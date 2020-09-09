@@ -2,11 +2,11 @@
 <!-- #include file="inc/const.asp" -->
 <!-- #include file="inc/dv_clsother.asp" -->
 <%
-Dvbbs.stats="°æÖ÷¹ÜÀíÒ³Ãæ"
+Dvbbs.stats="ç‰ˆä¸»ç®¡ç†é¡µé¢"
 Dvbbs.LoadTemplates("")
 Dvbbs.Nav()
 Dim sql1,rs1,sql,Rs,i
-If Dvbbs.UserID=0 Then Response.redirect "showerr.asp?ErrCodes=<li>ÇëµÇÂ¼ºó½øĞĞ²Ù×÷¡£&action=OtherErr"
+If Dvbbs.UserID=0 Then Response.redirect "showerr.asp?ErrCodes=<li>è¯·ç™»å½•åè¿›è¡Œæ“ä½œã€‚&action=OtherErr"
 
 If DVbbs.BoardID=0 then
 	Dvbbs.Head_var 2,0,"",""
@@ -15,7 +15,7 @@ Else
 	GetBoardPermission
 End If
 
-If Not(Dvbbs.boardmaster or Dvbbs.master or Dvbbs.superboardmaster) Then Response.redirect "showerr.asp?ErrCodes=<li>Ö»ÓĞ¸Ã°æ°æÖ÷¼¶±ğÒÔÉÏµÄ¹ÜÀíÔ±²ÅÄÜµÇÂ¼¡£&action=OtherErr"
+If Not(Dvbbs.boardmaster or Dvbbs.master or Dvbbs.superboardmaster) Then Response.redirect "showerr.asp?ErrCodes=<li>åªæœ‰è¯¥ç‰ˆç‰ˆä¸»çº§åˆ«ä»¥ä¸Šçš„ç®¡ç†å‘˜æ‰èƒ½ç™»å½•ã€‚&action=OtherErr"
 If Not Dvbbs.ChkPost() Then Dvbbs.AddErrCode(16):Dvbbs.Showerr()
 Main()
 Dvbbs.Footer()
@@ -24,15 +24,15 @@ Sub Main()
 %>
 <TABLE cellpadding=0 cellspacing=1 class=tableborder1 align=center > 
         <tr >
-          <th height=24 align=center colspan="2">»¶Ó­ <%=Dvbbs.htmlencode(Dvbbs.membername)%>½øÈë°æÖ÷¹ÜÀíÒ³Ãæ</th>
+          <th height=24 align=center colspan="2">æ¬¢è¿ <%=Dvbbs.htmlencode(Dvbbs.membername)%>è¿›å…¥ç‰ˆä¸»ç®¡ç†é¡µé¢</th>
         </tr>
         <tr >
           <td height=24 align=center colspan="2" class=tablebody1>
-        <b>¹ÜÀíÑ¡Ïî£º<a href="announcements.asp?boardid=<%=Dvbbs.BoardID%>">¹«¸æ·¢²¼ºÍ¹ÜÀí</a> | 
-		<a href="admin_boardset.asp?action=editbminfo&boardid=<%=Dvbbs.BoardID%>">»ù±¾ĞÅÏ¢¹ÜÀí</a> |  
-				<a href="admin_boardset.asp?action=editbmads&boardid=<%=Dvbbs.BoardID%>">·Ö°æ¹ã¸æ¹ÜÀí</a> |  
-				<a href="index.asp?action=batch&boardid=<%=Dvbbs.BoardID%>">ÅúÁ¿¹ÜÀíÌû×Ó</a> |  
-				<a href="infolist.asp?t=paper&boardid=<%=Dvbbs.BoardID%>">·Ö°æĞ¡×Ö±¨¹ÜÀí</a>
+        <b>ç®¡ç†é€‰é¡¹ï¼š<a href="announcements.asp?boardid=<%=Dvbbs.BoardID%>">å…¬å‘Šå‘å¸ƒå’Œç®¡ç†</a> | 
+		<a href="admin_boardset.asp?action=editbminfo&boardid=<%=Dvbbs.BoardID%>">åŸºæœ¬ä¿¡æ¯ç®¡ç†</a> |  
+				<a href="admin_boardset.asp?action=editbmads&boardid=<%=Dvbbs.BoardID%>">åˆ†ç‰ˆå¹¿å‘Šç®¡ç†</a> |  
+				<a href="index.asp?action=batch&boardid=<%=Dvbbs.BoardID%>">æ‰¹é‡ç®¡ç†å¸–å­</a> |  
+				<a href="infolist.asp?t=paper&boardid=<%=Dvbbs.BoardID%>">åˆ†ç‰ˆå°å­—æŠ¥ç®¡ç†</a>
 		</b></td>
         </tr>
 </table>
@@ -42,7 +42,7 @@ Sub Main()
               <td width="30%" valign=top align=left>
 		<table cellpadding=3 cellspacing=1 class=tableborder1 style="width:100%;word-break:break-all;">
 		<tr>
-			<th width="100%" height=24  colspan="2">¡¶ ±¾°æĞÅÏ¢À¸ ¡·
+			<th width="100%" height=24  colspan="2">ã€Š æœ¬ç‰ˆä¿¡æ¯æ  ã€‹
 			</th>
 		</tr>
 		<tr>
@@ -50,25 +50,25 @@ Sub Main()
 			</td>
 		</tr>
 		<tr>
-			<td width="60%" height=24 class=tablebody1 >½ñÈÕĞÂÌû£º
+			<td width="60%" height=24 class=tablebody1 >ä»Šæ—¥æ–°å¸–ï¼š
 			</td>
 			<td width="40%" height=24 class=tablebody1 ><font color="RED"><%=Application(Dvbbs.CacheName &"_information_" & Dvbbs.boardid).documentElement.selectSingleNode("information/@todaynum").text%></FONT>
 			</td>
 		</tr>
 		<tr>
-			<td  height=24 class=tablebody2 >Ö÷ÌâÌû×Ó£º
+			<td  height=24 class=tablebody2 >ä¸»é¢˜å¸–å­ï¼š
 			</td>
 			<td  height=24 class=tablebody2 ><%=Application(Dvbbs.CacheName &"_information_" & Dvbbs.boardid).documentElement.selectSingleNode("information/@topicnum").text%>
 			</td>
 		</tr>
 		<tr>
-			<td  height=24 class=tablebody1 >±¾°æÌû×Ó£º
+			<td  height=24 class=tablebody1 >æœ¬ç‰ˆå¸–å­ï¼š
 			</td>
 			<td  height=24 class=tablebody1 ><%=Application(Dvbbs.CacheName &"_information_" & Dvbbs.boardid).documentElement.selectSingleNode("information/@postnum").text%>
 			</td>
 		</tr>
 		<tr>
-			<td width="30%" height=24 class=tablebody2 colspan="2">¹ÜÀí³ÉÔ±£º
+			<td width="30%" height=24 class=tablebody2 colspan="2">ç®¡ç†æˆå‘˜ï¼š
 			<%
 			Dim master
 			For Each master in Application(Dvbbs.CacheName&"_boardmaster").documentElement.selectNodes("boardmaster[@boardid='"&Dvbbs.boardid&"']/master")
@@ -78,30 +78,30 @@ Sub Main()
 			</td>
 		</tr>
 		<tr>
-			<th width="100%" height=24  colspan="2">¡¶ ¹ÜÀíÈ¨ÏŞ ¡·
+			<th width="100%" height=24  colspan="2">ã€Š ç®¡ç†æƒé™ ã€‹
 			</th>
 		</tr>
 		<tr>
-			<td  height=24 class=tablebody1 >Ö÷°æÖ÷¿ÉÔöÉ¾¸±°æÖ÷£º
+			<td  height=24 class=tablebody1 >ä¸»ç‰ˆä¸»å¯å¢åˆ å‰¯ç‰ˆä¸»ï¼š
 			</td>
-			<td  height=24 class=tablebody1 ><%if Dvbbs.Board_Setting(33)=1 then%>´ò¿ª<%else%><FONT COLOR=RED>¹Ø±Õ</FONT><%end if%>
-			</td>
-		</tr>
-		<tr>
-			<td  height=24 class=tablebody2 >Ö÷°æÖ÷¿ÉĞŞ¸Ä¹ã¸æÅäÖÃ£º
-			</td>
-			<td  height=24 class=tablebody2 ><%if Dvbbs.Board_Setting(34)=1 then%>´ò¿ª<%else%><FONT COLOR=RED>¹Ø±Õ</FONT><%end if%>
+			<td  height=24 class=tablebody1 ><%if Dvbbs.Board_Setting(33)=1 then%>æ‰“å¼€<%else%><FONT COLOR=RED>å…³é—­</FONT><%end if%>
 			</td>
 		</tr>
 		<tr>
-			<td  height=24 class=tablebody1 >ËùÓĞ°æÖ÷¾ù¿ÉĞŞ¸Ä¹ã¸æÅäÖÃ£º
+			<td  height=24 class=tablebody2 >ä¸»ç‰ˆä¸»å¯ä¿®æ”¹å¹¿å‘Šé…ç½®ï¼š
 			</td>
-			<td  height=24 class=tablebody1 ><%if Dvbbs.Board_Setting(35)=1 then%>´ò¿ª<%else%><FONT COLOR=RED>¹Ø±Õ</FONT><%end if%>
+			<td  height=24 class=tablebody2 ><%if Dvbbs.Board_Setting(34)=1 then%>æ‰“å¼€<%else%><FONT COLOR=RED>å…³é—­</FONT><%end if%>
+			</td>
+		</tr>
+		<tr>
+			<td  height=24 class=tablebody1 >æ‰€æœ‰ç‰ˆä¸»å‡å¯ä¿®æ”¹å¹¿å‘Šé…ç½®ï¼š
+			</td>
+			<td  height=24 class=tablebody1 ><%if Dvbbs.Board_Setting(35)=1 then%>æ‰“å¼€<%else%><FONT COLOR=RED>å…³é—­</FONT><%end if%>
 			</td>
 		</tr>
 		<tr>
 			<td width="100%" height=24  colspan="2" class=tablebody2>
-		<b>×¢Òâ£º</b>¸÷¸ö°æÃæ°æÖ÷¿ÉÒÔÔÚ×Ô¼º°æÃæ×ÔÓÉ·¢²¼¹«¸æºÍ°æÃæÉèÖÃ£¬¹ÜÀíÔ±¿ÉÒÔÔÚËùÓĞ°æÃæ·¢²¼£¬²¢¶ÔĞÅÏ¢½øĞĞ¹ÜÀí²Ù×÷¡£
+		<b>æ³¨æ„ï¼š</b>å„ä¸ªç‰ˆé¢ç‰ˆä¸»å¯ä»¥åœ¨è‡ªå·±ç‰ˆé¢è‡ªç”±å‘å¸ƒå…¬å‘Šå’Œç‰ˆé¢è®¾ç½®ï¼Œç®¡ç†å‘˜å¯ä»¥åœ¨æ‰€æœ‰ç‰ˆé¢å‘å¸ƒï¼Œå¹¶å¯¹ä¿¡æ¯è¿›è¡Œç®¡ç†æ“ä½œã€‚
 			</td>
 		</tr>
 		</table>
@@ -111,7 +111,7 @@ Sub Main()
       		<table cellpadding=3 cellspacing=1 class=tableborder1 style="width:100%;word-break:break-all;">
 		  <tr>
 			<td width="100%" height=24 class=tablebody1>
-<B>×¢Òâ</B>£º<BR>±¾Ò³ÃæÎª°æÖ÷×¨ÓÃ£¬Ê¹ÓÃÇ°Çë¿´×ó±ßÏà¶ÔÓ¦µÄ¹¦ÄÜÊÇ·ñ´ò¿ª£¬ÔÚ½øĞĞ¹ÜÀíÉèÖÃµÄÊ±ºò£¬²»ÒªËæÒâ¸ü¸ÄÉèÖÃ£¬ÈçĞè¸ü¸Ä£¬±ØĞëÌîĞ´ÍêÕû»òÕßÕıÈ·µÄÌîĞ´¡£
+<B>æ³¨æ„</B>ï¼š<BR>æœ¬é¡µé¢ä¸ºç‰ˆä¸»ä¸“ç”¨ï¼Œä½¿ç”¨å‰è¯·çœ‹å·¦è¾¹ç›¸å¯¹åº”çš„åŠŸèƒ½æ˜¯å¦æ‰“å¼€ï¼Œåœ¨è¿›è¡Œç®¡ç†è®¾ç½®çš„æ—¶å€™ï¼Œä¸è¦éšæ„æ›´æ”¹è®¾ç½®ï¼Œå¦‚éœ€æ›´æ”¹ï¼Œå¿…é¡»å¡«å†™å®Œæ•´æˆ–è€…æ­£ç¡®çš„å¡«å†™ã€‚
 		  </td></tr>
 		</table>
 <%
@@ -144,11 +144,11 @@ End Sub
 Sub editbmads()
 	Dim master_1,chkedit
 	If Not ChkBoardEditor(1) Then
-		Response.Redirect "showerr.asp?ErrCodes=<li>ÄãµÄÈ¨ÏŞ²»×ã£¬²»ÄÜ½øĞĞ¸ÃÏî¹ÜÀíÉèÖÃ¡£&action=OtherErr"
+		Response.Redirect "showerr.asp?ErrCodes=<li>ä½ çš„æƒé™ä¸è¶³ï¼Œä¸èƒ½è¿›è¡Œè¯¥é¡¹ç®¡ç†è®¾ç½®ã€‚&action=OtherErr"
 	End If
 
 	Set Rs=Dvbbs.Execute("select boardmaster,Board_Ads from dv_board where boardid="&Dvbbs.BoardID)
-	If rs.eof and rs.bof Then Response.redirect "showerr.asp?ErrCodes=<li>ÄúÃ»ÓĞÖ¸¶¨ÏàÓ¦ÂÛÌ³ID£¬²»ÄÜ½øĞĞ¹ÜÀí¡£&action=OtherErr"
+	If rs.eof and rs.bof Then Response.redirect "showerr.asp?ErrCodes=<li>æ‚¨æ²¡æœ‰æŒ‡å®šç›¸åº”è®ºå›IDï¼Œä¸èƒ½è¿›è¡Œç®¡ç†ã€‚&action=OtherErr"
 	Dvbbs.Forum_Ads = Split(Rs(1),"$")
 %>
 <script language = "javaScript" src = "inc/toxhtml.js" type="text/javascript"></script>
@@ -156,95 +156,95 @@ Sub editbmads()
 <form method="POST" action="?action=savebmads&boardid=<%=Dvbbs.BoardID%>">
 <TABLE cellPadding=1 cellSpacing=1 class=tableborder1 align=center style="width:100%;word-break:break-all;">
 <tr> 
-<th height="23" colspan="2" class="tableHeaderText"><b>ÂÛÌ³¹ã¸æÉèÖÃ</b>£¨ÈçÎªÉèÖÃ·ÖÂÛÌ³£¬¾ÍÊÇ·ÖÂÛÌ³Ê×Ò³¹ã¸æ£¬ÏÂÊôÒ³ÃæÎªÌû×ÓÏÔÊ¾Ò³Ãæ£©</th>
+<th height="23" colspan="2" class="tableHeaderText"><b>è®ºå›å¹¿å‘Šè®¾ç½®</b>ï¼ˆå¦‚ä¸ºè®¾ç½®åˆ†è®ºå›ï¼Œå°±æ˜¯åˆ†è®ºå›é¦–é¡µå¹¿å‘Šï¼Œä¸‹å±é¡µé¢ä¸ºå¸–å­æ˜¾ç¤ºé¡µé¢ï¼‰</th>
 </tr>
 <tr> 
-<td colspan="2" class="tablebody1">×¢ÒâÊÂÏî£ºÎª·ÀÖ¹¹ÜÀíÕÊºÅ±»µÁÓÃµ¼ÖÂµÄ¹ÒÂíÎÊÌâ£¬Èç¹ûÄúÌá½»µÄ¹ã¸æÊı¾İº¬Ç°Ì¨²»½ÓÊÜµÄ´øobject,iframe,script,link,metaµÈµÈÓĞ¿ÉÄÜÎ£º¦¿Í»§¶ËµÄÄÚÈİ£¬Çëµ½ºóÌ¨¹ã¸æ¹ÜÀíÖĞ²Ù×÷¡£</td>
+<td colspan="2" class="tablebody1">æ³¨æ„äº‹é¡¹ï¼šä¸ºé˜²æ­¢ç®¡ç†å¸å·è¢«ç›—ç”¨å¯¼è‡´çš„æŒ‚é©¬é—®é¢˜ï¼Œå¦‚æœæ‚¨æäº¤çš„å¹¿å‘Šæ•°æ®å«å‰å°ä¸æ¥å—çš„å¸¦object,iframe,script,link,metaç­‰ç­‰æœ‰å¯èƒ½å±å®³å®¢æˆ·ç«¯çš„å†…å®¹ï¼Œè¯·åˆ°åå°å¹¿å‘Šç®¡ç†ä¸­æ“ä½œã€‚</td>
 </tr>
 <tr> 
-<td width="40%" class="tablebody1"><B>Ê×Ò³¶¥²¿¹ã¸æ´úÂë</B></font></td>
+<td width="40%" class="tablebody1"><B>é¦–é¡µé¡¶éƒ¨å¹¿å‘Šä»£ç </B></font></td>
 <td width="60%" class="tablebody1"> 
 <textarea name="Forum_ads(0)" cols="50" rows="3" onblur="fixtoxhtml(this)"><%=(Dvbbs.Forum_ads(0))%></textarea>
 </td>
 </tr>
 <tr> 
-<td width="40%" class="tablebody1"><B>Ê×Ò³Î²²¿¹ã¸æ´úÂë</B></font></td>
+<td width="40%" class="tablebody1"><B>é¦–é¡µå°¾éƒ¨å¹¿å‘Šä»£ç </B></font></td>
 <td width="60%" class="tablebody1"> 
 <textarea name="Forum_ads(1)" cols="50" rows="3" onblur="fixtoxhtml(this)"><%=(Dvbbs.Forum_ads(1))%></textarea>
 </td>
 </tr>
 <tr> 
-<td width="40%" class="tablebody1"><B>¿ªÆôÊ×Ò³¸¡¶¯¹ã¸æ</B></font></td>
+<td width="40%" class="tablebody1"><B>å¼€å¯é¦–é¡µæµ®åŠ¨å¹¿å‘Š</B></font></td>
 <td width="60%" class="tablebody1"> 
-<input type=radio name="Forum_ads(2)" value=0 <%if Dvbbs.Forum_ads(2)=0 then%>checked<%end if%>>¹Ø±Õ&nbsp;
-<input type=radio name="Forum_ads(2)" value=1 <%if Dvbbs.Forum_ads(2)=1 then%>checked<%end if%>>´ò¿ª&nbsp;
+<input type=radio name="Forum_ads(2)" value=0 <%if Dvbbs.Forum_ads(2)=0 then%>checked<%end if%>>å…³é—­&nbsp;
+<input type=radio name="Forum_ads(2)" value=1 <%if Dvbbs.Forum_ads(2)=1 then%>checked<%end if%>>æ‰“å¼€&nbsp;
 </td>
 </tr>
 <tr> 
-<td width="40%" class="tablebody1"><B>ÂÛÌ³Ê×Ò³¸¡¶¯¹ã¸æÍ¼Æ¬µØÖ·</B></font></td>
+<td width="40%" class="tablebody1"><B>è®ºå›é¦–é¡µæµ®åŠ¨å¹¿å‘Šå›¾ç‰‡åœ°å€</B></font></td>
 <td width="60%" class="tablebody1"> 
 <input type="text" name="Forum_ads(3)" size="35" value="<%=Dvbbs.Forum_ads(3)%>" onblur="fixtoxhtml(this)">
 </td>
 </tr>
 <tr> 
-<td width="40%" class="tablebody1"><B>ÂÛÌ³Ê×Ò³¸¡¶¯¹ã¸æÁ¬½ÓµØÖ·</B></font></td>
+<td width="40%" class="tablebody1"><B>è®ºå›é¦–é¡µæµ®åŠ¨å¹¿å‘Šè¿æ¥åœ°å€</B></font></td>
 <td width="60%" class="tablebody1"> 
 <input type="text" name="Forum_ads(4)" size="35" value="<%=Dvbbs.Forum_ads(4)%>" onblur="fixtoxhtml(this)">
 </td>
 </tr>
 <tr> 
-<td width="40%" class="tablebody1"><B>ÂÛÌ³Ê×Ò³¸¡¶¯¹ã¸æÍ¼Æ¬¿í¶È</B></font></td>
+<td width="40%" class="tablebody1"><B>è®ºå›é¦–é¡µæµ®åŠ¨å¹¿å‘Šå›¾ç‰‡å®½åº¦</B></font></td>
 <td width="60%" class="tablebody1"> 
-<input type="text" name="Forum_ads(5)" size="3" value="<%=Dvbbs.Forum_ads(5)%>" onblur="fixtoxhtml(this)">&nbsp;ÏóËØ
+<input type="text" name="Forum_ads(5)" size="3" value="<%=Dvbbs.Forum_ads(5)%>" onblur="fixtoxhtml(this)">&nbsp;è±¡ç´ 
 </td>
 </tr>
 <tr> 
-<td width="40%" class="tablebody1"><B>ÂÛÌ³Ê×Ò³¸¡¶¯¹ã¸æÍ¼Æ¬¸ß¶È</B></font></td>
+<td width="40%" class="tablebody1"><B>è®ºå›é¦–é¡µæµ®åŠ¨å¹¿å‘Šå›¾ç‰‡é«˜åº¦</B></font></td>
 <td width="60%" class="tablebody1"> 
-<input type="text" name="Forum_ads(6)" size="3" value="<%=Dvbbs.Forum_ads(6)%>" onblur="fixtoxhtml(this)">&nbsp;ÏóËØ
+<input type="text" name="Forum_ads(6)" size="3" value="<%=Dvbbs.Forum_ads(6)%>" onblur="fixtoxhtml(this)">&nbsp;è±¡ç´ 
 </td>
 </tr>
 <tr> 
-<td width="40%" class="tablebody1"><B>¿ªÆôÊ×Ò³ÓÒÏÂ¹Ì¶¨¹ã¸æ</B></font></td>
+<td width="40%" class="tablebody1"><B>å¼€å¯é¦–é¡µå³ä¸‹å›ºå®šå¹¿å‘Š</B></font></td>
 <td width="60%" class="tablebody1"> 
-<input type=radio name="Forum_ads(13)" value=0 <%if Dvbbs.Forum_ads(13)=0 then%>checked<%end if%>>¹Ø±Õ&nbsp;
-<input type=radio name="Forum_ads(13)" value=1 <%if Dvbbs.Forum_ads(13)=1 then%>checked<%end if%>>´ò¿ª&nbsp;
+<input type=radio name="Forum_ads(13)" value=0 <%if Dvbbs.Forum_ads(13)=0 then%>checked<%end if%>>å…³é—­&nbsp;
+<input type=radio name="Forum_ads(13)" value=1 <%if Dvbbs.Forum_ads(13)=1 then%>checked<%end if%>>æ‰“å¼€&nbsp;
 </td>
 </tr>
 <tr> 
-<td width="40%" class="tablebody1"><B>ÂÛÌ³Ê×Ò³ÓÒÏÂ¹Ì¶¨¹ã¸æÍ¼Æ¬µØÖ·</B></font></td>
+<td width="40%" class="tablebody1"><B>è®ºå›é¦–é¡µå³ä¸‹å›ºå®šå¹¿å‘Šå›¾ç‰‡åœ°å€</B></font></td>
 <td width="60%" class="tablebody1"> 
 <input type="text" name="Forum_ads(8)" size="35" value="<%=Dvbbs.Forum_ads(8)%>" onblur="fixtoxhtml(this)">
 </td>
 </tr>
 <tr> 
-<td width="40%" class="tablebody1"><B>ÂÛÌ³Ê×Ò³ÓÒÏÂ¹Ì¶¨¹ã¸æÁ¬½ÓµØÖ·</B></font></td>
+<td width="40%" class="tablebody1"><B>è®ºå›é¦–é¡µå³ä¸‹å›ºå®šå¹¿å‘Šè¿æ¥åœ°å€</B></font></td>
 <td width="60%" class="tablebody1"> 
 <input type="text" name="Forum_ads(9)" size="35" value="<%=Dvbbs.Forum_ads(9)%>" onblur="fixtoxhtml(this)">
 </td>
 </tr>
 <tr> 
-<td width="40%" class="tablebody1"><B>ÂÛÌ³Ê×Ò³ÓÒÏÂ¹Ì¶¨¹ã¸æÍ¼Æ¬¿í¶È</B></font></td>
+<td width="40%" class="tablebody1"><B>è®ºå›é¦–é¡µå³ä¸‹å›ºå®šå¹¿å‘Šå›¾ç‰‡å®½åº¦</B></font></td>
 <td width="60%" class="tablebody1"> 
-<input type="text" name="Forum_ads(10)" size="3" value="<%=Dvbbs.Forum_ads(10)%>" onblur="fixtoxhtml(this)">&nbsp;ÏóËØ
+<input type="text" name="Forum_ads(10)" size="3" value="<%=Dvbbs.Forum_ads(10)%>" onblur="fixtoxhtml(this)">&nbsp;è±¡ç´ 
 </td>
 </tr>
 <tr> 
-<td width="40%" class="tablebody1"><B>ÂÛÌ³Ê×Ò³ÓÒÏÂ¹Ì¶¨¹ã¸æÍ¼Æ¬¸ß¶È</B></font></td>
+<td width="40%" class="tablebody1"><B>è®ºå›é¦–é¡µå³ä¸‹å›ºå®šå¹¿å‘Šå›¾ç‰‡é«˜åº¦</B></font></td>
 <td width="60%" class="tablebody1"> 
-<input type="text" name="Forum_ads(11)" size="3" value="<%=Dvbbs.Forum_ads(11)%>" onblur="fixtoxhtml(this)">&nbsp;ÏóËØ
+<input type="text" name="Forum_ads(11)" size="3" value="<%=Dvbbs.Forum_ads(11)%>" onblur="fixtoxhtml(this)">&nbsp;è±¡ç´ 
 </td>
 </tr>
 
 <tr> 
-<td width="200" class="tablebody1"><B>ÊÇ·ñ¿ªÆôÌû¼äËæ»ú¹ã¸æ</B></td>
+<td width="200" class="tablebody1"><B>æ˜¯å¦å¼€å¯å¸–é—´éšæœºå¹¿å‘Š</B></td>
 <td width="*" class="tablebody1"> 
-<input type=radio name="Forum_ads(7)" value=0 <%if Dvbbs.Forum_ads(7)="0" then%>checked<%end if%>>¹Ø±Õ&nbsp;
-<input type=radio name="Forum_ads(7)" value=1 <%if Dvbbs.Forum_ads(7)="1" then%>checked<%end if%>>´ò¿ª&nbsp;
+<input type=radio name="Forum_ads(7)" value=0 <%if Dvbbs.Forum_ads(7)="0" then%>checked<%end if%>>å…³é—­&nbsp;
+<input type=radio name="Forum_ads(7)" value=1 <%if Dvbbs.Forum_ads(7)="1" then%>checked<%end if%>>æ‰“å¼€&nbsp;
 </td>
 </tr>
 <tr> 
-<td width="*" class="tablebody1" valign="top" colspan=2><B>ÂÛÌ³Ìû¼äËæ»ú¹ã¸æ´úÂë</B> <br>Ö§³ÖHTMLÓï·¨£¬Ã¿ÌõËæ»ú¹ã¸æÒ»ĞĞ£¬ÓÃ»Ø³µ·Ö¿ª¡£</td>
+<td width="*" class="tablebody1" valign="top" colspan=2><B>è®ºå›å¸–é—´éšæœºå¹¿å‘Šä»£ç </B> <br>æ”¯æŒHTMLè¯­æ³•ï¼Œæ¯æ¡éšæœºå¹¿å‘Šä¸€è¡Œï¼Œç”¨å›è½¦åˆ†å¼€ã€‚</td>
 </tr>
 <tr>
 <td width="*" class="tablebody1" colspan=2> 
@@ -252,25 +252,25 @@ Sub editbmads()
 </td>
 </tr>
 <tr> 
-<td width="200" class="tablebody1"><B>ÊÇ·ñ¿ªÆôÒ³ÃæÎÄ×Ö¹ã¸æÎ»</B></td>
+<td width="200" class="tablebody1"><B>æ˜¯å¦å¼€å¯é¡µé¢æ–‡å­—å¹¿å‘Šä½</B></td>
 <td width="*" class="tablebody1"> 
-<input type=radio name="Forum_ads(12)" value=0 <%if Dvbbs.Forum_ads(12)="0" then%>checked<%end if%>>¹Ø±Õ&nbsp;
-<input type=radio name="Forum_ads(12)" value=1 <%if Dvbbs.Forum_ads(12)="1" then%>checked<%end if%>>´ò¿ª&nbsp;
+<input type=radio name="Forum_ads(12)" value=0 <%if Dvbbs.Forum_ads(12)="0" then%>checked<%end if%>>å…³é—­&nbsp;
+<input type=radio name="Forum_ads(12)" value=1 <%if Dvbbs.Forum_ads(12)="1" then%>checked<%end if%>>æ‰“å¼€&nbsp;
 </td>
 </tr>
 <tr> 
-<td width="200" class="tablebody1"><B>Ò³ÃæÎÄ×Ö¹ã¸æÎ»ÉèÖÃ(°æÃæ)</B><BR>ÇëÈ·ÈÏÒÑ´ò¿ªÁËÒ³ÃæÎÄ×Ö¹ã¸æÎ»¹¦ÄÜ<BR></td>
+<td width="200" class="tablebody1"><B>é¡µé¢æ–‡å­—å¹¿å‘Šä½è®¾ç½®(ç‰ˆé¢)</B><BR>è¯·ç¡®è®¤å·²æ‰“å¼€äº†é¡µé¢æ–‡å­—å¹¿å‘Šä½åŠŸèƒ½<BR></td>
 <td width="*" class="tablebody1"> 
-<input type=radio name="Forum_ads(15)" value=0 <%if Dvbbs.Forum_ads(15)="0" then%>checked<%end if%>>Ìû×ÓÁĞ±í&nbsp;
-<input type=radio name="Forum_ads(15)" value=1 <%if Dvbbs.Forum_ads(15)="1" then%>checked<%end if%>>Ìû×ÓÄÚÈİ&nbsp;
-<input type=radio name="Forum_ads(15)" value=2 <%if Dvbbs.Forum_ads(15)="2" then%>checked<%end if%>>Á½Õß¶¼ÏÔÊ¾&nbsp;
-<input type=radio name="Forum_ads(15)" value=3 <%if Dvbbs.Forum_ads(15)="3" then%>checked<%end if%>>Á½Õß¶¼²»ÏÔÊ¾&nbsp;
+<input type=radio name="Forum_ads(15)" value=0 <%if Dvbbs.Forum_ads(15)="0" then%>checked<%end if%>>å¸–å­åˆ—è¡¨&nbsp;
+<input type=radio name="Forum_ads(15)" value=1 <%if Dvbbs.Forum_ads(15)="1" then%>checked<%end if%>>å¸–å­å†…å®¹&nbsp;
+<input type=radio name="Forum_ads(15)" value=2 <%if Dvbbs.Forum_ads(15)="2" then%>checked<%end if%>>ä¸¤è€…éƒ½æ˜¾ç¤º&nbsp;
+<input type=radio name="Forum_ads(15)" value=3 <%if Dvbbs.Forum_ads(15)="3" then%>checked<%end if%>>ä¸¤è€…éƒ½ä¸æ˜¾ç¤º&nbsp;
 <input type="hidden" name="Forum_ads(17)" size="3" value="<%=Dvbbs.Forum_ads(17)%>">
 </td>
 </tr>
 
 <tr> 
-<td width="*" class="tablebody1" valign="top" colspan=2><B>Ò³ÃæÎÄ×Ö¹ã¸æÎ»ÄÚÈİ</B> <br>Ö§³ÖHTMLÓï·¨£¬Ã¿Ìõ¹ã¸æÒ»ĞĞ£¬ÓÃ»Ø³µ·Ö¿ª¡£</td>
+<td width="*" class="tablebody1" valign="top" colspan=2><B>é¡µé¢æ–‡å­—å¹¿å‘Šä½å†…å®¹</B> <br>æ”¯æŒHTMLè¯­æ³•ï¼Œæ¯æ¡å¹¿å‘Šä¸€è¡Œï¼Œç”¨å›è½¦åˆ†å¼€ã€‚</td>
 </tr>
 <tr>
 <td width="*" class="tablebody1" colspan=2> 
@@ -281,7 +281,7 @@ Sub editbmads()
 <td width="40%" class="tablebody1">&nbsp;</td>
 <td width="60%" class="tablebody1"> 
 <div align="center"> 
-<input type="submit" name="Submit" value="Ìá ½»">
+<input type="submit" name="Submit" value="æ äº¤">
 </div>
 </td>
 </tr>
@@ -292,7 +292,7 @@ End Sub
 
 Sub savebmads()
 	If Not ChkBoardEditor(1) Then
-		Response.Redirect "showerr.asp?ErrCodes=<li>ÄãµÄÈ¨ÏŞ²»×ã£¬²»ÄÜ½øĞĞ¸ÃÏî¹ÜÀíÉèÖÃ¡£&action=OtherErr"
+		Response.Redirect "showerr.asp?ErrCodes=<li>ä½ çš„æƒé™ä¸è¶³ï¼Œä¸èƒ½è¿›è¡Œè¯¥é¡¹ç®¡ç†è®¾ç½®ã€‚&action=OtherErr"
 	End If
 	Dim Forum_adsinfo
 	Dim iSetting
@@ -316,21 +316,21 @@ Sub savebmads()
 		Dvbbs.Execute(sql)
 		Dvbbs.LoadBoardData Dvbbs.BoardID
 		LoardTextAd()
-		Response.Write Dvbbs.BoardType&"¹ã¸æÉèÖÃ³É¹¦¡£"
-		Dvbbs.Execute("Insert Into Dv_Log (l_AnnounceID,l_BoardID,l_touser,l_username,l_content,l_ip,l_type) values (0,"&Dvbbs.BoardID&",'¹ã¸æ¹ÜÀí','" & Dvbbs.MemberName & "','ÉèÖÃ "&Dvbbs.boardtype&"¹ã¸æ','" & Dvbbs.userTrueIP & "',3)")
+		Response.Write Dvbbs.BoardType&"å¹¿å‘Šè®¾ç½®æˆåŠŸã€‚"
+		Dvbbs.Execute("Insert Into Dv_Log (l_AnnounceID,l_BoardID,l_touser,l_username,l_content,l_ip,l_type) values (0,"&Dvbbs.BoardID&",'å¹¿å‘Šç®¡ç†','" & Dvbbs.MemberName & "','è®¾ç½® "&Dvbbs.boardtype&"å¹¿å‘Š','" & Dvbbs.userTrueIP & "',3)")
 	Else
-		Response.Write Dvbbs.BoardType&"¹ã¸æÉèÖÃÊ§°Ü£¬Ô­Òò£º"&checkinfo&"¡£<br />ÈçĞèÒªÉèÖÃ°üº¬½Å±¾»òÆäËûÎ£ÏÕ±êÇ©µÄ¹ã¸æ£¬Çëµ½ºóÌ¨²Ù×÷¡£"
-		Dvbbs.Execute("Insert Into Dv_Log (l_AnnounceID,l_BoardID,l_touser,l_username,l_content,l_ip,l_type) values (0,"&Dvbbs.BoardID&",'¹ã¸æ¹ÜÀí','" & Dvbbs.MemberName & "','ÉèÖÃ "&Dvbbs.boardtype&"¹ã¸æÊ§°Ü','" & Dvbbs.userTrueIP & "',3)")
+		Response.Write Dvbbs.BoardType&"å¹¿å‘Šè®¾ç½®å¤±è´¥ï¼ŒåŸå› ï¼š"&checkinfo&"ã€‚<br />å¦‚éœ€è¦è®¾ç½®åŒ…å«è„šæœ¬æˆ–å…¶ä»–å±é™©æ ‡ç­¾çš„å¹¿å‘Šï¼Œè¯·åˆ°åå°æ“ä½œã€‚"
+		Dvbbs.Execute("Insert Into Dv_Log (l_AnnounceID,l_BoardID,l_touser,l_username,l_content,l_ip,l_type) values (0,"&Dvbbs.BoardID&",'å¹¿å‘Šç®¡ç†','" & Dvbbs.MemberName & "','è®¾ç½® "&Dvbbs.boardtype&"å¹¿å‘Šå¤±è´¥','" & Dvbbs.userTrueIP & "',3)")
 	End If
 End Sub
 
-'°æÖ÷ÉèÖÃÈ¨ÏŞ	Bloon
-'Act 0=ĞŞ¸Ä»ù±¾ÉèÖÃ£¬1=ĞŞ¸Ä¹ã¸æ
+'ç‰ˆä¸»è®¾ç½®æƒé™	Bloon
+'Act 0=ä¿®æ”¹åŸºæœ¬è®¾ç½®ï¼Œ1=ä¿®æ”¹å¹¿å‘Š
 Function ChkBoardEditor(Act)
 	Dim Master,IsMaster
 	IsMaster = False
 	ChkBoardEditor = False
-	'ĞŞÕı³¬°æ½øÈë·Ö°æ»ù±¾ÉèÖÃ³ö´í 2005-6-1 Dv.Yz
+	'ä¿®æ­£è¶…ç‰ˆè¿›å…¥åˆ†ç‰ˆåŸºæœ¬è®¾ç½®å‡ºé”™ 2005-6-1 Dv.Yz
 	If Dvbbs.Master Or Dvbbs.SuperBoardMaster Then
 		ChkBoardEditor = True
 		Exit Function
@@ -365,9 +365,9 @@ Sub Editbminfo()
 	Set Rs = Dvbbs.iCreateObject("Adodb.Recordset")
 	Sql = "SELECT * FROM Dv_Board WHERE Boardid = " & Dvbbs.Boardid
 	Rs.Open Sql,Conn,1,1
-	If Rs.Eof And Rs.bof Then Response.Redirect "showerr.asp?ErrCodes=<li>ÄúÃ»ÓĞÖ¸¶¨ÏàÓ¦ÂÛÌ³ID£¬²»ÄÜ½øĞĞ¹ÜÀí¡£&action=OtherErr"
+	If Rs.Eof And Rs.bof Then Response.Redirect "showerr.asp?ErrCodes=<li>æ‚¨æ²¡æœ‰æŒ‡å®šç›¸åº”è®ºå›IDï¼Œä¸èƒ½è¿›è¡Œç®¡ç†ã€‚&action=OtherErr"
 	If Not ChkBoardEditor(0) Then
-		Response.Redirect "showerr.asp?ErrCodes=<li>ÄãµÄÈ¨ÏŞ²»×ã£¬²»ÄÜ½øĞĞ¸ÃÏî¹ÜÀíÉèÖÃ¡£&action=OtherErr"
+		Response.Redirect "showerr.asp?ErrCodes=<li>ä½ çš„æƒé™ä¸è¶³ï¼Œä¸èƒ½è¿›è¡Œè¯¥é¡¹ç®¡ç†è®¾ç½®ã€‚&action=OtherErr"
 	End If
 %>
 <script language = "javaScript" src = "inc/toxhtml.js" type="text/javascript"></script>
@@ -375,40 +375,40 @@ Sub Editbminfo()
 <Input type='hidden' name=editid value='<%=Dvbbs.BoardID%>'>
 <TABLE cellPadding=1 cellSpacing=1 class=tableborder1 align=center style="width:100%;word-break:break-all;">
 <tr> 
-<td colspan="2" class="tablebody1">×¢ÒâÊÂÏî£ºÎª·ÀÖ¹¹ÜÀíÕÊºÅ±»µÁÓÃµ¼ÖÂµÄ¹ÒÂíÎÊÌâ£¬Èç¹ûÄúµÄ°æÃæËµÃ÷£¬»ò°æÃæ¹æÔò°üº¬´øobject,iframe,script,link,metaµÈµÈÓĞ¿ÉÄÜÎ£º¦¿Í»§¶ËµÄÄÚÈİ£¬Çëµ½ºóÌ¨ÂÛÌ³¹ÜÀíÖĞ²Ù×÷¡£</td>
+<td colspan="2" class="tablebody1">æ³¨æ„äº‹é¡¹ï¼šä¸ºé˜²æ­¢ç®¡ç†å¸å·è¢«ç›—ç”¨å¯¼è‡´çš„æŒ‚é©¬é—®é¢˜ï¼Œå¦‚æœæ‚¨çš„ç‰ˆé¢è¯´æ˜ï¼Œæˆ–ç‰ˆé¢è§„åˆ™åŒ…å«å¸¦object,iframe,script,link,metaç­‰ç­‰æœ‰å¯èƒ½å±å®³å®¢æˆ·ç«¯çš„å†…å®¹ï¼Œè¯·åˆ°åå°è®ºå›ç®¡ç†ä¸­æ“ä½œã€‚</td>
 </tr>
     <tr> 
-    <th colspan="3" height=22 class=tablebody2><b>»ù±¾ĞÅÏ¢¹ÜÀí </b> 
+    <th colspan="3" height=22 class=tablebody2><b>åŸºæœ¬ä¿¡æ¯ç®¡ç† </b> 
  
   <tr> 
-      <td height=22 class=tablebody1  align="center">ÂÛÌ³Ãû³Æ£º</td>
+      <td height=22 class=tablebody1  align="center">è®ºå›åç§°ï¼š</td>
       <td  class=tablebody1>
 	  <input type="text" name="BoardType" size="30" value="<%=server.HTMLEncode(rs("BoardType"))%>" readonly />
 	  </td>
     </tr>
     <tr> 
-      <td height=22 class=tablebody2  align="center">°æÃæËµÃ÷£º</td>
+      <td height=22 class=tablebody2  align="center">ç‰ˆé¢è¯´æ˜ï¼š</td>
       <td  class=tablebody1>
       <textarea name="Readme" cols="80" rows="5" onblur="fixtoxhtml(this)"><%=server.HTMLEncode(rs("readme"))%></textarea>
       </td>
     </tr>
     <tr> 
-      <td height=22 class=tablebody2  align="center">°æÃæ¹æÔò£º</td>
+      <td height=22 class=tablebody2  align="center">ç‰ˆé¢è§„åˆ™ï¼š</td>
       <td  class=tablebody1>
       <textarea name="Rules" cols="80" rows="5" onblur="fixtoxhtml(this)"><%=Server.Htmlencode(rs("Rules")&"")%></textarea>
       </td>
     </tr>
     <tr> 
-      <td height=22 class=tablebody1  align="center">°æÖ÷ĞŞ¸Ä£º</td>
+      <td height=22 class=tablebody1  align="center">ç‰ˆä¸»ä¿®æ”¹ï¼š</td>
       <td  class=tablebody1> 
-        <input type="text" name="boardmaster" size="50" value="<%=server.HTMLEncode(rs("boardmaster")&"")%>"><BR>(¶à°æÖ÷Ìí¼ÓÇëÓÃ|·Ö¸ô£¬Èç£ºÉ³Ì²Ğ¡×Ó|wodeail)
+        <input type="text" name="boardmaster" size="50" value="<%=server.HTMLEncode(rs("boardmaster")&"")%>"><BR>(å¤šç‰ˆä¸»æ·»åŠ è¯·ç”¨|åˆ†éš”ï¼Œå¦‚ï¼šæ²™æ»©å°å­|wodeail)
       </td>
     </tr>
     <%If Cint(Dvbbs.Board_Setting(2))=1 Then%>
     <tr> 
-      <td height=22 class=tablebody1  align="center">ÈÏÖ¤ÓÃ»§£º</td>
+      <td height=22 class=tablebody1  align="center">è®¤è¯ç”¨æˆ·ï¼š</td>
       <td  class=tablebody1> 
-      <textarea name="boarduser" cols="80" rows="3"><%=replace(rs("boarduser")&"",",",chr(13)&chr(10))%></textarea><li>Ã¿¸öÓÃ<b>»Ø³µ</b>·Ö¸ô¿ª
+      <textarea name="boarduser" cols="80" rows="3"><%=replace(rs("boarduser")&"",",",chr(13)&chr(10))%></textarea><li>æ¯ä¸ªç”¨<b>å›è½¦</b>åˆ†éš”å¼€
       </td>
     </tr>
     <%End If%>
@@ -416,7 +416,7 @@ Sub Editbminfo()
     <tr> 
       <td height=22 class=tablebody2>&nbsp;</td>
       <td  class=tablebody2> 
-        <input type="submit" name="Submit" value="Ìá½»">
+        <input type="submit" name="Submit" value="æäº¤">
       </td>
     </tr>
   </table>
@@ -427,7 +427,7 @@ End Sub
 
 Sub Savebminfo()
 	If Not ChkBoardEditor(0) Then
-		Response.Redirect "showerr.asp?ErrCodes=<li>ÄãµÄÈ¨ÏŞ²»×ã£¬²»ÄÜ½øĞĞ¸ÃÏî¹ÜÀíÉèÖÃ¡£&action=OtherErr"
+		Response.Redirect "showerr.asp?ErrCodes=<li>ä½ çš„æƒé™ä¸è¶³ï¼Œä¸èƒ½è¿›è¡Œè¯¥é¡¹ç®¡ç†è®¾ç½®ã€‚&action=OtherErr"
 	End If
 	Dim Rname, i,upmaster
 	Dim Readme, BoardType, Boardmaster, Sid, Boarduser, Rules
@@ -438,14 +438,14 @@ Sub Savebminfo()
 	Dim Checkinfo
 	Checkinfo=checkXHTML(Request.Form("readme"))
 	If Checkinfo<>"" Then
-		Dvbbs.Execute("Insert Into Dv_Log (l_AnnounceID,l_BoardID,l_touser,l_username,l_content,l_ip,l_type) values (0,"&Dvbbs.BoardID&",'ÂÛÌ³»ù±¾ĞÅÏ¢','" & Dvbbs.MemberName & "','¶Ô°æÃæ"& Dvbbs.BoardType&"½øĞĞ»ù±¾ĞÅÏ¢¹ÜÀíÊ§°Ü ','" & Dvbbs.userTrueIP & "',3)")
-		Response.Write "<p>ÂÛÌ³ĞŞ¸ÄÊ§°Ü£¬Ô­ÒòÊÇ°æÃæËµÃ÷ÖĞ"& Checkinfo&"<br />Èç¹ûÒ»¶¨ÒªÊäÈë´ø½Å±¾»òÎ£ÏÕ±êÇ©µÄÄÚÈİ£¬Çëµ½ºóÌ¨²Ù×÷¡£</p>"
+		Dvbbs.Execute("Insert Into Dv_Log (l_AnnounceID,l_BoardID,l_touser,l_username,l_content,l_ip,l_type) values (0,"&Dvbbs.BoardID&",'è®ºå›åŸºæœ¬ä¿¡æ¯','" & Dvbbs.MemberName & "','å¯¹ç‰ˆé¢"& Dvbbs.BoardType&"è¿›è¡ŒåŸºæœ¬ä¿¡æ¯ç®¡ç†å¤±è´¥ ','" & Dvbbs.userTrueIP & "',3)")
+		Response.Write "<p>è®ºå›ä¿®æ”¹å¤±è´¥ï¼ŒåŸå› æ˜¯ç‰ˆé¢è¯´æ˜ä¸­"& Checkinfo&"<br />å¦‚æœä¸€å®šè¦è¾“å…¥å¸¦è„šæœ¬æˆ–å±é™©æ ‡ç­¾çš„å†…å®¹ï¼Œè¯·åˆ°åå°æ“ä½œã€‚</p>"
 		Exit Sub
 	End If
 	Checkinfo=checkXHTML(Request.Form("Rules"))
 	If Checkinfo<>"" Then
-		Dvbbs.Execute("Insert Into Dv_Log (l_AnnounceID,l_BoardID,l_touser,l_username,l_content,l_ip,l_type) values (0,"&Dvbbs.BoardID&",'ÂÛÌ³»ù±¾ĞÅÏ¢','" & Dvbbs.MemberName & "','¶Ô°æÃæ"& Dvbbs.BoardType&"½øĞĞ»ù±¾ĞÅÏ¢¹ÜÀíÊ§°Ü','" & Dvbbs.userTrueIP & "',3)")
-		Response.Write "<p>ÂÛÌ³ĞŞ¸ÄÊ§°Ü£¬Ô­Òò"& Checkinfo&"<br />Èç¹ûÒ»¶¨ÒªÊäÈë´ø½Å±¾»òÎ£ÏÕ±êÇ©µÄÄÚÈİ£¬Çëµ½ºóÌ¨²Ù×÷¡£</p>"
+		Dvbbs.Execute("Insert Into Dv_Log (l_AnnounceID,l_BoardID,l_touser,l_username,l_content,l_ip,l_type) values (0,"&Dvbbs.BoardID&",'è®ºå›åŸºæœ¬ä¿¡æ¯','" & Dvbbs.MemberName & "','å¯¹ç‰ˆé¢"& Dvbbs.BoardType&"è¿›è¡ŒåŸºæœ¬ä¿¡æ¯ç®¡ç†å¤±è´¥','" & Dvbbs.userTrueIP & "',3)")
+		Response.Write "<p>è®ºå›ä¿®æ”¹å¤±è´¥ï¼ŒåŸå› "& Checkinfo&"<br />å¦‚æœä¸€å®šè¦è¾“å…¥å¸¦è„šæœ¬æˆ–å±é™©æ ‡ç­¾çš„å†…å®¹ï¼Œè¯·åˆ°åå°æ“ä½œã€‚</p>"
 		Exit Sub
 	End If
 	If Cint(Dvbbs.Board_Setting(2)) = 1 Then
@@ -453,17 +453,17 @@ Sub Savebminfo()
 		Boarduser = Replace(boarduser,chr(13)&chr(10),",")
 	End If
 	'Sid = Request("sid")
-	'If IsNumeric(Sid) = 0 Or Sid = "" Then Response.Redirect "showerr.asp?ErrCodes=<li>·Ç·¨µÄÄ£°å±àºÅ&action=OtherErr"
+	'If IsNumeric(Sid) = 0 Or Sid = "" Then Response.Redirect "showerr.asp?ErrCodes=<li>éæ³•çš„æ¨¡æ¿ç¼–å·&action=OtherErr"
 	'Sid=CLng(Sid)
-	If Len(Readme) > 255 Then Response.Redirect "showerr.asp?ErrCodes=<li>ÂÛÌ³¼ò½é¶àÓÚ255¸ö×Ö¡£&action=OtherErr"
-	If BoardType = "" Then Response.Redirect "showerr.asp?ErrCodes=<li>ÇëÊäÈëÂÛÌ³Ãû³Æ¡£&action=OtherErr"
-	'If Boardmaster = "" Then Response.Redirect "showerr.asp?ErrCodes=<li>ÇëÊäÈë¹ÜÀí³ÉÔ±¡£&action=OtherErr"
+	If Len(Readme) > 255 Then Response.Redirect "showerr.asp?ErrCodes=<li>è®ºå›ç®€ä»‹å¤šäº255ä¸ªå­—ã€‚&action=OtherErr"
+	If BoardType = "" Then Response.Redirect "showerr.asp?ErrCodes=<li>è¯·è¾“å…¥è®ºå›åç§°ã€‚&action=OtherErr"
+	'If Boardmaster = "" Then Response.Redirect "showerr.asp?ErrCodes=<li>è¯·è¾“å…¥ç®¡ç†æˆå‘˜ã€‚&action=OtherErr"
 	Rname = split(Boardmaster,"|")
 	For i = 0 To Ubound(Rname)
 		Sql = "SELECT TOP 1 Username FROM [Dv_User] WHERE Username = '" & Replace(Rname(i),"'","") & "'"
 		Set Rs = Dvbbs.Execute(Sql)
 		If Rs.Eof And Rs.Bof Then
-			Response.Redirect "showerr.asp?ErrCodes=<li>ÂÛÌ³Ã»ÓĞ" & Replace(Rname(i), "'", "") & "Õâ¸öÓÃ»§£¬²»ÄÜÌí¼ÓÎª°æÖ÷&action=OtherErr"
+			Response.Redirect "showerr.asp?ErrCodes=<li>è®ºå›æ²¡æœ‰" & Replace(Rname(i), "'", "") & "è¿™ä¸ªç”¨æˆ·ï¼Œä¸èƒ½æ·»åŠ ä¸ºç‰ˆä¸»&action=OtherErr"
 			Exit For
 		End If
 		Set Rs = Nothing
@@ -486,7 +486,7 @@ Sub Savebminfo()
 	Sql = "SELECT * FROM Dv_Board WHERE Boardid = " & Dvbbs.BoardID
 	Rs.Open Sql,Conn,1,3
 	If Rs.Eof And Rs.Bof Then
-		Response.redirect "showerr.asp?ErrCodes=<li>ÄúÃ»ÓĞÖ¸¶¨ÏàÓ¦ÂÛÌ³ID£¬²»ÄÜ½øĞĞ¹ÜÀí¡£&action=OtherErr"
+		Response.redirect "showerr.asp?ErrCodes=<li>æ‚¨æ²¡æœ‰æŒ‡å®šç›¸åº”è®ºå›IDï¼Œä¸èƒ½è¿›è¡Œç®¡ç†ã€‚&action=OtherErr"
 	End If
 	If Trim(Boardmaster)<>Trim(Rs("Boardmaster")) Then upmaster=1
 	Rs("Boardmaster") = Boardmaster
@@ -497,9 +497,9 @@ Sub Savebminfo()
 	'Rs("Sid") = Clng(Sid)
 	Rs.Update
 		
-	Dvbbs.Execute("Insert Into Dv_Log (l_AnnounceID,l_BoardID,l_touser,l_username,l_content,l_ip,l_type) values (0,"&Dvbbs.BoardID&",'ÂÛÌ³»ù±¾ĞÅÏ¢','" & Dvbbs.MemberName & "','¶Ô°æÃæ"& Dvbbs.BoardType&"½øĞĞ»ù±¾ĞÅÏ¢¹ÜÀí ','" & Dvbbs.userTrueIP & "',3)")
+	Dvbbs.Execute("Insert Into Dv_Log (l_AnnounceID,l_BoardID,l_touser,l_username,l_content,l_ip,l_type) values (0,"&Dvbbs.BoardID&",'è®ºå›åŸºæœ¬ä¿¡æ¯','" & Dvbbs.MemberName & "','å¯¹ç‰ˆé¢"& Dvbbs.BoardType&"è¿›è¡ŒåŸºæœ¬ä¿¡æ¯ç®¡ç† ','" & Dvbbs.userTrueIP & "',3)")
 	
-	Response.Write "<p>ÂÛÌ³ĞŞ¸Ä³É¹¦£¡"
+	Response.Write "<p>è®ºå›ä¿®æ”¹æˆåŠŸï¼"
 	Dvbbs.LoadBoardList()
 	Dvbbs.LoadBoardData Dvbbs.BoardID
 End Sub

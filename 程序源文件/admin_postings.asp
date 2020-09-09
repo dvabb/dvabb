@@ -39,14 +39,14 @@ Class Dv_Forum_Admin
 		LocalCanTopTopic_a	=	False
 		LocalCanTopTopic_m	=	False
 		LocalCanTopicMode	=	False
-		'±¾ÂÛÌ³ºÍÉÏ¼¶ÂÛÌ³ID
+		'æœ¬è®ºå›å’Œä¸Šçº§è®ºå›ID
 		UpdateBoardID	=Application(Dvbbs.CacheName&"_boardlist").documentElement.selectSingleNode("board[@boardid='"&Dvbbs.BoardID&"']/@parentstr").text & "," & Dvbbs.BoardID
 		doGiveMoney		=	0
 		doWealth		=	0
 		douserEP		=	0
 		douserCP		=	0
 		doWealthMsg		=	""
-		allmsg			=	"Ã»ÓĞ¶ÔÓÃ»§½øĞĞ·ÖÖµ²Ù×÷"
+		allmsg			=	"æ²¡æœ‰å¯¹ç”¨æˆ·è¿›è¡Œåˆ†å€¼æ“ä½œ"
 		If Dvbbs.UserID=0 Then Dvbbs.AddErrCode(6)
 		ID=Request("ID")
 		If ID="" or IsNumeric(ID)=0 Then
@@ -58,22 +58,22 @@ Class Dv_Forum_Admin
 
 		If IsNumeric(Request("GiveMoney")) And Not (Request("GiveMoney")="0" or Request("GiveMoney")="") Then
 			doGiveMoney=Request("GiveMoney")
-			doGiveMoneyMsg="½ğ±Ò" & Request("GiveMoney") & "£¬"
+			doGiveMoneyMsg="é‡‘å¸" & Request("GiveMoney") & "ï¼Œ"
 		End If
 
 		If IsNumeric(Request("doWealth")) And Not (Request("doWealth")="0" or Request("doWealth")="") Then
 			doWealth=Request("doWealth")
-			doWealthMsg="½ğÇ®" & Request("doWealth") & "£¬"
+			doWealthMsg="é‡‘é’±" & Request("doWealth") & "ï¼Œ"
 		End If
 		If IsNumeric(Request("douserEP")) And Not (Request("douserEP")="0" or Request("douserEP")="") Then
 			douserEP=Request("douserEP")
-			douserEPMsg="»ı·Ö" & Request("douserEP") & "£¬"
+			douserEPMsg="ç§¯åˆ†" & Request("douserEP") & "ï¼Œ"
 		End If
 		If IsNumeric(Request("douserCP")) And Not (Request("douserCP")="0" or Request("douserCP")="") Then
 			douserCP=Request("douserCP")
-			douserCPMsg="÷ÈÁ¦" & Request("douserCP")
+			douserCPMsg="é­…åŠ›" & Request("douserCP")
 		End If
-		If Not (doWealthMsg="" And douserEPMsg="" And douserCPMsg="") Then allmsg="ÓÃ»§²Ù×÷£º" & doGiveMoneyMsg & doWealthMsg & douserEPMsg & douserCPMsg
+		If Not (doWealthMsg="" And douserEPMsg="" And douserCPMsg="") Then allmsg="ç”¨æˆ·æ“ä½œï¼š" & doGiveMoneyMsg & doWealthMsg & douserEPMsg & douserCPMsg
 
 		If Dvbbs.ErrCodes<>"" Then Dvbbs.ShowErr
 
@@ -89,7 +89,7 @@ Class Dv_Forum_Admin
 		Set Rs=Nothing			
 		If Dvbbs.ErrCodes<>"" Then Dvbbs.ShowErr		
 	End Sub
-	'ÅĞ¶ÏÓÃ»§ÊÇ·ñÓĞ×¨Ìâ¹ÜÀí²Ù×÷È¨ÏŞ
+	'åˆ¤æ–­ç”¨æˆ·æ˜¯å¦æœ‰ä¸“é¢˜ç®¡ç†æ“ä½œæƒé™
 	Public Property Get CanTopicMod()
 		If (dvbbs.master or dvbbs.superboardmaster or dvbbs.boardmaster) and Cint(Dvbbs.GroupSetting(65))=1 Then
 			CanTopicMode=True
@@ -104,7 +104,7 @@ Class Dv_Forum_Admin
 		End If
 		CanTopicMod=LocalCanTopicMod
 	End Property
-	'ÅĞ¶ÏÓÃ»§ÊÇ·ñÓĞËø¶¨/½â³ıËø¶¨È¨ÏŞ
+	'åˆ¤æ–­ç”¨æˆ·æ˜¯å¦æœ‰é”å®š/è§£é™¤é”å®šæƒé™
 	Public Property Get CanLockTopic()
 		If (dvbbs.master or dvbbs.superboardmaster or dvbbs.boardmaster) and Cint(Dvbbs.GroupSetting(20))=1 Then LocalCanLockTopic=True
 		If Cint(Dvbbs.GroupSetting(20))=1 and Dvbbs.UserGroupID>3 Then LocalCanLockTopic=True
@@ -121,7 +121,7 @@ Class Dv_Forum_Admin
 		End If		
 		CanLockTopic=LocalCanLockTopic
 	End Property
-	'ÅĞ¶ÏÓÃ»§ÊÇ·ñÓĞÒÆ¶¯Ìû×ÓÈ¨ÏŞ
+	'åˆ¤æ–­ç”¨æˆ·æ˜¯å¦æœ‰ç§»åŠ¨å¸–å­æƒé™
 	Public Property Get CanMoveTopic()
 		If (dvbbs.master or dvbbs.superboardmaster or dvbbs.boardmaster) and Cint(Dvbbs.GroupSetting(19))=1 Then LocalCanMoveTopic=True
 		If Cint(Dvbbs.GroupSetting(19))=1 and Dvbbs.UserGroupID>3 Then LocalCanMoveTopic=True
@@ -138,7 +138,7 @@ Class Dv_Forum_Admin
 		End If		
 		CanMoveTopic=LocalCanMoveTopic
 	End Property	
-	'ÅĞ¶ÏÓÃ»§ÊÇ·ñÓĞÉ¾³ıÌû×ÓÈ¨ÏŞ
+	'åˆ¤æ–­ç”¨æˆ·æ˜¯å¦æœ‰åˆ é™¤å¸–å­æƒé™
 	Public Property Get CanDelTopic()
 		If (dvbbs.master or dvbbs.superboardmaster or dvbbs.boardmaster) and Cint(Dvbbs.GroupSetting(18))=1 Then LocalCanDelTopic=True
 		If Cint(Dvbbs.GroupSetting(18))=1 and Dvbbs.UserGroupID>3 Then LocalCanDelTopic=True
@@ -155,7 +155,7 @@ Class Dv_Forum_Admin
 		End If
 		CanDelTopic=LocalCanDelTopic
 	End Property
-	'ÅĞ¶ÏÓÃ»§ÊÇ·ñÓĞ¹Ì¶¥/½â³ı¹Ì¶¥Ìû×ÓÈ¨ÏŞ
+	'åˆ¤æ–­ç”¨æˆ·æ˜¯å¦æœ‰å›ºé¡¶/è§£é™¤å›ºé¡¶å¸–å­æƒé™
 	Public Property Get CanTopTopic()
 		If (dvbbs.master or dvbbs.superboardmaster or dvbbs.boardmaster) and Cint(Dvbbs.GroupSetting(21))=1 Then LocalCanTopTopic=True
 		If Cint(Dvbbs.GroupSetting(21))=1 and Dvbbs.UserGroupID>3 Then LocalCanTopTopic=True
@@ -166,7 +166,7 @@ Class Dv_Forum_Admin
 		End If
 		CanTopTopic=LocalCanTopTopic
 	End Property	
-	'ÅĞ¶ÏÓÃ»§ÊÇ·ñÓĞ×Ü¹Ì¶¥Ìû×ÓÈ¨ÏŞ
+	'åˆ¤æ–­ç”¨æˆ·æ˜¯å¦æœ‰æ€»å›ºé¡¶å¸–å­æƒé™
 	Public Property Get CanTopTopic_a()
 		If (dvbbs.master or dvbbs.superboardmaster or dvbbs.boardmaster) and Cint(Dvbbs.GroupSetting(38))=1 Then LocalCanTopTopic_a=True
 		If Cint(Dvbbs.GroupSetting(38))=1 and Dvbbs.UserGroupID>3 Then LocalCanTopTopic_a=True
@@ -177,7 +177,7 @@ Class Dv_Forum_Admin
 		End If
 		CanTopTopic_a=LocalCanTopTopic_a
 	End Property	
-	'ÅĞ¶ÏÓÃ»§ÊÇ·ñÓĞÇøÓò¹Ì¶¥Ìû×ÓÈ¨ÏŞ
+	'åˆ¤æ–­ç”¨æˆ·æ˜¯å¦æœ‰åŒºåŸŸå›ºé¡¶å¸–å­æƒé™
 	Public Property Get CanTopTopic_m()
 		If (dvbbs.master or dvbbs.superboardmaster or dvbbs.boardmaster) and Cint(Dvbbs.GroupSetting(54))=1 Then LocalCanTopTopic_m=True
 		If Cint(Dvbbs.GroupSetting(54))=1 and Dvbbs.UserGroupID>3 Then LocalCanTopTopic_m=True
@@ -188,7 +188,7 @@ Class Dv_Forum_Admin
 		End If
 		CanTopTopic_m=LocalCanTopTopic_m
 	End Property
-	'ÅĞ¶ÏÓÃ»§ÊÇ·ñÓĞ¼ÓÈë/½â³ı¾«»ªÌû×ÓÈ¨ÏŞ
+	'åˆ¤æ–­ç”¨æˆ·æ˜¯å¦æœ‰åŠ å…¥/è§£é™¤ç²¾åå¸–å­æƒé™
 	Public Property Get CanBestTopic()
 		If (dvbbs.master or dvbbs.superboardmaster or dvbbs.boardmaster) and Cint(Dvbbs.GroupSetting(24))=1 Then LocalCanBestTopic=True
 		If Cint(Dvbbs.GroupSetting(24))=1 and Dvbbs.UserGroupID>3 Then LocalCanBestTopic=True
@@ -199,7 +199,7 @@ Class Dv_Forum_Admin
 		End If
 		CanBestTopic=LocalCanBestTopic
 	End Property
-	'ÅĞ¶ÏÓÃ»§ÊÇ·ñÓĞ½±Àø/³Í·£Ìû×ÓÈ¨ÏŞ
+	'åˆ¤æ–­ç”¨æˆ·æ˜¯å¦æœ‰å¥–åŠ±/æƒ©ç½šå¸–å­æƒé™
 	Public Property Get CanAwardTopic()
 		If (dvbbs.master or dvbbs.superboardmaster or dvbbs.boardmaster) and Cint(Dvbbs.GroupSetting(22))=1 Then LocalCanAwardTopic=True
 		If Cint(Dvbbs.GroupSetting(22))=1 and Dvbbs.UserGroupID>3 Then LocalCanAwardTopic=True
@@ -213,11 +213,11 @@ Class Dv_Forum_Admin
 	Public Function Main()
 		If Not Dvbbs.ChkPost() Then Dvbbs.AddErrCode(42):Dvbbs.Showerr()
 		Select Case Request("action")
-		Case "ĞŞ¸´"
+		Case "ä¿®å¤"
 			If Dvbbs.userid=0 Then
 				Dvbbs.AddErrCode(6)
 			Else
-				ActionInfo="ĞŞ¸´Ìû×Ó"
+				ActionInfo="ä¿®å¤å¸–å­"
 				fixtopic()
 			End If
 		Case "lock"
@@ -225,7 +225,7 @@ Class Dv_Forum_Admin
 			If not CanLockTopic Then
 				Dvbbs.AddErrCode(28)
 			Else
-				ActionInfo="Ëø¶¨Ìû×Ó"
+				ActionInfo="é”å®šå¸–å­"
 				lock()
 			End If
 		Case "unlock"
@@ -233,7 +233,7 @@ Class Dv_Forum_Admin
 			If not CanLockTopic Then
 				Dvbbs.AddErrCode(28)
 			Else
-				ActionInfo="½â³ıËø¶¨"
+				ActionInfo="è§£é™¤é”å®š"
 				unlock()
 			End If
 		Case "uptopic"
@@ -241,7 +241,7 @@ Class Dv_Forum_Admin
 			If Not CanLockTopic Then
 				Dvbbs.AddErrCode(28)
 			Else
-				ActionInfo="ÌáÉıÌû×Ó"
+				ActionInfo="æå‡å¸–å­"
 				uptopic()
 			End If
 		Case "downtopic"
@@ -249,7 +249,7 @@ Class Dv_Forum_Admin
 			If Not CanLockTopic Then
 				Dvbbs.AddErrCode(28)
 			Else
-				ActionInfo="³Áµ×Ìû×Ó"
+				ActionInfo="æ²‰åº•å¸–å­"
 				downtopic()
 			End If
 		Case "move"
@@ -257,17 +257,17 @@ Class Dv_Forum_Admin
 			If not CanMoveTopic Then
 				Dvbbs.AddErrCode(28)
 			Else
-				ActionInfo="ÒÆ¶¯Ìû×Ó"
+				ActionInfo="ç§»åŠ¨å¸–å­"
 				Tmove()
 			End If
 		Case "copy"
 			If Request.form("submit")="" Then Exit Function
-			ActionInfo="¸´ÖÆÌû×Ó"
+			ActionInfo="å¤åˆ¶å¸–å­"
 			copy()
 		Case "istop"
 			If Request.form("submit")="" Then Exit Function
 			If CanTopTopic Or CanTopTopic_a Or CanTopTopic_m Then
-				ActionInfo="¹Ì¶¥Ìû×Ó"
+				ActionInfo="å›ºé¡¶å¸–å­"
 				Getistop()
 			Else
 				Dvbbs.AddErrCode(28)
@@ -277,19 +277,19 @@ Class Dv_Forum_Admin
 			If not CanDelTopic Then
 				Dvbbs.AddErrCode(28)
 			Else
-				ActionInfo="É¾³ıÌû×Ó"
+				ActionInfo="åˆ é™¤å¸–å­"
 				delete()
 			End If
 		Case "dele"
 		If Request.form("submit")="" Then Exit Function
-			ActionInfo="É¾³ıÌû×Ó"
+			ActionInfo="åˆ é™¤å¸–å­"
 			dele(1)
 		Case "islockpage"
 			If Request.form("submit")="" Then Exit Function
 			If not CanBestTopic Then
 				Dvbbs.AddErrCode(28)
 			Else
-				ActionInfo="µ¥ÌûÆÁ±Î"
+				ActionInfo="å•å¸–å±è”½"
 				islockpage()
 			End If
 		Case "nolockpage"
@@ -297,7 +297,7 @@ Class Dv_Forum_Admin
 			If not CanBestTopic Then
 				Dvbbs.AddErrCode(28)
 			Else
-				ActionInfo="½â³ıÆÁ±Î"
+				ActionInfo="è§£é™¤å±è”½"
 				nolockpage()
 			End If
 		Case "isbest"
@@ -305,7 +305,7 @@ Class Dv_Forum_Admin
 			If not CanBestTopic Then
 				Dvbbs.AddErrCode(28)
 			Else
-				ActionInfo="¾«»ªÌû×Ó"
+				ActionInfo="ç²¾åå¸–å­"
 				isbest()
 			End If
 		Case "nobest"
@@ -313,32 +313,32 @@ Class Dv_Forum_Admin
 			If not CanBestTopic Then
 				Dvbbs.AddErrCode(28)
 			Else
-				ActionInfo="½â³ı¾«»ª"
+				ActionInfo="è§£é™¤ç²¾å"
 				nobest()
 			End If
 		Case "TopicMode"
 			If Request.form("submit")="" Then Exit Function
-			ActionInfo="×¨Ìâ¹ÜÀí"
+			ActionInfo="ä¸“é¢˜ç®¡ç†"
 			If not CanMoveTopic Then Dvbbs.AddErrCode(28)
 			TopicMode()
 		Case "delre"
 			If Request.form("submit")="" Then Exit Function
-			ActionInfo="ÅúÁ¿É¾³ı¸úÌù"
+			ActionInfo="æ‰¹é‡åˆ é™¤è·Ÿè´´"
 			Call delre()
-		Case "SaveRewardMoney"	'½±Àø½ğ±Ò²Ù×÷
+		Case "SaveRewardMoney"	'å¥–åŠ±é‡‘å¸æ“ä½œ
 			If Request.form("submit")="" Then Exit Function
-			ActionInfo="Ìû×ÓÆÀ¼Û"
+			ActionInfo="å¸–å­è¯„ä»·"
 			Call RewardMoney
 		Case Else
 			main_a()
 		End Select
 		If Dvbbs.ErrCodes<>"" Then Dvbbs.ShowErr()
 	End Function
-	'ÅúÁ¿É¾³ı¸úÌù
+	'æ‰¹é‡åˆ é™¤è·Ÿè´´
 	Private Sub delre()
 		Check_topicInfo()
 		If Dvbbs.ErrCodes<>"" Then Exit Sub
-		'ÅĞ¶ÏÓÃ»§ÊÇ·ñÓĞÉ¾³ıÌû×ÓÈ¨ÏŞ
+		'åˆ¤æ–­ç”¨æˆ·æ˜¯å¦æœ‰åˆ é™¤å¸–å­æƒé™
 		If Not CanDelTopic Then Dvbbs.AddErrCode(28)
 		Dim DelID,j,i
 		j=0
@@ -356,7 +356,7 @@ Class Dv_Forum_Admin
 			End If
 		Next
 		If j>0 Then
-			Dvbbs.Dvbbs_Suc(SucMsgInfo("ÅúÁ¿É¾³ı"&j&"¸ö¸úÌù,ÄúµÄ²Ù×÷ÒÑ¾­¼ÇÂ¼"))
+			Dvbbs.Dvbbs_Suc(SucMsgInfo("æ‰¹é‡åˆ é™¤"&j&"ä¸ªè·Ÿè´´,æ‚¨çš„æ“ä½œå·²ç»è®°å½•"))
 		Else
 			Dvbbs.AddErrCode(35)
 		End If
@@ -368,23 +368,23 @@ Class Dv_Forum_Admin
 		Action=Request("action")
 		Decrease=0
 		Select Case Action
-		Case "Ëø¶¨"
+		Case "é”å®š"
 			If Not CanAwardTopic Then seldisable="disabled"
 			reaction="lock"
 			If not CanLockTopic Then Dvbbs.AddErrCode(28)
-		Case "½âËø"
+		Case "è§£é”"
 			If Not CanAwardTopic Then seldisable="disabled"
 			reaction="unlock"
 			If not CanLockTopic Then Dvbbs.AddErrCode(28)
-		Case "ÌáÉı"
+		Case "æå‡"
 			If Not CanAwardTopic Then seldisable="disabled"
 			reaction="uptopic"
 			If not CanLockTopic Then Dvbbs.AddErrCode(28)
-		Case "³Áµ×"
+		Case "æ²‰åº•"
 			If Not CanAwardTopic Then seldisable="disabled"
 			reaction="downtopic"
 			If not CanLockTopic Then Dvbbs.AddErrCode(28)
-		Case "É¾³ıÖ÷Ìâ"
+		Case "åˆ é™¤ä¸»é¢˜"
 			doWealth=-Dvbbs.Forum_user(3)
 			douserEP=-Dvbbs.Forum_user(8)
 			douserCP=-Dvbbs.Forum_user(13)
@@ -399,10 +399,10 @@ Class Dv_Forum_Admin
 			douserCP=-Dvbbs.Forum_user(13)
 			If Not CanAwardTopic Then seldisable="disabled"
 			reaction="dele"
-			Action="É¾³ıµ¥Ìù"
+			Action="åˆ é™¤å•è´´"
 			Check_AnnounceInfo()
 			If Dvbbs.ErrCodes<>"" Then Exit Sub
-			'ÅĞ¶ÏÓÃ»§ÊÇ·ñÓĞÉ¾³ıÌû×ÓÈ¨ÏŞ
+			'åˆ¤æ–­ç”¨æˆ·æ˜¯å¦æœ‰åˆ é™¤å¸–å­æƒé™
 			If Not CanDelTopic Then Dvbbs.AddErrCode(28)
 			If SysObjFso=True Then DelUpFile=1
 			Decrease=2
@@ -412,7 +412,7 @@ Class Dv_Forum_Admin
 			douserCP=-Dvbbs.Forum_user(16)
 			If Not CanAwardTopic Then seldisable="disabled"
 			reaction="islockpage"
-			Action="µ¥ÌùÆÁ±Î"
+			Action="å•è´´å±è”½"
 			Check_AnnounceInfo()
 			If Dvbbs.ErrCodes<>"" Then Exit Sub
 			If Not CanBestTopic Then Dvbbs.AddErrCode(28)
@@ -422,7 +422,7 @@ Class Dv_Forum_Admin
 			douserCP=Dvbbs.Forum_user(16)
 			If Not CanAwardTopic Then seldisable="disabled"
 			reaction="nolockpage"
-			Action="½â³ıÆÁ±Î"
+			Action="è§£é™¤å±è”½"
 			Check_AnnounceInfo()
 			If Dvbbs.ErrCodes<>"" Then Exit Sub
 			If Not CanBestTopic Then Dvbbs.AddErrCode(28)
@@ -432,7 +432,7 @@ Class Dv_Forum_Admin
 			douserCP=Dvbbs.Forum_user(16)
 			If Not CanAwardTopic Then seldisable="disabled"
 			reaction="isbest"
-			Action="¼ÓÎª¾«»ª"
+			Action="åŠ ä¸ºç²¾å"
 			Check_AnnounceInfo()
 			If Dvbbs.ErrCodes<>"" Then Exit Sub
 			If Not CanBestTopic Then Dvbbs.AddErrCode(28)
@@ -442,46 +442,46 @@ Class Dv_Forum_Admin
 			douserCP=-Dvbbs.Forum_user(16)
 			If Not CanAwardTopic Then seldisable="disabled"
 			reaction="nobest"
-			Action="½â³ı¾«»ª"
+			Action="è§£é™¤ç²¾å"
 			Check_AnnounceInfo()
 			If Dvbbs.ErrCodes<>"" Then Exit Sub
 			If not CanBestTopic Then Dvbbs.AddErrCode(28)
 		Case "copy_a"
 			seldisable="disabled"
 			reaction="copy"
-			Action="¸´ÖÆÌù×Ó"
+			Action="å¤åˆ¶è´´å­"
 			Check_AnnounceInfo()
 			If Dvbbs.ErrCodes<>"" Then Exit Sub
-			'ÅĞ¶ÏÓÃ»§ÊÇ·ñÓĞÒÆ¶¯Ìû×ÓÈ¨ÏŞ
+			'åˆ¤æ–­ç”¨æˆ·æ˜¯å¦æœ‰ç§»åŠ¨å¸–å­æƒé™
 			If Not CanMoveTopic Then Dvbbs.AddErrCode(28)
-		Case "ÉèÖÃ¹Ì¶¥"
+		Case "è®¾ç½®å›ºé¡¶"
 			If Not CanAwardTopic Then seldisable="disabled"
 			reaction="istop"
 			If CanTopTopic Or CanTopTopic_a Or CanTopTopic_m Then
 			Else
 				Dvbbs.AddErrCode(28)
 			End If
-		Case "±à¼­¹Ì¶¥"
+		Case "ç¼–è¾‘å›ºé¡¶"
 			If Not CanAwardTopic Then seldisable="disabled"
 			reaction="istop"
 			If CanTopTopic Or CanTopTopic_a Or CanTopTopic_m Then
 			Else
 				Dvbbs.AddErrCode(28)
 			End If
-		Case "ÒÆ¶¯"
+		Case "ç§»åŠ¨"
 			seldisable="disabled"
 			reaction="move"
 			If Not CanMoveTopic Then Dvbbs.AddErrCode(28)
-		Case "×¨Ìâ¹ÜÀí"
+		Case "ä¸“é¢˜ç®¡ç†"
 			If Not CanMoveTopic Then Dvbbs.AddErrCode(28)
 			reaction="TopicMode"
-		Case "¸úÌû¹ÜÀí"
+		Case "è·Ÿå¸–ç®¡ç†"
 			doWealth=-Dvbbs.Forum_user(3)
 			douserEP=-Dvbbs.Forum_user(8)
 			douserCP=-Dvbbs.Forum_user(13)
 			Check_topicInfo()
 			If Dvbbs.ErrCodes<>"" Then Exit Sub
-			'ÅĞ¶ÏÓÃ»§ÊÇ·ñÓĞÉ¾³ıÌû×ÓÈ¨ÏŞ
+			'åˆ¤æ–­ç”¨æˆ·æ˜¯å¦æœ‰åˆ é™¤å¸–å­æƒé™
 			If Not CanDelTopic Then Dvbbs.AddErrCode(28)
 			Dim Star,i,j,treedata,tmpstr,blank
 			Star=Request("Star")
@@ -522,9 +522,9 @@ Class Dv_Forum_Admin
 				treedata=Replace(treedata,"{$username}",Rs(3))
 				treedata=Replace(treedata,"{$DateAndTime}",Rs(6))
 				If Rs(7)=0 Then 
-					treedata=Replace(treedata,"{$length}","ÎŞÄÚÈİ")
+					treedata=Replace(treedata,"{$length}","æ— å†…å®¹")
 				Else
-					treedata=Replace(treedata,"{$length}",Rs(7)&"×Ö½Ú")
+					treedata=Replace(treedata,"{$length}",Rs(7)&"å­—èŠ‚")
 				End If
 				treedata=Replace(treedata,"{$rootid}",Rs(8))
 				treedata=Replace(treedata,"{$Expression}",Rs(11))
@@ -554,12 +554,12 @@ Class Dv_Forum_Admin
 			Endpage=Rs.PageCount
 			Response.Write "<table border=0 cellpadding=0 cellspacing=3 width="""&Dvbbs.mainsetting(0)&""" align=center>"
 			Response.Write "<tr><td valign=middle nowrap>"
-			Response.Write "Ò³´Î£º<b>"&Star&"</b>/<b>"&Endpage&"</b>Ò³"
-			Response.Write "Ã¿Ò³<b>"& Dvbbs.Board_Setting(27) &"</b> ÌùÊı<b>"& Rs.RecordCount &"</b></td>"
-			Response.Write "<td valign=middle nowrap><div align=right><p>·ÖÒ³£º <b>"
+			Response.Write "é¡µæ¬¡ï¼š<b>"&Star&"</b>/<b>"&Endpage&"</b>é¡µ"
+			Response.Write "æ¯é¡µ<b>"& Dvbbs.Board_Setting(27) &"</b> è´´æ•°<b>"& Rs.RecordCount &"</b></td>"
+			Response.Write "<td valign=middle nowrap><div align=right><p>åˆ†é¡µï¼š <b>"
 			Dim Endpage
 			If Star > 4 Then
-				Response.Write "<a href=""admin_postings.asp?action=¸úÌû¹ÜÀí&BoardID="&Dvbbs.BoardID&"&ID="&ID&"&star=1"">[1]</a> ..."
+				Response.Write "<a href=""admin_postings.asp?action=è·Ÿå¸–ç®¡ç†&BoardID="&Dvbbs.BoardID&"&ID="&ID&"&star=1"">[1]</a> ..."
 			End If
 			
 			If Endpage >Star+3 Then
@@ -570,12 +570,12 @@ Class Dv_Forum_Admin
 					If i = CLng(star) Then
 						response.write " <font color="&dvbbs.mainsetting(1)&">["&i&"]</font>"
 					Else
-						Response.Write " <a href=""admin_postings.asp?action=¸úÌû¹ÜÀí&BoardID="&Dvbbs.BoardID&"&ID="&ID&"&star="&i&""">["&i&"]</a>"
+						Response.Write " <a href=""admin_postings.asp?action=è·Ÿå¸–ç®¡ç†&BoardID="&Dvbbs.BoardID&"&ID="&ID&"&star="&i&""">["&i&"]</a>"
 					End If
 				End If
 			Next
 			If star+3 < Rs.PageCount Then
-				response.write "... <a href=""admin_postings.asp?action=¸úÌû¹ÜÀí&BoardID="&Dvbbs.BoardID&"&ID="&ID&"&star="&Rs.PageCount&""">["&Rs.PageCount&"]</a></b>"
+				response.write "... <a href=""admin_postings.asp?action=è·Ÿå¸–ç®¡ç†&BoardID="&Dvbbs.BoardID&"&ID="&ID&"&star="&Rs.PageCount&""">["&Rs.PageCount&"]</a></b>"
 			End If
 			Response.Write "</p></div></td></tr></table>"
 			Set Rs=Nothing
@@ -603,7 +603,7 @@ Class Dv_Forum_Admin
 		Case "RewardMoney"
 			If Not ChkRewardMoney Then Dvbbs.AddErrCode(28) : Exit Sub
 			reaction = "SaveRewardMoney"
-			Action = "Ìû×ÓÆÀ¼Û"
+			Action = "å¸–å­è¯„ä»·"
 			Dim TempStr0
 			If Not Dvbbs.Master Then
 				TempStr0 = Replace(template.html(8),"{$UserTodyInfo}",Replace(template.Strings(3),"{$PayMoney}",(Clng(Dvbbs.Forum_Setting(97))-Clng(Dvbbs.UserToday(4)))))
@@ -677,10 +677,10 @@ Class Dv_Forum_Admin
 	Public Function Topic_Manage_Sms()
 		If Request("ismsg")="1" Then
 		Dim msgcontent
-		msgcontent="Äú·¢±íµÄÌû×Ó¡¶[url=dispbbs.asp?boardID="&Dvbbs.BoardID&"&ID="&ID&"]"&Topic&"[/url]¡·Òò"&replace(Content,"ÀíÓÉ£º","")&"¶ø±»"&ActionInfo&"£¬ÇÒ½øĞĞÁË"&replace(Allmsg,"ÓÃ»§²Ù×÷£º","")&"µÄ²Ù×÷"
-		If Request("msg")<>"" Then msgContent=msgContent & chr(10) & "ÒÔÏÂÎª²Ù×÷Õß¸øÄúµÄ¸½ÑÔ£º" & Request("msg")
+		msgcontent="æ‚¨å‘è¡¨çš„å¸–å­ã€Š[url=dispbbs.asp?boardID="&Dvbbs.BoardID&"&ID="&ID&"]"&Topic&"[/url]ã€‹å› "&replace(Content,"ç†ç”±ï¼š","")&"è€Œè¢«"&ActionInfo&"ï¼Œä¸”è¿›è¡Œäº†"&replace(Allmsg,"ç”¨æˆ·æ“ä½œï¼š","")&"çš„æ“ä½œ"
+		If Request("msg")<>"" Then msgContent=msgContent & chr(10) & "ä»¥ä¸‹ä¸ºæ“ä½œè€…ç»™æ‚¨çš„é™„è¨€ï¼š" & Request("msg")
 
-		Dvbbs.Execute("Insert Into Dv_Message(incept,sender,title,content,sendtime,flag,issend) values('"&Dvbbs.CheckStr(TopicUsername)&"','"&Dvbbs.MemberName&"','ÏµÍ³ÏûÏ¢','"&Dvbbs.CheckStr(msgContent)&"',"&SqlNowString&",0,1)")
+		Dvbbs.Execute("Insert Into Dv_Message(incept,sender,title,content,sendtime,flag,issend) values('"&Dvbbs.CheckStr(TopicUsername)&"','"&Dvbbs.MemberName&"','ç³»ç»Ÿæ¶ˆæ¯','"&Dvbbs.CheckStr(msgContent)&"',"&SqlNowString&",0,1)")
 		Update_User_Msg(TopicUsername)
 		End If
 	End Function
@@ -693,7 +693,7 @@ Class Dv_Forum_Admin
 		End If
 		Dvbbs.Execute("Update [Dv_User] Set UserMsg='"&dvbbs.CheckStr(msginfo)&"' Where username='"&dvbbs.CheckStr(username)&"'")
 	End Function
-	'Í³¼ÆÁôÑÔ
+	'ç»Ÿè®¡ç•™è¨€
 	Public Function newincept(iusername)
 		Dim rs
 		Rs=Dvbbs.Execute("Select Count(id) From Dv_Message Where flag=0 and issend=1 and delR=0 And incept='"& iusername &"'")
@@ -711,12 +711,12 @@ Class Dv_Forum_Admin
 		end if
 		set ars=nothing
 	End Function
-	'ÅĞ¶ÏÊÇ·ñÎªÌû×Ó×îºó»Ø¸´
+	'åˆ¤æ–­æ˜¯å¦ä¸ºå¸–å­æœ€åå›å¤
 	Public Function isLastPost()
 		Dim LastTopic,body,LastRootID,LastPostTime,LastPostUser
 		Dim LastPost,uploadpic_n,LastPostUserID,LastID
 		isLastPost=False
-		'È¡µÃµ±Ç°Ö÷Ìâ×îºó»Ø¸´ID
+		'å–å¾—å½“å‰ä¸»é¢˜æœ€åå›å¤ID
 		Set Rs=Dvbbs.Execute("select LastPost from Dv_topic where topicID="&ID)
 		If not (rs.eof and rs.bof) Then
 			If not isnull(rs(0)) and rs(0)<>"" Then
@@ -735,10 +735,10 @@ Class Dv_Forum_Admin
 				LastID=rs(6)
 				Dvbbs.BoardID=rs(7)
 			Else
-				LastTopic="ÎŞ"
+				LastTopic="æ— "
 				LastRootID=0
 				LastPostTime=now()
-				LastPostUser="ÎŞ"
+				LastPostUser="æ— "
 				LastPostUserID=0
 				LastID=0
 				Dvbbs.BoardID=0
@@ -748,7 +748,7 @@ Class Dv_Forum_Admin
 			Dvbbs.Execute("update Dv_topic set LastPost='"&Dvbbs.CheckStr(LastPost)&"' where topicID="&ID)
 		End If
 	End Function
-	'¸üĞÂÌû×Ó×îºó»Ø¸´ĞÅÏ¢ 2005-1-12 Dv.Yz
+	'æ›´æ–°å¸–å­æœ€åå›å¤ä¿¡æ¯ 2005-1-12 Dv.Yz
 	Public Function FixLastPost()
 		Dim LastTopic,body,LastRootID,LastPostTime,LastPostUser
 		Dim LastPost,uploadpic_n,LastPostUserID,LastID
@@ -758,7 +758,7 @@ Class Dv_Forum_Admin
 			LastRootID = Rs(2)
 			LastPostTime = Rs(3)
 			If Rs(8)=2 Then
-				LastPostUser = "ÄäÃûÓÃ»§"
+				LastPostUser = "åŒ¿åç”¨æˆ·"
 			Else
 				LastPostUser = Replace(Rs(4),"$","")
 			End If
@@ -767,10 +767,10 @@ Class Dv_Forum_Admin
 			LastID = Rs(6)
 			Dvbbs.BoardID = Rs(7)
 		Else
-			LastTopic = "ÎŞ"
+			LastTopic = "æ— "
 			LastRootID = 0
 			LastPostTime = Now()
-			LastPostUser = "ÎŞ"
+			LastPostUser = "æ— "
 			LastPostUserID = 0
 			LastID = 0
 			Dvbbs.BoardID = 0
@@ -779,7 +779,7 @@ Class Dv_Forum_Admin
 		LastPost = LastPostUser & "$" & LastRootID & "$" & LastPostTime & "$" & Replace(left(Dvbbs.Replacehtml(LastTopic),20),"$","") & "$" & Uploadpic_n & "$" & LastPostUserID & "$" & LastID & "$" & Dvbbs.BoardID
 		Dvbbs.Execute("UPDATE Dv_Topic SET LastPost = '" & Dvbbs.CheckStr(LastPost) & "' WHERE TopicID = " & ID)
 	End Function
-	'¸üĞÂÖ¸¶¨ÂÛÌ³ĞÅÏ¢
+	'æ›´æ–°æŒ‡å®šè®ºå›ä¿¡æ¯
 	Public Function LastCount(boardID)
 		Dim LastTopic,body,LastRootID,LastPostTime,LastPostUser
 		Dim LastPost,uploadpic_n,LastpostuserID,LastID
@@ -792,10 +792,10 @@ Class Dv_Forum_Admin
 			LastPostUserID=rs(4)
 			LastID=rs(5)
 		Else
-			LastTopic="ÎŞ"
+			LastTopic="æ— "
 			LastRootID=0
 			LastPostTime=now()
-			LastPostUser="ÎŞ"
+			LastPostUser="æ— "
 			LastPostUserID=0
 			LastID=0
 		End If
@@ -828,13 +828,13 @@ Class Dv_Forum_Admin
 		Set Rs=Nothing
 	End Function
 
-	'°æÃæ·¢ÌûÊıÔö¼Ó
+	'ç‰ˆé¢å‘å¸–æ•°å¢åŠ 
 	Public Sub BoardNumAdd(boardID,topicNum,postNum,todayNum)
 		Dvbbs.Execute("update dv_board set postnum=postnum+"&postNum&",topicNum=topicNum+"&topicNum&",todayNum=todayNum+"&todayNum&" where boardID in ("&UpdateBoardID&")")
 		'Dvbbs.ReloadBoardInfo(UpdateBoardID)
 	End Sub
 	
-	'°æÃæ·¢ÌûÊı¼õÉÙ
+	'ç‰ˆé¢å‘å¸–æ•°å‡å°‘
 	Public Sub BoardNumSub(boardID,topicNum,postNum,todayNum)
 		Dvbbs.Execute("update dv_board set postnum=postnum-"&postNum&",topicNum=topicNum-"&topicNum&",todayNum=todayNum-"&todayNum&" where boardID in ("&UpdateBoardID&")")
 		Dim trs,LastPostTime,LastpostuserID,Lastid,uploadpic_n
@@ -847,10 +847,10 @@ Class Dv_Forum_Admin
 			LastPostUserid=trs(4)
 			Lastid=trs(5)
 		else
-			LastTopic="ÎŞ"
+			LastTopic="æ— "
 			LastRootid=0
 			LastPostTime=now()
-			LastPostUser="ÎŞ"
+			LastPostUser="æ— "
 			LastPostUserid=0
 			Lastid=0
 		End If
@@ -859,14 +859,14 @@ Class Dv_Forum_Admin
 		LastPost=LastPostUser & "$" & LastRootid & "$" & LastPostTime & "$" & LastTopic & "$" & uploadpic_n & "$" & LastPostUserID & "$" & LastID & "$" & BoardID
 	End Sub
 	
-	'ËùÓĞÂÛÌ³·¢ÌûÊıÔö¼Ó
+	'æ‰€æœ‰è®ºå›å‘å¸–æ•°å¢åŠ 
 	Public Function AllboardNumAdd(todayNum,postNum,topicNum)
 		Dvbbs.Execute("Update dv_Setup Set Forum_TodayNum=Forum_todayNum+"&todaynum&",Forum_PostNum=Forum_PostNum+"&postNum&",Forum_TopicNum=Forum_topicNum+"&TopicNum)
 		Dvbbs.Name="setup"
 		Dvbbs.RemoveCache()
 	End Function
 
-	'ËùÓĞÂÛÌ³·¢ÌûÊı¼õÉÙ
+	'æ‰€æœ‰è®ºå›å‘å¸–æ•°å‡å°‘
 	Public Function AllboardNumSub(todayNum,postNum,topicNum)
 		Dvbbs.Execute("Update dv_Setup Set Forum_TodayNum=Forum_TodayNum-"&todaynum&",Forum_PostNum=Forum_PostNum-"&postNum&",Forum_TopicNum=Forum_TopicNum-"&TopicNum)
 		Dvbbs.Name="setup"
@@ -877,21 +877,21 @@ Class Dv_Forum_Admin
 		sucmsg=""
 		title=Dvbbs.htmlencode(Request.form("title"))
 		content=Dvbbs.htmlencode(Request.form("content"))
-		content="ÀíÓÉ£º" & title & content
+		content="ç†ç”±ï¼š" & title & content
 		If Request.form("title")="" and Request.form("content")="" Then
 			Dvbbs.AddErrCode(39)
 			Dvbbs.ShowErr()
 		End If
-		sucmsg=ActionInfo&"¡¶"&server.htmlencode(topic)&"¡·£¬"&server.htmlencode(content)& "£¬"&allmsg&""
+		sucmsg=ActionInfo&"ã€Š"&server.htmlencode(topic)&"ã€‹ï¼Œ"&server.htmlencode(content)& "ï¼Œ"&allmsg&""
 	End Sub
 
 	Private Function SucMsgInfo(GetMsg)
 		SucMsgInfo="<li>"+GetMsg
-		SucMsgInfo=SucMsgInfo+"<li>"+"<a href=index.asp?boardid="&Dvbbs.boardid&">·µ»ØÂÛÌ³ÁĞ±í</a>"
-		SucMsgInfo=SucMsgInfo+"<li>"+"<a href=dispbbs.asp?boardid="&Dvbbs.boardid&"&id="&ID&" >·µ»ØÖ÷Ìâ£º¡¶"&server.htmlencode(Topic)&"¡·</a>"
+		SucMsgInfo=SucMsgInfo+"<li>"+"<a href=index.asp?boardid="&Dvbbs.boardid&">è¿”å›è®ºå›åˆ—è¡¨</a>"
+		SucMsgInfo=SucMsgInfo+"<li>"+"<a href=dispbbs.asp?boardid="&Dvbbs.boardid&"&id="&ID&" >è¿”å›ä¸»é¢˜ï¼šã€Š"&server.htmlencode(Topic)&"ã€‹</a>"
 	End Function
 
-	'×¨Ìâ¹ÜÀí²Ù×÷
+	'ä¸“é¢˜ç®¡ç†æ“ä½œ
 	Public Sub TopicMode()
 	Dim ModeID
 	ModeID=Request.Form("mode")
@@ -936,7 +936,7 @@ Class Dv_Forum_Admin
 	End If
 	End Sub
 
-	'Ëø¶¨Ìû×Ó
+	'é”å®šå¸–å­
 	Public Sub lock()
 		LogType=5
 		Get_RequestInfo
@@ -946,7 +946,7 @@ Class Dv_Forum_Admin
 		Topic_Manage_Sms()
 		Dvbbs.Dvbbs_Suc(SucMsgInfo(sucmsg))
 	End Sub
-	'½â³ıËø¶¨Ìû×Ó
+	'è§£é™¤é”å®šå¸–å­
 	Public Sub unlock()
 		LogType=3
 		Get_RequestInfo
@@ -957,7 +957,7 @@ Class Dv_Forum_Admin
 		Dvbbs.Dvbbs_Suc(SucMsgInfo(sucmsg))
 	End Sub
 
-	'ÌáÉıÌû×Ó
+	'æå‡å¸–å­
 	Public Sub uptopic()
 		LogType=3
 		Get_RequestInfo
@@ -967,7 +967,7 @@ Class Dv_Forum_Admin
 		Topic_Manage_Sms()
 		Dvbbs.Dvbbs_Suc(SucMsgInfo(sucmsg))
 	End Sub
-	'³Áµ×Ìû×Ó
+	'æ²‰åº•å¸–å­
 	Public Sub downtopic()
 		LogType=3
 		Get_RequestInfo
@@ -981,7 +981,7 @@ Class Dv_Forum_Admin
 		Topic_Manage_Sms()
 		Dvbbs.Dvbbs_Suc(SucMsgInfo(sucmsg))
 	End Sub
-	'¹Ì¶¥Ìû×Ó£¬°üÀ¨×Ü¹Ì¶¥¡¢Çø¹Ì¶¥ºÍ¹Ì¶¥
+	'å›ºé¡¶å¸–å­ï¼ŒåŒ…æ‹¬æ€»å›ºé¡¶ã€åŒºå›ºé¡¶å’Œå›ºé¡¶
 	Public Sub Getistop()
 		Dim IsTop
 		Dim iForum_AllTopNum,mForum_AllTopNum
@@ -989,7 +989,7 @@ Class Dv_Forum_Admin
 		Dim Bn
 		LogType=4
 		Get_RequestInfo
-		If Request("getboard")<>"" Then	'·ÀÖ¹×¢Èë by Dv.ADRX
+		If Request("getboard")<>"" Then	'é˜²æ­¢æ³¨å…¥ by Dv.ADRX
 			If Not IsNumeric(Replace(Request("getboard")," ","")) Then
 				Dvbbs.AddErrCode(18)
 				Exit Sub
@@ -997,7 +997,7 @@ Class Dv_Forum_Admin
 		End If
 		If Request("istopaction")="1" Then
 			'------------------------------------------------------------------------------------
-			'Èç¹ûµÈ¼¶ÊÇ°ßÖ÷£¬ĞèÒªÅĞ¶ÏÊÇ·ñÓĞ¸Ã°æµÄ¹ÜÀíÈ¨ÏŞ Fssunwin
+			'å¦‚æœç­‰çº§æ˜¯æ–‘ä¸»ï¼Œéœ€è¦åˆ¤æ–­æ˜¯å¦æœ‰è¯¥ç‰ˆçš„ç®¡ç†æƒé™ Fssunwin
 			If Dvbbs.UserGroupID = 3 and Trim(Request("getboard"))<>"" Then
 				Dim CanMsterBoardID
 				CanMsterBoardID = GetBoardMsterID(Dvbbs.MemberName)
@@ -1014,15 +1014,15 @@ Class Dv_Forum_Admin
 				Next
 			End If
 			'------------------------------------------------------------------------------------
-			'Èç¹ûÔ­À´ÊÇ¹Ì¶¥¡¢ÇøÓò¹Ì¶¥»ò×Ü¹Ì¶¥£¬ÅĞ¶ÏÆäÊÇ·ñÓĞĞèÒªÇåÀíÊı¾İ
+			'å¦‚æœåŸæ¥æ˜¯å›ºé¡¶ã€åŒºåŸŸå›ºé¡¶æˆ–æ€»å›ºé¡¶ï¼Œåˆ¤æ–­å…¶æ˜¯å¦æœ‰éœ€è¦æ¸…ç†æ•°æ®
 			Set Rs=Dvbbs.Execute("Select IsTop From Dv_Topic Where TopicID="& ID)
 			IsTop = Rs(0)
-			'Èç¹ûÓĞ×Ü¹Ì¶¥ĞèÒªÇåÀí
+			'å¦‚æœæœ‰æ€»å›ºé¡¶éœ€è¦æ¸…ç†
 			If IsTop = 3 And Request("alltop")="" And CanTopTopic_a Then
-				ActionInfo = "Çå³ı×Ü¹Ì¶¥"
+				ActionInfo = "æ¸…é™¤æ€»å›ºé¡¶"
 				Dvbbs.Execute("update dv_topic set istop=0  where boardID="&Dvbbs.BoardID&" and topicID="&ID)
 				IsTop = 0
-				'½«×Ü¹Ì¶¥ID´Ó×ÜÉèÖÃ±íÈ¥³ı
+				'å°†æ€»å›ºé¡¶IDä»æ€»è®¾ç½®è¡¨å»é™¤
 				Set Rs=Dvbbs.Execute("Select Forum_AllTopNum From Dv_Setup")
 				iForum_AllTopNum = "," & Rs(0) & ","
 				If Instr(iForum_AllTopNum,"," & ID & ",")>0 Then
@@ -1042,12 +1042,12 @@ Class Dv_Forum_Admin
 				Set Rs=Nothing
 			End If
 
-			'Èç¹ûÓĞ¹Ì¶¥ĞèÒªÇåÀí
+			'å¦‚æœæœ‰å›ºé¡¶éœ€è¦æ¸…ç†
 			If IsTop = 1 And CanTopTopic And Trim(Request("getboard"))="" Then
-				ActionInfo = "½â³ı¹Ì¶¥"
+				ActionInfo = "è§£é™¤å›ºé¡¶"
 				Dvbbs.Execute("update dv_topic set istop=0 where boardID="&Dvbbs.BoardID&" and topicID="&ID)
 				IsTop = 0
-				'ÇåÀí¶ÔÓ¦°æÃæÖĞµÄÌû×ÓID
+				'æ¸…ç†å¯¹åº”ç‰ˆé¢ä¸­çš„å¸–å­ID
 				Set Rs=Dvbbs.Execute("Select BoardID,BoardTopStr From Dv_Board Where BoardID="&Dvbbs.BoardID)
 				If Not (Rs.Eof And Rs.Bof) Then
 					If Rs(1)="" Or IsNull(Rs(1)) Then
@@ -1075,19 +1075,19 @@ Class Dv_Forum_Admin
 				End If
 			End If
 
-			'Èç¹ûÓĞÇøÓò¹Ì¶¥ĞèÒªÇåÀí
+			'å¦‚æœæœ‰åŒºåŸŸå›ºé¡¶éœ€è¦æ¸…ç†
 			UpBoardID = ""
 			If IsTop = 2 And CanTopTopic_m Then
-				'Èç¹û·µ»ØµÄgetboardÎª¿Õ£¬ÔòÒÑ¾­½â³ı¸ÃÌùµÄÇøÓò¹Ì¶¥£¬Ó¦ÇåÀíËùÓĞº¬ÓĞ¸ÃIDµÄ°æÃæ
+				'å¦‚æœè¿”å›çš„getboardä¸ºç©ºï¼Œåˆ™å·²ç»è§£é™¤è¯¥è´´çš„åŒºåŸŸå›ºé¡¶ï¼Œåº”æ¸…ç†æ‰€æœ‰å«æœ‰è¯¥IDçš„ç‰ˆé¢
 				If Trim(Request("getboard"))="" Then
-					ActionInfo = "½â³ıÇøÓò¹Ì¶¥"
+					ActionInfo = "è§£é™¤åŒºåŸŸå›ºé¡¶"
 					
 						Dvbbs.Execute("update dv_topic set istop=0  where boardID="&Dvbbs.BoardID&" and topicID="&ID)
 					
 					IsTop = 0
-					'²éÑ¯µÃ³öÔ­À´¸ÃÌùËù¹Ì¶¥µÄ°æÃæ
+					'æŸ¥è¯¢å¾—å‡ºåŸæ¥è¯¥è´´æ‰€å›ºé¡¶çš„ç‰ˆé¢
 					Set Rs=Dvbbs.Execute("Select BoardID,BoardTopStr From Dv_Board Where BoardTopStr Like '%"&ID&"%'")
-					Rem ÒÔÊı×é´úÌæÑ­»·²éÑ¯¡£ 2004-5-7 Dvbbs.YangZheng
+					Rem ä»¥æ•°ç»„ä»£æ›¿å¾ªç¯æŸ¥è¯¢ã€‚ 2004-5-7 Dvbbs.YangZheng
 					If Not (Rs.Eof And Rs.Bof) Then
 						Sql = Rs.GetRows(-1)
 						Rs.Close:Set Rs = Nothing
@@ -1118,8 +1118,8 @@ Class Dv_Forum_Admin
 						Next
 						Dvbbs.ReloadBoardInfo(UpBoardID & Dvbbs.BoardID)
 					End If
-				'Èç¹û·µ»ØµÄgetboard²»Îª¿Õ£¬ÔòÓ¦ÇåÀíÔ­À´º¬ÓĞ¸ÃIDÇÒ²»ÊôÓÚ·µ»ØµÄgetboardµÄ°æÃæµÄ¸ÃÌû×ÓID
-				'ĞèÍ¬Ê±ÅĞ¶Ï£¬Èç¹ûÓÃ»§½«Ô­ÇøÓò¹Ì¶¥ÉèÖÃÉı¼¶Îª×Ü¹Ì¶¥£¬ÇÒÍü¼ÇÈ¡ÏûÁĞ±íÖĞµÄ°æÃæ£¬ÔòÓ¦ÇåÀí¸ÃID¶ÔÓ¦µÄ°æÃæ
+				'å¦‚æœè¿”å›çš„getboardä¸ä¸ºç©ºï¼Œåˆ™åº”æ¸…ç†åŸæ¥å«æœ‰è¯¥IDä¸”ä¸å±äºè¿”å›çš„getboardçš„ç‰ˆé¢çš„è¯¥å¸–å­ID
+				'éœ€åŒæ—¶åˆ¤æ–­ï¼Œå¦‚æœç”¨æˆ·å°†åŸåŒºåŸŸå›ºé¡¶è®¾ç½®å‡çº§ä¸ºæ€»å›ºé¡¶ï¼Œä¸”å¿˜è®°å–æ¶ˆåˆ—è¡¨ä¸­çš„ç‰ˆé¢ï¼Œåˆ™åº”æ¸…ç†è¯¥IDå¯¹åº”çš„ç‰ˆé¢
 				Else
 					Dim ii
 					ii = 0
@@ -1129,7 +1129,7 @@ Class Dv_Forum_Admin
 					
 					
 						IsTop = 0
-						'²éÑ¯µÃ³öÔ­À´¸ÃÌùËù¹Ì¶¥µÄ°æÃæ
+						'æŸ¥è¯¢å¾—å‡ºåŸæ¥è¯¥è´´æ‰€å›ºé¡¶çš„ç‰ˆé¢
 						UpBoardID = ""
 						Set Rs = Dvbbs.Execute("Select BoardID,BoardTopStr From Dv_Board Where BoardTopStr Like '%" & ID & "%'")
 						If Not (Rs.Eof And Rs.Bof) Then
@@ -1198,7 +1198,7 @@ Class Dv_Forum_Admin
 							Dvbbs.ReloadBoardInfo(UpBoardID & Dvbbs.BoardID)
 						End If
 						GetBoard = Split(Request("getboard"),",")
-						'Èç¹ûµ¥Ñ¡µ±Ç°°æÃæ£¬ÔòÈ¡ÏûÇøÓò¹Ì¶¥£¬»¹Ô­Îª°æÃæ¹Ì¶¥£¬Èç¶àÑ¡Ôò²»×ö´¦Àí
+						'å¦‚æœå•é€‰å½“å‰ç‰ˆé¢ï¼Œåˆ™å–æ¶ˆåŒºåŸŸå›ºé¡¶ï¼Œè¿˜åŸä¸ºç‰ˆé¢å›ºé¡¶ï¼Œå¦‚å¤šé€‰åˆ™ä¸åšå¤„ç†
 						If Ubound(getBoard)=0 And Clng(getBoard(0))=Dvbbs.BoardID And CanTopTopic Then
 							'Select Case IsTop
 							'	Case 0 : TimeAdd = 100
@@ -1216,13 +1216,13 @@ Class Dv_Forum_Admin
 				End If
 			End If
 
-			'×Ü¹Ì¶¥²Ù×÷
+			'æ€»å›ºé¡¶æ“ä½œ
 			Dim TimeAdd
 			TimeAdd = 0
 			If Request("alltop")="1" And CanTopTopic_a Then
 					Dvbbs.Execute("update dv_topic set istop=3  where boardID="&Dvbbs.BoardID&" and topicID="&ID)
 			
-				'½«×Ü¹Ì¶¥ID²åÈë×ÜÉèÖÃ±í
+				'å°†æ€»å›ºé¡¶IDæ’å…¥æ€»è®¾ç½®è¡¨
 				Set Rs=Dvbbs.Execute("Select Forum_AllTopNum From Dv_Setup")
 				iForum_AllTopNum = "," & Rs(0) & ","
 				If Instr(iForum_AllTopNum,"," & ID & ",")=0 Then
@@ -1238,7 +1238,7 @@ Class Dv_Forum_Admin
 			Else
 				If Request("getboard")<>"" Then
 					getBoard = Split(Request("getBoard"),",")
-					'µ¥Ñ¡ÇÒµ±Ç°°æÃæ¹Ì¶¥
+					'å•é€‰ä¸”å½“å‰ç‰ˆé¢å›ºé¡¶
 					i = 0
 					If Ubound(getBoard)=0 And Clng(getBoard(0))=Dvbbs.BoardID And CanTopTopic Then
 						Set Rs=Dvbbs.Execute("Select BoardID,BoardTopStr From Dv_Board Where BoardID="&Clng(getBoard(0)))
@@ -1260,12 +1260,12 @@ Class Dv_Forum_Admin
 						End If
 						Dvbbs.Execute("update dv_topic set istop=1 where boardID="&Dvbbs.BoardID&" and topicID="&ID)
 					
-					'¶àÑ¡ÇøÓò¹Ì¶¥£¬°üº¬ÔÚµ±Ç°°æÃæ¹Ì¶¥²Ù×÷ÖĞµ¥Ñ¡ÆäËü°æÃæ
-					'ÔÚÕâÀï²»ĞèÅĞ¶Ïµ±Ç°ÓÃ»§ÔÚÆäËü°æÃæµÄÈ¨ÏŞ
-					'ÒòÎªÖ»ÒªÔÚÓÃ»§×é»ò°æÃæÈ¨ÏŞ»òÓÃ»§È¨ÏŞÖĞ¶Ôµ±Ç°°æÃæÓĞÇøÓò¹Ì¶¥È¨ÏŞ£¬ÔòÄ¬ÈÏÎª¿ÉÌí¼Ó¹Ì¶¥µ½ÆäËü°æÃæ
+					'å¤šé€‰åŒºåŸŸå›ºé¡¶ï¼ŒåŒ…å«åœ¨å½“å‰ç‰ˆé¢å›ºé¡¶æ“ä½œä¸­å•é€‰å…¶å®ƒç‰ˆé¢
+					'åœ¨è¿™é‡Œä¸éœ€åˆ¤æ–­å½“å‰ç”¨æˆ·åœ¨å…¶å®ƒç‰ˆé¢çš„æƒé™
+					'å› ä¸ºåªè¦åœ¨ç”¨æˆ·ç»„æˆ–ç‰ˆé¢æƒé™æˆ–ç”¨æˆ·æƒé™ä¸­å¯¹å½“å‰ç‰ˆé¢æœ‰åŒºåŸŸå›ºé¡¶æƒé™ï¼Œåˆ™é»˜è®¤ä¸ºå¯æ·»åŠ å›ºé¡¶åˆ°å…¶å®ƒç‰ˆé¢
 					Else
 						Set Rs=Dvbbs.Execute("Select BoardID,BoardTopStr From Dv_Board Where BoardID In ("&Dvbbs.Checkstr(Request("getBoard"))&")")
-						Rem Êı×éÌæ»»Ñ­»·²éÑ¯¡£ 2004-5-7 Dvbbs.YangZheng
+						Rem æ•°ç»„æ›¿æ¢å¾ªç¯æŸ¥è¯¢ã€‚ 2004-5-7 Dvbbs.YangZheng
 						If Not (Rs.Eof And Rs.Bof) Then
 							Sql = Rs.GetRows(-1)
 							Rs.Close:Set Rs = Nothing
@@ -1312,7 +1312,7 @@ Class Dv_Forum_Admin
 					Set Rs=Nothing
 				End If
 			End If
-			sucmsg=ActionInfo&"¡¶"&Server.htmlencode(topic)&"¡·£¬"&Server.htmlencode(content)& "£¬"&allmsg&""
+			sucmsg=ActionInfo&"ã€Š"&Server.htmlencode(topic)&"ã€‹ï¼Œ"&Server.htmlencode(content)& "ï¼Œ"&allmsg&""
 			Insert_Forum_Log()
 			Update_User_Point("")
 			Topic_Manage_Sms()
@@ -1330,7 +1330,7 @@ Class Dv_Forum_Admin
 			TempStr = Replace(TempStr,"{$topic}",Dvbbs.HtmlEncode(Topic))
 			TempStr = Replace(TempStr,"{$content}",Body)
 			TempStr = Replace(TempStr,"{$reaction}",request("action"))
-			'ÓĞ×Ü¹Ì¶¥ºÍÇøÓò¹Ì¶¥È¨ÏŞÔòÏÔÊ¾ËùÓĞ°æÃæÁĞ±í
+			'æœ‰æ€»å›ºé¡¶å’ŒåŒºåŸŸå›ºé¡¶æƒé™åˆ™æ˜¾ç¤ºæ‰€æœ‰ç‰ˆé¢åˆ—è¡¨
 			If CanTopTopic_a Or CanTopTopic_m Then
 				Set Rs=Dvbbs.Execute("select boardid,boardtype,depth,BoardTopStr from dv_board order by rootid,orders")
 			Else
@@ -1348,15 +1348,15 @@ Class Dv_Forum_Admin
 			BoardJump = BoardJump & " value="&rs(0)&">"
 			Select Case rs(2)
 			Case 0
-				BoardJump = BoardJump & "©ï"
+				BoardJump = BoardJump & "â•‹"
 			Case 1
-				BoardJump = BoardJump & "&nbsp;&nbsp;©À"
+				BoardJump = BoardJump & "&nbsp;&nbsp;â”œ"
 			End Select
 			If rs(2)>1 Then
 				For ii=2 To rs(2)
-					BoardJump = BoardJump & "&nbsp;&nbsp;©¦"
+					BoardJump = BoardJump & "&nbsp;&nbsp;â”‚"
 				Next
-				BoardJump = BoardJump & "&nbsp;&nbsp;©À"
+				BoardJump = BoardJump & "&nbsp;&nbsp;â”œ"
 			End If
 			BoardJump = BoardJump & rs(1)
 			BoardJump = BoardJump & "</option>"
@@ -1373,17 +1373,17 @@ Class Dv_Forum_Admin
 			TempStr = Replace(TempStr,"{$dousercp}",dousercp)
 			TempStr = Replace(TempStr,"{$msg}",Request.form("msg"))
 			TempStr = Replace(TempStr,"{$ismsg}",Request.form("ismsg"))
-			If Dvbbs.GroupSetting(21)="1" Then TempStr = Replace(TempStr,"{$boardtop}","¡Ì")
-			TempStr = Replace(TempStr,"{$boardtop}","<font color=red>¡Á</font>")
-			If Dvbbs.GroupSetting(54)="1" Then TempStr = Replace(TempStr,"{$areatop}","¡Ì")
-			TempStr = Replace(TempStr,"{$areatop}","<font color=red>¡Á</font>")
-			If Dvbbs.GroupSetting(38)="1" Then TempStr = Replace(TempStr,"{$alltop}","¡Ì")
-			TempStr = Replace(TempStr,"{$alltop}","<font color=red>¡Á</font>")
+			If Dvbbs.GroupSetting(21)="1" Then TempStr = Replace(TempStr,"{$boardtop}","âˆš")
+			TempStr = Replace(TempStr,"{$boardtop}","<font color=red>Ã—</font>")
+			If Dvbbs.GroupSetting(54)="1" Then TempStr = Replace(TempStr,"{$areatop}","âˆš")
+			TempStr = Replace(TempStr,"{$areatop}","<font color=red>Ã—</font>")
+			If Dvbbs.GroupSetting(38)="1" Then TempStr = Replace(TempStr,"{$alltop}","âˆš")
+			TempStr = Replace(TempStr,"{$alltop}","<font color=red>Ã—</font>")
 			Response.Write TempStr
 		End If
 	End Sub
 
-	'µ¥ÌûÆÁ±ÎÌû×Ó
+	'å•å¸–å±è”½å¸–å­
 	Public Sub islockpage()
 		LogType=5
 		Get_RequestInfo
@@ -1403,7 +1403,7 @@ Class Dv_Forum_Admin
 		End If 
 		Set Rs=Nothing	
 	End Sub 
-	'½â³ıµ¥ÌûÆÁ±ÎÌû×Ó
+	'è§£é™¤å•å¸–å±è”½å¸–å­
 	Public Sub nolockpage()
 		LogType=3
 		Get_RequestInfo
@@ -1421,7 +1421,7 @@ Class Dv_Forum_Admin
 		UseTools=Rs(0)
 		LogType=3
 		'Get_RequestInfo
-		sucmsg="ĞŞ¸´Ìû×Ó"
+		sucmsg="ä¿®å¤å¸–å­"
 		Set Rs = Dvbbs.Execute("SELECT COUNT(*), MAX(DateAndTime) FROM " & TotalUseTable & " WHERE BoardID = " & Dvbbs.BoardID & " AND RootID = " & ID)
 		If Not IsNull(rs(0)) And Not IsNull(rs(1)) Then
 			If  InStr("," & UseTools & ",",",13,")>0 Or InStr("," & UseTools & ",",",14,")>0 Then
@@ -1437,7 +1437,7 @@ Class Dv_Forum_Admin
 		Topic_Manage_Sms()
 		Dvbbs.Dvbbs_Suc(SucMsgInfo(sucmsg))
 	End Sub
-	'¾«»ªÌû×Ó
+	'ç²¾åå¸–å­
 	Public Sub isbest()
 		LogType=3
 		Dim datetimestr
@@ -1458,7 +1458,7 @@ Class Dv_Forum_Admin
 		topicusername=rs("username")
 		topicuserID=rs("postuserID")
 		If topic="" Then topic=left(replace(rs("body"),chr(10),","),26)
-		datetimestr=replace(replace(rs("dateandtime"),"ÉÏÎç",""),"ÏÂÎç","")
+		datetimestr=replace(replace(rs("dateandtime"),"ä¸Šåˆ",""),"ä¸‹åˆ","")
 
 		Dvbbs.Execute("Update "&TotalUseTable&" Set isbest=1 where boardID="&Dvbbs.BoardID&" and announceID="&replyID)
 		Dvbbs.Execute("Update Dv_topic Set isbest=1 where boardID="&Dvbbs.BoardID&" and topicID="&ID)
@@ -1471,7 +1471,7 @@ Class Dv_Forum_Admin
 		Topic_Manage_Sms()
 		Dvbbs.Dvbbs_Suc(SucMsgInfo(sucmsg))
 	End Sub
-	'½â³ı¾«»ªÌû×Ó
+	'è§£é™¤ç²¾åå¸–å­
 	Public Sub nobest()
 		LogType=3
 		Dim datetimestr
@@ -1489,7 +1489,7 @@ Class Dv_Forum_Admin
 		topic=rs("topic")
 		topicusername=rs("username")
 		topicuserID=rs("postuserID")
-		If topic="" Then topic="±¾Ìû×ÓÎª»Ø¸´Ìû×Ó"
+		If topic="" Then topic="æœ¬å¸–å­ä¸ºå›å¤å¸–å­"
 		Set Rs=Nothing
 
 		Dvbbs.Execute("Update "&TotalUseTable&" set isbest=0 Where boardID="&Dvbbs.BoardID&" and announceID="&replyID)
@@ -1502,7 +1502,7 @@ Class Dv_Forum_Admin
 		Dvbbs.Dvbbs_Suc(SucMsgInfo(sucmsg))
 	End Sub
 
-	'É¾³ı¸úÌù
+	'åˆ é™¤è·Ÿè´´
 	Public Sub dele(md)
 		Dim todaynum
 		Dim isbest,IsUpload
@@ -1514,7 +1514,7 @@ Class Dv_Forum_Admin
 			topicuserID=rs(2)
 			isbest=rs(4)
 			IsUpload=rs(5)
-			If topic="" Then topic="±¾Ìû×ÓÎª»Ø¸´Ìû×Ó"
+			If topic="" Then topic="æœ¬å¸–å­ä¸ºå›å¤å¸–å­"
 			If datediff("d",rs(3),now())=0 Then
 				todaynum=1
 			Else
@@ -1528,7 +1528,7 @@ Class Dv_Forum_Admin
 		End If
 		Set Rs=Nothing
 		
-		'ÅĞ¶ÏÓÃ»§ÊÇ·ñÓĞÉ¾³ıÌû×ÓÈ¨ÏŞ
+		'åˆ¤æ–­ç”¨æˆ·æ˜¯å¦æœ‰åˆ é™¤å¸–å­æƒé™
 		If Not CanDelTopic Then
 			Dvbbs.AddErrCode(28)
 			Exit Sub
@@ -1536,7 +1536,7 @@ Class Dv_Forum_Admin
 		LogType=3
 		Get_RequestInfo
 		Dim LastPostime,istop
-		'É¾³ıÊ±×Ô¶¯É¾³ı¾«»ª»Ø¸´Ìû
+		'åˆ é™¤æ—¶è‡ªåŠ¨åˆ é™¤ç²¾åå›å¤å¸–
 		If IsBest=1 Then
 			Dvbbs.Execute("update dv_topic set isbest=0 where boardid="&Dvbbs.BoardID&" and topicid="&ID)
 			Dvbbs.Execute("delete from dv_besttopic where Announceid="&replyID)
@@ -1557,7 +1557,7 @@ Class Dv_Forum_Admin
 			If Request.form("delupfile")<>"" and Request.form("delupfile")=1 Then
 				Call Delupfiles(Dvbbs.BoardID,ID&"|"&replyID)
 			Else
-			'¸üĞÂÉÏ´«¸½¼şÊı¾İ
+			'æ›´æ–°ä¸Šä¼ é™„ä»¶æ•°æ®
 			Dvbbs.Execute("update Dv_Upfile Set F_flag=4 Where F_BoardID="&Dvbbs.BoardID&" And F_AnnounceID LIKE  '"&ID&"|"&replyID&"' ")
 			End If
 		End IF
@@ -1580,7 +1580,7 @@ Class Dv_Forum_Admin
 			Dvbbs.Dvbbs_Suc(SucMsgInfo(sucmsg))
 		End If 
 	End Sub
-	'É¾³ıÖ÷Ìù
+	'åˆ é™¤ä¸»è´´
 	Public Sub delete()
 		Dim voteID,isvote,isbest,istop
 		Dim UpBoardID
@@ -1596,7 +1596,7 @@ Class Dv_Forum_Admin
 			isvote=rs(4)
 			isbest=rs(5)
 			istop=rs(6)
-			If topic="" Then topic="±¾Ìû×ÓÎª»Ø¸´Ìû×Ó"
+			If topic="" Then topic="æœ¬å¸–å­ä¸ºå›å¤å¸–å­"
 		End If
 		Set Rs=Nothing
 		LogType=3
@@ -1613,13 +1613,13 @@ Class Dv_Forum_Admin
 		Set Rs=Dvbbs.Execute(sql)
 		todayNum=rs(0)
 	
-		'·ÅÈë»ØÊÕÕ¾£¬»ØÊÕÕ¾boardidÎª444£¬locktopicÎªÔ­°æÃæID
+		'æ”¾å…¥å›æ”¶ç«™ï¼Œå›æ”¶ç«™boardidä¸º444ï¼Œlocktopicä¸ºåŸç‰ˆé¢ID
 		Dvbbs.Execute("update "&TotalUseTable&" set BoardID=444,locktopic="&Dvbbs.BoardID&" where rootID="&ID)
 		If isvote=1 Then
 			Dvbbs.Execute("update dv_topic set BoardID=444,locktopic="&Dvbbs.BoardID&",isvote=0,VoteTotal=0 where topicID="&ID)
 			Dvbbs.Execute("delete from dv_vote where voteID="&voteID)
 			Dvbbs.Execute("delete from dv_voteuser where voteID="&voteID)
-		'É¾ÌûÊ±×Ô¶¯½â³ı¾«»ªÌû×Ó
+		'åˆ å¸–æ—¶è‡ªåŠ¨è§£é™¤ç²¾åå¸–å­
 		ElseIf isbest=1 Then
 			Dvbbs.Execute("update dv_topic set BoardID=444,locktopic="&Dvbbs.BoardID&",isbest=0 where topicid="&id)
 			Dvbbs.Execute("delete from dv_besttopic where rootid="&id)
@@ -1629,7 +1629,7 @@ Class Dv_Forum_Admin
 		If istop>0 Then
 			Dvbbs.Execute("update dv_topic set istop=0,LastPostTime="&SqlNowString&" where topicid="&ID)
 			If istop=3 Then
-				'½«×Ü¹Ì¶¥ID´Ó×ÜÉèÖÃ±íÈ¥³ı
+				'å°†æ€»å›ºé¡¶IDä»æ€»è®¾ç½®è¡¨å»é™¤
 				Set Rs=Dvbbs.Execute("Select Forum_AllTopNum From Dv_Setup")
 				Dim iForum_AllTopNum,mForum_AllTopNum
 				iForum_AllTopNum = "," & Rs(0) & ","
@@ -1649,8 +1649,8 @@ Class Dv_Forum_Admin
 				End If
 				Set Rs=Nothing
 			Else
-				'½«¹Ì¶¥ÌùID´Ó°æÃæ±íÖĞÈ¥³ı
-				'²éÑ¯µÃ³öÔ­À´¸ÃÌùËù¹Ì¶¥µÄ°æÃæ
+				'å°†å›ºé¡¶è´´IDä»ç‰ˆé¢è¡¨ä¸­å»é™¤
+				'æŸ¥è¯¢å¾—å‡ºåŸæ¥è¯¥è´´æ‰€å›ºé¡¶çš„ç‰ˆé¢
 				Dim BoardTopStr,iBoardTopStr
 				Set Rs=Dvbbs.Execute("Select BoardID,BoardTopStr From Dv_Board Where BoardTopStr Like '%"&ID&"%'")
 				Do While Not Rs.Eof
@@ -1686,7 +1686,7 @@ Class Dv_Forum_Admin
 		If  Request.form("delupfile")="1" Then
 			Call Delupfiles(Dvbbs.BoardID,ID&"|")
 		Else
-			'ÉÏ´«ÎÄ¼şÊı¾İ¸üĞÂ
+			'ä¸Šä¼ æ–‡ä»¶æ•°æ®æ›´æ–°
 			Dvbbs.Execute("update Dv_Upfile Set F_flag=4 Where F_BoardID="&Dvbbs.BoardID&" And F_AnnounceID LIKE  '"&ID&"|"&"%' ")
 		End IF
 		call LastCount(dvbbs.boardID)
@@ -1730,7 +1730,7 @@ Class Dv_Forum_Admin
 		Dvbbs.Name="setup"
 		Dvbbs.RemoveCache()
 	End Sub
-	'ÒÆ¶¯Ìû×Ó
+	'ç§»åŠ¨å¸–å­
 	Public Sub Tmove()
 		LogType=3
 		Get_RequestInfo
@@ -1746,7 +1746,7 @@ Class Dv_Forum_Admin
 			Else
 				newboardID=Request("newboardID")
 			End If
-			'Ä¿±êÂÛÌ³ºÍÆäÉÏ¼¶ÂÛÌ³ID
+			'ç›®æ ‡è®ºå›å’Œå…¶ä¸Šçº§è®ºå›ID
 			set rs=Dvbbs.Execute("select ParentStr,Board_Setting from dv_board where boardID="&newboardID)
 			UpdateBoardID_1=rs(0) & "," & newboardID
 			reBoard_Setting=split(rs(1),",")
@@ -1761,7 +1761,7 @@ Class Dv_Forum_Admin
 				Exit Sub
 			Else
 				If Request.form("isdispmove")="yes" Then
-					newtopic=Dvbbs.CheckStr(Request.form("topic")) & "-->" & Dvbbs.MemberName & "×ªÒÆ"
+					newtopic=Dvbbs.CheckStr(Request.form("topic")) & "-->" & Dvbbs.MemberName & "è½¬ç§»"
 				Else
 					newtopic=Dvbbs.CheckStr(Request.form("topic"))
 				End If
@@ -1770,7 +1770,7 @@ Class Dv_Forum_Admin
 					Dvbbs.Execute(sql)
 				End If
 			End If
-			'ÒÆ¶¯ºó£¬È¡Ïû×¨ÌâËùÊô
+			'ç§»åŠ¨åï¼Œå–æ¶ˆä¸“é¢˜æ‰€å±
 			Dvbbs.Execute("update dv_topic set mode=0 where topicID="&ID)
 			If Request("leavemessage")="yes" Then
 				Dvbbs.Execute("update dv_topic set locktopic=1 where topicID="&ID)
@@ -1794,36 +1794,36 @@ Class Dv_Forum_Admin
 				loop
 			ElseIf Request("leavemessage")="no" Then
 				If Request.form("isdispmove")="yes" Then
-					newtopic=Dvbbs.CheckStr(Request.form("topic")) & "-->" & Dvbbs.MemberName & "×ªÒÆ"
+					newtopic=Dvbbs.CheckStr(Request.form("topic")) & "-->" & Dvbbs.MemberName & "è½¬ç§»"
 				Else
 					newtopic=Dvbbs.CheckStr(Request.form("topic"))
 				End If
-				'ÒÆ¶¯ÇÒ²»±£ÁôÊ±×Ô¶¯½â³ı¾«»ªÌû×Ó
+				'ç§»åŠ¨ä¸”ä¸ä¿ç•™æ—¶è‡ªåŠ¨è§£é™¤ç²¾åå¸–å­
 				if rs("isbest")=1 then
 					Dvbbs.Execute("update dv_topic set title='"&newtopic&"',boardid="&newboardid&",isbest=0 where topicid="&id)
 					Dvbbs.Execute("update "&TotalUseTable&" set topic='"&newtopic&"',isbest=0 where announceid="&replyid)
 					Dvbbs.Execute("update "&TotalUseTable&" set boardid="&newboardid&",isbest=0 where rootid="&id&" And boardid<>444 and boardID <>777")
 					Dvbbs.Execute("delete from dv_besttopic where rootid="&id)
-					'¸üĞÂ»ØÊÕÕ¾»òÉóºËÌûÖĞµÄ¸úÌùµÄÔ­°æÃæ±àºÅ
+					'æ›´æ–°å›æ”¶ç«™æˆ–å®¡æ ¸å¸–ä¸­çš„è·Ÿè´´çš„åŸç‰ˆé¢ç¼–å·
 					Dvbbs.Execute("update "&TotalUseTable&" set locktopic="&newboardid&" where rootid="&id &" and (boardid=444 OR boardID=777)")
 					
 				else
 					Dvbbs.Execute("update dv_topic set title='"&newtopic&"',boardid="&newboardid&" where topicid="&id)
 					Dvbbs.Execute("update "&TotalUseTable&" set topic='"&newtopic&"' where announceid="&replyid)
 					Dvbbs.Execute("update "&TotalUseTable&" set boardid="&newboardid&" where rootid="&id &" and boardid<>444 and boardID <>777")
-					'¸üĞÂ»ØÊÕÕ¾ÖĞµÄ¸úÌùµÄÔ­°æÃæ±àºÅ
+					'æ›´æ–°å›æ”¶ç«™ä¸­çš„è·Ÿè´´çš„åŸç‰ˆé¢ç¼–å·
 					Dvbbs.Execute("update "&TotalUseTable&" set locktopic="&newboardid&" where rootid="&id &" and (boardid=444 OR boardID =777)")	
 				end if
-				'ÒÆ¶¯Ê±ÅĞ¶ÏÊÇ·ñ¹Ì¶¥²¢×÷Ïà¹Ø´¦Àí 2004-4-25 Dvbbs.YangZheng
+				'ç§»åŠ¨æ—¶åˆ¤æ–­æ˜¯å¦å›ºé¡¶å¹¶ä½œç›¸å…³å¤„ç† 2004-4-25 Dvbbs.YangZheng
 				If Rs("istop") > 0 Then
 					Dim Yrs, TopstrinfoN, TopstrinfoO
-					'¶ÁÈ¡ĞÂ¾É°æÃæµÄ¹Ì¶¥ĞÅÏ¢
+					'è¯»å–æ–°æ—§ç‰ˆé¢çš„å›ºé¡¶ä¿¡æ¯
 					Set Yrs = Dvbbs.Execute("SELECT BoardTopStr From Dv_Board Where Boardid = " & Dvbbs.Boardid)
 					TopstrinfoO = Yrs(0)
 					Set Yrs = Dvbbs.Execute("SELECT BoardTopStr From Dv_Board Where Boardid = " & Newboardid)
 					TopstrinfoN = Yrs(0)
 					Yrs.Close:Set Yrs = Nothing
-					'É¾³ıÔ­¹Ì¶¥Ö÷ÌâID
+					'åˆ é™¤åŸå›ºé¡¶ä¸»é¢˜ID
 					TopstrinfoO = Replace(TopstrinfoO, Cstr(Rs("TopicID"))&",", "")
 					TopstrinfoO = Replace(TopstrinfoO, ","&Cstr(Rs("TopicID")), "")
 					TopstrinfoO = Replace(TopstrinfoO, Cstr(Rs("TopicID")), "")
@@ -1836,30 +1836,30 @@ Class Dv_Forum_Admin
 					Else
 						TopstrinfoN = TopstrinfoN & "," & Cstr(Rs("TopicID"))
 					End If
-					'¸üĞÂµ±Ç°°æÃæ¹Ì¶¥ĞÅÏ¢¼°»º´æ
+					'æ›´æ–°å½“å‰ç‰ˆé¢å›ºé¡¶ä¿¡æ¯åŠç¼“å­˜
 					Sql = "UPDATE Dv_Board SET BoardTopStr = '" & TopstrinfoO & "' WHERE BoardID = " & Dvbbs.Boardid
 					Dvbbs.Execute(Sql)
-					'¸üĞÂĞÂ°æÃæ¹Ì¶¥ĞÅÏ¢¼°»º´æ
+					'æ›´æ–°æ–°ç‰ˆé¢å›ºé¡¶ä¿¡æ¯åŠç¼“å­˜
 					Sql = "UPDATE Dv_Board SET BoardTopStr = '" & TopstrinfoN & "' WHERE Boardid = " & Newboardid
 					Dvbbs.Execute(Sql)
 					Dvbbs.LoadBoardinformation  Dvbbs.Boardid
 					Dvbbs.LoadBoardinformation Newboardid
 				End If
-				'ÅúÁ¿ÒÆ¶¯ÉÏ´«ÎÄ¼şÊı¾İ
+				'æ‰¹é‡ç§»åŠ¨ä¸Šä¼ æ–‡ä»¶æ•°æ®
 				dim F_announceID
 				F_announceID=id & "|"
 				Dvbbs.Execute("update DV_Upfile set F_readme='"&newtopic&"',F_boardid="&newboardid&" where F_announceID like '"& F_announceID&"%'")
 			Else
-				Dvbbs.AddErrmsg "ÇëÑ¡ÔñÏàÓ¦²Ù×÷¡£"
+				Dvbbs.AddErrmsg "è¯·é€‰æ‹©ç›¸åº”æ“ä½œã€‚"
 				exit sub
 			End If
 			Dim postNum,todayNum
-			'¼ÆËã¸ÃÌû×ÓµÄ»Ø¸´ÊıÁ¿£¬ÓÃÀ´Í³¼Æ¶ÔÓ¦°æÃæÌû×ÓÊı
-			'ÀÏÃÔĞŞÕı£¬²éÑ¯¸úÌùÊı×ÖÅÅ³ı±»É¾³ıºÍ´ıÉóºËµÄ(2004.8.6)
+			'è®¡ç®—è¯¥å¸–å­çš„å›å¤æ•°é‡ï¼Œç”¨æ¥ç»Ÿè®¡å¯¹åº”ç‰ˆé¢å¸–å­æ•°
+			'è€è¿·ä¿®æ­£ï¼ŒæŸ¥è¯¢è·Ÿè´´æ•°å­—æ’é™¤è¢«åˆ é™¤å’Œå¾…å®¡æ ¸çš„(2004.8.6)
 			set rs=Dvbbs.Execute("select count(*) from "&TotalUseTable&" where rootID="&ID&" And BoardID <> 444 And BoardID <> 777")
 			'set rs=Dvbbs.Execute("select count(*) from "&TotalUseTable&" where rootID="&ID)
 			postNum=rs(0)
-			'¼ÆËã¸ÃÌû×ÓÖĞ½ñÈÕ»Ø¸´µÄÊıÁ¿,8.6¼ÓÈë·ÇÉ¾³ıÌõ¼ş£¨boardid<>444 and boardID <>777£©
+			'è®¡ç®—è¯¥å¸–å­ä¸­ä»Šæ—¥å›å¤çš„æ•°é‡,8.6åŠ å…¥éåˆ é™¤æ¡ä»¶ï¼ˆboardid<>444 and boardID <>777ï¼‰
 	
 			If IsSqlDataBase=1 Then
 				sql="select count(*) from "&TotalUseTable&" where rootID="&ID&" and dateandtime>='"&date()&"' and boardid<>444 and boardID <>777"
@@ -1869,7 +1869,7 @@ Class Dv_Forum_Admin
 			Set Rs=Dvbbs.Execute(sql)
 			todayNum=rs(0)
 			set rs=nothing
-			'¸üĞÂÂÛÌ³Ìù×ÓÊı¾İ
+			'æ›´æ–°è®ºå›è´´å­æ•°æ®
 			call LastCount(dvbbs.boardID)
 			call BoardNumSub(dvbbs.boardID,1,postNum,todayNum)
 			Dvbbs.ReloadBoardInfo(UpdateBoardID)
@@ -1877,7 +1877,7 @@ Class Dv_Forum_Admin
 			call LastCount(newboardID)
 			call BoardNumAdd(newboardID,1,postNum,todayNum)
 			Dvbbs.ReloadBoardInfo(UpdateBoardID)
-			'¸üĞÂÂÛÌ³Êı¾İ½áÊø
+			'æ›´æ–°è®ºå›æ•°æ®ç»“æŸ
 			Insert_Forum_Log()
 			Update_User_Point("")
 			Topic_Manage_Sms()
@@ -1899,7 +1899,7 @@ Class Dv_Forum_Admin
 			Response.Write TempStr
 		End If
 	End Sub
-	'¸´ÖÆÌû×Ó
+	'å¤åˆ¶å¸–å­
 	Public Sub copy()
 		Dim reBoard_Setting
 		set rs=Dvbbs.Execute("select topic,username,postuserID from "&TotalUseTable&" where boardid="&dvbbs.boardid&" and AnnounceID="&replyID)
@@ -1910,11 +1910,11 @@ Class Dv_Forum_Admin
 			Topic=rs(0)
 			topicusername=rs(1)
 			topicuserID=rs(2)
-			If topic="" Then topic="±¾Ìû×ÓÎª»Ø¸´Ìû×Ó"
+			If topic="" Then topic="æœ¬å¸–å­ä¸ºå›å¤å¸–å­"
 		End If
 		Set Rs=Nothing
 
-		'ÅĞ¶ÏÓÃ»§ÊÇ·ñÓĞÒÆ¶¯Ìû×ÓÈ¨ÏŞ
+		'åˆ¤æ–­ç”¨æˆ·æ˜¯å¦æœ‰ç§»åŠ¨å¸–å­æƒé™
 		If Not CanMoveTopic Then
 			Dvbbs.AddErrCode(28)
 			exit sub
@@ -1945,7 +1945,7 @@ Class Dv_Forum_Admin
 				newboardID=Request("newboardID")
 			End If
 
-			'Ä¿±êÂÛÌ³ºÍÆäÉÏ¼¶ÂÛÌ³ID
+			'ç›®æ ‡è®ºå›å’Œå…¶ä¸Šçº§è®ºå›ID
 			set rs=Dvbbs.Execute("select ParentStr,Board_Setting from dv_board where boardID="&newboardID)
 			UpdateBoardID=rs(0) & "," & newboardID
 			reBoard_Setting=split(rs(1),",")
@@ -1964,7 +1964,7 @@ Class Dv_Forum_Admin
 			sql="select * from "&TotalUseTable&" where announceID="&replyID
 			rs.open sql,conn,1,1
 			If Request.form("isdispmove")="yes" Then
-				newtopic=Dvbbs.CheckStr(Request.form("topic")) & "-->" & Dvbbs.MemberName & "Ìí¼Ó"
+				newtopic=Dvbbs.CheckStr(Request.form("topic")) & "-->" & Dvbbs.MemberName & "æ·»åŠ "
 			Else
 				newtopic=Dvbbs.CheckStr(Request.form("topic"))
 			End If
@@ -1983,11 +1983,11 @@ Class Dv_Forum_Admin
 			Dvbbs.Execute(sql)
 			rs.close
 			set rs=nothing
-			'ÒÆ¶¯ÉÏ´«ÎÄ¼şÊı¾İ
+			'ç§»åŠ¨ä¸Šä¼ æ–‡ä»¶æ•°æ®
 			Dim F_announceID
 			F_announceID=ID & "|" &replyID
 			Dvbbs.Execute("update DV_Upfile set F_readme='"&newtopic&"',F_boardid="&newboardid&" where F_announceID = '"& F_announceID&"'")
-			'¸üĞÂÂÛÌ³Ìù×ÓÊı¾İ
+			'æ›´æ–°è®ºå›è´´å­æ•°æ®
 			call LastCount(NewboardID)
 			call BoardNumAdd(newboardID,1,postNum,todayNum)
 			call AllboardNumAdd(todayNum,postNum,1)
@@ -2011,7 +2011,7 @@ Class Dv_Forum_Admin
 			TempStr = Replace(TempStr,"{$topic}",Server.Htmlencode(Topic))
 			TempStr = Replace(TempStr,"{$BoardJumpList}","<select name=newboardID id=newboard size=1></select>")
 			Response.Write TempStr
-			Response.Write "<script language=""javascript"">BoardJumpListSelect("&Dvbbs.Boardid&",""newboard"","""",""ÒÆ¶¯Ìû×ÓÇëÑ¡Ôñ"",1);</script>"
+			Response.Write "<script language=""javascript"">BoardJumpListSelect("&Dvbbs.Boardid&",""newboard"","""",""ç§»åŠ¨å¸–å­è¯·é€‰æ‹©"",1);</script>"
 		End If
 	End Sub
 
@@ -2060,7 +2060,7 @@ Class Dv_Forum_Admin
 	End Sub
 
 	'---------------------------------------------------
-	'°ßÖ÷½±³ÍÌû×Ó
+	'æ–‘ä¸»å¥–æƒ©å¸–å­
 	'---------------------------------------------------
 	Private Function ChkRewardMoney()
 		Dim CanRewardMoney
@@ -2113,7 +2113,7 @@ Class Dv_Forum_Admin
 			UpGetMoney = Clng(Rs(4))
 			Rs.close
 			If TopicUserID=Dvbbs.UserID Then Dvbbs.AddErrCode(38) : Exit Sub
-			'¸üĞÂ°ßÖ÷Ã¿ÈÕ½±Àø½ğ±ÒÊı
+			'æ›´æ–°æ–‘ä¸»æ¯æ—¥å¥–åŠ±é‡‘å¸æ•°
 			If not Dvbbs.Master and ReAct = 0 Then
 				Dvbbs.UserToday(4) = Clng(Dvbbs.UserToday(4)) + GiveMoney
 				Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usertoday").text = Clng(Dvbbs.UserToday(0)) &"|"& Clng(Dvbbs.UserToday(1)) &"|"& Clng(Dvbbs.UserToday(2)) &"|"& Clng(Dvbbs.UserToday(3)) &"|"& Clng(Dvbbs.UserToday(4))
@@ -2121,8 +2121,8 @@ Class Dv_Forum_Admin
 				Dvbbs.Execute Sql
 			End If
 
-			'Isagree×Ö¶Î£¬¶¨ÒåÎª£º¿Û½ğ±ÒÊı|¼Ó½ğ±ÒÊı ,GetMoneyÖĞÎªµÃµ½µÄ×ÜÊı  
-			'Isagree : ¿Û½ğ±ÒÊı|¼Ó½ğ±ÒÊı|³Í·£Ô­Òò|ºÃÆÀÔ­Òò|ÖĞÁ¢ÈËÊı|Ö§³ÖÈËÊı|·´¶ÔÈËÊı
+			'Isagreeå­—æ®µï¼Œå®šä¹‰ä¸ºï¼šæ‰£é‡‘å¸æ•°|åŠ é‡‘å¸æ•° ,GetMoneyä¸­ä¸ºå¾—åˆ°çš„æ€»æ•°  
+			'Isagree : æ‰£é‡‘å¸æ•°|åŠ é‡‘å¸æ•°|æƒ©ç½šåŸå› |å¥½è¯„åŸå› |ä¸­ç«‹äººæ•°|æ”¯æŒäººæ•°|åå¯¹äººæ•°
 			If TempString="" or Instr(TempString&"","|")=0 Then
 				If ReAct = 1 Then
 					UpIsagree = GiveMoney&"|0|"&Replace(content,"|","")&"||0|0|0|"
@@ -2134,40 +2134,40 @@ Class Dv_Forum_Admin
 					TempString = TempString &"|||0|0|0"
 				End If
 				TempString = Split(TempString,"|")
-				'ĞŞÕı°ßÖñ½±Àø½ğ±Ò¼ÆËã,dv.linzi'
-				Dim temmoney'¶¨ÒåÊµ¼ÊÖµ
-				If TempString(0)>0 Then 'Êı¾İÎª¿Û³ıµÄ
-					If ReAct = 1 Then'µ±Ç°¿Û³ı
+				'ä¿®æ­£æ–‘ç«¹å¥–åŠ±é‡‘å¸è®¡ç®—,dv.linzi'
+				Dim temmoney'å®šä¹‰å®é™…å€¼
+				If TempString(0)>0 Then 'æ•°æ®ä¸ºæ‰£é™¤çš„
+					If ReAct = 1 Then'å½“å‰æ‰£é™¤
 						temmoney=TempString(0) + GiveMoney
 						TempString(0) = temmoney
 						TempString(2) = Replace(content,"|","")
-					Else'µ±Ç°½±Àø
+					Else'å½“å‰å¥–åŠ±
 						temmoney = GiveMoney-TempString(0)
-						If temmoney<0 Then'Êı¾İ¿â¼ÌĞøÏÔÊ¾¿Û³ı
+						If temmoney<0 Then'æ•°æ®åº“ç»§ç»­æ˜¾ç¤ºæ‰£é™¤
 							TempString(0) = abs(temmoney)
 							TempString(2) = Replace(content,"|","")
-						Else 'Êı¾İ¿âÏÔÊ¾½±Àø
+						Else 'æ•°æ®åº“æ˜¾ç¤ºå¥–åŠ±
 							TempString(0) = 0
 							TempString(1) = temmoney
-							TempString(2) =""'É¾³ıÔ­ËµÃ÷
+							TempString(2) =""'åˆ é™¤åŸè¯´æ˜
 							TempString(3) = Replace(content,"|","")
 						End If 
 						TempString(3) = Replace(content,"|","")
 					End If
-				Else 'Êı¾İ¿âÎª½±Àø
-					If ReAct = 1 Then'µ±Ç°ÊÇ´¦·£
+				Else 'æ•°æ®åº“ä¸ºå¥–åŠ±
+					If ReAct = 1 Then'å½“å‰æ˜¯å¤„ç½š
 						temmoney = TempString(1) - GiveMoney
-						If temmoney<0 Then'µ±Ç°Îª³Í·£
+						If temmoney<0 Then'å½“å‰ä¸ºæƒ©ç½š
 							TempString(0)=abs(temmoney):TempString(1)=0
 							TempString(2) = Replace(content,"|","")
-							TempString(3) = ""'Çå³ı
-						Else'¼ÌĞø½±Àø
+							TempString(3) = ""'æ¸…é™¤
+						Else'ç»§ç»­å¥–åŠ±
 							TempString(0) = 0
 							TempString(1) = temmoney
 							TempString(2) = ""
 							TempString(3) = Replace(content,"|","")	
 						End If 
-					Else'¼ÌĞø½±Àø
+					Else'ç»§ç»­å¥–åŠ±
 						temmoney=GiveMoney+TempString(0)
 						TempString(1) =temmoney
 						TempString(3) = Replace(content,"|","")
@@ -2179,11 +2179,11 @@ Class Dv_Forum_Admin
 			If ReAct = 1 Then
 				UpGetMoney = UpGetMoney - GiveMoney
 				Sql = "Update Dv_user Set UserMoney=UserMoney-"&GiveMoney&" where UserID="&TopicUserID
-				sucmsg = sucmsg&",¶ÔÓÃ»§£º"&TopicUsername&"¿Û³ı"&GiveMoney&"¸ö½ğ±Ò!"
+				sucmsg = sucmsg&",å¯¹ç”¨æˆ·ï¼š"&TopicUsername&"æ‰£é™¤"&GiveMoney&"ä¸ªé‡‘å¸!"
 			Else
 				UpGetMoney = UpGetMoney + GiveMoney
 				Sql = "Update Dv_user Set UserMoney=UserMoney+"&GiveMoney&" where UserID="&TopicUserID
-				sucmsg = sucmsg&",¶ÔÓÃ»§£º"&TopicUsername&"½±Àø"&GiveMoney&"¸ö½ğ±Ò!"
+				sucmsg = sucmsg&",å¯¹ç”¨æˆ·ï¼š"&TopicUsername&"å¥–åŠ±"&GiveMoney&"ä¸ªé‡‘å¸!"
 			End If
 			Dvbbs.Execute Sql
 			Sql = "Update "&TotalUseTable&" Set Isagree='"&UpIsagree&"' Where boardid="&Dvbbs.boardid&" and AnnounceID="&ReplyID
@@ -2222,9 +2222,9 @@ Class Dv_Forum_Admin
 		set re=Nothing
 		reUBBCode=strContent
 	End Function
-	'½ØÈ¡Ö¸¶¨×Ö·û
+	'æˆªå–æŒ‡å®šå­—ç¬¦
 	Function cutStr(str,strlen)
-		'È¥µôËùÓĞHTML±ê¼Ç
+		'å»æ‰æ‰€æœ‰HTMLæ ‡è®°
 		Dim re
 		Set re=new RegExp
 		re.IgnoreCase =True
@@ -2269,7 +2269,7 @@ Class Dv_Forum_Admin
 		End If
 	End Function
 
-	'·µ»Ø¸ÃÓÃ»§ÃûµÄ¿É¹ÜÀíµÄ°æ¿éID ÒÔ¡°,¡±·Ö¸ô¡£
+	'è¿”å›è¯¥ç”¨æˆ·åçš„å¯ç®¡ç†çš„ç‰ˆå—ID ä»¥â€œ,â€åˆ†éš”ã€‚
 	Private Function GetBoardMsterID(username)
 		Dim Srs,Board_Data,i,TempData
 		TempData = ""
@@ -2295,7 +2295,7 @@ Class Dv_Forum_Admin
 		End If
 		GetBoardMsterID=TempData
 	End Function
-	'»ñÈ¡ÏÂÊô°æ¿éID
+	'è·å–ä¸‹å±ç‰ˆå—ID
 	Private Function GetBoardID(BoardIDVal)
 		Dim TempData,Nodelist,Node
 		Set Nodelist = Application(Dvbbs.CacheName&"_boardlist").cloneNode(True).documentElement.getElementsByTagName("board")

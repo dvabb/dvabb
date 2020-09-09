@@ -3,7 +3,7 @@
 <!-- #include file="inc/dv_clsother.asp" -->
 <%
 Dim AdminLockTopic,XMLDom,TableList,paramnode,AccessSetting
-Rem ÉóºËÈ¨ÏŞÉèÖÃ,Èç¹û²»Ï£Íû°æÖ÷¿ÉÒÔÉóºËÈ«²¿Ìù,ÇëÆÁ±ÎÏÂÃæµÚÒ»ĞĞ
+Rem å®¡æ ¸æƒé™è®¾ç½®,å¦‚æœä¸å¸Œæœ›ç‰ˆä¸»å¯ä»¥å®¡æ ¸å…¨éƒ¨è´´,è¯·å±è”½ä¸‹é¢ç¬¬ä¸€è¡Œ
 If Dvbbs.UserGroupID=3 Then  Dvbbs.Boardmaster=True
 Rem =======================================================
 AdminLockTopic=False 
@@ -20,8 +20,8 @@ If Dvbbs.FoundUserPer And Cint(Dvbbs.GroupSetting(36))=1 Then
 ElseIf Dvbbs.FoundUserPer And Cint(Dvbbs.GroupSetting(36))=0 Then
 	AdminLockTopic=False 
 End If 
-If Not AdminLockTopic Then Response.redirect "showerr.asp?ErrCodes=<li>ÄúÃ»ÓĞÔÚ±¾°æÃæÉóºËÌû×ÓµÄÈ¨ÏŞ¡£&action=OtherErr"
-If Not Dvbbs.Master and (Request("action")="modify" Or Request("action")="save") Then Response.redirect "showerr.asp?ErrCodes=<li>ÄúÃ»ÓĞĞŞ¸ÄÉóºËÉèÖÃµÄÈ¨ÏŞ¡£&action=OtherErr"
+If Not AdminLockTopic Then Response.redirect "showerr.asp?ErrCodes=<li>æ‚¨æ²¡æœ‰åœ¨æœ¬ç‰ˆé¢å®¡æ ¸å¸–å­çš„æƒé™ã€‚&action=OtherErr"
+If Not Dvbbs.Master and (Request("action")="modify" Or Request("action")="save") Then Response.redirect "showerr.asp?ErrCodes=<li>æ‚¨æ²¡æœ‰ä¿®æ”¹å®¡æ ¸è®¾ç½®çš„æƒé™ã€‚&action=OtherErr"
 LoadTableList()
 Set paramnode=XMLDom.documentElement.appendChild(XMLDom.createNode(1,"param",""))
 paramnode.attributes.setNamedItem(XMLDom.createNode(2,"boardid","")).text=Dvbbs.Boardid
@@ -30,8 +30,8 @@ If Dvbbs.Master Then paramnode.attributes.setNamedItem(XMLDom.createNode(2,"mast
 Dvbbs.LoadTemplates("query")
 If Not Dvbbs.ChkPost() Then  Response.Redirect "index.asp"
  Select Case Request("action")
- 	Case "manage"'ÅúÁ¿ÉóºË
- 		Dvbbs.stats="ÅúÁ¿ÉóºË"
+ 	Case "manage"'æ‰¹é‡å®¡æ ¸
+ 		Dvbbs.stats="æ‰¹é‡å®¡æ ¸"
  		Dvbbs.Nav
  		manage()
  		If Dvbbs.BoardID=0 Then
@@ -39,12 +39,12 @@ If Not Dvbbs.ChkPost() Then  Response.Redirect "index.asp"
 		Else
 			Dvbbs.Head_var 1,Application(Dvbbs.CacheName&"_boardlist").documentElement.selectSingleNode("board[@boardid='"&Dvbbs.BoardID&"']/@depth").text,"",""
 		End If
- 	Case "view"'²é¿´µ¥¸öÉóºËÌù
- 		Dvbbs.stats="ÉóºËÌù×Ó"
+ 	Case "view"'æŸ¥çœ‹å•ä¸ªå®¡æ ¸è´´
+ 		Dvbbs.stats="å®¡æ ¸è´´å­"
  		View()
  		Dvbbs.Head()
- 	Case "modify"'ÉóºËÉèÖÃ¹ÜÀí
- 		Dvbbs.stats="Ìû×ÓÉóºËÉèÖÃ¹ÜÀí"
+ 	Case "modify"'å®¡æ ¸è®¾ç½®ç®¡ç†
+ 		Dvbbs.stats="å¸–å­å®¡æ ¸è®¾ç½®ç®¡ç†"
  		Dvbbs.Nav
  		If Dvbbs.BoardID=0 Then
 			Dvbbs.Head_var 2,0,"",""
@@ -52,8 +52,8 @@ If Not Dvbbs.ChkPost() Then  Response.Redirect "index.asp"
 			Dvbbs.Head_var 1,Application(Dvbbs.CacheName&"_boardlist").documentElement.selectSingleNode("board[@boardid='"&Dvbbs.BoardID&"']/@depth").text,"",""
 		End If
 		LoadAccessSetting
- 	Case "info"'²é¿´µ±Ç°ÉóºË¹æÔò
- 		Dvbbs.stats="ÉóºËÉèÖÃĞÅÏ¢"
+ 	Case "info"'æŸ¥çœ‹å½“å‰å®¡æ ¸è§„åˆ™
+ 		Dvbbs.stats="å®¡æ ¸è®¾ç½®ä¿¡æ¯"
  		Dvbbs.Nav
  		If Dvbbs.BoardID=0 Then
 			Dvbbs.Head_var 2,0,"",""
@@ -62,22 +62,22 @@ If Not Dvbbs.ChkPost() Then  Response.Redirect "index.asp"
 		End If
 		LoadAccessSetting
 	Case "save"
-		Dvbbs.stats="±£´æÉóºËÉèÖÃ"
+		Dvbbs.stats="ä¿å­˜å®¡æ ¸è®¾ç½®"
 		Dvbbs.Nav
 		Dvbbs.Head_var 2,0,"",""
 		SaveAccessSetting()
 	Case "addnocheck"
-		Dvbbs.stats="»íÃâÉóºËÓÃ»§"
+		Dvbbs.stats="è±å…å®¡æ ¸ç”¨æˆ·"
 		Dvbbs.Nav()
 		Dvbbs.Head_var 2,0,"",""
 		addnocheck
 	Case "unlock"
-		Dvbbs.stats="½â³ı¹Ì·â"
+		Dvbbs.stats="è§£é™¤å›ºå°"
 		Dvbbs.Nav()
 		Dvbbs.Head_var 1,Application(Dvbbs.CacheName&"_boardlist").documentElement.selectSingleNode("board[@boardid='"&Dvbbs.BoardID&"']/@depth").text,"",""
 		unlockPost()
  	Case Else
- 		Dvbbs.stats="Ìû×ÓÉóºË"
+ 		Dvbbs.stats="å¸–å­å®¡æ ¸"
  		Dvbbs.Nav
  		If Dvbbs.BoardID=0 Then
 			Dvbbs.Head_var 2,0,"",""
@@ -102,19 +102,19 @@ Sub unlockPost()
 	id=Request("id")
 	replyid=Request("replyid")
 	If Not IsNumeric(id) Or id="" Then
-		Response.redirect "showerr.asp?ErrCodes=<li>ÇëÖ¸¶¨ËùĞè²ÎÊı¡£&action=OtherErr"
+		Response.redirect "showerr.asp?ErrCodes=<li>è¯·æŒ‡å®šæ‰€éœ€å‚æ•°ã€‚&action=OtherErr"
 	End If
 	Id =CLng(id)
 	If Not IsNumeric(replyid) Or replyid="" Then
-		Response.redirect "showerr.asp?ErrCodes=<li>ÇëÖ¸¶¨ËùĞè²ÎÊı¡£&action=OtherErr"
+		Response.redirect "showerr.asp?ErrCodes=<li>è¯·æŒ‡å®šæ‰€éœ€å‚æ•°ã€‚&action=OtherErr"
 	End If
 	Set Rs=Dvbbs.Execute("select posttable From Dv_topic Where topicid="&id)
 	If Rs.EOF Then
-		Response.redirect "showerr.asp?ErrCodes=<li>¼ÇÂ¼²»´æÔÚ¡£&action=OtherErr"
+		Response.redirect "showerr.asp?ErrCodes=<li>è®°å½•ä¸å­˜åœ¨ã€‚&action=OtherErr"
 	End If
 	posttable=Rs(0)
 	Dvbbs.Execute("update " & Dvbbs.Checkstr(posttable) &" Set locktopic=0 where announceid="& replyid &" and rootid="&id&" and locktopic=3")
-	Dvbbs.Execute("Insert Into Dv_Log (l_AnnounceID,l_BoardID,l_touser,l_username,l_content,l_ip,l_type) values (0,"&Dvbbs.BoardID&",'½â³ı¹Ì·â','" & Dvbbs.MemberName & "','Ö÷Ìâ±àºÅ£º"& ID & ", Ìù×Ó±àºÅ£º"& replyid &" ','" & Dvbbs.userTrueIP & "',3)")
+	Dvbbs.Execute("Insert Into Dv_Log (l_AnnounceID,l_BoardID,l_touser,l_username,l_content,l_ip,l_type) values (0,"&Dvbbs.BoardID&",'è§£é™¤å›ºå°','" & Dvbbs.MemberName & "','ä¸»é¢˜ç¼–å·ï¼š"& ID & ", è´´å­ç¼–å·ï¼š"& replyid &" ','" & Dvbbs.userTrueIP & "',3)")
 End Sub
 
 Function Getusergroupid(username)
@@ -147,7 +147,7 @@ Sub addnocheck()
 			End If
 		End If
 	End If	
-	'É¾³ıÒÑ¾­²»ÔÚÉóºË×éµÄÓÃ»§µÄÃâÉóºËÊı¾İ
+	'åˆ é™¤å·²ç»ä¸åœ¨å®¡æ ¸ç»„çš„ç”¨æˆ·çš„å…å®¡æ ¸æ•°æ®
 	For Each Node in Dom.documentElement.selectNodes("setting/nocheck/username")
 		usergroupid=CInt(Getusergroupid(node.text))
 		If usergroupid=0 Then
@@ -160,7 +160,7 @@ Sub addnocheck()
 	Next
 	Dvbbs.Execute("update Dv_setup Set Forum_BoardXML='"&Dvbbs.Checkstr(Replace(Replace(Dom.xml,Chr(13),""),Chr(10),""))&"'")
 	Set Application(Dvbbs.CacheName & "_accesstopic")=Dom.cloneNode(True)
-	Dvbbs.Execute("Insert Into Dv_Log (l_AnnounceID,l_BoardID,l_touser,l_username,l_content,l_ip,l_type) values (0,"&Dvbbs.BoardID&",'»íÃâÉóºË','" & Dvbbs.MemberName & "','»íÃâ£º" & Dvbbs.CheckStr(Request("username")) & "','" & Dvbbs.userTrueIP & "',3)")
+	Dvbbs.Execute("Insert Into Dv_Log (l_AnnounceID,l_BoardID,l_touser,l_username,l_content,l_ip,l_type) values (0,"&Dvbbs.BoardID&",'è±å…å®¡æ ¸','" & Dvbbs.MemberName & "','è±å…ï¼š" & Dvbbs.CheckStr(Request("username")) & "','" & Dvbbs.userTrueIP & "',3)")
 End Sub
 
 Sub SaveAccessSetting()
@@ -262,7 +262,7 @@ Sub SaveAccessSetting()
 	Next
 	Dvbbs.Execute("update Dv_setup Set Forum_BoardXML='"&Dvbbs.Checkstr(Replace(Replace(Dom.xml,Chr(13),""),Chr(10),""))&"'")
 	Dvbbs.LoadSetup()
-	Dvbbs.Execute("Insert Into Dv_Log (l_AnnounceID,l_BoardID,l_touser,l_username,l_content,l_ip,l_type) values (0,"&Dvbbs.BoardID&",'ÉóºËÉèÖÃ','" & Dvbbs.MemberName & "','¸üĞÂ','" & Dvbbs.userTrueIP & "',3)")
+	Dvbbs.Execute("Insert Into Dv_Log (l_AnnounceID,l_BoardID,l_touser,l_username,l_content,l_ip,l_type) values (0,"&Dvbbs.BoardID&",'å®¡æ ¸è®¾ç½®','" & Dvbbs.MemberName & "','æ›´æ–°','" & Dvbbs.userTrueIP & "',3)")
 End Sub
 
 Sub LoadAccessSetting()
@@ -270,7 +270,7 @@ Sub LoadAccessSetting()
 	Set Dom=Application(Dvbbs.CacheName & "_accesstopic").cloneNode(True)
 	If Request("addnew")="1"  and Request("action")="modify" Then
 		Set Node=Dom.documentElement.appendChild(Dom.createNode(1,"setting",""))
-		Node.attributes.setNamedItem(Dom.createNode(2,"type","")).text="ĞÂ½¨ÉèÖÃ"
+		Node.attributes.setNamedItem(Dom.createNode(2,"type","")).text="æ–°å»ºè®¾ç½®"
 		Node.appendChild(Dom.createNode(1,"checkuser",""))
 	ElseIf Request("delsetting")="1" Then
 		Set Node=Dom.documentElement.selectNodes("setting")
@@ -312,7 +312,7 @@ Sub manage()
 			replyid=Dvbbs.CheckNumeric(replyid)
 			Node.attributes.setNamedItem(XMLDom.createNode(2,"rootid","")).text=id
 			Node.attributes.setNamedItem(XMLDom.createNode(2,"announceid","")).text=replyid
-			Rem ¼ì²éÖ÷Ìâ±íÊÇ·ñÓĞ¼ÇÂ¼£¬²¢ÇÒÈ¡µÃÆäÖ÷Ìù×´Ì¬
+			Rem æ£€æŸ¥ä¸»é¢˜è¡¨æ˜¯å¦æœ‰è®°å½•ï¼Œå¹¶ä¸”å–å¾—å…¶ä¸»è´´çŠ¶æ€
 			Set Rs=Dvbbs.Execute("select Boardid,LockTopic,PostTable,isvote,PollID From Dv_topic Where topicid="& id &"")
 			If Not Rs.EOF Then
 				posttable=Rs("posttable")
@@ -321,7 +321,7 @@ Sub manage()
 				PollID=Rs("PollID")
 				today=0
 				If Passed="1" Then
-					Rem Í¨¹ıÉóºË
+					Rem é€šè¿‡å®¡æ ¸
 					If replyid=id Then
 						Set Rs=Dvbbs.Execute("select dateandtime,PostUserid,ParentID,LockTopic,UserName,Body,IsUpLoad From "& posttable &" Where RootID="& id &" and Boardid=777")
 						If Not Rs.EOF Then 
@@ -331,18 +331,18 @@ Sub manage()
 							Node.attributes.setNamedItem(XMLDom.createNode(2,"child","")).text=0
 							Node.attributes.setNamedItem(XMLDom.createNode(2,"today","")).text=today
 							Node.attributes.setNamedItem(XMLDom.createNode(2,"boardid","")).text=boardid
-							Node.attributes.setNamedItem(XMLDom.createNode(2,"stats","")).text="Í¨¹ıÉóºË³É¹¦¡£"
+							Node.attributes.setNamedItem(XMLDom.createNode(2,"stats","")).text="é€šè¿‡å®¡æ ¸æˆåŠŸã€‚"
 							Dvbbs.Execute("update " & posttable &" set boardid="&boardid&",LockTopic=0 Where RootID="& id &" and ParentID=0 and Boardid=777")
 							Dvbbs.Execute("update dv_topic Set boardid="&boardid&",LockTopic=0,Child=0  Where topicid="& id &" and Boardid=777")
 							UpdatepostUser  rs(1),boardid,1
 							UpdateLastPost1 rs(4),replyid,rs(0),rs(5),"",rs(1),id,rs(3)
 							UpdateLastPost2 boardid,id,replyid
-							If Rs(1)<>0 Then Dvbbs.Sendmessanger Rs(1),"ÏµÍ³[ÉóºË]","Äú·¢±íµÄÌù×ÓÒÑ¾­Í¨¹ıÉóºË£¬Çë<a href=""dispbbs.asp?boardid="& boardid&"&amp;id="&id&""" target=""_blank"">µã´Ë²é¿´</a>"
+							If Rs(1)<>0 Then Dvbbs.Sendmessanger Rs(1),"ç³»ç»Ÿ[å®¡æ ¸]","æ‚¨å‘è¡¨çš„è´´å­å·²ç»é€šè¿‡å®¡æ ¸ï¼Œè¯·<a href=""dispbbs.asp?boardid="& boardid&"&amp;id="&id&""" target=""_blank"">ç‚¹æ­¤æŸ¥çœ‹</a>"
 						Else
 								Node.attributes.setNamedItem(XMLDom.createNode(2,"topic","")).text=0
 								Node.attributes.setNamedItem(XMLDom.createNode(2,"child","")).text=0
 								Node.attributes.setNamedItem(XMLDom.createNode(2,"today","")).text=0
-								Node.attributes.setNamedItem(XMLDom.createNode(2,"stats","")).text="Ê§°Ü£¬Ô­Òò£ºÕÒ²»µ½Ïà¹Ø¼ÇÂ¼£¬Êı¾İ¿ÉÄÜÒÑ¾­±»±ğµÄ¹ÜÀíÈËÔ±´¦ÀíÁË¡£"
+								Node.attributes.setNamedItem(XMLDom.createNode(2,"stats","")).text="å¤±è´¥ï¼ŒåŸå› ï¼šæ‰¾ä¸åˆ°ç›¸å…³è®°å½•ï¼Œæ•°æ®å¯èƒ½å·²ç»è¢«åˆ«çš„ç®¡ç†äººå‘˜å¤„ç†äº†ã€‚"
 						End If
 					Else
 						Set Rs=Dvbbs.Execute("select dateandtime,PostUserid,ParentID,LockTopic,UserName,Body,IsUpLoad From "& posttable &" Where RootID="& id &" and AnnounceID="&replyid&" and  Boardid=777")
@@ -353,35 +353,35 @@ Sub manage()
 							Node.attributes.setNamedItem(XMLDom.createNode(2,"child","")).text=1
 							Node.attributes.setNamedItem(XMLDom.createNode(2,"today","")).text=today
 							Node.attributes.setNamedItem(XMLDom.createNode(2,"boardid","")).text=boardid
-							Node.attributes.setNamedItem(XMLDom.createNode(2,"stats","")).text="Í¨¹ıÉóºË³É¹¦¡£"
+							Node.attributes.setNamedItem(XMLDom.createNode(2,"stats","")).text="é€šè¿‡å®¡æ ¸æˆåŠŸã€‚"
 							If Rs("ParentID")=0 Then
 								Dvbbs.Execute("update " & posttable &" set boardid="&boardid&",LockTopic=0 Where RootID="& id &" and ParentID=0")
 								Dvbbs.Execute("update dv_topic Set boardid="&boardid&",LockTopic=0,Child=0  Where topicid="& id)
 								UpdatepostUser  rs(1),boardid,1
 								UpdateLastPost1 rs(4),replyid,rs(0),rs(5),"",rs(1),id,rs(3)
 								UpdateLastPost2 boardid,id,replyid
-								If Rs(1)<>0 Then Dvbbs.Sendmessanger Rs(1),"ÏµÍ³[ÉóºË]","Äú·¢±íµÄÌù×ÓÒÑ¾­Í¨¹ıÉóºË£¬Çë<a href=""dispbbs.asp?boardid="& boardid&"&amp;id="&id&""" target=""_blank"">µã´Ë²é¿´</a>"
+								If Rs(1)<>0 Then Dvbbs.Sendmessanger Rs(1),"ç³»ç»Ÿ[å®¡æ ¸]","æ‚¨å‘è¡¨çš„è´´å­å·²ç»é€šè¿‡å®¡æ ¸ï¼Œè¯·<a href=""dispbbs.asp?boardid="& boardid&"&amp;id="&id&""" target=""_blank"">ç‚¹æ­¤æŸ¥çœ‹</a>"
 							Else
 								Dvbbs.Execute("update " & posttable &" set boardid="&boardid&",LockTopic=0 Where RootID="& id &" and AnnounceID="&replyid )
 								Dvbbs.Execute("update dv_topic Set boardid="&boardid&",LockTopic=0,Child=Child+1  Where topicid="& id)
 								UpdatepostUser  rs(1),boardid,0
 								UpdateLastPost1 rs(4),replyid,rs(0),rs(5),"",rs(1),id,rs(3)
 								UpdateLastPost2 boardid,id,replyid
-								If Rs(1)<>0 Then Dvbbs.Sendmessanger Rs(1),"ÏµÍ³[ÉóºË]","Äú·¢±íµÄÌù×ÓÒÑ¾­Í¨¹ıÉóºË£¬Çë<a href=""dispbbs.asp?boardid="& boardid&"&amp;id="&id&"&amp;skin=1&amp;replyid="&replyid&""" target=""_blank"">µã´Ë²é¿´</a>"
+								If Rs(1)<>0 Then Dvbbs.Sendmessanger Rs(1),"ç³»ç»Ÿ[å®¡æ ¸]","æ‚¨å‘è¡¨çš„è´´å­å·²ç»é€šè¿‡å®¡æ ¸ï¼Œè¯·<a href=""dispbbs.asp?boardid="& boardid&"&amp;id="&id&"&amp;skin=1&amp;replyid="&replyid&""" target=""_blank"">ç‚¹æ­¤æŸ¥çœ‹</a>"
 							End If
 						Else
 								Node.attributes.setNamedItem(XMLDom.createNode(2,"topic","")).text=0
 								Node.attributes.setNamedItem(XMLDom.createNode(2,"child","")).text=0
 								Node.attributes.setNamedItem(XMLDom.createNode(2,"today","")).text=0
-								Node.attributes.setNamedItem(XMLDom.createNode(2,"stats","")).text="Ê§°Ü£¬Ô­Òò£ºÕÒ²»µ½Ïà¹Ø¼ÇÂ¼,Êı¾İ¿ÉÄÜÒÑ¾­±»±ğµÄ¹ÜÀíÈËÔ±´¦ÀíÁË¡£"
+								Node.attributes.setNamedItem(XMLDom.createNode(2,"stats","")).text="å¤±è´¥ï¼ŒåŸå› ï¼šæ‰¾ä¸åˆ°ç›¸å…³è®°å½•,æ•°æ®å¯èƒ½å·²ç»è¢«åˆ«çš„ç®¡ç†äººå‘˜å¤„ç†äº†ã€‚"
 						End If
 					End If
 				ElseIf Passed="0" Then
-					Rem É¾³ı
+					Rem åˆ é™¤
 					If replyid=id Then
 						Set Rs=Dvbbs.Execute("select PostUserid From "& posttable &" Where RootID="& id &"")
 						If Not Rs.EOF Then
-							If Rs(0)<>0 Then Dvbbs.Sendmessanger Rs(0),"ÏµÍ³[ÉóºË]","Äú·¢±íµÄÌù×ÓÎ´ÄÜÍ¨¹ıÉóºË£¬Çë×¢ÒâÄú·¢±íµÄÄÚÈİ¡£"
+							If Rs(0)<>0 Then Dvbbs.Sendmessanger Rs(0),"ç³»ç»Ÿ[å®¡æ ¸]","æ‚¨å‘è¡¨çš„è´´å­æœªèƒ½é€šè¿‡å®¡æ ¸ï¼Œè¯·æ³¨æ„æ‚¨å‘è¡¨çš„å†…å®¹ã€‚"
 						End If
 						If isvote=1 Then
 							Dvbbs.Execute("delete From Dv_vote  Where voteid="& PollID &"")
@@ -391,7 +391,7 @@ Sub manage()
 					Else
 						Set Rs=Dvbbs.Execute("select ParentID,PostUserid From "& posttable &" Where RootID="& id &" and AnnounceID="&replyid )
 						If Not Rs.EOF Then
-							If Rs(1)<>0 Then Dvbbs.Sendmessanger Rs(1),"ÏµÍ³[ÉóºË]","Äú·¢±íµÄÌù×ÓÎ´ÄÜÍ¨¹ıÉóºË£¬Çë×¢ÒâÄú·¢±íµÄÄÚÈİ¡£"
+							If Rs(1)<>0 Then Dvbbs.Sendmessanger Rs(1),"ç³»ç»Ÿ[å®¡æ ¸]","æ‚¨å‘è¡¨çš„è´´å­æœªèƒ½é€šè¿‡å®¡æ ¸ï¼Œè¯·æ³¨æ„æ‚¨å‘è¡¨çš„å†…å®¹ã€‚"
 							If  Rs(0) <> 0 Then 
 								Dvbbs.Execute("delete From " & posttable &"  Where RootID="& id &" and AnnounceID="&replyid)
 							Else
@@ -403,29 +403,29 @@ Sub manage()
 							End If
 						End If
 					End If
-					'Çå³ıÉÏ´«¸½¼ş 2005-12-5 Dv.Yz
+					'æ¸…é™¤ä¸Šä¼ é™„ä»¶ 2005-12-5 Dv.Yz
 					Dvbbs.Execute("UPDATE Dv_Upfile SET F_Flag = 4 WHERE F_AnnounceID = '" & Id & "|" & Replyid & "'")
 					Node.attributes.setNamedItem(XMLDom.createNode(2,"topic","")).text=0
 					Node.attributes.setNamedItem(XMLDom.createNode(2,"child","")).text=0
 					Node.attributes.setNamedItem(XMLDom.createNode(2,"today","")).text=0
-					Node.attributes.setNamedItem(XMLDom.createNode(2,"stats","")).text="É¾³ı´ıÉóºËÌù³É¹¦¡£"
+					Node.attributes.setNamedItem(XMLDom.createNode(2,"stats","")).text="åˆ é™¤å¾…å®¡æ ¸è´´æˆåŠŸã€‚"
 				Else
 					Node.attributes.setNamedItem(XMLDom.createNode(2,"topic","")).text=0
 					Node.attributes.setNamedItem(XMLDom.createNode(2,"child","")).text=0
 					Node.attributes.setNamedItem(XMLDom.createNode(2,"today","")).text=0
-					Node.attributes.setNamedItem(XMLDom.createNode(2,"stats","")).text="´ıÉó£¬ÄúÃ»ÓĞ¶Ô¸ÃÌù½øĞĞ´¦Àí¡£"
+					Node.attributes.setNamedItem(XMLDom.createNode(2,"stats","")).text="å¾…å®¡ï¼Œæ‚¨æ²¡æœ‰å¯¹è¯¥è´´è¿›è¡Œå¤„ç†ã€‚"
 				End If
 			Else
 				Node.attributes.setNamedItem(XMLDom.createNode(2,"topic","")).text=0
 				Node.attributes.setNamedItem(XMLDom.createNode(2,"child","")).text=0
 				Node.attributes.setNamedItem(XMLDom.createNode(2,"today","")).text=0
-				Node.attributes.setNamedItem(XMLDom.createNode(2,"stats","")).text="Ê§°Ü£¬Ô­Òò£ºÕÒ²»µ½Ïà¹Ø¼ÇÂ¼¡£"
+				Node.attributes.setNamedItem(XMLDom.createNode(2,"stats","")).text="å¤±è´¥ï¼ŒåŸå› ï¼šæ‰¾ä¸åˆ°ç›¸å…³è®°å½•ã€‚"
 			End If
 		Else
 			Node.attributes.setNamedItem(XMLDom.createNode(2,"topic","")).text=0
 			Node.attributes.setNamedItem(XMLDom.createNode(2,"child","")).text=0
 			Node.attributes.setNamedItem(XMLDom.createNode(2,"today","")).text=0
-			Node.attributes.setNamedItem(XMLDom.createNode(2,"stats","")).text="Ê§°Ü£¬Ô­Òò£º²ÎÊı´íÎó¡£"
+			Node.attributes.setNamedItem(XMLDom.createNode(2,"stats","")).text="å¤±è´¥ï¼ŒåŸå› ï¼šå‚æ•°é”™è¯¯ã€‚"
 		End If
 		i=i+1
 	Next
@@ -433,7 +433,7 @@ Sub manage()
 	allpost=0
 	alltopic=0
 	alltoday=0
-	'Í³¼ÆÒ»ÏÂ¸üĞÂÇé¿ö
+	'ç»Ÿè®¡ä¸€ä¸‹æ›´æ–°æƒ…å†µ
 	For each boardid in Application(Dvbbs.CacheName&"_boardlist").documentElement.selectNodes("board/@boardid")
 		Set Node =XMLDom.documentElement.selectNodes("result[@boardid="& boardid.text &"]")
 		If Node.length > 0 Then
@@ -457,7 +457,7 @@ Sub manage()
 		Dvbbs.Execute("update dv_setup Set forum_postNum=forum_postNum+"& allpost &",forum_TopicNum=forum_topicNum +"& alltopic &",Forum_TodayNum=Forum_TodayNum +"& alltoday )
 		Dvbbs.loadSetup
 	End If
-	Tolog("ÅúÁ¿ÉóºË")
+	Tolog("æ‰¹é‡å®¡æ ¸")
 End Sub
 
 Sub View()
@@ -466,12 +466,12 @@ Sub View()
 	replyid=Request("replyid")
 	If Not IsNumeric(replyid) Or replyid="" Then replyid=0
 	If Not IsNumeric(id) Or id="" Then
-		Response.redirect "showerr.asp?ErrCodes=<li>ÇëÖ¸¶¨ËùĞè²ÎÊı¡£&action=OtherErr"
+		Response.redirect "showerr.asp?ErrCodes=<li>è¯·æŒ‡å®šæ‰€éœ€å‚æ•°ã€‚&action=OtherErr"
 	End If
 	Id =CLng(id)
 	Set rs=Dvbbs.Execute("Select posttable,boardid From Dv_topic Where topicid="&Id)
 	If Rs.EOF Then
-			Response.redirect "showerr.asp?ErrCodes=<li>¼ÇÂ¼²»´æÔÚ£¡&action=OtherErr"
+			Response.redirect "showerr.asp?ErrCodes=<li>è®°å½•ä¸å­˜åœ¨ï¼&action=OtherErr"
 	Else
 		posttable=Rs(0)
 		If replyid=0 Then
@@ -481,7 +481,7 @@ Sub View()
 		End If
 		Set Rs=Dvbbs.Execute(SQL)
 		If Rs.EOF Then
-			Response.redirect "showerr.asp?ErrCodes=<li>ÕÒ²»µ½Æ¥Åä¼ÇÂ¼£¡&action=OtherErr"
+			Response.redirect "showerr.asp?ErrCodes=<li>æ‰¾ä¸åˆ°åŒ¹é…è®°å½•ï¼&action=OtherErr"
 		Else
 			XMLDom.documentElement.appendChild(Dvbbs.RecordsetToxml(rs,"row","").documentElement.firstChild)
 		End If
@@ -535,13 +535,13 @@ Sub accesslist()
 	If Not IsNumeric(Page) Then Page="1"
 	If Page="" Then Page="1"
 	Page=CLng(Page)
-		'´«ËÍ²ÎÊıµ½xml
-	Pagesize=30'ÊÖ¹¤ÉèÖÃÃ¿Ò³×î´óÏÔÊ¾30Ìõ
+		'ä¼ é€å‚æ•°åˆ°xml
+	Pagesize=30'æ‰‹å·¥è®¾ç½®æ¯é¡µæœ€å¤§æ˜¾ç¤º30æ¡
 	paramnode.attributes.setNamedItem(XMLDom.createNode(2,"tableid","")).text=tableid
 	paramnode.attributes.setNamedItem(XMLDom.createNode(2,"keyword","")).text=keyword
 	paramnode.attributes.setNamedItem(XMLDom.createNode(2,"pagesize","")).text=Pagesize
 	paramnode.attributes.setNamedItem(XMLDom.createNode(2,"posttable","")).text=posttable
-	'¸ù¾İÒ³Ãæ²ÎÊı²úÉú²éÑ¯´úÂë
+	'æ ¹æ®é¡µé¢å‚æ•°äº§ç”ŸæŸ¥è¯¢ä»£ç 
 	keyword=Dvbbs.Checkstr(keyword)
 	SQl ="Select "
 	SQl1 ="Select Count(*) as length From "& posttable
@@ -569,7 +569,7 @@ Sub accesslist()
 	End If
 	Set Rs=Dvbbs.Execute(SQL1)
 	paramnode.attributes.setNamedItem(XMLDom.createNode(2,"count","")).text =Rs(0)
-	'¼ÆËãÒ»ÏÂµ±Ç°Page²ÎÊıÊÇ·ñºÏ·¨¡£Èç¹û³¬³ö·¶Î§£¬Ç¿ÖÆÎª×îºóÒ»Ò³
+	'è®¡ç®—ä¸€ä¸‹å½“å‰Pageå‚æ•°æ˜¯å¦åˆæ³•ã€‚å¦‚æœè¶…å‡ºèŒƒå›´ï¼Œå¼ºåˆ¶ä¸ºæœ€åä¸€é¡µ
 	If Rs(0) mod Pagesize =0 then
 			PageCount= Rs(0) \ Pagesize
 	Else
@@ -603,7 +603,7 @@ Sub LoadAccessCount()
 		Node.attributes.setNamedItem(XMLDom.createNode(2,"count","")).text=Dvbbs.Execute("select Count(*) From "& Node.selectSingleNode("@tablename").text &" Where boardid=777 "&SQL)(0)
 	Next
 End Sub
-'¸üĞÂÓÃ»§·¢ÌùÊı,»ı·Ö
+'æ›´æ–°ç”¨æˆ·å‘è´´æ•°,ç§¯åˆ†
 Sub UpdatepostUser( UserID,postboardid,istopic)
 	Dim Forum_user
 	If Not IsObject(Application(dvbbs.CacheName &"_boarddata_" & postboardid)) Then Dvbbs.LoadBoardData postboardid
@@ -615,7 +615,7 @@ Sub UpdatepostUser( UserID,postboardid,istopic)
 	End If
 End Sub
 
-'¸üĞÂÖ÷Ìâ×îºó»Ø¸´ÈË
+'æ›´æ–°ä¸»é¢˜æœ€åå›å¤äºº
 Sub UpdateLastPost1(LastPost_1,LastPost_2,LastPost_3,LastPost_4,LastPost_5,LastPost_6,LastPost_7,LastPost_8)
 Dim LastPost,LastPostArr
 LastPost_4=Dvbbs.Replacehtml(Dvbbs.strCut(LastPost_4,20))
@@ -623,7 +623,7 @@ LastPost=LastPost_1&"$"&LastPost_2&"$"&LastPost_3&"$"&LastPost_4&"$"&LastPost_5&
 Dvbbs.Execute("Update Dv_Topic Set lastpost='"&LastPost&"' ,LastPostTime='"&LastPost_3&"' Where Topicid="&LastPost_7&"")
 End Sub 
 
-'¸üĞÂ°æ¿é×îĞÂ»Ø¸´
+'æ›´æ–°ç‰ˆå—æœ€æ–°å›å¤
 Sub UpdateLastPost2(BoardId,topicid,announceid)
 Dim LastPost,rs
 Dim LastPost_1,LastPost_2,LastPost_3,LastPost_4,LastPost_5,LastPost_6,LastPost_7,LastPost_8
@@ -667,6 +667,6 @@ Sub UpDate_BoardInfoAndCache(BoardID,topic,Child,today)
 End Sub
 
 Sub Tolog(Info)
-	Dvbbs.Execute("Insert Into Dv_Log (l_AnnounceID,l_BoardID,l_touser,l_username,l_content,l_ip,l_type) values (0,"&Dvbbs.BoardID&",'ÉóºËÌù×Ó','" & Dvbbs.MemberName & "','" & Dvbbs.CheckStr(Info) & "','" & Dvbbs.userTrueIP & "',3)")
+	Dvbbs.Execute("Insert Into Dv_Log (l_AnnounceID,l_BoardID,l_touser,l_username,l_content,l_ip,l_type) values (0,"&Dvbbs.BoardID&",'å®¡æ ¸è´´å­','" & Dvbbs.MemberName & "','" & Dvbbs.CheckStr(Info) & "','" & Dvbbs.userTrueIP & "',3)")
 End Sub
 %>
