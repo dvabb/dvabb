@@ -1,0 +1,118 @@
+<html>
+<head>
+<title>动网论坛--博客二级域名和模拟静态页面</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<style>
+a:link     { COLOR: #000000; TEXT-DECORATION: none }
+a:visited   { COLOR: #000000 ; TEXT-DECORATION: none }
+a:active   { COLOR: #000000 ; TEXT-DECORATION: underline }
+a:hover    { COLOR: #000000 ; TEXT-DECORATION:underline }
+.home_top { border-top:2px solid #4798ED; }
+.home_path { background:#4798ED; padding-right:10px; color:#F0F0F0; font-size: 11px; }
+td, th, caption { font-family:  "宋体"; font-size: 12px; color:#000000;  LINE-HEIGHT: 165%; }
+.hrLine{MARGIN: 0px 0px; BORDER-BOTTOM: #807d76 1px dotted;}
+</style>
+</head>
+<body  leftmargin="0" topmargin="0" marginwidth="00">
+	<table width=960 cellspacing=0 cellpadding=3 class=home_top align=center>
+	<tr> 
+		<td width="100%" align=right style='padding-top:3px;'><a href="如何防范和解决DDOS攻击.htm"><font color=red>如何防范和解决DDOS攻击</font></a>&nbsp;&nbsp;&nbsp;<a href="http://www.cndw.com" target=_blank>动网主站</a>&nbsp;&nbsp;&nbsp;<a href="http://www.aspsky.cn" target=_blank>动网论坛虚拟主机</a>&nbsp;&nbsp;&nbsp;<a href="http://soft.cndw.com" target=_blank>官方支持网站</a>&nbsp;&nbsp;&nbsp;<a href="http://bbs.cndw.com" target=_blank>官方支持论坛</a>&nbsp;&nbsp;&nbsp;<a href="http://tool.cndw.com" target=_blank>站长工具</a>&nbsp;&nbsp;&nbsp;<a href="论坛网络支付功能介绍.htm"><font color=green>论坛网络支付功能介绍</font></a></td>
+	</tr>
+	<tr> 
+		<td><hr class=hrline size=1></td>
+	</tr>
+	<tr> 
+		<td height=22 align=center><a href="论坛安装必读.htm">论坛安装</a> | <a href="http://www.dvbbs.net/services.asp"><font color=blue>商业注册</font></a> | <a href="论坛安全设置.htm">安全说明</a> | <a href="论坛首页调用说明.htm">首页调用</a> | <a href="论坛常见问题.htm">常见问题</a> | <a href="http://www.dvbbs.net" target=_blank>技术特性</a> | <a href="http://www.cndw.com/busslist.asp" target=_blank><font color=green>典型案例</font></a> | <a href="http://www.dvbbs.net" target=_blank>关于动网</a> | <a href="http://www.cndw.com/contact.asp" target=_blank>联系我们</a> | <a href="http://www.aspsky.cn/"><font color=red>如何购买论坛虚拟主机</font></a></td>
+	</tr>
+	<tr> 			
+		<td class=home_path style='padding-left:10px;' height=2>
+	</td>
+	</tr>
+	<tr><td align=center height=10 bgcolor="F3F3F3"></td></tr>
+	<tr>
+		<td bgcolor="F3F3F3">
+		<b>动网论坛系统模拟静态页面配置说明</b><br>
+			<ol><li>需安装 ISAPI_Rewrite 组件，请自行到网上搜索此软件并安装于您的服务器。</li>
+		　　<li>配置 httpd.ini 文件，在该文件尾部加入以下代码：<BR>
+			<br />
+			# 重写index.asp <br>
+			RewriteRule /index_(\d+)_(\d*)_(.*)_(\d*)\.html /index\.asp\?boardid=$1&amp;topicmode=$2&amp;list_type=$3&amp;page=$4 [N,I] <br>
+			RewriteRule /index_(\d+)_(.*)_(\d*)_(.*)_(\d*)\.html /index\.asp\?boardid=$1&amp;action=$2&amp;topicmode=$3&amp;list_type=$4&amp;page=$5 [N,I] <br>
+			RewriteRule /index_(\d+)_(.*)_(\d*)_(\d*)\.html /index\.asp\?boardid=$1&amp;action=$2&amp;topicmode=$3&amp;page=$4 [N,I] <br>
+			RewriteRule /index_(\d+)_(\d*)_(.*)\.html /index\.asp\?boardid=$1&amp;page=$2&amp;action=$3 [N,I] <br>
+			RewriteRule /index_(\d+)_(\d*)\.html /index\.asp\?boardid=$1&amp;topicmode=$2 [N,I] <br>
+			RewriteRule /index_(\d+)_(\d*)_\.html /index\.asp\?boardid=$1&amp;page=$2 [N,I] <br>
+			# RewriteRule /index_(\d+)__\.html /index\.asp\?boardid=$1 [N,I] <br>
+			RewriteRule /index_(\d+)\.html /index\.asp\?boardid=$1 [N,I] <br>
+			RewriteRule /index\.html(.*) /index.asp [N,I] <br>
+			# 重写dispbbs.asp <br>
+			RewriteRule /dispbbs_(\d+)_(\d*)_(\d*)_skin(\d*)_(\d*)_(\d*)\.html /dispbbs\.asp\?boardid=$1&amp;replyid=$2&amp;id=$3&amp;skin=$4&amp;page=$5&amp;star=$6 [N,I] <br>
+			RewriteRule /dispbbs_(\d+)_(\d*)_(\d*)_skin(\d*)_(\d*)\.html /dispbbs\.asp\?boardid=$1&amp;replyid=$2&amp;id=$3&amp;skin=$4&amp;star=$5 [N,I] <br>
+			RewriteRule /dispbbs_(\d+)_(\d*)_(\d*)_skin(\d*)\.html /dispbbs.asp\?boardID=$1&amp;replyid=$2&amp;ID=$3&amp;skin=$4 [N,I] <br>
+			RewriteRule /dispbbs_(\d+)_(\d*)_(\d*)_(\d*)_(\d*)\.html /dispbbs.asp\?boardid=$1&amp;id=$2&amp;authorid=$3&amp;page=$4&amp;star=$5 [N,I]<br>
+			RewriteRule /dispbbs_(\d+)_(\d*)_(\d*)_(\d*)\.html /dispbbs.asp\?boardID=$1&amp;ID=$2&amp;page=$3&amp;star=$4 [N,I] <br>
+			RewriteRule /dispbbs_(\d+)_(\d*)_(\d*)_(\w+)\.html /dispbbs.asp\?boardID=$1&amp;ID=$2&amp;page=$3&amp;move=$4 [N,I] <br>
+			RewriteRule /dispbbs_(\d+)_(\d*)_(\d*)\.html /dispbbs.asp\?boardID=$1&amp;ID=$2&amp;page=$3 [N,I] <br>
+			RewriteRule /dispbbs_(\d+)_(\d*)\.html /dispbbs.asp\?boardID=$1&amp;ID=$2 [N,I]<br>
+			# 重写dv_rss.asp <br>
+			RewriteRule /dv_rss_(.*)_(\d+)_(\d+)_(\d+)_(\d+)_count(\d+)\.html /dv_rss.asp\?s=$1&amp;boardid=$2&amp;id=$3&amp;page=$4&amp;star=$5&amp;count=$6 [N,I] <br>
+			RewriteRule /dv_rss_(.*)_(\d+)_(\d+)_(\d+)_(\d+)\.html /dv_rss.asp\?s=$1&amp;boardid=$2&amp;id=$3&amp;page=$4&amp;star=$5 [N,I] <br>
+			RewriteRule /dv_rss_(.*)_(\d+)_(\d+)_(\d+)\.html /dv_rss.asp\?s=$1&amp;boardid=$2&amp;id=$3&amp;page=$4 [N,I] <br>
+			RewriteRule /dv_rss_(.*)_(\d+)_(\d+)_count(\d+)\.html /dv_rss.asp\?s=$1&amp;boardid=$2&amp;page=$3&amp;count=$4 [N,I] <br>
+			RewriteRule /dv_rss_(.*)_(\d+)_(\d+)\.html /dv_rss.asp\?s=$1&amp;boardid=$2&amp;page=S3 [N,I] <br>
+			RewriteRule /dv_rss_(.*)_(\d+)\.html /dv_rss.asp\?s=$1&amp;boardid=$2 [N,I] <br>
+			RewriteRule /dv_rss_(.*)\.html /dv_rss.asp\?s=$1 [N,I] <br>
+			RewriteRule /dv_rss(.*)\.html(.*) /dv_rss.asp [N,I] </li>
+		<li>修改 conn.asp 文件中的 IsUrlreWrite 参数。其中httpd.ini是ISAPI_Rewrite伪静态文件</li>
+		</ol>
+		<li><B>动网论坛博客系统二级域名配置说明</B><BR>
+		　　1、如您没有独立服务器，请到 <a href="http://domain.iboker.com/reg.asp" target=_blank>http://domain.iboker.com</a> 申请一个免费的二级域名系统（只支持动网博客系统的二级域名）<BR>
+		　　2、独立服务器用户：<BR>
+		　　　　1). 绑定泛域名到您服务器IP，如您的域名为iboker.com，则绑定*.iboker.com到您的服务器IP(前面为星号)。<BR>
+		　　　　2). 将您博客所在网站iis服务的主机头留空，新建Default.asp文件，并把新建文件的执行优先级设定为最高（IIS设置属性中的文档，将Default.asp移到最上面）。<BR>
+		　　　　		　　　　Default.asp文件代码：<BR>
+		　　　　		　　　　&lt;%<BR>
+		　　　　		　　　　Dim iURL<BR>
+		　　　　		　　　　iURL = Split(Request.ServerVariables("SERVER_NAME"),".")<BR>
+		　　　　		　　　　If Lcase(iURL(0))="www" Then<BR>
+		　　　　		　　　　'此处为网站或论坛或博客首页地址，请自行选择<BR>
+		　　　　		　　　　	Response.Redirect("index.asp")<BR>
+		　　　　		　　　　Else<BR>
+		　　　　		　　　　'如博客不在网站（泛域名所在网站）目录，请自行更改此处地址<BR>
+		　　　　		　　　　	Response.Write( "&lt;frameset&gt;&lt;frame src=""boke.asp?"&iURL(0)&".index.html""&gt;&lt;/frameset&gt;")<BR>
+		　　　　		　　　　End If<BR>
+		　　　　		　　　　%&gt;<BR>
+		　　　　3). 将此文件上传到网站根目录，如博客目录不在网站根目录，还需要修改Default.asp文件中的路径。<BR><BR>
+		<li><B>动网论坛博客系统模拟静态页面配置说明</B><BR>
+		　　1、需安装 ISAPI_Rewrite 组件，请自行到网上搜索此软件并安装于您的服务器。<BR>
+		　　2、配置 httpd.ini 文件，在该文件尾部加入以下代码：<BR>
+		　　　　RewriteRule /show_topic\.html /bokeindex\.asp\?show_topic\.html [N,I]<BR>
+		　　　　RewriteRule /show_topic\.(\S+)\.html /bokeindex\.asp\?show_topic\.$1\.html [N,I]<BR>
+		　　　　RewriteRule /show_topic\.(\d+)\.(\S+)\.html /bokeindex\.asp\?show_topic\.$1\.$2\.html [N,I]<BR>
+		　　　　RewriteRule /show_user\.html /bokeindex\.asp\?show_user\.html [N,I]<BR>
+		　　　　RewriteRule /show_user\.(\S+)\.html /bokeindex\.asp\?show_user\.$1\.html [N,I]<BR>
+		　　　　RewriteRule /([A-Za-z0-9_-]+)\.index\.html /boke\.asp\?$1\.index\.html [N,I]<BR>
+		　　　　RewriteRule /([A-Za-z0-9_-]+)\.showchannel\.(\S+)\.html /boke\.asp\?$1\.showchannel\.$2\.html [N,I]<BR>
+		　　　　RewriteRule /([A-Za-z0-9_-]+)\.showchannel\.(\d+)\.(\S+)\.html /boke\.asp\?$1\.showchannel\.$2\.$3\.html [N,I]<BR>
+		　　　　RewriteRule /([A-Za-z0-9_-]+)\.showtopic\.(\S+)\.html /boke\.asp\?$1\.showtopic\.$2\.html [N,I]<BR>
+		　　　　RewriteRule /([A-Za-z0-9_-]+)\.showtopic\.(\d+)\.(\S+)\.html /boke\.asp\?$1\.showtopic\.$2\.$3\.html [N,I]<BR>
+		　　　　RewriteRule /([A-Za-z0-9_-]+)\.(\w+)\.xml /bokerss\.asp\?$1\.$2\.xml [N,I]<BR>
+		　　2、修改 boke/config.asp 文件中的 Is_Isapi_Rewrite 参数。<BR>
+		</td>
+	</tr>
+	<tr><td align=center height=10 bgcolor="F3F3F3"></td></tr>
+	<tr> 			
+		<td class=home_path style='padding-left:10px;' height=2>
+	</td>
+	</tr>
+	<tr><td align=center height=10></td></tr>
+  <tr> 
+    <td height="24" valign="bottom" style="line-height:150%" align=center>
+      海口动网先锋网络科技有限公司版权所有<br>
+      <font face="Arial, Helvetica, sans-serif">Copyright &copy; 2000 - 2005 <b><font color="#000000">Cndw<font color="#FF6600">.Com</font></font></b></font> 
+      <br>
+      中华人民共和国电信与信息服务业务经营许可证编号 琼 ICP 020077 <br>
+      <br>
+    </td>
+  </tr>
+</table>

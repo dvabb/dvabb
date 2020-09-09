@@ -1,0 +1,88 @@
+<html>
+<head>
+<title>动网论坛--动网论坛Api接口使用说明</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<style>
+a:link     { COLOR: #000000; TEXT-DECORATION: none }
+a:visited   { COLOR: #000000 ; TEXT-DECORATION: none }
+a:active   { COLOR: #000000 ; TEXT-DECORATION: underline }
+a:hover    { COLOR: #000000 ; TEXT-DECORATION:underline }
+.home_top { border-top:2px solid #4798ED; }
+.home_path { background:#4798ED; padding-right:10px; color:#F0F0F0; font-size: 11px; }
+td, th, caption { font-family:  "宋体"; font-size: 12px; color:#000000;  LINE-HEIGHT: 165%; }
+.hrLine{MARGIN: 0px 0px; BORDER-BOTTOM: #807d76 1px dotted;}
+</style>
+</head>
+<body  leftmargin="0" topmargin="0" marginwidth="00">
+	<table width=768 cellspacing=0 cellpadding=3 class=home_top align=center>
+	<tr> 
+		<td width="100%" align=right style='padding-top:3px;'><a href="http://www.dvbbs.net" target=_blank>动网主站</a>&nbsp;&nbsp;&nbsp;<a href="http://www.aspsky.cn" target=_blank>动网论坛虚拟主机</a>&nbsp;&nbsp;&nbsp;<a href="http://asp.dvbbs.net" target=_blank>官方支持网站</a>&nbsp;&nbsp;&nbsp;<a href="http://bbs.dvbbs.net" target=_blank>官方支持论坛</a>&nbsp;&nbsp;&nbsp;<a href="http://tool.cndw.com" target=_blank>站长工具</a>&nbsp;&nbsp;&nbsp;<a href="论坛网络支付功能介绍.htm"><font color=green>论坛网络支付功能介绍</font></a></td>
+	</tr>
+	<tr> 
+		<td><hr class=hrline size=1></td>
+	</tr>
+	<tr> 
+		<td height=22 align=center><a href="论坛安装必读.htm">论坛安装</a> | <a href="http://www.dvbbs.net/services.asp"><font color=blue>商业注册</font></a> | <a href="论坛安全设置.htm">安全说明</a> | <a href="论坛首页调用说明.htm">首页调用</a> | <a href="论坛常见问题.htm">常见问题</a> | <a href="http://www.dvbbs.net" target=_blank>技术特性</a> | <a href="http://www.dvbbs.net" target=_blank><font color=green>典型案例</font></a> | <a href="http://www.dvbbs.net" target=_blank>关于动网</a> | <a href="http://www.dvbbs.net/services_contect.asp" target=_blank>联系我们</a> | <a href="http://www.aspsky.cn/"><font color=red>如何购买论坛虚拟主机</font></a></td>
+	</tr>
+	<tr> 			
+		<td class=home_path style='padding-left:10px;' height=2>
+	</td>
+	</tr>
+	<tr><td align=center height=10 bgcolor="F3F3F3"></td></tr>
+	<tr>
+		<td bgcolor="F3F3F3">
+		<li><B>动网论坛系统Api接口使用说明<br>
+　</B><ul type="circle">
+			<li><b>为您的系统开发支持动网论坛系统的整合接口<br>
+&nbsp;&nbsp;&nbsp; </b>
+			动网论坛的整合接口基于动易、动网、oblog三方联合制定的统一接口规范开发，<font color=blue>任意系统只要提供并开发符合该规范的接口，即可与动网论坛系统整合，实现不同Web系统之间的用户信息同步更新、登录等操作。</font><br>
+&nbsp;&nbsp;&nbsp; 有关统一接口规范的详细说明及动网论坛系统对接口的具体支持细节，请参考<a href="http://www.cndw.com/api/index.html"><font color=blue>《动网论坛系统Api接口开发人员指南》</font></a>。<br>
+　</li>
+			<li><b>运行环境要求</b><br>
+&nbsp;&nbsp; 在启用动网论坛系统整合接口之前，必须保证满足以下操作环境：<br>
+			1 动网论坛Dvbbs 7.1 sp1 正式版或更高版本（2006年4月10日以后的版本）；<br>
+			2 WEB服务器必须安装并启用MSXML3或更高版本的XML解析器以支持XML数据解析及服务器安全HTTP访问。<br>
+			3 
+			由于浏览器对跨域cookies的限制，所要整合的各个系统应该安装在同一域名下。如果不是安装在同一域名下，整合可能会导致用户不能登陆或注销！<br>
+　</li>
+			<li><b>配置Dvbbs 8.2.0系统整合其它程序</b><br>
+			1 配置文件路径： 论坛安装目录/dv_dpo/<font color="#FF0000">Api_Config.asp</font>；<br>
+			2 多系统整合设置参数共三个，包括以下：<br>
+&nbsp; <font color="#0000FF">DvApi_Enable</font> ：是否打开系统整合（默认闭关:
+			<font color="#FF0000">False</font> ,打开：<font color="#FF0000">True</font>）；<br>
+&nbsp; <font color="#0000FF">DvApi_SysKey</font> 
+			：网站密钥，用于整合的各个程序间通讯时进行安全验证，取值最好为6位以上无规律的复杂字符串，整合的各个系统密钥必须相同；<br>
+&nbsp; <font color="#0000FF">DvApi_Urls</font>&nbsp;&nbsp; 
+			：整合的其它程序的接口文件路径。多个程序接口之间用半角&quot;|&quot;分隔。<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 例如：<font color="#0000FF">DvApi_Urls</font> 
+			= &quot;http://你的网站地址/博客安装目录/oblogresponse.asp|http://你的网站地址/动易安装目录/API/API_Response.asp&quot;<br>
+			3 在进行整合前，应先对不同系统之间的用户数据进行同步。没有同步的用户将不能登陆。<br>
+　</li>
+			<li><b>配置其它程序整合动网论坛系统<br>
+			</b>1 Dvbbs 8.2.0 
+			提供完全符合动易、动网、oblog三方共同审定的整合规范的接口文件，供其它系统查询、操作动网论坛系统的用户资料；<br>
+			2 Dvbbs 8.2.0的接口文件路径为：动网安装目录/dv_dpo.asp<br>
+			在整合的其它程序的配置文件中，设置动网的接口文件为<br>
+			http://你的网站地址/动网安装目录/dv_dpo.asp<br>
+			即可。<br>
+　</li>
+			<li><b>有何问题可随时到官方支持论坛或者同我们的客户支持人员提出。</b> </li>
+		</ul>
+		</td>
+	</tr>
+	<tr><td align=center height=10 bgcolor="F3F3F3"></td></tr>
+	<tr> 			
+		<td class=home_path style='padding-left:10px;' height=2>
+	</td>
+	</tr>
+	<tr><td align=center height=10></td></tr>
+  <tr> 
+    <td height="24" valign="bottom" style="line-height:150%" align=center>
+      海口动网先锋网络科技有限公司版权所有<br>
+      <font face="Arial, Helvetica, sans-serif">Copyright &copy; 2000 - 2008 <b><font color="#000000">Dvbbs<font color="#FF6600">.Net</font></font></b></font> 
+      <br>
+      中华人民共和国电信与信息服务业务经营许可证编号 琼 ICP 020077 <br>
+      <br>
+    </td>
+  </tr>
+</table>
