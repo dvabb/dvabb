@@ -23,14 +23,14 @@ sub main()
 <table width="100%" border="0" cellspacing="1" cellpadding="3" align=center>
 <tr>
 <td valign=top>
-×¢Òâ£º±¾¹¦ÄÜĞèÒªÖ÷»ú¿ª·ÅFSOÈ¨ÏŞ£¬FSOÏà¹Ø°ïÖúÇë¿´Î¢Èí°ïÖúÎÄµµ<BR>
-ÔÚÕâÀïÄú¿ÉÒÔ¹ÜÀíÂÛÌ³ËùÓĞÓÃ»§×Ô¶¨ÒåÍ·ÏñÉÏ´«ÎÄ¼ş£¬ËÑË÷ÓÃ»§Í·ÏñÇëÓÃÓÃ»§ID½øĞĞËÑË÷<BR>
-ÓÃ»§IDµÄ»ñµÃ¿ÉÒÔÍ¨¹ıÓÃ»§ĞÅÏ¢¹ÜÀíÖĞËÑË÷Ïà¹ØÓÃ»§£¬È»ºó½«Êó±êÒÆµ½ÓÃ»§ÃûÁ¬½ÓÉÏ£¬²é¿´Á¬½ÓÊôĞÔ£¬²ÎÊıUserID = ºóÃæ¼ÈÊÇÓÃ»§µÄID
+æ³¨æ„ï¼šæœ¬åŠŸèƒ½éœ€è¦ä¸»æœºå¼€æ”¾FSOæƒé™ï¼ŒFSOç›¸å…³å¸®åŠ©è¯·çœ‹å¾®è½¯å¸®åŠ©æ–‡æ¡£<BR>
+åœ¨è¿™é‡Œæ‚¨å¯ä»¥ç®¡ç†è®ºå›æ‰€æœ‰ç”¨æˆ·è‡ªå®šä¹‰å¤´åƒä¸Šä¼ æ–‡ä»¶ï¼Œæœç´¢ç”¨æˆ·å¤´åƒè¯·ç”¨ç”¨æˆ·IDè¿›è¡Œæœç´¢<BR>
+ç”¨æˆ·IDçš„è·å¾—å¯ä»¥é€šè¿‡ç”¨æˆ·ä¿¡æ¯ç®¡ç†ä¸­æœç´¢ç›¸å…³ç”¨æˆ·ï¼Œç„¶åå°†é¼ æ ‡ç§»åˆ°ç”¨æˆ·åè¿æ¥ä¸Šï¼ŒæŸ¥çœ‹è¿æ¥å±æ€§ï¼Œå‚æ•°UserID = åé¢æ—¢æ˜¯ç”¨æˆ·çš„ID
 </td>
 </tr>
 </table>
 <table width="100%" border="0" cellspacing="1" cellpadding="3" align=center>
-<tr align=center><th width="*">ÎÄ¼şÃû</th><th width="100">ËùÊôÓÃ»§</th><th width="50">´óĞ¡</th><th width="120">×îºó·ÃÎÊ</th><th width="120">ÉÏ´«ÈÕÆÚ</th><th width="35">¹ÜÀí</th></tr>
+<tr align=center><th width="*">æ–‡ä»¶å</th><th width="100">æ‰€å±ç”¨æˆ·</th><th width="50">å¤§å°</th><th width="120">æœ€åè®¿é—®</th><th width="120">ä¸Šä¼ æ—¥æœŸ</th><th width="35">ç®¡ç†</th></tr>
 <form method="POST" action="?action=delall">
 <%
 pagesize = 20
@@ -59,7 +59,7 @@ filename = Replace(Replace(Request("filename"),"/",""),"..","")
 On Error Resume Next
 Set objFSO = Dvbbs.iCreateObject("Scripting.FileSystemObject")
 If Err Then
-	ErrMsg = "<li>ÄúµÄÏµÍ³²»Ö§³ÖFSOÎÄ¼ş¶ÁĞ´£¬²»ÄÜÊ¹ÓÃ´Ë¹¦ÄÜ¡£"
+	ErrMsg = "<li>æ‚¨çš„ç³»ç»Ÿä¸æ”¯æŒFSOæ–‡ä»¶è¯»å†™ï¼Œä¸èƒ½ä½¿ç”¨æ­¤åŠŸèƒ½ã€‚"
 	Exit Sub
 End If
 If filename<>"" Then
@@ -75,7 +75,7 @@ Else
 	Set uploadFolder = objFSO.GetFolder(Server.MapPath(".."&UpUserFaceFolder))
 End If
 If Err Then
-	ErrMsg = "<li>ÄúÊ¹ÓÃµÄÉÏ´«Í·ÏñÄ¿Â¼²»ÊÇÏµÍ³Ä¬ÈÏÄ¿Â¼£¬²»ÄÜ½øĞĞ¹ÜÀí¡£"
+	ErrMsg = "<li>æ‚¨ä½¿ç”¨çš„ä¸Šä¼ å¤´åƒç›®å½•ä¸æ˜¯ç³»ç»Ÿé»˜è®¤ç›®å½•ï¼Œä¸èƒ½è¿›è¡Œç®¡ç†ã€‚"
 	Exit Sub
 End If
 Set uploadFiles = uploadFolder.Files
@@ -92,7 +92,7 @@ For Each Upname In uploadFiles
 	i = i+1
 	If i>(page-1)*pagesize and i <= page*pagesize Then
 	upfilename = "../uploadFace/"&upname.name
-		If instr(upname.name,"_") Then    'È¡³öÍ·ÏñµÄÓÃ»§Ãû
+		If instr(upname.name,"_") Then    'å–å‡ºå¤´åƒçš„ç”¨æˆ·å
 			uid = split(upname.name,"_")
 			faceid = uid(0)
 			If  IsNumeric(faceid)	then
@@ -109,7 +109,7 @@ For Each Upname In uploadFiles
 		response.write "<td align=right class=td1>"& upname.size &"</td>"
 		response.write "<td align=center class=f>"& upname.datelastaccessed &"</td>"
 		response.write "<td align=center class=td1>"& upname.datecreated &"</td>"
-		response.write "<td align=center class=td2><a href='?filename="&upname.name&"'>É¾³ı</a></td></tr>"
+		response.write "<td align=center class=td2><a href='?filename="&upname.name&"'>åˆ é™¤</a></td></tr>"
 	ElseIf i>page*pagesize Then
 		Exit For
 	End If
@@ -118,7 +118,7 @@ Next
 
 End Sub 
 
-'ÇåÀíÍ·Ïñ
+'æ¸…ç†å¤´åƒ
 Sub Delface()
 	Server.ScriptTimeout = 999999
 	On Error Resume Next
@@ -132,7 +132,7 @@ Sub Delface()
 	Dnum = 0
 	DllUserFace = Request("filename")
 	Set objFSO = Dvbbs.iCreateObject("Scripting.FileSystemObject")
-	'É¾³ı·µ»¹Í·Ïñ²ÎÊıµÄÎÄ¼ş;
+	'åˆ é™¤è¿”è¿˜å¤´åƒå‚æ•°çš„æ–‡ä»¶;
 	If DllUserFace <> "" Then
 		DllUserFace = Replace(DllUserFace,"..","")
 		objFSO.DeleteFile(Server.MapPath(Upfacepath&DllUserFace))
@@ -149,7 +149,7 @@ Sub Delface()
 		i = i + 1
 		If i > 0 And i <= Filenum Then
 			Upfilename = Lcase(Upfacepath&upname.name)
-			'È¡³öÍ·ÏñµÄÓÃ»§Ãû
+			'å–å‡ºå¤´åƒçš„ç”¨æˆ·å
 			If Instr(upname.name,"_") Then
 				Uid = Split(upname.name,"_")
 				Faceid = Uid(0)
@@ -161,7 +161,7 @@ Sub Delface()
 						If Instr(Userface,"|") > 0 Then Userface = Split(Userface,"|")(1)
 						If Instr(Replace(Upfilename,"../",""),Userface) = 0 Then
 							objFSO.DeleteFile(Server.MapPath(upfilename))
-							Response.Write "Í·ÏñÒÑ¸ü¸Ä,ÓÃ»§" & Usernames & "¾ÉÍ·ÏñÎÄ¼ş£º"& upfilename &"ÒÑÉ¾³ı<br>"
+							Response.Write "å¤´åƒå·²æ›´æ”¹,ç”¨æˆ·" & Usernames & "æ—§å¤´åƒæ–‡ä»¶ï¼š"& upfilename &"å·²åˆ é™¤<br>"
 							Response.Flush
 							If Err Then
 								Response.Write Err.Description
@@ -171,7 +171,7 @@ Sub Delface()
 						End If
 					Else
 						objFSO.DeleteFile(Server.MapPath(upfilename))
-						Response.Write "ÓÃ»§ID£º" & Faceid & "ÒÑ×¢Ïú,ÎÄ¼ş£º" & Upfilename &"ÒÑÉ¾³ı<br>"
+						Response.Write "ç”¨æˆ·IDï¼š" & Faceid & "å·²æ³¨é”€,æ–‡ä»¶ï¼š" & Upfilename &"å·²åˆ é™¤<br>"
 						Response.Flush
 						If Err Then
 							Response.Write Err.Description
@@ -182,12 +182,12 @@ Sub Delface()
 					Set Rs = Nothing
 				End If
 			Else
-			'ÇåÀíÃ»ÓĞÓÃ»§IDµÄÍ·ÏñÎÄ¼ş
+			'æ¸…ç†æ²¡æœ‰ç”¨æˆ·IDçš„å¤´åƒæ–‡ä»¶
 				Sql = "SELECT Top 1 Userid From [Dv_User] WHERE Userface = '" & Upfilename & "'"
 				Set Rs = Dvbbs.Execute(Sql)
 				If Rs.Eof And Rs.Bof Then
 					objFSO.DeleteFile(Server.MapPath(upfilename))
-					Response.Write "ÒÑÇå²éÉ¾³ıÎÄ¼ş£º" & upfilename & "<br>"
+					Response.Write "å·²æ¸…æŸ¥åˆ é™¤æ–‡ä»¶ï¼š" & upfilename & "<br>"
 					Response.Flush
 					If Err Then
 						Response.Write Err.Description
@@ -195,13 +195,13 @@ Sub Delface()
 					End If
 					Dnum = Dnum + 1
 				Else
-				'¸ÄÎª´øIDµÄÍ·Ïñ 2005-1-15 Dv.Yz
+				'æ”¹ä¸ºå¸¦IDçš„å¤´åƒ 2005-1-15 Dv.Yz
 					Faceid = Rs(0)
 					Newfilename = Upfacepath & Faceid & "_" & Upname.Name
 					objFSO.Movefile ""&Server.MapPath(Upfilename)&"",""&Server.MapPath(Newfilename)&""
 					If Not Err Then
 						Dvbbs.Execute("UPDATE [Dv_User] Set UserFace = '"& Replace(Newfilename,"'","") & "' WHERE Userid = " & Faceid)
-						Response.Write "¾ÉÍ·Ïñ£º" & Upfilename & " ÒÑ¸ÄÎª£º" & Newfilename & "<br>"
+						Response.Write "æ—§å¤´åƒï¼š" & Upfilename & " å·²æ”¹ä¸ºï¼š" & Newfilename & "<br>"
 						Response.Flush
 						Dnum = Dnum + 1
 					Else
@@ -213,7 +213,7 @@ Sub Delface()
 			End If
 		End If
 	Next
-	Response.Write " ¹²ÇåÀí "& dnum &" ¸öÎÄ¼ş  "
+	Response.Write " å…±æ¸…ç† "& dnum &" ä¸ªæ–‡ä»¶  "
 End Sub
 
 Sub foot()
@@ -224,15 +224,15 @@ Set uploadFiles = Nothing
 <tr><td colspan=6 class=td1 height=30>
 <%
 If page>1 Then
-	response.write "<a href=?page=1>Ê×Ò³</a>&nbsp;&nbsp;<a href=""?page="& page-1 &""">ÉÏÒ»Ò³</a>&nbsp;&nbsp;"
+	response.write "<a href=?page=1>é¦–é¡µ</a>&nbsp;&nbsp;<a href=""?page="& page-1 &""">ä¸Šä¸€é¡µ</a>&nbsp;&nbsp;"
 Else
-	response.write "Ê×Ò³&nbsp;&nbsp;ÉÏÒ»Ò³&nbsp;&nbsp;"
+	response.write "é¦–é¡µ&nbsp;&nbsp;ä¸Šä¸€é¡µ&nbsp;&nbsp;"
 End If
 If page<i/pagesize Then
-	response.write "<a href=""?page="& page+1 &""">ÏÂÒ»Ò³</a>&nbsp;&nbsp;<a href=""?page="& pagenum &""">Î²Ò³</a>"
+	response.write "<a href=""?page="& page+1 &""">ä¸‹ä¸€é¡µ</a>&nbsp;&nbsp;<a href=""?page="& pagenum &""">å°¾é¡µ</a>"
 Else
-	response.write "ÏÂÒ»Ò³&nbsp;&nbsp;Î²Ò³"
+	response.write "ä¸‹ä¸€é¡µ&nbsp;&nbsp;å°¾é¡µ"
 End If
 %>
-<input type="submit" class="button" value="ÇåÀí"></td><tr></form></table><br>
+<input type="submit" class="button" value="æ¸…ç†"></td><tr></form></table><br>
 <% End Sub %>

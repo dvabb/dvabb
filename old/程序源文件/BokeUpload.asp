@@ -3,7 +3,7 @@
 <!--#include file="boke/config.asp"-->
 <!-- #include File="boke/Upload_Class.asp" -->
 <%
-DvBoke.Stats = "ÉÏ´«²Ù×÷"
+DvBoke.Stats = "ä¸Šä¼ æ“ä½œ"
 DvBoke.Head(0)
 Dim m
 m = Request.QueryString("mode")
@@ -23,27 +23,27 @@ End Sub
 
 Sub SaveUpload()
 	Dim MaxSize
-	Server.ScriptTimeOut=999999'ÒªÊÇÄãµÄÂÛÌ³Ö§³ÖÉÏ´«µÄÎÄ¼ş±È½Ï´ó£¬¾Í±ØĞëÉèÖÃ¡£
+	Server.ScriptTimeOut=999999'è¦æ˜¯ä½ çš„è®ºå›æ”¯æŒä¸Šä¼ çš„æ–‡ä»¶æ¯”è¾ƒå¤§ï¼Œå°±å¿…é¡»è®¾ç½®ã€‚
 	'-----------------------------------------------------------------------------
-	'Ìá½»ÑéÖ¤
+	'æäº¤éªŒè¯
 	'-----------------------------------------------------------------------------
 	If Not Dvbbs.ChkPost Then
 		Response.End
 	End If
 	If Dvboke.Userid=0 Then
-		Response.write "Äã»¹Î´µÇÂ½£¡"
+		Response.write "ä½ è¿˜æœªç™»é™†ï¼"
 		Response.End
 	End If
 	
 
 	If Dvboke.System_UpSetting(0)="1" Then
 		If Cint(Dvbbs.GroupSetting(7))=0 then
-			Response.write "ÄúÃ»ÓĞÔÚ±¾ÂÛÌ³ÉÏ´«ÎÄ¼şµÄÈ¨ÏŞ£¡"
+			Response.write "æ‚¨æ²¡æœ‰åœ¨æœ¬è®ºå›ä¸Šä¼ æ–‡ä»¶çš„æƒé™ï¼"
 			Response.End
 		End If
 	Else
 		If Dvboke.System_UpSetting(1)="0" Then
-			Response.write "ÄúÃ»ÓĞÔÚ±¾²©¿ÍÉÏ´«ÎÄ¼şµÄÈ¨ÏŞ£¡"
+			Response.write "æ‚¨æ²¡æœ‰åœ¨æœ¬åšå®¢ä¸Šä¼ æ–‡ä»¶çš„æƒé™ï¼"
 			Response.End
 		End If
 	End If
@@ -52,7 +52,7 @@ Sub SaveUpload()
 		MaxSize = Int(Dvbbs.GroupSetting(44))
 	End If
 	If Dvboke.BokeNode.getAttribute("spacesize")=0 Then
-		Response.write "µ±Ç°²©¿ÍÔÊĞíµÄÉÏ´«¿Õ¼äÒÑÂú£¬ÇëÓë¹ÜÀíÔ±ÁªÏµ¡£"
+		Response.write "å½“å‰åšå®¢å…è®¸çš„ä¸Šä¼ ç©ºé—´å·²æ»¡ï¼Œè¯·ä¸ç®¡ç†å‘˜è”ç³»ã€‚"
 		Response.End
 	ElseIf Dvboke.BokeNode.getAttribute("spacesize")>0 Then
 		If Dvboke.BokeNode.getAttribute("spacesize")<MaxSize Then
@@ -62,11 +62,11 @@ Sub SaveUpload()
 
 	'----------------------------------------------------------------------
 	Dim FilePath,ChildFilePath,Previewpath,DrawInfo,AllFileName
-	'ÉÏ´«Ä¿Â¼
+	'ä¸Šä¼ ç›®å½•
 	FilePath = CreatePath(CheckFolder)
-	'²»´øÏµÍ³ÉÏ´«Ä¿Â¼µÄÏÂ¼¶Ä¿Â¼Â·¾¶
+	'ä¸å¸¦ç³»ç»Ÿä¸Šä¼ ç›®å½•çš„ä¸‹çº§ç›®å½•è·¯å¾„
 	ChildFilePath = Replace(FilePath,CheckFolder,"")
-	'Ô¤ÀÀÍ¼Æ¬Ä¿Â¼Â·¾¶
+	'é¢„è§ˆå›¾ç‰‡ç›®å½•è·¯å¾„
 	Previewpath = "Boke/PreviewImage/"
 	Previewpath = CreatePath(Previewpath)
 
@@ -87,36 +87,36 @@ Sub SaveUpload()
 	Dim Upload,FormName,File,F_FileName,F_Viewname
 	'========================================================================
 	Set Upload = New UpFile_Cls
-	Upload.UploadType			= Cint(Dvboke.System_UpSetting(2))	'ÉèÖÃÉÏ´«×é¼şÀàĞÍ
-	Upload.UploadPath			= FilePath								'ÉèÖÃÉÏ´«Â·¾¶
-	Upload.InceptFileType		= Replace(DvBoke.System_Setting(16),"|",",")		'ÉèÖÃÉÏ´«ÎÄ¼şÏŞÖÆ
-	Upload.MaxSize				= MaxSize							'µ¥Î» KB
-	Upload.InceptMaxFile		= 5									'Ã¿´ÎÉÏ´«ÎÄ¼ş¸öÊıÉÏÏŞ
-	'Upload.ChkSessionName		= "UploadCode"							'·ÀÖ¹ÖØ¸´Ìá½»£¬SESSIONÃûÓëÌá½»µÄ±íµ¥ÒªÒ»ÖÂ¡£
-	'Ô¤ÀÀÍ¼Æ¬ÉèÖÃ
-	Upload.PreviewType			= Cint(Dvboke.System_UpSetting(3))	'ÉèÖÃÔ¤ÀÀÍ¼Æ¬×é¼şÀàĞÍ
-	Upload.PreviewImageWidth	= Dvboke.System_UpSetting(14)			'ÉèÖÃÔ¤ÀÀÍ¼Æ¬¿í¶È
-	Upload.PreviewImageHeight	= Dvboke.System_UpSetting(15)			'ÉèÖÃÔ¤ÀÀÍ¼Æ¬¸ß¶È
-	Upload.DrawImageWidth		= Dvboke.System_UpSetting(11)			'ÉèÖÃË®Ó¡Í¼Æ¬»òÎÄ×ÖÇøÓò¿í¶È
-	Upload.DrawImageHeight		= Dvboke.System_UpSetting(12)			'ÉèÖÃË®Ó¡Í¼Æ¬»òÎÄ×ÖÇøÓò¸ß¶È
-	Upload.DrawGraph			= Dvboke.System_UpSetting(10)			'ÉèÖÃË®Ó¡Í¸Ã÷¶È
-	Upload.DrawFontColor		= Dvboke.System_UpSetting(6)			'ÉèÖÃË®Ó¡ÎÄ×ÖÑÕÉ«
-	Upload.DrawFontFamily		= Dvboke.System_UpSetting(7)			'ÉèÖÃË®Ó¡ÎÄ×Ö×ÖÌå¸ñÊ½
-	Upload.DrawFontSize			= Dvboke.System_UpSetting(5)			'ÉèÖÃË®Ó¡ÎÄ×Ö×ÖÌå´óĞ¡
-	Upload.DrawFontBold			= Dvboke.System_UpSetting(8)			'ÉèÖÃË®Ó¡ÎÄ×ÖÊÇ·ñ´ÖÌå
-	Upload.DrawInfo				= DrawInfo								'ÉèÖÃË®Ó¡ÎÄ×ÖĞÅÏ¢»òÍ¼Æ¬ĞÅÏ¢
-	Upload.DrawType				= Dvboke.System_UpSetting(17)			'0=²»¼ÓÔØË®Ó¡ £¬1=¼ÓÔØË®Ó¡ÎÄ×Ö£¬2=¼ÓÔØË®Ó¡Í¼Æ¬
-	Upload.DrawXYType			= Dvboke.System_UpSetting(13)			'"0" =×óÉÏ£¬"1"=×óÏÂ,"2"=¾ÓÖĞ,"3"=ÓÒÉÏ,"4"=ÓÒÏÂ
-	Upload.DrawSizeType			= Dvboke.System_UpSetting(16)			'"0"=¹Ì¶¨ËõĞ¡£¬"1"=µÈ±ÈÀıËõĞ¡
+	Upload.UploadType			= Cint(Dvboke.System_UpSetting(2))	'è®¾ç½®ä¸Šä¼ ç»„ä»¶ç±»å‹
+	Upload.UploadPath			= FilePath								'è®¾ç½®ä¸Šä¼ è·¯å¾„
+	Upload.InceptFileType		= Replace(DvBoke.System_Setting(16),"|",",")		'è®¾ç½®ä¸Šä¼ æ–‡ä»¶é™åˆ¶
+	Upload.MaxSize				= MaxSize							'å•ä½ KB
+	Upload.InceptMaxFile		= 5									'æ¯æ¬¡ä¸Šä¼ æ–‡ä»¶ä¸ªæ•°ä¸Šé™
+	'Upload.ChkSessionName		= "UploadCode"							'é˜²æ­¢é‡å¤æäº¤ï¼ŒSESSIONåä¸æäº¤çš„è¡¨å•è¦ä¸€è‡´ã€‚
+	'é¢„è§ˆå›¾ç‰‡è®¾ç½®
+	Upload.PreviewType			= Cint(Dvboke.System_UpSetting(3))	'è®¾ç½®é¢„è§ˆå›¾ç‰‡ç»„ä»¶ç±»å‹
+	Upload.PreviewImageWidth	= Dvboke.System_UpSetting(14)			'è®¾ç½®é¢„è§ˆå›¾ç‰‡å®½åº¦
+	Upload.PreviewImageHeight	= Dvboke.System_UpSetting(15)			'è®¾ç½®é¢„è§ˆå›¾ç‰‡é«˜åº¦
+	Upload.DrawImageWidth		= Dvboke.System_UpSetting(11)			'è®¾ç½®æ°´å°å›¾ç‰‡æˆ–æ–‡å­—åŒºåŸŸå®½åº¦
+	Upload.DrawImageHeight		= Dvboke.System_UpSetting(12)			'è®¾ç½®æ°´å°å›¾ç‰‡æˆ–æ–‡å­—åŒºåŸŸé«˜åº¦
+	Upload.DrawGraph			= Dvboke.System_UpSetting(10)			'è®¾ç½®æ°´å°é€æ˜åº¦
+	Upload.DrawFontColor		= Dvboke.System_UpSetting(6)			'è®¾ç½®æ°´å°æ–‡å­—é¢œè‰²
+	Upload.DrawFontFamily		= Dvboke.System_UpSetting(7)			'è®¾ç½®æ°´å°æ–‡å­—å­—ä½“æ ¼å¼
+	Upload.DrawFontSize			= Dvboke.System_UpSetting(5)			'è®¾ç½®æ°´å°æ–‡å­—å­—ä½“å¤§å°
+	Upload.DrawFontBold			= Dvboke.System_UpSetting(8)			'è®¾ç½®æ°´å°æ–‡å­—æ˜¯å¦ç²—ä½“
+	Upload.DrawInfo				= DrawInfo								'è®¾ç½®æ°´å°æ–‡å­—ä¿¡æ¯æˆ–å›¾ç‰‡ä¿¡æ¯
+	Upload.DrawType				= Dvboke.System_UpSetting(17)			'0=ä¸åŠ è½½æ°´å° ï¼Œ1=åŠ è½½æ°´å°æ–‡å­—ï¼Œ2=åŠ è½½æ°´å°å›¾ç‰‡
+	Upload.DrawXYType			= Dvboke.System_UpSetting(13)			'"0" =å·¦ä¸Šï¼Œ"1"=å·¦ä¸‹,"2"=å±…ä¸­,"3"=å³ä¸Š,"4"=å³ä¸‹
+	Upload.DrawSizeType			= Dvboke.System_UpSetting(16)			'"0"=å›ºå®šç¼©å°ï¼Œ"1"=ç­‰æ¯”ä¾‹ç¼©å°
 	If Dvboke.System_UpSetting(18)<>"" or Dvboke.System_UpSetting(18)<>"0" Then
-		Upload.TransitionColor	= Dvboke.System_UpSetting(18)			'Í¸Ã÷¶ÈÑÕÉ«ÉèÖÃ
+		Upload.TransitionColor	= Dvboke.System_UpSetting(18)			'é€æ˜åº¦é¢œè‰²è®¾ç½®
 	End If
 	
-	'Ö´ĞĞÉÏ´«
+	'æ‰§è¡Œä¸Šä¼ 
 	Upload.SaveUpFile
 	
 	If Upload.ErrCodes<>0 Then
-		Response.write "´íÎó£º"& Upload.Description & "[ <a href=""?mode=UploadForm"">ÖØĞÂÉÏ´«</a> ]"
+		Response.write "é”™è¯¯ï¼š"& Upload.Description & "[ <a href=""?mode=UploadForm"">é‡æ–°ä¸Šä¼ </a> ]"
 		Exit Sub
 	End If
 	If Upload.Count > 0 Then
@@ -125,10 +125,10 @@ Sub SaveUpload()
 				F_FileName = FilePath & File.FileName
 				'Response.Write File.sFileName
 				'REsponse.End
-				'´´½¨Ô¤ÀÀ¼°Ë®Ó¡Í¼Æ¬
+				'åˆ›å»ºé¢„è§ˆåŠæ°´å°å›¾ç‰‡
 				If Upload.PreviewType<>999 and File.FileType=1 then
 						F_Viewname = Previewpath & "pre" & Replace(File.FileName,File.FileExt,"") & "jpg"
-						'´´½¨Ô¤ÀÀÍ¼Æ¬:Call CreateView(Ô­Ê¼ÎÄ¼şµÄÂ·¾¶,Ô¤ÀÀÎÄ¼şÃû¼°Â·¾¶,Ô­ÎÄ¼şºó×º)
+						'åˆ›å»ºé¢„è§ˆå›¾ç‰‡:Call CreateView(åŸå§‹æ–‡ä»¶çš„è·¯å¾„,é¢„è§ˆæ–‡ä»¶ååŠè·¯å¾„,åŸæ–‡ä»¶åç¼€)
 						Upload.CreateView F_FileName,F_Viewname,File.FileExt
 				End If
 				UploadSave F_FileName,ChildFilePath&File.FileName,File.sFileName,File.FileExt,F_Viewname,File.FileSize,File.FileType
@@ -136,7 +136,7 @@ Sub SaveUpload()
 			Set File = Nothing
 		Next
 	Else
-		Response.write "ÇëÕıÈ·Ñ¡ÔñÒªÉÏ´«µÄÎÄ¼ş¡£[ <a href=""?mode=UploadForm"">ÖØĞÂÉÏ´«</a> ]"
+		Response.write "è¯·æ­£ç¡®é€‰æ‹©è¦ä¸Šä¼ çš„æ–‡ä»¶ã€‚[ <a href=""?mode=UploadForm"">é‡æ–°ä¸Šä¼ </a> ]"
 		Exit Sub
 	End If
 
@@ -156,26 +156,26 @@ Sub Suc_upload(UpCount,upCountSize,AllFileName)
 	Else
 		RemainSize = -1
 	End If
-	SucMsg = UpCount & "¸ö¸½¼şÉÏ´«³É¹¦,¹²"&upCountSize&"MB ;"
+	SucMsg = UpCount & "ä¸ªé™„ä»¶ä¸Šä¼ æˆåŠŸ,å…±"&upCountSize&"MB ;"
 	If RemainSize = 0 Then
-		SucMsg = SucMsg & "[ µ±Ç°²©¿ÍµÄ¿Õ¼äÒÑÂú,ÇëÓë¹ÜÀíÔ±ÁªÏµ¡£]"
+		SucMsg = SucMsg & "[ å½“å‰åšå®¢çš„ç©ºé—´å·²æ»¡,è¯·ä¸ç®¡ç†å‘˜è”ç³»ã€‚]"
 	Else
-		SucMsg = SucMsg & "[ <a href=""?mode=UploadForm"">¼ÌĞøÉÏ´«</a> ]"
+		SucMsg = SucMsg & "[ <a href=""?mode=UploadForm"">ç»§ç»­ä¸Šä¼ </a> ]"
 	End If
 	Dvboke.Execute("UPDATE [Dv_Boke_User] SET SpaceSize = '" & RemainSize &"' WHERE UserID = " & DvBoke.BokeUserID)
 	Dim PageHtml
 	DvBoke.LoadPage("topic.xslt")
 	PageHtml = DvBoke.Page_Strings(27).text
-	If m="1" Then SucMsg = SucMsg & "<br>ÎÄ¼şµØÖ·£º" & AllFileName
+	If m="1" Then SucMsg = SucMsg & "<br>æ–‡ä»¶åœ°å€ï¼š" & AllFileName
 	PageHtml = Replace(PageHtml,"{$SucMsg}",SucMsg)
 	Response.Write PageHtml
 End Sub
 
 
-'±£´æÉÏ´«Êı¾İ²¢·µ»Ø¸½¼şID
+'ä¿å­˜ä¸Šä¼ æ•°æ®å¹¶è¿”å›é™„ä»¶ID
 Sub UploadSave(FileName,ChildFileName,sFileName,FileExt,ViewName,FileSize,F_Type)
-'ËùÓĞ×Ö¶Î ID,UserID,UserName,CatID,sType,TopicID,PostID,IsTopic,Title,FileName,FileType,FileSize,FileNote,DownNum,ViewNum,DateAndTime,PreviewImage 
-'×Ö¶ÎÅÅĞò ID=0 ,UserID=1 ,UserName=2 ,CatID=3 ,sType=4 ,TopicID=5 ,PostID=6 ,IsTopic=7 ,Title=8 ,FileName=9 ,FileType=10 ,FileSize=11 ,FileNote=12 ,DownNum=13 ,ViewNum=14 ,DateAndTime=15 ,PreviewImage=16 
+'æ‰€æœ‰å­—æ®µ ID,UserID,UserName,CatID,sType,TopicID,PostID,IsTopic,Title,FileName,FileType,FileSize,FileNote,DownNum,ViewNum,DateAndTime,PreviewImage 
+'å­—æ®µæ’åº ID=0 ,UserID=1 ,UserName=2 ,CatID=3 ,sType=4 ,TopicID=5 ,PostID=6 ,IsTopic=7 ,Title=8 ,FileName=9 ,FileType=10 ,FileSize=11 ,FileNote=12 ,DownNum=13 ,ViewNum=14 ,DateAndTime=15 ,PreviewImage=16 
 
 'CatID,sType,TopicID,PostID,IsTopic,Title,FileNote,IsLock
 	Dim ShwoFileName
@@ -190,7 +190,7 @@ Sub UploadSave(FileName,ChildFileName,sFileName,FileExt,ViewName,FileSize,F_Type
 		UpFileID = DownloadID & ","
 	Rs.Close
 	Set Rs=nothing
-	'0=ÆäËü,1=Í¼Æ¬,2=FLASH,3=ÒôÀÖ,4=µçÓ°
+	'0=å…¶å®ƒ,1=å›¾ç‰‡,2=FLASH,3=éŸ³ä¹,4=ç”µå½±
 	If F_Type=1 or F_Type=2 then
 		Response.write "<script>parent.put_html('PostContent','[upload="&FileExt&"]"&ChildFileName&"[/upload]<br/>');</script>"
 	Else
@@ -200,18 +200,18 @@ Sub UploadSave(FileName,ChildFileName,sFileName,FileExt,ViewName,FileSize,F_Type
 End Sub
 
 
-'¶ÁÈ¡ÉÏ´«Ä¿Â¼
+'è¯»å–ä¸Šä¼ ç›®å½•
 Function CheckFolder()
 	If DvBoke.System_UpSetting(19)="" Or DvBoke.System_UpSetting(19)="0" Then DvBoke.System_UpSetting(19)="Boke/UploadFile/"
 	CheckFolder = Replace(Replace(DvBoke.System_UpSetting(19),Chr(0),""),".","")
-	'ÔÚÄ¿Â¼ºó¼Ó(/)
+	'åœ¨ç›®å½•ååŠ (/)
 	If Right(CheckFolder,1)<>"/" Then CheckFolder=CheckFolder&"/"
 End Function
 
-'°´ÔÂ·İ×Ô¶¯Ã÷ÃûÉÏ´«ÎÄ¼ş¼Ğ,ĞèÒª£Æ£Ó£Ï×é¼şÖ§³Ö¡£
+'æŒ‰æœˆä»½è‡ªåŠ¨æ˜åä¸Šä¼ æ–‡ä»¶å¤¹,éœ€è¦ï¼¦ï¼³ï¼¯ç»„ä»¶æ”¯æŒã€‚
 Private Function CreatePath(PathValue)
 	Dim objFSO,Fsofolder,uploadpath
-	'ÒÔÄêÔÂ´´½¨ÉÏ´«ÎÄ¼ş¼Ğ£¬¸ñÊ½£º2003£­8
+	'ä»¥å¹´æœˆåˆ›å»ºä¸Šä¼ æ–‡ä»¶å¤¹ï¼Œæ ¼å¼ï¼š2003ï¼8
 	uploadpath = year(now) & "-" & month(now)
 	If Right(PathValue,1)<>"/" Then PathValue = PathValue&"/"
 	On Error Resume Next

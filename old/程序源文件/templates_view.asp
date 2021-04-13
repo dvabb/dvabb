@@ -2,12 +2,12 @@
 <!--#include file="inc/const.asp"-->
 <%
 Dvbbs.LoadTemplates("index")
-Dvbbs.Stats="´úÂëÑİÊ¾"
+Dvbbs.Stats="ä»£ç æ¼”ç¤º"
 Dvbbs.head()
 %>
 <CENTER>
 <FONT style="FONT-SIZE: 25px;line-height: 30px;" face=Verdana size=4>
-<b><%=Dvbbs.Stats%>²âÊÔÓë°ïÖú</b></font>
+<b><%=Dvbbs.Stats%>æµ‹è¯•ä¸å¸®åŠ©</b></font>
 </CENTER>
 <hr class=tableborder1>
 <p><p>
@@ -16,13 +16,13 @@ document.write(opener.txtRun.value)
 </script>
 <p><p><hr class=tableborder1>
 <table border="0" cellspacing="1" cellpadding="3" width="100%" class=tableborder2 align=center>
-<tr><th height="22">Ä£ °å ±à ¼­ ´° ¿Ú</th></tr>
+<tr><th height="22">æ¨¡ æ¿ ç¼– è¾‘ çª— å£</th></tr>
 <tr><td align=center width="98%" class=tablebody1>
 <form name="vieweditTXT" ><TEXTAREA id="edittxt" ROWS="20" COLS="120" style="width:98%;overflow-y:visible; border:0px; overflow:visible; border-width:1px;border-style: dotted;color: #000000;" ></TEXTAREA></td></tr>
 <tr>
 	<td height="22" align=center class=tablebody2>
-	<input type="button" name="editbutton" value="[±£´æĞŞ¸Ä]" onclick="selfedit()">
-	<input type="button" name="close" value="[¹Ø  ±Õ]" onclick="window.close()">
+	<input type="button" name="editbutton" value="[ä¿å­˜ä¿®æ”¹]" onclick="selfedit()">
+	<input type="button" name="close" value="[å…³  é—­]" onclick="window.close()">
 	<!-- <button onclick="edittxt.readOnly=true">ReadOnly</button> -->
 	</td>
 </tr>

@@ -10,54 +10,54 @@ Function checkXHTML(XMLstr)
 	If xml.loadxml("<div>" & replace(XMLstr,"&","&amp;") &"</div>") Then
 		checkXHTML=""
 		If xml.documentElement.getElementsByTagName("link").length >0 Then
-			checkXHTML="Êı¾İº¬Ç°Ì¨½ûÖ¹Ìá½»µÄ±êÇ©""link"""
+			checkXHTML="æ•°æ®å«å‰å°ç¦æ­¢æäº¤çš„æ ‡ç­¾""link"""
 			Exit Function
 		End If
 		If xml.documentElement.getElementsByTagName("iframe").length >0 Then
-			checkXHTML="Êı¾İº¬Ç°Ì¨½ûÖ¹Ìá½»µÄ±êÇ©""iframe"""
+			checkXHTML="æ•°æ®å«å‰å°ç¦æ­¢æäº¤çš„æ ‡ç­¾""iframe"""
 			Exit Function
 		End If
 		If xml.documentElement.getElementsByTagName("meta").length >0 Then
-			checkXHTML="Êı¾İº¬Ç°Ì¨½ûÖ¹Ìá½»µÄ±êÇ©""meta"""
+			checkXHTML="æ•°æ®å«å‰å°ç¦æ­¢æäº¤çš„æ ‡ç­¾""meta"""
 			Exit Function
 		End If
 		If xml.documentElement.getElementsByTagName("script").length >0 Then
-			checkXHTML="Êı¾İº¬Ç°Ì¨½ûÖ¹Ìá½»µÄ±êÇ©""script"""
+			checkXHTML="æ•°æ®å«å‰å°ç¦æ­¢æäº¤çš„æ ‡ç­¾""script"""
 			Exit Function
 		End If
 		If xml.documentElement.getElementsByTagName("object").length >0 Then
-			checkXHTML="Êı¾İº¬Ç°Ì¨½ûÖ¹Ìá½»µÄ±êÇ©""object"""
+			checkXHTML="æ•°æ®å«å‰å°ç¦æ­¢æäº¤çš„æ ‡ç­¾""object"""
 			Exit Function
 		End If
 		If xml.documentElement.getElementsByTagName("embed").length >0 Then
-			checkXHTML="Êı¾İº¬Ç°Ì¨½ûÖ¹Ìá½»µÄ±êÇ©""embed"""
+			checkXHTML="æ•°æ®å«å‰å°ç¦æ­¢æäº¤çš„æ ‡ç­¾""embed"""
 			Exit Function
 		End If
-		'hrefÀïµÄ½Å±¾
+		'hrefé‡Œçš„è„šæœ¬
 		For Each Node in xml.documentElement.selectNodes("//a[@href]")
 			If InStr(LCase(Node.selectSingleNode("@href").text),"script:")>0  Then
-				checkXHTML="³¬¼¶Á´½ÓÖĞº¬·Ç·¨µÄ½Å±¾´úÂë"
+				checkXHTML="è¶…çº§é“¾æ¥ä¸­å«éæ³•çš„è„šæœ¬ä»£ç "
 				Exit For
 			End If
 		Next
 		If checkXHTML<>"" Then Exit Function
-		'¹ıÂËsrcÀïµÄ½Å±¾
+		'è¿‡æ»¤srcé‡Œçš„è„šæœ¬
 		For Each Node in xml.documentElement.selectNodes("//*[@src]")
 			If InStr(LCase(Node.selectSingleNode("@src").text),"script:")>0  Then
-				checkXHTML="Í¼Æ¬µØÖ·ÖĞ°üº¬½Å±¾ÃüÁî"
+				checkXHTML="å›¾ç‰‡åœ°å€ä¸­åŒ…å«è„šæœ¬å‘½ä»¤"
 				Exit For
 			End If
 		Next
 		If checkXHTML<>"" Then Exit Function
-		'ËùÓĞµÄÊÂ¼şÊôĞÔ
+		'æ‰€æœ‰çš„äº‹ä»¶å±æ€§
 		For Each Node in xml.documentElement.selectNodes("//@*")
 			If Left(Node.nodeName,2)="on" Then
-				checkXHTML="Êı¾İº¬Ç°Ì¨½ûÖ¹Ìá½»µÄÊôĞÔ"
+				checkXHTML="æ•°æ®å«å‰å°ç¦æ­¢æäº¤çš„å±æ€§"
 				Exit For
 			End If
 		Next
 	Else
-		checkXHTML="Êı¾İÎŞ·¨Ğ£Ñé£¬Êı¾İ²»ºÏ·¨"
+		checkXHTML="æ•°æ®æ— æ³•æ ¡éªŒï¼Œæ•°æ®ä¸åˆæ³•"
 	End If
 	Set xml=nothing
 End Function
@@ -100,7 +100,7 @@ Function entity2Str(strText)
 				s=Replace(s,match.item(i),Chr(po))
 			End If
 		Next
-		Rem url±àÂë×ª»»
+		Rem urlç¼–ç è½¬æ¢
 		re.Pattern="(%)([0-9|a-z]{1,2})"
 		Set match = re.Execute(s)
 		For i= 0 to  match.count -1

@@ -3,10 +3,10 @@
 <%
 Dim iCacheName,iCache,mCacheName
 MyDbPath = "../"
-'»ñµÃÂÛÌ³»ù±¾ĞÅÏ¢ºÍ¼ì²âÓÃ»§µÇÂ½×´Ì¬
+'è·å¾—è®ºå›åŸºæœ¬ä¿¡æ¯å’Œæ£€æµ‹ç”¨æˆ·ç™»é™†çŠ¶æ€
 'Dvbbs.GetForum_Setting
 'Dvbbs.CheckUserLogin
-'ÖØĞÂ¸³ÓèÓÃ»§ÊÇ·ñ¿É½øÈëºóÌ¨È¨ÏŞ
+'é‡æ–°èµ‹äºˆç”¨æˆ·æ˜¯å¦å¯è¿›å…¥åå°æƒé™
 'If Dvbbs.GroupSetting(70)="1" Then Dvbbs.Master = True
 CheckAdmin(",")
 Head()
@@ -28,13 +28,13 @@ Sub delallcache()
 	If UBound(cachelist)>1 Then
 		For i=0 to UBound(cachelist)-1
 			DelCahe Cachelist(i)
-			Response.Write "¸üĞÂ <b>"&Replace(cachelist(i),CacheName&"_","")&"</b> Íê³É<br>"		
+			Response.Write "æ›´æ–° <b>"&Replace(cachelist(i),CacheName&"_","")&"</b> å®Œæˆ<br>"		
 		Next
-		Response.Write "¸üĞÂÁË"
+		Response.Write "æ›´æ–°äº†"
 		Response.Write UBound(cachelist)-1
-		Response.Write "¸ö»º´æ¶ÔÏó<br>"	
+		Response.Write "ä¸ªç¼“å­˜å¯¹è±¡<br>"	
 	Else
-		Response.Write "ËùÓĞ¶ÔÏóÒÑ¾­¸üĞÂ¡£"
+		Response.Write "æ‰€æœ‰å¯¹è±¡å·²ç»æ›´æ–°ã€‚"
 	End If
 End Sub 
 Sub DelCahe(MyCaheName)

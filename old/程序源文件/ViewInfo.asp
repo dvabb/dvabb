@@ -154,7 +154,7 @@ Sub ViewVoters_Main()
 	VoteEp = 0
 	If IsArray(Sql) Then
 		If votetype=2 and (Request.QueryString("showall")="1" or Not Viewvote) Then
-			'µ÷²éÉèÆ±ÏÔÊ¾
+			'è°ƒæŸ¥è®¾ç¥¨æ˜¾ç¤º
 			voteoption = Split(Sql(1,0),"|")
 			For k=0 to Ubound(votevalue)
 				Votechilds = Split(votevalue(k),"@@")
@@ -164,11 +164,11 @@ Sub ViewVoters_Main()
 				TempStr2 = TempArray(6)
 				TempStr2 = Replace(TempStr2,"{$votetopic}",Votechilds(0))
 					If Votechilds_Type = "2" Then
-					'ÎÊÌâĞÎÊ½
+					'é—®é¢˜å½¢å¼
 						TempStr4 = Replace(TempArray(10),"{$childtitle1}",DvUbb.Dv_UbbCode(voteoption(k),Dvbbs.UserGroupid,1,0))
 						
 						If Trim(Votechilds_Title(0)) = "null" or Not Viewvote Then
-							TempStr4 = Replace(TempStr4,"{$childtitle2}","ÎŞ")
+							TempStr4 = Replace(TempStr4,"{$childtitle2}","æ— ")
 						Else
 							TempStr4 = Replace(TempStr4,"{$childtitle2}",DvUbb.Dv_UbbCode(Votechilds_Title(0),Dvbbs.UserGroupid,1,0))
 						End If
@@ -227,7 +227,7 @@ Sub ViewVoters_Main()
 			TempStr1 = Replace(TempStr1,"{$votechildinfo}",TempStr3)
 			TempStr = Replace(TempStr,"{$voteinfo}",TempStr1)
 		Else
-			'¶àÑ¡Óëµ¥Ñ¡ÏÔÊ¾»ò²é¿´ÓÃ»§µ÷²éµÃ·Ö
+			'å¤šé€‰ä¸å•é€‰æ˜¾ç¤ºæˆ–æŸ¥çœ‹ç”¨æˆ·è°ƒæŸ¥å¾—åˆ†
 			'TempStr1 = TempArray(1)&TempArray(3)
 			For K=0 to ubound(Sql,2)
 				VoteEp = 0
@@ -264,7 +264,7 @@ Sub ViewVoters_Main()
 							VoteChild_Ep = 0
 						End If
 					Next
-					TempStr2 = Replace(TempStr2,"{$uservote}","×ÜµÃ·Ö£º<font class=""redfont"">"&VoteEp&"</font>,[<a href=""viewinfo.asp?showall=1&t=1&userid="&Sql(0,k)&"&boardid="&Dvbbs.boardid&"&id="&voteid&""">²é¿´¸ÃÓÃ»§Í¶Æ±ĞÅÏ¢</a>]")
+					TempStr2 = Replace(TempStr2,"{$uservote}","æ€»å¾—åˆ†ï¼š<font class=""redfont"">"&VoteEp&"</font>,[<a href=""viewinfo.asp?showall=1&t=1&userid="&Sql(0,k)&"&boardid="&Dvbbs.boardid&"&id="&voteid&""">æŸ¥çœ‹è¯¥ç”¨æˆ·æŠ•ç¥¨ä¿¡æ¯</a>]")
 				Else
 					TempStr2 = TempArray(3)
 					voteoption = Split(Sql(1,k),",")
@@ -296,7 +296,7 @@ End Sub
 
 Sub ViewTopicInfo_Main()
 	Dvbbs.LoadTemplates("dispbbs")
-	Dvbbs.ErrType = 1 'ÉèÖÃ´íÎóÌáÊ¾ĞÅÏ¢ÏÔÊ¾Ä£Ê½
+	Dvbbs.ErrType = 1 'è®¾ç½®é”™è¯¯æç¤ºä¿¡æ¯æ˜¾ç¤ºæ¨¡å¼
 	Dvbbs.mainsetting(0)="98%"
 	Action = Request("action")
 	Rootid = Request("ID")
@@ -309,9 +309,9 @@ Sub ViewTopicInfo_Main()
 	Dvbbs.ShowErr()
 	Rootid  = Clng(Rootid)
 	Select Case Action
-		Case "View" : Dvbbs.stats="²é¿´Ìù×ÓµÄĞÅÏ¢"
+		Case "View" : Dvbbs.stats="æŸ¥çœ‹è´´å­çš„ä¿¡æ¯"
 		Case Else
-		Dvbbs.stats="¹ºÂòÌû×Ó"
+		Dvbbs.stats="è´­ä¹°å¸–å­"
 	End Select
 	'Dvbbs.Nav
 	'Dvbbs.Head_var 1,Dvbbs.Board_Data(4,0),"",""
@@ -332,17 +332,17 @@ Sub view_Dispbbs()
 	Dvbbs.ShowErr()
 %>
 	<table border="0" cellpadding="4" cellspacing="1" align="center" class="tableborder1" style="width:99%">
-		<tr><th colspan=2 height=23>¸Ã»Ø¸´ÌûĞÅÏ¢</th></tr>
-		<tr><td class="tablebody2" width="20%" height=23 align="right"><b>»Ø¸´×÷Õß</b>£º</td><td class="tablebody1" width="80%" >
+		<tr><th colspan=2 height=23>è¯¥å›å¤å¸–ä¿¡æ¯</th></tr>
+		<tr><td class="tablebody2" width="20%" height=23 align="right"><b>å›å¤ä½œè€…</b>ï¼š</td><td class="tablebody1" width="80%" >
 		<% If BBsReplyInfo(8,0)=2 and Dvbbs.Board_Setting(68)="1" and Not Dvbbs.master Then%>
-		ÄäÃûÓÃ»§
+		åŒ¿åç”¨æˆ·
 		<% Else%>
 		<%=UserInfoUrl(BBsReplyInfo(0,0))%>
 		<% End If%>		
 		</td></tr>
-		<tr><td class="tablebody2" height="23" align="right"><b>»Ø¸´Ê±¼ä</b>£º</td><td class="tablebody1"><%=BBsReplyInfo(2,0)%></td></tr>
+		<tr><td class="tablebody2" height="23" align="right"><b>å›å¤æ—¶é—´</b>ï¼š</td><td class="tablebody1"><%=BBsReplyInfo(2,0)%></td></tr>
 		<%If DVbbs.Forum_Setting(90)="1" Then %>
-		<tr><td class="tablebody2" height="23" align="right"><b>Ê¹ÓÃµÀ¾ß</b>£º</td><td class="tablebody1"><%=GetTopicToolsInfo(BBsReplyInfo(6,0))%></td></tr>
+		<tr><td class="tablebody2" height="23" align="right"><b>ä½¿ç”¨é“å…·</b>ï¼š</td><td class="tablebody1"><%=GetTopicToolsInfo(BBsReplyInfo(6,0))%></td></tr>
 		<%End If%>
 	</table>
 <%
@@ -355,28 +355,28 @@ Sub view_Topic()
 	If TopicInfo(12,0)<>1 Then TopicInfo(0,0) = Dvbbs.iHtmlencode(TopicInfo(0,0))
 %>
 	<table border="0" cellpadding="4" cellspacing="1" align="center" class="tableborder1" Style="width:99%">
-	<tr><th colspan=4 height=23>¡¶<%=TopicInfo(0,0)%>¡· Ö÷ÌâĞÅÏ¢</th></tr>
-	<tr><td class="tablebody2" width="20%" height="23" align="right"><b>Ö÷Ìâ×÷Õß</b>£º</td><td class="tablebody1" width="80%" colspan="3">
+	<tr><th colspan=4 height=23>ã€Š<%=TopicInfo(0,0)%>ã€‹ ä¸»é¢˜ä¿¡æ¯</th></tr>
+	<tr><td class="tablebody2" width="20%" height="23" align="right"><b>ä¸»é¢˜ä½œè€…</b>ï¼š</td><td class="tablebody1" width="80%" colspan="3">
 	<% If TopicInfo(13,0)=1  and Dvbbs.Board_Setting(68)="1" and Not Dvbbs.master Then%>
-	ÄäÃûÓÃ»§
+	åŒ¿åç”¨æˆ·
 	<% Else%>
 	<%=UserInfoUrl(TopicInfo(1,0))%>
 	<% End If%>
 	</td></tr>
-	<tr><td class="tablebody2" height="23" align="right"><b>·¢±íÊ±¼ä</b>£º</td><td class="tablebody1" colspan="3"><%=TopicInfo(3,0)%></td></tr>
+	<tr><td class="tablebody2" height="23" align="right"><b>å‘è¡¨æ—¶é—´</b>ï¼š</td><td class="tablebody1" colspan="3"><%=TopicInfo(3,0)%></td></tr>
 	<tr>
-	<td class="tablebody2" width="20%" height="23" align="right"><b>»Ø¸´ÌûÊı</b>£º</td><td class="tablebody1" width="30%"><%=TopicInfo(4,0)%></td>
-	<td class="tablebody2" width="20%" align="right"><b>ä¯ÀÀ´ÎÊı</b>£º</td><td class="tablebody1" width="30%"><%=TopicInfo(5,0)%></td>
+	<td class="tablebody2" width="20%" height="23" align="right"><b>å›å¤å¸–æ•°</b>ï¼š</td><td class="tablebody1" width="30%"><%=TopicInfo(4,0)%></td>
+	<td class="tablebody2" width="20%" align="right"><b>æµè§ˆæ¬¡æ•°</b>ï¼š</td><td class="tablebody1" width="30%"><%=TopicInfo(5,0)%></td>
 	</tr>
 	<% If TopicInfo(11,0)>0 Then %>
-		<tr><td class="tablebody2" height=23 align=right><b>Ìû×ÓĞÅÏ¢</b>£º</td><td class="tablebody1" colspan=3><%=GetTopicMoneyInfo(TopicInfo(9,0),TopicInfo(11,0))%></td></tr>
-		<tr><td class="tablebody2" valign=top height=23 align=right><b>ÏêÏ¸ĞÅÏ¢</b>£º</td>
+		<tr><td class="tablebody2" height=23 align=right><b>å¸–å­ä¿¡æ¯</b>ï¼š</td><td class="tablebody1" colspan=3><%=GetTopicMoneyInfo(TopicInfo(9,0),TopicInfo(11,0))%></td></tr>
+		<tr><td class="tablebody2" valign=top height=23 align=right><b>è¯¦ç»†ä¿¡æ¯</b>ï¼š</td>
 		<td class=tablebody1 colspan=3>
 		<%ShowBuyUser%>
 		</td></tr>
 	<% End If %>
 	<%If TopicInfo(10,0)<>"" and DVbbs.Forum_Setting(90)="1" Then %>
-		<tr><td class="tablebody2" height="23" align="right"><b>µÀ¾ßĞÅÏ¢</b>£º</td><td class="tablebody1" colspan=3><u><%=GetTopicToolsInfo(TopicInfo(10,0))%></u></td></tr>
+		<tr><td class="tablebody2" height="23" align="right"><b>é“å…·ä¿¡æ¯</b>ï¼š</td><td class="tablebody1" colspan=3><u><%=GetTopicToolsInfo(TopicInfo(10,0))%></u></td></tr>
 	<% End If %>
 	</table>
 <%
@@ -384,7 +384,7 @@ End Sub
 	
 Sub FootInfo()
 	Response.Write "<table border=""0"" cellpadding=4 cellspacing=0 align=center Style=""Width:99%"">"
-	Response.Write "<tr><td align=center><input type=""button"" onclick=""window.close()"" value=""¹Ø±Õ""></td></tr>"
+	Response.Write "<tr><td align=center><input type=""button"" onclick=""window.close()"" value=""å…³é—­""></td></tr>"
 	Response.Write "</table>"
 End Sub
 
@@ -395,22 +395,22 @@ Sub ShowBuyUser()
 	n = Ubound(TempStr)
 	Select Case TopicInfo(11,0)
 		Case 1,5
-			Response.Write "Ä¿Ç°×Ü¹²ĞüÉÍµÄ½ğ±ÒÊıÎª£º<b>"&TempStr(0)
-			Response.Write "</b>£¬ĞüÉÍ´ÎÊıÎª£º<b>"&n-1&"</b>¡£<BR>"
+			Response.Write "ç›®å‰æ€»å…±æ‚¬èµçš„é‡‘å¸æ•°ä¸ºï¼š<b>"&TempStr(0)
+			Response.Write "</b>ï¼Œæ‚¬èµæ¬¡æ•°ä¸ºï¼š<b>"&n-1&"</b>ã€‚<BR>"
 			For i=2 to n
 				BuyUser = Split(TempStr(i),",")
 				Response.Write UserInfoUrl(BuyUser(0))
-				Response.Write " »ñµÃ½ğ±Ò£º<B>"&BuyUser(1)
+				Response.Write " è·å¾—é‡‘å¸ï¼š<B>"&BuyUser(1)
 				Response.Write "</B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
 				If i mod 2 = 1 then Response.Write "<br>"
 			Next
 		Case 2
-			Response.Write "Ä¿Ç°×÷Õß¹²»ñµÃ½ğ±ÒÊıÎª£º<b>"&TempStr(0)
-			Response.Write "</b>£¬ĞüÉÍÈËÊıÎª£º<b>"&n-1&"</b>¡£<BR>"
+			Response.Write "ç›®å‰ä½œè€…å…±è·å¾—é‡‘å¸æ•°ä¸ºï¼š<b>"&TempStr(0)
+			Response.Write "</b>ï¼Œæ‚¬èµäººæ•°ä¸ºï¼š<b>"&n-1&"</b>ã€‚<BR>"
 			For i=2 to n
 				BuyUser = Split(TempStr(i),",")
 				Response.Write UserInfoUrl(BuyUser(0))
-				Response.Write " ĞüÉÍ½ğ±Ò£º<B>"&BuyUser(1)
+				Response.Write " æ‚¬èµé‡‘å¸ï¼š<B>"&BuyUser(1)
 				Response.Write "</B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
 				If i mod 2 = 1 then Response.Write "<br>"
 			Next
@@ -419,19 +419,19 @@ Sub ShowBuyUser()
 			BuyMoneyInfo = Split(TempStr(0),"@@@")
 			If Ubound(BuyMoneyInfo)>0 Then
 				GetMoney = BuyMoneyInfo(0)
-				BuyInfo = "¸ÃÌû¹ºÂòÏŞÖÆÊıÎª£º"
+				BuyInfo = "è¯¥å¸–è´­ä¹°é™åˆ¶æ•°ä¸ºï¼š"
 				If BuyMoneyInfo(1)<>"-1" Then
-					BuyInfo = BuyInfo & BuyMoneyInfo(1)&"¡£"
+					BuyInfo = BuyInfo & BuyMoneyInfo(1)&"ã€‚"
 				Else
-					BuyInfo = BuyInfo & "ÎŞÏŞ¡£"
+					BuyInfo = BuyInfo & "æ— é™ã€‚"
 				End If
 				If BuyMoneyInfo(2)<>"0" Then
-					BuyInfo = BuyInfo & "VIPÓÃ»§ĞèÒªÖ§¸¶¹ºÂò¡£<br>"
+					BuyInfo = BuyInfo & "VIPç”¨æˆ·éœ€è¦æ”¯ä»˜è´­ä¹°ã€‚<br>"
 				Else
-					BuyInfo = BuyInfo & "VIPÓÃ»§²»ĞèÒªÖ§¸¶¹ºÂò¡£<br>"
+					BuyInfo = BuyInfo & "VIPç”¨æˆ·ä¸éœ€è¦æ”¯ä»˜è´­ä¹°ã€‚<br>"
 				End If
 				If BuyMoneyInfo(3)<>"" Then
-					BuyInfo = BuyInfo & ("Ö»ÔÊĞíÒÔÏÂÓÃ»§¹ºÂò£º<br>" & BuyMoneyInfo(3))
+					BuyInfo = BuyInfo & ("åªå…è®¸ä»¥ä¸‹ç”¨æˆ·è´­ä¹°ï¼š<br>" & BuyMoneyInfo(3))
 				End If
 				BuyInfo = BuyInfo&"<hr>"
 			Else
@@ -439,8 +439,8 @@ Sub ShowBuyUser()
 			End If
 			Response.Write BuyInfo
 			'Response.Write "<br>"
-			Response.Write "Ä¿Ç°×÷Õß¹²»ñµÃ½ğ±ÒÊıÎª£º<b>"&GetMoney
-			Response.Write "</b>£¬¹ºÂòÈËÊıÎª£º<b>"&n-2&"</b>¡£<BR>"
+			Response.Write "ç›®å‰ä½œè€…å…±è·å¾—é‡‘å¸æ•°ä¸ºï¼š<b>"&GetMoney
+			Response.Write "</b>ï¼Œè´­ä¹°äººæ•°ä¸ºï¼š<b>"&n-2&"</b>ã€‚<BR>"
 			For i=2 to n
 				Response.Write UserInfoUrl(TempStr(i))
 				Response.Write "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
@@ -453,10 +453,10 @@ Function UserInfoUrl(Name)
 	UserInfoUrl = "<a href=""dispuser.asp?name="&Name&""" target=_blank><u><b>"&Name&"</b></u></a>"
 End Function
 
-'¶ÁÈ¡µÀ¾ßÃûµ¥ÁĞ±í
+'è¯»å–é“å…·åå•åˆ—è¡¨
 Function GetTopicToolsInfo(ToolsID)
 	Dim Sql,Rs
-	GetTopicToolsInfo = "Ã»ÓĞÊ¹ÓÃµÀ¾ß£¡"
+	GetTopicToolsInfo = "æ²¡æœ‰ä½¿ç”¨é“å…·ï¼"
 	If IsNull(ToolsID) Then Exit Function
 	If Not IsNumeric(Replace(ToolsID,",","")) Then Exit Function
 	If ToolsID="-1111" Then Exit Function
@@ -465,14 +465,14 @@ Function GetTopicToolsInfo(ToolsID)
 	If Rs.Eof Then
 		Exit Function
 	Else
-		Sql = Rs.GetString(,-1, "¡ì¡ì¡ì", "&nbsp;&nbsp;&nbsp;&nbsp;", " </u>£¬<u> ")
-		'Sql = Split(Sql,"¡ì¡ì¡ì")
+		Sql = Rs.GetString(,-1, "Â§Â§Â§", "&nbsp;&nbsp;&nbsp;&nbsp;", " </u>ï¼Œ<u> ")
+		'Sql = Split(Sql,"Â§Â§Â§")
 	End If
 	GetTopicToolsInfo = Sql
 End Function
 
 Function GetTopicMoneyInfo(M,MoneyType)
-	'Ìû×ÓĞÅÏ¢ÀàĞÍ
+	'å¸–å­ä¿¡æ¯ç±»å‹
 	Dim TempStr
 	Select Case MoneyType
 		Case 1
@@ -493,7 +493,7 @@ Function GetTopicMoneyInfo(M,MoneyType)
 	GetTopicMoneyInfo = TempStr
 End Function
 
-'»ñÈ¡Ö÷ÌâĞÅÏ¢ TopicInfo:
+'è·å–ä¸»é¢˜ä¿¡æ¯ TopicInfo:
 'Title=0,PostUsername=1,PostUserid=2,DateAndTime=3,Child=4,Hits=5,LastPost=6,
 'LastPostTime=7,PostTable=8,GetMoney=9,UseTools=10,GetMoneyType=11,TopicMode=12
 Sub GetTopicInfo()
@@ -511,7 +511,7 @@ Sub GetTopicInfo()
 	TopicInfo = Sql
 End Sub
 
-'»ñÈ¡·Ö±íĞÅÏ¢ BBsInfo
+'è·å–åˆ†è¡¨ä¿¡æ¯ BBsInfo
 Sub GetBBsInfo()
 	Dim Sql,Rs
 	Sql = "Select isagree,PostBuyUser,GetMoney,UseTools,GetMoneyType,Announceid "
@@ -527,7 +527,7 @@ Sub GetBBsInfo()
 	BBsInfo = Sql
 End Sub
 
-'»ñÈ¡·Ö±íĞÅÏ¢ BBsInfo
+'è·å–åˆ†è¡¨ä¿¡æ¯ BBsInfo
 Sub GetBBsReplyInfo()
 	Dim Sql,Rs
 	Sql = "Select UserName,PostUserID,DateAndTime,isagree,PostBuyUser,GetMoney,UseTools,GetMoneyType,signflag "

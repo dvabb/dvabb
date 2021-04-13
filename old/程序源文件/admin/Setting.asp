@@ -21,34 +21,34 @@ Dim  sel
 <table border="0" cellspacing="1" cellpadding="3"  align="center" width="100%">
 <form method="POST" action="setting.asp?action=save" name="theform" onsubmit="return checkForm(this)">
 <tr> 
-<th width="100%" colspan="3" style="text-align:center;">ÂÛÌ³»ù±¾ÉèÖÃ£¨Ä¿Ç°Ö»Ìá¹©Ò»ÖÖÉèÖÃ)
+<th width="100%" colspan="3" style="text-align:center;">è®ºå›åŸºæœ¬è®¾ç½®ï¼ˆç›®å‰åªæä¾›ä¸€ç§è®¾ç½®)
 </th></tr>
 <tr> 
 <td width="100%" colspan=3>
-<a href="#setting3">[»ù±¾ÐÅÏ¢]</a>&nbsp;<a href="#setting21">[ÂÛÌ³ÏµÍ³Êý¾ÝÉèÖÃ]</a>&nbsp;<a href="#setting6">[ÇÄÇÄ»°Ñ¡Ïî]</a>&nbsp;<a href="#setting7">[ÂÛÌ³Ê×Ò³Ñ¡Ïî]</a>&nbsp;<a href="#setting8">[ÓÃ»§Óë×¢²áÑ¡Ïî]</a>&nbsp;<a href="#setting10">[ÏµÍ³ÉèÖÃ]</a>&nbsp;<a href="#setting12">[ÔÚÏßºÍÓÃ»§À´Ô´]</a>&nbsp;<a href="#setting_seo">[ËÑË÷ÒýÇæÓÅ»¯ÉèÖÃ(SEO)]</a>
+<a href="#setting3">[åŸºæœ¬ä¿¡æ¯]</a>&nbsp;<a href="#setting21">[è®ºå›ç³»ç»Ÿæ•°æ®è®¾ç½®]</a>&nbsp;<a href="#setting6">[æ‚„æ‚„è¯é€‰é¡¹]</a>&nbsp;<a href="#setting7">[è®ºå›é¦–é¡µé€‰é¡¹]</a>&nbsp;<a href="#setting8">[ç”¨æˆ·ä¸Žæ³¨å†Œé€‰é¡¹]</a>&nbsp;<a href="#setting10">[ç³»ç»Ÿè®¾ç½®]</a>&nbsp;<a href="#setting12">[åœ¨çº¿å’Œç”¨æˆ·æ¥æº]</a>&nbsp;<a href="#setting_seo">[æœç´¢å¼•æ“Žä¼˜åŒ–è®¾ç½®(SEO)]</a>
 </td>
 </tr>
 <tr> 
 <td width="100%" colspan="3">
-<a href="#setting13">[ÓÊ¼þÑ¡Ïî]</a>&nbsp;<a href="#setting14">[ÉÏ´«ÉèÖÃ]</a>&nbsp;<a href="#setting15">[ÓÃ»§Ñ¡Ïî(Ç©Ãû¡¢Í·ÏÎ¡¢ÅÅÐÐµÈ)]</a>&nbsp;<a href="#setting16">[Ìû×ÓÑ¡Ïî]</a>&nbsp;<a href="#setting17">[·ÀË¢ÐÂ»úÖÆ]</a>&nbsp;<a href="#setting18">[ÂÛÌ³·ÖÒ³ÉèÖÃ]</a>
+<a href="#setting13">[é‚®ä»¶é€‰é¡¹]</a>&nbsp;<a href="#setting14">[ä¸Šä¼ è®¾ç½®]</a>&nbsp;<a href="#setting15">[ç”¨æˆ·é€‰é¡¹(ç­¾åã€å¤´è¡”ã€æŽ’è¡Œç­‰)]</a>&nbsp;<a href="#setting16">[å¸–å­é€‰é¡¹]</a>&nbsp;<a href="#setting17">[é˜²åˆ·æ–°æœºåˆ¶]</a>&nbsp;<a href="#setting18">[è®ºå›åˆ†é¡µè®¾ç½®]</a>
 </td>
 </tr>
 <tr> 
 <td width="100%" colspan="3">
-<a href="#setting20">[ËÑË÷Ñ¡Ïî]</a>&nbsp;<a href="#settingxu">[<font color=blue>¹Ù·½²å¼þÉèÖÃ</font>]</a>&nbsp;<a href="#admin">[<font color=red>°²È«ÉèÖÃ</font>]</a>&nbsp;<a href="challenge.asp">[<font color=blue>RSS/ÊÖ»ú¶ÌÐÅ/ÔÚÏßÖ§¸¶</font>]</a>
-<a href="#SettingVIP">[VIPÓÃ»§×éÉèÖÃ]</a>
+<a href="#setting20">[æœç´¢é€‰é¡¹]</a>&nbsp;<a href="#settingxu">[<font color=blue>å®˜æ–¹æ’ä»¶è®¾ç½®</font>]</a>&nbsp;<a href="#admin">[<font color=red>å®‰å…¨è®¾ç½®</font>]</a>&nbsp;<a href="challenge.asp">[<font color=blue>RSS/æ‰‹æœºçŸ­ä¿¡/åœ¨çº¿æ”¯ä»˜</font>]</a>
+<a href="#SettingVIP">[VIPç”¨æˆ·ç»„è®¾ç½®]</a>
 </td>
 </tr>
 <tr> 
 <td width="93%" colspan="2">
-Èç¹ûÄúµÄÂÛÌ³µÄÉèÖÃ¸ãÂÒÁË£¬¿ÉÒÔÊ¹ÓÃ<a href="?action=restore"><B>»¹Ô­ÂÛÌ³Ä¬ÈÏÉèÖÃ</B></a>
+å¦‚æžœæ‚¨çš„è®ºå›çš„è®¾ç½®æžä¹±äº†ï¼Œå¯ä»¥ä½¿ç”¨<a href="?action=restore"><B>è¿˜åŽŸè®ºå›é»˜è®¤è®¾ç½®</B></a>
 </td>
-<input type="hidden" id="forum_return" value="<b>»¹Ô­ÂÛÌ³Ä¬ÈÏÉèÖÃ:</b><br><li>Èç¹ûÄú°ÑÂÛÌ³ÉèÖÃ¸ãÂÒÁË£¬¿ÉÒÔµã»÷»¹Ô­ÂÛÌ³Ä¬ÈÏÉèÖÃ½øÐÐ»¹Ô­²Ù×÷¡£<br><li>Ê¹ÓÃ´Ë²Ù×÷½«Ê¹ÄúÔ­À´µÄÉèÖÃÎÞÐ§¶ø»¹Ô­µ½ÂÛÌ³µÄÄ¬ÈÏÉèÖÃ£¬ÇëÈ·ÈÏÄú×öÁËÂÛÌ³±¸·Ý»òÕß¼ÇµÃ»¹Ô­ºó¸Ã×öÄÄÐ©Õë¶ÔÄúÂÛÌ³ËùÐèÒªµÄÉèÖÃ">
-<td><a href=# onclick="helpscript(forum_return);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
+<input type="hidden" id="forum_return" value="<b>è¿˜åŽŸè®ºå›é»˜è®¤è®¾ç½®:</b><br><li>å¦‚æžœæ‚¨æŠŠè®ºå›è®¾ç½®æžä¹±äº†ï¼Œå¯ä»¥ç‚¹å‡»è¿˜åŽŸè®ºå›é»˜è®¤è®¾ç½®è¿›è¡Œè¿˜åŽŸæ“ä½œã€‚<br><li>ä½¿ç”¨æ­¤æ“ä½œå°†ä½¿æ‚¨åŽŸæ¥çš„è®¾ç½®æ— æ•ˆè€Œè¿˜åŽŸåˆ°è®ºå›çš„é»˜è®¤è®¾ç½®ï¼Œè¯·ç¡®è®¤æ‚¨åšäº†è®ºå›å¤‡ä»½æˆ–è€…è®°å¾—è¿˜åŽŸåŽè¯¥åšå“ªäº›é’ˆå¯¹æ‚¨è®ºå›æ‰€éœ€è¦çš„è®¾ç½®">
+<td><a href=# onclick="helpscript(forum_return);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="ç‚¹å‡»æŸ¥é˜…ç®¡ç†å¸®åŠ©ï¼"></a></td>
 </tr>
 <tr> 
 <td width="50%">
-<U>ÂÛÌ³Ä¬ÈÏÊ¹ÓÃ·ç¸ñ</U></td>
+<U>è®ºå›é»˜è®¤ä½¿ç”¨é£Žæ ¼</U></td>
 <td width="43%">
 <%
 	Dim forum_sid,iforum_setting,stopreadme,forum_pack,iCssName,iCssID,iStyleName
@@ -72,40 +72,40 @@ Next
 %>
 </select> 
 </td>
-<input type="hidden" id="forum_skin" value="<b>ÂÛÌ³Ä¬ÈÏÊ¹ÓÃ·ç¸ñ:</b><br><li>ÔÚÕâÀïÄú¿ÉÒÔÑ¡ÔñÄúÂÛÌ³µÄÄ¬ÈÏÊ¹ÓÃ·ç¸ñ¡£<br><li>Èç¹ûÏë¸Ä±äÂÛÌ³·ç¸ñÇëµ½ÂÛÌ³·ç¸ñÄ£°å¹ÜÀíÖÐ½øÐÐÏà¹ØÉèÖÃ">
-<td><a href=# onclick="helpscript(forum_skin);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
+<input type="hidden" id="forum_skin" value="<b>è®ºå›é»˜è®¤ä½¿ç”¨é£Žæ ¼:</b><br><li>åœ¨è¿™é‡Œæ‚¨å¯ä»¥é€‰æ‹©æ‚¨è®ºå›çš„é»˜è®¤ä½¿ç”¨é£Žæ ¼ã€‚<br><li>å¦‚æžœæƒ³æ”¹å˜è®ºå›é£Žæ ¼è¯·åˆ°è®ºå›é£Žæ ¼æ¨¡æ¿ç®¡ç†ä¸­è¿›è¡Œç›¸å…³è®¾ç½®">
+<td><a href=# onclick="helpscript(forum_skin);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="ç‚¹å‡»æŸ¥é˜…ç®¡ç†å¸®åŠ©ï¼"></a></td>
 </tr>
 <tr> 
-<td class="td2"><U>ÂÛÌ³µ±Ç°×´Ì¬</U><BR>Î¬»¤ÆÚ¼ä¿ÉÉèÖÃ¹Ø±ÕÂÛÌ³</td>
+<td class="td2"><U>è®ºå›å½“å‰çŠ¶æ€</U><BR>ç»´æŠ¤æœŸé—´å¯è®¾ç½®å…³é—­è®ºå›</td>
 <td class="td2"> 
-<input type=radio name="forum_setting(21)" value=0 <%if Dvbbs.forum_setting(21)="0" then%>checked<%end if%> class="radio">´ò¿ª&nbsp;
-<input type=radio name="forum_setting(21)" value=1 <%if Dvbbs.forum_setting(21)="1" then%>checked<%end if%> class="radio">¹Ø±Õ&nbsp;
+<input type=radio name="forum_setting(21)" value=0 <%if Dvbbs.forum_setting(21)="0" then%>checked<%end if%> class="radio">æ‰“å¼€&nbsp;
+<input type=radio name="forum_setting(21)" value=1 <%if Dvbbs.forum_setting(21)="1" then%>checked<%end if%> class="radio">å…³é—­&nbsp;
 </td>
-<input type="hidden" id="forum_open" value="<b>ÂÛÌ³µ±Ç°×´Ì¬:</b><br><li>Èç¹ûÄúÐèÒª×ö¸ü¸Ä³ÌÐò¡¢¸üÐÂÊý¾Ý»òÕß×ªÒÆÕ¾µãµÈÐèÒªÔÝÊ±¹Ø±ÕÂÛÌ³µÄ²Ù×÷£¬¿ÉÔÚ´Ë´¦Ñ¡Ôñ¹Ø±ÕÂÛÌ³¡£<br><li>¹Ø±ÕÂÛÌ³ºó£¬¿ÉÖ±½ÓÊ¹ÓÃÂÛÌ³µØÖ·£«login.aspµÇÂ¼ÂÛÌ³£¬È»ºóÊ¹ÓÃÂÛÌ³µØÖ·£«admin_login.aspµÇÂ¼ºóÌ¨¹ÜÀí½øÐÐ´ò¿ªÂÛÌ³µÄ²Ù×÷">
-<td class="td2"><a href=# onclick="helpscript(forum_open);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
+<input type="hidden" id="forum_open" value="<b>è®ºå›å½“å‰çŠ¶æ€:</b><br><li>å¦‚æžœæ‚¨éœ€è¦åšæ›´æ”¹ç¨‹åºã€æ›´æ–°æ•°æ®æˆ–è€…è½¬ç§»ç«™ç‚¹ç­‰éœ€è¦æš‚æ—¶å…³é—­è®ºå›çš„æ“ä½œï¼Œå¯åœ¨æ­¤å¤„é€‰æ‹©å…³é—­è®ºå›ã€‚<br><li>å…³é—­è®ºå›åŽï¼Œå¯ç›´æŽ¥ä½¿ç”¨è®ºå›åœ°å€ï¼‹login.aspç™»å½•è®ºå›ï¼Œç„¶åŽä½¿ç”¨è®ºå›åœ°å€ï¼‹admin_login.aspç™»å½•åŽå°ç®¡ç†è¿›è¡Œæ‰“å¼€è®ºå›çš„æ“ä½œ">
+<td class="td2"><a href=# onclick="helpscript(forum_open);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="ç‚¹å‡»æŸ¥é˜…ç®¡ç†å¸®åŠ©ï¼"></a></td>
 </tr>
 <tr> 
-<td><U>Î¬»¤ËµÃ÷</U><BR>ÔÚÂÛÌ³¹Ø±ÕÇé¿öÏÂÏÔÊ¾£¬Ö§³ÖhtmlÓï·¨</td>
+<td><U>ç»´æŠ¤è¯´æ˜Ž</U><BR>åœ¨è®ºå›å…³é—­æƒ…å†µä¸‹æ˜¾ç¤ºï¼Œæ”¯æŒhtmlè¯­æ³•</td>
 <td> 
 <textarea name="StopReadme" cols="50" rows="3" ID="TDStopReadme"><%=Stopreadme%></textarea><br><a href="javascript:admin_Size(-3,'TDStopReadme')"><img src="skins/images/minus.gif" unselectable="on" border='0'></a> <a href="javascript:admin_Size(3,'TDStopReadme')"><img src="skins/images/plus.gif" unselectable="on" border='0'></a>
 </td>
-<input type="hidden" id="forum_opens" value="<b>ÂÛÌ³Î¬»¤ËµÃ÷:</b><br><li>Èç¹ûÄúÔÚÂÛÌ³µ±Ç°×´Ì¬ÖÐ¹Ø±ÕÁËÂÛÌ³£¬ÇëÔÚ´ËÊäÈëÎ¬»¤ËµÃ÷£¬Ëû½«ÏÔÊ¾ÔÚÂÛÌ³µÄÇ°Ì¨¸ø»áÔ±ä¯ÀÀ£¬¸æÖªÂÛÌ³¹Ø±ÕµÄÔ­Òò£¬ÔÚÕâÀï¿ÉÒÔÊ¹ÓÃHTMLÓï·¨¡£">
-<td><a href=# onclick="helpscript(forum_opens);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
+<input type="hidden" id="forum_opens" value="<b>è®ºå›ç»´æŠ¤è¯´æ˜Ž:</b><br><li>å¦‚æžœæ‚¨åœ¨è®ºå›å½“å‰çŠ¶æ€ä¸­å…³é—­äº†è®ºå›ï¼Œè¯·åœ¨æ­¤è¾“å…¥ç»´æŠ¤è¯´æ˜Žï¼Œä»–å°†æ˜¾ç¤ºåœ¨è®ºå›çš„å‰å°ç»™ä¼šå‘˜æµè§ˆï¼Œå‘ŠçŸ¥è®ºå›å…³é—­çš„åŽŸå› ï¼Œåœ¨è¿™é‡Œå¯ä»¥ä½¿ç”¨HTMLè¯­æ³•ã€‚">
+<td><a href=# onclick="helpscript(forum_opens);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="ç‚¹å‡»æŸ¥é˜…ç®¡ç†å¸®åŠ©ï¼"></a></td>
 </tr>
 <tr> 
 <td class="td2">
-<U>ÂÛÌ³¶¨Ê±ÉèÖÃ</U></td>
+<U>è®ºå›å®šæ—¶è®¾ç½®</U></td>
 <td class="td2"> 
-<input type=radio name="forum_setting(69)" value="0" <%If Dvbbs.forum_setting(69)="0" Then %>checked <%End If%> class="radio">¹Ø ±Õ</option>
-<input type=radio name="forum_setting(69)" value="1" <%If Dvbbs.forum_setting(69)="1" Then %>checked <%End If%> class="radio">¶¨Ê±¹Ø±Õ
-<input type=radio name="forum_setting(69)" value="2" <%If Dvbbs.forum_setting(69)="2" Then %>checked <%End If%> class="radio">¶¨Ê±Ö»¶Á
+<input type=radio name="forum_setting(69)" value="0" <%If Dvbbs.forum_setting(69)="0" Then %>checked <%End If%> class="radio">å…³ é—­</option>
+<input type=radio name="forum_setting(69)" value="1" <%If Dvbbs.forum_setting(69)="1" Then %>checked <%End If%> class="radio">å®šæ—¶å…³é—­
+<input type=radio name="forum_setting(69)" value="2" <%If Dvbbs.forum_setting(69)="2" Then %>checked <%End If%> class="radio">å®šæ—¶åªè¯»
 </td>
-<input type="hidden" id="forum_isopentime" value="<b>¶¨Ê±ÉèÖÃÑ¡Ôñ:</b><br><li>ÔÚÕâÀïÄú¿ÉÒÔÉèÖÃÊÇ·ñÆðÓÃ¶¨Ê±µÄ¸÷ÖÖ¹¦ÄÜ£¬Èç¹û¿ªÆôÁË±¾¹¦ÄÜ£¬ÇëÉèÖÃºÃÏÂÃæÑ¡ÏîÖÐµÄÂÛÌ³ÉèÖÃÊ±¼ä¡£<br><li>Èç¹ûÔÚ·Ç¿ª·ÅÊ±¼äÄÚÐèÒª¸ü¸Ä±¾ÉèÖÃ£¬¿ÉÖ±½ÓÊ¹ÓÃÂÛÌ³µØÖ·£«login.aspµÇÂ¼ÂÛÌ³£¬È»ºóÊ¹ÓÃÂÛÌ³µØÖ·£«admin_login.aspµÇÂ¼ºóÌ¨¹ÜÀí½øÐÐ´ò¿ªÂÛÌ³µÄ²Ù×÷">
-<td class="td2"><a href=# onclick="helpscript(forum_isopentime);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
+<input type="hidden" id="forum_isopentime" value="<b>å®šæ—¶è®¾ç½®é€‰æ‹©:</b><br><li>åœ¨è¿™é‡Œæ‚¨å¯ä»¥è®¾ç½®æ˜¯å¦èµ·ç”¨å®šæ—¶çš„å„ç§åŠŸèƒ½ï¼Œå¦‚æžœå¼€å¯äº†æœ¬åŠŸèƒ½ï¼Œè¯·è®¾ç½®å¥½ä¸‹é¢é€‰é¡¹ä¸­çš„è®ºå›è®¾ç½®æ—¶é—´ã€‚<br><li>å¦‚æžœåœ¨éžå¼€æ”¾æ—¶é—´å†…éœ€è¦æ›´æ”¹æœ¬è®¾ç½®ï¼Œå¯ç›´æŽ¥ä½¿ç”¨è®ºå›åœ°å€ï¼‹login.aspç™»å½•è®ºå›ï¼Œç„¶åŽä½¿ç”¨è®ºå›åœ°å€ï¼‹admin_login.aspç™»å½•åŽå°ç®¡ç†è¿›è¡Œæ‰“å¼€è®ºå›çš„æ“ä½œ">
+<td class="td2"><a href=# onclick="helpscript(forum_isopentime);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="ç‚¹å‡»æŸ¥é˜…ç®¡ç†å¸®åŠ©ï¼"></a></td>
 </tr>
 <tr> 
 <td>
-<U>¶¨Ê±ÉèÖÃ</U><BR>Çë¸ù¾ÝÐèÒªÑ¡Ôñ¿ª»ò¹Ø</td>
+<U>å®šæ—¶è®¾ç½®</U><BR>è¯·æ ¹æ®éœ€è¦é€‰æ‹©å¼€æˆ–å…³</td>
 <td> 
 <%
 Dvbbs.forum_setting(70)=split(Dvbbs.forum_setting(70),"|")
@@ -116,42 +116,42 @@ End If
 For i= 0 to UBound(Dvbbs.forum_setting(70))
 If i<10 Then Response.Write "&nbsp;"
 %>
-  <%=i%>µã£º<input type="checkbox" name="forum_setting(70)<%=i%>" value="1" <%If Dvbbs.forum_setting(70)(i)="1" Then %>checked<%End If%> class="checkbox">¿ª
+  <%=i%>ç‚¹ï¼š<input type="checkbox" name="forum_setting(70)<%=i%>" value="1" <%If Dvbbs.forum_setting(70)(i)="1" Then %>checked<%End If%> class="checkbox">å¼€
  <%
  If (i+1) mod 4 = 0 Then Response.Write "<br>"
  Next
  %>
 </td>
-<input type="hidden" id="forum_opentime" value="<b>ÂÛÌ³¿ª·ÅÊ±¼ä:</b><br><li>ÉèÖÃ±¾Ñ¡ÏîÇëÈ·ÈÏÄú´ò¿ªÁË¶¨Ê±¿ª·ÅÂÛÌ³¹¦ÄÜ¡£<br><li>±¾ÉèÖÃÒÔÐ¡Ê±Îªµ¥Î»£¬ÇëÎñ±Ø°´¹æ¶¨ÕýÈ·ÌîÐ´<br><li>Èç¹ûÔÚ·Ç¿ª·ÅÊ±¼äÄÚÐèÒª¸ü¸Ä±¾ÉèÖÃ£¬¿ÉÖ±½ÓÊ¹ÓÃÂÛÌ³µØÖ·£«login.aspµÇÂ¼ÂÛÌ³£¬È»ºóÊ¹ÓÃÂÛÌ³µØÖ·£«admin_login.aspµÇÂ¼ºóÌ¨¹ÜÀí½øÐÐ´ò¿ªÂÛÌ³µÄ²Ù×÷">
-<td><a href=# onclick="helpscript(forum_opentime);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
+<input type="hidden" id="forum_opentime" value="<b>è®ºå›å¼€æ”¾æ—¶é—´:</b><br><li>è®¾ç½®æœ¬é€‰é¡¹è¯·ç¡®è®¤æ‚¨æ‰“å¼€äº†å®šæ—¶å¼€æ”¾è®ºå›åŠŸèƒ½ã€‚<br><li>æœ¬è®¾ç½®ä»¥å°æ—¶ä¸ºå•ä½ï¼Œè¯·åŠ¡å¿…æŒ‰è§„å®šæ­£ç¡®å¡«å†™<br><li>å¦‚æžœåœ¨éžå¼€æ”¾æ—¶é—´å†…éœ€è¦æ›´æ”¹æœ¬è®¾ç½®ï¼Œå¯ç›´æŽ¥ä½¿ç”¨è®ºå›åœ°å€ï¼‹login.aspç™»å½•è®ºå›ï¼Œç„¶åŽä½¿ç”¨è®ºå›åœ°å€ï¼‹admin_login.aspç™»å½•åŽå°ç®¡ç†è¿›è¡Œæ‰“å¼€è®ºå›çš„æ“ä½œ">
+<td><a href=# onclick="helpscript(forum_opentime);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="ç‚¹å‡»æŸ¥é˜…ç®¡ç†å¸®åŠ©ï¼"></a></td>
 </tr>
 </table><a name="admin"></a><BR>
 <table border="0" cellspacing="1" cellpadding="3" align="center" width="100%">
 <tr> 
-<th width="100%" colspan="3" align="Left" id="tabletitlelink"><b>°²È«ÉèÖÃ</b>[<a href="#top">¶¥²¿</a>]
+<th width="100%" colspan="3" align="Left" id="tabletitlelink"><b>å®‰å…¨è®¾ç½®</b>[<a href="#top">é¡¶éƒ¨</a>]
 </th></tr>
 <tr> 
 <td class="td1" width="50%">
-<U>ºóÌ¨¹ÜÀíÄ¿Â¼µÄÉè¶¨</U><br>È±Ê¡Ä¿Â¼ÎªadminÎª°²È«Æð¼û£¬²»ÈÃÆäËûÈËÖªµÀÄ¿Â¼£¬ÇëÐÞ¸Ä</td>
+<U>åŽå°ç®¡ç†ç›®å½•çš„è®¾å®š</U><br>ç¼ºçœç›®å½•ä¸ºadminä¸ºå®‰å…¨èµ·è§ï¼Œä¸è®©å…¶ä»–äººçŸ¥é“ç›®å½•ï¼Œè¯·ä¿®æ”¹</td>
 <td class="td1" width="43%"> 
-<input title="Öµ²»ÄÜÎª¿Õ $!" type="text" name="Forum_AdminFolder" size="35" value="<%=Dvbbs.CacheData(33,0)%>"><br><BR><b>×¢Òâ£º</b>Ä¿Â¼Ãû³ÆºóÃæÒªÓÐ"/"£¬Èç"admin/"
-<input type="hidden" id="AdminFolder" value="<b>ºóÌ¨¹ÜÀíÄ¿Â¼µÄÉè¶¨:</b><br><li>ÔÚFTPÉÏÐÞ¸ÄÄúµÄÂÛÌ³µÄ¹ÜÀí,Ä¿Â¼Ãû³Æ¡£(È±Ê¡Ä¿Â¼Îªadmin)<br><li>È»ºóÖØÐÂÐÞ¸Ä¹ÜÀíÄ¿Â¼,¹ÜÀíÔ±µÇÂ¼ºóÌ¨ºó¾Í¿ÉÒÔ×Ô¶¯±»Òýµ¼µ½ÄúÉè¶¨µÄÄ¿Â¼.<br><li>³ý¹ÜÀíÔ±Íâ,ÆäËûÈËÎÞ·¨ÖªµÀ¹ÜÀíµÄµØÖ·.">
+<input title="å€¼ä¸èƒ½ä¸ºç©º $!" type="text" name="Forum_AdminFolder" size="35" value="<%=Dvbbs.CacheData(33,0)%>"><br><BR><b>æ³¨æ„ï¼š</b>ç›®å½•åç§°åŽé¢è¦æœ‰"/"ï¼Œå¦‚"admin/"
+<input type="hidden" id="AdminFolder" value="<b>åŽå°ç®¡ç†ç›®å½•çš„è®¾å®š:</b><br><li>åœ¨FTPä¸Šä¿®æ”¹æ‚¨çš„è®ºå›çš„ç®¡ç†,ç›®å½•åç§°ã€‚(ç¼ºçœç›®å½•ä¸ºadmin)<br><li>ç„¶åŽé‡æ–°ä¿®æ”¹ç®¡ç†ç›®å½•,ç®¡ç†å‘˜ç™»å½•åŽå°åŽå°±å¯ä»¥è‡ªåŠ¨è¢«å¼•å¯¼åˆ°æ‚¨è®¾å®šçš„ç›®å½•.<br><li>é™¤ç®¡ç†å‘˜å¤–,å…¶ä»–äººæ— æ³•çŸ¥é“ç®¡ç†çš„åœ°å€.">
 </td>
-<td class="td1"><a href=# onclick="helpscript(AdminFolder);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
+<td class="td1"><a href=# onclick="helpscript(AdminFolder);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="ç‚¹å‡»æŸ¥é˜…ç®¡ç†å¸®åŠ©ï¼"></a></td>
 </tr>
 <tr> 
 <td class="td2" width="50%">
-<U>ÊÇ·ñ½ûÖ¹´úÀí·þÎñÆ÷·ÃÎÊ</U><BR>½ûÖ¹´úÀí·þÎñÆ÷·ÃÎÊÄÜ±ÜÃâ¶ñÒâµÄCC¹¥»÷£¬µ«¿ª·ÅºóÓ°ÏìÕ¾µãÅÅÃû£¬½¨ÒéÔÚÊÜµ½Ã÷ÏÔµÄ¹¥»÷µÄÊ±ºò¿ªÆô</td>
+<U>æ˜¯å¦ç¦æ­¢ä»£ç†æœåŠ¡å™¨è®¿é—®</U><BR>ç¦æ­¢ä»£ç†æœåŠ¡å™¨è®¿é—®èƒ½é¿å…æ¶æ„çš„CCæ”»å‡»ï¼Œä½†å¼€æ”¾åŽå½±å“ç«™ç‚¹æŽ’åï¼Œå»ºè®®åœ¨å—åˆ°æ˜Žæ˜¾çš„æ”»å‡»çš„æ—¶å€™å¼€å¯</td>
 <td class="td2" width="43%"> 
-<input type="radio" name="forum_setting(100)" value="0" <%if Dvbbs.forum_setting(100)="0" then%>checked<%end if%> class="radio">·ñ&nbsp;
-<input type="radio" name="forum_setting(100)" value="1" <%if Dvbbs.forum_setting(100)="1" then%>checked<%end if%> class="radio">ÊÇ&nbsp;
+<input type="radio" name="forum_setting(100)" value="0" <%if Dvbbs.forum_setting(100)="0" then%>checked<%end if%> class="radio">å¦&nbsp;
+<input type="radio" name="forum_setting(100)" value="1" <%if Dvbbs.forum_setting(100)="1" then%>checked<%end if%> class="radio">æ˜¯&nbsp;
 </td>
-<input type="hidden" id="killcc" value="<b>ÊÇ·ñ½ûÖ¹´úÀí·þÎñÆ÷·ÃÎÊ:</b><br><li>½ûÖ¹´úÀí·þÎñÆ÷·ÃÎÊÄÜ±ÜÃâ¶ñÒâµÄCC¹¥»÷£¬µ«¿ª·ÅºóÓ°ÏìÕ¾µãÅÅÃû£¬½¨ÒéÔÚÊÜµ½Ã÷ÏÔµÄ¹¥»÷µÄÊ±ºò¿ªÆô£¬Æ½Ê±Ôò¹Ø±Õ¡£">
-<td class="td2"><a href=# onclick="helpscript(killcc);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
+<input type="hidden" id="killcc" value="<b>æ˜¯å¦ç¦æ­¢ä»£ç†æœåŠ¡å™¨è®¿é—®:</b><br><li>ç¦æ­¢ä»£ç†æœåŠ¡å™¨è®¿é—®èƒ½é¿å…æ¶æ„çš„CCæ”»å‡»ï¼Œä½†å¼€æ”¾åŽå½±å“ç«™ç‚¹æŽ’åï¼Œå»ºè®®åœ¨å—åˆ°æ˜Žæ˜¾çš„æ”»å‡»çš„æ—¶å€™å¼€å¯ï¼Œå¹³æ—¶åˆ™å…³é—­ã€‚">
+<td class="td2"><a href=# onclick="helpscript(killcc);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="ç‚¹å‡»æŸ¥é˜…ç®¡ç†å¸®åŠ©ï¼"></a></td>
 </tr>
 <tr> 
 <td class="td1" width="50%">
-<U>ÏÞÖÆÍ¬Ò»IPÁ¬½ÓÊýÎª</U><BR>ÏÞÖÆÍ¬Ò»IPÁ¬½ÓÊý£¬¿ÉÒÔ¼õÉÙ¶ñÒâµÄCC¹¥»÷µÄÓ°Ïì£¬µ«»áÔì³ÉÓÃ»§·ÃÎÊ²»±ã£¬½¨ÒéÉèÖÃÎª0¹Ø±Õ´Ë¹¦ÄÜ£¬ÔÚÊÜµ½¹¥»÷µÄÊ±ºò²Å¿ª·Å</td>
+<U>é™åˆ¶åŒä¸€IPè¿žæŽ¥æ•°ä¸º</U><BR>é™åˆ¶åŒä¸€IPè¿žæŽ¥æ•°ï¼Œå¯ä»¥å‡å°‘æ¶æ„çš„CCæ”»å‡»çš„å½±å“ï¼Œä½†ä¼šé€ æˆç”¨æˆ·è®¿é—®ä¸ä¾¿ï¼Œå»ºè®®è®¾ç½®ä¸º0å…³é—­æ­¤åŠŸèƒ½ï¼Œåœ¨å—åˆ°æ”»å‡»çš„æ—¶å€™æ‰å¼€æ”¾</td>
 <td class="td1" width="43%"> 
 <% Dim IP_MAX_value
 If UBound(Dvbbs.forum_setting) > 101 Then
@@ -160,99 +160,99 @@ Else
 	IP_MAX_value=0
 End If
 %>
-<input title="ÇëÊäÈëÕûÊý $!cint" type="text" name="forum_setting(101)" size="5" value="<%=IP_MAX_value%>">
+<input title="è¯·è¾“å…¥æ•´æ•° $!cint" type="text" name="forum_setting(101)" size="5" value="<%=IP_MAX_value%>">
 </td>
-<input type="hidden" id="IP_MAX" value="<b>ÏÞÖÆÍ¬Ò»IPÁ¬½ÓÊý:</b><br><li>ÏÞÖÆÍ¬Ò»IPÁ¬½ÓÊý£¬¿ÉÒÔ¼õÉÙ¶ñÒâµÄCC¹¥»÷µÄÓ°Ïì£¬µ«»áÔì³ÉÓÃ»§·ÃÎÊ²»±ã£¬½¨ÒéÉèÖÃÎª0¹Ø±Õ´Ë¹¦ÄÜ£¬ÔÚÊÜµ½¹¥»÷µÄÊ±ºò²Å¿ª·Å£¬Æ½Ê±Ôò¹Ø±Õ¡£">
-<td class="td1"><a href=# onclick="helpscript(IP_MAX);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
+<input type="hidden" id="IP_MAX" value="<b>é™åˆ¶åŒä¸€IPè¿žæŽ¥æ•°:</b><br><li>é™åˆ¶åŒä¸€IPè¿žæŽ¥æ•°ï¼Œå¯ä»¥å‡å°‘æ¶æ„çš„CCæ”»å‡»çš„å½±å“ï¼Œä½†ä¼šé€ æˆç”¨æˆ·è®¿é—®ä¸ä¾¿ï¼Œå»ºè®®è®¾ç½®ä¸º0å…³é—­æ­¤åŠŸèƒ½ï¼Œåœ¨å—åˆ°æ”»å‡»çš„æ—¶å€™æ‰å¼€æ”¾ï¼Œå¹³æ—¶åˆ™å…³é—­ã€‚">
+<td class="td1"><a href=# onclick="helpscript(IP_MAX);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="ç‚¹å‡»æŸ¥é˜…ç®¡ç†å¸®åŠ©ï¼"></a></td>
 </tr>
 </table><BR>
 <table border="0" cellspacing="1" cellpadding="3" align="center" width="100%">
 <tr> 
-<th width="100%" colspan="3">¶¯Íø¹Ù·½×Ô¶¯Í¨Ñ¶ÉèÖÃ
+<th width="100%" colspan="3">åŠ¨ç½‘å®˜æ–¹è‡ªåŠ¨é€šè®¯è®¾ç½®
 </th></tr>
 <tr> 
 <td class="td1" width="50%">
-<U>ÊÇ·ñÆðÓÃ¶¯Íø¹Ù·½×Ô¶¯Í¨Ñ¶ÏµÍ³</U><BR>¿ªÆôºó¿ÉÔÚÂÛÌ³ºóÌ¨ÊÕµ½¶¯Íø¹Ù·½×îÐÂÍ¨ÖªÒÔ¼°Ö±½Ó²ÎÓë¹Ù·½ÌÖÂÛÇøÌÖÂÛºÍ·¢Ìù</td>
+<U>æ˜¯å¦èµ·ç”¨åŠ¨ç½‘å®˜æ–¹è‡ªåŠ¨é€šè®¯ç³»ç»Ÿ</U><BR>å¼€å¯åŽå¯åœ¨è®ºå›åŽå°æ”¶åˆ°åŠ¨ç½‘å®˜æ–¹æœ€æ–°é€šçŸ¥ä»¥åŠç›´æŽ¥å‚ä¸Žå®˜æ–¹è®¨è®ºåŒºè®¨è®ºå’Œå‘è´´</td>
 <td class="td1" width="43%"> 
-<input type=radio name="forum_pack(0)" value=0 <%if cint(forum_pack(0))=0 then%>checked<%end if%> class="radio">·ñ&nbsp;
-<input type=radio name="forum_pack(0)" value=1 <%if cint(forum_pack(0))=1 then%>checked<%end if%> class="radio">ÊÇ&nbsp;
+<input type=radio name="forum_pack(0)" value=0 <%if cint(forum_pack(0))=0 then%>checked<%end if%> class="radio">å¦&nbsp;
+<input type=radio name="forum_pack(0)" value=1 <%if cint(forum_pack(0))=1 then%>checked<%end if%> class="radio">æ˜¯&nbsp;
 </td>
-<input type="hidden" id="forum_pack1" value="<b>ÊÇ·ñÆðÓÃ¶¯Íø×Ô¶¯¸üÐÂÍ¨ÖªÏµÍ³:</b><br><li>¿ªÆôºó¹ÜÀíºóÌ¨¶¥²¿»áÌáÊ¾¶¯ÍøµÄ×îÐÂ³ÌÐò¡¢²¹¶¡¡¢Í¨ÖªµÈ¡£">
-<td class="td1"><a href=# onclick="helpscript(forum_pack1);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
+<input type="hidden" id="forum_pack1" value="<b>æ˜¯å¦èµ·ç”¨åŠ¨ç½‘è‡ªåŠ¨æ›´æ–°é€šçŸ¥ç³»ç»Ÿ:</b><br><li>å¼€å¯åŽç®¡ç†åŽå°é¡¶éƒ¨ä¼šæç¤ºåŠ¨ç½‘çš„æœ€æ–°ç¨‹åºã€è¡¥ä¸ã€é€šçŸ¥ç­‰ã€‚">
+<td class="td1"><a href=# onclick="helpscript(forum_pack1);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="ç‚¹å‡»æŸ¥é˜…ç®¡ç†å¸®åŠ©ï¼"></a></td>
 </tr>
 <tr> 
 <td class="td2">
-<U>¿ªÆôÍ¨Ñ¶ÏµÍ³ÓÃ»§ÃûÓëÃÜÂë</U><BR>ÓÃ»§ÃûÓëÃÜÂëÓÃ·ûºÅ¡°|||¡±·Ö¿ª<BR>ÓÃ»§ÃûºÍÃÜÂëÇëµ½ <a href="http://bbs.dvbbs.net/Union_GetUserInfo.asp" target=_blank><font color=blue>¶¯Íø¹Ù·½</font></a> »ñÈ¡</td>
+<U>å¼€å¯é€šè®¯ç³»ç»Ÿç”¨æˆ·åä¸Žå¯†ç </U><BR>ç”¨æˆ·åä¸Žå¯†ç ç”¨ç¬¦å·â€œ|||â€åˆ†å¼€<BR>ç”¨æˆ·åå’Œå¯†ç è¯·åˆ° <a href="http://bbs.dvbbs.net/Union_GetUserInfo.asp" target=_blank><font color=blue>åŠ¨ç½‘å®˜æ–¹</font></a> èŽ·å–</td>
 <td class="td2">
 <%
 If UBound(forum_pack)<2 Then ReDim forum_pack(3)
 %>
 <input type=text size=21 name="forum_pack(1)" value="<%=forum_pack(1)%>|||<%=forum_pack(2)%>">
 </td>
-<input type="hidden" id="forum_pack2" value="<b>¿ªÆôÍ¨ÖªÏµÍ³ÓÃ»§ÃûÓëÃÜÂë:</b><br><li>ÈçÒª¿ªÆôÍ¨ÖªÏµÍ³£¬ÇëÄúÏÈµ½¶¯Íø¹Ù·½ÂÛÌ³×¢²áÒ»¸öÓÃ»§Ãû²¢ÔÚ¶¯Íø¹Ù·½Í¨ÖªÏµÍ³ÀïÈ¡µÃÃÜÂë£¬²¢ÌîÐ´ÓÚ´ËÀ¸¼´¿É¿ªÆô¡£">
-<td class="td2"><a href=# onclick="helpscript(forum_pack2);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
+<input type="hidden" id="forum_pack2" value="<b>å¼€å¯é€šçŸ¥ç³»ç»Ÿç”¨æˆ·åä¸Žå¯†ç :</b><br><li>å¦‚è¦å¼€å¯é€šçŸ¥ç³»ç»Ÿï¼Œè¯·æ‚¨å…ˆåˆ°åŠ¨ç½‘å®˜æ–¹è®ºå›æ³¨å†Œä¸€ä¸ªç”¨æˆ·åå¹¶åœ¨åŠ¨ç½‘å®˜æ–¹é€šçŸ¥ç³»ç»Ÿé‡Œå–å¾—å¯†ç ï¼Œå¹¶å¡«å†™äºŽæ­¤æ å³å¯å¼€å¯ã€‚">
+<td class="td2"><a href=# onclick="helpscript(forum_pack2);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="ç‚¹å‡»æŸ¥é˜…ç®¡ç†å¸®åŠ©ï¼"></a></td>
 </tr>
 </table><BR>
 <table border="0" cellspacing="1" cellpadding="3" align="center" width="100%">
 <tr> 
-<th height=25 colspan=2 align=left id=tabletitlelink><a name="setting3"></a><b>ÂÛÌ³»ù±¾ÐÅÏ¢</b>[<a href="#top">¶¥²¿</a>]</th>
+<th height=25 colspan=2 align=left id=tabletitlelink><a name="setting3"></a><b>è®ºå›åŸºæœ¬ä¿¡æ¯</b>[<a href="#top">é¡¶éƒ¨</a>]</th>
 </tr>
 <tr> 
-<td width="50%" class="td1"> <U>ÂÛÌ³Ãû³Æ</U></td>
+<td width="50%" class="td1"> <U>è®ºå›åç§°</U></td>
 <td width="50%" class="td1">  
-<input title="Öµ²»ÄÜÎª¿Õ $!" name="Forum_info(0)" size="35" value="<%=Dvbbs.Forum_info(0)%>">
+<input title="å€¼ä¸èƒ½ä¸ºç©º $!" name="Forum_info(0)" size="35" value="<%=Dvbbs.Forum_info(0)%>">
 </td>
 </tr>
 <tr> 
-<td width="50%" class="td2"> <U>ÂÛÌ³µÄ·ÃÎÊµØÖ·</U></td>
+<td width="50%" class="td2"> <U>è®ºå›çš„è®¿é—®åœ°å€</U></td>
 <td width="50%" class="td2">  
-<input title="Öµ²»ÄÜÎª¿Õ $!" name="Forum_info(1)" size="35" value="<%=Dvbbs.Forum_info(1)%>">
+<input title="å€¼ä¸èƒ½ä¸ºç©º $!" name="Forum_info(1)" size="35" value="<%=Dvbbs.Forum_info(1)%>">
 </td>
 </tr>
 <tr> 
-<td width="50%" class="td2"> <U>ÂÛÌ³µÄ´´½¨ÈÕÆÚ£¨¸ñÊ½£ºYYYY-M-D£©</U></td>
+<td width="50%" class="td2"> <U>è®ºå›çš„åˆ›å»ºæ—¥æœŸï¼ˆæ ¼å¼ï¼šYYYY-M-Dï¼‰</U></td>
 <td width="50%" class="td2">  
 <input type="text" name="forum_setting(74)" size="35" value="<%=Dvbbs.forum_setting(74)%>">
 </td>
 </tr>
 <tr> 
-<td width="50%" class="td1"> <U>ÂÛÌ³Ê×Ò³ÎÄ¼þÃû</U></td>
+<td width="50%" class="td1"> <U>è®ºå›é¦–é¡µæ–‡ä»¶å</U></td>
 <td width="50%" class="td1">  
-<input title="Öµ²»ÄÜÎª¿Õ $!" name="Forum_info(11)" size="35" value="<%=Dvbbs.Forum_info(11)%>">
+<input title="å€¼ä¸èƒ½ä¸ºç©º $!" name="Forum_info(11)" size="35" value="<%=Dvbbs.Forum_info(11)%>">
 </td>
 </tr>
 <tr> 
-<td width="50%" class="td2"> <U>ÍøÕ¾Ö÷Ò³Ãû³Æ</U></td>
+<td width="50%" class="td2"> <U>ç½‘ç«™ä¸»é¡µåç§°</U></td>
 <td width="50%" class="td2">  
-<input title="Öµ²»ÄÜÎª¿Õ $!" name="Forum_info(2)" size="35" value="<%=Dvbbs.Forum_info(2)%>">
+<input title="å€¼ä¸èƒ½ä¸ºç©º $!" name="Forum_info(2)" size="35" value="<%=Dvbbs.Forum_info(2)%>">
 </td>
 </tr>
 <tr> 
-<td width="50%" class="td1"> <U>ÍøÕ¾Ö÷Ò³·ÃÎÊµØÖ·</U></td>
+<td width="50%" class="td1"> <U>ç½‘ç«™ä¸»é¡µè®¿é—®åœ°å€</U></td>
 <td width="50%" class="td1">  
-<input title="Öµ²»ÄÜÎª¿Õ $!" name="Forum_info(3)" size="35" value="<%=Dvbbs.Forum_info(3)%>">
+<input title="å€¼ä¸èƒ½ä¸ºç©º $!" name="Forum_info(3)" size="35" value="<%=Dvbbs.Forum_info(3)%>">
 </td>
 </tr>
 <tr> 
-<td width="50%" class="td2"> <U>ÂÛÌ³¹ÜÀíÔ±Email</U></td>
+<td width="50%" class="td2"> <U>è®ºå›ç®¡ç†å‘˜Email</U></td>
 <td width="50%" class="td2">  
 <input  name="Forum_info(5)" size="35" value="<%=Dvbbs.Forum_info(5)%>">
 </td>
 </tr>
 <tr> 
-<td width="50%" class="td1"> <U>ÁªÏµÎÒÃÇµÄÁ´½Ó£¨²»ÌîÐ´ÎªMailto¹ÜÀíÔ±£©</U></td>
+<td width="50%" class="td1"> <U>è”ç³»æˆ‘ä»¬çš„é“¾æŽ¥ï¼ˆä¸å¡«å†™ä¸ºMailtoç®¡ç†å‘˜ï¼‰</U></td>
 <td width="50%" class="td1">  
 <input type="text" name="Forum_info(7)" size="35" value="<%=Dvbbs.Forum_info(7)%>">
 </td>
 </tr>
 <tr> 
-<td width="50%" class="td2"> <U>ÂÛÌ³Ê×Ò³LogoÍ¼Æ¬µØÖ·</U><BR>ÏÔÊ¾ÔÚÂÛÌ³¶¥²¿×óÉÏ½Ç£¬¿ÉÓÃÏà¶ÔÂ·¾¶»òÕß¾ø¶ÔÂ·¾¶</td>
+<td width="50%" class="td2"> <U>è®ºå›é¦–é¡µLogoå›¾ç‰‡åœ°å€</U><BR>æ˜¾ç¤ºåœ¨è®ºå›é¡¶éƒ¨å·¦ä¸Šè§’ï¼Œå¯ç”¨ç›¸å¯¹è·¯å¾„æˆ–è€…ç»å¯¹è·¯å¾„</td>
 <td width="50%" class="td2">  
-<input title="Öµ²»ÄÜÎª¿Õ $!" type="text" name="Forum_info(6)" size="35" value="<%=Dvbbs.Forum_info(6)%>">
+<input title="å€¼ä¸èƒ½ä¸ºç©º $!" type="text" name="Forum_info(6)" size="35" value="<%=Dvbbs.Forum_info(6)%>">
 </td>
 </tr>
 <tr> 
-<td width="50%" class="td1"> <U>ÂÛÌ³°æÈ¨ÐÅÏ¢</U></td>
+<td width="50%" class="td1"> <U>è®ºå›ç‰ˆæƒä¿¡æ¯</U></td>
 <td width="50%" class="td1" valign=top>  
 <textarea name="Copyright" cols="50" rows="5" id=TdCopyright><%=Dvbbs.Forum_Copyright%></textarea>
 <a href="javascript:admin_Size(-5,'TdCopyright')"><img src="skins/images/minus.gif" unselectable="on" border='0'></a> <a href="javascript:admin_Size(5,'TdCopyright')"><img src="skins/images/plus.gif" unselectable="on" border='0'></a>
@@ -261,242 +261,242 @@ If UBound(forum_pack)<2 Then ReDim forum_pack(3)
 </table><BR>
 <table border="0" cellspacing="1" cellpadding="3" align="center" width="100%">
 <tr> 
-<th height=25 colspan=2 align=left id=tabletitlelink><a name="setting21"></a><b>ÂÛÌ³ÏµÍ³Êý¾ÝÉèÖÃ</b>[<a href="#top">¶¥²¿</a>]--(ÒÔÏÂÐÅÏ¢²»½¨ÒéÓÃ»§ÐÞ¸Ä)</td>
+<th height=25 colspan=2 align=left id=tabletitlelink><a name="setting21"></a><b>è®ºå›ç³»ç»Ÿæ•°æ®è®¾ç½®</b>[<a href="#top">é¡¶éƒ¨</a>]--(ä»¥ä¸‹ä¿¡æ¯ä¸å»ºè®®ç”¨æˆ·ä¿®æ”¹)</td>
 </tr>
 <tr> 
-<td width="50%" class="td1"> <U>ÂÛÌ³»áÔ±×ÜÊý</U></td>
+<td width="50%" class="td1"> <U>è®ºå›ä¼šå‘˜æ€»æ•°</U></td>
 <td width="50%" class="td1">  
-<input title="ÇëÊäÈëÕûÊý $!cint" type="text" name="Forum_UserNum" size="25" value="<%=Dvbbs.CacheData(10,0)%>">
+<input title="è¯·è¾“å…¥æ•´æ•° $!cint" type="text" name="Forum_UserNum" size="25" value="<%=Dvbbs.CacheData(10,0)%>">
 </td>
 </tr>
 <tr> 
-<td width="50%" class="td2"> <U>ÂÛÌ³Ö÷Ìâ×ÜÊý</U></td>
+<td width="50%" class="td2"> <U>è®ºå›ä¸»é¢˜æ€»æ•°</U></td>
 <td width="50%" class="td2">  
-<input title="ÇëÊäÈëÕûÊý $!cint" type="text" name="Forum_TopicNum" size="25" value="<%=Dvbbs.CacheData(7,0)%>">
+<input title="è¯·è¾“å…¥æ•´æ•° $!cint" type="text" name="Forum_TopicNum" size="25" value="<%=Dvbbs.CacheData(7,0)%>">
 </td>
 </tr>
 <tr> 
-<td width="50%" class="td1"> <U>ÂÛÌ³Ìû×Ó×ÜÊý</U></td>
+<td width="50%" class="td1"> <U>è®ºå›å¸–å­æ€»æ•°</U></td>
 <td width="50%" class="td1">  
-<input title="ÇëÊäÈëÕûÊý $!cint" type="text" name="Forum_PostNum" size="25" value="<%=Dvbbs.CacheData(8,0)%>">
+<input title="è¯·è¾“å…¥æ•´æ•° $!cint" type="text" name="Forum_PostNum" size="25" value="<%=Dvbbs.CacheData(8,0)%>">
 </td>
 </tr>
 <tr> 
-<td width="50%" class="td2"> <U>ÂÛÌ³×î¸ßÈÕ·¢Ìù</U></td>
+<td width="50%" class="td2"> <U>è®ºå›æœ€é«˜æ—¥å‘è´´</U></td>
 <td width="50%" class="td2">  
-<input title="ÇëÊäÈëÕûÊý $!cint" type="text" name="Forum_MaxPostNum" size="25" value="<%=Dvbbs.CacheData(12,0)%>">
+<input title="è¯·è¾“å…¥æ•´æ•° $!cint" type="text" name="Forum_MaxPostNum" size="25" value="<%=Dvbbs.CacheData(12,0)%>">
 </td>
 </tr>
 <tr> 
-<td width="50%" class="td1"> <U>ÂÛÌ³×î¸ßÈÕ·¢Ìù·¢ÉúÊ±¼ä</U></td>
+<td width="50%" class="td1"> <U>è®ºå›æœ€é«˜æ—¥å‘è´´å‘ç”Ÿæ—¶é—´</U></td>
 <td width="50%" class="td1">  
-<input type="text" name="Forum_MaxPostDate" size="25" value="<%=Dvbbs.CacheData(13,0)%>">(¸ñÊ½£ºYYYY-M-D H:M:S)
+<input type="text" name="Forum_MaxPostDate" size="25" value="<%=Dvbbs.CacheData(13,0)%>">(æ ¼å¼ï¼šYYYY-M-D H:M:S)
 </td>
 </tr>
 <tr> 
-<td width="50%" class="td2"> <U>ÀúÊ·×î¸ßÍ¬Ê±ÔÚÏß¼ÍÂ¼ÈËÊý</U></td>
+<td width="50%" class="td2"> <U>åŽ†å²æœ€é«˜åŒæ—¶åœ¨çº¿çºªå½•äººæ•°</U></td>
 <td width="50%" class="td2">  
-<input title="ÇëÊäÈëÕûÊý $!cint" type="text" name="Forum_Maxonline" size="25" value="<%=Dvbbs.Maxonline%>">
+<input title="è¯·è¾“å…¥æ•´æ•° $!cint" type="text" name="Forum_Maxonline" size="25" value="<%=Dvbbs.Maxonline%>">
 </td>
 </tr>
 <tr> 
-<td width="50%" class="td1"> <U>ÀúÊ·×î¸ßÍ¬Ê±ÔÚÏß¼ÍÂ¼·¢ÉúÊ±¼ä</U></td>
+<td width="50%" class="td1"> <U>åŽ†å²æœ€é«˜åŒæ—¶åœ¨çº¿çºªå½•å‘ç”Ÿæ—¶é—´</U></td>
 <td width="50%" class="td1">  
-<input type="text" name="Forum_MaxonlineDate" size="25" value="<%=Dvbbs.CacheData(6,0)%>">(¸ñÊ½£ºYYYY-M-D H:M:S)
+<input type="text" name="Forum_MaxonlineDate" size="25" value="<%=Dvbbs.CacheData(6,0)%>">(æ ¼å¼ï¼šYYYY-M-D H:M:S)
 </td>
 </tr>
 </table><BR>
 
 <table border="0" cellspacing="1" cellpadding="3" align="center" width="100%">
 <tr> 
-<th height=25 colspan=2 align=left id=tabletitlelink><a name="setting6"></a><b>ÇÄÇÄ»°Ñ¡Ïî</b>[<a href="#top">¶¥²¿</a>]</td>
+<th height=25 colspan=2 align=left id=tabletitlelink><a name="setting6"></a><b>æ‚„æ‚„è¯é€‰é¡¹</b>[<a href="#top">é¡¶éƒ¨</a>]</td>
 </tr>
 <tr> 
-<td width="50%" class="td1"> <U>ÐÂ¶ÌÏûÏ¢µ¯³ö´°¿Ú</U></td>
+<td width="50%" class="td1"> <U>æ–°çŸ­æ¶ˆæ¯å¼¹å‡ºçª—å£</U></td>
 <td width="50%" class="td1">  
-<input type=radio name="forum_setting(10)" value=0 <%if Dvbbs.forum_setting(10)="0" then%>checked<%end if%> class="radio">·ñ&nbsp;
-<input type=radio name="forum_setting(10)" value=1 <%if Dvbbs.forum_setting(10)="1" then%>checked<%end if%> class="radio">ÊÇ&nbsp;
+<input type=radio name="forum_setting(10)" value=0 <%if Dvbbs.forum_setting(10)="0" then%>checked<%end if%> class="radio">å¦&nbsp;
+<input type=radio name="forum_setting(10)" value=1 <%if Dvbbs.forum_setting(10)="1" then%>checked<%end if%> class="radio">æ˜¯&nbsp;
 </td>
 </tr>
 <tr> 
-<td width="50%" class="td1"> <U>·¢ÂÛÌ³¶ÌÏûÏ¢ÊÇ·ñ²ÉÓÃÑéÖ¤Âë</U><BR>¿ªÆô´ËÏî¿ÉÒÔ·ÀÖ¹¶ñÒâ¶ÌÏûÏ¢</td>
+<td width="50%" class="td1"> <U>å‘è®ºå›çŸ­æ¶ˆæ¯æ˜¯å¦é‡‡ç”¨éªŒè¯ç </U><BR>å¼€å¯æ­¤é¡¹å¯ä»¥é˜²æ­¢æ¶æ„çŸ­æ¶ˆæ¯</td>
 <td width="50%" class="td1">  
-<input type=radio name="forum_setting(80)" value=0 <%if Dvbbs.forum_setting(80)="0" Then%>checked<%end if%> class="radio">·ñ&nbsp;
-<input type=radio name="forum_setting(80)" value=1 <%if Dvbbs.forum_setting(80)="1" Then%>checked<%end if%> class="radio">ÊÇ&nbsp;
+<input type=radio name="forum_setting(80)" value=0 <%if Dvbbs.forum_setting(80)="0" Then%>checked<%end if%> class="radio">å¦&nbsp;
+<input type=radio name="forum_setting(80)" value=1 <%if Dvbbs.forum_setting(80)="1" Then%>checked<%end if%> class="radio">æ˜¯&nbsp;
 </td>
 </tr>
 <tr> 
-<td width="50%" class="td1"> <U>¶à¾Ã¼ì²éÒ»´ÎÊÇ·ñÓÐÈº·¢¶ÌÐÅ</U><BR></td>
+<td width="50%" class="td1"> <U>å¤šä¹…æ£€æŸ¥ä¸€æ¬¡æ˜¯å¦æœ‰ç¾¤å‘çŸ­ä¿¡</U><BR></td>
 <td width="50%" class="td1">  
-<input type=text name="forum_setting(115)" size=8 value='<%if cint(Dvbbs.forum_setting(115))<1 then%>20<%else%><%=Dvbbs.forum_setting(115)%><%end if%>'> ·ÖÖÓ£¨×îÐ¡Îª1£¬½¨ÒéÉèÖÃ³É20ÒÔÉÏµÄÕûÊý£©
+<input type=text name="forum_setting(115)" size=8 value='<%if cint(Dvbbs.forum_setting(115))<1 then%>20<%else%><%=Dvbbs.forum_setting(115)%><%end if%>'> åˆ†é’Ÿï¼ˆæœ€å°ä¸º1ï¼Œå»ºè®®è®¾ç½®æˆ20ä»¥ä¸Šçš„æ•´æ•°ï¼‰
 </td>
 </tr>
 </table><BR>
 
 <table border="0" cellspacing="1" cellpadding="3" align="center" width="100%">
 <tr> 
-<th height=25 colspan=3 align=left id=tabletitlelink><a name="setting7"></a><b>ÂÛÌ³Ê×Ò³Ñ¡Ïî</b>[<a href="#top">¶¥²¿</a>]</td>
+<th height=25 colspan=3 align=left id=tabletitlelink><a name="setting7"></a><b>è®ºå›é¦–é¡µé€‰é¡¹</b>[<a href="#top">é¡¶éƒ¨</a>]</td>
 </tr>
 <tr>
 <td width="50%" class="td1">
-<U>Ê×Ò³ÏÔÊ¾ÂÛÌ³Éî¶È</U>
-<input type="hidden" id="forum_depth" value="<b>Ê×Ò³ÏÔÊ¾ÂÛÌ³Éî¶È°ïÖú:</b><br><li>0´ú±íÒ»¼¶£¬1´ú±í2¼¶£¬ÒÔ´ËÀàÍÆ£»<li>ÉèÖÃ¹ý´óµÄÂÛÌ³Éî¶È½«Ó°ÏìÂÛÌ³ÕûÌåÐÔÄÜ£¬Çë¸ù¾Ý×Ô¼ºÂÛÌ³Çé¿ö×öÉèÖÃ£¬½¨ÒéÉèÖÃÎª1¡£">
+<U>é¦–é¡µæ˜¾ç¤ºè®ºå›æ·±åº¦</U>
+<input type="hidden" id="forum_depth" value="<b>é¦–é¡µæ˜¾ç¤ºè®ºå›æ·±åº¦å¸®åŠ©:</b><br><li>0ä»£è¡¨ä¸€çº§ï¼Œ1ä»£è¡¨2çº§ï¼Œä»¥æ­¤ç±»æŽ¨ï¼›<li>è®¾ç½®è¿‡å¤§çš„è®ºå›æ·±åº¦å°†å½±å“è®ºå›æ•´ä½“æ€§èƒ½ï¼Œè¯·æ ¹æ®è‡ªå·±è®ºå›æƒ…å†µåšè®¾ç½®ï¼Œå»ºè®®è®¾ç½®ä¸º1ã€‚">
 </td>
 <td width="43%" class="td1"> 
-<input title="ÇëÊäÈëÕûÊý $!cint" type="text" size=10 name="forum_setting(5)" value="<%=Dvbbs.forum_setting(5)%>"> ¼¶
+<input title="è¯·è¾“å…¥æ•´æ•° $!cint" type="text" size=10 name="forum_setting(5)" value="<%=Dvbbs.forum_setting(5)%>"> çº§
 </td>
-<td class="td1"><a href=# onclick="helpscript(forum_depth);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
+<td class="td1"><a href=# onclick="helpscript(forum_depth);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="ç‚¹å‡»æŸ¥é˜…ç®¡ç†å¸®åŠ©ï¼"></a></td>
 </tr>
 <tr> 
-<td class="td2"> <U>ÊÇ·ñÏÔÊ¾¹ýÉúÈÕ»áÔ±</U>
-<input type="hidden" id="forum_userbirthday" value="<b>Ê×Ò³ÏÔÊ¾¹ýÉúÈÕ»áÔ±°ïÖú:</b><br><li>·²µ±ÌìÓÐ»áÔ±¹ýÉúÈÕÔòÏÔÊ¾ÓÚÂÛÌ³Ê×Ò³£»<li>¿ªÆô±¾¹¦ÄÜ½ÏÏûºÄ×ÊÔ´¡£">
+<td class="td2"> <U>æ˜¯å¦æ˜¾ç¤ºè¿‡ç”Ÿæ—¥ä¼šå‘˜</U>
+<input type="hidden" id="forum_userbirthday" value="<b>é¦–é¡µæ˜¾ç¤ºè¿‡ç”Ÿæ—¥ä¼šå‘˜å¸®åŠ©:</b><br><li>å‡¡å½“å¤©æœ‰ä¼šå‘˜è¿‡ç”Ÿæ—¥åˆ™æ˜¾ç¤ºäºŽè®ºå›é¦–é¡µï¼›<li>å¼€å¯æœ¬åŠŸèƒ½è¾ƒæ¶ˆè€—èµ„æºã€‚">
 </td>
 <td class="td2">  
-<input type=radio name="forum_setting(29)" value=0 <%if Dvbbs.forum_setting(29)="0" then%>checked<%end if%> class="radio">·ñ&nbsp;
-<input type=radio name="forum_setting(29)" value=1 <%if Dvbbs.forum_setting(29)="1" then%>checked<%end if%> class="radio">ÊÇ&nbsp;
+<input type=radio name="forum_setting(29)" value=0 <%if Dvbbs.forum_setting(29)="0" then%>checked<%end if%> class="radio">å¦&nbsp;
+<input type=radio name="forum_setting(29)" value=1 <%if Dvbbs.forum_setting(29)="1" then%>checked<%end if%> class="radio">æ˜¯&nbsp;
 </td>
-<td class="td2"><a href=# onclick="helpscript(forum_userbirthday);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
+<td class="td2"><a href=# onclick="helpscript(forum_userbirthday);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="ç‚¹å‡»æŸ¥é˜…ç®¡ç†å¸®åŠ©ï¼"></a></td>
 </tr>
 <tr>
-<td width="50%" class="td1"><U>Ê×Ò³ËÄ¸ñÏÔÊ¾</U></td>
+<td width="50%" class="td1"><U>é¦–é¡µå››æ ¼æ˜¾ç¤º</U></td>
 <td width="50%" class="td1">  
-<input type=radio name="forum_setting(113)" value=0 <%if Dvbbs.forum_setting(113)="0" then%>checked<%end if%> class="radio">ÊÇ&nbsp;
-<input type=radio name="forum_setting(113)" value=1 <%if Dvbbs.forum_setting(113)="1" then%>checked<%end if%> class="radio">·ñ&nbsp;
+<input type=radio name="forum_setting(113)" value=0 <%if Dvbbs.forum_setting(113)="0" then%>checked<%end if%> class="radio">æ˜¯&nbsp;
+<input type=radio name="forum_setting(113)" value=1 <%if Dvbbs.forum_setting(113)="1" then%>checked<%end if%> class="radio">å¦&nbsp;
 </td>
-<td class="td2"><a href=# class="helplink"><img src="skins/images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
+<td class="td2"><a href=# class="helplink"><img src="skins/images/help.gif" border=0 title="ç‚¹å‡»æŸ¥é˜…ç®¡ç†å¸®åŠ©ï¼"></a></td>
 </tr>
 <tr>
-<td width="50%" class="td1"><U>Ê×Ò³ÓÒ²àÐÅÏ¢ÏÔÊ¾</U></td>
+<td width="50%" class="td1"><U>é¦–é¡µå³ä¾§ä¿¡æ¯æ˜¾ç¤º</U></td>
 <td width="50%" class="td1">  
-<input type=radio name="forum_setting(114)" value=0 <%if Dvbbs.forum_setting(114)="0" then%>checked<%end if%> class="radio">ÊÇ&nbsp;
-<input type=radio name="forum_setting(114)" value=1 <%if Dvbbs.forum_setting(114)="1" then%>checked<%end if%> class="radio">·ñ&nbsp;
+<input type=radio name="forum_setting(114)" value=0 <%if Dvbbs.forum_setting(114)="0" then%>checked<%end if%> class="radio">æ˜¯&nbsp;
+<input type=radio name="forum_setting(114)" value=1 <%if Dvbbs.forum_setting(114)="1" then%>checked<%end if%> class="radio">å¦&nbsp;
 </td>
-<td class="td2"><a href=# class="helplink"><img src="skins/images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
+<td class="td2"><a href=# class="helplink"><img src="skins/images/help.gif" border=0 title="ç‚¹å‡»æŸ¥é˜…ç®¡ç†å¸®åŠ©ï¼"></a></td>
 </tr>
 </table><BR>
 
 <table border="0" cellspacing="1" cellpadding="3" align="center" width="100%">
 <tr> 
-<th height=25 colspan=2 align=left id=tabletitlelink><a name="setting8"></a><b>ÓÃ»§Óë×¢²áÑ¡Ïî</b>[<a href="#top">¶¥²¿</a>]</td>
+<th height=25 colspan=2 align=left id=tabletitlelink><a name="setting8"></a><b>ç”¨æˆ·ä¸Žæ³¨å†Œé€‰é¡¹</b>[<a href="#top">é¡¶éƒ¨</a>]</td>
 </tr>
 <tr> 
-<td width="50%" class="td1"> <U>ÊÇ·ñÔÊÐíÐÂÓÃ»§×¢²á</U><BR>¹Ø±ÕºóÂÛÌ³½«²»ÄÜ×¢²á</td>
+<td width="50%" class="td1"> <U>æ˜¯å¦å…è®¸æ–°ç”¨æˆ·æ³¨å†Œ</U><BR>å…³é—­åŽè®ºå›å°†ä¸èƒ½æ³¨å†Œ</td>
 <td width="50%" class="td1">  
-<input type=radio name="forum_setting(37)" value=0 <%if Dvbbs.forum_setting(37)="0" then%>checked<%end if%> class="radio">·ñ&nbsp;
-<input type=radio name="forum_setting(37)" value=1 <%if Dvbbs.forum_setting(37)="1" then%>checked<%end if%> class="radio">ÊÇ&nbsp;
+<input type=radio name="forum_setting(37)" value=0 <%if Dvbbs.forum_setting(37)="0" then%>checked<%end if%> class="radio">å¦&nbsp;
+<input type=radio name="forum_setting(37)" value=1 <%if Dvbbs.forum_setting(37)="1" then%>checked<%end if%> class="radio">æ˜¯&nbsp;
 </td>
 </tr>
 
 <tr> 
-<td width="50%" class="td2"> <U>×¢²áÊÇ·ñ²ÉÓÃÑéÖ¤Âë</U><BR>¿ªÆô´ËÏî¿ÉÒÔ·ÀÖ¹¶ñÒâ×¢²á</td>
+<td width="50%" class="td2"> <U>æ³¨å†Œæ˜¯å¦é‡‡ç”¨éªŒè¯ç </U><BR>å¼€å¯æ­¤é¡¹å¯ä»¥é˜²æ­¢æ¶æ„æ³¨å†Œ</td>
 <td width="50%" class="td2">  
-<input type=radio name="forum_setting(78)" value=0 <%if Dvbbs.forum_setting(78)="0" Then%>checked<%end if%> class="radio">·ñ&nbsp;
-<input type=radio name="forum_setting(78)" value=1 <%if Dvbbs.forum_setting(78)="1" Then%>checked<%end if%> class="radio">ÊÇ&nbsp;
+<input type=radio name="forum_setting(78)" value=0 <%if Dvbbs.forum_setting(78)="0" Then%>checked<%end if%> class="radio">å¦&nbsp;
+<input type=radio name="forum_setting(78)" value=1 <%if Dvbbs.forum_setting(78)="1" Then%>checked<%end if%> class="radio">æ˜¯&nbsp;
 </td>
 </tr>
 <tr> 
-<td width="50%" class="td1"> <U>×¢²áÊÇ·ñ²ÉÓÃÎÊÌâÑéÖ¤</U><BR>¿ªÆô´ËÏî¿ÉÒÔ·ÀÖ¹¶ñÒâ×¢²á<br />×¢ÒâÎÊÌâ´ð°¸²»ÒªÌ«BTÅ¶£¬»¹Ïë²»ÏëÈË×¢²á£¿</td>
+<td width="50%" class="td1"> <U>æ³¨å†Œæ˜¯å¦é‡‡ç”¨é—®é¢˜éªŒè¯</U><BR>å¼€å¯æ­¤é¡¹å¯ä»¥é˜²æ­¢æ¶æ„æ³¨å†Œ<br />æ³¨æ„é—®é¢˜ç­”æ¡ˆä¸è¦å¤ªBTå“¦ï¼Œè¿˜æƒ³ä¸æƒ³äººæ³¨å†Œï¼Ÿ</td>
 <td width="50%" class="td1">  
-<input type=radio name="forum_setting(107)" value=0 <%if Dvbbs.forum_setting(107)="0" Then%>checked<%end if%> class="radio">·ñ&nbsp;
-<input type=radio name="forum_setting(107)" value=1 <%if Dvbbs.forum_setting(107)="1" Then%>checked<%end if%> class="radio">ÊÇ&nbsp;
+<input type=radio name="forum_setting(107)" value=0 <%if Dvbbs.forum_setting(107)="0" Then%>checked<%end if%> class="radio">å¦&nbsp;
+<input type=radio name="forum_setting(107)" value=1 <%if Dvbbs.forum_setting(107)="1" Then%>checked<%end if%> class="radio">æ˜¯&nbsp;
 </td>
 </tr>
 <tr> 
-<td width="50%" class="td2"> <U>×¢²áÑéÖ¤ÎÊÌâ£º</U><BR>¿ÉÒÔÉèÖÃ¶à¸öÑéÖ¤ÎÊÌâ£¬·ÀÖ¹¶ñÒâ×¢²á<br />Ã¿¸öÎÊÌâÊ¹ÓÃ!(Ó¢ÎÄ¸ÐÌ¾ºÅ)·Ö¸ô.<br /><b><font color="red">Èç£º1+2=? ! 3*3=? ! °®µÄÓ¢ÎÄµ¥´ÊÊÇ____ ?</font></b></td>
+<td width="50%" class="td2"> <U>æ³¨å†ŒéªŒè¯é—®é¢˜ï¼š</U><BR>å¯ä»¥è®¾ç½®å¤šä¸ªéªŒè¯é—®é¢˜ï¼Œé˜²æ­¢æ¶æ„æ³¨å†Œ<br />æ¯ä¸ªé—®é¢˜ä½¿ç”¨!(è‹±æ–‡æ„Ÿå¹å·)åˆ†éš”.<br /><b><font color="red">å¦‚ï¼š1+2=? ! 3*3=? ! çˆ±çš„è‹±æ–‡å•è¯æ˜¯____ ?</font></b></td>
 <td width="50%" class="td2"><textarea name="forum_setting(105)" rows="5" cols="60"><%=Dvbbs.forum_setting(105)%></textarea></td>
 </tr>
 <tr> 
-<td width="50%" class="td2"> <U>×¢²áÑéÖ¤´ð°¸£º</U><BR>ÉèÖÃ»Ø´ðÉÏÊöÎÊÌâµÄ´ð°¸£¬·ÀÖ¹¶ñÒâ×¢²á<br />Ã¿¸ö´ð°¸Ê¹ÓÃ!(Ó¢ÎÄ¸ÐÌ¾ºÅ)·Ö¸ô£¬ºÍÉÏÃæµÄÎÊÌâË³Ðò¶ÔÓ¦! <br /><b><font color="red">Èç£º3!9!love</font></b></td>
+<td width="50%" class="td2"> <U>æ³¨å†ŒéªŒè¯ç­”æ¡ˆï¼š</U><BR>è®¾ç½®å›žç­”ä¸Šè¿°é—®é¢˜çš„ç­”æ¡ˆï¼Œé˜²æ­¢æ¶æ„æ³¨å†Œ<br />æ¯ä¸ªç­”æ¡ˆä½¿ç”¨!(è‹±æ–‡æ„Ÿå¹å·)åˆ†éš”ï¼Œå’Œä¸Šé¢çš„é—®é¢˜é¡ºåºå¯¹åº”! <br /><b><font color="red">å¦‚ï¼š3!9!love</font></b></td>
 <td width="50%" class="td2"><textarea name="forum_setting(106)" rows="5" cols="60"><%=Dvbbs.forum_setting(106)%></textarea></td>
 </tr>
 
 <tr> 
-<td width="50%" class="td1"> <U>µÇÂ¼ÊÇ·ñ²ÉÓÃÑéÖ¤Âë</U><BR>¿ªÆô´ËÏî¿ÉÒÔ·ÀÖ¹¶ñÒâµÇÂ¼²Â½âÃÜÂë</td>
+<td width="50%" class="td1"> <U>ç™»å½•æ˜¯å¦é‡‡ç”¨éªŒè¯ç </U><BR>å¼€å¯æ­¤é¡¹å¯ä»¥é˜²æ­¢æ¶æ„ç™»å½•çŒœè§£å¯†ç </td>
 <td width="50%" class="td1">  
-<input type=radio name="forum_setting(79)" value=0 <%if Dvbbs.forum_setting(79)="0" Then%>checked<%end if%> class="radio">·ñ&nbsp;
-<input type=radio name="forum_setting(79)" value=1 <%if Dvbbs.forum_setting(79)="1" Then%>checked<%end if%> class="radio">ÊÇ&nbsp;
+<input type=radio name="forum_setting(79)" value=0 <%if Dvbbs.forum_setting(79)="0" Then%>checked<%end if%> class="radio">å¦&nbsp;
+<input type=radio name="forum_setting(79)" value=1 <%if Dvbbs.forum_setting(79)="1" Then%>checked<%end if%> class="radio">æ˜¯&nbsp;
 </td>
 </tr>
 <tr> 
-<td width="50%" class="td2"> <U>»áÔ±È¡»ØÃÜÂëÊÇ·ñ²ÉÓÃÑéÖ¤Âë</U><BR>¿ªÆô´ËÏî¿ÉÒÔ·ÀÖ¹¶ñÒâµÇÂ¼²Â½âÃÜÂë</td>
+<td width="50%" class="td2"> <U>ä¼šå‘˜å–å›žå¯†ç æ˜¯å¦é‡‡ç”¨éªŒè¯ç </U><BR>å¼€å¯æ­¤é¡¹å¯ä»¥é˜²æ­¢æ¶æ„ç™»å½•çŒœè§£å¯†ç </td>
 <td width="50%" class="td2">  
-<input type=radio name="forum_setting(81)" value=0 <%if Dvbbs.forum_setting(81)="0" Then%>checked<%end if%> class="radio">·ñ&nbsp;
-<input type=radio name="forum_setting(81)" value=1 <%if Dvbbs.forum_setting(81)="1" Then%>checked<%end if%> class="radio">ÊÇ&nbsp;
+<input type=radio name="forum_setting(81)" value=0 <%if Dvbbs.forum_setting(81)="0" Then%>checked<%end if%> class="radio">å¦&nbsp;
+<input type=radio name="forum_setting(81)" value=1 <%if Dvbbs.forum_setting(81)="1" Then%>checked<%end if%> class="radio">æ˜¯&nbsp;
 </td>
 </tr>
 <tr> 
-<td width="50%" class="td1"> <U>»áÔ±È¡»ØÃÜÂë´ÎÊýÏÞÖÆ</U><BR>0Ôò±íÊ¾ÎÞÏÞÖÆ£¬ÈôÈ¡»ØÎÊ´ð´íÎó³¬¹ý´ËÏÞÖÆ£¬ÔòÍ£Ö¹ÖÁ24Ð¡Ê±ºó²ÅÄÜÔÙ´ÎÊ¹ÓÃÈ¡»ØÃÜÂë¹¦ÄÜ¡£</td>
+<td width="50%" class="td1"> <U>ä¼šå‘˜å–å›žå¯†ç æ¬¡æ•°é™åˆ¶</U><BR>0åˆ™è¡¨ç¤ºæ— é™åˆ¶ï¼Œè‹¥å–å›žé—®ç­”é”™è¯¯è¶…è¿‡æ­¤é™åˆ¶ï¼Œåˆ™åœæ­¢è‡³24å°æ—¶åŽæ‰èƒ½å†æ¬¡ä½¿ç”¨å–å›žå¯†ç åŠŸèƒ½ã€‚</td>
 <td width="50%" class="td1">  
-<input title="ÇëÊäÈëÕûÊý $!cint" type="text" name="forum_setting(84)" size="3" value="<%=Dvbbs.forum_setting(84)%>">
+<input title="è¯·è¾“å…¥æ•´æ•° $!cint" type="text" name="forum_setting(84)" size="3" value="<%=Dvbbs.forum_setting(84)%>">
 </td>
 </tr>
 <tr> 
-<td width="50%" class="td2"> <U>×î¶ÌÓÃ»§Ãû³¤¶È</U><BR>ÌîÐ´Êý×Ö£¬²»ÄÜÐ¡ÓÚ1´óÓÚ50</td>
+<td width="50%" class="td2"> <U>æœ€çŸ­ç”¨æˆ·åé•¿åº¦</U><BR>å¡«å†™æ•°å­—ï¼Œä¸èƒ½å°äºŽ1å¤§äºŽ50</td>
 <td width="50%" class="td2">  
-<input title="ÇëÊäÈëÕûÊý $!cint" type="text" name="forum_setting(40)" size="3" value="<%=Dvbbs.forum_setting(40)%>">
+<input title="è¯·è¾“å…¥æ•´æ•° $!cint" type="text" name="forum_setting(40)" size="3" value="<%=Dvbbs.forum_setting(40)%>">
 </td>
 </tr>
 <tr> 
-<td width="50%" class="td1"> <U>×î³¤ÓÃ»§Ãû³¤¶È</U><BR>ÌîÐ´Êý×Ö£¬²»ÄÜÐ¡ÓÚ1´óÓÚ50</td>
+<td width="50%" class="td1"> <U>æœ€é•¿ç”¨æˆ·åé•¿åº¦</U><BR>å¡«å†™æ•°å­—ï¼Œä¸èƒ½å°äºŽ1å¤§äºŽ50</td>
 <td width="50%" class="td1">  
-<input title="ÇëÊäÈëÕûÊý $!cint" type="text" name="forum_setting(41)" size="3" value="<%=Dvbbs.forum_setting(41)%>">
+<input title="è¯·è¾“å…¥æ•´æ•° $!cint" type="text" name="forum_setting(41)" size="3" value="<%=Dvbbs.forum_setting(41)%>">
 </td>
 </tr>
 <tr> 
-<td width="50%" class="td2"> <U>Í¬Ò»IP×¢²á¼ä¸ôÊ±¼ä</U><BR>Èç²»ÏëÏÞÖÆ¿ÉÌîÐ´0</td>
+<td width="50%" class="td2"> <U>åŒä¸€IPæ³¨å†Œé—´éš”æ—¶é—´</U><BR>å¦‚ä¸æƒ³é™åˆ¶å¯å¡«å†™0</td>
 <td width="50%" class="td2">  
-<input title="ÇëÊäÈëÕûÊý $!cint" type="text" name="forum_setting(22)" size="3" value="<%=Dvbbs.forum_setting(22)%>">&nbsp;Ãë
+<input title="è¯·è¾“å…¥æ•´æ•° $!cint" type="text" name="forum_setting(22)" size="3" value="<%=Dvbbs.forum_setting(22)%>">&nbsp;ç§’
 </td>
 </tr>
 <tr> 
-<td width="50%" class="td1"> <U>EmailÍ¨ÖªÃÜÂë</U><BR>È·ÈÏÄúµÄÕ¾µãÖ§³Ö·¢ËÍmail£¬Ëù°üº¬ÃÜÂëÎªÏµÍ³Ëæ»úÉú³É</td>
+<td width="50%" class="td1"> <U>Emailé€šçŸ¥å¯†ç </U><BR>ç¡®è®¤æ‚¨çš„ç«™ç‚¹æ”¯æŒå‘é€mailï¼Œæ‰€åŒ…å«å¯†ç ä¸ºç³»ç»Ÿéšæœºç”Ÿæˆ</td>
 <td width="50%" class="td1">  
-<input type=radio name="forum_setting(23)" value=0 <%if Dvbbs.forum_setting(23)="0" then%>checked<%end if%> class="radio">¹Ø±Õ&nbsp;
-<input type=radio name="forum_setting(23)" value=1 <%if Dvbbs.forum_setting(23)="1" then%>checked<%end if%> class="radio">´ò¿ª&nbsp;
+<input type=radio name="forum_setting(23)" value=0 <%if Dvbbs.forum_setting(23)="0" then%>checked<%end if%> class="radio">å…³é—­&nbsp;
+<input type=radio name="forum_setting(23)" value=1 <%if Dvbbs.forum_setting(23)="1" then%>checked<%end if%> class="radio">æ‰“å¼€&nbsp;
 </td>
 </tr>
 <tr> 
-<td width="50%" class="td2"> <U>Ò»¸öEmailÖ»ÄÜ×¢²áÒ»¸öÕÊºÅ</U></td>
+<td width="50%" class="td2"> <U>ä¸€ä¸ªEmailåªèƒ½æ³¨å†Œä¸€ä¸ªå¸å·</U></td>
 <td width="50%" class="td2">  
-<input type=radio name="forum_setting(24)" value=0 <%if Dvbbs.forum_setting(24)="0" then%>checked<%end if%> class="radio">¹Ø±Õ&nbsp;
-<input type=radio name="forum_setting(24)" value=1 <%if Dvbbs.forum_setting(24)="1" then%>checked<%end if%> class="radio">´ò¿ª&nbsp;
+<input type=radio name="forum_setting(24)" value=0 <%if Dvbbs.forum_setting(24)="0" then%>checked<%end if%> class="radio">å…³é—­&nbsp;
+<input type=radio name="forum_setting(24)" value=1 <%if Dvbbs.forum_setting(24)="1" then%>checked<%end if%> class="radio">æ‰“å¼€&nbsp;
 </td>
 </tr>
 <tr> 
-<td width="50%" class="td1"> <U>×¢²áÐèÒª¹ÜÀíÔ±ÈÏÖ¤</U></td>
+<td width="50%" class="td1"> <U>æ³¨å†Œéœ€è¦ç®¡ç†å‘˜è®¤è¯</U></td>
 <td width="50%" class="td1">  
-<input type=radio name="forum_setting(25)" value=0 <%if Dvbbs.forum_setting(25)="0" then%>checked<%end if%> class="radio">¹Ø±Õ&nbsp;
-<input type=radio name="forum_setting(25)" value=1 <%if Dvbbs.forum_setting(25)="1" then%>checked<%end if%> class="radio">´ò¿ª&nbsp;
+<input type=radio name="forum_setting(25)" value=0 <%if Dvbbs.forum_setting(25)="0" then%>checked<%end if%> class="radio">å…³é—­&nbsp;
+<input type=radio name="forum_setting(25)" value=1 <%if Dvbbs.forum_setting(25)="1" then%>checked<%end if%> class="radio">æ‰“å¼€&nbsp;
 </td>
 </tr>
 <tr> 
-<td width="50%" class="td2"> <U>·¢ËÍ×¢²áÐÅÏ¢ÓÊ¼þ</U><BR>ÇëÈ·ÈÏÄú´ò¿ªÁËÓÊ¼þ¹¦ÄÜ</td>
+<td width="50%" class="td2"> <U>å‘é€æ³¨å†Œä¿¡æ¯é‚®ä»¶</U><BR>è¯·ç¡®è®¤æ‚¨æ‰“å¼€äº†é‚®ä»¶åŠŸèƒ½</td>
 <td width="50%" class="td2">  
-<input type=radio name="forum_setting(47)" value=0 <%if Dvbbs.forum_setting(47)="0" then%>checked<%end if%> class="radio">¹Ø±Õ&nbsp;
-<input type=radio name="forum_setting(47)" value=1 <%if Dvbbs.forum_setting(47)="1" then%>checked<%end if%> class="radio">´ò¿ª&nbsp;
+<input type=radio name="forum_setting(47)" value=0 <%if Dvbbs.forum_setting(47)="0" then%>checked<%end if%> class="radio">å…³é—­&nbsp;
+<input type=radio name="forum_setting(47)" value=1 <%if Dvbbs.forum_setting(47)="1" then%>checked<%end if%> class="radio">æ‰“å¼€&nbsp;
 </td>
 </tr>
 <tr> 
-<td width="50%" class="td1"> <U>¿ªÆô¶ÌÐÅ»¶Ó­ÐÂ×¢²áÓÃ»§</U></td>
+<td width="50%" class="td1"> <U>å¼€å¯çŸ­ä¿¡æ¬¢è¿Žæ–°æ³¨å†Œç”¨æˆ·</U></td>
 <td width="50%" class="td1">  
-<input type=radio name="forum_setting(46)" value=0 <%if Dvbbs.forum_setting(46)="0" then%>checked<%end if%> class="radio">¹Ø±Õ&nbsp;
-<input type=radio name="forum_setting(46)" value=1 <%if Dvbbs.forum_setting(46)="1" then%>checked<%end if%> class="radio">´ò¿ª&nbsp;
+<input type=radio name="forum_setting(46)" value=0 <%if Dvbbs.forum_setting(46)="0" then%>checked<%end if%> class="radio">å…³é—­&nbsp;
+<input type=radio name="forum_setting(46)" value=1 <%if Dvbbs.forum_setting(46)="1" then%>checked<%end if%> class="radio">æ‰“å¼€&nbsp;
 </td>
 </tr>
 
 </table><BR>
 <table border="0" cellspacing="1" cellpadding="3" align="center" width="100%">
 <tr> 
-<th height=25 colspan=2 align=left id=tabletitlelink><a name="setting10"></a><b>ÏµÍ³ÉèÖÃ</b>[<a href="#top">¶¥²¿</a>]</td>
+<th height=25 colspan=2 align=left id=tabletitlelink><a name="setting10"></a><b>ç³»ç»Ÿè®¾ç½®</b>[<a href="#top">é¡¶éƒ¨</a>]</td>
 </tr>
 <tr> 
-<td width="50%" class="td1"> <U>ÂÛÌ³ËùÔÚÊ±Çø</U></td>
+<td width="50%" class="td1"> <U>è®ºå›æ‰€åœ¨æ—¶åŒº</U></td>
 <td width="50%" class="td1">  
-<input title="Öµ²»ÄÜÎª¿Õ $!" type="text" name="Forum_info(9)" size="35" value="<%=Dvbbs.Forum_info(9)%>">
+<input title="å€¼ä¸èƒ½ä¸ºç©º $!" type="text" name="Forum_info(9)" size="35" value="<%=Dvbbs.Forum_info(9)%>">
 </td>
 </tr>
 <tr> 
-<td width="50%" class="td2"> <U>·þÎñÆ÷Ê±²î</U></td>
+<td width="50%" class="td2"> <U>æœåŠ¡å™¨æ—¶å·®</U></td>
 <td width="50%" class="td2">
 <select name="forum_setting(0)">
 <%for i=-23 to 23%>
@@ -506,1131 +506,62 @@ If UBound(forum_pack)<2 Then ReDim forum_pack(3)
 </td>
 </tr>
 <tr> 
-<td width="50%" class="td1"> <U>½Å±¾³¬Ê±Ê±¼ä</U><BR>Ä¬ÈÏÎª300£¬Ò»°ã²»×ö¸ü¸Ä</td>
+<td width="50%" class="td1"> <U>è„šæœ¬è¶…æ—¶æ—¶é—´</U><BR>é»˜è®¤ä¸º300ï¼Œä¸€èˆ¬ä¸åšæ›´æ”¹</td>
 <td width="50%" class="td1">  
-<input title="ÇëÊäÈëÕûÊý $!cint" type="text" name="forum_setting(1)" size="3" value="<%=Dvbbs.forum_setting(1)%>">&nbsp;Ãë
+<input title="è¯·è¾“å…¥æ•´æ•° $!cint" type="text" name="forum_setting(1)" size="3" value="<%=Dvbbs.forum_setting(1)%>">&nbsp;ç§’
 </td>
 </tr>
 <tr> 
-<td width="50%" class="td2"> <U>ÊÇ·ñÏÔÊ¾Ò³ÃæÖ´ÐÐÊ±¼ä</U></td>
+<td width="50%" class="td2"> <U>æ˜¯å¦æ˜¾ç¤ºé¡µé¢æ‰§è¡Œæ—¶é—´</U></td>
 <td width="50%" class="td2">  
-<input type=radio name="forum_setting(30)" value=0 <%If Dvbbs.forum_setting(30)="0" then%>checked<%end if%> class="radio">·ñ&nbsp;
-<input type=radio name="forum_setting(30)" value=1 <%if Dvbbs.forum_setting(30)="1" then%>checked<%end if%> class="radio">ÊÇ&nbsp;
+<input type=radio name="forum_setting(30)" value=0 <%If Dvbbs.forum_setting(30)="0" then%>checked<%end if%> class="radio">å¦&nbsp;
+<input type=radio name="forum_setting(30)" value=1 <%if Dvbbs.forum_setting(30)="1" then%>checked<%end if%> class="radio">æ˜¯&nbsp;
 </td>
 </tr>
 <tr> 
-<td width="50%" class="td1"><U>½ûÖ¹µÄÓÊ¼þµØÖ·</U><BR>ÔÚÏÂÃæÖ¸¶¨µÄÓÊ¼þµØÖ·½«±»½ûÖ¹×¢²á£¬Ã¿¸öÓÊ¼þµØÖ·ÓÃ¡°|¡±·ûºÅ·Ö¸ô<BR>±¾¹¦ÄÜÖ§³ÖÄ£ºýËÑË÷£¬ÈçÉèÖÃÁËeway½ûÖ¹£¬½«½ûÖ¹eway@aspsky.net»òÕßeway@dvbbs.netÀàËÆÕâÑùµÄ×¢²á</td>
+<td width="50%" class="td1"><U>ç¦æ­¢çš„é‚®ä»¶åœ°å€</U><BR>åœ¨ä¸‹é¢æŒ‡å®šçš„é‚®ä»¶åœ°å€å°†è¢«ç¦æ­¢æ³¨å†Œï¼Œæ¯ä¸ªé‚®ä»¶åœ°å€ç”¨â€œ|â€ç¬¦å·åˆ†éš”<BR>æœ¬åŠŸèƒ½æ”¯æŒæ¨¡ç³Šæœç´¢ï¼Œå¦‚è®¾ç½®äº†ewayç¦æ­¢ï¼Œå°†ç¦æ­¢eway@aspsky.netæˆ–è€…eway@dvbbs.netç±»ä¼¼è¿™æ ·çš„æ³¨å†Œ</td>
 <td width="50%" class="td1"> 
-<input title="Öµ²»ÄÜÎª¿Õ $!" type="text" name="forum_setting(52)" size="50" value="<%=Dvbbs.forum_setting(52)%>">
+<input title="å€¼ä¸èƒ½ä¸ºç©º $!" type="text" name="forum_setting(52)" size="50" value="<%=Dvbbs.forum_setting(52)%>">
 </td>
 </tr>
 <tr> 
-<td width="50%" class="td2"><U>ÂÛÌ³½Å±¾¹ýÂËÀ©Õ¹ÉèÖÃ</U><BR>´ËÉèÖÃÎª¿ªÆôHTML½âÊÍµÄÊ±ºò¶Ô½Å±¾´úÂëµÄÊ¶±ðÉèÖÃ£¬<br>Äú¿ÉÒÔ¸ù¾ÝÐèÒªÌí¼Ó×Ô¶¨µÄ¹ýÂË<br>¸ñÊ½ÊÇ£º¹ýÂË×Ö| Èç£ºabc|efg| ÕâÑù¾ÍÌí¼ÓÁËabcºÍefgµÄ¹ýÂË</td>
+<td width="50%" class="td2"><U>è®ºå›è„šæœ¬è¿‡æ»¤æ‰©å±•è®¾ç½®</U><BR>æ­¤è®¾ç½®ä¸ºå¼€å¯HTMLè§£é‡Šçš„æ—¶å€™å¯¹è„šæœ¬ä»£ç çš„è¯†åˆ«è®¾ç½®ï¼Œ<br>æ‚¨å¯ä»¥æ ¹æ®éœ€è¦æ·»åŠ è‡ªå®šçš„è¿‡æ»¤<br>æ ¼å¼æ˜¯ï¼šè¿‡æ»¤å­—| å¦‚ï¼šabc|efg| è¿™æ ·å°±æ·»åŠ äº†abcå’Œefgçš„è¿‡æ»¤</td>
 <td width="50%" class="td2"> 
-<Input title="Öµ²»ÄÜÎª¿Õ $!" type="text" name="forum_setting(77)" size="50" value="<%=Dvbbs.forum_setting(77)%>"><br> Ã»ÓÐÌí¼Ó¿ÉÒÔÌî0,Èç¹ûÌí¼ÓÁË×îºóÒ»¸ö×Ö·û±ØÐëÊÇ"|"
+<Input title="å€¼ä¸èƒ½ä¸ºç©º $!" type="text" name="forum_setting(77)" size="50" value="<%=Dvbbs.forum_setting(77)%>"><br> æ²¡æœ‰æ·»åŠ å¯ä»¥å¡«0,å¦‚æžœæ·»åŠ äº†æœ€åŽä¸€ä¸ªå­—ç¬¦å¿…é¡»æ˜¯"|"
 </td>
 </tr>
 </table><BR>
 <table border="0" cellspacing="1" cellpadding="3" align="center" width="100%">
 <tr> 
-<th height=25 colspan=2 align=left id=tabletitlelink><a name="setting12"></a><b>ÔÚÏßºÍÓÃ»§À´Ô´</b>[<a href="#top">¶¥²¿</a>]</td>
+<th height=25 colspan=2 align=left id=tabletitlelink><a name="setting12"></a><b>åœ¨çº¿å’Œç”¨æˆ·æ¥æº</b>[<a href="#top">é¡¶éƒ¨</a>]</td>
 </tr>
 <tr> 
-<td width="50%" class="td1"> <U>ÔÚÏßÏÔÊ¾ÓÃ»§IP</U><BR>¹Ø±ÕºóÈç¹ûËùÊôÓÃ»§×é¡¢ÂÛÌ³È¨ÏÞ¡¢ÓÃ»§È¨ÏÞÖÐÉèÖÃÁËÓÃ»§¿Éä¯ÀÀÔò¿É¼û</td>
+<td width="50%" class="td1"> <U>åœ¨çº¿æ˜¾ç¤ºç”¨æˆ·IP</U><BR>å…³é—­åŽå¦‚æžœæ‰€å±žç”¨æˆ·ç»„ã€è®ºå›æƒé™ã€ç”¨æˆ·æƒé™ä¸­è®¾ç½®äº†ç”¨æˆ·å¯æµè§ˆåˆ™å¯è§</td>
 <td width="50%" class="td1">  
-<input type=radio name="forum_setting(28)" value=0 <%if Dvbbs.forum_setting(28)="0" then%>checked<%end if%> class="radio">±£ÃÜ&nbsp;
-<input type=radio name="forum_setting(28)" value=1 <%if Dvbbs.forum_setting(28)="1" then%>checked<%end if%> class="radio">¹«¿ª&nbsp;
+<input type=radio name="forum_setting(28)" value=0 <%if Dvbbs.forum_setting(28)="0" then%>checked<%end if%> class="radio">ä¿å¯†&nbsp;
+<input type=radio name="forum_setting(28)" value=1 <%if Dvbbs.forum_setting(28)="1" then%>checked<%end if%> class="radio">å…¬å¼€&nbsp;
 </td>
 </tr>
 <tr> 
-<td width="50%" class="td2"> <U>ÔÚÏßÏÔÊ¾ÓÃ»§À´Ô´</U><BR>¹Ø±ÕºóÈç¹ûËùÊôÓÃ»§×é¡¢ÂÛÌ³È¨ÏÞ¡¢ÓÃ»§È¨ÏÞÖÐÉèÖÃÁËÓÃ»§¿Éä¯ÀÀÔò¿É¼û<BR>¿ªÆô±¾¹¦ÄÜ½ÏÏûºÄ×ÊÔ´</td>
+<td width="50%" class="td2"> <U>åœ¨çº¿æ˜¾ç¤ºç”¨æˆ·æ¥æº</U><BR>å…³é—­åŽå¦‚æžœæ‰€å±žç”¨æˆ·ç»„ã€è®ºå›æƒé™ã€ç”¨æˆ·æƒé™ä¸­è®¾ç½®äº†ç”¨æˆ·å¯æµè§ˆåˆ™å¯è§<BR>å¼€å¯æœ¬åŠŸèƒ½è¾ƒæ¶ˆè€—èµ„æº</td>
 <td width="50%" class="td2">  
-<input type=radio name="forum_setting(36)" value=0 <%if Dvbbs.forum_setting(36)="0" then%>checked<%end if%> class="radio">±£ÃÜ&nbsp;
-<input type=radio name="forum_setting(36)" value=1 <%if Dvbbs.forum_setting(36)="1" then%>checked<%end if%> class="radio">¹«¿ª&nbsp;
+<input type=radio name="forum_setting(36)" value=0 <%if Dvbbs.forum_setting(36)="0" then%>checked<%end if%> class="radio">ä¿å¯†&nbsp;
+<input type=radio name="forum_setting(36)" value=1 <%if Dvbbs.forum_setting(36)="1" then%>checked<%end if%> class="radio">å…¬å¼€&nbsp;
 </td>
 </tr>
 <tr> 
-<td width="50%" class="td1"> <U>ÔÚÏß×ÊÁÏÁÐ±íÏÔÊ¾ÓÃ»§µ±Ç°Î»ÖÃ</U></td>
+<td width="50%" class="td1"> <U>åœ¨çº¿èµ„æ–™åˆ—è¡¨æ˜¾ç¤ºç”¨æˆ·å½“å‰ä½ç½®</U></td>
 <td width="50%" class="td1">  
-<input type=radio name="forum_setting(33)" value=0 <%if Dvbbs.forum_setting(33)="0" then%>checked<%end if%> class="radio">·ñ&nbsp;
-<input type=radio name="forum_setting(33)" value=1 <%if Dvbbs.forum_setting(33)="1" then%>checked<%end if%> class="radio">ÊÇ&nbsp;
+<input type=radio name="forum_setting(33)" value=0 <%if Dvbbs.forum_setting(33)="0" then%>checked<%end if%> class="radio">å¦&nbsp;
+<input type=radio name="forum_setting(33)" value=1 <%if Dvbbs.forum_setting(33)="1" then%>checked<%end if%> class="radio">æ˜¯&nbsp;
 </td>
 </tr>
 <tr> 
-<td width="50%" class="td2"> <U>ÔÚÏß×ÊÁÏÁÐ±íÏÔÊ¾ÓÃ»§µÇÂ¼ºÍ»î¶¯Ê±¼ä</U></td>
+<td width="50%" class="td2"> <U>åœ¨çº¿èµ„æ–™åˆ—è¡¨æ˜¾ç¤ºç”¨æˆ·ç™»å½•å’Œæ´»åŠ¨æ—¶é—´</U></td>
 <td width="50%" class="td2">  
-<input type=radio name="forum_setting(34)" value=0 <%if Dvbbs.forum_setting(34)="0" then%>checked<%end if%> class="radio">·ñ&nbsp;
-<input type=radio name="forum_setting(34)" value=1 <%if Dvbbs.forum_setting(34)="1" then%>checked<%end if%> class="radio">ÊÇ&nbsp;
+<input type=radio name="forum_setting(34)" value=0 <%if Dvbbs.forum_setting(34)="0" then%>checked<%end if%> class="radio">å¦&nbsp;
+<input type=radio name="forum_setting(34)" value=1 <%if Dvbbs.forum_setting(34)="1" then%>checked<%end if%> class="radio">æ˜¯&nbsp;
 </td>
 </tr>
 <tr> 
-<td width="50%" class="td1"> <U>ÔÚÏß×ÊÁÏÁÐ±íÏÔÊ¾ÓÃ»§ä¯ÀÀÆ÷ºÍ²Ù×÷ÏµÍ³</U></td>
-<td width="50%" class="td1">  
-<input type=radio name="forum_setting(35)" value=0 <%If Dvbbs.forum_setting(35)="0" then%>checked<%end if%> class="radio">·ñ&nbsp;
-<input type=radio name="forum_setting(35)" value=1 <%if Dvbbs.forum_setting(35)="1" then%>checked<%end if%> class="radio">ÊÇ&nbsp;
-</td>
-</tr>
-<tr> 
-<td width="50%" class="td2"> <U>ÔÚÏßÃûµ¥ÏÔÊ¾¿ÍÈËÔÚÏß</U><BR>Îª½ÚÊ¡×ÊÔ´½¨Òé¹Ø±Õ</td>
-<td width="50%" class="td2">  
-<input type=radio name="forum_setting(15)" value=0 <%if Dvbbs.forum_setting(15)="0" then%>checked<%end if%> class="radio">¹Ø±Õ&nbsp;
-<input type=radio name="forum_setting(15)" value=1 <%if Dvbbs.forum_setting(15)="1" then%>checked<%end if%> class="radio">´ò¿ª&nbsp;
-</td>
-</tr>
-<tr> 
-<td width="50%" class="td1"> <U>ÔÚÏßÃûµ¥ÏÔÊ¾ÓÃ»§ÔÚÏß</U><BR>Îª½ÚÊ¡×ÊÔ´½¨Òé¹Ø±Õ</td>
-<td width="50%" class="td1">  
-<input type=radio name="forum_setting(14)" value=0 <%if Dvbbs.forum_setting(14)="0" then%>checked<%end if%> class="radio">¹Ø±Õ&nbsp;
-<input type=radio name="forum_setting(14)" value=1 <%if Dvbbs.forum_setting(14)="1" then%>checked<%end if%> class="radio">´ò¿ª&nbsp;
-</td>
-</tr>
-<tr> 
-<td width="50%" class="td2"> <U>É¾³ý²»»î¶¯ÓÃ»§Ê±¼ä</U><BR>¿ÉÉèÖÃÉ¾³ý¶àÉÙ·ÖÖÓÄÚ²»»î¶¯ÓÃ»§<BR>µ¥Î»£º·ÖÖÓ£¬ÇëÊäÈëÊý×Ö</td>
-<td width="50%" class="td2">  
-<input title="ÇëÊäÈëÕûÊý $!cint" type="text" name="forum_setting(8)" size="3" value="<%=Dvbbs.forum_setting(8)%>">&nbsp;·ÖÖÓ
-</td>
-</tr>
-<tr> 
-<td width="50%" class="td1"> <U>×ÜÂÛÌ³ÔÊÐíÍ¬Ê±ÔÚÏßÊý</U><BR>Èç²»ÏëÏÞÖÆ£¬¿ÉÉèÖÃÎª0</td>
-<td width="50%" class="td1">  
-<input title="ÇëÊäÈëÕûÊý $!cint" type="text" name="forum_setting(26)" size="6" value="<%=Dvbbs.forum_setting(26)%>">&nbsp;ÈË
-</td>
-</tr>
-<tr> 
-<td width="50%" class="td2"> <U>Õ¹¿ªÓÃ»§ÔÚÏßÁÐ±íÃ¿Ò³ÏÔÊ¾ÓÃ»§Êý</U></td>
-<td width="50%" class="td2">  
-<input title="ÇëÊäÈëÕûÊý $!cint" type="text" name="forum_setting(58)" size="6" value="<%=Dvbbs.forum_setting(58)%>">&nbsp;ÈË
-</td>
-</tr>
-</table><BR>
-<table border="0" cellspacing="1" cellpadding="3" align="center" width="100%">
-<tr> 
-<th height=25 colspan=3 align=left id=tabletitlelink><a name="setting13"></a><b>ÓÊ¼þÑ¡Ïî</b>[<a href="#top">¶¥²¿</a>]</td>
-</tr>
-<tr> 
-	<td width="50%" class="td1"> <U>·¢ËÍÓÊ¼þ×é¼þ</U>
-	<input type="hidden" id="forum_emailplus" value="<b>·¢ËÍÓÊ¼þ×é¼þ°ïÖú:</b><br><li>Ñ¡Ôñ×é¼þÊ±ÇëÈ·ÈÏ·þÎñÆ÷ÊÇ·ñÖ§³Ö¡£">
-	<BR>Èç¹ûÄúµÄ·þÎñÆ÷²»Ö§³ÖÏÂÁÐ×é¼þ£¬ÇëÑ¡Ôñ²»Ö§³Ö</td>
-	<td width="43%" class="td1">  
-	<select name="forum_setting(2)" id="forum_setting(2)" onChange="chkselect(options[selectedIndex].value,'know1');">
-	<option value="0">²»Ö§³Ö 
-	<option value="1">JMAIL 
-	<option value="2">CDONTS 
-	<option value="3">ASPEMAIL 
-	</select><div id=know1></div></td>
-	<td class="td1"><a href=# onclick="helpscript(forum_emailplus);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
-</tr>
-<tr> 
-	<td class="td2"> <U>SMTP ServerµØÖ·</U>
-	<input type="hidden" id="forum_smtp" value="<b>SMTP ServerµØÖ·°ïÖú:</b><br><li>µ±Ñ¡ÔñÁËÓÊ¼þ×é¼þÊ±´ËÏî½¨ÒéÌîÐ´£¬ÀýÈç£ºsmtp.21cn.com£»<li>´ËÓÊ¼þ·þÎñÆ÷µØÖ·µÄÌîÐ´ÊÇ¸ù¾Ý¹ÜÀíÔ±ÓÊÏä¶ø¶¨£¬ÀýÈç¹ÜÀíÔ±ÓÊÏäÎªabc@163.net£¬Ôò´ËÀ¸¿ÉÌî£ºsmtp.163.net¡£">
-	<BR>Ö»ÓÐÔÚÂÛÌ³Ê¹ÓÃÉèÖÃÖÐ´ò¿ªÁË·¢ËÍÓÊ¼þ¹¦ÄÜ£¬¸ÃÌîÐ´ÄÚÈÝ·½ÓÐÐ§</td>
-	<td class="td2">  
-	<input type="text" name="Forum_info(4)" size="35" value="<%=Dvbbs.Forum_info(4)%>">
-	</td>
-	<td class="td2"><a href=# onclick="helpscript(forum_smtp);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
-</tr>
-<tr>
-	<td class="td1"> <U>ÓÊ¼þµÇÂ¼ÓÃ»§Ãû</U><BR>Ö»ÓÐÔÚÂÛÌ³Ê¹ÓÃÉèÖÃÖÐ´ò¿ªÁË·¢ËÍÓÊ¼þ¹¦ÄÜ£¬¸ÃÌîÐ´ÄÚÈÝ·½ÓÐÐ§</td>
-	<td colspan=2 class="td1">
-	<input type="text" name="Forum_info(12)" size="35" value="<%=Dvbbs.Forum_info(12)%>">
-	</td>
-</tr>
-<tr> 
-	<td class="td2"> <U>ÓÊ¼þµÇÂ¼ÃÜÂë</U></td>
-	<td colspan=2 class="td2">  
-	<input type="password" name="Forum_info(13)" size="35" value="<%=Dvbbs.Forum_info(13)%>">
-	</td>
-</tr>
-</table>
-<a name="setting14"></a>
-<BR>
-<%
-Dim UploadSetting
-UploadSetting = Split(Dvbbs.forum_setting(7),"|")
-If Ubound(UploadSetting)<>20 Then
-	Redim UploadSetting(20)
-	For i=0 to 20
-		If i=2 or i=3 Then
-			UploadSetting(i)=999
-		Else
-			UploadSetting(i)=0
-		End If
-	Next
-End If
-%>
-<table border="0" cellspacing="1" cellpadding="3" align="center" width="100%">
-<tr> 
-<th height=25 colspan=3 align=left id=tabletitlelink><b>ÉÏ´«ÉèÖÃ</b>[<a href="#top">¶¥²¿</a>]</td>
-</tr>
-<tr> 
-	<td width="50%" class="td1"> <U>Í·ÏñÉÏ´«</U></td>
-	<td width="43%" class="td1">
-	<SELECT name="UploadSetting(0)" id="UploadSetting(0)">
-	<OPTION value=0 <%if UploadSetting(0)=0 then%>selected<%end if%>>ÍêÈ«¹Ø±Õ&nbsp;
-	<OPTION value=1 <%if UploadSetting(0)=1 then%>selected<%end if%>>ÍêÈ«´ò¿ª&nbsp;
-	<OPTION value=2 <%if UploadSetting(0)=2 then%>selected<%end if%>>Ö»ÔÊÐí»áÔ±ÉÏ´«&nbsp;
-	</SELECT>
-	</td>
-	<input type="hidden" id="Forum_FaceUpload" value="<b>Í·ÏñÉÏ´«°ïÖú:</b><br><li>µ±¿ªÆô´Ë¹¦ÄÜ£¬ÓÃ»§¿ÉÒÔ°ÑÍ¼ÏñÎÄ¼þÉÏ´«µ½·þÎñÆ÷×÷ÎªÍ·Ïñ¡£<li>ÔÚÉÏ´«¹ÜÀíÖÐÓÐ¶ÔÉÏ´«Í·Ïñ½øÐÐ¹ÜÀí¡£<LI>ÍêÈ«¹Ø±Õ£º¼´×¢²áºÍÐÞ¸Ä×ÊÁÏ¶¼²»ÔÊÐíÉÏ´«Í·Ïñ¡£<LI>ÍêÈ«´ò¿ª£º¼´×¢²áºÍÐÞ¸Ä×ÊÁÏ¶¼ÔÊÐíÉÏ´«Í·Ïñ¡£<LI>Ö»ÔÊÐí»áÔ±ÉÏ´«£º¼´»áÔ±ÐÞ¸Ä¸öÈË×ÊÁÏÊ±ÔÊÐíÉÏ´«Í·Ïñ¡£">
-	<td class="td1"><a href=# onclick="helpscript(Forum_FaceUpload);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
-</tr>
-<tr> 
-	<td class="td2"><U>ÔÊÐíµÄ×î´óÍ·ÏñÎÄ¼þ´óÐ¡</U></td>
-	<td class="td2"> 
-	<input title="ÇëÊäÈëÕûÊý $!cint" type="text" name="UploadSetting(1)" size="6" value="<%=UploadSetting(1)%>">&nbsp;K
-	</td>
-	<input type="hidden" id="Forum_FaceUploadSize" value="<b>Í·ÏñÎÄ¼þ´óÐ¡°ïÖú:</b><br><li>ÏÞÖÆÉÏ´«Í·ÏñÎÄ¼þµÄ´óÐ¡¡£<li>ÓÃ»§Í·Ïñ³ýÉÏ´«ÏÞÖÆÍâ£¬Çë²é¿´¡°ÓÃ»§Ñ¡Ïî¡±Ïà¹ØÉèÖÃ¡£">
-	<td class="td2"><a href=# onclick="helpscript(Forum_FaceUploadSize);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
-</tr>
-<tr>
-	<td class="td1" ><U>Ñ¡È¡ÉÏ´«×é¼þ</U></td>
-	<td class="td1" >
-	<select name="UploadSetting(2)" id="UploadSetting(2)" onChange="chkselect(options[selectedIndex].value,'know2');">
-	<option value="999">¹Ø±Õ
-	<option value="0">ÎÞ×é¼þÉÏ´«Àà
-	<option value="1">Aspupload3.0×é¼þ 
-	<option value="2">SA-FileUp 4.0×é¼þ
-	<option value="3">DvFile-Up V1.0×é¼þ
-	</option></select><div id="know2"></div>
-	</td>
-	<td class="td1" >
-	<input type="hidden" id="forum_upload" value="<b>Ñ¡È¡ÉÏ´«×é¼þ°ïÖú:</b><br><li>µ±Ñ¡È¡Ê±£¬ÂÛÌ³ÏµÍ³»á×Ô¶¯ÎªÄú¼ì²â·þÎñÆ÷ÊÇ·ñÖ§³Ö¸Ã×é¼þ£»<li>ÈôÌáÊ¾²»Ö§³Ö£¬ÇëÑ¡Ôñ¹Ø±Õ¡£">
-	<a href=# onclick="helpscript(forum_upload);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
-</tr>
-<tr> 
-	<td class="td2"><U>Ñ¡È¡Éú³ÉÔ¤ÀÀÍ¼Æ¬×é¼þ</U></td>
-	<td class="td2"> 
-	<select name="UploadSetting(3)" id="UploadSetting(3)" onChange="chkselect(options[selectedIndex].value,'know3');">
-	<option value="999">¹Ø±Õ
-	<option value="0">CreatePreviewImage×é¼þ
-	<option value="1">AspJpeg×é¼þ
-	<option value="2">SA-ImgWriter×é¼þ
-	</select><div id="know3"></div>
-	</td>
-	<td class="td2">
-	<input type="hidden" id="forum_CreatImg" value="<b>Ñ¡È¡Éú³ÉÔ¤ÀÀÍ¼Æ¬×é¼þ°ïÖú:</b><br><li>µ±Ñ¡È¡Ê±£¬ÂÛÌ³ÏµÍ³»á×Ô¶¯ÎªÄú¼ì²â·þÎñÆ÷ÊÇ·ñÖ§³Ö¸Ã×é¼þ£»<li>ÈôÌáÊ¾²»Ö§³Ö£¬ÇëÑ¡Ôñ¹Ø±Õ¡£">
-	<a href=# onclick="helpscript(forum_CreatImg);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
-</tr>
-<tr> 
-	<td class="td1"><U>Éú³ÉÔ¤ÀÀÍ¼Æ¬´óÐ¡ÉèÖÃ£¨¿í¶È|¸ß¶È£©</U></td>
-	<td class="td1">
-		¿í¶È£º<INPUT title="ÇëÊäÈëÕûÊý $!cint" type="text" NAME="UploadSetting(14)" size=10 value="<%=UploadSetting(14)%>"> ÏóËØ
-		¸ß¶È£º<INPUT title="ÇëÊäÈëÕûÊý $!cint" type="text" NAME="UploadSetting(15)" size=10 value="<%=UploadSetting(15)%>"> ÏóËØ
-	</td>
-	<td class="td1">
-	<input type="hidden" id="forum_CreatImgSize" value="<b>Éú³ÉÔ¤ÀÀÍ¼Æ¬´óÐ¡ÉèÖÃ°ïÖú:</b><br><li>µ±Ñ¡È¡ÁËÉú³ÉÔ¤ÀÀÍ¼Æ¬×é¼þ£¬²¢ÇÒ·þÎñÆ÷ÉÏ×°ÓÐÏàÓ¦×é¼þ£¬´Ë¹¦ÄÜ²ÅÄÜÉúÐ§£»">
-	<a href=# onclick="helpscript(forum_CreatImgSize);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
-</tr>
-<tr> 
-	<td class="td2"><U>Éú³ÉÔ¤ÀÀÍ¼Æ¬´óÐ¡¹æÔòÑ¡Ïî</U></td>
-	<td class="td2"> 
-		<SELECT name="UploadSetting(16)" id="UploadSetting(16)">
-		<OPTION value=0>¹Ì¶¨</OPTION>
-		<OPTION value=1>µÈ±ÈÀýËõÐ¡</OPTION>
-		</SELECT>
-	</td>
-	<td class="td2">&nbsp;</td>
-</tr>
-<tr> 
-	<td class="td1"><U>Í¼Æ¬Ë®Ó¡ÉèÖÃ¿ª¹Ø</U></td>
-	<td class="td1"> 
-		<SELECT name="UploadSetting(17)" id="UploadSetting(17)">
-		<OPTION value="0">¹Ø±ÕË®Ó¡Ð§¹û</OPTION>
-		<OPTION value="1">Ë®Ó¡ÎÄ×ÖÐ§¹û</OPTION>
-		<OPTION value="2">Ë®Ó¡Í¼Æ¬Ð§¹û</OPTION>
-		</SELECT>
-	</td>
-	<td class="td1">&nbsp;</td>
-</tr>
-<tr> 
-	<td class="td2"><U>ÉÏ´«Í¼Æ¬Ìí¼ÓË®Ó¡ÎÄ×ÖÐÅÏ¢£¨¿ÉÎª¿Õ»ò0£©</U></td>
-	<td class="td2"> 
-	<INPUT TYPE="text" NAME="UploadSetting(4)" size=40 value="<%=UploadSetting(4)%>">
-	</td>
-	<td class="td2">
-	<input type="hidden" id="forum_CreatText" value="<b>ÉÏ´«Í¼Æ¬Ìí¼ÓË®Ó¡ÎÄ×Ö°ïÖú:</b><br><li>Èô²»ÐèÒªË®Ó¡ÎÄ×ÖÐ§¹û£¬ÇëÉèÖÃÎª¿Õ£»<li>Ë®Ó¡ÎÄ×Ö×ÖÊý²»ÒË³¬¹ý15¸ö×Ö·û,²»Ö§³ÖÈÎºÎWEB±àÂë±ê¼Ç£»<li>Ä¿Ç°Ö§³ÖµÄÏà¹ØÍ¼Æ¬×é¼þÓÐ£ºAspJpeg×é¼þ£¬SA-ImgWriter V1.21×é¼þ.">
-	<a href=# onclick="helpscript(forum_CreatText);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
-</tr>
-<tr> 
-	<td class="td1"><U>ÉÏ´«Ìí¼ÓË®Ó¡×ÖÌå´óÐ¡</U></td>
-	<td class="td1"> 
-	<INPUT title="ÇëÊäÈëÕûÊý $!cint" type="text" NAME="UploadSetting(5)" size=10 value="<%=UploadSetting(5)%>"> <b>px</b>
-	</td>
-	<td class="td1">&nbsp;</td>
-</tr>
-<tr> 
-	<td class="td2"><U>ÉÏ´«Ìí¼ÓË®Ó¡×ÖÌåÑÕÉ«</U></td>
-	<td class="td2">
-	<input type="hidden" name="UploadSetting(6)" id="UploadSetting(6)" value="<%=UploadSetting(6)%>">
-	<img border=0 src="../images/post/rect.gif" style="cursor:pointer;background-Color:<%=UploadSetting(6)%>;" onclick="Getcolor(this,'UploadSetting(6)');" title="Ñ¡È¡ÑÕÉ«!">
-	</td>
-	<td class="td2">&nbsp;</td>
-</tr>
-<tr> 
-	<td class="td1"><U>ÉÏ´«Ìí¼ÓË®Ó¡×ÖÌåÃû³Æ</U></td>
-	<td class="td1">
-	<SELECT name="UploadSetting(7)" id="UploadSetting(7)">
-	<option value="ËÎÌå">ËÎÌå</option>
-	<option value="¿¬Ìå_GB2312">¿¬Ìå</option>
-	<option value="ÐÂËÎÌå">ÐÂËÎÌå</option>
-	<option value="ºÚÌå">ºÚÌå</option>
-	<option value="Á¥Êé">Á¥Êé</option>
-	<OPTION value="Andale Mono" selected>Andale Mono</OPTION> 
-	<OPTION value=Arial>Arial</OPTION> 
-	<OPTION value="Arial Black">Arial Black</OPTION> 
-	<OPTION value="Book Antiqua">Book Antiqua</OPTION>
-	<OPTION value="Century Gothic">Century Gothic</OPTION> 
-	<OPTION value="Comic Sans MS">Comic Sans MS</OPTION>
-	<OPTION value="Courier New">Courier New</OPTION>
-	<OPTION value=Georgia>Georgia</OPTION>
-	<OPTION value=Impact>Impact</OPTION>
-	<OPTION value=Tahoma>Tahoma</OPTION>
-	<OPTION value="Times New Roman" >Times New Roman</OPTION>
-	<OPTION value="Trebuchet MS">Trebuchet MS</OPTION>
-	<OPTION value="Script MT Bold">Script MT Bold</OPTION>
-	<OPTION value=Stencil>Stencil</OPTION>
-	<OPTION value=Verdana>Verdana</OPTION>
-	<OPTION value="Lucida Console">Lucida Console</OPTION>
-	</SELECT>
-	</td>
-	<td class="td1">&nbsp;</td>
-</tr>
-<tr> 
-	<td class="td2"><U>ÉÏ´«Ë®Ó¡×ÖÌåÊÇ·ñ´ÖÌå</U></td>
-	<td class="td2"> 
-		<SELECT name="UploadSetting(8)" id="UploadSetting(8)">
-		<OPTION value=0>·ñ</OPTION>
-		<OPTION value=1>ÊÇ</OPTION>
-		</SELECT>
-	</td>
-	<td class="td2">&nbsp;</td>
-</tr>
-<!-- ÉÏ´«Í¼Æ¬Ìí¼ÓË®Ó¡LOGOÍ¼Æ¬¶¨Òå -->
-<tr> 
-	<td class="td1"><U>ÉÏ´«Í¼Æ¬Ìí¼ÓË®Ó¡LOGOÍ¼Æ¬ÐÅÏ¢£¨¿ÉÎª¿Õ»ò0£©</U><br>ÌîÐ´LOGOµÄÍ¼Æ¬Ïà¶ÔÂ·¾¶</td>
-	<td class="td1"> 
-	<INPUT TYPE="text" NAME="UploadSetting(9)" size=40 value="<%=UploadSetting(9)%>">
-	</td>
-	<td class="td1">&nbsp;</td>
-</tr>
-<tr> 
-	<td class="td2"><U>ÉÏ´«Í¼Æ¬Ìí¼ÓË®Ó¡Í¸Ã÷¶È</U></td>
-	<td class="td2"> 
-	<INPUT TYPE="text" NAME="UploadSetting(10)" size=10 value="<%=UploadSetting(10)%>"> Èç60%ÇëÌîÐ´0.6
-	</td>
-	<td class="td2">&nbsp;</td>
-</tr>
-<tr> 
-	<td class="td2"><U>Ë®Ó¡Í¼Æ¬È¥³ýµ×É«</U><br>±£ÁôÎª¿ÕÔòË®Ó¡Í¼Æ¬²»È¥³ýµ×É«</td>
-	<td class="td2"> 
-	<INPUT TYPE="text" NAME="UploadSetting(18)" ID="UploadSetting(18)" size=10 value="<%=UploadSetting(18)%>"> 
-	<img border=0 src="../images/post/rect.gif" style="cursor:pointer;background-Color:<%=UploadSetting(18)%>;" onclick="Getcolor(this,'UploadSetting(18)');" title="Ñ¡È¡ÑÕÉ«!">
-	</td>
-	<td class="td2">&nbsp;</td>
-</tr>
-<tr> 
-	<td class="td1"><U>Ë®Ó¡ÎÄ×Ö»òÍ¼Æ¬µÄ³¤¿íÇøÓò¶¨Òå</U><br>ÈçË®Ó¡Í¼Æ¬µÄ¿í¶ÈºÍ¸ß¶È</td>
-	<td class="td1"> 
-	¿í¶È£º<INPUT title="ÇëÊäÈëÕûÊý $!cint" type="text" NAME="UploadSetting(11)" size=10 value="<%=UploadSetting(11)%>"> ÏóËØ
-	¸ß¶È£º<INPUT title="ÇëÊäÈëÕûÊý $!cint" type="text" NAME="UploadSetting(12)" size=10 value="<%=UploadSetting(12)%>"> ÏóËØ
-	</td>
-	<td class="td1">&nbsp;</td>
-</tr>
-<tr> 
-	<td class="td2"><U>ÉÏ´«Í¼Æ¬Ìí¼ÓË®Ó¡LOGOÎ»ÖÃ×ø±ê</U></td>
-	<td class="td2">
-	<SELECT NAME="UploadSetting(13)" id="UploadSetting(13)">
-		<option value="0">×óÉÏ</option>
-		<option value="1">×óÏÂ</option>
-		<option value="2">¾ÓÖÐ</option>
-		<option value="3">ÓÒÉÏ</option>
-		<option value="4">ÓÒÏÂ</option>
-	</SELECT>
-	</td>
-	<td class="td2">&nbsp;</td>
-</tr>
-<!-- ÉÏ´«Í¼Æ¬Ìí¼ÓË®Ó¡LOGOÍ¼Æ¬¶¨Òå -->
-<%
-If IsObjInstalled("Scripting.FileSystemObject") Then 
-%>
-<tr> 
-<td class="td1"><U>ÊÇ·ñ²ÉÓÃÎÄ¼þ¡¢Í¼Æ¬·ÀµÁÁ´</U></td>
-<td class="td1">
-<input type="radio" name="Forum_Setting(75)" value=0 <%if Dvbbs.Forum_Setting(75)=0 Then %>checked<%end if%> class="radio">¹Ø±Õ&nbsp;
-<input type="radio" name="Forum_Setting(75)" value=1 <%if Dvbbs.Forum_Setting(75)=1 Then %>checked<%end if%> class="radio">´ò¿ª&nbsp;
-</td>
-<td class="td1">&nbsp;</td>
-</tr>
-<tr> 
-<td class="td2"><U>ÉÏ´«Ä¿Â¼Éè¶¨</U></td>
-<td class="td2">
-<%
-If Dvbbs.Forum_Setting(76)="" Or Dvbbs.Forum_Setting(76)="0" Then Dvbbs.Forum_Setting(76)="UploadFile/"
-%>
-<input type=text name="Forum_Setting(76)" value=<%=Dvbbs.Forum_Setting(76)%>>Èç¹ûÐÞ¸ÄÁË´ËÏî£¬ÇëÓÃFTPÊÖ¹¤´´½¨Ä¿Â¼ºÍÒÆ¶¯Ô­ÓÐÉÏ´«ÎÄ¼þ¡£
-</td>
-<td class="td2">&nbsp;</td>
-</tr>
-<%
-End If 
-%>
-</table>
-<BR>
-<table border="0" cellspacing="1" cellpadding="3" align="center" width="100%">
-<tr> 
-<th height=25 colspan=2 align=left id=tabletitlelink><a name="setting15"></a><b>ÓÃ»§Ñ¡Ïî</b>[<a href="#top">¶¥²¿</a>]</td>
-</tr>
-<tr> 
-<td width="50%" class="td1"> <U>ÔÊÐí¸öÈËÇ©Ãû</U></td>
-<td width="50%" class="td1">  
-<input type=radio name="forum_setting(42)" value=0 <%if Dvbbs.forum_setting(42)=0 then%>checked<%end if%> class="radio">¹Ø±Õ&nbsp;
-<input type=radio name="forum_setting(42)" value=1 <%if Dvbbs.forum_setting(42)=1 then%>checked<%end if%> class="radio">´ò¿ª&nbsp;
-</td>
-</tr>
-<tr> 
-<td width="50%" class="td2"> <U>ÔÊÐíÓÃ»§Ê¹ÓÃÍ·Ïñ</U></td>
-<td width="50%" class="td2">  
-<input type=radio name="forum_setting(53)" value=0 <%if Dvbbs.forum_setting(53)=0 then%>checked<%end if%> class="radio">¹Ø±Õ&nbsp;
-<input type=radio name="forum_setting(53)" value=1 <%if Dvbbs.forum_setting(53)=1 then%>checked<%end if%> class="radio">´ò¿ª&nbsp;
-</td>
-</tr>
-<tr> 
-<td class="td1" width="50%"><U>×î´óÍ·Ïñ³ß´ç</U><BR>¶¨ÒåÄÚÈÝÎªÍ·ÏñµÄ×î´ó¸ß¶ÈºÍ¿í¶È</td>
-<td class="td1" width="50%"> 
-<input title="ÇëÊäÈëÕûÊý $!cint" type="text" name="forum_setting(57)" size="6" value="<%=Dvbbs.forum_setting(57)%>">&nbsp;ÏóËØ
-</td>
-</tr>
-<tr> 
-<td width="50%" class="td2"> <U>Ä¬ÈÏÍ·Ïñ¿í¶È</U><BR>¶¨ÒåÄÚÈÝÎªÂÛÌ³Í·ÏñµÄÄ¬ÈÏ¿í¶È</td>
-<td width="50%" class="td2">  
-<input title="ÇëÊäÈëÕûÊý $!cint" type="text" name="forum_setting(38)" size="6" value="<%=Dvbbs.forum_setting(38)%>">&nbsp;ÏóËØ
-</td>
-</tr>
-<tr> 
-<td width="50%" class="td1"> <U>Ä¬ÈÏÍ·Ïñ¸ß¶È</U><BR>¶¨ÒåÄÚÈÝÎªÂÛÌ³Í·ÏñµÄÄ¬ÈÏ¿í¶È</td>
-<td width="50%" class="td1">  
-<input title="ÇëÊäÈëÕûÊý $!cint" type="text" name="forum_setting(39)" size="6" value="<%=Dvbbs.forum_setting(39)%>">&nbsp;ÏóËØ
-</td>
-</tr>
-<tr> 
-<td class="td2" width="50%"><U>Ê¹ÓÃ×Ô¶¨ÒåÍ·ÏñµÄ×îÉÙ·¢ÌûÊý</U></td>
-<td class="td2" width="50%"> 
-<input title="ÇëÊäÈëÕûÊý $!cint" type="text" name="forum_setting(54)" size="6" value="<%=Dvbbs.forum_setting(54)%>">&nbsp;Æª
-</td>
-</tr>
-<tr> 
-<td width="50%" class="td1"> <U>ÔÊÐí´ÓÆäËûÕ¾µãÁ´½ÓÍ·Ïñ</U><BR>¾ÍÊÇÊÇ·ñ¿ÉÒÔÖ±½ÓÊ¹ÓÃhttp..ÕâÑùµÄurlÀ´Ö±½ÓÏÔÊ¾Í·Ïñ</td>
-<td width="50%" class="td1">  
-<input type=radio name="forum_setting(55)" value=0 <%if Dvbbs.forum_setting(55)=0 then%>checked<%end if%> class="radio">¹Ø±Õ&nbsp;
-<input type=radio name="forum_setting(55)" value=1 <%if Dvbbs.forum_setting(55)=1 then%>checked<%end if%> class="radio">´ò¿ª&nbsp;
-</td>
-</tr>
-<tr> 
-<td width="50%" class="td2"> <U>ÓÃ»§Ç©ÃûÊÇ·ñ¿ªÆôUBB´úÂë</U></td>
-<td width="50%" class="td2">  
-<input type=radio name="forum_setting(65)" value=0 <%if Dvbbs.forum_setting(65)=0 then%>checked<%end if%> class="radio">¹Ø±Õ&nbsp;
-<input type=radio name="forum_setting(65)" value=1 <%if Dvbbs.forum_setting(65)=1 then%>checked<%end if%> class="radio">´ò¿ª&nbsp;
-</td>
-</tr>
-<tr> 
-<td width="50%" class="td1"> <U>ÓÃ»§Ç©ÃûÊÇ·ñ¿ªÆôHTML´úÂë</U></td>
-<td width="50%" class="td1">  
-<input type=radio name="forum_setting(66)" value=0 <%if Dvbbs.forum_setting(66)=0 then%>checked<%end if%> class="radio">¹Ø±Õ&nbsp;
-<input type=radio name="forum_setting(66)" value=1 <%if Dvbbs.forum_setting(66)=1 then%>checked<%end if%> class="radio">´ò¿ª&nbsp;
-</td>
-</tr>
-<tr> 
-<td width="50%" class="td2"> <U>ÓÃ»§ÊÇ·ñ¿ªÆôÌùÍ¼±êÇ©</U></td>
-<td width="50%" class="td2">  
-<input type=radio name="forum_setting(67)" value=0 <%if Dvbbs.forum_setting(67)=0 then%>checked<%end if%> class="radio">¹Ø±Õ&nbsp;
-<input type=radio name="forum_setting(67)" value=1 <%if Dvbbs.forum_setting(67)=1 then%>checked<%end if%> class="radio">´ò¿ª&nbsp;
-</td>
-</tr>
-<tr> 
-<td width="50%" class="td1"> <U>ÓÃ»§ÊÇ·ñ¿ªÆôFlash±êÇ©</U></td>
-<td width="50%" class="td1">  
-<input type=radio name="forum_setting(71)" value=0 <%if Dvbbs.forum_setting(71)="0" then%>checked<%end if%> class="radio">¹Ø±Õ&nbsp;
-<input type=radio name="forum_setting(71)" value=1 <%if Dvbbs.forum_setting(71)="1" then%>checked<%end if%> class="radio">´ò¿ª&nbsp;
-</td>
-</tr>
-<tr> 
-<td width="50%" class="td2"> <U>ÓÃ»§Í·ÏÎ</U><BR>ÊÇ·ñÔÊÐíÓÃ»§×Ô¶¨ÒåÍ·ÏÎ</td>
-<td width="50%" class="td2">  
-<input type=radio name="forum_setting(6)" value=0 <%if Dvbbs.forum_setting(6)="0" then%>checked<%end if%> class="radio">¹Ø±Õ&nbsp;
-<input type=radio name="forum_setting(6)" value=1 <%if Dvbbs.forum_setting(6)="1" then%>checked<%end if%> class="radio">´ò¿ª&nbsp;
-</td>
-</tr>
-<tr> 
-<td width="50%" class="td1"> <U>ÓÃ»§Í·ÏÎ×î´ó³¤¶È</U></td>
-<td width="50%" class="td1">  
-<input title="ÇëÊäÈëÕûÊý $!cint" type="text" name="forum_setting(59)" size="6" value="<%=Dvbbs.forum_setting(59)%>">&nbsp;byte
-</td>
-</tr>
-<tr> 
-<td width="50%" class="td2"> <U>×Ô¶¨ÒåÍ·ÏÎ×îÉÙ·¢ÌûÊýÁ¿ÏÞÖÆ</U><BR>²»×öÏÞÖÆÇëÉèÖÃÎª0</td>
-<td width="50%" class="td2">  
-<input title="ÇëÊäÈëÕûÊý $!cint" type="text" name="forum_setting(60)" size="6" value="<%=Dvbbs.forum_setting(60)%>">&nbsp;Æª
-</td>
-</tr>
-<tr> 
-<td width="50%" class="td1"> <U>×Ô¶¨ÒåÍ·ÏÎ×¢²áÌìÊýÏÞÖÆ</U><BR>²»×öÏÞÖÆÇëÉèÖÃÎª0</td>
-<td width="50%" class="td1">  
-<input title="ÇëÊäÈëÕûÊý $!cint" type="text" name="forum_setting(61)" size="6" value="<%=Dvbbs.forum_setting(61)%>">&nbsp;Ìì
-</td>
-</tr>
-<tr> 
-<td width="50%" class="td2"> <U>×Ô¶¨ÒåÍ·ÏÎÉÏÃæÁ½¸öÌõ¼þ¼ÓÔÚÒ»ÆðÏÞÖÆ</U></td>
-<td width="50%" class="td2">  
-<input type=radio name="forum_setting(62)" value=0 <%if Dvbbs.forum_setting(62)="0" then%>checked<%end if%> class="radio">·ñ&nbsp;
-<input type=radio name="forum_setting(62)" value=1 <%if Dvbbs.forum_setting(62)="1" then%>checked<%end if%> class="radio">ÊÇ&nbsp;
-</td>
-</tr>
-<tr> 
-<td width="50%" class="td1"> <U>×Ô¶¨ÒåÍ·ÏÎÖÐÒªÆÁ±ÎµÄ´ÊÓï</U><BR>Ã¿¸öÏÞÖÆ×Ö·ûÓÃ¡°|¡±·ûºÅ¸ô¿ª</td>
-<td width="50%" class="td1">  
-<input title="Öµ²»ÄÜÎª¿Õ $!" type="text" name="forum_setting(63)" size="50" value="<%=Dvbbs.forum_setting(63)%>">
-</td>
-</tr>
-<tr> 
-<td width="50%" class="td2"> <U>Ìû×ÓÏÔÊ¾Ò³ÃæÊÇ·ñÏÔÊ¾Ö§¸¶±¦ºÍ¸ÃÓÃ»§½»Ò×Í¼±ê</U></td>
-<td width="50%" class="td2">  
-<input type=radio name="forum_setting(89)" value=0 <%if Dvbbs.forum_setting(89)="0" then%>checked<%end if%> class="radio">·ñ&nbsp;
-<input type=radio name="forum_setting(89)" value=1 <%if Dvbbs.forum_setting(89)="1" then%>checked<%end if%> class="radio">ÊÇ&nbsp;
-</td>
-</tr>
-</table><BR>
-<table border="0" cellspacing="1" cellpadding="3" align="center" width="100%">
-<tr> 
-<th height=25 colspan=2 align=left id=tabletitlelink><a name="setting17"></a><b>·ÀË¢ÐÂ»úÖÆ</b>[<a href="#top">¶¥²¿</a>]</td>
-</tr>
-<tr> 
-<td width="50%" class="td2"> <U>·ÀË¢ÐÂ»úÖÆ</U><BR>ÈçÑ¡Ôñ´ò¿ªÇëÌîÐ´ÏÂÃæµÄÏÞÖÆË¢ÐÂÊ±¼ä<BR>¶Ô°æÖ÷ºÍ¹ÜÀíÔ±ÎÞÐ§</td>
-<td width="50%" class="td2">  
-<input type=radio name="forum_setting(19)" value=0 <%if Dvbbs.forum_setting(19)="0" then%>checked<%end if%> class="radio">¹Ø±Õ&nbsp;
-<input type=radio name="forum_setting(19)" value=1 <%if Dvbbs.forum_setting(19)="1" then%>checked<%end if%> class="radio">´ò¿ª&nbsp;
-</td>
-</tr>
-<tr> 
-<td width="50%" class="td1"> <U>ä¯ÀÀË¢ÐÂÊ±¼ä¼ä¸ô</U><BR>ÌîÐ´¸ÃÏîÄ¿ÇëÈ·ÈÏÄú´ò¿ªÁË·ÀË¢ÐÂ»úÖÆ<BR>½ö¶ÔÌû×ÓÁÐ±íºÍÏÔÊ¾Ìû×ÓÒ³ÃæÆð×÷ÓÃ</td>
-<td width="50%" class="td1">  
-<input title="ÇëÊäÈëÕûÊý $!cint" type="text" name="forum_setting(20)" size="3" value="<%=Dvbbs.forum_setting(20)%>">&nbsp;Ãë
-</td>
-</tr>
-<tr> 
-<td width="50%" class="td2"><U>·ÀË¢ÐÂ¹¦ÄÜÓÐÐ§µÄÒ³Ãæ</U><BR>ÇëÈ·ÈÏÄú´ò¿ªÁË·ÀË¢ÐÂ¹¦ÄÜ<BR>ÄúÖ¸¶¨µÄÒ³Ãæ½«ÓÐ·ÀË¢ÐÂ×÷ÓÃ£¬ÓÃ»§ÔÚÏÞ¶¨µÄÊ±¼äÄÚ²»ÄÜÖØ¸´´ò¿ª¸ÃÒ³Ãæ£¬¾ßÓÐÒ»¶¨¼õÉÙ×ÊÔ´ÏûºÄµÄ×÷ÓÃ<BR>Ã¿¸öÒ³ÃæÃûÇëÓÃ¡°|¡±·ûºÅ¸ô¿ª</td>
-<td width="50%" class="td2"> 
-<input title="Öµ²»ÄÜÎª¿Õ $!" type="text" name="forum_setting(64)" size="50" value="<%=Dvbbs.forum_setting(64)%>">
-</td>
-</tr>
-</table><BR>
-<table border="0" cellspacing="1" cellpadding="3" align="center" width="100%">
-<tr> 
-<th height=25 colspan=3 align=left id=tabletitlelink><a name="setting20"></a><b>ËÑË÷Ñ¡Ïî</b>[<a href="#top">¶¥²¿</a>]</td>
-</tr>
-<tr> 
-<td class="td1" width="50%"><U>Ã¿´ÎËÑË÷Ê±¼ä¼ä¸ô</U></td>
-<td class="td1" width="43%"> 
-<input title="ÇëÊäÈëÕûÊý $!cint" type="text" name="Forum_Setting(3)" size="6" value="<%=Dvbbs.Forum_Setting(3)%>">&nbsp;Ãë
-</td>
-<input type="hidden" id="s_1" value="<b>Ã¿´ÎËÑË÷Ê±¼ä¼ä¸ô</b><br><li>ÉèÖÃºÏÀíµÄÃ¿´ÎËÑË÷Ê±¼ä¼ä¸ô£¬¿ÉÒÔ±ÜÃâÓÃ»§·´¸´½øÐÐÏàÍ¬ËÑË÷¶øÏûºÄ´óÁ¿ÂÛÌ³×ÊÔ´">
-<td class="td1"><a href=# onclick="helpscript(s_1);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
-</tr>
-<tr> 
-<td class="td2"><U>ËÑË÷×Ö´®×îÐ¡ºÍ×î´ó³¤¶È</U><BR>×îÐ¡ºÍ×î´ó×Ö·ûÇëÓÃ·ûºÅ¡°|¡±·Ö¸ô£¬µ¥Î»Îª×Ö½Ú<BR>×îÐ¡×Ö·û²»ÒËÉèÖÃ¹ýÐ¡£¬×î´ó×Ö·û²»ÒËÉèÖÃ¹ý´ó£¬½¨ÒéÓÃÄ¬ÈÏÖµ</td>
-<td class="td2" > 
-<input title="Öµ²»ÄÜÎª¿Õ $!" type="text" name="Forum_Setting(4)" size="8" value="<%=Dvbbs.Forum_Setting(4)%>">
-</td>
-<input type="hidden" id="s_2" value="<b>ËÑË÷×Ö´®×îÐ¡ºÍ×î´ó³¤¶È</b><br><li>×îÐ¡ºÍ×î´ó×Ö·ûÇëÓÃ·ûºÅ¡°|¡±·Ö¸ô£¬µ¥Î»Îª×Ö½Ú<br><li>×îÐ¡×Ö·û²»ÒËÉèÖÃ¹ýÐ¡£¬×î´ó×Ö·û²»ÒËÉèÖÃ¹ý´ó£¬ÉèÖÃ¹ýÐ¡»òÕß¹ý´ó¶¼½«ÏûºÄ´óÁ¿ÂÛÌ³×ÊÔ´">
-<td class="td2"><a href=# onclick="helpscript(s_2);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
-</tr>
-<tr> 
-<td class="td1" ><U>ËÑË÷¿ÉÒÔ²»ÊÜ×Ö´®³¤¶ÈÏÞÖÆµÄ´Ê</U><BR>Ã¿¸ö×Ö·ûÇëÓÃ·ûºÅ¡°|¡±·Ö¸ô</td>
-<td class="td1"> 
-<input title="Öµ²»ÄÜÎª¿Õ $!" type="text" name="Forum_Setting(9)" size="50" value="<%=Dvbbs.Forum_Setting(9)%>">&nbsp;
-</td>
-<input type="hidden" id="s_3" value="<b>ËÑË÷¿ÉÒÔ²»ÊÜ×Ö´®³¤¶ÈÏÞÖÆµÄ´Ê</b><br><li>Ã¿¸ö×Ö·ûÇëÓÃ·ûºÅ¡°|¡±·Ö¸ô<br><li>ºÏÀíµÄÌîÐ´²»ÊÜ×Ö´®³¤¶ÈÏÞÖÆµÄ´Ê£¬¿ÉÒÔÊ¹Ò»Ð©³£ÓÃÇÒ¼òµ¥µÄµ¥´ÊËÑË÷µ½½á¹û£¬µ«ÄúÍ¬Ê±±ØÐë¿¼ÂÇËÑË÷×Ö´®³¤¶ÈµÄ³¤¶ÌÊÇºÍÏûºÄµÄ×ÊÔ´³ÉÕý±ÈµÄ">
-<td class="td1"><a href=# onclick="helpscript(s_3);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
-</tr>
-<tr> 
-<td class="td2"><U>ËÑË÷·µ»Ø×î¶àµÄ½á¹ûÊý</U><BR>½¨Òé²»ÒªÉèÖÃ¹ý´ó</td>
-<td class="td2"> 
-<input title="ÇëÊäÈëÕûÊý $!cint" type="text" name="Forum_Setting(12)" size="6" value="<%=Dvbbs.Forum_Setting(12)%>">&nbsp;¸ö
-</td>
-<input type="hidden" id="s_4" value="<b>ËÑË÷·µ»Ø×î¶àµÄ½á¹ûÊý</b><br><li>µ¥Î»ÎªÊý×Ö<br><li>·µ»ØËÑË÷µÄ½á¹ûÊýºÍÏûºÄµÄ×ÊÔ´³ÉÕý±È£¬ÇëºÏÀíÉèÖÃ">
-<td class="td2"><a href=# onclick="helpscript(s_4);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
-</tr>
-<tr> 
-<td class="td1">
-<U>ËÑË÷ÈÈÃÅÌû×ÓÌõ¼þÖÐ¶ÔÓ¦µÄËÑË÷ÌìÊýºÍä¯ÀÀ´ÎÊý±ê×¼</U><BR>ËÑË÷ÌìÊýºÍä¯ÀÀ´ÎÊýÇëÓÃ·ûºÅ¡°|¡±·Ö¸ô£¬µ¥Î»ÎªÊý×Ö<BR>ËÑË÷ÌìÊý²»ÒËÉèÖÃ¹ý´ó£¬½¨ÒéÓÃÄ¬ÈÏÖµ</td>
-<td class="td1"> 
-<input title="Öµ²»ÄÜÎª¿Õ $!" type="text" name="Forum_Setting(13)" size="8" value="<%=Dvbbs.Forum_Setting(13)%>">
-</td>
-<input type="hidden" id="s_5" value="<b>ËÑË÷ÈÈÃÅÌû×ÓÌõ¼þÖÐ¶ÔÓ¦µÄËÑË÷ÌìÊýºÍä¯ÀÀ´ÎÊý±ê×¼</b><br><li>ËÑË÷ÌìÊýºÍä¯ÀÀ´ÎÊýÇëÓÃ·ûºÅ¡°|¡±·Ö¸ô£¬µ¥Î»ÎªÊý×Ö<br><li>×÷ÎªÈÈÃÅÖ÷ÌâµÄËÑË÷ÌìÊýºÍä¯ÀÀ´ÎÊý±ê×¼ºÍÂÛÌ³×ÊÔ´ÏûºÄ³ÉÕý±È£¬ÇëºÏÀíÉèÖÃ">
-<td class="td1"><a href=# onclick="helpscript(s_5);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
-</tr>
-<tr> 
-<td class="td2"> <U>ÊÇ·ñ¿ªÆôÈ«ÎÄËÑË÷</U><BR>ACCESSÊý¾Ý¿â²»½¨Òé¿ªÆô<BR>SQLÊý¾Ý¿â×öÁËÈ«ÎÄË÷Òý¿ÉÒÔ¿ªÆô</td>
-<td class="td2">  
-<input type=radio name="Forum_Setting(16)" value=0 <%If Dvbbs.Forum_Setting(16)="0" then%>checked<%end if%> class="radio">¹Ø±Õ&nbsp;
-<input type=radio name="Forum_Setting(16)" value=1 <%If Dvbbs.Forum_Setting(16)="1" then%>checked<%end if%> class="radio">´ò¿ª&nbsp;
-</td>
-<input type="hidden" id="s_6" value="<b>ÊÇ·ñ¿ªÆôÈ«ÎÄËÑË÷</b><br><li>ACCESSÊý¾Ý¿âÔÚÊý¾ÝÈÝÁ¿½Ï´óÇé¿öÏÂ¿ªÆôËÑË÷½«ÏûºÄ´óÁ¿×ÊÔ´£¬SQLÊý¾Ý¿â¿ªÆôÊý¾Ý¿âÈ«ÎÄËÑË÷ºó¿ÉÊ¹ÓÃ±¾Ñ¡Ïî<br><li>ÉèÖÃSQLÊý¾Ý¿âµÄÈ«ÎÄËÑË÷Çë¿´Î¢ÈíÏà¹Ø°ïÖúÎÄµµ">
-<td class="td2"><a href=# onclick="helpscript(s_6);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
-</tr>
-<tr> 
-<td class="td1"> <U>ÓÃ»§ÁÐ±íÔÊÐíÓÃ»§ÃûËÑË÷</U></td>
-<td class="td1">  
-<input type=radio name="Forum_Setting(17)" value=0 <%if Dvbbs.Forum_Setting(17)="0" then%>checked<%end if%> class="radio">¹Ø±Õ&nbsp;
-<input type=radio name="Forum_Setting(17)" value=1 <%if Dvbbs.Forum_Setting(17)="1" then%>checked<%end if%> class="radio">´ò¿ª&nbsp;
-</td>
-<input type="hidden" id="s_7" value="<b>ÓÃ»§ÁÐ±íÔÊÐíÓÃ»§ÃûËÑË÷</b><br><li>¿ªÆô±¾ÏîÄ¿£¬ÔÚÓÃ»§ÁÐ±íÖÐ¿ÉÒÔ¶ÔÓÃ»§Ãû×ö¼òµ¥ËÑË÷<br><li>³öÓÚÓÃ»§Êý¾Ý°²È«ÉÏµÄ¿¼ÂÇ£¬ÄúÒ²¿ÉÒÔ¹Ø±Õ¸ÃÑ¡Ïî">
-<td class="td1"><a href=# onclick="helpscript(s_7);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
-</tr>
-<tr> 
-<td class="td2"> <U>ÓÃ»§ÁÐ±íÔÊÐíÁÐ³ö¹ÜÀíÍÅ¶Ó</U></td>
-<td class="td2">  
-<input type=radio name="Forum_Setting(18)" value=0 <%if Dvbbs.Forum_Setting(18)="0" then%>checked<%end if%> class="radio">¹Ø±Õ&nbsp;
-<input type=radio name="Forum_Setting(18)" value=1 <%if Dvbbs.Forum_Setting(18)="1" then%>checked<%end if%> class="radio">´ò¿ª&nbsp;
-</td>
-<input type="hidden" id="s_8" value="<b>ÓÃ»§ÁÐ±íÔÊÐíÁÐ³ö¹ÜÀíÍÅ¶Ó</b><br><li>¿ªÆô±¾ÏîÄ¿£¬ÔÚÓÃ»§ÁÐ±íÖÐ¿ÉÒÔÁÐ³öÂÛÌ³ÖÐµÄ¹ÜÀíÍÅ¶Ó×ÊÁÏ£¬¼´°æÖ÷»òÆäÒÔÉÏµÈ¼¶µÄÓÃ»§<br><li>³öÓÚÓÃ»§Êý¾Ý°²È«ÉÏµÄ¿¼ÂÇ£¬ÄúÒ²¿ÉÒÔ¹Ø±Õ¸ÃÑ¡Ïî">
-<td class="td2"><a href=# onclick="helpscript(s_8);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
-</tr>
-<tr> 
-<td class="td1"> <U>ÓÃ»§ÁÐ±íÔÊÐíÁÐ³öËùÓÐÓÃ»§</U></td>
-<td class="td1">  
-<input type=radio name="Forum_Setting(27)" value=0 <%if Dvbbs.Forum_Setting(27)="0" then%>checked<%end if%> class="radio">¹Ø±Õ&nbsp;
-<input type=radio name="Forum_Setting(27)" value=1 <%if Dvbbs.Forum_Setting(27)="1" then%>checked<%end if%> class="radio">´ò¿ª&nbsp;
-</td>
-<input type="hidden" id="s_9" value="<b>ÓÃ»§ÁÐ±íÔÊÐíÁÐ³öËùÓÐÓÃ»§</b><br><li>¿ªÆô±¾ÏîÄ¿£¬ÔÚÓÃ»§ÁÐ±íÖÐ¿ÉÒÔÁÐ³öÂÛÌ³ÖÐµÄËùÓÐµÄÓÃ»§×ÊÁÏ<br><li>³öÓÚÓÃ»§Êý¾Ý°²È«ÉÏµÄ¿¼ÂÇ£¬ÄúÒ²¿ÉÒÔ¹Ø±Õ¸ÃÑ¡Ïî">
-<td class="td1"><a href=# onclick="helpscript(s_9);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
-</tr>
-<tr> 
-<td class="td2"> <U>ÓÃ»§ÁÐ±íÔÊÐíÁÐ³öTOPÅÅÐÐÓÃ»§</U></td>
-<td class="td2">  
-<input type=radio name="Forum_Setting(31)" value=0 <%if Dvbbs.Forum_Setting(31)="0" then%>checked<%end if%> class="radio">¹Ø±Õ&nbsp;
-<input type=radio name="Forum_Setting(31)" value=1 <%if Dvbbs.Forum_Setting(31)="1" then%>checked<%end if%> class="radio">´ò¿ª&nbsp;
-</td>
-<input type="hidden" id="s_10" value="<b>ÓÃ»§ÁÐ±íÔÊÐíÁÐ³öTOPÅÅÐÐÓÃ»§</b><br><li>¿ªÆô±¾ÏîÄ¿£¬ÔÚÓÃ»§ÁÐ±íÖÐ¿ÉÒÔÁÐ³öÂÛÌ³°´ÕÕ·¢ÌùºÍ»ý·ÖÊýµÈÓÃ»§ÅÅÐÐ<br><li>³öÓÚÓÃ»§Êý¾Ý°²È«ÉÏµÄ¿¼ÂÇ£¬ÄúÒ²¿ÉÒÔ¹Ø±Õ¸ÃÑ¡Ïî">
-<td class="td2"><a href=# onclick="helpscript(s_10);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
-</tr>
-<tr> 
-<td class="td1"><U>ÓÃ»§ÁÐ±íTOP¸öÊý</U></td>
-<td class="td1"> 
-<input title="ÇëÊäÈëÕûÊý $!cint" type="text" name="forum_setting(68)" size="6" value="<%=Dvbbs.forum_setting(68)%>">&nbsp;¸ö
-</td>
-<input type="hidden" id="s_11" value="<b>ÓÃ»§ÁÐ±íTOP¸öÊý</b><br><li>ÔÚ¿ªÆôÁËTOPÅÅÐÐµÄÇé¿öÏÂ£¬½«¸ù¾ÝÕâÀïËùÉèÖÃµÄÊý×Ö¶ÁÈ¡Ëù¹æ¶¨ÊýÄ¿µÄÓÃ»§Êý¾Ý<br><li>³öÓÚÓÃ»§Êý¾Ý°²È«ÉÏµÄ¿¼ÂÇºÍ³öÓÚÂÛÌ³×ÊÔ´ÏûºÄ·½ÃæµÄ¿¼ÂÇ£¬ÄúÒ²¿ÉÒÔ¼õÉÙ¸ÃÑ¡ÏîµÄÉèÖÃÊýÄ¿">
-<td class="td1"><a href=# onclick="helpscript(s_11);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
-</tr>
-</table><BR>
-
-<table border="0" cellspacing="1" cellpadding="3" align="center" width="100%">
-<tr> 
-<th height=25 colspan=2 align=left id=tabletitlelink><a name="setting18"></a><b>ÂÛÌ³·ÖÒ³ÉèÖÃ</b>[<a href="#top">¶¥²¿</a>]</th>
-</tr>
-<tr> 
-<td class="td1"  width="50%"> <U>Ã¿Ò³ÏÔÊ¾×î¶à¼ÍÂ¼</U><BR>ÓÃÓÚÂÛÌ³ËùÓÐºÍ·ÖÒ³ÓÐ¹ØµÄÏîÄ¿£¨Ìû×ÓÁÐ±íºÍä¯ÀÀÌû×Ó³ýÍâ£©</td>
-<td class="td1"  width="50%">  
-<input title="ÇëÊäÈëÕûÊý $!cint" type="text" name="forum_setting(11)" size="3" value="<%=Dvbbs.forum_setting(11)%>">&nbsp;Ìõ
-</td>
-</tr>
-</table><BR>
-
-<table border="0" cellspacing="1" cellpadding="3" align="center" width="100%">
-<tr>
-<th height=25 colspan=2 align=left id=tabletitlelink><a name="setting_seo"></a><b>ËÑË÷ÒýÇæÓÅ»¯ÉèÖÃ(SEO)</b>[<a href="#top">¶¥²¿</a>]</th>
-</tr>
-<tr> 
-<td class="td1"  width="50%"> <U>Title ÃèÊö£º</U><BR>ÎªËùÓÐÒ³ÃæÊäÈëÕ¾µãµÄ±êÌâ(title)ÃèÊö£¬ÈÃËÑË÷ÒýÇæ¸üÈÝÒ×ÕÒµ½ÄúµÄÂÛÌ³¡£</td>
-<td class="td1"  width="50%">  
-<input title="Öµ²»ÄÜÎª¿Õ $!" type="text" name="forum_setting(111)" size="35" value="<%=Dvbbs.forum_setting(111)%>">
-</td>
-</tr>
-<tr> 
-<td width="50%" class="td1"> <U>Meta ¹Ø¼ü´Ê£º</U><BR>ÎªËùÓÐÒ³ÃæÊäÈë Meta ¹Ø¼ü´Ê£¬ÈÃËÑË÷ÒýÇæ¸üÈÝÒ×ÕÒµ½ÄúµÄÂÛÌ³¡£</td>
-<td width="50%" class="td1">  
-<input title="Öµ²»ÄÜÎª¿Õ $!" type="text" name="Forum_info(8)" size="35" value="<%=Dvbbs.Forum_info(8)%>">
-</td>
-</tr>
-<tr> 
-<td width="50%" class="td2"> <U>Meta ÃèÊö£º</U><BR>ÎªËùÓÐÒ³ÃæÊäÈë Meta ÃèÊö£¬ÒÔ±ãÄÜ¹»ÔÚËÑË÷ÒýÇæÖÐÕýÈ·ËÑË÷µ½ÄúµÄÂÛÌ³¡£<BR><font color=red>½éÉÜÖÐÇë²»Òª´øÓ¢ÎÄµÄ¶ººÅ</font></td>
-<td width="50%" class="td2">  
-<input title="Öµ²»ÄÜÎª¿Õ $!" type="text" name="Forum_info(10)" size="35" value="<%=Dvbbs.Forum_info(10)%>">
-</td>
-</tr>
-</table><BR>
-
-<table border="0" cellspacing="1" cellpadding="3" align="center" width="100%">
-<tr> 
-<th height=25 colspan=2 align=left id=tabletitlelink><a name="setting16"></a><b>Ìû×ÓÑ¡Ïî</b>[<a href="#top">¶¥²¿</a>]</td>
-</tr>
-<tr>
-<td class="td1"  width="50%"> <U>×÷ÎªÈÈÃÅ»°ÌâµÄ×îµÍÈËÆøÖµ</U><BR>±ê×¼ÎªÖ÷Ìâ»Ø¸´Êý</td>
-<td class="td1"  width="50%">  
-<input title="ÇëÊäÈëÕûÊý $!cint" type="text" name="forum_setting(44)" size="3" value="<%=Dvbbs.forum_setting(44)%>">&nbsp;Ìõ
-</td>
-</tr>
-<tr> 
-<td class="td2"> <U>±à¼­¹ýµÄÌû×ÓÏÔÊ¾¡°ÓÉxxxÓÚyyy±à¼­¡±µÄÐÅÏ¢</U></td>
-<td class="td2">  
-<input type=radio name="forum_setting(48)" value=0 <%if Dvbbs.forum_setting(48)="0" then%>checked<%end if%> class="radio">·ñ&nbsp;
-<input type=radio name="forum_setting(48)" value=1 <%if Dvbbs.forum_setting(48)="1" then%>checked<%end if%> class="radio">ÊÇ&nbsp;
-</td>
-</tr>
-<tr> 
-<td class="td1"> <U>¹ÜÀíÔ±±à¼­ºóÏÔÊ¾¡°ÓÉXXX±à¼­¡±µÄÐÅÏ¢</U></td>
-<td class="td1">  
-<input type=radio name="forum_setting(49)" value=0 <%if Dvbbs.forum_setting(49)="0" then%>checked<%end if%> class="radio">·ñ&nbsp;
-<input type=radio name="forum_setting(49)" value=1 <%if Dvbbs.forum_setting(49)="1" then%>checked<%end if%> class="radio">ÊÇ&nbsp;
-</td>
-</tr>
-<tr> 
-<td class="td2"> <U>µÈ´ý¡°ÓÉXXX±à¼­¡±ÐÅÏ¢ÏÔÊ¾µÄÊ±¼ä</U><BR>ÔÊÐíÓÃ»§±à¼­×Ô¼ºµÄÌû×Ó¶ø²»ÔÚÌû×Óµ×²¿ÏÔÊ¾¡°ÓÉXXX±à¼­¡±ÐÅÏ¢µÄÊ±ÏÞ£¨ÒÔ·ÖÖÓÎªµ¥Î»£©</td>
-<td class="td2">  
-<input title="ÇëÊäÈëÕûÊý $!cint" type="text" name="forum_setting(50)" size="3" value="<%=Dvbbs.forum_setting(50)%>">&nbsp;·ÖÖÓ
-</td>
-</tr>
-<tr> 
-<td class="td1"> <U>±à¼­Ìû×ÓÊ±ÏÞ</U><BR>±à¼­´¦ÀíÌû×ÓµÄÊ±¼äÏÞÖÆ£¨ÒÔ·ÖÖÓÎªµ¥Î»£¬1ÌìÊÇ1440·ÖÖÓ£©³¬¹ýÕâ¸öÊ±¼äÏÞÖÆ£¬Ö»ÓÐ¹ÜÀíÔ±ºÍ°æÖ÷²ÅÄÜ±à¼­ºÍÉ¾³ýÌû×Ó¡£Èç¹û²»ÏëÊ¹ÓÃÕâÏî¹¦ÄÜ£¬ÇëÉèÖÃÎª0</td>
-<td class="td1">  
-<input title="ÇëÊäÈëÕûÊý $!cint" type="text" name="forum_setting(51)" size="3" value="<%=Dvbbs.forum_setting(51)%>">&nbsp;·ÖÖÓ
-</td>
-</tr>
-</table>
-<BR>
-<!--
-<table border="0" cellspacing="1" cellpadding="3" align="center" width="100%">
-<tr> 
-<th height=25 colspan=2 align=left id=tabletitlelink><a name="setting19"></a><b>ÃÅÅÉÉèÖÃ</b>[<a href="#top">¶¥²¿</a>]
-</tr>
-<tr> 
-<td class="td2"  width="50%"> <U>ÊÇ·ñ¿ªÆôÂÛÌ³ÃÅÅÉ</U></td>
-<td class="td2">  
-<input type=radio name="forum_setting(32)" value=0 checked class="radio">·ñ&nbsp;
-<input type=radio name="forum_setting(32)" value=1 class="radio">ÊÇ&nbsp;
-</td>
-</tr>
-</table>
-<BR>
--->
-<table border="0" cellspacing="1" cellpadding="3" align="center" width="100%">
-<tr> 
-<th height=25 colspan=2 align=left id=tabletitlelink><a name="setting19"></a><b>VIPÓÃ»§×é¹¦ÄÜ¿ªÆôÉèÖÃ</b>[<a href="#top">¶¥²¿</a>]
-</tr>
-<tr> 
-<td class="td2"  width="50%"><a name="SettingVIP"></a>
-<U>ÊÇ·ñVIPÓÃ»§×é¹¦ÄÜ</U>
-<br>Èô¿ªÆôVIPÓÃ»§×é¹¦ÄÜ£¬ÇëÈ·ÈÏÂÛÌ³ÓÃ»§×é£¨µÈ¼¶£©¹ÜÀíÀïÊÇ·ñÌí¼ÓÁËVIPÓÃ»§×é</td>
-<td class="td2">  
-<input type=radio name="forum_setting(43)" value=0 <%if Dvbbs.forum_setting(43)="0" then%>checked<%end if%> class="radio">·ñ&nbsp;
-<input type=radio name="forum_setting(43)" value=1 <%if Dvbbs.forum_setting(43)="1" then%>checked<%end if%> class="radio">ÊÇ&nbsp;
-</td>
-</tr>
-</table>
-<BR>
-<table border="0" cellspacing="1" cellpadding="3" align="center" width="100%">
-<tr> 
-<th height=25 colspan=2 align=left id=tabletitlelink><a name="settingxu"></a><b>¶¯Íø¹Ù·½²å¼þÑ¡Ïî</b>[<a href="#top">¶¥²¿</a>]
-</tr>
-<tr> 
-<td class="td1" width="50%"> <U>µÀ¾ß¹¦ÄÜ×Ü¿ª¹Ø</U></td>
-<td class="td1" width="43%">  
-<input type=radio name="forum_setting(90)" value=0 <%if Dvbbs.forum_setting(90)="0" then%>checked<%end if%> class="radio">¹Ø±Õ&nbsp;
-<input type=radio name="forum_setting(90)" value=1 <%if Dvbbs.forum_setting(90)="1" then%>checked<%end if%> class="radio">¿ªÆô&nbsp;
-</td>
-</tr>
-<tr> 
-<td class="td2"> <U>µÀ¾ßÖÐÐÄÂòÂô½»Ò×</U></td>
-<td class="td2">  
-<input type=radio name="forum_setting(91)" value=0 <%if Dvbbs.forum_setting(91)="0" then%>checked<%end if%> class="radio">¹Ø±Õ&nbsp;
-<input type=radio name="forum_setting(91)" value=1 <%if Dvbbs.forum_setting(91)="1" then%>checked<%end if%> class="radio">¿ªÆô&nbsp;
-</td>
-</tr>
-<tr> 
-<td class="td1"> <U>µÀ¾ßÖÐÐÄ²ÉÓÃ¶ÀÁ¢Êý¾Ý¿â</U><BR>ÈôÉèÎª¶ÀÁ¢£¬Çë×ÔÐÐÐÞ¸ÄCONN.ASPÎÄ¼þ£¬ÉèÖÃ¶ÀÁ¢Êý¾Ý¿âÂ·¾¶</td>
-<td class="td1">  
-<input type=radio name="forum_setting(92)" value=0 <%if Dvbbs.forum_setting(92)="0" then%>checked<%end if%> class="radio">¹Ø±Õ&nbsp;
-<input type=radio name="forum_setting(92)" value=1 <%if Dvbbs.forum_setting(92)="1" then%>checked<%end if%> class="radio">¿ªÆô&nbsp;
-</td>
-</tr>
-<tr> 
-<td class="td2" width="50%"> <U>Ä§·¨±íÇé£¨Í·Ïñ£©×Ü¿ª¹Ø</U><BR>¸Ã¹¦ÄÜÊý¾Ý¿â²ÉÓÃµÀ¾ßÖÐÐÄÊý¾Ý¿â£¬¹¦ÄÜ¿É¶ÀÁ¢ÓÚµÀ¾ßÖÐÐÄÖ®Íâ¿ª¹Ø</td>
-<td class="td2" width="43%">  
-<input type=radio name="forum_setting(98)" value=0 <%if Dvbbs.forum_setting(98)="0" then%>checked<%end if%> class="radio">¹Ø±Õ&nbsp;
-<input type=radio name="forum_setting(98)" value=1 <%if Dvbbs.forum_setting(98)="1" then%>checked<%end if%> class="radio">¿ªÆô&nbsp;
-</td>
-</tr>
-<tr> 
-<td class="td1"  width="50%"> <U>ÊÇ·ñÆôÓÃ²©¿Í¹¦ÄÜ</U><BR>¿ªÆôºóÇë´ò¿ªboke/config.aspÎÄ¼þ×öºÃÏà¹ØÉèÖÃ</td>
-<td class="td1">  
-<input type=radio name="forum_setting(99)" value=0 <%if Dvbbs.forum_setting(99)="0" then%>checked<%end if%> class="radio">·ñ&nbsp;
-<input type=radio name="forum_setting(99)" value=1 <%if Dvbbs.forum_setting(99)="1" then%>checked<%end if%> class="radio">ÊÇ&nbsp;
-</td>
-</tr>
-
-<!--Èç¹ûÒª¿ªÆôÑ«ÕÂ²å¼þÇëÈ¥µôÕâÐÐ´úÂë-->
-<tr> 
-<td class="td1"  width="50%"> <U>ÊÇ·ñÆôÓÃÑ«ÕÂ¹¦ÄÜ</U></td>
-<td class="td1">  
-<input type=radio name="forum_setting(104)" value=0 <%if Dvbbs.forum_setting(104)="0" then%>checked<%end if%> class="radio">·ñ&nbsp;
-<input type=radio name="forum_setting(104)" value=1 <%if Dvbbs.forum_setting(104)="1" then%>checked<%end if%> class="radio">ÊÇ&nbsp;
-</td>
-</tr>
-
-
-<!--Èç¹ûÒª¿ªÆôÔÚÏßÊ±³¤Í³¼Æ¹¦ÄÜÇëÈ¥µôÕâÐÐ´úÂë
-<tr> 
-<td class="td1"  width="50%"> <U>ÊÇ·ñÆôÓÃÔÚÏßÊ±³¤Í³¼Æ¹¦ÄÜ</U></td>
-<td class="td1">  
-<input type=radio name="forum_setting(102)" value=0 <%if Dvbbs.forum_setting(102)="0" then%>checked<%end if%> class="radio">·ñ&nbsp;
-<input type=radio name="forum_setting(102)" value=1 <%if Dvbbs.forum_setting(102)="1" then%>checked<%end if%> class="radio">ÊÇ&nbsp;
-</td>
-</tr>
--->
-
-<!--Èç¹ûÒªÆôÓÃ°æÖ÷ÆÀ¼Û¹¦ÄÜÇëÈ¥µôÕâÐÐ´úÂë
-<tr> 
-<td class="td1"  width="50%"> <U>ÊÇ·ñÆôÓÃ°æÖ÷ÆÀ¼Û¹¦ÄÜ</U></td>
-<td class="td1">  
-<input type=radio name="forum_setting(110)" value=0 <%if Dvbbs.forum_setting(110)="0" then%>checked<%end if%> class="radio">·ñ&nbsp;
-<input type=radio name="forum_setting(110)" value=1 <%if Dvbbs.forum_setting(110)="1" then%>checked<%end if%> class="radio">ÊÇ&nbsp;
-</td>
-</tr>
--->
-<tr> 
-<td class="td1"  width="50%"> <U>ÊÇ·ñÏÔÊ¾·ÖÀ¸</U></td>
-<td class="td1">  
-<input type=radio name="forum_setting(103)" value=0 <%if Dvbbs.forum_setting(103)="0" then%>checked<%end if%> class="radio">·ñ&nbsp;
-<input type=radio name="forum_setting(103)" value=1 <%if Dvbbs.forum_setting(103)="1" then%>checked<%end if%> class="radio">ÊÇ&nbsp;
-</td>
-</tr>
-<tr> 
-<th height=25 colspan=3 align=left id=tabletitlelink><a name="setting23"></a><b>ÂÛÌ³½ð±Ò»ãÂÊÉèÖÃ</b></th>
-</tr>
-<tr> 
-<td class="td2" width="50%"> <U>½ðÇ®Óë½ð±Ò»ãÂÊ</U></td>
-<td class="td2">  
-<input title="ÇëÊäÈëÕûÊý $!cint" type="text" name="forum_setting(93)" size="6" value="<%=Dvbbs.forum_setting(93)%>">&nbsp;½ðÇ®=1½ð±Ò
-</td>
-</tr>
-<tr> 
-<td class="td1" width="50%"> <U>»ý·ÖÓë½ð±Ò»ãÂÊ</U></td>
-<td class="td1">  
-<input title="ÇëÊäÈëÕûÊý $!cint" type="text" name="forum_setting(94)" size="6" value="<%=Dvbbs.forum_setting(94)%>">&nbsp;»ý·Ö=1½ð±Ò
-</td>
-</tr>
-<tr> 
-<td class="td2" width="50%"> <U>÷ÈÁ¦Óë½ð±Ò»ãÂÊ</U></td>
-<td class="td2">  
-<input title="ÇëÊäÈëÕûÊý $!cint" type="text" name="forum_setting(95)" size="6" value="<%=Dvbbs.forum_setting(95)%>">&nbsp;÷ÈÁ¦=1½ð±Ò
-</td>
-</tr>
-<tr>
-<td class="td1" width="50%"> <U>µãÈ¯Óë½ð±Ò»ãÂÊ</U></td>
-<td class="td1">  
-<input type="text" name="forum_setting(96)" size="6" value="<%=Dvbbs.forum_setting(96)%>">&nbsp;µãÈ¯=1½ð±Ò
-</td>
-</tr>
-<tr> 
-<th height=25 colspan=3 align=left id=tabletitlelink><a name="setting23"></a><b>ÆäËüÉèÖÃ</b></th>
-</tr>
-<tr>
-<td class="td2" width="50%"> <U>°æÖ÷Ã¿ÈÕ¿É½±Àø½ð±Ò¸öÊý</U></td>
-<td class="td2">  
-<input title="ÇëÊäÈëÕûÊý $!cint" type="text" name="forum_setting(97)" size="6" value="<%=Dvbbs.forum_setting(97)%>">&nbsp;¸ö½ð±Ò
-</td>
-</tr>
-<tr> 
-<th height=25 colspan=3 align=left id=tabletitlelink><a name="setting23"></a><b>È«Õ¾ÉóºËÉèÖÃ</b></th>
-</tr>
-<tr>
-<td class="td2" width="50%"> <U>ÊÇ·ñ¿ªÆô³ý¹ÜÀíÔ±£¬°æÖ÷£¬³¬°æÒÔÍâµÄÆäËüËùÓÐÓÃ»§×é·¢ÌûÐèÒªÉóºË</U></td>
-<td class="td2">  
-<input type=radio name="forum_setting(108)" value=0 <%if Dvbbs.forum_setting(108)="0" then%>checked<%end if%> class="radio">·ñ&nbsp;
-<input type=radio name="forum_setting(108)" value=1 <%if Dvbbs.forum_setting(108)="1" then%>checked<%end if%> class="radio">ÊÇ&nbsp;
-</td>
-</tr>
-<tr>
-<td class="td2" width="50%"> <U>ÊÇ·ñ¿ªÆôº¬ÓÐ·Ç·¨¹Ø¼ü´Ê²»ÔÊÐí·¢¹¦ÄÜ</U>&nbsp;&nbsp;&nbsp;<a href="Badlanguage.asp">µã»÷ÕâÀïÉèÖÃ¹Ø¼ü´Ê</a></td>
-<td class="td2">  
-<input type=radio name="forum_setting(109)" value=0 <%if Dvbbs.forum_setting(109)="0" then%>checked<%end if%> class="radio">·ñ&nbsp;
-<input type=radio name="forum_setting(109)" value=1 <%if Dvbbs.forum_setting(109)="1" then%>checked<%end if%> class="radio">ÊÇ&nbsp;
-</td>
-</tr>
-<tr>
-<td class="td2" width="50%"> <U>ÍøÕ¾µ¼º½ÉèÖÃ</U>&nbsp;&nbsp;&nbsp;</td>
-<td class="td2">  
-<input type=radio name="forum_setting(112)" value=0 <%if Dvbbs.forum_setting(112)="0" then%>checked<%end if%> class="radio">¿ªÆô&nbsp;
-<input type=radio name="forum_setting(112)" value=1 <%if Dvbbs.forum_setting(112)="1" then%>checked<%end if%> class="radio">¹Ø±Õ&nbsp;½¨ÒéÔÚ°æ¿é¶àÊ±¹Ø±Õ´Ë¹¦ÄÜ
-</td>
-</tr>
-<tr> 
-<td width="50%" class="td1"> &nbsp;</td>
-<td width="50%" class="td1">
-<input type="submit" name="Submit" value="Ìá ½»" class="button">
-</td>
-</tr>
-</table>
-</form>
-<SCRIPT LANGUAGE="JavaScript">
-CheckSel('forum_setting(2)','<%=Dvbbs.forum_setting(2)%>');
-CheckSel('UploadSetting(0)','<%=UploadSetting(0)%>');
-CheckSel('UploadSetting(2)','<%=UploadSetting(2)%>');
-CheckSel('UploadSetting(3)','<%=UploadSetting(3)%>');
-CheckSel('UploadSetting(7)','<%=UploadSetting(7)%>');
-CheckSel('UploadSetting(8)','<%=UploadSetting(8)%>');
-CheckSel('UploadSetting(13)','<%=UploadSetting(13)%>');
-CheckSel('UploadSetting(16)','<%=UploadSetting(16)%>');
-CheckSel('UploadSetting(17)','<%=UploadSetting(17)%>');
-</script>
-<div id="Issubport0" style="display:none">ÇëÑ¡ÔñEMAIL×é¼þ£¡</div>
-<div id="Issubport999" style="display:none"></div>
-<%
-Dim InstalledObjects(12)
-InstalledObjects(1) = "JMail.Message"				'JMail 4.3
-InstalledObjects(2) = "CDONTS.NewMail"				'CDONTS
-InstalledObjects(3) = "Persits.MailSender"			'ASPEMAIL
-'-----------------------
-InstalledObjects(4) = "Adodb.Stream"				'Adodb.Stream
-InstalledObjects(5) = "Persits.Upload"				'Aspupload3.0
-InstalledObjects(6) = "SoftArtisans.FileUp"			'SA-FileUp 4.0
-InstalledObjects(7) = "DvFile.Upload"				'DvFile-Up V1.0
-'-----------------------
-InstalledObjects(9) = "CreatePreviewImage.cGvbox"	'CreatePreviewImage
-InstalledObjects(10) = "Persits.Jpeg"				'AspJpeg
-InstalledObjects(11) = "SoftArtisans.ImageGen"		'SoftArtisans ImgWriter V1.21
-InstalledObjects(12) = "sjCatSoft.Thumbnail"		'sjCatSoft.Thumbnail V2.6
-
-For i=1 to 12
-	Response.Write "<div id=""Issubport"&i&""" style=""display:none"">"
-	If IsObjInstalled(InstalledObjects(i)) Then Response.Write InstalledObjects(i)&":<font color=red><b>¡Ì</b>·þÎñÆ÷Ö§³Ö!</font>" Else Response.Write InstalledObjects(i)&"<b>¡Á</b>·þÎñÆ÷²»Ö§³Ö!" 
-	Response.Write "</div>"
-Next
-%>
-<SCRIPT LANGUAGE="JavaScript">
-<!--
-function chkselect(s,divid)
-{
-var divname='Issubport';
-var chkreport;
-	s=Number(s)
-	if (divid=="know1")
-	{
-	divname=divname+s;
-	}
-	if (divid=="know2")
-	{
-	s+=4;
-	if (s==1003){s=999;}
-	divname=divname+s;
-	}
-	if (divid=="know3")
-	{
-	s+=9;
-	if (s==1008){s=999;}
-	divname=divname+s;
-	}
-document.getElementById(divid).innerHTML=divname;
-chkreport=document.getElementById(divname).innerHTML;
-document.getElementById(divid).innerHTML=chkreport;
-}
-//-->
-</SCRIPT>
-<%
-end Sub
-'ÅÐ¶Ï±íµ¥²ÎÊý
-Function checkinput(inputname,errmsg)'²Î1=±íµ¥Ãû ²Î2=´íÎóÍ£Ï¢
-Dim item,itemarr,i
-If inputname="forum_setting" Then 
-item="1,5,84,38,39,40,41,22,8,26,54,57,58,59,60,61,20,3,12,68,11,44,50,51,93,94,95,96,97,101"  '±íµ¥ÐòºÅ
-Else 
-item="1,5,10,11,12,14,15" '±íµ¥ÐòºÅ
-End If 
-itemarr=Split(item,",")
-For Each i In itemarr
-	If Request(inputname&"("&i&")")="" Or IsNull(Request(inputname&"("&i&")")) Or Not IsNumeric(Request(inputname&"("&i&")")) Then 
-	errmsg=inputname&"("&i&")ÖµÎª¿Õ»ò²»ÎªÕûÊýÀàÐÍ£¬Çë·µ»ØÖØÐ´"
-	Exit For 
-	End If 
-	If Request(inputname&"("&i&")")>2147483647 Then 
-	errmsg=inputname&"("&i&")Öµ³¬¹ý2147483647,»áµ¼ÖÂÒç³ö±¨´í£¬Çë·µ»ØÖØÐ´"
-	Exit For 
-	End If 
-Next 
-End function 
-
-Sub saveconst()
-	Dim Forum_copyright,Forum_info,forum_setting,iforum_setting,isetting
-	Dim Forum_Maxonline,Forum_TopicNum,Forum_PostNum
-	Dim Forum_UserNum,Forum_MaxPostNum,Forum_MaxPostDate,Forum_MaxonlineDate
-	Dim Forum_pack
-	Dim UploadSetting,Tempstr,i
-	
-	If not IsDate(Request.Form("Forum_Setting(74)")) Then 
-		Errmsg=ErrMsg + "<li>ÂÛÌ³´´½¨ÈÕÆÚ±ØÐëÊÇÒ»¸öÓÐÐ§ÈÕÆÚ¡£"
-		Dvbbs_error()
-		Exit Sub
-	End If
-	
-	If not IsDate(Request.Form("Forum_MaxPostDate")) Then 
-		Errmsg=ErrMsg + "<li>ÂÛÌ³×î¸ßÈÕ·¢Ìù·¢ÉúÊ±¼äÈÕÆÚ±ØÐëÊÇÒ»¸öÓÐÐ§ÈÕÆÚ¡£"
-		Dvbbs_error()
-		Exit Sub
-	Else
-		Forum_MaxPostDate=Request.Form("Forum_MaxPostDate")
-	End If
-	
-	If not IsDate(Request.Form("Forum_MaxonlineDate")) Then 
-		Errmsg=ErrMsg + "<li>ÀúÊ·×î¸ßÍ¬Ê±ÔÚÏß¼ÍÂ¼·¢ÉúÊ±¼äÈÕÆÚ±ØÐëÊÇÒ»¸öÓÐÐ§ÈÕÆÚ¡£"
-		Dvbbs_error()
-		Exit Sub
-	Else
-		Forum_MaxonlineDate=Request.Form("Forum_MaxonlineDate")
-	End If
-	
-	
-	Forum_Maxonline	= Request.Form("Forum_Maxonline")
-	Forum_TopicNum	= Request.Form("Forum_TopicNum")
-	Forum_PostNum	= Request.Form("Forum_PostNum")
-	Forum_UserNum	= Request.Form("Forum_UserNum")
-	Forum_MaxPostNum= Request.Form("Forum_MaxPostNum")
-	Forum_pack	= Request.Form("Forum_pack(0)")&"|||"&Trim(Request.Form("Forum_pack(1)"))
-	
-	If Not ISNumeric(Forum_Maxonline&Forum_TopicNum&Forum_PostNum&Forum_UserNum&Forum_MaxPostNum) Then 
-		Errmsg=ErrMsg + "<li>·Ç·¨µÄ²ÎÊý£¬ÂÛÌ³ÏµÍ³Êý¾Ý³ö´í£¬Ìá½»ÖÐÖ¹¡£"
-		Dvbbs_error()
-		Exit Sub
-	End If
-	
-	'If not isnumeric(request.Form("cid")) or not isnumeric(request.Form("Sid")) Then
-	'	Errmsg=ErrMsg + "<li>ÇëÑ¡ÔñÄ£°åÓë·ç¸ñ£¡"
-	'	Dvbbs_error()
-	'	Exit Sub
-	'End IF
-	
-'ÐÂÌí¼Ó±íµ¥Êý×ÖÀàÐÍÅÐ¶Ï
-checkinput "forum_setting",ErrMsg
-checkinput "UploadSetting",ErrMsg
-	If errmsg<>"" Then 
-	Dvbbs_error()
-	Exit Sub
-	End If 
-	
-	UploadSetting = ""
-	For i=0 To 20
-		Tempstr = Trim(Request.Form("UploadSetting("&i&")"))
-		If Tempstr = "" Then
-			UploadSetting = UploadSetting & 0
-		Else
-			UploadSetting = UploadSetting & Replace(Replace(Tempstr,"|",""),",","")
-		End If
-		If i<20 Then
-			UploadSetting = UploadSetting & "|"
-		End If
-	Next
-	
-	Dim setingdata,j,Rs,SQL
-	If Forum_Maxonline="" Then Forum_Maxonline=0
-	If Forum_TopicNum="" Then Forum_TopicNum=0
-	If Forum_PostNum="" Then Forum_PostNum=0
-	If Forum_UserNum="" Then Forum_UserNum=0
-	If Forum_MaxPostNum="" Then Forum_MaxPostNum=0
-	For i = 0 To 120
-		If Trim(request.Form("Forum_Setting("&i&")"))="" Or i=70 or i = 7 Then
-			'Response.Write "Forum_Setting("&i&")<br>"
-			isetting=0
-			If i=7 Then
-				isetting = UploadSetting
-			End If
-			If i=70 Then
-				isetting=""
-				For j=0 to  23
-					If isetting="" Then
-						If Request.form("Forum_Setting(70)"&j)="1" Then
-							isetting="1"
-						Else
-							isetting="0"
-						End If
-					Else
-						If Request.form("Forum_Setting(70)"&j)="1" Then
-							isetting=isetting&"|1"
-						Else
-							isetting=isetting&"|0"
-						End If
-					End If
-				Next
-			End If		
-		Else
-			isetting=Replace(Trim(request.Form("Forum_Setting("&i&")")),",","")
-		End If
-	
-		If i = 0 Then
-			forum_setting = isetting
-		Else
-			forum_setting = forum_setting & "," & isetting
-		End If
-	Next
-	
-	For i = 0 To 13
-		If Trim(Request.Form("Forum_info("&i&")")) = "" And i <> 4 And i <> 12 And i<>13 Then
-			'Response.Write "Forum_info("&i&")<br>"
-			isetting=0
-		Else
-			isetting=Replace(Trim(request.Form("Forum_info("&i&")")),",","")
-		End If
-		If i = 0 Then
-			Forum_info = isetting
-		Else
-			Forum_info = Forum_info & "," & isetting
-		End If
-	Next
-	Forum_copyright=request("copyright")
-	'forum_info|||forum_setting|||forum_user|||copyright|||splitword|||stopreadme
-	Set rs=Dvbbs.execute("select forum_setting from dv_setup")
-	iforum_setting=split(rs(0),"|||")
-	forum_setting=forum_info & "|||" & forum_setting & "|||" & iforum_setting(2) & "|||" & Forum_copyright & "|||" & iforum_setting(4) & "|||" & request.Form("StopReadme")
-	forum_setting=Replace(forum_setting,"'","''")
-	Dim Forum_AdminFolder
-	Forum_AdminFolder=Request("Forum_AdminFolder")
-	If Forum_AdminFolder<>"" Then
-		Forum_AdminFolder=Forum_AdminFolder&"/"
-		Forum_AdminFolder=replace(Forum_AdminFolder,"\","/")
-		Forum_AdminFolder=replace(Forum_AdminFolder,"//","/")
-	Else
-		Forum_AdminFolder=Dvbbs.CacheData(33,0)
-	End If
-	
-	sql="update Dv_setup set Forum_AdminFolder='"&Dvbbs.Checkstr(Forum_AdminFolder)&"',Forum_Setting='"&forum_setting&"',forum_sid="&Dvbbs.CheckNumeric(request.Form("Sid"))
-	sql=sql+",Forum_Maxonline="&Forum_Maxonline&",Forum_TopicNum="&Forum_TopicNum&",Forum_PostNum="&Forum_PostNum &",Forum_UserNum="&Forum_UserNum&",Forum_MaxPostNum="&Forum_MaxPostNum&",Forum_MaxPostDate='"&Forum_MaxPostDate &"',Forum_MaxonlineDate='"&Forum_MaxonlineDate&"',Forum_pack='"&Forum_pack&"'"
-	dvbbs.execute(sql)
-	Dvbbs.loadSetup()
-	Dvbbs.Loadstyle()
-	Dvbbs.Name="CustomIndex"
-	Dvbbs.RemoveCache()
-	Dv_suc("ÉèÖÃÂÛÌ³³£¹æÐÅÏ¢³É¹¦")
-end sub
-
-'»Ö¸´Ä¬ÈÏÉèÖÃ
-Sub restore()
-	Dim Forum_setting
-	'forum_setting="  ¶¯ÍøÏÈ·æÂÛÌ³,http://bbs.dvbbs.net,¶¯ÍøÏÈ·æ,http://www.aspsky.net/,,eway@aspsky.net,images/logo.gif,http://www.aspsky.cn/email.asp,aspsky|dvbbs|¶¯Íø|¶¯ÍøÂÛÌ³|asp|ÂÛÌ³|²å¼þ,±±¾©Ê±¼ä,¶¯ÍøÂÛÌ³ÊÇÊ¹ÓÃÁ¿×î¶à¡¢¸²¸ÇÃæ×î¹ãµÄÃâ·ÑÖÐÎÄÂÛÌ³£¬Ò²ÊÇ¹úÄÚÖªÃûµÄ¼¼ÊõÌÖÂÛÕ¾µã£¬Ï£ÍûÎÒÃÇÐÁ¿àµÄÅ¬Á¦¿ÉÒÔÎªÄú´øÀ´ºÜ¶à·½±ã,index.asp,,|||0,300,0,60,2|20,1,1,2|100|0|999|bbs.dvbbs.net|12|#FF0000|Arial|0|images/WaterMap.gif|0.7|110|35|4|120|100|1|2|#0066cc|0|0,40,dvbbs|sql|aspsky|asp|php|cgi|jsp|htm,0,20,500,20|200,0,0,1,1,1,0,30,0,7200,0,1,0,0,1,1,0,1,1,1,1,1,1,0,1,32,32,1,10,1,0,10,0,1,0,1,1,0,0,0,1,10,1,0,120,30,9,15,4,0,0,0,1,0,1,20,0,1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1,0,0,0,2000-3-26,0,UploadFile/,object|EMBED|,1,1,1,1,0,0,5,0,0,0,0,0,1,1,0,50,30,20,5,100,1,0,0,0,1,0,1|||100,15,12,12,8,60,10,5,5,6,30,6,2,2,3,25,15,20|||Copyright &copy;2000 - 2005  <a href=http://www.dvbbs.net><font face=Verdana, Arial, Helvetica, sans-serif><b>Aspsky<font color=#CC0000>.Net</font></b></font></a>|||!,@,#,$,%,^,&,*,(,),{,},[,],|,\,.,/,?,`,~|||ÂÛÌ³ÔÝÍ£Ê¹ÓÃ"
-
-	Forum_setting="¶¯ÍøÏÈ·æÂÛÌ³,http://bbs.dvbbs.net,¶¯ÍøÏÈ·æ,http://www.dvbbs.net/,,eway@aspsky.net,images/logo.gif,http://www.dvbbs.net/contact.asp,aspsky|dvbbs|¶¯Íø|¶¯ÍøÂÛÌ³|asp|ÂÛÌ³|²å¼þ,±±¾©Ê±¼ä,¶¯ÍøÂÛÌ³ÊÇÊ¹ÓÃÁ¿×î¶à¡¢¸²¸ÇÃæ×î¹ãµÄÃâ·ÑÖÐÎÄÂÛÌ³£¬Ò²ÊÇ¹úÄÚÖªÃûµÄ¼¼ÊõÌÖÂÛÕ¾µã£¬Ï£ÍûÎÒÃÇÐÁ¿àµÄÅ¬Á¦¿ÉÒÔÎªÄú´øÀ´ºÜ¶à·½±ã,index.asp,,|||0,300,1,60,2|20,1,1,2|100|0|999|bbs.dvbbs.net|12|#FF0000|Arial|0|images/WaterMap.gif|0.7|110|35|4|120|100|1|2|#0066cc|0|0,20,dvbbs|sql|aspsky|asp|php|cgi|jsp|htm,0,20,500,20|200,0,0,1,1,1,0,30,0,7200,0,1,0,0,1,1,0,1,1,0,1,1,1,0,1,48,48,1,12,1,0,10,0,1,0,1,1,0,0,0,1,10,1,0,120,30,9,15,4,0,0,0,1,0,1,20,0,1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1,0,0,0,2000-3-26,0,UploadFile/,0,1,1,1,1,0,0,5,0,0,0,0,1,1,1,0,50,30,20,0.2,100,1,1,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0|||100,15,12,12,8,60,10,5,5,6,30,6,2,2,3,25,15,20|||Copyright &copy; 2000 - 2008  <a href=""http://www.dvbbs.net""><font face=""Verdana, Arial, Helvetica, sans-serif""><b>Dvbbs<font color=""#CC0000"">.Net</font></b></font></a>|||!,@,#,$,%,^,&,*,(,),{,},[,],|,\,.,/,?,`,~|||ÂÛÌ³ÔÝÍ£Ê¹ÓÃ."
-
-	Conn.Execute("update Dv_setup set Forum_Setting='"&forum_setting&"'")
-	Dv_suc("»¹Ô­ÂÛÌ³³£¹æÉèÖÃ³É¹¦")
-	Dvbbs.loadSetup()
-	Dvbbs.Loadstyle()
-End Sub
-
-Function IsObjInstalled(strClassString)
-	On Error Resume Next
-	IsObjInstalled = False
-	Err = 0
-	Dim xTestObj
-	Set xTestObj = Dvbbs.iCreateObject(strClassString)
-	If Err = 0 Then IsObjInstalled = True
-	If Err = -2147352567 Then IsObjInstalled = True
-	Set xTestObj = Nothing
-	Err = 0
-End Function
-%>
+<td width="50%" class="td1"> <U>åœ¨çº¿èµ„æ–™åˆ—è¡¨æ˜¾ç¤ºç”¨æˆ·.netç»«è®³æŠ€æ©æ¬ç‰±é¨å‹¬æ•žé

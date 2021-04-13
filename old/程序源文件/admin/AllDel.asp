@@ -23,7 +23,7 @@ set rs=Dvbbs.Execute("select boardid,depth,boardtype from dv_board order by root
 if rs.eof and rs.bof then
 	iboardid(0)=0
 	idepth(0)=0
-	iboardname(0)="Ã»ÓĞÂÛÌ³"
+	iboardname(0)="æ²¡æœ‰è®ºå›"
 else
 	do while not rs.eof
 		iboardid(i)=rs(0)
@@ -54,30 +54,30 @@ case else
 <table cellpadding=3 cellspacing=1 border=0 width=100% align="center">
 	<tr>
     <td width="100%" valign=top class=td1>
-<B>×¢Òâ</B>£ºÏÂÃæ²Ù×÷½«´óÅúÁ¿É¾³ıÂÛÌ³Ìû×Ó£¬<font color=red>²¢ÇÒËùÓĞ²Ù×÷²»¿É»Ö¸´£¡</font>Èç¹ûÄúÈ·¶¨ÕâÑù×ö£¬Çë×ĞÏ¸¼ì²éÄúÊäÈëµÄĞÅÏ¢¡£
+<B>æ³¨æ„</B>ï¼šä¸‹é¢æ“ä½œå°†å¤§æ‰¹é‡åˆ é™¤è®ºå›å¸–å­ï¼Œ<font color=red>å¹¶ä¸”æ‰€æœ‰æ“ä½œä¸å¯æ¢å¤ï¼</font>å¦‚æœæ‚¨ç¡®å®šè¿™æ ·åšï¼Œè¯·ä»”ç»†æ£€æŸ¥æ‚¨è¾“å…¥çš„ä¿¡æ¯ã€‚
 </td>
 </tr>
 </table><BR>
 <table width="100%" border="0" cellspacing="1" cellpadding="3" align="center">
 <form action="alldel.asp?action=alldel" method="post">
-	<th valign=middle colspan=2>É¾³ıÖ¸¶¨ÈÕÆÚÄÚÌû×Ó</b>(±¾¹¦ÄÜ²»¿Û³ıÓÃ»§Ìû×ÓÊıºÍ»ı·Ö)</th>
+	<th valign=middle colspan=2>åˆ é™¤æŒ‡å®šæ—¥æœŸå†…å¸–å­</b>(æœ¬åŠŸèƒ½ä¸æ‰£é™¤ç”¨æˆ·å¸–å­æ•°å’Œç§¯åˆ†)</th>
 	<tr>
-	<td valign=middle width=40% class=td1>É¾³ı¶àÉÙÌìÇ°µÄÌû×Ó(ÌîĞ´Êı×Ö)</td><td class=td1><input name="TimeLimited" value=100 size=30>&nbsp;<input type=submit class="button" name="submit" value="Ìá ½»"></td></tr>
+	<td valign=middle width=40% class=td1>åˆ é™¤å¤šå°‘å¤©å‰çš„å¸–å­(å¡«å†™æ•°å­—)</td><td class=td1><input name="TimeLimited" value=100 size=30>&nbsp;<input type=submit class="button" name="submit" value="æ äº¤"></td></tr>
 	<tr>
-	<td valign=middle width=40%  class=td1>ÂÛÌ³°æÃæ</td>
+	<td valign=middle width=40%  class=td1>è®ºå›ç‰ˆé¢</td>
 	<td class=td1>
 		<select name="delboardid" size=1>
 		<%
 		for k=0 to i-1
 			if iboardid(k)=0 then
-				response.write "<option value=0>Ã»ÓĞÂÛÌ³</option>"
+				response.write "<option value=0>æ²¡æœ‰è®ºå›</option>"
 			elseif k=0 then
-				response.write "<option value=all>È«²¿ÂÛÌ³</option>"
+				response.write "<option value=all>å…¨éƒ¨è®ºå›</option>"
 			end if
 			response.write "<option value="&iboardid(k)&">"
 			if idepth(k)>0 then
 			for n=1 to idepth(k)
-			response.write "£­"
+			response.write "ï¼"
 			next
 			end if
 			response.write iboardname(k)&"</option>"
@@ -87,24 +87,24 @@ case else
 	</td></tr>
 </form>
 <form action="alldel.asp?action=alldelTopic" method="post">
-	<th valign=middle colspan=2>É¾³ıÖ¸¶¨ÈÕÆÚÄÚÃ»ÓĞ»Ø¸´µÄÖ÷Ìâ(±¾¹¦ÄÜ²»¿Û³ıÓÃ»§Ìû×ÓÊıºÍ»ı·Ö)</th>
+	<th valign=middle colspan=2>åˆ é™¤æŒ‡å®šæ—¥æœŸå†…æ²¡æœ‰å›å¤çš„ä¸»é¢˜(æœ¬åŠŸèƒ½ä¸æ‰£é™¤ç”¨æˆ·å¸–å­æ•°å’Œç§¯åˆ†)</th>
 	<tr>
-	<td valign=middle width=40% class=td1>É¾³ı¶àÉÙÌìÇ°µÄÌû×Ó(ÌîĞ´Êı×Ö)</td><td class=td1><input name="TimeLimited" value=100 size=30>&nbsp;<input type=submit class="button" name="submit" value="Ìá ½»"></td></tr>
+	<td valign=middle width=40% class=td1>åˆ é™¤å¤šå°‘å¤©å‰çš„å¸–å­(å¡«å†™æ•°å­—)</td><td class=td1><input name="TimeLimited" value=100 size=30>&nbsp;<input type=submit class="button" name="submit" value="æ äº¤"></td></tr>
 	<tr>
-	<td valign=middle width=40% class=td1>ÂÛÌ³°æÃæ</td>
+	<td valign=middle width=40% class=td1>è®ºå›ç‰ˆé¢</td>
 	<td class=td1>
 		<select name="delboardid" size=1>
 		<%
 		for k=0 to i-1
 			if iboardid(k)=0 then
-				response.write "<option value=0>Ã»ÓĞÂÛÌ³</option>"
+				response.write "<option value=0>æ²¡æœ‰è®ºå›</option>"
 			elseif k=0 then
-				response.write "<option value=all>È«²¿ÂÛÌ³</option>"
+				response.write "<option value=all>å…¨éƒ¨è®ºå›</option>"
 			end if
 			response.write "<option value="&iboardid(k)&">"
 			if idepth(k)>0 then
 			for n=1 to idepth(k)
-			response.write "£­"
+			response.write "ï¼"
 			next
 			end if
 			response.write iboardname(k)&"</option>"
@@ -114,23 +114,23 @@ case else
 	</td></tr>
 </form>
 <form action="alldel.asp?action=userdel" method="post">
-	<th valign=middle colspan=2>É¾³ıÄ³ÓÃ»§µÄËùÓĞÌû×Ó</th>
+	<th valign=middle colspan=2>åˆ é™¤æŸç”¨æˆ·çš„æ‰€æœ‰å¸–å­</th>
 	<tr>
-	<td valign=middle width=40% class=td1>ÇëÊäÈëÓÃ»§Ãû</td><td class=td1><input type=text name="username" size=30>&nbsp;<input type=submit class="button" name="submit" value="Ìá ½»"></td></tr>
+	<td valign=middle width=40% class=td1>è¯·è¾“å…¥ç”¨æˆ·å</td><td class=td1><input type=text name="username" size=30>&nbsp;<input type=submit class="button" name="submit" value="æ äº¤"></td></tr>
 	<tr>
-	<td valign=middle width=40%  class=td1>ÂÛÌ³°æÃæ</td><td class=td1>
+	<td valign=middle width=40%  class=td1>è®ºå›ç‰ˆé¢</td><td class=td1>
 		<select name="delboardid" size=1>
 		<%
 		for k=0 to i-1
 			if iboardid(k)=0 then
-				response.write "<option value=0>Ã»ÓĞÂÛÌ³</option>"
+				response.write "<option value=0>æ²¡æœ‰è®ºå›</option>"
 			elseif k=0 then
-				response.write "<option value=all>È«²¿ÂÛÌ³</option>"
+				response.write "<option value=all>å…¨éƒ¨è®ºå›</option>"
 			end if
 			response.write "<option value="&iboardid(k)&">"
 			if idepth(k)>0 then
 			for n=1 to idepth(k)
-			response.write "£­"
+			response.write "ï¼"
 			next
 			end if
 			response.write iboardname(k)&"</option>"
@@ -141,20 +141,20 @@ case else
 </form>
 
 <form action="alldel.asp?action=delUser" method="post">
-	<th valign=middle colspan=2>É¾³ıÖ¸¶¨ÈÕÆÚÄÚÃ»ÓĞµÇÂ¼µÄÓÃ»§</th>
+	<th valign=middle colspan=2>åˆ é™¤æŒ‡å®šæ—¥æœŸå†…æ²¡æœ‰ç™»å½•çš„ç”¨æˆ·</th>
 	<tr>
-	<td class=td1 valign=middle>Ö¸¶¨ÈÕÆÚ</td>
+	<td class=td1 valign=middle>æŒ‡å®šæ—¥æœŸ</td>
 	<td class=td1 valign=middle>
 		<select name=TimeLimited size=1> 
-		<option value=1>É¾³ıÒ»ÌìÇ°µÄ
-		<option value=2>É¾³ıÁ½ÌìÇ°µÄ
-		<option value=7>É¾³ıÒ»ĞÇÆÚÇ°µÄ
-		<option value=15>É¾³ı°ë¸öÔÂÇ°µÄ
-		<option value=30>É¾³ıÒ»¸öÔÂÇ°µÄ
-		<option value=60>É¾³ıÁ½¸öÔÂÇ°µÄ
-		<option value=180>É¾³ı°ëÄêÇ°µÄ
+		<option value=1>åˆ é™¤ä¸€å¤©å‰çš„
+		<option value=2>åˆ é™¤ä¸¤å¤©å‰çš„
+		<option value=7>åˆ é™¤ä¸€æ˜ŸæœŸå‰çš„
+		<option value=15>åˆ é™¤åŠä¸ªæœˆå‰çš„
+		<option value=30>åˆ é™¤ä¸€ä¸ªæœˆå‰çš„
+		<option value=60>åˆ é™¤ä¸¤ä¸ªæœˆå‰çš„
+		<option value=180>åˆ é™¤åŠå¹´å‰çš„
 		</select>
-		<input type=submit class="button" name="submit" value="Ìá ½»">
+		<input type=submit class="button" name="submit" value="æ äº¤">
 	</td></tr>
 </form>
 
@@ -169,28 +169,28 @@ Sub Moveinfo()
 <table cellpadding=3 cellspacing=1 border=0 width=100% align=center>
 	<tr>
     <td width="100%" valign=top>
-<B>×¢Òâ</B>£ºÕâÀïÖ»ÊÇÒÆ¶¯Ìû×Ó£¬¶ø²»ÊÇ¿½±´»òÕßÉ¾³ı£¡
-            <br>ÏÂÃæ²Ù×÷½«É¾³ıÔ­ÂÛÌ³Ìû×Ó£¬²¢ÒÆ¶¯µ½ÄúÖ¸¶¨µÄÂÛÌ³ÖĞ¡£Èç¹ûÄúÈ·¶¨ÕâÑù×ö£¬Çë×ĞÏ¸¼ì²éÄúÊäÈëµÄĞÅÏ¢¡£<BR>Äú¿ÉÒÔ½«Ò»¸öÂÛÌ³ÏÂÊôÂÛÌ³µÄÌû×ÓÒÆ¶¯µ½ÉÏ¼¶ÂÛÌ³£¬Ò²¿ÉÒÔ½«ÉÏ¼¶ÂÛÌ³µÄÌû×ÓÒÆ¶¯µ½ÏÂ¼¶ÂÛÌ³£¬µ«×÷Îª·ÖÀàµÄÂÛÌ³ÓÉÓÚÂÛÌ³ÉèÖÃºÜ¿ÉÄÜ²»ÄÜ·¢²¼Ìû×Ó£¨Ö»ÄÜä¯ÀÀ£©
+<B>æ³¨æ„</B>ï¼šè¿™é‡Œåªæ˜¯ç§»åŠ¨å¸–å­ï¼Œè€Œä¸æ˜¯æ‹·è´æˆ–è€…åˆ é™¤ï¼
+            <br>ä¸‹é¢æ“ä½œå°†åˆ é™¤åŸè®ºå›å¸–å­ï¼Œå¹¶ç§»åŠ¨åˆ°æ‚¨æŒ‡å®šçš„è®ºå›ä¸­ã€‚å¦‚æœæ‚¨ç¡®å®šè¿™æ ·åšï¼Œè¯·ä»”ç»†æ£€æŸ¥æ‚¨è¾“å…¥çš„ä¿¡æ¯ã€‚<BR>æ‚¨å¯ä»¥å°†ä¸€ä¸ªè®ºå›ä¸‹å±è®ºå›çš„å¸–å­ç§»åŠ¨åˆ°ä¸Šçº§è®ºå›ï¼Œä¹Ÿå¯ä»¥å°†ä¸Šçº§è®ºå›çš„å¸–å­ç§»åŠ¨åˆ°ä¸‹çº§è®ºå›ï¼Œä½†ä½œä¸ºåˆ†ç±»çš„è®ºå›ç”±äºè®ºå›è®¾ç½®å¾ˆå¯èƒ½ä¸èƒ½å‘å¸ƒå¸–å­ï¼ˆåªèƒ½æµè§ˆï¼‰
 </td>
 </tr>
 </table>
 <table width="100%" border="0" cellspacing="1" cellpadding="3" align="center">
 <form action="alldel.asp?action=MoveDateTopic" method="post">
-	<th valign=middle colspan=2>°´ÈÕÆÚÒÆ¶¯</th>
+	<th valign=middle colspan=2>æŒ‰æ—¥æœŸç§»åŠ¨</th>
 	<tr>
-	<td valign=middle width=40% class=td1>ÒÆ¶¯¶àÉÙÌìÇ°µÄÌû×Ó(ÌîĞ´Êı×Ö)<li>ÌîĞ´Îª0£¬¼´·Ö°æËùÓĞÌû×Ó¡£</td><td class=td1><input name="TimeLimited" value=0 size=30>Ìì&nbsp;<input type=submit class="button" name="submit" value="Ìá ½»"></td></tr>
+	<td valign=middle width=40% class=td1>ç§»åŠ¨å¤šå°‘å¤©å‰çš„å¸–å­(å¡«å†™æ•°å­—)<li>å¡«å†™ä¸º0ï¼Œå³åˆ†ç‰ˆæ‰€æœ‰å¸–å­ã€‚</td><td class=td1><input name="TimeLimited" value=0 size=30>å¤©&nbsp;<input type=submit class="button" name="submit" value="æ äº¤"></td></tr>
 	<tr>
-	<td valign=middle width=40% class=td1>Ô­ÂÛÌ³</td><td class=td1>
+	<td valign=middle width=40% class=td1>åŸè®ºå›</td><td class=td1>
 		<select name="outboardid" size=1>
 		<%
 		for k=0 to i-1
 			if iboardid(k)=0 then
-				response.write "<option value=0>Ã»ÓĞÂÛÌ³</option>"
+				response.write "<option value=0>æ²¡æœ‰è®ºå›</option>"
 			end if
 			response.write "<option value="&iboardid(k)&">"
 			if idepth(k)>0 then
 			for n=1 to idepth(k)
-			response.write "£­"
+			response.write "ï¼"
 			next
 			end if
 			response.write iboardname(k)&"</option>"
@@ -199,17 +199,17 @@ Sub Moveinfo()
 		</select>
 	</td></tr>
 	<tr>
-	<td valign=middle width=40% class=td1>Ä¿±êÂÛÌ³</td><td class=td1>
+	<td valign=middle width=40% class=td1>ç›®æ ‡è®ºå›</td><td class=td1>
 		<select name="inboardid" size=1>
 		<%
 		for k=0 to i-1
 			if iboardid(k)=0 then
-				response.write "<option value=0>Ã»ÓĞÂÛÌ³</option>"
+				response.write "<option value=0>æ²¡æœ‰è®ºå›</option>"
 			end if
 			response.write "<option value="&iboardid(k)&">"
 			if idepth(k)>0 then
 			for n=1 to idepth(k)
-			response.write "£­"
+			response.write "ï¼"
 			next
 			end if
 			response.write iboardname(k)&"</option>"
@@ -219,21 +219,21 @@ Sub Moveinfo()
 	</td></tr>
 </form>
 <form action="alldel.asp?action=MoveUserTopic" method="post">
-	<th valign=middle colspan=2>°´ÓÃ»§ÒÆ¶¯</th>
+	<th valign=middle colspan=2>æŒ‰ç”¨æˆ·ç§»åŠ¨</th>
 	<tr>
-	<td valign=middle width=40% class=td1>ÇëÌîĞ´ÓÃ»§Ãû</td><td class=td1><input name="username" size=30>&nbsp;<input type=submit class="button" name="submit" value="Ìá ½»"></td></tr>
+	<td valign=middle width=40% class=td1>è¯·å¡«å†™ç”¨æˆ·å</td><td class=td1><input name="username" size=30>&nbsp;<input type=submit class="button" name="submit" value="æ äº¤"></td></tr>
 	<tr>
-	<td valign=middle width=40% class=td1>Ô­ÂÛÌ³</td><td class=td1>
+	<td valign=middle width=40% class=td1>åŸè®ºå›</td><td class=td1>
 		<select name="outboardid" size=1>
 		<%
 		for k=0 to i-1
 			if iboardid(k)=0 then
-				response.write "<option value=0>Ã»ÓĞÂÛÌ³</option>"
+				response.write "<option value=0>æ²¡æœ‰è®ºå›</option>"
 			end if
 			response.write "<option value="&iboardid(k)&">"
 			if idepth(k)>0 then
 			for n=1 to idepth(k)
-			response.write "£­"
+			response.write "ï¼"
 			next
 			end if
 			response.write iboardname(k)&"</option>"
@@ -242,17 +242,17 @@ Sub Moveinfo()
 		</select>
 	</td></tr>
 	<tr>
-	<td valign=middle width=40% class=td1>Ä¿±êÂÛÌ³</td><td class=td1>
+	<td valign=middle width=40% class=td1>ç›®æ ‡è®ºå›</td><td class=td1>
 		<select name="inboardid" size=1>
 		<%
 		for k=0 to i-1
 			if iboardid(k)=0 then
-				response.write "<option value=0>Ã»ÓĞÂÛÌ³</option>"
+				response.write "<option value=0>æ²¡æœ‰è®ºå›</option>"
 			end if
 			response.write "<option value="&iboardid(k)&">"
 			if idepth(k)>0 then
 			for n=1 to idepth(k)
-			response.write "£­"
+			response.write "ï¼"
 			next
 			end if
 			response.write iboardname(k)&"</option>"
@@ -265,13 +265,13 @@ Sub Moveinfo()
 <%
 	end sub
 
-'É¾³ıÄ³ÓÃ»§µÄËùÓĞÌû×Ó
+'åˆ é™¤æŸç”¨æˆ·çš„æ‰€æœ‰å¸–å­
 Sub Del()
 	dim titlenum,delboardid,PostUserID,delboardida,rs,sql,i
-	Dim Dnum 'É¾³ıÌû×ÓÊı 2005-10-30 Dv.Yz
+	Dim Dnum 'åˆ é™¤å¸–å­æ•° 2005-10-30 Dv.Yz
 	If request("delboardid")="0" then
 		founderr=true
-		Errmsg=ErrMsg + "<BR><li>·Ç·¨µÄ°æÃæ²ÎÊı¡£"
+		Errmsg=ErrMsg + "<BR><li>éæ³•çš„ç‰ˆé¢å‚æ•°ã€‚"
 		exit sub
 	Elseif request("delboardid")="all" then
 		delboardid=""
@@ -282,18 +282,18 @@ Sub Del()
 	End if
 	If Request("username")="" then
 		founderr=true
-		Errmsg=ErrMsg + "<BR><li>ÇëÊäÈë±»Ìû×ÓÉ¾³ıÓÃ»§Ãû¡£"
+		Errmsg=ErrMsg + "<BR><li>è¯·è¾“å…¥è¢«å¸–å­åˆ é™¤ç”¨æˆ·åã€‚"
 		exit sub
 	End If
 	Set Rs=Dvbbs.Execute("Select UserID,UserGroupID From Dv_User Where UserName='"&replace(request("username"),"'","")&"'")
 	If Rs.Eof And Rs.Bof Then
 		founderr=true
-		Errmsg=ErrMsg + "<BR><li>Ä¿±êÓÃ»§²»´æÔÚ£¬ÇëÖØĞÂÊäÈë¡£"
+		Errmsg=ErrMsg + "<BR><li>ç›®æ ‡ç”¨æˆ·ä¸å­˜åœ¨ï¼Œè¯·é‡æ–°è¾“å…¥ã€‚"
 		exit sub
 	End If
 	If Rs(1)=1 Or Rs(1)=2 Or Rs(1)=3 Then
 		founderr=true
-		Errmsg=ErrMsg + "<BR><li>¶Ô¹ÜÀíÔ±¡¢³¬¼¶°æÖ÷¡¢°æÖ÷µÄÌù×Ó²»ÄÜ½øĞĞÅúÁ¿É¾³ı²Ù×÷¡£"
+		Errmsg=ErrMsg + "<BR><li>å¯¹ç®¡ç†å‘˜ã€è¶…çº§ç‰ˆä¸»ã€ç‰ˆä¸»çš„è´´å­ä¸èƒ½è¿›è¡Œæ‰¹é‡åˆ é™¤æ“ä½œã€‚"
 		exit sub
 	End If
 		PostUserID=Rs(0)
@@ -307,11 +307,11 @@ Sub Del()
 		Dvbbs.Execute(sql)
 		next
 		Set Rs=Nothing
-		'¾«»ª
+		'ç²¾å
 		Dvbbs.Execute("delete from dv_besttopic where "&delboardid&" PostUserID="&PostUserID)
-		'ÉÏ´«
+		'ä¸Šä¼ 
 		Dvbbs.Execute("delete from Dv_UpFile where "&delboardida&" F_UserID="&PostUserID)
-		'¸ÃÓÃ»§·¢±íµÄÖ÷Ìâ¡¢Á¬´ø¸úÌùÒ»ÆğÉ¾³ı
+		'è¯¥ç”¨æˆ·å‘è¡¨çš„ä¸»é¢˜ã€è¿å¸¦è·Ÿè´´ä¸€èµ·åˆ é™¤
 		set rs=Dvbbs.Execute("select topicid,posttable from dv_topic where "&delboardid&" PostUserID="&PostUserID)
 		do while not rs.eof
 			Dvbbs.Execute("Delete From "&rs(1)&" where rootid="&rs(0))
@@ -324,17 +324,17 @@ Sub Del()
 		if isnull(titlenum) then titlenum=0
 		sql="update [dv_user] set userpost=userpost-"&titlenum&",userWealth=userWealth-"&titlenum*Dvbbs.Forum_user(3)&",userEP=userEP-"&titlenum*Dvbbs.Forum_user(8)&",userCP=userCP-"&titlenum*Dvbbs.Forum_user(13)&" where UserID="&PostUserID
 		Dvbbs.Execute(sql)
-		Response.write "¸ÃÓÃ»§µÄ" & Dnum & "¸öÖ÷Ìâ¼°¸úÌûÉ¾³ı³É¹¦£¡<BR>½¨ÒéÄúµ½¸üĞÂÂÛÌ³Êı¾İÖĞ¸üĞÂÒ»ÏÂÂÛÌ³Êı¾İ£¬»òÕß<a href=alldel.asp>·µ»Ø</a>"
+		Response.write "è¯¥ç”¨æˆ·çš„" & Dnum & "ä¸ªä¸»é¢˜åŠè·Ÿå¸–åˆ é™¤æˆåŠŸï¼<BR>å»ºè®®æ‚¨åˆ°æ›´æ–°è®ºå›æ•°æ®ä¸­æ›´æ–°ä¸€ä¸‹è®ºå›æ•°æ®ï¼Œæˆ–è€…<a href=alldel.asp>è¿”å›</a>"
 	Response.Flush
 End Sub
 
-'É¾³ıÖ¸¶¨ÈÕÆÚÄÚÌû×Ó
+'åˆ é™¤æŒ‡å®šæ—¥æœŸå†…å¸–å­
 Sub Alldel()
 	Dim TimeLimited,Delboardid,DelSql,rs,i
-	Dim Dnum 'É¾³ıÌû×ÓÊı 2005-10-30 Dv.Yz
+	Dim Dnum 'åˆ é™¤å¸–å­æ•° 2005-10-30 Dv.Yz
 	If Request("delboardid")="0" Then
 		'founderr=true
-		Errmsg=ErrMsg + "<BR><li>·Ç·¨µÄ°æÃæ²ÎÊı¡£"
+		Errmsg=ErrMsg + "<BR><li>éæ³•çš„ç‰ˆé¢å‚æ•°ã€‚"
 		Exit Sub
 	Elseif Request("delboardid")="all" Then
 		Delboardid=""
@@ -345,7 +345,7 @@ Sub Alldel()
 	TimeLimited=Request.Form("TimeLimited")
 	If Not Isnumeric(TimeLimited) Then
 		'founderr=true
-		Errmsg=ErrMsg + "<BR><li>·Ç·¨µÄ²ÎÊı¡£"
+		Errmsg=ErrMsg + "<BR><li>éæ³•çš„å‚æ•°ã€‚"
 		Exit Sub
 	Else
 		For i=0 to Ubound(allposttable)
@@ -358,7 +358,7 @@ Sub Alldel()
 				Dnum = Rs(0)
 				Dvbbs.Execute("DELETE FROM "&Allposttable(i)&" WHERE "&Delboardid&" Datediff('d',DateAndTime,"&SqlNowString&")>"&TimeLimited)
 			End if
-			Response.Write Allposttable(i)&"±í" & Dnum & "ÕÅÌû×ÓÉ¾³ıÍê³É£¡<BR>"
+			Response.Write Allposttable(i)&"è¡¨" & Dnum & "å¼ å¸–å­åˆ é™¤å®Œæˆï¼<BR>"
 			Response.Flush
 		Next
 		If IsSqlDataBase=1 Then
@@ -372,19 +372,19 @@ Sub Alldel()
 			Dvbbs.Execute("DELETE FROM Dv_topic WHERE "&Delboardid&" Datediff('d',DateAndTime,"&SqlNowString&")>"&TimeLimited)
 			Dvbbs.Execute("DELETE FROM Dv_besttopic WHERE "&Delboardid&" Datediff('d',DateAndTime,"&SqlNowString&") > "&TimeLimited)
 		End If
-			Response.Write "Dv_Topic±í" & Dnum & "¸öÖ÷ÌâÉ¾³ıÍê³É£¡<BR>"
+			Response.Write "Dv_Topicè¡¨" & Dnum & "ä¸ªä¸»é¢˜åˆ é™¤å®Œæˆï¼<BR>"
 			Response.Flush
 	End if
-	Response.Write "É¾³ı³É¹¦£¡<BR>½¨ÒéÄúµ½¸üĞÂÂÛÌ³Êı¾İÖĞ¸üĞÂÒ»ÏÂÂÛÌ³Êı¾İ£¬»òÕß<a href=alldel.asp>·µ»Ø</a>"
+	Response.Write "åˆ é™¤æˆåŠŸï¼<BR>å»ºè®®æ‚¨åˆ°æ›´æ–°è®ºå›æ•°æ®ä¸­æ›´æ–°ä¸€ä¸‹è®ºå›æ•°æ®ï¼Œæˆ–è€…<a href=alldel.asp>è¿”å›</a>"
 	Response.Flush
 End sub
 
 sub alldelTopic()
 	Dim TimeLimited,delboardid,rs
-	Dim Dnum 'É¾³ıÌû×ÓÊı 2005-10-30 Dv.Yz
+	Dim Dnum 'åˆ é™¤å¸–å­æ•° 2005-10-30 Dv.Yz
 	if request("delboardid")="0" then
 		'founderr=true
-		Errmsg=ErrMsg + "<BR><li>·Ç·¨µÄ°æÃæ²ÎÊı¡£"
+		Errmsg=ErrMsg + "<BR><li>éæ³•çš„ç‰ˆé¢å‚æ•°ã€‚"
 		exit sub
 	elseif request("delboardid")="all" then
 		delboardid=""
@@ -394,7 +394,7 @@ sub alldelTopic()
 	TimeLimited=request.form("TimeLimited")
 	if not isnumeric(TimeLimited) then
 		'founderr=true
-		Errmsg=ErrMsg + "<BR><li>·Ç·¨µÄ²ÎÊı¡£"
+		Errmsg=ErrMsg + "<BR><li>éæ³•çš„å‚æ•°ã€‚"
 		exit sub
 	else
 	if IsSqlDataBase=1 then
@@ -418,22 +418,22 @@ sub alldelTopic()
 	end if
 	set rs=nothing
 	end if
-	response.write "Dv_Topic±í" & Dnum & "¸öÖ÷ÌâÉ¾³ı³É¹¦£¡<BR>½¨ÒéÄúµ½¸üĞÂÂÛÌ³Êı¾İÖĞ¸üĞÂÒ»ÏÂÂÛÌ³Êı¾İ£¬»òÕß<a href=alldel.asp>·µ»Ø</a>"
+	response.write "Dv_Topicè¡¨" & Dnum & "ä¸ªä¸»é¢˜åˆ é™¤æˆåŠŸï¼<BR>å»ºè®®æ‚¨åˆ°æ›´æ–°è®ºå›æ•°æ®ä¸­æ›´æ–°ä¸€ä¸‹è®ºå›æ•°æ®ï¼Œæˆ–è€…<a href=alldel.asp>è¿”å›</a>"
 	end sub
 
 Sub DelUser()
 	Dim TimeLimited,rs,sql,i
-	Dim Dnum 'É¾³ıÓÃ»§Êı 2005-10-30 Dv.Yz
+	Dim Dnum 'åˆ é™¤ç”¨æˆ·æ•° 2005-10-30 Dv.Yz
 	TimeLimited=Replace(request.form("TimeLimited"),"'","")
 	if TimeLimited="all" then
-	response.Write "ËãÁË°É£¬Ïë¿ªµã°É£¬ÕâÑù×ö»áÁ¬¹ÜÀíÔ±¶¼É¾µôµÄ£¡"
+	response.Write "ç®—äº†å§ï¼Œæƒ³å¼€ç‚¹å§ï¼Œè¿™æ ·åšä¼šè¿ç®¡ç†å‘˜éƒ½åˆ æ‰çš„ï¼"
 	else
 	if IsSqlDataBase=1 then
 	set rs=Dvbbs.Execute("select userid,username,usergroupid from [dv_user] where datediff(d,LastLogin,"&SqlNowString&")>"&Dvbbs.CheckNumeric(TimeLimited)&"")
 	else
 	set rs=Dvbbs.Execute("select userid,username,usergroupid from [dv_user] where datediff('d',LastLogin,"&SqlNowString&")>"&Dvbbs.CheckNumeric(TimeLimited)&"")
 	end if
-	'shinzeal¼ÓÈëÉ¾³ıÓÃ»§µÄÍ¬Ê±×Ô¶¯É¾³ıÆäÌû×Ó£¨°üÀ¨¾«»ªÌù£©µÄ¹¦ÄÜ
+	'shinzealåŠ å…¥åˆ é™¤ç”¨æˆ·çš„åŒæ—¶è‡ªåŠ¨åˆ é™¤å…¶å¸–å­ï¼ˆåŒ…æ‹¬ç²¾åè´´ï¼‰çš„åŠŸèƒ½
 	do while not rs.eof
 		If rs(2)>3 then
 		for i=0 to ubound(allposttable)
@@ -467,31 +467,31 @@ Sub DelUser()
 		Dvbbs.Execute("delete from [dv_user] where datediff('d',LastLogin,"&SqlNowString&")>"&TimeLimited&"")
 	end if
 	end if
-	response.write "É¾³ı" & Dnum & "¸öÓÃ»§³É¹¦£¡<BR>½¨ÒéÄúµ½¸üĞÂÂÛÌ³Êı¾İÖĞ¸üĞÂÒ»ÏÂÂÛÌ³Êı¾İ£¬»òÕß<a href=alldel.asp>·µ»Ø</a>"
+	response.write "åˆ é™¤" & Dnum & "ä¸ªç”¨æˆ·æˆåŠŸï¼<BR>å»ºè®®æ‚¨åˆ°æ›´æ–°è®ºå›æ•°æ®ä¸­æ›´æ–°ä¸€ä¸‹è®ºå›æ•°æ®ï¼Œæˆ–è€…<a href=alldel.asp>è¿”å›</a>"
 	Response.Flush
 End Sub
 
 Sub MoveUserTopic()
 	Dim PostUserID,Sql,rs,i
 	If Not Isnumeric(Request("Inboardid")) Then
-		Response.Write "´íÎóµÄ°æÃæ²ÎÊı¡£"
+		Response.Write "é”™è¯¯çš„ç‰ˆé¢å‚æ•°ã€‚"
 		Exit Sub
 	End If
 	If Not Isnumeric(Request("Outboardid")) Then
-		Response.Write "´íÎóµÄ°æÃæ²ÎÊı¡£"
+		Response.Write "é”™è¯¯çš„ç‰ˆé¢å‚æ•°ã€‚"
 		Exit Sub
 	End If
 	If Request("Username") = "" Then
-		Response.Write "ÇëÌîĞ´ÓÃ»§Ãû¡£"
+		Response.Write "è¯·å¡«å†™ç”¨æˆ·åã€‚"
 		Exit Sub
 	End If
 	If Cint(Request("Outboardid")) = Cint(Request("Inboardid")) Then
-		Response.Write "²»ÄÜÔÚÏàÍ¬°æÃæ½øĞĞÒÆ¶¯²Ù×÷£¡"
+		Response.Write "ä¸èƒ½åœ¨ç›¸åŒç‰ˆé¢è¿›è¡Œç§»åŠ¨æ“ä½œï¼"
 		Exit Sub
 	End If
 	Set Rs = Dvbbs.Execute("Select UserID From Dv_User Where UserName = '" & Replace(Request("Username"), "'", "''") & "'")
 	If Rs.Eof And Rs.Bof Then
-		Response.Write "Ä¿±êÓÃ»§Ãû²¢²»´æÔÚ£¬ÇëÖØĞÂÊäÈë£¡"
+		Response.Write "ç›®æ ‡ç”¨æˆ·åå¹¶ä¸å­˜åœ¨ï¼Œè¯·é‡æ–°è¾“å…¥ï¼"
 		Exit Sub
 	End If
 	PostUserID = Rs(0)
@@ -499,7 +499,7 @@ Sub MoveUserTopic()
 		Dvbbs.Execute("UPDATE " & Allposttable(i) & " SET Boardid = " & Request("Inboardid") & " WHERE Boardid = " & Request("Outboardid") & " AND PostUserID = " & PostUserID)
 	Next
 	Rs.Close:Set Rs = Nothing
-	REM ĞŞ¸ÄÅúÁ¿ÒÆ¶¯·½Ê½ 2004-4-25 Dvbbs.YangZheng
+	REM ä¿®æ”¹æ‰¹é‡ç§»åŠ¨æ–¹å¼ 2004-4-25 Dvbbs.YangZheng
 	SET Rs = Dvbbs.Execute("SELECT Topicid, Posttable, Istop FROM Dv_Topic WHERE Boardid = " & Request("Outboardid") & " AND PostUserID = " & PostUserID)
 	Rem Topicid:0, Posttable:1, Istop:2
 	If Not(Rs.Eof And Rs.Bof) Then
@@ -510,13 +510,13 @@ Sub MoveUserTopic()
 			Dvbbs.Execute("UPDATE " & Sql(1,i) & " SET Boardid = " & Request("Inboardid") & " WHERE Rootid = " & Sql(0,i))
 			Dvbbs.Execute("UPDATE Dv_Topic SET Boardid = " & Request("Inboardid") & " WHERE Boardid = " & Request("Outboardid") & " AND Topicid = " & Sql(0,i))
 			If Sql(2,0) > 0 Then
-				'¶ÁÈ¡ĞÂ¾É°æÃæµÄ¹Ì¶¥ĞÅÏ¢
+				'è¯»å–æ–°æ—§ç‰ˆé¢çš„å›ºé¡¶ä¿¡æ¯
 				Set Yrs = Dvbbs.Execute("SELECT BoardTopStr From Dv_Board Where Boardid = " & Request("Outboardid"))
 				TopstrinfoO = Yrs(0)
 				Set Yrs = Dvbbs.Execute("SELECT BoardTopStr From Dv_Board Where Boardid = " & Request("Inboardid"))
 				TopstrinfoN = Yrs(0)
 				Yrs.Close:Set Yrs = Nothing
-				'É¾³ıÔ­¹Ì¶¥Ö÷ÌâID
+				'åˆ é™¤åŸå›ºé¡¶ä¸»é¢˜ID
 				TopstrinfoO = Replace(TopstrinfoO, Cstr(Sql(0,i))&",", "")
 				TopstrinfoO = Replace(TopstrinfoO, ","&Cstr(Sql(0,i)), "")
 				TopstrinfoO = Replace(TopstrinfoO, Cstr(Sql(0,i)), "")
@@ -529,42 +529,42 @@ Sub MoveUserTopic()
 				Else
 					TopstrinfoN = TopstrinfoN & "," & Cstr(Sql(0,i))
 				End If
-				'¸üĞÂµ±Ç°°æÃæ¹Ì¶¥ĞÅÏ¢¼°»º´æ
+				'æ›´æ–°å½“å‰ç‰ˆé¢å›ºé¡¶ä¿¡æ¯åŠç¼“å­˜
 				Dvbbs.Execute("UPDATE Dv_Board SET BoardTopStr = '" & TopstrinfoO & "' WHERE BoardID = " & Request("Outboardid"))
-				'¸üĞÂĞÂ°æÃæ¹Ì¶¥ĞÅÏ¢¼°»º´æ
+				'æ›´æ–°æ–°ç‰ˆé¢å›ºé¡¶ä¿¡æ¯åŠç¼“å­˜
 				Dvbbs.Execute("UPDATE Dv_Board SET BoardTopStr = '" & TopstrinfoN & "' WHERE Boardid = " & Request("Inboardid"))
 			End If
 		Next
 		Dvbbs.ReloadBoardInfo(Request("Outboardid")&","&Request("Inboardid"))
 	End If
 	Dvbbs.Execute("UPDATE Dv_Besttopic SET Boardid = " & Request("Inboardid") & " WHERE Boardid = " & Request("Outboardid") & " AND PostUserID = " & PostUserID)
-	'shinzeal¼ÓÈëÒÆ¶¯ÉÏ´«ÎÄ¼şÊı¾İ
+	'shinzealåŠ å…¥ç§»åŠ¨ä¸Šä¼ æ–‡ä»¶æ•°æ®
 	Dvbbs.Execute("UPDATE Dv_Upfile SET F_Boardid = " & Request("Inboardid") & " WHERE F_Boardid = " & Request("Outboardid") & " AND F_UserID = " & PostUserID)
-	Response.Write "ÒÆ¶¯³É¹¦£¡<br>ÔÚ¡°ÖØ¼ÆÂÛÌ³Êı¾İºÍĞŞ¸´¡±ÖĞ¡°¸üĞÂÂÛÌ³Êı¾İ¡±¡£"
+	Response.Write "ç§»åŠ¨æˆåŠŸï¼<br>åœ¨â€œé‡è®¡è®ºå›æ•°æ®å’Œä¿®å¤â€ä¸­â€œæ›´æ–°è®ºå›æ•°æ®â€ã€‚"
 End Sub
 
 Sub MoveDateTopic()
 	Dim TimeLimited,rs,sql,i
 	TimeLimited = Request.Form("TimeLimited")
 	If Not Isnumeric(TimeLimited) Then
-		Response.Write "´íÎóµÄÈÕÆÚ²ÎÊı¡£"
+		Response.Write "é”™è¯¯çš„æ—¥æœŸå‚æ•°ã€‚"
 		Exit Sub
 	Else
 		TimeLimited = Clng(TimeLimited)
 	End If
 	If Not Isnumeric(Request("Inboardid")) Then
-		Response.Write "´íÎóµÄ°æÃæ²ÎÊı¡£"
+		Response.Write "é”™è¯¯çš„ç‰ˆé¢å‚æ•°ã€‚"
 		Exit Sub
 	End If
 	If Not Isnumeric(Request("Outboardid")) Then
-		Response.Write "´íÎóµÄ°æÃæ²ÎÊı¡£"
+		Response.Write "é”™è¯¯çš„ç‰ˆé¢å‚æ•°ã€‚"
 		Exit Sub
 	End If
 	If Cint(Request("Outboardid")) = Cint(Request("Inboardid")) Then
-		Response.Write "²»ÄÜÔÚÏàÍ¬°æÃæ½øĞĞÒÆ¶¯²Ù×÷£¡"
+		Response.Write "ä¸èƒ½åœ¨ç›¸åŒç‰ˆé¢è¿›è¡Œç§»åŠ¨æ“ä½œï¼"
 		Exit Sub
 	End If
-	Rem ĞŞ¸ÄÒÆ¶¯·½Ê½ 2004-4-25 Dvbbs.YangZheng
+	Rem ä¿®æ”¹ç§»åŠ¨æ–¹å¼ 2004-4-25 Dvbbs.YangZheng
 	Sql = "SELECT PostTable,Isbest,IsTop,TopicID FROM Dv_Topic WHERE Boardid = " & Request("Outboardid")
 	If TimeLimited > 0 Then
 		If IsSqlDataBase = 1 Then
@@ -589,13 +589,13 @@ Sub MoveDateTopic()
 			End If
 			If Sql(2,i) > 0 Then
 				
-				'¶ÁÈ¡ĞÂ¾É°æÃæµÄ¹Ì¶¥ĞÅÏ¢
+				'è¯»å–æ–°æ—§ç‰ˆé¢çš„å›ºé¡¶ä¿¡æ¯
 				Set Yrs = Dvbbs.Execute("SELECT BoardTopStr From Dv_Board Where Boardid = " & Request("Outboardid"))
 				TopstrinfoO = Yrs(0)
 				Set Yrs = Dvbbs.Execute("SELECT BoardTopStr From Dv_Board Where Boardid = " & Request("Inboardid"))
 				TopstrinfoN = Yrs(0)
 				Yrs.Close:Set Yrs = Nothing
-				'É¾³ıÔ­¹Ì¶¥Ö÷ÌâID
+				'åˆ é™¤åŸå›ºé¡¶ä¸»é¢˜ID
 				TopstrinfoO = Replace(TopstrinfoO, Cstr(Sql(3,i))&",", "")
 				TopstrinfoO = Replace(TopstrinfoO, ","&Cstr(Sql(3,i)), "")
 				TopstrinfoO = Replace(TopstrinfoO, Cstr(Sql(3,i)), "")
@@ -608,11 +608,11 @@ Sub MoveDateTopic()
 				Else
 					TopstrinfoN = TopstrinfoN & "," & Cstr(Sql(3,i))
 				End If
-				'¸üĞÂÔ­°æÃæ¹Ì¶¥ĞÅÏ¢¼°»º´æ
+				'æ›´æ–°åŸç‰ˆé¢å›ºé¡¶ä¿¡æ¯åŠç¼“å­˜
 				Sqlstr = "UPDATE Dv_Board SET BoardTopStr = '" & TopstrinfoO & "' WHERE BoardID = " & Request("Outboardid")
 				Dvbbs.Execute(Sqlstr)
 				
-				'¸üĞÂĞÂ°æÃæ¹Ì¶¥ĞÅÏ¢¼°»º´æ
+				'æ›´æ–°æ–°ç‰ˆé¢å›ºé¡¶ä¿¡æ¯åŠç¼“å­˜
 				Sqlstr = "UPDATE Dv_Board SET BoardTopStr = '" & TopstrinfoN & "' WHERE Boardid = " & Request("Inboardid")
 				Dvbbs.Execute(Sqlstr)
 			End If
@@ -620,6 +620,6 @@ Sub MoveDateTopic()
 		Next
 		Dvbbs.ReloadBoardInfo(Request("Outboardid")&","&Request("Inboardid"))
 	End If
-	Response.Write "ÒÆ¶¯³É¹¦£¡<br>ÔÚ¡°ÖØ¼ÆÂÛÌ³Êı¾İºÍĞŞ¸´¡±ÖĞ¡°¸üĞÂÂÛÌ³Êı¾İ¡±¡£"
+	Response.Write "ç§»åŠ¨æˆåŠŸï¼<br>åœ¨â€œé‡è®¡è®ºå›æ•°æ®å’Œä¿®å¤â€ä¸­â€œæ›´æ–°è®ºå›æ•°æ®â€ã€‚"
 End Sub
 %>

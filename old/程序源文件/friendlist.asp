@@ -36,11 +36,11 @@ Select Case Request("action")
 		Call saveF()
 	Case "saveF"
 		Call saveF()
-	Case "ÒÆ¶¯"
+	Case "ç§»åŠ¨"
 		Call MovFriend()
-	Case "É¾³ı"
+	Case "åˆ é™¤"
 		Call DelFriend()
-	case "Çå¿ÕºÃÓÑ"
+	case "æ¸…ç©ºå¥½å‹"
 		Call AllDelFriend()	
 End Select
 If ErrCodes<>"" Then Showerr
@@ -52,7 +52,7 @@ Dvbbs.Showerr()
 Dvbbs.ActiveOnline()
 Dvbbs.Footer()
 Dvbbs.PageEnd()
-'Ö÷Ò³Ãæ
+'ä¸»é¡µé¢
 Sub	Main()
 Dim TempLateStr,TempWrite
 	TempLateStr=template.html(13)
@@ -86,10 +86,10 @@ Function UserFavName_List
 		ShowList=template.html(14)
 		If FavName_id=i Then
 			ShowName="<font color="&Redcolor&">"&UserFavName(i)&"</font>"
-			ShowList=Replace(ShowList,"{$FavName_pic}",Dvbbs.mainpic(12)) '´ò¿ª
+			ShowList=Replace(ShowList,"{$FavName_pic}",Dvbbs.mainpic(12)) 'æ‰“å¼€
 		Else
 			ShowName=UserFavName(i)
-			ShowList=Replace(ShowList,"{$FavName_pic}",Dvbbs.mainpic(13)) '¹Ø±Õ
+			ShowList=Replace(ShowList,"{$FavName_pic}",Dvbbs.mainpic(13)) 'å…³é—­
 		End If
 		ShowList=Replace(ShowList,"{$FavName_Name}",ShowName)
 		ShowList=Replace(ShowList,"{$FavName_id}",i)
@@ -160,14 +160,14 @@ For i=0 To Ubound(SQL,2)
 		ShowList=template.html(15)
 		If SQL(5,i)="" or isnull(SQL(5,i)) Then
 			ShowList=Replace(ShowList,"{$Friend_HomePage}","")
-			ShowList=Replace(ShowList,"{$Friend_Oicq}","ÎŞ")
+			ShowList=Replace(ShowList,"{$Friend_Oicq}","æ— ")
 		Else
 			Friend_IM=split(SQL(5,i),"|||")
 			ShowList=Replace(ShowList,"{$Friend_HomePage}",Friend_IM(0))
 			If Isnumeric(Friend_IM(1)) Then
-				ShowList = Replace(ShowList,"{$Friend_Oicq}","<a target=blank href=http://wpa.qq.com/msgrd?V=1&Uin=" & Friend_IM(1) & "&Site=" & Dvbbs.Forum_Info(0) & "&Menu=yes><img border=0 SRC=http://wpa.qq.com/pa?p=1:" & Friend_IM(1) & ":9 alt=µã»÷ÕâÀï·¢ÏûÏ¢¸ø" & Friend_IM(1) & "></a>")
+				ShowList = Replace(ShowList,"{$Friend_Oicq}","<a target=blank href=http://wpa.qq.com/msgrd?V=1&Uin=" & Friend_IM(1) & "&Site=" & Dvbbs.Forum_Info(0) & "&Menu=yes><img border=0 SRC=http://wpa.qq.com/pa?p=1:" & Friend_IM(1) & ":9 alt=ç‚¹å‡»è¿™é‡Œå‘æ¶ˆæ¯ç»™" & Friend_IM(1) & "></a>")
 			Else
-				ShowList = Replace(ShowList,"{$Friend_Oicq}","ÎŞ")
+				ShowList = Replace(ShowList,"{$Friend_Oicq}","æ— ")
 			End If
 		End If
 		ShowList=Replace(ShowList,"{$F_id}",SQL(0,i))
@@ -184,13 +184,13 @@ Next
 UserFriend_List=UserFriend_List+ShowPage(CurrentPage,Pcount,totalrec,PageListNum)
 End Function
 
-'Í¼Æ¬Êä³ö
+'å›¾ç‰‡è¾“å‡º
 Function ImgSrc(str)
 	If str="" Then Exit Function
 	ImgSrc = "<img src="&str&" border=0>"
 End Function
 
-'·ÖÒ³Êä³ö
+'åˆ†é¡µè¾“å‡º
 Function ShowPage(CurrentPage,Pcount,totalrec,PageNum)
 	Dim SearchStr
 	SearchStr=Request("action")
@@ -204,7 +204,7 @@ Function ShowPage(CurrentPage,Pcount,totalrec,PageNum)
 	ShowPage=Replace(ShowPage,"{$redcolor}",redcolor)
 End Function
 
-'´´½¨·Ö×é
+'åˆ›å»ºåˆ†ç»„
 Sub Creat_fav()
 If Dvbbs.chkpost=False Then
 	Dvbbs.AddErrCode(16)
@@ -226,7 +226,7 @@ End If
 	End If
 End Sub
 
-'ĞŞ¸Ä·Ö×é
+'ä¿®æ”¹åˆ†ç»„
 Sub save_fav()
 If Dvbbs.chkpost=False Then
 	Dvbbs.AddErrCode(16)
@@ -255,7 +255,7 @@ End If
 	Dvbbs.Dvbbs_Suc("<li>"+template.Strings(48))
 End Sub
 
-'ÅúÁ¿ÒÆ¶¯
+'æ‰¹é‡ç§»åŠ¨
 Sub MovFriend()
 If Dvbbs.chkpost=False Then
 	Dvbbs.AddErrCode(16)
@@ -287,7 +287,7 @@ End If
 	End If
 End Sub
 
-'É¾³ı·Ö×é
+'åˆ é™¤åˆ†ç»„
 Sub Del_Fav()
 Dim Old_FavName,New_FavName,Del_FavName,i
 If Dvbbs.chkpost=False Then
@@ -322,7 +322,7 @@ Else
 End If
 End Sub
 
-'É¾³ıºÃÓÑ
+'åˆ é™¤å¥½å‹
 Sub DelFriend()
 If Dvbbs.chkpost=False Then
 	Dvbbs.AddErrCode(16)
@@ -347,7 +347,7 @@ End If
 	End If
 End Sub
 
-'Çå¿ÕºÃÓÑ
+'æ¸…ç©ºå¥½å‹
 Sub AllDelFriend()
 	If Dvbbs.chkpost=False Then
 		Dvbbs.AddErrCode(16)
@@ -358,7 +358,7 @@ Sub AllDelFriend()
 	Session("ispost")="0"
 End Sub
 
-'±£´æÌí¼ÓºÃÓÑ
+'ä¿å­˜æ·»åŠ å¥½å‹
 Sub saveF()
 If Dvbbs.chkpost=False Then
 	Dvbbs.AddErrCode(16)
@@ -410,7 +410,7 @@ next
 Dvbbs.Dvbbs_Suc("<li>"+template.Strings(43))
 End Sub
 
-'ÏÔÊ¾´íÎóĞÅÏ¢
+'æ˜¾ç¤ºé”™è¯¯ä¿¡æ¯
 Sub Showerr()
 Dim Show_Errmsg
 	If ErrCodes<>"" Then 

@@ -23,15 +23,15 @@ Response.Write vbNewLine
 Response.Write "<script language=""javascript"" type=""text/javascript"">"
 Response.Write vbNewLine
 
-'´«ËÍµÈ¼¶Í¼Æ¬±äÁ¿µ½JS
+'ä¼ é€ç­‰çº§å›¾ç‰‡å˜é‡åˆ°JS
 Dim i,GroupTitlePic,TempGroupInfo
-'È¡³öÓÃ»§×éÍ¼±êÊı¾İ
+'å–å‡ºç”¨æˆ·ç»„å›¾æ ‡æ•°æ®
 i=0
 For Each GroupTitlePic in Application(Dvbbs.CacheName &"_grouppic").documentElement.selectNodes("usergroup")
 	Response.Write "piclist["&GroupTitlePic.selectSingleNode("@usergroupid").text&"]='"&Dvbbs.Forum_PicUrl & GroupTitlePic.selectSingleNode("@titlepic").text&"';"
 	Response.Write vbNewLine		
 Next
-'´«ËÍ×Ö·û´®±äÁ¿µ½JS
+'ä¼ é€å­—ç¬¦ä¸²å˜é‡åˆ°JS
 For i=0 to 13
 	Response.Write "Strings[Strings.length]='"& template.Strings(i)&"';"		
 Next 
@@ -59,7 +59,7 @@ Sub Getonline()
 	page=CLng(page)
 	Dim Selectlist
 	Selectlist=""
-	'ÔÚÏß×ÊÁÏÁĞ±íÏÔÊ¾µÇÂ¼ºÍ»î¶¯Ê±¼ä
+	'åœ¨çº¿èµ„æ–™åˆ—è¡¨æ˜¾ç¤ºç™»å½•å’Œæ´»åŠ¨æ—¶é—´
 	If CInt(Dvbbs.forum_setting(33))=1  Then 
 		Selectlist=Selectlist&",stats"	
 	End If
@@ -67,15 +67,15 @@ Sub Getonline()
 		Selectlist=Selectlist&",startime,lastimebk"	
 	End If
 	
-	'ÏÔÊ¾ä¯ÀÀÆ÷ºÍ²Ù×÷ÏµÍ³
+	'æ˜¾ç¤ºæµè§ˆå™¨å’Œæ“ä½œç³»ç»Ÿ
 	If CInt(Dvbbs.forum_setting(35))=1 Then 
 		Selectlist=Selectlist&",browser"	
 	End If
-	'ÔÚÏß×ÊÁÏÁĞ±íÏÔÊ¾À´Ô´
+	'åœ¨çº¿èµ„æ–™åˆ—è¡¨æ˜¾ç¤ºæ¥æº
 	If CInt(Dvbbs.forum_setting(36))=1 Then
 		Selectlist=Selectlist&",actCome"
 	End If
-	'¿ÉÒÔ²é¿´À´·ÃIP¼°À´Ô´  0£­·ñ 1£­ÊÇ
+	'å¯ä»¥æŸ¥çœ‹æ¥è®¿IPåŠæ¥æº  0ï¼å¦ 1ï¼æ˜¯
 	If (Dvbbs.master Or Dvbbs.Superboardmaster) And CInt(Dvbbs.GroupSetting(30)) =1 Then
 		Selectlist=Selectlist&",IP"
 	End If

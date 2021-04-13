@@ -10,7 +10,7 @@ Dim TotalUseTable,Announceid,UserName,PostBuyUser,ReplyID_a,RootID_a,AnnounceID_
 IsThisBoardMaster = Dvbbs.BoardMaster
 VisitType = Lcase(Request("s"))
 Forum_url = Dvbbs.Get_ScriptNameUrl()
-'ÎÄµµä¯ÀÀµØÖ·£º
+'æ–‡æ¡£æµè§ˆåœ°å€ï¼š
 If VisitType = "" Then
 	VisitType = "xhtml"
 End If
@@ -47,7 +47,7 @@ Sub Page_End()
 	'Set Dvbbs = Nothing
 End Sub
 
-'´´½¨XMLÎÄµµ
+'åˆ›å»ºXMLæ–‡æ¡£
 Sub CreatRssXml()
 	Dim TopicID,PostID
 	TopicID = Dvbbs.CheckNumeric(Request.QueryString("id"))
@@ -57,9 +57,9 @@ Sub CreatRssXml()
 	XmlDom.documentElement.setAttribute "version","2.0"
 	Set Root = XmlDom.documentElement.appendChild(XmlDom.createNode(1,"channel",""))
 	Call CreatHead()
-	'·ÖÀàĞÅÏ¢ÏÔÊ¾
+	'åˆ†ç±»ä¿¡æ¯æ˜¾ç¤º
 	If Dvbbs.Boardid>0 Then
-		'Ö÷ÌâID>0Ê±¶ÁÈ¡¸ÃÌû×Ó
+		'ä¸»é¢˜ID>0æ—¶è¯»å–è¯¥å¸–å­
 		If TopicID>0 Then
 			Set Dv_ubb = new Dvbbs_UbbCode
 				Dv_ubb.PostType = 1
@@ -75,8 +75,8 @@ End Sub
 
 Sub ShowXML(Stype)
 	Response.Clear
-	Response.CharSet="gb2312"  'Êı¾İ¼¯
-	Response.ContentType="text/xml"  'Êı¾İÁ÷¸ñÊ½¶¨Òå
+	Response.CharSet="gb2312"  'æ•°æ®é›†
+	Response.ContentType="text/xml"  'æ•°æ®æµæ ¼å¼å®šä¹‰
 	Response.Write "<?xml version=""1.0"" encoding=""gb2312""?>"&vbNewLine
 	If Stype = "xslt" Then
 		Response.Write "<?xml-stylesheet type=""text/xsl"" href=""inc/Templates/sitemap.xslt"" ?>"&vbNewLine
@@ -85,11 +85,11 @@ Sub ShowXML(Stype)
 End Sub
 
 Sub TransNode(XmlDoc)
-	'XSLTÄ£°å×ª»»¿ªÊ¼
+	'XSLTæ¨¡æ¿è½¬æ¢å¼€å§‹
 	Dim Xmlskin,Proc,XmlStyle
 	Set Xmlskin = Dvbbs.CreateXmlDoc("msxml2.FreeThreadedDOMDocument"& MsxmlVersion)
 	If Not (Xmlskin.load(Server.MapPath("inc/Templates/sitemap.xslt"))) Then
-		Response.Write "Ä£°åÊı¾İ³ö´í£¬ÇëÓë¹ÜÀíÔ±ÁªÏµ£¡"
+		Response.Write "æ¨¡æ¿æ•°æ®å‡ºé”™ï¼Œè¯·ä¸ç®¡ç†å‘˜è”ç³»ï¼"
 		Response.End
 	End If
 	Set XMLStyle=Dvbbs.iCreateObject("msxml2.XSLTemplate" & MsxmlVersion)
@@ -103,10 +103,10 @@ Sub TransNode(XmlDoc)
 End Sub
 
 '--------------------------------------------------------------------
-'ÎÄµµÄÚÈİÊı¾İ
+'æ–‡æ¡£å†…å®¹æ•°æ®
 '--------------------------------------------------------------------
 
-'´´½¨ÎÄµµĞÅÏ¢
+'åˆ›å»ºæ–‡æ¡£ä¿¡æ¯
 Sub CreatHead()
 	Dim Node,RssTitle
 	RssTitle = "Rss & SiteMap"
@@ -126,7 +126,7 @@ Sub CreatHead()
 	Node.appendChild(XmlDom.createNode(1,"title","")).text = Dvbbs.Forum_Info(0)
 End Sub
 
-'°æÃæÁĞ±í
+'ç‰ˆé¢åˆ—è¡¨
 Sub BoardList()
 	Dim BoardNodes,ChildNode
 	Dim Node
@@ -153,14 +153,14 @@ Sub BoardList()
 	Next
 End Sub
 
-'Ö÷ÌâÁĞ±í
+'ä¸»é¢˜åˆ—è¡¨
 Sub TopicList()
 	Dim Sql,Rs,Cmd,Page,TopicMode,Count,PageCount,PageSize
 	Dim Posttime
 	Dim Topidlist,Node,ChildNode
-	'²ÎÊı´¦Àí
-	Page = Dvbbs.CheckNumeric(Request("Page"))	'·ÖÒ³
-	TopicMode = Dvbbs.CheckNumeric(Request("topicmode")) '×¨Ìâ
+	'å‚æ•°å¤„ç†
+	Page = Dvbbs.CheckNumeric(Request("Page"))	'åˆ†é¡µ
+	TopicMode = Dvbbs.CheckNumeric(Request("topicmode")) 'ä¸“é¢˜
 	Count = Dvbbs.CheckNumeric(Request("Count"))
 	PageSize = Dvbbs.CheckNumeric(Dvbbs.Board_Setting(26))
 	If Page<1 Then Page = 1
@@ -234,7 +234,7 @@ Sub TopicList()
 	Sql = Empty
 	If Not Topidlist Is Nothing Then
 		For Each ChildNode in Topidlist.documentElement.SelectNodes("item")
-			'Êı¾İĞÅÏ¢µ÷Õû
+			'æ•°æ®ä¿¡æ¯è°ƒæ•´
 			If Dvbbs.Board_Setting(60)<>"" And Dvbbs.Board_Setting(60)<>"0" Then
 				Posttime = ChildNode.getAttribute("lastposttime")
 				If Not IsDate(Posttime) Then
@@ -246,12 +246,12 @@ Sub TopicList()
 					ChildNode.setAttribute "lastposttime",DateDiff("n",Posttime,Now)+Cint(Dvbbs.Forum_Setting(0))
 				End If
 			End If
-			'½¨Á¢item½ÚµãĞÅÏ¢
+			'å»ºç«‹itemèŠ‚ç‚¹ä¿¡æ¯
 			'Set Node = Root.appendChild(XmlDom.createNode(1,"item",""))
 			ChildNode.setAttribute "type","topic"
 			ChildNode.appendChild(XmlDom.createNode(1,"title","")).text = Dvbbs.ChkBadWords(ChildNode.getAttribute("title"))
 			If ChildNode.getAttribute("hidename")="1" Then
-				ChildNode.appendChild(XmlDom.createNode(1,"author","")).text = "ÄäÃûÓÃ»§"
+				ChildNode.appendChild(XmlDom.createNode(1,"author","")).text = "åŒ¿åç”¨æˆ·"
 			Else
 				ChildNode.appendChild(XmlDom.createNode(1,"author","")).text = Dvbbs.ChkBadWords(ChildNode.getAttribute("postusername"))
 			End If
@@ -268,7 +268,7 @@ Sub TopicList()
 				ChildNode.appendChild(XmlDom.createNode(1,"bbslink","")).text = Forum_url & "dispbbs.asp?boardid="&ChildNode.getAttribute("boardid")&"&id="&ChildNode.getAttribute("topicid")&"&page="&page
 			End If
 
-			'ÇåÀí²»ĞèÒªµÄÊôĞÔ
+			'æ¸…ç†ä¸éœ€è¦çš„å±æ€§
 			ChildNode.removeAttribute "dateandtime"
 			ChildNode.removeAttribute "expression"
 			ChildNode.removeAttribute "getmoney"
@@ -290,14 +290,14 @@ Sub TopicList()
 	Root.setAttribute "pagecount",PageCount
 End Sub
 
-'Ìû×ÓÏÔÊ¾
+'å¸–å­æ˜¾ç¤º
 Sub PostList(id)
 	Dvbbs.LoadTemplates("")
 	Dim Star,Sql,Rs,Page,TopicMode,Count,PageCount,PageSize
 	Dim CantRead,TopicTitle,Topicinfo,PostInfo,ChildNode
 	Dim IsTop,IsVote,Pollid,PostUserName,Locktopic,PostUserid,T_GetMoneyType
-	Star = Dvbbs.CheckNumeric(Request("star"))	'Ìû×Ó·ÖÒ³
-	Page = Dvbbs.CheckNumeric(Request("page"))	'Ö÷ÌâÁĞ±í·ÖÒ³
+	Star = Dvbbs.CheckNumeric(Request("star"))	'å¸–å­åˆ†é¡µ
+	Page = Dvbbs.CheckNumeric(Request("page"))	'ä¸»é¢˜åˆ—è¡¨åˆ†é¡µ
 	Count = Dvbbs.CheckNumeric(Request("Count"))
 
 	If Star<1 Then Star = 1
@@ -324,7 +324,7 @@ Sub PostList(id)
 		T_GetMoneyType = Cint(Rs(15))
 		PostUserName = Rs(3)
 		TotalUseTable = Rs(10)
-		'Ëø¶¨¶àÉÙÌìÇ°µÄÌû×ÓÅĞ¶Ï 2004-9-16 Dv.Yz
+		'é”å®šå¤šå°‘å¤©å‰çš„å¸–å­åˆ¤æ–­ 2004-9-16 Dv.Yz
 		If Not Ubound(Dvbbs.Board_Setting) > 70 Then
 			Locktopic = Rs(9)
 		Else
@@ -361,10 +361,10 @@ Sub PostList(id)
 	If Star > PageCount Then star = PageCount
 	If Star < 1 Then star = 1
 
-	Rem Èç¹ûÊÇÔ­°æÂÛÌ³,Ã»¾­¹ı×ª»»µÄ½¨ÒéÊ¹ÓÃÕâĞĞ,¿ÉÒÔ¼õÉÙÏûºÄ
+	Rem å¦‚æœæ˜¯åŸç‰ˆè®ºå›,æ²¡ç»è¿‡è½¬æ¢çš„å»ºè®®ä½¿ç”¨è¿™è¡Œ,å¯ä»¥å‡å°‘æ¶ˆè€—
 	SQL="Select AnnounceID,B.UserName,Topic,dateandtime,body,RootID,isbest,PostUserid,Ubblist,LockTopic,PostBuyUser,ParentID,GetMoneyType,signflag,U.UserGroupID,U.LockUser From "& TotalUseTable &" B Inner Join [dv_user] U On U.UserID=B.PostUserID where  RootID="& id &" and Boardid="& Dvbbs.Boardid&" Order By Announceid"
 
-	Rem Èç¹ûÄãµÄÂÛÌ³ÊÇ´Ó±ğµÄÂÛÌ³×ª»»¹ıÀ´µÄ,Èç³öÏÖÂ¥²ã´íÎó,Ôò¿ÉÒÔ°ÑÏÂÃæµÄ×¢ÊÍÈ¥µô,±ÜÃâ´íÎó.
+	Rem å¦‚æœä½ çš„è®ºå›æ˜¯ä»åˆ«çš„è®ºå›è½¬æ¢è¿‡æ¥çš„,å¦‚å‡ºç°æ¥¼å±‚é”™è¯¯,åˆ™å¯ä»¥æŠŠä¸‹é¢çš„æ³¨é‡Šå»æ‰,é¿å…é”™è¯¯.
 	Rem SQL="Select AnnounceID,UserName,Topic,dateandtime,body,Expression,ip,RootID,signflag,isbest,PostUserid,layer,isagree,GetMoneyType,IsUpload,Ubblist,LockTopic,GetMoney,UseTools,PostBuyUser,ParentID From "& TotalUseTable &" where  RootID="& id &" and Boardid="& Dvbbs.Boardid&" Order By dateandtime"
 
 	Set Rs=Dvbbs.Execute(SQL)
@@ -381,11 +381,11 @@ Sub PostList(id)
 	Set Rs = Nothing
 	Dim Postbody
 
-	EmotPath=Split(Dvbbs.Forum_emot,"|||")(0)		'emĞÄÇéÂ·¾¶
+	EmotPath=Split(Dvbbs.Forum_emot,"|||")(0)		'emå¿ƒæƒ…è·¯å¾„
 	If Not PostInfo Is Nothing Then
 		For Each ChildNode in PostInfo.documentElement.SelectNodes("item")
 			CantRead = True
-			'¹ıÂËÔà×Ö
+			'è¿‡æ»¤è„å­—
 			If Int(ChildNode.getAttribute("postuserid")) = Dvbbs.UserID Then
 				Postbody = Dvbbs.ChkBadWords(ChildNode.getAttribute("body"))
 				CantRead = False
@@ -396,7 +396,7 @@ Sub PostList(id)
 					If Dvbbs.BoardMaster Then
 						Postbody = Dvbbs.ChkBadWords(ChildNode.getAttribute("body"))
 					Else
-						Postbody = "½ğ±Ò¹ºÂòÌû£¬Çë½øÈëÍêÕûÄ£Ê½ä¯ÀÀ£¡"
+						Postbody = "é‡‘å¸è´­ä¹°å¸–ï¼Œè¯·è¿›å…¥å®Œæ•´æ¨¡å¼æµè§ˆï¼"
 						CantRead = False
 					End If
 				Else
@@ -407,23 +407,23 @@ Sub PostList(id)
 			If CantRead Then
 				If ChildNode.getAttribute("locktopic")=1 Then
 					If Dvbbs.BoardMaster Then
-						Postbody = "Ìû×ÓÒÑËø¶¨£¡<hr/>" & Dvbbs.ChkBadWords(ChildNode.getAttribute("body"))
+						Postbody = "å¸–å­å·²é”å®šï¼<hr/>" & Dvbbs.ChkBadWords(ChildNode.getAttribute("body"))
 					Else
-						Postbody = "Ìû×ÓÒÑËø¶¨£¡"
+						Postbody = "å¸–å­å·²é”å®šï¼"
 						CantRead = False
 					End If
 				ElseIf ChildNode.getAttribute("locktopic")=2 Then
 					If Dvbbs.BoardMaster Then
-						Postbody = "Ìû×ÓÒÑÆÁ±Î£¡<hr/>" & Dvbbs.ChkBadWords(ChildNode.getAttribute("body"))
+						Postbody = "å¸–å­å·²å±è”½ï¼<hr/>" & Dvbbs.ChkBadWords(ChildNode.getAttribute("body"))
 					Else
-						Postbody = "Ìû×ÓÒÑÆÁ±Î£¡"
+						Postbody = "å¸–å­å·²å±è”½ï¼"
 						CantRead = False
 					End If
 				ElseIf ChildNode.getAttribute("locktopic")=3 Then
 					If Dvbbs.BoardMaster Then
-						Postbody = "Ìû×Ó´ıÉóºË£¡<hr/>" & Dvbbs.ChkBadWords(ChildNode.getAttribute("body"))
+						Postbody = "å¸–å­å¾…å®¡æ ¸ï¼<hr/>" & Dvbbs.ChkBadWords(ChildNode.getAttribute("body"))
 					Else
-						Postbody = "Ìû×Ó´ıÉóºË£¡"
+						Postbody = "å¸–å­å¾…å®¡æ ¸ï¼"
 						CantRead = False
 					End If
 				End If
@@ -431,18 +431,18 @@ Sub PostList(id)
 			If CantRead Then
 				If ChildNode.getAttribute("lockuser")=1 Then
 					If Dvbbs.BoardMaster Then
-						Postbody = "ÓÃ»§ÒÑËø¶¨£¡<hr/>" & Dvbbs.ChkBadWords(ChildNode.getAttribute("body"))
+						Postbody = "ç”¨æˆ·å·²é”å®šï¼<hr/>" & Dvbbs.ChkBadWords(ChildNode.getAttribute("body"))
 					Else
-						Postbody = "ÓÃ»§ÒÑËø¶¨£¡"
+						Postbody = "ç”¨æˆ·å·²é”å®šï¼"
 						CantRead = False
 					End If
 				ElseIf ChildNode.getAttribute("lockuser")=2 Then
 
 					If Dvbbs.BoardMaster Then
-						Postbody = "ÓÃ»§ÒÑÆÁ±Î£¡<hr/>" & Dvbbs.ChkBadWords(ChildNode.getAttribute("body"))
+						Postbody = "ç”¨æˆ·å·²å±è”½ï¼<hr/>" & Dvbbs.ChkBadWords(ChildNode.getAttribute("body"))
 					Else
 
-						Postbody = "ÓÃ»§ÒÑÆÁ±Î£¡"
+						Postbody = "ç”¨æˆ·å·²å±è”½ï¼"
 
 						CantRead = False
 					End If
@@ -453,21 +453,21 @@ Sub PostList(id)
 					If Dvbbs.GroupSetting(41)="1" Then
 						Postbody = Dvbbs.ChkBadWords(ChildNode.getAttribute("body"))
 					Else
-						Postbody = "¾«»ªÌû×Ó£¬Ä¿Ç°ÄãÎŞÈ¨ä¯ÀÀ£¡"
+						Postbody = "ç²¾åå¸–å­ï¼Œç›®å‰ä½ æ— æƒæµè§ˆï¼"
 						CantRead = False
 					End If
 				Else
 					Postbody = Dvbbs.ChkBadWords(ChildNode.getAttribute("body"))
 				End If
 			End If
-			'UBBĞèÒª±äÁ¿
+			'UBBéœ€è¦å˜é‡
 			Announceid = ChildNode.getAttribute("announceid")
 			UserName = ChildNode.getAttribute("username")
 			PostBuyUser = ChildNode.getAttribute("postbuyuser")
 			ReplyID_a = ChildNode.getAttribute("announceid")
 			RootID_a = ChildNode.getAttribute("rootid")
 			AnnounceID_a = ReplyID_a
-			'½¨Á¢item½ÚµãĞÅÏ¢
+			'å»ºç«‹itemèŠ‚ç‚¹ä¿¡æ¯
 			ChildNode.setAttribute "type","post"
 			If ChildNode.getAttribute("parentid")=0 Then
 				ChildNode.appendChild(XmlDom.createNode(1,"title","")).text =TopicTitle
@@ -475,14 +475,14 @@ Sub PostList(id)
 				ChildNode.appendChild(XmlDom.createNode(1,"title","")).text = Dvbbs.ChkBadWords(ChildNode.getAttribute("topic"))
 			End If
 			If ChildNode.getAttribute("signflag")="2" Then
-				ChildNode.appendChild(XmlDom.createNode(1,"author","")).text = "ÄäÃûÓÃ»§"
+				ChildNode.appendChild(XmlDom.createNode(1,"author","")).text = "åŒ¿åç”¨æˆ·"
 			Else
 				ChildNode.appendChild(XmlDom.createNode(1,"author","")).text = Dvbbs.ChkBadWords(ChildNode.getAttribute("username"))
 			End If
 			'ChildNode.appendChild(XmlDom.createNode(1,"author","")).text = ChildNode.getAttribute("username")
 			ChildNode.appendChild(XmlDom.createNode(1,"pubDate","")).text = ChildNode.getAttribute("dateandtime")
 			'ChildNode.appendChild(XmlDom.createNode(1,"description","")).text = Postbody
-			'Ubb×ª»»
+			'Ubbè½¬æ¢
 			If CantRead = False Then
 				ChildNode.appendChild(XmlDom.createNode(1,"description","")).text = postbody
 			Else
@@ -507,7 +507,7 @@ Sub PostList(id)
 			End If
 
 
-			'ÇåÀí²»ĞèÒªµÄÊôĞÔ
+			'æ¸…ç†ä¸éœ€è¦çš„å±æ€§
 			ChildNode.removeAttribute "lockuser"
 			ChildNode.removeAttribute "getmoneytype"
 			ChildNode.removeAttribute "postbuyuser"

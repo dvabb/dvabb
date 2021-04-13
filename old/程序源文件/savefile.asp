@@ -9,7 +9,7 @@ If Dvbbs.boardid>0 And Dvbbs.userid>0 Then
 	If Request("t")="1" Then Upfile_Main 
 	Main
 Else
-	response.write "<span style=""font-size:12px;font-family:verdana;"">°æÃæ²ÎÊı´íÎó£¬»òÄúÉĞÎ´µÇÂ½¡£</span>"
+	response.write "<span style=""font-size:12px;font-family:verdana;"">ç‰ˆé¢å‚æ•°é”™è¯¯ï¼Œæˆ–æ‚¨å°šæœªç™»é™†ã€‚</span>"
 End If 
 MainBottom
 Dvbbs.PageEnd()
@@ -22,22 +22,22 @@ End Sub
 Sub InsertUploadInfoToEdit(iFtype,sExt,sOldName,sShowName,iDownid)
 	G_Script=G_Script&"DvFileInput_OnUpload('"&iFtype&"','"&sExt&"','"&sOldName&"','"&sShowName&"','"&iDownid&"');"
 End Sub 
-'·µ»Ø×´Ì¬
+'è¿”å›çŠ¶æ€
 Sub Upfile_Main()
 	Dvbbs.ShowErr()
-	Server.ScriptTimeOut=999999'ÒªÊÇÄãµÄÂÛÌ³Ö§³ÖÉÏ´«µÄÎÄ¼ş±È½Ï´ó£¬¾Í±ØĞëÉèÖÃ¡£
+	Server.ScriptTimeOut=999999'è¦æ˜¯ä½ çš„è®ºå›æ”¯æŒä¸Šä¼ çš„æ–‡ä»¶æ¯”è¾ƒå¤§ï¼Œå°±å¿…é¡»è®¾ç½®ã€‚
 	'-----------------------------------------------------------------------------
-	'Ìá½»ÑéÖ¤
+	'æäº¤éªŒè¯
 	'-----------------------------------------------------------------------------
 	If Not Dvbbs.ChkPost Then
 		Exit Sub 
 	End If
 	If Dvbbs.Userid=0 Then
-		ShowUploadErr "Äú»¹Î´µÇÂ½,²»ÄÜÉÏ´«£¡"
+		ShowUploadErr "æ‚¨è¿˜æœªç™»é™†,ä¸èƒ½ä¸Šä¼ ï¼"
 		Exit Sub 
 	End If
 	If Cint(Dvbbs.GroupSetting(7))=0 then
-		ShowUploadErr "ÄúÃ»ÓĞÔÚ±¾ÂÛÌ³ÉÏ´«ÎÄ¼şµÄÈ¨ÏŞ"
+		ShowUploadErr "æ‚¨æ²¡æœ‰åœ¨æœ¬è®ºå›ä¸Šä¼ æ–‡ä»¶çš„æƒé™"
 		Exit Sub 
 	End If
 	UploadFile
@@ -55,14 +55,14 @@ Sub UploadFile()
 		OnceUPCount = Clng(OnceUPCount)
 	End If
 	If OnceUPCount >= Clng(Dvbbs.GroupSetting(40)) then
- 		ShowUploadErr "Ò»´ÎÖ»ÄÜÉÏ´«"&Dvbbs.GroupSetting(40)&"¸öÎÄ¼ş£¡"
+ 		ShowUploadErr "ä¸€æ¬¡åªèƒ½ä¸Šä¼ "&Dvbbs.GroupSetting(40)&"ä¸ªæ–‡ä»¶ï¼"
 		Exit Sub
 	Else
 		InceptMaxFile = Clng(Dvbbs.GroupSetting(40)) - OnceUPCount
 	End If
 	If Not IsNumeric(Dvbbs.UserToday(2)) Then Dvbbs.UserToday(2) = 0
 	If Clng(Dvbbs.UserToday(2))>Clng(Dvbbs.GroupSetting(50)) Then
- 		ShowUploadErr "ÒÑ³¬³öÁËÄãÔÚÂÛÌ³Ã¿ÌìÉÏ´«µÄÎÄ¼ş¸öÊı"&Dvbbs.GroupSetting(50)&"¸ö£¡"
+ 		ShowUploadErr "å·²è¶…å‡ºäº†ä½ åœ¨è®ºå›æ¯å¤©ä¸Šä¼ çš„æ–‡ä»¶ä¸ªæ•°"&Dvbbs.GroupSetting(50)&"ä¸ªï¼"
 		Exit Sub
 	Else
 		If Clng(Dvbbs.GroupSetting(50))-Clng(Dvbbs.UserToday(2))<InceptMaxFile Then
@@ -70,11 +70,11 @@ Sub UploadFile()
 		End If
 	End If
 
-	'ÉÏ´«Ä¿Â¼
+	'ä¸Šä¼ ç›®å½•
 	FilePath = CreatePath(CheckFolder)
-	'²»´øÏµÍ³ÉÏ´«Ä¿Â¼µÄÏÂ¼¶Ä¿Â¼Â·¾¶
+	'ä¸å¸¦ç³»ç»Ÿä¸Šä¼ ç›®å½•çš„ä¸‹çº§ç›®å½•è·¯å¾„
 	ChildFilePath = Replace(FilePath,CheckFolder,"")
-	'Ô¤ÀÀÍ¼Æ¬Ä¿Â¼Â·¾¶
+	'é¢„è§ˆå›¾ç‰‡ç›®å½•è·¯å¾„
 	Previewpath = "PreviewImage/"
 	Previewpath = CreatePath(Previewpath)
 
@@ -91,58 +91,58 @@ Sub UploadFile()
 	End If
 
 	Set Upload = New UpFile_Cls
-	Upload.UploadType			= Cint(Dvbbs.Forum_UploadSetting(2))	'ÉèÖÃÉÏ´«×é¼şÀàĞÍ
-	Upload.UploadPath			= FilePath								'ÉèÖÃÉÏ´«Â·¾¶
-	Upload.InceptFileType		= Replace(Dvbbs.Board_Setting(19),"|",",")		'ÉèÖÃÉÏ´«ÎÄ¼şÏŞÖÆ
-	Upload.MaxSize				= Int(Dvbbs.GroupSetting(44))			'µ¥Î» KB
-	Upload.InceptMaxFile		= InceptMaxFile							'Ã¿´ÎÉÏ´«ÎÄ¼ş¸öÊıÉÏÏŞ
-	Upload.ChkSessionName		= "UploadCode"							'·ÀÖ¹ÖØ¸´Ìá½»£¬SESSIONÃûÓëÌá½»µÄ±íµ¥ÒªÒ»ÖÂ¡£
-	'Ô¤ÀÀÍ¼Æ¬ÉèÖÃ
-	Upload.PreviewType			= Cint(Dvbbs.Forum_UploadSetting(3))	'ÉèÖÃÔ¤ÀÀÍ¼Æ¬×é¼şÀàĞÍ
-	Upload.PreviewImageWidth	= Dvbbs.Forum_UploadSetting(14)			'ÉèÖÃÔ¤ÀÀÍ¼Æ¬¿í¶È
-	Upload.PreviewImageHeight	= Dvbbs.Forum_UploadSetting(15)			'ÉèÖÃÔ¤ÀÀÍ¼Æ¬¸ß¶È
-	Upload.DrawImageWidth		= Dvbbs.Forum_UploadSetting(11)			'ÉèÖÃË®Ó¡Í¼Æ¬»òÎÄ×ÖÇøÓò¿í¶È
-	Upload.DrawImageHeight		= Dvbbs.Forum_UploadSetting(12)			'ÉèÖÃË®Ó¡Í¼Æ¬»òÎÄ×ÖÇøÓò¸ß¶È
-	Upload.DrawGraph			= Dvbbs.Forum_UploadSetting(10)			'ÉèÖÃË®Ó¡Í¸Ã÷¶È
-	Upload.DrawFontColor		= Dvbbs.Forum_UploadSetting(6)			'ÉèÖÃË®Ó¡ÎÄ×ÖÑÕÉ«
-	Upload.DrawFontFamily		= Dvbbs.Forum_UploadSetting(7)			'ÉèÖÃË®Ó¡ÎÄ×Ö×ÖÌå¸ñÊ½
-	Upload.DrawFontSize			= Dvbbs.Forum_UploadSetting(5)			'ÉèÖÃË®Ó¡ÎÄ×Ö×ÖÌå´óĞ¡
-	Upload.DrawFontBold			= Dvbbs.Forum_UploadSetting(8)			'ÉèÖÃË®Ó¡ÎÄ×ÖÊÇ·ñ´ÖÌå
-	Upload.DrawInfo				= DrawInfo								'ÉèÖÃË®Ó¡ÎÄ×ÖĞÅÏ¢»òÍ¼Æ¬ĞÅÏ¢
-	Upload.DrawType				= Dvbbs.Forum_UploadSetting(17)			'0=²»¼ÓÔØË®Ó¡ £¬1=¼ÓÔØË®Ó¡ÎÄ×Ö£¬2=¼ÓÔØË®Ó¡Í¼Æ¬
-	Upload.DrawXYType			= Dvbbs.Forum_UploadSetting(13)			'"0" =×óÉÏ£¬"1"=×óÏÂ,"2"=¾ÓÖĞ,"3"=ÓÒÉÏ,"4"=ÓÒÏÂ
-	Upload.DrawSizeType			= Dvbbs.Forum_UploadSetting(16)			'"0"=¹Ì¶¨ËõĞ¡£¬"1"=µÈ±ÈÀıËõĞ¡
+	Upload.UploadType			= Cint(Dvbbs.Forum_UploadSetting(2))	'è®¾ç½®ä¸Šä¼ ç»„ä»¶ç±»å‹
+	Upload.UploadPath			= FilePath								'è®¾ç½®ä¸Šä¼ è·¯å¾„
+	Upload.InceptFileType		= Replace(Dvbbs.Board_Setting(19),"|",",")		'è®¾ç½®ä¸Šä¼ æ–‡ä»¶é™åˆ¶
+	Upload.MaxSize				= Int(Dvbbs.GroupSetting(44))			'å•ä½ KB
+	Upload.InceptMaxFile		= InceptMaxFile							'æ¯æ¬¡ä¸Šä¼ æ–‡ä»¶ä¸ªæ•°ä¸Šé™
+	Upload.ChkSessionName		= "UploadCode"							'é˜²æ­¢é‡å¤æäº¤ï¼ŒSESSIONåä¸æäº¤çš„è¡¨å•è¦ä¸€è‡´ã€‚
+	'é¢„è§ˆå›¾ç‰‡è®¾ç½®
+	Upload.PreviewType			= Cint(Dvbbs.Forum_UploadSetting(3))	'è®¾ç½®é¢„è§ˆå›¾ç‰‡ç»„ä»¶ç±»å‹
+	Upload.PreviewImageWidth	= Dvbbs.Forum_UploadSetting(14)			'è®¾ç½®é¢„è§ˆå›¾ç‰‡å®½åº¦
+	Upload.PreviewImageHeight	= Dvbbs.Forum_UploadSetting(15)			'è®¾ç½®é¢„è§ˆå›¾ç‰‡é«˜åº¦
+	Upload.DrawImageWidth		= Dvbbs.Forum_UploadSetting(11)			'è®¾ç½®æ°´å°å›¾ç‰‡æˆ–æ–‡å­—åŒºåŸŸå®½åº¦
+	Upload.DrawImageHeight		= Dvbbs.Forum_UploadSetting(12)			'è®¾ç½®æ°´å°å›¾ç‰‡æˆ–æ–‡å­—åŒºåŸŸé«˜åº¦
+	Upload.DrawGraph			= Dvbbs.Forum_UploadSetting(10)			'è®¾ç½®æ°´å°é€æ˜åº¦
+	Upload.DrawFontColor		= Dvbbs.Forum_UploadSetting(6)			'è®¾ç½®æ°´å°æ–‡å­—é¢œè‰²
+	Upload.DrawFontFamily		= Dvbbs.Forum_UploadSetting(7)			'è®¾ç½®æ°´å°æ–‡å­—å­—ä½“æ ¼å¼
+	Upload.DrawFontSize			= Dvbbs.Forum_UploadSetting(5)			'è®¾ç½®æ°´å°æ–‡å­—å­—ä½“å¤§å°
+	Upload.DrawFontBold			= Dvbbs.Forum_UploadSetting(8)			'è®¾ç½®æ°´å°æ–‡å­—æ˜¯å¦ç²—ä½“
+	Upload.DrawInfo				= DrawInfo								'è®¾ç½®æ°´å°æ–‡å­—ä¿¡æ¯æˆ–å›¾ç‰‡ä¿¡æ¯
+	Upload.DrawType				= Dvbbs.Forum_UploadSetting(17)			'0=ä¸åŠ è½½æ°´å° ï¼Œ1=åŠ è½½æ°´å°æ–‡å­—ï¼Œ2=åŠ è½½æ°´å°å›¾ç‰‡
+	Upload.DrawXYType			= Dvbbs.Forum_UploadSetting(13)			'"0" =å·¦ä¸Šï¼Œ"1"=å·¦ä¸‹,"2"=å±…ä¸­,"3"=å³ä¸Š,"4"=å³ä¸‹
+	Upload.DrawSizeType			= Dvbbs.Forum_UploadSetting(16)			'"0"=å›ºå®šç¼©å°ï¼Œ"1"=ç­‰æ¯”ä¾‹ç¼©å°
 	If Dvbbs.Forum_UploadSetting(18)<>"" or Dvbbs.Forum_UploadSetting(18)<>"0" Then
-		Upload.TransitionColor	= Dvbbs.Forum_UploadSetting(18)			'Í¸Ã÷¶ÈÑÕÉ«ÉèÖÃ
+		Upload.TransitionColor	= Dvbbs.Forum_UploadSetting(18)			'é€æ˜åº¦é¢œè‰²è®¾ç½®
 	End If
-	'Ö´ĞĞÉÏ´«
+	'æ‰§è¡Œä¸Šä¼ 
 	Upload.SaveUpFile
 	If Upload.ErrCodes<>0 Then
-		ShowUploadErr "´íÎó£º"& Upload.Description & ""
+		ShowUploadErr "é”™è¯¯ï¼š"& Upload.Description & ""
 		Exit Sub
 	End If
 	If Upload.Count > 0 Then
 		For Each FormName In Upload.UploadFiles
 			Set File = Upload.UploadFiles(FormName)
 				F_FileName = FilePath & File.FileName
-				'´´½¨Ô¤ÀÀ¼°Ë®Ó¡Í¼Æ¬
+				'åˆ›å»ºé¢„è§ˆåŠæ°´å°å›¾ç‰‡
 				If Upload.PreviewType<>999 and File.FileType=1 then
 						F_Viewname = Previewpath & "pre" & Replace(File.FileName,File.FileExt,"") & "jpg"
-						'´´½¨Ô¤ÀÀÍ¼Æ¬:Call CreateView(Ô­Ê¼ÎÄ¼şµÄÂ·¾¶,Ô¤ÀÀÎÄ¼şÃû¼°Â·¾¶,Ô­ÎÄ¼şºó×º)
+						'åˆ›å»ºé¢„è§ˆå›¾ç‰‡:Call CreateView(åŸå§‹æ–‡ä»¶çš„è·¯å¾„,é¢„è§ˆæ–‡ä»¶ååŠè·¯å¾„,åŸæ–‡ä»¶åç¼€)
 						Upload.CreateView F_FileName,F_Viewname,File.FileExt
 				End If
 				UploadSave F_FileName,ChildFilePath&File.FileName,File.FileExt,F_Viewname,File.FileSize,File.FileType,File.FileOldName
 			Set File = Nothing
 		Next
 	Else
-		ShowUploadErr "ÇëÕıÈ·Ñ¡ÔñÒªÉÏ´«µÄÎÄ¼ş¡£"
+		ShowUploadErr "è¯·æ­£ç¡®é€‰æ‹©è¦ä¸Šä¼ çš„æ–‡ä»¶ã€‚"
 		Exit Sub
 	End If
 	Call Suc_upload(Upload.Count,OnceUPCount)
 	Set Upload = Nothing
 End Sub
 
-'±£´æÉÏ´«Êı¾İ²¢·µ»Ø¸½¼şID
+'ä¿å­˜ä¸Šä¼ æ•°æ®å¹¶è¿”å›é™„ä»¶ID
 Sub UploadSave(FileName,ChildFileName,FileExt,ViewName,FileSize,F_Type,F_OldName)
 	Dim ShwoFileName
 	ShwoFileName = Dvbbs.Checkstr(Replace(FileName,CheckFolder,"UploadFile/"))
@@ -164,27 +164,27 @@ Sub Suc_upload(UpCount,upNum)
 	iUserInfo = Dvbbs.UserToday(0) & "|" & Dvbbs.UserToday(1) & "|" & Dvbbs.UserToday(2) & "|" & Dvbbs.UserToday(3) & "|" & Dvbbs.UserToday(4)
 	iUserInfo=Dvbbs.Checkstr(iUserInfo)
 	If upNum < Clng(Dvbbs.GroupSetting(40)) And Dvbbs.UserToday(2) < Clng(Dvbbs.GroupSetting(50)) Then
-		ShowUploadSuc UpCount & "¸öÎÄ¼şÉÏ´«³É¹¦,Ä¿Ç°½ñÌì×Ü¹²ÉÏ´«ÁË" & Dvbbs.UserToday(2) & "¸ö¸½¼ş¡£"
+		ShowUploadSuc UpCount & "ä¸ªæ–‡ä»¶ä¸Šä¼ æˆåŠŸ,ç›®å‰ä»Šå¤©æ€»å…±ä¸Šä¼ äº†" & Dvbbs.UserToday(2) & "ä¸ªé™„ä»¶ã€‚"
 	Else
-		ShowUploadSuc UpCount & "¸öÎÄ¼şÉÏ´«³É¹¦!±¾´ÎÒÑ´ïµ½ÉÏ´«ÊıÉÏÏŞ¡£"
+		ShowUploadSuc UpCount & "ä¸ªæ–‡ä»¶ä¸Šä¼ æˆåŠŸ!æœ¬æ¬¡å·²è¾¾åˆ°ä¸Šä¼ æ•°ä¸Šé™ã€‚"
 	End If
 	Dvbbs.Execute("UPDATE [Dv_user] SET UserToday = '" & iUserInfo &"' WHERE UserID = " & Dvbbs.UserID)
 	Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usertoday").text=iUserInfo
 End Sub
 
 
-'¶ÁÈ¡ÉÏ´«Ä¿Â¼
+'è¯»å–ä¸Šä¼ ç›®å½•
 Function CheckFolder()
 	If Dvbbs.Forum_Setting(76)="" Or Dvbbs.Forum_Setting(76)="0" Then Dvbbs.Forum_Setting(76)="UploadFile/"
 	CheckFolder = Replace(Replace(Dvbbs.Forum_Setting(76),Chr(0),""),".","")
-	'ÔÚÄ¿Â¼ºó¼Ó(/)
+	'åœ¨ç›®å½•ååŠ (/)
 	If Right(CheckFolder,1)<>"/" Then CheckFolder=CheckFolder&"/"
 End Function
 
-'°´ÔÂ·İ×Ô¶¯Ã÷ÃûÉÏ´«ÎÄ¼ş¼Ğ,ĞèÒª£Æ£Ó£Ï×é¼şÖ§³Ö¡£
+'æŒ‰æœˆä»½è‡ªåŠ¨æ˜åä¸Šä¼ æ–‡ä»¶å¤¹,éœ€è¦ï¼¦ï¼³ï¼¯ç»„ä»¶æ”¯æŒã€‚
 Function CreatePath(PathValue)
 	Dim objFSO,Fsofolder,uploadpath
-	'ÒÔÄêÔÂ´´½¨ÉÏ´«ÎÄ¼ş¼Ğ£¬¸ñÊ½£º2003£­8
+	'ä»¥å¹´æœˆåˆ›å»ºä¸Šä¼ æ–‡ä»¶å¤¹ï¼Œæ ¼å¼ï¼š2003ï¼8
 	uploadpath = year(now) & "-" & month(now)
 	If Right(PathValue,1)<>"/" Then PathValue = PathValue&"/"
 	On Error Resume Next
@@ -218,29 +218,29 @@ input.addfile{cursor:pointer;height:20px;left:-10px;position:absolute;top:0px;wi
 <head>
 <script language="javascript">
 <!--
-/*¸Ä½øµÄÉÏ´«½çÃæ HxyMan 2008-1-22*/
+/*æ”¹è¿›çš„ä¸Šä¼ ç•Œé¢ HxyMan 2008-1-22*/
 var DvFileInput={
 	$:function(d){return document.getElementById(d);},
 	isFF:function(){var a=navigator.userAgent;return a.indexOf('Gecko')!=-1&&!(a.indexOf('KHTML')>-1||a.indexOf('Konqueror')>-1||a.indexOf('AppleWebKit')>-1);},
 	ae:function(o,t,h){if (o.addEventListener){o.addEventListener(t,h,false);}else if(o.attachEvent){o.attachEvent('on'+t,h);}else{try{o['on'+t]=h;}catch(e){;}}},
 	count:0,
 	realcount:0,
-	uped:0,//½ñÌìÒÑ¾­ÉÏ´«¸öÊı
-	max:1,//»¹¿ÉÒÔÉÏ´«¶àÉÙ¸ö
-	once:1,//×î¶àÄÜÍ¬Ê±ÉÏ´«¶àÉÙ¸ö
+	uped:0,//ä»Šå¤©å·²ç»ä¸Šä¼ ä¸ªæ•°
+	max:1,//è¿˜å¯ä»¥ä¸Šä¼ å¤šå°‘ä¸ª
+	once:1,//æœ€å¤šèƒ½åŒæ—¶ä¸Šä¼ å¤šå°‘ä¸ª
 	boardid:0,
 	uploadcode:0,
 	readme:'',
 	add:function(){
 		if (DvFileInput.chkre()){
-			DvFileInput_OnEcho('<font color=red><b>ÄúÒÑ¾­Ìí¼Ó¹ı´ËÎÄ¼şÁË!</b></font>');
+			DvFileInput_OnEcho('<font color=red><b>æ‚¨å·²ç»æ·»åŠ è¿‡æ­¤æ–‡ä»¶äº†!</b></font>');
 		}
 		else if (DvFileInput.realcount>=DvFileInput.max){
-			DvFileInput_OnEcho('<font color=red><b>Äú×î¶àÖ»ÄÜÉÏ´«'+DvFileInput.max+'¸öÎÄ¼ş¡£</b></font>');
+			DvFileInput_OnEcho('<font color=red><b>æ‚¨æœ€å¤šåªèƒ½ä¸Šä¼ '+DvFileInput.max+'ä¸ªæ–‡ä»¶ã€‚</b></font>');
 		}else if (DvFileInput.realcount>=DvFileInput.once){
-			DvFileInput_OnEcho('<font color=red><b>ÄúÒ»´Î×î¶àÖ»ÄÜÉÏ´«'+DvFileInput.once+'¸öÎÄ¼ş¡£</b></font>');
+			DvFileInput_OnEcho('<font color=red><b>æ‚¨ä¸€æ¬¡æœ€å¤šåªèƒ½ä¸Šä¼ '+DvFileInput.once+'ä¸ªæ–‡ä»¶ã€‚</b></font>');
 		}else{
-			DvFileInput_OnEcho('<font color=blue>¿ÉÒÔ¼ÌĞøÌí¼Ó¸½¼ş£¬Ò²¿ÉÒÔÁ¢¼´ÉÏ´«¡£</font>');
+			DvFileInput_OnEcho('<font color=blue>å¯ä»¥ç»§ç»­æ·»åŠ é™„ä»¶ï¼Œä¹Ÿå¯ä»¥ç«‹å³ä¸Šä¼ ã€‚</font>');
 			var o=DvFileInput.$('dv_fileinput_'+DvFileInput.count);
 			++DvFileInput.count;
 			++DvFileInput.realcount;
@@ -276,7 +276,7 @@ var DvFileInput={
 		var i=DvFileInput.count-1;
 		oBtn.id='dv_fileinput_btn_'+i;
         oBtn.src='images/others/filedel.gif';
-        oBtn.alt='É¾³ı';
+        oBtn.alt='åˆ é™¤';
 		oBtn.style.cursor='pointer';
 		var o=DvFileInput.$('dv_fileinput_'+i);
 		DvFileInput.ae(oBtn,'click',function(){
@@ -297,15 +297,15 @@ var DvFileInput={
 	},
 	init:function(){
 		var a=document;
-		a.writeln('<form id="dv_fileinput_form" name="dv_fileinput_form" action="savefile.asp?t=1&boardid='+DvFileInput.boardid+'" target="_self" method="post" enctype="multipart/form-data" style="margin:0;padding:0;"><input type="hidden" id="UploadCode" name="UploadCode" value="'+DvFileInput.uploadcode+'" /><div id="dv_fileinput_formarea"><img src="images/others/fileitem.gif" alt="µã»÷ÎÄ×ÖÌí¼Ó¸½¼ş" border="0" /> <a href="javascript:;">Ìí¼Ó¸½¼ş<input id="dv_fileinput_0" name="dv_fileinput_0" class="addfile" size="1" type="file" onchange="DvFileInput.add();" /></a> <span id="dv_fileinput_upbtn"><a href="javascript:DvFileInput.send();">ÉÏ´«¸½¼ş</a></span> <span id="dv_fileinput_msg"></span> '+DvFileInput.readme+'</div></form></div><div id="dv_fileinput_show"></div>');
+		a.writeln('<form id="dv_fileinput_form" name="dv_fileinput_form" action="savefile.asp?t=1&boardid='+DvFileInput.boardid+'" target="_self" method="post" enctype="multipart/form-data" style="margin:0;padding:0;"><input type="hidden" id="UploadCode" name="UploadCode" value="'+DvFileInput.uploadcode+'" /><div id="dv_fileinput_formarea"><img src="images/others/fileitem.gif" alt="ç‚¹å‡»æ–‡å­—æ·»åŠ é™„ä»¶" border="0" /> <a href="javascript:;">æ·»åŠ é™„ä»¶<input id="dv_fileinput_0" name="dv_fileinput_0" class="addfile" size="1" type="file" onchange="DvFileInput.add();" /></a> <span id="dv_fileinput_upbtn"><a href="javascript:DvFileInput.send();">ä¸Šä¼ é™„ä»¶</a></span> <span id="dv_fileinput_msg"></span> '+DvFileInput.readme+'</div></form></div><div id="dv_fileinput_show"></div>');
 	},
 	send:function(){
 		if (DvFileInput.realcount>0){
 			DvFileInput.$('dv_fileinput_'+DvFileInput.count).disabled=true;
-			DvFileInput.$('dv_fileinput_upbtn').innerHTML='ÉÏ´«ÖĞ£¬ÇëÉÔµÈ..';
+			DvFileInput.$('dv_fileinput_upbtn').innerHTML='ä¸Šä¼ ä¸­ï¼Œè¯·ç¨ç­‰..';
 			DvFileInput.$('dv_fileinput_form').submit();
 		}else{
-			alert('ÇëÏÈÌí¼Ó¸½¼şÔÙÉÏ´«¡£');
+			alert('è¯·å…ˆæ·»åŠ é™„ä»¶å†ä¸Šä¼ ã€‚');
 		}
 	},
 	clear:function(){
@@ -384,7 +384,7 @@ DvFileInput.uploadcode='<%=PostRanNum%>';
 DvFileInput.uped=parseInt('<%=Dvbbs.CheckNumeric(Dvbbs.UserToday(2))%>');
 DvFileInput.max=parseInt('<%=Dvbbs.CheckNumeric(Dvbbs.Groupsetting(50)-Dvbbs.UserToday(2))%>');
 DvFileInput.once=parseInt('<%=Dvbbs.CheckNumeric(Dvbbs.Groupsetting(40))%>');
-DvFileInput.readme='½ñÌì»¹¿ÉÉÏ´«'+DvFileInput.max+'¸ö<a style="CURSOR: help" title="ÂÛÌ³ÏŞÖÆ:Ò»´Î'+DvFileInput.once+'¸ö£¬Ò»Ìì<%=Dvbbs.Groupsetting(50)%>¸ö,Ã¿¸ö<%=Dvbbs.Groupsetting(44)%>K">(²é¿´ÂÛÌ³ÏŞÖÆ)</a>';
+DvFileInput.readme='ä»Šå¤©è¿˜å¯ä¸Šä¼ '+DvFileInput.max+'ä¸ª<a style="CURSOR: help" title="è®ºå›é™åˆ¶:ä¸€æ¬¡'+DvFileInput.once+'ä¸ªï¼Œä¸€å¤©<%=Dvbbs.Groupsetting(50)%>ä¸ª,æ¯ä¸ª<%=Dvbbs.Groupsetting(44)%>K">(æŸ¥çœ‹è®ºå›é™åˆ¶)</a>';
 DvFileInput.init();	
 DvFileInput_OnResize();
 //-->

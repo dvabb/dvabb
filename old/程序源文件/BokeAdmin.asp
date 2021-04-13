@@ -15,8 +15,8 @@ If not Dvbbs.master or  Instr(","&session("flag")&",",",38,")=0 Then Response.Re
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
-<meta name=keywords content="¶¯ÍøÏÈ·æ,¶¯ÍøÂÛÌ³,dvbbs,²©¿Í,blog,boke">
-<title>¶¯Íø²©¿ÍÏµÍ³¹ÜÀíÒ³Ãæ</title>
+<meta name=keywords content="åŠ¨ç½‘å…ˆé”‹,åŠ¨ç½‘è®ºå›,dvbbs,åšå®¢,blog,boke">
+<title>åŠ¨ç½‘åšå®¢ç³»ç»Ÿç®¡ç†é¡µé¢</title>
 <link rel="stylesheet" type="text/css" href="<%=Dvbbs.CacheData(33,0)%>skins/css/main.css" />
 
 <SCRIPT LANGUAGE="JavaScript">
@@ -33,21 +33,21 @@ return true;
 <body leftmargin="0" topmargin="0" marginheight="0" marginwidth="0">
 <table width="100%" border="0" cellspacing="0" cellpadding="0"  align=center class="tableBorder">
 <tr> 
-<th width="100%" colspan=2 height=25>¶¯Íø²©¿ÍÏµÍ³¹ÜÀí
+<th width="100%" colspan=2 height=25>åŠ¨ç½‘åšå®¢ç³»ç»Ÿç®¡ç†
 </th>
 </tr>
 <tr>
 <td class="td1" colspan=2>
-<p><B>×¢Òâ</B>£º
-<BR>¢Ù É¾³ı²©¿ÍÏµÍ³À¸Ä¿»ò»°ÌâÇ°ÇëÏÈ½«ÆäÖĞÎÄÕÂ¡¢ÆÀÂÛºÍÓÃ»§×ªÒÆµ½ÆäËûÀ¸Ä¿»ò·ÖÀ¸ÖĞ£¬²»ĞèÒªµÄÎÄÕÂ»òÆÀÂÛ¿ÉÔÚĞÅÏ¢¹ÜÀíÖĞÅúÁ¿É¾³ı
-<BR>¢Ú É¾³ıÓÃ»§²©¿ÍÀ¸Ä¿Ç°ÇëÏÈ½«ÆäÖĞÎÄÕÂºÍÆÀÂÛ×ªÒÆµ½¸ÃÓÃ»§µÄÆäËüÀ¸Ä¿ºóÔÙÖ´ĞĞÉ¾³ı²Ù×÷
+<p><B>æ³¨æ„</B>ï¼š
+<BR>â‘  åˆ é™¤åšå®¢ç³»ç»Ÿæ ç›®æˆ–è¯é¢˜å‰è¯·å…ˆå°†å…¶ä¸­æ–‡ç« ã€è¯„è®ºå’Œç”¨æˆ·è½¬ç§»åˆ°å…¶ä»–æ ç›®æˆ–åˆ†æ ä¸­ï¼Œä¸éœ€è¦çš„æ–‡ç« æˆ–è¯„è®ºå¯åœ¨ä¿¡æ¯ç®¡ç†ä¸­æ‰¹é‡åˆ é™¤
+<BR>â‘¡ åˆ é™¤ç”¨æˆ·åšå®¢æ ç›®å‰è¯·å…ˆå°†å…¶ä¸­æ–‡ç« å’Œè¯„è®ºè½¬ç§»åˆ°è¯¥ç”¨æˆ·çš„å…¶å®ƒæ ç›®åå†æ‰§è¡Œåˆ é™¤æ“ä½œ
 </td>
 </tr>
 <tr>
 <td class="td2" height=25>
-<B>¹ÜÀí²Ù×÷Ñ¡Ïî</B></td>
-<td class="td2"><a href="?s=8">ÉèÖÃ</a> | 
-<a href="?s=1&t=1">À¸Ä¿</a> | <a href="?s=1&t=2">»°Ìâ</a> | <a href="?s=2">ÓÃ»§¹ÜÀí</a> | <a href="?s=3">ÓÃ»§À¸Ä¿</a> | <a href="?s=4">¹«¸æ¹ÜÀí</a> | <a href="?s=5">ÉÏ´«¹ÜÀí</a> | <a href="?s=6">¹Ø¼ü×Ö</a> | <a href="?s=7">Ä£°å</a> | <a href="?s=9">Êı¾İ¸üĞÂ</a>
+<B>ç®¡ç†æ“ä½œé€‰é¡¹</B></td>
+<td class="td2"><a href="?s=8">è®¾ç½®</a> | 
+<a href="?s=1&t=1">æ ç›®</a> | <a href="?s=1&t=2">è¯é¢˜</a> | <a href="?s=2">ç”¨æˆ·ç®¡ç†</a> | <a href="?s=3">ç”¨æˆ·æ ç›®</a> | <a href="?s=4">å…¬å‘Šç®¡ç†</a> | <a href="?s=5">ä¸Šä¼ ç®¡ç†</a> | <a href="?s=6">å…³é”®å­—</a> | <a href="?s=7">æ¨¡æ¿</a> | <a href="?s=9">æ•°æ®æ›´æ–°</a>
 </td>
 </tr>
 </table>
@@ -82,7 +82,7 @@ Sub Boke_UploadFile()
 		Dim FileSize,SpaceSize,objFSO,FilePath,ViewPath
 		FID = DvBoke.CheckNumeric(Request("fid"))
 		If FID = 0 Then
-			ErrMsg = "ÎÄ¼ş²ÎÊı´íÎó£¬ÇëÖØĞÂÑ¡È¡ÕıÈ·µÄÎÄ¼şÔÙ½øĞĞ²Ù×÷!"
+			ErrMsg = "æ–‡ä»¶å‚æ•°é”™è¯¯ï¼Œè¯·é‡æ–°é€‰å–æ­£ç¡®çš„æ–‡ä»¶å†è¿›è¡Œæ“ä½œ!"
 			Dvbbs_error()
 			Exit Sub
 		End If
@@ -112,19 +112,19 @@ Sub Boke_UploadFile()
 			End If
 			Set objFSO = Nothing
 		End If
-		Dv_suc("ÎÄ¼şÒÑ³É¹¦É¾³ı£¡")
+		Dv_suc("æ–‡ä»¶å·²æˆåŠŸåˆ é™¤ï¼")
 		Exit Sub
 	End If
 %>
 	<table width="100%" border="0" cellspacing="1" cellpadding="5"  align="center" class="tableBorder">
 	<tr> 
 	<th width="100%" height="25" align="left" ID="TableTitleLink">
-	²©¿ÍÉÏ´«ÎÄ¼ş¹ÜÀí
+	åšå®¢ä¸Šä¼ æ–‡ä»¶ç®¡ç†
 	</th>
 	</tr>
-	<tr><td class="td1">ËµÃ÷£º
+	<tr><td class="td1">è¯´æ˜ï¼š
 	<ul>
-	<li><font color="red">Î´Öª</font>ÎÄ¼ş:ÊÇÖ¸×÷ÕßÉÏ´«ºóÎ´·¢±í»òÎ´Ê¹ÓÃµÄÎÄ¼ş¡£</li>
+	<li><font color="red">æœªçŸ¥</font>æ–‡ä»¶:æ˜¯æŒ‡ä½œè€…ä¸Šä¼ åæœªå‘è¡¨æˆ–æœªä½¿ç”¨çš„æ–‡ä»¶ã€‚</li>
 	</ul></td></tr>
 	</table>
 
@@ -132,24 +132,24 @@ Sub Boke_UploadFile()
 	<table width="100%" border="0" cellspacing="1" cellpadding="5"  align="center" class="tableBorder">
 	<tr> 
 	<th width="100%" colspan="5" height="25" align="left" ID="TableTitleLink">
-	ÉÏ´«ĞÅÏ¢ÁĞ±í
+	ä¸Šä¼ ä¿¡æ¯åˆ—è¡¨
 	</th>
 	</tr>
 	<tr>
 	<td class="bodytitle" height="24" width="15%">
-	ÑİÊ¾
+	æ¼”ç¤º
 	</td>
 	<td class="bodytitle" height="24" width="35%">
-	Ãû³Æ/ Â·¾¶
+	åç§°/ è·¯å¾„
 	</td>
 	<td class="bodytitle" height="24" width="15%">
-	×÷Õß
+	ä½œè€…
 	</td>
 	<td class="bodytitle" height="24" width="15%">
-	ÉÏ´«Ê±¼ä
+	ä¸Šä¼ æ—¶é—´
 	</td>
 	<td class="bodytitle" height="24" width="20%">
-	²Ù×÷
+	æ“ä½œ
 	</td>
 	</tr>
 <%
@@ -187,15 +187,15 @@ Sub Boke_UploadFile()
 <td class="td1">
 <%
 If Rs(12)=1 Then
-	'ĞŞ¸ÄÍ¼Æ¬Â·¾¶Îª·Ç¸¸Â·¾¶ 2005-10-6 Dv.Yz
+	'ä¿®æ”¹å›¾ç‰‡è·¯å¾„ä¸ºéçˆ¶è·¯å¾„ 2005-10-6 Dv.Yz
 	Response.Write "<a href="""&DvBoke.System_UpSetting(19)&Rs(10)&""" target=""_blank""><img src="""&ViewFile&""" border=""1"" width=""80"" height=""60""></a>"
 Else
-	Response.Write "ÆäËü"
+	Response.Write "å…¶å®ƒ"
 End If
 %>
 </td>
 <td class="td1">
-¡¶<b><%=Rs(9)%></b>¡·
+ã€Š<b><%=Rs(9)%></b>ã€‹
 <br/><u><%=Rs(10)%></u>
 </td>
 <td class="td2">
@@ -206,11 +206,11 @@ End If
 </td>
 <td class="td2">
 <%If Rs(19)=4 Then%>
-<font color="red">Î´Öª</font>
+<font color="red">æœªçŸ¥</font>
 <%Else%>
-<a href="Userid_<%=Rs(1)%>.showtopic.<%=Rs(6)%>.html" target="_blank">²é¿´</a>
+<a href="Userid_<%=Rs(1)%>.showtopic.<%=Rs(6)%>.html" target="_blank">æŸ¥çœ‹</a>
 <%End If%>
-| <a href="?s=5&act=del&fid=<%=Rs(0)%>">É¾³ı</a>
+| <a href="?s=5&act=del&fid=<%=Rs(0)%>">åˆ é™¤</a>
 </td>
 </tr>
 <%
@@ -219,7 +219,7 @@ End If
 		Wend
 		Pcount=Rs.PageCount
 %>
-<tr><td colspan=5 class=td1>¹²ÓĞ<%=TotalRec%>Ìõ¼ÇÂ¼£¬·ÖÒ³£º
+<tr><td colspan=5 class=td1>å…±æœ‰<%=TotalRec%>æ¡è®°å½•ï¼Œåˆ†é¡µï¼š
 <%
 	Dim Searchstr
 	Searchstr = "?s=5"
@@ -276,43 +276,43 @@ Sub Boke_Update()
 	<table width="100%" border="0" cellspacing="1" cellpadding="5"  align="center" class="tableBorder">
 	<tr> 
 	<th width="100%" colspan="2" height="25" align="left" ID="TableTitleLink">
-	²©¿ÍĞÅÏ¢¸üĞÂ
+	åšå®¢ä¿¡æ¯æ›´æ–°
 	</th>
 	</tr>
 	<tr>
 	<td class="td2" colspan="2">
-	ËµÃ÷:
+	è¯´æ˜:
 	</td>
 	</tr>
 	<tr>
 	<td width="10%" class="td2">
-	<input type="button" name="act" value="²©¿ÍÓÃ»§Í³¼Æ" class="button" onclick="location.href='?s=9&t=1'"/>
+	<input type="button" name="act" value="åšå®¢ç”¨æˆ·ç»Ÿè®¡" class="button" onclick="location.href='?s=9&t=1'"/>
 	</td>
-	<td align="left" width="90%" class="td1">ÖØĞÂÍ³¼Æµ±Ç°²©¿ÍÓÃ»§×ÜÊı</td>
+	<td align="left" width="90%" class="td1">é‡æ–°ç»Ÿè®¡å½“å‰åšå®¢ç”¨æˆ·æ€»æ•°</td>
 	</tr>
 	<tr>
 	<td width="10%" class="td2">
-	<input type="button" name="act" value="²©¿ÍË÷ÒıÊı¾İÍ³¼Æ" class="button" onclick="location.href='?s=9&t=2'"/>
+	<input type="button" name="act" value="åšå®¢ç´¢å¼•æ•°æ®ç»Ÿè®¡" class="button" onclick="location.href='?s=9&t=2'"/>
 	</td>
-	<td align="left" width="90%" class="td1">ÖØĞÂÍ³¼Æµ±Ç°²©¿ÍË÷ÒıÓÃ»§Êı£¬Ìû×ÓÊıĞÅÏ¢</td>
+	<td align="left" width="90%" class="td1">é‡æ–°ç»Ÿè®¡å½“å‰åšå®¢ç´¢å¼•ç”¨æˆ·æ•°ï¼Œå¸–å­æ•°ä¿¡æ¯</td>
 	</tr>
 	<tr>
 	<td width="10%" class="td2">
-	<input type="button" name="act" value="²©¿Í»°ÌâÊı¾İÍ³¼Æ" class="button" onclick="location.href='?s=9&t=3'"/>
+	<input type="button" name="act" value="åšå®¢è¯é¢˜æ•°æ®ç»Ÿè®¡" class="button" onclick="location.href='?s=9&t=3'"/>
 	</td>
-	<td align="left" width="90%" class="td1">ÖØĞÂÍ³¼Æµ±Ç°²©¿Í»°ÌâÌû×ÓÊıĞÅÏ¢</td>
+	<td align="left" width="90%" class="td1">é‡æ–°ç»Ÿè®¡å½“å‰åšå®¢è¯é¢˜å¸–å­æ•°ä¿¡æ¯</td>
 	</tr>
 	<tr>
 	<td width="10%" class="td2">
-	<input type="button" name="act" value="²©¿Í×ÜÊı¾İÍ³¼Æ" class="button" onclick="location.href='?s=9&t=4'"/>
+	<input type="button" name="act" value="åšå®¢æ€»æ•°æ®ç»Ÿè®¡" class="button" onclick="location.href='?s=9&t=4'"/>
 	</td>
-	<td align="left" width="90%" class="td1">ÖØĞÂÍ³¼Æµ±Ç°²©¿ÍÌû×ÓÊıĞÅÏ¢</td>
+	<td align="left" width="90%" class="td1">é‡æ–°ç»Ÿè®¡å½“å‰åšå®¢å¸–å­æ•°ä¿¡æ¯</td>
 	</tr>
 	<tr>
 	<td width="10%" class="td2">
-	<input type="button" name="act" value="²©¿ÍÓÃ»§Êı¾İ×Ü¸üĞÂ" class="button" onclick="location.href='?s=9&t=5'"/>
+	<input type="button" name="act" value="åšå®¢ç”¨æˆ·æ•°æ®æ€»æ›´æ–°" class="button" onclick="location.href='?s=9&t=5'"/>
 	</td>
-	<td align="left" width="90%" class="td1">¸üĞÂËùÓĞ²©¿ÍÓÃ»§µÄÏà¹ØÊı¾İ,°üÀ¨ÎÄÕÂÊı¡¢ÆÀÂÛÊıÒÔ¼°²©¿ÍÓÃ»§Ê×Ò³»º´æÊı¾İµÈ</td>
+	<td align="left" width="90%" class="td1">æ›´æ–°æ‰€æœ‰åšå®¢ç”¨æˆ·çš„ç›¸å…³æ•°æ®,åŒ…æ‹¬æ–‡ç« æ•°ã€è¯„è®ºæ•°ä»¥åŠåšå®¢ç”¨æˆ·é¦–é¡µç¼“å­˜æ•°æ®ç­‰</td>
 	</tr>
 	</table>
 <%
@@ -324,7 +324,7 @@ Sub Boke_Update_Users()
 	AllUsers = DvBoke.Execute("Select Count(*) From Dv_Boke_User")(0)
 	DvBoke.Execute("update Dv_Boke_System set S_UserNum = "&AllUsers)
 	DvBoke.LoadSetup(1)
-	Dv_suc("²©¿ÍÓÃ»§Í³¼ÆÍê³É,µ±Ç°¹²ÓĞ"&AllUsers&"Î»²©¿ÍÓÃ»§!")
+	Dv_suc("åšå®¢ç”¨æˆ·ç»Ÿè®¡å®Œæˆ,å½“å‰å…±æœ‰"&AllUsers&"ä½åšå®¢ç”¨æˆ·!")
 End Sub
 
 Sub Boke_Update_SysCats()
@@ -355,7 +355,7 @@ Sub Boke_Update_SysCats()
 				TodayNum = 0
 			End If
 			DvBoke.Execute("update Dv_Boke_SysCat set uCatNum="&uCatNum&",TopicNum="&TopicNum&",PostNum="&PostNum&",TodayNum="&TodayNum&",LastUpTime='"&LastUpTime&"' where sCatID="&ChildNode.getAttribute("scatid"))
-			SucMsg = SucMsg &"<li>"&ChildNode.getAttribute("scattitle")&" :¹²ÓĞ"&uCatNum&"ÓÃ»§£¬"&TopicNum&"ÆªÎÄÕÂ£¬"&PostNum&"ÆªÆÀÂÛ£¬½ñÈÕ·¢±í¹²"&TodayNum&"Æª£¬×îºó¸üĞÂÊ±¼ä£º"&LastUpTime&"</li>"
+			SucMsg = SucMsg &"<li>"&ChildNode.getAttribute("scattitle")&" :å…±æœ‰"&uCatNum&"ç”¨æˆ·ï¼Œ"&TopicNum&"ç¯‡æ–‡ç« ï¼Œ"&PostNum&"ç¯‡è¯„è®ºï¼Œä»Šæ—¥å‘è¡¨å…±"&TodayNum&"ç¯‡ï¼Œæœ€åæ›´æ–°æ—¶é—´ï¼š"&LastUpTime&"</li>"
 		Next
 	End If
 	DvBoke.LoadSetup(1)
@@ -387,7 +387,7 @@ Sub Boke_Update_ChatCats()
 			Rs.Close
 
 			DvBoke.Execute("update Dv_Boke_SysCat set  TopicNum="&TopicNum&",PostNum="&PostNum&",TodayNum="&TodayNum&",LastUpTime='"&LastUpTime&"' where sCatID="&ChildNode.getAttribute("scatid"))
-			SucMsg = SucMsg &"<li>"&ChildNode.getAttribute("scattitle")&" :"&TopicNum&"ÆªÎÄÕÂ£¬"&PostNum&"ÆªÆÀÂÛ£¬½ñÈÕ·¢±í¹²"&TodayNum&"Æª£¬×îºó¸üĞÂÊ±¼ä£º"&LastUpTime&"</li>"
+			SucMsg = SucMsg &"<li>"&ChildNode.getAttribute("scattitle")&" :"&TopicNum&"ç¯‡æ–‡ç« ï¼Œ"&PostNum&"ç¯‡è¯„è®ºï¼Œä»Šæ—¥å‘è¡¨å…±"&TodayNum&"ç¯‡ï¼Œæœ€åæ›´æ–°æ—¶é—´ï¼š"&LastUpTime&"</li>"
 		Next
 	End If
 	DvBoke.LoadSetup(1)
@@ -415,7 +415,7 @@ Sub Boke_Update_System()
 	End If
 	DvBoke.Execute("update Dv_Boke_System set S_LastPostTime='"&S_LastPostTime&"',S_TopicNum="&S_TopicNum&",S_PhotoNum="&S_PhotoNum&",S_FavNum="&S_FavNum&",S_TodayNum="&S_TodayNum&",S_PostNum="&S_PostNum)
 	
-	SucMsg = "<li>²©¿ÍÏµÍ³×ÜĞÅÏ¢£º :ÎÄÕÂ¹²"&S_TopicNum&"Æª£¬Ïà²á¹²"&S_PhotoNum&"Æª£¬ÊÕ²Ø¹²"&S_FavNum&"Æª£¬ÆÀÂÛ¹²"&S_PostNum&"Æª£¬½ñÈÕ·¢±í¹²"&S_TodayNum&"Æª£¬×îºó¸üĞÂÊ±¼ä£º"&S_LastPostTime&"</li>"
+	SucMsg = "<li>åšå®¢ç³»ç»Ÿæ€»ä¿¡æ¯ï¼š :æ–‡ç« å…±"&S_TopicNum&"ç¯‡ï¼Œç›¸å†Œå…±"&S_PhotoNum&"ç¯‡ï¼Œæ”¶è—å…±"&S_FavNum&"ç¯‡ï¼Œè¯„è®ºå…±"&S_PostNum&"ç¯‡ï¼Œä»Šæ—¥å‘è¡¨å…±"&S_TodayNum&"ç¯‡ï¼Œæœ€åæ›´æ–°æ—¶é—´ï¼š"&S_LastPostTime&"</li>"
 	
 	DvBoke.LoadSetup(1)
 	Dv_suc(SucMsg)
@@ -428,7 +428,7 @@ Sub Boke_Update_UserInfo()
 %>
 <table cellpadding="0" cellspacing="0" border="0" width="100%" class="tableBorder" align=center>
 <tr><td colspan=2 class=td1>
-ÏÂÃæ¿ªÊ¼¸üĞÂÂÛÌ³ÓÃ»§×ÊÁÏ£¬Ô¤¼Æ±¾´Î¹²ÓĞ<%=BokeUserCount%>¸öÓÃ»§ĞèÒª¸üĞÂ
+ä¸‹é¢å¼€å§‹æ›´æ–°è®ºå›ç”¨æˆ·èµ„æ–™ï¼Œé¢„è®¡æœ¬æ¬¡å…±æœ‰<%=BokeUserCount%>ä¸ªç”¨æˆ·éœ€è¦æ›´æ–°
 <table width="100%" border="0" cellspacing="1" cellpadding="1">
 <tr> 
 <td bgcolor=000000>
@@ -457,7 +457,7 @@ Sub Boke_Update_UserInfo()
 		uPhotoNum = DvBoke.Execute("Select Count(*) From Dv_Boke_Topic Where sType=4 And UserID = " & Rs(0))(0)
 		uTodayNum = DvBoke.Execute("Select Count(*) From Dv_Boke_Post Where BokeUserID = " & Rs(0) & " And DateDiff("&DayStr&",JoinTime,"&bSqlNowString&") = 0")(0)
 		uPostNum = DvBoke.Execute("Select Count(*) From Dv_Boke_Post Where ParentID>0 And BokeUserID = " & Rs(0))(0)
-		'Ä¿Ç°½ö¸üĞÂÊ×Ò³Ö÷ÌâÁĞ±íÊı¾İ
+		'ç›®å‰ä»…æ›´æ–°é¦–é¡µä¸»é¢˜åˆ—è¡¨æ•°æ®
 		Set iBokeCat = Dvbbs.CreateXmlDoc("msxml2.FreeThreadedDOMDocument")
 		If Rs(2)="" Or IsNull(Rs(2)) Then
 			iBokeCat.Load(Server.MapPath(DvBoke.Cache_Path &"usercat.config"))
@@ -490,7 +490,7 @@ Sub Boke_Update_UserInfo()
 				Else
 					BokeBody = tRs("TitleNote")
 				End If
-				BokeBody = DvCode.UbbCode(BokeBody) & "...<br/>[<a href=""boke.asp?"&Rs(1)&".showtopic."&tRs("TopicID")&".html"">ÔÄ¶ÁÈ«ÎÄ</a>]"
+				BokeBody = DvCode.UbbCode(BokeBody) & "...<br/>[<a href=""boke.asp?"&Rs(1)&".showtopic."&tRs("TopicID")&".html"">é˜…è¯»å…¨æ–‡</a>]"
 				NodeList.attributes.getNamedItem("titlenote").text = BokeBody
 				NodeList.attributes.getNamedItem("posttime").text = tRs("PostTime")
 				NodeList.attributes.getNamedItem("lastposttime").text = tRs("LastPostTime")
@@ -505,7 +505,7 @@ Sub Boke_Update_UserInfo()
 		'End
 		DvBoke.Execute("Update Dv_Boke_User set XmlData = '"&Replace(iBokeCat.documentElement.xml,"'","''")&"',TopicNum="&uTopicNum&",FavNum="&uFavNum&",PhotoNum="&uPhotoNum&",TodayNum="&uTodayNum&",PostNum="&uPostNum&" where UserID="&Rs(0))
 		Response.Write "<script>img2.width=" & Fix((i/BokeUserCount) * 400) & ";" & VbCrLf
-		Response.Write "txt2.innerHTML=""¸üĞÂÍê"&Rs(1)&"µÄÊı¾İ£¬ÕıÔÚ¸üĞÂÏÂÒ»¸öÓÃ»§Êı¾İ£¬" & FormatNumber(i/BokeUserCount*100,4,-1) & """;" & VbCrLf
+		Response.Write "txt2.innerHTML=""æ›´æ–°å®Œ"&Rs(1)&"çš„æ•°æ®ï¼Œæ­£åœ¨æ›´æ–°ä¸‹ä¸€ä¸ªç”¨æˆ·æ•°æ®ï¼Œ" & FormatNumber(i/BokeUserCount*100,4,-1) & """;" & VbCrLf
 		Response.Write "img2.title=""" & Rs(1) & "(" & i & ")"";</script>" & VbCrLf
 		Response.Flush
 	Rs.MoveNext
@@ -514,7 +514,7 @@ Sub Boke_Update_UserInfo()
 	Set Rs=Nothing
 	Response.Write "<script>img2.width=400;txt2.innerHTML=""100"";</script>"
 
-	SucMsg = "<li>¸üĞÂËùÓĞÓÃ»§Êı¾İ³É¹¦£¡</li>"	
+	SucMsg = "<li>æ›´æ–°æ‰€æœ‰ç”¨æˆ·æ•°æ®æˆåŠŸï¼</li>"	
 	Dv_suc(SucMsg)
 End Sub
 
@@ -537,30 +537,30 @@ Sub Boke_SysNews()
 	<table width="100%" border="0" cellspacing="1" cellpadding="5"  align="center" class="tableBorder">
 	<tr> 
 	<th width="100%" colspan="2" height="25" align="left" ID="TableTitleLink">
-	Ê×Ò³¹«¸æĞÅÏ¢
+	é¦–é¡µå…¬å‘Šä¿¡æ¯
 	</th>
 	</tr>
 	<%
 	If Request.Form("act") = "save" Then
 		Node.text = Request.Form("boketopnews")
 		DvBoke.SaveSystemCache()
-		Manage_Suc "Äú³É¹¦±à¼­ÁË²©¿ÍÊ×Ò³¹«¸æĞÅÏ¢","2","?s=4"
+		Manage_Suc "æ‚¨æˆåŠŸç¼–è¾‘äº†åšå®¢é¦–é¡µå…¬å‘Šä¿¡æ¯","2","?s=4"
 	ElseIf Request.Form("act") = "save1" Then
 		Node1.text = Request.Form("bokemanagenews")
 		DvBoke.SaveSystemCache()
-		Manage_Suc "Äú³É¹¦±à¼­ÁË¸öÈË²©¿Í¹ÜÀíÊ×Ò³ÏµÍ³Í¨ÖªĞÅÏ¢","2","?s=4"
+		Manage_Suc "æ‚¨æˆåŠŸç¼–è¾‘äº†ä¸ªäººåšå®¢ç®¡ç†é¦–é¡µç³»ç»Ÿé€šçŸ¥ä¿¡æ¯","2","?s=4"
 	Else
 	%>
 	<form method="post" action="?s=4">
 	<tr>
 	<td class="td2" width="20%">
-	±à¼­ĞÅÏ¢ÄÚÈİ:
+	ç¼–è¾‘ä¿¡æ¯å†…å®¹:
 	</td>
 	<td class="td2"width="80%">
 	<input type="hidden" name="act" value="save">
 	<textarea name="boketopnews" rows="0" cols="0" style="display:none;"><%=Server.Htmlencode(Bodystr)%></textarea>
 	<iframe id="EditFrame" src="boke/edit_plus/FCKeditor/editor/fckeditor.html?InstanceName=boketopnews&Toolbar=Default" width="100%" height="200" frameborder="no" scrolling="no"></iframe>
-	<input type="submit" value="Ìá½»¸ü¸Ä" class="button">
+	<input type="submit" value="æäº¤æ›´æ”¹" class="button">
 	</td>
 	</tr>
 	</form>
@@ -570,19 +570,19 @@ Sub Boke_SysNews()
 	</tr>
 	<tr> 
 	<th width="100%" colspan="2" height="25" align="left" ID="TableTitleLink">
-	¸öÈË²©¿Í¹ÜÀíÊ×Ò³ÏµÍ³Í¨Öª
+	ä¸ªäººåšå®¢ç®¡ç†é¦–é¡µç³»ç»Ÿé€šçŸ¥
 	</th>
 	</tr>
 	<form method="post" action="?s=4">
 	<tr>
 	<td class="td2" width="20%">
-	±à¼­ĞÅÏ¢ÄÚÈİ:
+	ç¼–è¾‘ä¿¡æ¯å†…å®¹:
 	</td>
 	<td class="td2"width="80%">
 	<input type="hidden" name="act" value="save1">
 	<textarea name="bokemanagenews" rows="0" cols="0" style="display:none;"><%=Server.Htmlencode(Bodystr1)%></textarea>
 	<iframe id="EditFrame" src="boke/edit_plus/FCKeditor/editor/fckeditor.html?InstanceName=bokemanagenews&Toolbar=Default" width="100%" height="200" frameborder="no" scrolling="no"></iframe>
-	<input type="submit" value="Ìá½»¸ü¸Ä" class="button">
+	<input type="submit" value="æäº¤æ›´æ”¹" class="button">
 	</td>
 	</tr>
 	</form>
@@ -601,17 +601,17 @@ S_ID = 0
 If Request("act")="save" Then
 	S_ID = DvBoke.CheckNumeric(Request.Form("S_ID"))
 	If Request.Form("S_Name") = "" or Len(Request.Form("S_Name"))>50 Then
-		ErrMsg = "Ä£°åÃû³Æ²»ÄÜÎª¿Õ»ò³¬³ö50¸ö×Ö·û!"
+		ErrMsg = "æ¨¡æ¿åç§°ä¸èƒ½ä¸ºç©ºæˆ–è¶…å‡º50ä¸ªå­—ç¬¦!"
 		Dvbbs_error()
 		Exit Sub
 	End If
 	If Request.Form("S_Path")="" or Len(Request.Form("S_Path"))>150 Then
-		ErrMsg = "Ä£°åÂ·¾¶²»ÄÜÎª¿Õ»ò³¬³ö150¸ö×Ö·û!"
+		ErrMsg = "æ¨¡æ¿è·¯å¾„ä¸èƒ½ä¸ºç©ºæˆ–è¶…å‡º150ä¸ªå­—ç¬¦!"
 		Dvbbs_error()
 		Exit Sub
 	End If
 	If Len(Request.Form("S_Info"))>250 Then
-		ErrMsg = "Ä£°åĞÅÏ¢¼°ËµÃ÷²»ÄÜ³¬³ö250¸ö×Ö·û!"
+		ErrMsg = "æ¨¡æ¿ä¿¡æ¯åŠè¯´æ˜ä¸èƒ½è¶…å‡º250ä¸ªå­—ç¬¦!"
 		Dvbbs_error()
 		Exit Sub
 	End If
@@ -630,7 +630,7 @@ If Request("act")="save" Then
 	Rs.Update
 	Rs.Close
 	Set Rs = Nothing
-	Dv_suc("Ä£°åÊı¾İ±£´æ³É¹¦")
+	Dv_suc("æ¨¡æ¿æ•°æ®ä¿å­˜æˆåŠŸ")
 	Exit Sub
 ElseIf Request("act") = "edit" Then
 	S_ID = DvBoke.CheckNumeric(Request("S_ID"))
@@ -657,7 +657,7 @@ ElseIf Request("act") = "addsys" Then
 			S_Name = Rs(1)
 			DvBoke.Execute("Update Dv_Boke_System Set SkinID = "&S_ID)
 			DvBoke.LoadSetup(1)
-			Dv_suc("ÒÑ½«Ä£°å["& S_Name &"]ÉèÎªÏµÍ³Ä¬ÈÏÄ£°å!")
+			Dv_suc("å·²å°†æ¨¡æ¿["& S_Name &"]è®¾ä¸ºç³»ç»Ÿé»˜è®¤æ¨¡æ¿!")
 		End If
 		Rs.Close
 		Set Rs = Nothing
@@ -668,7 +668,7 @@ ElseIf Request("act")="del" Then
 	S_ID = DvBoke.CheckNumeric(Request("S_ID"))
 	If S_ID>0 Then
 		If Clng(DvBoke.System_Node.getAttribute("skinid")) = S_ID Then
-			ErrMsg = "²»ÄÜÉ¾³ıÏµÍ³Ä¬ÈÏÄ£°å£¬ÇëÖØĞÂÑ¡È¡!"
+			ErrMsg = "ä¸èƒ½åˆ é™¤ç³»ç»Ÿé»˜è®¤æ¨¡æ¿ï¼Œè¯·é‡æ–°é€‰å–!"
 			Dvbbs_error()
 			Exit Sub
 		End If
@@ -680,19 +680,19 @@ ElseIf Request("act")="del" Then
 			If NewS_ID>0 Then
 				DvBoke.Execute("Update Dv_Boke_User Set SkinID = "&NewS_ID&" where SkinID="&S_ID)
 				DvBoke.Execute("Delete from Dv_Boke_Skins where S_ID="&S_ID)
-				Dv_suc("Ä£°å["& S_Name &"]É¾³ı³É¹¦!")
+				Dv_suc("æ¨¡æ¿["& S_Name &"]åˆ é™¤æˆåŠŸ!")
 			Else
-				ErrMsg = "ÇëÌí¼Ó¿ÉÓÃÄ£°åºóÔÙ½øĞĞÉ¾³ı²Ù×÷!"
+				ErrMsg = "è¯·æ·»åŠ å¯ç”¨æ¨¡æ¿åå†è¿›è¡Œåˆ é™¤æ“ä½œ!"
 				Dvbbs_error()
 			End If
 		Else
-			ErrMsg = "Ä£°åµÄ²»´æÔÚ£¬É¾³ıÊ§°Ü!"
+			ErrMsg = "æ¨¡æ¿çš„ä¸å­˜åœ¨ï¼Œåˆ é™¤å¤±è´¥!"
 			Dvbbs_error()
 		End If
 		Rs.Close
 		Set Rs = Nothing
 	Else
-		ErrMsg = "Ä£°åµÄ²ÎÊı´íÎó£¬É¾³ıÊ§°Ü!"
+		ErrMsg = "æ¨¡æ¿çš„å‚æ•°é”™è¯¯ï¼Œåˆ é™¤å¤±è´¥!"
 		Dvbbs_error()
 	End If
 	Exit Sub
@@ -701,36 +701,36 @@ End If
 <table width="100%" border="0" cellspacing="1" cellpadding="5"  align="center" class="tableBorder">
 <tr> 
 <th width="100%" colspan="2" height="25" align="left" ID="TableTitleLink">
-Ä£°åĞÅÏ¢¹ÜÀí
+æ¨¡æ¿ä¿¡æ¯ç®¡ç†
 </th>
 </tr>
 <form method="post" action="?s=7&act=save">
 <tr>
-<td class="td2" width="20%">Ä£°åÃû³Æ</td>
+<td class="td2" width="20%">æ¨¡æ¿åç§°</td>
 <td class="td2"width="80%">
 <input type="text" name="S_Name" value="<%=S_Name%>">
 </td>
 </tr>
 <tr>
-<td class="td2">Ìá¹©Õß</td>
+<td class="td2">æä¾›è€…</td>
 <td class="td2">
 <input type="text" name="S_Builder" value="<%=S_Builder%>">
 </td>
 </tr>
 <tr>
-<td class="td2">Ä£°åÂ·¾¶</td>
+<td class="td2">æ¨¡æ¿è·¯å¾„</td>
 <td class="td2">
 <input type="text" name="S_Path" size="50" value="<%=S_Path%>">
 </td>
 </tr>
 <tr>
-<td class="td2">ÑİÊ¾Í¼Æ¬</td>
+<td class="td2">æ¼”ç¤ºå›¾ç‰‡</td>
 <td class="td2">
 <input type="text" name="S_ViewPic" size="50" value="<%=S_ViewPic%>">
 </td>
 </tr>
 <tr>
-<td class="td2">ĞÅÏ¢¼°ËµÃ÷</td>
+<td class="td2">ä¿¡æ¯åŠè¯´æ˜</td>
 <td class="td2">
 <textarea name="S_Info" rows="5" cols="50"><%=Server.Htmlencode(S_Info)%></textarea>
 </td>
@@ -738,7 +738,7 @@ End If
 <tr>
 <td class="td2" colspan="2" align="center">
 <input type="hidden" name="S_ID" value="<%=S_ID%>">
-<input type="submit" value="±£´æ" class="button">
+<input type="submit" value="ä¿å­˜" class="button">
 </td>
 </tr>
 </form>
@@ -747,24 +747,24 @@ End If
 <table width="100%" border="0" cellspacing="1" cellpadding="5"  align="center" class="tableBorder">
 <tr> 
 <th width="100%" colspan="5" height="25" align="left" ID="TableTitleLink">
-Ä£°åĞÅÏ¢ÁĞ±í
+æ¨¡æ¿ä¿¡æ¯åˆ—è¡¨
 </th>
 </tr>
 <tr>
 <td class="bodytitle" height="24" width="15%">
-ÑİÊ¾
+æ¼”ç¤º
 </td>
 <td class="bodytitle" height="24" width="20%">
-Ãû³Æ/ Â·¾¶
+åç§°/ è·¯å¾„
 </td>
 <td class="bodytitle" height="24" width="15%">
-Ìá¹©Õß
+æä¾›è€…
 </td>
 <td class="bodytitle" height="24" width="30%">
-ĞÅÏ¢¼°ËµÃ÷
+ä¿¡æ¯åŠè¯´æ˜
 </td>
 <td class="bodytitle" height="24" width="20%">
-²Ù×÷
+æ“ä½œ
 </td>
 </tr>
 <%
@@ -815,12 +815,12 @@ End If
 <%=Rs(4)%>&nbsp;
 </td>
 <td class="td2">
-<a href="?s=7&act=edit&s_id=<%=Rs(0)%>">±à¼­</a> | <a href="?s=7&act=del&s_id=<%=Rs(0)%>">É¾³ı</a>
+<a href="?s=7&act=edit&s_id=<%=Rs(0)%>">ç¼–è¾‘</a> | <a href="?s=7&act=del&s_id=<%=Rs(0)%>">åˆ é™¤</a>
  | 
 <%If Clng(DvBoke.System_Node.getAttribute("skinid")) = Rs(0) Then%>
- <font color="red">ÏµÍ³Ä¬ÈÏ</font>
+ <font color="red">ç³»ç»Ÿé»˜è®¤</font>
 <%Else%>
- <a href="?s=7&act=addsys&s_id=<%=Rs(0)%>">ÉèÎªÄ¬ÈÏ</a>
+ <a href="?s=7&act=addsys&s_id=<%=Rs(0)%>">è®¾ä¸ºé»˜è®¤</a>
 <%End If%>
 </td>
 </tr>
@@ -830,7 +830,7 @@ End If
 		Wend
 		Pcount=Rs.PageCount
 %>
-<tr><td colspan=5 class=td1>¹²ÓĞ<%=TotalRec%>Ìõ¼ÇÂ¼£¬·ÖÒ³£º
+<tr><td colspan=5 class=td1>å…±æœ‰<%=TotalRec%>æ¡è®°å½•ï¼Œåˆ†é¡µï¼š
 <%
 	Dim Searchstr
 	Searchstr = "?s=7"
@@ -866,21 +866,21 @@ Set Rs = Nothing
 <%
 End Sub
 
-'²©¿ÍÏµÍ³À¸Ä¿¹ÜÀí
+'åšå®¢ç³»ç»Ÿæ ç›®ç®¡ç†
 Sub Boke_SysCat()
 	Dim Rs,i,TableClass,t,tStr
 	t = Request("t")
 	If t = "" Or Not IsNumeric(t) Then t = 1
 	t = Cint(t)
 	If t = 1 Then
-		tStr = "À¸Ä¿"
+		tStr = "æ ç›®"
 	Else
-		tStr = "»°Ìâ"
+		tStr = "è¯é¢˜"
 	End If
 %>
 <table width="100%" border="0" cellspacing="0" cellpadding="0"  align=center class="tableBorder">
 <tr> 
-<th width="100%" colspan=6 height=25 align=left ID="TableTitleLink">&nbsp;&nbsp;²©¿ÍÏµÍ³<%=tStr%>¹ÜÀí | <a href="?s=1&t=<%=t%>&Action=Add">Ìí¼Ó<%=tStr%></a>
+<th width="100%" colspan=6 height=25 align=left ID="TableTitleLink">&nbsp;&nbsp;åšå®¢ç³»ç»Ÿ<%=tStr%>ç®¡ç† | <a href="?s=1&t=<%=t%>&Action=Add">æ·»åŠ <%=tStr%></a>
 </th>
 </tr>
 <%
@@ -889,12 +889,12 @@ If Request("Action")="Add" Then
 <FORM METHOD=POST ACTION="?s=1&t=<%=t%>&Action=Save">
 <tr align=center>
 <td class="td2" height=24 colspan=6>
-<B>Ìí¼Ó²©¿ÍÏµÍ³<%=tStr%></B>
+<B>æ·»åŠ åšå®¢ç³»ç»Ÿ<%=tStr%></B>
 </td>
 </tr>
 <tr>
 <td class="td1" height=24 width="35%" align=right>
-<B><%=tStr%>Ãû³Æ</B>£º
+<B><%=tStr%>åç§°</B>ï¼š
 </td>
 <td class="td1" width="65%">
 <input type="text" name="Title" size="50">
@@ -902,7 +902,7 @@ If Request("Action")="Add" Then
 </tr>
 <tr>
 <td class="td2" height=24 width="35%" align=right>
-<B><%=tStr%>ËµÃ÷</B>£º
+<B><%=tStr%>è¯´æ˜</B>ï¼š
 </td>
 <td class="td2" width="65%">
 <textarea name="Note" cols="50" rows="5"></textarea>
@@ -910,14 +910,14 @@ If Request("Action")="Add" Then
 </tr>
 <tr align=center>
 <td class="td1" height=24 colspan=6>
-<input type=submit name=submit value="Ìí¼Ó²©¿Í<%=tStr%>" class="button">
+<input type=submit name=submit value="æ·»åŠ åšå®¢<%=tStr%>" class="button">
 </td>
 </tr>
 </FORM>
 <%
 ElseIf Request("Action")="Save" Then
 	If Request("Title")="" Then
-		Manage_Err "ÇëÌîĞ´"&tStr&"µÄÃû³Æ","6","?s=1&t="&t&""
+		Manage_Err "è¯·å¡«å†™"&tStr&"çš„åç§°","6","?s=1&t="&t&""
 		Exit Sub
 	End If
 	If t=1 Then
@@ -926,16 +926,16 @@ ElseIf Request("Action")="Save" Then
 		DvBoke.Execute("Insert Into Dv_Boke_SysCat (sCatTitle,sCatNote,stype) Values ('"&Replace(Request("Title"),"'","''")&"','"&Replace(Request("Note"),"'","''")&"',1)")
 	End If
 	
-	Manage_Suc "Äú³É¹¦Ìí¼ÓÁË²©¿Í"&tStr&"","6","?s=1&t="&t&""
+	Manage_Suc "æ‚¨æˆåŠŸæ·»åŠ äº†åšå®¢"&tStr&"","6","?s=1&t="&t&""
 	DvBoke.LoadSetup(1)
 ElseIf Request("Action")="Edit" Then
 	If Request("ID") = "" Or Not IsNumeric(Request("ID")) Then
-		Manage_Err "·Ç·¨µÄ"&tStr&"²ÎÊı","6","?s=1&t="&t&""
+		Manage_Err "éæ³•çš„"&tStr&"å‚æ•°","6","?s=1&t="&t&""
 		Exit Sub
 	End If
 	Set Rs = DvBoke.Execute("Select * From Dv_Boke_SysCat Where sCatID = " & Request("ID"))
 	If Rs.Eof And Rs.Bof Then
-		Manage_Err "·Ç·¨µÄ"&tStr&"²ÎÊı","6","?s=1&t="&t&""
+		Manage_Err "éæ³•çš„"&tStr&"å‚æ•°","6","?s=1&t="&t&""
 		Rs.Close
 		Set Rs=Nothing
 		Exit Sub
@@ -945,12 +945,12 @@ ElseIf Request("Action")="Edit" Then
 <input type=hidden value="<%=Request("ID")%>" name="ID">
 <tr align=center>
 <td class="td2" height=24 colspan=6>
-<B>±à¼­²©¿ÍÏµÍ³<%=tStr%></B>
+<B>ç¼–è¾‘åšå®¢ç³»ç»Ÿ<%=tStr%></B>
 </td>
 </tr>
 <tr>
 <td class="td1" height=24 width="35%" align=right>
-<B><%=tStr%>Ãû³Æ</B>£º
+<B><%=tStr%>åç§°</B>ï¼š
 </td>
 <td class="td1" width="65%">
 <input type="text" name="Title" size="50" value="<%=Server.HtmlEncode(Rs("sCatTitle"))%>">
@@ -958,7 +958,7 @@ ElseIf Request("Action")="Edit" Then
 </tr>
 <tr>
 <td class="td2" height=24 width="35%" align=right>
-<B><%=tStr%>ËµÃ÷</B>£º
+<B><%=tStr%>è¯´æ˜</B>ï¼š
 </td>
 <td class="td2" width="65%">
 <textarea name="Note" cols="50" rows="5"><%=Server.HtmlEncode(Rs("sCatNote")&"")%></textarea>
@@ -966,36 +966,36 @@ ElseIf Request("Action")="Edit" Then
 </tr>
 <tr align=center>
 <td class="td1" height=24 colspan=6>
-<input type=submit name=submit value="±à¼­²©¿Í<%=tStr%>" class="button">
+<input type=submit name=submit value="ç¼–è¾‘åšå®¢<%=tStr%>" class="button">
 </td>
 </tr>
 </FORM>
 <%
 ElseIf Request("Action")="SaveEdit" Then
 	If Request("Title")="" Then
-		Manage_Err "ÇëÌîĞ´"&tStr&"µÄÃû³Æ","6","?s=1&t="&t&""
+		Manage_Err "è¯·å¡«å†™"&tStr&"çš„åç§°","6","?s=1&t="&t&""
 		Exit Sub
 	End If
 	If Request("ID") = "" Or Not IsNumeric(Request("ID")) Then
-		Manage_Err "·Ç·¨µÄ"&tStr&"²ÎÊı","6","?s=1&t="&t&""
+		Manage_Err "éæ³•çš„"&tStr&"å‚æ•°","6","?s=1&t="&t&""
 		Exit Sub
 	End If
 	DvBoke.Execute("Update Dv_Boke_SysCat Set sCatTitle='"&Replace(Request("Title"),"'","''")&"',sCatNote='"&Replace(Request("Note"),"'","''")&"' Where sCatID = " & Request("ID"))
-	Manage_Suc "Äú³É¹¦±à¼­ÁË²©¿Í"&tStr&"","6","?s=1&t="&t&""
+	Manage_Suc "æ‚¨æˆåŠŸç¼–è¾‘äº†åšå®¢"&tStr&"","6","?s=1&t="&t&""
 	DvBoke.LoadSetup(1)
 ElseIf Request("Action")="Del" Then
 	If Request("ID") = "" Or Not IsNumeric(Request("ID")) Then
-		Manage_Err "·Ç·¨µÄ"&tStr&"²ÎÊı","6","?s=1&t="&t&""
+		Manage_Err "éæ³•çš„"&tStr&"å‚æ•°","6","?s=1&t="&t&""
 		Exit Sub
 	End If
 	DvBoke.Execute("Delete From Dv_Boke_SysCat Where sCatID = " & Request("ID"))
-	Manage_Suc "Äú³É¹¦É¾³ıÁË²©¿Í"&tStr&"","6","?s=1&t="&t&""
+	Manage_Suc "æ‚¨æˆåŠŸåˆ é™¤äº†åšå®¢"&tStr&"","6","?s=1&t="&t&""
 	DvBoke.LoadSetup(1)
 Else
 %>
 <tr>
 <td class="td1" colspan=6 height=25>
-<B>ËµÃ÷</B>£ºµã»÷ÓÃ»§Êı¿É²é¿´´Ë·ÖÀ¸µÄÓÃ»§²©¿ÍÁĞ±í
+<B>è¯´æ˜</B>ï¼šç‚¹å‡»ç”¨æˆ·æ•°å¯æŸ¥çœ‹æ­¤åˆ†æ çš„ç”¨æˆ·åšå®¢åˆ—è¡¨
 </td>
 </tr>
 <tr align=center>
@@ -1003,1652 +1003,23 @@ Else
 <B><%=tStr%></B>
 </td>
 <td class="bodytitle">
-<B>½ñÈÕ</B>
+<B>ä»Šæ—¥</B>
 </td>
 <td class="bodytitle">
-<B>ÎÄÕÂ</B>
+<B>æ–‡ç« </B>
 </td>
 <td class="bodytitle">
-<B>»Ø¸´</B>
+<B>å›å¤</B>
 </td>
 <td class="bodytitle">
-<B>ÓÃ»§Êı</B>
+<B>ç”¨æˆ·æ•°</B>
 </td>
 <td class="bodytitle" align=left>
-<B>²Ù×÷</B>
+<B>æ“ä½œ</B>
 </td>
 </tr>
 <%
 	i = 0
 	'TableClass = "td1"
-	Set Rs=DvBoke.Execute("Select * From Dv_Boke_SysCat Where sType = "&t&"-1 Order By sCatID")
-	Do While Not Rs.Eof
-	If TableClass = "td2" Then
-		TableClass="td1"
-	Else
-		TableClass="td2"
-	End If
-%>
-<tr align=center>
-<td class="<%=TableClass%>" height=24>
-<%=Rs("sCatTitle")%>
-</td>
-<td class="<%=TableClass%>">
-<%=Rs("TodayNum")%>
-</td>
-<td class="<%=TableClass%>">
-<%=Rs("TopicNum")%>
-</td>
-<td class="<%=TableClass%>">
-<%=Rs("PostNum")%>
-</td>
-<td class="<%=TableClass%>">
-<%=Rs("uCatNum")%> ¸ö
-</td>
-<td class="<%=TableClass%>" align=left>
-<a href="?s=1&t=<%=t%>&Action=Edit&ID=<%=Rs("sCatID")%>">±à¼­</a> | ÉèÖÃ | 
-<%
-	If Rs("uCatNum") = 0 And Rs("TopicNum") = 0 Then
-%>
-<a href=# onclick="alertreadme('É¾³ı½«°üÀ¨¸Ã<%=tStr%>µÄËùÓĞĞÅÏ¢£¬È·¶¨É¾³ıÂğ?','?s=1&t=<%=t%>&Action=Del&ID=<%=Rs("sCatID")%>')">É¾³ı</a>
-<%
-	Else
-%>
-<a href=# onclick="alertreadme('¸Ã·ÖÀ¸º¬ÓĞÓÃ»§²©¿Í£¬±ØĞëÏÈÉ¾³ıÆäÏÂÊô·ÖÀ¸·½ÄÜÉ¾³ı±¾·ÖÀ¸£¡','#')">É¾³ı</a>
-<%
-	End If
-%>
-</td>
-</tr>
-<%
-	Rs.MoveNext
-	Loop
-	Rs.Close
-	Set Rs=Nothing
-End If
-%>
-</table>
-<%
-End Sub
-
-Sub Boke_KeyWord()
-	Dim Rs,Sql,i,TableClass,KeyWord
-	Dim CurrentPage,Page_Count,Pcount
-	Dim TotalRec,EndPage
-	Dim KeyID
-	CurrentPage=Request("page")
-	If CurrentPage="" Or Not IsNumeric(CurrentPage) Then
-		CurrentPage=1
-	Else
-		CurrentPage=Clng(CurrentPage)
-		If Err Then
-			CurrentPage=1
-			Err.Clear
-		End If
-	End If
-	KeyWord = Dvbbs.CheckStr(Request("KeyWord"))
-%>
-<table width="100%" border="0" cellspacing="0" cellpadding="0"  align=center class="tableBorder">
-<tr> 
-<th width="100%" colspan=4 height=25 align=left ID="TableTitleLink">&nbsp;&nbsp;²©¿ÍÏµÍ³¹Ø¼ü×Ö¹ÜÀí
-</th>
-</tr>
-<FORM METHOD=POST ACTION="?s=6">
-<tr>
-<td class="td1" colspan=4 height=25>
-<B>ËÑË÷</B>£º<input type="text" value="<%=KeyWord%>" name="KeyWord">
-<input type=submit name=submit value="²éÑ¯" class="button">
-¿É¸ù¾İÓÃ»§Ãû¡¢²©¿ÍÃû¡¢¹Ø¼ü×Ö¡¢Á´½ÓµÈÄ£ºı²éÑ¯
-</td>
-</tr>
-</FORM>
-<%
-If Request("Action")="Edit" Then
-	If Request("KeyID") = "" Or Not IsNumeric(Request("KeyID")) Then
-		Manage_Err "·Ç·¨µÄ¹Ø¼ü×Ö²ÎÊı","4","?s=6"
-		Exit Sub
-	End If
-	Set Rs = DvBoke.Execute("Select * From Dv_Boke_KeyWord Where KeyID = " & Request("KeyID"))
-	If Rs.Eof And Rs.Bof Then
-		Manage_Err "·Ç·¨µÄ¹Ø¼ü×Ö²ÎÊı","4","?s=6"
-		Rs.Close
-		Set Rs=Nothing
-		Exit Sub
-	End If
-%>
-<FORM METHOD=POST ACTION="?s=6&Action=SaveEdit">
-<input type=hidden value="<%=Request("KeyID")%>" name="KeyID">
-<tr align=center>
-<td class="td2" height=24 colspan=6>
-<B>±à¼­²©¿ÍÏµÍ³ÓÃ»§¹Ø¼ü×Ö</B>
-</td>
-</tr>
-<tr>
-<td class="td1" height=24 width="35%" align=right>
-<B>¹Ø ¼ü ×Ö</B>£º
-</td>
-<td class="td1" width="65%">
-<input type="text" name="KeyWord" size="50" value="<%=Server.HtmlEncode(Rs("KeyWord"))%>">
-</td>
-</tr>
-<tr>
-<td class="td1" height=24 width="35%" align=right>
-<B>Ìæ»»ÎÄ±¾</B>£º
-</td>
-<td class="td1" width="65%">
-<input type="text" name="nKeyWord" size="50" value="<%=Server.HtmlEncode(Rs("nKeyWord"))%>">
-</td>
-</tr>
-<tr>
-<td class="td1" height=24 width="35%" align=right>
-<B>Á´½ÓµØÖ·</B>£º
-</td>
-<td class="td1" width="65%">
-<input type="text" name="LinkUrl" size="50" value="<%=Server.HtmlEncode(Rs("LinkUrl")&"")%>">
-</td>
-</tr>
-<tr>
-<td class="td1" height=24 width="35%" align=right>
-<B>Á´½Ó±êÌâ</B>£º
-</td>
-<td class="td1" width="65%">
-<input type="text" name="LinkTitle" size="50" value="<%=Server.HtmlEncode(Rs("LinkTitle")&"")%>">
-<input type=checkbox name="NewWindows" value="<%=Rs("NewWindows")%>" <%If Rs("NewWindows")=1 Then Response.Write "checked"%>>
-ĞÂ´°¿Ú´ò¿ª
-</td>
-</tr>
-<tr align=center>
-<td class="td1" height=24 colspan=6>
-<input type=submit name=submit value="±à¼­²©¿Í¹Ø¼ü×Ö" class="button">
-</td>
-</tr>
-</FORM>
-<%
-ElseIf Request("Action")="SaveEdit" Then
-	Dim nKeyWord,LinkUrl,LinkTitle,NewWindows
-	KeyID = Request.Form("KeyID")
-	KeyWord = DvBoke.CheckStr(Request.Form("KeyWord"))
-	nKeyWord = DvBoke.CheckStr(Request.Form("nKeyWord"))
-	LinkUrl = DvBoke.CheckStr(Request.Form("LinkUrl"))
-	LinkTitle = DvBoke.CheckStr(Request.Form("LinkTitle"))
-	NewWindows = Request.Form("NewWindows")
-
-	If KeyID = "" Or Not IsNumeric(KeyID) Then KeyID = 0
-	KeyID = cCur(KeyID)
-	If NewWindows = "" Or Not IsNumeric(NewWindows) Then NewWindows = 0
-	NewWindows = Cint(NewWindows)
-	If KeyWord = "" Or nKeyWord = "" Then
-		Manage_Err "·Ç·¨µÄ¹Ø¼ü×Ö²ÎÊı","4","?s=6"
-		Exit Sub
-	Else
-		KeyWord = Server.HtmlEncode(KeyWord)
-		nKeyWord = Server.HtmlEncode(nKeyWord)
-	End If
-	If LinkUrl <> "" Then LinkUrl = Server.HtmlEncode(Dv_FilterJS(LinkUrl))
-	If LinkTitle <> "" Then LinkTitle = Server.HtmlEncode(Dv_FilterJS(LinkTitle))
-
-	DvBoke.Execute("Update Dv_Boke_KeyWord Set KeyWord = '"&KeyWord&"',nKeyWord = '"&nKeyWord&"',LinkUrl = '"&LinkUrl&"',LinkTitle = '"&LinkTitle&"',NewWindows = "&NewWindows&" Where KeyID = " & KeyID)
-	Manage_Suc "Äú³É¹¦±à¼­ÁË²©¿Í¹Ø¼ü×Ö","4","?s=6"
-ElseIf Request("Action")="Del" Then
-	Dim iKeyID
-	KeyID = Request.Form("KeyID")
-	If KeyID = "" Then
-		Manage_Err "·Ç·¨µÄ¹Ø¼ü×ÖID","4","?s=6"
-		Exit Sub
-	End If
-	iKeyID = Replace(Replace(KeyID,",","")," ","")
-	If Not IsNumeric(iKeyID) Then
-		Manage_Err "·Ç·¨µÄ¹Ø¼ü×ÖID","4","?s=6"
-		Exit Sub
-	End If
-	DvBoke.Execute("Delete From Dv_Boke_KeyWord Where KeyID In ("&KeyID&")")
-	Manage_Suc "Äú³É¹¦É¾³ıÁË²©¿Í¹Ø¼ü×Ö","4","?s=6"
-Else
-%>
-<tr align=center>
-<td class="bodytitle" width="20%" height=24 align=left>
-&nbsp;<B>ÓÃ»§</B>
-</td>
-<td class="bodytitle"  width="40%" align=left>
-<B>¹Ø¼ü×Ö</B>
-</td>
-<td class="bodytitle"  width="30%" align=left>
-<B>Á´½Ó</B>
-</td>
-<td class="bodytitle"  width="10%" align=left>
-<B>²Ù×÷</B>
-</td>
-</tr>
-<FORM METHOD=POST ACTION="?s=6&Action=Del">
-<%
-	If KeyWord <> "" Then
-		Sql = "Select k.*,u.UserName,u.BokeName From Dv_Boke_KeyWord k Inner Join Dv_Boke_User u On k.UserID=u.UserID Where u.UserName Like '%"&KeyWord&"%' Or u.BokeName Like '%"&KeyWord&"%'  Or k.KeyWord Like '%"&KeyWord&"%' Or k.nKeyWord Like '%"&KeyWord&"%' Or k.LinkUrl Like '%"&KeyWord&"%' Or k.LinkTitle Like '%"&KeyWord&"%' Order By KeyID Desc"
-	Else
-		Sql = "Select k.*,u.UserName,u.BokeName From Dv_Boke_KeyWord k Inner Join Dv_Boke_User u On k.UserID=u.UserID Order By KeyID Desc"
-	End If
-	If Not IsObject(Boke_Conn) Then Boke_ConnectionDatabase
-	Set Rs=Dvbbs.iCreateObject("Adodb.RecordSet")
-	Rs.Open Sql,Boke_Conn,1,3
-	If Not (Rs.Eof And Rs.Bof) Then
-		Rs.PageSize = 30
-		Rs.AbsolutePage=CurrentPage
-		Page_Count=0
-		TotalRec=Rs.RecordCount
-		While (Not Rs.Eof) And (Not Page_Count = 30)
-			If TableClass = "td2" Then
-				TableClass="td1"
-			Else
-				TableClass="td2"
-			End If
-%>
-<tr align=center>
-<td class="<%=TableClass%>" height=24 align=left>
-<%=Server.HtmlEncode(Rs("UserName"))%>(<%=Server.HtmlEncode(Rs("BokeName"))%>)
-</td>
-<td class="<%=TableClass%>" align=left>
-<%=Server.HtmlEncode(Rs("KeyWord"))%>(<%=Server.HtmlEncode(Rs("nKeyWord"))%>)
-</td>
-<td class="<%=TableClass%>" align=left>
-<a href="<%=Server.HtmlEncode(Rs("LinkUrl")&"")%>" target=_blank title="<%=Server.HtmlEncode(Rs("LinkTitle")&"")%>"><%=Server.HtmlEncode(Rs("LinkUrl")&"")%></a>
-</td>
-<td class="<%=TableClass%>" align=left>
-<input type="checkbox" name="KeyID" value="<%=Rs("KeyID")%>">
-<a href="?s=6&Action=Edit&KeyID=<%=Rs("KeyID")%>">±à¼­</a>
-</td>
-</tr>
-<%
-			Page_Count = Page_Count + 1
-		Rs.MoveNext
-		Wend
-		Pcount=Rs.PageCount
-%>
-<tr><td colspan=3 class=td1 align=center>·ÖÒ³£º
-<%
-	Dim Searchstr
-	Searchstr = "?s=6&KeyWord=" & KeyWord
-	if currentpage > 4 then
-		response.write "<a href="""&Searchstr&"&page=1"">[1]</a> ..."
-	end if
-	if Pcount>currentpage+3 then
-		endpage=currentpage+3
-	else
-		endpage=Pcount
-	end if
-	for i=currentpage-3 to endpage
-	if not i<1 then
-		if i = clng(currentpage) then
-        response.write " <font color=red>["&i&"]</font>"
-		else
-        response.write " <a href="""&Searchstr&"&page="&i&""">["&i&"]</a>"
-		end if
-	end if
-	next
-	if currentpage+3 < Pcount then 
-		response.write "... <a href="""&Searchstr&"&page="&Pcount&""">["&Pcount&"]</a>"
-	end if
-%>
-</td>
-<td align=left class=td1>
-<input type=submit name=submit value="É¾³ı" class="button">
-</td>
-</tr>
-</FORM>
-<%
-	End If
-	Rs.Close
-	Set Rs=Nothing
-End If
-%>
-</table>
-<%
-End Sub
-
-Sub Boke_UserCat()
-	Dim Rs,Sql,i,TableClass,KeyWord
-	Dim CurrentPage,Page_Count,Pcount
-	Dim TotalRec,EndPage
-	Dim KeyID
-	CurrentPage=Request("page")
-	If CurrentPage="" Or Not IsNumeric(CurrentPage) Then
-		CurrentPage=1
-	Else
-		CurrentPage=Clng(CurrentPage)
-		If Err Then
-			CurrentPage=1
-			Err.Clear
-		End If
-	End If
-	KeyWord = Dvbbs.CheckStr(Request("KeyWord"))
-%>
-<table width="100%" border="0" cellspacing="0" cellpadding="0"  align=center class="tableBorder">
-<tr> 
-<th width="100%" colspan=6 height=25 align=left ID="TableTitleLink">&nbsp;&nbsp;²©¿ÍÏµÍ³ÓÃ»§À¸Ä¿¹ÜÀí
-</th>
-</tr>
-<tr>
-<td class="td1" colspan=6 height=25>
-<B>ËµÃ÷</B>£ºµã»÷À¸Ä¿Ãû³Æ½øÈë¸ÃÀ¸Ä¿ÎÄÕÂÁĞ±í
-</td>
-</tr>
-<FORM METHOD=POST ACTION="?s=3">
-<tr>
-<td class="td1" colspan=6 height=25>
-<B>ËÑË÷</B>£º<input type="text" value="<%=KeyWord%>" name="KeyWord">
-<input type=submit name=submit value="²éÑ¯" class="button">
-¿É¸ù¾İÓÃ»§Ãû¡¢²©¿ÍÃû¡¢À¸Ä¿Ãû¡¢À¸Ä¿ËµÃ÷µÈÄ£ºı²éÑ¯
-</td>
-</tr>
-</FORM>
-<%
-If Request("Action")="Edit" Then
-	If Request("ID") = "" Or Not IsNumeric(Request("ID")) Then
-		Manage_Err "·Ç·¨µÄ¹Ø¼ü×Ö²ÎÊı","6","?s=3"
-		Exit Sub
-	End If
-	Set Rs = DvBoke.Execute("Select * From Dv_Boke_UserCat Where uCatID = " & Request("ID"))
-	If Rs.Eof And Rs.Bof Then
-		Manage_Err "·Ç·¨µÄ¹Ø¼ü×Ö²ÎÊı","6","?s=3"
-		Rs.Close
-		Set Rs=Nothing
-		Exit Sub
-	End If
-%>
-<FORM METHOD=POST ACTION="?s=3&Action=SaveEdit">
-<input type=hidden value="<%=Request("ID")%>" name="ID">
-<tr align=center>
-<td class="td2" height=24 colspan=6>
-<B>±à¼­²©¿ÍÏµÍ³ÓÃ»§À¸Ä¿</B>
-</td>
-</tr>
-<tr>
-<td class="td1" height=24 width="35%" align=right>
-<B>À¸Ä¿Ãû³Æ</B>£º
-</td>
-<td class="td1" width="65%">
-<input type="text" name="Title" size="50" value="<%=Server.HtmlEncode(Rs("uCatTitle"))%>">
-</td>
-</tr>
-<tr>
-<td class="td2" height=24 width="35%" align=right>
-<B>À¸Ä¿ËµÃ÷</B>£º
-</td>
-<td class="td2" width="65%">
-<textarea name="Note" cols="50" rows="5"><%=Server.HtmlEncode(Rs("uCatNote")&"")%></textarea>
-</td>
-</tr>
-<tr align=center>
-<td class="td1" height=24 colspan=6>
-<input type=submit name=submit value="±à¼­ÓÃ»§²©¿ÍÀ¸Ä¿" class="button">
-</td>
-</tr>
-</FORM>
-<%
-ElseIf Request("Action")="SaveEdit" Then
-	If Request("Title")="" Then
-		Manage_Err "ÇëÌîĞ´À¸Ä¿µÄÃû³Æ","6","?s=3"
-		Exit Sub
-	End If
-	If Request("ID") = "" Or Not IsNumeric(Request("ID")) Then
-		Manage_Err "·Ç·¨µÄÀ¸Ä¿²ÎÊı","6","?s=3"
-		Exit Sub
-	End If
-	DvBoke.Execute("Update Dv_Boke_UserCat Set uCatTitle='"&Replace(Request("Title"),"'","''")&"',uCatNote='"&Replace(Request("Note"),"'","''")&"' Where uCatID = " & Request("ID"))
-	Manage_Suc "Äú³É¹¦±à¼­ÁË²©¿ÍÀ¸Ä¿","6","?s=3"
-ElseIf Request("Action")="Del" Then
-	KeyID = Request("ID")
-	If KeyID = "" Or Not IsNumeric(KeyID) Then
-		Manage_Err "·Ç·¨µÄÀ¸Ä¿ID","4","?s=3"
-		Exit Sub
-	End If
-	DvBoke.Execute("Delete From Dv_Boke_UserCat Where uCatID=" & KeyID)
-	Manage_Suc "Äú³É¹¦É¾³ıÁËÓÃ»§²©¿ÍÀ¸Ä¿","6","?s=3"
-Else
-%>
-<tr align=center>
-<td class="bodytitle" height=24 align=left>
-&nbsp;<B>ÓÃ»§</B>
-</td>
-<td class="bodytitle" align=left>
-<B>À¸Ä¿Ãû³Æ</B>
-</td>
-<td class="bodytitle" align=left>
-<B>½ñÈÕ</B>
-</td>
-<td class="bodytitle" align=left>
-<B>ÎÄÕÂ</B>
-</td>
-<td class="bodytitle" align=left>
-<B>ÆÀÂÛ</B>
-</td>
-<td class="bodytitle" align=left>
-<B>²Ù×÷</B>
-</td>
-</tr>
-<FORM METHOD=POST ACTION="?s=6&Action=Del">
-<%
-	If KeyWord <> "" Then
-		Sql = "Select k.*,u.UserName,u.BokeName From Dv_Boke_UserCat k Inner Join Dv_Boke_User u On k.UserID=u.UserID Where u.UserName Like '%"&KeyWord&"%' Or u.BokeName Like '%"&KeyWord&"%'  Or k.uCatTitle Like '%"&KeyWord&"%' Or k.uCatNote Like '%"&KeyWord&"%' Order By uCatID Desc"
-	Else
-		Sql = "Select k.*,u.UserName,u.BokeName From Dv_Boke_UserCat k Inner Join Dv_Boke_User u On k.UserID=u.UserID Order By uCatID Desc"
-	End If
-	If Not IsObject(Boke_Conn) Then Boke_ConnectionDatabase
-	Set Rs=Dvbbs.iCreateObject("Adodb.RecordSet")
-	Rs.Open Sql,Boke_Conn,1,3
-	If Not (Rs.Eof And Rs.Bof) Then
-		Rs.PageSize = 30
-		Rs.AbsolutePage=CurrentPage
-		Page_Count=0
-		TotalRec=Rs.RecordCount
-		While (Not Rs.Eof) And (Not Page_Count = 30)
-			If TableClass = "td2" Then
-				TableClass="td1"
-			Else
-				TableClass="td2"
-			End If
-%>
-<tr align=center>
-<td class="<%=TableClass%>" height=24 align=left>
-<%=Server.HtmlEncode(Rs("UserName"))%>(<%=Server.HtmlEncode(Rs("BokeName"))%>)
-</td>
-<td class="<%=TableClass%>" align=left>
-<%=Server.HtmlEncode(Rs("uCatTitle"))%>
-</td>
-<td class="<%=TableClass%>" align=left>
-<%=Rs("TodayNum")%>
-</td>
-<td class="<%=TableClass%>" align=left>
-<%=Rs("TopicNum")%>
-</td>
-<td class="<%=TableClass%>" align=left>
-<%=Rs("PostNum")%>
-</td>
-<td class="<%=TableClass%>" align=left>
-<a href="?s=3&Action=Edit&ID=<%=Rs("uCatID")%>">±à¼­</a> | 
-<%
-	If Rs("TopicNum") = 0 Then
-%>
-<a href=# onclick="alertreadme('É¾³ı½«°üÀ¨¸ÃÀ¸Ä¿µÄËùÓĞĞÅÏ¢£¬È·¶¨É¾³ıÂğ?','?s=3&Action=Del&ID=<%=Rs("uCatID")%>')">É¾³ı</a>
-<%
-	Else
-%>
-<a href=# onclick="alertreadme('¸Ã·ÖÀ¸º¬ÓĞÓÃ»§²©¿ÍÎÄÕÂ£¬±ØĞëÏÈÉ¾³ı»òÒÆ¶¯À¸Ä¿ÄÚµÄÎÄÕÂ·½ÄÜÉ¾³ı±¾·ÖÀ¸£¡','#')">É¾³ı</a>
-<%
-	End If
-%>
-</td>
-</tr>
-<%
-			Page_Count = Page_Count + 1
-		Rs.MoveNext
-		Wend
-		Pcount=Rs.PageCount
-%>
-<tr><td colspan=6 class=td1 align=center>·ÖÒ³£º
-<%
-	Dim Searchstr
-	Searchstr = "?s=3&KeyWord=" & KeyWord
-	if currentpage > 4 then
-		response.write "<a href="""&Searchstr&"&page=1"">[1]</a> ..."
-	end if
-	if Pcount>currentpage+3 then
-		endpage=currentpage+3
-	else
-		endpage=Pcount
-	end if
-	for i=currentpage-3 to endpage
-	if not i<1 then
-		if i = clng(currentpage) then
-        response.write " <font color=red>["&i&"]</font>"
-		else
-        response.write " <a href="""&Searchstr&"&page="&i&""">["&i&"]</a>"
-		end if
-	end if
-	next
-	if currentpage+3 < Pcount then 
-		response.write "... <a href="""&Searchstr&"&page="&Pcount&""">["&Pcount&"]</a>"
-	end if
-%>
-</td>
-</tr>
-</FORM>
-<%
-	End If
-	Rs.Close
-	Set Rs=Nothing
-End If
-%>
-</table>
-<%
-End Sub
-
-Sub Boke_User()
-	Dim Rs,Sql,i,TableClass,KeyWord
-	Dim CurrentPage,Page_Count,Pcount
-	Dim TotalRec,EndPage
-	Dim ID,tRs
-	CurrentPage=Request("page")
-	If CurrentPage="" Or Not IsNumeric(CurrentPage) Then
-		CurrentPage=1
-	Else
-		CurrentPage=Clng(CurrentPage)
-		If Err Then
-			CurrentPage=1
-			Err.Clear
-		End If
-	End If
-	KeyWord = Dvbbs.CheckStr(Request("KeyWord"))
-%>
-<table width="100%" border="0" cellspacing="0" cellpadding="0"  align=center class="tableBorder">
-<tr> 
-<th width="100%" colspan=6 height=25 align=left ID="TableTitleLink">&nbsp;&nbsp;²©¿ÍÏµÍ³ÓÃ»§¹ÜÀí
-</th>
-</tr>
-<FORM METHOD=POST ACTION="?s=2">
-<tr>
-<td class="td1" colspan=6 height=25>
-<B>ËÑË÷</B>£º<input type="text" value="<%=KeyWord%>" name="KeyWord">
-<input type=submit name=submit value="²éÑ¯" class="button">
-¿É¸ù¾İÓÃ»§Ãû¡¢²©¿ÍÃû¡¢±êÌâ¡¢ËµÃ÷µÈÄ£ºı²éÑ¯
-</td>
-</tr>
-</FORM>
-<%
-If Request("Action")="Edit" Then
-	If Request("ID") = "" Or Not IsNumeric(Request("ID")) Then
-		Manage_Err "·Ç·¨µÄÓÃ»§²ÎÊı","6","?s=2"
-		Exit Sub
-	End If
-	Set Rs=DvBoke.Execute("Select * From Dv_Boke_User Where UserID = " & Request("ID"))
-%>
-<tr>
-<td class="td2" colspan=6 height=25>
-<B>±à¼­²©¿ÍÓÃ»§×ÊÁÏ</B> | <a href="<%=Dvbbs.CacheData(33,0)%>user.asp?action=modify&userid=<%=Request("ID")%>">µã»÷±à¼­´ËÓÃ»§ÂÛÌ³×ÊÁÏ</a>
-</td>
-</tr>
-<FORM METHOD=POST ACTION="?s=2&Action=SaveEdit">
-<input type="hidden" name="ID" value="<%=Request("ID")%>">
-<tr>
-<td class="td1" height=25>
-²©¿ÍÀà±ğ£º
-</td>
-<td class="td1" colspan=5 height=25>
-<Select Name="SysCatID" Size=1>
-<%
-	Set tRs=DvBoke.Execute("Select * From Dv_Boke_SysCat Order By sCatID")
-	Do While Not tRs.Eof
-		Response.Write "<Option value="""&tRs("sCatID")&""""
-		If Rs("SysCatID")=tRs("sCatID") Then Response.Write " Selected"
-		Response.Write ">"&tRs("sCatTitle")&"</Option>"
-	tRs.MoveNext
-	Loop
-	tRs.Close
-	Set tRs=Nothing
-%>
-</Select>
-</td>
-</tr>
-<tr>
-<td class="td1" height=25>
-Ê¹ÓÃÄ£°å£º
-</td>
-<td class="td1" colspan=5 height=25>
-<Select Name="SkinID" Size=1>
-<%
-	Set tRs=DvBoke.Execute("Select * From Dv_Boke_Skins Order By s_ID")
-	Do While Not tRs.Eof
-		Response.Write "<Option value="""&tRs("s_ID")&""""
-		If Rs("SkinID")=tRs("s_ID") Then Response.Write " Selected"
-		Response.Write ">"&tRs("S_SkinName")&"</Option>"
-	tRs.MoveNext
-	Loop
-	tRs.Close
-	Set tRs=Nothing
-%>
-</Select>
-</td>
-</tr>
-<tr>
-<td class="td1" height=25 width="20%">
-ÓÃ»§Ãû£º
-</td>
-<td class="td1" colspan=5 height=25>
-<%=Rs("UserName")%>
-</td>
-</tr>
-<tr>
-<td class="td1" height=25>
-²©¿ÍÃû£º
-</td>
-<td class="td1" colspan=5 height=25>
-<input type=text name="BokeName" value="<%=Rs("BokeName")%>">
-</td>
-</tr>
-<tr>
-<td class="td1" height=25>
-²©¿Í±ÊÃû£º
-</td>
-<td class="td1" colspan=5 height=25>
-<input type=text name="NickName" value="<%=Rs("NickName")%>">
-</td>
-</tr>
-<tr>
-<td class="td1" height=25>
-²©¿ÍÃÜÂë£º
-</td>
-<td class="td1" colspan=5 height=25>
-<input type=text name="PassWord" value="">
-Èç¹û²»ĞŞ¸ÄÇëÁô¿Õ
-</td>
-</tr>
-<tr>
-<td class="td1" height=25>
-²©¿Í±êÌâ£º
-</td>
-<td class="td1" colspan=5 height=25>
-<input type=text name="BokeTitle" value="<%=Server.HtmlEncode(Rs("BokeTitle")&"")%>">
-</td>
-</tr>
-<tr>
-<td class="td1" height=25>
-²©¿Í×Ó±êÌâ£º
-</td>
-<td class="td1" colspan=5 height=25>
-<input type=text name="BokeChildTitle" value="<%=Server.HtmlEncode(Rs("BokeChildTitle")&"")%>">
-</td>
-</tr>
-<tr>
-<td class="td1" height=25>
-²©¿Í¹«¸æ£º
-</td>
-<td class="td1" colspan=5 height=25>
-<textarea name=BokeNote rows=4 cols=80><%=Server.HtmlEncode(Rs("BokeNote")&"")%></textarea>
-</td>
-</tr>
-<tr>
-<td class="td1" height=25>
-¿ªÍ¨Ê±¼ä£º
-</td>
-<td class="td1" colspan=5 height=25>
-<input type=text name="JoinBokeTime" value="<%=Rs("JoinBokeTime")%>">
-</td>
-</tr>
-<tr>
-<td class="td1" height=25>
-½ñÈÕĞÅÏ¢Êı£º
-</td>
-<td class="td1" colspan=5 height=25>
-<input type=text name="TodayNum" value="<%=Rs("TodayNum")%>">
-</td>
-</tr>
-<tr>
-<td class="td1" height=25>
-ÎÄÕÂ×ÜÊı£º
-</td>
-<td class="td1" colspan=5 height=25>
-<input type=text name="TopicNum" value="<%=Rs("TopicNum")%>">
-</td>
-</tr>
-<tr>
-<td class="td1" height=25>
-ÆÀÂÛ×ÜÊı£º
-</td>
-<td class="td1" colspan=5 height=25>
-<input type=text name="PostNum" value="<%=Rs("PostNum")%>">
-</td>
-</tr>
-<tr>
-<td class="td1" height=25>
-ÊÕ²Ø×ÜÊı£º
-</td>
-<td class="td1" colspan=5 height=25>
-<input type=text name="FavNum" value="<%=Rs("FavNum")%>">
-</td>
-</tr>
-<tr>
-<td class="td1" height=25>
-ÏàÆ¬×ÜÊı£º
-</td>
-<td class="td1" colspan=5 height=25>
-<input type=text name="PhotoNum" value="<%=Rs("PhotoNum")%>">
-</td>
-</tr>
-<tr>
-<td class="td1" height=25>
-TrackBacksÊı£º
-</td>
-<td class="td1" colspan=5 height=25>
-<input type=text name="TrackBacks" value="<%=Rs("TrackBacks")%>">
-</td>
-</tr>
-<tr>
-<td class="td1" height=25>
-·ÃÎÊÓÃ»§Êı£º
-</td>
-<td class="td1" colspan=5 height=25>
-<input type=text name="PageView" value="<%=Rs("PageView")%>">
-</td>
-</tr>
-<tr>
-<td class="td1" height=25>
-¿Õ¼ä´óĞ¡£º
-</td>
-<td class="td1" colspan=5 height=25>
-<input type=text name="SpaceSize" value="<%=Rs("SpaceSize")%>">
--1 Îª²»ÏŞÖÆ
-</td>
-</tr>
-<tr>
-<td class="td1" height=25>
-</td>
-<td class="td1" colspan=5 height=25>
-<input type=submit name="submit" value="ĞŞ¸ÄÓÃ»§×ÊÁÏ" class="button">
-</td>
-</tr>
-</FORM>
-<%
-	Rs.Close
-	Set Rs=Nothing
-ElseIf Request("Action")="SaveEdit" Then
-	If Request("SysCatID")="" Or Not IsNumeric(Request("SysCatID")) Or Request("SkinID")="" Or Not IsNumeric(Request("SkinID")) Or Request("TodayNum")="" Or Not IsNumeric(Request("TodayNum")) Or Request("TopicNum")="" Or Not IsNumeric(Request("TopicNum")) Or Request("PostNum")="" Or Not IsNumeric(Request("PostNum")) Or Request("FavNum")="" Or Not IsNumeric(Request("FavNum")) Or Request("PhotoNum")="" Or Not IsNumeric(Request("PhotoNum")) Or Request("TrackBacks")="" Or Not IsNumeric(Request("TrackBacks")) Or Request("PageView")="" Or Not IsNumeric(Request("PageView")) Or Request("SpaceSize")="" Or Not IsNumeric(Request("SpaceSize")) Or Request("JoinBokeTime")="" Or Not IsDate(Request("JoinBokeTime")) Then
-		Manage_Err "·Ç·¨µÄ²ÎÊı¡£Çë×¢ÒâÊÇ·ñÍêÕûÌîĞ´ÁËĞÅÏ¢£¬ÒÔ¼°¸÷ÏîĞÅÏ¢ÊÇ·ñ°´ÕıÈ·µÄÈÕÆÚ»òÊı×Ö¸ñÊ½ÌîĞ´¡£","6","?s=2"
-		Exit Sub
-	End If
-	If Request("ID") = "" Or Not IsNumeric(Request("ID")) Then
-		Manage_Err "·Ç·¨µÄÓÃ»§²ÎÊı","6","?s=2"
-		Exit Sub
-	End If
-	If Request("BokeName") = "" Then
-		Manage_Err "ÇëÌîĞ´ÓÃ»§²©¿ÍÃû³Æ","6","?s=2"
-		Exit Sub
-	End If
-	If Request("NickName") = "" Then
-		Manage_Err "ÇëÌîĞ´ÓÃ»§²©¿Í±ÊÃû","6","?s=2"
-		Exit Sub
-	End If
-	Dim NewPassWord
-	If Request("PassWord") <> "" Then
-		NewPassWord = MD5(Request("PassWord"),16)
-	End If
-	Sql = "Select * From Dv_Boke_User Where UserID = " & Request("ID")
-	If Not IsObject(Boke_Conn) Then Boke_ConnectionDatabase
-	Set Rs=Dvbbs.iCreateObject("Adodb.RecordSet")
-	Rs.Open Sql,Boke_Conn,1,3
-	If Not (Rs.Eof And Rs.Bof) Then
-		Rs("BokeName")=Replace(Request("BokeName"),"'","")
-		Rs("NickName")=Replace(Request("NickName"),"'","")
-		Rs("BokeTitle")=Replace(Request("BokeTitle"),"'","")
-		Rs("BokeChildTitle")=Replace(Request("BokeChildTitle"),"'","")
-		Rs("BokeNote")=Replace(Request("BokeNote"),"'","")
-		If NewPassWord<>"" Then Rs("PassWord")=NewPassWord
-		Rs("SysCatID")=Request("SysCatID")
-		Rs("SkinID")=Request("SkinID")
-		Rs("TodayNum")=Request("TodayNum")
-		Rs("TopicNum")=Request("TopicNum")
-		Rs("PostNum")=Request("PostNum")
-		Rs("FavNum")=Request("FavNum")
-		Rs("PhotoNum")=Request("PhotoNum")
-		Rs("TrackBacks")=Request("TrackBacks")
-		Rs("PageView")=Request("PageView")
-		Rs("SpaceSize")=Request("SpaceSize")
-		Rs("JoinBokeTime")=Request("JoinBokeTime")
-		Rs.Update
-	End If
-	Rs.Close
-	Set Rs=Nothing
-	Manage_Suc "Äú³É¹¦±à¼­ÁË²©¿ÍÓÃ»§×ÊÁÏ","6","?s=2"
-ElseIf Request("Action")="Del" Then
-	ID = Request("ID")
-	If ID = "" Or Not IsNumeric(ID) Then
-		Manage_Err "·Ç·¨µÄÓÃ»§²ÎÊı","6","?s=2"
-		Exit Sub
-	End If
-	Set Rs = DvBoke.Execute("Select SysCatID,TodayNum,TopicNum,PostNum,FavNum,PhotoNum From Dv_Boke_User Where UserID="&ID)
-	If Rs.Eof Then
-		Manage_Err "¸ÃÓÃ»§ÒÑ²»´æÔÚ","6","?s=2"
-		Exit Sub
-	Else
-		DvBoke.Execute("Update Dv_Boke_SysCat Set uCatNum = uCatNum-1,TopicNum = TopicNum -"&Rs(2)&",PostNum = PostNum - "&Rs(3)&" Where sCatID=" & Rs(0))
-		DvBoke.Execute("Update Dv_Boke_System Set S_UserNum = S_UserNum-1,S_TopicNum = S_TopicNum -"&Rs(2)&",S_PostNum = S_PostNum - "&Rs(3)&",S_PhotoNum = S_PhotoNum - "&Rs(5)&",S_FavNum = S_FavNum - "&Rs(4))
-	End If
-	Rs.Close
-	Set Rs = Nothing
-
-	'É¾³ıÓÃ»§ÎÄÕÂ
-	DvBoke.Execute("Delete From [Dv_Boke_Topic] Where UserID = "&ID)
-	DvBoke.Execute("Delete From [Dv_Boke_Post] Where BokeUserID = "&ID)
-	DvBoke.Execute("Delete From [Dv_Boke_Post] Where BokeUserID = "&ID)
-	DvBoke.Execute("Delete From [Dv_Boke_Upfile] Where BokeUserID = "&ID)
-	DvBoke.Execute("Delete From [Dv_Boke_KeyWord] Where UserID = "&ID)
-	DvBoke.Execute("Delete From [Dv_Boke_UserCat] Where UserID = "&ID)
-	DvBoke.Execute("Delete From [Dv_Boke_UserSave] Where UserID = "&ID)
-	DvBoke.Execute("Delete From Dv_Boke_User Where UserID=" & ID)
-	'É¾³ıÓÃ»§ÉÏ´«Ä¿Â¼
-	Dim objFSO,UserFolder
-	Set objFSO = Dvbbs.iCreateObject("Scripting.FileSystemObject")
-	UserFolder = DvBoke.System_UpSetting(19) & ID
-	If objFSO.FolderExists(Server.MapPath(UserFolder)) Then
-		objFSO.DeleteFolder(Server.MapPath(UserFolder))
-	End If
-	Set objFSO = Nothing
-	DvBoke.LoadSetup(1)
-	Manage_Suc "Äú³É¹¦É¾³ıÁË²©¿ÍÓÃ»§","6","?s=2"
-Else
-%>
-<tr align=center>
-<td class="bodytitle" height=24 align=left>
-&nbsp;<B>ÓÃ»§</B>
-</td>
-<td class="bodytitle" align=left>
-<B>Àà±ğ</B>
-</td>
-<td class="bodytitle" align=left>
-<B>½ñÈÕ</B>
-</td>
-<td class="bodytitle" align=left>
-<B>ÎÄÕÂ</B>
-</td>
-<td class="bodytitle" align=left>
-<B>ÆÀÂÛ</B>
-</td>
-<td class="bodytitle" align=left>
-<B>²Ù×÷</B>
-</td>
-</tr>
-<FORM METHOD=POST ACTION="?s=2&Action=Move">
-<%
-	If KeyWord <> "" Then
-		Sql = "Select u.*,c.sCatTitle From Dv_Boke_User u Inner Join Dv_Boke_SysCat c On u.SysCatID=c.sCatID Where u.UserName Like '%"&KeyWord&"%' Or u.BokeName Like '%"&KeyWord&"%' Or u.BokeTitle Like '%"&KeyWord&"%' Or u.BokeChildTitle Like '%"&KeyWord&"%' Order By u.JoinBokeTime Desc"
-	Else
-		Sql = "Select u.*,c.sCatTitle From Dv_Boke_User u Inner Join Dv_Boke_SysCat c On u.SysCatID=c.sCatID Order By u.JoinBokeTime Desc"
-	End If
-	If Not IsObject(Boke_Conn) Then Boke_ConnectionDatabase
-	Set Rs=Dvbbs.iCreateObject("Adodb.RecordSet")
-	Rs.Open Sql,Boke_Conn,1,3
-	If Not (Rs.Eof And Rs.Bof) Then
-		Rs.PageSize = 30
-		Rs.AbsolutePage=CurrentPage
-		Page_Count=0
-		TotalRec=Rs.RecordCount
-		While (Not Rs.Eof) And (Not Page_Count = 30)
-			If TableClass = "td2" Then
-				TableClass="td1"
-			Else
-				TableClass="td2"
-			End If
-%>
-<tr align=center>
-<td class="<%=TableClass%>" height=24 align=left>
-<%=Server.HtmlEncode(Rs("UserName"))%>(<%=Server.HtmlEncode(Rs("BokeName"))%>)
-</td>
-<td class="<%=TableClass%>" align=left>
-<%=Server.HtmlEncode(Rs("sCatTitle"))%>
-</td>
-<td class="<%=TableClass%>" align=left>
-<%=Rs("TodayNum")%>
-</td>
-<td class="<%=TableClass%>" align=left>
-<%=Rs("TopicNum")%>
-</td>
-<td class="<%=TableClass%>" align=left>
-<%=Rs("PostNum")%>
-</td>
-<td class="<%=TableClass%>" align=left>
-<a href="?s=2&Action=Edit&ID=<%=Rs("UserID")%>">±à¼­</a> | 
-<%
-	If Rs("TopicNum") = 0 Then
-%>
-<a href=# onclick="alertreadme('É¾³ı½«°üÀ¨¸ÃÓÃ»§µÄËùÓĞĞÅÏ¢£¬È·¶¨É¾³ıÂğ?','?s=2&Action=Del&ID=<%=Rs("UserID")%>')">É¾³ı</a>
-<%
-	Else
-%>
-<a href=# onclick="alertreadme('¸Ã·ÖÀ¸º¬ÓĞÓÃ»§ÎÄÕÂ£¬±ØĞëÏÈÉ¾³ı»òÒÆ¶¯ÓÃ»§µÄÎÄÕÂ·½ÄÜÉ¾³ı±¾·ÖÀ¸£¡','#')">É¾³ı</a>
-<%
-	End If
-%>
-</td>
-</tr>
-<%
-			Page_Count = Page_Count + 1
-		Rs.MoveNext
-		Wend
-		Pcount=Rs.PageCount
-%>
-<tr><td colspan=6 class=td1 align=center>·ÖÒ³£º
-<%
-	Dim Searchstr
-	Searchstr = "?s=2&KeyWord=" & KeyWord
-	if currentpage > 4 then
-		response.write "<a href="""&Searchstr&"&page=1"">[1]</a> ..."
-	end if
-	if Pcount>currentpage+3 then
-		endpage=currentpage+3
-	else
-		endpage=Pcount
-	end if
-	for i=currentpage-3 to endpage
-	if not i<1 then
-		if i = clng(currentpage) then
-        response.write " <font color=red>["&i&"]</font>"
-		else
-        response.write " <a href="""&Searchstr&"&page="&i&""">["&i&"]</a>"
-		end if
-	end if
-	next
-	if currentpage+3 < Pcount then 
-		response.write "... <a href="""&Searchstr&"&page="&Pcount&""">["&Pcount&"]</a>"
-	end if
-%>
-</td>
-</tr>
-</FORM>
-<%
-	End If
-	Rs.Close
-	Set Rs=Nothing
-End If
-%>
-</table>
-<%
-End Sub
-
-Sub Boke_Setting()
-	Dim i,Rs
-	Dim Boke_Setting,UploadSetting
-%>
-<iframe width="260" height="165" id="colourPalette" src="images/post/nc_selcolor.htm" style="visibility:hidden; position: absolute; left: 0px; top: 0px;border:1px gray solid" frameborder="0" scrolling="no" ></iframe>
-<table width="100%" border="0" cellspacing="0" cellpadding="0"  align=center class="tableBorder">
-<tr> 
-<th width="100%" colspan=6 height=25 align=left ID="TableTitleLink">&nbsp;&nbsp;²©¿ÍÏµÍ³ÉèÖÃ
-</th>
-</tr>
-<a name="top"></a>
-<tr>
-<td class="td1" colspan=6 height=25>
-<a href="<%=Dvbbs.CacheData(33,0)%>setting.asp#settingxu">ÏµÍ³²©¿Í¿ª¹Ø</a> | <a href="?s=8#setting1">»ù±¾ĞÅÏ¢</a> | <a href="?s=8#setting2">»ù±¾ÉèÖÃ</a> | <a href="?s=8#setting3">ÉÏ´«ÉèÖÃ</a> | <a href="?s=8&Action=Weather">ÌìÆøÉèÖÃ</a>
-</td>
-</tr>
-<%
-If Request("Action")="Save" Then
-	Dim BokeName,BokeUrl,BokeDomain
-	Dim TempStr,iSetting
-	BokeName = DvBoke.CheckStr(Request.Form("BokeName"))
-	BokeUrl = DvBoke.CheckStr(Request.Form("BokeUrl"))
-	BokeDomain = DvBoke.CheckStr(Request.Form("BokeDomain"))
-
-	UploadSetting = ""
-	For i=0 To 20
-		Tempstr = Trim(Request.Form("UploadSetting("&i&")"))
-		If Tempstr = "" Then
-			UploadSetting = UploadSetting & 1
-		Else
-			UploadSetting = UploadSetting & Replace(Replace(Tempstr,"|",""),",","")
-		End If
-		If i<20 Then
-			UploadSetting = UploadSetting & "|"
-		End If
-	Next
-
-	If Request("t") = "1" Then
-		UploadSetting = ""
-		Dim iWeather_A,iWeather_B
-		Dim TempStr_A,TempStr_B
-		If Request("WeatherNum") <> "-1" Then
-			For i = 0 To Request("WeatherNum")
-				Tempstr_A = Trim(Request.Form("Weather_A("&i&")"))
-				Tempstr_B = Trim(Request.Form("Weather_B("&i&")"))
-				If Tempstr_A <> "" And Tempstr_B <> "" Then
-					iWeather_A = iWeather_A & Replace(Replace(Tempstr_A,"|",""),",","")
-					iWeather_B = iWeather_B & Replace(Replace(Tempstr_B,"|",""),",","")
-				End If
-				If i < cLng(Request("WeatherNum")) And Tempstr_A <> "" And Tempstr_B <> "" Then
-					iWeather_A = iWeather_A & "|"
-					iWeather_B = iWeather_B & "|"
-				End If
-			Next
-		End If
-		If Request("nWeather_A")<>"" And Request("nWeather_B")<>"" Then
-			If iWeather_A <> "" Then
-				iWeather_A = iWeather_A & "|" & Request("nWeather_A")
-				iWeather_B = iWeather_B & "|" & Request("nWeather_B")
-			Else
-				iWeather_A = Request("nWeather_A")
-				iWeather_B = Request("nWeather_B")
-			End If
-		End If
-		For i = 0 To 100
-			If Trim(Request.Form("Boke_Setting("&i&")"))="" Or i = 13 Or i = 14 Then
-				iSetting=1
-				If i=13 Then
-					iSetting = iWeather_A
-				End If
-				If i=14 Then
-					iSetting = iWeather_B
-				End If
-			Else
-				iSetting=Replace(Trim(Request.Form("Boke_Setting("&i&")")),",","")
-			End If
-	
-			If i = 0 Then
-				Boke_Setting = iSetting
-			Else
-				Boke_Setting = Boke_Setting & "," & iSetting
-			End If
-		Next
-	Else
-		For i = 0 To 100
-			If Trim(Request.Form("Boke_Setting("&i&")"))="" or i = 12 Then
-				iSetting=1
-				If i=12 Then
-					iSetting = UploadSetting
-				End If
-			Else
-				iSetting=Replace(Trim(Request.Form("Boke_Setting("&i&")")),",","")
-			End If
-	
-			If i = 0 Then
-				Boke_Setting = iSetting
-			Else
-				Boke_Setting = Boke_Setting & "," & iSetting
-			End If
-		Next
-	End If
-
-	Boke_Setting = DvBoke.CheckStr(Boke_Setting)
-
-	'Response.Write Boke_Setting
-
-	DvBoke.Execute("UpDate Dv_Boke_System Set s_name='"&BokeName&"',s_url='"&BokeUrl&"',s_sdomain='"&BokeDomain&"',s_setting='"&Boke_Setting&"'")
-	DvBoke.LoadSetup(1)
-	
-	Manage_Suc "Äú³É¹¦±à¼­ÁË²©¿ÍÏµÍ³ÉèÖÃ","2","?s=8"
-ElseIf Request("Action")="Weather" Then
-	Set Rs=DvBoke.Execute("Select Top 1 * From Dv_Boke_System")
-	Boke_Setting = Rs("S_Setting")
-	If Boke_Setting = "" Or IsNull(Boke_Setting) Then Boke_Setting = "1,1,0,1,1,1,20,20,15,3,1,1,1|0|0|999|bbs.dvbbs.net|12|1|Arial|0|images/WaterMap.gif|0.7|110|35|4|120|100|1|1|1|Boke/UploadFile/|0,1,1,-1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1"
-	Boke_Setting = Split(Boke_Setting,",")
-	If Ubound(Boke_Setting) < 100 Then Boke_Setting = Split("1,1,0,1,1,1,20,20,15,3,1,1,1|0|0|999|bbs.dvbbs.net|12|1|Arial|0|images/WaterMap.gif|0.7|110|35|4|120|100|1|1|1|Boke/UploadFile/|0,1,1,-1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1",",")
-	Dim Weather_A,Weather_B
-	Weather_A = Split(Boke_Setting(13),"|")
-	Weather_B = Split(Boke_Setting(14),"|")
-%>
-<FORM METHOD=POST ACTION="?s=8&Action=Save&t=1">
-</table>
-<BR>
-<%
-	For i = 0 To 12
-		Response.Write "<input type=hidden value="""&Boke_Setting(i)&""" name=""Boke_Setting("&i&")"">" & Chr(13)
-	Next
-%>
-<input type="hidden" name="BokeName" value="<%=Rs("s_name")%>">
-<input type="hidden" name="BokeUrl" value="<%=Rs("s_url")%>">
-<input type="hidden" name="BokeDomain" value="<%=Rs("s_sdomain")%>">
-<input type="hidden" name="WeatherNum" value="<%=Ubound(Weather_A)%>">
-<table border="0" cellspacing="1" cellpadding="3"  align=center class="tableBorder">
-<tr> 
-<th width="100%" colspan=3  align=Left id=tabletitlelink  height=25><b>²©¿ÍÌìÆøÉèÖÃ</b>[<a href="#top">¶¥²¿</a>]
-</th></tr>
-<tr>
-<td class="td1" colspan=6 height=25>
-<B>×¢Òâ</B>£ºÌìÆøÍ¼Æ¬Ä¬ÈÏÎ»ÖÃÓÚboke/images/weather/Ä¿Â¼ÏÂ£¬ĞÂÔöµÄÌìÆøÇë½«Ïà¹ØÍ¼Æ¬ÖÃÓÚ´ËÄ¿Â¼
-</td>
-</tr>
-<%
-	For i = 0 To Ubound(Weather_A)
-%>
-<tr> 
-<td width="50%" class=td1> <U>ÌìÆøĞÅÏ¢</U></td>
-<td width="50%" class=td1>  
-<input type="text" name="Weather_A(<%=i%>)" size="15" value="<%=Weather_A(i)%>">
-Í¼Æ¬
-<input type="text" name="Weather_B(<%=i%>)" size="15" value="<%=Weather_B(i)%>">
-<img src="boke/images/weather/<%=Weather_B(i)%>">
-</td>
-</tr>
-<%
-	Next
-%>
-<tr> 
-<td width="50%" class=td1> <U>ĞÂµÄÌìÆø</U></td>
-<td width="50%" class=td1>  
-<input type="text" name="nWeather_A" size="15" value="">
-Í¼Æ¬
-<input type="text" name="nWeather_B" size="15" value="">
-</td>
-</tr>
-<tr> 
-<td class=td1>&nbsp;</td>
-<td class=td1>
-<input type=submit name=submit value="Ìá½»¸ü¸Ä" class="button">
-</td>
-</tr>
-</table>
-</form>
-<%
-Else
-	Set Rs=DvBoke.Execute("Select Top 1 * From Dv_Boke_System")
-	Boke_Setting = Rs("S_Setting")
-	If Boke_Setting = "" Or IsNull(Boke_Setting) Then Boke_Setting = "1,1,0,1,1,1,20,20,15,3,1,1,1|0|0|999|bbs.dvbbs.net|12|1|Arial|0|images/WaterMap.gif|0.7|110|35|4|120|100|1|1|1|Boke/UploadFile/|0,1,1,-1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1"
-	Boke_Setting = Split(Boke_Setting,",")
-	If Ubound(Boke_Setting) < 100 Then Boke_Setting = Split("1,1,0,1,1,1,20,20,15,3,1,1,1|0|0|999|bbs.dvbbs.net|12|1|Arial|0|images/WaterMap.gif|0.7|110|35|4|120|100|1|1|1|Boke/UploadFile/|0,1,1,-1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1",",")
-	UploadSetting = Split(Boke_Setting(12),"|")
-	If Ubound(UploadSetting) < 2 Then UploadSetting = Split("1|0|0|999|bbs.dvbbs.net|12|1|Arial|0|images/WaterMap.gif|0.7|110|35|4|120|100|1|1|1|Boke/UploadFile/|0","|")
-%>
-</table>
-<FORM METHOD=POST ACTION="?s=8&Action=Save">
-<a name="setting1"></a>
-<BR>
-<table border="0" cellspacing="1" cellpadding="3"  align=center class="tableBorder">
-<tr> 
-<th width="100%" colspan=3  align=Left id=tabletitlelink  height=25><b>»ù±¾ĞÅÏ¢</b>[<a href="#top">¶¥²¿</a>]
-</th></tr>
-<tr> 
-<td width="50%" class=td1> <U>²©¿ÍÃû³Æ</U></td>
-<td width="50%" class=td1>  
-<input type="text" name="BokeName" size="35" value="<%=Rs("s_name")%>">
-</td>
-</tr>
-<tr> 
-<td width="50%" class=td1> <U>²©¿ÍËµÃ÷</U></td>
-<td width="50%" class=td1>  
-<textarea name="Boke_Setting(17)" cols="50" rows="3" ID="TDStopReadme"><%=Server.HtmlEncode(Boke_Setting(17)&"")%></textarea>
-</td>
-</tr>
-<tr> 
-<td width="50%" class=td1> <U>²©¿ÍµØÖ·</U><BR>ÇëÌîĞ´ÍêÕûURLµØÖ·£¬Èçhttp://www.dvbbs.net/boke/£¬<font color="red">²»ÄÜÊ¡ÂÔ×îºóµÄ/ºÅ</font>£¬´ËÉèÖÃ½«Ó°Ïìµ½RssºÍTrackbackµÄÕı³£ÔËĞĞ</td>
-<td width="50%" class=td1>  
-<input type="text" name="BokeUrl" size="35" value="<%=Rs("s_url")%>">
-</td>
-</tr>
-<tr> 
-<td width="50%" class=td1> <U>¶ş¼¶ÓòÃû¸ù</U><BR>Çë°´ÕÕdvbbs.netÕâÑùµÄĞÎÊ½ÊéĞ´£¬ÈçÓĞ¶à¸ö¶ş¼¶ÓòÃû£¬ÇëÓÃ¡°|¡±¸ô¿ª£¬<font color="red">Èç¹Ø±Õ¶ş¼¶ÓòÃû£¬ÇëÁô¿Õ</font><BR>´ËÉèÖÃĞèÏµÍ³Ö§³Ö£¬ÌîĞ´ºóÇëÔÄ¶Á²©¿ÍÏµÍ³ÉèÖÃÎÄµµ½øĞĞÏàÓ¦ÅäÖÃ<BR>¸Ã¹¦ÄÜÕı³£¿ªÆô×´Ì¬±íÏÖÎª²©¿ÍÓÃ»§¿É¸ù¾İ¡°ÓÃ»§²©¿Í±êÊ¶.¶ş¼¶ÓòÃû¸ù¡±½øÈë×Ô¼ºµÄ²©¿Í£¬Èç£ºshatan.dvbbs.net<BR>ÈçÏµÍ³²»Ö§³Ö¶ş¼¶ÓòÃûÉèÖÃ£¬¿ÉÒÔµ½ <a href="http://domain.iboker.com/reg.asp" target=_blank>domain.iboker.com</a> Ãâ·ÑÉêÇë</td>
-<td width="50%" class=td1>  
-<input type="text" name="BokeDomain" size="35" value="<%=Rs("s_sdomain")%>">
-</td>
-</tr>
-</table>
-<a name="setting2"></a>
-<BR>
-<table width="100%" border="0" cellspacing="1" cellpadding="3"  align=center class="tableBorder">
-<tr> 
-<th width="100%" colspan=3  align=Left id=tabletitlelink  height=25><b>»ù±¾ÉèÖÃ</b>[<a href="#top">¶¥²¿</a>]
-</th></tr>
-<tr> 
-<td width="50%" class=td1> <U>ĞÂÓÃ»§ÉêÇë</U></td>
-<td width="50%" class=td1>  
-<input type=radio class=radio name="Boke_Setting(0)" value=0 <%if Boke_Setting(0)="0" then%>checked<%end if%>>¹Ø±Õ&nbsp;
-<input type=radio class=radio name="Boke_Setting(0)" value=1 <%if Boke_Setting(0)="1" then%>checked<%end if%>>¿ªÆô&nbsp;
-</td>
-</tr>
-<tr> 
-<td width="50%" class=td1> <U>ÊÇ·ñ¿ªÆôÈ«ÎÄËÑË÷£¨½¨Òé¹Ø±Õ£©</U></td>
-<td width="50%" class=td1>  
-<input type=radio class=radio name="Boke_Setting(1)" value=0 <%if Boke_Setting(1)="0" then%>checked<%end if%>>¹Ø±Õ&nbsp;
-<input type=radio class=radio name="Boke_Setting(1)" value=1 <%if Boke_Setting(1)="1" then%>checked<%end if%>>¿ªÆô&nbsp;
-</td>
-</tr>
-<tr> 
-<td width="50%" class=td1> <U>ÓÎ¿Í·¢±íÆÀÂÛ</U></td>
-<td width="50%" class=td1>  
-<input type=radio class=radio name="Boke_Setting(2)" value=0 <%if Boke_Setting(2)="0" then%>checked<%end if%>>¹Ø±Õ&nbsp;
-<input type=radio class=radio name="Boke_Setting(2)" value=1 <%if Boke_Setting(2)="1" then%>checked<%end if%>>¿ªÆô&nbsp;
-</td>
-</tr>
-<tr> 
-<td width="50%" class=td1> <U>ÓÃ»§×¢²áÑéÖ¤Âë</U></td>
-<td width="50%" class=td1>  
-<input type=radio class=radio name="Boke_Setting(3)" value=0 <%if Boke_Setting(3)="0" then%>checked<%end if%>>¹Ø±Õ&nbsp;
-<input type=radio class=radio name="Boke_Setting(3)" value=1 <%if Boke_Setting(3)="1" then%>checked<%end if%>>¿ªÆô&nbsp;
-</td>
-</tr>
-<tr> 
-<td width="50%" class=td1> <U>ĞÂÎÄÕÂÑéÖ¤Âë</U></td>
-<td width="50%" class=td1>  
-<input type=radio class=radio name="Boke_Setting(4)" value=0 <%if Boke_Setting(4)="0" then%>checked<%end if%>>¹Ø±Õ&nbsp;
-<input type=radio class=radio name="Boke_Setting(4)" value=1 <%if Boke_Setting(4)="1" then%>checked<%end if%>>¿ªÆô&nbsp;
-</td>
-</tr>
-<tr> 
-<td width="50%" class=td1> <U>ÆÀÂÛÑéÖ¤Âë</U></td>
-<td width="50%" class=td1>  
-<input type=radio class=radio name="Boke_Setting(5)" value=0 <%if Boke_Setting(5)="0" then%>checked<%end if%>>¹Ø±Õ&nbsp;
-<input type=radio class=radio name="Boke_Setting(5)" value=1 <%if Boke_Setting(5)="1" then%>checked<%end if%>>¿ªÆô&nbsp;
-</td>
-</tr>
-<tr> 
-<td width="50%" class=td1> <U>ĞÂÎÄÕÂ¡¢ÆÀÂÛÊ±¼ä¼ä¸ô</U></td>
-<td width="50%" class=td1>  
-<input type="text" name="Boke_Setting(6)" size="35" value="<%=Boke_Setting(6)%>"> Ãë
-</td>
-</tr>
-<tr> 
-<td width="50%" class=td1> <U>Ä¬ÈÏ·ÖÒ³ĞÅÏ¢Êı</U></td>
-<td width="50%" class=td1>  
-<input type="text" name="Boke_Setting(7)" size="35" value="<%=Boke_Setting(7)%>"> Ìõ
-</td>
-</tr>
-<tr> 
-<td width="50%" class=td1> <U>ÏàÆ¬·ÖÒ³ĞÅÏ¢Êı</U></td>
-<td width="50%" class=td1>  
-<input type="text" name="Boke_Setting(8)" size="35" value="<%=Boke_Setting(8)%>"> ÕÅ
-</td>
-</tr>
-<tr> 
-<td width="50%" class=td1> <U>Ã¿ĞĞÏàÆ¬Êı</U></td>
-<td width="50%" class=td1>  
-<input type="text" name="Boke_Setting(9)" size="35" value="<%=Boke_Setting(9)%>"> ÕÅ
-</td>
-</tr>
-<tr> 
-<td width="50%" class=td1> <U>Í¼Æ¬×Ô¶¯°´±ÈÀıËõ·Å</U></td>
-<td width="50%" class=td1>  
-<input type=radio class=radio name="Boke_Setting(10)" value=0 <%if Boke_Setting(10)="0" then%>checked<%end if%>>¹Ø±Õ&nbsp;
-<input type=radio class=radio name="Boke_Setting(10)" value=1 <%if Boke_Setting(10)="1" then%>checked<%end if%>>¿ªÆô&nbsp;
-</td>
-</tr>
-<tr> 
-<td width="50%" class=td1> <U>Í¼Æ¬°´¹öÂÖËõ·Å</U></td>
-<td width="50%" class=td1>  
-<input type=radio class=radio name="Boke_Setting(11)" value=0 <%if Boke_Setting(11)="0" then%>checked<%end if%>>¹Ø±Õ&nbsp;
-<input type=radio class=radio name="Boke_Setting(11)" value=1 <%if Boke_Setting(11)="1" then%>checked<%end if%>>¿ªÆô&nbsp;
-</td>
-</tr>
-<tr> 
-<td width="50%" class=td1> <U>ÓÃ»§ÉÏ´«¿Õ¼ä´óĞ¡</U></td>
-<td width="50%" class=td1>  
-<input type="text" name="Boke_Setting(15)" value="<%=Boke_Setting(15)%>">MB (ÌîĞ´-1ÎªÎŞÏŞ)
-</td>
-</tr>
-</table>
-<a name="setting3"></a>
-<BR>
-<table border="0" cellspacing="1" cellpadding="3"  align=center class="tableBorder">
-<tr> 
-<th width="100%" colspan=3  align=Left id=tabletitlelink  height=25><b>ÉÏ´«ÉèÖÃ</b>[<a href="#top">¶¥²¿</a>]
-</th></tr>
-<tr> 
-	<td width="50%" class=td1> <U>ÓÃ»§ÉÏ´«ÉèÖÃÑØÓÃÓÃ»§×éÄ¬ÈÏÉèÖÃ</U><BR>½¨Òé¿ªÆô£¬¿ªÆôºóÑØÓÃ²»Í¬ÓÃ»§×éµÄÊÇ·ñÔÊĞíÉÏ´«¼°ÉÏ´«ÎÄ¼ş´óĞ¡ÏŞÖÆ</td>
-	<td width="43%" class=td1>
-<input type=radio class=radio name="UploadSetting(0)" value=0 <%if UploadSetting(0)="0" then%>checked<%end if%>>·ñ&nbsp;
-<input type=radio class=radio name="UploadSetting(0)" value=1 <%if UploadSetting(0)="1" then%>checked<%end if%>>ÊÇ&nbsp;
-	</td>
-</tr>
-<tr> 
-	<td class=td2><U>ÓÃ»§ÉÏ´«ÎÄ¼ş´óĞ¡</U><BR>ÉèÖÃºó½«²»ÑØÓÃÓÃ»§µÄÓÃ»§×éÉÏ´«ÉèÖÃ£¬ËùÓĞÓÃ»§×é¶¼½«Ê¹ÓÃ´ËÉèÖÃ</td>
-	<td class=td2> 
-	<input type="text" name="UploadSetting(1)" size="6" value="<%=UploadSetting(1)%>">&nbsp;K
-	</td>
-</tr>
-<tr> 
-<td class=td1> <U>ÉÏ´«ÎÄ¼şÏŞÖÆ</U><br>(ÎÄ¼şºó×ºÃû£¬ÒÔ"|"·Ö¸ô)</td>
-<td class=td1>  
-<input type="text" name="Boke_Setting(16)" value="<%=Boke_Setting(16)%>" size="40">
-</td>
-</tr>
-<tr>
-	<td class=td1 ><U>Ñ¡È¡ÉÏ´«×é¼ş</U></td>
-	<td class=td1 >
-	<select name="UploadSetting(2)" id="UploadSetting(2)" onChange="chkselect(options[selectedIndex].value,'know2');">
-	<option value="999">¹Ø±Õ
-	<option value="0">ÎŞ×é¼şÉÏ´«Àà
-	<option value="1">Aspupload3.0×é¼ş 
-	<option value="2">SA-FileUp 4.0×é¼ş
-	<option value="3">DvFile-Up V1.0×é¼ş
-	</option></select><div id="know2"></div>
-	</td>
-</tr>
-<tr> 
-	<td class=td2><U>Ñ¡È¡Éú³ÉÔ¤ÀÀÍ¼Æ¬×é¼ş</U></td>
-	<td class=td2> 
-	<select name="UploadSetting(3)" id="UploadSetting(3)" onChange="chkselect(options[selectedIndex].value,'know3');">
-	<option value="999">¹Ø±Õ
-	<option value="0">CreatePreviewImage×é¼ş
-	<option value="1">AspJpeg×é¼ş
-	<option value="2">SA-ImgWriter×é¼ş
-	</select><div id="know3"></div>
-	</td>
-</tr>
-<tr> 
-	<td class=td1><U>Éú³ÉÔ¤ÀÀÍ¼Æ¬´óĞ¡ÉèÖÃ£¨¿í¶È|¸ß¶È£©</U></td>
-	<td class=td1>
-		¿í¶È£º<INPUT TYPE="text" NAME="UploadSetting(14)" size=10 value="<%=UploadSetting(14)%>"> ÏóËØ
-		¸ß¶È£º<INPUT TYPE="text" NAME="UploadSetting(15)" size=10 value="<%=UploadSetting(15)%>"> ÏóËØ
-	</td>
-</tr>
-<tr> 
-	<td class=td2><U>Éú³ÉÔ¤ÀÀÍ¼Æ¬´óĞ¡¹æÔòÑ¡Ïî</U></td>
-	<td class=td2> 
-		<SELECT name="UploadSetting(16)" id="UploadSetting(16)">
-		<OPTION value=0>¹Ì¶¨</OPTION>
-		<OPTION value=1>µÈ±ÈÀıËõĞ¡</OPTION>
-		</SELECT>
-	</td>
-</tr>
-<tr> 
-	<td class=td1><U>Í¼Æ¬Ë®Ó¡ÉèÖÃ¿ª¹Ø</U></td>
-	<td class=td1> 
-		<SELECT name="UploadSetting(17)" id="UploadSetting(17)">
-		<OPTION value="0">¹Ø±ÕË®Ó¡Ğ§¹û</OPTION>
-		<OPTION value="1">Ë®Ó¡ÎÄ×ÖĞ§¹û</OPTION>
-		<OPTION value="2">Ë®Ó¡Í¼Æ¬Ğ§¹û</OPTION>
-		</SELECT>
-	</td>
-</tr>
-<tr> 
-	<td class=td2><U>ÉÏ´«Í¼Æ¬Ìí¼ÓË®Ó¡ÎÄ×ÖĞÅÏ¢£¨¿ÉÎª¿Õ»ò0£©</U></td>
-	<td class=td2> 
-	<INPUT TYPE="text" NAME="UploadSetting(4)" size=40 value="<%=UploadSetting(4)%>">
-	</td>
-</tr>
-<tr> 
-	<td class=td1><U>ÉÏ´«Ìí¼ÓË®Ó¡×ÖÌå´óĞ¡</U></td>
-	<td class=td1> 
-	<INPUT TYPE="text" NAME="UploadSetting(5)" size=10 value="<%=UploadSetting(5)%>"> <b>px</b>
-	</td>
-</tr>
-<tr> 
-	<td class=td2><U>ÉÏ´«Ìí¼ÓË®Ó¡×ÖÌåÑÕÉ«</U></td>
-	<td class=td2>
-	<input type="hidden" name="UploadSetting(6)" id="UploadSetting(6)" value="<%=UploadSetting(6)%>">
-	<img border=0 src="images/post/rect.gif" style="cursor:pointer;background-Color:<%=UploadSetting(6)%>;" onclick="Getcolor(this,'UploadSetting(6)');" title="Ñ¡È¡ÑÕÉ«!">
-	</td>
-</tr>
-<tr> 
-	<td class=td1><U>ÉÏ´«Ìí¼ÓË®Ó¡×ÖÌåÃû³Æ</U></td>
-	<td class=td1>
-	<SELECT name="UploadSetting(7)" id="UploadSetting(7)">
-	<option value="ËÎÌå">ËÎÌå</option>
-	<option value="¿¬Ìå_GB2312">¿¬Ìå</option>
-	<option value="ĞÂËÎÌå">ĞÂËÎÌå</option>
-	<option value="ºÚÌå">ºÚÌå</option>
-	<option value="Á¥Êé">Á¥Êé</option>
-	<OPTION value="Andale Mono" selected>Andale Mono</OPTION> 
-	<OPTION value=Arial>Arial</OPTION> 
-	<OPTION value="Arial Black">Arial Black</OPTION> 
-	<OPTION value="Book Antiqua">Book Antiqua</OPTION>
-	<OPTION value="Century Gothic">Century Gothic</OPTION> 
-	<OPTION value="Comic Sans MS">Comic Sans MS</OPTION>
-	<OPTION value="Courier New">Courier New</OPTION>
-	<OPTION value=Georgia>Georgia</OPTION>
-	<OPTION value=Impact>Impact</OPTION>
-	<OPTION value=Tahoma>Tahoma</OPTION>
-	<OPTION value="Times New Roman" >Times New Roman</OPTION>
-	<OPTION value="Trebuchet MS">Trebuchet MS</OPTION>
-	<OPTION value="Script MT Bold">Script MT Bold</OPTION>
-	<OPTION value=Stencil>Stencil</OPTION>
-	<OPTION value=Verdana>Verdana</OPTION>
-	<OPTION value="Lucida Console">Lucida Console</OPTION>
-	</SELECT>
-	</td>
-</tr>
-<tr> 
-	<td class=td2><U>ÉÏ´«Ë®Ó¡×ÖÌåÊÇ·ñ´ÖÌå</U></td>
-	<td class=td2> 
-		<SELECT name="UploadSetting(8)" id="UploadSetting(8)">
-		<OPTION value=0>·ñ</OPTION>
-		<OPTION value=1>ÊÇ</OPTION>
-		</SELECT>
-	</td>
-</tr>
-<!-- ÉÏ´«Í¼Æ¬Ìí¼ÓË®Ó¡LOGOÍ¼Æ¬¶¨Òå -->
-<tr> 
-	<td class=td1><U>ÉÏ´«Í¼Æ¬Ìí¼ÓË®Ó¡LOGOÍ¼Æ¬ĞÅÏ¢£¨¿ÉÎª¿Õ»ò0£©</U><br>ÌîĞ´LOGOµÄÍ¼Æ¬Ïà¶ÔÂ·¾¶</td>
-	<td class=td1> 
-	<INPUT TYPE="text" NAME="UploadSetting(9)" size=40 value="<%=UploadSetting(9)%>">
-	</td>
-</tr>
-<tr> 
-	<td class=td2><U>ÉÏ´«Í¼Æ¬Ìí¼ÓË®Ó¡Í¸Ã÷¶È</U></td>
-	<td class=td2> 
-	<INPUT TYPE="text" NAME="UploadSetting(10)" size=10 value="<%=UploadSetting(10)%>"> Èç60%ÇëÌîĞ´0.6
-	</td>
-</tr>
-<tr> 
-	<td class=td2><U>Ë®Ó¡Í¼Æ¬È¥³ıµ×É«</U><br>±£ÁôÎª¿ÕÔòË®Ó¡Í¼Æ¬²»È¥³ıµ×É«</td>
-	<td class=td2> 
-	<INPUT TYPE="text" NAME="UploadSetting(18)" ID="UploadSetting(18)" size=10 value="<%=UploadSetting(18)%>"> 
-	<img border=0 src="images/post/rect.gif" style="cursor:pointer;background-Color:<%=UploadSetting(18)%>;" onclick="Getcolor(this,'UploadSetting(18)');" title="Ñ¡È¡ÑÕÉ«!">
-	</td>
-</tr>
-<tr> 
-	<td class=td1><U>Ë®Ó¡ÎÄ×Ö»òÍ¼Æ¬µÄ³¤¿íÇøÓò¶¨Òå</U><br>ÈçË®Ó¡Í¼Æ¬µÄ¿í¶ÈºÍ¸ß¶È</td>
-	<td class=td1> 
-	¿í¶È£º<INPUT TYPE="text" NAME="UploadSetting(11)" size=10 value="<%=UploadSetting(11)%>"> ÏóËØ
-	¸ß¶È£º<INPUT TYPE="text" NAME="UploadSetting(12)" size=10 value="<%=UploadSetting(12)%>"> ÏóËØ
-	</td>
-</tr>
-<tr> 
-	<td class=td2><U>ÉÏ´«Í¼Æ¬Ìí¼ÓË®Ó¡LOGOÎ»ÖÃ×ø±ê</U></td>
-	<td class=td2>
-	<SELECT NAME="UploadSetting(13)" id="UploadSetting(13)">
-		<option value="0">×óÉÏ</option>
-		<option value="1">×óÏÂ</option>
-		<option value="2">¾ÓÖĞ</option>
-		<option value="3">ÓÒÉÏ</option>
-		<option value="4">ÓÒÏÂ</option>
-	</SELECT>
-	</td>
-</tr>
-<!-- ÉÏ´«Í¼Æ¬Ìí¼ÓË®Ó¡LOGOÍ¼Æ¬¶¨Òå -->
-<%
-If IsObjInstalled("Scripting.FileSystemObject") Then 
-%>
-<tr> 
-<td class=td1><U>ÊÇ·ñ²ÉÓÃÎÄ¼ş¡¢Í¼Æ¬·ÀµÁÁ´</U></td>
-<td class=td1>
-<input type=radio class=radio name="UploadSetting(20)" value=0 <%if UploadSetting(20)="0" Then %>checked<%end if%>>¹Ø±Õ&nbsp;
-<input type=radio class=radio name="UploadSetting(20)" value=1 <%if UploadSetting(20)="1" Then %>checked<%end if%>>´ò¿ª&nbsp;
-</td>
-</tr>
-<tr> 
-<td class=td2><U>ÉÏ´«Ä¿Â¼Éè¶¨</U></td>
-<td class=td2>
-<%
-If UploadSetting(19)="" Or UploadSetting(19)="0" Then UploadSetting(19)="Boke/UploadFile/"
-%>
-<input type=text name="UploadSetting(19)" value=<%=UploadSetting(19)%>>Èç¹ûĞŞ¸ÄÁË´ËÏî£¬ÇëÓÃFTPÊÖ¹¤´´½¨Ä¿Â¼ºÍÒÆ¶¯Ô­ÓĞÉÏ´«ÎÄ¼ş¡£
-</td>
-</tr>
-<%
-Else
-%>
-<input type=hidden name="UploadSetting(20)" value=<%=UploadSetting(20)%>>
-<input type=hidden name="UploadSetting(19)" value=<%=UploadSetting(19)%>>
-<%
-Rs.Close
-Set Rs=Nothing
-End If
-%>
-<!--ÌìÆø-->
-<input type="hidden" name="Boke_Setting(13)" value="<%=Boke_Setting(13)%>">
-<input type="hidden" name="Boke_Setting(14)" value="<%=Boke_Setting(14)%>">
-<!--ÌìÆø-->
-<tr> 
-<td class=td1>&nbsp;</td>
-<td class=td1>
-<input type=submit name=submit value="Ìá½»¸ü¸Ä" class="button">
-</td>
-</tr>
-</table><BR>
-</FORM>
-
-<div id="Issubport999" style="display:none"></div>
-<SCRIPT LANGUAGE="JavaScript">
-<!--
-function chkselect(s,divid)
-{
-var divname='Issubport';
-var chkreport;
-	s=Number(s)
-	if (divid=="know1")
-	{
-	divname=divname+s;
-	}
-	if (divid=="know2")
-	{
-	s+=4;
-	if (s==1003){s=999;}
-	divname=divname+s;
-	}
-	if (divid=="know3")
-	{
-	s+=9;
-	if (s==1008){s=999;}
-	divname=divname+s;
-	}
-document.getElementById(divid).innerHTML=divname;
-chkreport=document.getElementById(divname).innerHTML;
-document.getElementById(divid).innerHTML=chkreport;
-}
-//SELECT±íµ¥Ñ¡È¡
-function CheckSel(Voption,Value)
-{
-	var obj = document.getElementById(Voption);
-	for (i=0;i<obj.length;i++){
-		if (obj.options[i].value==Value){
-		obj.options[i].selected=true;
-		break;
-		}
-	}
-}
-var ColorImg;
-var ColorValue;
-function hideColourPallete() {
-	document.getElementById("colourPalette").style.visibility="hidden";
-}
-function Getcolor(img_val,input_val){
-	var obj = document.getElementById("colourPalette");
-	ColorImg = img_val;
-	ColorValue = document.getElementById(input_val);
-	if (obj){
-	obj.style.left = getOffsetLeft(ColorImg) + "px";
-	obj.style.top = (getOffsetTop(ColorImg) + ColorImg.offsetHeight) + "px";
-	if (obj.style.visibility=="hidden")
-	{
-	obj.style.visibility="visible";
-	}else {
-	obj.style.visibility="hidden";
-	}
-	}
-}
-//Colour pallete top offset
-function getOffsetTop(elm) {
-	var mOffsetTop = elm.offsetTop;
-	var mOffsetParent = elm.offsetParent;
-	while(mOffsetParent){
-		mOffsetTop += mOffsetParent.offsetTop;
-		mOffsetParent = mOffsetParent.offsetParent;
-	}
-	return mOffsetTop;
-}
-
-//Colour pallete left offset
-function getOffsetLeft(elm) {
-	var mOffsetLeft = elm.offsetLeft;
-	var mOffsetParent = elm.offsetParent;
-	while(mOffsetParent) {
-		mOffsetLeft += mOffsetParent.offsetLeft;
-		mOffsetParent = mOffsetParent.offsetParent;
-	}
-	return mOffsetLeft;
-}
-function setColor(color)
-{
-	if (ColorValue){ColorValue.value = color;}
-	if (ColorImg){ColorImg.style.backgroundColor = color;}
-	document.getElementById("colourPalette").style.visibility="hidden";
-}
-CheckSel('UploadSetting(2)','<%=UploadSetting(2)%>');
-CheckSel('UploadSetting(3)','<%=UploadSetting(3)%>');
-CheckSel('UploadSetting(7)','<%=UploadSetting(7)%>');
-CheckSel('UploadSetting(13)','<%=UploadSetting(13)%>');
-CheckSel('UploadSetting(16)','<%=UploadSetting(16)%>');
-CheckSel('UploadSetting(17)','<%=UploadSetting(17)%>');
-//-->
-</SCRIPT>
-<%
-Dim InstalledObjects(12)
-InstalledObjects(1) = "JMail.Message"				'JMail 4.3
-InstalledObjects(2) = "CDONTS.NewMail"				'CDONTS
-InstalledObjects(3) = "Persits.MailSender"			'ASPEMAIL
-'-----------------------
-InstalledObjects(4) = "Adodb.Stream"				'Adodb.Stream
-InstalledObjects(5) = "Persits.Upload"				'Aspupload3.0
-InstalledObjects(6) = "SoftArtisans.FileUp"			'SA-FileUp 4.0
-InstalledObjects(7) = "DvFile.Upload"				'DvFile-Up V1.0
-'-----------------------
-InstalledObjects(9) = "CreatePreviewImage.cGvbox"	'CreatePreviewImage
-InstalledObjects(10) = "Persits.Jpeg"				'AspJpeg
-InstalledObjects(11) = "SoftArtisans.ImageGen"		'SoftArtisans ImgWriter V1.21
-InstalledObjects(12) = "sjCatSoft.Thumbnail"		'sjCatSoft.Thumbnail V2.6
-
-For i=1 to 12
-	Response.Write "<div id=""Issubport"&i&""" style=""display:none"">"
-	If IsObjInstalled(InstalledObjects(i)) Then Response.Write InstalledObjects(i)&":<font color=red><b>¡Ì</b>·şÎñÆ÷Ö§³Ö!</font>" Else Response.Write InstalledObjects(i)&"<b>¡Á</b>·şÎñÆ÷²»Ö§³Ö!" 
-	Response.Write "</div>"
-Next
-End If
-End Sub
-
-%>
-</body>
-</html>
-<%
-
-
-
-Sub Manage_Suc(Msg,ColNum,rUrl)
-	Response.Write "<tr>"
-	Response.Write "<td class=""td1"" colspan="&ColNum&" height=25>"
-	Response.Write "<B>³É¹¦</B>£º"&Msg&"£¬<a href="""&rUrl&""">Çë·µ»Ø</a>¡£"
-	Response.Write "</td>"
-	Response.Write "</tr>"
-End Sub
-Sub Manage_Err(Msg,ColNum,rUrl)
-	Response.Write "<tr>"
-	Response.Write "<td class=""td1"" colspan="&ColNum&" height=25>"
-	Response.Write "<B>´íÎó</B>£º"&Msg&"£¬<a href="""&rUrl&""">Çë·µ»Ø</a>¡£"
-	Response.Write "</td>"
-	Response.Write "</tr>"
-End Sub
-Sub dvbbs_error()
-	Response.Write"<br>"
-	Response.Write"<table cellpadding=3 cellspacing=1 align=center class=""tableBorder"" style=""width:75%"">"
-	Response.Write"<tr align=center>"
-	Response.Write"<th width=""100%"" height=25 colspan=2>´íÎóĞÅÏ¢"
-	Response.Write"</td>"
-	Response.Write"</tr>"
-	Response.Write"<tr>"
-	Response.Write"<td width=""100%"" class=""td1"" colspan=2>"
-	Response.Write ErrMsg
-	Response.Write"</td></tr>"
-	Response.Write"<tr>"
-	Response.Write"<td class=""td1"" valign=middle colspan=2 align=center><a href=""javascript:history.go(-1)""><<·µ»ØÉÏÒ»Ò³</a></td></tr>"
-	Response.Write"</table>"
-End Sub 
-Sub Dv_suc(info)
-	Response.Write"<br>"
-	Response.Write"<table cellpadding=0 cellspacing=0 align=center class=""tableBorder"" style=""width:75%"">"
-	Response.Write"<tr align=center>"
-	Response.Write"<th width=""100%"" height=25 colspan=2>³É¹¦ĞÅÏ¢"
-	Response.Write"</td>"
-	Response.Write"</tr>"
-	Response.Write"<tr>"
-	Response.Write"<td width=""100%"" class=""td2"" colspan=2 height=25>"
-	Response.Write info
-	Response.Write"</td></tr>"
-	Response.Write"<tr>"
-	Response.Write"<td class=""td2"" valign=middle colspan=2 align=center><a href=""javascript:history.go(-1)"" ><<·µ»ØÉÏÒ»Ò³</a></td></tr>"
-	Response.Write"</table>"
-End Sub
-Function IsObjInstalled(strClassString)
-	On Error Resume Next
-	IsObjInstalled = False
-	Err = 0
-	Dim xTestObj
-	Set xTestObj = Dvbbs.iCreateObject(strClassString)
-	If Err = 0 Then IsObjInstalled = True
-	If Err = -2147352567 Then IsObjInstalled = True
-	Set xTestObj = Nothing
-	Err = 0
-End Function
-%>
+	Set Rs=DvBoke.Execute("Select * From Dv_Bokequest("Note"),"'","''")&"' Where sCatID = " & Request("ID"))
+	Manage_Suc "é®ã„¦åšé”ç†ºç´ªæˆæˆœç°¡é—æ°¬

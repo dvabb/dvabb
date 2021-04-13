@@ -8,7 +8,7 @@
 	If Not CLng(DVbbs.UserSession.documentElement.selectSingleNode("userinfo/@userid").text)=0 Then
 		activeuser="delete from Dv_online where userid= "& CLng(Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userid").text)
 		Conn.Execute activeuser,TempNum
-		'¸üĞÂ»º´æ×ÜÓÃ»§ÔÚÏßÊı¾İ
+		'æ›´æ–°ç¼“å­˜æ€»ç”¨æˆ·åœ¨çº¿æ•°æ®
 		MyBoardOnline.Forum_UserOnline = MyBoardOnline.Forum_UserOnline - TempNum
 		Dvbbs.Name="Forum_UserOnline"
 		Dvbbs.value=MyBoardOnline.Forum_UserOnline
@@ -16,7 +16,7 @@
 		If IsNumeric(DVbbs.UserSession.documentElement.selectSingleNode("userinfo/@statuserid").text) Then 
 			activeuser="delete from Dv_online where id="& DVbbs.UserSession.documentElement.selectSingleNode("userinfo/@statuserid").text
 			Conn.Execute activeuser,TempNum
-			'¸üĞÂ»º´æ×ÜÓÃ»§ÔÚÏßÊı¾İ
+			'æ›´æ–°ç¼“å­˜æ€»ç”¨æˆ·åœ¨çº¿æ•°æ®
 			MyBoardOnline.Forum_GuestOnline = MyBoardOnline.Forum_GuestOnline - TempNum
 			Dvbbs.Name="Forum_GuestOnline"
 			Dvbbs.value=MyBoardOnline.Forum_GuestOnline
@@ -39,7 +39,7 @@
 	Session("flag")=Empty
 
 	'-----------------------------------------------------------------
-	'ÏµÍ³ÕûºÏ
+	'ç³»ç»Ÿæ•´åˆ
 	'-----------------------------------------------------------------
 	Dim DvApi_Obj,DvApi_SaveCookie,SysKey
 	If DvApi_Enable Then

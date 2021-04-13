@@ -7,7 +7,7 @@ sBASE_64_CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
 sBASE_64_CHARACTERS = strUnicode2Ansi(sBASE_64_CHARACTERS)
 
 Function strUnicodeLen(asContents)
-  '¼ÆËãunicode×Ö·û´®µÄAnsi±àÂëµÄ³¤¶È
+  'è®¡ç®—unicodeå­—ç¬¦ä¸²çš„Ansiç¼–ç çš„é•¿åº¦
   asContents1="a"&asContents
   len1=len(asContents1)
   k=0
@@ -24,7 +24,7 @@ Function strUnicodeLen(asContents)
 End Function
 
 Function strUnicode2Ansi(asContents)
-  '½«Unicode±àÂëµÄ×Ö·û´®£¬×ª»»³ÉAnsi±àÂëµÄ×Ö·û´®
+  'å°†Unicodeç¼–ç çš„å­—ç¬¦ä¸²ï¼Œè½¬æ¢æˆAnsiç¼–ç çš„å­—ç¬¦ä¸²
   strUnicode2Ansi=""
   len1=len(asContents)
   for i=1 to len1
@@ -43,7 +43,7 @@ Function strUnicode2Ansi(asContents)
 End function
 
 Function strAnsi2Unicode(asContents)
-  '½«Ansi±àÂëµÄ×Ö·û´®£¬×ª»»³ÉUnicode±àÂëµÄ×Ö·û´®
+  'å°†Ansiç¼–ç çš„å­—ç¬¦ä¸²ï¼Œè½¬æ¢æˆUnicodeç¼–ç çš„å­—ç¬¦ä¸²
   strAnsi2Unicode = ""
   if isnull(asContents) or asContents="" then exit function
   len1=lenb(asContents)
@@ -63,8 +63,8 @@ Function strAnsi2Unicode(asContents)
 End function
 
 Function Base64encode(asContents)  
-'½«Ansi±àÂëµÄ×Ö·û´®½øĞĞBase64±àÂë
-'asContentsÓ¦µ±ÊÇANSI±àÂëµÄ×Ö·û´®£¨¶ş½øÖÆµÄ×Ö·û´®Ò²¿ÉÒÔ£©
+'å°†Ansiç¼–ç çš„å­—ç¬¦ä¸²è¿›è¡ŒBase64ç¼–ç 
+'asContentsåº”å½“æ˜¯ANSIç¼–ç çš„å­—ç¬¦ä¸²ï¼ˆäºŒè¿›åˆ¶çš„å­—ç¬¦ä¸²ä¹Ÿå¯ä»¥ï¼‰
 Dim lnPosition  
 Dim lsResult  
 Dim Char1  
@@ -88,7 +88,7 @@ end if
 
 m3=Len1 Mod 3 
 If M3 > 0 Then asContents = asContents & String(3-M3, chrb(0))  
-'²¹×ãÎ»ÊıÊÇÎªÁË±ãÓÚ¼ÆËã
+'è¡¥è¶³ä½æ•°æ˜¯ä¸ºäº†ä¾¿äºè®¡ç®—
 
 IF m3 > 0 THEN 
    len1=len1+(3-m3)
@@ -116,7 +116,7 @@ For lnPosition = 1 To len2 Step 3
     lsResult = lsResult & lsGroup64  
 Next  
 
-'´¦Àí×îºóÊ£ÓàµÄ¼¸¸ö×Ö·û
+'å¤„ç†æœ€åå‰©ä½™çš„å‡ ä¸ªå­—ç¬¦
 if M3 > 0  then
     lsGroup64 = ""  
     lsGroupBinary = Midb(asContents, len2+1, 3)  
@@ -130,9 +130,9 @@ if M3 > 0  then
     Char3 = Midb(sBASE_64_CHARACTERS, (((Byte3 And 192) \ 64) Or (SaveBits2 * 4) And &HFF) + 1, 1)  
 
     if M3=1 then
-       lsGroup64 = Char1 & Char2 & ChrB(61) & ChrB(61)   'ÓÃ=ºÅ²¹×ãÎ»Êı
+       lsGroup64 = Char1 & Char2 & ChrB(61) & ChrB(61)   'ç”¨=å·è¡¥è¶³ä½æ•°
     else
-       lsGroup64 = Char1 & Char2 & Char3 & ChrB(61)      'ÓÃ=ºÅ²¹×ãÎ»Êı
+       lsGroup64 = Char1 & Char2 & Char3 & ChrB(61)      'ç”¨=å·è¡¥è¶³ä½æ•°
     end if
     
     lsResult = lsResult & lsGroup64  
@@ -144,8 +144,8 @@ End Function
 
 
 Function Base64decode(asContents)  
-'½«Base64±àÂë×Ö·û´®×ª»»³ÉAnsi±àÂëµÄ×Ö·û´®
-'asContentsÓ¦µ±Ò²ÊÇANSI±àÂëµÄ×Ö·û´®£¨¶ş½øÖÆµÄ×Ö·û´®Ò²¿ÉÒÔ£©
+'å°†Base64ç¼–ç å­—ç¬¦ä¸²è½¬æ¢æˆAnsiç¼–ç çš„å­—ç¬¦ä¸²
+'asContentsåº”å½“ä¹Ÿæ˜¯ANSIç¼–ç çš„å­—ç¬¦ä¸²ï¼ˆäºŒè¿›åˆ¶çš„å­—ç¬¦ä¸²ä¹Ÿå¯ä»¥ï¼‰
 Dim lsResult  
 Dim lnPosition  
 Dim lsGroup64, lsGroupBinary  
@@ -157,14 +157,14 @@ len1= Lenb(asContents)
 M4 = len1 Mod 4
 
 if len1 < 1 or M4 > 0 then
-   '×Ö·û´®³¤¶ÈÓ¦µ±ÊÇ4µÄ±¶Êı
+   'å­—ç¬¦ä¸²é•¿åº¦åº”å½“æ˜¯4çš„å€æ•°
    Base64decode = ""  
    exit Function  
 end if
        
-'ÅĞ¶Ï×îºóÒ»Î»ÊÇ²»ÊÇ = ºÅ
-'ÅĞ¶Ïµ¹ÊıµÚ¶şÎ»ÊÇ²»ÊÇ = ºÅ
-'ÕâÀïm4±íÊ¾×îºóÊ£ÓàµÄĞèÒªµ¥¶À´¦ÀíµÄ×Ö·û¸öÊı
+'åˆ¤æ–­æœ€åä¸€ä½æ˜¯ä¸æ˜¯ = å·
+'åˆ¤æ–­å€’æ•°ç¬¬äºŒä½æ˜¯ä¸æ˜¯ = å·
+'è¿™é‡Œm4è¡¨ç¤ºæœ€åå‰©ä½™çš„éœ€è¦å•ç‹¬å¤„ç†çš„å­—ç¬¦ä¸ªæ•°
 if midb(asContents, len1, 1) = chrb(61)   then   m4=3 
 if midb(asContents, len1-1, 1) = chrb(61) then   m4=2
 
@@ -189,11 +189,11 @@ For lnPosition = 1 To Len2 Step 4
     lsResult = lsResult & lsGroupBinary  
 Next 
 
-'´¦Àí×îºóÊ£ÓàµÄ¼¸¸ö×Ö·û
+'å¤„ç†æœ€åå‰©ä½™çš„å‡ ä¸ªå­—ç¬¦
 if M4 > 0 then 
     lsGroupBinary = ""  
-    lsGroup64 = Midb(asContents, len2+1, m4) & chrB(65)   'chr(65)=A£¬×ª»»³ÉÖµÎª0
-    if M4=2 then                                          '²¹×ã4Î»£¬ÊÇÎªÁË±ãÓÚ¼ÆËã 
+    lsGroup64 = Midb(asContents, len2+1, m4) & chrB(65)   'chr(65)=Aï¼Œè½¬æ¢æˆå€¼ä¸º0
+    if M4=2 then                                          'è¡¥è¶³4ä½ï¼Œæ˜¯ä¸ºäº†ä¾¿äºè®¡ç®— 
         lsGroup64 = lsGroup64 & chrB(65)                  
     end if
     Char1 = InStrb(sBASE_64_CHARACTERS, Midb(lsGroup64, 1, 1)) - 1  

@@ -37,13 +37,13 @@ function setid()
 	if(!window.form.upcount.value)
 	window.form.upcount.value=1;
 	if(window.form.upcount.value><%=upset%>){
-	alert("Äú×î¶àÖ»ÄÜÍ¬Ê±ÉÏ´«<%=upset%>¸öÎÄ¼ş!");
+	alert("æ‚¨æœ€å¤šåªèƒ½åŒæ—¶ä¸Šä¼ <%=upset%>ä¸ªæ–‡ä»¶!");
 	window.form.upcount.value = <%=upset%>;
 	setid();
 	}
 	else{
 	for(i=1;i<=window.form.upcount.value;i++)
-	str+='<li>ÎÄ¼ş:<span id="preview_'+i+'"></span><input type="file" name="file'+i+'" style="width:200" onchange="viewfile(this,\'preview_'+i+'\')"></li>';
+	str+='<li>æ–‡ä»¶:<span id="preview_'+i+'"></span><input type="file" name="file'+i+'" style="width:200" onchange="viewfile(this,\'preview_'+i+'\')"></li>';
 	window.upid.innerHTML='<ol>'+str+'</ol>';
 
 	var num=i*16
@@ -61,7 +61,7 @@ function viewfile(obj,putdiv)
     
         if ((fileext=='.jpg')||(fileext=='.gif')||(fileext=='.jpeg')||(fileext=='.png')||(fileext=='.bmp'))
         {
-        //alert(''+document.form1.UpFile.value)//°ÑÕâÀï¸Ä³ÉÔ¤ÀÀÍ¼Æ¬µÄÓï¾ä
+        //alert(''+document.form1.UpFile.value)//æŠŠè¿™é‡Œæ”¹æˆé¢„è§ˆå›¾ç‰‡çš„è¯­å¥
 		document.getElementById(putdiv).innerHTML="<img src='"+obj.value+"' width='40' height='40' border='0'/>"
 		uploadframe(25)
         }
@@ -76,7 +76,7 @@ body ,body td{background:#EDF5F9;margin:0;padding:0;text-indent:0}
 <tr>
 <%
 If Cint(Dvbbs.Groupsetting(7))=0 Then
-	Response.Write "<TD  valign=top>ÄúÃ»ÓĞÔÚ±¾ÂÛÌ³ÉÏ´«ÎÄ¼şµÄÈ¨ÏŞ!</td>"
+	Response.Write "<TD  valign=top>æ‚¨æ²¡æœ‰åœ¨æœ¬è®ºå›ä¸Šä¼ æ–‡ä»¶çš„æƒé™!</td>"
 Else
 	Dim PostRanNum
 	Randomize
@@ -87,23 +87,23 @@ Else
 <td id="upid"  valign=top>
 	<span id="preview_1"></span><input type="file" name="file1" width=200 value="" size="40"  onchange="viewfile(this,'preview_1')"></TD>
 <td  valign=top width=1>
-	<input type="submit" name="Submit" value="ÉÏ´«" onclick="try{parent.document.Dvform.submit.disabled=true,parent.document.Dvform.submit2.disabled=true;}catch(e){}">
+	<input type="submit" name="Submit" value="ä¸Šä¼ " onclick="try{parent.document.Dvform.submit.disabled=true,parent.document.Dvform.submit2.disabled=true;}catch(e){}">
 </td>
 <td id=allupload  valign=top>
 	<% if upset > 1 then %>
-	<input type="button" name="setload" onClick="uploadframe(25);" value="ÅúÁ¿ÉÏ´«">
+	<input type="button" name="setload" onClick="uploadframe(25);" value="æ‰¹é‡ä¸Šä¼ ">
 	<% end if %>
 </td>
 <td  valign=top>
 	<div id=Setupload style="display:none">
 	<% if upset > 1 then %>
-	ÉèÖÃÉÏ´«µÄ¸öÊı
+	è®¾ç½®ä¸Šä¼ çš„ä¸ªæ•°
 	<input type="text" value="1" name="upcount" style="width:40">
-	<input type="button" name="Button" onClick="setid();" value="Éè¶¨"><br>(Ã¿´Î¿ÉÒÔÉèÖÃÍ¬Ê±ÉÏ´«<font color="#FF0000"><%=upset%></font>¸öÎÄ¼ş)
+	<input type="button" name="Button" onClick="setid();" value="è®¾å®š"><br>(æ¯æ¬¡å¯ä»¥è®¾ç½®åŒæ—¶ä¸Šä¼ <font color="#FF0000"><%=upset%></font>ä¸ªæ–‡ä»¶)
 	<% end if %>
 	</div>
-	<font color=<%=Dvbbs.mainsetting(1) %> >½ñÌì»¹¿ÉÉÏ´«<%=Dvbbs.Groupsetting(50)-dateupnum%>¸ö</font>£»
-	<a style="CURSOR: help" title="ÂÛÌ³ÏŞÖÆ:Ò»´Î<%=Dvbbs.Groupsetting(40)%>¸ö£¬Ò»Ìì<%=Dvbbs.Groupsetting(50)%>¸ö,Ã¿¸ö<%=Dvbbs.Groupsetting(44)%>K">(²é¿´ÂÛÌ³ÏŞÖÆ)</a>
+	<font color=<%=Dvbbs.mainsetting(1) %> >ä»Šå¤©è¿˜å¯ä¸Šä¼ <%=Dvbbs.Groupsetting(50)-dateupnum%>ä¸ª</font>ï¼›
+	<a style="CURSOR: help" title="è®ºå›é™åˆ¶:ä¸€æ¬¡<%=Dvbbs.Groupsetting(40)%>ä¸ªï¼Œä¸€å¤©<%=Dvbbs.Groupsetting(50)%>ä¸ª,æ¯ä¸ª<%=Dvbbs.Groupsetting(44)%>K">(æŸ¥çœ‹è®ºå›é™åˆ¶)</a>
 </td>
 <%end if%>
 </tr>
@@ -118,19 +118,19 @@ Sub Upfile_Main()
 	Dvbbs.Loadtemplates("")
 	Dvbbs.Head()
 	Dvbbs.ShowErr()
-	Server.ScriptTimeOut=999999'ÒªÊÇÄãµÄÂÛÌ³Ö§³ÖÉÏ´«µÄÎÄ¼ş±È½Ï´ó£¬¾Í±ØĞëÉèÖÃ¡£
+	Server.ScriptTimeOut=999999'è¦æ˜¯ä½ çš„è®ºå›æ”¯æŒä¸Šä¼ çš„æ–‡ä»¶æ¯”è¾ƒå¤§ï¼Œå°±å¿…é¡»è®¾ç½®ã€‚
 	'-----------------------------------------------------------------------------
-	'Ìá½»ÑéÖ¤
+	'æäº¤éªŒè¯
 	'-----------------------------------------------------------------------------
 	If Not Dvbbs.ChkPost Then
 		Response.End
 	End If
 	If Dvbbs.Userid=0 Then
-		Response.write "Äã»¹Î´µÇÂ½£¡"
+		Response.write "ä½ è¿˜æœªç™»é™†ï¼"
 		Response.End
 	End If
 	If Cint(Dvbbs.GroupSetting(7))=0 then
-		Response.write "ÄúÃ»ÓĞÔÚ±¾ÂÛÌ³ÉÏ´«ÎÄ¼şµÄÈ¨ÏŞ"
+		Response.write "æ‚¨æ²¡æœ‰åœ¨æœ¬è®ºå›ä¸Šä¼ æ–‡ä»¶çš„æƒé™"
 		Response.End
 	End If
 %>
@@ -168,14 +168,14 @@ Sub UploadFile()
 		OnceUPCount = Clng(OnceUPCount)
 	End If
 	If OnceUPCount >= Clng(Dvbbs.GroupSetting(40)) then
- 		Response.write "Ò»´ÎÖ»ÄÜÉÏ´«"&Dvbbs.GroupSetting(40)&"¸öÎÄ¼ş£¡"
+ 		Response.write "ä¸€æ¬¡åªèƒ½ä¸Šä¼ "&Dvbbs.GroupSetting(40)&"ä¸ªæ–‡ä»¶ï¼"
 		Exit Sub
 	Else
 		InceptMaxFile = Clng(Dvbbs.GroupSetting(40)) - OnceUPCount
 	End If
 	If Not IsNumeric(Dvbbs.UserToday(2)) Then Dvbbs.UserToday(2) = 0
 	If Clng(Dvbbs.UserToday(2))>Clng(Dvbbs.GroupSetting(50)) Then
- 		Response.write "ÒÑ³¬³öÁËÄãÔÚÂÛÌ³Ã¿ÌìÉÏ´«µÄÎÄ¼ş¸öÊı"&Dvbbs.GroupSetting(50)&"¸ö£¡"
+ 		Response.write "å·²è¶…å‡ºäº†ä½ åœ¨è®ºå›æ¯å¤©ä¸Šä¼ çš„æ–‡ä»¶ä¸ªæ•°"&Dvbbs.GroupSetting(50)&"ä¸ªï¼"
 		Exit Sub
 	Else
 		If Clng(Dvbbs.GroupSetting(50))-Clng(Dvbbs.UserToday(2))<InceptMaxFile Then
@@ -183,11 +183,11 @@ Sub UploadFile()
 		End If
 	End If
 
-	'ÉÏ´«Ä¿Â¼
+	'ä¸Šä¼ ç›®å½•
 	FilePath = CreatePath(CheckFolder)
-	'²»´øÏµÍ³ÉÏ´«Ä¿Â¼µÄÏÂ¼¶Ä¿Â¼Â·¾¶
+	'ä¸å¸¦ç³»ç»Ÿä¸Šä¼ ç›®å½•çš„ä¸‹çº§ç›®å½•è·¯å¾„
 	ChildFilePath = Replace(FilePath,CheckFolder,"")
-	'Ô¤ÀÀÍ¼Æ¬Ä¿Â¼Â·¾¶
+	'é¢„è§ˆå›¾ç‰‡ç›®å½•è·¯å¾„
 	Previewpath = "PreviewImage/"
 	Previewpath = CreatePath(Previewpath)
 
@@ -204,58 +204,58 @@ Sub UploadFile()
 	End If
 
 	Set Upload = New UpFile_Cls
-	Upload.UploadType			= Cint(Dvbbs.Forum_UploadSetting(2))	'ÉèÖÃÉÏ´«×é¼şÀàĞÍ
-	Upload.UploadPath			= FilePath								'ÉèÖÃÉÏ´«Â·¾¶
-	Upload.InceptFileType		= Replace(Dvbbs.Board_Setting(19),"|",",")		'ÉèÖÃÉÏ´«ÎÄ¼şÏŞÖÆ
-	Upload.MaxSize				= Int(Dvbbs.GroupSetting(44))			'µ¥Î» KB
-	Upload.InceptMaxFile		= InceptMaxFile							'Ã¿´ÎÉÏ´«ÎÄ¼ş¸öÊıÉÏÏŞ
-	Upload.ChkSessionName		= "UploadCode"							'·ÀÖ¹ÖØ¸´Ìá½»£¬SESSIONÃûÓëÌá½»µÄ±íµ¥ÒªÒ»ÖÂ¡£
-	'Ô¤ÀÀÍ¼Æ¬ÉèÖÃ
-	Upload.PreviewType			= Cint(Dvbbs.Forum_UploadSetting(3))	'ÉèÖÃÔ¤ÀÀÍ¼Æ¬×é¼şÀàĞÍ
-	Upload.PreviewImageWidth	= Dvbbs.Forum_UploadSetting(14)			'ÉèÖÃÔ¤ÀÀÍ¼Æ¬¿í¶È
-	Upload.PreviewImageHeight	= Dvbbs.Forum_UploadSetting(15)			'ÉèÖÃÔ¤ÀÀÍ¼Æ¬¸ß¶È
-	Upload.DrawImageWidth		= Dvbbs.Forum_UploadSetting(11)			'ÉèÖÃË®Ó¡Í¼Æ¬»òÎÄ×ÖÇøÓò¿í¶È
-	Upload.DrawImageHeight		= Dvbbs.Forum_UploadSetting(12)			'ÉèÖÃË®Ó¡Í¼Æ¬»òÎÄ×ÖÇøÓò¸ß¶È
-	Upload.DrawGraph			= Dvbbs.Forum_UploadSetting(10)			'ÉèÖÃË®Ó¡Í¸Ã÷¶È
-	Upload.DrawFontColor		= Dvbbs.Forum_UploadSetting(6)			'ÉèÖÃË®Ó¡ÎÄ×ÖÑÕÉ«
-	Upload.DrawFontFamily		= Dvbbs.Forum_UploadSetting(7)			'ÉèÖÃË®Ó¡ÎÄ×Ö×ÖÌå¸ñÊ½
-	Upload.DrawFontSize			= Dvbbs.Forum_UploadSetting(5)			'ÉèÖÃË®Ó¡ÎÄ×Ö×ÖÌå´óĞ¡
-	Upload.DrawFontBold			= Dvbbs.Forum_UploadSetting(8)			'ÉèÖÃË®Ó¡ÎÄ×ÖÊÇ·ñ´ÖÌå
-	Upload.DrawInfo				= DrawInfo								'ÉèÖÃË®Ó¡ÎÄ×ÖĞÅÏ¢»òÍ¼Æ¬ĞÅÏ¢
-	Upload.DrawType				= Dvbbs.Forum_UploadSetting(17)			'0=²»¼ÓÔØË®Ó¡ £¬1=¼ÓÔØË®Ó¡ÎÄ×Ö£¬2=¼ÓÔØË®Ó¡Í¼Æ¬
-	Upload.DrawXYType			= Dvbbs.Forum_UploadSetting(13)			'"0" =×óÉÏ£¬"1"=×óÏÂ,"2"=¾ÓÖĞ,"3"=ÓÒÉÏ,"4"=ÓÒÏÂ
-	Upload.DrawSizeType			= Dvbbs.Forum_UploadSetting(16)			'"0"=¹Ì¶¨ËõĞ¡£¬"1"=µÈ±ÈÀıËõĞ¡
+	Upload.UploadType			= Cint(Dvbbs.Forum_UploadSetting(2))	'è®¾ç½®ä¸Šä¼ ç»„ä»¶ç±»å‹
+	Upload.UploadPath			= FilePath								'è®¾ç½®ä¸Šä¼ è·¯å¾„
+	Upload.InceptFileType		= Replace(Dvbbs.Board_Setting(19),"|",",")		'è®¾ç½®ä¸Šä¼ æ–‡ä»¶é™åˆ¶
+	Upload.MaxSize				= Int(Dvbbs.GroupSetting(44))			'å•ä½ KB
+	Upload.InceptMaxFile		= InceptMaxFile							'æ¯æ¬¡ä¸Šä¼ æ–‡ä»¶ä¸ªæ•°ä¸Šé™
+	Upload.ChkSessionName		= "UploadCode"							'é˜²æ­¢é‡å¤æäº¤ï¼ŒSESSIONåä¸æäº¤çš„è¡¨å•è¦ä¸€è‡´ã€‚
+	'é¢„è§ˆå›¾ç‰‡è®¾ç½®
+	Upload.PreviewType			= Cint(Dvbbs.Forum_UploadSetting(3))	'è®¾ç½®é¢„è§ˆå›¾ç‰‡ç»„ä»¶ç±»å‹
+	Upload.PreviewImageWidth	= Dvbbs.Forum_UploadSetting(14)			'è®¾ç½®é¢„è§ˆå›¾ç‰‡å®½åº¦
+	Upload.PreviewImageHeight	= Dvbbs.Forum_UploadSetting(15)			'è®¾ç½®é¢„è§ˆå›¾ç‰‡é«˜åº¦
+	Upload.DrawImageWidth		= Dvbbs.Forum_UploadSetting(11)			'è®¾ç½®æ°´å°å›¾ç‰‡æˆ–æ–‡å­—åŒºåŸŸå®½åº¦
+	Upload.DrawImageHeight		= Dvbbs.Forum_UploadSetting(12)			'è®¾ç½®æ°´å°å›¾ç‰‡æˆ–æ–‡å­—åŒºåŸŸé«˜åº¦
+	Upload.DrawGraph			= Dvbbs.Forum_UploadSetting(10)			'è®¾ç½®æ°´å°é€æ˜åº¦
+	Upload.DrawFontColor		= Dvbbs.Forum_UploadSetting(6)			'è®¾ç½®æ°´å°æ–‡å­—é¢œè‰²
+	Upload.DrawFontFamily		= Dvbbs.Forum_UploadSetting(7)			'è®¾ç½®æ°´å°æ–‡å­—å­—ä½“æ ¼å¼
+	Upload.DrawFontSize			= Dvbbs.Forum_UploadSetting(5)			'è®¾ç½®æ°´å°æ–‡å­—å­—ä½“å¤§å°
+	Upload.DrawFontBold			= Dvbbs.Forum_UploadSetting(8)			'è®¾ç½®æ°´å°æ–‡å­—æ˜¯å¦ç²—ä½“
+	Upload.DrawInfo				= DrawInfo								'è®¾ç½®æ°´å°æ–‡å­—ä¿¡æ¯æˆ–å›¾ç‰‡ä¿¡æ¯
+	Upload.DrawType				= Dvbbs.Forum_UploadSetting(17)			'0=ä¸åŠ è½½æ°´å° ï¼Œ1=åŠ è½½æ°´å°æ–‡å­—ï¼Œ2=åŠ è½½æ°´å°å›¾ç‰‡
+	Upload.DrawXYType			= Dvbbs.Forum_UploadSetting(13)			'"0" =å·¦ä¸Šï¼Œ"1"=å·¦ä¸‹,"2"=å±…ä¸­,"3"=å³ä¸Š,"4"=å³ä¸‹
+	Upload.DrawSizeType			= Dvbbs.Forum_UploadSetting(16)			'"0"=å›ºå®šç¼©å°ï¼Œ"1"=ç­‰æ¯”ä¾‹ç¼©å°
 	If Dvbbs.Forum_UploadSetting(18)<>"" or Dvbbs.Forum_UploadSetting(18)<>"0" Then
-		Upload.TransitionColor	= Dvbbs.Forum_UploadSetting(18)			'Í¸Ã÷¶ÈÑÕÉ«ÉèÖÃ
+		Upload.TransitionColor	= Dvbbs.Forum_UploadSetting(18)			'é€æ˜åº¦é¢œè‰²è®¾ç½®
 	End If
-	'Ö´ĞĞÉÏ´«
+	'æ‰§è¡Œä¸Šä¼ 
 	Upload.SaveUpFile
 	If Upload.ErrCodes<>0 Then
-		Response.write "´íÎó£º"& Upload.Description & "[ <a href=""post_upload.asp?boardid=" & Dvbbs.BoardID & """>ÖØĞÂÉÏ´«</a> ]"
+		Response.write "é”™è¯¯ï¼š"& Upload.Description & "[ <a href=""post_upload.asp?boardid=" & Dvbbs.BoardID & """>é‡æ–°ä¸Šä¼ </a> ]"
 		Exit Sub
 	End If
 	If Upload.Count > 0 Then
 		For Each FormName In Upload.UploadFiles
 			Set File = Upload.UploadFiles(FormName)
 				F_FileName = FilePath & File.FileName
-				'´´½¨Ô¤ÀÀ¼°Ë®Ó¡Í¼Æ¬
+				'åˆ›å»ºé¢„è§ˆåŠæ°´å°å›¾ç‰‡
 				If Upload.PreviewType<>999 and File.FileType=1 then
 						F_Viewname = Previewpath & "pre" & Replace(File.FileName,File.FileExt,"") & "jpg"
-						'´´½¨Ô¤ÀÀÍ¼Æ¬:Call CreateView(Ô­Ê¼ÎÄ¼şµÄÂ·¾¶,Ô¤ÀÀÎÄ¼şÃû¼°Â·¾¶,Ô­ÎÄ¼şºó×º)
+						'åˆ›å»ºé¢„è§ˆå›¾ç‰‡:Call CreateView(åŸå§‹æ–‡ä»¶çš„è·¯å¾„,é¢„è§ˆæ–‡ä»¶ååŠè·¯å¾„,åŸæ–‡ä»¶åç¼€)
 						Upload.CreateView F_FileName,F_Viewname,File.FileExt
 				End If
 				UploadSave F_FileName,ChildFilePath&File.FileName,File.FileExt,F_Viewname,File.FileSize,File.FileType,File.FileOldName
 			Set File = Nothing
 		Next
 	Else
-		Response.write "ÇëÕıÈ·Ñ¡ÔñÒªÉÏ´«µÄÎÄ¼ş¡£[ <a href=""post_upload.asp?boardid=" & Dvbbs.BoardID & """>ÖØĞÂÉÏ´«</a> ]"
+		Response.write "è¯·æ­£ç¡®é€‰æ‹©è¦ä¸Šä¼ çš„æ–‡ä»¶ã€‚[ <a href=""post_upload.asp?boardid=" & Dvbbs.BoardID & """>é‡æ–°ä¸Šä¼ </a> ]"
 		Exit Sub
 	End If
 	Call Suc_upload(Upload.Count,OnceUPCount)
 	Set Upload = Nothing
 End Sub
 
-'±£´æÉÏ´«Êı¾İ²¢·µ»Ø¸½¼şID
+'ä¿å­˜ä¸Šä¼ æ•°æ®å¹¶è¿”å›é™„ä»¶ID
 Sub UploadSave(FileName,ChildFileName,FileExt,ViewName,FileSize,F_Type,F_OldName)
 	Dim ShwoFileName
 	ShwoFileName = Dvbbs.Checkstr(Replace(FileName,CheckFolder,"UploadFile/"))
@@ -283,27 +283,27 @@ Sub Suc_upload(UpCount,upNum)
 	iUserInfo = Dvbbs.UserToday(0) & "|" & Dvbbs.UserToday(1) & "|" & Dvbbs.UserToday(2) & "|" & Dvbbs.UserToday(3) & "|" & Dvbbs.UserToday(4)
 	iUserInfo=Dvbbs.Checkstr(iUserInfo)
 	If upNum < Clng(Dvbbs.GroupSetting(40)) And Dvbbs.UserToday(2) < Clng(Dvbbs.GroupSetting(50)) Then
-		Response.Write UpCount & "¸öÎÄ¼şÉÏ´«³É¹¦,Ä¿Ç°½ñÌì×Ü¹²ÉÏ´«ÁË" & Dvbbs.UserToday(2) & "¸ö¸½¼ş [ <a href=post_upload.asp?boardid=" & Dvbbs.BoardID & ">¼ÌĞøÉÏ´«</a> ]"
+		Response.Write UpCount & "ä¸ªæ–‡ä»¶ä¸Šä¼ æˆåŠŸ,ç›®å‰ä»Šå¤©æ€»å…±ä¸Šä¼ äº†" & Dvbbs.UserToday(2) & "ä¸ªé™„ä»¶ [ <a href=post_upload.asp?boardid=" & Dvbbs.BoardID & ">ç»§ç»­ä¸Šä¼ </a> ]"
 	Else
-		Response.write UpCount & "¸öÎÄ¼şÉÏ´«³É¹¦!±¾´ÎÒÑ´ïµ½ÉÏ´«ÊıÉÏÏŞ¡£"
+		Response.write UpCount & "ä¸ªæ–‡ä»¶ä¸Šä¼ æˆåŠŸ!æœ¬æ¬¡å·²è¾¾åˆ°ä¸Šä¼ æ•°ä¸Šé™ã€‚"
 	End If
 	Dvbbs.Execute("UPDATE [Dv_user] SET UserToday = '" & iUserInfo &"' WHERE UserID = " & Dvbbs.UserID)
 	Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usertoday").text=iUserInfo
 End Sub
 
 
-'¶ÁÈ¡ÉÏ´«Ä¿Â¼
+'è¯»å–ä¸Šä¼ ç›®å½•
 Function CheckFolder()
 	If Dvbbs.Forum_Setting(76)="" Or Dvbbs.Forum_Setting(76)="0" Then Dvbbs.Forum_Setting(76)="UploadFile/"
 	CheckFolder = Replace(Replace(Dvbbs.Forum_Setting(76),Chr(0),""),".","")
-	'ÔÚÄ¿Â¼ºó¼Ó(/)
+	'åœ¨ç›®å½•ååŠ (/)
 	If Right(CheckFolder,1)<>"/" Then CheckFolder=CheckFolder&"/"
 End Function
 
-'°´ÔÂ·İ×Ô¶¯Ã÷ÃûÉÏ´«ÎÄ¼ş¼Ğ,ĞèÒª£Æ£Ó£Ï×é¼şÖ§³Ö¡£
+'æŒ‰æœˆä»½è‡ªåŠ¨æ˜åä¸Šä¼ æ–‡ä»¶å¤¹,éœ€è¦ï¼¦ï¼³ï¼¯ç»„ä»¶æ”¯æŒã€‚
 Function CreatePath(PathValue)
 	Dim objFSO,Fsofolder,uploadpath
-	'ÒÔÄêÔÂ´´½¨ÉÏ´«ÎÄ¼ş¼Ğ£¬¸ñÊ½£º2003£­8
+	'ä»¥å¹´æœˆåˆ›å»ºä¸Šä¼ æ–‡ä»¶å¤¹ï¼Œæ ¼å¼ï¼š2003ï¼8
 	uploadpath = year(now) & "-" & month(now)
 	If Right(PathValue,1)<>"/" Then PathValue = PathValue&"/"
 	On Error Resume Next

@@ -13,7 +13,7 @@ Dim TempForum_PostFace,TempForum_userface,TempForum_emot
 admin_flag=",38,"
 CheckAdmin(admin_flag)
 Stype = Dvbbs.CheckNumeric(Request("Stype"))
-'Stype:1=���飬2=����em��3=ͷ��
+'Stype:1=表情，2=心情em，3=头像
 If Stype=0 Then Stype=4
 If 2=Stype Then
 	response.redirect "BbsFaceX.asp"
@@ -27,7 +27,7 @@ If Application(Dvbbs.CacheName &"_style").documentElement.selectSingleNode("styl
 		StyleID = Application(Dvbbs.CacheName &"_style").documentElement.selectSingleNode("style/@id").text
 		StyleName = Application(Dvbbs.CacheName &"_style").documentElement.selectSingleNode("style/@type").text
 	Else
-		Response.Write "ģ�������޷���ȡ,��������µ���"
+		Response.Write "模板数据无法提取,请检查或重新导入"
 		Response.End
 	End If
 Else
@@ -54,7 +54,7 @@ If Founderr=false Then
 			bbspicurl="../" & Forum_PostFace(0)
 		End If
 		connfile=Forum_PostFace
-		actname="��������ͼƬ"
+		actname="发贴表情图片"
 		picfilename="face"
 	case 2
 	'Skins/Default/emot/em01.gif	'Forum_emot
@@ -65,7 +65,7 @@ If Founderr=false Then
 			bbspicurl="../" & Forum_emot(0)
 		End If
 		connfile=Forum_emot
-		actname="��������ͼƬ"
+		actname="发贴心情图片"
 		picfilename="em"
 	case 3
 	'Images/userface/image1.gif
@@ -76,7 +76,7 @@ If Founderr=false Then
 			bbspicurl="../" & Forum_userface(0)
 		End If
 		connfile=Forum_userface
-		actname="ע��ͷ��"
+		actname="注册头像"
 		picfilename="image"
 	case else
 	'Images/userface/image1.gif
@@ -109,11 +109,11 @@ If Founderr=false Then
 		newnum=0
 	end if
 
-	if request("Submit")="��������" then
+	if request("Submit")="保存设置" then
 		call saveconst()
-	elseif request("Submit")="�ָ�Ĭ������" then
+	elseif request("Submit")="恢复默认设置" then
 		call savedefault()
-	ElseIf request("Submit")="�ָ�Ĭ��������" then
+	ElseIf request("Submit")="恢复默认总设置" then
 		Stype=4
 		call savedefault()
 	else
@@ -127,22 +127,22 @@ dim sel
 %>
 <table width="100%" border="0" cellspacing="1" cellpadding="3" align=center>
 <tr> 
-<td height="23" colspan="4" ><B>˵��</B>��<br>�١�����ͼƬ����������̳<%=bbspicurl%>Ŀ¼�У���Ҫ����Ҳ�뽫ͼƬ���ڸ�Ŀ¼<br>�ڡ��ұ߸�ѡ��Ϊɾ��ѡ����ѡ���㱣�����ã���ɾ����ӦͼƬ<BR>�ۡ�������޸��ļ����������޸���Ӧѡ���ֱ�ӵ���������ö�����ѡ���ұ߸�ѡ��
+<td height="23" colspan="4" ><B>说明</B>：<br>①、以下图片均保存于论坛<%=bbspicurl%>目录中，如要更换也请将图片放于该目录<br>②、右边复选框为删除选项，如果选择后点保存设置，则删除相应图片<BR>③、如仅仅修改文件名，可在修改相应选项后直接点击保存设置而不用选择右边复选框
 </td>
 </tr>
 </table>
 <table width="100%" border="0" cellspacing="1" cellpadding="3" align="center">
 <tr> 
-<th colspan="4"><%=actname%>�������� ��Ŀǰ����<%=count%>��<%=actname%>ͼƬ���ļ��У�<%=bbspicurl%>��</th>
+<th colspan="4"><%=actname%>管理设置 （目前共有<%=count%>个<%=actname%>图片在文件夹：<%=bbspicurl%>）</th>
 </tr>
 <tr>
-<td width="20%" align="left" class="forumrow">��ѡ�����ģ�壺 </td>
+<td width="20%" align="left" class="forumrow">请选择相关模板： </td>
 <form method="post" action="">
 <td width="80%" align="left" class="forumrow" colspan="3">
 	<%
 	Response.Write ""
 	Response.Write ""
-	'����ϵͳ��������ȡ������ģ�����ƺ�ID
+	'利用系统缓存数据取得所有模板名称和ID
 	Dim Templateslist
 	Response.Write "<select name=""StyleID"" size=""1"">"
 	For Each Templateslist in Application(Dvbbs.CacheName &"_style").documentElement.selectNodes("style")
@@ -154,37 +154,37 @@ dim sel
 	Next 
 	Response.Write "</select>"
 	Response.Write "&nbsp;&nbsp;"
-	Response.Write "<input type=submit class=""button"" value=""�� ��"" name=""mostyle"">"
+	Response.Write "<input type=submit class=""button"" value=""编 辑"" name=""mostyle"">"
 	%>
 </td>
 </form>
 </tr>
-<!--������-->
+<!--主表单-->
 <form method="POST" action="?Stype=<%=request("Stype")%>" name="bbspic" >
 <tr> 
-<td width="20%" align=left class=forumrow>��ǰģ�����ƣ�</td>
+<td width="20%" align=left class=forumrow>当前模版名称：</td>
 <td width="80%" align=left class=forumrow colspan="3"><%=StyleName%>
 </td>
 </tr>
 <tr> 
-<td width="20%" align=left class=forumrow>���ӵ��ļ�����</td>
-<td width="80%" align=left class=forumrow colspan="3"><input  type="text" name="NEWFILENAME" value="<%=newfilename%>">��<font color=red>�������Ĭ�ϣ����Ӻ����Ӧ���ļ����ϴ�����Ŀ¼�¡�</font>��
+<td width="20%" align=left class=forumrow>增加的文件名：</td>
+<td width="80%" align=left class=forumrow colspan="3"><input  type="text" name="NEWFILENAME" value="<%=newfilename%>">（<font color=red>建议采用默认，增加后把相应的文件名上传到该目录下。</font>）
 </td>
 </tr>
 <tr> 
-<td width="20%" align=left class=forumrow>����������Ŀ��</td>
+<td width="20%" align=left class=forumrow>批量增加数目：</td>
 <td width="80%" align=left class=forumrow colspan="3"><input  type="text" name="NEWNUM" value="<%=newnum%>">
-<input type="submit" class="button" name="Submit" value="����"><input type="hidden" name="StyleId" value="<%=StyleId%>" />
+<input type="submit" class="button" name="Submit" value="增加"><input type="hidden" name="StyleId" value="<%=StyleId%>" />
 </td>
 </tr>
 <tr> 
-<td width="20%" align="left" class=>��������ģ�壺</td>
-<td width="80%" align="left" class="forumrow" colspan="3">��<input type="radio" class="radio" name="coverall" value="1" >��<input type="radio" class="radio" name="coverall" value="0" checked>
+<td width="20%" align="left" class=>覆盖所有模板：</td>
+<td width="80%" align="left" class="forumrow" colspan="3">是<input type="radio" class="radio" name="coverall" value="1" >否<input type="radio" class="radio" name="coverall" value="0" checked>
 </td>
 </tr>
 <%
 Dim TempName,i
-IF request("Submit")="����" and request("Newnum")<>"" and request("Newnum")<>0 then
+IF request("Submit")="增加" and request("Newnum")<>"" and request("Newnum")<>0 then
 	newnum=REQUEST("Newnum")
 	for i=count to count+newnum-1
 		if stype=2 and i<10 Then
@@ -194,8 +194,8 @@ IF request("Submit")="����" and request("Newnum")<>"" and request("Newnum")<>0 t
 		End If
 		%>
 		<tr>
-		<td width="20%" class=forumRowHighlight><%=actname%>ID��<input type=hidden name="face_id<%=i%>" size="10" value="<%=i%>"><%=i%></td>
-		<td width="75%" class=forumRowHighlight colspan="2">�����ӵ��ļ���<input  type="text" name="userface<%=i%>" value="<%=TempName%>.gif"></td>
+		<td width="20%" class=forumRowHighlight><%=actname%>ID：<input type=hidden name="face_id<%=i%>" size="10" value="<%=i%>"><%=i%></td>
+		<td width="75%" class=forumRowHighlight colspan="2">新增加的文件：<input  type="text" name="userface<%=i%>" value="<%=TempName%>.gif"></td>
 		<td width="5%" class=forumRowHighlight> 
 		<input type="checkbox" class="checkbox" name="delid<%=i%>" value="<%=i%>">
 		</td>
@@ -204,20 +204,20 @@ IF request("Submit")="����" and request("Newnum")<>"" and request("Newnum")<>0 t
 End If
 %>
 <tr>
-<th width="20%" class=forumrow>�ļ�</th>
-<th width="45%" class=forumrow>�ļ���</th>
-<th width="30%" class=forumrow>ͼƬ</th>
-<th width="5%" class=forumrow>ɾ��</th>
+<th width="20%" class=forumrow>文件</th>
+<th width="45%" class=forumrow>文件名</th>
+<th width="30%" class=forumrow>图片</th>
+<th width="5%" class=forumrow>删除</th>
 </tr>
 <tr>
-<td width="20%" class=forumrow>�ļ�Ŀ¼��<input type=hidden name="face_id0" size="10" ></td>
+<td width="20%" class=forumrow>文件目录：<input type=hidden name="face_id0" size="10" ></td>
 <td width="45%" class=forumrow>&nbsp;<input  type="text" name="userface0" value="<%=Replace(bbspicurl,"../","")%>"></td>
 <td width="30%" class=forumrow>&nbsp;</td>
 <td width="5%" class=forumrow>&nbsp;</td>
 </tr>
 <% for i=1 to bbspicmun %>
 <tr>
-<td width="20%" class=forumrow>�ļ�����<input type=hidden name="face_id<%=i%>" size="10" value="<%=i%>"></td>
+<td width="20%" class=forumrow>文件名：<input type=hidden name="face_id<%=i%>" size="10" value="<%=i%>"></td>
 <td width="45%" class=forumrow>&nbsp;<input type="text" name="userface<%=i%>" value="<%=connfile(i)%>"></td>
 <td width="30%" class=forumrow> 
 &nbsp;&nbsp;<img src=<%=bbspicurl%><%=connfile(i)%>>
@@ -228,21 +228,21 @@ End If
 <% next %>
 <tr> 
 <td  colspan="4" class=forumrow> 
-<B>ע��</B>���ұ߸�ѡ��Ϊɾ��ѡ����ѡ���㱣�����ã���ɾ����ӦͼƬ<BR>������޸��ļ����������޸���Ӧѡ���ֱ�ӵ���������ö�����ѡ���ұ߸�ѡ��
+<B>注意</B>：右边复选框为删除选项，如果选择后点保存设置，则删除相应图片<BR>如仅仅修改文件名，可在修改相应选项后直接点击保存设置而不用选择右边复选框
 </td>
 </tr>
 <tr> 
 <td  colspan="4" class=forumrow> 
 <div align="center"> 
- ɾ��ѡ�ɾ����ѡ��ʵ���ļ���<font color=red>��ҪFSO֧�ֹ���</font>������<input type=radio class="radio" name=setfso value=1 >��<input type=radio class="radio" name=setfso value=0 checked> ��ѡ��Ҫɾ�����ļ���<input type="checkbox" class="checkbox" name=chkall value=on onclick="CheckAll(this.form)">ȫѡ <BR>
-<input type="submit" class="button" name="Submit" value="��������">
-<input type="submit" class="button" name="Submit" value="�ָ�Ĭ������">
-<input type="submit" class="button" name="Submit" value="�ָ�Ĭ��������">
+ 删除选项：删除所选的实际文件（<font color=red>需要FSO支持功能</font>）：是<input type=radio class="radio" name=setfso value=1 >否<input type=radio class="radio" name=setfso value=0 checked> 请选择要删除的文件，<input type="checkbox" class="checkbox" name=chkall value=on onclick="CheckAll(this.form)">全选 <BR>
+<input type="submit" class="button" name="Submit" value="保存设置">
+<input type="submit" class="button" name="Submit" value="恢复默认设置">
+<input type="submit" class="button" name="Submit" value="恢复默认总设置">
 </div>
 </td>
 </tr>
 </form>
-<!--����������-->
+<!--主表单结束-->
 </table><BR><BR>
 
 <%
@@ -265,15 +265,15 @@ sub saveconst()
 				Set objFSO = Dvbbs.iCreateObject("Scripting.FileSystemObject")
 				If objFSO.fileExists(filepaths) Then
 					'objFSO.DeleteFile(filepaths)
-					response.write "ɾ��"&filepaths
+					response.write "删除"&filepaths
 				Else
-					response.write "δ�ҵ�"&filepaths
+					response.write "未找到"&filepaths
 				End If
 			End If
 		End If
 	Next
 	Set objFSO=Nothing
-	''1=���飬2=����em��3=ͷ��
+	''1=表情，2=心情em，3=头像
 	'Style_Pic=TempForum_userface+"@@@"+TempForum_PostFace+"@@@"+TempForum_emot
 	f_userface=replace(f_userface,"@@@","")
 	Select Case Stype
@@ -288,7 +288,7 @@ sub saveconst()
 		Set Rs = Dvbbs.Execute("Select Id,Type,Folder From Dv_Templates")
 		If Not (Rs.Eof And Rs.Bof) Then
 			Do While Not Rs.Eof
-				'����ȫ�����Ϊͳһ�ı���/ͷ��/�������� By Dv.���� 2007-10-12
+				'设置全部风格为统一的表情/头像/发贴心情 By Dv.唧唧 2007-10-12
 				Dvbbs.writeToFile "../Resource/"&Rs(2)&"/pub_FaceEmot.htm",Dvbbs.checkstr(upconfig)
 				Dvbbs.Name = "Style_Pic"&Rs(0)
 				Dvbbs.value=upconfig
@@ -302,7 +302,7 @@ sub saveconst()
 		Dvbbs.Name = "Style_Pic"&StyleID
 		Dvbbs.value=upconfig
 	End If
-	Dv_suc(actname&"���óɹ���")
+	Dv_suc(actname&"设置成功。")
 End Sub
 
 sub savedefault()
@@ -331,20 +331,20 @@ sub savedefault()
 			userface="Images/userface/|||"+userface
 			upconfig=userface+"@@@"+TempForum_PostFace+"@@@"+TempForum_emot
 	case else
-			''ͷ��---------------------------------------
+			''头像---------------------------------------
 			for i=1 to 60
 			userface=userface&"image"&i&".gif|||"
 			next
 			userface="Images/userface/|||"+userface
 			upconfig=userface+"@@@"
-			''����---------------------------------------
+			''表情---------------------------------------
 			userface=""
 			for i=1 to 18
 			userface=userface&"face"&i&".gif|||"
 			next
 			userface="Skins/default/topicface/|||"+userface
 			upconfig=upconfig+userface+"@@@"
-			''����---------------------------------------
+			''心情---------------------------------------
 			userface=""
 			for i=1 to 9
 			userface=userface&"em0"&i&".gif|||"
@@ -359,7 +359,7 @@ sub savedefault()
 		Set Rs = Dvbbs.Execute("Select Id,Type,Folder From Dv_Templates")
 		If Not (Rs.Eof And Rs.Bof) Then
 			Do While Not Rs.Eof
-				'����ȫ�����Ϊͳһ�ı���/ͷ��/�������� By Dv.���� 2007-10-12
+				'设置全部风格为统一的表情/头像/发贴心情 By Dv.唧唧 2007-10-12
 				Dvbbs.writeToFile "../Resource/"&Rs(2)&"/pub_FaceEmot.htm",Dvbbs.checkstr(upconfig)
 				Dvbbs.Name = "Style_Pic"&Rs(0)
 				Dvbbs.value=upconfig
@@ -373,14 +373,14 @@ sub savedefault()
 		Dvbbs.Name = "Style_Pic"&StyleID
 		Dvbbs.value=upconfig
 	End If
-	Dv_suc(actname&"�ָ����óɹ���")
+	Dv_suc(actname&"恢复设置成功。")
 end sub
 
-Rem  �ļ����� pub_FaceEmot.html
-Rem  1=���飬2=����em��3=ͷ��
-Rem  ģ�������@@@�ָС����|||�ָ�;
-Rem  ��һ������Ϊ�ļ������Ŀ¼
-Rem  eg.: ����Ŀ¼|||����|||����...@@@����Ŀ¼|||����|||����...@@@ͷ��Ŀ¼|||ͷ��|||ͷ��...
+Rem  文件名称 pub_FaceEmot.html
+Rem  1=表情，2=心情em，3=头像
+Rem  模版大类以@@@分割；小类以|||分割;
+Rem  第一个子项为文件保存的目录
+Rem  eg.: 表情目录|||表情|||表情...@@@心情目录|||心情|||心情...@@@头像目录|||头像|||头像...
 
 Sub GetNum()
 	Dim NRs,sql
@@ -391,14 +391,14 @@ Sub GetNum()
 			StyleId=NRs(0)
 			StyleName=NRs(1)
 		Else
-			Rem ��������ģ������ ��ֹ������� By Dv.���� 2007-10-12
+			Rem 继续查找模板数据 防止缓存出错 By Dv.唧唧 2007-10-12
 			SQL=" Select Id,Type,Folder From Dv_Templates"
 			Set NRs=Dvbbs.Execute (SQL)
 			If Not NRs.eof Then
 				StyleId=NRs(0)
 				StyleName=NRs(1)
 			Else
-				Errmsg=ErrMsg + "<li>"+"ģ��δ�ҵ��������ѱ�ɾ����������ѡȡ��ȷģ�棡"
+				Errmsg=ErrMsg + "<li>"+"模块未找到，可能已被删除，请重新选取正确模版！"
 				Founderr=True
 				Exit Sub
 			End If
@@ -413,10 +413,10 @@ Sub GetNum()
 
 	Style_Pic = Dvbbs.ReadTextFile(FileName)
 
-	Style_Pic=Split(Style_Pic,"@@@")	'ģ�������@@@�ָС����|||�ָ�;
-	TempForum_userface=Style_Pic(0)			'�û�ͷ��
-	TempForum_PostFace=Style_Pic(1)			'��������
-	TempForum_emot=Style_Pic(2)				'�������� EM
+	Style_Pic=Split(Style_Pic,"@@@")	'模版大类以@@@分割；小类以|||分割;
+	TempForum_userface=Style_Pic(0)			'用户头像
+	TempForum_PostFace=Style_Pic(1)			'发贴表情
+	TempForum_emot=Style_Pic(2)				'发贴心情 EM
 
 	Forum_PostFace=split(TempForum_PostFace,"|||")
 	Forum_userface=split(TempForum_userface,"|||")

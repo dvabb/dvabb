@@ -14,7 +14,7 @@
 	AllPostTable=Split(AllPostTable,"|")
 
 	Dvbbs.LoadTemplates("")
-	Dvbbs.Stats = "ÓÎÏ·°æÃæÉèÖÃ"
+	Dvbbs.Stats = "æ¸¸æˆç‰ˆé¢è®¾ç½®"
 	Dvbbs.Nav()
 	Dvbbs.Head_var 0,0,Plus_Popwan.Program,"plus_popwan_forum.asp"
 	Dvbbs.ActiveOnline()
@@ -26,7 +26,7 @@
 	End If
 	Dvbbs.PageEnd()
 
-'Ò³ÃæÓÒ²àÄÚÈİ²¿·Ö
+'é¡µé¢å³ä¾§å†…å®¹éƒ¨åˆ†
 Sub Page_Center()
 	If Not Plus_Popwan.IsMaster Then
 		Dvbbs.AddErrcode(28)
@@ -46,7 +46,7 @@ Sub Page_Center()
 End Sub
 
 '=============
-'°æÃæÏà¹Ø ¿ªÊ¼
+'ç‰ˆé¢ç›¸å…³ å¼€å§‹
 '=============
 Sub info()
 %>
@@ -55,16 +55,16 @@ table {width:100%;}
 td {padding-left:5px;}
 </style>
 <table cellspacing="0" cellpadding="0" class="pw_tb1">
-<tr><th>ÓÎÏ·°æÃæÉèÖÃ</th></tr>
+<tr><th>æ¸¸æˆç‰ˆé¢è®¾ç½®</th></tr>
 <tr><td>
 <ul>
-<li>ËµÃ÷¢Ù£º´ËÒ³Ãæ¿ÉÌí¼ÓÓÎÏ·°æÃæ£¬Ïà¹ØÈ¨ÏŞÉèÖÃ£¬¿Éµ½ºóÌ¨°æÃæ¹ÜÀíÖĞ½øĞĞÉèÖÃ£»</li>
-<li>ËµÃ÷¢Ú£º°æÃæÁĞ±í²Ù×÷ÖĞ£¬¿É·¢Æğ¹Ì¶¥ÌûºÍ¹«¸æ¡£</li>
+<li>è¯´æ˜â‘ ï¼šæ­¤é¡µé¢å¯æ·»åŠ æ¸¸æˆç‰ˆé¢ï¼Œç›¸å…³æƒé™è®¾ç½®ï¼Œå¯åˆ°åå°ç‰ˆé¢ç®¡ç†ä¸­è¿›è¡Œè®¾ç½®ï¼›</li>
+<li>è¯´æ˜â‘¡ï¼šç‰ˆé¢åˆ—è¡¨æ“ä½œä¸­ï¼Œå¯å‘èµ·å›ºé¡¶å¸–å’Œå…¬å‘Šã€‚</li>
 </ul>
 </td></tr>
 <tr><td>
-<a href="?action=add">Ìí¼ÓÓÎÏ·°æÃæ</a>
-| <a href="plus_popwan_forum.asp">ÓÎÏ·°æÃæÉèÖÃ</a>
+<a href="?action=add">æ·»åŠ æ¸¸æˆç‰ˆé¢</a>
+| <a href="plus_popwan_forum.asp">æ¸¸æˆç‰ˆé¢è®¾ç½®</a>
 </td></tr>
 </table><br/>
 <%
@@ -76,9 +76,9 @@ Dim Rs,classrow,iii,SQL,i
 %>
 <table cellspacing="0" cellpadding="0" class="pw_tb1">
 <tr> 
-<th width="35%">ÂÛÌ³°æÃæ
+<th width="35%">è®ºå›ç‰ˆé¢
 </th>
-<th width="*">²Ù×÷
+<th width="*">æ“ä½œ
 </th>
 </tr>
 <%
@@ -115,7 +115,7 @@ For iii=0 To Ubound(SQL,2)
 %>
 </td>
 <td width="45%">
-<a href="?action=add&editid=<%=SQL(0,iii)%>"><font color="<%=Dvbbs.mainsetting(3)%>"><U>Ìí¼Ó°æÃæ</U></font></a> | <a href="?action=edit&editid=<%=SQL(0,iii)%>"><font color="<%=Dvbbs.mainsetting(3)%>"><U>»ù±¾ÉèÖÃ</U></font></a> | <%if SQL(4,iii)=0 then%><a href="?action=del&editid=<%=SQL(0,iii)%>" onclick="{if(confirm('É¾³ı½«°üÀ¨¸ÃÂÛÌ³µÄËùÓĞÌû×Ó£¬È·¶¨É¾³ıÂğ?')){return true;}return false;}"><font color="<%=Dvbbs.mainsetting(3)%>"><U>É¾³ı</U></a><%else%><a href="#" onclick="{if(confirm('¸ÃÂÛÌ³º¬ÓĞÏÂÊôÂÛÌ³£¬±ØĞëÏÈÉ¾³ıÆäÏÂÊôÂÛÌ³·½ÄÜÉ¾³ı±¾ÂÛÌ³£¡')){return true;}return false;}"><font color="<%=Dvbbs.mainsetting(3)%>"><U>É¾³ı</U></font></a><%end if%> | <a href="plus_popwan_post.asp?boardid=<%=Sql(0,iii)%>"><font color="<%=Dvbbs.mainsetting(3)%>"><U>·¢±í¹Ì¶¥Ìû</U></font></a> | <a href="plus_popwan_ann.asp?action=addann&boardid=<%=Sql(0,iii)%>"><font color="<%=Dvbbs.mainsetting(3)%>"><U>·¢±í¹«¸æ</U></font></a>
+<a href="?action=add&editid=<%=SQL(0,iii)%>"><font color="<%=Dvbbs.mainsetting(3)%>"><U>æ·»åŠ ç‰ˆé¢</U></font></a> | <a href="?action=edit&editid=<%=SQL(0,iii)%>"><font color="<%=Dvbbs.mainsetting(3)%>"><U>åŸºæœ¬è®¾ç½®</U></font></a> | <%if SQL(4,iii)=0 then%><a href="?action=del&editid=<%=SQL(0,iii)%>" onclick="{if(confirm('åˆ é™¤å°†åŒ…æ‹¬è¯¥è®ºå›çš„æ‰€æœ‰å¸–å­ï¼Œç¡®å®šåˆ é™¤å—?')){return true;}return false;}"><font color="<%=Dvbbs.mainsetting(3)%>"><U>åˆ é™¤</U></a><%else%><a href="#" onclick="{if(confirm('è¯¥è®ºå›å«æœ‰ä¸‹å±è®ºå›ï¼Œå¿…é¡»å…ˆåˆ é™¤å…¶ä¸‹å±è®ºå›æ–¹èƒ½åˆ é™¤æœ¬è®ºå›ï¼')){return true;}return false;}"><font color="<%=Dvbbs.mainsetting(3)%>"><U>åˆ é™¤</U></font></a><%end if%> | <a href="plus_popwan_post.asp?boardid=<%=Sql(0,iii)%>"><font color="<%=Dvbbs.mainsetting(3)%>"><U>å‘è¡¨å›ºé¡¶å¸–</U></font></a> | <a href="plus_popwan_ann.asp?action=addann&boardid=<%=Sql(0,iii)%>"><font color="<%=Dvbbs.mainsetting(3)%>"><U>å‘è¡¨å…¬å‘Š</U></font></a>
 </td></tr>
 <%
 Next
@@ -152,45 +152,45 @@ rs_c.open sql,conn,1,1
 <form action ="?action=savenew" method="post" name="theform">
 <input type="hidden" name="newboardid" value="<%=boardnum%>">
 <tr> 
-<th colspan="2" style="text-align:center;"><B>Ìí¼ÓÓÎÏ·×¨Ìâ°æ¿é</th>
+<th colspan="2" style="text-align:center;"><B>æ·»åŠ æ¸¸æˆä¸“é¢˜ç‰ˆå—</th>
 </tr>
 <tr> 
 <td width="100%" height="30" colspan="2">
-ËµÃ÷£º<BR>1¡¢Ìí¼ÓÂÛÌ³°æÃæºó£¬Ïà¹ØµÄÉèÖÃ¾ùÎªÄ¬ÈÏÉèÖÃ£¬Çë·µ»ØÂÛÌ³°æÃæ¹ÜÀíÊ×Ò³°æÃæÁĞ±íµÄ¸ß¼¶ÉèÖÃÖĞÉèÖÃ¸ÃÂÛÌ³µÄÏàÓ¦ÊôĞÔ£¬Èç¹ûÄúÏë¶Ô¸ÃÂÛÌ³×ö¸ü¾ßÌåµÄÈ¨ÏŞÉèÖÃ£¬Çëµ½<font color=blue>ºóÌ¨ÂÛÌ³È¨ÏŞ¹ÜÀí</font>ÖĞÉèÖÃÏàÓ¦ÓÃ»§×éÔÚ¸Ã°æÃæµÄÈ¨ÏŞ¡£<BR>
-2¡¢<font color=blue>Èç¹ûÄúÌí¼ÓµÄÊÇÂÛÌ³·ÖÀà</font>£¬Ö»ĞèÒªÔÚËùÊô·ÖÀàÖĞÑ¡Ôñ×÷ÎªÂÛÌ³·ÖÀà¼´¿É£»<font color=blue>Èç¹ûÄúÌí¼ÓµÄÊÇÂÛÌ³°æÃæ</font>£¬ÔòÒªÔÚËùÊô·ÖÀàÖĞÈ·¶¨²¢Ñ¡Ôñ¸ÃÂÛÌ³°æÃæµÄÉÏ¼¶°æÃæ¡£
+è¯´æ˜ï¼š<BR>1ã€æ·»åŠ è®ºå›ç‰ˆé¢åï¼Œç›¸å…³çš„è®¾ç½®å‡ä¸ºé»˜è®¤è®¾ç½®ï¼Œè¯·è¿”å›è®ºå›ç‰ˆé¢ç®¡ç†é¦–é¡µç‰ˆé¢åˆ—è¡¨çš„é«˜çº§è®¾ç½®ä¸­è®¾ç½®è¯¥è®ºå›çš„ç›¸åº”å±æ€§ï¼Œå¦‚æœæ‚¨æƒ³å¯¹è¯¥è®ºå›åšæ›´å…·ä½“çš„æƒé™è®¾ç½®ï¼Œè¯·åˆ°<font color=blue>åå°è®ºå›æƒé™ç®¡ç†</font>ä¸­è®¾ç½®ç›¸åº”ç”¨æˆ·ç»„åœ¨è¯¥ç‰ˆé¢çš„æƒé™ã€‚<BR>
+2ã€<font color=blue>å¦‚æœæ‚¨æ·»åŠ çš„æ˜¯è®ºå›åˆ†ç±»</font>ï¼Œåªéœ€è¦åœ¨æ‰€å±åˆ†ç±»ä¸­é€‰æ‹©ä½œä¸ºè®ºå›åˆ†ç±»å³å¯ï¼›<font color=blue>å¦‚æœæ‚¨æ·»åŠ çš„æ˜¯è®ºå›ç‰ˆé¢</font>ï¼Œåˆ™è¦åœ¨æ‰€å±åˆ†ç±»ä¸­ç¡®å®šå¹¶é€‰æ‹©è¯¥è®ºå›ç‰ˆé¢çš„ä¸Šçº§ç‰ˆé¢ã€‚
 </td>
 </tr>
 <tr> 
-<td width="40%" height="30">ÂÛÌ³Ãû³Æ</td>
+<td width="40%" height="30">è®ºå›åç§°</td>
 <td width="60%"> 
-<input type="text" name="boardtype" size="35">&nbsp;&nbsp;µã»÷ (<a title="ÌîĞ´±íµ¥" href="javascript:;" onclick="DvWnd.open('ÌîĞ´±íµ¥','plus_popwan_boardtinput.asp?sh=520&amp;sw=500',800,520,1,{bgc:'black',opa:0.5});">ÌîĞ´±íµ¥</a>) ¿É¿ìËÙÌîĞ´±íµ¥¡£
+<input type="text" name="boardtype" size="35">&nbsp;&nbsp;ç‚¹å‡» (<a title="å¡«å†™è¡¨å•" href="javascript:;" onclick="DvWnd.open('å¡«å†™è¡¨å•','plus_popwan_boardtinput.asp?sh=520&amp;sw=500',800,520,1,{bgc:'black',opa:0.5});">å¡«å†™è¡¨å•</a>) å¯å¿«é€Ÿå¡«å†™è¡¨å•ã€‚
 </td>
 </tr>
 <tr> 
-<td width="40%" height="24">°æÃæËµÃ÷<BR>¿ÉÒÔÊ¹ÓÃHTML´úÂë</td>
+<td width="40%" height="24">ç‰ˆé¢è¯´æ˜<BR>å¯ä»¥ä½¿ç”¨HTMLä»£ç </td>
 <td width="60%"> 
 <textarea name="Readme" cols="50" rows="5"></textarea>
 </td>
 </tr>
 <tr> 
-<td width="40%" height="24">°æÃæ¹æÔò<BR>¿ÉÒÔÊ¹ÓÃHTML´úÂë</td>
+<td width="40%" height="24">ç‰ˆé¢è§„åˆ™<BR>å¯ä»¥ä½¿ç”¨HTMLä»£ç </td>
 <td width="60%"> 
 <textarea name="Rules" cols="50" rows="5"></textarea>
 </td>
 </tr>
 <tr> 
-<td width="40%" height="30"><U>ËùÊôÀà±ğ</U></td>
+<td width="40%" height="30"><U>æ‰€å±ç±»åˆ«</U></td>
 <td width="60%"> 
 <select name="class" id="Boardid"></select>
 <SCRIPT LANGUAGE="JavaScript">
 <!--
-BoardJumpListSelect('<%=Dvbbs.CheckNumeric(Request("editid"))%>','Boardid','×öÎªÂÛÌ³·ÖÀà','0','0');
+BoardJumpListSelect('<%=Dvbbs.CheckNumeric(Request("editid"))%>','Boardid','åšä¸ºè®ºå›åˆ†ç±»','0','0');
 //-->
 </SCRIPT>
 </td>
 </tr>
 <tr> 
-<td width="40%" height="30"><U>Ê¹ÓÃÑùÊ½·ç¸ñ</U><BR>Ïà¹ØÑùÊ½·ç¸ñÖĞ°üº¬ÂÛÌ³ÑÕÉ«¡¢Í¼Æ¬<BR>µÈĞÅÏ¢</td>
+<td width="40%" height="30"><U>ä½¿ç”¨æ ·å¼é£æ ¼</U><BR>ç›¸å…³æ ·å¼é£æ ¼ä¸­åŒ…å«è®ºå›é¢œè‰²ã€å›¾ç‰‡<BR>ç­‰ä¿¡æ¯</td>
 <td width="60%">
 <%
 	set rs_c=dvbbs.execute("select forum_sid,forum_cid from dv_setup")
@@ -210,31 +210,31 @@ Next
 </td>
 </tr>
 <tr> 
-<td width="40%" height="30"><U>ÂÛÌ³°æÖ÷</U><BR>¶à°æÖ÷Ìí¼ÓÇëÓÃ|·Ö¸ô£¬Èç£ºÉ³Ì²Ğ¡×Ó|wodeail</td>
+<td width="40%" height="30"><U>è®ºå›ç‰ˆä¸»</U><BR>å¤šç‰ˆä¸»æ·»åŠ è¯·ç”¨|åˆ†éš”ï¼Œå¦‚ï¼šæ²™æ»©å°å­|wodeail</td>
 <td width="60%"> 
 <input type="text" name="boardmaster" size="35">
 </td>
 </tr>
 <tr> 
-<td width="40%" height="30"><U>Ê×Ò³ÏÔÊ¾ÂÛÌ³Í¼Æ¬</U><BR>³öÏÖÔÚÊ×Ò³ÂÛÌ³°æÃæ½éÉÜ×ó±ß<BR>ÇëÖ±½ÓÌîĞ´Í¼Æ¬URL</td>
+<td width="40%" height="30"><U>é¦–é¡µæ˜¾ç¤ºè®ºå›å›¾ç‰‡</U><BR>å‡ºç°åœ¨é¦–é¡µè®ºå›ç‰ˆé¢ä»‹ç»å·¦è¾¹<BR>è¯·ç›´æ¥å¡«å†™å›¾ç‰‡URL</td>
 <td width="60%">
 <input type="text" name="indexIMG" size="35">
 </td>
 </tr>
-<!-- URLÍâ²¿Á¬½Ó ¿ªÊ¼ -->
+<!-- URLå¤–éƒ¨è¿æ¥ å¼€å§‹ -->
 <tr> 
-<td width="40%" height="30"><U>URLÍâ²¿Á¬½Ó</U><BR>ÌîĞ´±¾ÄÚÈİºó£¬ÔÚÂÛÌ³ÁĞ±íµã»÷´Ë°æÃæ½«×Ô¶¯ÇĞ»»µ½¸ÃÍøÖ·<BR>ÇëÌîĞ´URL¾ø¶ÔÂ·¾¶</td>
+<td width="40%" height="30"><U>URLå¤–éƒ¨è¿æ¥</U><BR>å¡«å†™æœ¬å†…å®¹åï¼Œåœ¨è®ºå›åˆ—è¡¨ç‚¹å‡»æ­¤ç‰ˆé¢å°†è‡ªåŠ¨åˆ‡æ¢åˆ°è¯¥ç½‘å€<BR>è¯·å¡«å†™URLç»å¯¹è·¯å¾„</td>
 <td width="60%">
-<input type="radio" class="radio" name="tempradio" value="0" checked onclick="javascript:document.theform.Board_Setting_50.value='0';">¹Ø±Õ&nbsp;
-<input type="radio" class="radio" name="tempradio" value="1" >Ê¹ÓÃURLÍâ²¿Á¬½Ó&nbsp;
+<input type="radio" class="radio" name="tempradio" value="0" checked onclick="javascript:document.theform.Board_Setting_50.value='0';">å…³é—­&nbsp;
+<input type="radio" class="radio" name="tempradio" value="1" >ä½¿ç”¨URLå¤–éƒ¨è¿æ¥&nbsp;
 <br/><input type=text name="Board_Setting_50" value="0" size="50">
 </td>
 </tr>
-<!-- URLÍâ²¿Á¬½Ó ½áÊø -->
+<!-- URLå¤–éƒ¨è¿æ¥ ç»“æŸ -->
 <tr> 
 <td width="40%" height="24">&nbsp;</td>
 <td width="60%"> 
-<input type="submit" name="Submit" value="Ìí¼ÓÂÛÌ³" class="button">
+<input type="submit" name="Submit" value="æ·»åŠ è®ºå›" class="button">
 </td>
 </tr>
 </form>
@@ -261,42 +261,42 @@ forum_sid=rs("sid")
 <form action ="?action=savedit" method="post" name="theform">
 <input type="hidden" name="editid" value="<%=Request("editid")%>">
 <tr> 
-<th colspan="2" style="text-align:center;">±à¼­ÓÎÏ·×¨Ìâ£º<%=rs("boardtype")%></th>
+<th colspan="2" style="text-align:center;">ç¼–è¾‘æ¸¸æˆä¸“é¢˜ï¼š<%=rs("boardtype")%></th>
 </tr>
 <tr> 
 <td width="100%" height="30" colspan="2">
-ËµÃ÷£º<BR>1¡¢Ìí¼ÓÂÛÌ³°æÃæºó£¬Ïà¹ØµÄÉèÖÃ¾ùÎªÄ¬ÈÏÉèÖÃ£¬Çë·µ»ØÂÛÌ³°æÃæ¹ÜÀíÊ×Ò³°æÃæÁĞ±íµÄ¸ß¼¶ÉèÖÃÖĞÉèÖÃ¸ÃÂÛÌ³µÄÏàÓ¦ÊôĞÔ£¬Èç¹ûÄúÏë¶Ô¸ÃÂÛÌ³×ö¸ü¾ßÌåµÄÈ¨ÏŞÉèÖÃ£¬Çëµ½<font color=blue>ºóÌ¨ÂÛÌ³È¨ÏŞ¹ÜÀí</font>ÖĞÉèÖÃÏàÓ¦ÓÃ»§×éÔÚ¸Ã°æÃæµÄÈ¨ÏŞ¡£<BR>
-2¡¢<font color=blue>Èç¹ûÄúÌí¼ÓµÄÊÇÂÛÌ³·ÖÀà</font>£¬Ö»ĞèÒªÔÚËùÊô·ÖÀàÖĞÑ¡Ôñ×÷ÎªÂÛÌ³·ÖÀà¼´¿É£»<font color=blue>Èç¹ûÄúÌí¼ÓµÄÊÇÂÛÌ³°æÃæ</font>£¬ÔòÒªÔÚËùÊô·ÖÀàÖĞÈ·¶¨²¢Ñ¡Ôñ¸ÃÂÛÌ³°æÃæµÄÉÏ¼¶°æÃæ¡£
+è¯´æ˜ï¼š<BR>1ã€æ·»åŠ è®ºå›ç‰ˆé¢åï¼Œç›¸å…³çš„è®¾ç½®å‡ä¸ºé»˜è®¤è®¾ç½®ï¼Œè¯·è¿”å›è®ºå›ç‰ˆé¢ç®¡ç†é¦–é¡µç‰ˆé¢åˆ—è¡¨çš„é«˜çº§è®¾ç½®ä¸­è®¾ç½®è¯¥è®ºå›çš„ç›¸åº”å±æ€§ï¼Œå¦‚æœæ‚¨æƒ³å¯¹è¯¥è®ºå›åšæ›´å…·ä½“çš„æƒé™è®¾ç½®ï¼Œè¯·åˆ°<font color=blue>åå°è®ºå›æƒé™ç®¡ç†</font>ä¸­è®¾ç½®ç›¸åº”ç”¨æˆ·ç»„åœ¨è¯¥ç‰ˆé¢çš„æƒé™ã€‚<BR>
+2ã€<font color=blue>å¦‚æœæ‚¨æ·»åŠ çš„æ˜¯è®ºå›åˆ†ç±»</font>ï¼Œåªéœ€è¦åœ¨æ‰€å±åˆ†ç±»ä¸­é€‰æ‹©ä½œä¸ºè®ºå›åˆ†ç±»å³å¯ï¼›<font color=blue>å¦‚æœæ‚¨æ·»åŠ çš„æ˜¯è®ºå›ç‰ˆé¢</font>ï¼Œåˆ™è¦åœ¨æ‰€å±åˆ†ç±»ä¸­ç¡®å®šå¹¶é€‰æ‹©è¯¥è®ºå›ç‰ˆé¢çš„ä¸Šçº§ç‰ˆé¢ã€‚
 </td>
 </tr>
 <tr> 
-<td width="40%" height="30">ÂÛÌ³Ãû³Æ</td>
+<td width="40%" height="30">è®ºå›åç§°</td>
 <td width="60%"> 
 <input type="text" name="boardtype" size="35" value="<%=Server.htmlencode(rs("boardtype"))%>" >
 </td>
 </tr>
 <tr> 
-<td width="40%" height="24">°æÃæËµÃ÷<BR>¿ÉÒÔÊ¹ÓÃHTML´úÂë</td>
+<td width="40%" height="24">ç‰ˆé¢è¯´æ˜<BR>å¯ä»¥ä½¿ç”¨HTMLä»£ç </td>
 <td width="60%"> 
 <textarea name="Readme" cols="50" rows="5"><%=server.HTMLEncode(Rs("readme")&"")%></textarea>
 </td>
 </tr>
 <tr> 
-<td width="40%" height="24">°æÃæ¹æÔò<BR>¿ÉÒÔÊ¹ÓÃHTML´úÂë</td>
+<td width="40%" height="24">ç‰ˆé¢è§„åˆ™<BR>å¯ä»¥ä½¿ç”¨HTMLä»£ç </td>
 <td width="60%"> 
 <textarea name="Rules" cols="50" rows="5"><%=server.HTMLEncode(Rs("Rules")&"")%></textarea>
 </td>
 </tr>
 <tr> 
-<td width="40%" height="30"><U>ËùÊôÀà±ğ</U><BR>ËùÊôÂÛÌ³²»ÄÜÖ¸¶¨Îªµ±Ç°°æÃæ<BR>ËùÊôÂÛÌ³²»ÄÜÖ¸¶¨Îªµ±Ç°°æÃæµÄÏÂÊôÂÛÌ³</td>
+<td width="40%" height="30"><U>æ‰€å±ç±»åˆ«</U><BR>æ‰€å±è®ºå›ä¸èƒ½æŒ‡å®šä¸ºå½“å‰ç‰ˆé¢<BR>æ‰€å±è®ºå›ä¸èƒ½æŒ‡å®šä¸ºå½“å‰ç‰ˆé¢çš„ä¸‹å±è®ºå›</td>
 <td width="60%"> 
 <select name="class">
-<option value="0">×öÎªÂÛÌ³·ÖÀà</option>
+<option value="0">åšä¸ºè®ºå›åˆ†ç±»</option>
 <% do while not rs_c.EOF%>
 <option value="<%=rs_c("boardid")%>" <% if cint(rs("parentid")) = rs_c("boardid") then%> selected <%end if%>>
 <%if rs_c("depth")>0 then%>
 <%for i=1 to rs_c("depth")%>&nbsp;&nbsp;|<%next%>
-<%end if%>&nbsp;©À&nbsp;<%=rs_c("boardtype")%></option>
+<%end if%>&nbsp;â”œ&nbsp;<%=rs_c("boardtype")%></option>
 <%
 rs_c.MoveNext 
 loop
@@ -306,7 +306,7 @@ rs_c.Close
 </td>
 </tr>
 <tr> 
-<td width="40%" height="30"><U>Ê¹ÓÃÑùÊ½·ç¸ñ</U><BR>Ïà¹ØÑùÊ½·ç¸ñÖĞ°üº¬ÂÛÌ³ÑÕÉ«¡¢Í¼Æ¬<BR>µÈĞÅÏ¢</td>
+<td width="40%" height="30"><U>ä½¿ç”¨æ ·å¼é£æ ¼</U><BR>ç›¸å…³æ ·å¼é£æ ¼ä¸­åŒ…å«è®ºå›é¢œè‰²ã€å›¾ç‰‡<BR>ç­‰ä¿¡æ¯</td>
 <td width="60%">
 <%
 	set rs_c=dvbbs.execute("select forum_sid,forum_cid from dv_setup")
@@ -326,24 +326,24 @@ Next
 </td>
 </tr>
 <tr> 
-<td width="40%" height="30"><U>ÂÛÌ³°æÖ÷</U><BR>¶à°ßÖñÌí¼ÓÇëÓÃ|·Ö¸ô£¬Èç£ºÉ³Ì²Ğ¡×Ó|wodeail</td>
+<td width="40%" height="30"><U>è®ºå›ç‰ˆä¸»</U><BR>å¤šæ–‘ç«¹æ·»åŠ è¯·ç”¨|åˆ†éš”ï¼Œå¦‚ï¼šæ²™æ»©å°å­|wodeail</td>
 <td width="60%"> 
 <input type="text" name="boardmaster" size="35" value='<%=rs("boardmaster")%>'>
 <input type="hidden" name="oldboardmaster" value='<%=rs("boardmaster")%>'>
 </td>
 </tr>
 <tr> 
-<td width="40%" height="30"><U>Ê×Ò³ÏÔÊ¾ÂÛÌ³Í¼Æ¬</U><BR>³öÏÖÔÚÊ×Ò³ÂÛÌ³°æÃæ½éÉÜ×ó±ß<BR>ÇëÖ±½ÓÌîĞ´Í¼Æ¬URL</td>
+<td width="40%" height="30"><U>é¦–é¡µæ˜¾ç¤ºè®ºå›å›¾ç‰‡</U><BR>å‡ºç°åœ¨é¦–é¡µè®ºå›ç‰ˆé¢ä»‹ç»å·¦è¾¹<BR>è¯·ç›´æ¥å¡«å†™å›¾ç‰‡URL</td>
 <td width="60%">
 <input type="text" name="indexIMG" size="35" value="<%=rs("indexIMG")%>">
 </td>
 </tr>
-<!-- URLÍâ²¿Á¬½Ó ¿ªÊ¼ -->
+<!-- URLå¤–éƒ¨è¿æ¥ å¼€å§‹ -->
 <tr> 
-<td width="40%" height="30"><U>URLÍâ²¿Á¬½Ó</U><BR>ÌîĞ´±¾ÄÚÈİºó£¬ÔÚÂÛÌ³ÁĞ±íµã»÷´Ë°æÃæ½«×Ô¶¯ÇĞ»»µ½¸ÃÍøÖ·<BR>ÇëÌîĞ´URL¾ø¶ÔÂ·¾¶</td>
+<td width="40%" height="30"><U>URLå¤–éƒ¨è¿æ¥</U><BR>å¡«å†™æœ¬å†…å®¹åï¼Œåœ¨è®ºå›åˆ—è¡¨ç‚¹å‡»æ­¤ç‰ˆé¢å°†è‡ªåŠ¨åˆ‡æ¢åˆ°è¯¥ç½‘å€<BR>è¯·å¡«å†™URLç»å¯¹è·¯å¾„</td>
 <td width="60%">
-<input type="radio" class="radio" name="tempradio" value="0" onclick="javascript:document.theform.Board_Setting_50.value='0';">¹Ø±Õ&nbsp;
-<input type="radio" class="radio" name="tempradio" value="1" >Ê¹ÓÃURLÍâ²¿Á¬½Ó&nbsp;
+<input type="radio" class="radio" name="tempradio" value="0" onclick="javascript:document.theform.Board_Setting_50.value='0';">å…³é—­&nbsp;
+<input type="radio" class="radio" name="tempradio" value="1" >ä½¿ç”¨URLå¤–éƒ¨è¿æ¥&nbsp;
 <br/><input type=text name="Board_Setting_50" value="<%=reBoard_Setting(50)%>" size=50>
 <script type="text/javascript" language="javascript">
 <!--
@@ -357,16 +357,16 @@ Next
 </script>
 </td>
 </tr>
-<!-- URLÍâ²¿Á¬½Ó ½áÊø -->
+<!-- URLå¤–éƒ¨è¿æ¥ ç»“æŸ -->
 <tr> 
 <td width="40%" height="24">&nbsp;</td>
 <td width="60%"> 
-<input type="submit" name="Submit" value="Ìá½»ĞŞ¸Ä" class="button">
+<input type="submit" name="Submit" value="æäº¤ä¿®æ”¹" class="button">
 </td>
 </tr>
 <tr> 
 <td width="100%" height="30" colspan="2" align="right">
-<a href="?action=add&editid=<%=Request("editid")%>"><font color="<%=Dvbbs.mainsetting(3)%>"><U>Ìí¼Ó°æÃæ</U></font></a> | <a href="?action=edit&editid=<%=Request("editid")%>"><font color="<%=Dvbbs.mainsetting(3)%>"><U>»ù±¾ÉèÖÃ</U></font></a> | <%if rs("child")=0 then%><a href="?action=del&editid=<%=Request("editid")%>" onclick="{if(confirm('É¾³ı½«°üÀ¨¸ÃÂÛÌ³µÄËùÓĞÌû×Ó£¬È·¶¨É¾³ıÂğ?')){return true;}return false;}"><font color="<%=Dvbbs.mainsetting(3)%>"><U>É¾³ı</U></a><%else%><a href="#" onclick="{if(confirm('¸ÃÂÛÌ³º¬ÓĞÏÂÊôÂÛÌ³£¬±ØĞëÏÈÉ¾³ıÆäÏÂÊôÂÛÌ³·½ÄÜÉ¾³ı±¾ÂÛÌ³£¡')){return true;}return false;}"><font color="<%=Dvbbs.mainsetting(3)%>"><U>É¾³ı</U></a><%end if%>
+<a href="?action=add&editid=<%=Request("editid")%>"><font color="<%=Dvbbs.mainsetting(3)%>"><U>æ·»åŠ ç‰ˆé¢</U></font></a> | <a href="?action=edit&editid=<%=Request("editid")%>"><font color="<%=Dvbbs.mainsetting(3)%>"><U>åŸºæœ¬è®¾ç½®</U></font></a> | <%if rs("child")=0 then%><a href="?action=del&editid=<%=Request("editid")%>" onclick="{if(confirm('åˆ é™¤å°†åŒ…æ‹¬è¯¥è®ºå›çš„æ‰€æœ‰å¸–å­ï¼Œç¡®å®šåˆ é™¤å—?')){return true;}return false;}"><font color="<%=Dvbbs.mainsetting(3)%>"><U>åˆ é™¤</U></a><%else%><a href="#" onclick="{if(confirm('è¯¥è®ºå›å«æœ‰ä¸‹å±è®ºå›ï¼Œå¿…é¡»å…ˆåˆ é™¤å…¶ä¸‹å±è®ºå›æ–¹èƒ½åˆ é™¤æœ¬è®ºå›ï¼')){return true;}return false;}"><font color="<%=Dvbbs.mainsetting(3)%>"><U>åˆ é™¤</U></a><%end if%>
 </td>
 </tr>
 </form>
@@ -377,18 +377,18 @@ set rs=nothing
 set rs_c=nothing
 end sub
 
-'±£´æÌí¼ÓÂÛÌ³ĞÅÏ¢
+'ä¿å­˜æ·»åŠ è®ºå›ä¿¡æ¯
 Sub savenew()
 	If request("boardtype")="" Then
-		Errmsg=Errmsg+"<li>ÇëÊäÈëÂÛÌ³Ãû³Æ¡£"
+		Errmsg=Errmsg+"<li>è¯·è¾“å…¥è®ºå›åç§°ã€‚"
 		founderr=true
 	End If
 	If request("class")="" Then
-		Errmsg=Errmsg+"<li>ÇëÑ¡ÔñÂÛÌ³·ÖÀà¡£"
+		Errmsg=Errmsg+"<li>è¯·é€‰æ‹©è®ºå›åˆ†ç±»ã€‚"
 		founderr=true
 	End If
 	If request("readme")="" Then
-		Errmsg=Errmsg+"<li>ÇëÊäÈëÂÛÌ³ËµÃ÷¡£"
+		Errmsg=Errmsg+"<li>è¯·è¾“å…¥è®ºå›è¯´æ˜ã€‚"
 		founderr=true
 	End If
 	If founderr=true Then
@@ -403,7 +403,7 @@ Sub savenew()
 		depth=rs(2)
 		orders=rs(3)
 		If depth+1>20 Then
-			Errmsg="±¾ÂÛÌ³ÏŞÖÆ×î¶àÖ»ÄÜÓĞ20¼¶·ÖÀà"
+			Errmsg="æœ¬è®ºå›é™åˆ¶æœ€å¤šåªèƒ½æœ‰20çº§åˆ†ç±»"
 		  Response.Redirect "showerr.asp?ErrCodes=<li>"& Errmsg &"&action=OtherErr"
 		  Exit Sub
 		 End If 
@@ -416,7 +416,7 @@ Sub savenew()
 	sql="select boardid from dv_board where boardid="&Dvbbs.CheckNumeric(request("newboardid"))
 	Set rs=Dvbbs.Execute(sql)
 	If not (rs.eof and rs.bof) then
-		Errmsg="Äú²»ÄÜÖ¸¶¨ºÍ±ğµÄÂÛÌ³Ò»ÑùµÄĞòºÅ¡£"
+		Errmsg="æ‚¨ä¸èƒ½æŒ‡å®šå’Œåˆ«çš„è®ºå›ä¸€æ ·çš„åºå·ã€‚"
 		Response.Redirect "showerr.asp?ErrCodes=<li>"& Errmsg &"&action=OtherErr"
 		exit sub
 	Else
@@ -463,7 +463,7 @@ Sub savenew()
 		rs("todaynum") = 0
 		rs("child")=0
 		rs("LastPost")="$0$"&Now()&"$$$$$"
-		rs("Board_Setting")="0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,16240,3,0,gif|jpg|jpeg|bmp|png|rar|txt|zip|mid,0,0,1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1,0,1,100,20,10,9,normal,1,10,10,0,0,0,0,1,0,0,1,4,0,0,0,200,0,0,,$$,"&iBoard_Setting&",0,0,1,0|0|0|0|0|0|0|0|0,0|0|0|0|0|0|0|0|0,0,0,0,0,0,0,0,0,0,¹àË®|¹ã¸æ|½±Àø|³Í·£|ºÃÎÄÕÂ|ÄÚÈİ²»·û|ÖØ¸´·¢Ìû,0,1,0,24,0,0"
+		rs("Board_Setting")="0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,16240,3,0,gif|jpg|jpeg|bmp|png|rar|txt|zip|mid,0,0,1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1,0,1,100,20,10,9,normal,1,10,10,0,0,0,0,1,0,0,1,4,0,0,0,200,0,0,,$$,"&iBoard_Setting&",0,0,1,0|0|0|0|0|0|0|0|0,0|0|0|0|0|0|0|0|0,0,0,0,0,0,0,0,0,0,çŒæ°´|å¹¿å‘Š|å¥–åŠ±|æƒ©ç½š|å¥½æ–‡ç« |å†…å®¹ä¸ç¬¦|é‡å¤å‘å¸–,0,1,0,24,0,0"
 		rs("sid")=Dvbbs.CheckNumeric(request.form("sid"))
 '		rs("cid")=Dvbbs.CheckNumeric(request.form("cid"))
 		rs("board_ads")=trs("forum_ads")
@@ -477,7 +477,7 @@ Sub savenew()
 	rs.Update 
 	rs.Close
 	If Request("boardmaster")<>"" Then Call addmaster(Request("boardmaster"),"none",0)
-	Dvbbs.dvbbs_suc("ÂÛÌ³Ìí¼Ó³É¹¦£¡" & str)
+	Dvbbs.dvbbs_suc("è®ºå›æ·»åŠ æˆåŠŸï¼" & str)
 	set rs=nothing
 	trs.close
 	set trs=nothing
@@ -485,10 +485,10 @@ Sub savenew()
 	RestoreBoardCache()
 End Sub
 
-'±£´æ±à¼­ÂÛÌ³ĞÅÏ¢
+'ä¿å­˜ç¼–è¾‘è®ºå›ä¿¡æ¯
 Sub savedit()
 	if clng(request("editid"))=clng(request("class")) then
-		Errmsg="ËùÊôÂÛÌ³²»ÄÜÖ¸¶¨×Ô¼º"
+		Errmsg="æ‰€å±è®ºå›ä¸èƒ½æŒ‡å®šè‡ªå·±"
 		Response.Redirect "showerr.asp?ErrCodes=<li>"& Errmsg &"&action=OtherErr"
 		exit sub
 	end if
@@ -521,12 +521,12 @@ Sub savedit()
 			iBoard_Setting = iBoard_Setting & "," & temp_iBoard_Setting(iii)
 		End If
 	Next
-	'ÅĞ¶ÏËùÖ¸¶¨µÄÂÛÌ³ÊÇ·ñÆäÏÂÊôÂÛÌ³
+	'åˆ¤æ–­æ‰€æŒ‡å®šçš„è®ºå›æ˜¯å¦å…¶ä¸‹å±è®ºå›
 	if ParentID=0 then
 		if clng(request("class"))<>0 then
 		set trs=Dvbbs.Execute("select rootid from dv_board where boardid="&request("class"))
 		if rootid=trs(0) then
-			errmsg="Äú²»ÄÜÖ¸¶¨¸Ã°æÃæµÄÏÂÊôÂÛÌ³×÷ÎªËùÊôÂÛÌ³1"
+			errmsg="æ‚¨ä¸èƒ½æŒ‡å®šè¯¥ç‰ˆé¢çš„ä¸‹å±è®ºå›ä½œä¸ºæ‰€å±è®ºå›1"
 			Response.Redirect "showerr.asp?ErrCodes=<li>"& Errmsg &"&action=OtherErr"
 			exit sub
 		end if
@@ -534,7 +534,7 @@ Sub savedit()
 	else
 		set trs=Dvbbs.Execute("select boardid from dv_board where ParentStr like '%"&ParentStr&","&newboardid&"%' and boardid="&request("class"))
 		if not (trs.eof and trs.bof) then
-			errmsg="Äú²»ÄÜÖ¸¶¨¸Ã°æÃæµÄÏÂÊôÂÛÌ³×÷ÎªËùÊôÂÛÌ³"
+			errmsg="æ‚¨ä¸èƒ½æŒ‡å®šè¯¥ç‰ˆé¢çš„ä¸‹å±è®ºå›ä½œä¸ºæ‰€å±è®ºå›"
 			Response.Redirect "showerr.asp?ErrCodes=<li>"& Errmsg &"&action=OtherErr"
 			exit sub
 		end if
@@ -549,7 +549,7 @@ Sub savedit()
 		mrs.close:Set mrs=Nothing
 		rs("rootid")=Maxrootid
 	End if
-	rs("boardtype") = Request.Form("boardtype")	'È¡ÏûJS¹ıÂË¡£
+	rs("boardtype") = Request.Form("boardtype")	'å–æ¶ˆJSè¿‡æ»¤ã€‚
 	rs("parentid") = Request.Form("class")
 	rs("boardmaster") = Request("boardmaster")
 	rs("readme") = Request("readme")
@@ -562,27 +562,27 @@ Sub savedit()
 	rs.Close:set rs=nothing
 	if request("oldboardmaster")<>Request("boardmaster") then call addmaster(Request("boardmaster"),request("oldboardmaster"),1)
 	
-	Dvbbs.dvbbs_suc("ÂÛÌ³ĞŞ¸Ä³É¹¦£¡<br>" & str)
+	Dvbbs.dvbbs_suc("è®ºå›ä¿®æ”¹æˆåŠŸï¼<br>" & str)
 	CheckAndFixBoard 0,1
 	Boardchild()
 	RestoreBoardCache()
 End sub
 
-'É¾³ı°æÃæ£¬É¾³ı°æÃæÌû×Ó£¬Èë¿Ú£º°æÃæID
+'åˆ é™¤ç‰ˆé¢ï¼Œåˆ é™¤ç‰ˆé¢å¸–å­ï¼Œå…¥å£ï¼šç‰ˆé¢ID
 Sub Del()
 	Dim Trs,EditId
 	EditId = Dvbbs.CheckNumeric(Request("editid"))
-	'¸üĞÂÆäÉÏ¼¶°æÃæÂÛÌ³Êı£¬Èç¹û¸ÃÂÛÌ³º¬ÓĞÏÂ¼¶ÂÛÌ³Ôò²»ÔÊĞíÉ¾³ı
+	'æ›´æ–°å…¶ä¸Šçº§ç‰ˆé¢è®ºå›æ•°ï¼Œå¦‚æœè¯¥è®ºå›å«æœ‰ä¸‹çº§è®ºå›åˆ™ä¸å…è®¸åˆ é™¤
 	Set tRs = Dvbbs.Execute("SELECT RootID FROM Dv_Board WHERE BoardID = " & EditId)
 	Dim UpdateRootID,Rs,sql,i
 	UpdateRootID = tRs(0)
 	Set Rs = Dvbbs.Execute("SELECT ParentStr, Child, Depth FROM Dv_Board WHERE BoardID = " &  EditId)
 	If Not (Rs.Eof And Rs.Bof) Then
 		If Rs(1) > 0 Then
-			Response.Write "¸ÃÂÛÌ³º¬ÓĞÏÂÊôÂÛÌ³£¬ÇëÉ¾³ıÆäÏÂÊôÂÛÌ³ºóÔÙ½øĞĞÉ¾³ı±¾ÂÛÌ³µÄ²Ù×÷"
+			Response.Write "è¯¥è®ºå›å«æœ‰ä¸‹å±è®ºå›ï¼Œè¯·åˆ é™¤å…¶ä¸‹å±è®ºå›åå†è¿›è¡Œåˆ é™¤æœ¬è®ºå›çš„æ“ä½œ"
 			Exit Sub
 		End If
-		'Èç¹ûÓĞÉÏ¼¶°æÃæ£¬Ôò¸üĞÂÊı¾İ
+		'å¦‚æœæœ‰ä¸Šçº§ç‰ˆé¢ï¼Œåˆ™æ›´æ–°æ•°æ®
 		If Rs(2) > 0 Then
 			Dvbbs.Execute("UPDATE Dv_Board SET Child = Child - 1 WHERE BoardID IN (" & Rs(0) & ")")
 		End If
@@ -596,13 +596,13 @@ Sub Del()
 		Dvbbs.Execute("DELETE FROM Dv_BestTopic WHERE BoardID = " & EditId)
 		Dvbbs.Execute("DELETE FROM Dv_Upfile WHERE F_BoardID = " & EditId)
 		Dvbbs.Execute("DELETE FROM Dv_Appraise WHERE BoardID = " & EditId)
-		'É¾³ı±»É¾³ıÂÛÌ³µÄ×Ô¶¨ÒåÓÃ»§È¨ÏŞ 2004-11-15 Dv.Yz
+		'åˆ é™¤è¢«åˆ é™¤è®ºå›çš„è‡ªå®šä¹‰ç”¨æˆ·æƒé™ 2004-11-15 Dv.Yz
 		Dvbbs.Execute("DELETE FROM Dv_UserAccess WHERE NOT Uc_BoardID IN (SELECT BoardID FROM Dv_Board)")
 	End If
 	Set Rs = Nothing
 	CheckAndFixBoard 0,1
 	RestoreBoardCache()
-	Dvbbs.Dvbbs_suc("ÂÛÌ³É¾³ı³É¹¦£¡")
+	Dvbbs.Dvbbs_suc("è®ºå›åˆ é™¤æˆåŠŸï¼")
 End Sub
 
 Sub Addmaster(s,o,n)
@@ -636,23 +636,23 @@ Sub Addmaster(s,o,n)
 			Rs("Userdel") = 0
 			Rs("Userpower") = 0
 			Rs("Lockuser") = 0
-			'¼ÓÈë¸üÏêÏ¸×ÊÁÏÊ¹µÇÂ¼ÓëÏÔÊ¾×ÊÁÏ²»»á³ö´í¡£
+			'åŠ å…¥æ›´è¯¦ç»†èµ„æ–™ä½¿ç™»å½•ä¸æ˜¾ç¤ºèµ„æ–™ä¸ä¼šå‡ºé”™ã€‚
 			Rs("UserSex") = 1
 			Rs("UserEmail") = Arr(i) & "@aspsky.net"
 			Rs("UserFace") = "Images/userface/image1.gif"
 			Rs("UserWidth") = 32
 			Rs("UserHeight") = 32
 			Rs("UserIM") = "||||||||||||||||||"
-			Rs("UserFav") = "Ä°ÉúÈË,ÎÒµÄºÃÓÑ,ºÚÃûµ¥"
+			Rs("UserFav") = "é™Œç”Ÿäºº,æˆ‘çš„å¥½å‹,é»‘åå•"
 			Rs("LastLogin") = Now()
 			Rs("JoinDate") = Now()
 			Rs("Userpost") = 0
 			Rs("Usertopic") = 0
 			Rs.Update
-			Str = Str & "ÄãÌí¼ÓÁËÒÔÏÂÓÃ»§£º<b>" & Arr(i) & "</b> ÃÜÂë£º<b>" & Pw & "</b><br><br>"
+			Str = Str & "ä½ æ·»åŠ äº†ä»¥ä¸‹ç”¨æˆ·ï¼š<b>" & Arr(i) & "</b> å¯†ç ï¼š<b>" & Pw & "</b><br><br>"
 			Dvbbs.Execute("UPDATE Dv_Setup SET Forum_Usernum = Forum_Usernum + 1, Forum_Lastuser = '" & Arr(i) & "'")
 		Else
-			'ĞŞÕıÌí¼Ó°æÖ÷²»¸Ä±äµÈ¼¶µÄ´íÎó 2005-3-7 Dv.Yz
+			'ä¿®æ­£æ·»åŠ ç‰ˆä¸»ä¸æ”¹å˜ç­‰çº§çš„é”™è¯¯ 2005-3-7 Dv.Yz
 			If Rs("UserGroupID") > 3 Then
 				Rs("Userclass") = Classname
 				Rs("UserGroupID") = 3
@@ -662,7 +662,7 @@ Sub Addmaster(s,o,n)
 		End If
 		Rs.Close
 	Next
-	'ÅĞ¶ÏÔ­°æÖ÷ÔÚÆäËû°æÃæÊÇ·ñ»¹µ£ÈÎ°æÖ÷£¬ÈçÃ»ÓĞµ£ÈÎÔò³·»»¸ÃÓÃ»§Ö°Î»¡£
+	'åˆ¤æ–­åŸç‰ˆä¸»åœ¨å…¶ä»–ç‰ˆé¢æ˜¯å¦è¿˜æ‹…ä»»ç‰ˆä¸»ï¼Œå¦‚æ²¡æœ‰æ‹…ä»»åˆ™æ’¤æ¢è¯¥ç”¨æˆ·èŒä½ã€‚
 	If n = 1 Then
 		Dim Iboardmaster
 		Dim UserGrade, Article
@@ -685,7 +685,7 @@ Sub Addmaster(s,o,n)
 						Else
 							Article = Cstr(Rs(2))
 						End If
-						'È¡¶ÔÓ¦×¢²á»áÔ±µÄµÈ¼¶
+						'å–å¯¹åº”æ³¨å†Œä¼šå‘˜çš„ç­‰çº§
 						Set UserGrade = Dvbbs.Execute("SELECT TOP 1 Usertitle, Grouppic,UserGroupID FROM Dv_Usergroups WHERE Minarticle <= " & Article & " AND NOT MinArticle = -1 AND ParentGID = 4 ORDER BY MinArticle DESC")
 						If Not (UserGrade.Eof And UserGrade.Bof) Then
 							Dvbbs.Execute("UPDATE [Dv_User] SET UserGroupID = 10, Titlepic = '" & UserGrade(1) & "', Userclass = '" & UserGrade(0) & "' WHERE Userid = " & Rs(0))
@@ -714,7 +714,7 @@ Sub RestoreBoardCache()
 		Dvbbs.LoadBoardData board.text
 		Dvbbs.LoadBoardinformation board.text
 	Next
-	If Request("action")="RestoreBoardCache" Then Dvbbs.Dvbbs_suc("ÖØ½¨ËùÓĞ°æÃæ»º´æ³É¹¦£¡")
+	If Request("action")="RestoreBoardCache" Then Dvbbs.Dvbbs_suc("é‡å»ºæ‰€æœ‰ç‰ˆé¢ç¼“å­˜æˆåŠŸï¼")
 End Sub
 Sub CheckAndFixBoard(ParentID,orders)
 	Dim Rs,SQL,Child,ParentStr,i
@@ -740,7 +740,7 @@ Sub CheckAndFixBoard(ParentID,orders)
 	End If
 End Sub
 
-Rem Í³¼ÆÏÂÊôÂÛÌ³º¯Êı 2004-5-3 Dvbbs.YangZheng
+Rem ç»Ÿè®¡ä¸‹å±è®ºå›å‡½æ•° 2004-5-3 Dvbbs.YangZheng
 Sub Boardchild()
 	Dim cBoardNum, cBoardid
 	Dim Trs,rs,Sql
@@ -788,6 +788,6 @@ Sub AllPostTable1()
 	Trs.Close
 End Sub
 '=============
-'°æÃæÏà¹Ø ½áÊø
+'ç‰ˆé¢ç›¸å…³ ç»“æŸ
 '=============
 %>

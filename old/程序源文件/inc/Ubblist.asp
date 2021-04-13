@@ -16,7 +16,7 @@ Function Ubblist(Str1)
 	Dv_ubb(46)="[/size]":Dv_ubb(47)="[/i]":Dv_ubb(48)="[/b]":Dv_ubb(49)="[/u]":Dv_ubb(50)="[em":Dv_ubb(51)="www.":Dv_ubb(52)="[/payto]"
 	Dv_ubb(53)="[/username]":Dv_ubb(54)="[/center]"
 	Ubblist=","
-	'¼ì²é½Å±¾±ê¼Ç0
+	'æ£€æŸ¥è„šæœ¬æ ‡è®°0
 	For i=0 to 13
 		If InStr(Str,Dv_ubb(i))>0 Or InStr(Str,"&#")>0  or InStr(Str,"button") Then
 				Ubblist=Ubblist&"0,"
@@ -32,7 +32,7 @@ Function Ubblist(Str1)
 				Ubblist=Ubblist & i-13 &","
 			End If
 		End If
-		'Response.Write Dv_ubb(i)&"±àºÅ:"&i-13&"."		
+		'Response.Write Dv_ubb(i)&"ç¼–å·:"&i-13&"."		
 	Next
 	Ubblist=Ubblist & "39,"
 	If istext(Str1) Then
@@ -44,7 +44,7 @@ Function Ubblist(Str1)
 	End If
 	
 	Dim TmpStr
-	'È¥µô×Ö·û´®ÖĞµÄ¿Õ¸ñ
+	'å»æ‰å­—ç¬¦ä¸²ä¸­çš„ç©ºæ ¼
 	If IsNull(Str) Then Exit Function
 	TmpStr=Replace(Str," ","")
 	TmpStr=Replace(TmpStr,"  ","")
@@ -61,7 +61,7 @@ Function istext(Str)
  	istext=True
  End If
 End Function
-'¼ì²é±í¸ñ
+'æ£€æŸ¥è¡¨æ ¼
 Function fixtable(Str,flag)
 	Dim bodyStr
 	bodyStr=Str

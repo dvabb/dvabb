@@ -44,7 +44,7 @@ Sub step1()
 	End If
 	If Dvbbs.forum_setting(81)="1"  Then
 		If Not Dvbbs.CodeIsTrue() Then
-			 Response.redirect "showerr.asp?ErrCodes=<li>ÑéÖ¤ÂëĞ£ÑéÊ§°Ü£¬Çë·µ»ØË¢ĞÂÒ³ÃæºóÔÙÊäÈëÑéÖ¤Âë¡£&action=OtherErr"
+			 Response.redirect "showerr.asp?ErrCodes=<li>éªŒè¯ç æ ¡éªŒå¤±è´¥ï¼Œè¯·è¿”å›åˆ·æ–°é¡µé¢åå†è¾“å…¥éªŒè¯ç ã€‚&action=OtherErr"
 		End If
 	End If
 	If Dvbbs.Forum_Setting(2)<>"0" Then
@@ -98,7 +98,7 @@ Sub step2()
 	End If
 	If Dvbbs.forum_setting(81)="1"  Then
 		If Not Dvbbs.CodeIsTrue() Then
-			 Response.redirect "showerr.asp?ErrCodes=<li>ÑéÖ¤ÂëĞ£ÑéÊ§°Ü£¬Çë·µ»ØË¢ĞÂÒ³ÃæºóÔÙÊäÈëÑéÖ¤Âë¡£&action=OtherErr"
+			 Response.redirect "showerr.asp?ErrCodes=<li>éªŒè¯ç æ ¡éªŒå¤±è´¥ï¼Œè¯·è¿”å›åˆ·æ–°é¡µé¢åå†è¾“å…¥éªŒè¯ç ã€‚&action=OtherErr"
 		End If
 	End If
 	sql="select useranswer,userquesion,useranswer,UserToday,UserID from [Dv_user] where username='"&username&"'"
@@ -115,7 +115,7 @@ Sub step2()
 		UserToday = Split(UpUserToday,"|")
 		UserToday(3) = Cint(UserToday(3))
 		If UserToday(3)>Cint(Dvbbs.forum_setting(84)) and Cint(Dvbbs.forum_setting(84))<>0 Then
-			showerr "ÄúÈ¡»ØÃÜÂë´ÎÊıÒÑ³¬³öÏµÍ³ÏŞÖÆ£¬Çë24Ğ¡Ê±ºóÔÙÊ¹ÓÃÈ¡»ØÃÜÂë¹¦ÄÜ£¡"
+			showerr "æ‚¨å–å›å¯†ç æ¬¡æ•°å·²è¶…å‡ºç³»ç»Ÿé™åˆ¶ï¼Œè¯·24å°æ—¶åå†ä½¿ç”¨å–å›å¯†ç åŠŸèƒ½ï¼"
 			Exit Sub
 		End If
 		answerpass =False
@@ -232,7 +232,7 @@ Sub step3()
 				End If 
 				Response.Write Tpl8
 				'-----------------------------------------------------------------
-				'ÏµÍ³ÕûºÏ
+				'ç³»ç»Ÿæ•´åˆ
 				'-----------------------------------------------------------------
 				Dim DvApi_Obj,DvApi_SaveCookie,SysKey
 				If DvApi_Enable Then
@@ -287,14 +287,14 @@ Sub sendusermail()
 	If Cint(Dvbbs.Forum_Setting(2))>0 Then
 		Dim DvEmail
 		Set DvEmail = New Dv_SendMail
-		DvEmail.SendObject = Cint(Dvbbs.Forum_Setting(2))	'ÉèÖÃÑ¡È¡×é¼ş 1=Jmail,2=Cdonts,3=Aspemail
-		DvEmail.ServerLoginName = Dvbbs.Forum_info(12)	'ÄúµÄÓÊ¼ş·şÎñÆ÷µÇÂ¼Ãû
-		DvEmail.ServerLoginPass = Dvbbs.Forum_info(13)	'µÇÂ¼ÃÜÂë
-		DvEmail.SendSMTP = Dvbbs.Forum_info(4)			'SMTPµØÖ·
-		DvEmail.SendFromEmail = Dvbbs.Forum_info(5)		'·¢ËÍÀ´Ô´µØÖ·
-		DvEmail.SendFromName = Dvbbs.Forum_info(0)		'·¢ËÍÈËĞÅÏ¢
+		DvEmail.SendObject = Cint(Dvbbs.Forum_Setting(2))	'è®¾ç½®é€‰å–ç»„ä»¶ 1=Jmail,2=Cdonts,3=Aspemail
+		DvEmail.ServerLoginName = Dvbbs.Forum_info(12)	'æ‚¨çš„é‚®ä»¶æœåŠ¡å™¨ç™»å½•å
+		DvEmail.ServerLoginPass = Dvbbs.Forum_info(13)	'ç™»å½•å¯†ç 
+		DvEmail.SendSMTP = Dvbbs.Forum_info(4)			'SMTPåœ°å€
+		DvEmail.SendFromEmail = Dvbbs.Forum_info(5)		'å‘é€æ¥æºåœ°å€
+		DvEmail.SendFromName = Dvbbs.Forum_info(0)		'å‘é€äººä¿¡æ¯
 		If DvEmail.ErrCode = 0 Then
-			DvEmail.SendMail useremail,topic,mailbody	'Ö´ĞĞ·¢ËÍÓÊ¼ş
+			DvEmail.SendMail useremail,topic,mailbody	'æ‰§è¡Œå‘é€é‚®ä»¶
 			If DvEmail.Count>0 Then
 				SendMail = True
 				sendmsg=template.Strings(20)&"<a href="&activepassurl&"><B>"&template.Strings(21)&"</B></a>"
@@ -339,7 +339,7 @@ Sub GetPass()
 				Rs.Update
 				Response.Write template.html(11)
 				'-----------------------------------------------------------------
-				'ÏµÍ³ÕûºÏ
+				'ç³»ç»Ÿæ•´åˆ
 				'-----------------------------------------------------------------
 				Dim DvApi_Obj,DvApi_SaveCookie,SysKey
 				If DvApi_Enable Then

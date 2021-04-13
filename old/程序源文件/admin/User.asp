@@ -32,9 +32,9 @@ Case "saveuserpermission"
 	SaveUserPermission()
 Case "uniteuser"
 	UniteUser()
-Case "audituser" 'ÉóºËÓÃ»§
+Case "audituser" 'å®¡æ ¸ç”¨æˆ·
 	audituser()
-Case "saveaudit" '±£´æÉóºË
+Case "saveaudit" 'ä¿å­˜å®¡æ ¸
 	saveaudit()
 Case Else
 	UserIndex()
@@ -43,31 +43,31 @@ End Select
 UserMain(0)
 Footer()
 
-'ÓÃ»§¹ÜÀíÍ¨ÓÃÍ·²¿
+'ç”¨æˆ·ç®¡ç†é€šç”¨å¤´éƒ¨
 Sub UserMain(Str)
 	If Str = 1 Then
 %>
 
 <table cellpadding="2" cellspacing="1" border="0" width="100%" align=center>
 <tr>
-<th colspan=8 style="text-align:center;">ÓÃ»§¹ÜÀí</th>
+<th colspan=8 style="text-align:center;">ç”¨æˆ·ç®¡ç†</th>
 </tr>
 <tr>
-<td width="20%" class=td2 align="center"><button Style="width:80;height:50;border: 1px outset;" class="button">×¢ÒâÊÂÏî</button></td>
-<td width="80%" class=td2 colspan=7><li>¢ÙµãÉ¾³ı°´Å¥½«É¾³ıËùÑ¡¶¨µÄÓÃ»§£¬´Ë²Ù×÷ÊÇ²»¿ÉÄæµÄ£»<li>¢ÚÄú¿ÉÒÔÅúÁ¿ÒÆ¶¯ÓÃ»§µ½ÏàÓ¦µÄ×é£»<li>¢ÛµãÓÃ»§Ãû½øĞĞÏàÓ¦µÄ×ÊÁÏ²Ù×÷£»<li>¢ÜµãÓÃ»§×îºóµÇÂ½IP¿É½øĞĞËø¶¨IP²Ù×÷£»<li>¢İµãÓÃ»§Email½«¸ø¸ÃÓÃ»§·¢ËÍEmail£»<li>¢ŞµãĞŞ¸´Ìù×Ó½«»áĞŞ¸´¸ÃÓÃ»§Ëù·¢µÄÌù×ÓÊı¾İ²¢¸üĞÂÆäÎÄÕÂÊı£¬ÓÃÓÚÎóÉ¾IDÓÃ»§ÌùµÄĞŞ¸´¡£</td>
+<td width="20%" class=td2 align="center"><button Style="width:80;height:50;border: 1px outset;" class="button">æ³¨æ„äº‹é¡¹</button></td>
+<td width="80%" class=td2 colspan=7><li>â‘ ç‚¹åˆ é™¤æŒ‰é’®å°†åˆ é™¤æ‰€é€‰å®šçš„ç”¨æˆ·ï¼Œæ­¤æ“ä½œæ˜¯ä¸å¯é€†çš„ï¼›<li>â‘¡æ‚¨å¯ä»¥æ‰¹é‡ç§»åŠ¨ç”¨æˆ·åˆ°ç›¸åº”çš„ç»„ï¼›<li>â‘¢ç‚¹ç”¨æˆ·åè¿›è¡Œç›¸åº”çš„èµ„æ–™æ“ä½œï¼›<li>â‘£ç‚¹ç”¨æˆ·æœ€åç™»é™†IPå¯è¿›è¡Œé”å®šIPæ“ä½œï¼›<li>â‘¤ç‚¹ç”¨æˆ·Emailå°†ç»™è¯¥ç”¨æˆ·å‘é€Emailï¼›<li>â‘¥ç‚¹ä¿®å¤è´´å­å°†ä¼šä¿®å¤è¯¥ç”¨æˆ·æ‰€å‘çš„è´´å­æ•°æ®å¹¶æ›´æ–°å…¶æ–‡ç« æ•°ï¼Œç”¨äºè¯¯åˆ IDç”¨æˆ·è´´çš„ä¿®å¤ã€‚</td>
 </tr>
 <tr>
 <td width=100% class=td2 colspan=8>
-¿ìËÙ²é¿´£º<a href="user.asp">ÓÃ»§¹ÜÀíÊ×Ò³</a> | <a href="?action=userSearch&userSearch=1"><%If Request("userSearch")="1" Then%><font color=red><%End If%>ËùÓĞÓÃ»§<%If Request("userSearch")="1" Then%></font><%End If%></a> | <a href="?action=userSearch&userSearch=2"><%If Request("userSearch")="2" Then%><font color=red><%End If%>·¢ÌùTOP100<%If Request("userSearch")="2" Then%></font><%End If%></a> | <a href="?action=userSearch&userSearch=3"><%If Request("userSearch")="3" Then%><font color=red><%End If%>·¢ÌùEND100<%If Request("userSearch")="3" Then%></font><%End If%></a> | <a href="?action=userSearch&userSearch=4"><%If Request("userSearch")="4" Then%><font color=red><%End If%>24HÄÚµÇÂ¼<%If Request("userSearch")="4" Then%></font><%End If%></a> | <a href="?action=userSearch&userSearch=5"><%If Request("userSearch")="5" Then%><font color=red><%End If%>24HÄÚ×¢²á<%If Request("userSearch")="5" Then%></font><%End If%></a><BR>
-¡¡¡¡¡¡¡¡¡¡<a href="?action=userSearch&userSearch=6"><%If Request("userSearch")="6" Then%><font color=red><%End If%>µÈ´ıÑéÖ¤»áÔ±<%If Request("userSearch")="6" Then%></font><%End If%></a> | <a href="?action=userSearch&userSearch=7"><%If Request("userSearch")="7" Then%><font color=red><%End If%>ÓÊ¼şÑéÖ¤<%If Request("userSearch")="7" Then%></font><%End If%></a> | <a href="?action=userSearch&userSearch=8"><%If Request("userSearch")="8" Then%><font color=red><%End If%>¹ÜÀí¡¡ÍÅ¶Ó<%If Request("userSearch")="8" Then%></font><%End If%></a> | <a href="?action=userSearch&userSearch=11"><%If Request("userSearch")="11" Then%><font color=red><%End If%>ÆÁ±Î¡¡ÓÃ»§<%If Request("userSearch")="11" Then%></font><%End If%></a> | <a href="?action=userSearch&userSearch=12"><%If Request("userSearch")="12" Then%><font color=red><%End If%>Ëø¶¨ ÓÃ»§<%If Request("userSearch")="12" Then%></font><%End If%></a> | <a href="?action=userSearch&userSearch=14"><%If Request("userSearch")="13" Then%><font color=red><%End If%>×Ô¶¨ÒåÈ¨ÏŞÓÃ»§<%If Request("userSearch")="13" Then%></font><%End If%></a>
- | <a href="?action=userSearch&userSearch=15"><%If Request("userSearch")="15" Then%><font color=red><%End If%>VIPÓÃ»§<%If Request("userSearch")="15" Then%></font><%End If%></a>
- | <a href="?action=userSearch&userSearch=16"><%If Request("userSearch")="16" Then%><font color=red><%End If%>ÉóºË»áÔ±(°üº¬ÓÃ»§×é)<%If Request("userSearch")="16" Then%></font><%End If%></a>
- | <a href="?action=userSearch&userSearch=17"><%If Request("userSearch")="17" Then%><font color=red><%End If%>×Ô¶¨ÒåÉóºË»áÔ±<%If Request("userSearch")="17" Then%></font><%End If%></a>
+å¿«é€ŸæŸ¥çœ‹ï¼š<a href="user.asp">ç”¨æˆ·ç®¡ç†é¦–é¡µ</a> | <a href="?action=userSearch&userSearch=1"><%If Request("userSearch")="1" Then%><font color=red><%End If%>æ‰€æœ‰ç”¨æˆ·<%If Request("userSearch")="1" Then%></font><%End If%></a> | <a href="?action=userSearch&userSearch=2"><%If Request("userSearch")="2" Then%><font color=red><%End If%>å‘è´´TOP100<%If Request("userSearch")="2" Then%></font><%End If%></a> | <a href="?action=userSearch&userSearch=3"><%If Request("userSearch")="3" Then%><font color=red><%End If%>å‘è´´END100<%If Request("userSearch")="3" Then%></font><%End If%></a> | <a href="?action=userSearch&userSearch=4"><%If Request("userSearch")="4" Then%><font color=red><%End If%>24Hå†…ç™»å½•<%If Request("userSearch")="4" Then%></font><%End If%></a> | <a href="?action=userSearch&userSearch=5"><%If Request("userSearch")="5" Then%><font color=red><%End If%>24Hå†…æ³¨å†Œ<%If Request("userSearch")="5" Then%></font><%End If%></a><BR>
+ã€€ã€€ã€€ã€€ã€€<a href="?action=userSearch&userSearch=6"><%If Request("userSearch")="6" Then%><font color=red><%End If%>ç­‰å¾…éªŒè¯ä¼šå‘˜<%If Request("userSearch")="6" Then%></font><%End If%></a> | <a href="?action=userSearch&userSearch=7"><%If Request("userSearch")="7" Then%><font color=red><%End If%>é‚®ä»¶éªŒè¯<%If Request("userSearch")="7" Then%></font><%End If%></a> | <a href="?action=userSearch&userSearch=8"><%If Request("userSearch")="8" Then%><font color=red><%End If%>ç®¡ç†ã€€å›¢é˜Ÿ<%If Request("userSearch")="8" Then%></font><%End If%></a> | <a href="?action=userSearch&userSearch=11"><%If Request("userSearch")="11" Then%><font color=red><%End If%>å±è”½ã€€ç”¨æˆ·<%If Request("userSearch")="11" Then%></font><%End If%></a> | <a href="?action=userSearch&userSearch=12"><%If Request("userSearch")="12" Then%><font color=red><%End If%>é”å®š ç”¨æˆ·<%If Request("userSearch")="12" Then%></font><%End If%></a> | <a href="?action=userSearch&userSearch=14"><%If Request("userSearch")="13" Then%><font color=red><%End If%>è‡ªå®šä¹‰æƒé™ç”¨æˆ·<%If Request("userSearch")="13" Then%></font><%End If%></a>
+ | <a href="?action=userSearch&userSearch=15"><%If Request("userSearch")="15" Then%><font color=red><%End If%>VIPç”¨æˆ·<%If Request("userSearch")="15" Then%></font><%End If%></a>
+ | <a href="?action=userSearch&userSearch=16"><%If Request("userSearch")="16" Then%><font color=red><%End If%>å®¡æ ¸ä¼šå‘˜(åŒ…å«ç”¨æˆ·ç»„)<%If Request("userSearch")="16" Then%></font><%End If%></a>
+ | <a href="?action=userSearch&userSearch=17"><%If Request("userSearch")="17" Then%><font color=red><%End If%>è‡ªå®šä¹‰å®¡æ ¸ä¼šå‘˜<%If Request("userSearch")="17" Then%></font><%End If%></a>
 </td>
 </tr>
 <tr>
 <td width=100% class=td2 colspan=8>
-¹¦ÄÜÑ¡Ïî£º<a href="?action=uniteuser">ºÏ²¢ÓÃ»§</a> | <a href="update_user.asp">½±³ÍÓÃ»§¹ÜÀí</a> <!--| <a href="boardmastergrade.asp">°æÖ÷¹¤×÷Çé¿ö</a>-->
+åŠŸèƒ½é€‰é¡¹ï¼š<a href="?action=uniteuser">åˆå¹¶ç”¨æˆ·</a> | <a href="update_user.asp">å¥–æƒ©ç”¨æˆ·ç®¡ç†</a> <!--| <a href="boardmastergrade.asp">ç‰ˆä¸»å·¥ä½œæƒ…å†µ</a>-->
 </td>
 </tr>
 <%
@@ -79,30 +79,30 @@ Sub UserMain(Str)
 	End If
 End Sub
 
-'ÓÃ»§¹ÜÀíÊ×Ò³£¬ËÑË÷Ïî
+'ç”¨æˆ·ç®¡ç†é¦–é¡µï¼Œæœç´¢é¡¹
 Sub UserIndex()
 %>
 <form action="?action=userSearch" method=post>
 <tr>
-<th colspan=7 style="text-align:center;">¸ß¼¶²éÑ¯</th>
+<th colspan=7 style="text-align:center;">é«˜çº§æŸ¥è¯¢</th>
 </tr>
 <tr>
-<td width="20%" class=td1>×¢ÒâÊÂÏî</td>
-<td width="80%" class=td1 colspan=5>ÔÚ¼ÇÂ¼ºÜ¶àµÄÇé¿öÏÂËÑË÷Ìõ¼şÔ½¶à²éÑ¯Ô½Âı£¬Çë¾¡Á¿¼õÉÙ²éÑ¯Ìõ¼ş£»×î¶àÏÔÊ¾¼ÇÂ¼ÊıÒ²²»ÒËÑ¡Ôñ¹ı´ó</td>
+<td width="20%" class=td1>æ³¨æ„äº‹é¡¹</td>
+<td width="80%" class=td1 colspan=5>åœ¨è®°å½•å¾ˆå¤šçš„æƒ…å†µä¸‹æœç´¢æ¡ä»¶è¶Šå¤šæŸ¥è¯¢è¶Šæ…¢ï¼Œè¯·å°½é‡å‡å°‘æŸ¥è¯¢æ¡ä»¶ï¼›æœ€å¤šæ˜¾ç¤ºè®°å½•æ•°ä¹Ÿä¸å®œé€‰æ‹©è¿‡å¤§</td>
 </tr>
 <tr>
-<td width="20%" class=td1>×î¶àÏÔÊ¾¼ÇÂ¼Êı</td>
+<td width="20%" class=td1>æœ€å¤šæ˜¾ç¤ºè®°å½•æ•°</td>
 <td width="80%" class=td1 colspan=5><input size=45 name="searchMax" type=text value=100></td>
 </tr>
 <tr>
-<td width="20%" class=td1>ÓÃ»§Ãû</td>
-<td width="80%" class=td1 colspan=5><input size=45 name="username" type=text>&nbsp;<input type=checkbox class=checkbox name="usernamechk" value="yes" checked>ÓÃ»§ÃûÍêÕûÆ¥Åä</td>
+<td width="20%" class=td1>ç”¨æˆ·å</td>
+<td width="80%" class=td1 colspan=5><input size=45 name="username" type=text>&nbsp;<input type=checkbox class=checkbox name="usernamechk" value="yes" checked>ç”¨æˆ·åå®Œæ•´åŒ¹é…</td>
 </tr>
 <tr>
-<td width="20%" class=td1>ÓÃ»§×é</td>
+<td width="20%" class=td1>ç”¨æˆ·ç»„</td>
 <td width="80%" class=td1 colspan=5>
 <select size=1 name="usergroups">
-<option value=0>ÈÎÒâ</option>
+<option value=0>ä»»æ„</option>
 <%
 Dim rs
 set rs=Dvbbs.Execute("select usergroupid,UserTitle,ParentGID from dv_usergroups Where Not ParentGID=0 order by ParentGID,usergroupid")
@@ -117,95 +117,95 @@ set rs=nothing
 </td>
 </tr>
 <tr>
-<td width="20%" class=td1>Email°üº¬</td>
+<td width="20%" class=td1>EmailåŒ…å«</td>
 <td width="80%" class=td1 colspan=5><input size=45 name="userEmail" type=text></td>
 </tr>
 <tr>
-<td width="20%" class=td1>ÓÃ»§IM°üº¬</td>
-<td width="80%" class=td1 colspan=5><input size=45 name="userim" type=text> °üÀ¨Ö÷Ò³¡¢OICQ¡¢UC¡¢ICQ¡¢YAHOO¡¢AIM¡¢MSN</td>
+<td width="20%" class=td1>ç”¨æˆ·IMåŒ…å«</td>
+<td width="80%" class=td1 colspan=5><input size=45 name="userim" type=text> åŒ…æ‹¬ä¸»é¡µã€OICQã€UCã€ICQã€YAHOOã€AIMã€MSN</td>
 </tr>
 <tr>
-<td width="20%" class=td1>µÇÂ¼IP°üº¬</td>
+<td width="20%" class=td1>ç™»å½•IPåŒ…å«</td>
 <td width="80%" class=td1 colspan=5><input size=45 name="lastip" type=text></td>
 </tr>
 <tr>
-<td width="20%" class=td1>Í·ÏÎ°üº¬</td>
+<td width="20%" class=td1>å¤´è¡”åŒ…å«</td>
 <td width="80%" class=td1 colspan=5><input size=45 name="usertitle" type=text></td>
 </tr>
 <tr>
-<td width="20%" class=td1>Ç©Ãû°üº¬</td>
+<td width="20%" class=td1>ç­¾ååŒ…å«</td>
 <td width="80%" class=td1 colspan=5><input size=45 name="sign" type=text></td>
 </tr>
 <tr>
-<td width="20%" class=td1>ÏêÏ¸×ÊÁÏ°üº¬</td>
+<td width="20%" class=td1>è¯¦ç»†èµ„æ–™åŒ…å«</td>
 <td width="80%" class=td1 colspan=5><input size=45 name="userinfo" type=text></td>
 </tr>
-<!--shinzeal¼ÓÈëÌØÊâËÑË÷-->
+<!--shinzealåŠ å…¥ç‰¹æ®Šæœç´¢-->
 <tr>
-<th colspan=7 style="text-align:center;">ÌØÊâ²éÑ¯&nbsp;£¨×¢Òâ£º <¶àÓÚ> »ò <ÉÙÓÚ> ÒÑÄ¬ÈÏ°üº¬ <µÈÓÚ>£»Ìõ¼şÁô¿ÕÔò²»Ê¹ÓÃ´ËÌõ¼ş £©</th>
+<th colspan=7 style="text-align:center;">ç‰¹æ®ŠæŸ¥è¯¢&nbsp;ï¼ˆæ³¨æ„ï¼š <å¤šäº> æˆ– <å°‘äº> å·²é»˜è®¤åŒ…å« <ç­‰äº>ï¼›æ¡ä»¶ç•™ç©ºåˆ™ä¸ä½¿ç”¨æ­¤æ¡ä»¶ ï¼‰</th>
 </tr>
 <tr>
 <td class=td1 colspan=7>
 <table ID="Table1" width="100%">
 <tr>
-<td width="50%" class=td2>µÇÂ¼´ÎÊı:<input type=radio class=radio value=more name="loginR" checked>&nbsp;¶àÓÚ&nbsp;<input type=radio class=radio value=less name="loginR">&nbsp;ÉÙÓÚ&nbsp;&nbsp;<input size=5 name="loginT" type=text> ´Î</td>
-<td width="50%" class=td2>ÏûÊ§ÌìÊı:<input type=radio class=radio value=more name="vanishR" checked>&nbsp;¶àÓÚ&nbsp;<input type=radio class=radio value=less name="vanishR">&nbsp;ÉÙÓÚ&nbsp;&nbsp;<input size=5 name="vanishT" type=text> Ìì</td>
+<td width="50%" class=td2>ç™»å½•æ¬¡æ•°:<input type=radio class=radio value=more name="loginR" checked>&nbsp;å¤šäº&nbsp;<input type=radio class=radio value=less name="loginR">&nbsp;å°‘äº&nbsp;&nbsp;<input size=5 name="loginT" type=text> æ¬¡</td>
+<td width="50%" class=td2>æ¶ˆå¤±å¤©æ•°:<input type=radio class=radio value=more name="vanishR" checked>&nbsp;å¤šäº&nbsp;<input type=radio class=radio value=less name="vanishR">&nbsp;å°‘äº&nbsp;&nbsp;<input size=5 name="vanishT" type=text> å¤©</td>
 </tr>
 <tr>
-<td>×¢²áÌìÊı:<input type=radio class=radio value=more name="regR" checked>&nbsp;¶àÓÚ&nbsp;<input type=radio class=radio value=less name="regR">&nbsp;ÉÙÓÚ&nbsp;&nbsp;<input size=5 name="regT" type=text> Ìì</td>
-<td>·¢±íÌûÊı:<input type=radio class=radio value=more name="artcleR" checked>&nbsp;¶àÓÚ&nbsp;<input type=radio class=radio value=less name="artcleR">&nbsp;ÉÙÓÚ&nbsp;&nbsp;<input size=5 name="artcleT" type=text> Æª</td>
+<td>æ³¨å†Œå¤©æ•°:<input type=radio class=radio value=more name="regR" checked>&nbsp;å¤šäº&nbsp;<input type=radio class=radio value=less name="regR">&nbsp;å°‘äº&nbsp;&nbsp;<input size=5 name="regT" type=text> å¤©</td>
+<td>å‘è¡¨å¸–æ•°:<input type=radio class=radio value=more name="artcleR" checked>&nbsp;å¤šäº&nbsp;<input type=radio class=radio value=less name="artcleR">&nbsp;å°‘äº&nbsp;&nbsp;<input size=5 name="artcleT" type=text> ç¯‡</td>
 </tr>
 
 <tr>
-<td class=td2>ÓÃ»§½ğÇ®:<input type=radio class=radio value=more name="UWealth" checked>&nbsp;¶àÓÚ&nbsp;<input type=radio class=radio value=less name="UWealth">&nbsp;ÉÙÓÚ&nbsp;&nbsp;<input size=5 name="UWealth_value" type=text></td>
-<td class=td2>ÓÃ»§»ı·Ö:<input type=radio class=radio value=more name="UEP" checked>&nbsp;¶àÓÚ&nbsp;<input type=radio class=radio value=less name="UEP">&nbsp;ÉÙÓÚ&nbsp;&nbsp;<input size=5 name="UEP_value" type=text></td>
+<td class=td2>ç”¨æˆ·é‡‘é’±:<input type=radio class=radio value=more name="UWealth" checked>&nbsp;å¤šäº&nbsp;<input type=radio class=radio value=less name="UWealth">&nbsp;å°‘äº&nbsp;&nbsp;<input size=5 name="UWealth_value" type=text></td>
+<td class=td2>ç”¨æˆ·ç§¯åˆ†:<input type=radio class=radio value=more name="UEP" checked>&nbsp;å¤šäº&nbsp;<input type=radio class=radio value=less name="UEP">&nbsp;å°‘äº&nbsp;&nbsp;<input size=5 name="UEP_value" type=text></td>
 </tr>
 <tr>
-<td>ÓÃ»§÷ÈÁ¦:<input type=radio class=radio value=more name="UCP" checked>&nbsp;¶àÓÚ&nbsp;<input type=radio class=radio value=less name="UCP">&nbsp;ÉÙÓÚ&nbsp;&nbsp;<input size=5 name="UCP_value" type=text></td>
-<td>ÓÃ»§ÍşÍû:<input type=radio class=radio value=more name="UPower" checked>&nbsp;¶àÓÚ&nbsp;<input type=radio class=radio value=less name="UPower">&nbsp;ÉÙÓÚ&nbsp;&nbsp;<input size=5 name="UPower_value" type=text></td>
+<td>ç”¨æˆ·é­…åŠ›:<input type=radio class=radio value=more name="UCP" checked>&nbsp;å¤šäº&nbsp;<input type=radio class=radio value=less name="UCP">&nbsp;å°‘äº&nbsp;&nbsp;<input size=5 name="UCP_value" type=text></td>
+<td>ç”¨æˆ·å¨æœ›:<input type=radio class=radio value=more name="UPower" checked>&nbsp;å¤šäº&nbsp;<input type=radio class=radio value=less name="UPower">&nbsp;å°‘äº&nbsp;&nbsp;<input size=5 name="UPower_value" type=text></td>
 </tr>
 <tr>
-<td class=td2>ÓÃ»§½ğ±Ò:<input type=radio class=radio value=more name="UMoney" checked>&nbsp;¶àÓÚ&nbsp;<input type=radio class=radio value=less name="UMoney">&nbsp;ÉÙÓÚ&nbsp;&nbsp;<input size=5 name="UMoney_value" type=text></td>
-<td class=td2>ÓÃ»§µãÈ¯:<input type=radio class=radio value=more name="UTicket" checked>&nbsp;¶àÓÚ&nbsp;<input type=radio class=radio value=less name="UTicket">&nbsp;ÉÙÓÚ&nbsp;&nbsp;<input size=5 name="UTicket_value" type=text></td>
+<td class=td2>ç”¨æˆ·é‡‘å¸:<input type=radio class=radio value=more name="UMoney" checked>&nbsp;å¤šäº&nbsp;<input type=radio class=radio value=less name="UMoney">&nbsp;å°‘äº&nbsp;&nbsp;<input size=5 name="UMoney_value" type=text></td>
+<td class=td2>ç”¨æˆ·ç‚¹åˆ¸:<input type=radio class=radio value=more name="UTicket" checked>&nbsp;å¤šäº&nbsp;<input type=radio class=radio value=less name="UTicket">&nbsp;å°‘äº&nbsp;&nbsp;<input size=5 name="UTicket_value" type=text></td>
 </tr>
 <tr>
-<td class=td1><LI>ÒÔÏÂÌõ¼şÇëÑ¡È¡ÏàÓ¦µÄVIPÓÃ»§×é½øĞĞ²éÑ¯</LI></td>
+<td class=td1><LI>ä»¥ä¸‹æ¡ä»¶è¯·é€‰å–ç›¸åº”çš„VIPç”¨æˆ·ç»„è¿›è¡ŒæŸ¥è¯¢</LI></td>
 </tr>
 <tr>
-<td class=td2>VipµÇ¼ÇÊ±¼ä:<input type=radio class=radio value=more name="UVipStarTime" checked>&nbsp;¶àÓÚ&nbsp;<input type=radio class=radio value=less name="UVipStarTime">&nbsp;ÉÙÓÚ&nbsp;&nbsp;<input size=5 name="UVipStarTime_value" type=text></td>
-<td class=td2>Vip½ØÖ¹Ê±¼ä:<input type=radio class=radio value=more name="UVipEndTime" checked>&nbsp;¶àÓÚ&nbsp;<input type=radio class=radio value=less name="UVipEndTime">&nbsp;ÉÙÓÚ&nbsp;&nbsp;<input size=5 name="UVipEndTime_value" type=text></td>
+<td class=td2>Vipç™»è®°æ—¶é—´:<input type=radio class=radio value=more name="UVipStarTime" checked>&nbsp;å¤šäº&nbsp;<input type=radio class=radio value=less name="UVipStarTime">&nbsp;å°‘äº&nbsp;&nbsp;<input size=5 name="UVipStarTime_value" type=text></td>
+<td class=td2>Vipæˆªæ­¢æ—¶é—´:<input type=radio class=radio value=more name="UVipEndTime" checked>&nbsp;å¤šäº&nbsp;<input type=radio class=radio value=less name="UVipEndTime">&nbsp;å°‘äº&nbsp;&nbsp;<input size=5 name="UVipEndTime_value" type=text></td>
 </tr>
 </table>
 </td></tr>
 
-<!--ÌØÊâËÑË÷½áÊø-->
+<!--ç‰¹æ®Šæœç´¢ç»“æŸ-->
 <tr>
-<td width="100%" class=td1 align=center colspan=7><input name="submit" type=submit class=button value="   ËÑ  Ë÷   "></td>
+<td width="100%" class=td1 align=center colspan=7><input name="submit" type=submit class=button value="   æœ  ç´¢   "></td>
 </tr>
 <input type=hidden value="9" name="userSearch">
 </form>
 <%
 End Sub
-'ÓÃ»§ÅúÁ¿ÉóºË
+'ç”¨æˆ·æ‰¹é‡å®¡æ ¸
 Sub audituser()
 Dim Groupids
 %>
 <FORM METHOD=POST ACTION="?action=saveaudit" name="formaudituser">
-<tr><th colspan=8 style="text-align:center;">ÓÃ»§ÅúÁ¿ÉèÖÃÉóºË</th></tr><tr><td width=20% class=td1>×¢ÒâÊÂÏî</td><td width=80% class=td1 colspan=5>¶àÃ¿¸öÓÃ»§»òÃ¿¸öÓÃ»§×é±ØĞëÒÔ<font color=red>","</font>·ûºÅ·Ö¸ô</td></tr>
-<tr><td width=20% class=td1>ÀıÈç£ºÓÃ»§</td><td width=80% class=td1 colspan=5>ÓÃ»§1,ÓÃ»§2,...,ÓÃ»§n</td></tr>
-<tr><td width=20% class=td1>ÀıÈç£ºÓÃ»§×é</td><td width=80% class=td1 colspan=5>ÓÃ»§×éID1,ÓÃ»§×éID2,...,ÓÃ»§×éIDn</td></tr>
-<tr><td width=20% class=td1>ÀıÈç£º×Ô¶¨ÒåÓÃ»§</td><td width=80% class=td1 colspan=5>×Ô¶¨ÒåÓÃ»§,×Ô¶¨ÒåÓÃ»§,...,×Ô¶¨ÒåÓÃ»§n</td></tr>
-<tr><td width=20% class=td1>ÉóºËÈ¨ÏŞÇø·Ö:</td><td width=80% class=td1 colspan=5>×Ô¶¨ÒåÓÃ»§<font color=red>´óÓÚ</font>ÓÃ»§×é<font color=red>´óÓÚ</font>ÓÃ»§</td></tr>
+<tr><th colspan=8 style="text-align:center;">ç”¨æˆ·æ‰¹é‡è®¾ç½®å®¡æ ¸</th></tr><tr><td width=20% class=td1>æ³¨æ„äº‹é¡¹</td><td width=80% class=td1 colspan=5>å¤šæ¯ä¸ªç”¨æˆ·æˆ–æ¯ä¸ªç”¨æˆ·ç»„å¿…é¡»ä»¥<font color=red>","</font>ç¬¦å·åˆ†éš”</td></tr>
+<tr><td width=20% class=td1>ä¾‹å¦‚ï¼šç”¨æˆ·</td><td width=80% class=td1 colspan=5>ç”¨æˆ·1,ç”¨æˆ·2,...,ç”¨æˆ·n</td></tr>
+<tr><td width=20% class=td1>ä¾‹å¦‚ï¼šç”¨æˆ·ç»„</td><td width=80% class=td1 colspan=5>ç”¨æˆ·ç»„ID1,ç”¨æˆ·ç»„ID2,...,ç”¨æˆ·ç»„IDn</td></tr>
+<tr><td width=20% class=td1>ä¾‹å¦‚ï¼šè‡ªå®šä¹‰ç”¨æˆ·</td><td width=80% class=td1 colspan=5>è‡ªå®šä¹‰ç”¨æˆ·,è‡ªå®šä¹‰ç”¨æˆ·,...,è‡ªå®šä¹‰ç”¨æˆ·n</td></tr>
+<tr><td width=20% class=td1>å®¡æ ¸æƒé™åŒºåˆ†:</td><td width=80% class=td1 colspan=5>è‡ªå®šä¹‰ç”¨æˆ·<font color=red>å¤§äº</font>ç”¨æˆ·ç»„<font color=red>å¤§äº</font>ç”¨æˆ·</td></tr>
 <tr><td width=20% class=td1>&nbsp;</td><td width=80% class=td1 colspan=5>
-(1)Èç¹û×Ô¶¨ÒåÓÃ»§Ó¦ÓÃÉóºË£¬ÔòÉóºË
-(2)Èç¹û×Ô¶¨ÒåÓÃ»§²»Ó¦ÓÃÉóºË£¬Ôò¸ù¾İÓÃ»§×éÊÇ·ñÓ¦ÓÃÉóºË
-(3)Èç¹ûÓÃ»§×é²»Ó¦ÓÃÉóºË£¬Ôò¸ù¾İÓÃ»§ÊÇ·ñÓ¦ÓÃÉóºË</td></tr>
-<tr><td width=20% class=td1>&nbsp;</td><td width=80% class=td1 colspan=5><input type="radio" id="audittype" name="audittype" value="1" checked>Ó¦ÓÃÉóºË&nbsp;&nbsp;&nbsp;<input type="radio" id="audittype" name="audittype" value="0">È¡ÏûÉóºË</td></td></tr>
-<tr><td width=20% class=td1>ÓÃ»§</td><td width=80% class=td1 colspan=5><input type="text" id="usernames" name="usernames" size="100"></td></tr>
-<tr><td width=20% class=td1>ÓÃ»§×é</td><td width=80% class=td1 colspan=5><input type=text name="groupid" value="" size="100"><input type="button" class="button" value="Ñ¡ÔñÓÃ»§×é" onclick="getGroup('Select_Group');"></td></tr>
-<tr><td width=20% class=td1>×Ô¶¨ÒåÓÃ»§</td><td width=80% class=td1 colspan=5><input type="text" id="customusernames" name="customusernames" size="100"></td></tr>
-<tr><td width=20% class=td1>ËùÓĞÓÃ»§</td><td width=80% class=td1 colspan=5><input type="checkbox" id="userall" name="userall" >&nbspÕë¶ÔËùÓĞÓÃ»§</td></tr>
-<tr><td width=20% class=td1>&nbsp;</td><td width=80% class=td1 colspan=5><INPUT TYPE="submit" value="Ìá½»">&nbsp;&nbsp;&nbsp;<INPUT TYPE="reset" value="ÖØĞÂÉèÖÃ"></td></tr>
+(1)å¦‚æœè‡ªå®šä¹‰ç”¨æˆ·åº”ç”¨å®¡æ ¸ï¼Œåˆ™å®¡æ ¸
+(2)å¦‚æœè‡ªå®šä¹‰ç”¨æˆ·ä¸åº”ç”¨å®¡æ ¸ï¼Œåˆ™æ ¹æ®ç”¨æˆ·ç»„æ˜¯å¦åº”ç”¨å®¡æ ¸
+(3)å¦‚æœç”¨æˆ·ç»„ä¸åº”ç”¨å®¡æ ¸ï¼Œåˆ™æ ¹æ®ç”¨æˆ·æ˜¯å¦åº”ç”¨å®¡æ ¸</td></tr>
+<tr><td width=20% class=td1>&nbsp;</td><td width=80% class=td1 colspan=5><input type="radio" id="audittype" name="audittype" value="1" checked>åº”ç”¨å®¡æ ¸&nbsp;&nbsp;&nbsp;<input type="radio" id="audittype" name="audittype" value="0">å–æ¶ˆå®¡æ ¸</td></td></tr>
+<tr><td width=20% class=td1>ç”¨æˆ·</td><td width=80% class=td1 colspan=5><input type="text" id="usernames" name="usernames" size="100"></td></tr>
+<tr><td width=20% class=td1>ç”¨æˆ·ç»„</td><td width=80% class=td1 colspan=5><input type=text name="groupid" value="" size="100"><input type="button" class="button" value="é€‰æ‹©ç”¨æˆ·ç»„" onclick="getGroup('Select_Group');"></td></tr>
+<tr><td width=20% class=td1>è‡ªå®šä¹‰ç”¨æˆ·</td><td width=80% class=td1 colspan=5><input type="text" id="customusernames" name="customusernames" size="100"></td></tr>
+<tr><td width=20% class=td1>æ‰€æœ‰ç”¨æˆ·</td><td width=80% class=td1 colspan=5><input type="checkbox" id="userall" name="userall" >&nbspé’ˆå¯¹æ‰€æœ‰ç”¨æˆ·</td></tr>
+<tr><td width=20% class=td1>&nbsp;</td><td width=80% class=td1 colspan=5><INPUT TYPE="submit" value="æäº¤">&nbsp;&nbsp;&nbsp;<INPUT TYPE="reset" value="é‡æ–°è®¾ç½®"></td></tr>
 <%
 Call Select_Audit_Group(Replace(Groupids&"","@",","))
 End Sub 
@@ -218,37 +218,37 @@ groupid=Dvbbs.CheckStr(request("groupid"))
 customusernames=Dvbbs.CheckStr(request("customusernames"))
 If Dvbbs.CheckStr(Request("userall"))="on" Then userall=True 
 If Not userall And usernames="" And groupid="" And customusernames="" Then 
-			ErrMsg =ErrMsg& "ÇëÉèÖÃÓÃ»§»òÓÃ»§×é»ò×Ô¶¨ÒåÓÃ»§¡£"
+			ErrMsg =ErrMsg& "è¯·è®¾ç½®ç”¨æˆ·æˆ–ç”¨æˆ·ç»„æˆ–è‡ªå®šä¹‰ç”¨æˆ·ã€‚"
 			founderr=true
 			Dvbbs_Error()        
 Else 
 		If userall Then 
 			Dvbbs.Execute("Update Dv_User set UserIsAudit_Custom="&audittype&",userisaudit="&audittype&"")
             Dvbbs.Execute("Update Dv_UserGroups set UserGroupIsAudit="&audittype&"")
-			Dv_suc("ËùÓĞÓÃ»§ÉèÖÃÉóºË³É¹¦£¡")
+			Dv_suc("æ‰€æœ‰ç”¨æˆ·è®¾ç½®å®¡æ ¸æˆåŠŸï¼")
 		Else 
 			If usernames<>"" Then 
 			updateaudit usernames,0,audittype
-			Dv_suc("ÓÃ»§ÉèÖÃÉóºË³É¹¦£¡")
+			Dv_suc("ç”¨æˆ·è®¾ç½®å®¡æ ¸æˆåŠŸï¼")
 			End If 
 			If groupid<>"" Then 
 			updateaudit groupid,1,audittype
-			Dv_suc("ÓÃ»§×éÉèÖÃÉóºË³É¹¦£¡")
+			Dv_suc("ç”¨æˆ·ç»„è®¾ç½®å®¡æ ¸æˆåŠŸï¼")
 			End If 
 			If customusernames<>"" Then 
 			updateaudit customusernames,2,audittype
-			Dv_suc("×Ô¶¨ÒåÓÃ»§ÉèÖÃÉóºË³É¹¦£¡")
+			Dv_suc("è‡ªå®šä¹‰ç”¨æˆ·è®¾ç½®å®¡æ ¸æˆåŠŸï¼")
 			End If 
 		End If 
 End If 
 End Sub 
-Function updateaudit(value,type1,audittype) '²Î1=±íµ¥Öµ ²Î2=ÓÃ»§»òÓÃ»§×é»ò×Ô¶¨ÒåÓÃ»§ ²Î3=²Ù×÷ÀàĞÍ
+Function updateaudit(value,type1,audittype) 'å‚1=è¡¨å•å€¼ å‚2=ç”¨æˆ·æˆ–ç”¨æˆ·ç»„æˆ–è‡ªå®šä¹‰ç”¨æˆ· å‚3=æ“ä½œç±»å‹
 Dim usernames,groupid,SQL,Rs,i,ToUserID,ToUserGroupId
 Select Case type1
 Case "0"
 				usernames=Split(value,",")
 				If Ubound(usernames)>100 Then
-				ErrMsg =ErrMsg& "ÏŞÖÆÒ»´Î²»ÄÜ³¬¹ı100Î»Ä¿±êÓÃ»§¡£"
+				ErrMsg =ErrMsg& "é™åˆ¶ä¸€æ¬¡ä¸èƒ½è¶…è¿‡100ä½ç›®æ ‡ç”¨æˆ·ã€‚"
 				founderr=true
 				Dvbbs_Error()
 				Exit Function 
@@ -263,7 +263,7 @@ Case "0"
 							ToUserID = ToUserID &","& Rs(0)
 						End If
 					Else 
-						ErrMsg =ErrMsg&"<font color=red>"&usernames(i)& "</font>ÓÃ»§²»´æÔÚ¡£"
+						ErrMsg =ErrMsg&"<font color=red>"&usernames(i)& "</font>ç”¨æˆ·ä¸å­˜åœ¨ã€‚"
 						founderr=true
 						Dvbbs_Error()
 						Exit Function
@@ -277,7 +277,7 @@ Case "1"
 				SQL = "select usergroupid,title from dv_usergroups where usergroupid="&groupid(i)&""
 				SET Rs = Dvbbs.Execute(SQL)
 				If Rs.eof Then 
-							ErrMsg =ErrMsg&"IDÎª<font color=red>"&groupid(i)& "</font>µÄÓÃ»§×é²»´æÔÚ¡£"
+							ErrMsg =ErrMsg&"IDä¸º<font color=red>"&groupid(i)& "</font>çš„ç”¨æˆ·ç»„ä¸å­˜åœ¨ã€‚"
 							founderr=true
 							Dvbbs_Error()
 							Exit Function
@@ -288,7 +288,7 @@ Case "1"
 Case "2"
 				usernames=Split(value,",")
 				If Ubound(usernames)>100 Then
-				ErrMsg =ErrMsg& "ÏŞÖÆÒ»´Î²»ÄÜ³¬¹ı100Î»×Ô¶¨ÒåÓÃ»§¡£"
+				ErrMsg =ErrMsg& "é™åˆ¶ä¸€æ¬¡ä¸èƒ½è¶…è¿‡100ä½è‡ªå®šä¹‰ç”¨æˆ·ã€‚"
 				founderr=true
 				Dvbbs_Error()
 				Exit Function 
@@ -303,7 +303,7 @@ Case "2"
 							ToUserID = ToUserID &","& Rs(0)
 						End If
 					Else 
-						ErrMsg =ErrMsg&"<font color=red>"&usernames(i)& "</font>ÓÃ»§²»´æÔÚ¡£"
+						ErrMsg =ErrMsg&"<font color=red>"&usernames(i)& "</font>ç”¨æˆ·ä¸å­˜åœ¨ã€‚"
 						founderr=true
 						Dvbbs_Error()
 						Exit Function
@@ -320,7 +320,7 @@ End Function
 Sub UserSearch()
 %>
 <tr>
-<th colspan=8 style="text-align:center;">ËÑË÷½á¹û</th>
+<th colspan=8 style="text-align:center;">æœç´¢ç»“æœ</th>
 </tr>
 <%
 	dim currentpage,page_count,Pcount
@@ -403,7 +403,7 @@ Sub UserSearch()
 		'	end if
 		'end if
 
-		'======shinzeal¼ÓÈëÌØÊâËÑË÷=======
+		'======shinzealåŠ å…¥ç‰¹æ®Šæœç´¢=======
 		dim Tsqlstr
 		if request("loginT")<>"" then
 		   	if request("loginR")="more" then
@@ -592,7 +592,7 @@ Sub UserSearch()
 			end if 
 		end if
 
-		'======ÌØÊâËÑË÷½áÊø======
+		'======ç‰¹æ®Šæœç´¢ç»“æŸ======
 		if request("useremail")<>"" then
 			if sqlstr="" then
 			sqlstr=" useremail like '%"&request("useremail")&"%'"
@@ -621,7 +621,7 @@ Sub UserSearch()
 			sqlstr=sqlstr & " and UserInfo like '%"&request("userinfo")&"%'"
 			end if
 		end if
-		'ĞŞÕı²»ÄÜÓÃÍ·ÏÎËÑË÷ 2005-4-9 Dv.Yz
+		'ä¿®æ­£ä¸èƒ½ç”¨å¤´è¡”æœç´¢ 2005-4-9 Dv.Yz
 		If Request("usertitle") <> "" Then
 			If Sqlstr = "" Then
 				Sqlstr = " UserTitle LIKE '%" & Request("usertitle") & "%'"
@@ -638,7 +638,7 @@ Sub UserSearch()
 		end if
 
 		If Sqlstr = "" Then
-			Response.Write "<tr><td colspan=8 class=td1>ÇëÖ¸¶¨ËÑË÷²ÎÊı£¡</td></tr>"
+			Response.Write "<tr><td colspan=8 class=td1>è¯·æŒ‡å®šæœç´¢å‚æ•°ï¼</td></tr>"
 			Response.End
 		End If
 		If Request("Searchmax") = "" Or Not Isnumeric(Request("Searchmax")) Then
@@ -647,29 +647,29 @@ Sub UserSearch()
 			Sql = "SELECT TOP " & Request("Searchmax") & Sql &" FROM [Dv_User] WHERE " & Sqlstr & " ORDER BY UserID DESC"
 		End If
 	case else
-		Response.Write "<tr><td colspan=8 class=td1>´íÎóµÄ²ÎÊı¡£</td></tr>"
+		Response.Write "<tr><td colspan=8 class=td1>é”™è¯¯çš„å‚æ•°ã€‚</td></tr>"
 		Response.End
 	End Select
 	'Response.Write sql
 	rs.open sql,conn,1,1
 	if rs.eof and rs.bof then
-		response.write "<tr><td colspan=8 class=td1>Ã»ÓĞÕÒµ½Ïà¹Ø¼ÇÂ¼¡£"
+		response.write "<tr><td colspan=8 class=td1>æ²¡æœ‰æ‰¾åˆ°ç›¸å…³è®°å½•ã€‚"
 		If Request("userSearch")="15" Then
-			Response.Write "£¨ÈôÎ´Ìí¼ÓVIPÓÃ»§×é£¬Çë<a href=""group.asp""><font color=red>µã»÷½øÈëÂÛÌ³ÓÃ»§×é¹ÜÀí</font></a>½øĞĞÌí¼Ó¡££©"
+			Response.Write "ï¼ˆè‹¥æœªæ·»åŠ VIPç”¨æˆ·ç»„ï¼Œè¯·<a href=""group.asp""><font color=red>ç‚¹å‡»è¿›å…¥è®ºå›ç”¨æˆ·ç»„ç®¡ç†</font></a>è¿›è¡Œæ·»åŠ ã€‚ï¼‰"
 		End If
 		Response.Write "</td></tr>"
 	else
 %>
 <FORM METHOD=POST ACTION="?action=touser">
 <tr align=center height=23>
-<td class=td2 width="10%"><B>ÓÃ»§Ãû</B></td>
+<td class=td2 width="10%"><B>ç”¨æˆ·å</B></td>
 <td class=td2 width="15%"><B>Email</B></td>
-<td class=td2 width="8%"><B>È¨ÏŞ</B></td>
-<td class=td2 width="8%"><B>Êı¾İĞŞ¸´</B></td>
-<td class=td2 width="15%"><B>×îºóIP</B></td>
-<td class=td2 width="15%"><B>×îºóµÇÂ¼</B></td>
-<td class=td2 width="20%"><B>µÇ¼Ç/ÖÕÖ¹ÈÕÆÚ</B></td>
-<td class=td2><B>²Ù×÷</B></td>
+<td class=td2 width="8%"><B>æƒé™</B></td>
+<td class=td2 width="8%"><B>æ•°æ®ä¿®å¤</B></td>
+<td class=td2 width="15%"><B>æœ€åIP</B></td>
+<td class=td2 width="15%"><B>æœ€åç™»å½•</B></td>
+<td class=td2 width="20%"><B>ç™»è®°/ç»ˆæ­¢æ—¥æœŸ</B></td>
+<td class=td2><B>æ“ä½œ</B></td>
 </tr>
 <%
 		rs.PageSize = Cint(Dvbbs.Forum_Setting(11))
@@ -681,9 +681,9 @@ Sub UserSearch()
 <tr>
 <td class=td1><a href="?action=modify&userid=<%=rs("userid")%>"><%=rs("username")%></a></td>
 <td class=td1><a href="mailto:<%=rs("useremail")%>"><%=rs("useremail")%></a></td>
-<td class=td1 align=center><a href="?action=UserPermission&userid=<%=rs("userid")%>&username=<%=rs("username")%>">±à¼­</a></td>
-<td class=td1 align=center><a href="?action=fix&userid=<%=rs("userid")%>&username=<%=rs("username")%>">ĞŞ¸´</a></td>
-<td class=td1><a href="lockIP.asp?userip=<%=rs("UserLastIP")%>" title="µã»÷Ëø¶¨¸ÃÓÃ»§IP"><%=rs("userlastip")%></a>&nbsp;</td>
+<td class=td1 align=center><a href="?action=UserPermission&userid=<%=rs("userid")%>&username=<%=rs("username")%>">ç¼–è¾‘</a></td>
+<td class=td1 align=center><a href="?action=fix&userid=<%=rs("userid")%>&username=<%=rs("username")%>">ä¿®å¤</a></td>
+<td class=td1><a href="lockIP.asp?userip=<%=rs("UserLastIP")%>" title="ç‚¹å‡»é”å®šè¯¥ç”¨æˆ·IP"><%=rs("userlastip")%></a>&nbsp;</td>
 <td class=td1><%if rs("lastlogin")<>"" and isdate(rs("lastlogin")) then%><%=rs("lastlogin")%><%end if%></td>
 <td class=td1 align=center>
 <%=rs("Vip_StarTime")%>/
@@ -697,11 +697,11 @@ Sub UserSearch()
 		wend
 		Pcount=rs.PageCount
 %>
-<tr><td colspan=8 class=td1 align=center>·ÖÒ³£º
+<tr><td colspan=8 class=td1 align=center>åˆ†é¡µï¼š
 <%
 Dim Searchstr,i
-'ĞŞÕıÍ·ÏÎËÑË÷ÓÃ»§µÄ·ÖÒ³´íÎó¡£
-'ĞŞÕı×îºóµÇÂ½IPËÑË÷ÓÃ»§µÄ·ÖÒ³´íÎó 2005.10.12 By Winder
+'ä¿®æ­£å¤´è¡”æœç´¢ç”¨æˆ·çš„åˆ†é¡µé”™è¯¯ã€‚
+'ä¿®æ­£æœ€åç™»é™†IPæœç´¢ç”¨æˆ·çš„åˆ†é¡µé”™è¯¯ 2005.10.12 By Winder
 Searchstr = "?userSearch=" & Request("userSearch") & "&username=" & Request("username") & "&useremail=" & Request("useremail") & "&userim=" & Request("userim") & "&lastip=" & Request("lastip") & "&usertitle=" & Request("usertitle") & "&sign=" & Request("sign") & "&userinfo=" & Request("userinfo") & "&action=" & Request("action") & "&loginR=" & Request("loginR") & "&loginT=" & Request("loginT") & "&vanishR=" & Request("vanishR") & "&vanishT=" & Request("vanishT") & "&regR=" & Request("regR") & "&regT=" & Request("regT") & "&artcleR=" & Request("artcleR") & "&artcleT=" & Request("artcleT") & "&UWealth=" & Request("UWealth") & "&UWealth_value=" & Request("UWealth_value") & "&UEP=" & Request("UEP") & "&UEP_value=" & Request("UEP_value") & "&UCP=" & Request("UCP") & "&UCP_value=" & Request("UCP_value") & "&UPower=" & Request("UPower") & "&UPower_value=" & Request("UPower_value") & "&UMoney=" & Request("UMoney") & "&UMoney_value=" & Request("UMoney_value") & "&UTicket=" & Request("UTicket") & "&UTicket_value=" & Request("UTicket_value") & "&searchmax=" & Request("searchmax") & "&UVipStarTime=" & Request("UVipStarTime") & "&UVipStarTime_value=" & Request("UVipStarTime_value") & "&UVipEndTime=" & Request("UVipEndTime") & "&UVipEndTime_value=" & Request("UVipEndTime_value")&"&usergroups="&Request("usergroups")&"&usergroupid="&Request("usergroupid")
 
 	if currentpage > 4 then
@@ -726,7 +726,7 @@ Searchstr = "?userSearch=" & Request("userSearch") & "&username=" & Request("use
 	end if
 %>
 </td></tr>
-<tr><td colspan=5 class=td1 align=center><B>ÇëÑ¡ÔñÄúĞèÒª½øĞĞµÄ²Ù×÷</B>£º<input type="radio" class=radio name="useraction" value=1> É¾³ı&nbsp;&nbsp;<input type="radio" class=radio name="useraction" value=3> É¾³ıÓÃ»§ËùÓĞÌû×Ó&nbsp;&nbsp;<input type="radio" class=radio name="useraction" value=2 checked> ÒÆ¶¯µ½ÓÃ»§×é
+<tr><td colspan=5 class=td1 align=center><B>è¯·é€‰æ‹©æ‚¨éœ€è¦è¿›è¡Œçš„æ“ä½œ</B>ï¼š<input type="radio" class=radio name="useraction" value=1> åˆ é™¤&nbsp;&nbsp;<input type="radio" class=radio name="useraction" value=3> åˆ é™¤ç”¨æˆ·æ‰€æœ‰å¸–å­&nbsp;&nbsp;<input type="radio" class=radio name="useraction" value=2 checked> ç§»åŠ¨åˆ°ç”¨æˆ·ç»„
 <select size=1 name="selusergroup">
 <%
 set trs=Dvbbs.Execute("select usergroupid,UserTitle,ParentGID from dv_usergroups where not (usergroupid=1 or usergroupid=7) and (Not ParentGID=0) order by ParentGID,usergroupid")
@@ -739,11 +739,11 @@ set trs=nothing
 %>
 </select>
 </td>
-<td class=td1 colspan=8 align=center>È«²¿Ñ¡¶¨<input type=checkbox class=checkbox value="on" name="chkall" onclick="CheckAll(this.form)">
+<td class=td1 colspan=8 align=center>å…¨éƒ¨é€‰å®š<input type=checkbox class=checkbox value="on" name="chkall" onclick="CheckAll(this.form)">
 </td>
 </tr>
 <tr><td colspan=8 class=td1 align=center>
-<input type=submit class=button name=submit value="Ö´ĞĞÑ¡¶¨µÄ²Ù×÷"  onclick="{if(confirm('È·¶¨Ö´ĞĞÑ¡ÔñµÄ²Ù×÷Âğ?')){return true;}return false;}">
+<input type=submit class=button name=submit value="æ‰§è¡Œé€‰å®šçš„æ“ä½œ"  onclick="{if(confirm('ç¡®å®šæ‰§è¡Œé€‰æ‹©çš„æ“ä½œå—?')){return true;}return false;}">
 </td></tr>
 </FORM>
 <%
@@ -752,1287 +752,26 @@ set trs=nothing
 	set rs=nothing
 End Sub
 
-'²Ù×÷ÓÃ»§£¬É¾³ıÓÃ»§ĞÅÏ¢Ïà¹Ø²Ù×÷
+'æ“ä½œç”¨æˆ·ï¼Œåˆ é™¤ç”¨æˆ·ä¿¡æ¯ç›¸å…³æ“ä½œ
 Sub ToUser()
 	Dim SQL,rs
-	response.write "<tr><th colspan=8 style=""text-align:center;"">Ö´ĞĞ½á¹û</th></tr>"
+	response.write "<tr><th colspan=8 style=""text-align:center;"">æ‰§è¡Œç»“æœ</th></tr>"
 	if request("useraction")="" then
-		response.write "<tr><td colspan=8 class=td1>ÇëÖ¸¶¨Ïà¹Ø²ÎÊı¡£</td></tr>"
-		founderr=true
-	end if
-	if request("userid")="" then
-		response.write "<tr><td colspan=8 class=td1>ÇëÑ¡ÔñÏà¹ØÓÃ»§¡£</td></tr>"
-		founderr=true
-	end if
-	if not founderr then
-		if request("useraction")=1 then
-			Dim AllUserName
-			AllUserName = ""
-			'------------------shinzeal¼ÓÈëÉ¾³ıÓÃ»§µÄ¶ÌĞÅ-------------------------
-			dim uid,i
-			for i=1 to request("userid").count
-				if request("userid").count=1 then
-				uID=request("userid")
-				else
-				uID=replace(request.form("userid")(i),"'","")
-				end if
-				set rs=Dvbbs.Execute("select username from [dv_User] where userid="&uid&"")
-				if not (rs.eof and rs.bof) then
-					AllUserName = AllUserName & Rs(0) & ","
-					Dvbbs.Execute("update dv_message set delR=1 where incept='"&trim(rs(0))&"' and delR=0")
-					Dvbbs.Execute("update dv_message set delS=1 where sender='"&trim(rs(0))&"' and delS=0 and issend=0")
-					Dvbbs.Execute("update dv_message set delS=1 where sender='"&trim(rs(0))&"' and delS=0 and issend=1")
-					Dvbbs.Execute("delete from dv_message where incept='"&rs(0)&"' and delR=1") 
-					Dvbbs.Execute("update dv_message set delS=2 where sender='"&trim(rs(0))&"' and delS=1")
-					Dvbbs.Execute("delete from dv_friend where F_username='"&rs(0)&"'") 
-					Dvbbs.Execute("delete from dv_bookmark where username='"&rs(0)&"'") 
-				end if 
-				rs.close
-			next
-			If Right(AllUserName,1) = "," Then AllUserName = Left(AllUserName,Len(AllUserName)-1)
-			'-------------------É¾³ıÓÃ»§µÄ¶ÌĞÅ------------------------
-			'É¾³ıÓÃ»§µÄÌû×ÓºÍ¾«»ª
-			Dvbbs.Execute("delete from dv_topic where PostUserID in ("&replace(request("userid"),"'","")&")")
-			for i=0 to ubound(allposttable)
-				Dvbbs.Execute("delete from "&allposttable(i)&" where PostUserID in ("&replace(request("userid"),"'","")&")")
-			next
-			Dvbbs.Execute("delete from dv_besttopic where PostUserID in ("&replace(request("userid"),"'","")&")")
-			'É¾³ıÓÃ»§ÉÏ´«±í
-			Dvbbs.Execute("delete from dv_upfile where F_UserID in ("&replace(request("userid"),"'","")&")")
-			Dvbbs.Execute("delete from [dv_user] where userid in ("&replace(request("userid"),"'","")&")")
-			Response.write "<tr><td colspan=8 class=td1>É¾³ıÓÃ»§£¨ "& AllUserName &" £©²Ù×÷³É¹¦¡£</td></tr>"
-
-			'-----------------------------------------------------------------
-			'ÏµÍ³ÕûºÏ
-			'-----------------------------------------------------------------
-			Dim DvApi_Obj,DvApi_SaveCookie,SysKey
-			If DvApi_Enable Then
-				'SysKey = Md5(DvApi_SysKey&AllUserName,16)
-				Set DvApi_Obj = New DvApi
-					DvApi_Obj.NodeValue "syskey",SysKey,0,False
-					DvApi_Obj.NodeValue "action","delete",0,False
-					DvApi_Obj.NodeValue "username",AllUserName,1,False
-					Md5OLD = 1
-					SysKey = Md5(DvApi_Obj.XmlNode("username")&DvApi_SysKey,16)
-					Md5OLD = 0
-					DvApi_Obj.NodeValue "syskey",SysKey,0,False
-					DvApi_Obj.SendHttpData
-					'If DvApi_Obj.Status = "1" Then
-						'Response.redirect "showerr.asp?ErrCodes="& DvApi_Obj.Message &"&action=OtherErr"
-					'End If
-				Set DvApi_Obj = Nothing
-			End If
-			'-----------------------------------------------------------------
-		elseif request("useraction")=2 then
-			dim userclass,usertitlepic
-			set rs=Dvbbs.Execute("select * from dv_usergroups where usergroupid="&request("selusergroup")&" order by minarticle")
-			if not (rs.eof and rs.bof) then
-				userclass=rs("usertitle")
-				usertitlepic=rs("grouppic")
-			end if
-			Dvbbs.Execute("update [dv_user] set UserGroupID="&replace(request("selusergroup"),"'","")&",userclass='"&userclass&"',titlepic='"&usertitlepic&"' where userid in ("&replace(request("userid"),"'","")&")")
-			response.write "<tr><td colspan=8 class=td1>²Ù×÷³É¹¦¡£</td></tr>"
-		elseif request("useraction")=3 then
-			dim titlenum
-			if request("userid")="" then
-				response.write "<tr><td colspan=8 class=td1>ÇëÊäÈë±»É¾³ıÌû×ÓÓÃ»§Ãû¡£</td></tr>"
-			end if
-			titlenum=0
-			for i=0 to ubound(allposttable)
-			set rs=Dvbbs.Execute("Select Count(announceID) from "&allposttable(i)&" where postuserid in ("&replace(request("userid"),"'","")&")") 
-   			titlenum=titlenum+rs(0)
-			sql="update "&allposttable(i)&" set locktopic=boardid,boardid=444,isbest=0 where postuserid in ("&replace(request("userid"),"'","")&")"
-			Dvbbs.Execute(sql)
-			next
-			Dvbbs.Execute("delete from dv_besttopic where postuserid in ("&replace(request("userid"),"'","")&")")
-			set rs=Dvbbs.Execute("select topicid,posttable from dv_topic where postuserid in ("&replace(request("userid"),"'","")&")")
-			do while not rs.eof
-			Dvbbs.Execute("update "&rs(1)&" set locktopic=boardid,boardid=444,isbest=0 where rootid="&rs(0))
-			rs.movenext
-			loop
-			set rs=nothing
-			Dvbbs.Execute("update dv_topic set locktopic=boardid,boardid=444,isbest=0 where postuserid in ("&replace(request("userid"),"'","")&")")
-			if isnull(titlenum) then titlenum=0
-			sql="update [dv_user] set UserPost=UserPost-"&titlenum&",userWealth=userWealth-"&titlenum*Dvbbs.Forum_user(3)&",userEP=userEP-"&titlenum*Dvbbs.Forum_user(8)&",userCP=userCP-"&titlenum*Dvbbs.Forum_user(13)&" where userid in ("&replace(request("userid"),"'","")&")"
-			Dvbbs.Execute(sql)
-			response.write "<tr><td colspan=8 class=td1>É¾³ı³É¹¦£¬Èç¹ûÒªÍêÈ«É¾³ıÌû×ÓÇëµ½ÂÛÌ³»ØÊÕÕ¾<BR>½¨ÒéÄúµ½¸üĞÂÂÛÌ³Êı¾İÖĞ¸üĞÂÒ»ÏÂÂÛÌ³Êı¾İ£¬»òÕß<a href=alldel.asp>·µ»Ø</a></td></tr>"
-		else
-			response.write "<tr><td colspan=8 class=td1>´íÎóµÄ²ÎÊı¡£</td></tr>"
-		end if
-	end if
-End Sub
-
-'ĞŞ¸ÄÓÃ»§×ÊÁÏ±íµ¥
-Sub UserModify()
-dim realname,character,personal,country,province,city,shengxiao,blood,belief,occupation,marital, education,college,userphone,iaddress
-Dim UserIM
-Dim rs,sql
-	response.write "<tr><th colspan=8 style=""text-align:center;"">ÓÃ»§×ÊÁÏ²Ù×÷</th></tr>"
-	if not isnumeric(request("userid")) then
-		response.write "<tr><td colspan=8 class=td1>´íÎóµÄÓÃ»§²ÎÊı¡£</td></tr>"
-		founderr=true
-	end if
-	if not founderr then
-		Set rs= Dvbbs.iCreateObject("ADODB.Recordset")
-		sql="select * from [dv_user] where userid="&request("userid")
-		rs.open sql,conn,1,1
-		if rs.eof and rs.bof then
-		response.write "<tr><td colspan=8 class=td1>Ã»ÓĞÕÒµ½Ïà¹ØÓÃ»§¡£</td></tr>"
-		founderr=true
-		else
-if rs("userinfo")<>"" then
-	userinfo=split(Server.HtmlEncode(rs("userinfo")),"|||")
-	if ubound(userinfo)=14 then
-		realname=userinfo(0)
-		character=userinfo(1)
-		personal=userinfo(2)
-		country=userinfo(3)
-		province=userinfo(4)
-		city=userinfo(5)
-		shengxiao=userinfo(6)
-		blood=userinfo(7)
-		belief=userinfo(8)
-		occupation=userinfo(9)
-		marital=userinfo(10)
-		education=userinfo(11)
-		college=userinfo(12)
-		userphone=userinfo(13)
-		iaddress=userinfo(14)
-	else
-		realname=""
-		character=""
-		personal=""
-		country=""
-		province=""
-		city=""
-		shengxiao=""
-		blood=""
-		belief=""
-		occupation=""
-		marital=""
-		education=""
-		college=""
-		userphone=""
-		iaddress=""
-	end if
-else
-	realname=""
-	character=""
-	personal=""
-	country=""
-	province=""
-	city=""
-	shengxiao=""
-	blood=""
-	belief=""
-	occupation=""
-	marital=""
-	education=""
-	college=""
-	userphone=""
-	iaddress=""
-end if
-UserIM = Split(Rs("UserIM"),"|||")
-%>
-<FORM METHOD=POST ACTION="?action=saveuserinfo">
-<tr>
-<td width=100% class=td1 valign=top colspan=8>¶Ô <%=rs("username")%> ÓÃ»§²Ù×÷¿ì½İÑ¡Ïî£º<BR><BR>
-<a href="mailto:<%=rs("useremail")%>">·¢ÓÊ¼ş</a> | <a href="../messanger.asp?action=new&touser=<%=rs("username")%>" target=_blank>·¢¶ÌĞÅ</a> | <a href="../dispuser.asp?id=<%=rs("userid")%>" target=_blank>Ô¤ÀÀÓÃ»§×ÊÁÏ</a> | <a href="../Query.asp?stype=1&nSearch=3&keyword=<%=rs("username")%>&SearchDate=30" target=_blank>ÓÃ»§ĞÂÌù</a> | <a href="../Query.asp?stype=6&nSearch=0&pSearch=0&keyword=<%=rs("username")%>" target=_blank>ÓÃ»§¾«»ª</a> | <a href="../Query.asp?stype=4&nSearch=0&pSearch=0&keyword=<%=rs("username")%>" target=_blank>ÓÃ»§ÈÈÌù</a> | <a href="../show.asp?username=<%=rs("username")%>" target=_blank>ÓÃ»§Õ¹Çø</a> | <a href="?action=UserPermission&userid=<%=rs("userid")%>&username=<%=rs("username")%>">±à¼­È¨ÏŞ</a> | <a href="../TopicOther.asp?action=lookip&ip=<%=Rs("UserLastIP")%>&t=1" target=_blank>×îºóÀ´Ô´</a> | <a href="?action=touser&useraction=1&userid=<%=rs("userid")%>" onclick="{if(confirm('É¾³ı½«²»¿É»Ö¸´£¬²¢ÇÒ½«É¾³ı¸ÃÓÃ»§ÔÚÂÛÌ³µÄËùÓĞĞÅÏ¢£¬È·¶¨É¾³ıÂğ?')){return true;}return false;}">É¾³ıÓÃ»§</a>
-</td>
-</tr>
-<tr><th colspan=6 style="text-align:center;">ÓÃ»§»ù±¾×ÊÁÏĞŞ¸Ä£­£­<%=rs("username")%></th></tr>
-<tr><td class=td1 height=23 align=left colspan=6>
-×¢Òâ£ºĞÂ½¨¹ÜÀíÔ±½¨Òéµ½¹ÜÀíÔ±¹ÜÀíÖĞ½øĞĞ£¬½öÔÚ´ËÉèÖÃÎª¹ÜÀíÔ±×éµÄÓÃ»§²¢ÎŞ½øÈëÏµÍ³ºóÌ¨È¨ÏŞ
-</td></tr>
-<tr>
-<td width=20% class=td1>ÓÃ»§×é</td>
-<td width=80% class=td1 colspan=5>
-<select size=1 name="usergroups">
+		response.write "<tr><td colspan=8 class=td1>è¯·æŒ‡å®šç›¸å…³å‚æ•°ã€‚</td></tç²
+<select size=1 name="selusergroup">
 <%
-set trs=Dvbbs.Execute("select usergroupid,UserTitle,parentgid from dv_usergroups where Not ParentGID=0 order by ParentGID,usergroupid")
+set trs=Dvbbs.Execute("select usergroupid,UserTitle,ParentGID from dv_usergroups where not (usergroupid=1 or usergroupid=7) and (Not ParentGID=0) order by ParentGID,usergroupid")
 do while not trs.eof
-response.write "<option value="&trs(0)
-if rs("usergroupid")=trs(0) then response.write " selected "
-response.write ">"&SysGroupName(tRs(2)) & trs(1)
-'if trs(2)>0 then response.write "(×Ô¶¨ÒåµÈ¼¶)"
-response.write "</option>"
+response.write "<option value="&trs(0)&">"&SysGroupName(tRs(2))&trs(1)&"</option>"
 trs.movenext
 loop
 trs.close
 set trs=nothing
-
 %>
 </select>
 </td>
-</tr>
-<input name="userid" type=hidden value="<%=rs("userid")%>">
-<tr>
-<td width=20% class=td1>ÓÃ»§Ãû</td>
-<td width=80% class=td1 colspan=5><input size=45 name="username" type=text value="<%=Server.HtmlEncode(rs("username"))%>" disabled></td>
-</tr>
-<tr>
-<td width=20% class=td1>ÃÜ  Âë</td>
-<td width=80% class=td1 colspan=5><input size=45 name="password" type=text>&nbsp;Èç¹û²»ĞŞ¸ÄÇëÁô¿Õ</td>
-</tr>
-<tr>
-<td width=20% class=td1>ÃÜÂëÎÊÌâ</td>
-<td width=80% class=td1 colspan=5><input size=45 name="quesion" type=text value="<%If Trim(rs("userquesion"))<>"" Then Response.Write Server.HtmlEncode(rs("userquesion"))%>"></td>
-</tr>
-<tr>
-<td width=20% class=td1>ÃÜÂë´ğ°¸</td>
-<td width=80% class=td1 colspan=5><input size=45 name="answer" type=text>&nbsp;Èç¹û²»ĞŞ¸ÄÇëÁô¿Õ</td>
-</tr><tr>
-<td width=20% class=td1>ÓÃ»§ĞÔ±ğ</td>
-<td width=80% class=td1 colspan=5>
-Å® <input type="radio" class=radio value="0" <%if rs("UserSex")=0 then%>checked<%end if%> name="sex">&nbsp;
-ÄĞ <input type="radio" class=radio value="1" <%if rs("UserSex")=1 then%>checked<%end if%> name="sex">&nbsp;
+<td class=td1 colspan=8 align=center>éã„©å„´é–«å¤Šç•¾<input type=checkbox class=checkbox value="on" name="chkall" onclick="CheckAll(this.form)">
 </td>
 </tr>
-<tr>
-<td width=20% class=td1>¸öÈËÕÕÆ¬</td>
-<td width=80% class=td1 colspan=5><input size=45 name="UserPhoto" type=text value="<%If Trim(rs("UserPhoto"))<>"" Then Response.Write Server.HtmlEncode(rs("UserPhoto"))%>"></td>
-</tr>
-<tr>
-<td width=20% class=td1>Email</td>
-<td width=80% class=td1 colspan=5><input size=45 name="userEmail" type=text value="<%If Trim(rs("useremail"))<>"" Then Response.Write Server.HtmlEncode(rs("useremail"))%>"></td>
-</tr>
-<tr>
-<td width=20% class=td1>¸öÈËÖ÷Ò³</td>
-<td width=80% class=td1 colspan=5><input size=45 name="homepage" type=text value="<%=Server.HtmlEncode(UserIM(0))%>"></td>
-</tr>
-<tr>
-<td width=20% class=td1>Í·Ïñ</td>
-<td width=80% class=td1 colspan=5><input size=45 name="face" type=text value="<%If Trim(Rs("UserFace"))<>"" Then Response.Write Server.HtmlEncode(Split(rs("userface"),"|")(Ubound(Split(rs("userface"),"|"))))%>">&nbsp;¿í¶È£º<input size=3 name="width" type=text value="<%=rs("userwidth")%>">&nbsp;¸ß¶È£º<input size=3 name="height" type=text value="<%=rs("userheight")%>"></td>
-</tr>
-<tr>
-<td width=20% class=td1>OICQ</td>
-<td width=80% class=td1 colspan=5><input size=45 name="oicq" type=text value="<%=Server.HtmlEncode(UserIM(1))%>"></td>
-</tr>
-<tr>
-<td width=20% class=td1>ICQ</td>
-<td width=80% class=td1 colspan=5><input size=45 name="icq" type=text value="<%=Server.HtmlEncode(UserIM(2))%>"></td>
-</tr>
-<tr>
-<td width=20% class=td1>MSN</td>
-<td width=80% class=td1 colspan=5><input size=45 name="msn" type=text value="<%=Server.HtmlEncode(UserIM(3))%>"></td>
-</tr>
-<tr>
-<td width=20% class=td1>AIM</td>
-<td width=80% class=td1 colspan=5><input size=45 name="aim" type=text value="<%=Server.HtmlEncode(UserIM(4))%>"></td>
-</tr>
-<tr>
-<td width=20% class=td1>YaHoo</td>
-<td width=80% class=td1 colspan=5><input size=45 name="yahoo" type=text value="<%=Server.HtmlEncode(UserIM(5))%>"></td>
-</tr>
-<tr>
-<td width=20% class=td1>UC</td>
-<td width=80% class=td1 colspan=5><input size=45 name="uc" type=text value="<%=Server.HtmlEncode(UserIM(6))%>"></td>
-</tr>
-<tr>
-<td width=20% class=td1>Í·ÏÎ</td>
-<td width=80% class=td1 colspan=5><input size=45 name="usertitle" type=text value="<%If Trim(Rs("UserTitle"))<>"" Then Response.Write Server.HtmlEncode(rs("usertitle"))%>"></td>
-</tr>
-<tr><th colspan=6 style="text-align:center;">ÓÃ»§·ÖÖµ×ÊÁÏĞŞ¸Ä</th></tr>
-<tr>
-<td width=20% class=td1>·¢±íÎÄÕÂ</td>
-<td width=80% class=td1 colspan=5><input size=45 name="article" type=text value="<%=rs("UserPost")%>"></td>
-</tr>
-<tr>
-<td width=20% class=td1>±»É¾ÎÄÕÂ</td>
-<td width=80% class=td1 colspan=5><input size=45 name="Userdel" type=text value="<%=rs("userdel")%>"></td>
-</tr>
-<tr>
-<td width=20% class=td1>¾«»ªÎÄÕÂ</td>
-<td width=80% class=td1 colspan=5><input size=45 name="userisbest" type=text value="<%=rs("userisbest")%>"></td>
-</tr>
-<tr>
-<td width=20% class=td1>½ğ±Ò</td>
-<td width=80% class=td1 colspan=5><input size=45 name="usermoney" type=text value="<%=rs("usermoney")%>"></td>
-</tr>
-<tr>
-<td width=20% class=td1>µãÈ¯</td>
-<td width=80% class=td1 colspan=5><input size=45 name="UserTicket" type=text value="<%=rs("UserTicket")%>"></td>
-</tr>
-<tr>
-<td width=20% class=td1>½ğÇ®</td>
-<td width=80% class=td1 colspan=5><input size=45 name="userwealth" type=text value="<%=rs("userwealth")%>"></td>
-</tr>
-<tr>
-<td width=20% class=td1>»ı·Ö</td>
-<td width=80% class=td1 colspan=5><input size=45 name="userep" type=text value="<%=rs("userep")%>"></td>
-</tr>
-<tr>
-<td width=20% class=td1>÷ÈÁ¦</td>
-<td width=80% class=td1 colspan=5><input size=45 name="usercp" type=text value="<%=rs("usercp")%>"></td>
-</tr>
-<tr>
-<td width=20% class=td1>ÍşÍû</td>
-<td width=80% class=td1 colspan=5><input size=45 name="userpower" type=text value="<%=rs("userpower")%>"></td>
-</tr>
-<tr><th colspan=6 style="text-align:center;">ÈÕÆÚÏà¹Ø</th></tr>
-<tr>
-<td width=20% class=td1>ÉúÈÕ</td>
-<td width=80% class=td1 colspan=5><input size=45 name="birthday" type=text value="<%=rs("userbirthday")%>">&nbsp;¸ñÊ½£º2001-2-2</td>
-</tr>
-<tr>
-<td width=20% class=td1>×¢²áÊ±¼ä</td>
-<td width=80% class=td1 colspan=5><input size=45 name="adddate" type=text value="<%=rs("JoinDate")%>"></td>
-</tr>
-<tr>
-<td width=20% class=td1>×îºóµÇÂ¼</td>
-<td width=80% class=td1 colspan=5><input size=45 name="lastlogin" type=text value="<%=rs("lastlogin")%>"></td>
-</tr>
-<tr>
-<td width=20% class=td1>×¢²áIP</td>
-<td width=80% class=td1 colspan=5><input size=45 name="regip" type=text value="<%=rs("regip")%>"></td>
-</tr>
-<tr><th colspan=6 style="text-align:center;">ÓÃ»§ÏêÏ¸×ÊÁÏ</th></tr>
-<tr>
-<td width=20% class=td1>ÕæÊµĞÕÃû</td>
-<td width=80% class=td1 colspan=5><input size=45 name="realname" type=text value="<%=realname%>"></td>
-</tr>
-<tr>
-<td width=20% class=td1>¹ú¡¡¡¡¼Ò</td>
-<td width=80% class=td1 colspan=5><input size=45 name="country" type=text value="<%=country%>"></td>
-</tr>
-<tr>
-<td width=20% class=td1>ÁªÏµµç»°</td>
-<td width=80% class=td1 colspan=5><input size=45 name="userphone" type=text value="<%=userphone%>"></td>
-</tr><tr>
-<td width=20% class=td1>Í¨ĞÅµØÖ·</td>
-<td width=80% class=td1 colspan=5><input size=45 name="address" type=text value="<%=iaddress%>"></td>
-</tr>
-<tr>
-<td width=20% class=td1>Ê¡¡¡¡¡·İ</td>
-<td width=80% class=td1 colspan=5><input size=45 name="province" type=text value="<%=province%>"></td>
-</tr>
-<tr>
-<td width=20% class=td1>³Ç¡¡¡¡ÊĞ</td>
-<td width=80% class=td1 colspan=5><input size=45 name="city" type=text value="<%=city%>"></td>
-</tr><tr>
-<td width=20% class=td1>Éú¡¡¡¡Ğ¤</td>
-<td width=80% class=td1 colspan=5>
-<select size=1 name=shengxiao>
-<option <%if shengxiao="" then%>selected<%end if%>></option>
-<option value=Êó <%if shengxiao="Êó" then%>selected<%end if%>>Êó</option>
-<option value=Å£ <%if shengxiao="Å£" then%>selected<%end if%>>Å£</option>
-<option value=»¢ <%if shengxiao="»¢" then%>selected<%end if%>>»¢</option>
-<option value=ÍÃ <%if shengxiao="ÍÃ" then%>selected<%end if%>>ÍÃ</option>
-<option value=Áú <%if shengxiao="Áú" then%>selected<%end if%>>Áú</option>
-<option value=Éß <%if shengxiao="Éß" then%>selected<%end if%>>Éß</option>
-<option value=Âí <%if shengxiao="Âí" then%>selected<%end if%>>Âí</option>
-<option value=Ñò <%if shengxiao="Ñò" then%>selected<%end if%>>Ñò</option>
-<option value=ºï <%if shengxiao="ºï" then%>selected<%end if%>>ºï</option>
-<option value=¼¦ <%if shengxiao="¼¦" then%>selected<%end if%>>¼¦</option>
-<option value=¹· <%if shengxiao="¹·" then%>selected<%end if%>>¹·</option>
-<option value=Öí <%if shengxiao="Öí" then%>selected<%end if%>>Öí</option>
-</select>
-</td>
-</tr>
-<tr>
-<td width=20% class=td1>Ñª¡¡¡¡ĞÍ</td>
-<td width=80% class=td1 colspan=5>
-<select size=1 name=blood>
-<option <%if blood="" then%>selected<%end if%>></option>
-<option value=A <%if blood="A" then%>selected<%end if%>>A</option>
-<option value=B <%if blood="B" then%>selected<%end if%>>B</option>
-<option value=AB <%if blood="AB" then%>selected<%end if%>>AB</option>
-<option value=O <%if blood="O" then%>selected<%end if%>>O</option>
-<option value=ÆäËû <%if blood="ÆäËû" then%>selected<%end if%>>ÆäËû</option>
-</select>
-</td>
-</tr>
-<tr>
-<td width=20% class=td1>ĞÅ¡¡¡¡Ñö</td>
-<td width=80% class=td1 colspan=5>
-<select size=1 name=belief>
-<option <%if belief="" then%>selected<%end if%>></option>
-<option value=·ğ½Ì <%if belief="·ğ½Ì" then%>selected<%end if%>>·ğ½Ì</option>
-<option value=µÀ½Ì <%if belief="µÀ½Ì" then%>selected<%end if%>>µÀ½Ì</option>
-<option value=»ù¶½½Ì <%if belief="»ù¶½½Ì" then%>selected<%end if%>>»ù¶½½Ì</option>
-<option value=ÌìÖ÷½Ì <%if belief="ÌìÖ÷½Ì" then%>selected<%end if%>>ÌìÖ÷½Ì</option>
-<option value=»Ø½Ì <%if belief="»Ø½Ì" then%>selected<%end if%>>»Ø½Ì</option>
-<option value=ÎŞÉñÂÛÕß <%if belief="ÎŞÉñÂÛÕß" then%>selected<%end if%>>ÎŞÉñÂÛÕß</option>
-<option value=¹²²úÖ÷ÒåÕß <%if belief="¹²²úÖ÷ÒåÕß" then%>selected<%end if%>>¹²²úÖ÷ÒåÕß</option>
-<option value=ÆäËû <%if belief="ÆäËû" then%>selected<%end if%>>ÆäËû</option>
-</select>
-</td>
-</tr><tr>
-<td width=20% class=td1>Ö°¡¡¡¡Òµ</td>
-<td width=80% class=td1 colspan=5>
-<select name=occupation>
-<option <%if occupation="" then%>selected<%end if%>> </option>
-<option value="²Æ»á/½ğÈÚ" <%if occupation="²Æ»á/½ğÈÚ" then%>selected<%end if%>>²Æ»á/½ğÈÚ</option>
-<option value=¹¤³ÌÊ¦ <%if occupation="¹¤³ÌÊ¦" then%>selected<%end if%>>¹¤³ÌÊ¦</option>
-<option value=¹ËÎÊ <%if occupation="¹ËÎÊ" then%>selected<%end if%>>¹ËÎÊ</option>
-<option value=¼ÆËã»úÏà¹ØĞĞÒµ <%if occupation="¼ÆËã»úÏà¹ØĞĞÒµ" then%>selected<%end if%>>¼ÆËã»úÏà¹ØĞĞÒµ</option>
-<option value=¼ÒÍ¥Ö÷¸¾ <%if occupation="¼ÒÍ¥Ö÷¸¾" then%>selected<%end if%>>¼ÒÍ¥Ö÷¸¾</option>
-<option value="½ÌÓı/ÅàÑµ" <%if occupation="½ÌÓı/ÅàÑµ" then%>selected<%end if%>>½ÌÓı/ÅàÑµ</option>
-<option value="¿Í»§·şÎñ/Ö§³Ö" <%if occupation="¿Í»§·şÎñ/Ö§³Ö" then%>selected<%end if%>>¿Í»§·şÎñ/Ö§³Ö</option>
-<option value="ÁãÊÛÉÌ/ÊÖ¹¤¹¤ÈË" <%if occupation="ÁãÊÛÉÌ/ÊÖ¹¤¹¤ÈË" then%>selected<%end if%>>ÁãÊÛÉÌ/ÊÖ¹¤¹¤ÈË</option>
-<option value=ÍËĞİ <%if occupation="ÍËĞİ" then%>selected<%end if%>>ÍËĞİ</option>
-<option value=ÎŞÖ°Òµ <%if occupation="ÎŞÖ°Òµ" then%>selected<%end if%>>ÎŞÖ°Òµ</option>
-<option value="ÏúÊÛ/ÊĞ³¡/¹ã¸æ" <%if occupation="ÏúÊÛ/ÊĞ³¡/¹ã¸æ" then%>selected<%end if%>>ÏúÊÛ/ÊĞ³¡/¹ã¸æ</option>
-<option value=Ñ§Éú <%if occupation="Ñ§Éú" then%>selected<%end if%>>Ñ§Éú</option>
-<option value=ÑĞ¾¿ºÍ¿ª·¢ <%if occupation="ÑĞ¾¿ºÍ¿ª·¢" then%>selected<%end if%>>ÑĞ¾¿ºÍ¿ª·¢</option>
-<option value="Ò»°ã¹ÜÀí/¼à¶½" <%if occupation="Ò»°ã¹ÜÀí/¼à¶½" then%>selected<%end if%>>Ò»°ã¹ÜÀí/¼à¶½</option>
-<option value="Õş¸®/¾ü¶Ó" <%if occupation="Õş¸®/¾ü¶Ó" then%>selected<%end if%>>Õş¸®/¾ü¶Ó</option>
-<option value="Ö´ĞĞ¹Ù/¸ß¼¶¹ÜÀí" <%if occupation="Ö´ĞĞ¹Ù/¸ß¼¶¹ÜÀí" then%>selected<%end if%>>Ö´ĞĞ¹Ù/¸ß¼¶¹ÜÀí</option>
-<option value="ÖÆÔì/Éú²ú/²Ù×÷" <%if occupation="ÖÆÔì/Éú²ú/²Ù×÷" then%>selected<%end if%>>ÖÆÔì/Éú²ú/²Ù×÷</option>
-<option value=×¨ÒµÈËÔ± <%if occupation="×¨ÒµÈËÔ±" then%>selected<%end if%>>×¨ÒµÈËÔ±</option>
-<option value="×Ô¹Í/ÒµÖ÷" <%if occupation="×Ô¹Í/ÒµÖ÷" then%>selected<%end if%>>×Ô¹Í/ÒµÖ÷</option>
-<option value=ÆäËû <%if occupation="ÆäËû" then%>selected<%end if%>>ÆäËû</option>
-</select>
-</td>
-</tr>
-<tr>
-<td width=20% class=td1>»éÒö×´¿ö</td>
-<td width=80% class=td1 colspan=5>
-<select size=1 name=marital>
-<option <%if marital="" then%>selected<%end if%>></option>
-<option value=Î´»é <%if marital="Î´»é" then%>selected<%end if%>>Î´»é</option>
-<option value=ÒÑ»é <%if marital="ÒÑ»é" then%>selected<%end if%>>ÒÑ»é</option>
-<option value=ÀëÒì <%if marital="ÀëÒì" then%>selected<%end if%>>ÀëÒì</option>
-<option value=É¥Å¼ <%if marital="É¥Å¼" then%>selected<%end if%>>É¥Å¼</option>
-</select>
-</td>
-</tr>
-<tr>
-<td width=20% class=td1>×î¸ßÑ§Àú</td>
-<td width=80% class=td1 colspan=5>
-<select size=1 name=education>
-<option <%if education="" then%>selected<%end if%>></option>
-<option value=Ğ¡Ñ§ <%if education="Ğ¡Ñ§" then%>selected<%end if%>>Ğ¡Ñ§</option>
-<option value=³õÖĞ <%if education="³õÖĞ" then%>selected<%end if%>>³õÖĞ</option>
-<option value=¸ßÖĞ <%if education="¸ßÖĞ" then%>selected<%end if%>>¸ßÖĞ</option>
-<option value=´óÑ§ <%if education="´óÑ§" then%>selected<%end if%>>´óÑ§</option>
-<option value=Ë¶Ê¿ <%if education="Ë¶Ê¿" then%>selected<%end if%>>Ë¶Ê¿</option>
-<option value=²©Ê¿ <%if education="²©Ê¿" then%>selected<%end if%>>²©Ê¿</option>
-</select>
-</td>
-</tr>
-<tr>
-<td width=20% class=td1>±ÏÒµÔºĞ£</td>
-<td width=80% class=td1 colspan=5><input size=45 name="college" type=text value="<%=college%>"></td>
-</tr>
-<tr>
-<td width=20% class=td1>ĞÔ¡¡¸ñ</td>
-<td width=80% class=td1 colspan=5>
-<textarea name=character rows=4 cols=80><%=character%></textarea>
-</td>
-</tr><tr>
-<td width=20% class=td1>¸öÈË¼ò½é</td>
-<td width=80% class=td1 colspan=5>
-<textarea name=personal rows=4 cols=80><%=personal%></textarea>
-</td>
-</tr><tr>
-<td width=20% class=td1>ÓÃ»§Ç©Ãû</td>
-<td width=80% class=td1 colspan=5>
-<textarea name="sign" rows=4 cols=80><%If Trim(Rs("UserSign"))<>"" Then Response.Write Server.HtmlEncode(rs("usersign"))%></textarea>
-</td>
-</tr>
-<tr><th colspan=6 style="text-align:center;">ÓÃ»§ÉèÖÃ</th></tr>
-<tr>
-<td width=20% class=td1>ÓÃ»§×´Ì¬</td>
-<td width=80% class=td1 colspan=5>
-Õı³£ <input type="radio" class=radio value="0" <%if rs("lockuser")=0 then%>checked<%end if%> name="lockuser">&nbsp;
-Ëø¶¨ <input type="radio" class=radio value="1" <%if rs("lockuser")=1 then%>checked<%end if%> name="lockuser">&nbsp;
-ÆÁ±Î <input type="radio" class=radio value="2" <%if rs("lockuser")=2 then%>checked<%end if%> name="lockuser">
-</td>
-</tr>
-<tr>
-<td width=20% class=td1>×îºóµÇÂ¼IP²éÑ¯</td>
-<td width=80% class=td1 colspan=5><%
-Dim lastipinfo,k
-lastipinfo=Rs("lastipinfo")
-If lastipinfo="" Or IsNull(lastipinfo) Then lastipinfo="127.0.0.1"
-response.Write Replace(lastipinfo,"|","&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;")
-%></td>
-</tr>
-<!--
-<tr>
-<td width=20% class=td1>Ñô¹â»áÔ±</td>
-<td width=80% class=td1 colspan=5>
-¹Ø±Õ <input type="radio" class=radio value="0" <%if rs("IsChallenge")=0 then%>checked<%end if%> name="IsChallenge">&nbsp;
-¿ªÆô <input type="radio" class=radio value="1" <%if rs("IsChallenge")=1 then%>checked<%end if%> name="IsChallenge">&nbsp;
-&nbsp;&nbsp;
-ÊÖ»úºÅ&nbsp;<input type=text size=15 name="UserMobile" Value="<%=Rs("UserMobile")%>">
-</td>
-</tr>
--->
-<tr>
-<td width=20% class=td1>VIPÓÃ»§µÇ¼ÇÊ±¼ä</td>
-<td width=80% class=td1 colspan=5>
-<INPUT TYPE="text" NAME="Vip_StarTime" value="<%=Rs("Vip_StarTime")%>">
-</td>
-</tr>
-<tr>
-<td width=20% class=td1>VIPÓÃ»§µ½ÆÚÊ±¼ä</td>
-<td width=80% class=td1 colspan=5>
-<INPUT TYPE="text" NAME="Vip_EndTime" value="<%=Rs("Vip_EndTime")%>">
-</td>
-</tr>
-<tr>
-<td width=100% class=td1 align=center colspan=6><input name="submit" type=submit class=button value="   ¸ü  ĞÂ   "></td>
-</tr>
-</FORM>
-<%
-		end if
-		rs.close
-		set rs=nothing
-	end if
-End Sub
-
-Sub SaveUserInfo()
-	response.write "<tr><th colspan=8 style=""text-align:center;"">¸üĞÂÓÃ»§×ÊÁÏ</th></tr>"
-	userinfo=checkreal(request.Form("realname")) & "|||" & checkreal(request.Form("character")) & "|||" & checkreal(request.Form("personal")) & "|||" & checkreal(request.Form("country")) & "|||" & checkreal(request.Form("province")) & "|||" & checkreal(request.Form("city")) & "|||" & request.Form("shengxiao") & "|||" & request.Form("blood") & "|||" & request.Form("belief") & "|||" & request.Form("occupation") & "|||" & request.Form("marital") & "|||" & request.Form("education") & "|||" & checkreal(request.Form("college")) & "|||" & checkreal(request.Form("userphone")) & "|||" & checkreal(request.Form("address"))
-	dim myuserim,rs,sql
-	myuserim=checkreal(request.Form("homepage")) & "|||" & checkreal(request.Form("oicq")) & "|||" & checkreal(request.Form("icq")) & "|||" & checkreal(request.Form("msn")) & "|||" & checkreal(request.Form("aim")) & "|||" & checkreal(request.Form("yahoo")) & "|||" & request.Form("uc")
-	if not isnumeric(request("userid")) then
-		response.write "<tr><td colspan=8 class=td1>´íÎóµÄÓÃ»§²ÎÊı¡£</td></tr>"
-		founderr=true
-	end if
-	'ÓÃ»§Ç©Ãû³¤¶ÈÏŞÖÆ 2004-9-13 Dv.Yz
-	If Dvbbs.StrLength(Request.Form("sign")) > 250 Then
-		Response.Write "<tr><td colspan=8 class=td1>ÓÃ»§Ç©Ãû²»ÄÜ³¬¹ı 250 ¸ö×Ö·û¡£</td></tr>"
-		Founderr = True
-	End If
-	if not founderr then
-	Dim iUserClass,iTitlePic
-	Set Rs=Dvbbs.Execute("Select * From Dv_UserGroups Where UserGroupID = " & Request.Form("usergroups"))
-	If Rs.Eof And Rs.Bof Then
-		Response.Write "<tr><td colspan=8 class=td1>ËùÑ¡ÓÃ»§×éĞÅÏ¢²¢²»´æÔÚ¡£</td></tr>"
-		Founderr = True
-	Else
-		iUserClass = Rs("UserTitle")
-		iTitlePic = Rs("GroupPic")
-	End If
-	Dim UpUserName
-	Set rs= Dvbbs.iCreateObject("ADODB.Recordset")
-	sql="select * from [dv_user] where userid="&request("userid")
-	rs.open sql,conn,1,3
-	if rs.eof and rs.bof then
-		response.write "<tr><td colspan=8 class=td1>Ã»ÓĞÕÒµ½Ïà¹ØÓÃ»§¡£</td></tr>"
-		founderr=true
-	Else
-		UpUserName = rs("username")
-		Rs("UserPhoto")=Request.form("UserPhoto")
-		'rs("username")=request.form("username")
-		if request.form("password")<>"" then
-			rs("userpassword")=md5(request.form("password"),16)
-		end if
-		rs("usergroupid")=request.form("usergroups")
-		rs("userquesion")=request.form("quesion")
-		if request.form("answer")<>"" then rs("useranswer")=md5(request.form("answer"),16)
-		rs("userclass")=iUserClass
-		rs("useremail")=request.form("useremail")
-		Rs("UserSex")=request.form("sex")
-		rs("userim")=myuserim
-		rs("userface")=request.form("face")
-		if isnumeric(request.form("width")) then rs("userwidth")=request.form("width")
-		if isnumeric(request.form("height")) then rs("userheight")=request.form("height")
-		rs("usertitle")=request.form("usertitle")
-		rs("titlepic")=iTitlePic
-		if isnumeric(request.form("article")) then rs("UserPost")=request.form("article")
-		if isnumeric(request.form("userdel")) then rs("userdel")=request.form("userdel")
-		if isnumeric(request.form("userisbest")) then rs("userisbest")=request.form("userisbest")
-		if isnumeric(request.form("userpower")) then rs("userpower")=request.form("userpower")
-		if isnumeric(request.form("userwealth")) then rs("userwealth")=request.form("userwealth")
-		if isnumeric(request.form("usermoney")) then rs("usermoney")=request.form("usermoney")
-		if isnumeric(request.form("UserTicket")) then rs("UserTicket")=request.form("UserTicket")
-		if isnumeric(request.form("userep")) then rs("userep")=request.form("userep")
-		if isnumeric(request.form("usercp")) then rs("usercp")=request.form("usercp")
-		if isdate(request.form("birthday")) then rs("userbirthday")=request.form("birthday")
-		if isdate(request.form("adddate")) then rs("JoinDate")=request.form("adddate")
-		if isdate(request.form("lastlogin")) then rs("lastlogin")=request.form("lastlogin")
-		if isdate(request.form("Vip_StarTime")) then rs("Vip_StarTime")=request.form("Vip_StarTime")
-		if isdate(request.form("Vip_EndTime")) then rs("Vip_EndTime")=request.form("Vip_EndTime")
-		if isnumeric(request.form("lockuser")) then rs("lockuser")=request.form("lockuser")
-		rs("usersign")=request.form("sign")
-		rs("userinfo")=userinfo
-		rs("regip")=request.form("regip")
-		'If request.form("IsChallenge")="0" Or Request.Form("UserMobile")="" Then
-			Rs("IsChallenge")=0
-			Rs("UserMobile")=""
-		'Else
-		'	Rs("IsChallenge")=1
-		'	Rs("UserMobile")=Request.Form("UserMobile")
-		'End If
-		rs.update
-	end if
-	rs.close
-	set rs=nothing
-	end if
-	if not founderr then
-		'-----------------------------------------------------------------
-		'ÏµÍ³ÕûºÏ
-		'-----------------------------------------------------------------
-		Dim DvApi_Obj,DvApi_SaveCookie,SysKey
-		If DvApi_Enable Then
-			Set DvApi_Obj = New DvApi
-				DvApi_Obj.NodeValue "syskey",SysKey,0,False
-				DvApi_Obj.NodeValue "action","update",0,False
-				DvApi_Obj.NodeValue "username",UpUserName,1,False
-				Md5OLD = 1
-				SysKey = Md5(DvApi_Obj.XmlNode("username")&DvApi_SysKey,16)
-				Md5OLD = 0
-				DvApi_Obj.NodeValue "syskey",SysKey,0,False
-				DvApi_Obj.NodeValue "password",Request.form("password"),1,False
-				DvApi_Obj.NodeValue "answer",Request.Form("useranswer"),1,False
-				DvApi_Obj.NodeValue "question",Request.Form("quesion"),1,False
-				DvApi_Obj.NodeValue "email",Request.Form("useremail"),1,False
-				DvApi_Obj.SendHttpData
-				If DvApi_Obj.Status = "1" Then
-					response.write "<tr><td colspan=8 class=td1>"&DvApi_Obj.Message&"</td></tr>"
-				End If
-			Set DvApi_Obj = Nothing
-		End If
-		'-----------------------------------------------------------------
-	End If
-	if founderr then
-		response.write "<tr><td colspan=8 class=td1>¸üĞÂÊ§°Ü¡£</td></tr>"
-	else
-
-		response.write "<tr><td colspan=8 class=td1>¸üĞÂÓÃ»§Êı¾İ³É¹¦¡£</td></tr>"
-	end if
-End Sub
-
-Sub UserPermission()
-	Response.Write "<tr><th colspan=8 style=""text-align:center;"">±à¼­" & Request("Username") & "ÂÛÌ³È¨ÏŞ£¨ºìÉ«±íÊ¾¸ÃÓÃ»§ÔÚ¸Ã°æÃæÓĞ×Ô¶¨ÒåÈ¨ÏŞ£©</th></tr>"
-	If Not Isnumeric(Request("Userid")) Then
-		Response.Write "<tr><td colspan=8 class=td1>´íÎóµÄÓÃ»§²ÎÊı¡£</td></tr>"
-		Founderr = True
-	End If
-	If Not Founderr Then
-		Response.Write "<tr><td colspan=8 class=td1 height=25>¢ÙÄú¿ÉÒÔÉèÖÃ¸ÃÓÃ»§ÔÚ²»Í¬ÂÛÌ³ÄÚµÄÈ¨ÏŞ£¬ºìÉ«±íÊ¾Îª¸ÃÓÃ»§×éÊ¹ÓÃµÄÊÇÓÃ»§×Ô¶¨ÒåÊôĞÔ<BR>¢Ú¸ÃÈ¨ÏŞ²»ÄÜ¼Ì³Ğ£¬±ÈÈçÄúÉèÖÃÁËÒ»¸ö°üº¬ÏÂ¼¶ÂÛÌ³µÄ°æÃæ£¬ÄÇÃ´Ö»¶ÔÄúÉèÖÃµÄ°æÃæÉúĞ§¶ø²»¶ÔÆäÏÂÊôÂÛÌ³ÉúĞ§<BR>¢ÛÈç¹ûÄúÏëÉèÖÃÉúĞ§£¬±ØĞëÔÚÉèÖÃÒ³Ãæ<B>Ñ¡Ôñ×Ô¶¨ÒåÉèÖÃ</B>£¬Ñ¡ÔñÁË×Ô¶¨ÒåÉèÖÃºó£¬ÕâÀïÉèÖÃµÄÈ¨ÏŞ½«<B>ÓÅÏÈ</B>ÓÚÓÃ»§×éÉèÖÃºÍÂÛÌ³È¨ÏŞÉèÖÃ£¬±ÈÈçÓÃ»§×éÄ¬ÈÏ»òÂÛÌ³È¨ÏŞÉèÖÃ¸ÃÓÃ»§×é²»ÄÜ¹ÜÀíÌû×Ó£¬¶øÕâÀïÉèÖÃÁË¸ÃÓÃ»§¿É¹ÜÀíÌû×Ó£¬ÄÇÃ´¸ÃÓÃ»§ÔÚÕâ¸ö°æÃæ¾Í¿ÉÒÔ¹ÜÀíÌû×Ó</td></tr>"
-		Set Trs = Dvbbs.Execute("SELECT Uc_UserId FROM Dv_UserAccess WHERE Uc_Boardid = 0 AND Uc_Userid = " & Request("Userid"))
-		If Trs.Eof And Trs.Bof Then
-		Response.Write "<tr><td colspan=8 class=td1 height=25><a href=?action=UserBoardPermission&boardid=0&userid=" & Request("Userid") & ">±à¼­¸ÃÓÃ»§ÔÚÈ«¾ÖµÄÈ¨ÏŞ</a>£¨Ç°Ì¨¶ÌĞÅ¡¢Ç°Ì¨ÓÃ»§ĞÅÏ¢¡¢Ìû×ÓºÍÈ¨ÏŞ¹ÜÀí¡¢½øÈëºóÌ¨È¨ÏŞµÈ£©</td></tr>"
-		Else
-		Response.Write "<tr><td colspan=8 class=td1 height=25><a href=?action=UserBoardPermission&boardid=0&userid=" & Request("Userid") & "><font color=red>±à¼­¸ÃÓÃ»§ÔÚÈ«¾ÖµÄÈ¨ÏŞ</font></a>£¨Ç°Ì¨¶ÌĞÅ¡¢Ç°Ì¨ÓÃ»§ĞÅÏ¢¡¢Ìû×ÓºÍÈ¨ÏŞ¹ÜÀí¡¢½øÈëºóÌ¨È¨ÏŞµÈ£©</td></tr>"
-		End If
-'----------------------boardinfo--------------------
-		Response.Write "<tr><td colspan=8 class=td1><B>µã»÷ÂÛÌ³Ãû³Æ½øÈë±à¼­×´Ì¬</B><BR>"
-		Rem ¸ÄÓÃÊı×é´úÌæÑ­»·²éÑ¯ 2004-5-6 Dvbbs.YangZheng
-		Dim Bn,Sql,Rs,i
-		Sql = "SELECT Depth, Child, Boardid, Parentid, Boardtype FROM Dv_Board ORDER BY Rootid, Orders"
-		Set Rs = Dvbbs.Execute(Sql)
-		If Not (Rs.Eof And Rs.Bof) Then
-			Sql = Rs.GetRows(-1)
-			Rs.Close:Set Rs = Nothing
-			For Bn = 0 To Ubound(Sql,2)
-				If Sql(0,Bn) > 0 Then
-					For i = 1 To Sql(0,Bn)
-						Response.Write "&nbsp;"
-					Next
-				End If
-				If Sql(1,Bn) > 0 Then
-					Response.Write "<img src=""../skins/default/plus.gif"">"
-				Else
-					Response.Write "<img src=""../skins/default/nofollow.gif"">"
-				End If
-%>
-<a href="?action=UserBoardPermission&boardid=<%=Sql(2,Bn)%>&userid=<%=Request("Userid")%>">
-<%
-				Set Trs = Dvbbs.Execute("SELECT Uc_UserId FROM Dv_UserAccess WHERE Uc_Boardid = " & Sql(2,Bn) & " AND Uc_Userid = " & Request("Userid"))
-				If Not (Trs.Eof And Trs.Bof) Then
-					Response.Write "<font color=red>[×Ô¶¨Òå]"
-				End If
-				If Sql(3,Bn) = 0 Then Response.Write "<b>"
-				Response.Write Sql(4,Bn)
-				If Sql(3,Bn) = 0 Then Response.Write "</b>"
-				If Sql(1,Bn) > 0 Then Response.Write "(" & Sql(1,Bn) & ")"
-				Response.Write "</font></a><BR>"
-			Next
-		End If
-		Response.Write "</td></tr>"
-'-------------------end-------------------
-	End If
-End Sub
-
-Sub UserBoardPermission()
-	Dim rs
-	if not isnumeric(request("userid")) then
-		response.write "<tr><td colspan=8 class=td1>´íÎóµÄÓÃ»§²ÎÊı¡£</td></tr>"
-		founderr=true
-	end if
-	if not isnumeric(request("boardid")) then
-		response.write "<tr><td colspan=8 class=td1>´íÎóµÄ°æÃæ²ÎÊı¡£</td></tr>"
-		founderr=true
-	end if
-	if not founderr then
-	set rs=Dvbbs.Execute("select u.UserGroupID,ug.title,u.username from [dv_user] u inner join dv_UserGroups UG on u.userGroupID=ug.userGroupID where u.userid="&request("userid"))
-	Dvbbs.UserGroupID=rs(0)
-	usertitle=rs(1)
-	Dvbbs.membername=rs(2)
-	dim boardtype
-	set rs=Dvbbs.Execute("select boardtype from dv_board where boardid="&request("boardid"))
-	if rs.eof and rs.bof then
-	boardtype="ÂÛÌ³ÆäËûÒ³Ãæ"
-	else
-	boardtype=rs(0)
-	end if
-	response.write "<tr><th colspan=8 style=""text-align:center;"">±à¼­ "&Dvbbs.membername&" ÔÚ "&boardtype&" È¨ÏŞ</th></tr>"
-	response.write "<tr><td colspan=8 height=25 class=td1>×¢Òâ£º¸ÃÓÃ»§ÊôÓÚ <B>"&usertitle&"</B> ÓÃ»§×éÖĞ£¬Èç¹ûÄúÉèÖÃÁËËûµÄ×Ô¶¨ÒåÈ¨ÏŞ£¬Ôò¸ÃÓÃ»§È¨ÏŞ½«ÒÔ×Ô¶¨ÒåÈ¨ÏŞÎªÖ÷</td></tr>"
-%>
-<tr><td colspan=8 class=td1>
-<%
-Dim reGroupSetting
-Dim FoundGroup,FoundUserPermission,FoundGroupPermission
-FoundGroup=false
-FoundUserPermission=false
-FoundGroupPermission=false
-
-set rs=Dvbbs.Execute("select * from dv_UserAccess where uc_boardid="&request("boardid")&" and uc_userid="&request("userid"))
-if not (rs.eof and rs.bof) then
-	reGroupSetting=rs("uc_Setting")
-	FoundGroup=true
-	FoundUserPermission=true
-end if
-
-if not foundgroup then
-set rs=Dvbbs.Execute("select * from dv_BoardPermission where boardid="&request("boardid")&" and groupid="&DVbbs.UserGroupID)
-if not(rs.eof and rs.bof) then
-	reGroupSetting=rs("PSetting")
-	FoundGroup=true
-	FoundGroupPermission=true
-end if
-end if
-
-if not foundgroup then
-set rs=Dvbbs.Execute("select * from dv_usergroups where usergroupid="&DVbbs.UserGroupID)
-if rs.eof and rs.bof then
-	response.write "Î´ÕÒµ½¸ÃÓÃ»§×é£¡"
-	response.end
-else
-	FoundGroup=true
-	FoundGroupPermission=true
-	reGroupSetting=rs("GroupSetting")
-end if
-end if
-%>
-<table width="100%" border="0" cellspacing="1" cellpadding="0" align=center>
-<FORM METHOD=POST ACTION="?action=saveuserpermission">
-<input type=hidden name="userid" value="<%=request("userid")%>">
-<input type=hidden name="BoardID" value="<%=request("boardid")%>">
-<input type=hidden name="username" value="<%=Dvbbs.membername%>">
-<%If Dvbbs.BoardID <> 0 Then%>
-<tr> 
-<td width="100%" class=td1 colspan=2 height=25>
-<font color=blue>±£´æÄ¿±ê</font>£º<input type=radio class=radio name="savetype" value=0 checked>¸Ã°æÃæ&nbsp;<input type=radio class=radio name="savetype" value=1>ËùÓĞ°æÃæ&nbsp;<input type=radio class=radio name="savetype" value=2>ÏàÍ¬·ÖÀàÏÂËùÓĞ°æÃæ£¨²»°üÀ¨·ÖÀà£©&nbsp;<input type=radio class=radio name="savetype" value=3>ÏàÍ¬·ÖÀàÏÂËùÓĞ°æÃæ£¨°üÀ¨·ÖÀà£©&nbsp;<input type=radio class=radio name="savetype" value=4>Í¬·ÖÀàÍ¬¼¶±ğ°æÃæ
-</td>
-</tr>
-<tr> 
-<td width="100%" class=td1 colspan=2 height=25>
-<font color=blue>
-ÕâÀïÖ¸µÄ·ÖÀà½öÖ¸Ò»¼¶·ÖÀà£¬¶ø²»ÊÇ¸Ã°æÃæµÄÉÏ¼¶°æÃæ</font>£¬±ÈÈçÄúÄ¿Ç°ÉèÖÃµÄÊÇÒ»¸öÎå¼¶°æÃæ£¬Ñ¡ÔñÁËÏàÍ¬·ÖÀàÏÂËùÓĞ°æÃæ¶¼¸üĞÂ£¬ÄÇÃ´ÕâÀï½«¸üĞÂ°üÀ¨¸Ã·ÖÀàµÄÒ»¼¶¡¢¶ş¼¶¡¢Èı¼¶¡¢ËÄ¼¶ËùÓĞ°æÃæ£¬Èç¹ûÄúµ£ĞÄ¸üĞÂ·¶Î§Ì«´ó£¬¿ÉÒÔÑ¡Ôñ¸üĞÂÍ¬·ÖÀàÍ¬¼¶±ğ°æÃæ¡£
-</td>
-</tr>
-<%Else%>
-<input type=hidden name="savetype" value=0>
-<%End If%>
-<tr> 
-<td height="23" colspan="2" class=td1><input type=radio class=radio name="isdefault" value="1" <%if FoundGroupPermission then%>checked<%end if%>><B>Ê¹ÓÃÓÃ»§×éÄ¬ÈÏÖµ</B> (×¢Òâ: Õâ½«É¾³ıÈÎºÎÖ®Ç°Ëù×öµÄ×Ô¶¨ÒåÉèÖÃ)</td>
-</tr>
-<tr> 
-<td height="23" colspan="2"  class=td1><input type=radio class=radio name="isdefault" value="0" <%if FoundUserPermission then%>checked<%end if%>><B>Ê¹ÓÃ×Ô¶¨ÒåÉèÖÃ</B> &nbsp;(<font color=blue>Ñ¡Ôñ×Ô¶¨Òå²ÅÄÜÊ¹ÒÔÏÂÉèÖÃÉúĞ§</font>)</td>
-</tr>
-<%
-GroupPermission(reGroupSetting)
-%>
-<input type=hidden value="yes" name="groupaction">
-</FORM>
-</table>
-</td></tr>
-<%
-	end if
-End Sub
-
-Sub SaveUserPermission()
-	Dim i
-	response.write "<tr><th colspan=8 style=""text-align:center;"">±à¼­ÓÃ»§ "&request("username")&" È¨ÏŞ</th></tr>"
-	if not isnumeric(request("userid")) then
-		response.write "<tr><td colspan=8 class=td1>´íÎóµÄÓÃ»§²ÎÊı¡£</td></tr>"
-		founderr=true
-	end if
-	if not isnumeric(request("boardid")) then
-		response.write "<tr><td colspan=8 class=td1>´íÎóµÄ°æÃæ²ÎÊı¡£</td></tr>"
-		founderr=true
-	end if
-	if not founderr then
-	dim myGroupSetting,rs
-	Dim IsGroupSetting,MyIsGroupSetting,FoundSetting
-	myGroupSetting=GetGroupPermission
-	select case request("savetype")
-	'µ±Ç°°æÃæ
-	case "0"
-		if request("isdefault")=1 then
-			Dvbbs.Execute("delete from dv_UserAccess where uc_boardid="&request("boardid")&" and uc_userid="&request("userid"))
-			Set Rs=Dvbbs.Execute("Select Count(*) from dv_UserAccess where uc_boardid="&request("boardid")&" and uc_userid="&request("userid"))
-			FoundSetting=Rs(0)
-			If IsNull(FoundSetting) Or FoundSetting="" Then FoundSetting=0
-			If Dvbbs.BoardID > 0 Then
-			Set Rs=Dvbbs.Execute("select IsGroupSetting From Dv_Board Where BoardID="&request("boardid"))
-			If Trim(Rs(0))="" Or IsNull(Rs(0)) Then
-				MyIsGroupSetting = ""
-			Else
-				IsGroupSetting = "," & Rs(0) & ","
-				If FoundSetting=0 Then IsGroupSetting = Replace(IsGroupSetting,",0_"&request("userid"),"")
-				IsGroupSetting=replace(IsGroupSetting,",,",",")
-				IsGroupSetting = Split(IsGroupSetting,",")
-				For i=1 To Ubound(IsGroupSetting)-1
-					If i=1 Then
-						MyIsGroupSetting = IsGroupSetting(i)
-					Else
-						MyIsGroupSetting = MyIsGroupSetting & "," & IsGroupSetting(i)
-					End If
-				Next
-			End If
-			Dvbbs.Execute("update dv_Board set IsGroupSetting='"&MyIsGroupSetting&"' Where BoardID="&request("boardid"))
-			End If
-		else
-			set rs=Dvbbs.Execute("select * from dv_UserAccess where uc_boardid="&request("boardid")&" and uc_userid="&request("userid"))
-			if rs.eof and rs.bof then
-				Dvbbs.Execute("insert into dv_UserAccess (uc_userid,uc_boardid,uc_setting) values ("&request("userid")&","&request("boardid")&",'"&myGroupSetting&"')")
-			else
-				Dvbbs.Execute("update dv_UserAccess set uc_setting='"&myGroupSetting&"' where uc_boardid="&request("boardid")&" and uc_userid="&request("userid"))
-			end if
-			If Dvbbs.BoardID > 0 Then
-			Set Rs=Dvbbs.Execute("select IsGroupSetting From Dv_Board Where BoardID="&request("boardid"))
-			If Trim(Rs(0))="" Or IsNull(Rs(0)) Then
-				MyIsGroupSetting = 0
-			Else
-				IsGroupSetting = "," & Rs(0) & ","
-				IsGroupSetting = Replace(IsGroupSetting,",0_"&request("userid"),"")
-				IsGroupSetting=replace(IsGroupSetting,",,",",")
-				IsGroupSetting = IsGroupSetting & "0_"&request("userid")&","
-				IsGroupSetting = Split(IsGroupSetting,",")
-				For i=1 To Ubound(IsGroupSetting)-1
-					If i=1 Then
-						MyIsGroupSetting = IsGroupSetting(i)
-					Else
-						MyIsGroupSetting = MyIsGroupSetting & "," & IsGroupSetting(i)
-					End If
-				Next
-			End If
-			Dvbbs.Execute("update dv_Board set IsGroupSetting='"&MyIsGroupSetting&"' Where BoardID="&request("boardid"))
-			Set Rs=Nothing
-			End If
-		end if
-		If Dvbbs.BoardID > 0 Then Dvbbs.ReloadBoardCache request("boardid")
-	'ËùÓĞ°æÃæ
-	case "1"
-		set trs=Dvbbs.Execute("select * from dv_board")
-		do while not trs.eof
-		if request("isdefault")=1 then
-			Dvbbs.Execute("delete from dv_UserAccess where uc_boardid="&trs("boardid")&" and uc_userid="&request("userid"))
-			Set Rs=Dvbbs.Execute("Select Count(*) from dv_UserAccess where uc_boardid="&trs("boardid")&" and uc_userid="&request("userid"))
-			FoundSetting=Rs(0)
-			If IsNull(FoundSetting) Or FoundSetting="" Then FoundSetting=0
-			Set Rs=Dvbbs.Execute("select IsGroupSetting From Dv_Board Where BoardID="&trs("boardid"))
-			If Trim(Rs(0))="" Or IsNull(Rs(0)) Then
-				MyIsGroupSetting = ""
-			Else
-				IsGroupSetting = "," & Rs(0) & ","
-				If FoundSetting=0 Then IsGroupSetting = Replace(IsGroupSetting,",0_"&request("userid"),"")
-				IsGroupSetting=replace(IsGroupSetting,",,",",")
-				IsGroupSetting = Split(IsGroupSetting,",")
-				For i=1 To Ubound(IsGroupSetting)-1
-					If i=1 Then
-						MyIsGroupSetting = IsGroupSetting(i)
-					Else
-						MyIsGroupSetting = MyIsGroupSetting & "," & IsGroupSetting(i)
-					End If
-				Next
-			End If
-			FoundSetting=""
-			Dvbbs.Execute("update dv_Board set IsGroupSetting='"&MyIsGroupSetting&"' Where BoardID="&trs("boardid"))
-		Else
-			set rs=Dvbbs.Execute("select * from dv_UserAccess where uc_boardid="&trs("boardid")&" and uc_userid="&request("userid"))
-			if rs.eof and rs.bof then
-				Dvbbs.Execute("insert into dv_UserAccess (uc_userid,uc_boardid,uc_setting) values ("&request("userid")&","&trs("boardid")&",'"&myGroupSetting&"')")
-			else
-				Dvbbs.Execute("update dv_UserAccess set uc_setting='"&myGroupSetting&"' where uc_boardid="&trs("boardid")&" and uc_userid="&request("userid"))
-			end if
-			Set Rs=Dvbbs.Execute("select IsGroupSetting From Dv_Board Where BoardID="&trs("boardid"))
-			If Trim(Rs(0))="" Or IsNull(Rs(0)) Then
-				MyIsGroupSetting = 0
-			Else
-				IsGroupSetting = "," & Rs(0) & ","
-				IsGroupSetting = Replace(IsGroupSetting,",0_"&request("userid"),"")
-				IsGroupSetting=replace(IsGroupSetting,",,",",")
-				IsGroupSetting = IsGroupSetting & "0_"&request("userid")&","
-				IsGroupSetting = Split(IsGroupSetting,",")
-				For i=1 To Ubound(IsGroupSetting)-1
-					If i=1 Then
-						MyIsGroupSetting = IsGroupSetting(i)
-					Else
-						MyIsGroupSetting = MyIsGroupSetting & "," & IsGroupSetting(i)
-					End If
-				Next
-			End If
-			Dvbbs.Execute("update dv_Board set IsGroupSetting='"&MyIsGroupSetting&"' Where BoardID="&trs("boardid"))
-		end if
-		Dvbbs.ReloadBoardCache trs("boardid")
-		trs.movenext
-		loop
-		trs.close
-		set trs=nothing
-		Set Rs=Nothing
-	'ÏàÍ¬·ÖÀàÏÂËùÓĞ°æÃæ£¨²»°üÀ¨·ÖÀà£©
-	case "2"
-		set trs=Dvbbs.Execute("select rootid from dv_board where boardid="&request("boardid"))
-		myrootid=trs(0)
-		set trs=Dvbbs.Execute("select * from dv_board where (Not ParentID=0) and rootid="&myrootid)
-		do while not trs.eof
-		if request("isdefault")=1 then
-			Dvbbs.Execute("delete from dv_UserAccess where uc_boardid="&trs("boardid")&" and uc_userid="&request("userid"))
-			Set Rs=Dvbbs.Execute("Select Count(*) from dv_UserAccess where uc_boardid="&trs("boardid")&" and uc_userid="&request("userid"))
-			FoundSetting=Rs(0)
-			If IsNull(FoundSetting) Or FoundSetting="" Then FoundSetting=0
-			Set Rs=Dvbbs.Execute("select IsGroupSetting From Dv_Board Where BoardID="&trs("boardid"))
-			If Trim(Rs(0))="" Or IsNull(Rs(0)) Then
-				MyIsGroupSetting = ""
-			Else
-				IsGroupSetting = "," & Rs(0) & ","
-				If FoundSetting=0 Then IsGroupSetting = Replace(IsGroupSetting,",0_"&request("userid"),"")
-				IsGroupSetting=replace(IsGroupSetting,",,",",")
-				IsGroupSetting = Split(IsGroupSetting,",")
-				For i=1 To Ubound(IsGroupSetting)-1
-					If i=1 Then
-						MyIsGroupSetting = IsGroupSetting(i)
-					Else
-						MyIsGroupSetting = MyIsGroupSetting & "," & IsGroupSetting(i)
-					End If
-				Next
-			End If
-			FoundSetting=""
-			Dvbbs.Execute("update dv_Board set IsGroupSetting='"&MyIsGroupSetting&"' Where BoardID="&trs("boardid"))
-		else
-			set rs=Dvbbs.Execute("select * from dv_UserAccess where uc_boardid="&trs("boardid")&" and uc_userid="&request("userid"))
-			if rs.eof and rs.bof then
-				Dvbbs.Execute("insert into dv_UserAccess (uc_userid,uc_boardid,uc_setting) values ("&request("userid")&","&trs("boardid")&",'"&myGroupSetting&"')")
-			else
-				Dvbbs.Execute("update dv_UserAccess set uc_setting='"&myGroupSetting&"' where uc_boardid="&trs("boardid")&" and uc_userid="&request("userid"))
-			end if
-			Set Rs=Dvbbs.Execute("select IsGroupSetting From Dv_Board Where BoardID="&trs("boardid"))
-			If Trim(Rs(0))="" Or IsNull(Rs(0)) Then
-				MyIsGroupSetting = 0
-			Else
-				IsGroupSetting = "," & Rs(0) & ","
-				IsGroupSetting = Replace(IsGroupSetting,",0_"&request("userid"),"")
-					IsGroupSetting=replace(IsGroupSetting,",,",",")
-				IsGroupSetting = IsGroupSetting & "0_"&request("userid")&","
-				IsGroupSetting = Split(IsGroupSetting,",")
-				For i=1 To Ubound(IsGroupSetting)-1
-					If i=1 Then
-						MyIsGroupSetting = IsGroupSetting(i)
-					Else
-						MyIsGroupSetting = MyIsGroupSetting & "," & IsGroupSetting(i)
-					End If
-				Next
-			End If
-			Dvbbs.Execute("update dv_Board set IsGroupSetting='"&MyIsGroupSetting&"' Where BoardID="&trs("boardid"))
-		end if
-		Dvbbs.ReloadBoardCache trs("boardid")
-		trs.movenext
-		loop
-		trs.close
-		set trs=nothing
-		Set Rs=Nothing
-	'ÏàÍ¬·ÖÀàÏÂËùÓĞ°æÃæ£¨°üÀ¨·ÖÀà£©
-	case "3"
-		set trs=Dvbbs.Execute("select rootid from dv_board where boardid="&request("boardid"))
-		myrootid=trs(0)
-		set trs=Dvbbs.Execute("select * from dv_board where rootid="&myrootid)
-		do while not trs.eof
-		if request("isdefault")=1 then
-			Dvbbs.Execute("delete from dv_UserAccess where uc_boardid="&trs("boardid")&" and uc_userid="&request("userid"))
-			Set Rs=Dvbbs.Execute("Select Count(*) from dv_UserAccess where uc_boardid="&trs("boardid")&" and uc_userid="&request("userid"))
-			FoundSetting=Rs(0)
-			If IsNull(FoundSetting) Or FoundSetting="" Then FoundSetting=0
-			Set Rs=Dvbbs.Execute("select IsGroupSetting From Dv_Board Where BoardID="&trs("boardid"))
-			If Trim(Rs(0))="" Or IsNull(Rs(0)) Then
-				MyIsGroupSetting = ""
-			Else
-				IsGroupSetting = "," & Rs(0) & ","
-				If FoundSetting=0 Then IsGroupSetting = Replace(IsGroupSetting,",0_"&request("userid"),"")
-				IsGroupSetting=replace(IsGroupSetting,",,",",")
-				IsGroupSetting = Split(IsGroupSetting,",")
-				For i=1 To Ubound(IsGroupSetting)-1
-					If i=1 Then
-						MyIsGroupSetting = IsGroupSetting(i)
-					Else
-						MyIsGroupSetting = MyIsGroupSetting & "," & IsGroupSetting(i)
-					End If
-				Next
-			End If
-			FoundSetting=""
-			Dvbbs.Execute("update dv_Board set IsGroupSetting='"&MyIsGroupSetting&"' Where BoardID="&trs("boardid"))
-		else
-			set rs=Dvbbs.Execute("select * from dv_UserAccess where uc_boardid="&trs("boardid")&" and uc_userid="&request("userid"))
-			if rs.eof and rs.bof then
-				Dvbbs.Execute("insert into dv_UserAccess (uc_userid,uc_boardid,uc_setting) values ("&request("userid")&","&trs("boardid")&",'"&myGroupSetting&"')")
-			else
-				Dvbbs.Execute("update dv_UserAccess set uc_setting='"&myGroupSetting&"' where uc_boardid="&trs("boardid")&" and uc_userid="&request("userid"))
-			end if
-			Set Rs=Dvbbs.Execute("select IsGroupSetting From Dv_Board Where BoardID="&trs("boardid"))
-			If Trim(Rs(0))="" Or IsNull(Rs(0)) Then
-				MyIsGroupSetting = 0
-			Else
-				IsGroupSetting = "," & Rs(0) & ","
-				IsGroupSetting = Replace(IsGroupSetting,",0_"&request("userid"),"")
-				IsGroupSetting=replace(IsGroupSetting,",,",",")
-				IsGroupSetting = IsGroupSetting & "0_"&request("userid")&","
-				IsGroupSetting = Split(IsGroupSetting,",")
-				For i=1 To Ubound(IsGroupSetting)-1
-					If i=1 Then
-						MyIsGroupSetting = IsGroupSetting(i)
-					Else
-						MyIsGroupSetting = MyIsGroupSetting & "," & IsGroupSetting(i)
-					End If
-				Next
-			End If
-			Dvbbs.Execute("update dv_Board set IsGroupSetting='"&MyIsGroupSetting&"' Where BoardID="&trs("boardid"))
-		end if
-		Dvbbs.ReloadBoardCache trs("boardid")
-		trs.movenext
-		loop
-		trs.close
-		set trs=nothing
-		Set Rs=Nothing
-	'Í¬·ÖÀàÍ¬¼¶±ğ°æÃæ
-	case "4"
-		dim myparentid,myparentstr
-		set trs=Dvbbs.Execute("select rootid,ParentStr,ParentID from dv_board where boardid="&request("boardid"))
-		myrootid=trs(0)
-		myparentstr=trs(1)
-		myparentid=trs(2)
-		set trs=Dvbbs.Execute("select * from dv_board where rootid="&myrootid&" and ParentID="&myparentid&" and ParentStr='"&myparentstr&"'")
-		do while not trs.eof
-		if request("isdefault")=1 then
-			Dvbbs.Execute("delete from dv_UserAccess where uc_boardid="&trs("boardid")&" and uc_userid="&request("userid"))
-			Set Rs=Dvbbs.Execute("Select Count(*) from dv_UserAccess where uc_boardid="&trs("boardid")&" and uc_userid="&request("userid"))
-			FoundSetting=Rs(0)
-			If IsNull(FoundSetting) Or FoundSetting="" Then FoundSetting=0
-			Set Rs=Dvbbs.Execute("select IsGroupSetting From Dv_Board Where BoardID="&trs("boardid"))
-			If Trim(Rs(0))="" Or IsNull(Rs(0)) Then
-				MyIsGroupSetting = ""
-			Else
-				IsGroupSetting = "," & Rs(0) & ","
-				If FoundSetting=0 Then IsGroupSetting = Replace(IsGroupSetting,",0_"&request("userid"),"")
-				IsGroupSetting=replace(IsGroupSetting,",,",",")
-				IsGroupSetting = Split(IsGroupSetting,",")
-				For i=1 To Ubound(IsGroupSetting)-1
-					If i=1 Then
-						MyIsGroupSetting = IsGroupSetting(i)
-					Else
-						MyIsGroupSetting = MyIsGroupSetting & "," & IsGroupSetting(i)
-					End If
-				Next
-			End If
-			FoundSetting=""
-			Dvbbs.Execute("update dv_Board set IsGroupSetting='"&MyIsGroupSetting&"' Where BoardID="&trs("boardid"))
-		else
-			set rs=Dvbbs.Execute("select * from dv_UserAccess where uc_boardid="&trs("boardid")&" and uc_userid="&request("userid"))
-			if rs.eof and rs.bof then
-				Dvbbs.Execute("insert into dv_UserAccess (uc_userid,uc_boardid,uc_setting) values ("&request("userid")&","&trs("boardid")&",'"&myGroupSetting&"')")
-			else
-				Dvbbs.Execute("update dv_UserAccess set uc_setting='"&myGroupSetting&"' where uc_boardid="&trs("boardid")&" and uc_userid="&request("userid"))
-			end if
-			Set Rs=Dvbbs.Execute("select IsGroupSetting From Dv_Board Where BoardID="&trs("boardid"))
-			If Trim(Rs(0))="" Or IsNull(Rs(0)) Then
-				MyIsGroupSetting = 0
-			Else
-				IsGroupSetting = "," & Rs(0) & ","
-				IsGroupSetting = Replace(IsGroupSetting,",0_"&request("userid"),"")
-				IsGroupSetting=replace(IsGroupSetting,",,",",")
-				IsGroupSetting = IsGroupSetting & "0_"&request("userid")&","
-				IsGroupSetting = Split(IsGroupSetting,",")
-				For i=1 To Ubound(IsGroupSetting)-1
-					If i=1 Then
-						MyIsGroupSetting = IsGroupSetting(i)
-					Else
-						MyIsGroupSetting = MyIsGroupSetting & "," & IsGroupSetting(i)
-					End If
-				Next
-			End If
-			Dvbbs.Execute("update dv_Board set IsGroupSetting='"&MyIsGroupSetting&"' Where BoardID="&trs("boardid"))
-		end if
-		Dvbbs.ReloadBoardCache trs("boardid")
-		trs.movenext
-		loop
-		trs.close
-		set trs=nothing
-		Set Rs=Nothing
-	end select
-	if founderr then
-		response.write "<tr><td colspan=8 class=td1>¸üĞÂÊ§°Ü¡£</td></tr>"
-	else
-		response.write "<tr><td colspan=8 class=td1><li>ÉèÖÃÓÃ»§È¨ÏŞ³É¹¦¡£"
-		If Request.Form("GroupSetting(70)") = "1" Then Response.Write "<li>ÄúÉèÖÃÁË¸ÃÓÃ»§¿É½øÈëÂÛÌ³ºóÌ¨µÄÈ¨ÏŞ£¬Çëµ½¹ÜÀíÔ±¹ÜÀíÖĞ <a href=""admin.asp?action=add"">Ìí¼Ó</a> ¸ÃÓÃ»§µÄºóÌ¨ÕËºÅºÍÉèÖÃ¸ÃÕÊ»§ºóÌ¨È¨ÏŞ¡£"
-		Response.Write "</td></tr>"
-	end if
-	End if
-End Sub
-
-Sub UniteUser()
-	if request("auser")<>"" and request("buser")<>"" then
-		dim auserid,buserid,rs,i
-		dim c1,c2,c3,c4,c5,c6,c7,c8,c9
-		set rs=dvbbs.execute("select userid,userpost,usertopic,userviews,userwealth,userep,usercp,userpower,userisbest,userdel,usergroupid from dv_user where username='"&replace(request("auser"),"'","''")&"'")
-		if rs.eof and rs.bof then
-			errmsg = errmsg + "<tr><td colspan=8 class=td1>Ã»ÓĞÕÒµ½±»ºÏ²¢ÓÃ»§</td></tr>"
-			founderr=true
-		else
-			auserid=rs(0)
-			c1=rs(1)
-			c2=rs(2)
-			c3=rs(3)
-			c4=rs(4)
-			c5=rs(5)
-			c6=rs(6)
-			c7=rs(7)
-			c8=rs(8)
-			c9=rs(9)
-			if rs(10) < 4 then
-				errmsg = errmsg + "<tr><td colspan=8 class=td1>Ö»ÔÊĞí¶Ô×¢²áÓÃ»§×é½øĞĞºÏ²¢ÓÃ»§²Ù×÷</td></tr>"
-				founderr=true
-			end if
-		end if
-		set rs=dvbbs.execute("select userid from dv_user where username='"&replace(request("buser"),"'","''")&"'")
-		if rs.eof and rs.bof then
-			errmsg = errmsg + "<tr><td colspan=8 class=td1>Ã»ÓĞÕÒµ½ºÏ²¢µÄÄ¿±êÓÃ»§</td></tr>"
-			founderr=true
-		else
-			buserid=rs(0)
-		end if
-		if auserid=buserid then
-			errmsg = errmsg + "<tr><td colspan=8 class=td1>ÏàÍ¬ÓÃ»§²»ÄÜ½øĞĞºÏ²¢</td></tr>"
-			founderr=true
-		end if
-		if founderr then
-			Response.Write errmsg
-		else
-			'ºÏ²¢ÓÃ»§µÄ×ÊÁÏ
-			dvbbs.execute("update dv_user set userpost=userpost+"&c1&",usertopic=usertopic+"&c2&",userviews=userviews+"&c3&",userwealth=userwealth+"&c4&",userep=userep+"&c5&",usercp=usercp+"&c6&",userpower=userpower+"&c7&",userisbest=userisbest+"&c8&",userdel=userdel+"&c9&" where userid="&buserid)
-			'¸üĞÂÌû×ÓÊı¾İ
-			for i=0 to ubound(allposttable)
-				dvbbs.execute("update "&allposttable(i)&" set postuserid="&buserid&",username='"&replace(request("buser"),"'","''")&"' where postuserid="&auserid)
-			next
-			dvbbs.execute("update dv_topic set postuserid="&buserid&",postusername='"&replace(request("buser"),"'","''")&"' where postuserid="&auserid)
-			'¸üĞÂ¶ÌĞÅÊı¾İ
-			Dvbbs.Execute("update dv_message set incept='"&replace(request("buser"),"'","''")&"' where incept='"&replace(request("auser"),"'","''")&"'")
-			Dvbbs.Execute("update dv_message set sender='"&replace(request("buser"),"'","''")&"' where sender='"&replace(request("auser"),"'","''")&"'")
-			Dvbbs.Execute("update dv_friend set F_username='"&replace(request("buser"),"'","''")&"' where F_username='"&replace(request("auser"),"'","''")&"'") 
-			Dvbbs.Execute("update dv_bookmark set username='"&replace(request("buser"),"'","''")&"' where username='"&replace(request("auser"),"'","''")&"'") 
-
-			Dvbbs.Execute("update dv_besttopic set PostUserID="&buserid&",postusername='"&replace(request("buser"),"'","''")&"' where PostUserID="&auserid)
-			'¸üĞÂÓÃ»§ÉÏ´«±í
-			Dvbbs.Execute("update dv_upfile set F_UserID="&buserid&",F_Username='"&replace(request("buser"),"'","''")&"' where F_UserID="&auserid)
-			response.write "<tr><td colspan=8 class=td1>ºÏ²¢ÓÃ»§Êı¾İ³É¹¦¡£</td></tr>"
-		end if
-	else
-%>
-<form action="?action=uniteuser" method=post>
-<tr>
-<th colspan=7 style="text-align:center;">ºÏ²¢ÓÃ»§</th>
-</tr>
-<tr>
-<td width=20% class=td1>×¢ÒâÊÂÏî</td>
-<td width=80% class=td1 colspan=5>±»ºÏ²¢ÓÃ»§ÔÚÂÛÌ³ÖĞµÄËùÓĞÌû×Ó£¨°üÀ¨¾«»ª£©¡¢¶ÌĞÅ¡¢ÉÏ´«¡¢ÊÕ²ØµÈ×ÊÁÏ½«ºÏ²¢µ½ËùÖ¸¶¨µÄÓÃ»§ÖĞ</td>
-</tr>
-<tr>
-<td width=20% class=td1>Ñ¡Ïî</td>
-<td width=80% class=td1 colspan=5>°ÑÓÃ»§ <input size=25 name="auser" type=text> ×ÊÁÏºÏ²¢µ½ <input size=25 name="buser" type=text> ÓÃ»§ <input type=submit class=button name=submit value="Ìá½»"></td>
-</tr>
-</form>
-<%
-	end if
-End Sub
-
-Sub Fixuser()
-	Dim Userid,i
-	Userid = Request("Userid")
-	If Not IsNumeric(Userid) Then
-	Errmsg = ErrMsg + "<BR><li>²ÎÊı´íÎó!"
-		Dvbbs_Error()
-		Exit Sub
-	End If
-	Userid = CLng(Userid)
-	Dim Rs, Username, UserArticle, UserIsBest
-	UserArticle = 0
-	Set Rs = Dvbbs.Execute("SELECT Username FROM [Dv_User] WHERE Userid = " & Userid & "")
-	If Rs.Eof Or Rs.Bof Then
-		Errmsg = ErrMsg + "<BR><li>ÕÒ²»µ½¸ÃÓÃ»§£¬ÎóÉ¾ÓÃ»§ĞèÒªÖØĞÂÓÃÔ­À´µÄÃû×Ö×¢²á²Å¿ÉÒÔĞŞ¸´Êı¾İ!"
-		Dvbbs_Error()
-		Exit Sub
-	Else
-		Username = Rs(0)
-		Rs.Close:Set Rs = Nothing
-		'ĞŞ¸´Ö÷Ìâ±í
-		Dvbbs.Execute ("Update Dv_Topic Set PostUserID = " & Userid & " WHERE PostUserName = '" & Username & "'")
-		'ĞŞ¸´ËùÓĞÊı¾İ±í
-		For i = 0 To Ubound(AllPostTable)
-			Dvbbs.Execute ("Update " & AllPostTable(i) & " Set Postuserid = " & Userid & " WHERE UserName = '" & Username & "'")
-			'¼ÆËãÓÃ»§·¢Ìù
-			Set Rs = Dvbbs.Execute("SELECT COUNT(*) FROM " & AllPostTable(i) & " WHERE Postuserid = " & Userid & "")
-			UserArticle = UserArticle + Rs(0)
-			Rs.Close:Set Rs = Nothing
-		Next
-		'ĞŞ¸´¾«»ª
-		Dvbbs.Execute ("UPDATE Dv_BestTopic Set PostUserID = " & Userid & " WHERE PostUserName = '" & Username & "'")
-		Set Rs = Dvbbs.Execute("SELECT COUNT(*) FROM Dv_BestTopic WHERE Postuserid = " & Userid &"")
-		UserIsBest = Rs(0)
-		Rs.Close:Set Rs = Nothing
-		'ĞŞ¸´ÉÏ´«ÎÄ¼şÁĞ±í
-		Dvbbs.Execute ("UPDATE DV_Upfile SET F_UserID = " & Userid & " WHERE F_Username = '" & Username & "'")
-		'¸üĞÂ·¢ÌùÊı
-		Dvbbs.Execute ("UPDATE [Dv_User] SET UserPost = " & UserArticle & ", UserIsBest = " & UserIsBest & " WHERE Userid = " & Userid & "")
-	End If
-	Set Rs = Nothing
-	Dv_Suc("ÓÃ»§<b>" & Username & "</b>Êı¾İĞŞ¸´³É¹¦£¡")
-End Sub
-
-Function CheckReal(v)
-	Dim w
-	If Not IsNull(v) Then
-		w=Replace(v,"|||","¡ì¡ì¡ì")
-		CheckReal=w
-	End If
-End Function
-
-Function CheckNumeric(Byval CHECK_ID)
-	If CHECK_ID<>"" and IsNumeric(CHECK_ID) Then _
-		CHECK_ID = Int(CHECK_ID) _
-	Else _
-		CHECK_ID = 0
-	CheckNumeric = CHECK_ID
-End Function
-Sub Select_Audit_Group(SelGroupID)
-Dim Rs,Sql,i
-SelGroupID = ","&SelGroupID&","
-Sql = "Select UserGroupID,Title,UserTitle,ParentGid,IsSetting From Dv_UserGroups where ParentGid>0  Order by ParentGid,UserGroupID"
-Set Rs = Dvbbs.Execute(SQL)
-If Not Rs.eof Then
-	SQL=Rs.GetRows(-1)
-	Rs.close:Set Rs = Nothing
-Else
-	Exit Sub
-End If
-%>
-<div id="Select_Group" style="POSITION:absolute;Z-INDEX: 99;display:none;width:400px">
-<select name="SelGroupid" id="SelGroupid" size="28" style="width:100%" multiple>
-<%
-For i=0 To Ubound(SQL,2)
-%>
-<option value="<%=SQL(0,i)%>" <%If Instr(SelGroupID,","&SQL(0,i)&",") Then Response.Write "Selected"%>> <%=SysGroupname(SQL(3,i))%> -- <%=SQL(1,i)%>--<%=SQL(2,i)%></option>
-<%
-Next
-%>
-</select>
-<input type="button" value="È·¶¨" class="button" onclick="getGroup('Select_Group')"> Çë°´ CTRL ¼ü¶àÑ¡!
-</div>
-<%
-End Sub
-%>
+<tr><td colspan=8 class=td1 align=center>
+<input type=submit class=button name=submit value="éµÑ†

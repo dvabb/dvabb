@@ -3,7 +3,7 @@
 <!--#include file="inc/dv_clsother.asp" -->
 <%
 If Dvbbs.BoardID=0 Then
-	Response.Write("<h1>´íÎó: </h1>²ÎÊı´íÎó¡£")
+	Response.Write("<h1>é”™è¯¯: </h1>å‚æ•°é”™è¯¯ã€‚")
 	Dvbbs.PageEnd()
 	Response.End
 End If
@@ -36,7 +36,7 @@ Sub downloadFile(strFile)
 	intFilelength = f.size
 	s.LoadFromFile(strFilename)
 	If err Then
-	 	Response.Write("<h1>´íÎó: </h1>" & err.Description & "<p>")
+	 	Response.Write("<h1>é”™è¯¯: </h1>" & err.Description & "<p>")
 		Response.End 
 	End If
 	Set fso=Nothing

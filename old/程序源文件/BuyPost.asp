@@ -15,15 +15,15 @@
 	topic=Dvbbs.CheckStr(Request("topic"))
 	boardid=Dvbbs.Checknumeric(Request("boardid"))
 	dvbbs.boardid=boardid
-	If dvbbs.boardid=0 Then Response.redirect "showerr.asp?ErrCodes=<Br>"+"<li>°æ¿éIDºÅ´íÎó¡£&action=OtherErr"
+	If dvbbs.boardid=0 Then Response.redirect "showerr.asp?ErrCodes=<Br>"+"<li>ç‰ˆå—IDå·é”™è¯¯ã€‚&action=OtherErr"
 	Select Case Action
-		Case "view" : Dvbbs.stats="²é¿´¹ºÂòÌù×ÓµÄÓÃ»§"
-		Case "buy" : Dvbbs.stats="½ğ±Ò¹ºÂòÌû×Ó"
-		Case "Send" : Dvbbs.stats="ĞüÉÍ½ğ±Ò"
-		Case "Close" : Dvbbs.stats="½áÌû²Ù×÷"
-		Case "Cancel" : Dvbbs.stats="×ª³ÉÆÕÍ¨Ìû" 'add by reoaiq by 090927
+		Case "view" : Dvbbs.stats="æŸ¥çœ‹è´­ä¹°è´´å­çš„ç”¨æˆ·"
+		Case "buy" : Dvbbs.stats="é‡‘å¸è´­ä¹°å¸–å­"
+		Case "Send" : Dvbbs.stats="æ‚¬èµé‡‘å¸"
+		Case "Close" : Dvbbs.stats="ç»“å¸–æ“ä½œ"
+		Case "Cancel" : Dvbbs.stats="è½¬æˆæ™®é€šå¸–" 'add by reoaiq by 090927
 		Case Else
-		Dvbbs.stats="¹ºÂòÌû×Ó"
+		Dvbbs.stats="è´­ä¹°å¸–å­"
 	End Select
 	Dvbbs.Nav()
 	Dvbbs.Head_var 1,Application(Dvbbs.CacheName&"_boardlist").documentElement.selectSingleNode("board[@boardid='"&Dvbbs.BoardID&"']/@depth").text,"",""
@@ -44,20 +44,20 @@
 	Dvbbs.Activeonline()
 	Dvbbs.Footer
 	Dvbbs.PageEnd()
-	'×ª³ÉÆÕÍ¨Ìû 'add by reoaiq by 090927
+	'è½¬æˆæ™®é€šå¸– 'add by reoaiq by 090927
 	Sub Cancel()
 Dim LogMsg
 If Dvbbs.BoardMaster Then 
 Dvbbs.Execute("update dv_topic set getmoney=0,getmoneytype=0 where topicid="&Rootid&"")
 Dvbbs.Execute("update "&PostTable&" set getmoney=0,getmoneytype=0 where Rootid="&Rootid&"")
-LogMsg = "½ğ±ÒÌû¡¶<a href=""Dispbbs.asp?BoardID="&Dvbbs.BoardID&"&ID="&Rootid&"&ReplyID="&Announceid&"&Skin=1"" target=_blank><b>"&Dvbbs.strCut(Topic,20)&"</b></a>¡·×ª»»ÎªÆÕÍ¨³É¹¦"
+LogMsg = "é‡‘å¸å¸–ã€Š<a href=""Dispbbs.asp?BoardID="&Dvbbs.BoardID&"&ID="&Rootid&"&ReplyID="&Announceid&"&Skin=1"" target=_blank><b>"&Dvbbs.strCut(Topic,20)&"</b></a>ã€‹è½¬æ¢ä¸ºæ™®é€šæˆåŠŸ"
 Dvbbs.Dvbbs_Suc(LogMsg)
 Else 
-Response.redirect "showerr.asp?ErrCodes=<Br>"+"<li>Äú²»ÊÇ¹ÜÀíÔ±µÈ¼¶£¬²»ÄÜ×ª»»¡£&action=OtherErr"
+Response.redirect "showerr.asp?ErrCodes=<Br>"+"<li>æ‚¨ä¸æ˜¯ç®¡ç†å‘˜ç­‰çº§ï¼Œä¸èƒ½è½¬æ¢ã€‚&action=OtherErr"
 Exit Sub
 End If 
 End Sub 
-	'½áÌû²Ù×÷
+	'ç»“å¸–æ“ä½œ
 	Sub Close()
 		Dim PostBuyUser,ToUserName,PostUserID,GetMoney,Topic,TopAnnounceID,LogMsg
 		Dim TempStr
@@ -83,42 +83,42 @@ End Sub
 			End If
 			SendMoney = GetMoney-TempStr(0)
 			If SendMoney<0 Then SendMoney = 0
-			'¸üĞÂÓÃ»§£¬·µ»¹½ğ±Ò
+			'æ›´æ–°ç”¨æˆ·ï¼Œè¿”è¿˜é‡‘å¸
 			If SendMoney>0 Then
 				Dvbbs.Execute("update [Dv_user] set UserMoney=UserMoney+"&SendMoney&" where userid="&Dvbbs.UserID)
-				Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usermoney").text  = cCur(Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usermoney").text )+SendMoney	'ÓÃ»§½ğ±ÒÊıÁ¿
+				Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usermoney").text  = cCur(Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usermoney").text )+SendMoney	'ç”¨æˆ·é‡‘å¸æ•°é‡
 			End If
-			'¸üĞÂÌû×ÓÀàĞÍ
+			'æ›´æ–°å¸–å­ç±»å‹
 			Dvbbs.Execute("update Dv_Topic set GetMoneyType=5 where TopicID="&Rootid)
 			Dvbbs.Execute("update "&PostTable&" set GetMoneyType=5 where AnnounceID="&TopAnnounceID)
 
-			LogMsg = "<b>½áÌû²Ù×÷</b>£ºĞüÉÍ½ğ±ÒÌûÖ÷Ìâ¡¶<a href=""Dispbbs.asp?boardid="&Dvbbs.BoardID&"&id="&Rootid&""" target=_blank><b>"&Topic&"</b></a>¡·½áÌû³É¹¦£¬»¹·µ½ğ±ÒÊıÎª£º<b>"&SendMoney&"</b>"
+			LogMsg = "<b>ç»“å¸–æ“ä½œ</b>ï¼šæ‚¬èµé‡‘å¸å¸–ä¸»é¢˜ã€Š<a href=""Dispbbs.asp?boardid="&Dvbbs.BoardID&"&id="&Rootid&""" target=_blank><b>"&Topic&"</b></a>ã€‹ç»“å¸–æˆåŠŸï¼Œè¿˜è¿”é‡‘å¸æ•°ä¸ºï¼š<b>"&SendMoney&"</b>"
 			Dim Dv_LogMsg
-			Dv_LogMsg = "½áÌû²Ù×÷£ºĞüÉÍ½ğ±ÒÌûÖ÷Ìâ¡¶"&Topic&"¡·½áÌû³É¹¦£¬»¹·µ½ğ±ÒÊıÎª£º"&SendMoney
+			Dv_LogMsg = "ç»“å¸–æ“ä½œï¼šæ‚¬èµé‡‘å¸å¸–ä¸»é¢˜ã€Š"&Topic&"ã€‹ç»“å¸–æˆåŠŸï¼Œè¿˜è¿”é‡‘å¸æ•°ä¸ºï¼š"&SendMoney
 			Dvbbs.Execute("Insert Into Dv_Log (l_AnnounceID,l_BoardID,l_touser,l_username,l_content,l_ip,l_type) values (" & Rootid & "," & Dvbbs.BoardID & ",'" & Dvbbs.MemberName & "','" & Dvbbs.MemberName & "','" & Dvbbs.CheckStr(Dv_LogMsg) & "','" & Dvbbs.UserTrueIP & "',5)")
 			Dvbbs.Dvbbs_Suc(LogMsg)
 		Else
 	%>
 	<FORM METHOD=POST ACTION="buypost.asp?action=Close">
 	<table cellpadding=3 cellspacing=1 align=center class=tableborder1>
-	<tr><th colspan=2>¡¶ <%=Topic%> ¡· ĞüÉÍ½ğ±Ò½áÌû²Ù×÷</th></tr>
+	<tr><th colspan=2>ã€Š <%=Topic%> ã€‹ æ‚¬èµé‡‘å¸ç»“å¸–æ“ä½œ</th></tr>
 	<tr>
-	<td class=tablebody1 colspan=2><li>Ö´ĞĞ½áÌûºó£¬Ìû×Ó¹Ø±Õ£¬²»ÔÊĞíÆäËû»áÔ±»Ø¸´¡£</td>
+	<td class=tablebody1 colspan=2><li>æ‰§è¡Œç»“å¸–åï¼Œå¸–å­å…³é—­ï¼Œä¸å…è®¸å…¶ä»–ä¼šå‘˜å›å¤ã€‚</td>
 	</tr>
 	<tr>
-	<td class=tablebody2 align=right width="30%">ĞüÉÍ½ğ±Ò×ÜÊı£º</td>
+	<td class=tablebody2 align=right width="30%">æ‚¬èµé‡‘å¸æ€»æ•°ï¼š</td>
 	<td class=tablebody1 width="70%"><%=GetMoney%></td>
 	</tr>
 	<tr>
-	<td class=tablebody2 align=right>ÒÑĞüÉÍ½ğ±Ò×ÜÊı£º</td>
+	<td class=tablebody2 align=right>å·²æ‚¬èµé‡‘å¸æ€»æ•°ï¼š</td>
 	<td class=tablebody1><%=TempStr(0)%></td>
 	</tr>
 	<tr>
-	<td class=tablebody2 align=right>·µ»¹ÓÃ»§½ğ±ÒÊı£º</td>
+	<td class=tablebody2 align=right>è¿”è¿˜ç”¨æˆ·é‡‘å¸æ•°ï¼š</td>
 	<td class=tablebody1><%=GetMoney-TempStr(0)%></td>
 	</tr>
 	<tr><td class=tablebody2 colspan=2 align=center>
-	<INPUT TYPE="submit" value="È·¶¨½áÌû"> <INPUT TYPE="button" value="È¡Ïû" onclick="history.go(-1)">
+	<INPUT TYPE="submit" value="ç¡®å®šç»“å¸–"> <INPUT TYPE="button" value="å–æ¶ˆ" onclick="history.go(-1)">
 	</td></tr>
 	<INPUT TYPE="hidden" NAME="react" value="SaveClose">
 	<INPUT TYPE="hidden" NAME="PostTable" value="<%=PostTable%>">
@@ -130,7 +130,7 @@ End Sub
 		End If
 	End Sub
 
-	'ĞüÉÍ½ğ±ÒÌû
+	'æ‚¬èµé‡‘å¸å¸–
 	Sub SendMoney()
 		Dim PostBuyUser,ToUserName,PostUserID,GetMoney,Topic,TopAnnounceID,LogMsg
 		Dim TempStr,IsSendUser
@@ -150,9 +150,9 @@ End Sub
 		TempStr = Split(PostBuyUser,"|||",2)
 		TempStr(0) = cCur(TempStr(0))
 		If Instr(PostBuyUser,"|||"&ToUserName&",")>0 Then
-			IsSendUser = "<font class=Redfont>[ÒÑĞüÉÍ]</font>"
+			IsSendUser = "<font class=Redfont>[å·²æ‚¬èµ]</font>"
 		Else
-			IsSendUser = "<font color=gray>[Î´ĞüÉÍ]</font>"
+			IsSendUser = "<font color=gray>[æœªæ‚¬èµ]</font>"
 		End If
 		If Request.Form("ReAct")="SaveMoney" Then
 			If Not Dvbbs.ChkPost Then
@@ -167,15 +167,15 @@ End Sub
 			Else
 				SendMoney = cCur(SendMoney)
 			End If
-			If TempStr(0) < 0 Then Response.redirect "showerr.asp?ErrCodes=<Br>"+"<li>ĞüÉÍµÄ½ğ±ÒÊıÌ«ÉÙ»òÒÑ³¬³öÁËÊ£Óà½ğ±ÒÊı¡£&action=OtherErr"
+			If TempStr(0) < 0 Then Response.redirect "showerr.asp?ErrCodes=<Br>"+"<li>æ‚¬èµçš„é‡‘å¸æ•°å¤ªå°‘æˆ–å·²è¶…å‡ºäº†å‰©ä½™é‡‘å¸æ•°ã€‚&action=OtherErr"
 			TempStr(0) = TempStr(0)+SendMoney
 
 			If SendMoney<1 or TempStr(0)>GetMoney  Then
-				Response.redirect "showerr.asp?ErrCodes=<Br>"+"<li>ĞüÉÍµÄ½ğ±ÒÊıÌ«ÉÙ»òÒÑ³¬³öÁËÊ£Óà½ğ±ÒÊı¡£&action=OtherErr"
+				Response.redirect "showerr.asp?ErrCodes=<Br>"+"<li>æ‚¬èµçš„é‡‘å¸æ•°å¤ªå°‘æˆ–å·²è¶…å‡ºäº†å‰©ä½™é‡‘å¸æ•°ã€‚&action=OtherErr"
 				Exit Sub
 			End If
 
-			'¶ÁÈ¡»Ø¸´ÓÃ»§ĞÅÏ¢£¬¸üĞÂGetMoneyÊıÖµ
+			'è¯»å–å›å¤ç”¨æˆ·ä¿¡æ¯ï¼Œæ›´æ–°GetMoneyæ•°å€¼
 			Sql = "Select username,PostUserID,GetMoney From "&PostTable&" where AnnounceID="&AnnounceID
 			Dvbbs.SqlQueryNum=Dvbbs.SqlQueryNum+1
 			set Rs=Dvbbs.iCreateObject("adodb.recordset")
@@ -187,7 +187,7 @@ End Sub
 				ToUserName = Rs(0)
 				PostUserID = Rs(1)
 				If PostUserID=Dvbbs.UserID Then
-					Response.redirect "showerr.asp?ErrCodes=<Br>"+"<li>ĞüÉÍ½ğ±ÒÌû²»ÄÜ¶Ô×ÔÒÑĞüÉÍ½ğ±Ò¡£&action=OtherErr"
+					Response.redirect "showerr.asp?ErrCodes=<Br>"+"<li>æ‚¬èµé‡‘å¸å¸–ä¸èƒ½å¯¹è‡ªå·²æ‚¬èµé‡‘å¸ã€‚&action=OtherErr"
 					Exit Sub
 				End If
 				Rs(2) = Rs(2)+SendMoney
@@ -196,35 +196,35 @@ End Sub
 			Rs.close
 			TempStr(1) = TempStr(1) & "|||" &ToUserName&","&SendMoney
 			PostBuyUser = TempStr(0) & "|||" & TempStr(1)
-			'¸üĞÂÄ¿±êÓÃ»§£¬Ôö¼Ó½ğ±Ò
+			'æ›´æ–°ç›®æ ‡ç”¨æˆ·ï¼Œå¢åŠ é‡‘å¸
 			Dvbbs.Execute("update [Dv_user] set UserMoney=UserMoney+"&SendMoney&" where userid="&PostUserID)
-			'¸üĞÂ·Ö±íÖĞÖ÷ÌâĞĞPostBuyUserÊı¾İ
+			'æ›´æ–°åˆ†è¡¨ä¸­ä¸»é¢˜è¡ŒPostBuyUseræ•°æ®
 			Dvbbs.Execute("update "&PostTable&" set PostBuyUser = '"&PostBuyUser&"' where AnnounceID="&TopAnnounceID)
-			LogMsg = "¹ØÓÚ»Ø¸´Ö÷Ìâ¡¶<a href=""Dispbbs.asp?BoardID="&Dvbbs.BoardID&"&ID="&Rootid&"&ReplyID="&Announceid&"&Skin=1"" target=_blank><b>"&Topic&"</b></a>¡·µÄÌû×ÓĞüÉÍ½ğ±Ò³É¹¦£¬<b>"&ToUserName&"</b>»ñµÃ½ğ±ÒÊıÎª£º<b>"&SendMoney&"</b>£¬Ê£Óà¿ÉĞüÉÍ½ğ±ÒÊıÎª£º<b>"& GetMoney-TempStr(0) &"</b>¡£"
+			LogMsg = "å…³äºå›å¤ä¸»é¢˜ã€Š<a href=""Dispbbs.asp?BoardID="&Dvbbs.BoardID&"&ID="&Rootid&"&ReplyID="&Announceid&"&Skin=1"" target=_blank><b>"&Topic&"</b></a>ã€‹çš„å¸–å­æ‚¬èµé‡‘å¸æˆåŠŸï¼Œ<b>"&ToUserName&"</b>è·å¾—é‡‘å¸æ•°ä¸ºï¼š<b>"&SendMoney&"</b>ï¼Œå‰©ä½™å¯æ‚¬èµé‡‘å¸æ•°ä¸ºï¼š<b>"& GetMoney-TempStr(0) &"</b>ã€‚"
 			Dvbbs.Dvbbs_Suc(LogMsg)
 		Else
 	%>
 	<FORM METHOD=POST ACTION="buypost.asp?action=Send">
 	<table cellpadding=3 cellspacing=1 align=center class=tableborder1>
-	<tr><th colspan=2>¡¶ <%=Topic%> ¡· ĞüÉÍ½ğ±Ò²Ù×÷</th></tr>
+	<tr><th colspan=2>ã€Š <%=Topic%> ã€‹ æ‚¬èµé‡‘å¸æ“ä½œ</th></tr>
 	<tr>
-	<td class=tablebody1 align=right width="30%">ĞüÉÍ½ğ±Ò×ÜÊı£º</td>
+	<td class=tablebody1 align=right width="30%">æ‚¬èµé‡‘å¸æ€»æ•°ï¼š</td>
 	<td class=tablebody1 width="70%"><%=GetMoney%></td>
 	</tr>
 	<tr>
-	<td class=tablebody1 align=right>ÒÑĞüÉÍ½ğ±Ò×ÜÊı£º</td>
+	<td class=tablebody1 align=right>å·²æ‚¬èµé‡‘å¸æ€»æ•°ï¼š</td>
 	<td class=tablebody1><%=TempStr(0)%></td>
 	</tr>
 	<tr>
-	<td class=tablebody1 align=right>ĞüÉÍÄ¿±êÓÃ»§£º</td>
+	<td class=tablebody1 align=right>æ‚¬èµç›®æ ‡ç”¨æˆ·ï¼š</td>
 	<td class=tablebody1><%=Server.HtmlEncode(ToUserName)%> <%=IsSendUser%></td>
 	</tr>
 	<tr>
-	<td class=tablebody1 align=right>ÉèÖÃĞüÉÍ½ğ±Ò¸öÊı£º</td>
-	<td class=tablebody1><INPUT TYPE="text" NAME="SendMoney" value=""> Ê£Óà<b><font class="Redfont"><%=(GetMoney-TempStr(0))%></font></b>½ğ±Ò¡£</td>
+	<td class=tablebody1 align=right>è®¾ç½®æ‚¬èµé‡‘å¸ä¸ªæ•°ï¼š</td>
+	<td class=tablebody1><INPUT TYPE="text" NAME="SendMoney" value=""> å‰©ä½™<b><font class="Redfont"><%=(GetMoney-TempStr(0))%></font></b>é‡‘å¸ã€‚</td>
 	</tr>
 	<tr><td class=tablebody2 colspan=2 align=center>
-	<INPUT TYPE="submit" value="È·¶¨"> <INPUT TYPE="button" value="È¡Ïû" onclick="history.go(-1)">
+	<INPUT TYPE="submit" value="ç¡®å®š"> <INPUT TYPE="button" value="å–æ¶ˆ" onclick="history.go(-1)">
 	</td></tr>
 	<INPUT TYPE="hidden" NAME="react" value="SaveMoney">
 	<INPUT TYPE="hidden" NAME="PostTable" value="<%=PostTable%>">
@@ -236,7 +236,7 @@ End Sub
 		End If
 	End Sub
 
-	'½ğ±ÒÌû×Ó¹ºÂò
+	'é‡‘å¸å¸–å­è´­ä¹°
 	Sub Buy()
 		Dim PostBuyUser,ToUserName,PostUserID,GetMoney,GetMoneyType,IsUpdate,LogMsg,Topic,TempStr
 		IsUpdate = False
@@ -256,33 +256,33 @@ End Sub
 			GetMoneyType = Rs(4)
 			Topic = Rs(5)
 			If Not IsNumeric(GetMoney) Then GetMoney=0
-			If GetMoney < 0 Then Response.redirect "showerr.asp?ErrCodes=<Br>"+"<li>ÓÉÓÚ´ËÌù½ğ±ÒÉèÖÃÊı¾İ´íÎó£¬¹ºÂòÊ§°Ü¡£&action=OtherErr"
+			If GetMoney < 0 Then Response.redirect "showerr.asp?ErrCodes=<Br>"+"<li>ç”±äºæ­¤è´´é‡‘å¸è®¾ç½®æ•°æ®é”™è¯¯ï¼Œè´­ä¹°å¤±è´¥ã€‚&action=OtherErr"
 			If Instr(PostBuyUser,"|||$PayMoney|||") AND Dvbbs.UserID<>PostUserID AND GetMoney<>0 and InStr(PostBuyUser,"|||"&Dvbbs.Membername&"|||")=0 Then
 				TempStr = Split(Rs(0),"|||",2)
 				Dim BuyMoneyInfo
 				BuyMoneyInfo = Split(TempStr(0),"@@@")
 				BuyMoneyInfo(1) = cCur(BuyMoneyInfo(1))
 				BuyMoneyInfo(2) = Clng(BuyMoneyInfo(2))
-				'¹ºÂòÊıÁ¿ÏŞÖÆ(ÉèÖÃÎª¡°-1¡±Ôò²»ÏŞÖÆ)
+				'è´­ä¹°æ•°é‡é™åˆ¶(è®¾ç½®ä¸ºâ€œ-1â€åˆ™ä¸é™åˆ¶)
 				If BuyMoneyInfo(1)=0 Then
-					Response.redirect "showerr.asp?ErrCodes=<Br>"+"<li>±¾Ìû×ÓÒÑÊÛÍê¡£&action=OtherErr"
+					Response.redirect "showerr.asp?ErrCodes=<Br>"+"<li>æœ¬å¸–å­å·²å”®å®Œã€‚&action=OtherErr"
 					Exit Sub
 				ElseIf BuyMoneyInfo(1)>0 Then
 					BuyMoneyInfo(1) = BuyMoneyInfo(1) - 1 
 				End If
-				'µ±VIP²»ĞèÒª¸¶·ÑÊ±½«GetMoneyÇåÎª0
+				'å½“VIPä¸éœ€è¦ä»˜è´¹æ—¶å°†GetMoneyæ¸…ä¸º0
 				'If BuyMoneyInfo(2)=0 and Dvbbs.VipGroupUser Then
 					'GetMoney = 0
 				'End If
-				'¿É¹ºÂòÓÃ»§Ãûµ¥ÏŞÖÆ(Ã¿¸öÓÃ»§ÃûÓÃÓ¢ÎÄ¶ººÅ¡°,¡±·Ö¸ô·û·Ö¿ª£¬×¢ÒâÇø·Ö´óĞ¡Ğ´)
+				'å¯è´­ä¹°ç”¨æˆ·åå•é™åˆ¶(æ¯ä¸ªç”¨æˆ·åç”¨è‹±æ–‡é€—å·â€œ,â€åˆ†éš”ç¬¦åˆ†å¼€ï¼Œæ³¨æ„åŒºåˆ†å¤§å°å†™)
 				If BuyMoneyInfo(3)<>"" Then
 					If Instr(","&BuyMoneyInfo(3)&",",","&Dvbbs.Membername&",")=0 Then
-						Response.redirect "showerr.asp?ErrCodes=<Br>"+"<li>¹ºÂòÊ§°Ü£¬·Ç×÷ÕßÖ¸¶¨µÄÓÃ»§²»ÄÜ¹ºÂò¸ÃÌû¡£&action=OtherErr"
+						Response.redirect "showerr.asp?ErrCodes=<Br>"+"<li>è´­ä¹°å¤±è´¥ï¼Œéä½œè€…æŒ‡å®šçš„ç”¨æˆ·ä¸èƒ½è´­ä¹°è¯¥å¸–ã€‚&action=OtherErr"
 						Exit Sub
 					End If
 				End If
 				If GetMoney>CCur(Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usermoney").text)  Then 
-					Response.redirect "showerr.asp?ErrCodes=<Br>"+"<li>ÄãµÄÓÃ»§½ğ±Ò²»×ã£¬¹ºÂò¸ÃÌûÊ§°Ü¡£&action=OtherErr"
+					Response.redirect "showerr.asp?ErrCodes=<Br>"+"<li>ä½ çš„ç”¨æˆ·é‡‘å¸ä¸è¶³ï¼Œè´­ä¹°è¯¥å¸–å¤±è´¥ã€‚&action=OtherErr"
 					Exit Sub
 				End If
 				BuyMoneyInfo(0) = cCur(BuyMoneyInfo(0)) + GetMoney '*ToolsSetting(4)
@@ -295,13 +295,13 @@ End Sub
 				Dvbbs.Execute("update [Dv_user] set UserMoney=UserMoney+"&GetMoney&" where userid="&PostUserID)
 				IsUpdate = True
 			Else
-				Response.redirect "showerr.asp?ErrCodes=<Br>"+"<li>Äã²»ÄÜÖØ¸´¹ºÂò»òÕß²»ÄÜ¹ºÂò×ÔÒÑµÄ½ğ±ÒÌû×Ó¡£&action=OtherErr"
+				Response.redirect "showerr.asp?ErrCodes=<Br>"+"<li>ä½ ä¸èƒ½é‡å¤è´­ä¹°æˆ–è€…ä¸èƒ½è´­ä¹°è‡ªå·²çš„é‡‘å¸å¸–å­ã€‚&action=OtherErr"
 				Exit Sub
 			End If
 		End If
 		Rs.Close : Set Rs=Nothing
 		If IsUpdate Then
-			LogMsg = "¹ºÂò½ğ±ÒÌû¡¶<a href=""Dispbbs.asp?boardid="&Dvbbs.BoardID&"&id="&Rootid&""" target=_blank><b>"&Topic&"</b></a>¡·³É¹¦£¬Ö§¸¶½ğ±ÒÊıÎª£º<b>"&GetMoney&"</b>£¬<b>"&ToUserName&"</b>µÃµ½½ğ±ÒÎª£º"&GetMoney
+			LogMsg = "è´­ä¹°é‡‘å¸å¸–ã€Š<a href=""Dispbbs.asp?boardid="&Dvbbs.BoardID&"&id="&Rootid&""" target=_blank><b>"&Topic&"</b></a>ã€‹æˆåŠŸï¼Œæ”¯ä»˜é‡‘å¸æ•°ä¸ºï¼š<b>"&GetMoney&"</b>ï¼Œ<b>"&ToUserName&"</b>å¾—åˆ°é‡‘å¸ä¸ºï¼š"&GetMoney
 			Dvbbs.Dvbbs_Suc(LogMsg)
 		End If
 	End Sub
@@ -327,7 +327,7 @@ End Sub
 			Dvbbs.ShowErr()
 		Else
 			If rs(4)>0 Then
-				Response.redirect "showerr.asp?ErrCodes=<Br>"+"<li>ÓÉÓÚÌû×ÓÊ¹ÓÃÁËÌØÊâÀàĞÍ£¬ËùÒÔ²»ÄÜ²ÉÓÃ½ğÇ®¹ºÂòÌû¡£&action=OtherErr"
+				Response.redirect "showerr.asp?ErrCodes=<Br>"+"<li>ç”±äºå¸–å­ä½¿ç”¨äº†ç‰¹æ®Šç±»å‹ï¼Œæ‰€ä»¥ä¸èƒ½é‡‡ç”¨é‡‘é’±è´­ä¹°å¸–ã€‚&action=OtherErr"
 				Exit Sub
 			End If
 			strContent=Dvbbs.HTMLEncode(rs(0))
@@ -347,11 +347,11 @@ End Sub
 			Set re=Nothing
 					
 			If Dvbbs.membername=rs(2) Then
-				response.write "<script>alert('ºÇºÇ£¬ÄúÒª»¨Ç®¹ºÂò×Ô¼º·¢²¼µÄÌû×ÓÂğ£¿');</script>"
+				response.write "<script>alert('å‘µå‘µï¼Œæ‚¨è¦èŠ±é’±è´­ä¹°è‡ªå·±å‘å¸ƒçš„å¸–å­å—ï¼Ÿ');</script>"
 			ElseIf  usermoney >ii then
 				If (not isnull(PostBuyUser)) Or  PostBuyUser<>"" Then
 					If InStr("|"&PostBuyUser&"|","|"&Dvbbs.membername&"|")>0 Then
-						response.write "<script>alert('ºÇºÇ£¬ÄúÒÑ¾­¹ºÂò¹ıÁËÑ½£¿');</script>"
+						response.write "<script>alert('å‘µå‘µï¼Œæ‚¨å·²ç»è´­ä¹°è¿‡äº†å‘€ï¼Ÿ');</script>"
 					Else
 						Dvbbs.Execute("update [Dv_user] set userWealth=userWealth-"&ii&" where userid="&Dvbbs.userid)
 						Dvbbs.Execute("update [Dv_user] set userWealth=userWealth+"&ii&" where userid="&rs(3))
@@ -361,17 +361,17 @@ End Sub
 							rs(1)=rs(1) & "|" & Dvbbs.membername
 						End If
 						Rs.Update 
-						response.write "<script>alert('¹ºÂò³É¹¦£¡');</script>"
+						response.write "<script>alert('è´­ä¹°æˆåŠŸï¼');</script>"
 					End If
 				Else 
 					Dvbbs.Execute("update [Dv_user] set userWealth=userWealth-"&ii&" where userid="&Dvbbs.userid)
 					Dvbbs.Execute("update [Dv_user] set userWealth=userWealth+"&ii&" where userid="&rs(3))
 					rs(1)=Dvbbs.membername
 					Rs.Update
-					response.write "<script>alert('¹ºÂò³É¹¦£¡');</script>"
+					response.write "<script>alert('è´­ä¹°æˆåŠŸï¼');</script>"
 				End If
 			Else
-				response.write "<script>alert('Äú¶¼Ã»ÓĞÇ®Ñ½£¿');</script>"
+				response.write "<script>alert('æ‚¨éƒ½æ²¡æœ‰é’±å‘€ï¼Ÿ');</script>"
 			End If
 			
 		End If
@@ -390,14 +390,14 @@ End Sub
 		PostBuyUser=Trim(rs(0))
 		Response.Write "<table cellpadding=3 cellspacing=1 align=center class=tableborder1>"
 		Response.Write "<TBODY><TR>"
-		Response.Write "<Th height=24 colspan=1>²é¿´¹ºÂòÌù×ÓµÄÓÃ»§</Th>"
+		Response.Write "<Th height=24 colspan=1>æŸ¥çœ‹è´­ä¹°è´´å­çš„ç”¨æˆ·</Th>"
 		Response.Write "</TR>"
 		Response.Write "<tr><TD class=tablebody2>"
 		If (not isnull(PostBuyUser)) Or  PostBuyUser<>"" Then
 			PostBuyUser=Replace(PostBuyUser,"|","<li>")
 			Response.Write "<li>"&PostBuyUser		
 		Else
-			Response.Write "<br><li>»¹Î´ÓĞÈË¹ºÂò£¡"
+			Response.Write "<br><li>è¿˜æœªæœ‰äººè´­ä¹°ï¼"
 		End If
 		Response.Write "</td></tr>"
 		Response.Write "</table>"

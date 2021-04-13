@@ -6,16 +6,16 @@
 Dvbbs.LoadTemplates("usermanager")
 Dvbbs.Stats=Dvbbs.MemberName&template.Strings(4)
 Dvbbs.mainsetting(0)="98%"
-Dvbbs.ErrType = 1	'×ªµ½²»ÏÔÊ¾¶¥²¿ºÍµ¼º½µÄ´íÎóÏÔÊ¾Ò³
+Dvbbs.ErrType = 1	'è½¬åˆ°ä¸æ˜¾ç¤ºé¡¶éƒ¨å’Œå¯¼èˆªçš„é”™è¯¯æ˜¾ç¤ºé¡µ
 Dvbbs.Head()
 Dim Rs,Sql,SqlStr,ErrCodes,TempLateStr,id,sendtime,sender,temptxt
 Dim top_TempLateStr,send_TempLateStr,Read_TempLateStr
 DIM title,ActInfo
 Dim EmotPath
 Dim replyid,Announceid,UserName
-EmotPath=Split(Dvbbs.Forum_emot,"|||")(0)		'emĞÄÇéÂ·¾¶
-If Dvbbs.userid=0 Then Dvbbs.AddErrCode(6):Dvbbs.Showerr()								'ÅĞ¶ÏÓÃ»§ÊÇ·ñÔÚÏß¡£
-If Cint(Dvbbs.GroupSetting(32))=0 Then ErrCodes=ErrCodes+"<li>"+template.Strings(33)	'ÅĞ¶ÏÓÃ»§ÊÇ·ñÓĞÈ¨ÏŞ¡£
+EmotPath=Split(Dvbbs.Forum_emot,"|||")(0)		'emå¿ƒæƒ…è·¯å¾„
+If Dvbbs.userid=0 Then Dvbbs.AddErrCode(6):Dvbbs.Showerr()								'åˆ¤æ–­ç”¨æˆ·æ˜¯å¦åœ¨çº¿ã€‚
+If Cint(Dvbbs.GroupSetting(32))=0 Then ErrCodes=ErrCodes+"<li>"+template.Strings(33)	'åˆ¤æ–­ç”¨æˆ·æ˜¯å¦æœ‰æƒé™ã€‚
 id=Request("id")
 TempLateStr=split(template.html(11),"||")
 If Dvbbs.forum_setting(80)="0" Then
@@ -44,37 +44,37 @@ SELECT Case Request("action")
 			SqlStr="SELECT id,title,content,incept,sender,sendtime FROM Dv_Message WHERE incept='"&Dvbbs.MemberName&"' And id="&Dvbbs.checkStr(id)
 			temptxt=template.Strings(56)
 		End If
-		Dvbbs.Stats=ActInfo(0)		'"·¢ËÍ¶ÌĞÅ"
+		Dvbbs.Stats=ActInfo(0)		'"å‘é€çŸ­ä¿¡"
 		If Dvbbs.IsReadonly()  And Not Dvbbs.Master Then Response.redirect "showerr.asp?action=readonly&boardid="&dvbbs.boardID&"" 
 		'Response.Write "<script src=""images/post/post.js"" type=""text/javascript""></script>"
 		call sendmsg()		
 	Case "read"
-		Dvbbs.Stats=ActInfo(1)		'"ÔÄ¶Á¶ÌĞÅ"
+		Dvbbs.Stats=ActInfo(1)		'"é˜…è¯»çŸ­ä¿¡"
 		call read()
 		Dvbbs.NewPassword()
 	Case "outread"
-		Dvbbs.Stats=ActInfo(1)		'"ÔÄ¶Á¶ÌĞÅ"
+		Dvbbs.Stats=ActInfo(1)		'"é˜…è¯»çŸ­ä¿¡"
 		call read()
 		Dvbbs.NewPassword()
 	Case  "newmsg"
-		Dvbbs.Stats=ActInfo(0)		'"·¢ËÍ¶ÌĞÅ"
+		Dvbbs.Stats=ActInfo(0)		'"å‘é€çŸ­ä¿¡"
 		If Dvbbs.IsReadonly()  And Not Dvbbs.Master Then Response.redirect "showerr.asp?action=readonly&boardid="&dvbbs.boardID&"" 
 		Call newmsg()
 	Case "send"
-		Dvbbs.Stats=ActInfo(2)		'"±£´æ·¢ËÍ¶ÌĞÅ"
+		Dvbbs.Stats=ActInfo(2)		'"ä¿å­˜å‘é€çŸ­ä¿¡"
 		If Dvbbs.IsReadonly()  And Not Dvbbs.Master Then Response.redirect "showerr.asp?action=readonly&boardid="&dvbbs.boardID&"" 
 		call savemsg()
 	Case "fw"
 		Response.Cookies("Dvbbs")=""
 		title="FW: "
-		Dvbbs.Stats=ActInfo(3)		'"×ª·¢¶ÌĞÅ"
+		Dvbbs.Stats=ActInfo(3)		'"è½¬å‘çŸ­ä¿¡"
 		If Dvbbs.IsReadonly()  And Not Dvbbs.Master Then Response.redirect "showerr.asp?action=readonly&boardid="&dvbbs.boardID&"" 
 		SqlStr="SELECT id,title,content,incept,sender,sendtime FROM Dv_Message WHERE (incept='"&Dvbbs.MemberName&"' or sender='"&Dvbbs.MemberName&"') And id="&Dvbbs.checkStr(id)
 		temptxt=template.Strings(57)
 		call sendmsg()
 	Case "edit"
 		Response.Cookies("Dvbbs")=""
-		Dvbbs.Stats=ActInfo(4)		'"ĞŞ¸Ä¶ÌĞÅ"
+		Dvbbs.Stats=ActInfo(4)		'"ä¿®æ”¹çŸ­ä¿¡"
 		If Dvbbs.IsReadonly()  And Not Dvbbs.Master Then Response.redirect "showerr.asp?action=readonly&boardid="&dvbbs.boardID&"" 
 		SqlStr="SELECT id,title,content,incept,sender,sendtime FROM Dv_Message WHERE sender='"&Dvbbs.MemberName&"' And issend=0 And id="&Dvbbs.checkStr(id)
 		call sendmsg()
@@ -83,35 +83,35 @@ SELECT Case Request("action")
 	Case "delet"
 		If Dvbbs.IsReadonly()  And Not Dvbbs.Master Then Response.redirect "showerr.asp?action=readonly&boardid="&dvbbs.boardID&"" 
 		call Delete()
-	Case ActInfo(5)					'"É¾³ıÊÕ¼şÏä"
+	Case ActInfo(5)					'"åˆ é™¤æ”¶ä»¶ç®±"
 		If Dvbbs.IsReadonly()  And Not Dvbbs.Master Then Response.redirect "showerr.asp?action=readonly&boardid="&dvbbs.boardID&"" 
 		Dvbbs.Stats=ActInfo(5)
 		call Delinbox()
-	Case ActInfo(6)					'"Çå¿ÕÊÕ¼şÏä"
+	Case ActInfo(6)					'"æ¸…ç©ºæ”¶ä»¶ç®±"
 		Dvbbs.Stats=ActInfo(6)
 		If Dvbbs.IsReadonly()  And Not Dvbbs.Master Then Response.redirect "showerr.asp?action=readonly&boardid="&dvbbs.boardID&"" 
 		call AllDelinbox()
-	Case ActInfo(7)					'"É¾³ı²İ¸åÏä"
+	Case ActInfo(7)					'"åˆ é™¤è‰ç¨¿ç®±"
 		Dvbbs.Stats=ActInfo(7)
 		If Dvbbs.IsReadonly()  And Not Dvbbs.Master Then Response.redirect "showerr.asp?action=readonly&boardid="&dvbbs.boardID&"" 
 		call Deloutbox()
-	Case ActInfo(8)					'"Çå¿Õ²İ¸åÏä"
+	Case ActInfo(8)					'"æ¸…ç©ºè‰ç¨¿ç®±"
 		Dvbbs.Stats=ActInfo(8)
 		If Dvbbs.IsReadonly()  And Not Dvbbs.Master Then Response.redirect "showerr.asp?action=readonly&boardid="&dvbbs.boardID&"" 	
 		call AllDeloutbox()
-	Case ActInfo(9)					'"É¾³ıÒÑ·¢ËÍµÄÏûÏ¢"
+	Case ActInfo(9)					'"åˆ é™¤å·²å‘é€çš„æ¶ˆæ¯"
 		Dvbbs.Stats=ActInfo(9)
 		If Dvbbs.IsReadonly()  And Not Dvbbs.Master Then Response.redirect "showerr.asp?action=readonly&boardid="&dvbbs.boardID&"" 
 		call Delissend()
-	Case ActInfo(10)				'"Çå¿ÕÒÑ·¢ËÍµÄÏûÏ¢"
+	Case ActInfo(10)				'"æ¸…ç©ºå·²å‘é€çš„æ¶ˆæ¯"
 		Dvbbs.Stats=ActInfo(10)
 		If Dvbbs.IsReadonly()  And Not Dvbbs.Master Then Response.redirect "showerr.asp?action=readonly&boardid="&dvbbs.boardID&"" 
 		call AllDelissend()
-	case ActInfo(11)				'"É¾³ıÀ¬»øÏä"
+	case ActInfo(11)				'"åˆ é™¤åƒåœ¾ç®±"
 		Dvbbs.Stats=ActInfo(11)
 		If Dvbbs.IsReadonly()  And Not Dvbbs.Master Then Response.redirect "showerr.asp?action=readonly&boardid="&dvbbs.boardID&"" 
 		call Delrecycle()
-	Case ActInfo(12)				'"Çå¿ÕÀ¬»øÏä"
+	Case ActInfo(12)				'"æ¸…ç©ºåƒåœ¾ç®±"
 		Dvbbs.Stats=ActInfo(12)
 		If Dvbbs.IsReadonly()  And Not Dvbbs.Master Then Response.redirect "showerr.asp?action=readonly&boardid="&dvbbs.boardID&"" 
 		Call AllDelrecycle()
@@ -125,7 +125,7 @@ Response.Write TempLateStr(3)
 Response.Write "</div>"
 Dvbbs.Footer()
 Dvbbs.PageEnd()
-'·¢ËÍĞÅÏ¢,»Ø¸´£¬×ª·¢,±à¼­
+'å‘é€ä¿¡æ¯,å›å¤ï¼Œè½¬å‘,ç¼–è¾‘
 Sub sendmsg()
 	Dim content,i,textarea,touser,incept
 	Dim chatloglist
@@ -236,7 +236,7 @@ Sub sendmsg()
 	Response.Write send_TempLateStr
 End Sub
 
-'¶ÁÈ¡ĞÅÏ¢
+'è¯»å–ä¿¡æ¯
 sub read()
 	If id<>"" and isNumeric(id) Then
 		id=Clng(id)
@@ -289,12 +289,12 @@ sub read()
 End Sub
 
 
-'±£´æ
+'ä¿å­˜
 Sub savemsg()
 	Dim i,BoxName
 	Dim incept,title,message,subtype
 	Dim Http_Referer
-	'°ÑÌá½»µÄÊı¾İ±£´æµ½session
+	'æŠŠæäº¤çš„æ•°æ®ä¿å­˜åˆ°session
 	Dvbbs.UserSession.documentElement.selectSingleNode("userinfo").attributes.setNamedItem(Dvbbs.UserSession.createNode(2,"postdata","")).text=Request.form("message")
 	BoxName=split(template.Strings(63),",")
 	If Clng(Dvbbs.GroupSetting(53))>0 And DateDiff("s",Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@joindate").text,Now)<Clng(Dvbbs.GroupSetting(53))*60 Then
@@ -310,13 +310,13 @@ Sub savemsg()
 	If Dvbbs.forum_setting(80)="1" Then
 		If Not Dvbbs.CodeIsTrue() Then
 			Http_Referer = "messanger.asp?action=new&touser="&Request("touser")
-			ErrCodes=ErrCodes+"<meta http-equiv=refresh content=""2;URL="&Http_Referer&"""><li>ÑéÖ¤ÂëĞ£ÑéÊ§°Ü£¬Çë·µ»ØË¢ĞÂÒ³ÃæÔÙÊÔ¡£Á½Ãëºó×Ô¶¯·µ»Ø"
+			ErrCodes=ErrCodes+"<meta http-equiv=refresh content=""2;URL="&Http_Referer&"""><li>éªŒè¯ç æ ¡éªŒå¤±è´¥ï¼Œè¯·è¿”å›åˆ·æ–°é¡µé¢å†è¯•ã€‚ä¸¤ç§’åè‡ªåŠ¨è¿”å›"
 			Exit Sub
 		End If
 	End If
 
 	If CStr(Request.Cookies("Dvbbs"))=CStr(Dvbbs.Boardid) Then
-		Dvbbs.Dvbbs_Suc("<li>"+template.Strings(26))	'ÄúµÄĞŞ¸ÄĞÅÏ¢ÒÑ³É¹¦Ìá½»£¡
+		Dvbbs.Dvbbs_Suc("<li>"+template.Strings(26))	'æ‚¨çš„ä¿®æ”¹ä¿¡æ¯å·²æˆåŠŸæäº¤ï¼
 		Exit Sub
 	End If
 
@@ -364,14 +364,14 @@ Sub savemsg()
 		Else
 			If Request.Form("sms_act")="Sms_Issend" Then
 				Sql="insert into Dv_Message (incept,sender,title,content,sendtime,flag,issend) values ('"& Dvbbs.CheckStr(InceptName) &"','"&Dvbbs.MemberName&"','"&title&"','"&message&"',"&SqlNowString&",0,1)"
-				subtype=BoxName(2)		'ÒÑ·¢ËÍµÄÏûÏ¢
+				subtype=BoxName(2)		'å·²å‘é€çš„æ¶ˆæ¯
 				SendNum = SendNum + 1
 			ElseIf Request.Form("sms_act")="Sms_Issave" Then
 				Sql="insert into Dv_Message (incept,sender,title,content,sendtime,flag,issend) values ('"& Dvbbs.CheckStr(InceptName) &"','"&Dvbbs.MemberName&"','"&title&"','"&message&"',"&SqlNowString&",0,0)"
-				subtype=BoxName(4)		'·¢¼şÏä
+				subtype=BoxName(4)		'å‘ä»¶ç®±
 			Else
 				Sql="insert into Dv_Message (incept,sender,title,content,sendtime,flag,issend) values ('"& Dvbbs.CheckStr(InceptName) &"','"&Dvbbs.MemberName&"','"&title&"','"&message&"',"&SqlNowString&",0,1)"
-				subtype=BoxName(2)		'ÒÑ·¢ËÍµÄÏûÏ¢
+				subtype=BoxName(2)		'å·²å‘é€çš„æ¶ˆæ¯
 				SendNum = SendNum + 1
 			End If
 			Dvbbs.execute(sql)
@@ -383,7 +383,7 @@ Sub savemsg()
 		Exit For
 		End If
 	Next
-	'¸üĞÂÓÃ»§µ±ÈÕ·¢¶ÌĞÅÊı¾İÒÔ¼°»º´æ
+	'æ›´æ–°ç”¨æˆ·å½“æ—¥å‘çŸ­ä¿¡æ•°æ®ä»¥åŠç¼“å­˜
 	If SendNum > 0 Then
 		Dim iUserInfo
 		iUserInfo = Dvbbs.UserToday(0) & "|" & Dvbbs.UserToday(1) + SendNum & "|" & Dvbbs.UserToday(2) &"|"& Clng(Dvbbs.UserToday(3)) &"|"& Clng(Dvbbs.UserToday(4))
@@ -395,7 +395,7 @@ Sub savemsg()
 	Dvbbs.Dvbbs_Suc("<li>"+Replace(template.Strings(38),"{$SmsBOX}",subtype))
 End Sub
 
-'±£´æĞŞ¸Ä
+'ä¿å­˜ä¿®æ”¹
 Sub savedit()
 	Dim incept,title,message,subtype
 	If Clng(Dvbbs.GroupSetting(53))>0 And DateDiff("s",Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@joindate").text,Now)<Clng(Dvbbs.GroupSetting(53))*60 Then
@@ -441,16 +441,16 @@ Sub savedit()
 	End If
 	Rs.close:Set Rs=Nothing
 	If Request("sms_act")="Sms_Issend" Then
-		Sql="UPDATE Dv_Message Set incept='"&incept&"',title='"&title&"',content='"&message&"',sendtime="&SqlNowString&",flag=0,issend=1 WHERE id="&Dvbbs.checkStr(id) &" And Sender ='"&Dvbbs.MemberName&"'" Rem modify by Dv.Jastby Ö»ÔÊĞíĞŞ¸Ä×Ô¼º·¢ËÍµÄ¶ÌĞÅ 2008-1-10
-		subtype="·¢ËÍÏä"
+		Sql="UPDATE Dv_Message Set incept='"&incept&"',title='"&title&"',content='"&message&"',sendtime="&SqlNowString&",flag=0,issend=1 WHERE id="&Dvbbs.checkStr(id) &" And Sender ='"&Dvbbs.MemberName&"'" Rem modify by Dv.Jastby åªå…è®¸ä¿®æ”¹è‡ªå·±å‘é€çš„çŸ­ä¿¡ 2008-1-10
+		subtype="å‘é€ç®±"
 		SendNum = 1
 	Else
-		Sql="UPDATE Dv_Message Set incept='"&incept&"',title='"&title&"',content='"&message&"',sendtime="&SqlNowString&",flag=0,issend=0 WHERE id="&Dvbbs.checkStr(id) &" And Sender ='"&Dvbbs.MemberName&"'" Rem modify by Dv.Jastby Ö»ÔÊĞíĞŞ¸Ä×Ô¼º·¢ËÍµÄ¶ÌĞÅ 2008-1-10
-		subtype="·¢¼şÏä"
+		Sql="UPDATE Dv_Message Set incept='"&incept&"',title='"&title&"',content='"&message&"',sendtime="&SqlNowString&",flag=0,issend=0 WHERE id="&Dvbbs.checkStr(id) &" And Sender ='"&Dvbbs.MemberName&"'" Rem modify by Dv.Jastby åªå…è®¸ä¿®æ”¹è‡ªå·±å‘é€çš„çŸ­ä¿¡ 2008-1-10
+		subtype="å‘ä»¶ç®±"
 	End If
 	Dvbbs.execute(sql)
 
-	'¸üĞÂÓÃ»§µ±ÈÕ·¢¶ÌĞÅÊı¾İÒÔ¼°»º´æ
+	'æ›´æ–°ç”¨æˆ·å½“æ—¥å‘çŸ­ä¿¡æ•°æ®ä»¥åŠç¼“å­˜
 	If SendNum > 0 Then
 		Dim iUserInfo
 		iUserInfo = Dvbbs.UserToday(0) & "|" & Dvbbs.UserToday(1) + SendNum & "|" & Dvbbs.UserToday(2) &"|"& Clng(Dvbbs.UserToday(3)) &"|"& Clng(Dvbbs.UserToday(4))
@@ -462,8 +462,8 @@ Sub savedit()
 	Dvbbs.Dvbbs_Suc("<li>"+Replace(template.Strings(38),"{$SmsBOX}",subtype))
 End Sub
 
-'-------------------------------------------------------------Âß¼­É¾³ı-----------------------------------------
-'ÊÕ¼şÂß¼­É¾³ı£¬ÖÃÓÚ»ØÊÕÕ¾£¬Èë¿Ú×Ö¶ÎDelR£¬¿ÉÓÃÓÚÅúÁ¿¼°µ¥¸öÉ¾³ı
+'-------------------------------------------------------------é€»è¾‘åˆ é™¤-----------------------------------------
+'æ”¶ä»¶é€»è¾‘åˆ é™¤ï¼Œç½®äºå›æ”¶ç«™ï¼Œå…¥å£å­—æ®µDelRï¼Œå¯ç”¨äºæ‰¹é‡åŠå•ä¸ªåˆ é™¤
 Sub Delinbox()
 If CheckID(id) = False Then
 	ErrCodes=ErrCodes+"<li>"+template.Strings(51)
@@ -480,10 +480,10 @@ Sub AllDelinbox()
 	UPDATE_User_Msg(Dvbbs.membername)
 End Sub
 
-'·¢¼şÂß¼­É¾³ı£¬ÖÃÓÚ»ØÊÕÕ¾£¬Èë¿Ú×Ö¶ÎDelS£¬¿ÉÓÃÓÚÅúÁ¿¼°µ¥¸öÉ¾³ı
+'å‘ä»¶é€»è¾‘åˆ é™¤ï¼Œç½®äºå›æ”¶ç«™ï¼Œå…¥å£å­—æ®µDelSï¼Œå¯ç”¨äºæ‰¹é‡åŠå•ä¸ªåˆ é™¤
 Sub Deloutbox()
 If CheckID(id) = False Then
-	ErrCodes=ErrCodes+"<meta http-equiv=refresh content=""2;URL="&Request.ServerVariables("HTTP_REFERER")&"""><li>"+template.Strings(51)&"2Ãëºó×Ô¶¯·µ»ØÉÏÒ»Ò³"
+	ErrCodes=ErrCodes+"<meta http-equiv=refresh content=""2;URL="&Request.ServerVariables("HTTP_REFERER")&"""><li>"+template.Strings(51)&"2ç§’åè‡ªåŠ¨è¿”å›ä¸Šä¸€é¡µ"
 Else
 	Dvbbs.execute("UPDATE Dv_Message Set DelS=1 WHERE sender='"&Dvbbs.MemberName&"' And issend=0 And id in ("&Dvbbs.checkStr(id)&")")
 	Dvbbs.Dvbbs_Suc("<li>"+template.Strings(36))
@@ -497,11 +497,11 @@ Sub AllDeloutbox()
 	UPDATE_User_Msg(Dvbbs.membername)
 End Sub
 
-'ÒÑ·¢ËÍÂß¼­É¾³ı£¬ÖÃÓÚ»ØÊÕÕ¾£¬Èë¿Ú×Ö¶ÎDelS£¬¿ÉÓÃÓÚÅúÁ¿¼°µ¥¸öÉ¾³ı
-'DelS£º0Î´²Ù×÷£¬1·¢ËÍÕßÉ¾³ı£¬2·¢ËÍÕß´Ó»ØÊÕÕ¾É¾³ı
+'å·²å‘é€é€»è¾‘åˆ é™¤ï¼Œç½®äºå›æ”¶ç«™ï¼Œå…¥å£å­—æ®µDelSï¼Œå¯ç”¨äºæ‰¹é‡åŠå•ä¸ªåˆ é™¤
+'DelSï¼š0æœªæ“ä½œï¼Œ1å‘é€è€…åˆ é™¤ï¼Œ2å‘é€è€…ä»å›æ”¶ç«™åˆ é™¤
 Sub DelISsend()
 If CheckID(id) = False Then
-	ErrCodes=ErrCodes+"<meta http-equiv=refresh content=""2;URL="&Request.ServerVariables("HTTP_REFERER")&"""><li>"+template.Strings(51)&"Á½Ãëºó×Ô¶¯·µ»Ø"
+	ErrCodes=ErrCodes+"<meta http-equiv=refresh content=""2;URL="&Request.ServerVariables("HTTP_REFERER")&"""><li>"+template.Strings(51)&"ä¸¤ç§’åè‡ªåŠ¨è¿”å›"
 Else 
 	Dvbbs.execute("UPDATE Dv_Message Set DelS=1 WHERE sender='"&Dvbbs.MemberName&"' And issend=1 And id in ("&Dvbbs.checkStr(id)&")")
 	Dvbbs.Dvbbs_Suc("<li>"+template.Strings(36))
@@ -509,14 +509,14 @@ Else
 End If
 End Sub
 
-'½«ÒÑ·¢ËÍµÄ¶ÌĞÅÒÆµ½»ØÊÕÕ¾¡£
+'å°†å·²å‘é€çš„çŸ­ä¿¡ç§»åˆ°å›æ”¶ç«™ã€‚
 Sub AllDelIssend()
 	Dvbbs.execute("UPDATE Dv_Message Set DelS=1 WHERE sender='"&Dvbbs.MemberName&"' And DelS=0 And issend=1")
 	Dvbbs.Dvbbs_Suc("<li>"+template.Strings(36))
 	UPDATE_User_Msg(Dvbbs.membername)
 End Sub
 
-'ÓÃ»§ÄÜÍêÈ«É¾³ıÊÕµ½ĞÅÏ¢ºÍÂß¼­É¾³ıËù·¢ËÍĞÅÏ¢£¬Âß¼­É¾³ıËù·¢ËÍĞÅÏ¢ÉèÖÃÈë¿Ú×Ö¶ÎDelS²ÎÊıÎª2
+'ç”¨æˆ·èƒ½å®Œå…¨åˆ é™¤æ”¶åˆ°ä¿¡æ¯å’Œé€»è¾‘åˆ é™¤æ‰€å‘é€ä¿¡æ¯ï¼Œé€»è¾‘åˆ é™¤æ‰€å‘é€ä¿¡æ¯è®¾ç½®å…¥å£å­—æ®µDelSå‚æ•°ä¸º2
 sub Delrecycle()
 If CheckID(id) = False Then
 	ErrCodes=ErrCodes+"<meta http-equiv=refresh content=""2;URL="&Request.ServerVariables("HTTP_REFERER")&"""><li>"+template.Strings(51)
@@ -529,18 +529,18 @@ Else
 End If
 End Sub
 
-'ÊÕĞÅÈË»ØÊÕÕ¾£º incept=ÊÕĞÅÈË DelR=1
-'·¢ĞÅÈË»ØÊÕÕ¾£º sender=ÊÕĞÅÈË DelS=2
-'Çå¿Õ¼°É¾³ı»ØÊÕÕ¾¼ÇÂ¼£¬½«²»ÔÚ»ØÊÕÕ¾µÄ¼ÇÂ¼·Åµ½»ØÊÕÕ¾ÄÚ
+'æ”¶ä¿¡äººå›æ”¶ç«™ï¼š incept=æ”¶ä¿¡äºº DelR=1
+'å‘ä¿¡äººå›æ”¶ç«™ï¼š sender=æ”¶ä¿¡äºº DelS=2
+'æ¸…ç©ºåŠåˆ é™¤å›æ”¶ç«™è®°å½•ï¼Œå°†ä¸åœ¨å›æ”¶ç«™çš„è®°å½•æ”¾åˆ°å›æ”¶ç«™å†…
 sub AllDelrecycle()
 	Dvbbs.execute("DelETE FROM Dv_Message WHERE incept='"&Dvbbs.MemberName&"' And DelR=1")	
 	Dvbbs.execute("UPDATE Dv_Message Set DelS=2 WHERE sender='"&Dvbbs.MemberName&"' And DelS=1")
-	'sucmsg=sucmsg+"<br/>"+"<li>É¾³ı¶ÌĞÅÏ¢³É¹¦¡£É¾³ıµÄÏûÏ¢½«²»¿É»Ö¸´¡£"
+	'sucmsg=sucmsg+"<br/>"+"<li>åˆ é™¤çŸ­ä¿¡æ¯æˆåŠŸã€‚åˆ é™¤çš„æ¶ˆæ¯å°†ä¸å¯æ¢å¤ã€‚"
 	Dvbbs.Dvbbs_Suc("<li>"+template.Strings(37))
 	UPDATE_User_Msg(Dvbbs.Membername)
 End Sub
 
-'É¾³ıµÄÏûÏ¢½«ÖÃÓÚÄúµÄ»ØÊÕÕ¾
+'åˆ é™¤çš„æ¶ˆæ¯å°†ç½®äºæ‚¨çš„å›æ”¶ç«™
 Sub Delete()
 If CheckID(id) = False Then
 	ErrCodes=ErrCodes+"<meta http-equiv=refresh content=""2;URL="&Request.ServerVariables("HTTP_REFERER")&"""><li>"+template.Strings(51)
@@ -553,7 +553,7 @@ End If
 End Sub
 
 '-------------------------------------------------------------------------------------------------------------
-'ÏÔÊ¾´íÎóĞÅÏ¢
+'æ˜¾ç¤ºé”™è¯¯ä¿¡æ¯
 Sub Showerr()
 Dim Show_Errmsg
 	If ErrCodes<>"" Then 
@@ -567,7 +567,7 @@ Dim Show_Errmsg
 	Response.write Show_Errmsg
 End Sub
 
-'ÓÃ»§ºÃÓÑÏÂÀ­Ãûµ¥
+'ç”¨æˆ·å¥½å‹ä¸‹æ‹‰åå•
 Function OPTION_Friend()
 DIM i
 Sql="SELECT F_friend FROM Dv_Friend WHERE F_userid="&Dvbbs.userid&" ORDER BY F_addtime DESC"
@@ -585,7 +585,7 @@ Else
 End If
 End Function
 
-'ºÚÃûµ¥ÑéÖ¤
+'é»‘åå•éªŒè¯
 Function CHKHateName(name)
 DIM Sql,Rs
 CHKHateName=False
@@ -598,7 +598,7 @@ If not Rs.eof Then
 End If
 End Function
 
-'¸üĞÂÓÃ»§¶ÌĞÅÍ¨ÖªĞÅÏ¢£¨ĞÂ¶ÌĞÅÌõÊı||ĞÂ¶ÌÑ¶ID||·¢ĞÅÈËÃû£©
+'æ›´æ–°ç”¨æˆ·çŸ­ä¿¡é€šçŸ¥ä¿¡æ¯ï¼ˆæ–°çŸ­ä¿¡æ¡æ•°||æ–°çŸ­è®¯ID||å‘ä¿¡äººåï¼‰
 Sub UPDATE_User_Msg(username)
 	Dim msginfo,i,UP_UserInfo,newmsg
 	newmsg=newincept(username)
@@ -615,7 +615,7 @@ Sub UPDATE_User_Msg(username)
 	End If
 End Sub
 
-'Í³¼ÆÁôÑÔ
+'ç»Ÿè®¡ç•™è¨€
 Function newincept(iusername)
 Dim Rs
 Rs=Dvbbs.execute("SELECT Count(id) FROM Dv_Message WHERE flag=0 And issend=1 And DelR=0 And incept='"& Dvbbs.CheckStr(iusername) &"'")

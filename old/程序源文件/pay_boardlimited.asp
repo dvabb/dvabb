@@ -11,7 +11,7 @@ Else
 		Response.redirect "index.asp?boardid="&Dvbbs.Boardid
 	End If
 End If
-dvbbs.stats="���ѽ�����֤��̳"
+dvbbs.stats="交费进入认证论坛"
 Dvbbs.Nav()
 Dvbbs.Head_var 1,Application(Dvbbs.CacheName&"_boardlist").documentElement.selectSingleNode("board[@boardid='"&Dvbbs.BoardID&"']/@depth").text,"",""
 Dvbbs.Showerr()
@@ -35,19 +35,19 @@ End If
 %>
 <table cellpadding=3 cellspacing=1 align=center class=tableborder1>
 <form action="pay_boardlimited.asp?action=subinfo&boardid=<%=Dvbbs.BoardID%>" method=post>
-<tr><th align=center colspan=2>���ѽ�����֤��̳</td></tr>
-<tr><td class=tablebody1 colspan=2 height=24>���ʸð������Ϊ����� <B><%=Dvbbs.Board_Setting(64)%></B> ���µķ���Ȩ�޽������� <B><%=UseMondy%></B> ����� �� <B><%=UseTicket%></B> �ŵ�ȯ��
+<tr><th align=center colspan=2>付费进入认证论坛</td></tr>
+<tr><td class=tablebody1 colspan=2 height=24>访问该版面规则为：获得 <B><%=Dvbbs.Board_Setting(64)%></B> 个月的访问权限将花费您 <B><%=UseMondy%></B> 个金币 或 <B><%=UseTicket%></B> 张点券。
 </td></tr>
-<tr><td class=tablebody1 colspan=2 height=24>��Ŀǰ���� ��� <B><%=Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usermoney").text%></B> �� �� ��ȯ <B><%=Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userticket").text%></B> �� �Ļ��ҵ�λ�ɹ�֧�� ��<a href="UserPay.asp?action=UserCenter" target="_blank"><font color=red>�һ���̳���</font></a> | <a href="UserPay.asp" target="_blank"><font color=red>������̳��ȯ</font></a> | <a href="plus_Tools_SmsPay.asp"><font color=red>�㲥�ֻ����Ż���̳��ȯ</font></a>��</td></tr>
-<tr><td class=tablebody1 colspan=2 height=24 style="line-height : 15px"><B>�������˵��</B>��<BR>
-1��ֻ��Ҫ��ҹ���ģ����۳�����Ӧ�Ľ�ң��������ܲ���<BR>
-2��ֻ��Ҫ��ȯ����ģ����۳�����Ӧ�ĵ�ȯ����ȯ��ֵ�뿴<a href="plus_Tools_Center.asp">��������</a>���������ܲ���<BR>
-3����Һ͵�ȯ���ܹ���ģ����ȿ۳���Ӧ�ĵ�ȯ�����������������Ľ���п۳���������߾��������ܲ���<BR>
+<tr><td class=tablebody1 colspan=2 height=24>您目前共有 金币 <B><%=Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usermoney").text%></B> 个 ＋ 点券 <B><%=Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userticket").text%></B> 张 的货币单位可供支付 （<a href="UserPay.asp?action=UserCenter" target="_blank"><font color=red>兑换论坛金币</font></a> | <a href="UserPay.asp" target="_blank"><font color=red>购买论坛点券</font></a> | <a href="plus_Tools_SmsPay.asp"><font color=red>点播手机短信获奖论坛点券</font></a>）</td></tr>
+<tr><td class=tablebody1 colspan=2 height=24 style="line-height : 15px"><B>购买操作说明</B>：<BR>
+1、只需要金币购买的，则会扣除您相应的金币，不够则不能操作<BR>
+2、只需要点券购买的，则会扣除您相应的点券，点券充值请看<a href="plus_Tools_Center.asp">道具中心</a>，不够则不能操作<BR>
+3、金币和点券都能购买的，优先扣除相应的点券数，如果不够则从您的金币中扣除，如果两者均不够则不能操作<BR>
 <%If Dvbbs.forum_setting(43)="1" Then%>
-4��Vip�û�ֻ�軨�� <B><font color=red><%=Dvbbs.Board_Setting(62)*Dvbbs.Board_Setting(66)%></font></B> ����� �� <B><font color=red><%=Dvbbs.Board_Setting(63)*Dvbbs.Board_Setting(66)%></font></B> �ŵ�ȯ ��<a href="JoinVipGroup.asp" target="_blank"><font color=red>����������ΪVIP�û�</font></a>��
+4、Vip用户只需花费 <B><font color=red><%=Dvbbs.Board_Setting(62)*Dvbbs.Board_Setting(66)%></font></B> 个金币 或 <B><font color=red><%=Dvbbs.Board_Setting(63)*Dvbbs.Board_Setting(66)%></font></B> 张点券 （<a href="JoinVipGroup.asp" target="_blank"><font color=red>现以升级成为VIP用户</font></a>）
 <%End If%>
 </td></tr>
-<tr><td align=center class=tablebody2 colspan=2><input type=submit value="ȷ��֧��"></td></tr>
+<tr><td align=center class=tablebody2 colspan=2><input type=submit value="确认支付"></td></tr>
 </form>
 </table>
 <%
@@ -65,9 +65,9 @@ Sub Subinfo()
 		GetUserTicket = GetUserTicket * cCur(Dvbbs.Board_Setting(66))
 	End If
 	If  CCur(Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userticket").text) <  GetUserTicket Then
-		Response.redirect "showerr.asp?ErrCodes=<li>���ĵ�ȯ��Ŀ���������ܹ��������̳����&action=OtherErr"
+		Response.redirect "showerr.asp?ErrCodes=<li>您的点券数目不够，不能购买进入论坛服务&action=OtherErr"
 	ElseIf CCur(Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usermoney").text) < GetUserMoney Then
-		Response.redirect "showerr.asp?ErrCodes=<li>���Ľ����Ŀ���������ܹ��������̳����&action=OtherErr"
+		Response.redirect "showerr.asp?ErrCodes=<li>您的金币数目不够，不能购买进入论坛服务&action=OtherErr"
 	Else
 	If GetUserTicket >0 Then
 		If CCur(Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userticket").text)-GetUserTicket>=0 Then
@@ -83,9 +83,9 @@ Sub Subinfo()
 	Dvbbs.Execute("Update Dv_User Set UserMoney = UserMoney - "&GetUserMoney&",UserTicket = UserTicket - "&GetUserTicket&" Where UserID=" & Dvbbs.UserID)
 	%>
 	<table cellpadding=3 cellspacing=1 align=center class=tableborder1>
-	<tr><th align=center colspan=2>���ѽ����������ɹ�</td></tr>
-	<tr><td class=tablebody1 colspan=2 height=24>��֧���� <B><%=GetUserMoney%></B> ����� �� <B><%=GetUserTicket%></B> �ŵ�ȯ����� <%=Dvbbs.BoardType%> �����ֹ�� <B><%=DateAdd("m",1,Now())%></B> �ķ���Ȩ��</td></tr>
-	<tr><td class=tablebody1 colspan=2 height=24><li><a href="list.asp?boardid=<%=Dvbbs.BoardID%>">����<%=Dvbbs.BoardType%></a></td></tr>
+	<tr><th align=center colspan=2>付费进入版面操作成功</td></tr>
+	<tr><td class=tablebody1 colspan=2 height=24>您支付了 <B><%=GetUserMoney%></B> 个金币 或 <B><%=GetUserTicket%></B> 张点券，获得 <%=Dvbbs.BoardType%> 版面截止到 <B><%=DateAdd("m",1,Now())%></B> 的访问权限</td></tr>
+	<tr><td class=tablebody1 colspan=2 height=24><li><a href="list.asp?boardid=<%=Dvbbs.BoardID%>">进入<%=Dvbbs.BoardType%></a></td></tr>
 	</table>
 <%
 End If
@@ -99,7 +99,7 @@ Function Add_SuperBoardUser(UserName)
 	If BoardUser="" Then
 		SuperBoardUser = UserName & "=" & Now()
 	Else
-		'������û�ԭ������Ϣ
+		'清除该用户原购买信息
 		BoardUser=Split(BoardUser,",")
 		For i=0 To Ubound(BoardUser)
 			SuperBoardUser_List_A = Split(BoardUser(i),"=")

@@ -6,8 +6,8 @@
 <%
 Dim RssDataMode,rsbody
 
-RssDataMode = "0"'0Îª²»È¡Ìû×ÓÄÚÈİ£¬1ÎªÈ¡Ìû×ÓÄÚÈİ£¬È¡Ìû×ÓÄÚÈİ½ÏÎªÏûºÄ×ÊÔ´
-'ÓÃ²ÎÊı¿ØÖÆ
+RssDataMode = "0"'0ä¸ºä¸å–å¸–å­å†…å®¹ï¼Œ1ä¸ºå–å¸–å­å†…å®¹ï¼Œå–å¸–å­å†…å®¹è¾ƒä¸ºæ¶ˆè€—èµ„æº
+'ç”¨å‚æ•°æ§åˆ¶
 
 Dim XMLDOM,node,Cnode,Cnode1,msginfo
 Set XMLDOM=Dvbbs.CreateXmlDoc("msxml2.FreeThreadedDOMDocument")
@@ -34,17 +34,17 @@ RssID = Clng(RssID)
 Sql = "Select Top 20 TopicID,Title,PostUserName,PostUserID,DateAndTime,BoardID,PostTable,GetMoneyType,HideName "
 Select Case RssID
 Case 1
-	RssTitle = "×îĞÂ20ÆªÂÛÌ³Ö÷Ìâ"
+	RssTitle = "æœ€æ–°20ç¯‡è®ºå›ä¸»é¢˜"
 	Sql = Sql & " From Dv_Topic Where Boardid <> 444 and BoardID <> 777 Order By DateAndTime Desc"
 Case 2
-	RssTitle = "×îĞÂ20ÆªÂÛÌ³¾«»ª"
+	RssTitle = "æœ€æ–°20ç¯‡è®ºå›ç²¾å"
 	If Dvbbs.BoardID=0 Then 
 		Sql = Sql & " From Dv_Topic Where IsBest=1 And Boardid <> 444 and BoardID <> 777 Order By DateAndTime Desc"
 	Else
 		Sql = Sql & " From Dv_Topic Where BoardID="&Dvbbs.BoardID&" and IsBest=1 And Boardid <> 444 and BoardID <> 777 Order By DateAndTime Desc"
 	End If
 Case 3
-	RssTitle = "½ñÈÕÈÈÃÅÖ÷Ìâ"
+	RssTitle = "ä»Šæ—¥çƒ­é—¨ä¸»é¢˜"
 	If IsSqlDataBase = 1 Then
 		Sql = Sql & " From Dv_Topic Where DateDiff(d,DateAndTime,"&SqlNowString&")=0 and Boardid <> 444 and BoardID <> 777 Order By Hits Desc"
 	Else
@@ -52,14 +52,14 @@ Case 3
 	End If
 Case 4
 	If Dvbbs.BoardID = 0 Then
-		RssTitle = "×îĞÂ20ÆªÂÛÌ³Ö÷Ìâ"
+		RssTitle = "æœ€æ–°20ç¯‡è®ºå›ä¸»é¢˜"
 		Sql = Sql & " From Dv_Topic where Boardid <> 444 and BoardID <> 777 Order By DateAndTime Desc"
 	Else
-		RssTitle = Dvbbs.BoardType & "×îĞÂ20ÆªÂÛÌ³Ö÷Ìâ"
+		RssTitle = Dvbbs.BoardType & "æœ€æ–°20ç¯‡è®ºå›ä¸»é¢˜"
 		Sql = Sql & " From Dv_Topic Where BoardID="&Dvbbs.BoardID&" Order By DateAndTime Desc"
 	End If
 Case 5
-	RssTitle = "×îĞÂ20ÆªÂÛÌ³¾«»ª"
+	RssTitle = "æœ€æ–°20ç¯‡è®ºå›ç²¾å"
 	If Dvbbs.BoardID=0 Then 
 		Sql = Sql & " From Dv_Topic Where IsBest=1 And Boardid <> 444 and BoardID <> 777 Order By DateAndTime Desc"
 	Else
@@ -67,14 +67,14 @@ Case 5
 	End If
 Case 6
 	If Dvbbs.BoardID = 0 Then
-		RssTitle = "½ñÈÕÈÈÃÅÖ÷Ìâ"
+		RssTitle = "ä»Šæ—¥çƒ­é—¨ä¸»é¢˜"
 		If IsSqlDataBase = 1 Then
 			Sql = Sql & " From Dv_Topic Where DateDiff(d,DateAndTime,"&SqlNowString&")=0  and Boardid <> 444 and BoardID <> 777 Order By Hits Desc"
 		Else
 			Sql = Sql & " From Dv_Topic Where DateDiff('d',DateAndTime,"&SqlNowString&")=0 and Boardid <> 444 and BoardID <> 777 Order By Hits Desc"
 		End If
 	Else
-		RssTitle = Dvbbs.BoardType & "½ñÈÕÈÈÃÅÖ÷Ìâ"
+		RssTitle = Dvbbs.BoardType & "ä»Šæ—¥çƒ­é—¨ä¸»é¢˜"
 		If IsSqlDataBase = 1 Then
 			Sql = Sql & " From Dv_Topic Where BoardID="&Dvbbs.BoardID&" And  DateDiff(d,DateAndTime,"&SqlNowString&")=0  and Boardid <> 444 and BoardID <> 777 Order By Hits Desc"
 		Else
@@ -83,16 +83,16 @@ Case 6
 	End If
 Case 7
 	If Dvbbs.UserID = 0 Then
-		RssTitle = "´íÎóĞÅÏ¢"
+		RssTitle = "é”™è¯¯ä¿¡æ¯"
 	Else
-		RssTitle = "ÊÕÈ¡ÂÛÌ³¶ÌĞÅ"
+		RssTitle = "æ”¶å–è®ºå›çŸ­ä¿¡"
 	End If
 Case 8
 Case 9
 Case Else
-	RssTitle = "»ñÈ¡ÆµµÀÁĞ±í"
+	RssTitle = "è·å–é¢‘é“åˆ—è¡¨"
 End Select
-If RssDataMode<>"0" Then RssTitle =RssTitle &"-È«ÎÄ"
+If RssDataMode<>"0" Then RssTitle =RssTitle &"-å…¨æ–‡"
 node.appendChild(XMLDOM.createNode(1,"title","")).text=Dvbbs.Forum_Info(0)&"--"&RssTitle
 node.appendChild(XMLDOM.createNode(1,"link","")).text=Dvbbs.Forum_info(1)
 node.appendChild(XMLDOM.createNode(1,"language","")).text="zh-cn"
@@ -106,33 +106,33 @@ Cnode.appendChild(XMLDOM.createNode(1,"title","")).text = Dvbbs.Forum_Info(0)
 Select Case RssID
 Case 0
 	Set Cnode=node.appendChild(XMLDOM.createNode(1,"item",""))
-	Cnode.appendChild(XMLDOM.createNode(1,"title","")).text=Dvbbs.Forum_Info(0)&"--ÆµµÀÁĞ±í"
+	Cnode.appendChild(XMLDOM.createNode(1,"title","")).text=Dvbbs.Forum_Info(0)&"--é¢‘é“åˆ—è¡¨"
 	Cnode.appendChild(XMLDOM.createNode(1,"link","")).text=Dvbbs.Forum_info(1)
 	Cnode.appendChild(XMLDOM.createNode(1,"author","")).text=Dvbbs.Forum_info(0)
 	Cnode.appendChild(XMLDOM.createNode(1,"pubDate","")).text=Now()
 	Set Cnode1=Cnode.appendChild(XMLDOM.createNode(1,"description",""))
-	msginfo= "<b>×îĞÂ20ÆªÂÛÌ³Ö÷Ìâ</b>£º<a href="""&RssHomePageUrl&"RssFeed.asp?RssID=1"">"&RssHomePageUrl&"RssFeed.asp?RssID=1</a>"
+	msginfo= "<b>æœ€æ–°20ç¯‡è®ºå›ä¸»é¢˜</b>ï¼š<a href="""&RssHomePageUrl&"RssFeed.asp?RssID=1"">"&RssHomePageUrl&"RssFeed.asp?RssID=1</a>"
 	msginfo=msginfo& "<br />"
-	msginfo=msginfo& "<b>×îĞÂ20ÆªÂÛÌ³Ö÷Ìâ-È«ÎÄ</b>£º<a href="""&RssHomePageUrl&"RssFeed.asp?RssID=1&RssDataMode=1"">"&RssHomePageUrl&"RssFeed.asp?RssID=1&RssDataMode=1</a>"
+	msginfo=msginfo& "<b>æœ€æ–°20ç¯‡è®ºå›ä¸»é¢˜-å…¨æ–‡</b>ï¼š<a href="""&RssHomePageUrl&"RssFeed.asp?RssID=1&RssDataMode=1"">"&RssHomePageUrl&"RssFeed.asp?RssID=1&RssDataMode=1</a>"
 	msginfo=msginfo& "<br />"
-	msginfo=msginfo& "<b>×îĞÂ20ÆªÂÛÌ³¾«»ª</b>£º<a href="""&RssHomePageUrl&"RssFeed.asp?RssID=2"">"&RssHomePageUrl&"RssFeed.asp?RssID=2</a>"
+	msginfo=msginfo& "<b>æœ€æ–°20ç¯‡è®ºå›ç²¾å</b>ï¼š<a href="""&RssHomePageUrl&"RssFeed.asp?RssID=2"">"&RssHomePageUrl&"RssFeed.asp?RssID=2</a>"
 	msginfo=msginfo& "<br />"
-	msginfo=msginfo& "<b>×îĞÂ20ÆªÂÛÌ³¾«»ª-È«ÎÄ</b>£º<a href="""&RssHomePageUrl&"RssFeed.asp?RssID=2&RssDataMode=1"">"&RssHomePageUrl&"RssFeed.asp?RssID=2&RssDataMode=1</a>"
+	msginfo=msginfo& "<b>æœ€æ–°20ç¯‡è®ºå›ç²¾å-å…¨æ–‡</b>ï¼š<a href="""&RssHomePageUrl&"RssFeed.asp?RssID=2&RssDataMode=1"">"&RssHomePageUrl&"RssFeed.asp?RssID=2&RssDataMode=1</a>"
 	msginfo=msginfo& "<br />"
-	msginfo=msginfo& "<b>½ñÈÕÈÈÃÅÖ÷Ìâ</b>£º<a href="""&RssHomePageUrl&"RssFeed.asp?RssID=3"">"&RssHomePageUrl&"RssFeed.asp?RssID=3</a>"
+	msginfo=msginfo& "<b>ä»Šæ—¥çƒ­é—¨ä¸»é¢˜</b>ï¼š<a href="""&RssHomePageUrl&"RssFeed.asp?RssID=3"">"&RssHomePageUrl&"RssFeed.asp?RssID=3</a>"
 	msginfo=msginfo& "<br />"
-	msginfo=msginfo& "<b>½ñÈÕÈÈÃÅÖ÷Ìâ-È«ÎÄ</b>£º<a href="""&RssHomePageUrl&"RssFeed.asp?RssID=3&RssDataMode=1"">"&RssHomePageUrl&"RssFeed.asp?RssID=3&RssDataMode=1</a>"
+	msginfo=msginfo& "<b>ä»Šæ—¥çƒ­é—¨ä¸»é¢˜-å…¨æ–‡</b>ï¼š<a href="""&RssHomePageUrl&"RssFeed.asp?RssID=3&RssDataMode=1"">"&RssHomePageUrl&"RssFeed.asp?RssID=3&RssDataMode=1</a>"
 	msginfo=msginfo& "<br />"
-	msginfo=msginfo& "<b>°æÃæĞÅÏ¢¶©ÔÄ£¬µã»÷Ïà¹Ø×ÖÑù²é¿´Á¬½Ó</b>£º"
+	msginfo=msginfo& "<b>ç‰ˆé¢ä¿¡æ¯è®¢é˜…ï¼Œç‚¹å‡»ç›¸å…³å­—æ ·æŸ¥çœ‹è¿æ¥</b>ï¼š"
 	msginfo=msginfo& "<br />"
 	Dim bnode
 	For each bnode in Application(Dvbbs.CacheName&"_boardlist").documentElement.selectNodes("board")
-		msginfo=msginfo& BNode.attributes.getNamedItem("boardtype").text & "µÄ <a href="""&RssHomePageUrl&"RssFeed.asp?RssID=4&BoardID="&BNode.attributes.getNamedItem("boardid").text&""">×îĞÂÖ÷Ìâ</a>¡¢<a href="""&RssHomePageUrl&"RssFeed.asp?RssID=6&BoardID="&BNode.attributes.getNamedItem("boardid").text&""">½ñÈÕÈÈÃÅ</a>¡¢<a href="""&RssHomePageUrl&"RssFeed.asp?RssID=2&BoardID="&BNode.attributes.getNamedItem("boardid").text&""">×îĞÂ¾«»ª</a>"
+		msginfo=msginfo& BNode.attributes.getNamedItem("boardtype").text & "çš„ <a href="""&RssHomePageUrl&"RssFeed.asp?RssID=4&BoardID="&BNode.attributes.getNamedItem("boardid").text&""">æœ€æ–°ä¸»é¢˜</a>ã€<a href="""&RssHomePageUrl&"RssFeed.asp?RssID=6&BoardID="&BNode.attributes.getNamedItem("boardid").text&""">ä»Šæ—¥çƒ­é—¨</a>ã€<a href="""&RssHomePageUrl&"RssFeed.asp?RssID=2&BoardID="&BNode.attributes.getNamedItem("boardid").text&""">æœ€æ–°ç²¾å</a>"
 		msginfo=msginfo& "<br />"
-		msginfo=msginfo& BNode.attributes.getNamedItem("boardtype").text & "µÄ <a href="""&RssHomePageUrl&"RssFeed.asp?RssID=4&RssDataMode=1&BoardID="&BNode.attributes.getNamedItem("boardid").text&""">×îĞÂÖ÷Ìâ-È«ÎÄ</a>¡¢<a href="""&RssHomePageUrl&"RssFeed.asp?RssID=6&RssDataMode=1&BoardID="&BNode.attributes.getNamedItem("boardid").text&""">½ñÈÕÈÈÃÅ-È«ÎÄ</a>¡¢<a href="""&RssHomePageUrl&"RssFeed.asp?RssID=2&RssDataMode=1&BoardID="&BNode.attributes.getNamedItem("boardid").text&""">×îĞÂ¾«»ª-È«ÎÄ</a>"
+		msginfo=msginfo& BNode.attributes.getNamedItem("boardtype").text & "çš„ <a href="""&RssHomePageUrl&"RssFeed.asp?RssID=4&RssDataMode=1&BoardID="&BNode.attributes.getNamedItem("boardid").text&""">æœ€æ–°ä¸»é¢˜-å…¨æ–‡</a>ã€<a href="""&RssHomePageUrl&"RssFeed.asp?RssID=6&RssDataMode=1&BoardID="&BNode.attributes.getNamedItem("boardid").text&""">ä»Šæ—¥çƒ­é—¨-å…¨æ–‡</a>ã€<a href="""&RssHomePageUrl&"RssFeed.asp?RssID=2&RssDataMode=1&BoardID="&BNode.attributes.getNamedItem("boardid").text&""">æœ€æ–°ç²¾å-å…¨æ–‡</a>"
 		msginfo=msginfo& "<br />"
 	Next
-	msginfo=msginfo& "<b>ÊÕÈ¡ÂÛÌ³¶ÌĞÅ</b>£º<a href="""&RssHomePageUrl&"RssFeed.asp?RssID=7"">"&RssHomePageUrl&"RssFeed.asp?RssID=7</a>"
+	msginfo=msginfo& "<b>æ”¶å–è®ºå›çŸ­ä¿¡</b>ï¼š<a href="""&RssHomePageUrl&"RssFeed.asp?RssID=7"">"&RssHomePageUrl&"RssFeed.asp?RssID=7</a>"
 	msginfo=msginfo& "<br />"
 	Cnode1.appendChild(XMLDOM.createCDATASection(replace(msginfo,"]]>","]]&gt;")))
 Case 7
@@ -140,12 +140,12 @@ Case Else
 	Set Rs=Dvbbs.Execute(Sql)
 	If Rs.Eof And Rs.Bof Then
 		Set Cnode=node.appendChild(XMLDOM.createNode(1,"item",""))
-		Cnode.appendChild(XMLDOM.createNode(1,"title","")).text="½ñÈÕÃ»ÓĞ¸üĞÂĞÅÏ¢"
+		Cnode.appendChild(XMLDOM.createNode(1,"title","")).text="ä»Šæ—¥æ²¡æœ‰æ›´æ–°ä¿¡æ¯"
 		Cnode.appendChild(XMLDOM.createNode(1,"link","")).text=Dvbbs.Forum_info(1)
 		Cnode.appendChild(XMLDOM.createNode(1,"author","")).text=Dvbbs.Forum_info(0)
 		Cnode.appendChild(XMLDOM.createNode(1,"pubDate","")).text=Now()
 		Set Cnode1=Cnode.appendChild(XMLDOM.createNode(1,"description",""))
-		msginfo= "½ñÈÕÃ»ÓĞ¸üĞÂĞÅÏ¢£¡"
+		msginfo= "ä»Šæ—¥æ²¡æœ‰æ›´æ–°ä¿¡æ¯ï¼"
 		Cnode1.appendChild(XMLDOM.createCDATASection(replace(msginfo,"]]>","]]&gt;")))
 	Else
 		Do While Not Rs.Eof
@@ -158,14 +158,14 @@ Case Else
 			End If
 			If Dvbbs.Boardid <>0 Then
 				If Rs(8)=1 And Dvbbs.Board_Setting(68)="1" And Not Dvbbs.Boardmaster Then
-					Cnode.appendChild(XMLDOM.createNode(1,"author","")).text="ÄäÃûÓÃ»§"
+					Cnode.appendChild(XMLDOM.createNode(1,"author","")).text="åŒ¿åç”¨æˆ·"
 				Else
 					Cnode.appendChild(XMLDOM.createNode(1,"author","")).text=Rs(2)&""
 				End If
 			Else
 				If Rs(8)=1 and Not(Dvbbs.Master Or Dvbbs.Superboardmaster) Then
 					If Board_Setting68(Rs(5))=1 Then
-							Cnode.appendChild(XMLDOM.createNode(1,"author","")).text="ÄäÃûÓÃ»§"
+							Cnode.appendChild(XMLDOM.createNode(1,"author","")).text="åŒ¿åç”¨æˆ·"
 					Else
 							Cnode.appendChild(XMLDOM.createNode(1,"author","")).text=Rs(2)&""
 					End If
@@ -177,14 +177,14 @@ Case Else
 			Set Cnode1=Cnode.appendChild(XMLDOM.createNode(1,"description",""))
 			
 			If RssDataMode="0" Then 
-				msginfo=  "Òªä¯ÀÀ±¾ÌõĞÅÏ¢Çëµã»÷±êÌâ¡£"
+				msginfo=  "è¦æµè§ˆæœ¬æ¡ä¿¡æ¯è¯·ç‚¹å‡»æ ‡é¢˜ã€‚"
 			Else
 				If Rs("GetMoneyType")=3 Then
-					msginfo = "±¾Ìù×ÓÄÚÈİ¾­¹ıÌØÊâ¼ÓÃÜ£¬Çëµ½ÂÛÌ³Ö±½Ó²é¿´"
+					msginfo = "æœ¬è´´å­å†…å®¹ç»è¿‡ç‰¹æ®ŠåŠ å¯†ï¼Œè¯·åˆ°è®ºå›ç›´æ¥æŸ¥çœ‹"
 				Else
 					Set rsbody=Dvbbs.Execute("Select top 1 t.body,t.ubblist,u.LockUser,U.UserGroupID,t.isbest,t.BoardID From "&Rs("posttable")&" t Inner Join [dv_user] U On T.postuserid=u.userid Where  RootID="&Rs(0)&"  And t.BoardID<>444 and t.BoardID <>777 Order by AnnounceID asc")
 					If RsBody.EOF Then
-						msginfo = "Êı¾İ´íÎó»ò¶ªÊ§¡£"
+						msginfo = "æ•°æ®é”™è¯¯æˆ–ä¸¢å¤±ã€‚"
 					Else
 						If Dvbbs.BoardID<>0 Then 
 							If Rsbody(2)=0 Then
@@ -192,10 +192,10 @@ Case Else
 								Ubblists=RSbody(1)&""
 									msginfo= dv_ubb.Dv_UbbCode(Rsbody(0),Rsbody(3),2,0)
 								Else
-									msginfo = "¾«»ªÌùÄÚÈİĞèÒªÓĞÈ¨ÏŞ²Å¿ÉÒÔä¯ÀÀ"		
+									msginfo = "ç²¾åè´´å†…å®¹éœ€è¦æœ‰æƒé™æ‰å¯ä»¥æµè§ˆ"		
 								End If
 							Else
-								msginfo = "´ËÓÃ»§ÒÑ¾­±»Ëø¶¨,»òÆÁ±Î,²»ÏÔÊ¾·¢ÑÔÄÚÈİ"		
+								msginfo = "æ­¤ç”¨æˆ·å·²ç»è¢«é”å®š,æˆ–å±è”½,ä¸æ˜¾ç¤ºå‘è¨€å†…å®¹"		
 							End If
 						Else
 							If GetSetting(Rsbody(5)) Then 
@@ -204,13 +204,13 @@ Case Else
 										Ubblists=RSbody(1)&""
 										msginfo = dv_ubb.Dv_UbbCode(Rsbody(0),Rsbody(3),2,0)
 									Else
-										msginfo = "¾«»ªÌùÄÚÈİĞèÒªÓĞÈ¨ÏŞ²Å¿ÉÒÔä¯ÀÀ"		
+										msginfo = "ç²¾åè´´å†…å®¹éœ€è¦æœ‰æƒé™æ‰å¯ä»¥æµè§ˆ"		
 									End If
 								Else
-									msginfo = "´ËÓÃ»§ÒÑ¾­±»Ëø¶¨,»òÆÁ±Î,²»ÏÔÊ¾·¢ÑÔÄÚÈİ"		
+									msginfo = "æ­¤ç”¨æˆ·å·²ç»è¢«é”å®š,æˆ–å±è”½,ä¸æ˜¾ç¤ºå‘è¨€å†…å®¹"		
 								End If
 							Else
-								msginfo = "ÄúÃ»ÓĞ²é¿´ÄÚÈİµÄÈ¨ÏŞ¡£"		
+								msginfo = "æ‚¨æ²¡æœ‰æŸ¥çœ‹å†…å®¹çš„æƒé™ã€‚"		
 							End If
 						
 						End If			
@@ -233,11 +233,11 @@ Function Board_Setting68(bid)
 End Function
 
 Sub TransNode(XmlDoc)
-	'XSLTÄ£°å×ª»»¿ªÊ¼
+	'XSLTæ¨¡æ¿è½¬æ¢å¼€å§‹
 	Dim Xmlskin,Proc,XmlStyle
 	Set Xmlskin = Dvbbs.CreateXmlDoc("msxml2.FreeThreadedDOMDocument"& MsxmlVersion)
 	If Not (Xmlskin.load(Server.MapPath("inc/Templates/rss.xslt"))) Then
-		Response.Write "Ä£°åÊı¾İ³ö´í£¬ÇëÓë¹ÜÀíÔ±ÁªÏµ£¡"
+		Response.Write "æ¨¡æ¿æ•°æ®å‡ºé”™ï¼Œè¯·ä¸ç®¡ç†å‘˜è”ç³»ï¼"
 		Response.End
 	End If
 	Set XMLStyle=Dvbbs.iCreateObject("msxml2.XSLTemplate" & MsxmlVersion)
@@ -253,8 +253,8 @@ End Sub
 
 Sub ShowXML()
 	Response.Clear
-	Response.CharSet="gb2312"  'Êı¾İ¼¯
-	Response.ContentType="text/xml"  'Êı¾İÁ÷¸ñÊ½¶¨Òå
+	Response.CharSet="gb2312"  'æ•°æ®é›†
+	Response.ContentType="text/xml"  'æ•°æ®æµæ ¼å¼å®šä¹‰
 	Response.Write "<?xml version=""1.0"" encoding=""gb2312""?>"&vbNewLine
 	Response.Write "<?xml-stylesheet type=""text/xsl"" href=""inc/Templates/rss.xslt"" ?>"&vbNewLine
 	Response.Write XMLDOM.xml
@@ -263,7 +263,7 @@ End Sub
 
 Sub ShowHtml()
 	Response.Clear
-	Response.CharSet="gb2312"  'Êı¾İ¼¯
+	Response.CharSet="gb2312"  'æ•°æ®é›†
 	TransNode(XMLDOM)
 	Set XMLDOM=Nothing
 End Sub
@@ -308,11 +308,11 @@ Function GetSetting(BoardID)
 		Exit Function
 	End If
 	If Dvbbs.GroupSetting(0)="0"  Then Dvbbs.AddErrCode(27)
-	'·ÃÎÊÂÛÌ³ÏŞÖÆ(°üÀ¨ÎÄÕÂ¡¢»ı·Ö¡¢½ğÇ®¡¢÷ÈÁ¦¡¢ÍşÍû¡¢¾«»ª¡¢±»É¾Êı¡¢×¢²áÊ±¼ä)
+	'è®¿é—®è®ºå›é™åˆ¶(åŒ…æ‹¬æ–‡ç« ã€ç§¯åˆ†ã€é‡‘é’±ã€é­…åŠ›ã€å¨æœ›ã€ç²¾åã€è¢«åˆ æ•°ã€æ³¨å†Œæ—¶é—´)
 	Dim BoardUserLimited
 	BoardUserLimited = Split(Board_Setting(54),"|")
 	If Ubound(BoardUserLimited)=8 Then
-		'ÎÄÕÂ
+		'æ–‡ç« 
 		If Trim(BoardUserLimited(0))<>"0" And IsNumeric(BoardUserLimited(0)) Then
 			If Dvbbs.UserID = 0 Then 
 				GetSetting=False
@@ -323,7 +323,7 @@ Function GetSetting(BoardID)
 				Exit Function
 			End If
 		End If
-		'»ı·Ö
+		'ç§¯åˆ†
 		If Trim(BoardUserLimited(1))<>"0" And IsNumeric(BoardUserLimited(1)) Then
 			If Dvbbs.UserID = 0 Then
 				GetSetting=False
@@ -334,7 +334,7 @@ Function GetSetting(BoardID)
 				Exit Function
 			End If
 		End If
-		'½ğÇ®
+		'é‡‘é’±
 		If Trim(BoardUserLimited(2))<>"0" And IsNumeric(BoardUserLimited(2)) Then
 			If Dvbbs.UserID = 0 Then 
 				GetSetting=False
@@ -345,7 +345,7 @@ Function GetSetting(BoardID)
 				Exit Function
 			End If
 		End If
-		'÷ÈÁ¦
+		'é­…åŠ›
 		If Trim(BoardUserLimited(3))<>"0" And IsNumeric(BoardUserLimited(3)) Then
 			If Dvbbs.UserID = 0 Then
 				GetSetting=False
@@ -356,7 +356,7 @@ Function GetSetting(BoardID)
 				Exit Function
 			End If
 		End If
-		'ÍşÍû
+		'å¨æœ›
 		If Trim(BoardUserLimited(4))<>"0" And IsNumeric(BoardUserLimited(4)) Then
 			If Dvbbs.UserID = 0 Then 
 				GetSetting=False
@@ -367,7 +367,7 @@ Function GetSetting(BoardID)
 				Exit Function
 			End If
 		End If
-		'¾«»ª
+		'ç²¾å
 		If Trim(BoardUserLimited(5))<>"0" And IsNumeric(BoardUserLimited(5)) Then
 			If Dvbbs.UserID = 0 Then
 				GetSetting=False
@@ -378,7 +378,7 @@ Function GetSetting(BoardID)
 				Exit Function
 			End If
 		End If
-		'É¾Ìù
+		'åˆ è´´
 		If Trim(BoardUserLimited(6))<>"0" And IsNumeric(BoardUserLimited(6)) Then
 			If Dvbbs.UserID = 0 Then
 				GetSetting=False
@@ -389,7 +389,7 @@ Function GetSetting(BoardID)
 				Exit Function
 			End If
 		End If
-		'×¢²áÊ±¼ä
+		'æ³¨å†Œæ—¶é—´
 		If Trim(BoardUserLimited(7))<>"0" And IsNumeric(BoardUserLimited(7)) Then
 			If Dvbbs.UserID = 0 Then 	
 				GetSetting=False
@@ -402,7 +402,7 @@ Function GetSetting(BoardID)
 		End If
 		
 	End If
-	'ÈÏÖ¤°æ¿éÅĞ¶ÏBoard_Setting(2)
+	'è®¤è¯ç‰ˆå—åˆ¤æ–­Board_Setting(2)
 	If Board_Setting(2)="1" Then
 		If Dvbbs.UserID=0 Then
 			GetSetting=False
@@ -410,7 +410,7 @@ Function GetSetting(BoardID)
 		Else
 			Dim Boarduser,Canlogin,i
 			Canlogin = False
-			If Ubound(Boarduser)=-1 Then	'Îª¿ÕÊ±ÖµµÈÓÚ-1
+			If Ubound(Boarduser)=-1 Then	'ä¸ºç©ºæ—¶å€¼ç­‰äº-1
 				GetSetting=False
 				Exit Function
 			Else

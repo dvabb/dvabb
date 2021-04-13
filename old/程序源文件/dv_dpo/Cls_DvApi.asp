@@ -44,11 +44,11 @@ Class DvApi
 	End Sub
 	
 	'--------------------------------------------------
-	'²ÎÊı £º
-	'NodeName ½ÚµãÃû
-	'NodeText Öµ
-	'NodeType ±£´æÀàĞÍ [text=0,cdata=1] 
-	'blnEncode ÊÇ·ñ±àÂë [true,false]
+	'å‚æ•° ï¼š
+	'NodeName èŠ‚ç‚¹å
+	'NodeText å€¼
+	'NodeType ä¿å­˜ç±»å‹ [text=0,cdata=1] 
+	'blnEncode æ˜¯å¦ç¼–ç  [true,false]
 	'--------------------------------------------------
 	Public Sub NodeValue(Byval NodeName,Byval NodeText,Byval NodeType ,Byval blnEncode)
 		Dim ChildNode,CreateCDATASection
@@ -71,9 +71,9 @@ Class DvApi
 	End Sub
 
 	'--------------------------------------------------
-	'»ñÈ¡·¢ËÍ°üXMLÖĞ½ÚµãµÄÖµ
-	'²ÎÊı £º
-	'Str ½ÚµãÃû
+	'è·å–å‘é€åŒ…XMLä¸­èŠ‚ç‚¹çš„å€¼
+	'å‚æ•° ï¼š
+	'Str èŠ‚ç‚¹å
 	'--------------------------------------------------
 	Public Property Get XmlNode(Byval Str)
 		If XmlDoc.documentElement.selectSingleNode(Str) is Nothing Then
@@ -84,11 +84,11 @@ Class DvApi
 	End Property
 
 	'--------------------------------------------------
-	'»ñÈ¡·µ»ØXMLÊı¾İ¶ÔÏó
-	'Àı£º
+	'è·å–è¿”å›XMLæ•°æ®å¯¹è±¡
+	'ä¾‹ï¼š
 	'DvApi_Obj.GetAppid = "dvbbs"
 	'If DvApi_Obj.GetXmlData<>Null Then Response.Write DvApi_Obj.GetXmlData.xml
-	'µ±GetXmlData²»ÎªNULLÊ±£¬GetXmlDataÎªXML¶ÔÏó
+	'å½“GetXmlDataä¸ä¸ºNULLæ—¶ï¼ŒGetXmlDataä¸ºXMLå¯¹è±¡
 	'--------------------------------------------------
 	Public Property Get GetXmlData()
 		Dim GetXmlDoc
@@ -114,13 +114,13 @@ Class DvApi
 				LoadAppid = Lcase(GetXmlDoc.documentElement.selectSingleNode("appid").Text)
 				GetData.add LoadAppid,GetXmlDoc
 				Status = GetXmlDoc.documentElement.selectSingleNode("status").Text
-				MessageCode = MessageCode & LoadAppid & "(" & Status &")£º" & GetXmlDoc.documentElement.selectSingleNode("body/message").Text
-				If Status = "1" Then 'µ±·¢Éú´íÎóÊ±ÍË³ö
+				MessageCode = MessageCode & LoadAppid & "(" & Status &")ï¼š" & GetXmlDoc.documentElement.selectSingleNode("body/message").Text
+				If Status = "1" Then 'å½“å‘ç”Ÿé”™è¯¯æ—¶é€€å‡º
 					Exit For
 				End If
 			Else
 				Status = "1"
-				MessageCode = "ÇëÇóÊı¾İ´íÎó£¡"
+				MessageCode = "è¯·æ±‚æ•°æ®é”™è¯¯ï¼"
 				Exit For
 			End If
 		Next
@@ -133,9 +133,9 @@ Class DvApi
 	End Property
 	
 	'--------------------------------------------------
-	'Ğ´COOKIEµ÷ÓÃ 
-	'²ÎÊı
-	'C_Syskey ÃÜÔ¿£¬C_UserName ÓÃ»§Ãû£¬C_PassWord ¼ÓÃÜµÄÓÃ»§ÃÜÂë £¬C_SetType ±£´æCOOKIEÊ±¼ä
+	'å†™COOKIEè°ƒç”¨ 
+	'å‚æ•°
+	'C_Syskey å¯†é’¥ï¼ŒC_UserName ç”¨æˆ·åï¼ŒC_PassWord åŠ å¯†çš„ç”¨æˆ·å¯†ç  ï¼ŒC_SetType ä¿å­˜COOKIEæ—¶é—´
 	'--------------------------------------------------
 	Public Function SetCookie(Byval C_Syskey,Byval C_UserName,Byval C_PassWord,Byval C_SetType)
 		Dim i,TempStr
@@ -147,7 +147,7 @@ Class DvApi
 	End Function
 
 	'--------------------------------------------------
-	'´òÓ¡·¢ËÍÇëÇóXMLÊı¾İ
+	'æ‰“å°å‘é€è¯·æ±‚XMLæ•°æ®
 	'--------------------------------------------------
 	Public Sub PrintXmlData()
 		Response.Clear
@@ -159,7 +159,7 @@ Class DvApi
 	End Sub
 
 	'--------------------------------------------------
-	'´òÓ¡·µ»ØXMLÊı¾İ
+	'æ‰“å°è¿”å›XMLæ•°æ®
 	'DvApi_Obj.GetAppid = "dvbbs"
 	'DvApi_Obj.PrintGetXmlData
 	'--------------------------------------------------

@@ -41,7 +41,7 @@ Sub hotTopic()
 		'SQL1="Select count(*) From Dv_Topic Where Boardid in ("& blist &") and Datediff('d',LastPostTime, " & SqlNowString & ") < 15 And hits > 20"
 	End If
 	'Set Rs1=Dvbbs.Execute(SQL1)
-	'¼ÆËãÒ»ÏÂµ±Ç°Page²ÎÊıÊÇ·ñºÏ·¨¡£Èç¹û³¬³ö·¶Î§£¬Ç¿ÖÆÎª×îºóÒ»Ò³
+	'è®¡ç®—ä¸€ä¸‹å½“å‰Pageå‚æ•°æ˜¯å¦åˆæ³•ã€‚å¦‚æœè¶…å‡ºèŒƒå›´ï¼Œå¼ºåˆ¶ä¸ºæœ€åä¸€é¡µ
 	If Not IsObject(Conn) Then ConnectionDatabase
 	Rs.Open Sql,Conn,1,1
 	If Rs.Eof And Rs.Bof Then Exit Sub
@@ -66,7 +66,7 @@ Sub hotTopic()
 		Set Node=Dvbbs.ArrayToxml(SQL,rs,"row","datarows")
 		For each node1 in node.documentElement.selectNodes("row")
 			If node1.selectSingleNode("@hidename").text="1" Then
-				node1.selectSingleNode("@postusername").text="ÄäÃûÓÃ»§"
+				node1.selectSingleNode("@postusername").text="åŒ¿åç”¨æˆ·"
 			End If
 		Next
 		XMLDom.documentElement.appendChild(node.documentElement)
@@ -120,7 +120,7 @@ Dim Rs,SQL,SQL1,Rs1,page,PageCount,node,node1
 	SQL="Select TopicID,Title,PostUsername,hidename,boardid,child,hits,dateandtime,lastposttime,istop,isvote,isbest From Dv_topic Where isbest=1  order by topicid Desc"
 	SQL1="Select count(*) From Dv_topic Where isbest=1"
 	Set Rs1=Dvbbs.Execute(SQL1)
-		'¼ÆËãÒ»ÏÂµ±Ç°Page²ÎÊıÊÇ·ñºÏ·¨¡£Èç¹û³¬³ö·¶Î§£¬Ç¿ÖÆÎª×îºóÒ»Ò³
+		'è®¡ç®—ä¸€ä¸‹å½“å‰Pageå‚æ•°æ˜¯å¦åˆæ³•ã€‚å¦‚æœè¶…å‡ºèŒƒå›´ï¼Œå¼ºåˆ¶ä¸ºæœ€åä¸€é¡µ
 	If Rs1(0) mod Pagesize =0 then
 			PageCount= Rs1(0) \ Pagesize
 	Else
@@ -141,7 +141,7 @@ Dim Rs,SQL,SQL1,Rs1,page,PageCount,node,node1
 		Set Node=Dvbbs.ArrayToxml(SQL,rs,"row","datarows")
 		For each node1 in node.documentElement.selectNodes("row")
 			If node1.selectSingleNode("@hidename").text="1" Then
-				node1.selectSingleNode("@postusername").text="ÄäÃûÓÃ»§"
+				node1.selectSingleNode("@postusername").text="åŒ¿åç”¨æˆ·"
 			End If
 		Next
 		XMLDom.documentElement.appendChild(node.documentElement)
@@ -183,7 +183,7 @@ Sub GetPostData()
 			End If
 			Node.appendChild(XMLDOM.createNode(1,"ForumName","")).text=Server.HtmlEncode(Getbbsname(boardid) & "")
 			Node.appendChild(XMLDOM.createNode(1,"ForumUrl","")).text=Dvbbs.Get_ScriptNameUrl()&"index.asp?boardid="&boardid
-			Node.appendChild(XMLDOM.createNode(1,"ForumType","")).text="¿Æ¼¼"
+			Node.appendChild(XMLDOM.createNode(1,"ForumType","")).text="ç§‘æŠ€"
 			 Select Case Session.CodePage
 			 	Case 65001
 			 		Node.appendChild(XMLDOM.createNode(1,"Language","")).text="utf-8"
@@ -228,7 +228,7 @@ Sub GetPostData()
 			posttable=Rs("posttable")
 			getmoneytype=Rs("getmoneytype")
 			Dvbbs.LoadTemplates("")
-			EmotPath=Split(Dvbbs.Forum_emot,"|||")(0)		'emĞÄÇéÂ·¾¶
+			EmotPath=Split(Dvbbs.Forum_emot,"|||")(0)		'emå¿ƒæƒ…è·¯å¾„
 			Set dv_ubb=new Dvbbs_UbbCode
 			dv_ubb.PostType=1
 			SQL="Select top 50 AnnounceID,UserName,Topic,body,signflag,isbest,PostUserid,GetMoneyType,rootid,Ubblist,LockTopic,GetMoney,UseTools,PostBuyUser,ParentID,IsUpload From "& posttable &" where  RootID="& RootId &" and Boardid="& Boardid&" Order By ParentID,dateandtime"
@@ -257,10 +257,10 @@ Sub GetPostData()
 									body = dv_ubb.Dv_UbbCode(body,10,1,1) 
 						End If
 					Else
-						body="ÄÚÈİ±»ÏŞÖÆ»ò½ûÖ¹"
+						body="å†…å®¹è¢«é™åˆ¶æˆ–ç¦æ­¢"
 					End If
 				'Else
-				'	body="¾«»ªÌù,ĞèÒªÈ¨ÏŞ·½¿É²é¿´"
+				'	body="ç²¾åè´´,éœ€è¦æƒé™æ–¹å¯æŸ¥çœ‹"
 				'End If
 				body=replace(body,"]]>","]]&gt;")
 				Node1.appendChild(XMLDOM.createNode(1,"Content","")).appendChild(XMLDOM.createCDATASection(body))
@@ -352,7 +352,7 @@ Sub GetUserData()
 		SQL=RS.GetRows(1)
 		Set Node=Dvbbs.ArrayToxml(SQL,rs,"row","datarows")
 		For each node1 in node.documentElement.selectNodes("row")
-			node1.selectSingleNode("@useranswer").text="¼ÓÃÜ×Ö¶Î"
+			node1.selectSingleNode("@useranswer").text="åŠ å¯†å­—æ®µ"
 		Next
 		XMLDom.documentElement.appendChild(node.documentElement)
 	End If
@@ -404,7 +404,7 @@ Sub GetForumInfo()
 			SQL=RS.GetRows(1)
 			Set Node=Dvbbs.ArrayToxml(SQL,rs,"row","userdatarows")
 			For each node1 in node.documentElement.selectNodes("row")
-				node1.selectSingleNode("@useranswer").text="¼ÓÃÜ×Ö¶Î"
+				node1.selectSingleNode("@useranswer").text="åŠ å¯†å­—æ®µ"
 			Next
 			XMLDom.documentElement.appendChild(node.documentElement)
 		End If
@@ -416,7 +416,7 @@ Sub GetForumInfo()
 	Set Node=Dvbbs.ArrayToxml(SQL,rs,"row","bestdatarows")
 	For each node1 in node.documentElement.selectNodes("row")
 		If node1.selectSingleNode("@hidename").text="1" Then
-			node1.selectSingleNode("@postusername").text="ÄäÃûÓÃ»§"
+			node1.selectSingleNode("@postusername").text="åŒ¿åç”¨æˆ·"
 		End If
 	Next
 	XMLDom.documentElement.appendChild(node.documentElement)
@@ -430,7 +430,7 @@ Sub GetForumInfo()
 	Set Node=Dvbbs.ArrayToxml(SQL,rs,"row","hotdatarows")
 	For each node1 in node.documentElement.selectNodes("row")
 		If node1.selectSingleNode("@hidename").text="1" Then
-			node1.selectSingleNode("@postusername").text="ÄäÃûÓÃ»§"
+			node1.selectSingleNode("@postusername").text="åŒ¿åç”¨æˆ·"
 		End If
 	Next
 	XMLDom.documentElement.appendChild(node.documentElement)
@@ -440,7 +440,7 @@ Sub GetForumInfo()
 	Set Node=Dvbbs.ArrayToxml(SQL,rs,"row","newdatarows")
 	For each node1 in node.documentElement.selectNodes("row")
 		If node1.selectSingleNode("@hidename").text="1" Then
-			node1.selectSingleNode("@postusername").text="ÄäÃûÓÃ»§"
+			node1.selectSingleNode("@postusername").text="åŒ¿åç”¨æˆ·"
 		End If
 	Next
 	XMLDom.documentElement.appendChild(node.documentElement)

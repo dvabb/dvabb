@@ -12,7 +12,7 @@ Public Show_Upload,IsTopic,EditMode,MaxLen
 
 Private Act,PageHtml
 Private Sub Class_Initialize()
-	Show_Upload = 0	'是否显示上传
+	Show_Upload = 0	'鏄惁鏄剧ず涓婁紶
 	IsTopic = 0
 	EditMode = "Default"
 	RootID = 0
@@ -20,7 +20,7 @@ Private Sub Class_Initialize()
 	PostUserName = ""
 	CatID = -1
 	sCatID = -1
-	sType = -1	'0=文章,1=收藏,2=链接,3=交易,4=相册
+	sType = -1	'0=鏂囩珷,1=鏀惰棌,2=閾炬帴,3=浜ゆ槗,4=鐩稿唽
 	PostUserID = 0
 	Title = ""
 	Content = ""

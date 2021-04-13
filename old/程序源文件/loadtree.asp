@@ -4,12 +4,12 @@
 <!--#include file="inc/dv_ubbcode.asp"-->
 <%
 If Dvbbs.BoardID = 0 Then
-	Response.Write "²ÎÊı´íÎó"
+	Response.Write "å‚æ•°é”™è¯¯"
 	Dvbbs.PageEnd()
 	Response.End 
 End If
 If Dvbbs.GroupSetting(2)="0"  Then
-	Response.Write "<script language=""javascript"">alert('ÄúÃ»ÓĞÈ¨ÏŞ²é¿´Ìù×Ó!')</script>"
+	Response.Write "<script language=""javascript"">alert('æ‚¨æ²¡æœ‰æƒé™æŸ¥çœ‹è´´å­!')</script>"
 	Dvbbs.PageEnd()
 	Response.End	
 End If
@@ -43,7 +43,7 @@ Sub Showtitle()
 	Response.flush
 End Sub 
 Sub Showtree()
-	'½ÓÊÕ²ÎÊı
+	'æ¥æ”¶å‚æ•°
 	Dim AnnounceID,ReplyID,TotalUseTable,openid
 	Dim template_html3
 	template_html3=template.html(3)
@@ -81,13 +81,13 @@ Sub Showtree()
 					blank=blank&"&nbsp;"
 				Next
 				If Rs("locktopic")=2 Then 
-					treedata=Replace(treedata,"{$topic}","==´Ë·¢ÑÔÒÑ±»¹ÜÀíÔ±ÆÁ±Î==")
+					treedata=Replace(treedata,"{$topic}","==æ­¤å‘è¨€å·²è¢«ç®¡ç†å‘˜å±è”½==")
 				ElseIf Rs("locktopic")=2 Then 
-					treedata=Replace(treedata,"{$topic}","==´Ë·¢ÑÔ±»¹Ì·âµÈ´ı½â³ıÖĞ==")
+					treedata=Replace(treedata,"{$topic}","==æ­¤å‘è¨€è¢«å›ºå°ç­‰å¾…è§£é™¤ä¸­==")
 				ElseIf Rs("LockUser")=1 Then
-					treedata=Replace(treedata,"{$topic}","==´ËÈËÒÑ±»¹ÜÀíÔ±Ëø¶¨==")
+					treedata=Replace(treedata,"{$topic}","==æ­¤äººå·²è¢«ç®¡ç†å‘˜é”å®š==")
 				ElseIf Rs("LockUser")=2 Then
-					treedata=Replace(treedata,"{$topic}","==´ËÈËËùÓĞ·¢ÑÔÒÑ±»¹ÜÀíÔ±ÆÁ±Î==")
+					treedata=Replace(treedata,"{$topic}","==æ­¤äººæ‰€æœ‰å‘è¨€å·²è¢«ç®¡ç†å‘˜å±è”½==")
 				Else
 					If Rs("topic")="" or isnull(rs("topic")) Then 
 						treedata=Replace(treedata,"{$topic}",cutStr(Reubbcode(Rs("body")),35))
@@ -103,7 +103,7 @@ Sub Showtree()
 				treedata=Replace(treedata,"{$announceid}",Rs(0))
 				treedata=Replace(treedata,"{$boardid}",Rs(2))
 				If Dvbbs.Board_Setting(68)="1" And Rs(15)=2 And Not Dvbbs.BoardMaster Then
-					treedata=Replace(treedata,"{$username}","ÄäÃû")
+					treedata=Replace(treedata,"{$username}","åŒ¿å")
 				Else
 					treedata=Replace(treedata,"{$username}",Rs(3))
 				End If
@@ -174,9 +174,9 @@ Function reUBBCode(strContent)
 	set re=Nothing
 	reUBBCode=strContent
 End Function
-'½ØÈ¡Ö¸¶¨×Ö·û
+'æˆªå–æŒ‡å®šå­—ç¬¦
 Function cutStr(str,strlen)
-	'È¥µôËùÓĞHTML±ê¼Ç
+	'å»æ‰æ‰€æœ‰HTMLæ ‡è®°
 	Dim re
 	Set re=new RegExp
 	re.IgnoreCase =True

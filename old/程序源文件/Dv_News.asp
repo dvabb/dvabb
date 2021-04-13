@@ -2,26 +2,26 @@
 <!--#Include File="inc/Const.asp"-->
 <%
 '//*****************************************************************************//
-''@	¶¯ÍøÂÛÌ³Ê×Ò³µ÷ÓÃ
-''@ ³ÌĞòÊÊÓÃ°æ±¾£ºDVBBS v8.3.0 
-''@ ¹Ù·½ÂÛÌ³µØÖ·£ºhttp://bbs.dvbbs.net http://www.aspsky.net
-''@ ³ÌĞò×÷Õß£º	Fssunwin
-''@ ¸üĞÂÈÕÆÚ£º	2005-04-16
+''@	åŠ¨ç½‘è®ºå›é¦–é¡µè°ƒç”¨
+''@ ç¨‹åºé€‚ç”¨ç‰ˆæœ¬ï¼šDVBBS v8.3.0 
+''@ å®˜æ–¹è®ºå›åœ°å€ï¼šhttp://bbs.dvbbs.net http://www.aspsky.net
+''@ ç¨‹åºä½œè€…ï¼š	Fssunwin
+''@ æ›´æ–°æ—¥æœŸï¼š	2005-04-16
 '//*****************************************************************************//
 Dim Temp_Dv_ForumNews
 '//*****************************************************************************//
-''@ ÉèÖÃÍâ²¿µ÷ÓÃÏŞÖÆ
+''@ è®¾ç½®å¤–éƒ¨è°ƒç”¨é™åˆ¶
 Const LockUrl = ""
-''@ ËµÃ÷£ºÖ»ÔÊĞíµ÷ÓÃÍøÖ·,ÒªÒÔ"HTTP://"¿ªÍ·,Îª¿ÕÔò²»ÏŞÖÆËùÓĞÍâ²¿µ÷ÓÃ.(¿ÉÔÊĞí¶àÍøÖ·ÏŞÖÆ£¬ÒªÒÔ","·Ö¸ô¡£)
-''@ Ê¹ÓÃ£ºÀıÈçÖ»ÔÊĞí´ËÁ½¸öÍøÖ·µ÷ÓÃ: lockurl="http://www.artistsky.net/,http://www.artbbs.net/"
+''@ è¯´æ˜ï¼šåªå…è®¸è°ƒç”¨ç½‘å€,è¦ä»¥"HTTP://"å¼€å¤´,ä¸ºç©ºåˆ™ä¸é™åˆ¶æ‰€æœ‰å¤–éƒ¨è°ƒç”¨.(å¯å…è®¸å¤šç½‘å€é™åˆ¶ï¼Œè¦ä»¥","åˆ†éš”ã€‚)
+''@ ä½¿ç”¨ï¼šä¾‹å¦‚åªå…è®¸æ­¤ä¸¤ä¸ªç½‘å€è°ƒç”¨: lockurl="http://www.artistsky.net/,http://www.artbbs.net/"
 '//*****************************************************************************//
 '//*****************************************************************************//
-''@ ÉèÖÃÁÙÊ±ÎÄ¼şÃû
-Temp_Dv_ForumNews = "Dv_ForumNews/Temp_Dv_ForumNews.config"	'ÁÙÊ±ÎÄ¼şÃû¿É×ÔĞĞĞŞ¸Ä¡£¸ÃÎÄ¼ş¿ÉÒÔËæÊ±É¾³ıÇåÀí¡£
+''@ è®¾ç½®ä¸´æ—¶æ–‡ä»¶å
+Temp_Dv_ForumNews = "Dv_ForumNews/Temp_Dv_ForumNews.config"	'ä¸´æ—¶æ–‡ä»¶åå¯è‡ªè¡Œä¿®æ”¹ã€‚è¯¥æ–‡ä»¶å¯ä»¥éšæ—¶åˆ é™¤æ¸…ç†ã€‚
 '//*****************************************************************************//
 
 If CheckServer(Lockurl)=False then
-	OutPut "Êı¾İ±»±£»¤,½ûÖ¹±»ÆäËûÕ¾µãµ÷ÓÃ!"
+	OutPut "æ•°æ®è¢«ä¿æŠ¤,ç¦æ­¢è¢«å…¶ä»–ç«™ç‚¹è°ƒç”¨!"
 	Response.End	
 End If
 Dim NewsConfigFile
@@ -35,17 +35,17 @@ Call LoadXml()
 Call Page_Main()
 Call CloseFile()
 'Dvbbs.PageEnd()
-'Response.Write "<br>Ò³ÃæÖ´ĞĞÊ±¼ä "&FormatNumber((Timer()-Startime)*1000,5)&" ºÁÃë"
+'Response.Write "<br>é¡µé¢æ‰§è¡Œæ—¶é—´ "&FormatNumber((Timer()-Startime)*1000,5)&" æ¯«ç§’"
 Sub Page_Main()
 	Dim GetName
 	GetName = Lcase(Request.QueryString("GetName"))
 	If GetName = "" Then
-		OutPut "²ÎÊı´íÎó£¬µ÷ÓÃÒÑÖĞÖ¹£¡"
+		OutPut "å‚æ•°é”™è¯¯ï¼Œè°ƒç”¨å·²ä¸­æ­¢ï¼"
 		Exit Sub
 	End If
 	Set Node = XmlDoc.DocumentElement.selectSingleNode("NewsCode[@NewsName='"&GetName&"']")
 	If (Node is nothing) Then
-		OutPut "ÉèÖÃÊı¾İ²»´æÔÚ£¬µ÷ÓÃÒÑÖĞÖ¹£¡"
+		OutPut "è®¾ç½®æ•°æ®ä¸å­˜åœ¨ï¼Œè°ƒç”¨å·²ä¸­æ­¢ï¼"
 		Exit Sub
 	End If
 	Dim Updatetime,LastTime
@@ -53,7 +53,7 @@ Sub Page_Main()
 	LastTime = Node.getAttribute("LastTime")
 	If Updatetime>0 and IsDate(LastTime) Then
 		If Datediff("s",LastTime,now()) > Updatetime Then
-			'¸üĞÂ
+			'æ›´æ–°
 			Call UpNewsData()
 			Call SaveData()
 		Else
@@ -99,7 +99,7 @@ Sub SaveData()
 	If Not (TempXml_Nodes is nothing) Then
 		TempXmlDoc.DocumentElement.RemoveChild(TempXml_Nodes)
 	End If
-	'´´½¨µ÷ÓÃÊı¾İ
+	'åˆ›å»ºè°ƒç”¨æ•°æ®
 	Set TempXml_Nodes = XmlDoc.createNode(1,"NewsData","")
 	Set attributes = TempXmlDoc.createAttribute("NewsName")
 	attributes.text = Node.getAttribute("NewsName")
@@ -141,22 +141,22 @@ End Sub
 
 Sub UpNewsData()
 	Select Case Node.getAttribute("NewsType")
-		Case "1" : Call NewsType_1() 'Ìû×Óµ÷ÓÃ
-		Case "2" : Call NewsType_2() 'ĞÅÏ¢µ÷ÓÃ
-		Case "3" : Call NewsType_3() '°æ¿éµ÷ÓÃ
-		Case "4" : Call NewsType_4() '»áÔ±µ÷ÓÃ
-		Case "5" : Call NewsType_5() '¹«¸æµ÷ÓÃ
-		Case "6" : Call NewsType_6() 'Õ¹Çøµ÷ÓÃ
-		Case "7" : Call NewsType_7() 'È¦×Óµ÷ÓÃ
-		Case "8" : Call NewsType_8() 'µÇÂ½¿òµ÷ÓÃ
+		Case "1" : Call NewsType_1() 'å¸–å­è°ƒç”¨
+		Case "2" : Call NewsType_2() 'ä¿¡æ¯è°ƒç”¨
+		Case "3" : Call NewsType_3() 'ç‰ˆå—è°ƒç”¨
+		Case "4" : Call NewsType_4() 'ä¼šå‘˜è°ƒç”¨
+		Case "5" : Call NewsType_5() 'å…¬å‘Šè°ƒç”¨
+		Case "6" : Call NewsType_6() 'å±•åŒºè°ƒç”¨
+		Case "7" : Call NewsType_7() 'åœˆå­è°ƒç”¨
+		Case "8" : Call NewsType_8() 'ç™»é™†æ¡†è°ƒç”¨
 		Case Else
-			OutPut "µ÷ÓÃÀàĞÍ²»´æÔÚ£¬µ÷ÓÃÒÑÖĞÖ¹£¡"
+			OutPut "è°ƒç”¨ç±»å‹ä¸å­˜åœ¨ï¼Œè°ƒç”¨å·²ä¸­æ­¢ï¼"
 			Exit Sub
 	End Select
 	NewsMainStr = Fixjs(NewsMainStr)
 End Sub
 
-'Ìû×Óµ÷ÓÃ
+'å¸–å­è°ƒç”¨
 Sub NewsType_1()
 	Dim Skin_Main
 	Dim SQL,Rs,i
@@ -164,7 +164,7 @@ Sub NewsType_1()
 	If Not Rs.eof Then
 		SQL=Rs.GetRows(-1)
 	Else
-		OutPut "ÔİÎ´ÓĞĞÂÌû×Ó£¡"
+		OutPut "æš‚æœªæœ‰æ–°å¸–å­ï¼"
 		Exit Sub
 	End If
 	Rs.close:Set Rs = Nothing
@@ -226,7 +226,7 @@ Sub NewsType_1()
 	NewsMainStr = Node.selectSingleNode("Skin_Head").text & NewsMainStr & Node.selectSingleNode("Skin_Footer").text
 End Sub
 
-'ĞÅÏ¢µ÷ÓÃ
+'ä¿¡æ¯è°ƒç”¨
 Sub NewsType_2()
 	Set MyBoardOnline=New Cls_UserOnlne 
 	Dvbbs.GetForum_Setting
@@ -245,7 +245,7 @@ Sub NewsType_2()
 	NewsMainStr = Node.selectSingleNode("Skin_Head").text & Skin_Main & Node.selectSingleNode("Skin_Footer").text
 End Sub
 
-'°æ¿éµ÷ÓÃ
+'ç‰ˆå—è°ƒç”¨
 Sub NewsType_3()
 	Dim Skin_Main,Mode,Depth
 	Dim BoardNode,Nodes
@@ -328,7 +328,7 @@ Sub NewsType_3()
 	NewsMainStr = Node.selectSingleNode("Skin_Head").text & NewsMainStr & Node.selectSingleNode("Skin_Footer").text
 End Sub
 
-'»áÔ±µ÷ÓÃ
+'ä¼šå‘˜è°ƒç”¨
 ''UserID,UserName,UserTopic,UserPost,UserBest,UserWealth,UserCP,UserEP,UserDel,UserSex,JoinDate 
 Sub NewsType_4()
 	Dim Skin_Main
@@ -338,7 +338,7 @@ Sub NewsType_4()
 	If Not Rs.eof Then
 		SQL=Rs.GetRows(-1)
 	Else
-		OutPut "ÔİÎ´ÓĞ»áÔ±Êı¾İ£¡"
+		OutPut "æš‚æœªæœ‰ä¼šå‘˜æ•°æ®ï¼"
 		Exit Sub
 	End If
 	Rs.close:Set Rs = Nothing
@@ -361,7 +361,7 @@ Sub NewsType_4()
 	NewsMainStr = Node.selectSingleNode("Skin_Head").text & NewsMainStr & Node.selectSingleNode("Skin_Footer").text
 End Sub
 
-'¹«¸æµ÷ÓÃ
+'å…¬å‘Šè°ƒç”¨
 Sub NewsType_5()
 	Dim Skin_Main
 	Dim SQL,Rs,i
@@ -369,7 +369,7 @@ Sub NewsType_5()
 	If Not Rs.eof Then
 		SQL=Rs.GetRows(-1)
 	Else
-		OutPut "ÔİÎ´ÓĞĞÂ¹«¸æ£¡"
+		OutPut "æš‚æœªæœ‰æ–°å…¬å‘Šï¼"
 		Exit Sub
 	End If
 	Rs.close:Set Rs = Nothing
@@ -411,7 +411,7 @@ Sub NewsType_5()
 	NewsMainStr = Node.selectSingleNode("Skin_Head").text & NewsMainStr & Node.selectSingleNode("Skin_Footer").text
 End Sub
 
-'Õ¹Çøµ÷ÓÃ
+'å±•åŒºè°ƒç”¨
 Sub NewsType_6()
 	Dim Skin_Main
 	Dim SQL,Rs,i
@@ -421,7 +421,7 @@ Sub NewsType_6()
 	If Not Rs.eof Then
 		SQL=Rs.GetRows(-1)
 	Else
-		OutPut "ÔİÎ´ÓĞĞÂÕ¹ÇøÎÄ¼ş£¡"
+		OutPut "æš‚æœªæœ‰æ–°å±•åŒºæ–‡ä»¶ï¼"
 		Exit Sub
 	End If
 	Rs.close:Set Rs = Nothing
@@ -432,12 +432,12 @@ Sub NewsType_6()
 	Else
 		Topiclen = Cint(Topiclen)
 	End If	'F_ID,F_AnnounceID,F_BoardID,F_Username,F_Filename,F_Readme,F_Type,F_FileType,F_AddTime,F_Viewname,F_ViewNum,F_DownNum,F_FileSize 
-	'F_Typ : 1=Í¼Æ¬¼¯,2=FLASH¼¯,3=ÒôÀÖ¼¯,4=µçÓ°¼¯,0=ÎÄ¼ş¼¯
+	'F_Typ : 1=å›¾ç‰‡é›†,2=FLASHé›†,3=éŸ³ä¹é›†,4=ç”µå½±é›†,0=æ–‡ä»¶é›†
 	Dim FileArray,Filename,Picheight,Picwidth
 	Dim RootID,ReplyID,F_AnnounceID
 	Dim BoardNode,Nodes,t,tab
 	Dim TColor,TColor1,TColor2
-	FileArray = "ÎÄ¼ş¼¯||Í¼Æ¬¼¯||FLASH¼¯||ÒôÀÖ¼¯||µçÓ°¼¯"
+	FileArray = "æ–‡ä»¶é›†||å›¾ç‰‡é›†||FLASHé›†||éŸ³ä¹é›†||ç”µå½±é›†"
 	FileArray = Split(FileArray,"||")
 	Picheight = Node.getAttribute("PicHeight")
 	Picwidth  = Node.getAttribute("PicWidth")
@@ -503,7 +503,7 @@ Sub NewsType_6()
 		If SQL(6,i)=1 Then
 			Filename = "<IMG SRC="""&Filename&""" style=""border: 1 solid #000000"" width="&Picwidth&" height="&Picheight&" >"
 		Else
-			Filename = SQL(7,i) & " ÀàÎÄ¼ş"
+			Filename = SQL(7,i) & " ç±»æ–‡ä»¶"
 		End If
 		Skin_Main = Replace(Skin_Main,"{$Filename}",Filename)
 		NewsMainStr = NewsMainStr & Skin_Main
@@ -530,7 +530,7 @@ Sub NewsType_7()
 	If Not Rs.eof Then
 		SQL=Rs.GetRows(-1)
 	Else
-		OutPut "ÔİÎ´ÓĞ»áÔ±Êı¾İ£¡"
+		OutPut "æš‚æœªæœ‰ä¼šå‘˜æ•°æ®ï¼"
 		Exit Sub
 	End If
 	Rs.close:Set Rs = Nothing
@@ -560,7 +560,7 @@ Sub NewsType_8()
 	NewsMainStr = Node.selectSingleNode("Skin_Main").text
 	Dvbbs.loadTemplates("")
 	If Dvbbs.Forum_Setting(79)=1 Then
-		NewsMainStr = Replace(NewsMainStr,"{$CheckCode}","ÑéÖ¤Âë£º"&Dvbbs.mainhtml(15))
+		NewsMainStr = Replace(NewsMainStr,"{$CheckCode}","éªŒè¯ç ï¼š"&Dvbbs.mainhtml(15))
 	Else
 		NewsMainStr = Replace(NewsMainStr,"{$CheckCode}","")
 	End If
@@ -571,23 +571,23 @@ End Sub
 Function IGStatsStr(Stats)
 	Select Case Stats
 		Case 1
-			IGStatsStr="Õı³£"
+			IGStatsStr="æ­£å¸¸"
 		Case 2
-			IGStatsStr="Ëø¶¨"
+			IGStatsStr="é”å®š"
 		Case 3
-			IGStatsStr="¹Ø±Õ"
+			IGStatsStr="å…³é—­"
 		Case 0
-			IGStatsStr="ÉóºË"
+			IGStatsStr="å®¡æ ¸"
 		Case Else
-			IGStatsStr="Î´Öª"
+			IGStatsStr="æœªçŸ¥"
 	End Select
 End Function
 
 Function UserSex(Val)
 	If Val = "1" Then
-		UserSex = "ÏÈÉú"
+		UserSex = "å…ˆç”Ÿ"
 	Else
-		UserSex = "Å®Ê¿"
+		UserSex = "å¥³å£«"
 	End If
 End Function
 

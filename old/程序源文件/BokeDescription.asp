@@ -4,7 +4,7 @@
 <%
 Dim ShowHead,isSystem
 ShowHead = Request.QueryString("ShowHead")
-DvBoke.Stats = "ÌáÊ¾ĞÅÏ¢"
+DvBoke.Stats = "æç¤ºä¿¡æ¯"
 isSystem = 0
 If DvBoke.BokeUserID = 0 Then isSystem = 1
 If ShowHead <> "1" Then
@@ -16,10 +16,10 @@ Page_Main()
 DvBoke.Footer
 Dvbbs.PageEnd()
 '--------------------------------------------------------
-'	Ïà¹Øµ÷ÓÃËµÃ÷£º
-'	DvBoke.ShowCode(2)	-- ĞÅÏ¢±àºÅ
-'	DvBoke.ShowCode("ÌáÊ¾ÄÚÈİ") -- ×Ô¶¨ÒåÄÚÈİ
-'	DvBoke.ShowMsg(0)	-- Êä³öĞÎÊ½ 0=Õı³£ 1=²»ÏÔÊ¾¶¥²¿
+'	ç›¸å…³è°ƒç”¨è¯´æ˜ï¼š
+'	DvBoke.ShowCode(2)	-- ä¿¡æ¯ç¼–å·
+'	DvBoke.ShowCode("æç¤ºå†…å®¹") -- è‡ªå®šä¹‰å†…å®¹
+'	DvBoke.ShowMsg(0)	-- è¾“å‡ºå½¢å¼ 0=æ­£å¸¸ 1=ä¸æ˜¾ç¤ºé¡¶éƒ¨
 '
 '--------------------------------------------------------
 
@@ -48,14 +48,14 @@ Sub Page_Main()
 		Select Case Request.QueryString("RefreshID")
 		Case "0"
 			RefreshUrl = "bokeindex.asp"
-			ShowSkins = Replace(ShowSkins,"{$refreshname}"," <a href="""&RefreshUrl&"""><U>²©¿ÍÊ×Ò³</U></a>")
+			ShowSkins = Replace(ShowSkins,"{$refreshname}"," <a href="""&RefreshUrl&"""><U>åšå®¢é¦–é¡µ</U></a>")
 			
 		Case "-1"
 			RefreshUrl = DvBoke.ModHtmlLinked&DvBoke.BokeName&".index.html"
-			ShowSkins = Replace(ShowSkins,"{$refreshname}"," <a href="""&RefreshUrl&"""><U>"&DvBoke.BokeUserName&"µÄ¸öÈË²©¿ÍÊ×Ò³</U></a>")
+			ShowSkins = Replace(ShowSkins,"{$refreshname}"," <a href="""&RefreshUrl&"""><U>"&DvBoke.BokeUserName&"çš„ä¸ªäººåšå®¢é¦–é¡µ</U></a>")
 		Case Else
 			RefreshUrl = DvBoke.ModHtmlLinked&DvBoke.BokeName&".showtopic."&Request.QueryString("RefreshID")&".html"
-			ShowSkins = Replace(ShowSkins,"{$refreshname}"," <a href="""&RefreshUrl&"""><U>Ö÷ÌâÒ³Ãæ</U></a>")
+			ShowSkins = Replace(ShowSkins,"{$refreshname}"," <a href="""&RefreshUrl&"""><U>ä¸»é¢˜é¡µé¢</U></a>")
 		End Select
 		ShowSkins = Replace(ShowSkins,"{$refresh}","<meta http-equiv=refresh content=""3;URL="&RefreshUrl&"""/>")
 	Else

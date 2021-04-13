@@ -37,36 +37,36 @@ Sub Main()
 %>
 <BR>
 <table cellpadding=3 cellspacing=1 align=center class=tableborder1>
-<tr><th colspan="2" width="100%">��̳ͨ��֤����</th></tr>
+<tr><th colspan="2" width="100%">论坛通行证设置</th></tr>
 <tr>
 <td width="100%" colspan=2 class=tablebody1>
-<B>˵��</B>��
-<li>��̳ͨ��֤����������ͨ���ڹ��ڴ󲿷ֵ�������̳������������̳�����ð󶨻�������̳ͨ��֤�ʺ�</li>
-<li>�������δ����̳ͨ��֤���������Ƿ�ע������̳ͨ��֤����������ֱ��������̳ͨ��֤�ʺţ�ϵͳ���Զ������������������</li>
-<li>�����ϣ�������Ѱ���̳ͨ��֤�����Ƚ���󶨺���а󶨻�ע�����</li>
+<B>说明</B>：
+<li>论坛通行证可让您自由通行于国内大部分的网络论坛，您可以在论坛中设置绑定或解除绑定论坛通行证帐号</li>
+<li>如果您尚未绑定论坛通行证，无论您是否注册了论坛通行证，您都可以直接输入论坛通行证帐号，系统将自动引导您完成整个过程</li>
+<li>如果您希望更改已绑定论坛通行证，请先解除绑定后进行绑定或注册操作</li>
 </td></tr>
 <form action="?Action=CheckUser" method=POST name="theForm">
 <%
 If FoundPassport <> "" Then
 %>
 <tr>
-<td class=tablebody1 width="40%"><B>������̳�ʺ��Ѱ���̳ͨ��֤</B>��</td>
+<td class=tablebody1 width="40%"><B>您的论坛帐号已绑定论坛通行证</B>：</td>
 <td class=tablebody1> <%=FoundPassport%>
 </td></tr>
 <tr align="center">
 <td colspan="2" width="100%"  class=tablebody2>
-<input type=Submit value="�����̳ͨ��֤��" name="Submit">
+<input type=Submit value="解除论坛通行证绑定" name="Submit">
 </td></tr>
 <%
 Else
 %>
 <tr>
-<td class=tablebody1 width="40%"><B>��������̳ͨ��֤�ʺ�</B>��</td>
+<td class=tablebody1 width="40%"><B>请输入论坛通行证帐号</B>：</td>
 <td class=tablebody1> <input type="text" name="passport" value="" size=30 maxlength=13>
 </td></tr>
 <tr align="center">
 <td colspan="2" width="100%"  class=tablebody2>
-<input type=Submit value="��̳ͨ��֤�󶨻�ע��" name="Submit">
+<input type=Submit value="论坛通行证绑定或注册" name="Submit">
 </td></tr>
 <%
 End If
@@ -76,9 +76,9 @@ End If
 End Sub
 
 Sub CheckUser()
-	If Request("Submit") = "�����̳ͨ��֤��" Then
+	If Request("Submit") = "解除论坛通行证绑定" Then
 		Dvbbs.Execute("Update Dv_User Set Passport='',IsChallenge=0 Where UserID = " & Dvbbs.UserID)
-		Dvbbs.Dvbbs_Suc("<li>�����̳ͨ��֤����̳�ʺųɹ���")
+		Dvbbs.Dvbbs_Suc("<li>解除论坛通行证绑定论坛帐号成功！")
 	Else
 		Response.Redirect "login.asp?action=chk&passport=" & Request("passport")
 	End If

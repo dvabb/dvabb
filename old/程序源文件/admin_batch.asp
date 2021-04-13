@@ -64,7 +64,7 @@ Sub Main
 	Dvbbs.ShowErr
 End Sub
 
-'ÅúÁ¿×¨¼­²Ù×÷
+'æ‰¹é‡ä¸“è¾‘æ“ä½œ
 Function Topic_SetTopicMode
 Dim TopModeID
 If Request.form("mode")<>"" and IsNumeric(Request.form("mode")) Then
@@ -79,13 +79,13 @@ For I=1 To Request.Form("Announceid").Count
 	ID=CLng(ID)
 	Dvbbs.Execute("Update Dv_Topic Set Mode="&TopModeID&" Where BoardID="&Dvbbs.BoardID&" And TopicID=" & ID)
 Next
-	SQL="insert into Dv_Log (L_AnnounceID,L_BoardID,L_ToUser,L_UserName,L_Content,L_IP,l_type) Values ("&Id&","&Dvbbs.BoardID&",'More','"&Dvbbs.Membername&"','ÅúÁ¿×¨¼­²Ù×÷','"&Ip&"',3)"
+	SQL="insert into Dv_Log (L_AnnounceID,L_BoardID,L_ToUser,L_UserName,L_Content,L_IP,l_type) Values ("&Id&","&Dvbbs.BoardID&",'More','"&Dvbbs.Membername&"','æ‰¹é‡ä¸“è¾‘æ“ä½œ','"&Ip&"',3)"
 	Dvbbs.Execute(SQL)
-	sucmsg="<li>ÅúÁ¿×¨¼­²Ù×÷³É¹¦¡£<li>ÄúµÄ²Ù×÷ĞÅÏ¢ÒÑ¾­¼ÇÂ¼ÔÚ°¸¡£"
+	sucmsg="<li>æ‰¹é‡ä¸“è¾‘æ“ä½œæˆåŠŸã€‚<li>æ‚¨çš„æ“ä½œä¿¡æ¯å·²ç»è®°å½•åœ¨æ¡ˆã€‚"
 	Dvbbs.Dvbbs_suc(sucmsg)
 End Function
 
-'ÅúÁ¿Ëø¶¨
+'æ‰¹é‡é”å®š
 Function Topic_Batch_Lock
 	Dim ID
 	For I=1 To Request.Form("Announceid").Count
@@ -93,13 +93,13 @@ Function Topic_Batch_Lock
 		ID=CLng(ID)
 		Dvbbs.Execute("update dv_Topic Set LockTopic=1 Where BoardID="&Dvbbs.BoardID&" And TopicID=" & ID)
 	Next
-	SQL="insert into Dv_Log (L_AnnounceID,L_BoardID,L_ToUser,L_UserName,L_Content,L_IP,l_type) Values ("&Id&","&Dvbbs.BoardID&",'More','"&Dvbbs.Membername&"','ÅúÁ¿Ëø¶¨','"&Ip&"',3)"
+	SQL="insert into Dv_Log (L_AnnounceID,L_BoardID,L_ToUser,L_UserName,L_Content,L_IP,l_type) Values ("&Id&","&Dvbbs.BoardID&",'More','"&Dvbbs.Membername&"','æ‰¹é‡é”å®š','"&Ip&"',3)"
 	Dvbbs.Execute(SQL)
-	sucmsg="<li>Ìû×ÓÅúÁ¿Ëø¶¨³É¹¦¡£<li>ÄúµÄ²Ù×÷ĞÅÏ¢ÒÑ¾­¼ÇÂ¼ÔÚ°¸¡£"
+	sucmsg="<li>å¸–å­æ‰¹é‡é”å®šæˆåŠŸã€‚<li>æ‚¨çš„æ“ä½œä¿¡æ¯å·²ç»è®°å½•åœ¨æ¡ˆã€‚"
 	Dvbbs.Dvbbs_suc(sucmsg)
 End Function
 
-'ÅúÁ¿É¾³ı
+'æ‰¹é‡åˆ é™¤
 Function Topic_Batch_Delete
 	Dim ID,toprs,iBoardTopStr
 	Dim ChildNum,istop,Forum_AllTopNum,j,AllTopNum,Board_TopNum,TopNum,BoardTopStr
@@ -109,7 +109,7 @@ Function Topic_Batch_Delete
 	For I=1 To Request.Form("Announceid").Count
 		ID=Replace(Request.Form("Announceid")(I),"'","")
 		ID=CLng(ID)
-		'¸üĞÂ·¢ÌùÓÃ»§Êı¾İ
+		'æ›´æ–°å‘è´´ç”¨æˆ·æ•°æ®
 		Set Rs=Dvbbs.Execute("Select PostTable,Child,istop from dv_Topic Where BoardID="&Dvbbs.BoardID&" And TopicID="&ID)
 		If Not Rs.Eof Then
 		TotalUseTable=Rs(0)
@@ -117,16 +117,16 @@ Function Topic_Batch_Delete
 		istop=Rs(2)
 		Dvbbs.Execute("Update [dv_User] Set Userwealth=Userwealth-"&Dvbbs.Forum_user(3)&",Usercp=Usercp-"&Dvbbs.Forum_user(13)&",Userep=Userep-"&Dvbbs.Forum_user(8)&" Where Userid In (Select PostUserID From "&TotalUseTable&" Where BoardID="&Dvbbs.BoardID&" And Rootid="&ID&")")
 
-		'¸üĞÂÌû×ÓÊı¾İ
+		'æ›´æ–°å¸–å­æ•°æ®
 		Dvbbs.Execute("Update "&TotalUseTable&" Set Locktopic=BoardID,BoardID=444,isbest=0 Where BoardID="&Dvbbs.BoardID&" And RootID=" & ID)
 		Dvbbs.Execute("update dv_Topic Set Locktopic=BoardID,BoardID=444,isbest=0 Where BoardID="&Dvbbs.BoardID&" And TopicID="&ID)
-		'¸üĞÂÉÏ´«¸½¼şÊı¾İ
+		'æ›´æ–°ä¸Šä¼ é™„ä»¶æ•°æ®
 		Dvbbs.Execute("update Dv_Upfile Set F_flag=4 Where F_BoardID="&Dvbbs.BoardID&" And F_AnnounceID LIKE  '"&ID&"|"&"%' ")
 		Dvbbs.Execute("delete from dv_besttopic where rootid="&ID)
 		End If
-		'ÅĞ¶ÏÊÇ·ñÎª¹Ì¶¥Ìù£¬ÊÇÔò¸üĞÂ¹Ì¶¥Êı¾İ
+		'åˆ¤æ–­æ˜¯å¦ä¸ºå›ºé¡¶è´´ï¼Œæ˜¯åˆ™æ›´æ–°å›ºé¡¶æ•°æ®
 		If istop=3 Then
-			'½«×Ü¹Ì¶¥ID´Ó×ÜÉèÖÃ±íÈ¥³ı
+			'å°†æ€»å›ºé¡¶IDä»æ€»è®¾ç½®è¡¨å»é™¤
 			Forum_AllTopNum=Split(AllTopNum,",")
 			TopNum=""
 			For j=0 to UBound(Forum_AllTopNum)
@@ -140,7 +140,7 @@ Function Topic_Batch_Delete
 			Next
 			AllTopNum=TopNum
 		ElseIf istop=1 Then
-			'¹Ì¶¥ÌùÈ¥³ı°æÃæ¹Ì¶¥ID
+			'å›ºé¡¶è´´å»é™¤ç‰ˆé¢å›ºé¡¶ID
 			Forum_AllTopNum=Split(Board_TopNum,",")
 			TopNum=""
 			For j=0 to UBound(Forum_AllTopNum)
@@ -154,7 +154,7 @@ Function Topic_Batch_Delete
 			Next
 			Board_TopNum=TopNum
 		ElseIf istop=2 Then
-			'²éÑ¯´ËÌùÇø¹Ì¶¥µÄËùÓĞ°æÃæID
+			'æŸ¥è¯¢æ­¤è´´åŒºå›ºé¡¶çš„æ‰€æœ‰ç‰ˆé¢ID
 			Set toprs=Dvbbs.Execute("Select BoardID,BoardTopStr From Dv_Board Where BoardTopStr Like '%"&ID&"%'")
 			Do While Not TopRs.Eof
 			If TopRs(1)="" Or IsNull(TopRs(1)) Then
@@ -185,16 +185,16 @@ Function Topic_Batch_Delete
 			Loop
 		End If
 	Next
-	'×Ü¹Ì¶¥Êı¾İ·¢Éú±ä»¯,Ôò¸üĞÂÊı¾İ
+	'æ€»å›ºé¡¶æ•°æ®å‘ç”Ÿå˜åŒ–,åˆ™æ›´æ–°æ•°æ®
 	If AllTopNum <> Dvbbs.CacheData(28,0) Then
 		Dvbbs.Execute("Update Dv_Setup Set Forum_AllTopNum='"&AllTopNum&"'")
 		Dvbbs.ReloadSetupCache AllTopNum,28
 	End If
-	'¹Ì¶¥Êı¾İ·¢Éú±ä»¯,Ôò¸üĞÂÊı¾İ
+	'å›ºé¡¶æ•°æ®å‘ç”Ÿå˜åŒ–,åˆ™æ›´æ–°æ•°æ®
 	If Board_TopNum <> Application(Dvbbs.CacheName &"_information_" & Dvbbs.Boardid).documentElement.selectSingleNode("information/@boardtopstr").text Then
 		Dvbbs.Execute("Update Dv_Board Set BoardTopStr='"&Board_TopNum&"' Where BoardID="&Dvbbs.boardid)
 	End If
-	'¸üĞÂ°æÃæºÍ×ÜÊı¾İ
+	'æ›´æ–°ç‰ˆé¢å’Œæ€»æ•°æ®
 	Set Rs=Dvbbs.Execute("Select ParentStr,ParentID from dv_Board Where BoardID="&Dvbbs.BoardID)
 	If Rs(1)=0 Then
 		UpdateBoardID = Dvbbs.BoardID
@@ -204,9 +204,9 @@ Function Topic_Batch_Delete
 	Del_Math_Forum_Count ChildNum,i-1
 	Math_Forum_Today(Dvbbs.BoardID)
 	LastCount(Dvbbs.BoardID)
-	SQL="insert into Dv_Log (L_AnnounceID,L_BoardID,L_ToUser,L_UserName,L_Content,L_IP,l_type) Values ("&ID&","&Dvbbs.BoardID&",'More','"&Dvbbs.Membername&"','ÅúÁ¿É¾³ı','"&IP&"',3)"
+	SQL="insert into Dv_Log (L_AnnounceID,L_BoardID,L_ToUser,L_UserName,L_Content,L_IP,l_type) Values ("&ID&","&Dvbbs.BoardID&",'More','"&Dvbbs.Membername&"','æ‰¹é‡åˆ é™¤','"&IP&"',3)"
 	Dvbbs.Execute(SQL)
-	sucmsg="<li>Ìû×ÓÅúÁ¿É¾³ı³É¹¦¡£<li>ÄúµÄ²Ù×÷ĞÅÏ¢ÒÑ¾­¼ÇÂ¼ÔÚ°¸¡£"
+	sucmsg="<li>å¸–å­æ‰¹é‡åˆ é™¤æˆåŠŸã€‚<li>æ‚¨çš„æ“ä½œä¿¡æ¯å·²ç»è®°å½•åœ¨æ¡ˆã€‚"
 
 	Dvbbs.ReloadBoardInfo(UpdateBoardID)
 	Dvbbs.loadSetup()
@@ -219,10 +219,10 @@ Function Topic_Batch_Move
 	Dim F_announceID,SplitUpBoardID
 	ChildNum=0
 	If Request.form("newboard")="" or isnull(Request.form("newboard")) or not isnumeric(Request.form("newboard")) Then
-		Response.redirect "showerr.asp?ErrCodes=<li>Èç¹ûÄúÊÇÅúÁ¿×ªÒÆÌû×ÓÇëÑ¡ÔñÏà¹ØÂÛÌ³¡£&action=OtherErr"
+		Response.redirect "showerr.asp?ErrCodes=<li>å¦‚æœæ‚¨æ˜¯æ‰¹é‡è½¬ç§»å¸–å­è¯·é€‰æ‹©ç›¸å…³è®ºå›ã€‚&action=OtherErr"
 		Exit Function
 	ElseIf Cint(Request.form("newboard"))=Cint(Dvbbs.BoardID) Then
-		Response.redirect "showerr.asp?ErrCodes=<li>Çë²»ÒªÑ¡ÔñÏàÍ¬µÄÂÛÌ³½øĞĞ×ªÒÆ²Ù×÷¡£&action=OtherErr"
+		Response.redirect "showerr.asp?ErrCodes=<li>è¯·ä¸è¦é€‰æ‹©ç›¸åŒçš„è®ºå›è¿›è¡Œè½¬ç§»æ“ä½œã€‚&action=OtherErr"
 		Exit Function
 	Else
 		newboard=Request.form("newboard")
@@ -236,21 +236,21 @@ Function Topic_Batch_Move
 			TotalUseTable = Rs(0)
 			ChildNum = ChildNum + Rs(2)
 			Dvbbs.Execute("UPDATE " & TotalUseTable & " SET BoardID = " & Newboard & " WHERE BoardID = " & Dvbbs.BoardID & " AND RootID = " & ID)
-			'¸üĞÂ°æ¿éID£¬²¢È¡Ïû×¨ÌâËùÊô
+			'æ›´æ–°ç‰ˆå—IDï¼Œå¹¶å–æ¶ˆä¸“é¢˜æ‰€å±
 			Dvbbs.Execute("UPDATE Dv_Topic SET BoardID = " & Newboard & ",mode=0 WHERE BoardID = " & Dvbbs.BoardID & " AND TopicID = " & ID)
 			If Rs(1) = 1 Then
 				Dvbbs.Execute("UPDATE Dv_Besttopic Set BoardID = " & Newboard & " WHERE BoardID = " & Dvbbs.BoardID & " AND RootID = " & ID)
 			End If
-			'ÒÆ¶¯Ê±ÅĞ¶ÏÊÇ·ñ¹Ì¶¥²¢×÷Ïà¹Ø´¦Àí 2004-4-25 Dvbbs.YangZheng
+			'ç§»åŠ¨æ—¶åˆ¤æ–­æ˜¯å¦å›ºé¡¶å¹¶ä½œç›¸å…³å¤„ç† 2004-4-25 Dvbbs.YangZheng
 			If Rs("istop") > 0 Then
 				Dim Yrs, TopstrinfoN, TopstrinfoO
-				'¶ÁÈ¡ĞÂ¾É°æÃæµÄ¹Ì¶¥ĞÅÏ¢
+				'è¯»å–æ–°æ—§ç‰ˆé¢çš„å›ºé¡¶ä¿¡æ¯
 				Set Yrs = Dvbbs.Execute("SELECT BoardTopStr From Dv_Board Where Boardid = " & Dvbbs.Boardid)
 				TopstrinfoO = Yrs(0)
 				Set Yrs = Dvbbs.Execute("SELECT BoardTopStr From Dv_Board Where Boardid = " & Newboard)
 				TopstrinfoN = Yrs(0)
 				Yrs.Close:Set Yrs = Nothing
-				'É¾³ıÔ­¹Ì¶¥Ö÷ÌâID
+				'åˆ é™¤åŸå›ºé¡¶ä¸»é¢˜ID
 				TopstrinfoO = Replace(TopstrinfoO, Cstr(ID)&",", "")
 				TopstrinfoO = Replace(TopstrinfoO, ","&Cstr(ID), "")
 				TopstrinfoO = Replace(TopstrinfoO, Cstr(ID), "")
@@ -263,20 +263,20 @@ Function Topic_Batch_Move
 				Else
 					TopstrinfoN = TopstrinfoN & "," & Cstr(ID)
 				End If
-				'¸üĞÂµ±Ç°°æÃæ¹Ì¶¥ĞÅÏ¢¼°»º´æ
+				'æ›´æ–°å½“å‰ç‰ˆé¢å›ºé¡¶ä¿¡æ¯åŠç¼“å­˜
 				Sql = "UPDATE Dv_Board SET BoardTopStr = '" & TopstrinfoO & "' WHERE BoardID = " & Dvbbs.Boardid
 				Dvbbs.Execute(Sql)
-				'¸üĞÂĞÂ°æÃæ¹Ì¶¥ĞÅÏ¢¼°»º´æ
+				'æ›´æ–°æ–°ç‰ˆé¢å›ºé¡¶ä¿¡æ¯åŠç¼“å­˜
 				Sql = "UPDATE Dv_Board SET BoardTopStr = '" & TopstrinfoN & "' WHERE Boardid = " & Newboard
 				Dvbbs.Execute(Sql)
 			End If
-			'shinzeal¼ÓÈëÅúÁ¿ÒÆ¶¯ÉÏ´«ÎÄ¼şÊı¾İ
+			'shinzealåŠ å…¥æ‰¹é‡ç§»åŠ¨ä¸Šä¼ æ–‡ä»¶æ•°æ®
 			F_announceID = ID & "|"
 			Dvbbs.Execute("UPDATE DV_Upfile SET F_Boardid = " & Newboard & " WHERE F_boardid = " & Dvbbs.Boardid & " AND F_AnnounceID LIKE '" & F_announceID & "%'")
-			'shinzeal¼ÓÈëÅúÁ¿ÒÆ¶¯ÉÏ´«ÎÄ¼şÊı¾İ½áÊø
+			'shinzealåŠ å…¥æ‰¹é‡ç§»åŠ¨ä¸Šä¼ æ–‡ä»¶æ•°æ®ç»“æŸ
 		End If
 	Next
-	'¸üĞÂ°æÃæºÍ×ÜÊı¾İ
+	'æ›´æ–°ç‰ˆé¢å’Œæ€»æ•°æ®
 	Dim TempUpdateBoardID
 	Set Rs=Dvbbs.Execute("Select ParentStr from dv_Board Where BoardID="&Dvbbs.BoardID)
 	UpdateBoardID=Rs(0) & "," & Dvbbs.BoardID
@@ -295,9 +295,9 @@ Function Topic_Batch_Move
 	LastCount(Newboard)
 	Math_Forum_Today(Newboard)
 	Dvbbs.ReloadBoardInfo(TempUpdateBoardID)
-	SQL="insert into Dv_Log (L_AnnounceID,L_BoardID,L_ToUser,L_UserName,L_Content,L_IP,l_type) Values ("&ID&","&Dvbbs.BoardID&",'More','"&Dvbbs.Membername&"','ÅúÁ¿ÒÆ¶¯','"&IP&"',3)"
+	SQL="insert into Dv_Log (L_AnnounceID,L_BoardID,L_ToUser,L_UserName,L_Content,L_IP,l_type) Values ("&ID&","&Dvbbs.BoardID&",'More','"&Dvbbs.Membername&"','æ‰¹é‡ç§»åŠ¨','"&IP&"',3)"
 	Dvbbs.Execute(SQL)
-	sucmsg="<li>Ìû×ÓÅúÁ¿ÒÆ¶¯³É¹¦¡£<li>ÄúµÄ²Ù×÷ĞÅÏ¢ÒÑ¾­¼ÇÂ¼ÔÚ°¸¡£"
+	sucmsg="<li>å¸–å­æ‰¹é‡ç§»åŠ¨æˆåŠŸã€‚<li>æ‚¨çš„æ“ä½œä¿¡æ¯å·²ç»è®°å½•åœ¨æ¡ˆã€‚"
 	Dvbbs.Dvbbs_suc(sucmsg)
 	Dvbbs.loadSetup()
 End Function
@@ -313,9 +313,9 @@ Function Topic_Batch_Istop
 		Dvbbs.Execute("update dv_Topic Set Istop=1,LastPostTime=Dateadd('d',100,LastPostTime) Where BoardID="&Dvbbs.BoardID&" And TopicID="&ID)
 		end if
 	Next
-	SQL="insert into Dv_Log (L_AnnounceID,L_BoardID,L_ToUser,L_UserName,L_Content,L_IP,l_type) Values ("&ID&","&Dvbbs.BoardID&",'More','"&Dvbbs.Membername&"','ÅúÁ¿¹Ì¶¥','"&IP&"',4)"
+	SQL="insert into Dv_Log (L_AnnounceID,L_BoardID,L_ToUser,L_UserName,L_Content,L_IP,l_type) Values ("&ID&","&Dvbbs.BoardID&",'More','"&Dvbbs.Membername&"','æ‰¹é‡å›ºé¡¶','"&IP&"',4)"
 	Dvbbs.Execute(SQL)
-	sucmsg="<li>Ìû×ÓÅúÁ¿¹Ì¶¥³É¹¦¡£<li>ÄúµÄ²Ù×÷ĞÅÏ¢ÒÑ¾­¼ÇÂ¼ÔÚ°¸¡£"
+	sucmsg="<li>å¸–å­æ‰¹é‡å›ºé¡¶æˆåŠŸã€‚<li>æ‚¨çš„æ“ä½œä¿¡æ¯å·²ç»è®°å½•åœ¨æ¡ˆã€‚"
 	Dvbbs.ReloadBoardInfo(Dvbbs.BoardID)
 	Dvbbs.Dvbbs_suc(sucmsg)
 End Function
@@ -335,14 +335,14 @@ Function Topic_Batch_Isbest
 		Dvbbs.Execute("update dv_Topic Set Isbest=1 Where TopicID="&ID)
 		End If
 	Next
-	SQL="insert into Dv_Log (L_AnnounceID,L_BoardID,L_ToUser,L_UserName,L_Content,L_IP,l_type) values ("&ID&","&Dvbbs.BoardID&",'more','"&Dvbbs.Membername&"','ÅúÁ¿¾«»ª','"&IP&"',3)"
+	SQL="insert into Dv_Log (L_AnnounceID,L_BoardID,L_ToUser,L_UserName,L_Content,L_IP,l_type) values ("&ID&","&Dvbbs.BoardID&",'more','"&Dvbbs.Membername&"','æ‰¹é‡ç²¾å','"&IP&"',3)"
 	Dvbbs.Execute(SQL)
-	sucmsg="<li>Ìû×ÓÅúÁ¿¾«»ª³É¹¦¡£<li>ÄúµÄ²Ù×÷ĞÅÏ¢ÒÑ¾­¼ÇÂ¼ÔÚ°¸¡£"
+	sucmsg="<li>å¸–å­æ‰¹é‡ç²¾åæˆåŠŸã€‚<li>æ‚¨çš„æ“ä½œä¿¡æ¯å·²ç»è®°å½•åœ¨æ¡ˆã€‚"
 	Dvbbs.Dvbbs_suc(sucmsg)
 	Set Rs=Nothing
 End Function
 
-'¸üĞÂÖ¸¶¨ÂÛÌ³ĞÅÏ¢
+'æ›´æ–°æŒ‡å®šè®ºå›ä¿¡æ¯
 Function LastCount(BoardID)
 	Dim LastTopic,body,LastRootid,LastPostTime,LastPostUser
 	Dim LastPost,uploadpic_n,Lastpostuserid,Lastid
@@ -355,10 +355,10 @@ Function LastCount(BoardID)
 		LastPostUserid=Rs(4)
 		Lastid=Rs(5)
 	Else
-		LastTopic="ÎŞ"
+		LastTopic="æ— "
 		LastRootid=0
 		LastPostTime=now()
-		LastPostUser="ÎŞ"
+		LastPostUser="æ— "
 		LastPostUserid=0
 		Lastid=0
 	End If
@@ -391,7 +391,7 @@ Function Add_Math_Forum_Count(TopicNum,BBSNUM)
 End Function
 
 
-'½ñÈÕÌû×Ó
+'ä»Šæ—¥å¸–å­
 Function Math_Forum_Today(BoardID)
 	Dim MathForumToday
 	if IsSqlDataBase=1 then

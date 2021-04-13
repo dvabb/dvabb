@@ -15,13 +15,13 @@ CheckAdmin(admin_flag)
 
 if request.QueryString("act")<>"scan" then
 Response.Write "<form action='?act=scan' method='post'>"
-Response.Write "<b>ÌîÈëÄãÒª¼ì²éµÄÂ·¾¶£ºÍøÕ¾¸ùÄ¿Â¼µÄÏà¶ÔÂ·¾¶£¬Ìî \ ¼´¼ì²éÕû¸öÍøÕ¾£». Îª³ÌĞòËùÔÚÄ¿Â¼</b>"
+Response.Write "<b>å¡«å…¥ä½ è¦æ£€æŸ¥çš„è·¯å¾„ï¼šç½‘ç«™æ ¹ç›®å½•çš„ç›¸å¯¹è·¯å¾„ï¼Œå¡« \ å³æ£€æŸ¥æ•´ä¸ªç½‘ç«™ï¼›. ä¸ºç¨‹åºæ‰€åœ¨ç›®å½•</b>"
 Response.Write "<input name='path' type='text' style='border:1px solid #999' value='.' size='30' />"
 Response.Write " <br>"
-Response.Write "<!--ÍøÕ¾¸ùÄ¿Â¼µÄÏà¶ÔÂ·¾¶£¬Ìî\¼´¼ì²éÕû¸öÍøÕ¾£».Îª³ÌĞòËùÔÚÄ¿Â¼-->"
+Response.Write "<!--ç½‘ç«™æ ¹ç›®å½•çš„ç›¸å¯¹è·¯å¾„ï¼Œå¡«\å³æ£€æŸ¥æ•´ä¸ªç½‘ç«™ï¼›.ä¸ºç¨‹åºæ‰€åœ¨ç›®å½•-->"
 Response.Write "<br>"
 Response.Write "<br>"
-Response.Write " <input type='submit' value=' ¿ªÊ¼É¨Ãè ' style='background:#fff;border:1px solid #999;padding:2px 2px 0px 2px;margin:4px;border-width:1px 3px 1px 3px' /> "
+Response.Write " <input type='submit' value=' å¼€å§‹æ‰«æ ' style='background:#fff;border:1px solid #999;padding:2px 2px 0px 2px;margin:4px;border-width:1px 3px 1px 3px' /> "
 Response.Write "</form>"
 
 else
@@ -51,16 +51,16 @@ Call ShowAllFile(TmpPath)
 <tr>
 <td class="CPanel" style="padding:5px;line-height:170%;clear:both;font-size:12px">
 <div id="updateInfo" style="background:ffffe1;border:1px solid #89441f;padding:4px;display:none"></div>
-É¨ÃèÍê±Ï£¡Ò»¹²¼ì²éÎÄ¼ş¼Ğ<font color="#FF0000"><%=SumFolders%></font>¸ö£¬ÎÄ¼ş<font color="#FF0000"><%=SumFiles%></font>¸ö£¬·¢ÏÖ¿ÉÒÉµã<font color="#FF0000"><%=Sun%></font>¸ö
+æ‰«æå®Œæ¯•ï¼ä¸€å…±æ£€æŸ¥æ–‡ä»¶å¤¹<font color="#FF0000"><%=SumFolders%></font>ä¸ªï¼Œæ–‡ä»¶<font color="#FF0000"><%=SumFiles%></font>ä¸ªï¼Œå‘ç°å¯ç–‘ç‚¹<font color="#FF0000"><%=Sun%></font>ä¸ª
 <table width="100%" border="0" cellpadding="0" cellspacing="0">
 <tr>
 <td valign="top">
 <table width="100%" border="1" cellpadding="0" cellspacing="0" style="padding:5px;line-height:170%;clear:both;font-size:12px">
 <tr>
-<td width="20%">ÎÄ¼şÏà¶ÔÂ·¾¶</td>
-<td width="20%">ÌØÕ÷Âë</td>
-<td width="40%">ÃèÊö</td>
-<td width="20%">´´½¨/ĞŞ¸ÄÊ±¼ä</td>
+<td width="20%">æ–‡ä»¶ç›¸å¯¹è·¯å¾„</td>
+<td width="20%">ç‰¹å¾ç </td>
+<td width="40%">æè¿°</td>
+<td width="20%">åˆ›å»º/ä¿®æ”¹æ—¶é—´</td>
 </tr>
 <p>
 <%=Report%>
@@ -72,14 +72,14 @@ Call ShowAllFile(TmpPath)
 <%
 timer2 = timer
 thetime=cstr(int(((timer2-timer1)*10000 )+0.5)/10)
-response.write "<br><font size=""2"">±¾Ò³Ö´ĞĞ¹²ÓÃÁË"&thetime&"ºÁÃë</font>"
+response.write "<br><font size=""2"">æœ¬é¡µæ‰§è¡Œå…±ç”¨äº†"&thetime&"æ¯«ç§’</font>"
 end if
 Footer()
 %>
 
 <%
 
-'±éÀú´¦Àípath¼°Æä×ÓÄ¿Â¼ËùÓĞÎÄ¼ş
+'éå†å¤„ç†pathåŠå…¶å­ç›®å½•æ‰€æœ‰æ–‡ä»¶
 Sub ShowAllFile(Path)
 Dim f,fc2,myfile,temp,fc,f1,fso
 Set fso = createObject("Scripting.FileSystemObject")
@@ -102,26 +102,26 @@ Next
 Set FSO = Nothing
 End Sub
 
-'¼ì²âÎÄ¼ş
+'æ£€æµ‹æ–‡ä»¶
 Sub ScanFile(FilePath, InFile)
 If InFile <> "" Then
-Infiles = "¸ÃÎÄ¼ş±»<a href=""http://"&Request.Servervariables("server_name")&"\"&InFile&""" target=_blank>"& InFile & "</a>ÎÄ¼ş°üº¬Ö´ĞĞ"
+Infiles = "è¯¥æ–‡ä»¶è¢«<a href=""http://"&Request.Servervariables("server_name")&"\"&InFile&""" target=_blank>"& InFile & "</a>æ–‡ä»¶åŒ…å«æ‰§è¡Œ"
 End If
 on error resume next
 set ofile = fso.OpenTextFile(FilePath)
 filetxt = Lcase(ofile.readall())
 If err Then Exit Sub end if
 if len(filetxt)>0 then
-'ÌØÕ÷Âë¼ì²é
+'ç‰¹å¾ç æ£€æŸ¥
 temp = "<a href=""http://"&Request.Servervariables("server_name")&"\"&replace(FilePath,server.MapPath("\")&"\","",1,1,1)&""" target=_blank>"&replace(FilePath,server.MapPath("\")&"\","",1,1,1)&"</a>"
 'Check "WScr"&DoMyBest&"ipt.Shell"
 If instr( filetxt, Lcase("WScr"&DoMyBest&"ipt.Shell") ) or Instr( filetxt, Lcase("clsid:72C24DD5-D70A"&DoMyBest&"-438B-8A42-98424B88AFB8") ) then
-Report = Report&"<tr><td>"&temp&"</td><td>WScr"&DoMyBest&"ipt.Shell »òÕß clsid:72C24DD5-D70A"&DoMyBest&"-438B-8A42-98424B88AFB8</td><td>Î£ÏÕ×é¼ş£¬Ò»°ã±»ASPÄ¾ÂíÀûÓÃ¡£"&infiles&"</td><td>"&GetDatecreate(filepath)&"<br>"&GetDatemodify(filepath)&"</td></tr>"
+Report = Report&"<tr><td>"&temp&"</td><td>WScr"&DoMyBest&"ipt.Shell æˆ–è€… clsid:72C24DD5-D70A"&DoMyBest&"-438B-8A42-98424B88AFB8</td><td>å±é™©ç»„ä»¶ï¼Œä¸€èˆ¬è¢«ASPæœ¨é©¬åˆ©ç”¨ã€‚"&infiles&"</td><td>"&GetDatecreate(filepath)&"<br>"&GetDatemodify(filepath)&"</td></tr>"
 Sun = Sun + 1
 End if
 'Check "She"&DoMyBest&"ll.Application"
 If instr( filetxt, Lcase("She"&DoMyBest&"ll.Application") ) or Instr( filetxt, Lcase("clsid:13709620-C27"&DoMyBest&"9-11CE-A49E-444553540000") ) then
-Report = Report&"<tr><td>"&temp&"</td><td>She"&DoMyBest&"ll.Application »òÕß clsid:13709620-C27"&DoMyBest&"9-11CE-A49E-444553540000</td><td>Î£ÏÕ×é¼ş£¬Ò»°ã±»ASPÄ¾ÂíÀûÓÃ¡£"&infiles&"</td><td>"&GetDatecreate(filepath)&"<br>"&GetDatemodify(filepath)&"</td></tr>"
+Report = Report&"<tr><td>"&temp&"</td><td>She"&DoMyBest&"ll.Application æˆ–è€… clsid:13709620-C27"&DoMyBest&"9-11CE-A49E-444553540000</td><td>å±é™©ç»„ä»¶ï¼Œä¸€èˆ¬è¢«ASPæœ¨é©¬åˆ©ç”¨ã€‚"&infiles&"</td><td>"&GetDatecreate(filepath)&"<br>"&GetDatemodify(filepath)&"</td></tr>"
 Sun = Sun + 1
 End If
 'Check .Encode
@@ -130,19 +130,19 @@ regEx.IgnoreCase = True
 regEx.Global = True
 regEx.Pattern = "@\s*LANGUAGE\s*=\s*[""]?\s*(vbscript|jscript|javascript).encode\b"
 If regEx.Test(filetxt) Then
-Report = Report&"<tr><td>"&temp&"</td><td>(vbscript|jscript|javascript).Encode</td><td>ËÆºõ½Å±¾±»¼ÓÃÜÁË£¬Ò»°ãASPÎÄ¼şÊÇ²»»á¼ÓÃÜµÄ¡£"&infiles&"</td><td>"&GetDatecreate(filepath)&"<br>"&GetDatemodify(filepath)&"</td></tr>"
+Report = Report&"<tr><td>"&temp&"</td><td>(vbscript|jscript|javascript).Encode</td><td>ä¼¼ä¹è„šæœ¬è¢«åŠ å¯†äº†ï¼Œä¸€èˆ¬ASPæ–‡ä»¶æ˜¯ä¸ä¼šåŠ å¯†çš„ã€‚"&infiles&"</td><td>"&GetDatecreate(filepath)&"<br>"&GetDatemodify(filepath)&"</td></tr>"
 Sun = Sun + 1
 End If
 'Check my ASP backdoor :(
 regEx.Pattern = "\bEv"&"al\b"
 If regEx.Test(filetxt) Then
-Report = Report&"<tr><td>"&temp&"</td><td>Ev"&"al</td><td>e"&"val()º¯Êı¿ÉÒÔÖ´ĞĞÈÎÒâASP´úÂë£¬±»Ò»Ğ©ºóÃÅÀûÓÃ¡£ÆäĞÎÊ½Ò»°ãÊÇ£ºev"&"al(X)<br>µ«ÊÇjavascript´úÂëÖĞÒ²¿ÉÒÔÊ¹ÓÃ£¬ÓĞ¿ÉÄÜÊÇÎó±¨¡£"&infiles&"</td><td>"&GetDatecreate(filepath)&"<br>"&GetDatemodify(filepath)&"</td></tr>"
+Report = Report&"<tr><td>"&temp&"</td><td>Ev"&"al</td><td>e"&"val()å‡½æ•°å¯ä»¥æ‰§è¡Œä»»æ„ASPä»£ç ï¼Œè¢«ä¸€äº›åé—¨åˆ©ç”¨ã€‚å…¶å½¢å¼ä¸€èˆ¬æ˜¯ï¼šev"&"al(X)<br>ä½†æ˜¯javascriptä»£ç ä¸­ä¹Ÿå¯ä»¥ä½¿ç”¨ï¼Œæœ‰å¯èƒ½æ˜¯è¯¯æŠ¥ã€‚"&infiles&"</td><td>"&GetDatecreate(filepath)&"<br>"&GetDatemodify(filepath)&"</td></tr>"
 Sun = Sun + 1
 End If
 'Check exe&cute backdoor
 regEx.Pattern = "[^.]\bExe"&"cute\b"
 If regEx.Test(filetxt) Then
-Report = Report&"<tr><td>"&temp&"</td><td>Exec"&"ute</td><td>e"&"xecute()º¯Êı¿ÉÒÔÖ´ĞĞÈÎÒâASP´úÂë£¬±»Ò»Ğ©ºóÃÅÀûÓÃ¡£ÆäĞÎÊ½Ò»°ãÊÇ£ºex"&"ecute(X)¡£<br>"&infiles&"</td><td>"&GetDatecreate(filepath)&"<br>"&GetDatemodify(filepath)&"</td></tr>"
+Report = Report&"<tr><td>"&temp&"</td><td>Exec"&"ute</td><td>e"&"xecute()å‡½æ•°å¯ä»¥æ‰§è¡Œä»»æ„ASPä»£ç ï¼Œè¢«ä¸€äº›åé—¨åˆ©ç”¨ã€‚å…¶å½¢å¼ä¸€èˆ¬æ˜¯ï¼šex"&"ecute(X)ã€‚<br>"&infiles&"</td><td>"&GetDatecreate(filepath)&"<br>"&GetDatemodify(filepath)&"</td></tr>"
 Sun = Sun + 1
 End If
 Set regEx = Nothing
@@ -201,7 +201,7 @@ regEx.IgnoreCase = True
 regEx.Global = True
 regEx.Pattern = "Server.(Exec"&"ute|Transfer)([ \t]*|\()[^""]\)"
 If regEx.Test(filetxt) Then
-Report = Report&"<tr><td>"&temp&"</td><td>Server.Exec"&"ute</td><td>²»ÄÜ¸ú×Ù¼ì²éServer.e"&"xecute()º¯ÊıÖ´ĞĞµÄÎÄ¼ş¡£Çë¹ÜÀíÔ±×ÔĞĞ¼ì²é¡£<br>"&infiles&"</td><td>"&GetDatecreate(filepath)&"<br>"&GetDatemodify(filepath)&"</td></tr>"
+Report = Report&"<tr><td>"&temp&"</td><td>Server.Exec"&"ute</td><td>ä¸èƒ½è·Ÿè¸ªæ£€æŸ¥Server.e"&"xecute()å‡½æ•°æ‰§è¡Œçš„æ–‡ä»¶ã€‚è¯·ç®¡ç†å‘˜è‡ªè¡Œæ£€æŸ¥ã€‚<br>"&infiles&"</td><td>"&GetDatecreate(filepath)&"<br>"&GetDatemodify(filepath)&"</td></tr>"
 Sun = Sun + 1
 End If
 Set Matches = Nothing
@@ -215,7 +215,7 @@ regEx.Pattern = "createO"&"bject[ |\t]*\(.*\)"
 Set Matches = regEx.Execute(filetxt)
 For Each Match in Matches
 If Instr(Match.Value, "&") or Instr(Match.Value, "+") or Instr(Match.Value, """") = 0 or Instr(Match.Value, "(") <> InStrRev(Match.Value, "(") Then
-Report = Report&"<tr><td>"&temp&"</td><td>Creat"&"eObject</td><td>Crea"&"teObjectº¯ÊıÊ¹ÓÃÁË±äĞÎ¼¼Êõ£¬×ĞÏ¸¸´²é¡£"&infiles&"</td><td>"&GetDatecreate(filepath)&"<br>"&GetDatemodify(filepath)&"</td></tr>"
+Report = Report&"<tr><td>"&temp&"</td><td>Creat"&"eObject</td><td>Crea"&"teObjectå‡½æ•°ä½¿ç”¨äº†å˜å½¢æŠ€æœ¯ï¼Œä»”ç»†å¤æŸ¥ã€‚"&infiles&"</td><td>"&GetDatecreate(filepath)&"<br>"&GetDatemodify(filepath)&"</td></tr>"
 Sun = Sun + 1
 exit sub
 End If
@@ -227,7 +227,7 @@ set ofile = nothing
 set fsos = nothing
 End Sub
 
-'¼ì²éÎÄ¼şºó×º£¬Èç¹ûÓëÔ¤¶¨µÄÆ¥Åä¼´·µ»ØTRUE
+'æ£€æŸ¥æ–‡ä»¶åç¼€ï¼Œå¦‚æœä¸é¢„å®šçš„åŒ¹é…å³è¿”å›TRUE
 Function CheckExt(FileExt)
 Dim Ext,i 
 

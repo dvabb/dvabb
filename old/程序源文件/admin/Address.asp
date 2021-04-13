@@ -23,11 +23,11 @@ sub main()
 %>
 <table width="100%" border="0" cellspacing="1" cellpadding="3" align="center">
 <tr> 
-<th width="100%" colspan=5 style="text-align:center;">IPÊı¾İÔ´¹ÜÀí£­£­<a href="?action=add">Ìí¼Ó£É£ĞµØÖ·</a></th>
+<th width="100%" colspan=5 style="text-align:center;">IPæ•°æ®æºç®¡ç†ï¼ï¼<a href="?action=add">æ·»åŠ ï¼©ï¼°åœ°å€</a></th>
 </tr>
 <tr> 
-<td width="20%" class=td1>×¢ÒâÊÂÏî</td>
-<td width="80%" class=td1 colspan=4>Èç¹ûĞèÒªÌí¼ÓIPÊı¾İÀ´Ô´ÇëÖ±½ÓÌí¼Ó£¬Èç¹ûÌí¼ÓµÄÀ´Ô´ÔÚÊı¾İ¿âÖĞÒÑ¾­´æÔÚ£¬½«ÌáÊ¾ÄúÊÇ·ñ½øĞĞĞŞ¸Ä£¬Êı¾İ¿âÖĞÉĞÃ»ÓĞµÄ¼ÇÂ¼½«Ö±½ÓÌí¼Ó£¬ÄúÒ²¿ÉÒÔÖ±½Ó¶ÔÏÖÓĞµÄÊı¾İ½øĞĞ¹ÜÀí²Ù×÷¡£</td>
+<td width="20%" class=td1>æ³¨æ„äº‹é¡¹</td>
+<td width="80%" class=td1 colspan=4>å¦‚æœéœ€è¦æ·»åŠ IPæ•°æ®æ¥æºè¯·ç›´æ¥æ·»åŠ ï¼Œå¦‚æœæ·»åŠ çš„æ¥æºåœ¨æ•°æ®åº“ä¸­å·²ç»å­˜åœ¨ï¼Œå°†æç¤ºæ‚¨æ˜¯å¦è¿›è¡Œä¿®æ”¹ï¼Œæ•°æ®åº“ä¸­å°šæ²¡æœ‰çš„è®°å½•å°†ç›´æ¥æ·»åŠ ï¼Œæ‚¨ä¹Ÿå¯ä»¥ç›´æ¥å¯¹ç°æœ‰çš„æ•°æ®è¿›è¡Œç®¡ç†æ“ä½œã€‚</td>
 </tr>
 <%
 	if request("action") = "add" then 
@@ -59,27 +59,27 @@ sub addip()
 %>
 <form action="?action=savenew" method=post>
 <tr> 
-    <th colspan="5">ĞŞ¸Ä IP µØÖ·</th>
+    <th colspan="5">ä¿®æ”¹ IP åœ°å€</th>
 </tr>
 <tr> 
-<td width="20%" class=td1>ÆğÊ¼ I P</td>
+<td width="20%" class=td1>èµ·å§‹ I P</td>
 <td width="80%" class=td1 colspan=4><input type="text" name="ip1" size="30"></td>
 </tr>
 <tr> 
-<td width="20%" class=td1>½áÎ² I P</td>
+<td width="20%" class=td1>ç»“å°¾ I P</td>
 <td width="80%" class=td1 colspan=4><input type="text" name="ip2" size="30"></td>
 </tr>
 <tr> 
-<td width="20%" class=f>À´Ô´¹ú¼Ò</td>
+<td width="20%" class=f>æ¥æºå›½å®¶</td>
 <td width="80%" class=td1 colspan=4><input type="text" name="country" size="30"></td>
 </tr>
 <tr> 
-<td width="20%" class=td1>À´Ô´³ÇÊĞ</td>
+<td width="20%" class=td1>æ¥æºåŸå¸‚</td>
 <td width="80%" class=td1 colspan=4><input type="text" name="city" size="30"></td>
 </tr>
 <tr> 
 <td width="20%" class=td1>&nbsp;</td>
-<td width="80%" class=td1 colspan=4><input type="submit" class="button" name="Submit" value="Ìá ½»"></td>
+<td width="80%" class=td1 colspan=4><input type="submit" class="button" name="Submit" value="æ äº¤"></td>
 </tr>
 </form>
 <%
@@ -94,29 +94,29 @@ rs.open sql,aconn,1,1
 %>
 <form action="?action=savedit" method=post>
 <tr> 
-    <th colspan="5">ĞŞ¸Ä IP µØÖ·</th>
+    <th colspan="5">ä¿®æ”¹ IP åœ°å€</th>
 </tr>
 <tr> 
-<td width="20%" class=td1>ÆğÊ¼ I P</td>
+<td width="20%" class=td1>èµ·å§‹ I P</td>
 <td width="80%" class=td1 colspan=4><input type="text" name="ip1" size="30" value="<%=deaddr(ip1)%>"></td>
 </tr>
 <tr> 
-<td width="20%" class=td1>½áÎ² I P</td>
+<td width="20%" class=td1>ç»“å°¾ I P</td>
 <td width="80%" class=td1 colspan=4><input type="text" name="ip2" size="30" value="<%=deaddr(ip2)%>"></td>
 </tr>
 <tr> 
-<td width="20%" class=td1>À´Ô´¹ú¼Ò</td>
+<td width="20%" class=td1>æ¥æºå›½å®¶</td>
 <td width="80%" class=td1 colspan=4><input type="text" name="country" size="30" value="<%=rs("country")%>"></td>
 </tr>
 <tr> 
-<td width="20%" class=td1>À´Ô´³ÇÊĞ</td>
+<td width="20%" class=td1>æ¥æºåŸå¸‚</td>
 <td width="80%" class=td1 colspan=4><input type="text" name="city" size="30" value="<%=rs("city")%>"></td>
 </tr>
 <input type="hidden" name="oldip1" value="<%=request("ip1")%>">
 <input type="hidden" name="oldip2" value="<%=request("ip2")%>">
 <tr> 
 <td width="20%" class=td1>&nbsp;</td>
-<td width="80%" class=td1 colspan=4><input type="submit" class="button" name="Submit" value="Ìá ½»"></td>
+<td width="80%" class=td1 colspan=4><input type="submit" class="button" name="Submit" value="æ äº¤"></td>
 </tr>
 </form>
 <%
@@ -125,15 +125,15 @@ end sub
 sub savenew()
 Dim sql
 if request.form("ip1")="" then
-body="<tr><td colspan=5 class=td1>ÇëÌîĞ´IPµØÖ·£¡</td></tr>"
+body="<tr><td colspan=5 class=td1>è¯·å¡«å†™IPåœ°å€ï¼</td></tr>"
 exit sub
 end if
 if request.form("ip2")="" then
-body="<tr><td colspan=5 class=td1>ÇëÌîĞ´IPµØÖ·£¡</td></tr>"
+body="<tr><td colspan=5 class=td1>è¯·å¡«å†™IPåœ°å€ï¼</td></tr>"
 exit sub
 end if
 if request.form("country")="" or request.form("city")="" then
-body="<tr><td colspan=5 class=td1>¹ú¼ÒºÍ³ÇÊĞ±ØĞëÌîĞ´ÆäÒ»£¡</td></tr>"
+body="<tr><td colspan=5 class=td1>å›½å®¶å’ŒåŸå¸‚å¿…é¡»å¡«å†™å…¶ä¸€ï¼</td></tr>"
 exit sub
 end if
 ip1=enaddr(request.form("ip1"))
@@ -149,9 +149,9 @@ rs("ip2")=ip2
 rs("country")=country
 rs("city")=city
 rs.update
-body="<tr><td colspan=5 class=td1>Ìí¼Ó³É¹¦£¬<a href=?>Çë¼ÌĞøÆäËû²Ù×÷</a>¡£</td></tr>"
+body="<tr><td colspan=5 class=td1>æ·»åŠ æˆåŠŸï¼Œ<a href=?>è¯·ç»§ç»­å…¶ä»–æ“ä½œ</a>ã€‚</td></tr>"
 else
-body="<tr><td colspan=5 class=td1>Ìí¼ÓÊ§°Ü£¬Êı¾İÒÑ´æÔÚ£¬Çëµ½ËÑË÷ÖĞËÑË÷¸ÃipµØÖ·²¢½øĞĞĞŞ¸Ä¡£</td></tr>"
+body="<tr><td colspan=5 class=td1>æ·»åŠ å¤±è´¥ï¼Œæ•°æ®å·²å­˜åœ¨ï¼Œè¯·åˆ°æœç´¢ä¸­æœç´¢è¯¥ipåœ°å€å¹¶è¿›è¡Œä¿®æ”¹ã€‚</td></tr>"
 end if
 rs.close
 end sub
@@ -172,9 +172,9 @@ rs("ip2")=ip2
 rs("country")=country
 rs("city")=city
 rs.update
-body="<tr><td colspan=5 class=td1>IPµØÖ·ĞŞ¸Ä³É¹¦£¡</td></tr>"
+body="<tr><td colspan=5 class=td1>IPåœ°å€ä¿®æ”¹æˆåŠŸï¼</td></tr>"
 else
-body="<tr><td colspan=5 class=td1>IPµØÖ·ĞŞ¸ÄÊ§°Ü£¡</td></tr>"
+body="<tr><td colspan=5 class=td1>IPåœ°å€ä¿®æ”¹å¤±è´¥ï¼</td></tr>"
 end if
 rs.close
 end sub
@@ -185,7 +185,7 @@ ip1=request("ip1")
 ip2=request("ip2")
 sql="delete from dv_address where ip1="&ip1&" and ip2="&ip2&""
 aconn.Execute(sql)
-body="<tr><td colspan=5 class=td1>É¾³ı³É¹¦£¬<a href=?>Çë¼ÌĞøÆäËû²Ù×÷</a>¡£</td></tr>"
+body="<tr><td colspan=5 class=td1>åˆ é™¤æˆåŠŸï¼Œ<a href=?>è¯·ç»§ç»­å…¶ä»–æ“ä½œ</a>ã€‚</td></tr>"
 end sub
 
 sub ipinfo()
@@ -222,14 +222,14 @@ sub ipinfo()
 	else
 %>
 <tr> 
-    <th colspan="5">IP µØÖ·¿âËÑË÷½á¹û</th>
+    <th colspan="5">IP åœ°å€åº“æœç´¢ç»“æœ</th>
 </tr>
   <tr align="center"> 
-    <td width="20%" class="forumHeaderBackgroundAlternate"><B>ÆğÊ¼ IP</B></td>
-    <td width="20%" class="forumHeaderBackgroundAlternate"><B>½áÎ² IP</B></td>
-    <td width="18%" class="forumHeaderBackgroundAlternate"><B>¹ú ¼Ò</B></td>
-    <td width="30%" class="forumHeaderBackgroundAlternate"><B>³Ç ÊĞ</B></td>
-    <td width="12%" class="forumHeaderBackgroundAlternate"><B>²Ù ×÷</B></td>
+    <td width="20%" class="forumHeaderBackgroundAlternate"><B>èµ·å§‹ IP</B></td>
+    <td width="20%" class="forumHeaderBackgroundAlternate"><B>ç»“å°¾ IP</B></td>
+    <td width="18%" class="forumHeaderBackgroundAlternate"><B>å›½ å®¶</B></td>
+    <td width="30%" class="forumHeaderBackgroundAlternate"><B>åŸ å¸‚</B></td>
+    <td width="12%" class="forumHeaderBackgroundAlternate"><B>æ“ ä½œ</B></td>
   </tr>
 <%
 		rs.PageSize = Cint(Dvbbs.Forum_Setting(11))
@@ -243,14 +243,14 @@ sub ipinfo()
     <td width="20%" class=td1><%=deaddr(rs("ip2"))%></td>
     <td width="18%" class=td1><%=rs("country")%>&nbsp;</td>
     <td width="30%" class=td1><%=rs("city")%>&nbsp;</td>
-    <td width="12%" align="center" class=td1><a href="?action=edit&ip1=<%=rs("ip1")%>&ip2=<%=rs("ip2")%>">±à¼­</a>|<a href="?action=del&ip1=<%=rs("ip1")%>&ip2=<%=rs("ip2")%>">É¾³ı</a></td>
+    <td width="12%" align="center" class=td1><a href="?action=edit&ip1=<%=rs("ip1")%>&ip2=<%=rs("ip2")%>">ç¼–è¾‘</a>|<a href="?action=del&ip1=<%=rs("ip1")%>&ip2=<%=rs("ip2")%>">åˆ é™¤</a></td>
     </tr>
 <%
 		page_count = page_count + 1
 		rs.movenext
 		wend
 %>
-<tr><td colspan=5 class=td1 align=center>·ÖÒ³£º
+<tr><td colspan=5 class=td1 align=center>åˆ†é¡µï¼š
 <%Pcount=rs.PageCount
 	if currentpage > 4 then
 	response.write "<a href=""?page=1&action=query&country="&country&"&city="&city&"&ip="&request("ip")&""">[1]</a> ..."
@@ -284,22 +284,22 @@ sub ipquery()
 %>
 <form action="?action=query" method = post>
 <tr> 
-    <th colspan="5">IP µØÖ·¿âËÑË÷</th>
+    <th colspan="5">IP åœ°å€åº“æœç´¢</th>
 </tr>
   <tr> 
-    <td width="20%" class=td1>IP µØÖ·£º</td>
+    <td width="20%" class=td1>IP åœ°å€ï¼š</td>
     <td width="80%" class=td1 colspan=4> 
       <input type="text" name="ip" size=40>
     </td>
   </tr>
   <tr> 
-    <td width="20%" class=td1>¹ú ¼Ò£º</td>
+    <td width="20%" class=td1>å›½ å®¶ï¼š</td>
     <td width="80%" class=td1 colspan=4> 
       <input type="text" name="country" size=40>
     </td>
   </tr>
   <tr> 
-    <td width="20%" class=td1>³Ç ÊĞ£º</td>
+    <td width="20%" class=td1>åŸ å¸‚ï¼š</td>
     <td width="80%" class=td1 colspan=4> 
       <input type="text" name="city" size=40>
     </td>
@@ -307,7 +307,7 @@ sub ipquery()
   <tr> 
     <td width="20%" class=td1>&nbsp;</td>
     <td width="80%" class=td1 colspan=4> 
-       <input type="submit" class="button" name="Submit" value="ËÑ Ë÷" class="button">
+       <input type="submit" class="button" name="Submit" value="æœ ç´¢" class="button">
     </td>
   </tr>
 </form>

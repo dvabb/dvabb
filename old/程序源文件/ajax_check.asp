@@ -74,7 +74,7 @@ Sub CheckUserName()
 	Else
 		FormValue=Dvbbs.CheckStr(Trim(FormValue))
 		If Trim(FormValue) = "" Then
-			Response.Write ErrCode(Template.Strings(6))'«Î ‰»Îƒ˙µƒ”√ªß√˚°£login
+			Response.Write ErrCode(Template.Strings(6))'ËØ∑ËæìÂÖ•ÊÇ®ÁöÑÁî®Êà∑Âêç„ÄÇlogin
 			Exit Sub
 		End If
 
@@ -86,67 +86,9 @@ Sub CheckUserName()
 			Exit Sub
 		Else
 			If XMLDom.documentElement.selectSingleNode("@checknumeric").text = "1" and IsNumeric(FormValue) Then
-				Response.Write ErrCode("±æ¬€Ã≥≤ªΩ” ‹»´ ˝◊÷µƒ”√ªß√˚◊¢≤·.")
+				Response.Write ErrCode("Êú¨ËÆ∫Âùõ‰∏çÊé•ÂèóÂÖ®Êï∞Â≠óÁöÑÁî®Êà∑ÂêçÊ≥®ÂÜå.")
 				Exit Sub
 			End If
 		End If
 
-		If Instr(FormValue,"=")>0 or Instr(FormValue,"%")>0 or Instr(FormValue,chr(32))>0 or Instr(FormValue,"?")>0 or Instr(FormValue,"&")>0 or Instr(FormValue,";")>0 or Instr(FormValue,",")>0 or Instr(FormValue,"'")>0 or Instr(FormValue,",")>0 or Instr(FormValue,chr(34))>0 or Instr(FormValue,chr(9))>0 or Instr(FormValue,"£†")>0 or Instr(FormValue,"$")>0 or Instr(FormValue,"|")>0 Then
-			Response.Write ErrCode(Template.Strings(46)) '”√ªß√˚∫¨”–∑«∑®◊÷∑˚!
-			Exit Sub
-		End If
-
-		Dim Rs
-		Set Rs = Dvbbs.Execute("Select top 1 UserName From Dv_User Where UserName='"&Dvbbs.Checkstr(FormValue)&"'")
-		If Not Rs.Eof And Not Rs.Bof Then
-			Response.Write ErrCode(Template.Strings(44)) '∂‘≤ª∆£¨ƒ˙ ‰»Îµƒ”√ªß√˚“—æ≠±ª◊¢≤·°£
-			Exit Sub
-		Else
-		
-		End If
-		Set Rs = Nothing
-		Response.Write SucCode("ø…“‘ π”√!")
-	End If
-End Sub
-
-Sub CheckUserEmail()
-	Dim FormValue,TempLateStr
-	FormValue = CheckValue(Ubound(CheckValue))
-
-	Dvbbs.LoadTemplates("login")
-	LoadRegSetting()
-	If Trim(FormValue) = "" Then
-		Response.Write ErrCode(Template.Strings(30))
-		Exit Sub
-	End If
-	If IsValidEmail(Trim(FormValue)) = False then
-		Response.Write ErrCode(Template.Strings(30))
-		Exit Sub
-	End If
-	If Cint(Dvbbs.Forum_Setting(24))=1 Then
-
-		Dim Rs
-		'Set Rs = Dvbbs.Execute("Select top 1 UserName From Dv_User Where UserEmail='"&Dvbbs.Checkstr(FormValue)&"'")
-		Set Rs = Dvbbs.Execute("Select top 1 UserEmail From Dv_User Where UserEmail='"&Dvbbs.Checkstr(Trim(FormValue))&"'")'o 08.01.18
-		If Not Rs.Eof And Not Rs.Bof Then
-			Response.Write ErrCode(Template.Strings(43))
-			Exit Sub
-		Else
-			Response.Write SucCode("ø…“‘ π”√!")
-			Exit Sub
-		End If
-		Set Rs = Nothing
-	End If
-	'Response.Write SucCode("ø…“‘ π”√!")
-End Sub
-
-Sub CheckDvCode()
-	Dim CodeStr
-	CodeStr = LCase(Trim(CheckValue(Ubound(CheckValue))))
-	If CStr(Session("GetCode"))=CStr(CodeStr) And CodeStr<>""  Then
-		Response.Write SucCode("")
-	Else
-		Response.Write ErrCode("")
-	End If
-End Sub
-%>
+		If Instr(FormValue,"=")>0 or Instr(FormValue,"%")>0 or Instr(FormValue,chr(32))>0 or Instr(FormValue,"?")>0 or Instr(FormValue,"&")>0 or Instr(FormValue,";")>0 or Instr(FormValue,",")>0 or Instr(FormValue,"'")>0 or Instr(FormValue,",")>0 or Instr(FormValue,chr(34))>0 or Instr(FormValue,chr(9))>0 or Instr(FormValue,"

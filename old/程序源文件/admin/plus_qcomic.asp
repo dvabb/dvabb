@@ -42,7 +42,7 @@ Sub edit()
 	Call requst()
 
 	Dvbbs.Execute("Update Dv_Qcomic set senable='"& senable &"|||,"& boardlist &",',semail='"& semail &"',sid='"& sid &"',spassword='"& spassword &"',skey='"& skey &"',owidth='"& owidth &"',oheight='"& oheight &"',iwidth='"& iwidth &"',iheight='"& iheight &"'")
-	Dv_suc("ĞŞ¸Ä¸üĞÂ³É¹¦")
+	Dv_suc("ä¿®æ”¹æ›´æ–°æˆåŠŸ")
 
 	Call Dvbbs.Load_qcomic_plus()
 End Sub
@@ -74,59 +74,59 @@ Sub MainForm()
 	End If
 	post_action = "edit"
 	method	= "post"
-	str	=	"ĞŞ¸Ä"
+	str	=	"ä¿®æ”¹"
 	Set rs = Nothing
 %>
 <table cellpadding="3" cellspacing="1" border="0" width="100%" align="center">
-<tr><td height="25" class="td_title">×éÍ¼¹¦ÄÜËµÃ÷</td></tr>
+<tr><td height="25" class="td_title">ç»„å›¾åŠŸèƒ½è¯´æ˜</td></tr>
 </table>
 
 <table border="0" cellspacing="1" cellpadding="3" align="center" width="100%">
-<tr><td class="td2 title" colspan="2">»ù±¾²ÎÊıÉèÖÃ£¨Çë·ÃÎÊ<a href="http://picunion.qihoo.com" target=_blank><font color=red>http://picunion.qihoo.com</font></a>£¬»ñÈ¡ÁªÃËÕÊ»§ĞÅÏ¢£©</td></tr>
+<tr><td class="td2 title" colspan="2">åŸºæœ¬å‚æ•°è®¾ç½®ï¼ˆè¯·è®¿é—®<a href="http://picunion.qihoo.com" target=_blank><font color=red>http://picunion.qihoo.com</font></a>ï¼Œè·å–è”ç›Ÿå¸æˆ·ä¿¡æ¯ï¼‰</td></tr>
 <form method="<%=method%>" action="">
 <tr>
-	<td align="right">ÊÇ·ñ¿ªÆô×éÍ¼¹¦ÄÜ£º</td>
-	<td><input type="radio" name="senable" value="1" <%If senable="1" Then Response.Write "checked" %>/>¿ªÆô&nbsp;&nbsp;<input type="radio" name="senable" value="0" <%If senable="0" Then Response.Write "checked" %>/>¹Ø±Õ&nbsp;&nbsp;</td>
+	<td align="right">æ˜¯å¦å¼€å¯ç»„å›¾åŠŸèƒ½ï¼š</td>
+	<td><input type="radio" name="senable" value="1" <%If senable="1" Then Response.Write "checked" %>/>å¼€å¯&nbsp;&nbsp;<input type="radio" name="senable" value="0" <%If senable="0" Then Response.Write "checked" %>/>å…³é—­&nbsp;&nbsp;</td>
 </tr>
 <tr>
-	<td align="right">ÁªÃËÕÊ»§£º</td>
+	<td align="right">è”ç›Ÿå¸æˆ·ï¼š</td>
 	<td>
 	<input type="text" name="semail" size="30" value="<%=semail%>"/>
-	&nbsp;<font class="font1">Äú½«Ê¹ÓÃ´ËÓÊ¼şµØÖ·µÇÂ¼£¬ÇëÈ·±£ËüÊÇÕæÊµÓĞĞ§µÄ</font>
+	&nbsp;<font class="font1">æ‚¨å°†ä½¿ç”¨æ­¤é‚®ä»¶åœ°å€ç™»å½•ï¼Œè¯·ç¡®ä¿å®ƒæ˜¯çœŸå®æœ‰æ•ˆçš„</font>
 	</td>
 </tr>
 <tr>
-	<td align="right">ÁªÃËID£º</td>
+	<td align="right">è”ç›ŸIDï¼š</td>
 	<td><input type="text" name="sid" size="30" value="<%=sid%>"/></td>
 </tr>
 <tr>
-	<td align="right">ÁªÃËÃÜÂë£º</td>
+	<td align="right">è”ç›Ÿå¯†ç ï¼š</td>
 	<td><input type="text" name="spassword" size="30" value="<%=spassword%>" /></td>
 </tr>
 <tr>
-	<td align="right">ÁªÃËÃÜÔ¿£º</td>
+	<td align="right">è”ç›Ÿå¯†é’¥ï¼š</td>
 	<td><input type="text" name="skey" size="30" value="<%=skey%>" /></td>
 </tr>
 
-<tr><td class="td2 title" colspan="2">flash¿í¸ßÉèÖÃ</td></tr>
+<tr><td class="td2 title" colspan="2">flashå®½é«˜è®¾ç½®</td></tr>
 <tr>
-	<td align="right">Õ¹Ê¾flash¿í¶È£º</td>
-	<td><input type="text" name="owidth" size="30" value="<%=owidth%>" />&nbsp;<font class="font1">Ä¬ÈÏÖµ650</font></td>
+	<td align="right">å±•ç¤ºflashå®½åº¦ï¼š</td>
+	<td><input type="text" name="owidth" size="30" value="<%=owidth%>" />&nbsp;<font class="font1">é»˜è®¤å€¼650</font></td>
 </tr>
 <tr>
-	<td align="right">Õ¹Ê¾flash¸ß¶È£º</td>
-	<td><input type="text" name="oheight" size="30" value="<%=oheight%>" />&nbsp;<font class="font1">Ä¬ÈÏÖµ500</font></td>
+	<td align="right">å±•ç¤ºflashé«˜åº¦ï¼š</td>
+	<td><input type="text" name="oheight" size="30" value="<%=oheight%>" />&nbsp;<font class="font1">é»˜è®¤å€¼500</font></td>
 </tr>
 <tr>
-	<td align="right">ÉÏ´«flash¿í¶È£º</td>
-	<td><input type="text" name="iwidth" size="30" value="<%=iwidth%>" />&nbsp;<font class="font1">Ä¬ÈÏÖµ750</font></td>
+	<td align="right">ä¸Šä¼ flashå®½åº¦ï¼š</td>
+	<td><input type="text" name="iwidth" size="30" value="<%=iwidth%>" />&nbsp;<font class="font1">é»˜è®¤å€¼750</font></td>
 </tr>
 <tr>
-	<td align="right">ÉÏ´«flash¸ß¶È£º</td>
-	<td><input type="text" name="iheight" size="30" value="<%=iheight%>" />&nbsp;<font class="font1">Ä¬ÈÏÖµ240</font></td>
+	<td align="right">ä¸Šä¼ flashé«˜åº¦ï¼š</td>
+	<td><input type="text" name="iheight" size="30" value="<%=iheight%>" />&nbsp;<font class="font1">é»˜è®¤å€¼240</font></td>
 </tr>
 <tr>
-	<td align="right">Ñ¡ÔñÆôÓÃ°å¿é£º<br />Çë°´ Ctrl »òÕß Shift ¼ü¶àÑ¡<br />°å¿é²»ÄÜ¼Ì³Ğ</td>
+	<td align="right">é€‰æ‹©å¯ç”¨æ¿å—ï¼š<br />è¯·æŒ‰ Ctrl æˆ–è€… Shift é”®å¤šé€‰<br />æ¿å—ä¸èƒ½ç»§æ‰¿</td>
 	<td>
 		<select name="boardlist" size="20" style="width:270px" multiple>
 		<%
@@ -136,7 +136,7 @@ Sub MainForm()
 		if Instr(boardlist,",0,")>0 then
 			Response.Write " selected"
 		end if
-		Response.Write " value='0'>È«²¿°å¿é</option>"
+		Response.Write " value='0'>å…¨éƒ¨æ¿å—</option>"
 		do while not rs.eof
 			Response.Write "<option "
 			if Instr(boardlist,","&rs(0)&",")>0 then
@@ -145,15 +145,15 @@ Sub MainForm()
 			Response.Write " value="&rs(0)&">"
 			Select Case rs(2)
 				Case 0
-					Response.Write "©ï"
+					Response.Write "â•‹"
 				Case 1
-					Response.Write "&nbsp;&nbsp;©À"
+					Response.Write "&nbsp;&nbsp;â”œ"
 			End Select
 			If rs(2)>1 Then
 				For ii=2 To rs(2)
-					Response.Write "&nbsp;&nbsp;©¦"
+					Response.Write "&nbsp;&nbsp;â”‚"
 				Next
-				Response.Write "&nbsp;&nbsp;©À"
+				Response.Write "&nbsp;&nbsp;â”œ"
 			End If
 			Response.Write rs(1)
 			Response.Write "</option>"
@@ -168,7 +168,7 @@ Sub MainForm()
 <tr>
 	<td class="td2" colspan="2" align="center">
 	<input type="hidden" name="action" value="<%=post_action%>" />	
-	<input type="submit" name="submit" value="È·ÈÏÌá½»"/>
+	<input type="submit" name="submit" value="ç¡®è®¤æäº¤"/>
 </td>
 </tr>
 </form>

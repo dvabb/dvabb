@@ -13,7 +13,7 @@
 	End Select
 	Dvbbs.PageEnd()
 
-'ÏÔÊ¾Õ¾µãĞÅÏ¢
+'æ˜¾ç¤ºç«™ç‚¹ä¿¡æ¯
 Sub ShowConfig()
 	Dim XmlDom,Node
 	Set XmlDom = Server.CreateObject("msxml2.FreeThreadedDOMDocument.3.0")
@@ -24,7 +24,7 @@ Sub ShowConfig()
 	Node.setAttribute "gamesite",Plus_Popwan.ConfigNode.getAttribute("gamesite")
 	Node.setAttribute "recommendid",RecommendID
 	Response.Clear
-	Response.CharSet="gb2312"  'Êı¾İ¼¯
+	Response.CharSet="gb2312"  'æ•°æ®é›†
 	Response.contentType = "application/xml"
 	Response.Expires = 0
 	Response.Write "<?xml version=""1.0"" encoding=""gb2312""?>"
@@ -33,7 +33,7 @@ Sub ShowConfig()
 	Set XmlDom=Nothing
 End Sub
 
-'ÓÃ»§½øÈëÓÎÏ·Ìø×ª
+'ç”¨æˆ·è¿›å…¥æ¸¸æˆè·³è½¬
 Sub PlayGame()
 	Dim GoGame,UniUrl,SiteID,UserKey,Sign,DateTime,UserEmail,Userid
 	SiteID = Plus_Popwan.ConfigNode.getAttribute("siteid")

@@ -36,112 +36,112 @@ hr { width:90%; text-align:left; size:0; height:0px; border-top:1px solid #46A0C
   <tr>
     <td valign="top" style="padding-top:10px;" class="left_color" id="menubar">
 			<div id="left0" style="display:"> 
-				<a href="setting.asp" target="frmright">ÂÛÌ³»ù±¾ÉèÖÃ</a>
-				<a href="board.asp?action=add" target="frmright">Ìí¼ÓÂÛÌ³°æÃæ</a>
-				<a href="board.asp" target="frmright">ÂÛÌ³°æÃæ¹ÜÀí</a>
-				<a href="user.asp" target="frmright">ÓÃ»§×ÊÁÏ¹ÜÀí</a>
-				<a href="group.asp" target="frmright">ÓÃ»§×é(µÈ¼¶)¹ÜÀí</a>
-				<a href="template.asp" target="frmright">·ç¸ñÄ£°å¹ÜÀí</a>
-				<a href="admin.asp" target="frmright">¹ÜÀíÔ±¹ÜÀí</a>
-				<a href="data.asp?action=BackupData" target="frmright">ÂÛÌ³Êý¾Ý±¸·Ý</a>
+				<a href="setting.asp" target="frmright">è®ºå›åŸºæœ¬è®¾ç½®</a>
+				<a href="board.asp?action=add" target="frmright">æ·»åŠ è®ºå›ç‰ˆé¢</a>
+				<a href="board.asp" target="frmright">è®ºå›ç‰ˆé¢ç®¡ç†</a>
+				<a href="user.asp" target="frmright">ç”¨æˆ·èµ„æ–™ç®¡ç†</a>
+				<a href="group.asp" target="frmright">ç”¨æˆ·ç»„(ç­‰çº§)ç®¡ç†</a>
+				<a href="template.asp" target="frmright">é£Žæ ¼æ¨¡æ¿ç®¡ç†</a>
+				<a href="admin.asp" target="frmright">ç®¡ç†å‘˜ç®¡ç†</a>
+				<a href="data.asp?action=BackupData" target="frmright">è®ºå›æ•°æ®å¤‡ä»½</a>
 	
-				<!--<a href="plus_adsali.asp" target="frmright">Õ¾³¤ÓªÏú(°¢ÀïÂèÂè¹ã¸æÁªÃË)</a>-->
-				<a href="forumads.asp" target="frmright">ÂÛÌ³¹ã¸æ¹ÜÀí</a>
-				<a href="ReloadForumCache.asp" target="frmright">¸üÐÂÂÛÌ³»º´æ</a>
-				<a href="log.asp" target="frmright">ÂÛÌ³ÏµÍ³ÈÕÖ¾</a>
-				<a href="Badlanguage.asp" target="frmright">ÂÛÌ³¹Ø¼ü´ÊÉèÖÃ</a>
-				<a href="comparefileonlie.asp" target="frmright">ÂÛÌ³ÎÄ¼þÐ£¼ì</a>
+				<!--<a href="plus_adsali.asp" target="frmright">ç«™é•¿è¥é”€(é˜¿é‡Œå¦ˆå¦ˆå¹¿å‘Šè”ç›Ÿ)</a>-->
+				<a href="forumads.asp" target="frmright">è®ºå›å¹¿å‘Šç®¡ç†</a>
+				<a href="ReloadForumCache.asp" target="frmright">æ›´æ–°è®ºå›ç¼“å­˜</a>
+				<a href="log.asp" target="frmright">è®ºå›ç³»ç»Ÿæ—¥å¿—</a>
+				<a href="Badlanguage.asp" target="frmright">è®ºå›å…³é”®è¯è®¾ç½®</a>
+				<a href="comparefileonlie.asp" target="frmright">è®ºå›æ–‡ä»¶æ ¡æ£€</a>
 			</div>
 
 			<div id="left1" style="display:none"> 
-				<a href=setting.asp target="frmright">ÂÛÌ³»ù±¾ÉèÖÃ</a>
-				<a href=forumads.asp target="frmright">ÂÛÌ³¹ã¸æÉèÖÃ</a>
-				<!--<a href="plus_adsali.asp" target="frmright"><font color="red">Õ¾³¤ÓªÏú(°¢ÀïÂèÂè¹ã¸æÁªÃË)</font></a>-->
-				<a href="../announcements.asp?boardid=0&action=AddAnn" target="_blank">ÂÛÌ³¹«¸æ¹ÜÀí</a>
-				<a href=link.asp?action=add target="frmright">ÓÑÇéÂÛÌ³Ìí¼Ó</a>
-				<a href=link.asp target="frmright">ÓÑÇéÂÛÌ³¹ÜÀí</a>
-				<a href="ForumPay.asp" target="frmright">ÂÛÌ³½»Ò×¹ÜÀí</a>
-				<a href="ForumNewsSetting.asp" target="frmright">ÂÛÌ³Ê×Ò³µ÷ÓÃ</a>
-				<a href="badword.asp?reaction=badword" target="frmright">Ôà»°¹ýÂËÉèÖÃ</a>
-				<a href="badword.asp?reaction=splitreg" target="frmright">×¢²á¹ýÂË×Ö·û</a>
-				<a href="lockip.asp?action=add" target="frmright">IPÀ´·ÃÏÞ¶¨Ìí¼Ó</a>
-				<a href="lockip.asp" target="frmright">IPÀ´·ÃÏÞ¶¨¹ÜÀí</a>
-				<a href="Badlanguage.asp" target="frmright">ÂÛÌ³¹Ø¼ü´ÊÉèÖÃ</a>
-				<a href="comparefileonlie.asp" target="frmright">ÂÛÌ³ÎÄ¼þÐ£¼ì</a>
+				<a href=setting.asp target="frmright">è®ºå›åŸºæœ¬è®¾ç½®</a>
+				<a href=forumads.asp target="frmright">è®ºå›å¹¿å‘Šè®¾ç½®</a>
+				<!--<a href="plus_adsali.asp" target="frmright"><font color="red">ç«™é•¿è¥é”€(é˜¿é‡Œå¦ˆå¦ˆå¹¿å‘Šè”ç›Ÿ)</font></a>-->
+				<a href="../announcements.asp?boardid=0&action=AddAnn" target="_blank">è®ºå›å…¬å‘Šç®¡ç†</a>
+				<a href=link.asp?action=add target="frmright">å‹æƒ…è®ºå›æ·»åŠ </a>
+				<a href=link.asp target="frmright">å‹æƒ…è®ºå›ç®¡ç†</a>
+				<a href="ForumPay.asp" target="frmright">è®ºå›äº¤æ˜“ç®¡ç†</a>
+				<a href="ForumNewsSetting.asp" target="frmright">è®ºå›é¦–é¡µè°ƒç”¨</a>
+				<a href="badword.asp?reaction=badword" target="frmright">è„è¯è¿‡æ»¤è®¾ç½®</a>
+				<a href="badword.asp?reaction=splitreg" target="frmright">æ³¨å†Œè¿‡æ»¤å­—ç¬¦</a>
+				<a href="lockip.asp?action=add" target="frmright">IPæ¥è®¿é™å®šæ·»åŠ </a>
+				<a href="lockip.asp" target="frmright">IPæ¥è®¿é™å®šç®¡ç†</a>
+				<a href="Badlanguage.asp" target="frmright">è®ºå›å…³é”®è¯è®¾ç½®</a>
+				<a href="comparefileonlie.asp" target="frmright">è®ºå›æ–‡ä»¶æ ¡æ£€</a>
 			</div>
 
 			<div id="left2" style="display:none"> 
-				<a href="board.asp?action=add" target="frmright" alt="">°æÃæ(·ÖÀà)Ìí¼Ó</a>
-				<a href="board.asp" target="frmright" alt="">°æÃæ(·ÖÀà)¹ÜÀí</a>
-				<a href="board.asp?action=permission" target="frmright" alt="">·Ö°æÃæÓÃ»§È¨ÏÞÉèÖÃ</a>
-				<a href="boardunite.asp" target="frmright" alt="">ºÏ²¢°æÃæÊý¾Ý</a>
-				<a href="update.asp" target="frmright" alt="">ÖØ¼ÆÂÛÌ³Êý¾ÝºÍÐÞ¸´</a>
+				<a href="board.asp?action=add" target="frmright" alt="">ç‰ˆé¢(åˆ†ç±»)æ·»åŠ </a>
+				<a href="board.asp" target="frmright" alt="">ç‰ˆé¢(åˆ†ç±»)ç®¡ç†</a>
+				<a href="board.asp?action=permission" target="frmright" alt="">åˆ†ç‰ˆé¢ç”¨æˆ·æƒé™è®¾ç½®</a>
+				<a href="boardunite.asp" target="frmright" alt="">åˆå¹¶ç‰ˆé¢æ•°æ®</a>
+				<a href="update.asp" target="frmright" alt="">é‡è®¡è®ºå›æ•°æ®å’Œä¿®å¤</a>
 			</div>
 
 			<div id="left3" style="display:none">
-				<a href="user.asp" target="frmright"  alt="">ÓÃ»§×ÊÁÏ(È¨ÏÞ)¹ÜÀí</a>
-				<a href="group.asp" target="frmright" alt="">ÓÃ»§×é(µÈ¼¶)¹ÜÀí</a>
-				<a href="wealth.asp" target="frmright" alt="">ÓÃ»§»ý·ÖÉèÖÃ</a>
-				<a href="message.asp" target="frmright" alt="">ÓÃ»§¶ÌÐÅ¹ÜÀí</a>
-				<a href="update.asp?action=updateuser" target="frmright" alt="">ÖØ¼ÆÓÃ»§¸÷ÏîÊý¾Ý</a>
-				<a href="SendEmail.asp" target="frmright" alt="">ÓÃ»§ÓÊ¼þÈº·¢¹ÜÀí</a>
-				<a href="admin.asp?action=add" target="frmright" alt="">¹ÜÀíÔ±Ìí¼Ó</a>
-				<a href="admin.asp" target="frmright" alt="">¹ÜÀíÔ±¹ÜÀí</a>
-				<a href="user.asp?action=audituser" target="frmright" alt="">ÅúÁ¿ÉèÖÃÉóºË</a>
+				<a href="user.asp" target="frmright"  alt="">ç”¨æˆ·èµ„æ–™(æƒé™)ç®¡ç†</a>
+				<a href="group.asp" target="frmright" alt="">ç”¨æˆ·ç»„(ç­‰çº§)ç®¡ç†</a>
+				<a href="wealth.asp" target="frmright" alt="">ç”¨æˆ·ç§¯åˆ†è®¾ç½®</a>
+				<a href="message.asp" target="frmright" alt="">ç”¨æˆ·çŸ­ä¿¡ç®¡ç†</a>
+				<a href="update.asp?action=updateuser" target="frmright" alt="">é‡è®¡ç”¨æˆ·å„é¡¹æ•°æ®</a>
+				<a href="SendEmail.asp" target="frmright" alt="">ç”¨æˆ·é‚®ä»¶ç¾¤å‘ç®¡ç†</a>
+				<a href="admin.asp?action=add" target="frmright" alt="">ç®¡ç†å‘˜æ·»åŠ </a>
+				<a href="admin.asp" target="frmright" alt="">ç®¡ç†å‘˜ç®¡ç†</a>
+				<a href="user.asp?action=audituser" target="frmright" alt="">æ‰¹é‡è®¾ç½®å®¡æ ¸</a>
 				
 			</div>
 
 			<div id="left4" style="display:none"> 
-				<a href="template.asp" target="frmright" alt="">·ç¸ñ½çÃæÄ£°å×Ü¹ÜÀí</a>
-				<a href="Template_RegAndLogout.asp" target="frmright" alt="">Ä£°å×¢²áÓë×¢Ïú</a>
-				<a href="Label.asp" target="frmright" alt="">×Ô¶¨Òå±êÇ©¹ÜÀí</a>
+				<a href="template.asp" target="frmright" alt="">é£Žæ ¼ç•Œé¢æ¨¡æ¿æ€»ç®¡ç†</a>
+				<a href="Template_RegAndLogout.asp" target="frmright" alt="">æ¨¡æ¿æ³¨å†Œä¸Žæ³¨é”€</a>
+				<a href="Label.asp" target="frmright" alt="">è‡ªå®šä¹‰æ ‡ç­¾ç®¡ç†</a>
 			</div>
 
 			<div id="left5" style="display:none"> 
-				<a href="alldel.asp" target="frmright" alt="">ÅúÁ¿É¾³ý</a>
-				<a href="alldel.asp?action=moveinfo" target="frmright" alt="">ÅúÁ¿ÒÆ¶¯</a>
-				<a href="../recycle.asp" target="frmright" alt="">»ØÊÕÕ¾¹ÜÀí</a>
-				<a href="postdata.asp?action=Nowused" target="frmright" alt="">µ±Ç°Ìû×ÓÊý¾Ý±í¹ÜÀí </a>
-				<a href="postdata.asp" target="frmright" alt="">Êý¾Ý±í¼äÌû×Ó×ª»» </a>
+				<a href="alldel.asp" target="frmright" alt="">æ‰¹é‡åˆ é™¤</a>
+				<a href="alldel.asp?action=moveinfo" target="frmright" alt="">æ‰¹é‡ç§»åŠ¨</a>
+				<a href="../recycle.asp" target="frmright" alt="">å›žæ”¶ç«™ç®¡ç†</a>
+				<a href="postdata.asp?action=Nowused" target="frmright" alt="">å½“å‰å¸–å­æ•°æ®è¡¨ç®¡ç† </a>
+				<a href="postdata.asp" target="frmright" alt="">æ•°æ®è¡¨é—´å¸–å­è½¬æ¢ </a>
 			</div>
 
 			<div id="left6" style="display:none"> 
-				<a href="data.asp?action=CompressData" target="frmright" alt="">Ñ¹ËõÊý¾Ý¿â</a>
-				<a href="data.asp?action=BackupData" target="frmright" alt="">±¸·ÝÊý¾Ý¿â</a>
-				<a href="data.asp?action=RestoreData" target="frmright" alt="">»Ö¸´Êý¾Ý¿â</a>
-				<a href="address.asp?action=add" target="frmright" alt="">ÂÛÌ³IP¿âÌí¼Ó</a>
-				<a href="address.asp" target="frmright" alt="">ÂÛÌ³IP¿â¹ÜÀí </a>
+				<a href="data.asp?action=CompressData" target="frmright" alt="">åŽ‹ç¼©æ•°æ®åº“</a>
+				<a href="data.asp?action=BackupData" target="frmright" alt="">å¤‡ä»½æ•°æ®åº“</a>
+				<a href="data.asp?action=RestoreData" target="frmright" alt="">æ¢å¤æ•°æ®åº“</a>
+				<a href="address.asp?action=add" target="frmright" alt="">è®ºå›IPåº“æ·»åŠ </a>
+				<a href="address.asp" target="frmright" alt="">è®ºå›IPåº“ç®¡ç† </a>
 			</div>
 
 			<div id="left7" style="display:none"> 
-				<a href="upUserface.asp" target="frmright" alt="">ÉÏ´«Í·Ïñ¹ÜÀí</a>
-				<a href="uploadlist.asp" target="frmright" alt="">ÉÏ´«ÎÄ¼þ¹ÜÀí</a>
-				<a href="bbsface.asp?Stype=3" target="frmright" alt="">×¢²áÍ·Ïñ¹ÜÀí</a>
-				<a href="bbsface.asp?Stype=2" target="frmright" alt="">·¢ÌùÐÄÇé¹ÜÀí</a>
-				<a href="bbsface.asp?Stype=1" target="frmright" alt="">·¢Ìù±íÇé¹ÜÀí</a>
+				<a href="upUserface.asp" target="frmright" alt="">ä¸Šä¼ å¤´åƒç®¡ç†</a>
+				<a href="uploadlist.asp" target="frmright" alt="">ä¸Šä¼ æ–‡ä»¶ç®¡ç†</a>
+				<a href="bbsface.asp?Stype=3" target="frmright" alt="">æ³¨å†Œå¤´åƒç®¡ç†</a>
+				<a href="bbsface.asp?Stype=2" target="frmright" alt="">å‘è´´å¿ƒæƒ…ç®¡ç†</a>
+				<a href="bbsface.asp?Stype=1" target="frmright" alt="">å‘è´´è¡¨æƒ…ç®¡ç†</a>
 			</div>
 
 			<div id="left8" style="display:none"> 
-				<a href="plus.asp" target="frmright" alt="">ÂÛÌ³²Ëµ¥¹ÜÀí</a>				
+				<a href="plus.asp" target="frmright" alt="">è®ºå›èœå•ç®¡ç†</a>				
 				
-				<a href="../bokeadmin.asp" target="frmright" alt="">ÂÛÌ³²©¿Í¹ÜÀí</a>
+				<a href="../bokeadmin.asp" target="frmright" alt="">è®ºå›åšå®¢ç®¡ç†</a>
 				
-				<a href="plus_Tools_Info.asp?action=Setting" target="frmright" alt="">µÀ¾ßÖÐÐÄÉèÖÃ</a>
-				<a href="plus_Tools_Info.asp?action=List" target="frmright" alt="">µÀ¾ß×ÊÁÏÉèÖÃ</a>
-				<a href="plus_Tools_User.asp" target="frmright" alt="">ÓÃ»§µÀ¾ß¹ÜÀí</a>
-				<a href="plus_Tools_User.asp?action=paylist" target="frmright" alt="">½»Ò×ÐÅÏ¢¹ÜÀí</a>
-				<a href="MoneyLog.asp" target="frmright" alt="">µÀ¾ßÖÐÐÄÈÕÖ¾</a>
-				<a href="plus_Tools_Magicface.asp" target="frmright" alt="">Ä§·¨±íÇéÉèÖÃ</a>
-				<a href="plus_cnzz_wss.asp" target='frmright'>Á÷Á¿Í³¼Æ</a>
-				<a href="plus_ccvideo.asp" target="frmright" alt="">CCÊÓÆµ²å¼þ</a>
-				<a href="plus_qcomic.asp" target='frmright'>×éÍ¼²ÎÊýÉèÖÃ</a>				
+				<a href="plus_Tools_Info.asp?action=Setting" target="frmright" alt="">é“å…·ä¸­å¿ƒè®¾ç½®</a>
+				<a href="plus_Tools_Info.asp?action=List" target="frmright" alt="">é“å…·èµ„æ–™è®¾ç½®</a>
+				<a href="plus_Tools_User.asp" target="frmright" alt="">ç”¨æˆ·é“å…·ç®¡ç†</a>
+				<a href="plus_Tools_User.asp?action=paylist" target="frmright" alt="">äº¤æ˜“ä¿¡æ¯ç®¡ç†</a>
+				<a href="MoneyLog.asp" target="frmright" alt="">é“å…·ä¸­å¿ƒæ—¥å¿—</a>
+				<a href="plus_Tools_Magicface.asp" target="frmright" alt="">é­”æ³•è¡¨æƒ…è®¾ç½®</a>
+				<a href="plus_cnzz_wss.asp" target='frmright'>æµé‡ç»Ÿè®¡</a>
+				<a href="plus_ccvideo.asp" target="frmright" alt="">CCè§†é¢‘æ’ä»¶</a>
+				<a href="plus_qcomic.asp" target='frmright'>ç»„å›¾å‚æ•°è®¾ç½®</a>				
 			</div>
 
 			<div id="left9" style="display:none"> 
-				<a href="data.asp?action=SpaceSize" target="frmright" alt="">ÏµÍ³ÐÅÏ¢¼ì²â</a>
-				<a href="log.asp" target="frmright" alt="">ÂÛÌ³ÏµÍ³ÈÕÖ¾</a>
-				<a href="help.asp" target="frmright" alt="">ÂÛÌ³°ïÖú¹ÜÀí</a>
-				<a href="ReloadForumCache.asp" target="frmright" alt="">¸üÐÂÂÛÌ³»º´æ</a>
+				<a href="data.asp?action=SpaceSize" target="frmright" alt="">ç³»ç»Ÿä¿¡æ¯æ£€æµ‹</a>
+				<a href="log.asp" target="frmright" alt="">è®ºå›ç³»ç»Ÿæ—¥å¿—</a>
+				<a href="help.asp" target="frmright" alt="">è®ºå›å¸®åŠ©ç®¡ç†</a>
+				<a href="ReloadForumCache.asp" target="frmright" alt="">æ›´æ–°è®ºå›ç¼“å­˜</a>
 			</div>
 	</td>
  </tr>

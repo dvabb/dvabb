@@ -6,7 +6,7 @@
 <!--#include file="inc/code_encrypt.asp"-->
 <%
 If Dvbbs.BoardID < 1 Then
-	Response.Write "²ÎÊı´íÎó"
+	Response.Write "å‚æ•°é”™è¯¯"
 	Response.End
 End If
 Dim totalusetable,AnnounceID,ReplyID
@@ -17,7 +17,7 @@ Dim dv_ubb,abgcolor
 Dim EmotPath
 Dim PostStyle
 PostStyle = Request("poststyle")
-Dim IsThisBoardMaster 'È·¶¨µ±Ç°ÓÃ»§ÊÇ·ñ±¾°æ°æÖ÷£¬·ÀÖ¹ÏÂÃæµÄ²Ù×÷Ó°Ïìµ½ Dvbbs.BoardMasterµ¼ÖÂ³ö´í
+Dim IsThisBoardMaster 'ç¡®å®šå½“å‰ç”¨æˆ·æ˜¯å¦æœ¬ç‰ˆç‰ˆä¸»ï¼Œé˜²æ­¢ä¸‹é¢çš„æ“ä½œå½±å“åˆ° Dvbbs.BoardMasterå¯¼è‡´å‡ºé”™
 IsThisBoardMaster = Dvbbs.BoardMaster
 Dvbbs.Loadtemplates("post")
 Set MyPost = New Dvbbs_Post
@@ -30,7 +30,7 @@ Else
 	Dvbbs.ErrType=1
 	Response.Write "<style type=""text/css"">.tableborder1{width:100%;}</style>"
 End If
-EmotPath=Split(Dvbbs.Forum_emot,"|||")(0)		'emĞÄÇéÂ·¾¶
+EmotPath=Split(Dvbbs.Forum_emot,"|||")(0)		'emå¿ƒæƒ…è·¯å¾„
 
 Set dv_ubb=new Dvbbs_UbbCode
 dv_ubb.posttype=1
@@ -53,11 +53,11 @@ Class Dvbbs_Post
 	Private FoundUseMagic,iMagicFace,tMagicMoney,tMagicTicket
 	Private FlashId
 	Private Sub Class_Initialize()
-		'¹ÜÀíÔ±¼°¸Ã°æ°æÖ÷ÔÊĞíÔÚËø¶¨ÂÛÌ³·¢Ìû
+		'ç®¡ç†å‘˜åŠè¯¥ç‰ˆç‰ˆä¸»å…è®¸åœ¨é”å®šè®ºå›å‘å¸–
 		If Dvbbs.Board_Setting(0)="1" And Not (Dvbbs.Master or Dvbbs.Boardmaster) Then
 			Response.redirect "showerr.asp?ShowErrType="&Dvbbs.ErrType&"&action=lock&boardid="&dvbbs.boardID&""
 		End If
-		Rem ¶¯Íø.Ğ¡Ò×£¬Ö¸¶¨ÓÃ»§×é¶¨Ê±Ö»¶Á
+		Rem åŠ¨ç½‘.å°æ˜“ï¼ŒæŒ‡å®šç”¨æˆ·ç»„å®šæ—¶åªè¯»
 		If Dvbbs.TyReadOnly Then Response.redirect "showerr.asp?ShowErrType=110&action=readonly&boardid="&dvbbs.boardID&""
 		If Dvbbs.IsReadonly() And Not Dvbbs.Master  Then Response.redirect "showerr.asp?ShowErrType="&Dvbbs.ErrType&"&action=readonly&boardid="&dvbbs.boardID&""
 		Action = Request("Action")
@@ -97,7 +97,7 @@ Class Dvbbs_Post
 		IsAudit = Cint(Dvbbs.Board_Setting(3))
 		FoundUseMagic = 0
 	End Sub
-	'Action 1=·¢Ìù¡¢2=»ØÌû¡¢3=Í¶Æ±¡¢4=±à¼­ Ö÷Ìå²¿·Ö
+	'Action 1=å‘è´´ã€2=å›å¸–ã€3=æŠ•ç¥¨ã€4=ç¼–è¾‘ ä¸»ä½“éƒ¨åˆ†
 	Public Function Show_Post_Body()
 		Chk_Post()
 		Dvbbs.ShowErr()
@@ -113,26 +113,26 @@ Class Dvbbs_Post
 
 		If Dvbbs.GroupSetting(51)="1" And (Action=1 Or Action=3) Then TempStr = Replace(TempStr,"{$useraction}",TempArray(3))
 
-		'»°Ìâ
+		'è¯é¢˜
 		TempStr1 = Split(template.Strings(8),",")
 		For i = 0 To Ubound(TempStr1)
 			TempStr2 = TempStr2 & "<option value="""&TempStr1(i)&""">"&TempStr1(i)&"</option>"
 		Next
 		TempStr = Replace(TempStr,"{$topictype}",TempStr2)
-		'ÌØÊâ±êÌâ
+		'ç‰¹æ®Šæ ‡é¢˜
 		If Dvbbs.GroupSetting(51)="1" Then TempStr = Replace(TempStr,"{$topicstatsinfo}",TempArray(1))
 		TempStr = Replace(TempStr,"{$topicstatsinfo}","")
-		'ÑéÖ¤ÂëBoard_Setting(4)
+		'éªŒè¯ç Board_Setting(4)
 		If Dvbbs.Board_Setting(4)="0" Then
 			TempStr = Replace(TempStr,"{$getcode}","")
 		Else
 			TempArray(5)= Replace(TempArray(5),"{$codestr}",Dvbbs.GetCode&"<span id=GetCode></span>")
 			TempStr = Replace(TempStr,"{$getcode}",TempArray(5))
 		End If
-		'Í·Ïñ
+		'å¤´åƒ
 		TempStr = Replace(TempStr,"{$Forum_PostFace}",Dvbbs.Forum_PostFace)
 
-		'±êÇ©ÅĞ¶Ï²¿·Ö
+		'æ ‡ç­¾åˆ¤æ–­éƒ¨åˆ†
 		TempStr = Replace(TempStr,"{$ihtml}",Dvbbs.Board_Setting(5))
 		TempStr = Replace(TempStr,"{$iubb}",Dvbbs.Board_Setting(6))
 		TempStr = Replace(TempStr,"{$iimg}",Dvbbs.Board_Setting(7))
@@ -149,11 +149,11 @@ Class Dvbbs_Post
 		TempStr = Replace(TempStr,"{$ireplyview}",Dvbbs.Board_Setting(15))
 		TempStr = Replace(TempStr,"{$iusemoney}",Dvbbs.Board_Setting(23))
 		TempStr = Replace(TempStr,"{$iuseusername}",Dvbbs.Board_Setting(56))
-		'ubb²¿·Ö
+		'ubbéƒ¨åˆ†
 		PostType = 1
 		TempStr = Replace(TempStr,"{$PostType}",PostType)
 		TempStr = Replace(TempStr,"{$getubb}",Temp_UBBHTML())
-		'·¢ÌùĞÄÇé
+		'å‘è´´å¿ƒæƒ…
 		TempStr = Replace(TempStr,"{$Forum_emot}",Dvbbs.Forum_emot)
 		TempStr = Replace(TempStr,"{$Forum_sn}",GetFormID())
 		TempStr = Replace(TempStr,"{$star}",Star)
@@ -183,7 +183,7 @@ Class Dvbbs_Post
 		If Not Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@postdata") Is Nothing Then
 				Content=Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@postdata").text
 		End if
-		'Action 1=·¢Ìù¡¢2=»ØÌû¡¢3=Í¶Æ±¡¢4=±à¼­ Ö÷Ìå²¿·Ö
+		'Action 1=å‘è´´ã€2=å›å¸–ã€3=æŠ•ç¥¨ã€4=ç¼–è¾‘ ä¸»ä½“éƒ¨åˆ†
 		If 1=Dvbbs.Board_Setting(67) Then 
 			TempStr = Replace(TempStr,"{$tenpay}","'tenpay',")
 		Else
@@ -198,7 +198,7 @@ Class Dvbbs_Post
 			TempStr = Replace(TempStr,"{$useraction}","")
 			TempStr = Replace(TempStr,"{$retopicloop}","")
 			If Dvbbs.UserID = 0 Then
-				TempStr = Replace(TempStr,"{$membername}","¿ÍÈË"" readonly=""readonly")
+				TempStr = Replace(TempStr,"{$membername}","å®¢äºº"" readonly=""readonly")
 				TempStr = Replace(TempStr,"{$memberword}","**********"" readonly=""readonly")
 			Else
 				TempStr = Replace(TempStr,"{$membername}",Dvbbs.MemberName)
@@ -235,7 +235,7 @@ Class Dvbbs_Post
 			retopicloop = Get_Re_TopicInfo
 			retopicloop=Replace(retopicloop,"$","&#36;")
 			If Dvbbs.UserID = 0 Then
-				TempStr = Replace(TempStr,"{$membername}","¿ÍÈË"" readonly=""readonly")
+				TempStr = Replace(TempStr,"{$membername}","å®¢äºº"" readonly=""readonly")
 				TempStr = Replace(TempStr,"{$memberword}","**********"" readonly=""readonly")
 			Else
 				TempStr = Replace(TempStr,"{$membername}",Dvbbs.MemberName)
@@ -261,7 +261,7 @@ Class Dvbbs_Post
 			TempStr1 = Replace(TempStr1,"{$votelimited}",Dvbbs.Board_Setting(32))
 			TempStr1 = Replace(TempStr1,"{$posttimesel}",TempArray(2))
 			If Dvbbs.UserID = 0 Then
-				TempStr = Replace(TempStr,"{$membername}","¿ÍÈË"" readonly=""readonly")
+				TempStr = Replace(TempStr,"{$membername}","å®¢äºº"" readonly=""readonly")
 				TempStr = Replace(TempStr,"{$memberword}","**********"" readonly=""readonly")
 			Else
 				TempStr = Replace(TempStr,"{$membername}",Dvbbs.MemberName)
@@ -344,10 +344,10 @@ Class Dvbbs_Post
 			TempStr = Replace(TempStr,"{$checkbox4}","")
 			TempStr = Replace(TempStr,"{$checkbox5}","")
 		End If
-		'ÉÏ´«
+		'ä¸Šä¼ 
 		If (Dvbbs.GroupSetting(7)="1" Or Dvbbs.GroupSetting(7)="2") and Dvbbs.Forum_setting(43)<>999 Then TempStr = Replace(TempStr,"{$uploadinfo}",Temp_FileUpload)
 		TempStr = Replace(TempStr,"{$uploadinfo}","")
-		'·¢ÌûĞÄÇé
+		'å‘å¸–å¿ƒæƒ…
 		TempStr = Replace(TempStr,"{$SelectFace}",Expression)
 		TempStr = Replace(TempStr,"{$boardid}",Dvbbs.BoardID)
 		TempStr = Replace(TempStr,"{$tools_magicface}","")
@@ -364,7 +364,7 @@ Class Dvbbs_Post
 			TempStr = Replace(TempStr,"{$isalipay}","")
 		End If
 		TempStr = Replace(TempStr,"{$poststyle}",PostStyle)
-		'hxyman ĞÂ¼ÓÒ»Ğ©±êÇ©
+		'hxyman æ–°åŠ ä¸€äº›æ ‡ç­¾
 		TempStr = Replace(TempStr,"{$maxtitlelength}",Dvbbs.Board_Setting(45))
 		If Action = 1 Or Action = 3 Then
 			TempStr = Replace(TempStr,"{$ispostnew}",1)
@@ -388,7 +388,7 @@ Class Dvbbs_Post
 		Response.Cookies("Dvbbs")=""
 	End Function
 
-	'×¨ÌâÏÂÀ­Ä£Ê½¶ÁÈ¡
+	'ä¸“é¢˜ä¸‹æ‹‰æ¨¡å¼è¯»å–
 	Public Function TopicMode(SelectMode)
 		If Cint(Dvbbs.GroupSetting(65))=0 Then Exit Function
 		If Replace(Dvbbs.Board_Setting(48),"$$","")="" Then Exit Function
@@ -399,25 +399,25 @@ Class Dvbbs_Post
 			TopicMode=TopicMode+" >"&BoardTopic(iii)&"</option>"
 		Next
 		TopicMode=Replace(SelectMode,"{$TopicMode}",TopicMode)
-		'¼ÓÈë±ØÑ¡×¨ÌâÅĞ¶ÏÒşº¬²Ëµ¥¡£2005-3-11 Dv.Yz
+		'åŠ å…¥å¿…é€‰ä¸“é¢˜åˆ¤æ–­éšå«èœå•ã€‚2005-3-11 Dv.Yz
 		TopicMode = TopicMode & "<input type=""hidden"" id=""selecttmode"" value=""" & Cint(Dvbbs.GroupSetting(65)) & """ />"
 	End Function
-	'Í¨ÓÃÅĞ¶Ï
+	'é€šç”¨åˆ¤æ–­
 	Public Function Chk_Post()
-		If Dvbbs.Board_Setting(43)="1" Then Dvbbs.AddErrCode(72)	'±¾ÂÛÌ³×÷Îª·ÖÀàÂÛÌ³²»ÔÊĞí·¢Ìù
-		If Dvbbs.Board_Setting(1)="1" and Dvbbs.GroupSetting(37)="0" Then Dvbbs.AddErrCode(26)	'ÊÇ·ñÒş²ØÂÛÌ³
+		If Dvbbs.Board_Setting(43)="1" Then Dvbbs.AddErrCode(72)	'æœ¬è®ºå›ä½œä¸ºåˆ†ç±»è®ºå›ä¸å…è®¸å‘è´´
+		If Dvbbs.Board_Setting(1)="1" and Dvbbs.GroupSetting(37)="0" Then Dvbbs.AddErrCode(26)	'æ˜¯å¦éšè—è®ºå›
 		If Dvbbs.UserID>0 Then
 			If Clng(Dvbbs.GroupSetting(52))>0 And DateDiff("s",Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@joindate").text,Now)<Clng(Dvbbs.GroupSetting(52))*60 Then Response.redirect "showerr.asp?ShowErrType="&Dvbbs.ErrType&"&ErrCodes=<li>"&Replace(template.Strings(21),"{$timelimited}",Dvbbs.GroupSetting(52))&"&action=OtherErr"
 			If Dvbbs.GroupSetting(62)<>"0" And Not Action = 4 Then
 				If Clng(Dvbbs.GroupSetting(62))<=Clng(Dvbbs.UserToday(0)) Then Response.redirect "showerr.asp?ShowErrType="&Dvbbs.ErrType&"&ErrCodes=<li>"&Replace(template.Strings(27),"{$topiclimited}",Dvbbs.GroupSetting(62))&"&action=OtherErr"
 			End If
 		End If
-		'¿ÉÒÔ·¢²¼ĞÂÖ÷Ìâ
+		'å¯ä»¥å‘å¸ƒæ–°ä¸»é¢˜
 		If Dvbbs.GroupSetting(3)="0" And (Action = 1 Or Action = 3) Then Response.redirect "showerr.asp?ShowErrType="&Dvbbs.ErrType&"&ErrCodes=<li>"&template.Strings(28)&"&action=OtherErr"
-		'¿ÉÒÔ»Ø¸´ÆäËûÈËµÄÖ÷Ìâ
+		'å¯ä»¥å›å¤å…¶ä»–äººçš„ä¸»é¢˜
 		'If Dvbbs.GroupSetting(5)="0" And (Action = 2) Then Response.redirect "showerr.asp?ShowErrType="&Dvbbs.ErrType&"&ErrCodes=<li>"&template.Strings(29)&"&action=OtherErr"
 	End Function
-	'µÃµ½»Ø¸´»òÒıÓÃÌû×ÓµÄÅĞ¶ÏºÍÏà¹ØĞÅÏ¢
+	'å¾—åˆ°å›å¤æˆ–å¼•ç”¨å¸–å­çš„åˆ¤æ–­å’Œç›¸å…³ä¿¡æ¯
 	Public Function Get_Re_TopicInfo()
 		Dim lockuser,postip
 		postip=""
@@ -486,7 +486,7 @@ Class Dvbbs_Post
 				If Cint(Dvbbs.GroupSetting(2))=0 Then Dvbbs.AddErrCode(31)
 			End If
 			If Rs("signflag")=2 And Dvbbs.Board_Setting(68)="1" Then
-				UserName="ÄäÃûÓÃ»§"
+				UserName="åŒ¿åç”¨æˆ·"
 				postip="("&Split(rs("ip"),".")(0)&Split(rs("ip"),".")(1)&")"
 			End If
 			UserName=UserName&postip
@@ -504,18 +504,18 @@ Class Dvbbs_Post
 			Content = reubbcode(Content)
 			Content = Ubb2Html(Content)
 			If Dvbbs_Mode=2 Then
-				Content = "[quote][B]ÒÔÏÂÊÇÒıÓÃ[I]"&UserName&"[/I]ÔÚ"&DateAndTime&"µÄ·¢ÑÔ£º[/B][BR]"& Content & "[/QUOTE]"
+				Content = "[quote][B]ä»¥ä¸‹æ˜¯å¼•ç”¨[I]"&UserName&"[/I]åœ¨"&DateAndTime&"çš„å‘è¨€ï¼š[/B][BR]"& Content & "[/QUOTE]"
 			Else
-				Content = "<DIV class=quote><B>ÒÔÏÂÊÇÒıÓÃ<i>"&UserName&"</i>ÔÚ"&DateAndTime&"µÄ·¢ÑÔ£º</B><br>"& Content & "</DIV><p>"
+				Content = "<DIV class=quote><B>ä»¥ä¸‹æ˜¯å¼•ç”¨<i>"&UserName&"</i>åœ¨"&DateAndTime&"çš„å‘è¨€ï¼š</B><br>"& Content & "</DIV><p>"
 			End If
 			Content = Server.HtmlEncode(Content)
 		Else
 			Content = ""
 		End If
-		If GetMoneyType<>3 Then	'¹ºÂò½ğ±ÒÌù²»ÏÔÊ¾»Ø¸´
-			'Ö÷Ìâ¸úÌù²¿·ÖĞÅÏ¢
+		If GetMoneyType<>3 Then	'è´­ä¹°é‡‘å¸è´´ä¸æ˜¾ç¤ºå›å¤
+			'ä¸»é¢˜è·Ÿè´´éƒ¨åˆ†ä¿¡æ¯
 			Dim PostUserGroup,TempStr1,TempStr2,TempStr3
-			TempStr1 = Replace(template.html(7),"{$width}",Dvbbs.mainsetting(0))	'<!--post.asp##»ØÌûÌû×ÓÑ­»·²¿·Ö-->
+			TempStr1 = Replace(template.html(7),"{$width}",Dvbbs.mainsetting(0))	'<!--post.asp##å›å¸–å¸–å­å¾ªç¯éƒ¨åˆ†-->
 			Set Rs=Dvbbs.Execute("Select top 10 b.UserName,b.Topic,b.dateandtime,b.body,b.AnnounceID,b.isbest,u.lockuser,u.UserGroupID,b.postbuyuser,b.ubblist,b.IsAudit,b.locktopic,b.signflag,b.ip,b.postuserid from "&TotalUseTable&" b left outer join [dv_user] u on b.postuserid=u.userid where b.boardid="&Dvbbs.boardid&" and b.RootID="&AnnounceID&" order by b.AnnounceID desc")
 			Do While Not Rs.EOF
 				If Rs("postuserid")=0 Then
@@ -530,9 +530,9 @@ Class Dvbbs_Post
 				TempStr2 = TempStr1
 				If Rs("signflag")=2 Then
 					If Dvbbs.Boardmaster Then
-						UserName = Rs("UserName")&" (ÄäÃû)"
+						UserName = Rs("UserName")&" (åŒ¿å)"
 					Else
-						UserName = "ÄäÃûÓÃ»§"
+						UserName = "åŒ¿åç”¨æˆ·"
 					End If
 				Else
 					UserName = Rs("UserName")
@@ -573,7 +573,7 @@ Class Dvbbs_Post
 		End If
 		Get_Re_TopicInfo = TempStr3
 	End Function
-	'È¡µÃ±à¼­ÌùÒ³ÃæĞÅÏ¢
+	'å–å¾—ç¼–è¾‘è´´é¡µé¢ä¿¡æ¯
 	Public Function Get_Edit_TopicInfo()
 		Get_M_Request()
 		ReplyID = Request("replyid")
@@ -588,7 +588,7 @@ Class Dvbbs_Post
 			MyTopicMode = Rs(1)
 			iMagicFace = Split(Rs(2),"|")
 			If Ubound(iMagicFace) = 1 Then FoundUseMagic = iMagicFace(0)
-			Rem ¾ÉÌûµÄÖ÷ÌâÄ£Ê½Öµ¿ÉÄÜÎª¿Õ£¬ÔòĞèÒª¼ÓÈëÅĞ¶Ï¡£2004-5-6 Dvbbs.YangZheng
+			Rem æ—§å¸–çš„ä¸»é¢˜æ¨¡å¼å€¼å¯èƒ½ä¸ºç©ºï¼Œåˆ™éœ€è¦åŠ å…¥åˆ¤æ–­ã€‚2004-5-6 Dvbbs.YangZheng
 			If Isnull(MyTopicMode) Or MyTopicMode = "" Then MyTopicMode = 0
 		End If
 		Rs.close
@@ -626,7 +626,7 @@ Class Dvbbs_Post
 
 	End Function
 
-	'ÅĞ¶ÏÓÃ»§ÊÇ·ñÓĞ±à¼­È¨ÏŞÇÒÌáÈ¡Ïà¹ØĞÅÏ¢
+	'åˆ¤æ–­ç”¨æˆ·æ˜¯å¦æœ‰ç¼–è¾‘æƒé™ä¸”æå–ç›¸å…³ä¿¡æ¯
 	Public Function Get_Edit_PermissionInfo()
 		Dim old_user
 		If Action = 4 Then
@@ -695,26 +695,26 @@ Class Dvbbs_Post
 		If Action = 4 Then Dvbbs.MemberName=old_user
 	End Function
 
-	'·µ»ØÅĞ¶ÏºÍ²ÎÊı
+	'è¿”å›åˆ¤æ–­å’Œå‚æ•°
 	Public Function Get_M_Request()
 		AnnounceID = Request("ID")
 		If AnnounceID = "" Or Not IsNumeric(AnnounceID) Then Dvbbs.AddErrCode(30)
 		Dvbbs.ShowErr()
 		AnnounceID = Clng(AnnounceID)
 	End Function
-	'Ö»¶Á£¬»ñµÃ»Ø¸´Òşº¬InputÄ£°å
+	'åªè¯»ï¼Œè·å¾—å›å¤éšå«Inputæ¨¡æ¿
 	Public Property Get Re_HiddenInput()
 		Re_HiddenInput = template.html(4)
 		Re_HiddenInput = Replace(Re_HiddenInput,"{$announceid}",AnnounceID)
 		Re_HiddenInput = Replace(Re_HiddenInput,"{$replyid}",ReplyID)
 	End Property
-	'Ö»¶Á£¬»ñµÃ±à¼­Òşº¬InputÄ£°å
+	'åªè¯»ï¼Œè·å¾—ç¼–è¾‘éšå«Inputæ¨¡æ¿
 	Public Property Get Edit_HiddenInput()
 		Edit_HiddenInput = template.html(5)
 		Edit_HiddenInput = Replace(Edit_HiddenInput,"{$announceid}",AnnounceID)
 		Edit_HiddenInput = Replace(Edit_HiddenInput,"{$replyid}",ReplyID)
 	End Property
-	'Ö»¶Á£¬»ñµÃÉÏ´«±íµ¥Ä£°å
+	'åªè¯»ï¼Œè·å¾—ä¸Šä¼ è¡¨å•æ¨¡æ¿
 	Public Property Get Temp_FileUpload()
 		Dim TempArray,TempStr1
 		Temp_FileUpload = template.html(2)
@@ -752,7 +752,7 @@ Class Dvbbs_Post
 		Next
 		Temp_FileUpload = Replace(Temp_FileUpload,"{$uploadlist}",TempStr1)
 	End Property
-	'Ö»¶Á£¬»ñµÃUBBÄ£°å
+	'åªè¯»ï¼Œè·å¾—UBBæ¨¡æ¿
 	Public Property Get Temp_UBB()
 		Dim TempArray
 		Temp_UBB = template.html(3)
@@ -761,171 +761,14 @@ Class Dvbbs_Post
 			Temp_UBB = Replace(Temp_UBB,"{$ubb"&i&"}",TempArray(0) & TempArray(i))
 		Next
 	End Property
-	'Ö»¶Á£¬»ñµÃUBB¡ª¡ªHTML±à¼­Æ÷Ä£°å
+	'åªè¯»ï¼Œè·å¾—UBBâ€”â€”HTMLç¼–è¾‘å™¨æ¨¡æ¿
 	Public Property Get Temp_UBBHTML()
 		Dim TempArray
 		Temp_UBBHTML = template.html(11)
-		'DV_Custom_3080D20080114--start CcÊÓÆµ²å¼şÉÏ´«°´Å¥±êÇ©Ìæ»» -------------
+		'DV_Custom_3080D20080114--start Ccè§†é¢‘æ’ä»¶ä¸Šä¼ æŒ‰é’®æ ‡ç­¾æ›¿æ¢ -------------
 		Dim Xmldoc,Forum_api,Ccvideo_api
 		Set Forum_api = Server.Createobject("Msxml2.Freethreadeddomdocument"& Msxmlversion)
-		If IsNull(Dvbbs.Forum_apis) Or IsEmpty(Dvbbs.Forum_apis) Then
-			Temp_UBBHTML=Replace(Temp_UBBHTML,"{$Plus_CcVideo}","")
-		Else
-			If Not Forum_api.Loadxml(Dvbbs.Forum_apis) Then
-				Temp_UBBHTML=Replace(Temp_UBBHTML,"{$Plus_CcVideo}","")
-			Else
-				Set Ccvideo_api = Forum_api.Documentelement.Selectsinglenode("ccvideo")
-				If Ccvideo_api Is Nothing  Then
-					Temp_UBBHTML=Replace(Temp_UBBHTML,"{$Plus_CcVideo}","")
-				Else
-					Dim testcc
-					testcc=Ccvideo_api.Getattribute("ccvideoid")
-					if Instr(Ccvideo_api.Getattribute("boardlist"),","&Dvbbs.BoardID&",")>0 Then
-						Temp_UBBHTML=Replace(Temp_UBBHTML,"{$Plus_CcVideo}","<!-- ccÊÓÆµ²å¼ş´úÂë --><object width='72' height='24'><param name='wmode' value='transparent' /><param name='allowScriptAccess' value='always' /><param name='movie' value='http://union.bokecc.com/flash/plugin/{$Plus_CcPlugin}.swf?userID={$Plus_CcUserid}&type={$Plus_CcType}' /><embed src='http://union.bokecc.com/flash/plugin/{$Plus_CcPlugin}.swf?userID={$Plus_CcUserid}&type={$Plus_CcType}' type='application/x-shockwave-flash' width='72' height='24' allowScriptAccess='always' wmode='transparent'></embed></object><!-- ccÊÓÆµ²å¼ş´úÂë -->")
-						Temp_UBBHTML=Replace(Temp_UBBHTML,"{$Plus_CcUserid}",Ccvideo_api.Getattribute("ccvideoid"))
-						Temp_UBBHTML=Replace(Temp_UBBHTML,"{$Plus_CcPlugin}",Ccvideo_api.Getattribute("ccvideobtn"))
-						Temp_UBBHTML=Replace(Temp_UBBHTML,"{$Plus_CcType}",Ccvideo_api.Getattribute("ccvideotype"))
-					Else
-						Temp_UBBHTML=Replace(Temp_UBBHTML,"{$Plus_CcVideo}","")
-					End If
-				End If
-			End If
-		End If
-		Set Forum_api = Nothing
-		Set Ccvideo_api = Nothing
-		'DV_Custom_3080D20080114--END CcÊÓÆµ²å¼şÉÏ´«°´Å¥±êÇ©Ìæ»» -------------
+		If IsNull(Dvbbs.Forum_ai))
+		Next
 	End Property
-End Class
-'½ØÈ¡Ö¸¶¨×Ö·û
-Function cutStr(str,strlen)
-	'È¥µôËùÓĞHTML±ê¼Ç
-	Dim re
-	Set re=new RegExp
-	re.IgnoreCase =True
-	re.Global=True
-	re.Pattern="<(.[^>]*)>"
-	str=re.Replace(str,"")
-	set re=Nothing
-	Dim l,t,c,i
-	l=Len(str)
-	t=0
-	For i=1 to l
-		c=Abs(Asc(Mid(str,i,1)))
-		If c>255 Then
-			t=t+2
-		Else
-			t=t+1
-		End If
-		If t>=strlen Then
-			cutStr=left(str,i)&"..."
-			Exit For
-		Else
-			cutStr=str
-		End If
-	Next
-	cutStr=Replace(cutStr,chr(10),"")
-	cutStr=Replace(cutStr,chr(13),"")
-End Function
-'¹ıÂË²»±ØÒªUBB
-Function reUBBCode(strContent)
-	Dim re
-	Set re=new RegExp
-	re.IgnoreCase =True
-	re.Global=True
-	re.Pattern="<\/div>"
-	strContent=re.Replace(strContent,Chr(2))
-	re.Pattern="<div class=quote><b>ÒÔÏÂÊÇÒıÓÃ"
-	strContent=re.Replace(strContent,Chr(1))
-	re.Pattern="<div class=quote>([^\x01\x02]*)\x02"
-	Do While re.Test(strContent)
-		strContent=re.Replace(strContent,"[quote]$1[/quote]")
-	Loop
-	re.Pattern="\x01[^\x02]*\x02"
-	strContent=re.Replace(strContent,"")
-	re.Pattern="\[quote\]((?:.|\n)*?)\[\/quote\]"
-	Do While re.Test(strContent)
-		strContent=re.Replace(strContent,"<div class=quote>$1</div>")
-	Loop
-	re.Pattern="\x02"
-	strContent=re.Replace(strContent,"</div>")
-	re.Pattern="<div align=right><font color=#000066>(?:.|\n)*?<\/font><\/div>"
-	strContent=re.Replace(strContent,"")
-	re.Pattern="\[align=right\]\[color=#000066\](?:.|\n)*?\[\/color\]\[\/align\]"
-	strContent=re.Replace(strContent,"")
-'	re.Pattern="(\[QUOTE\])(.|\n)*?(\[\/QUOTE\])"
-'	strContent=re.Replace(strContent,"$2")
-	re.Pattern="\[point=*([0-9]*)\](?:.|\n)*?\[\/point\]"
-	strContent=re.Replace(strContent,"")
-	re.Pattern="\[post=*([0-9]*)\](?:.|\n)*?\[\/post\]"
-	strContent=re.Replace(strContent,"")
-	re.Pattern="\[power=*([0-9]*)\](?:.|\n)*?\[\/power\]"
-	strContent=re.Replace(strContent,"")
-	re.Pattern="\[usercp=*([0-9]*)\](?:.|\n)*?\[\/usercp\]"
-	strContent=re.Replace(strContent,"")
-	re.Pattern="\[money=*([0-9]*)\](?:.|\n)*?\[\/money\]"
-	strContent=re.Replace(strContent,"")
-	re.Pattern="\[replyview\](?:.|\n)*?\[\/replyview\]"
-	strContent=re.Replace(strContent,"")
-	re.Pattern="\[usemoney=*([0-9]*)\](?:.|\n)*?\[\/usemoney\]"
-	strContent=re.Replace(strContent,"")
-	re.Pattern="\[UserName=(.[^\[]*)\](?:.|\n)*?\[\/UserName\]"
-	strContent=re.Replace(strContent,"")
-	re.Pattern="  "
-	strContent=re.Replace(strContent,"&nbsp;&nbsp;")
-	re.Pattern="<I><\/I>"
-	strContent=re.Replace(strContent,"")
-	set re=Nothing
-	reUBBCode=strContent
-End Function
-
-'±à¼­Ê±ÓÃ£¨¶Ô¾ÉÊı¾İ¼æÈİ£©
-Function Ubb2Html(str)
-	Ubb2Html=str:Exit Function
-	If Str<>"" And Not IsNull(Str) Then
-		Dim re
-		Set re=new RegExp
-		re.IgnoreCase =True
-		re.Global=True
-		re.Pattern="(>)("&vbNewLine&")(<)"
-		Str=re.Replace(Str,"$1$3")
-		re.Pattern="(>)("&vbNewLine&vbNewLine&")(<)"
-		Str=re.Replace(Str,"$1$3")
-		If Dvbbs_Mode=2 Then
-			re.Pattern="&nbsp;"
-			Str=re.Replace(Str," ")
-		Else
-			re.Pattern=vbNewLine
-			Str=re.Replace(Str,"<br>")
-			re.Pattern="  "
-			Str=re.Replace(Str,"&nbsp;&nbsp;")
-			re.Pattern="	"
-			Str=re.Replace(Str,"&nbsp;")
-		End If
-		re.Pattern="<I><\/I>"
-		Str=re.Replace(Str,"")
-		re.Pattern="<(\w+)(?:&nbsp;)+([^>]*)>"
-		Str = re.Replace(Str,"<$1 $2>")
-		If Request("reply")="true" Then
-			re.Pattern="<DIV class=quote><b>ÒÔÏÂÊÇÒıÓÃ(?:.|\n)*<\/div>"
-			Str=re.Replace(Str,"")
-			re.Pattern="<div class=""quote""><b>ÒÔÏÂÊÇÒıÓÃ(?:.|\n)*<\/div>"
-			Str=re.Replace(Str,"")
-			re.Pattern="\[quote\]<b>ÒÔÏÂÊÇÒıÓÃ(?:.|\n)*\[\/quote\]"
-			Str=re.Replace(Str,"")
-			re.Pattern="\[quote\]\[b\]ÒÔÏÂÊÇÒıÓÃ(?:.|\n)*\[\/quote\]"
-			Str=re.Replace(Str,"")
-		End If
-		Set Re=Nothing
-		Ubb2Html = Str
-	Else
-		Ubb2Html = ""
-	End If
-End Function
-Function GetFormID()
-	Dim i,sessionid
-	sessionid = Session.SessionID
-	For i=1 to Len(sessionid)
-		GetFormID=GetFormID&Chr(Mid(sessionid,i,1)+97)
-	Next
-End Function
-%>
+	'é™

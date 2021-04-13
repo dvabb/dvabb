@@ -3,7 +3,7 @@
 <!--#include file="boke/config.asp"-->
 <!--#include file="boke/checkinput.asp"-->
 <%
-DvBoke.Stats = "≤È—Ø"
+DvBoke.Stats = "Êü•ËØ¢"
 DvBoke.Nav(0)
 DvBoke.LeftMenu
 Page_Main()
@@ -28,7 +28,7 @@ Function SearchOut(PageHtml)
 End Function
 
 Function Search(PageHtml)
-	'------> ªÒ»°≤È—ØÃıº˛
+	'------> Ëé∑ÂèñÊü•ËØ¢Êù°‰ª∂
 	Dim SqlStr
 	Dim Stype,SelType,CatID,KeyWord,DYear,DMonth,DDay
 	Stype = Request("Stype")
@@ -37,32 +37,32 @@ Function Search(PageHtml)
 	DYear = DvBoke.CheckNumeric(Request("DY"))
 	DMonth = DvBoke.CheckNumeric(Request("DM"))
 	DDay = DvBoke.CheckNumeric(Request("DD"))
-	'∑÷¿‡
+	'ÂàÜÁ±ª
 	If Stype>=0 THen
 		Stype = DvBoke.CheckNumeric(Stype)
 		SqlStr = SqlStr &" and sType ="&Stype
 	Else
 		Stype = -1
 	End If
-	'ƒÍ
+	'Âπ¥
 	If DYear>0 Then
 		SqlStr = SqlStr &" and Year(JoinTime) ="&DYear
 	End If
-	'‘¬
+	'Êúà
 	If DMonth>0 Then
 		SqlStr = SqlStr &" and Month(JoinTime) ="&DMonth
 	End If
-	'»’
+	'Êó•
 	If DDay>0 Then
 		SqlStr = SqlStr &" and Day(JoinTime) ="&DDay
 	End If
 	If KeyWord<>"" Then
 		Select Case SelType
-			Case 2	'ƒ⁄»›
+			Case 2	'ÂÜÖÂÆπ
 				SqlStr = SqlStr &" and Content like '%"&KeyWord&"%'"
-			Case 1	'◊˜’ﬂ
+			Case 1	'‰ΩúËÄÖ
 				SqlStr = SqlStr &" and UserName like '%"&KeyWord&"%'"
-			Case Else	'±ÍÃ‚
+			Case Else	'Ê†áÈ¢ò
 				SqlStr = SqlStr &" and Title like '%"&KeyWord&"%'"
 		End Select
 	End If
@@ -79,10 +79,10 @@ Function Search(PageHtml)
 	If IsNumeric(Page) = 0 or Page="" Then Page=1
 	Page = Clng(Page)
 	'TopicID,CatID,sCatID,UserID,UserName,Title,TitleNote,PostTime,Child,Hits,IsView,IsLock,sType,LastPostTime,IsBest,S_Key,Weather,VisitUser,PayMoney,PayNumber,PayTime,TrackBacks
-	'◊÷∂Œ≈≈–Ú TopicID=0 ,CatID=1 ,sCatID=2 ,UserID=3 ,UserName=4 ,Title=5 ,TitleNote=6 ,PostTime=7 ,Child=8 ,Hits=9 ,IsView=10 ,IsLock=11 ,sType=12 ,LastPostTime=13 ,IsBest=14 ,S_Key=15 ,Weather=16 ,VisitUser=17 ,PayMoney=18 ,PayNumber=19 ,PayTime=20 ,TrackBacks=21 
+	'Â≠óÊÆµÊéíÂ∫è TopicID=0 ,CatID=1 ,sCatID=2 ,UserID=3 ,UserName=4 ,Title=5 ,TitleNote=6 ,PostTime=7 ,Child=8 ,Hits=9 ,IsView=10 ,IsLock=11 ,sType=12 ,LastPostTime=13 ,IsBest=14 ,S_Key=15 ,Weather=16 ,VisitUser=17 ,PayMoney=18 ,PayNumber=19 ,PayTime=20 ,TrackBacks=21 
 
 	'PostID,BokeUserID,CatID,sCatID,ParentID,RootID,UserID,UserName,Title,Content,JoinTime,IP,sType,IsUpfile
-	'◊÷∂Œ≈≈–Ú PostID=0 ,BokeUserID=1 ,CatID=2 ,sCatID=3 ,ParentID=4 ,RootID=5 ,UserID=6 ,UserName=7 ,Title=8 ,Content=9 ,JoinTime=10 ,IP=11 ,sType=12 ,IsUpfile=13
+	'Â≠óÊÆµÊéíÂ∫è PostID=0 ,BokeUserID=1 ,CatID=2 ,sCatID=3 ,ParentID=4 ,RootID=5 ,UserID=6 ,UserName=7 ,Title=8 ,Content=9 ,JoinTime=10 ,IP=11 ,sType=12 ,IsUpfile=13
 
 	Sql = "Select PostID,BokeUserID,CatID,sCatID,ParentID,RootID,UserID,UserName,Title,Content,JoinTime,IP,sType,IsUpfile From [Dv_Boke_Post] Where BokeUserID = "&DvBoke.BokeUserID
 	If DvBoke.IsBokeOwner Then
@@ -92,7 +92,7 @@ Function Search(PageHtml)
 	End If
 	Sql = Sql & " order by JoinTime desc"
 	'Response.Write sql
-	'------>  ˝æ›ø‚≤È—Ø
+	'------> Êï∞ÊçÆÂ∫ìÊü•ËØ¢
 
 	If Dv_Boke_InDvbbsData = 1 Then
 		If Not IsObject(Boke_Conn) Then Boke_ConnectionDatabase
@@ -122,8 +122,8 @@ Function Search(PageHtml)
 		DvBoke.ShowMsg(2)
 	End If
 	Rs.close:Set Rs = Nothing
-	'------>  ˝æ›ø‚≤È—Ø
-	'------> ƒ£∞Â◊™ªª
+	'------> Êï∞ÊçÆÂ∫ìÊü•ËØ¢
+	'------> Ê®°ÊùøËΩ¨Êç¢
 	If DvBoke.InputShowMsg <> "" Then
 		PageHtml = Replace(PageHtml,"{$searchlist}",DvBoke.InputShowMsg)
 	Else

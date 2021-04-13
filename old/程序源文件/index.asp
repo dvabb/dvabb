@@ -4,18 +4,18 @@
 <!--#include file="inc/dv_Template.inc"-->
 <!--#include file="inc/dv_pageclass.asp"-->
 <%
-Rem Ê×Ò³Ò³ÃæÉèÖÃ
-Const CachePage=True		Rem ÊÇ·ñ×öÒ³Ãæ»º´æ
-Const CacheTime=60			Rem »º´æÊ§Ğ§Ê±¼ä
-Const Link_Br = 8			Rem ÓÑÇéÁ´½ÓÃ¿ĞĞ¸öÊı	N
-Const TopicMode_Br = 10		Rem Ìû×Ó×¨ÌâÃ¿ĞĞ¸öÊı	N
+Rem é¦–é¡µé¡µé¢è®¾ç½®
+Const CachePage=True		Rem æ˜¯å¦åšé¡µé¢ç¼“å­˜
+Const CacheTime=60			Rem ç¼“å­˜å¤±æ•ˆæ—¶é—´
+Const Link_Br = 8			Rem å‹æƒ…é“¾æ¥æ¯è¡Œä¸ªæ•°	N
+Const TopicMode_Br = 10		Rem å¸–å­ä¸“é¢˜æ¯è¡Œä¸ªæ•°	N
 'Dvbbs.ShowSQL = 1
 
 Dim action
 Dim XmlDom,Node,BoardList,Xpath,Count,ChildLen,BWidth
-Dim AnnouncementsItem,BBSItem,BoardItem Rem ÏÔÊ¾°å¿éÁĞ±íµÄ±äÁ¿
+Dim AnnouncementsItem,BBSItem,BoardItem Rem æ˜¾ç¤ºæ¿å—åˆ—è¡¨çš„å˜é‡
 Dim SmallPaper,TopicModeList,TopicModeListImg
-Dim Topic,TopTopic,TopicMode,lastpost,Page,PageCount,Cmd,Rs,SQL,list_type Rem ÏÔÊ¾Ìû×ÓÁĞ±íµÄ±äÁ¿
+Dim Topic,TopTopic,TopicMode,lastpost,Page,PageCount,Cmd,Rs,SQL,list_type Rem æ˜¾ç¤ºå¸–å­åˆ—è¡¨çš„å˜é‡
 Dim LinkDom,LinkNode,UserNode,UserMsg
 Dim i,j,n,ii
 Dim ShowMod,DispMode
@@ -92,12 +92,12 @@ var status = 1;
 function switchSysBar(){
      if (1 == window.status){
 		  window.status = 0;
-          document.getElementById("switchPoint").innerHTML = '<img src="images/others/left.gif" alt="Õ¹¿ª×óÀ¸" />';
+          document.getElementById("switchPoint").innerHTML = '<img src="images/others/left.gif" alt="å±•å¼€å·¦æ " />';
           document.getElementById("frmTitle").style.display="none";
      }
      else{
 		  window.status = 1;
-          document.getElementById("switchPoint").innerHTML = '<img src="images/others/right.gif" alt="Òş²Ø×óÀ¸" />';
+          document.getElementById("switchPoint").innerHTML = '<img src="images/others/right.gif" alt="éšè—å·¦æ " />';
           document.getElementById("frmTitle").style.display="block";
      }
 }
@@ -130,7 +130,7 @@ function switchSysBar(){
 <%
 End Sub
 
-Sub RequestStr() Rem Request Êı¾İ
+Sub RequestStr() Rem Request æ•°æ®
 	Page=Request("Page")
 	If (Not isNumeric(Page))or Page="" Then Page=1
 	Page=Clng(Page)
@@ -153,7 +153,7 @@ Sub Chk_List_Err()
 	Dvbbs.showerr()
 End Sub
 
-Sub Announcements() Rem ¹«¸æÏÔÊ¾
+Sub Announcements() Rem å…¬å‘Šæ˜¾ç¤º
 	Dvbbs.Name="Dv_news_"&Dvbbs.boardid
 	If IsObject(XmlDom) Then Set XmlDom = Nothing 
 	If(Dvbbs.ObjIsEmpty()) Then
@@ -173,7 +173,7 @@ Sub Announcements() Rem ¹«¸æÏÔÊ¾
 	'Response.Write Server.HtmlEncode(XmlDom.xml)
 End Sub
 
-Sub ShowBbsBoard()	Rem ²éÑ¯°æÃæÁĞ±íÊı¾İ
+Sub ShowBbsBoard()	Rem æŸ¥è¯¢ç‰ˆé¢åˆ—è¡¨æ•°æ®
 	If Dvbbs.BoardID=0 Then
 		Xpath="board[@parentid=0]"
 	Else
@@ -186,7 +186,7 @@ Sub ShowBbsBoard()	Rem ²éÑ¯°æÃæÁĞ±íÊı¾İ
 	End If
 End Sub
 
-Sub GetBBSLink() Rem ¼ÓÔØÓÑÇéÁ´½Ó
+Sub GetBBSLink() Rem åŠ è½½å‹æƒ…é“¾æ¥
 	Dvbbs.name="ForumLink"
 	If Dvbbs.ObjIsEmpty() Then LoadlinkList()
 	Set LinkDom=Dvbbs.CreateXmlDoc("msxml2.FreeThreadedDOMDocument"& MsxmlVersion)
@@ -207,7 +207,7 @@ Sub LoadlinkList()
 	Set Rs=Nothing
 End Sub
 
-Sub Ad()	Rem ¸¡¶¯¹ã¸æ
+Sub Ad()	Rem æµ®åŠ¨å¹¿å‘Š
 	If Dvbbs.Forum_ads(2)="1" or Dvbbs.Forum_ads(13)="1" Then
 		TPL_Echo "<script language=""javascript"" src=""inc/Dv_Adv.js"" type=""text/javascript""></script>"
 		TPL_Echo "<script language=""javascript"" type=""text/javascript"">" & vbNewLine
@@ -217,7 +217,7 @@ Sub Ad()	Rem ¸¡¶¯¹ã¸æ
 	End If
 End Sub
 
-Sub Forum_BirUser() Rem ²éÑ¯½ñÌì¹ıÉúÈÕµÄÓÃ»§
+Sub Forum_BirUser() Rem æŸ¥è¯¢ä»Šå¤©è¿‡ç”Ÿæ—¥çš„ç”¨æˆ·
 	Dim Rs,SQL,NowMonth,NowDate,todaystr0,todaystr1,node
 	NowMonth=Month(Date())
 	NowDate=Day(Date())
@@ -256,9 +256,9 @@ Sub TopicSetting()
 	TopicModeListImg = Split("$$"& Dvbbs.Board_Setting(49),"$$")
 End Sub
 
-Sub ShowTopic_1() Rem ²éÑ¯¹Ì¶¥Ìû×ÓÁĞ±í	
+Sub ShowTopic_1() Rem æŸ¥è¯¢å›ºé¡¶å¸–å­åˆ—è¡¨	
 	Dim topiclist,topidlist
-	If Page=1 Then ' //¹Ì¶¥Ìû×Ó
+	If Page=1 Then ' //å›ºé¡¶å¸–å­
 		topidlist=Dvbbs.CacheData(28,0)
 		If topidlist="" Then
 			topidlist=Application(Dvbbs.CacheName &"_information_" & Dvbbs.boardid).documentElement.selectSingleNode("information/@boardtopstr").text
@@ -289,14 +289,14 @@ Sub ShowTopic_1() Rem ²éÑ¯¹Ì¶¥Ìû×ÓÁĞ±í
 		End If
 	End If
 End Sub
-Sub ShowTopic_2() Rem ²éÑ¯ÆÕÍ¨Ìû×ÓÁĞ±í
+Sub ShowTopic_2() Rem æŸ¥è¯¢æ™®é€šå¸–å­åˆ—è¡¨
 	Dim SQLQuery,d
 	If IsSqlDataBase=1 Then
 		d=""
 	Else
 		d="'"
 	End If
-	Select Case CInt(list_type(0)) Rem Ìõ¼ş²éÑ¯
+	Select Case CInt(list_type(0)) Rem æ¡ä»¶æŸ¥è¯¢
 		Case 0	:	SQLQuery = " "
 		Case 1	:	SQLQuery = " And datediff("&(d&"d"&d)&",DateAndTime,"&SqlNowString&")=0"
 		Case 2	:	SQLQuery = " And datediff("&(d&"ww"&d)&",DateAndTime,"&SqlNowString&")=0"
@@ -339,9 +339,9 @@ Sub ShowTopic_2() Rem ²éÑ¯ÆÕÍ¨Ìû×ÓÁĞ±í
 		
 		Dim mypage
 		Set mypage=new Pager
-		mypage.getconn=conn 'µÃµ½Êı¾İ¿âÁ¬½Ó
-		mypage.pagesize=Cint(Dvbbs.Board_Setting(26)) '¶¨Òå·ÖÒ³Ã¿Ò»Ò³µÄ¼ÇÂ¼Êı
-		mypage.TableName="Dv_Topic" 'Òª²éÑ¯µÄ±íÃû
+		mypage.getconn=conn 'å¾—åˆ°æ•°æ®åº“è¿æ¥
+		mypage.pagesize=Cint(Dvbbs.Board_Setting(26)) 'å®šä¹‰åˆ†é¡µæ¯ä¸€é¡µçš„è®°å½•æ•°
+		mypage.TableName="Dv_Topic" 'è¦æŸ¥è¯¢çš„è¡¨å
 		mypage.Tablezd=sqlfields
 		mypage.KeyName=OrderField
 		mypage.OrderType=OrderType
@@ -388,7 +388,7 @@ Sub ShowTopic_2() Rem ²éÑ¯ÆÕÍ¨Ìû×ÓÁĞ±í
 	If Page>PageCount Then Page=1	
 End Sub
 
-Sub ParseBbsBoardNode(sToken,BoardData,ParentNode) Rem ×ª»»°æÃæÁĞ±íÊı¾İ	
+Sub ParseBbsBoardNode(sToken,BoardData,ParentNode) Rem è½¬æ¢ç‰ˆé¢åˆ—è¡¨æ•°æ®	
 	On Error Resume Next
 
 	If Not IsObject(BoardData) Then
@@ -428,19 +428,19 @@ Sub ParseBbsBoardNode(sToken,BoardData,ParentNode) Rem ×ª»»°æÃæÁĞ±íÊı¾İ
 			If Not (Node Is Nothing) Then
 				If sToken="boardmaster" Then
 					If Node.text="" Then
-						TPL_Echo "ÔİÎŞ°æÖ÷"
+						TPL_Echo "æš‚æ— ç‰ˆä¸»"
 					Else
 						Dim boardmaster
 						boardmaster = Split(Node.text,"|")
 						For i=0 To UBound(boardmaster)
-							TPL_Echo "<a href=""dispuser.asp?name="&boardmaster(i)&""" title=""²é¿´°æÖ÷"&boardmaster(i)&"µÄ×ÊÁÏ"" target=""_blank"">"&boardmaster(i)&"</a>&nbsp;&nbsp;"
+							TPL_Echo "<a href=""dispuser.asp?name="&boardmaster(i)&""" title=""æŸ¥çœ‹ç‰ˆä¸»"&boardmaster(i)&"çš„èµ„æ–™"" target=""_blank"">"&boardmaster(i)&"</a>&nbsp;&nbsp;"
 						Next
 					End If
 				ElseIf sToken="indeximg" And Len(Node.text)>4 Then
-					TPL_Echo "<img src="""&Node.text&""" alt=""µã»÷½øÈë°æÃæ"" border=""0"" />"
+					TPL_Echo "<img src="""&Node.text&""" alt=""ç‚¹å‡»è¿›å…¥ç‰ˆé¢"" border=""0"" />"
 				ElseIf ParentNode="information/" Then
 					If BoardData.selectSingleNode("@checkout").text="1" And sToken="lastpost_3" Then
-						TPL_Echo "ÇëÈÏÖ¤ÓÃ»§½øÈë²é¿´."
+						TPL_Echo "è¯·è®¤è¯ç”¨æˆ·è¿›å…¥æŸ¥çœ‹."
 					Else
 						TPL_Echo Server.HtmlEnCode(Dvbbs.Replacehtml(Node.text))
 					End If
@@ -463,7 +463,7 @@ Sub BirUser()
 	End If
 End Sub
 
-Sub ParseBirUserNode(sToken,UserNode)	Rem ×ª»»½ñÌìÉúÈÕÓÃ»§Êı¾İ
+Sub ParseBirUserNode(sToken,UserNode)	Rem è½¬æ¢ä»Šå¤©ç”Ÿæ—¥ç”¨æˆ·æ•°æ®
 	On Error Resume Next
 	If sToken="sum" Then
 		TPL_Echo Application(Dvbbs.CacheName & "_biruser").documentElement.selectNodes("user").Length
@@ -477,7 +477,7 @@ Sub ParseBirUserNode(sToken,UserNode)	Rem ×ª»»½ñÌìÉúÈÕÓÃ»§Êı¾İ
 	If Err Then Err.Clear
 End Sub
 
-Sub ParseLinkNode(sToken,LinkNode)	Rem ×ª»»ÓÑÇéÁ´½ÓÊı¾İ
+Sub ParseLinkNode(sToken,LinkNode)	Rem è½¬æ¢å‹æƒ…é“¾æ¥æ•°æ®
 	On Error Resume Next
 	If Not IsObject(LinkNode) Then Exit Sub
 	Set Node = LinkNode.selectSingleNode("@"&sToken&"")
@@ -492,7 +492,7 @@ Sub ParseLinkNode(sToken,LinkNode)	Rem ×ª»»ÓÑÇéÁ´½ÓÊı¾İ
 	If Err Then Err.Clear
 End Sub
 
-Sub ParseRuleNode(sToken) Rem ×ª»»°æ¹æÊı¾İ
+Sub ParseRuleNode(sToken) Rem è½¬æ¢ç‰ˆè§„æ•°æ®
 	On Error Resume Next
 	If IsObject(XmlDom) Then Set XmlDom = Nothing
 	Set XMLDom = Application(Dvbbs.CacheName &"_boarddata_" & Dvbbs.boardid).cloneNode(True)
@@ -504,7 +504,7 @@ Sub ParseRuleNode(sToken) Rem ×ª»»°æ¹æÊı¾İ
 	If Err Then Err.Clear
 End Sub
 
-Sub ParseAnnouncements(sToken) Rem ×ª»»¹«¸æÊı¾İ
+Sub ParseAnnouncements(sToken) Rem è½¬æ¢å…¬å‘Šæ•°æ®
 	On Error Resume Next
 	Select Case sToken
 		Case "i"	:	TPL_Echo i
@@ -519,7 +519,7 @@ Sub ParseAnnouncements(sToken) Rem ×ª»»¹«¸æÊı¾İ
 	If Err Then Err.Clear
 End Sub
 
-Sub ParseSmallpaper(sToken) Rem ×ª»»Ğ¡×Ö±¨Êı¾İ
+Sub ParseSmallpaper(sToken) Rem è½¬æ¢å°å­—æŠ¥æ•°æ®
 	On Error Resume Next
 	Select Case sToken
 		Case "i"	:	TPL_Echo i
@@ -538,7 +538,7 @@ Sub ParseSmallpaper(sToken) Rem ×ª»»Ğ¡×Ö±¨Êı¾İ
 	If Err Then Err.Clear
 End Sub
 
-Sub ParseTopicMode(sToken) Rem ×ª»»Ìû×Ó×¨ÌâÊı¾İ
+Sub ParseTopicMode(sToken) Rem è½¬æ¢å¸–å­ä¸“é¢˜æ•°æ®
 	Select Case sToken
 		Case "boardid"	: TPL_Echo Dvbbs.Boardid
 		Case "i"	:	TPL_Echo i
@@ -557,7 +557,7 @@ Sub ParseTopicMode(sToken) Rem ×ª»»Ìû×Ó×¨ÌâÊı¾İ
 	End Select
 End Sub
 
-Sub ParseTopTopicNode(sToken) Rem ×ª»»¹Ì¶¥Ìû×ÓÊı¾İ
+Sub ParseTopTopicNode(sToken) Rem è½¬æ¢å›ºé¡¶å¸–å­æ•°æ®
 	Dim title
 	Select Case sToken
 		Case "checkbox"
@@ -574,9 +574,9 @@ Sub ParseTopTopicNode(sToken) Rem ×ª»»¹Ì¶¥Ìû×ÓÊı¾İ
 		Case "id"			:	TPL_Echo TopTopic(0,i)
 		Case "listimg"
 			If CInt(TopTopic(6,i))>0 Then
-				TPL_Echo	"<a href=""loadtree1.asp?boardid="&TopTopic(1,i)&"&amp;rootid="&TopTopic(0,i)&"&amp;action=1"" target=""hiddenframe""  title=""Õ¹¿ªÌû×ÓÁĞ±í""><img src="""&Dvbbs.mainpic(11)&""" alt=""Õ¹¿ªÌû×ÓÁĞ±í"" /></a>&nbsp;"
+				TPL_Echo	"<a href=""loadtree1.asp?boardid="&TopTopic(1,i)&"&amp;rootid="&TopTopic(0,i)&"&amp;action=1"" target=""hiddenframe""  title=""å±•å¼€å¸–å­åˆ—è¡¨""><img src="""&Dvbbs.mainpic(11)&""" alt=""å±•å¼€å¸–å­åˆ—è¡¨"" /></a>&nbsp;"
 			Else
-				TPL_Echo	"<img src="""&Dvbbs.mainpic(10)&""" alt=""ÎŞ»Ø¸´Ìû×Ó"" />"
+				TPL_Echo	"<img src="""&Dvbbs.mainpic(10)&""" alt=""æ— å›å¤å¸–å­"" />"
 			End If
 		Case "boardid"		:	TPL_Echo TopTopic(1,i)
 		Case "title","title2"
@@ -602,13 +602,13 @@ Sub ParseTopTopicNode(sToken) Rem ×ª»»¹Ì¶¥Ìû×ÓÊı¾İ
 						PostTime = TopTopic(5,i)
 				End If
 				If DateDiff("n",Posttime,Now)+Cint(Dvbbs.Forum_Setting(0)) < CLng(Dvbbs.Board_Setting(61)) Then
-					TPL_Echo "&nbsp;<img src="""&Dvbbs.Board_Setting(60)&""" border=""0"" alt="""&DateDiff("n",Posttime,Now)+Cint(Dvbbs.Forum_Setting(0))&"·ÖÖÓÇ°¸üĞÂ!""/>"
+					TPL_Echo "&nbsp;<img src="""&Dvbbs.Board_Setting(60)&""" border=""0"" alt="""&DateDiff("n",Posttime,Now)+Cint(Dvbbs.Forum_Setting(0))&"åˆ†é’Ÿå‰æ›´æ–°!""/>"
 				End If
 			End If
 		Case "pagelist"
 			If lastpost(4)<>"" Then	TPL_Echo "&nbsp;<img src="""&Dvbbs.Forum_PicUrl&"filetype/"&lastpost(4)&".gif"" width=""16"" height=""16"" class=""filetype"" />&nbsp;"
 			
-			Rem Èç¹û¹Ì¶¥Ìû×ÓÒª²ÉÓÃ²»Í¬°å¿éµÄ·ÖÒ³ÉèÖÃ£¬ÇëÈ¡ÏûÏÂÃæÒ»¶ÎÆÁ±Î
+			Rem å¦‚æœå›ºé¡¶å¸–å­è¦é‡‡ç”¨ä¸åŒæ¿å—çš„åˆ†é¡µè®¾ç½®ï¼Œè¯·å–æ¶ˆä¸‹é¢ä¸€æ®µå±è”½
 			'Dim tempBoardId:tempBoardId=Dvbbs.BoardId
 			'If CInt(tempBoardId)<>CInt(TopTopic(1,i)) Then
 			'	Dvbbs.BoardId = CInt(TopTopic(1,i))				
@@ -625,17 +625,17 @@ Sub ParseTopTopicNode(sToken) Rem ×ª»»¹Ì¶¥Ìû×ÓÊı¾İ
 			If TopTopic(22,i)="0" Then
 				TPL_Echo "<a href=""dispuser.asp?Name="&TopTopic(3,i)&""">"&TopTopic(3,i)&"</a>"				
 			ElseIf TopTopic(22,i)="1" And TopTopic(4,i)<>"0"  Then
-				TPL_Echo "<font color=""gray"">ÄäÃûÓÃ»§</font>"
+				TPL_Echo "<font color=""gray"">åŒ¿åç”¨æˆ·</font>"
 			Else
-				TPL_Echo "<font color=""gray"">¿ÍÈË</font>"
+				TPL_Echo "<font color=""gray"">å®¢äºº</font>"
 			End If
 		Case "postusername_2"
 			If TopTopic(22,i)="0" And TopTopic(4,i)<>"0" Then
 				TPL_Echo TopTopic(3,i)
 			ElseIf TopTopic(22,i)="1" Then
-				TPL_Echo "ÄäÃûÓÃ»§"
+				TPL_Echo "åŒ¿åç”¨æˆ·"
 			Else
-				TPL_Echo "¿ÍÈË"
+				TPL_Echo "å®¢äºº"
 			End If
 		Case "dateandtime"	:	TPL_Echo TopTopic(5,i)
 		Case "dateandtime2"	:	TPL_Echo DateValue(TopTopic(5,i))
@@ -652,15 +652,15 @@ Sub ParseTopTopicNode(sToken) Rem ×ª»»¹Ì¶¥Ìû×ÓÊı¾İ
 		Case "lastposttime" :	TPL_Echo lastpost(2)
 		Case "top" :	TPL_Echo TopTopic(11,i)
 		Case "tool"
-			If CInt(TopTopic(19,i))>0											Then	Call TopicTool(CInt(TopTopic(19,i)),TopTopic(18,i),TopTopic(0,i),1) ' ½ğ±ÒÌû×Ó
-			If TopTopic(20,i)>"0" And TopTopic(20,i)<"28"						Then	Call TopicTool(TopTopic(20,i),0,TopTopic(0,i),2) ' µÀ¾ßÌû×Ó
-			If TopTopic(21,i)="1"												Then	Call TopicTool(0,0,TopTopic(0,i),3)	' ÊÖ»ú·¢±íµÄÌû×Ó
-			If TopTopic(21,i)="2"												Then	Call TopicTool(0,0,TopTopic(0,i),4)	' ½»Ò×Ìû×Ó
-			If InStr(TopTopic(15,i),"|")>0 And InStr(TopTopic(15,i),"0|")<>1	Then	Call TopicTool(0,0,TopTopic(0,i),5)	' Ä§·¨±íÇéÌû×Ó
+			If CInt(TopTopic(19,i))>0											Then	Call TopicTool(CInt(TopTopic(19,i)),TopTopic(18,i),TopTopic(0,i),1) ' é‡‘å¸å¸–å­
+			If TopTopic(20,i)>"0" And TopTopic(20,i)<"28"						Then	Call TopicTool(TopTopic(20,i),0,TopTopic(0,i),2) ' é“å…·å¸–å­
+			If TopTopic(21,i)="1"												Then	Call TopicTool(0,0,TopTopic(0,i),3)	' æ‰‹æœºå‘è¡¨çš„å¸–å­
+			If TopTopic(21,i)="2"												Then	Call TopicTool(0,0,TopTopic(0,i),4)	' äº¤æ˜“å¸–å­
+			If InStr(TopTopic(15,i),"|")>0 And InStr(TopTopic(15,i),"0|")<>1	Then	Call TopicTool(0,0,TopTopic(0,i),5)	' é­”æ³•è¡¨æƒ…å¸–å­
 	End Select
 End Sub
 
-Sub ParseTopicNode(sToken) Rem ×ª»»ÆÕÍ¨Ìû×ÓÊı¾İ
+Sub ParseTopicNode(sToken) Rem è½¬æ¢æ™®é€šå¸–å­æ•°æ®
 	Dim title
 	Select Case sToken
 		Case "folder"
@@ -678,9 +678,9 @@ Sub ParseTopicNode(sToken) Rem ×ª»»ÆÕÍ¨Ìû×ÓÊı¾İ
 		Case "id"			:	TPL_Echo Topic(0,i)
 		Case "listimg"
 			If CInt(Topic(6,i))>0 Then
-				TPL_Echo	"<a href=""loadtree1.asp?boardid="&Topic(1,i)&"&amp;rootid="&Topic(0,i)&"&amp;action=1"" target=""hiddenframe""  title=""Õ¹¿ªÌû×ÓÁĞ±í""><img src="""&Dvbbs.mainpic(11)&""" alt=""Õ¹¿ªÌû×ÓÁĞ±í"" /></a>"
+				TPL_Echo	"<a href=""loadtree1.asp?boardid="&Topic(1,i)&"&amp;rootid="&Topic(0,i)&"&amp;action=1"" target=""hiddenframe""  title=""å±•å¼€å¸–å­åˆ—è¡¨""><img src="""&Dvbbs.mainpic(11)&""" alt=""å±•å¼€å¸–å­åˆ—è¡¨"" /></a>"
 			Else
-				TPL_Echo	"<img src="""&Dvbbs.mainpic(10)&""" alt=""ÎŞ»Ø¸´Ìû×Ó"" />"
+				TPL_Echo	"<img src="""&Dvbbs.mainpic(10)&""" alt=""æ— å›å¤å¸–å­"" />"
 			End If
 		Case "checkbox"
 			lastpost = Split(Topic(9,i),"$")
@@ -717,7 +717,7 @@ Sub ParseTopicNode(sToken) Rem ×ª»»ÆÕÍ¨Ìû×ÓÊı¾İ
 						PostTime = Topic(5,i)
 				End If
 				If DateDiff("n",Posttime,Now)+Cint(Dvbbs.Forum_Setting(0)) < CLng(Dvbbs.Board_Setting(61)) Then
-					TPL_Echo "&nbsp;<img src="""&Dvbbs.Board_Setting(60)&""" border=""0"" alt="""&DateDiff("n",Posttime,Now)+Cint(Dvbbs.Forum_Setting(0))&"·ÖÖÓÇ°¸üĞÂ!""/>"
+					TPL_Echo "&nbsp;<img src="""&Dvbbs.Board_Setting(60)&""" border=""0"" alt="""&DateDiff("n",Posttime,Now)+Cint(Dvbbs.Forum_Setting(0))&"åˆ†é’Ÿå‰æ›´æ–°!""/>"
 				End If
 			End If
 		Case "pagelist"
@@ -731,17 +731,17 @@ Sub ParseTopicNode(sToken) Rem ×ª»»ÆÕÍ¨Ìû×ÓÊı¾İ
 			If Topic(22,i)="0" And Topic(4,i)<>"0" Then
 				TPL_Echo "<a href=""dispuser.asp?Name="&Topic(3,i)&""">"&Topic(3,i)&"</a>"				
 			ElseIf Topic(22,i)="1" Then
-				TPL_Echo "<font color=""gray"">ÄäÃûÓÃ»§</font>"
+				TPL_Echo "<font color=""gray"">åŒ¿åç”¨æˆ·</font>"
 			Else
-				TPL_Echo "<font color=""gray"">¿ÍÈË</font>"
+				TPL_Echo "<font color=""gray"">å®¢äºº</font>"
 			End If
 		Case "postusername_2"
 			If Topic(22,i)="0" And Topic(4,i)<>"0" Then
 				TPL_Echo Topic(3,i)
 			ElseIf Topic(22,i)="1" Then
-				TPL_Echo "ÄäÃûÓÃ»§"
+				TPL_Echo "åŒ¿åç”¨æˆ·"
 			Else
-				TPL_Echo "¿ÍÈË"
+				TPL_Echo "å®¢äºº"
 			End If
 		Case "dateandtime"	:	TPL_Echo Topic(5,i)
 		Case "dateandtime2"	:	TPL_Echo DateValue(Topic(5,i))
@@ -761,11 +761,11 @@ Sub ParseTopicNode(sToken) Rem ×ª»»ÆÕÍ¨Ìû×ÓÊı¾İ
 			If action<>"" Then gaction= "&amp;action="&action
 			TPL_ShowPage	Page,Count, Dvbbs.CheckNumeric(Dvbbs.Board_Setting(26)),10, "index.asp?boardid="&Dvbbs.BoardID & gaction &"&amp;TopicMode="&TopicMode&"&amp;List_Type="&Replace(Request("list_type")," ","")&"&amp;Page="
 		Case "tool"
-			If CInt(Topic(19,i))>0										Then	Call TopicTool(CInt(Topic(19,i)),Topic(18,i),Topic(0,i),1) ' ½ğ±ÒÌû×Ó
-			If Topic(20,i)>"0" And Topic(20,i)<"28"						Then	Call TopicTool(Topic(20,i),0,Topic(0,i),2) ' µÀ¾ßÌû×Ó
-			If Topic(21,i)="1"											Then	Call TopicTool(0,0,Topic(0,i),3)	' ÊÖ»ú·¢±íµÄÌû×Ó
-			If Topic(21,i)="2"											Then	Call TopicTool(0,0,Topic(0,i),4)	' ½»Ò×Ìû×Ó
-			If InStr(Topic(15,i),"|")>0 And InStr(Topic(15,i),"0|")<>1	Then	Call TopicTool(0,0,Topic(0,i),5)	' Ä§·¨±íÇéÌû×Ó
+			If CInt(Topic(19,i))>0										Then	Call TopicTool(CInt(Topic(19,i)),Topic(18,i),Topic(0,i),1) ' é‡‘å¸å¸–å­
+			If Topic(20,i)>"0" And Topic(20,i)<"28"						Then	Call TopicTool(Topic(20,i),0,Topic(0,i),2) ' é“å…·å¸–å­
+			If Topic(21,i)="1"											Then	Call TopicTool(0,0,Topic(0,i),3)	' æ‰‹æœºå‘è¡¨çš„å¸–å­
+			If Topic(21,i)="2"											Then	Call TopicTool(0,0,Topic(0,i),4)	' äº¤æ˜“å¸–å­
+			If InStr(Topic(15,i),"|")>0 And InStr(Topic(15,i),"0|")<>1	Then	Call TopicTool(0,0,Topic(0,i),5)	' é­”æ³•è¡¨æƒ…å¸–å­
 	End Select
 End Sub
 
@@ -790,37 +790,37 @@ Function TopicPageList(id,boardid,pn)
 	TPL_Echo "]"
 End Function
 
-Sub TopicTool(t,n,id,s) Rem ÏÔÊ¾Ö÷ÌâÊ¹ÓÃµÄµÀ¾ßĞÅÏ¢
+Sub TopicTool(t,n,id,s) Rem æ˜¾ç¤ºä¸»é¢˜ä½¿ç”¨çš„é“å…·ä¿¡æ¯
 	Select Case s
 	Case 1
 		Select Case t
 			Case 1
-				TPL_Echo "<span style=""float:right"">[ĞüÉÍ"&n&"¸ö½ğ±Ò]<img src=""images/mini_query.gif"" border=""0"" alt=""ĞüÉÍ½ğ±ÒÌû£¬¹²ĞüÉÍ"&n&"¸ö½ğ±Ò£¬²é¿´ÏêÏ¸ĞÅÏ¢"" onclick=""openScript('ViewInfo.asp?t=2&amp;action=View&amp;BoardId="&Dvbbs.BoardId&"&amp;ID="&id&"',600,450);"" style=""cursor : pointer;"" /></span> "
+				TPL_Echo "<span style=""float:right"">[æ‚¬èµ"&n&"ä¸ªé‡‘å¸]<img src=""images/mini_query.gif"" border=""0"" alt=""æ‚¬èµé‡‘å¸å¸–ï¼Œå…±æ‚¬èµ"&n&"ä¸ªé‡‘å¸ï¼ŒæŸ¥çœ‹è¯¦ç»†ä¿¡æ¯"" onclick=""openScript('ViewInfo.asp?t=2&amp;action=View&amp;BoardId="&Dvbbs.BoardId&"&amp;ID="&id&"',600,450);"" style=""cursor : pointer;"" /></span> "
 			Case 2
-				TPL_Echo "<span style=""float:right""><img src=""images/mini_query.gif"" border=""0"" alt=""»ñÔù½ğ±ÒÌû£¬Ä¿Ç°¹²»ñµÃ"&n&"¸ö½ğ±Ò£¬²é¿´ÏêÏ¸ĞÅÏ¢"" onclick=""openScript('ViewInfo.asp?t=2&amp;action=View&amp;BoardId="&Dvbbs.BoardId&"&amp;ID="&id&"',600,450);"" style=""cursor : pointer;"" /></span> "
+				TPL_Echo "<span style=""float:right""><img src=""images/mini_query.gif"" border=""0"" alt=""è·èµ é‡‘å¸å¸–ï¼Œç›®å‰å…±è·å¾—"&n&"ä¸ªé‡‘å¸ï¼ŒæŸ¥çœ‹è¯¦ç»†ä¿¡æ¯"" onclick=""openScript('ViewInfo.asp?t=2&amp;action=View&amp;BoardId="&Dvbbs.BoardId&"&amp;ID="&id&"',600,450);"" style=""cursor : pointer;"" /></span> "
 			Case 3
-				TPL_Echo "<span style=""float:right""><img src=""images/mini_query.gif"" border=""0"" alt=""½ğ±Ò¹ºÂòÌû£¬ĞèÒªÖ§¸¶"&n&"¸ö½ğ±Ò²ÅÄÜä¯ÀÀ£¬²é¿´ÏêÏ¸ĞÅÏ¢"" onclick=""openScript('ViewInfo.asp?t=2&amp;action=View&amp;BoardId="&Dvbbs.BoardId&"&amp;ID="&id&"',600,450);"" style=""cursor : pointer;"" /></span> "
+				TPL_Echo "<span style=""float:right""><img src=""images/mini_query.gif"" border=""0"" alt=""é‡‘å¸è´­ä¹°å¸–ï¼Œéœ€è¦æ”¯ä»˜"&n&"ä¸ªé‡‘å¸æ‰èƒ½æµè§ˆï¼ŒæŸ¥çœ‹è¯¦ç»†ä¿¡æ¯"" onclick=""openScript('ViewInfo.asp?t=2&amp;action=View&amp;BoardId="&Dvbbs.BoardId&"&amp;ID="&id&"',600,450);"" style=""cursor : pointer;"" /></span> "
 			Case 5
-				TPL_Echo "<span style=""float:right""><img src=""images/mini_query.gif"" border=""0"" alt=""ÔùËÍ½ğ±ÒÌû[ÒÑ½áÌû]£¬¹²ÔùËÍ"&n&"¸ö½ğ±Ò£¬²é¿´ÏêÏ¸ĞÅÏ¢"" onclick=""openScript('ViewInfo.asp?t=2&amp;action=View&amp;BoardId="&Dvbbs.BoardId&"&amp;ID="&id&"',600,450);"" style=""cursor : pointer;"" /></span> "
+				TPL_Echo "<span style=""float:right""><img src=""images/mini_query.gif"" border=""0"" alt=""èµ é€é‡‘å¸å¸–[å·²ç»“å¸–]ï¼Œå…±èµ é€"&n&"ä¸ªé‡‘å¸ï¼ŒæŸ¥çœ‹è¯¦ç»†ä¿¡æ¯"" onclick=""openScript('ViewInfo.asp?t=2&amp;action=View&amp;BoardId="&Dvbbs.BoardId&"&amp;ID="&id&"',600,450);"" style=""cursor : pointer;"" /></span> "
 		End Select
 	Case 2
-		TPL_Echo "<span style=""float:right""><font class=""showtools"" onmousemove=""this.title='¸ÃÖ÷ÌâÊ¹ÓÃÁËµÀ¾ß£º'+ShowTools["&t&"]+'';"">[<script type=""text/javascript"" language=""javascript"">document.write (ShowTools["&t&"]);</script>]</font></span> "
+		TPL_Echo "<span style=""float:right""><font class=""showtools"" onmousemove=""this.title='è¯¥ä¸»é¢˜ä½¿ç”¨äº†é“å…·ï¼š'+ShowTools["&t&"]+'';"">[<script type=""text/javascript"" language=""javascript"">document.write (ShowTools["&t&"]);</script>]</font></span> "
 	Case 3
-		TPL_Echo "<span style=""float:right""><a href=""wap.asp?Action=readme"" target=""_blank"" title=""Wap-ÊÖ»ú·¢Ìû"" ><img src=""images/wap.gif"" border=""0"" /></a></span> "
+		TPL_Echo "<span style=""float:right""><a href=""wap.asp?Action=readme"" target=""_blank"" title=""Wap-æ‰‹æœºå‘å¸–"" ><img src=""images/wap.gif"" border=""0"" /></a></span> "
 	Case 4
-		TPL_Echo "<span style=""float:right""><img src=""images/alipay/tenpay_icon.gif"" border=""0""  alt=""Ìû×Ó°üº¬²Æ¸¶Í¨½»Ò×ĞÅÏ¢£¬²Æ¸¶Í¨½»Ò×ÂòÂô¶¼ÓĞ±£ÕÏ£¬ÃâÊÖĞø·Ñ¡¢°²È«¡¢¿ì½İ£¡"" /></span> "
+		TPL_Echo "<span style=""float:right""><img src=""images/alipay/tenpay_icon.gif"" border=""0""  alt=""å¸–å­åŒ…å«è´¢ä»˜é€šäº¤æ˜“ä¿¡æ¯ï¼Œè´¢ä»˜é€šäº¤æ˜“ä¹°å–éƒ½æœ‰ä¿éšœï¼Œå…æ‰‹ç»­è´¹ã€å®‰å…¨ã€å¿«æ·ï¼"" /></span> "
 	Case 5
-		TPL_Echo "<span style=""float:right""><img src=""dv_plus/tools/magicface/magicemot.gif"" border=""0""  alt=""Ä§·¨±íÇé"" /></span> "
+		TPL_Echo "<span style=""float:right""><img src=""dv_plus/tools/magicface/magicemot.gif"" border=""0""  alt=""é­”æ³•è¡¨æƒ…"" /></span> "
 	End Select
 End Sub
 
 
-Sub	DispToolsInfo() Rem ÏÔÊ¾µÀ¾ßjs
+Sub	DispToolsInfo() Rem æ˜¾ç¤ºé“å…·js
 	TPL_Echo vbNewLine & "<script language=""javascript"" type=""text/javascript"">" & vbNewLine
 	TPL_Echo LoadToolsInfo & vbNewLine
 	TPL_Echo "</script>" & vbNewLine
 End Sub
-Function LoadToolsInfo() Rem ¼ÓÔØµÀ¾ßĞÅÏ¢
+Function LoadToolsInfo() Rem åŠ è½½é“å…·ä¿¡æ¯
 	Dim Tools_Info,i,ShowTools,TempStr
 	Dvbbs.Name="Plus_ToolsInfo"
 	If Dvbbs.ObjIsEmpty() Then
@@ -828,316 +828,8 @@ Function LoadToolsInfo() Rem ¼ÓÔØµÀ¾ßĞÅÏ¢
 		Sql = "Select ID,ToolsName From Dv_Plus_Tools_Info order by ID"
 		Set Rs = Dvbbs.Plus_Execute(Sql)
 		If Not Rs.Eof Then
-			Sql = Rs.GetString(,, "¡ì¡ì¡ì", "@#@", "")
+			Sql = Rs.GetString(,, "Â§Â§Â§", "@#@", "")
 		End If
 		Rs.Close : Set Rs = Nothing
 		Tools_Info = Split(Sql,"@#@")
-		TempStr =  "var ShowTools = new Array();" & vbNewLine
-		For i=0 To Ubound(Tools_Info)-1
-			ShowTools = Split(Tools_Info(i),"¡ì¡ì¡ì")
-			TempStr = TempStr & "ShowTools["&ShowTools(0)&"]='"&Replace(Replace(Replace(ShowTools(1),"\","\\"),"'","\'"),chr(13),"")&"';"
-		Next
-		Dvbbs.value = TempStr & vbNewLine
-	End If
-	LoadToolsInfo = Dvbbs.value
-End Function
-
-Sub ParsePageNode(sToken) Rem ×ª»»Ò³Ãæ¿ª¹ØµÄÊı¾İ
-	Select Case sToken
-		Case "online_asp"
-			If Dvbbs.Forum_Setting(14)="1" Or Dvbbs.Forum_Setting(15)="1" Then
-				TPL_Echo "Online.asp?action=1&amp;boardid="&Dvbbs.boardid
-			End If
-		Case "listtype" :	TPL_Echo Join(list_type,",")
-		Case "TopicMode"	:	TPL_Echo TopicMode
-		Case "page"		:	TPL_Echo page
-		Case "codestr"	:   TPL_Echo Dvbbs.MainHtml(15)
-		Case "left"
-			If Dvbbs.Forum_Setting(114)="0" Then
-				TPL_Echo "page_left"
-			End If
-	End Select
-
-	If InStr(sToken,"mainpic_")>0 Then
-		Dim pic_i
-		pic_i = Int(Replace(sToken,"mainpic_",""))
-		TPL_Echo Dvbbs.mainpic(pic_i)
-	End If
-End Sub
-
-Sub ParseInfoNode(sToken) Rem ×ª»»ÂÛÌ³ÉèÖÃºÍÂÛÌ³ĞÅÏ¢µÄÊı¾İ
-	Select Case sToken
-		Case "logincheckcode"		: TPL_Echo Dvbbs.forum_setting(79)'µÇÂ¼ÑéÖ¤ÂëÉèÖÃ
-		Case "rss"					: TPL_Echo Dvbbs.Forum_ChanSetting(2)'rss¶©ÔÄ
-		Case "wap"					: TPL_Echo Dvbbs.Forum_ChanSetting(1)'wap·ÃÎÊ
-		Case "pic_0"				: TPL_Echo template.pic(0)
-		Case "pic_1"				: TPL_Echo template.pic(1)
-		Case "pic_2"				: TPL_Echo template.pic(2)
-		Case "pic_3"				: TPL_Echo template.pic(3)
-		Case "issearch_a"			: TPL_Echo 0
-		Case "ForumUrl"				: TPL_Echo Dvbbs.Get_ScriptNameUrl()
-		Case "dvgetcode"			: TPL_Echo Dvbbs.GetCode()
-	End Select
-End Sub
-
-Sub ParseUserInfoNode(sToken) Rem ×ª»»ÓÃ»§ĞÅÏ¢µÄÊı¾İ
-	Select Case sToken
-		Case "userid"			: TPL_Echo Dvbbs.UserId
-		Case "username"			: TPL_Echo Dvbbs.MemberName
-		Case Else
-			Set Node = Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@"&sToken&"")
-			If Not (Node Is Nothing) Then
-				TPL_Echo Node.text
-			End If
-			Set Node = Nothing
-	End Select
-End Sub
-
-Sub ParseUserMsgNode(sTokenName,UserMsg) Rem ×ª»»ÓÃ»§¶ÌÏûÏ¢µÄÊı¾İ
-	If IsArray(UserMsg) And IsNumeric(sTokenName) Then
-		If CInt(sTokenName)<=UBound(UserMsg) Then	TPL_Echo UserMsg(sTokenName)
-	End If
-End Sub
-
-'---------------------------------------
-'Ãû³Æ	µ¥±êÇ©½âÊÍ
-'²ÎÊı	sTokenType	- ±êÇ©Ãû³Æ
-'		sTokenName	- Ä£°åÄÚÈİ
-'---------------------------------------
-Sub TPL_ParseNode(sTokenType, sTokenName)
-	Select Case sTokenType
-		Case "user"
-			ParseUserInfoNode		sTokenName
-		Case "bbsitem"
-			ParseBbsBoardNode		sTokenName,BBSItem,""
-		Case "boarditem"
-			ParseBbsBoardNode		sTokenName,BoardItem,""
-		Case "information"
-			ParseBbsBoardNode		sTokenName,BoardItem,"information/"
-		Case "usermsg"
-			ParseUserMsgNode		sTokenName,UserMsg
-		Case "biruser_list"
-			ParseBirUserNode		sTokenName,UserNode
-		Case "announcementsitem"
-			ParseAnnouncements		sTokenName
-		Case "smallpaper"
-			ParseSmallPaper		sTokenName
-		Case "toptopic"
-			ParseTopTopicNode		sTokenName
-		Case "topic"
-			ParseTopicNode		sTokenName
-		Case "rule"
-			ParseRuleNode		sTokenName
-		Case "topicmode_li"
-			ParseTopicMode	sTokenName
-		Case "page"
-			ParsePageNode	sTokenName
-		Case "forum_info"
-			ParseInfoNode	sTokenName
-		Case "text_link","logo_link"
-			ParseLinkNode	sTokenName,LinkNode
-		Case "ad"
-			If sTokenName="forumtextad" Then
-				If Dvbbs.Boardid=0 Then
-					TPL_Echo	GetForumTextAd(0)
-				Else
-					TPL_Echo	GetForumTextAd(1)
-				End If
-			End If
-		Case "usergrouppic"			
-			On Error Resume Next
-			If Not (Node.selectSingleNode("@"&sTokenName&"") Is Nothing) Then
-				TPL_Echo Node.selectSingleNode("@"&sTokenName&"").text
-			End If
-			If Err Then	Err.Clear
-		Case Else
-	End Select 
-End Sub
-
-Sub TPL_ParseArea(sTokenName, sTemplate) Rem Ä£°åÇøÓò±êÇ©½âÊÍ
-	If Dvbbs.BoardId=0 Then
-		Call DispIndex(sTokenName, sTemplate)
-	Else
-		Call DispIndex(sTokenName, sTemplate)
-		Call DispTopic(sTokenName, sTemplate)
-	End If
-	Select Case sTokenName
-		Case "userid=0"	:	If Dvbbs.UserId=0 Then	TPL_Scan sTemplate
-		Case "userid>0"	:	If Dvbbs.UserId>0 Then	TPL_Scan sTemplate	
-		Case "homecall=0"	:	If Dvbbs.forum_setting(113)=0 Then	TPL_Scan sTemplate
-		Case "homecall>0"	:	If Dvbbs.forum_setting(113)>0 Then	TPL_Scan sTemplate	
-		Case "riInform=0"	:	If Dvbbs.forum_setting(114)=0 Then	TPL_Scan sTemplate
-		Case "riInform>0"	:	If Dvbbs.forum_setting(114)>0 Then	TPL_Scan sTemplate
-	End Select
-End Sub 
-
-Sub DispIndex(sTokenName, sTemplate)	Rem ´¦ÀíÊ×Ò³ºÍ°æÃæÄ£¿é
-	Select Case sTokenName
-		Case "bbsitem"					Rem Ò»¼¶°æÃæ			
-			For Each BBSItem In BoardList.documentElement.selectNodes(Xpath)				
-				ShowMod=Trim(Request.Cookies("List")("list"&BBSItem.selectSingleNode("@boardid").text))
-				DispMode=Trim(Request.Cookies("Disp")("list"&BBSItem.selectSingleNode("@boardid").text))
-
-				If ShowMod="" Or Not IsNumeric(ShowMod) Then
-					ShowMod = BBSItem.selectSingleNode("@mode").text
-				End If
-
-				ChildLen = BoardList.documentElement.selectNodes("board[@parentid="&(BBSItem.selectSingleNode("@boardid").text)&"]").Length
-				n = CInt(BBSItem.selectSingleNode("@simplenesscount").text)
-				If n<=0 Then n=3
-				If ChildLen>n Or ChildLen=0 Then
-					BWidth = Int(100/n)&"%"
-				Else
-					BWidth = Int(100/ChildLen)&"%"
-				End If
-				If (ChildLen>0 Or Dvbbs.BoardId=0) And (BBSItem.selectSingleNode("@hidden").text="0" Or Dvbbs.GroupSetting(37)="1") Then				
-					 TPL_Scan	sTemplate
-				End If				
-			Next		
-		Case "bbsitem_1"				Rem ×Ó°æÃæ ÁĞ±íÄ£Ê½
-			If ShowMod="0" And (DispMode="" Or Dvbbs.BoardId>0) Then TPL_Scan	sTemplate
-		Case "bbsitem_2"				Rem ×Ó°æÃæ ¼ò½àÄ£Ê½
-			If ShowMod="1" And (DispMode="" Or Dvbbs.BoardId>0) Then TPL_Scan	sTemplate
-		Case "boarditem"
-			j=0
-			For Each BoardItem In BoardList.documentElement.selectNodes("board[@parentid="&(BBSItem.selectSingleNode("@boardid").text)&"]")
-				If BoardItem.selectSingleNode("@hidden").text="0" Or Dvbbs.GroupSetting(37)="1" Then ' Òş²ØÂÛÌ³ºÍÈ¨ÏŞ
-					j=j+1:TPL_Scan	sTemplate
-				End If
-			Next
-			Set BoardItem = Nothing			
-		Case "announcementsitem"		Rem ¹«¸æ
-			Call Announcements():i=0
-			For Each AnnouncementsItem In XMLDom.documentElement.selectNodes("announcements[@boardid="& Dvbbs.Boardid&"]")
-				i=i+1	:	TPL_Scan	sTemplate
-			Next
-			Set AnnouncementsItem = Nothing
-	End Select
-
-	If Dvbbs.BoardId=0 Then
-		Select Case sTokenName
-			Case "smsnew=0","smsnew>0"
-				Set Node = Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usermsg")			
-				If Not (Node Is Nothing) Then
-					UserMsg = Split(Node.text,"||")
-					If UBound(UserMsg)<2 Then UserMsg = Split("0||0||null","||")
-					If sTokenName="smsnew=0" And CInt(UserMsg(0))=0 Then
-						TPL_Scan	sTemplate
-					ElseIf sTokenName="smsnew>0" And CInt(UserMsg(0))>0 Then
-						TPL_Scan	sTemplate
-					End if
-				End If
-				Set Node = Nothing
-			Case "logincode"				Rem ÓÒÀ¸µÇÂ½ÑéÖ¤Âë
-				If Dvbbs.forum_setting(79)<>"0" Then
-					Session("xcount")=4
-					TPL_Scan	sTemplate
-				End If
-			Case "logo_link"				Rem LogoÓÑÇéÁ´½Ó
-				If Dvbbs.BoardId=0 Then
-					Call GetBBSLink:i=0
-					For Each LinkNode In LinkDom.documentElement.selectNodes("link[@islogo=1]")
-						i=i+1	:	TPL_Scan	sTemplate
-					Next
-				End If
-			Case "text_link"				Rem ÎÄ×ÖÓÑÇéÁ´½Ó
-				If Dvbbs.BoardId=0 Then				
-					i=0
-					For Each LinkNode In LinkDom.documentElement.selectNodes("link[@islogo=0]")
-						i=i+1	:	TPL_Scan	sTemplate
-					Next
-				End If
-				Set LinkNode = Nothing
-			Case "biruser"					Rem ÉúÈÕÓÃ»§ÅĞ¶Ï¿ªÆô
-				If Dvbbs.Forum_setting(29)="1" Then
-					Call BirUser()
-					TPL_Scan sTemplate
-				End If
-			Case "biruser_list"				Rem ÏÔÊ¾½ñÌìÉúÈÕÓÃ»§
-				For Each UserNode In Application(Dvbbs.CacheName & "_biruser").documentElement.selectNodes("user")
-					TPL_Scan sTemplate
-				Next
-				Set UserNode = Nothing
-			Case "usergrouppic"				
-				For Each Node In Application(Dvbbs.CacheName &"_grouppic").documentElement.selectNodes("usergroup[@orders!=0]")
-					TPL_Scan sTemplate
-				Next
-				Set Node = Nothing
-		End Select
-	End If
-End Sub
-
-Sub DispTopic(sTokenName, sTemplate)	Rem ´¦ÀíÌû×ÓÁĞ±íÄ£¿é
-	Select Case sTokenName
-		Case "showtopic"				Rem Ìû×ÓÇøÓò
-			If Dvbbs.Board_Setting(43)="0" Then TPL_Scan sTemplate
-		Case "boardtab"					Rem ÅĞ¶ÏÊÇ·ñ·ûºÏÏÔÊ¾ ×Ó°æÃæ¡¢°æ¹æ¡¢×¨ÌâÀ¸Ä¿µÄÌõ¼ş
-			Dim term_1,term_2,term_3			
-			term_1 = UBound(TopicModeList)>1
-			term_2 = Not (Application(Dvbbs.CacheName &"_boarddata_" & Dvbbs.boardid).cloneNode(True).documentElement.selectSingleNode("boarddata/@rules") Is Nothing) And Application(Dvbbs.CacheName &"_boarddata_" & Dvbbs.boardid).cloneNode(True).documentElement.selectSingleNode("boarddata/@rules").text<>""
-			term_3 = BoardList.documentElement.selectNodes("board[@parentid="&(Dvbbs.BoardId)&"]").Length>0 And (BoardList.documentElement.selectNodes("board[@hidden=0 and @parentid="&(Dvbbs.BoardId)&"]").Length>0 Or Dvbbs.GroupSetting(37)="1")
-
-			If term_1 Or term_2 Or term_3 Then
-				TPL_Scan sTemplate
-			End If
-		Case "rule"								Rem °æ¹æ
-			If Not (Application(Dvbbs.CacheName &"_boarddata_" & Dvbbs.boardid).cloneNode(True).documentElement.selectSingleNode("boarddata/@rules") Is Nothing) Then
-				If Application(Dvbbs.CacheName &"_boarddata_" & Dvbbs.boardid).cloneNode(True).documentElement.selectSingleNode("boarddata/@rules").text<>"" Then
-					TPL_Scan sTemplate
-				End If
-			End If
-		Case "smallpaper"				Rem Ğ¡×Ö±¨
-			If Not IsObject(Application(Dvbbs.CacheName & "_smallpaper")) Then LoadBoardNews_Paper()
-			For Each SmallPaper in Application(Dvbbs.CacheName & "_smallpaper").documentElement.SelectNodes("smallpaper[@s_boardid='"&Dvbbs.Boardid&"']")
-				i=i+1	:	TPL_Scan	sTemplate
-			Next
-			Set SmallPaper = Nothing
-		Case "topicmode"				Rem ×¨Ìâ
-			If UBound(TopicModeList)>1 Then
-				TPL_Scan sTemplate
-			End If
-		Case "topicmode_li"				Rem ×¨ÌâÁĞ±í
-			For i=1 To UBound(TopicModeList)
-				TPL_Scan sTemplate
-			Next
-		Case "tenpay"
-			If Dvbbs.Board_Setting(67)=1 Then	TPL_Scan sTemplate
-		Case "page=1"
-			If Page=1 Then TPL_Scan sTemplate
-		Case "toptopic"					Rem ¹Ì¶¥Ìû×Ó
-			If Page=1 Then
-				Call ShowTopic_1()
-				If IsArray(TopTopic) Then
-					For i=0 To UBound(TopTopic,2)
-						TPL_Scan sTemplate
-					Next
-				End If
-			End If
-		Case "topic"					Rem ÆÕÍ¨Ìû×Ó
-			Call ShowTopic_2()
-			If IsArray(Topic) Then
-				For i=0 To UBound(Topic,2)
-					TPL_Scan sTemplate
-				Next
-			End If
-		Case "action=batch"
-			If action="batch" Then TPL_Scan sTemplate
-		Case Else 
-	End Select
-End Sub
-
-TPL_Flush()
-
-If IsObject(XmlDom) Then Set XmlDom = Nothing
-If IsObject(LinkDom) Then Set LinkDom = Nothing 
-Set BBSItem = Nothing
-Set BoardList = Nothing
-Set Node = Nothing
-
-Set TopTopic=Nothing
-Set Topic=Nothing
-If action<>"frameon" Then
-	Dvbbs.Footer
-End If
-Dvbbs.PageEnd()
-%>
+		TempStr

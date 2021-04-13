@@ -15,7 +15,7 @@ Class Cls_DvBoke
 	Public IsBokeOwner,IsMaster,InputShowMsg
 	Private SystemPath,ErrCode,bokeurl_r
 	Private Sub Class_Initialize()
-		BokeStype = "ÎÄÕÂ,ÊÕ²Ø,Á´½Ó,½»Ò×,Ïà²á"
+		BokeStype = "æ–‡ç« ,æ”¶è—,é“¾æ¥,äº¤æ˜“,ç›¸å†Œ"
 		BokeStype = Split(BokeStype,",")
 		SqlQueryNum = 0
 		IsBokeOwner = False
@@ -93,7 +93,7 @@ Class Cls_DvBoke
 		SqlQueryNum = SqlQueryNum + 1
 	End Function
 
-	Rem ÅĞ¶Ï·¢ÑÔÊÇ·ñÀ´×ÔÍâ²¿
+	Rem åˆ¤æ–­å‘è¨€æ˜¯å¦æ¥è‡ªå¤–éƒ¨
 	Public Function ChkPost()
 		Dim server_v1,server_v2
 		Chkpost=False 
@@ -139,7 +139,7 @@ Class Cls_DvBoke
 		Furl=getUrlEncodel(Furl)
 	End Function
 	
-	Function HTMLEncode(reString) '×ª»»HTML´úÂë
+	Function HTMLEncode(reString) 'è½¬æ¢HTMLä»£ç 
 		Dim Str:Str=reString
 		IF Not isnull(Str) Then
 			Str = replace(Str, ">", "&gt;")
@@ -178,13 +178,13 @@ Class Cls_DvBoke
 		ClearHtmlTages = Str
 	End Function
 
-	'³õÊ¼»¯Ä¬ÈÏÊı¾İ
+	'åˆå§‹åŒ–é»˜è®¤æ•°æ®
 	Private Sub Setup_SysBokeNode()
 		Dim XslDoc
 		Page_File = Server.MapPath(Cache_Path &"default.config")
 		Set XslDoc=Dvbbs.CreateXmlDoc("Msxml2.FreeThreadedDOMDocument")
 		If Not XslDoc.Load(Page_File) Then
-			Response.Write "³õÊ¼Êı¾İ²»´æÔÚ£¡"
+			Response.Write "åˆå§‹æ•°æ®ä¸å­˜åœ¨ï¼"
 			Response.End
 		Else
 			Set BokeNode=XslDoc.documentElement.selectSingleNode("rs:data/z:row")
@@ -207,18 +207,18 @@ Class Cls_DvBoke
 		ElseIf BokeUserID>0 Then
 			Sql = Sql & " where UserID = "&BokeUserID
 		Else
-			'ÇëÑ¡È¡Ïà¹ØµÄDVBOKE£¬·µ»Ø×ÛºÏÁĞ±í
+			'è¯·é€‰å–ç›¸å…³çš„DVBOKEï¼Œè¿”å›ç»¼åˆåˆ—è¡¨
 			Exit Sub
 		End If
 		Set Rs = Execute(SQL)
 		If Rs.EOF And Rs.BOF Then
-			'ÉêÇëÒ³Ãæ
+			'ç”³è¯·é¡µé¢
 			BokeUserID = 0
 			If Dvbbs.UserID = 0 Then
-				'Response.Write "<script>alert(""Äú·ÃÎÊµÄ²©¿ÍÓÃ»§²»´æÔÚ£¬ÏµÍ³½«»á×Ô¶¯×ªÏòµ½ÏµÍ³²©¿ÍÊ×Ò³Ãæ£¡"");</script>"
+				'Response.Write "<script>alert(""æ‚¨è®¿é—®çš„åšå®¢ç”¨æˆ·ä¸å­˜åœ¨ï¼Œç³»ç»Ÿå°†ä¼šè‡ªåŠ¨è½¬å‘åˆ°ç³»ç»Ÿåšå®¢é¦–é¡µé¢ï¼"");</script>"
 				'Response.Redirect "BokeIndex.asp"
 			Else
-				'Response.Write "<script>alert(""Äú·ÃÎÊµÄ²©¿ÍÓÃ»§²»´æÔÚ£¬ÏµÍ³½«»á×Ô¶¯×ªÏòµ½¸öÈË²©¿ÍÉêÇëÒ³Ãæ£¡"");</script>"
+				'Response.Write "<script>alert(""æ‚¨è®¿é—®çš„åšå®¢ç”¨æˆ·ä¸å­˜åœ¨ï¼Œç³»ç»Ÿå°†ä¼šè‡ªåŠ¨è½¬å‘åˆ°ä¸ªäººåšå®¢ç”³è¯·é¡µé¢ï¼"");</script>"
 				'Response.Redirect "BokeApply.asp"
 			End If
 			Exit Sub
@@ -262,7 +262,7 @@ Class Cls_DvBoke
 			BokeCat.Load(Server.MapPath(Cache_Path &"usercat.config"))
 		Else
 			If Not BokeCat.LoadXml(Rs(17)) Then
-				'Response.Write "ÓÃ»§À¸Ä¿Êı¾İ³ö´í£¡"
+				'Response.Write "ç”¨æˆ·æ ç›®æ•°æ®å‡ºé”™ï¼"
 				BokeCat.Load(Server.MapPath(Cache_Path &"usercat.config"))
 			End If
 		End If
@@ -272,7 +272,7 @@ Class Cls_DvBoke
 
 	End Sub
 
-	'ÖØÖÃÏµÍ³±íÊı¾İ ACT=1Ç¿ÖÆ¸üĞÂ
+	'é‡ç½®ç³»ç»Ÿè¡¨æ•°æ® ACT=1å¼ºåˆ¶æ›´æ–°
 	Public Sub LoadSetup(Act)
 		Page_File = Server.MapPath(Cache_Path &"System.config")
 		Set SystemDoc = Dvbbs.CreateXmlDoc("Msxml2.FreeThreadedDOMDocument")
@@ -300,7 +300,7 @@ Class Cls_DvBoke
 		SystemDoc.save Page_File
 	End Sub
 
-	'ÏµÍ³
+	'ç³»ç»Ÿ
 	'S_LastPostTime,S_TopicNum,S_PhotoNum,S_FavNum,S_UserNum,S_TodayNum,S_PostNum
 	Public Sub Update_System(UserNum,TodayNum,FavNum,PhotoNum,TopicNum,PostNum,LastTime)
 		If Not IsNull(LastTime) and IsDate(LastTime) Then
@@ -315,7 +315,7 @@ Class Cls_DvBoke
 		'SaveSystemCache()
 	End Sub
 
-	'ÏµÍ³·ÖÀà
+	'ç³»ç»Ÿåˆ†ç±»
 	'sCatID,uCatNum,TopicNum,PostNum,TodayNum,LastUpTime
 	Public Sub Update_SysCat(sCatID,UserNum,TodayNum,TopicNum,PostNum,LastTime)
 		Dim UpCatID,i,Nodes
@@ -429,14 +429,14 @@ Class Cls_DvBoke
 		Set TempXmlDoc = Nothing
 	End Sub
 
-	'Ó¦ÓÃ¹ı³Ì
-	'Ò³Ãæ¼ÓÔØ
+	'åº”ç”¨è¿‡ç¨‹
+	'é¡µé¢åŠ è½½
 	Public Sub LoadPage(ByVal StyleFile)
 		Dim XslDoc
 		Page_File = Server.MapPath(Skins_Path & "xml/" & StyleFile)
 		Set XslDoc=Dvbbs.CreateXmlDoc("Msxml2.FreeThreadedDOMDocument")
 		If Not XslDoc.Load(Page_File) Then
-			Response.Write "Ä£°å²»´æÔÚ"
+			Response.Write "æ¨¡æ¿ä¸å­˜åœ¨"
 			Response.End
 			Exit Sub
 		Else
@@ -455,7 +455,7 @@ Class Cls_DvBoke
 		Dim XslDoc
 		Set XslDoc=Dvbbs.CreateXmlDoc("Msxml2.FreeThreadedDOMDocument")
 		If Not XslDoc.Load(Page_File) Then
-			Response.Write "Ö÷Ä£°å²»´æÔÚ!"
+			Response.Write "ä¸»æ¨¡æ¿ä¸å­˜åœ¨!"
 			Exit Sub
 		Else
 			Set Main_Strings = XslDoc.DocumentElement.selectNodes("xsl:variable")
@@ -697,7 +697,7 @@ Class Cls_DvBoke
 		Dim Node,ChildNodes,LinkTemp,Temp
 		Set Node = DvBoke.BokeCat.selectNodes("xml/bokelink/rs:data/z:row")
 		If Node.Length=0 Then
-			LinkStr = "ÔİÎ´Ìí¼Ó¸ÃĞÅÏ¢¡£"
+			LinkStr = "æš‚æœªæ·»åŠ è¯¥ä¿¡æ¯ã€‚"
 			Exit Function
 		End If
 		For Each ChildNodes in Node
@@ -713,7 +713,7 @@ Class Cls_DvBoke
 		Dim Node,ChildNodes,BokePostTemp,Temp
 		Set Node = DvBoke.BokeCat.selectNodes("xml/bokepost/rs:data/z:row")
 		If Node.Length=0 Then
-			BokePost = "ÔİÎ´Ìí¼Ó¸ÃĞÅÏ¢¡£"
+			BokePost = "æš‚æœªæ·»åŠ è¯¥ä¿¡æ¯ã€‚"
 			Exit Function
 		End If
 		Dim Title
@@ -741,7 +741,7 @@ Class Cls_DvBoke
 		Dim Node,ChildNodes,PhotosTemp,Temp
 		Set Node = DvBoke.BokeCat.selectNodes("xml/bokephoto/rs:data/z:row")
 		If Node.Length=0 Then
-			BokePhotos = "ÔİÎ´Ìí¼Ó¸ÃĞÅÏ¢¡£"
+			BokePhotos = "æš‚æœªæ·»åŠ è¯¥ä¿¡æ¯ã€‚"
 			Exit Function
 		End If
 		Dim ViewFile
@@ -769,8 +769,8 @@ Class Cls_DvBoke
 		Dim TempStr
 		Dim Endtime
 		Endtime = Timer()
-		TempStr = "²éÑ¯´ÎÊı£º("& SqlQueryNum + Dvbbs.SqlQueryNum &")"
-		TempStr = TempStr & ",Ò³ÃæÖ´ĞĞÊ±¼ä 0"&FormatNumber((Endtime-Startime),5)&" Ãë"
+		TempStr = "æŸ¥è¯¢æ¬¡æ•°ï¼š("& SqlQueryNum + Dvbbs.SqlQueryNum &")"
+		TempStr = TempStr & ",é¡µé¢æ‰§è¡Œæ—¶é—´ 0"&FormatNumber((Endtime-Startime),5)&" ç§’"
 		SysInfo = TempStr
 	End Function
 
@@ -791,7 +791,7 @@ Class Cls_DvBoke
 		ErrCode = ErrCode & Code
 	End Sub
 	
-	'Stype 0=ÏÔÊ¾µ×²¿¼°¶¥²¿ĞÅÏ¢,1=²»ÏÔÊ¾¶¥²¿¼°µ×²¿,2=ÔÚÏà¹ØÒ³ÃæÄÚÏÔÊ¾
+	'Stype 0=æ˜¾ç¤ºåº•éƒ¨åŠé¡¶éƒ¨ä¿¡æ¯,1=ä¸æ˜¾ç¤ºé¡¶éƒ¨åŠåº•éƒ¨,2=åœ¨ç›¸å…³é¡µé¢å†…æ˜¾ç¤º
 	Public Sub ShowMsg(Stype)
 		If sType = 2 Then
 			If ErrCode = "" Then Exit Sub
@@ -821,7 +821,7 @@ Class Cls_DvBoke
 			If ErrCode<>"" and ScriptName<>"bokedescription.asp" Then Response.Redirect Furl("BokeDescription.asp?user="&BokeName&"&ShowHead="& Stype &"&RefreshID="&RefreshID&"&Codes=" & ErrCode)
 		End If
 	End Sub
-	'ÊÇ·ñÖ§³ÖFSO
+	'æ˜¯å¦æ”¯æŒFSO
 	Public Function SysObjFso()
 		Dim xTestObj
 		SysObjFso = False
@@ -841,7 +841,7 @@ Class Cls_DvBoke
 		FilePath = DvBoke.System_UpSetting(19)
 		Set Rs=Execute("Select ID,FileName,PreviewImage,FileSize,BokeUserID From Dv_Boke_Upfile Where PostID = " & PostID)
 		Do While Not Rs.Eof
-			'É¾³ı¸½¼ş
+			'åˆ é™¤é™„ä»¶
 			FileSize = Rs("FileSize")
 			If SysObjFso=True Then
 				If objFSO.FileExists(Server.MapPath(FilePath & Rs("FileName"))) Then
@@ -855,13 +855,13 @@ Class Cls_DvBoke
 					End If
 				End IF
 			End If
-			'·µ»¹ÎÄ¼ş¿Õ¼ä
+			'è¿”è¿˜æ–‡ä»¶ç©ºé—´
 			If FileSize>0 Then
 				FileSize = Formatnumber((FileSize/1024)/1024,2)
 				Response.Write "Update Dv_Boke_User Set SpaceSize = SpaceSize + "&FileSize&" where SpaceSize<>-1 and UserID="&Rs("BokeUserID")
 				Execute("Update Dv_Boke_User Set SpaceSize = SpaceSize + "&FileSize&" where SpaceSize<>-1 and UserID="&Rs("BokeUserID"))
 			End If
-			'É¾³ı¸½¼ş±í¼ÇÂ¼
+			'åˆ é™¤é™„ä»¶è¡¨è®°å½•
 			Execute("Delete From Dv_Boke_Upfile Where ID = " & Rs("ID"))
 		Rs.MoveNext
 		Loop

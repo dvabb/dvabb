@@ -7,7 +7,7 @@
 	Dim Errmsg,Numc
 
 	Dvbbs.LoadTemplates("")
-	Dvbbs.Stats = "ÁªÃËĞÅÏ¢¹ÜÀí"
+	Dvbbs.Stats = "è”ç›Ÿä¿¡æ¯ç®¡ç†"
 	Dvbbs.Nav()
 	Dvbbs.Head_var 0,0,Plus_Popwan.Program,"plus_popwan_Message.asp"
 	Dvbbs.ActiveOnline()
@@ -19,7 +19,7 @@
 	End If
 	Dvbbs.PageEnd()
 
-'Ò³ÃæÓÒ²àÄÚÈİ²¿·Ö
+'é¡µé¢å³ä¾§å†…å®¹éƒ¨åˆ†
 Sub Page_Center()
 	If Not (Dvbbs.master Or Dvbbs.GroupSetting(70)="1") Then
 		Dvbbs.AddErrcode(28)
@@ -42,26 +42,26 @@ td {padding-left:5px;}
 </style>
 <table cellspacing="0" cellpadding="0" class="pw_tb1">
                 <tr> 
-                  <th colspan="2" style="text-align:center;">ÂÛÌ³¶ÌĞÅ¹ã²¥</th>
+                  <th colspan="2" style="text-align:center;">è®ºå›çŸ­ä¿¡å¹¿æ’­</th>
                 </tr>
             <form action="?action=add" method="post">
                 <tr> 
-                  <td width="22%">ÏûÏ¢±êÌâ</td>
+                  <td width="22%">æ¶ˆæ¯æ ‡é¢˜</td>
                   <td width="78%"> 
                     <input type="text" name="title" size="70">
                   </td>
                 </tr>
                 <tr> 
-                  <td width="22%">½ÓÊÕ·½Ñ¡Ôñ</td>
+                  <td width="22%">æ¥æ”¶æ–¹é€‰æ‹©</td>
                   <td width="78%"> 
                     <select name="stype" size="1">
-					<option value="1">ËùÓĞÔÚÏßÓÃ»§</option>
-					<option value="2">ËùÓĞ¹ó±ö</option>
-					<option value="3">ËùÓĞ°æÖ÷</option>
-					<option value="4">ËùÓĞ¹ÜÀíÔ±</option>
-					<option value="5">°æÖ÷/³¬°æ/¹ÜÀíÔ±</option>
-					<option value="6">ËùÓĞÓÃ»§</option>
-					<option value="7">ËùÓĞ³¬°æ</option>
+					<option value="1">æ‰€æœ‰åœ¨çº¿ç”¨æˆ·</option>
+					<option value="2">æ‰€æœ‰è´µå®¾</option>
+					<option value="3">æ‰€æœ‰ç‰ˆä¸»</option>
+					<option value="4">æ‰€æœ‰ç®¡ç†å‘˜</option>
+					<option value="5">ç‰ˆä¸»/è¶…ç‰ˆ/ç®¡ç†å‘˜</option>
+					<option value="6">æ‰€æœ‰ç”¨æˆ·</option>
+					<option value="7">æ‰€æœ‰è¶…ç‰ˆ</option>
 <%
 	Dim Rs,Sql
 	Sql = "SELECT UserGroupID, Title From Dv_UserGroups WHERE UserGroupID > 8 AND ParentGID = 0 ORDER BY UserGroupID"
@@ -81,12 +81,12 @@ td {padding-left:5px;}
                 </tr>
                 <tr> 
                   <td width="22%" height="20" valign="top">
-                    <p>ÏûÏ¢ÄÚÈİ</p>
-                    <p>(<font color="red">HTML´úÂëÖ§³Ö</font>)</p>
+                    <p>æ¶ˆæ¯å†…å®¹</p>
+                    <p>(<font color="red">HTMLä»£ç æ”¯æŒ</font>)</p>
                   </td>
                   <td width="78%" height="20"> 
                     <textarea name="message" cols="80" rows="10"></textarea>
-                    <br><input type="radio" class="radio" name="isshow" value="1" checked>ÏÔÊ¾·¢ËÍ¹ı³Ì <input type="radio" class="radio" name="isshow" value="0" > ²»ÏÔÊ¾·¢ËÍ¹ı³Ì£¨ËÙ¶È½Ï¿ì£©
+                    <br><input type="radio" class="radio" name="isshow" value="1" checked>æ˜¾ç¤ºå‘é€è¿‡ç¨‹ <input type="radio" class="radio" name="isshow" value="0" > ä¸æ˜¾ç¤ºå‘é€è¿‡ç¨‹ï¼ˆé€Ÿåº¦è¾ƒå¿«ï¼‰
                   </td>
                 </tr>
                 <tr> 
@@ -95,8 +95,8 @@ td {padding-left:5px;}
                   </td>
                   <td width="78%" height="23"> 
                     <div align="center"> 
-                      <input type="submit" class="button" name="Submit" value="·¢ËÍÏûÏ¢">
-                      <input type="reset" class="button" name="Submit2" value="ÖØĞÂÌîĞ´">
+                      <input type="submit" class="button" name="Submit" value="å‘é€æ¶ˆæ¯">
+                      <input type="reset" class="button" name="Submit2" value="é‡æ–°å¡«å†™">
                     </div>
                   </td>
                 </tr>
@@ -112,17 +112,17 @@ Sub Savemsg()
 	message=Replace(Request("message"),Chr(13)&Chr(10),"<br/>")
 	message=Dvbbs.checkStr(message)
 	If Len(Title)=0 Then 
-		Errmsg = Errmsg + "ÏûÏ¢±êÌâ²»ÄÜÎª¿Õ"
+		Errmsg = Errmsg + "æ¶ˆæ¯æ ‡é¢˜ä¸èƒ½ä¸ºç©º"
 		Response.Redirect "showerr.asp?ErrCodes=<li>"& Errmsg &"&action=OtherErr"
 		Exit Sub			
 	End If
 	If Len(message)=0 Then
-		Errmsg = Errmsg + "ÏûÏ¢ÄÚÈİ²»ÄÜÎª¿Õ"
+		Errmsg = Errmsg + "æ¶ˆæ¯å†…å®¹ä¸èƒ½ä¸ºç©º"
 		Response.Redirect "showerr.asp?ErrCodes=<li>"& Errmsg &"&action=OtherErr"
 		Exit Sub			
 	End If
 	If Len(message)>255 Then
-		Errmsg = Errmsg + "ÏûÏ¢ÄÚÈİ²»ÄÜ¶àÓÚ255×Ö½Ú"
+		Errmsg = Errmsg + "æ¶ˆæ¯å†…å®¹ä¸èƒ½å¤šäº255å­—èŠ‚"
 		Response.Redirect "showerr.asp?ErrCodes=<li>"& Errmsg &"&action=OtherErr"
 		Exit Sub			
 	End If 
@@ -166,7 +166,7 @@ Sub Savemsg()
 		Numc = Rs(0)
 		sql = "SELECT UserName FROM [Dv_User] WHERE UserGroupID = 2 ORDER BY UserID DESC"
 	Case Else
-		REM ¼ÓÈë×Ô¶¨ÒåÓÃ»§×éÈº·¢¶ÌĞÅ¹¦ÄÜ 2004-5-19 Dv.Yz
+		REM åŠ å…¥è‡ªå®šä¹‰ç”¨æˆ·ç»„ç¾¤å‘çŸ­ä¿¡åŠŸèƒ½ 2004-5-19 Dv.Yz
 		Sql = "SELECT COUNT(*) FROM [Dv_User] WHERE Usergroupid = " & Cint(Request("stype"))
 		Set Rs = Dvbbs.Execute(Sql)
 		Numc = Rs(0)
@@ -175,7 +175,7 @@ Sub Savemsg()
 %>
 <br><table cellspacing="0" cellpadding="0" class="pw_tb1">
 <tr><td colspan=2>
-ÏÂÃæ¿ªÊ¼·¢ËÍ¶ÌÏûÏ¢£¬Ô¤¼Æ±¾´Î·¢ËÍ<%=Numc%>¸öÓÃ»§¡£
+ä¸‹é¢å¼€å§‹å‘é€çŸ­æ¶ˆæ¯ï¼Œé¢„è®¡æœ¬æ¬¡å‘é€<%=Numc%>ä¸ªç”¨æˆ·ã€‚
 <table style="width:400px;" cellspacing="1" cellpadding="1" class="pw_tb1">
 <tr> 
 <td bgcolor="#000000">
@@ -187,21 +187,21 @@ Sub Savemsg()
 <%
 Response.Flush
 	Set Rs = Dvbbs.Execute(Sql)
-	'ĞŞÕıËùÊôÓÃ»§×éÓÃ»§ÊıÎª0Ê±µÄ´íÎó Dv.Yz 2005-1-27
+	'ä¿®æ­£æ‰€å±ç”¨æˆ·ç»„ç”¨æˆ·æ•°ä¸º0æ—¶çš„é”™è¯¯ Dv.Yz 2005-1-27
 	If Not (Rs.Eof And Rs.Bof) Then
 		userlist=Rs.GetRows(-1)
 		Set Rs = Nothing
 		Response.Write "<script>document.getElementById('img2').width=" & Fix((i/Numc) * 400) & ";" & VbCrLf
-		Response.Write "document.getElementById('txt2').innerHTML=""ÕıÔÚ·¢ËÍ£¬..."";" & VbCrLf
-		Response.Write "document.getElementById('img2').title=""·¢ËÍ¶ÌĞÅ¸ø...."";</script>" & VbCrLf
+		Response.Write "document.getElementById('txt2').innerHTML=""æ­£åœ¨å‘é€ï¼Œ..."";" & VbCrLf
+		Response.Write "document.getElementById('img2').title=""å‘é€çŸ­ä¿¡ç»™...."";</script>" & VbCrLf
 		Response.Flush
 		For i=0 to UBound(userlist,2)
 			userlist(0,i)=Dvbbs.checkStr(userlist(0,i))
 			If Response.IsClientConnected Then
 				If isshow="1" Then
 					Response.Write "<script>document.getElementById('img2').width=" & Fix((i/Numc) * 400) & ";" & VbCrLf
-					Response.Write "document.getElementById('txt2').innerHTML=""" & FormatNumber(i/Numc*100,4,-1) & "%£¬·¢ËÍ¶ÌĞÅ¸ø" & userlist(0,i) & "³É¹¦£¡"";" & VbCrLf
-					Response.Write "document.getElementById('img2').title=""·¢ËÍ¶ÌĞÅ¸ø" & userlist(0,i)  & "³É¹¦£¡"";</script>" & VbCrLf
+					Response.Write "document.getElementById('txt2').innerHTML=""" & FormatNumber(i/Numc*100,4,-1) & "%ï¼Œå‘é€çŸ­ä¿¡ç»™" & userlist(0,i) & "æˆåŠŸï¼"";" & VbCrLf
+					Response.Write "document.getElementById('img2').title=""å‘é€çŸ­ä¿¡ç»™" & userlist(0,i)  & "æˆåŠŸï¼"";</script>" & VbCrLf
 					Response.Flush
 				End If
 				Sql = "INSERT into dv_message(incept, sender, title, content, sendtime, flag, issend) values('"&userlist(0,i) &"', '"&sender&"', '"&Title&"', '"&Trim(message)&"', "&SqlNowString&",0,1)"
@@ -211,11 +211,11 @@ Response.Flush
 			End If 
 		Next 
 		Response.Write "<script>document.getElementById('img2').width=400;" & VbCrLf
-		Response.Write "document.getElementById('txt2').innerHTML=""100%£¬·¢ËÍÍê³É"";" & VbCrLf
-		Response.Write "document.getElementById('img2').title=""·¢ËÍ¶ÌĞÅ¸ø...."";</script>" & VbCrLf
+		Response.Write "document.getElementById('txt2').innerHTML=""100%ï¼Œå‘é€å®Œæˆ"";" & VbCrLf
+		Response.Write "document.getElementById('img2').title=""å‘é€çŸ­ä¿¡ç»™...."";</script>" & VbCrLf
 		Response.Flush
 	End If
-	Dvbbs.Dvbbs_Suc("²Ù×÷³É¹¦£¡Çë¼ÌĞø±ğµÄ²Ù×÷¡£")
+	Dvbbs.Dvbbs_Suc("æ“ä½œæˆåŠŸï¼è¯·ç»§ç»­åˆ«çš„æ“ä½œã€‚")
 End Sub
 
 Function inceptid(stype,iusername)
@@ -237,7 +237,7 @@ Function update_user_msg(username)
 	End If
 	Dvbbs.Execute("update [dv_user] set UserMsg='"&dvbbs.CheckStr(msginfo)&"' where username='"&dvbbs.CheckStr(username)&"'")
 End Function
-'Í³¼ÆÁôÑÔ
+'ç»Ÿè®¡ç•™è¨€
 Function newincept(iusername)
 	Dim rs
 	Rs=Dvbbs.Execute("Select Count(id) from dv_Message Where flag=0 and issend=1 and delR=0 And incept='"& iusername &"'")

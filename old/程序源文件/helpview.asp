@@ -2,7 +2,7 @@
 <!--#include file="inc/const.asp"-->
 <%
 Dvbbs.LoadTemplates("")
-Dvbbs.Stats=Dvbbs.Forum_Info(0)&"¹ÜÀí°ïÖú"
+Dvbbs.Stats=Dvbbs.Forum_Info(0)&"ç®¡ç†å¸®åŠ©"
 Dvbbs.Head
 %>
 <br>
@@ -16,7 +16,7 @@ document.write(opener.txtRun.value)
 </td></tr>
 <tr>
 <td height="22" align=center class=tablebody2>
-<input type="button" name="close" value="[¹Ø  ±Õ]" onclick="window.close()">
+<input type="button" name="close" value="[å…³  é—­]" onclick="window.close()">
 </td>
 </tr>
 </table>

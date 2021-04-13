@@ -19,21 +19,21 @@ Dim i
 %>
 <table cellpadding="0" cellspacing="0" border="0" width="100%" align="center">
 <tr>
-<th style="text-align:center;" colspan=2>ÂÛÌ³Êı¾İ´¦Àí</th>
+<th style="text-align:center;" colspan=2>è®ºå›æ•°æ®å¤„ç†</th>
 </tr>
 <tr>
-<td width="20%" class="td1" height=25>×¢ÒâÊÂÏî</td>
-<td width="80%" class="td1">ÏÂÃæÓĞµÄ²Ù×÷¿ÉÄÜ½«·Ç³£ÏûºÄ·şÎñÆ÷×ÊÔ´£¬¶øÇÒ¸üĞÂÊ±¼äºÜ³¤£¬Çë×ĞÏ¸È·ÈÏÃ¿Ò»²½²Ù×÷ºóÖ´ĞĞ¡£</td>
+<td width="20%" class="td1" height=25>æ³¨æ„äº‹é¡¹</td>
+<td width="80%" class="td1">ä¸‹é¢æœ‰çš„æ“ä½œå¯èƒ½å°†éå¸¸æ¶ˆè€—æœåŠ¡å™¨èµ„æºï¼Œè€Œä¸”æ›´æ–°æ—¶é—´å¾ˆé•¿ï¼Œè¯·ä»”ç»†ç¡®è®¤æ¯ä¸€æ­¥æ“ä½œåæ‰§è¡Œã€‚</td>
 </tr>
 <%
 	If request("action")="updat" Then
-		If request("submit")="¸üĞÂ·Ö°æÃæÊı¾İ" Or request("submit")="¸üĞÂÂÛÌ³Êı¾İ" Then
+		If request("submit")="æ›´æ–°åˆ†ç‰ˆé¢æ•°æ®" Or request("submit")="æ›´æ–°è®ºå›æ•°æ®" Then
 			call updateboard()
-		ElseIf request("submit")="ĞŞ ¸´" Then
+		ElseIf request("submit")="ä¿® å¤" Then
 			call fixtopic()
-		ElseIf request("submit")="Çå¿ÕÔÚÏßÓÃ»§" Then
+		ElseIf request("submit")="æ¸…ç©ºåœ¨çº¿ç”¨æˆ·" Then
 			call Delallonline()
-		ElseIf request("submit")="¸üĞÂÊÕ²Ø¼Ğ" Then
+		ElseIf request("submit")="æ›´æ–°æ”¶è—å¤¹" Then
 			call Updatebm()
 		Else
 			call updateall()
@@ -57,73 +57,73 @@ Dim i
 		Dvbbs.Execute("update "&AllPostTable(i)&" set boardid=444 where boardid="&request("boardid"))
 		next
 		end if
-		response.write "<tr><td align=left colspan=2 height=23 class=td1>Çå¿ÕÂÛÌ³Êı¾İ³É¹¦£¬Çë·µ»Ø¸üĞÂÌû×ÓÊı¾İ£¡</td></tr>"
+		response.write "<tr><td align=left colspan=2 height=23 class=td1>æ¸…ç©ºè®ºå›æ•°æ®æˆåŠŸï¼Œè¯·è¿”å›æ›´æ–°å¸–å­æ•°æ®ï¼</td></tr>"
 	elseif request("action")="updateuser" then
 %>
 <FORM METHOD=POST ACTION="?action=updateuserinfo">
 <tr> 
-<th style="text-align:center;" colspan=2>¸üĞÂÓÃ»§Êı¾İ</th>
+<th style="text-align:center;" colspan=2>æ›´æ–°ç”¨æˆ·æ•°æ®</th>
 </tr>
 <tr>
-<td width="20%" class="td1">ÖØĞÂ¼ÆËãÓÃ»§·¢Ìù</td>
-<td width="80%" class="td1">Ö´ĞĞ±¾²Ù×÷½«°´ÕÕ<font color=red>µ±Ç°ÂÛÌ³Êı¾İ¿â</font>·¢ÌùÖØĞÂ¼ÆËãËùÓĞÓÃ»§·¢±íÌû×ÓÊıÁ¿¡£</td>
+<td width="20%" class="td1">é‡æ–°è®¡ç®—ç”¨æˆ·å‘è´´</td>
+<td width="80%" class="td1">æ‰§è¡Œæœ¬æ“ä½œå°†æŒ‰ç…§<font color=red>å½“å‰è®ºå›æ•°æ®åº“</font>å‘è´´é‡æ–°è®¡ç®—æ‰€æœ‰ç”¨æˆ·å‘è¡¨å¸–å­æ•°é‡ã€‚</td>
 </tr>
 <tr>
-<td width="20%" class="td1">¿ªÊ¼ÓÃ»§ID</td>
-<td width="80%" class="td1"><input type=text name="beginID" value="1" size=10>&nbsp;ÓÃ»§ID£¬¿ÉÒÔÌîĞ´ÄúÏë´ÓÄÄÒ»¸öIDºÅ¿ªÊ¼½øĞĞĞŞ¸´</td>
+<td width="20%" class="td1">å¼€å§‹ç”¨æˆ·ID</td>
+<td width="80%" class="td1"><input type=text name="beginID" value="1" size=10>&nbsp;ç”¨æˆ·IDï¼Œå¯ä»¥å¡«å†™æ‚¨æƒ³ä»å“ªä¸€ä¸ªIDå·å¼€å§‹è¿›è¡Œä¿®å¤</td>
 </tr>
 <tr>
-<td width="20%" class="td1">½áÊøÓÃ»§ID</td>
-<td width="80%" class="td1"><input type=text name="endID" value="100" size=10>&nbsp;½«¸üĞÂ¿ªÊ¼µ½½áÊøIDÖ®¼äµÄÓÃ»§Êı¾İ£¬Ö®¼äµÄÊıÖµ×îºÃ²»ÒªÑ¡Ôñ¹ı´ó</td>
+<td width="20%" class="td1">ç»“æŸç”¨æˆ·ID</td>
+<td width="80%" class="td1"><input type=text name="endID" value="100" size=10>&nbsp;å°†æ›´æ–°å¼€å§‹åˆ°ç»“æŸIDä¹‹é—´çš„ç”¨æˆ·æ•°æ®ï¼Œä¹‹é—´çš„æ•°å€¼æœ€å¥½ä¸è¦é€‰æ‹©è¿‡å¤§</td>
 </tr>
 <tr>
 <td width="20%" class="td1">&nbsp;</td>
-<td width="80%" class="td1"><input type="submit" class="button" name="Submit" value="ÖØĞÂ¼ÆËãÓÃ»§·¢Ìù"></td>
+<td width="80%" class="td1"><input type="submit" class="button" name="Submit" value="é‡æ–°è®¡ç®—ç”¨æˆ·å‘è´´"></td>
 </tr>
 </form>
 
 <FORM METHOD=POST ACTION="?action=updateuserinfo">
 <tr>
-<td width="20%" class="td1" valign=top>¸üĞÂÓÃ»§µÈ¼¶</td>
-<td width="80%" class="td1">Ö´ĞĞ±¾²Ù×÷½«°´ÕÕ<font color=red>µ±Ç°ÂÛÌ³Êı¾İ¿â</font>ÓÃ»§·¢ÌùÊıÁ¿ºÍÂÛÌ³µÄµÈ¼¶ÉèÖÃÖØĞÂ¼ÆËãÓÃ»§µÈ¼¶£¬±¾²Ù×÷²»Ó°ÏìµÈ¼¶Îª¹ó±ö¡¢°æÖ÷¡¢×Ü°æÖ÷µÄÊı¾İ¡£</td>
+<td width="20%" class="td1" valign=top>æ›´æ–°ç”¨æˆ·ç­‰çº§</td>
+<td width="80%" class="td1">æ‰§è¡Œæœ¬æ“ä½œå°†æŒ‰ç…§<font color=red>å½“å‰è®ºå›æ•°æ®åº“</font>ç”¨æˆ·å‘è´´æ•°é‡å’Œè®ºå›çš„ç­‰çº§è®¾ç½®é‡æ–°è®¡ç®—ç”¨æˆ·ç­‰çº§ï¼Œæœ¬æ“ä½œä¸å½±å“ç­‰çº§ä¸ºè´µå®¾ã€ç‰ˆä¸»ã€æ€»ç‰ˆä¸»çš„æ•°æ®ã€‚</td>
 </tr>
 <tr>
-<td width="20%" class="td1">¿ªÊ¼ÓÃ»§ID</td>
-<td width="80%" class="td1"><input type=text name="beginID" value="1" size=10>&nbsp;ÓÃ»§ID£¬¿ÉÒÔÌîĞ´ÄúÏë´ÓÄÄÒ»¸öIDºÅ¿ªÊ¼½øĞĞĞŞ¸´</td>
+<td width="20%" class="td1">å¼€å§‹ç”¨æˆ·ID</td>
+<td width="80%" class="td1"><input type=text name="beginID" value="1" size=10>&nbsp;ç”¨æˆ·IDï¼Œå¯ä»¥å¡«å†™æ‚¨æƒ³ä»å“ªä¸€ä¸ªIDå·å¼€å§‹è¿›è¡Œä¿®å¤</td>
 </tr>
 <tr>
-<td width="20%" class="td1">½áÊøÓÃ»§ID</td>
-<td width="80%" class="td1"><input type=text name="endID" value="100" size=10>&nbsp;½«¸üĞÂ¿ªÊ¼µ½½áÊøIDÖ®¼äµÄÓÃ»§Êı¾İ£¬Ö®¼äµÄÊıÖµ×îºÃ²»ÒªÑ¡Ôñ¹ı´ó</td>
+<td width="20%" class="td1">ç»“æŸç”¨æˆ·ID</td>
+<td width="80%" class="td1"><input type=text name="endID" value="100" size=10>&nbsp;å°†æ›´æ–°å¼€å§‹åˆ°ç»“æŸIDä¹‹é—´çš„ç”¨æˆ·æ•°æ®ï¼Œä¹‹é—´çš„æ•°å€¼æœ€å¥½ä¸è¦é€‰æ‹©è¿‡å¤§</td>
 </tr>
 <tr>
 <td width="20%" class="td1">&nbsp;</td>
-<td width="80%" class="td1"><input type="submit" class="button" name="Submit" value="¸üĞÂÓÃ»§µÈ¼¶"></td>
+<td width="80%" class="td1"><input type="submit" class="button" name="Submit" value="æ›´æ–°ç”¨æˆ·ç­‰çº§"></td>
 </tr>
 </form>
 
 <FORM METHOD=POST ACTION="?action=updateuserinfo">
 <tr>
-<td width="20%" class="td1" valign=top>¸üĞÂÓÃ»§½ğÇ®/»ı·Ö/÷ÈÁ¦</td>
-<td width="80%" class="td1">Ö´ĞĞ±¾²Ù×÷½«°´ÕÕ<font color=red>µ±Ç°ÂÛÌ³Êı¾İ¿â</font>ÓÃ»§µÄ·¢ÌùÊıÁ¿ºÍÂÛÌ³µÄÏà¹ØÉèÖÃÖØĞÂ¼ÆËãÓÃ»§µÄ½ğÇ®/»ı·Ö/÷ÈÁ¦£¬±¾²Ù×÷Ò²½«ÖØĞÂ¼ÆËã¹ó±ö¡¢°æÖ÷¡¢×Ü°æÖ÷µÄÊı¾İ<BR>×¢Òâ£º²»ÍÆ¼öÓÃ»§½øĞĞ±¾²Ù×÷£¬±¾²Ù×÷ÔÚÊı¾İºÜ¶àµÄÊ±ºòÇë¾¡Á¿²»ÒªÊ¹ÓÃ£¬²¢ÇÒ±¾²Ù×÷¶Ô¸÷¸ö°æÃæÉ¾³ıÌû×ÓµÈËù¿ÛÏàÓ¦·ÖÖµ²»×öÔËËã£¬Ö»ÊÇ°´ÕÕ·¢ÌùºÍ×ÜµÄÂÛÌ³·ÖÖµÉèÖÃ½øĞĞÔËËã£¬Çë´ó¼ÒÉ÷ÖØ²Ù×÷£¬<font color=red>¶øÇÒ±¾Ïî²Ù×÷½«ÖØÖÃÓÃ»§ÒòÎª½±Àø¡¢³Í·£µÈÔ­Òò¹ÜÀíÔ±¶ÔÓÃ»§·ÖÖµµÄĞŞ¸Ä¡£</font></td>
+<td width="20%" class="td1" valign=top>æ›´æ–°ç”¨æˆ·é‡‘é’±/ç§¯åˆ†/é­…åŠ›</td>
+<td width="80%" class="td1">æ‰§è¡Œæœ¬æ“ä½œå°†æŒ‰ç…§<font color=red>å½“å‰è®ºå›æ•°æ®åº“</font>ç”¨æˆ·çš„å‘è´´æ•°é‡å’Œè®ºå›çš„ç›¸å…³è®¾ç½®é‡æ–°è®¡ç®—ç”¨æˆ·çš„é‡‘é’±/ç§¯åˆ†/é­…åŠ›ï¼Œæœ¬æ“ä½œä¹Ÿå°†é‡æ–°è®¡ç®—è´µå®¾ã€ç‰ˆä¸»ã€æ€»ç‰ˆä¸»çš„æ•°æ®<BR>æ³¨æ„ï¼šä¸æ¨èç”¨æˆ·è¿›è¡Œæœ¬æ“ä½œï¼Œæœ¬æ“ä½œåœ¨æ•°æ®å¾ˆå¤šçš„æ—¶å€™è¯·å°½é‡ä¸è¦ä½¿ç”¨ï¼Œå¹¶ä¸”æœ¬æ“ä½œå¯¹å„ä¸ªç‰ˆé¢åˆ é™¤å¸–å­ç­‰æ‰€æ‰£ç›¸åº”åˆ†å€¼ä¸åšè¿ç®—ï¼Œåªæ˜¯æŒ‰ç…§å‘è´´å’Œæ€»çš„è®ºå›åˆ†å€¼è®¾ç½®è¿›è¡Œè¿ç®—ï¼Œè¯·å¤§å®¶æ…é‡æ“ä½œï¼Œ<font color=red>è€Œä¸”æœ¬é¡¹æ“ä½œå°†é‡ç½®ç”¨æˆ·å› ä¸ºå¥–åŠ±ã€æƒ©ç½šç­‰åŸå› ç®¡ç†å‘˜å¯¹ç”¨æˆ·åˆ†å€¼çš„ä¿®æ”¹ã€‚</font></td>
 </tr>
 <tr>
-<td width="20%" class="td1">¿ªÊ¼ÓÃ»§ID</td>
-<td width="80%" class="td1"><input type=text name="beginID" value="1" size=10>&nbsp;ÓÃ»§ID£¬¿ÉÒÔÌîĞ´ÄúÏë´ÓÄÄÒ»¸öIDºÅ¿ªÊ¼½øĞĞĞŞ¸´</td>
+<td width="20%" class="td1">å¼€å§‹ç”¨æˆ·ID</td>
+<td width="80%" class="td1"><input type=text name="beginID" value="1" size=10>&nbsp;ç”¨æˆ·IDï¼Œå¯ä»¥å¡«å†™æ‚¨æƒ³ä»å“ªä¸€ä¸ªIDå·å¼€å§‹è¿›è¡Œä¿®å¤</td>
 </tr>
 <tr>
-<td width="20%" class="td1">½áÊøÓÃ»§ID</td>
-<td width="80%" class="td1"><input type=text name="endID" value="100" size=10>&nbsp;½«¸üĞÂ¿ªÊ¼µ½½áÊøIDÖ®¼äµÄÓÃ»§Êı¾İ£¬Ö®¼äµÄÊıÖµ×îºÃ²»ÒªÑ¡Ôñ¹ı´ó</td>
+<td width="20%" class="td1">ç»“æŸç”¨æˆ·ID</td>
+<td width="80%" class="td1"><input type=text name="endID" value="100" size=10>&nbsp;å°†æ›´æ–°å¼€å§‹åˆ°ç»“æŸIDä¹‹é—´çš„ç”¨æˆ·æ•°æ®ï¼Œä¹‹é—´çš„æ•°å€¼æœ€å¥½ä¸è¦é€‰æ‹©è¿‡å¤§</td>
 </tr>
 <tr>
 <td width="20%" class="td1">&nbsp;</td>
-<td width="80%" class="td1"><input type="submit" class="button" name="Submit" value="¸üĞÂÓÃ»§½ğÇ®/»ı·Ö/÷ÈÁ¦"></td>
+<td width="80%" class="td1"><input type="submit" class="button" name="Submit" value="æ›´æ–°ç”¨æˆ·é‡‘é’±/ç§¯åˆ†/é­…åŠ›"></td>
 </tr>
 </FORM>
 <%
 	elseif request("action")="updateuserinfo" then
-		if request("submit")="ÖØĞÂ¼ÆËãÓÃ»§·¢Ìù" then
+		if request("submit")="é‡æ–°è®¡ç®—ç”¨æˆ·å‘è´´" then
 		call updateTopic()
-		elseif request("submit")="¸üĞÂÓÃ»§µÈ¼¶" then
+		elseif request("submit")="æ›´æ–°ç”¨æˆ·ç­‰çº§" then
 		call updategrade()
 		else
 		call updatemoney()
@@ -134,82 +134,82 @@ Dim i
 		response.write body
 		end if
 	else
-	'Ö÷ÌâÊı,Ìû×ÓÊı,ÓÃ»§Êı,½ñÈÕÌù,×òÈÕÌù,×Ü¹Ì¶¥,×îºó×¢²á
+	'ä¸»é¢˜æ•°,å¸–å­æ•°,ç”¨æˆ·æ•°,ä»Šæ—¥è´´,æ˜¨æ—¥è´´,æ€»å›ºé¡¶,æœ€åæ³¨å†Œ
 %>
 <tr> 
-<th style="text-align:center;" colspan=2>¸üĞÂÂÛÌ³Êı¾İ</th>
+<th style="text-align:center;" colspan=2>æ›´æ–°è®ºå›æ•°æ®</th>
 </tr>
 
 <form action="update.asp?action=updat" method=post>
 <tr>
-<td width="20%" class="td2">¸üĞÂ×ÜÂÛÌ³Êı¾İ</td>
+<td width="20%" class="td2">æ›´æ–°æ€»è®ºå›æ•°æ®</td>
 <td width="80%" class="td2">
 <input type="checkbox" class="checkbox" name="u1" value="1">
-Ö÷ÌâÊı
+ä¸»é¢˜æ•°
 <input type="checkbox" class="checkbox" name="u2" value="1">
-Ìû×ÓÊı
+å¸–å­æ•°
 <input type="checkbox" class="checkbox" name="u3" value="1">
-ÓÃ»§Êı
+ç”¨æˆ·æ•°
 <input type="checkbox" class="checkbox" name="u4" value="1" checked>
-½ñÈÕÌû
+ä»Šæ—¥å¸–
 <input type="checkbox" class="checkbox" name="u5" value="1" checked>
-×òÈÕÌû
+æ˜¨æ—¥å¸–
 <input type="checkbox" class="checkbox" name="u6" value="1">
-×Ü¹Ì¶¥
+æ€»å›ºé¡¶
 <input type="checkbox" class="checkbox" name="u7" value="1">
-×îºó×¢²á
-<BR><BR><input type="submit" class="button" name="Submit" value="¸üĞÂÂÛÌ³×ÜÊı¾İ"><BR><BR>ÕâÀï½«ÖØĞÂ¼ÆËãÕû¸öÂÛÌ³µÄÌû×ÓÖ÷ÌâºÍ»Ø¸´Êı£¬½ñÈÕÌû×Ó£¬×îºó¼ÓÈëÓÃ»§µÈ£¬½¨ÒéÃ¿¸ôÒ»¶ÎÊ±¼äÔËĞĞÒ»´Î¡£<hr size=1></td>
+æœ€åæ³¨å†Œ
+<BR><BR><input type="submit" class="button" name="Submit" value="æ›´æ–°è®ºå›æ€»æ•°æ®"><BR><BR>è¿™é‡Œå°†é‡æ–°è®¡ç®—æ•´ä¸ªè®ºå›çš„å¸–å­ä¸»é¢˜å’Œå›å¤æ•°ï¼Œä»Šæ—¥å¸–å­ï¼Œæœ€ååŠ å…¥ç”¨æˆ·ç­‰ï¼Œå»ºè®®æ¯éš”ä¸€æ®µæ—¶é—´è¿è¡Œä¸€æ¬¡ã€‚<hr size=1></td>
 </tr>
 <tr>
-<td width="20%" class="td1">¸üĞÂ·Ö°æÃæÊı¾İ</td>
-<td width="80%" class="td1"><input type="submit" class="button" name="Submit" value="¸üĞÂ·Ö°æÃæÊı¾İ"><BR><BR>ÕâÀï½«ÖØĞÂ¼ÆËãÃ¿¸ö°æÃæµÄÌû×ÓÖ÷ÌâºÍ»Ø¸´Êı£¬½ñÈÕÌû×Ó£¬×îºó»Ø¸´ĞÅÏ¢µÈ£¬½¨ÒéÃ¿¸ôÒ»¶ÎÊ±¼äÔËĞĞÒ»´Î¡£<hr size=1>
+<td width="20%" class="td1">æ›´æ–°åˆ†ç‰ˆé¢æ•°æ®</td>
+<td width="80%" class="td1"><input type="submit" class="button" name="Submit" value="æ›´æ–°åˆ†ç‰ˆé¢æ•°æ®"><BR><BR>è¿™é‡Œå°†é‡æ–°è®¡ç®—æ¯ä¸ªç‰ˆé¢çš„å¸–å­ä¸»é¢˜å’Œå›å¤æ•°ï¼Œä»Šæ—¥å¸–å­ï¼Œæœ€åå›å¤ä¿¡æ¯ç­‰ï¼Œå»ºè®®æ¯éš”ä¸€æ®µæ—¶é—´è¿è¡Œä¸€æ¬¡ã€‚<hr size=1>
 </td>
 </tr>
 <tr>
-<td width="20%" class="td2">¸üĞÂÂÛÌ³ÊÕ²Ø¼Ğ</td>
-<td width="80%" class="td2"><input type="submit" class="button" name="Submit" value="¸üĞÂÊÕ²Ø¼Ğ"><BR><BR>ÕâÀï½«ÖØĞÂÕûÀíÂÛÌ³µÄÊÕ²Ø¼Ğ£¬É¾³ı²»´æÔÚÓÃ»§µÄÊÕ²Ø¼ÇÂ¼£¬ÖØĞÂÖ¸Ïò±»ÒÆ¶¯µÄÌû×ÓÊÕ²ØµØÖ·£¬É¾³ıÒÑ±»É¾³ıµÄÌû×ÓÊÕ²Ø¼ÇÂ¼¡£
+<td width="20%" class="td2">æ›´æ–°è®ºå›æ”¶è—å¤¹</td>
+<td width="80%" class="td2"><input type="submit" class="button" name="Submit" value="æ›´æ–°æ”¶è—å¤¹"><BR><BR>è¿™é‡Œå°†é‡æ–°æ•´ç†è®ºå›çš„æ”¶è—å¤¹ï¼Œåˆ é™¤ä¸å­˜åœ¨ç”¨æˆ·çš„æ”¶è—è®°å½•ï¼Œé‡æ–°æŒ‡å‘è¢«ç§»åŠ¨çš„å¸–å­æ”¶è—åœ°å€ï¼Œåˆ é™¤å·²è¢«åˆ é™¤çš„å¸–å­æ”¶è—è®°å½•ã€‚
 </td>
 </tr>
 <tr> 
-<th style="text-align:center;" colspan=2>ĞŞ¸´Ìû×Ó(ĞŞ¸´Ö¸¶¨·¶Î§ÄÚÌû×ÓµÄ×îºó»Ø¸´Êı¾İ)</th>
+<th style="text-align:center;" colspan=2>ä¿®å¤å¸–å­(ä¿®å¤æŒ‡å®šèŒƒå›´å†…å¸–å­çš„æœ€åå›å¤æ•°æ®)</th>
 </tr>
 <tr>
-<td width="20%" class="td1">¿ªÊ¼µÄIDºÅ</td>
-<td width="80%" class="td1"><input type=text name="beginID" value="1" size=10>&nbsp;Ìû×ÓÖ÷ÌâID£¬¿ÉÒÔÌîĞ´ÄúÏë´ÓÄÄÒ»¸öIDºÅ¿ªÊ¼½øĞĞĞŞ¸´</td>
+<td width="20%" class="td1">å¼€å§‹çš„IDå·</td>
+<td width="80%" class="td1"><input type=text name="beginID" value="1" size=10>&nbsp;å¸–å­ä¸»é¢˜IDï¼Œå¯ä»¥å¡«å†™æ‚¨æƒ³ä»å“ªä¸€ä¸ªIDå·å¼€å§‹è¿›è¡Œä¿®å¤</td>
 </tr>
 <tr>
-<td width="20%" class="td2">½áÊøµÄIDºÅ</td>
-<td width="80%" class="td2"><input type=text name="EndID" value="1000" size=10>&nbsp;½«¸üĞÂ¿ªÊ¼µ½½áÊøIDÖ®¼äµÄÌû×ÓÊı¾İ£¬Ö®¼äµÄÊıÖµ×îºÃ²»ÒªÑ¡Ôñ¹ı´ó</td>
+<td width="20%" class="td2">ç»“æŸçš„IDå·</td>
+<td width="80%" class="td2"><input type=text name="EndID" value="1000" size=10>&nbsp;å°†æ›´æ–°å¼€å§‹åˆ°ç»“æŸIDä¹‹é—´çš„å¸–å­æ•°æ®ï¼Œä¹‹é—´çš„æ•°å€¼æœ€å¥½ä¸è¦é€‰æ‹©è¿‡å¤§</td>
 </tr>
 <tr>
 <td width="20%" class="td1">&nbsp;</td>
-<td width="80%" class="td1"><input type="submit" class="button" name="Submit" value="ĞŞ ¸´"></td>
+<td width="80%" class="td1"><input type="submit" class="button" name="Submit" value="ä¿® å¤"></td>
 </tr>
 </form>
 <form name=Fix action="update.asp?action=fix" method=post>
 <tr> 
-<th style="text-align:center;" colspan=2>ĞŞÕıÌù×ÓUBB±êÇ©(ĞŞ¸´Ö¸¶¨·¶Î§Ìù×ÓUBB±êÇ©)</th>
+<th style="text-align:center;" colspan=2>ä¿®æ­£è´´å­UBBæ ‡ç­¾(ä¿®å¤æŒ‡å®šèŒƒå›´è´´å­UBBæ ‡ç­¾)</th>
 </tr>
 <tr>
-<td width="20%" class="td1">¿ªÊ¼µÄIDºÅ</td>
-<td width="80%" class="td1"><input type=text name="beginID" value="1" size=10>&nbsp;Ìû×ÓÖ÷ÌâID£¬¿ÉÒÔÌîĞ´ÄúÏë´ÓÄÄÒ»¸öIDºÅ¿ªÊ¼½øĞĞĞŞ¸´</td>
+<td width="20%" class="td1">å¼€å§‹çš„IDå·</td>
+<td width="80%" class="td1"><input type=text name="beginID" value="1" size=10>&nbsp;å¸–å­ä¸»é¢˜IDï¼Œå¯ä»¥å¡«å†™æ‚¨æƒ³ä»å“ªä¸€ä¸ªIDå·å¼€å§‹è¿›è¡Œä¿®å¤</td>
 </tr>
 <tr>
-<td width="20%" class="td2">½áÊøµÄIDºÅ</td>
-<td width="80%" class="td2"><input type=text name="EndID" value="1000" size=10>&nbsp;½«¸üĞÂ¿ªÊ¼µ½½áÊøIDÖ®¼äµÄÌû×ÓÊı¾İ£¬Ö®¼äµÄÊıÖµ×îºÃ²»ÒªÑ¡Ôñ¹ı´ó</td>
+<td width="20%" class="td2">ç»“æŸçš„IDå·</td>
+<td width="80%" class="td2"><input type=text name="EndID" value="1000" size=10>&nbsp;å°†æ›´æ–°å¼€å§‹åˆ°ç»“æŸIDä¹‹é—´çš„å¸–å­æ•°æ®ï¼Œä¹‹é—´çš„æ•°å€¼æœ€å¥½ä¸è¦é€‰æ‹©è¿‡å¤§</td>
 </tr>
 <tr>
-<td width="20%" class="td1">ĞÂÀÏÌùµÄ±êÊ¶ÈÕÆÚ</td>
-<td width="80%" class="td1"><input type="text" name="updatedate" value="2003-12-1">(¸ñÊ½£ºYYYY-M-D) ¾ÍÊÇÂÛÌ³Éı¼¶µ½v7.0µÄÈÕÆÚ£¬Èç¹û²»ÌîĞ´£¬Ò»ÂÉ°´ÀÏÌù´¦Àí</td>
+<td width="20%" class="td1">æ–°è€è´´çš„æ ‡è¯†æ—¥æœŸ</td>
+<td width="80%" class="td1"><input type="text" name="updatedate" value="2003-12-1">(æ ¼å¼ï¼šYYYY-M-D) å°±æ˜¯è®ºå›å‡çº§åˆ°v7.0çš„æ—¥æœŸï¼Œå¦‚æœä¸å¡«å†™ï¼Œä¸€å¾‹æŒ‰è€è´´å¤„ç†</td>
 </tr>
 <tr>
-<td width="20%" class="td2">È¥µôÌù×ÓÖĞµÄHTML±ê¼Ç</td>
-<td width="80%" class="td2">ÊÇ <input type="radio" class="radio" name="killhtml" value="1">
-  ·ñ <input type="radio" class="radio" name="killhtml" value="0" checked>&nbsp;<br>Ñ¡ÊÇµÄ»°£¬Ìù×ÓÖĞµÄHTML±ê¼Ç½«»á×Ô¶¯±»Çå³ı£¬ÓĞÀûÓÚ¼õÉÙÊı¾İ¿âµÄ´óĞ¡£¬µ«ÊÇ»áÊ§È¥Ô­À´µÄHTMLĞ§¹û¡£</td>
+<td width="20%" class="td2">å»æ‰è´´å­ä¸­çš„HTMLæ ‡è®°</td>
+<td width="80%" class="td2">æ˜¯ <input type="radio" class="radio" name="killhtml" value="1">
+  å¦ <input type="radio" class="radio" name="killhtml" value="0" checked>&nbsp;<br>é€‰æ˜¯çš„è¯ï¼Œè´´å­ä¸­çš„HTMLæ ‡è®°å°†ä¼šè‡ªåŠ¨è¢«æ¸…é™¤ï¼Œæœ‰åˆ©äºå‡å°‘æ•°æ®åº“çš„å¤§å°ï¼Œä½†æ˜¯ä¼šå¤±å»åŸæ¥çš„HTMLæ•ˆæœã€‚</td>
 </tr>
 <tr>
 <td width="20%" class="td1">&nbsp;</td>
-<td width="80%" class="td1"><input type="submit" class="button" name="Submit" value="ĞŞ Õı"></td>
+<td width="80%" class="td1"><input type="submit" class="button" name="Submit" value="ä¿® æ­£"></td>
 </tr>
 </form>
 
@@ -221,7 +221,7 @@ Dim i
 	end sub
 
 Sub updateboard()
-	'ÏÈ°´ÕÕËùÓĞ°æÃæIDµÃ³öÌû×ÓÊı£¬È»ºó¼ÆËã¸÷¸öÓĞÏÂÊôÂÛÌ³µÄÌû×Ó×ÜºÍ
+	'å…ˆæŒ‰ç…§æ‰€æœ‰ç‰ˆé¢IDå¾—å‡ºå¸–å­æ•°ï¼Œç„¶åè®¡ç®—å„ä¸ªæœ‰ä¸‹å±è®ºå›çš„å¸–å­æ€»å’Œ
 	Dim allarticle
 	Dim alltopic
 	Dim alltoday
@@ -236,10 +236,10 @@ Sub updateboard()
 	Dim UserAccessCount,UpGroupSetting,ii
 	Dim Slastpost
 	ii=0
-	'ÉèÖÃ´ò¿ªÊı¾İÊ±¼ä
+	'è®¾ç½®æ‰“å¼€æ•°æ®æ—¶é—´
 	conn.CommandTimeout=3600
 
-	'»ñµÃÒª¸üĞÂµÄ×ÜÊı
+	'è·å¾—è¦æ›´æ–°çš„æ€»æ•°
 	If IsNumeric(request("boardid")) And request("boardid")<>"" Then
 		Set Rs=Dvbbs.Execute("Select Count(*) From [Dv_board] Where BoardID="&request("boardid"))
 		C1=rs(0)
@@ -254,7 +254,7 @@ Sub updateboard()
 </table><BR>
 <table cellpadding="0" cellspacing="0" border="0" width="100%" align="center">
 <tr><td colspan=2 class=td1>
-ÏÂÃæ¿ªÊ¼¸üĞÂÂÛÌ³°æÃæ×ÊÁÏ£¬¹²ÓĞ<%=C1%>¸ö°æÃæĞèÒª¸üĞÂ
+ä¸‹é¢å¼€å§‹æ›´æ–°è®ºå›ç‰ˆé¢èµ„æ–™ï¼Œå…±æœ‰<%=C1%>ä¸ªç‰ˆé¢éœ€è¦æ›´æ–°
 <table width="400" border="0" cellspacing="1" cellpadding="1">
 <tr> 
 <td bgcolor=#000000>
@@ -266,14 +266,14 @@ Sub updateboard()
 <%
 	Response.Flush
 
-	'ÅÅĞò°´ÕÕChildºÍOrders£¬ÒÔ±ãÏÈ¸üĞÂÏÂ¼¶ÂÛÌ³µÄÊı¾İ²ÅÑ­»·µ½ÉÏ¼¶°æÃæ£¬ÕâÊ±ÉÏ¼¶°æÃæ¶ÁÈ¡µÄ¾ÍÊÇÏÂ¼¶°æÃæµÄ×îĞÂÊı¾İ
+	'æ’åºæŒ‰ç…§Childå’ŒOrdersï¼Œä»¥ä¾¿å…ˆæ›´æ–°ä¸‹çº§è®ºå›çš„æ•°æ®æ‰å¾ªç¯åˆ°ä¸Šçº§ç‰ˆé¢ï¼Œè¿™æ—¶ä¸Šçº§ç‰ˆé¢è¯»å–çš„å°±æ˜¯ä¸‹çº§ç‰ˆé¢çš„æœ€æ–°æ•°æ®
 	If IsNumeric(request("boardid")) And request("boardid")<>"" Then
 		Set Rs=Dvbbs.Execute("Select BoardID,BoardType,Child,ParentStr,RootID,Board_Setting,BoardTopStr,IsGroupSetting From Dv_Board Where BoardID="&Request("BoardID"))
 	Else
-		Call Boardchild()	'Í³¼Æ¸üĞÂÏÂÊôÂÛÌ³¸öÊı YZ-2004-2-26×¢
+		Call Boardchild()	'ç»Ÿè®¡æ›´æ–°ä¸‹å±è®ºå›ä¸ªæ•° YZ-2004-2-26æ³¨
 		Set Rs=Dvbbs.Execute("Select BoardID,BoardType,Child,ParentStr,RootID,Board_Setting,BoardTopStr,IsGroupSetting From Dv_Board Order by Child,RootID,Orders Desc")
 	End If
-	Dim SQL, LastPostArr 'LastPostArr XGÔö¼Ó2007-04-11
+	Dim SQL, LastPostArr 'LastPostArr XGå¢åŠ 2007-04-11
 	If Not Rs.EOF Then 
 		SQL=Rs.GetRows(-1)
 		Set Rs=Nothing
@@ -282,7 +282,7 @@ Sub updateboard()
 		
 		reBoard_Setting=Split(SQL(5,i)&"",",")
 		AllBoard = 0
-		'ËùÓĞÖ÷ÌâºÍÌû×Ó
+		'æ‰€æœ‰ä¸»é¢˜å’Œå¸–å­
 		Set Trs=Dvbbs.Execute("Select Count(*),Sum(Child) From Dv_Topic Where BoardID="&SQL(0,i))
 		AllTopic=Trs(0)
 		AllArticle=Trs(1)
@@ -290,7 +290,7 @@ Sub updateboard()
 		If IsNull(AllArticle) Then AllArticle = 0
 		AllArticle = AllArticle + AllTopic
 		Set Trs=Nothing
-		'ËùÓĞ½ñÈÕÌù
+		'æ‰€æœ‰ä»Šæ—¥è´´
 		If IsSqlDataBase = 1 Then
 			Set Trs=Dvbbs.Execute("Select Count(*) From "&Dvbbs.NowUseBBS&" Where BoardID="&SQL(0,i)&" and datediff(d,dateandtime,"&SqlNowString&")=0")
 		Else
@@ -299,7 +299,7 @@ Sub updateboard()
 		AllToday=Trs(0)
 		Set Trs=Nothing
 		If IsNull(AllToday) Then AllToday=0
-		'×îºó»Ø¸´ĞÅÏ¢
+		'æœ€åå›å¤ä¿¡æ¯
 		Set Trs=Dvbbs.Execute("Select Top 1 LastPost,TopicID,Title,PostTable From Dv_Topic Where BoardID="&SQL(0,i)&" Order by LastPostTime Desc")
 		If Not (Trs.Eof And Trs.Bof) Then
 			LastPostArr = Split(Trs(0)&"","$")
@@ -318,10 +318,10 @@ Sub updateboard()
 					LastPostArr(5) = Trs(4)
 					LastPostArr(7) = Trs(1)
 				Else
-					LastPostArr(0) = "ÎŞ"
+					LastPostArr(0) = "æ— "
 					LastPostArr(1) = 0
 					LastPostArr(2) = now()
-					LastPostArr(3) = "ÎŞ"
+					LastPostArr(3) = "æ— "
 					LastPostArr(4) = ""
 					LastPostArr(5) = ""
 					LastPostArr(6) = ""
@@ -336,15 +336,15 @@ Sub updateboard()
 			'LastPost=Replace(Dvbbs.Replacehtml(Trs(0)&""),"'","''")
 		Else
 			Trs.Close:Set Trs=Nothing
-			LastPost="ÎŞ$0$"&Now()&"$ÎŞ$$$$"
+			LastPost="æ— $0$"&Now()&"$æ— $$$$"
 		End If
-		'¸üĞÂµ±Ç°°æÃæÊı¾İ
+		'æ›´æ–°å½“å‰ç‰ˆé¢æ•°æ®
 		'SLastPost = Split(LastPost,"$")
 		'If Ubound(SLastPost) < 7 Then LastPost = LastPost & "$"
 		Dvbbs.Execute("Update [Dv_board] Set PostNum="&AllArticle&",TopicNum="&AllTopic&",TodayNum="&AllToday&",LastPost='"&Dvbbs.ChkBadWords(LastPost)&"' Where BoardID="&SQL(0,i))
-		'Èç¹ûµ±Ç°°æÃæÓĞÏÂÊôÂÛÌ³£¬Ôò¸üĞÂÆäÊı¾İÎªÏÂÊôÂÛÌ³Êı¾İ
+		'å¦‚æœå½“å‰ç‰ˆé¢æœ‰ä¸‹å±è®ºå›ï¼Œåˆ™æ›´æ–°å…¶æ•°æ®ä¸ºä¸‹å±è®ºå›æ•°æ®
 		If SQL(2,i)>0 Then
-			'Ìû×Ó×ÜÊı£¬Ö÷Ìâ×ÜÊı£¬½ñÈÕÌù×ÜÊı£¬ÏÂÊô°æÃæÊı
+			'å¸–å­æ€»æ•°ï¼Œä¸»é¢˜æ€»æ•°ï¼Œä»Šæ—¥è´´æ€»æ•°ï¼Œä¸‹å±ç‰ˆé¢æ•°
 			If SQL(3,i)=0 Then
 				ParentStr=SQL(0,i)
 				'Set Trs=Dvbbs.Execute("Select Sum(PostNum),Sum(TopicNum),Sum(TodayNum),Count(*) From Dv_board Where (Not BoardID="&SQL(0,i)&") And RootID="&SQL(0,i))
@@ -355,7 +355,7 @@ Sub updateboard()
 			Set Trs=Dvbbs.Execute("Select Sum(PostNum),Sum(TopicNum),Sum(TodayNum),Count(*) From Dv_board Where ParentStr Like '%"&ParentStr&"%'")
 
 			If Not (Trs.Eof And Trs.Bof) Then
-				'Èç¹û¸Ã°æÃæÔÊĞí·¢Ìù£¬ÔòÌû×ÓÊıÓ¦¸ÃÊÇ¸Ã°æÃæÌùÊı+ÏÂÊô°æÃæÌû×ÓÊı
+				'å¦‚æœè¯¥ç‰ˆé¢å…è®¸å‘è´´ï¼Œåˆ™å¸–å­æ•°åº”è¯¥æ˜¯è¯¥ç‰ˆé¢è´´æ•°+ä¸‹å±ç‰ˆé¢å¸–å­æ•°
 				If reBoard_Setting(43)="0" Then
 					If Not IsNull(Trs(0)) Then AllArticle = Trs(0) + AllArticle
 					If Not IsNull(Trs(1)) Then AllTopic = Trs(1) + AllTopic
@@ -373,7 +373,7 @@ Sub updateboard()
 				End If
 			End If
 			Set Trs=Nothing
-			'ÏÂÊô°æ¿éID
+			'ä¸‹å±ç‰ˆå—ID
 			ParentStr = Sql(0,i)
 			Set Trs = Dvbbs.Execute("SELECT Boardid FROM Dv_Board WHERE ParentID = "&Sql(0,i))
 			If Not (Trs.Eof And Trs.Bof) Then
@@ -383,7 +383,7 @@ Sub updateboard()
 				Loop
 			End If
 			Set Trs=Nothing
-			'×îºó»Ø¸´ĞÅÏ¢
+			'æœ€åå›å¤ä¿¡æ¯
 			Set Trs=Dvbbs.Execute("Select Top 1 LastPost,TopicID,Title,PostTable From Dv_Topic Where BoardID In ("&ParentStr&") Order by LastPostTime Desc")
 			If Not (Trs.Eof And Trs.Bof) Then
 				LastPostArr = Split(Trs(0)&"","$")
@@ -402,10 +402,10 @@ Sub updateboard()
 						LastPostArr(5) = Trs(4)
 						LastPostArr(7) = Trs(1)
 					Else
-						LastPostArr(0) = "ÎŞ"
+						LastPostArr(0) = "æ— "
 						LastPostArr(1) = 0
 						LastPostArr(2) = now()
-						LastPostArr(3) = "ÎŞ"
+						LastPostArr(3) = "æ— "
 						LastPostArr(4) = ""
 						LastPostArr(5) = ""
 						LastPostArr(6) = ""
@@ -420,14 +420,14 @@ Sub updateboard()
 				'LastPost=Replace(Dvbbs.Replacehtml(Trs(0)&""),"'","''")
 			Else
 				Trs.Close:Set Trs=Nothing
-				LastPost="ÎŞ$0$"&Now()&"$ÎŞ$$$$"
+				LastPost="æ— $0$"&Now()&"$æ— $$$$"
 			End If
-			'¸üĞÂ°æÃæÊı¾İ
+			'æ›´æ–°ç‰ˆé¢æ•°æ®
 			'SLastPost = Split(LastPost,"$")
 			'If Ubound(SLastPost) < 7 Then LastPost = LastPost & "$"
 			Dvbbs.Execute("Update [Dv_board] Set PostNum="&AllArticle&",TopicNum="&AllTopic&",TodayNum="&AllToday&",LastPost='"&Dvbbs.ChkBadWords(LastPost)&"' Where BoardID="&SQL(0,i))
 		End If
-		'¸üĞÂIsGroupSetting
+		'æ›´æ–°IsGroupSetting
 		'IsGroupSetting=SQL(7,i)
 		'Set Trs=Dvbbs.Execute("Select Count(*) From Dv_UserAccess Where uc_BoardID="&SQL(0,i))
 		'UserAccessCount = Trs(0)
@@ -444,7 +444,7 @@ Sub updateboard()
 		'	Trs.MoveNext
 		'	Loop
 		'End If
-		'¸üĞÂºÍÇåÀí¹Ì¶¥ÌùÊı¾İ(¹Ì¶¥ºÍÇøÓò¹Ì¶¥)
+		'æ›´æ–°å’Œæ¸…ç†å›ºé¡¶è´´æ•°æ®(å›ºé¡¶å’ŒåŒºåŸŸå›ºé¡¶)
 		'Set Trs=Dvbbs.Execute("Select TopicID From Dv_Topic Where BoardID="&Rs(0)&" And IsTop In (1,2)")
 		If Not IsNull(SQL(6,i)) And SQL(6,i)<>"" Then
 		Set Trs=Dvbbs.Execute("Select TopicID,BoardID,IsTop From Dv_Topic Where TopicID In ("&SQL(6,i)&")")
@@ -475,7 +475,7 @@ Sub updateboard()
 			Response.Write "img2.title=""" & SQL(0,i) & "(" & ii & ")"";</script>" & VbCrLf
 			Response.Flush
 		'End If
-		body="<table cellpadding=0 cellspacing=0 border=0 width=100% align=center><tr><td colspan=2 class=td1>¸üĞÂÂÛÌ³Êı¾İ³É¹¦£¬"&SQL(1,i)&"¹²ÓĞ"&AllArticle&"ÆªÌù×Ó£¬"&AllTopic&"ÆªÖ÷Ìâ£¬½ñÈÕÓĞ"&AllToday&"ÆªÌû×Ó¡£</td></tr></table>"
+		body="<table cellpadding=0 cellspacing=0 border=0 width=100% align=center><tr><td colspan=2 class=td1>æ›´æ–°è®ºå›æ•°æ®æˆåŠŸï¼Œ"&SQL(1,i)&"å…±æœ‰"&AllArticle&"ç¯‡è´´å­ï¼Œ"&AllTopic&"ç¯‡ä¸»é¢˜ï¼Œä»Šæ—¥æœ‰"&AllToday&"ç¯‡å¸–å­ã€‚</td></tr></table>"
 		Response.Write body
 		Response.Flush
 	'Rs.MoveNext
@@ -495,7 +495,7 @@ Sub updateboard()
 	Next
 End Sub
 
-Rem Í³¼ÆÏÂÊôÂÛÌ³º¯Êı 2004-5-3 Dvbbs.YangZheng
+Rem ç»Ÿè®¡ä¸‹å±è®ºå›å‡½æ•° 2004-5-3 Dvbbs.YangZheng
 Sub Boardchild()
 	Dim cBoardNum, cBoardid
 	Dim Trs,rs,Sql,i
@@ -526,8 +526,8 @@ Sub Boardchild()
 End Sub
 
 Sub Updateall()
-	'Ö÷ÌâÊı,Ìû×ÓÊı,ÓÃ»§Êı,½ñÈÕÌù,×òÈÕÌù,×Ü¹Ì¶¥,×îºó×¢²á
-	Body = "<tr><td colspan=2 class=td1>¸üĞÂ×ÜÂÛÌ³Êı¾İ³É¹¦¡£"
+	'ä¸»é¢˜æ•°,å¸–å­æ•°,ç”¨æˆ·æ•°,ä»Šæ—¥è´´,æ˜¨æ—¥è´´,æ€»å›ºé¡¶,æœ€åæ³¨å†Œ
+	Body = "<tr><td colspan=2 class=td1>æ›´æ–°æ€»è®ºå›æ•°æ®æˆåŠŸã€‚"
 	Dim AllTopNum,PostNum,TopicNum,LastUser
 	Dim TodayNum,UserNum, YesterdayNum,SqlStr,Sql_a,sql
 	If Request.Form("u1") = "1" Or Request("index")="1" Then
@@ -538,9 +538,9 @@ Sub Updateall()
 			Sql_a = Sql_a & ",Forum_TopicNum = " & TopicNum & ""
 		End If
 		If SqlStr = "" Then
-			SqlStr = "ÂÛÌ³¹²ÓĞ " & TopicNum & " ÆªÖ÷Ìâ"
+			SqlStr = "è®ºå›å…±æœ‰ " & TopicNum & " ç¯‡ä¸»é¢˜"
 		Else
-			SqlStr = SqlStr & "£¬" & TopicNum & " ÆªÖ÷Ìâ"
+			SqlStr = SqlStr & "ï¼Œ" & TopicNum & " ç¯‡ä¸»é¢˜"
 		End If
 	End If
 	If Request.Form("u2") = "1" Or Request("index")="1" Then
@@ -551,9 +551,9 @@ Sub Updateall()
 			Sql_a = Sql_a & ",Forum_PostNum = " & PostNum & ""
 		End If
 		If SqlStr = "" Then
-			SqlStr = "ÂÛÌ³¹²ÓĞ " & PostNum & " ÆªÌû×Ó"
+			SqlStr = "è®ºå›å…±æœ‰ " & PostNum & " ç¯‡å¸–å­"
 		Else
-			SqlStr = SqlStr & "£¬" & PostNum & " ÆªÌû×Ó"
+			SqlStr = SqlStr & "ï¼Œ" & PostNum & " ç¯‡å¸–å­"
 		End If
 	End If
 	If Request.Form("u3") = "1" Or Request("index")="1" Then
@@ -564,9 +564,9 @@ Sub Updateall()
 			Sql_a = Sql_a & ",Forum_UserNum = " & UserNum & ""
 		End If
 		If SqlStr = "" Then
-			SqlStr = "ÂÛÌ³¹²ÓĞ " & UserNum & " ¸öÓÃ»§"
+			SqlStr = "è®ºå›å…±æœ‰ " & UserNum & " ä¸ªç”¨æˆ·"
 		Else
-			SqlStr = SqlStr & "£¬" & UserNum & " ¸öÓÃ»§"
+			SqlStr = SqlStr & "ï¼Œ" & UserNum & " ä¸ªç”¨æˆ·"
 		End If
 	End If
 	If Request.Form("u4") = "1" Or Request("index")="1"  Then
@@ -577,9 +577,9 @@ Sub Updateall()
 			Sql_a = Sql_a & ",Forum_TodayNum = " & TodayNum & ""
 		End If
 		If SqlStr = "" Then
-			SqlStr = "ÂÛÌ³¹²ÓĞ " & TodayNum & " Æª½ñÈÕÌû"
+			SqlStr = "è®ºå›å…±æœ‰ " & TodayNum & " ç¯‡ä»Šæ—¥å¸–"
 		Else
-			SqlStr = SqlStr & "£¬" & TodayNum & " Æª½ñÈÕÌû"
+			SqlStr = SqlStr & "ï¼Œ" & TodayNum & " ç¯‡ä»Šæ—¥å¸–"
 		End If
 	End If
 	If Request.Form("u5") = "1" Or Request("index")="1"  Then
@@ -590,9 +590,9 @@ Sub Updateall()
 			Sql_a = Sql_a & ",Forum_YesterdayNum = " & YesterdayNum & ""
 		End If
 		If SqlStr = "" Then
-			SqlStr = "ÂÛÌ³¹²ÓĞ " & YesterdayNum & " Æª×òÈÕÌû"
+			SqlStr = "è®ºå›å…±æœ‰ " & YesterdayNum & " ç¯‡æ˜¨æ—¥å¸–"
 		Else
-			SqlStr = SqlStr & "£¬" & YesterdayNum & " Æª×òÈÕÌû"
+			SqlStr = SqlStr & "ï¼Œ" & YesterdayNum & " ç¯‡æ˜¨æ—¥å¸–"
 		End If
 	End If
 	If Request.Form("u6") = "1" Or Request("index")="1" Then
@@ -603,9 +603,9 @@ Sub Updateall()
 			Sql_a = Sql_a & ",Forum_AllTopNum = '" & AllTopNum & "'"
 		End If
 		If SqlStr = "" Then
-			SqlStr = "ÂÛÌ³¹²ÓĞ " & UBound(Split(AllTopNum&"", ",")) + 1 & " ¸ö¹Ì¶¥Ö÷Ìâ"
+			SqlStr = "è®ºå›å…±æœ‰ " & UBound(Split(AllTopNum&"", ",")) + 1 & " ä¸ªå›ºé¡¶ä¸»é¢˜"
 		Else
-			SqlStr = SqlStr & "£¬" & UBound(Split(AllTopNum&"", ",")) + 1 & " ¸ö¹Ì¶¥Ö÷Ìâ"
+			SqlStr = SqlStr & "ï¼Œ" & UBound(Split(AllTopNum&"", ",")) + 1 & " ä¸ªå›ºé¡¶ä¸»é¢˜"
 		End If
 	End If
 	If Request.Form("u7") = "1" Or Request("index")="1" Then
@@ -616,9 +616,9 @@ Sub Updateall()
 			Sql_a = Sql_a & ",Forum_lastUser = '" & Dvbbs.CheckStr(Dvbbs.HtmlEncode(LastUser)) & "'"
 		End If
 		If SqlStr = "" Then
-			SqlStr = "ÂÛÌ³×îĞÂ¼ÓÈëÓÃ»§Îª " & LastUser & ""
+			SqlStr = "è®ºå›æœ€æ–°åŠ å…¥ç”¨æˆ·ä¸º " & LastUser & ""
 		Else
-			SqlStr = SqlStr & "£¬×îĞÂ¼ÓÈëÓÃ»§Îª " & LastUser & ""
+			SqlStr = SqlStr & "ï¼Œæœ€æ–°åŠ å…¥ç”¨æˆ·ä¸º " & LastUser & ""
 		End If
 	End If
 
@@ -636,15 +636,15 @@ End sub
 
 Sub fixtopic()
 if not isnumeric(request.form("beginid")) then
-	body="<tr><td colspan=2 class=td1>´íÎóµÄ¿ªÊ¼²ÎÊı£¡</td></tr>"
+	body="<tr><td colspan=2 class=td1>é”™è¯¯çš„å¼€å§‹å‚æ•°ï¼</td></tr>"
 	exit sub
 End If
 if not isnumeric(request.form("endid")) then
-	body="<tr><td colspan=2 class=td1>´íÎóµÄ½áÊø²ÎÊı£¡</td></tr>"
+	body="<tr><td colspan=2 class=td1>é”™è¯¯çš„ç»“æŸå‚æ•°ï¼</td></tr>"
 	exit sub
 end if
 if clng(request.form("beginid"))>clng(request.form("endid")) then
-	body="<tr><td colspan=2 class=td1>¿ªÊ¼IDÓ¦¸Ã±È½áÊøIDĞ¡£¡</td></tr>"
+	body="<tr><td colspan=2 class=td1>å¼€å§‹IDåº”è¯¥æ¯”ç»“æŸIDå°ï¼</td></tr>"
 	exit sub
 end if
 dim TotalUseTable,Ers,sql,rs,i
@@ -658,7 +658,7 @@ C1=clng(request.form("endid"))-clng(request.form("beginid"))
 &nbsp;<BR>
 <table cellpadding="0" cellspacing="0" border="0" width="100%" align="center">
 <tr><td colspan=2 class=td1>
-ÏÂÃæ¿ªÊ¼¸üĞÂÂÛÌ³Ìû×Ó×ÊÁÏ£¬Ô¤¼Æ±¾´Î¹²ÓĞ<%=C1%>¸öÌû×ÓĞèÒª¸üĞÂ
+ä¸‹é¢å¼€å§‹æ›´æ–°è®ºå›å¸–å­èµ„æ–™ï¼Œé¢„è®¡æœ¬æ¬¡å…±æœ‰<%=C1%>ä¸ªå¸–å­éœ€è¦æ›´æ–°
 <table width="400" border="0" cellspacing="1" cellpadding="1">
 <tr> 
 <td bgcolor=#000000>
@@ -676,7 +676,7 @@ sql="select topicid,PostTable from Dv_topic where topicid>="&request.form("begin
 
 set rs=Dvbbs.Execute(sql)
 if rs.eof and rs.bof then
-	body="<tr><td colspan=2 class=td1>ÒÑ¾­µ½¼ÇÂ¼µÄ×îÎ²¶Ë£¬Çë½áÊø¸üĞÂ£¡</td></tr>"
+	body="<tr><td colspan=2 class=td1>å·²ç»åˆ°è®°å½•çš„æœ€å°¾ç«¯ï¼Œè¯·ç»“æŸæ›´æ–°ï¼</td></tr>"
 	exit sub
 end if
 do while not rs.eof
@@ -695,12 +695,12 @@ do while not rs.eof
 		i=i+1
 		'If (i mod 100) = 0 Then
 		Response.Write "<script>img2.width=" & Fix((i/C1) * 400) & ";" & VbCrLf
-		Response.Write "txt2.innerHTML=""¸üĞÂÍê"&server.htmlencode(ers(2)&"")&"µÄÊı¾İ£¬ÕıÔÚ¸üĞÂÏÂÒ»¸öÌû×ÓÊı¾İ£¬" & FormatNumber(i/C1*100,4,-1) & """;" & VbCrLf
+		Response.Write "txt2.innerHTML=""æ›´æ–°å®Œ"&server.htmlencode(ers(2)&"")&"çš„æ•°æ®ï¼Œæ­£åœ¨æ›´æ–°ä¸‹ä¸€ä¸ªå¸–å­æ•°æ®ï¼Œ" & FormatNumber(i/C1*100,4,-1) & """;" & VbCrLf
 		Response.Write "img2.title=""" & server.htmlencode(eRs(2)&"") & "(" & i & ")"";</script>" & VbCrLf
 		Response.Flush
 		'End If
 	end if
-	'¼ÆËã»ØÌûÊı 2004-8-2
+	'è®¡ç®—å›å¸–æ•° 2004-8-2
 	Sql = "SELECT COUNT(*) FROM " & Rs(1) & " WHERE Rootid = " & Rs(0) & " AND Boardid <> 444 AND Boardid <> 777"
 	Set Ers = Dvbbs.Execute(Sql)
 	Dvbbs.Execute("UPDATE Dv_Topic SET Child = " & Ers(0)-1 & " WHERE Topicid = " & Rs(0) & "")
@@ -712,26 +712,26 @@ Response.Write "<script>img2.width=400;txt2.innerHTML=""100"";</script>"
 %>
 <form action="update.asp?action=updat" method=post>
 <tr> 
-<th style="text-align:center;" colspan=2>¼ÌĞøĞŞ¸´Ìû×Ó(ĞŞ¸´Ö¸¶¨·¶Î§ÄÚÌû×ÓµÄ×îºó»Ø¸´Êı¾İ)</th>
+<th style="text-align:center;" colspan=2>ç»§ç»­ä¿®å¤å¸–å­(ä¿®å¤æŒ‡å®šèŒƒå›´å†…å¸–å­çš„æœ€åå›å¤æ•°æ®)</th>
 </tr>
 <tr>
-<td width="20%" class="td1">¿ªÊ¼µÄIDºÅ</td>
-<td width="80%" class="td1"><input type=text name="beginID" value="<%=request.form("endid")+1%>" size=5>&nbsp;Ìû×ÓÖ÷ÌâID£¬¿ÉÒÔÌîĞ´ÄúÏë´ÓÄÄÒ»¸öIDºÅ¿ªÊ¼½øĞĞĞŞ¸´</td>
+<td width="20%" class="td1">å¼€å§‹çš„IDå·</td>
+<td width="80%" class="td1"><input type=text name="beginID" value="<%=request.form("endid")+1%>" size=5>&nbsp;å¸–å­ä¸»é¢˜IDï¼Œå¯ä»¥å¡«å†™æ‚¨æƒ³ä»å“ªä¸€ä¸ªIDå·å¼€å§‹è¿›è¡Œä¿®å¤</td>
 </tr>
 <tr>
-<td width="20%" class="td1">½áÊøµÄIDºÅ</td>
-<td width="80%" class="td1"><input type=text name="EndID" value="<%=request.form("endid")+(request.form("endid")-request.form("beginid"))+1%>" size=5>&nbsp;½«¸üĞÂ¿ªÊ¼µ½½áÊøIDÖ®¼äµÄÌû×ÓÊı¾İ£¬Ö®¼äµÄÊıÖµ×îºÃ²»ÒªÑ¡Ôñ¹ı´ó</td>
+<td width="20%" class="td1">ç»“æŸçš„IDå·</td>
+<td width="80%" class="td1"><input type=text name="EndID" value="<%=request.form("endid")+(request.form("endid")-request.form("beginid"))+1%>" size=5>&nbsp;å°†æ›´æ–°å¼€å§‹åˆ°ç»“æŸIDä¹‹é—´çš„å¸–å­æ•°æ®ï¼Œä¹‹é—´çš„æ•°å€¼æœ€å¥½ä¸è¦é€‰æ‹©è¿‡å¤§</td>
 </tr>
 <tr>
 <td width="20%" class="td1">&nbsp;</td>
-<td width="80%" class="td1"><input type="submit" class="button" name="Submit" value="ĞŞ ¸´"></td>
+<td width="80%" class="td1"><input type="submit" class="button" name="Submit" value="ä¿® å¤"></td>
 </tr>
 </form>
 <%
 end sub
 
-'·ÖÂÛÌ³½ñÈÕÌû×Ó
-REM ĞŞ¸Ä²éÑ¯ËùÓĞÌû×Ó±íÊı¾İ 2004-8-26.Dv.Yz
+'åˆ†è®ºå›ä»Šæ—¥å¸–å­
+REM ä¿®æ”¹æŸ¥è¯¢æ‰€æœ‰å¸–å­è¡¨æ•°æ® 2004-8-26.Dv.Yz
 Function Todays(Boardid)
 	Todays = 0
 	If IsSqlDataBase = 1 Then
@@ -748,8 +748,8 @@ Function Todays(Boardid)
 	Set Tmprs = Nothing
 End Function
 
-'È«²¿ÂÛÌ³½ñÈÕÌû×Ó
-REM ĞŞ¸Ä²éÑ¯ËùÓĞÌû×Ó±íÊı¾İ 2004-8-26.Dv.Yz
+'å…¨éƒ¨è®ºå›ä»Šæ—¥å¸–å­
+REM ä¿®æ”¹æŸ¥è¯¢æ‰€æœ‰å¸–å­è¡¨æ•°æ® 2004-8-26.Dv.Yz
 Function Alltodays()
 	Dim i
 	Alltodays = 0
@@ -767,7 +767,7 @@ Function Alltodays()
 	Set Tmprs = Nothing
 End Function
 
-'ÂÛÌ³×òÌìµÄÌû×Ó 2004-8-31.Dv.Yz
+'è®ºå›æ˜¨å¤©çš„å¸–å­ 2004-8-31.Dv.Yz
 Function Allyesterdays()
 	Dim i
 	Allyesterdays = 0
@@ -785,25 +785,25 @@ Function Allyesterdays()
 	Set Tmprs = Nothing
 End Function
 
-'ËùÓĞ×¢²áÓÃ»§ÊıÁ¿
+'æ‰€æœ‰æ³¨å†Œç”¨æˆ·æ•°é‡
 function allusers() 
 	allusers=Dvbbs.Execute("Select count(userid) from [Dv_user]")(0) 
 	If IsNull(allusers) Then allusers=0 
 End function
-'×îĞÂ×¢²áÓÃ»§
+'æœ€æ–°æ³¨å†Œç”¨æˆ·
 Function newuser()
 	Dim sql
 	sql="Select top 1 username from [Dv_user] order by userid desc"
 	Set tmprs=Dvbbs.Execute(sql)
 	If tmprs.eof and tmprs.bof Then
-		newuser="Ã»ÓĞ»áÔ±"
+		newuser="æ²¡æœ‰ä¼šå‘˜"
 	Else
    		newuser=tmprs("username")
 	End If
 	Set tmprs=Nothing 
 End function 
 
-'ËùÓĞÂÛÌ³Ìû×Ó
+'æ‰€æœ‰è®ºå›å¸–å­
 function AnnounceNum()
 	dim AnnNum,i
 	AnnNum=0
@@ -814,7 +814,7 @@ function AnnounceNum()
 		AnnounceNum=AnnounceNum + AnnNum
 	next
 end function
-'·ÖÂÛÌ³Ìû×Ó
+'åˆ†è®ºå›å¸–å­
 function BoardAnnounceNum(boardid)
 	dim BoardAnnNum
 	BoardAnnNum=0
@@ -826,7 +826,7 @@ function BoardAnnounceNum(boardid)
 	next
 end function
 
-'ËùÓĞÂÛÌ³Ö÷Ìâ
+'æ‰€æœ‰è®ºå›ä¸»é¢˜
 function GetTopicnum()
 	Dim TopicNum
 	TopicNum=Dvbbs.Execute("Select Count(topicid) from DV_topic where not boardid in (444,777)")(0)
@@ -834,13 +834,13 @@ function GetTopicnum()
 	GetTopicnum = TopicNum
 end function
 
-'·ÖÂÛÌ³Ö÷Ìâ
+'åˆ†è®ºå›ä¸»é¢˜
 function BoardTopicNum(boardid) 
 	BoardTopicNum=Dvbbs.Execute("Select Count(topicid) from [Dv_topic] where boardid="&boardid)(0) 
 	if isnull(BoardTopicNum) then BoardTopicNum=0 
 end function
 
-'ÂÛÌ³×Ü¹Ì¶¥Ö÷ÌâÊı
+'è®ºå›æ€»å›ºé¡¶ä¸»é¢˜æ•°
 function Forum_AllTopNum()
 	Set tmprs=Dvbbs.Execute("Select TopicID From Dv_Topic Where Not BoardID In (444,777) And IsTop=3")
 	If tmprs.eof and tmprs.bof Then
@@ -850,553 +850,7 @@ function Forum_AllTopNum()
 			If Forum_AllTopNum="" Then
 				Forum_AllTopNum = tmprs(0)
 			Else
-				Forum_AllTopNum = Forum_AllTopNum & "," & tmprs(0)
-			End If
-		tmprs.MoveNext
-		Loop
-	End If
-	Set tmprs=Nothing
-end function
-
-'¸üĞÂÓÃ»§·¢ÌùÊı
-sub updateTopic()
-if not isnumeric(request.form("beginid")) then
-	body="<tr><td colspan=2 class=td1>´íÎóµÄ¿ªÊ¼²ÎÊı£¡</td></tr>"
-	exit sub
-end if
-if not isnumeric(request.form("endid")) then
-	body="<tr><td colspan=2 class=td1>´íÎóµÄ½áÊø²ÎÊı£¡</td></tr>"
-	exit sub
-end if
-if clng(request.form("beginid"))>clng(request.form("endid")) then
-	body="<tr><td colspan=2 class=td1>¿ªÊ¼IDÓ¦¸Ã±È½áÊøIDĞ¡£¡</td></tr>"
-	exit sub
-end if
-Dim C1
-C1=clng(request.form("endid"))-clng(request.form("beginid"))
-%>
-</table>
-&nbsp;<BR>
-<table cellpadding="0" cellspacing="0" border="0" width="100%" align="center">
-<tr><td colspan=2 class=td1>
-ÏÂÃæ¿ªÊ¼¸üĞÂÂÛÌ³ÓÃ»§×ÊÁÏ£¬Ô¤¼Æ±¾´Î¹²ÓĞ<%=C1%>¸öÓÃ»§ĞèÒª¸üĞÂ
-<table width="400" border="0" cellspacing="1" cellpadding="1">
-<tr> 
-<td bgcolor=#000000>
-<table width="400" border="0" cellspacing="0" cellpadding="1">
-<tr> 
-<td bgcolor=#ffffff height=9><img src="../skins/default/bar/bar3.gif" width=0 height=16 id=img2 name=img2 align=absmiddle></td></tr></table>
-</td></tr></table> <span id=txt2 name=txt2 style="font-size:9pt">0</span><span style="font-size:9pt">%</span></td></tr>
-</table>
-
-<table cellpadding="0" cellspacing="0" border="0" width="100%" align="center">
-<%
-Response.Flush
-dim userTopic,UserPost,rs,sql,i
-sql="select userid,username from [Dv_user] where userid>="&request.form("beginid")&" and userid<="&request.form("endid")
-set rs=Dvbbs.Execute(sql)
-if rs.eof and rs.bof then
-	body="<tr><td colspan=2 class=td1>ÒÑ¾­µ½¼ÇÂ¼µÄ×îÎ²¶Ë£¬Çë½áÊø¸üĞÂ£¡</td></tr>"
-	exit sub
-end if
-do while not rs.eof
-	UserTopic=UserallTopicnum(rs(0))
-	userPost=Userallnum(rs(0))
-	Dvbbs.Execute("update [Dv_user] set UserPost="&userPost&",UserTopic="&UserTopic&" where userid="&rs(0))
-	i=i+1
-	'If (i mod 100) = 0 Then
-		Response.Write "<script>img2.width=" & Fix((i/C1) * 400) & ";" & VbCrLf
-		Response.Write "txt2.innerHTML=""¸üĞÂÍê"&rs(1)&"µÄÊı¾İ£¬ÕıÔÚ¸üĞÂÏÂÒ»¸öÓÃ»§Êı¾İ£¬" & FormatNumber(i/C1*100,4,-1) & """;" & VbCrLf
-		Response.Write "img2.title=""" & Rs(1) & "(" & i & ")"";</script>" & VbCrLf
-		Response.Flush
-	'End If
-rs.movenext
-loop
-set rs=nothing
-Response.Write "<script>img2.width=400;txt2.innerHTML=""100"";</script>"
-%>
-<FORM METHOD=POST ACTION="?action=updateuserinfo">
-<tr> 
-<th style="text-align:center;" colspan=2>¼ÌĞø¸üĞÂÓÃ»§Êı¾İ</th>
-</tr>
-<tr>
-<td width="20%" class="td1">ÖØĞÂ¼ÆËãÓÃ»§·¢Ìù</td>
-<td width="80%" class="td1">Ö´ĞĞ±¾²Ù×÷½«°´ÕÕ<font color=red>µ±Ç°ÂÛÌ³Êı¾İ¿â</font>·¢ÌùÖØĞÂ¼ÆËãËùÓĞÓÃ»§·¢±íÌû×ÓÊıÁ¿¡£</td>
-</tr>
-<tr>
-<td width="20%" class="td1">¿ªÊ¼ÓÃ»§ID</td>
-<td width="80%" class="td1"><input type=text name="beginID" value="<%=request.form("endid")+1%>" size=10>&nbsp;ÓÃ»§ID£¬¿ÉÒÔÌîĞ´ÄúÏë´ÓÄÄÒ»¸öIDºÅ¿ªÊ¼½øĞĞĞŞ¸´</td>
-</tr>
-<tr>
-<td width="20%" class="td1">½áÊøÓÃ»§ID</td>
-<td width="80%" class="td1"><input type=text name="endID" value="<%=request.form("endid")+(request.form("endid")-request.form("beginid"))+1%>" size=10>&nbsp;½«¸üĞÂ¿ªÊ¼µ½½áÊøIDÖ®¼äµÄÓÃ»§Êı¾İ£¬Ö®¼äµÄÊıÖµ×îºÃ²»ÒªÑ¡Ôñ¹ı´ó</td>
-</tr>
-<tr>
-<td width="20%" class="td1">&nbsp;</td>
-<td width="80%" class="td1"><input type="submit" class="button" name="Submit" value="ÖØĞÂ¼ÆËãÓÃ»§·¢Ìù"></td>
-</tr>
-</form>
-<%
-end sub
-
-'¸üĞÂÓÃ»§½ğÇ®/»ı·Ö/÷ÈÁ¦
-sub updatemoney()
-if not isnumeric(request.form("beginid")) then
-	body="<tr><td colspan=2 class=td1>´íÎóµÄ¿ªÊ¼²ÎÊı£¡</td></tr>"
-	exit sub
-end if
-if not isnumeric(request.form("endid")) then
-	body="<tr><td colspan=2 class=td1>´íÎóµÄ½áÊø²ÎÊı£¡</td></tr>"
-	exit sub
-end if
-if clng(request.form("beginid"))>clng(request.form("endid")) then
-	body="<tr><td colspan=2 class=td1>¿ªÊ¼IDÓ¦¸Ã±È½áÊøIDĞ¡£¡</td></tr>"
-	exit sub
-end if
-dim userTopic,userReply,userWealth
-dim userEP,userCP
-
-Dim C1,sql,rs,i
-C1=clng(request.form("endid"))-clng(request.form("beginid"))
-%>
-</table>
-&nbsp;<BR>
-<table cellpadding="0" cellspacing="0" border="0" width="100%" align="center">
-<tr><td colspan=2 class=td1>
-ÏÂÃæ¿ªÊ¼¸üĞÂÂÛÌ³ÓÃ»§×ÊÁÏ£¬Ô¤¼Æ±¾´Î¹²ÓĞ<%=C1%>¸öÓÃ»§ĞèÒª¸üĞÂ
-<table width="400" border="0" cellspacing="1" cellpadding="1">
-<tr> 
-<td bgcolor=#000000>
-<table width="400" border="0" cellspacing="0" cellpadding="1">
-<tr> 
-<td bgcolor=#ffffff height=9><img src="../skins/default/bar/bar3.gif" width=0 height=16 id=img2 name=img2 align=absmiddle></td></tr></table>
-</td></tr></table> <span id=txt2 name=txt2 style="font-size:9pt">0</span><span style="font-size:9pt">%</span></td></tr>
-</table>
-
-<table cellpadding="0" cellspacing="0" border="0" width="100%" align="center">
-<%
-Response.Flush
-sql="select userlogins,userid,userpost,usertopic,username from [Dv_user] where userid>="&request.form("beginid")&" and userid<="&request.form("endid")
-set rs=Dvbbs.Execute(sql)
-'shinzeal¼ÓÈë×Ô¶¯ÌáÊ¾Íê³É
-if rs.eof and rs.bof then
-	body="<tr><td colspan=2 class=td1>ÒÑ¾­µ½¼ÇÂ¼µÄ×îÎ²¶Ë£¬Çë½áÊø¸üĞÂ£¡</td></tr>"
-	exit sub
-end if
-do while not rs.eof
-	'userTopic=UserTopicNum(rs(1))
-	'userreply=UserReplyNum(rs(1))
-	userwealth=rs(0)*Dvbbs.Forum_user(4) + rs("usertopic")*Dvbbs.Forum_user(1) + (rs("userpost")-rs("usertopic"))*Dvbbs.Forum_user(2)
-	userEP=rs(0)*Dvbbs.Forum_user(9) + rs("usertopic")*Dvbbs.Forum_user(6) + (rs("userpost")-rs("usertopic"))*Dvbbs.Forum_user(7)
-	userCP=rs(0)*Dvbbs.Forum_user(14) + rs("usertopic")*Dvbbs.Forum_user(11) + (rs("userpost")-rs("usertopic"))*Dvbbs.Forum_user(12)
-	if isnull(UserWealth) or not isnumeric(userwealth) then userwealth=0
-	if isnull(Userep) or not isnumeric(userep) then userep=0
-	if isnull(Usercp) or not isnumeric(usercp) then usercp=0
-	Dvbbs.Execute("update [Dv_user] set userWealth="&userWealth&",userep="&userep&",usercp="&usercp&" where userid="&rs(1))
-	i=i+1
-	'If (i mod 100) = 0 Then
-		Response.Write "<script>img2.width=" & Fix((i/C1) * 400) & ";" & VbCrLf
-		Response.Write "txt2.innerHTML=""¸üĞÂÍê"&rs(4)&"µÄÊı¾İ£¬ÕıÔÚ¸üĞÂÏÂÒ»¸öÓÃ»§Êı¾İ£¬" & FormatNumber(i/C1*100,4,-1) & """;" & VbCrLf
-		Response.Write "img2.title=""" & Rs(4) & "(" & i & ")"";</script>" & VbCrLf
-		Response.Flush
-	'End If
-rs.movenext
-loop
-set rs=nothing
-Response.Write "<script>img2.width=400;txt2.innerHTML=""100"";</script>"
-%>
-<FORM METHOD=POST ACTION="?action=updateuserinfo">
-<tr> 
-<th style="text-align:center;" colspan=2>¼ÌĞø¸üĞÂÓÃ»§Êı¾İ</th>
-</tr>
-<tr>
-<td width="20%" class="td1" valign=top>¸üĞÂÓÃ»§½ğÇ®/»ı·Ö/÷ÈÁ¦</td>
-<td width="80%" class="td1">Ö´ĞĞ±¾²Ù×÷½«°´ÕÕ<font color=red>µ±Ç°ÂÛÌ³Êı¾İ¿â</font>ÓÃ»§µÄ·¢ÌùÊıÁ¿ºÍÂÛÌ³µÄÏà¹ØÉèÖÃÖØĞÂ¼ÆËãÓÃ»§µÄ½ğÇ®/»ı·Ö/÷ÈÁ¦£¬±¾²Ù×÷Ò²½«ÖØĞÂ¼ÆËã¹ó±ö¡¢°æÖ÷¡¢×Ü°æÖ÷µÄÊı¾İ<BR>×¢Òâ£º²»ÍÆ¼öÓÃ»§½øĞĞ±¾²Ù×÷£¬±¾²Ù×÷ÔÚÊı¾İºÜ¶àµÄÊ±ºòÇë¾¡Á¿²»ÒªÊ¹ÓÃ£¬²¢ÇÒ±¾²Ù×÷¶Ô¸÷¸ö°æÃæÉ¾³ıÌû×ÓµÈËù¿ÛÏàÓ¦·ÖÖµ²»×öÔËËã£¬Ö»ÊÇ°´ÕÕ·¢ÌùºÍ×ÜµÄÂÛÌ³·ÖÖµÉèÖÃ½øĞĞÔËËã£¬Çë´ó¼ÒÉ÷ÖØ²Ù×÷£¬<font color=red>¶øÇÒ±¾Ïî²Ù×÷½«ÖØÖÃÓÃ»§ÒòÎª½±Àø¡¢³Í·£µÈÔ­Òò¹ÜÀíÔ±¶ÔÓÃ»§·ÖÖµµÄĞŞ¸Ä¡£</font></td>
-</tr>
-<tr>
-<td width="20%" class="td1">¿ªÊ¼ÓÃ»§ID</td>
-<td width="80%" class="td1"><input type=text name="beginID" value="<%=request.form("endid")+1%>" size=10>&nbsp;ÓÃ»§ID£¬¿ÉÒÔÌîĞ´ÄúÏë´ÓÄÄÒ»¸öIDºÅ¿ªÊ¼½øĞĞĞŞ¸´</td>
-</tr>
-<tr>
-<td width="20%" class="td1">½áÊøÓÃ»§ID</td>
-<td width="80%" class="td1"><input type=text name="endID" value="<%=request.form("endid")+(request.form("endid")-request.form("beginid"))+1%>" size=10>&nbsp;½«¸üĞÂ¿ªÊ¼µ½½áÊøIDÖ®¼äµÄÓÃ»§Êı¾İ£¬Ö®¼äµÄÊıÖµ×îºÃ²»ÒªÑ¡Ôñ¹ı´ó</td>
-</tr>
-<tr>
-<td width="20%" class="td1">&nbsp;</td>
-<td width="80%" class="td1"><input type="submit" class="button" name="Submit" value="¸üĞÂÓÃ»§½ğÇ®/»ı·Ö/÷ÈÁ¦"></td>
-</tr>
-</form>
-<%
-end sub
-
-'¸üĞÂÓÃ»§µÈ¼¶
-sub updategrade()
-if not isnumeric(request.form("beginid")) then
-	body="<tr><td colspan=2 class=td1>´íÎóµÄ¿ªÊ¼²ÎÊı£¡</td></tr>"
-	exit sub
-end if
-if not isnumeric(request.form("endid")) then
-	body="<tr><td colspan=2 class=td1>´íÎóµÄ½áÊø²ÎÊı£¡</td></tr>"
-	exit sub
-end if
-if clng(request.form("beginid"))>clng(request.form("endid")) then
-	body="<tr><td colspan=2 class=td1>¿ªÊ¼IDÓ¦¸Ã±È½áÊøIDĞ¡£¡</td></tr>"
-	exit sub
-end if
-
-Dim oldMinArticle,Rss,sql,rs
-oldMinArticle=0
-Set Rss=Dvbbs.Execute("Select UserID From [Dv_User] Where UserID>="&Request.Form("beginid"))
-If Rss.Eof And Rss.Bof Then
-	body="<tr><td colspan=2 class=td1>ÒÑ¾­µ½¼ÇÂ¼µÄ×îÎ²¶Ë£¬Çë½áÊø¸üĞÂ£¡</td></tr>"
-	Exit Sub
-End If
-Rss.Close
-
-SQL = "Select UserGroupID From Dv_UserGroups Where Not ParentGID In (0,3)"
-Set Rss = Dvbbs.Execute(SQL)
-	SQL = Rss.GetString(,, "", ",", "")
-Rss.close
-Set Rss = Nothing
-SQL = SQL & "1"
-
-Set Rs=Dvbbs.Execute("Select * From Dv_UserGroups Where ParentGID=3 Order By MinArticle Desc")
-Do While Not Rs.Eof
-	Dvbbs.Execute("Update [Dv_User] Set UserClass='"&Rs("UserTitle")&"',TitlePic='"&Rs("GroupPic")&"',UserGroupID="&Rs("UserGroupID")&" Where (Not UserGroupID In ("&SQL&")) And (UserID>="&Request.Form("beginid")&" And UserID<="&Request.Form("endid")&") And (UserPost<"&oldMinArticle&" And UserPost>="&Rs("MinArticle")&" )")
-	oldMinArticle=Rs("MinArticle")
-Rs.MoveNext
-Loop
-Rs.Close
-Set Rs=Nothing
-%>
-<FORM METHOD=POST ACTION="?action=updateuserinfo">
-<tr> 
-<th style="text-align:center;" colspan=2>¼ÌĞø¸üĞÂÓÃ»§Êı¾İ</th>
-</tr>
-<tr>
-<td width="20%" class="td1" valign=top>¸üĞÂÓÃ»§µÈ¼¶</td>
-<td width="80%" class="td1">Ö´ĞĞ±¾²Ù×÷½«°´ÕÕ<font color=red>µ±Ç°ÂÛÌ³Êı¾İ¿â</font>ÓÃ»§·¢ÌùÊıÁ¿ºÍÂÛÌ³µÄµÈ¼¶ÉèÖÃÖØĞÂ¼ÆËãÓÃ»§µÈ¼¶£¬±¾²Ù×÷²»Ó°ÏìµÈ¼¶Îª¹ó±ö¡¢°æÖ÷¡¢×Ü°æÖ÷µÄÊı¾İ¡£</td>
-</tr>
-<tr>
-<td width="20%" class="td1">¿ªÊ¼ÓÃ»§ID</td>
-<td width="80%" class="td1"><input type=text name="beginID" value="<%=request.form("endid")+1%>" size=10>&nbsp;ÓÃ»§ID£¬¿ÉÒÔÌîĞ´ÄúÏë´ÓÄÄÒ»¸öIDºÅ¿ªÊ¼½øĞĞĞŞ¸´</td>
-</tr>
-<tr>
-<td width="20%" class="td1">½áÊøÓÃ»§ID</td>
-<td width="80%" class="td1"><input type=text name="endID" value="<%=request.form("endid")+(request.form("endid")-request.form("beginid"))+1%>" size=10>&nbsp;½«¸üĞÂ¿ªÊ¼µ½½áÊøIDÖ®¼äµÄÓÃ»§Êı¾İ£¬Ö®¼äµÄÊıÖµ×îºÃ²»ÒªÑ¡Ôñ¹ı´ó</td>
-</tr>
-<tr>
-<td width="20%" class="td1">&nbsp;</td>
-<td width="80%" class="td1"><input type="submit" class="button" name="Submit" value="¸üĞÂÓÃ»§µÈ¼¶"></td>
-</tr>
-</form>
-<%
-end sub
-
-'ÓÃ»§ËùÓĞÖ÷ÌâÊı
-function UserTopicNum(userid)
-	dim topicnum
-	topicnum=0
-	usertopicnum=0
-	set tmprs=Dvbbs.Execute("select count(*) from dv_topic where not boardid in (444,777) and PostUserID="&userid)
-	TopicNum=tmprs(0)
-	if isnull(TopicNum) then TopicNum=0
-	UserTopicNum=UserTopicNum + TopicNum
-	set tmprs=nothing
-end function
-'ÓÃ»§ËùÓĞ»Ø¸´Êı
-Function UserReplyNum(userid)
-	dim replynum,i
-	replynum=0
-	userreplynum=0
-	For i=0 to ubound(AllPostTable)
-		set tmprs=Dvbbs.Execute("select count(announceid) from "&AllPostTable(i)&" where not boardid in (444,777) and ParentID>0 and PostUserID="&userid)
-		replyNum=tmprs(0)
-		if isnull(replyNum) then replyNum=0
-		UserReplyNum=UserReplyNum + replynum
-	next
-	set tmprs=nothing
-end function
-'ÓÃ»§ËùÓĞÌû×Ó
-function Userallnum(userid)
-	dim allnum,i
-	allnum=0
-	userallnum=0
-	For i=0 to ubound(AllPostTable)
-		set tmprs=Dvbbs.Execute("select count(announceid) from "&AllPostTable(i)&" where not boardid in (444,777) and PostUserID="&userid)
-		allnum=tmprs(0)
-		if isnull(allnum) then allnum=0
-		userallnum=userallnum+allnum
-	Next
-	Set tmprs=nothing
+				Forum_AllTopNum = Forum_AllTor]")(0) 
+	If IsNull(allusers) Then allusers=0 
 End function
-
-function UserallTopicnum(userid)
-	dim allnum,i
-	allnum=0
-	UserallTopicnum=0
-	For i=0 to ubound(AllPostTable)
-		set tmprs=Dvbbs.Execute("select count(*) from Dv_Topic where not boardid in (444,777) and PostUserID="&userid)
-		allnum=tmprs(0)
-		if isnull(allnum) then allnum=0
-		UserallTopicnum=UserallTopicnum+allnum
-	Next
-	Set tmprs=nothing
-End function
-
-Sub fixbbs()
-Dim killhtml,updatedate
-updatedate=Request("updatedate")
-killhtml=Request("killhtml")
-If Not IsNumeric(request.form("beginid")) Then
-	body="<tr><td colspan=2 class=td1>´íÎóµÄ¿ªÊ¼²ÎÊı£¡</td></tr>"
-	Exit Sub
-End If
-If Not IsNumeric(request.form("endid")) Then
-	body="<tr><td colspan=2 class=td1>´íÎóµÄ½áÊø²ÎÊı£¡</td></tr>"
-	Exit Sub
-End If
-If CLng(request.form("beginid"))>clng(request.form("endid")) Then
-	body="<tr><td colspan=2 class=td1>¿ªÊ¼IDÓ¦¸Ã±È½áÊøIDĞ¡£¡</td></tr>"
-	Exit Sub
-End If
-Dim C1, D1
-C1 = clng(request.form("endid"))-clng(request.form("beginid"))
-D1 = Clng(Request.Form("beginid"))
-%>
-</table>
-&nbsp;<BR>
-<table cellpadding="0" cellspacing="0" border="0" width="100%" align="center">
-<tr><td colspan=2 class=td1>
-ÏÂÃæ¿ªÊ¼¸üĞÂÂÛÌ³Ìû×Ó×ÊÁÏ£¬Ô¤¼Æ±¾´Î¹²ÓĞ<%=C1%>¸öÌû×ÓĞèÒª¸üĞÂ
-<table width="400" border="0" cellspacing="1" cellpadding="1">
-<tr> 
-<td bgcolor=#000000>
-<table width="400" border="0" cellspacing="0" cellpadding="1">
-<tr> 
-<td bgcolor=#ffffff height=9><img src="../skins/default/bar/bar3.gif" width=0 height=16 id=img2 name=img2 align=absmiddle></td></tr></table>
-</td></tr></table>
-<span id=txt3 name=txt3 style="font-size:9pt;color:red;"></span>
-<span id=txt2 name=txt2 style="font-size:9pt">0</span><span style="font-size:9pt">%</span></td></tr>
-</table>
-
-<table cellpadding="0" cellspacing="0" border="0" width="100%" align="center">
-<%
-Response.Flush
-Dim TotalUseTable,Ers,SQL1
-Dim vBody,isagree,re
-Dim Maxid,Rs,Sql,i
-Set Rs=Dvbbs.Execute("select Max(topicid) from dv_topic")
-Maxid=Rs(0)
-Set Rs=Nothing
-If Maxid< CLng(request.form("beginid")) Then
-	body="<tr><td colspan=2 class=td1>ÒÑ¾­µ½¼ÇÂ¼µÄ×îÎ²¶Ë£¬Çë½áÊø¸üĞÂ£¡</td></tr>"
-	set rs=nothing
-	Exit Sub
-End If
-Sql = "SELECT Topicid, PostTable FROM Dv_Topic WHERE Topicid >= " & CLng(Request.Form("beginid")) & " AND Topicid <= " & CLng(Request.Form("endid")) & " ORDER BY TopicID"
-Set Rs=Dvbbs.Execute(sql)
-Set  ERs=Dvbbs.iCreateObject("adodb.recordset")
-Do While Not rs.eof
-	SQl1 ="select Body,isagree,Ubblist,topic,DateAndTime,Announceid from "&Rs(1)&" where Rootid="&CLng(Rs(0))&""
-	Ers.open SQL1,Conn,1,3
-	If Not(eRs.eof OR ers.BOF) Then
-		Do While Not ers.eof
-			vbody=eRs(0)
-			isagree=eRs(1)
-			If IsNull(isagree) Then isagree=""
-			If isagree <>""  Then
-				isagree=Replace(isagree,"[isubb]","")
-			Else
-				isagree=ers(1)
-			End If
-			If killhtml="1" Then
-				eRs(0)=vbody
-			End If
-			ers(1)=	isagree&""
-			If IsDate(updatedate) And IsDate(ers(4)) Then
-				If updatedate > ers(4) Then
-					ers(2)=Ubblist(vbody)
-				Else
-					If killhtml="1" Then
-						Set re=new RegExp
-						re.IgnoreCase =true
-						re.Global=True
-						re.Pattern="<br>"
-						vbody=re.Replace(vbody,"[br]")
-						re.Pattern="<(.[^>]*)>"
-						vbody=re.Replace(vbody,"")
-						Set re=Nothing
-					End If 
-					ers(2)=UbblistOLD(vbody)
-				End If
-			Else
-				ers(2)=UbblistOLD(vbody)
-			End If
-		ers.update
-			Response.Write "<script>txt3.innerHTML=""¸üĞÂÍê±àºÅÎª"&eRs(5)&"µÄÌû×ÓÊı¾İ£¬"";</script>"
-			Response.Flush
-		eRs.movenext 
-		Loop
-	End If
-	ERs.close
-	i = CLng(Rs(0)) - D1 + 1	'ĞŞÕıiÎªÏà¶ÔÎ»ÖÃÖµ 2005-12-3 Dv.Yz
-	'If (i mod 100) = 0 Then
-		Response.Write "<script>img2.width=" & Fix((i/C1) * 400) & ";" & VbCrLf
-		Response.Write "txt2.innerHTML=""¸üĞÂÍê±àºÅÎª"&Rs(0)&"µÄÊı¾İ£¬ÕıÔÚ¸üĞÂÏÂÒ»¸öÌû×ÓÊı¾İ£¬" & FormatNumber(i/C1*100,4,-1) & """;" & VbCrLf
-		Response.Write "img2.title=""" & Rs(0) & "(" & i & ")"";</script>" & VbCrLf
-		Response.Flush
-	'End If
-Rs.movenext 
-Loop
-Set ers=nothing
-set rs=nothing
-Response.Write "<script>img2.width=400;txt3.innerHTML='';txt2.innerHTML=""100"";</script>"
-%>
-<form name=Fix action="update.asp?action=fix" method=post>
-<tr> 
-<th style="text-align:center;" colspan=2>¼ÌĞøĞŞ¸´Ìû×Ó(ĞŞ¸´Ö¸¶¨·¶Î§Ìù×ÓUBB±êÇ©)</th>
-</tr>
-<tr>
-<td width="20%" class="td1">¿ªÊ¼µÄIDºÅ</td>
-<td width="80%" class="td1"><input type=text name="beginID" value="<%=request.form("endid")+1%>" size=5>&nbsp;Ìû×ÓÖ÷ÌâID£¬¿ÉÒÔÌîĞ´ÄúÏë´ÓÄÄÒ»¸öIDºÅ¿ªÊ¼½øĞĞĞŞ¸´</td>
-</tr>
-<tr>
-<td width="20%" class="td1">½áÊøµÄIDºÅ</td>
-<td width="80%" class="td1"><input type=text name="EndID" value="<%=request.form("endid")+(request.form("endid")-request.form("beginid"))+1%>" size=5>&nbsp;½«¸üĞÂ¿ªÊ¼µ½½áÊøIDÖ®¼äµÄÌû×ÓÊı¾İ£¬Ö®¼äµÄÊıÖµ×îºÃ²»ÒªÑ¡Ôñ¹ı´ó</td>
-</tr>
-<tr>
-<td width="20%" class="td1">ĞÂÀÏÌùµÄ±êÊ¶ÈÕÆÚ</td>
-<td width="80%" class="td1"><input type="text" name="updatedate" value="<%=updatedate%>">(¸ñÊ½£ºYYYY-M-D) ¾ÍÊÇÂÛÌ³Éı¼¶µ½v7.0µÄÈÕÆÚ£¬Èç¹û²»ÌîĞ´£¬Ò»ÂÉ°´ÀÏÌù´¦Àí</td>
-</tr>
-<tr>
-<td width="20%" class="td1">È¥µôÌù×ÓÖĞµÄHTML±ê¼Ç</td>
-<td width="80%" class="td1"><input type="radio" class="radio" name="killhtml" value="1" 
- <%
-  If killhtml="1" Then 
-  %>
-  checked 
-  <%
-  End If 
-  %>
-> ÊÇ
-  <input type="radio" class="radio" name="killhtml" value="0" 
-  <%
-  If killhtml="0" Then 
-  %>
-  checked 
-  <%
-  End If 
-  %>
-  > ·ñ &nbsp;<br>Ñ¡ÊÇµÄ»°£¬Ìù×ÓÖĞµÄHTML±ê¼Ç½«»á×Ô¶¯±»Çå³ı£¬ÓĞÀûÓÚ¼õÉÙÊı¾İ¿âµÄ´óĞ¡£¬µ«ÊÇ»áÊ§È¥Ô­À´µÄHTMLĞ§¹û¡£</td>
-</tr>
-<tr>
-<td width="20%" class="td1">&nbsp;</td>
-<td width="80%" class="td1"><input type="submit" class="button" name="Submit" value="ĞŞ Õı"></td>
-</tr>
-</form>
-<%
-End Sub
-
-'Çå¿ÕÔÚÏßÓÃ»§ 2004-10-11 Dv.Yz
-Sub Delallonline()
-	Dim Sql
-	Sql = "DELETE FROM Dv_Online"
-	Dvbbs.Execute(Sql)
-	Body = "<tr><td colspan=2 class=td1>Çå¿ÕÔÚÏßÓÃ»§Êı¾İ³É¹¦£¬Çë <a href=""ReloadForumCache.asp""><font color=""red"">¸üĞÂ·şÎñÆ÷»º´æ</font> </a>¡£"
-End Sub
-
-'¸üĞÂÂÛÌ³ÊÕ²Ø¼Ğ 2005-11-30 Dv.Yz
-Sub Updatebm()
-	Dim bi,Rs,Sql
-	Set Rs = Dvbbs.Execute("SELECT Id, Url, UserName FROM Dv_BookMark ORDER BY Id")
-	If Not (Rs.Eof And Rs.Bof) Then
-		Sql = Rs.GetRows(-1)
-		Set Rs = Nothing
-		Dim Url, RootID, BoardID, Topic
-		Dim C1
-		C1 = Ubound(Sql,2) + 1
-%>
-<table cellpadding="0" cellspacing="0" border="0" width="100%" align="center">
-<tr><td colspan=2 class=td1>
-ÏÂÃæ¿ªÊ¼¸üĞÂÊÕ²Ø¼Ğ×ÊÁÏ£¬Ô¤¼Æ±¾´Î¹²ÓĞ<%=C1%>¸öÊÕ²ØÖ÷ÌâĞèÒª¸üĞÂ
-<table width="400" border="0" cellspacing="1" cellpadding="1">
-<tr> 
-<td bgcolor=#000000>
-<table width="400" border="0" cellspacing="0" cellpadding="1">
-<tr> 
-<td bgcolor=#ffffff height=9><img src="../skins/default/bar/bar3.gif" width=0 height=16 id=img2 name=img2 align=absmiddle></td></tr></table>
-</td></tr></table>
-<span id=txt3 name=txt3 style="font-size:9pt;color:red;"></span>
-<span id=txt2 name=txt2 style="font-size:9pt">0</span><span style="font-size:9pt">%</span></td></tr>
-</table>
-<%
-		For bi = 0 To Ubound(Sql,2)
-			Set Rs = Dvbbs.Execute("SELECT UserName From Dv_User WHERE UserName = '" & Sql(2,bi) & "'")
-			If Rs.Eof And Rs.Bof Then
-				Dvbbs.Execute("DELETE FROM Dv_BookMark WHERE Id = " & Sql(0,bi))
-				Response.Write "<script>txt3.innerHTML=""É¾³ıÍê±àºÅÎª" & Sql(0,bi) & "µÄÊÕ²Ø¼ĞÊı¾İ£¬"";</script>"
-				Response.Flush
-			Else
-				Set Rs = Nothing
-				RootID = Split(Split(Sql(1,bi),"&")(1),"=")(1)
-				If Isnumeric(RootID) Then
-					RootID = Clng(Rootid)
-				Else
-					RootID = 0
-				End If
-				Set Rs = Dvbbs.Execute("SELECT BoardID, TopicID, Title FROM Dv_Topic WHERE NOT BoardID IN (444,777) AND TopicID = " & RootID)
-				If Rs.Eof And Rs.Bof Then
-					Dvbbs.Execute("DELETE FROM Dv_BookMark WHERE Id = " & Sql(0,bi))
-					Response.Write "<script>txt3.innerHTML=""É¾³ıÍê±àºÅÎª" & Sql(0,bi) & "µÄÊÕ²Ø¼ĞÊı¾İ£¬"";</script>"
-					Response.Flush
-				Else
-					Boardid = Rs(0)
-					RootID = Rs(1)
-					Topic = Rs(2)
-					Topic = Left(Dvbbs.checkStr(trim(topic)),100)
-					Url = "dispbbs.asp?boardid=" & Boardid & "&id=" & RootID
-					Dvbbs.Execute("UPDATE Dv_BookMark SET Url = '" & Url & "', Topic = '" & Topic & "' WHERE Id = " & Sql(0,bi))
-					Response.Write "<script>txt3.innerHTML=""¸üĞÂÍê±àºÅÎª" & Sql(0,bi) & "µÄÊÕ²Ø¼ĞÊı¾İ£¬"";</script>"
-					Response.Flush
-				End If
-			End If
-			Response.Write "<script>img2.width=" & Fix((bi/C1) * 400) & ";" & VbCrLf
-			Response.Write "txt2.innerHTML=""¸üĞÂÍê±àºÅÎª" & Sql(0,bi) & "µÄÊı¾İ£¬ÕıÔÚ¸üĞÂÏÂÒ»¸öÊÕ²Ø¼ĞÊı¾İ£¬" & FormatNumber(bi/C1*100,4,-1) & """;" & VbCrLf
-			Response.Write "img2.title=""" & Sql(2,bi) & "(" & bi & ")"";</script>" & VbCrLf
-			Response.Flush
-		Next
-		Response.Write "<script>img2.width=400;txt3.innerHTML='¸üĞÂÍê³É£¡<a href=" & Request.ServerVariables("HTTP_REFERER") & "><<·µ»ØÉÏÒ»Ò³</a>';txt2.innerHTML=""100"";</script>"
-	Else
-	%>
-		<table cellpadding="0" cellspacing="0" border="0" width="100%" align="center">
-			<tr><td colspan=2 class=td1>ÊÕ²Ø¼Ğ×ÊÁÏÎª¿Õ£¬²»ĞèÒª¸üĞÂ£¡</td></tr>
-		</table>
-	<%
-	End If
-	
-End Sub
-
-Function cutStr(str,strlen)
-	Str=Dvbbs.Replacehtml(Str)
-	Dim l,t,c,i
-	l=Len(str)
-	t=0
-	For i=1 to l
-		c=Abs(Asc(Mid(str,i,1)))
-		If c>255 Then
-			t=t+2
-		Else
-			t=t+1
-		End If
-		If t>=strlen Then
-			cutStr=left(str,i)&"..."
-			Exit For
-		Else
-			cutStr=str
-		End If
-	Next
-	cutStr=Replace(cutStr,chr(10),"")
-	cutStr=Replace(cutStr,chr(13),"")
-End Function
-%>
+'éˆâ‚¬é‚ç‰ˆæ•éå²€æ•¤é´

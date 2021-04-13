@@ -11,15 +11,15 @@ Sub ViewMain()
 %>
 <br>
 <table cellpadding="5" cellspacing="1" border="0" class="tableBorder2" align="center" height="85%">
-<tr><th height="23">йврЁ╣Всцп╖╧Ш╡Бйт</th></tr>
+<tr><th height="23">И╕√И║╣Х╟┐Г■╗Ф∙┬Ф·°Ф╣▀Х╞∙</th></tr>
 <tr>
 <td height="*" class="tablebody1" valign="top">
 <div class="quote">
-╣Всц╢ЗбКё╨ <font class="redfont" id="scriptcode"></font>
+Х╟┐Г■╗Д╩ёГ═│О╪  <font class="redfont" id="scriptcode"></font>
 <input type="hidden" name="NewScript" id="NewScript">
-<input type="button" value="©╫╠╢╣Всц╢ЗбК" onclick="oCopy(document.getElementById('NewScript'));">
+<input type="button" value="Ф▀╥Х╢²Х╟┐Г■╗Д╩ёГ═│" onclick="oCopy(document.getElementById('NewScript'));">
 </div>
-<font color="gray">ртобн╙╡И©╢╣д╣Всцп╖╧Шё╨</font>
+<font color="gray">Д╩╔Д╦▀Д╦╨Ф÷╔Г°▀Г └Х╟┐Г■╗Ф∙┬Ф·°О╪ </font>
 <hr size=1>
 <script language="JavaScript">
 <!--
@@ -38,7 +38,7 @@ function oCopy(obj){
 </tr>
 </table>
 <p></p>
-<center><button onclick="window.close();">╧ь╠у╢╟©з</button></center>
+<center><button onclick="window.close();">Е┘ЁИ≈╜Г╙≈Е▐ё</button></center>
 <%
 End Sub
 %>

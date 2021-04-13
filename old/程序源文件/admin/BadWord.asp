@@ -24,10 +24,10 @@ Else
 
 <%if request("reaction")="badword" then%>
 <tr>
-<th colspan=2>Ìû×Ó¹ýÂË×Ö·û</th>
+<th colspan=2>å¸–å­è¿‡æ»¤å­—ç¬¦</th>
 </tr>
 <tr>
-<td class=td1 width="100%" colspan=2><B>ËµÃ÷</B>£º¹ýÂË×Ö·ûÉè¶¨¹æÔòÎª  <B>Òª¹ýÂËµÄ×Ö·û=¹ýÂËºóµÄ×Ö·û</B> £¬Ã¿¸ö¹ýÂË×Ö·ûÓÃ»Ø³µ·Ö¸î¿ª¡£</td>
+<td class=td1 width="100%" colspan=2><B>è¯´æ˜Ž</B>ï¼šè¿‡æ»¤å­—ç¬¦è®¾å®šè§„åˆ™ä¸º  <B>è¦è¿‡æ»¤çš„å­—ç¬¦=è¿‡æ»¤åŽçš„å­—ç¬¦</B> ï¼Œæ¯ä¸ªè¿‡æ»¤å­—ç¬¦ç”¨å›žè½¦åˆ†å‰²å¼€ã€‚</td>
 </tr>
 <tr>
 <td class=td1 width="100%" colspan=2>
@@ -48,25 +48,25 @@ Next
 LoadSetting
 	%>
 <tr>
-<th colspan=2>×¢²á¹ýÂË×Ö·û</th>
+<th colspan=2>æ³¨å†Œè¿‡æ»¤å­—ç¬¦</th>
 </tr>
 <tr>
-<td class=td1 width="20%">ËµÃ÷£º</td>
-<td class=td1 width="80%">×¢²á¹ýÂË×Ö·û½«²»ÔÊÐíÓÃ»§×¢²á°üº¬ÒÔÏÂ×Ö·ûµÄÄÚÈÝ£¬ÇëÄú½«Òª¹ýÂËµÄ×Ö·û´®ÌíÈë£¬Èç¹ûÓÐ¶à¸ö×Ö·û´®£¬ÇëÓÃ¡°,¡±·Ö¸ô¿ª£¬ÀýÈç£ºÉ³Ì²,quest,Ä¾Äñ</td>
+<td class=td1 width="20%">è¯´æ˜Žï¼š</td>
+<td class=td1 width="80%">æ³¨å†Œè¿‡æ»¤å­—ç¬¦å°†ä¸å…è®¸ç”¨æˆ·æ³¨å†ŒåŒ…å«ä»¥ä¸‹å­—ç¬¦çš„å†…å®¹ï¼Œè¯·æ‚¨å°†è¦è¿‡æ»¤çš„å­—ç¬¦ä¸²æ·»å…¥ï¼Œå¦‚æžœæœ‰å¤šä¸ªå­—ç¬¦ä¸²ï¼Œè¯·ç”¨â€œ,â€åˆ†éš”å¼€ï¼Œä¾‹å¦‚ï¼šæ²™æ»©,quest,æœ¨é¸Ÿ</td>
 </tr>
 <tr>
-<td class=td1 width="20%">ÇëÊäÈë¹ýÂË×Ö·û</td>
+<td class=td1 width="20%">è¯·è¾“å…¥è¿‡æ»¤å­—ç¬¦</td>
 <td class=td1 width="80%"><input type="text" name="splitwords" value="<%=split(Dvbbs.cachedata(1,0),"|||")(4)%>" size="80"></td>
 </tr>
 </table>
 <br>
 <table width="100%" border="0" cellspacing="1" cellpadding="3" align="center">
 <tr>
-<th colspan=2>×¢²áÏÞÖÆÉèÖÃ</th>
+<th colspan=2>æ³¨å†Œé™åˆ¶è®¾ç½®</th>
 </tr>
 <tr>
-<td class=td1 width="20%">ËµÃ÷£º</td>
-<td class=td1 width="80%">À©Õ¹×¢²áÉèÖÃ,Çë¸ù¾Ý×Ô¼ºÐèÒªÉèÖÃ.</td>
+<td class=td1 width="20%">è¯´æ˜Žï¼š</td>
+<td class=td1 width="80%">æ‰©å±•æ³¨å†Œè®¾ç½®,è¯·æ ¹æ®è‡ªå·±éœ€è¦è®¾ç½®.</td>
 </tr>
 <tr>
 <%
@@ -82,13 +82,13 @@ Else
 End If
 End If
 %>
-<td class=td1 width="20%">²ÉÓÃIP²ßÂÔ</td>
-<td class=td1 width="80%"><input type="checkbox" class="checkbox" value="1" name="<%=nodename%>" <%=checkedstr %>  /> Èç¹û²»Ñ¡Ôñ,ËùÓÐºÍIPµØÖ·ÓÐ¹ØµÄÉèÖÃ¶¼²»Æð×÷ÓÃ.</td>
+<td class=td1 width="20%">é‡‡ç”¨IPç­–ç•¥</td>
+<td class=td1 width="80%"><input type="checkbox" class="checkbox" value="1" name="<%=nodename%>" <%=checkedstr %>  /> å¦‚æžœä¸é€‰æ‹©,æ‰€æœ‰å’ŒIPåœ°å€æœ‰å…³çš„è®¾ç½®éƒ½ä¸èµ·ä½œç”¨.</td>
 </tr>
 <tr>
-<td class=td1 width="20%">ÔÊÐí×¢²áIP(IP°×Ãûµ¥)<br>
-ÌîÐ´¿ÉÒÔ×¢²áµÄIPµØÖ·,¸ñÊ½ÊÇIPµØÖ·=ËµÃ÷,Ã¿¸öÓÃ»»ÐÐ·Ö¿ª
-Ö§³ÖÍ¨Åä·û,Èç192.168.*.* =ÄÚÍøIP Èç²»²ÉÓÃIP°×Ãûµ¥,ÇëÁô¿Õ
+<td class=td1 width="20%">å…è®¸æ³¨å†ŒIP(IPç™½åå•)<br>
+å¡«å†™å¯ä»¥æ³¨å†Œçš„IPåœ°å€,æ ¼å¼æ˜¯IPåœ°å€=è¯´æ˜Ž,æ¯ä¸ªç”¨æ¢è¡Œåˆ†å¼€
+æ”¯æŒé€šé…ç¬¦,å¦‚192.168.*.* =å†…ç½‘IP å¦‚ä¸é‡‡ç”¨IPç™½åå•,è¯·ç•™ç©º
 </td>
 <td class=td1 width="80%"><textarea name="iplist1" cols="80" rows="8"><%
 For Each  Node In XMLDom.documentElement.selectNodes("checkip/iplist1/ip")
@@ -97,9 +97,9 @@ Next
 %></textarea></td>
 </tr>
 <tr>
-<td class=td1 width="20%">½ûÖ¹×¢²áIP(ipºÚÃûµ¥)<br>
-ÌîÐ´¿ÉÒÔ×¢²áµÄIPµØÖ·,¸ñÊ½ÊÇIPµØÖ·=ËµÃ÷,Ã¿¸öÓÃ»»ÐÐ·Ö¿ª
-Ö§³ÖÍ¨Åä·û,Èç192.168.*.* =ÄÚÍøIP Èç²»²ÉÓÃIPºÚÃûµ¥,ÇëÁô¿Õ
+<td class=td1 width="20%">ç¦æ­¢æ³¨å†ŒIP(ipé»‘åå•)<br>
+å¡«å†™å¯ä»¥æ³¨å†Œçš„IPåœ°å€,æ ¼å¼æ˜¯IPåœ°å€=è¯´æ˜Ž,æ¯ä¸ªç”¨æ¢è¡Œåˆ†å¼€
+æ”¯æŒé€šé…ç¬¦,å¦‚192.168.*.* =å†…ç½‘IP å¦‚ä¸é‡‡ç”¨IPé»‘åå•,è¯·ç•™ç©º
 </td>
 <td class=td1 width="80%"><textarea name="iplist2" cols="80" rows="8"><%
 For Each  Node In XMLDom.documentElement.selectNodes("checkip/iplist2/ip")
@@ -121,9 +121,9 @@ End If
 End If
 %>
 <tr>
-<td class=td1 width="20%">ÈçIPÊÜÏÞÖÆÌá½»IPÀ´Ô´ÐÅÏ¢</td>
+<td class=td1 width="20%">å¦‚IPå—é™åˆ¶æäº¤IPæ¥æºä¿¡æ¯</td>
 <td class=td1 width="80%">
-<input type="checkbox" class="checkbox" value="1" name="<%=nodename%>" <%=checkedstr %> /><br> Èç¹û×¢²áÓÃ»§ËùÔÚIP²»ÔÚÔÊÐí×¢²áÖ®ÁÐ,¿ÉÒÔÒýµ¼×¢²áÕß½øÈëÌá½»µ±Ç°IPÐÅÏ¢µÄÒ³Ãæ,ÒÔ±ã¹ÜÀíÔ±¿ÉÒÔÔö¼Ó¸Ã¶ÎIPµØÖ·µÄÐí¿É.
+<input type="checkbox" class="checkbox" value="1" name="<%=nodename%>" <%=checkedstr %> /><br> å¦‚æžœæ³¨å†Œç”¨æˆ·æ‰€åœ¨IPä¸åœ¨å…è®¸æ³¨å†Œä¹‹åˆ—,å¯ä»¥å¼•å¯¼æ³¨å†Œè€…è¿›å…¥æäº¤å½“å‰IPä¿¡æ¯çš„é¡µé¢,ä»¥ä¾¿ç®¡ç†å‘˜å¯ä»¥å¢žåŠ è¯¥æ®µIPåœ°å€çš„è®¸å¯.
 </td>
 </tr>
 <%
@@ -136,8 +136,8 @@ Else
 End If
 %>
 <tr>
-<td class=td1 width="20%">Ò»¸öIPµØÖ·Ò»Ìì¿ÉÒÔ×¢²á´ÎÊý</td>
-<td class=td1 width="80%"><input type="text" Size="4" value="<%=checkedstr %>" name="<%=nodename%>"  />ÇëÌîÐ´Êý×Ö·ñÔò»á³ö´í,Èç²»ÏëÏÞÖÆ,ÇëÌîÐ´0</td>
+<td class=td1 width="20%">ä¸€ä¸ªIPåœ°å€ä¸€å¤©å¯ä»¥æ³¨å†Œæ¬¡æ•°</td>
+<td class=td1 width="80%"><input type="text" Size="4" value="<%=checkedstr %>" name="<%=nodename%>"  />è¯·å¡«å†™æ•°å­—å¦åˆ™ä¼šå‡ºé”™,å¦‚ä¸æƒ³é™åˆ¶,è¯·å¡«å†™0</td>
 </tr>
 <%
 nodename="checknumeric"
@@ -153,8 +153,8 @@ End If
 End If
 %>
 <tr>
-<td class=td1 width="20%">½ûÖ¹´¿Êý×ÖID×¢²á</td>
-<td class=td1 width="80%"><input type="checkbox" class="checkbox" value="1" name="<%=nodename%>" <%=checkedstr %> />ÊÇ·ñÔÊÐí²ÉÓÃ´¿ÊýµÄÓÃ»§Ãû×¢²á</td>
+<td class=td1 width="20%">ç¦æ­¢çº¯æ•°å­—IDæ³¨å†Œ</td>
+<td class=td1 width="80%"><input type="checkbox" class="checkbox" value="1" name="<%=nodename%>" <%=checkedstr %> />æ˜¯å¦å…è®¸é‡‡ç”¨çº¯æ•°çš„ç”¨æˆ·åæ³¨å†Œ</td>
 </tr>
 <%
 nodename="checktime"
@@ -170,8 +170,8 @@ End If
 End If
 %>
 <tr>
-<td class=td1 width="20%">ÒªÇóÊäÈëµ±Ç°Ê±¼ä</td>
-<td class=td1 width="80%"><Input type="checkbox" class="checkbox" value="1" name="<%=nodename%>" <%=checkedstr %> /><br>Èç¹ûÆôÓÃ,ÒªÇóÓÃ»§Ñ¡Ôñ×Ô¼ºËùÔÚÊ±ÇøºÍÊäÈëËûËùÔÚµØµÄÊ±¼ä(ÒÔÐ¡Ê±Îªµ¥Î»)</td>
+<td class=td1 width="20%">è¦æ±‚è¾“å…¥å½“å‰æ—¶é—´</td>
+<td class=td1 width="80%"><Input type="checkbox" class="checkbox" value="1" name="<%=nodename%>" <%=checkedstr %> /><br>å¦‚æžœå¯ç”¨,è¦æ±‚ç”¨æˆ·é€‰æ‹©è‡ªå·±æ‰€åœ¨æ—¶åŒºå’Œè¾“å…¥ä»–æ‰€åœ¨åœ°çš„æ—¶é—´(ä»¥å°æ—¶ä¸ºå•ä½)</td>
 </tr>
 <%
 nodename="usevarform"
@@ -187,14 +187,14 @@ End If
 End If
 %>
 <tr>
-<td class=td1 width="20%">²ÉÓÃ¶¯Ì¬µÄ±íµ¥ÏîÄ¿Ãû³Æ</td>
-<td class=td1 width="80%"><input type="checkbox" class="checkbox" value="1" name="<%=nodename%>" <%=checkedstr %> />²ÉÓÃ²»¶¨ÃûµÄ±íµ¥ÏîÄ¿Ãû³Æ,Ôö¼Ó»úÆ÷ÈË×¢²áµÄÄÑ¶È.</td>
+<td class=td1 width="20%">é‡‡ç”¨åŠ¨æ€çš„è¡¨å•é¡¹ç›®åç§°</td>
+<td class=td1 width="80%"><input type="checkbox" class="checkbox" value="1" name="<%=nodename%>" <%=checkedstr %> />é‡‡ç”¨ä¸å®šåçš„è¡¨å•é¡¹ç›®åç§°,å¢žåŠ æœºå™¨äººæ³¨å†Œçš„éš¾åº¦.</td>
 </tr>
 <%end if%>
 <input type=hidden value="<%=request("reaction")%>" name="reaction">
 <tr> 
 <td class=td1 width="20%">&nbsp;</td>
-<td width="80%" class=td1><input type="submit" class="button" name="Submit" value="Ìá ½»"></td>
+<td width="80%" class=td1><input type="submit" class="button" name="Submit" value="æ äº¤"></td>
 </tr>
 </table>
 
@@ -236,7 +236,7 @@ sql = "update dv_setup set forum_setting='"&replace(forum_setting,"'","''")&"',F
 dvbbs.execute(sql)
 End If
 Dvbbs.loadSetup()
-Dv_suc("¸üÐÂ³É¹¦")
+Dv_suc("æ›´æ–°æˆåŠŸ")
 
 End Sub
 Sub LoadSetting()

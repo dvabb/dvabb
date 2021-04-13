@@ -1,13 +1,13 @@
 <%
-'²©¿ÍÏµÍ³ÊÇ·ñ¶ÀÁ¢Êı¾İ¿â,1±íÊ¾¶ÀÁ¢Êı¾İ¿â,0±íÊ¾ÔÚ¶¯ÍøÂÛÌ³Êı¾İ¿âÖĞ
+'åšå®¢ç³»ç»Ÿæ˜¯å¦ç‹¬ç«‹æ•°æ®åº“,1è¡¨ç¤ºç‹¬ç«‹æ•°æ®åº“,0è¡¨ç¤ºåœ¨åŠ¨ç½‘è®ºå›æ•°æ®åº“ä¸­
 Const Dv_Boke_InDvbbsData = 1
-'²©¿ÍÏµÍ³Êı¾İ¿âÀàĞÍ,0±íÊ¾ACCESS,1±íÊ¾SQL Server
+'åšå®¢ç³»ç»Ÿæ•°æ®åº“ç±»å‹,0è¡¨ç¤ºACCESS,1è¡¨ç¤ºSQL Server
 Const Dv_Boke_DataBase = 0
-'ÊÇ·ñÖ§³ÖÄ£ÄâHTML,ĞèÒª·şÎñÆ÷Ö§³ÖIsapiwrite²¢×öÏà¹ØÉèÖÃ
+'æ˜¯å¦æ”¯æŒæ¨¡æ‹ŸHTML,éœ€è¦æœåŠ¡å™¨æ”¯æŒIsapiwriteå¹¶åšç›¸å…³è®¾ç½®
 Const Is_Isapi_Rewrite = 0
 
 If Dvbbs.forum_setting(99)="0" And Not Dvbbs.Master Then
-	Response.redirect "showerr.asp?ErrCodes=<li>¶Ô²»Æğ£¬±¾ÂÛÌ³µÄ²©¿Í¹¦ÄÜÒÑ¾­¹Ø±Õ£¡</li>&action=OtherErr"
+	Response.redirect "showerr.asp?ErrCodes=<li>å¯¹ä¸èµ·ï¼Œæœ¬è®ºå›çš„åšå®¢åŠŸèƒ½å·²ç»å…³é—­ï¼</li>&action=OtherErr"
 End If
 
 Dim bSqlNowString,DvBoke,Boke_Conn
@@ -22,7 +22,7 @@ Else
 End If
 MyDbPath = ""
 
-'¶ÀÁ¢²©¿ÍÏµÍ³Êı¾İ¿âÁ´½Óº¯Êı
+'ç‹¬ç«‹åšå®¢ç³»ç»Ÿæ•°æ®åº“é“¾æ¥å‡½æ•°
 Sub Boke_ConnectionDatabase()
 	Dim ConnStr
 	If Dv_Boke_InDvbbsData = 0 Then
@@ -31,7 +31,7 @@ Sub Boke_ConnectionDatabase()
 		Exit Sub
 	End If
 	If Dv_Boke_DataBase = 1 Then
-		'sqlÊı¾İ¿âÁ¬½Ó²ÎÊı£ºÊı¾İ¿âÃû¡¢ÓÃ»§ÃÜÂë¡¢ÓÃ»§Ãû¡¢Á¬½ÓÃû£¨±¾µØÓÃlocal£¬ÍâµØÓÃIP£©
+		'sqlæ•°æ®åº“è¿æ¥å‚æ•°ï¼šæ•°æ®åº“åã€ç”¨æˆ·å¯†ç ã€ç”¨æˆ·åã€è¿æ¥åï¼ˆæœ¬åœ°ç”¨localï¼Œå¤–åœ°ç”¨IPï¼‰
 		Dim SqlDatabaseName,SqlPassword,SqlUsername,SqlLocalName
 		SqlDatabaseName = "dvbbs8"
 		SqlPassword = "dvbbs"
@@ -40,7 +40,7 @@ Sub Boke_ConnectionDatabase()
 		ConnStr = "Provider = Sqloledb; User ID = " & SqlUsername & "; Password = " & SqlPassword & "; Initial Catalog = " & SqlDatabaseName & "; Data Source = " & SqlLocalName & ";"
 	Else
 		Dim Db
-		'Ãâ·ÑÓÃ»§µÚÒ»´ÎÊ¹ÓÃÇëĞŞ¸Ä±¾´¦Êı¾İ¿âµØÖ·²¢ÏàÓ¦ĞŞ¸ÄdataÄ¿Â¼ÖĞÊı¾İ¿âÃû³Æ
+		'å…è´¹ç”¨æˆ·ç¬¬ä¸€æ¬¡ä½¿ç”¨è¯·ä¿®æ”¹æœ¬å¤„æ•°æ®åº“åœ°å€å¹¶ç›¸åº”ä¿®æ”¹dataç›®å½•ä¸­æ•°æ®åº“åç§°
 		Db = MyDbPath & "Boke/data/Dvboke.mdb"
 		ConnStr = "Provider = Microsoft.Jet.OLEDB.4.0;Data Source = " & Server.MapPath(db)
 	End If
@@ -50,7 +50,7 @@ Sub Boke_ConnectionDatabase()
 	If Err Then
 		err.Clear
 		Set Boke_Conn = Nothing
-		Response.Write "²å¼şÊı¾İ¿âÁ¬½Ó³ö´í£¬Çë¼ì²éÁ¬½Ó×Ö´®¡£"'×¢ÊÍ£¬ĞèÒª°ÑÕâ¼¸¸ö×Ö·­Òë³ÉÓ¢ÎÄ¡£
+		Response.Write "æ’ä»¶æ•°æ®åº“è¿æ¥å‡ºé”™ï¼Œè¯·æ£€æŸ¥è¿æ¥å­—ä¸²ã€‚"'æ³¨é‡Šï¼Œéœ€è¦æŠŠè¿™å‡ ä¸ªå­—ç¿»è¯‘æˆè‹±æ–‡ã€‚
 		Response.End
 	End If
 End Sub

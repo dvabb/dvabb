@@ -5,7 +5,7 @@
 <HTML xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=gb2312" />
-<TITLE><%=Dvbbs.Forum_info(0)%>ºóÌ¨¹ÜÀíÍ¨ÓÃÄ£°å</TITLE>
+<TITLE><%=Dvbbs.Forum_info(0)%>åå°ç®¡ç†é€šç”¨æ¨¡æ¿</TITLE>
 <link href="skins/css/style.css" rel="stylesheet" type="text/css" />
 <style>
 .main_left {table-layout:auto; background:url(skins/images/left_bg.gif)}
@@ -13,8 +13,8 @@
 .main_left_title{text-align:left; padding-left:15px; font-size:14px; font-weight:bold; color:#fff;}
 .left_iframe{HEIGHT: 92%; VISIBILITY: inherit;WIDTH: 180px; background:transparent;}
 .main_iframe{HEIGHT: 92%; VISIBILITY: inherit; WIDTH:100%; Z-INDEX: 1}
-table { font-size:12px; font-family : tahoma, ËÎÌå, fantasy; }
-td { font-size:12px; font-family : tahoma, ËÎÌå, fantasy;}
+table { font-size:12px; font-family : tahoma, å®‹ä½“, fantasy; }
+td { font-size:12px; font-family : tahoma, å®‹ä½“, fantasy;}
 </style>
 <script language = "javaScript" src = "inc/admin.js" type="text/javascript"></script>
 <SCRIPT>
@@ -48,8 +48,8 @@ function switchSysBar(){
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
   <tr height="32">
 	  <td background="skins/images/bg2.gif"width="28" style="padding-left:30px;"><img src="skins/images/arrow.gif" alt="" align="absmiddle" /></td>
-	  <td background="skins/images/bg2.gif"><span style="float:left">¹Ù·½¹«¸æ£º</span><span style="color:#c00; font-weight:bold; float:left;width:300px;" id="dvbbsannounce"></span></td>
-	  <td background="skins/images/bg2.gif" style="text-align:right; color: #135294; "><%=Dvbbs.MemberName%>(<%=Dvbbs.MemberClass%>) | <a href="index.asp" target='_top'>ºóÌ¨Ê×Ò³</a> | <a href="../index.asp" target="_blank">ÂÛÌ³Ê×Ò³</a> | <a href="logout.asp" target="_top">ÍË³ö</a> </td>
+	  <td background="skins/images/bg2.gif"><span style="float:left">å®˜æ–¹å…¬å‘Šï¼š</span><span style="color:#c00; font-weight:bold; float:left;width:300px;" id="dvbbsannounce"></span></td>
+	  <td background="skins/images/bg2.gif" style="text-align:right; color: #135294; "><%=Dvbbs.MemberName%>(<%=Dvbbs.MemberClass%>) | <a href="index.asp" target='_top'>åå°é¦–é¡µ</a> | <a href="../index.asp" target="_blank">è®ºå›é¦–é¡µ</a> | <a href="logout.asp" target="_top">é€€å‡º</a> </td>
   </tr>
 </table>
 </td>
@@ -60,7 +60,7 @@ function switchSysBar(){
 	</td>
 	<td style="width:0px;" valign="middle">
 		<div onclick="switchSysBar()">
-		<span class="navpoint" id="switchPoint" title="¹Ø±Õ/´ò¿ª×óÀ¸"><img src="skins/images/right.gif" alt="" /></span>
+		<span class="navpoint" id="switchPoint" title="å…³é—­/æ‰“å¼€å·¦æ "><img src="skins/images/right.gif" alt="" /></span>
 		</div>
 	</td>
 	<td style="width: 100%" valign="top">
@@ -72,7 +72,7 @@ function switchSysBar(){
   <tr height="32">
 	<td style="padding-left:30px; font-family:arial; font-size:11px;">Copyright Right &copy; 2008 Dvbbs.Net   Powered By Dvbbs Version <%=fversion%></td>
 	<td style="text-align:right; color:#91B1C6;">
-	<td style="text-align:right; color: #135294; padding-right:20px;"><a href="reloadforumcache.asp" target="frmright">ÇåÀí»º´æ</a> | <a href="../recycle.asp" target="_blank">»ØÊÕÕ¾¹ÜÀí</a> | <a href="update.asp?action=updat&amp;submit=Çå¿ÕÔÚÏßÓÃ»§" target="frmright">Çå¿ÕÔÚÏßÁĞ±í</a></td>
+	<td style="text-align:right; color: #135294; padding-right:20px;"><a href="reloadforumcache.asp" target="frmright">æ¸…ç†ç¼“å­˜</a> | <a href="../recycle.asp" target="_blank">å›æ”¶ç«™ç®¡ç†</a> | <a href="update.asp?action=updat&amp;submit=æ¸…ç©ºåœ¨çº¿ç”¨æˆ·" target="frmright">æ¸…ç©ºåœ¨çº¿åˆ—è¡¨</a></td>
   </tr>
 </table>
 </td>

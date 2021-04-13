@@ -21,7 +21,7 @@ Sub Main()
 <head>
 <meta HTTP-EQUIV=Expires CONTENT=0>
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
-<TITLE>Dvbbs¶à¹¦ÄÜ±à¼­Æ÷</TITLE>
+<TITLE>Dvbbså¤šåŠŸèƒ½ç¼–è¾‘å™¨</TITLE>
 <Link rel="stylesheet" type="text/css" href="images/post/pop.css">
 <style type="text/css">
 				.Disactive { border-right: 1px solid; border-top: 1px solid; border-left: 1px solid; width: 1%; cursor: hand; border-bottom: 1px solid; background-color: #dedbd6; text-align: center; }
@@ -124,7 +124,7 @@ document.write("<TD height=20 colspan="+cols+">") ;
 pagecount('red',24,ImgCount,star)
 }
 
-//·ÖÒ³
+//åˆ†é¡µ
 function pagecount(alertcolor,PageSize,TopicNum,star){
 PageSize=Math.floor(PageSize);
 TopicNum=Math.floor(TopicNum);
@@ -148,18 +148,18 @@ else
 }
 document.write ('<table border="0" cellpadding="0" cellspacing="3" width="100%" >');
 document.write ('<tr><td valign="middle" width="50%">');
-document.write ('×ÜÎÄ¼şÊı: <b>'+TopicNum+' </b>&nbsp;&nbsp;·ÖÒ³£º');
+document.write ('æ€»æ–‡ä»¶æ•°: <b>'+TopicNum+' </b>&nbsp;&nbsp;åˆ†é¡µï¼š');
 if (star==1)
 {
 	document.write ('<font face=webdings color="'+alertcolor+'">9</font>');
 }
 else
 {
-	document.write ('<a href="#" onclick=pageopen('+star+') title="Ê×Ò³"><font face=webdings>9</font></a> ');
+	document.write ('<a href="#" onclick=pageopen('+star+') title="é¦–é¡µ"><font face=webdings>9</font></a> ');
 }
 if (p*10 > 0)
 {
-	document.write ('<a onclick=pageopen('+p*10+') href="#" title="ÉÏÊ®Ò³"><font face=webdings>7</font></a> ');
+	document.write ('<a onclick=pageopen('+p*10+') href="#" title="ä¸Šåé¡µ"><font face=webdings>7</font></a> ');
 }
 document.write ('<b>');
 for (var i=p*10+1;i<p*10+11;i++)
@@ -177,7 +177,7 @@ for (var i=p*10+1;i<p*10+11;i++)
 document.write ('</b>');
 if (i<n)
 {
-	document.write ('<a onclick=pageopen('+i+') href="#" title="ÏÂÊ®Ò³"><font face=webdings>8</font></a>   ');
+	document.write ('<a onclick=pageopen('+i+') href="#" title="ä¸‹åé¡µ"><font face=webdings>8</font></a>   ');
 }
 if (star==n)
 {
@@ -185,7 +185,7 @@ if (star==n)
 }
 else
 {
-	document.write (' <a onclick=pageopen('+n+') href="#" title="Î²Ò³"><font face=webdings>:</font></a>  ');
+	document.write (' <a onclick=pageopen('+n+') href="#" title="å°¾é¡µ"><font face=webdings>:</font></a>  ');
 }
 document.write ('</td></tr></table>');
 }
@@ -204,7 +204,7 @@ document.write("</TR>") ;
 <div id=code></div>
 </td>
 </tr>
-<tr><td align=center height=1><BUTTON onclick=window.close();>¹Ø±Õ</BUTTON></td></tr>
+<tr><td align=center height=1><BUTTON onclick=window.close();>å…³é—­</BUTTON></td></tr>
 </table>
 </body>
 </html>
@@ -222,18 +222,18 @@ Sub Face_Main()
 	Dim y,z,show
 	Dim stats,Forum_userfaceNum,Forum_userface,Forum_facepath
 	Dim i
-	stats="ÂÛÌ³Í·ÏñÁĞ±í"
-	h=6 'Ã¿ĞĞÏÔÊ¾¸öÊı
-	s=30 'Ã¿Ò³ÏÔÊ¾¸öÊı
+	stats="è®ºå›å¤´åƒåˆ—è¡¨"
+	h=6 'æ¯è¡Œæ˜¾ç¤ºä¸ªæ•°
+	s=30 'æ¯é¡µæ˜¾ç¤ºä¸ªæ•°
 
 	Dvbbs.LoadTemplates("usermanager")
-	Dvbbs.Stats="ÓÃ»§Í·ÏñÁĞ±í"
+	Dvbbs.Stats="ç”¨æˆ·å¤´åƒåˆ—è¡¨"
 	Dvbbs.head()
 	'Dvbbs.Head_var 0,0,template.Strings(0),"usermanager.asp"
 	Forum_userface=split(Dvbbs.Forum_userface,"|||")
 	Forum_facepath=Forum_userface(0)
 	Forum_userfacenum=ubound(Forum_userface)
-	M=Forum_userfaceNum-1 'Í·Ïó¸öÊı
+	M=Forum_userfaceNum-1 'å¤´è±¡ä¸ªæ•°
 	Dim TempStr,TempLateStr
 	Dim Facebar,p
 	TempStr=template.Strings(66)

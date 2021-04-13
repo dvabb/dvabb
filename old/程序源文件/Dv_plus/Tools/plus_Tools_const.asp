@@ -9,17 +9,17 @@ Class Plus_Tools_Cls
 	Private Sub Class_Initialize()
 		buyCount = 1
 		ToolsID = CheckNumeric(Request("ToolsID"))
-		If DVbbs.Forum_Setting(90)=0 and IsEmpty(session("flag")) Then ShowErr(1)	'ÖĞĞÄÒÑ¹Ø±Õ
+		If DVbbs.Forum_Setting(90)=0 and IsEmpty(session("flag")) Then ShowErr(1)	'ä¸­å¿ƒå·²å…³é—­
 	End Sub
 
 	Public Sub ChkToolsLogin()
-		If Dvbbs.UserID=0 Then Dvbbs.AddErrCode(6):Dvbbs.Showerr()	'ÅĞ¶ÏÓÃ»§ÊÇ·ñÔÚÏß¡£
+		If Dvbbs.UserID=0 Then Dvbbs.AddErrCode(6):Dvbbs.Showerr()	'åˆ¤æ–­ç”¨æˆ·æ˜¯å¦åœ¨çº¿ã€‚
 		If ToolsID=0 Then ShowErr(3):Exit Sub
-		GetToolsInfo	'ÌáÈ¡µÀ¾ßÉèÖÃĞÅÏ¢
+		GetToolsInfo	'æå–é“å…·è®¾ç½®ä¿¡æ¯
 	End Sub
 
 	'---------------------------------------------------
-	'¶ÁÈ¡µÀ¾ßÏµÍ³ĞÅÏ¢
+	'è¯»å–é“å…·ç³»ç»Ÿä¿¡æ¯
 	'---------------------------------------------------
 	Private Sub GetToolsInfo()
 		Dim Sql,Rs
@@ -29,15 +29,15 @@ Class Plus_Tools_Cls
 		If Rs.Eof Then
 			ShowErr(3):Exit Sub
 		Else
-			Sql = Rs.GetString(,1, "¡ì¡ì¡ì", "", "")
-			Sql = Split(Sql,"¡ì¡ì¡ì")
+			Sql = Rs.GetString(,1, "Â§Â§Â§", "", "")
+			Sql = Split(Sql,"Â§Â§Â§")
 		End If
 		Rs.Close : Set Rs = Nothing
 		ToolsInfo = Sql
 		ToolsSetting = Split(ToolsInfo(16),",")
 	End Sub
 	'---------------------------------------------------
-	'¶ÁÈ¡ÓÃ»§µÀ¾ßĞÅÏ¢
+	'è¯»å–ç”¨æˆ·é“å…·ä¿¡æ¯
 	'---------------------------------------------------
 	Public Sub GetUserToolsInfo(G_USerID,G_ToolsID)
 		Dim Sql,Rs
@@ -50,14 +50,14 @@ Class Plus_Tools_Cls
 		If Rs.Eof Then
 			ShowErr(3):Exit Sub
 		Else
-			Sql = Rs.GetString(,1, "¡ì¡ì¡ì", "", "")
-			Sql = Split(Sql,"¡ì¡ì¡ì")
+			Sql = Rs.GetString(,1, "Â§Â§Â§", "", "")
+			Sql = Split(Sql,"Â§Â§Â§")
 		End If
 		Rs.Close : Set Rs = Nothing
 		UserToolsInfo = Sql
 	End Sub
 	'---------------------------------------------------
-	'¶ÁÈ¡Ä¿±êÓÃ»§ĞÅÏ¢
+	'è¯»å–ç›®æ ‡ç”¨æˆ·ä¿¡æ¯
 	'---------------------------------------------------
 	Public Sub GetToUserInfo(ToUserID)
 		Dim Sql,Rs
@@ -69,14 +69,14 @@ Class Plus_Tools_Cls
 		If Rs.Eof Then
 			ShowErr(11):Exit Sub
 		Else
-			Sql = Rs.GetString(,1, "¡ì¡ì¡ì", "", "")
-			Sql = Split(Sql,"¡ì¡ì¡ì")
+			Sql = Rs.GetString(,1, "Â§Â§Â§", "", "")
+			Sql = Split(Sql,"Â§Â§Â§")
 		End If
 		Rs.Close : Set Rs = Nothing
 		ToUserInfo = Sql
 	End Sub
 	'---------------------------------------------------
-	'¼ì²éÓÃ»§Ê¹ÓÃµÀ¾ßÈ¨ÏŞ
+	'æ£€æŸ¥ç”¨æˆ·ä½¿ç”¨é“å…·æƒé™
 	'---------------------------------------------------
 	Public Sub ChkUseTools()
 		If Not IsArray(ToolsInfo) Then GetToolsInfo
@@ -87,7 +87,7 @@ Class Plus_Tools_Cls
 	End Sub
 
 	'---------------------------------------------------
-	'¼ì²éÄ¿±êÓÃ»§Ê¹ÓÃµÀ¾ßÈ¨ÏŞ
+	'æ£€æŸ¥ç›®æ ‡ç”¨æˆ·ä½¿ç”¨é“å…·æƒé™
 	'---------------------------------------------------
 	Public Sub ChkToUseTools(ToUserID)
 		If Not IsArray(ToUserInfo) Then GetToUserInfo(ToUserID)
@@ -95,7 +95,7 @@ Class Plus_Tools_Cls
 	End Sub
 
 	'---------------------------------------------------
-	'¼ì²éÓÃ»§×éÏŞÖÆÊ¹ÓÃµÀ¾ßÈ¨ÏŞ
+	'æ£€æŸ¥ç”¨æˆ·ç»„é™åˆ¶ä½¿ç”¨é“å…·æƒé™
 	'---------------------------------------------------
 	Public Sub ChkUserGroup()
 		If Not IsArray(ToolsInfo) Then GetToolsInfo
@@ -103,7 +103,7 @@ Class Plus_Tools_Cls
 		If ToolsInfo(11) = "" or Instr(","& ToolsInfo(11) &",",","& Dvbbs.UserGroupID &",") = 0 Then ShowErr(4):Exit Sub
 	End Sub
 	'---------------------------------------------------
-	'¼ì²é°æ¿éÏŞÖÆÊ¹ÓÃµÀ¾ßÈ¨ÏŞ
+	'æ£€æŸ¥ç‰ˆå—é™åˆ¶ä½¿ç”¨é“å…·æƒé™
 	'---------------------------------------------------
 	Public Sub Chkboard()
 		If Not IsArray(ToolsInfo) Then GetToolsInfo
@@ -115,7 +115,7 @@ Class Plus_Tools_Cls
 	End Property
 
 	'---------------------------------------------------
-	'¼ì²éÓÃ»§¹ºÂòµÀ¾ßÈ¨ÏŞ£º bType Êı×ÖĞÍ£¬ÎªÓÃ»§Ñ¡È¡µÄ¹ºÂòÀàĞÍ
+	'æ£€æŸ¥ç”¨æˆ·è´­ä¹°é“å…·æƒé™ï¼š bType æ•°å­—å‹ï¼Œä¸ºç”¨æˆ·é€‰å–çš„è´­ä¹°ç±»å‹
 	'---------------------------------------------------
 	Public Sub ChkbuyTools(byval bType)
 		Dim CanbuyTools
@@ -126,23 +126,23 @@ Class Plus_Tools_Cls
 			bType = Cint(bType)
 		End If
 		If Not IsArray(ToolsInfo) Then GetToolsInfo
-		If Int(ToolsInfo(4)) = 0 OR buyCount>Int(ToolsInfo(4)) OR buyCount = 0 Then ShowErr(8):Exit Sub '¿â´æ²»×ã
+		If Int(ToolsInfo(4)) = 0 OR buyCount>Int(ToolsInfo(4)) OR buyCount = 0 Then ShowErr(8):Exit Sub 'åº“å­˜ä¸è¶³
 		Select Case Cint(ToolsInfo(14))
-			Case 0 'Ö»Ğè½ğ±Ò
+			Case 0 'åªéœ€é‡‘å¸
 				If cCur(Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usermoney").text)>=Int(ToolsInfo(6))*buyCount and bType=0 Then
 					CanbuyTools = True
 				End If
-			Case 1 'Ö»ĞèµãÈ¯
+			Case 1 'åªéœ€ç‚¹åˆ¸
 				If cCur(Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userticket").text)>=Int(ToolsInfo(13))*buyCount and bType=1 Then
 					CanbuyTools = True
 				End If
-			Case 2 '½ğ±Ò+µãÈ¯
+			Case 2 'é‡‘å¸+ç‚¹åˆ¸
 				If cCur(Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usermoney").text)<Int(ToolsInfo(6))*buyCount Or cCur(Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userticket").text)<Int(ToolsInfo(13))*buyCount Then
 					CanbuyTools = False
 				Else
 					CanbuyTools = True
 				End If
-			Case 3 '½ğ±Ò»òµãÈ¯
+			Case 3 'é‡‘å¸æˆ–ç‚¹åˆ¸
 				If bType=0 Then
 					If cCur(Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usermoney").text)>Int(ToolsInfo(6))*buyCount Then CanbuyTools = True
 				ElseIf bType=1 Then
@@ -156,15 +156,15 @@ Class Plus_Tools_Cls
 		If CanbuyTools = False Then ShowErr(7):Exit Sub
 	End Sub
 	'---------------------------------------------------
-	'¹ºÂò·½Ê½
+	'è´­ä¹°æ–¹å¼
 	'---------------------------------------------------
 	Public Property Get buyType(byval bType)
 		Select Case Cint(bType)
-			Case 0 : buyType = "Ö»Ğè½ğ±Ò"
-			Case 1 : buyType = "Ö»ĞèµãÈ¯"
-			Case 2 : buyType = "½ğ±Ò+µãÈ¯"
-			Case 3 : buyType = "½ğ±Ò»òµãÈ¯"
-			Case Else : buyType = "ÔİÍ£¹ºÂò"
+			Case 0 : buyType = "åªéœ€é‡‘å¸"
+			Case 1 : buyType = "åªéœ€ç‚¹åˆ¸"
+			Case 2 : buyType = "é‡‘å¸+ç‚¹åˆ¸"
+			Case 3 : buyType = "é‡‘å¸æˆ–ç‚¹åˆ¸"
+			Case Else : buyType = "æš‚åœè´­ä¹°"
 		End Select
 		buyType = "<font class=redfont>"&buyType&"</font>"
 	End Property
@@ -173,28 +173,28 @@ Class Plus_Tools_Cls
 		If Code<>"" Then Response.redirect "showerr.asp?ErrCodes="& ErrCodes(Code) &"&action=NoHeadErr"
 	End Sub
 	'---------------------------------------------------
-	'´íÎóĞÅÏ¢
+	'é”™è¯¯ä¿¡æ¯
 	'---------------------------------------------------
 	Public Function ErrCodes(byval ErrNum)
 		Select Case ErrNum
-			Case 1 : ErrCodes = "<li>µÀ¾ßÖĞĞÄÒÑ¾­¹Ø±Õ£¡</li>"
-			Case 2 : ErrCodes = "<li>µÀ¾ß½»Ò×ÖĞĞÄÒÑ¾­¹Ø±Õ£¬²»ÄÜ½øĞĞµÀ¾ß½»Ò×£¡</li>"
-			Case 3 : ErrCodes = "<li>¸ÃµÀ¾ß²»´æÔÚ»ò²ÎÊı²»ÕıÈ·£¡</li>"
-			Case 4 : ErrCodes = "<li>ÄúÃ»ÓĞ¹ºÂò»òÊ¹ÓÃ¸ÃµÀ¾ßµÄÈ¨ÏŞ£¡</li>"
-			Case 5 : ErrCodes = "<li>±¾°æ¿é²»ÄÜÊ¹ÓÃ¸ÃµÀ¾ß£¡</li>"
-			Case 6 : ErrCodes = "<li>¸ÃµÀ¾ßÒÑ±»ÏµÍ³½ûÖ¹Ê¹ÓÃ£¡</li>"
-			Case 7 : ErrCodes = "<li>ÄúµÄ½ğ±Ò»òµãÈ¯²»×ã»òÑ¡È¡µÄ¹ºÂò·½Ê½²»ÕıÈ·£¬²»ÄÜ¹ºÂò¸ÃµÀ¾ß£¡</li>"
-			Case 8 : ErrCodes = "<li>¸ÃµÀ¾ßÏµÍ³¿â´æ²»×ã£¬ÔİÍ£¹ºÂò£¡</li>"
-			Case 9 : ErrCodes = "<li>×ªÈÃµÄÊıÁ¿ÒÑ³¬¹ıÁËÄúÓµÓĞµÄµÀ¾ßÊı¾İ»òÃ»ÓĞÌîĞ´ÕıÈ·µÄµÀ¾ßÊıÁ¿£¬³öÊÛÖĞÖ¹£¡</li>"
-			Case 10 : ErrCodes = "<li>ÔİÍ£¹ºÂò£¡</li>"
-			Case 11 : ErrCodes = "<li>µÀ¾ßÊ¹ÓÃÄ¿±êÓÃ»§²»´æÔÚ»ò²ÎÊı²»ÕıÈ·£¡"
-			Case 12 : ErrCodes = "<li>ÓÉÓÚÄãµÄÎÄÕÂÊı»ò½ğÇ®Öµ»ò»ı·ÖÖµ»ò÷ÈÁ¦Öµ²»×ã£¬ËùÒÔÃ»ÓĞÊ¹ÓÃ¸ÃµÀ¾ßµÄÈ¨ÏŞ£¡</li>"
-			Case 13 : ErrCodes = "<li>ÓÉÓÚÊ¹ÓÃµÄÄ¿±êÓÃ»§µÄÎÄÕÂÊı»ò½ğÇ®Öµ»ò»ı·ÖÖµ»ò÷ÈÁ¦Öµ²»×ã£¬ËùÒÔÄã²»ÄÜÊ¹ÓÃ¸ÃµÀ¾ß£¡</li>"
-			Case 14 : ErrCodes = "<li>´Ë²Ù×÷²»ÄÜÔÚÏàÍ¬ÓÃ»§ÃûÖ®¼ä½øĞĞ£¡</li>"
-			Case 15 : ErrCodes = "<li>ºó»ÚÒ©Ö»ÄÜÓÃÔÚ×Ô¼º·¢±íµÄÌû×ÓÉÏ£¡</li>"
-			Case 16 : ErrCodes = "<li>ÄúÉèÖÃµÄ×ªÈÃ½ğ±Ò»òµãÈ¯Êı²»ÕıÈ·£¡</li>"
-			Case 17 : ErrCodes = "<li>ÄúµÄ½ğ±Ò»òµãÈ¯²»×ã£¬²»ÄÜ×ªÈÃ£¡</li>"
-			Case 18 : ErrCodes = "<li>¸ÃÓÃ»§Ã»ÓĞÈÎºÎµÀ¾ß¡£</li>"
+			Case 1 : ErrCodes = "<li>é“å…·ä¸­å¿ƒå·²ç»å…³é—­ï¼</li>"
+			Case 2 : ErrCodes = "<li>é“å…·äº¤æ˜“ä¸­å¿ƒå·²ç»å…³é—­ï¼Œä¸èƒ½è¿›è¡Œé“å…·äº¤æ˜“ï¼</li>"
+			Case 3 : ErrCodes = "<li>è¯¥é“å…·ä¸å­˜åœ¨æˆ–å‚æ•°ä¸æ­£ç¡®ï¼</li>"
+			Case 4 : ErrCodes = "<li>æ‚¨æ²¡æœ‰è´­ä¹°æˆ–ä½¿ç”¨è¯¥é“å…·çš„æƒé™ï¼</li>"
+			Case 5 : ErrCodes = "<li>æœ¬ç‰ˆå—ä¸èƒ½ä½¿ç”¨è¯¥é“å…·ï¼</li>"
+			Case 6 : ErrCodes = "<li>è¯¥é“å…·å·²è¢«ç³»ç»Ÿç¦æ­¢ä½¿ç”¨ï¼</li>"
+			Case 7 : ErrCodes = "<li>æ‚¨çš„é‡‘å¸æˆ–ç‚¹åˆ¸ä¸è¶³æˆ–é€‰å–çš„è´­ä¹°æ–¹å¼ä¸æ­£ç¡®ï¼Œä¸èƒ½è´­ä¹°è¯¥é“å…·ï¼</li>"
+			Case 8 : ErrCodes = "<li>è¯¥é“å…·ç³»ç»Ÿåº“å­˜ä¸è¶³ï¼Œæš‚åœè´­ä¹°ï¼</li>"
+			Case 9 : ErrCodes = "<li>è½¬è®©çš„æ•°é‡å·²è¶…è¿‡äº†æ‚¨æ‹¥æœ‰çš„é“å…·æ•°æ®æˆ–æ²¡æœ‰å¡«å†™æ­£ç¡®çš„é“å…·æ•°é‡ï¼Œå‡ºå”®ä¸­æ­¢ï¼</li>"
+			Case 10 : ErrCodes = "<li>æš‚åœè´­ä¹°ï¼</li>"
+			Case 11 : ErrCodes = "<li>é“å…·ä½¿ç”¨ç›®æ ‡ç”¨æˆ·ä¸å­˜åœ¨æˆ–å‚æ•°ä¸æ­£ç¡®ï¼"
+			Case 12 : ErrCodes = "<li>ç”±äºä½ çš„æ–‡ç« æ•°æˆ–é‡‘é’±å€¼æˆ–ç§¯åˆ†å€¼æˆ–é­…åŠ›å€¼ä¸è¶³ï¼Œæ‰€ä»¥æ²¡æœ‰ä½¿ç”¨è¯¥é“å…·çš„æƒé™ï¼</li>"
+			Case 13 : ErrCodes = "<li>ç”±äºä½¿ç”¨çš„ç›®æ ‡ç”¨æˆ·çš„æ–‡ç« æ•°æˆ–é‡‘é’±å€¼æˆ–ç§¯åˆ†å€¼æˆ–é­…åŠ›å€¼ä¸è¶³ï¼Œæ‰€ä»¥ä½ ä¸èƒ½ä½¿ç”¨è¯¥é“å…·ï¼</li>"
+			Case 14 : ErrCodes = "<li>æ­¤æ“ä½œä¸èƒ½åœ¨ç›¸åŒç”¨æˆ·åä¹‹é—´è¿›è¡Œï¼</li>"
+			Case 15 : ErrCodes = "<li>åæ‚”è¯åªèƒ½ç”¨åœ¨è‡ªå·±å‘è¡¨çš„å¸–å­ä¸Šï¼</li>"
+			Case 16 : ErrCodes = "<li>æ‚¨è®¾ç½®çš„è½¬è®©é‡‘å¸æˆ–ç‚¹åˆ¸æ•°ä¸æ­£ç¡®ï¼</li>"
+			Case 17 : ErrCodes = "<li>æ‚¨çš„é‡‘å¸æˆ–ç‚¹åˆ¸ä¸è¶³ï¼Œä¸èƒ½è½¬è®©ï¼</li>"
+			Case 18 : ErrCodes = "<li>è¯¥ç”¨æˆ·æ²¡æœ‰ä»»ä½•é“å…·ã€‚</li>"
 		End Select
 	End Function
 
@@ -209,7 +209,7 @@ Class Plus_Tools_Cls
 End Class
 
 '--------------------------------------------------------------------------------
-'ÓÃ»§ĞÅÏ¢
+'ç”¨æˆ·ä¿¡æ¯
 '--------------------------------------------------------------------------------
 Sub UserInfo()
 	Dim Sql,Rs,UserToolsCount
@@ -220,49 +220,49 @@ Sub UserInfo()
 %>
 <table border="0" cellpadding="3" cellspacing="1" align="center" class="tableborder1" style="Width:100%">
 	<tr>
-		<th>¸öÈË×ÊÁÏ</th>
+		<th>ä¸ªäººèµ„æ–™</th>
 	</tr>
 	<tr>
 		<td align="center" class="tablebody1">
 			<table border="0" cellpadding="3" cellspacing="1" align="center" style="Width:90%">
 				<tr>
-					<td class="tablebody2" style="text-align:left">½ğ±Ò£º<b>
+					<td class="tablebody2" style="text-align:left">é‡‘å¸ï¼š<b>
 						<font color="<%=Dvbbs.mainsetting(1)%>">
 							<%=Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usermoney").text%>
-						</font></b> ¸ö
+						</font></b> ä¸ª
 					</td>
 				</tr>
 				<tr>
-					<td class="tablebody1" style="text-align:left">µãÈ¯£º<b>
+					<td class="tablebody1" style="text-align:left">ç‚¹åˆ¸ï¼š<b>
 						<font color="<%=Dvbbs.mainsetting(1)%>">
 							<%=Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userticket").text%>
-						</font></b> ÕÅ
+						</font></b> å¼ 
 					</td>
 				</tr>
 				<tr>
-					<td class="tablebody2" style="text-align:left">µÀ¾ß£º
+					<td class="tablebody2" style="text-align:left">é“å…·ï¼š
 						<a href="?action=UserTools_List"><b>
-							<font color="<%=Dvbbs.mainsetting(1)%>"><%=UserToolsCount%></font></b></a> ¸ö
+							<font color="<%=Dvbbs.mainsetting(1)%>"><%=UserToolsCount%></font></b></a> ä¸ª
 					</td>
 				</tr>
 				<tr>
-					<td class="tablebody1" style="text-align:left">½ğÇ®£º<%=Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userwealth").text%>
+					<td class="tablebody1" style="text-align:left">é‡‘é’±ï¼š<%=Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userwealth").text%>
 					</td>
 				</tr>
 				<tr>
-					<td class="tablebody2" style="text-align:left">ÎÄÕÂ£º<%=Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userpost").text%>
+					<td class="tablebody2" style="text-align:left">æ–‡ç« ï¼š<%=Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userpost").text%>
 					</td>
 				</tr>
 				<tr>
-					<td class="tablebody1" style="text-align:left">»ı·Ö£º<%=Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userep").text%>
+					<td class="tablebody1" style="text-align:left">ç§¯åˆ†ï¼š<%=Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userep").text%>
 					</td>
 				</tr>
 				<tr>
-					<td class="tablebody2" style="text-align:left">÷ÈÁ¦£º<%=Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usercp").text%>
+					<td class="tablebody2" style="text-align:left">é­…åŠ›ï¼š<%=Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usercp").text%>
 					</td>
 				</tr>
 				<tr>
-					<td class="tablebody1" style="text-align:left">ÍşÍû£º<%=Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userpower").text%>
+					<td class="tablebody1" style="text-align:left">å¨æœ›ï¼š<%=Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userpower").text%>
 					</td>
 				</tr>
 				<tr><td class="tablebody2"></td></tr>
@@ -277,10 +277,10 @@ Sub Tools_Nav_Link()
 %>
 	<table border="0" width="<%=Dvbbs.mainsetting(0)%>" cellpadding="2" cellspacing="0" align="center">
 		<tr>
-		<th><a href="plus_Tools_Center.asp">ÏµÍ³½»Ò×ÖĞĞÄ</a></th>
-		<th><a href="plus_Tools_Center.asp?action=UserbussTools_List" >ÓÃ»§½»Ò×ÖĞĞÄ</a></th>
-		<th ><a href="?action=UserTools_List">ÎÒµÄµÀ¾ßÏä</a></th>
-		<th><a href="UserPay.asp">¹ºÂòÂÛÌ³µãÈ¯</a></th>
+		<th><a href="plus_Tools_Center.asp">ç³»ç»Ÿäº¤æ˜“ä¸­å¿ƒ</a></th>
+		<th><a href="plus_Tools_Center.asp?action=UserbussTools_List" >ç”¨æˆ·äº¤æ˜“ä¸­å¿ƒ</a></th>
+		<th ><a href="?action=UserTools_List">æˆ‘çš„é“å…·ç®±</a></th>
+		<th><a href="UserPay.asp">è´­ä¹°è®ºå›ç‚¹åˆ¸</a></th>
 		</tr>
 	</table>
 <%

@@ -19,22 +19,22 @@ End Select
 If founderr then call dvbbs_error()
 footer()
 
-'¶¥²¿±êÌâ
+'é¡¶éƒ¨æ ‡é¢˜
 Sub Main_head()
-'(0=ÆäËü,1=Ê¹ÓÃ,2=×ªÈÃ,3=³äÖµ,4=¹ºÂò,5=½±Àø)
+'(0=å…¶å®ƒ,1=ä½¿ç”¨,2=è½¬è®©,3=å……å€¼,4=è´­ä¹°,5=å¥–åŠ±)
 Dim stype
 stype = Request("stype")
 If stype="" Then stype=0
 %>
 <table width="100%" border="0" cellspacing="1" cellpadding="3" align="center">
-<tr><th>µÀ¾ßÖÐÐÄÈÕÖ¾¹ÜÀí</th></tr>
+<tr><th>é“å…·ä¸­å¿ƒæ—¥å¿—ç®¡ç†</th></tr>
 <tr><td class="forumRow" style="line-height : 18px ;">
-<B>ä¯ÀÀ</B>£º<a href="MoneyLog.asp">ËùÓÐÈÕÖ¾</a> | <a href="MoneyLog.asp?stype=4"><%If stype=4 Then Response.Write "<font color=red>"%>¹ºÂòÈÕÖ¾<%If stype=4 Then Response.Write "</font>"%></a> | <a href="MoneyLog.asp?stype=2"><%If stype=2 Then Response.Write "<font color=red>"%>×ªÈÃÈÕÖ¾<%If stype=2 Then Response.Write "</font>"%></a> | <a href="MoneyLog.asp?stype=5"><%If stype=5 Then Response.Write "<font color=red>"%>½±ÀøÈÕÖ¾<%If stype=5 Then Response.Write "</font>"%></a> | <a href="MoneyLog.asp?stype=6"><%If stype=6 Then Response.Write "<font color=red>"%>VIP½»Ò×ÈÕÖ¾<%If stype=6 Then Response.Write "</font>"%></a> | <a href="MoneyLog.asp?stype=1"><%If stype=1 Then Response.Write "<font color=red>"%>Ê¹ÓÃÈÕÖ¾<%If stype=1 Then Response.Write "</font>"%></a> | <a href="MoneyLog.asp?stype=-1"><%If stype="-1" Then Response.Write "<font color=red>"%>ºóÌ¨²Ù×÷ÈÕÖ¾<%If stype="-1" Then Response.Write "</font>"%></a><BR>
+<B>æµè§ˆ</B>ï¼š<a href="MoneyLog.asp">æ‰€æœ‰æ—¥å¿—</a> | <a href="MoneyLog.asp?stype=4"><%If stype=4 Then Response.Write "<font color=red>"%>è´­ä¹°æ—¥å¿—<%If stype=4 Then Response.Write "</font>"%></a> | <a href="MoneyLog.asp?stype=2"><%If stype=2 Then Response.Write "<font color=red>"%>è½¬è®©æ—¥å¿—<%If stype=2 Then Response.Write "</font>"%></a> | <a href="MoneyLog.asp?stype=5"><%If stype=5 Then Response.Write "<font color=red>"%>å¥–åŠ±æ—¥å¿—<%If stype=5 Then Response.Write "</font>"%></a> | <a href="MoneyLog.asp?stype=6"><%If stype=6 Then Response.Write "<font color=red>"%>VIPäº¤æ˜“æ—¥å¿—<%If stype=6 Then Response.Write "</font>"%></a> | <a href="MoneyLog.asp?stype=1"><%If stype=1 Then Response.Write "<font color=red>"%>ä½¿ç”¨æ—¥å¿—<%If stype=1 Then Response.Write "</font>"%></a> | <a href="MoneyLog.asp?stype=-1"><%If stype="-1" Then Response.Write "<font color=red>"%>åŽå°æ“ä½œæ—¥å¿—<%If stype="-1" Then Response.Write "</font>"%></a><BR>
 </td>
 </tr>
 <FORM METHOD=POST ACTION="MoneyLog.asp">
 <input type=hidden name=stype value="<%=stype%>">
-<tr><td class="forumRow">¹Ø¼ü×Ö£º<INPUT TYPE="text" NAME="Keyword" value="<%=Request("Keyword")%>"> <INPUT TYPE="submit" class="button" value="²éÕÒÊý¾Ý"></td></tr>
+<tr><td class="forumRow">å…³é”®å­—ï¼š<INPUT TYPE="text" NAME="Keyword" value="<%=Request("Keyword")%>"> <INPUT TYPE="submit" class="button" value="æŸ¥æ‰¾æ•°æ®"></td></tr>
 </FORM>
 </table><br>
 <%
@@ -44,7 +44,7 @@ Sub Log_List()
 	Dim LogType,Stype,StypeStr,Keyword
 	Dim Rs,Sql,i
 	Dim Page,MaxRows,Endpage,CountNum,PageSearch,SqlString
-	LogType = "ÆäËü|Ê¹ÓÃ|×ªÈÃ|³äÖµ|¹ºÂò|½±Àø|VIP½»Ò×"
+	LogType = "å…¶å®ƒ|ä½¿ç”¨|è½¬è®©|å……å€¼|è´­ä¹°|å¥–åŠ±|VIPäº¤æ˜“"
 	LogType = Split(LogType,"|")
 	PageSearch = ""
 	Endpage = 0
@@ -63,14 +63,14 @@ Sub Log_List()
 <table width="100%" border="0" cellspacing="1" cellpadding="3" align="center">
 <FORM METHOD=POST ACTION="?action=alldel">
 <tr>
-<th width="8%">ÀàÐÍ</th>
-<th width="7%">ÊýÁ¿</th>
-<th width="7%">½ð±Ò</th>
-<th width="7%">µãÈ¯</th>
-<th width="*">ËµÃ÷</th>
-<th width="10%">ÓÃ»§</th>
+<th width="8%">ç±»åž‹</th>
+<th width="7%">æ•°é‡</th>
+<th width="7%">é‡‘å¸</th>
+<th width="7%">ç‚¹åˆ¸</th>
+<th width="*">è¯´æ˜Ž</th>
+<th width="10%">ç”¨æˆ·</th>
 <th width="10%">IP</th>
-<th width="9%">Ê±¼ä</th>
+<th width="9%">æ—¶é—´</th>
 </tr>
 <%
 	Select Case Stype
@@ -125,7 +125,7 @@ Sub Log_List()
 		End if
 		SQL=Rs.GetRows(MaxRows)
 	Else
-		Response.Write "<tr><td class=""forumRow"" colspan=""8"" align=center>»¹Ã»ÓÐÈÕÖ¾¼ÇÂ¼£¡</td></tr></table>"
+		Response.Write "<tr><td class=""forumRow"" colspan=""8"" align=center>è¿˜æ²¡æœ‰æ—¥å¿—è®°å½•ï¼</td></tr></table>"
 		Exit Sub
 	End If
 	Rs.close:Set Rs = Nothing
@@ -138,7 +138,7 @@ Sub Log_List()
 <td class="forumRow" align=center><%=SQL(3,i)%></td>
 <td class="forumRow" align=center><%=SQL(4,i)%></td>
 <td class="forumRow"><%=Replace(SQL(11,i),"dispbbs.asp?","../dispbbs.asp?skin=1&amp;")%></td>
-<td class="forumRow" align=center><a href="../dispuser.asp?id=<%=SQL(6,i)%>" target="_blank" title="²é¿´ÓÃ»§×ÊÁÏ£¬Ê£Óà£¨½ð±Ò|µãÈ¯£©£º<%=SQL(12,i)%>"><%=SQL(5,i)%></a><br><%=SQL(12,i)%></td>
+<td class="forumRow" align=center><a href="../dispuser.asp?id=<%=SQL(6,i)%>" target="_blank" title="æŸ¥çœ‹ç”¨æˆ·èµ„æ–™ï¼Œå‰©ä½™ï¼ˆé‡‘å¸|ç‚¹åˆ¸ï¼‰ï¼š<%=SQL(12,i)%>"><%=SQL(5,i)%></a><br><%=SQL(12,i)%></td>
 <td class="forumRow" align=center><%=SQL(7,i)%></td>
 <td class="forumRow" align=center><%=FormatDateTime(SQL(8,i),2)%></td>
 </tr>
@@ -146,11 +146,11 @@ Sub Log_List()
 	Next
 %>
 <tr><td class="forumRow" colspan="8" align=left style="line-height : 18px ;">
-²Ù×÷£º<input name=chkall type=checkbox class="checkbox" value=on onclick=CheckAll(this.form)>
-È«Ñ¡
-<input type=submit class="button" name=submit value="ÅúÁ¿É¾³ý">
-<BR><font color=blue>ÅúÁ¿É¾³ý²Ù×÷£¬ÏµÍ³»á×Ô¶¯±£Áô×îºó10ÌìµÄÈÕÖ¾ÐÅÏ¢£¬²Ù×÷²»¿É»Ö¸´£¬ÇëÉ÷ÖØ£º</font><BR>
-<B>Çå¿Õ</B>£º<a href="MoneyLog.asp?action=del" onclick="{if(confirm('É¾³ý²Ù×÷½«²»¿É»Ö¸´£¬È·¶¨Âð?')){return true;}return false;}">ËùÓÐÈÕÖ¾</a> | <a href="MoneyLog.asp?action=del&dtype=1" onclick="{if(confirm('É¾³ý²Ù×÷½«²»¿É»Ö¸´£¬È·¶¨Âð?')){return true;}return false;}">Ê¹ÓÃÈÕÖ¾</a> | <a href="MoneyLog.asp?action=del&dtype=2" onclick="{if(confirm('É¾³ý²Ù×÷½«²»¿É»Ö¸´£¬È·¶¨Âð?')){return true;}return false;}">×ªÈÃÈÕÖ¾</a> | <a href="MoneyLog.asp?action=del&dtype=5" onclick="{if(confirm('É¾³ý²Ù×÷½«²»¿É»Ö¸´£¬È·¶¨Âð?')){return true;}return false;}">½±ÀøÈÕÖ¾</a> | <a href="MoneyLog.asp?action=del&dtype=4" onclick="{if(confirm('É¾³ý²Ù×÷½«²»¿É»Ö¸´£¬È·¶¨Âð?')){return true;}return false;}">¹ºÂòÈÕÖ¾</a> | <a href="MoneyLog.asp?action=del&dtype=3" onclick="{if(confirm('É¾³ý²Ù×÷½«²»¿É»Ö¸´£¬È·¶¨Âð?')){return true;}return false;}">³äÖµÈÕÖ¾</a> | <a href="MoneyLog.asp?action=del&dtype=-1" onclick="{if(confirm('É¾³ý²Ù×÷½«²»¿É»Ö¸´£¬È·¶¨Âð?')){return true;}return false;}">ºóÌ¨²Ù×÷ÈÕÖ¾</a>
+æ“ä½œï¼š<input name=chkall type=checkbox class="checkbox" value=on onclick=CheckAll(this.form)>
+å…¨é€‰
+<input type=submit class="button" name=submit value="æ‰¹é‡åˆ é™¤">
+<BR><font color=blue>æ‰¹é‡åˆ é™¤æ“ä½œï¼Œç³»ç»Ÿä¼šè‡ªåŠ¨ä¿ç•™æœ€åŽ10å¤©çš„æ—¥å¿—ä¿¡æ¯ï¼Œæ“ä½œä¸å¯æ¢å¤ï¼Œè¯·æ…Žé‡ï¼š</font><BR>
+<B>æ¸…ç©º</B>ï¼š<a href="MoneyLog.asp?action=del" onclick="{if(confirm('åˆ é™¤æ“ä½œå°†ä¸å¯æ¢å¤ï¼Œç¡®å®šå—?')){return true;}return false;}">æ‰€æœ‰æ—¥å¿—</a> | <a href="MoneyLog.asp?action=del&dtype=1" onclick="{if(confirm('åˆ é™¤æ“ä½œå°†ä¸å¯æ¢å¤ï¼Œç¡®å®šå—?')){return true;}return false;}">ä½¿ç”¨æ—¥å¿—</a> | <a href="MoneyLog.asp?action=del&dtype=2" onclick="{if(confirm('åˆ é™¤æ“ä½œå°†ä¸å¯æ¢å¤ï¼Œç¡®å®šå—?')){return true;}return false;}">è½¬è®©æ—¥å¿—</a> | <a href="MoneyLog.asp?action=del&dtype=5" onclick="{if(confirm('åˆ é™¤æ“ä½œå°†ä¸å¯æ¢å¤ï¼Œç¡®å®šå—?')){return true;}return false;}">å¥–åŠ±æ—¥å¿—</a> | <a href="MoneyLog.asp?action=del&dtype=4" onclick="{if(confirm('åˆ é™¤æ“ä½œå°†ä¸å¯æ¢å¤ï¼Œç¡®å®šå—?')){return true;}return false;}">è´­ä¹°æ—¥å¿—</a> | <a href="MoneyLog.asp?action=del&dtype=3" onclick="{if(confirm('åˆ é™¤æ“ä½œå°†ä¸å¯æ¢å¤ï¼Œç¡®å®šå—?')){return true;}return false;}">å……å€¼æ—¥å¿—</a> | <a href="MoneyLog.asp?action=del&dtype=-1" onclick="{if(confirm('åˆ é™¤æ“ä½œå°†ä¸å¯æ¢å¤ï¼Œç¡®å®šå—?')){return true;}return false;}">åŽå°æ“ä½œæ—¥å¿—</a>
 </td></tr>
 </FORM>
 <%
@@ -189,7 +189,7 @@ Sub Del()
 		SQL = "Delete From Dv_MoneyLog Where DateDiff("&SqlDate&",Log_Time,"&SqlNowString&")>10"
 	End Select
 	Dvbbs.Plus_Execute(SQL)
-	Dv_Suc("É¾³ýÏµÍ³µÀ¾ßÈÕÖ¾³É¹¦£¡")
+	Dv_Suc("åˆ é™¤ç³»ç»Ÿé“å…·æ—¥å¿—æˆåŠŸï¼")
 	Footer()
 	Response.End
 End Sub
@@ -199,12 +199,12 @@ Sub AllDel()
 	Dim SqlDate,sql
 	IDStr = Request("logid")
 	If IDStr="" Then
-		Errmsg=ErrMsg + "<BR><li>·Ç·¨µÄ²ÎÊý¡£"
+		Errmsg=ErrMsg + "<BR><li>éžæ³•çš„å‚æ•°ã€‚"
 		founderr=True
 	Else
 		IDStr_a = Replace(Replace(IDStr," ",""),",","")
 		If Not IsNumeric(IDStr_a) Then
-			Errmsg=ErrMsg + "<BR><li>·Ç·¨µÄ²ÎÊý¡£"
+			Errmsg=ErrMsg + "<BR><li>éžæ³•çš„å‚æ•°ã€‚"
 			founderr=True
 		End If
 	End If
@@ -216,7 +216,7 @@ Sub AllDel()
 	End If
 	SQL = "Delete From Dv_MoneyLog Where Log_ID In ("&IDStr&") And DateDiff("&SqlDate&",Log_Time,"&SqlNowString&")>10"
 	Dvbbs.Plus_Execute(SQL)
-	Dv_Suc("É¾³ýÏµÍ³µÀ¾ßÈÕÖ¾³É¹¦£¡")
+	Dv_Suc("åˆ é™¤ç³»ç»Ÿé“å…·æ—¥å¿—æˆåŠŸï¼")
 	Footer()
 	Response.End
 End Sub

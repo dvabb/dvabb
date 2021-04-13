@@ -3,11 +3,11 @@
 <!--#include file="inc/chan_const.asp"-->
 <!--#include file="inc/md5.asp"-->
 <%
-Dvbbs.stats="¹ºÂòÂÛÌ³µãÈ¯"
+Dvbbs.stats="è´­ä¹°è®ºå›ç‚¹åˆ¸"
 Dvbbs.LoadTemplates("")
 Dvbbs.nav()
 
-Dvbbs.Head_var 0,0,"ÓÃ»§¿ØÖÆÃæ°å","usermanager.asp"
+Dvbbs.Head_var 0,0,"ç”¨æˆ·æ§åˆ¶é¢æ¿","usermanager.asp"
 
 If Request("raction")="alipay_return" Then
 	AliPay_Return()
@@ -62,20 +62,20 @@ Sub SmsPayMain()
 
 	If Dvbbs.Forum_ChanSetting(3)="0" Then
 %>
-	<tr><td height=23 class="tablebody2"><B>ÍøÂçÒøĞĞÖ§¸¶¹ºÂòµãÈ¯</B>£ºÊ¹ÓÃÇ°Çëµ½ <a href="https://www.alipay.com/" target=_blank><font color=red>°¢Àï°Í°Í.Ö§¸¶±¦</font></a> ÉêÇëÒ»¸öÖ§¸¶±¦ÕËºÅ£¬Ö§¸¶¹ı³Ì²»ÊÕÈ¡ÊÖĞø·Ñ</td>
+	<tr><td height=23 class="tablebody2"><B>ç½‘ç»œé“¶è¡Œæ”¯ä»˜è´­ä¹°ç‚¹åˆ¸</B>ï¼šä½¿ç”¨å‰è¯·åˆ° <a href="https://www.alipay.com/" target=_blank><font color=red>é˜¿é‡Œå·´å·´.æ”¯ä»˜å®</font></a> ç”³è¯·ä¸€ä¸ªæ”¯ä»˜å®è´¦å·ï¼Œæ”¯ä»˜è¿‡ç¨‹ä¸æ”¶å–æ‰‹ç»­è´¹</td>
 	</tr>
 	<FORM TARGET="_blank" METHOD=POST ACTION="?action=alipay">
 	<tr><td height=23 class="tablebody1">
-	ÇëÊäÈëÒªÖ§¸¶µÄ½ğ¶î£º
+	è¯·è¾“å…¥è¦æ”¯ä»˜çš„é‡‘é¢ï¼š
 	<input type=text size=5 name="paymoney" value="1" onkeyup="ShowChange(this.value,this,'PAY_M',1)">
-	»ñÈ¡<FONT ID="PAY_M" CLASS="REDFONT"><%=CCur(Dvbbs.Forum_ChanSetting(14))*1%></FONT>ÕÅÂÛÌ³µãÈ¯¡£
-	£¨×îµÍ 1 ÔªÈËÃñ±Ò £©
-	<input type=submit name=submit value="ÍøÉÏÖ§¸¶">
+	è·å–<FONT ID="PAY_M" CLASS="REDFONT"><%=CCur(Dvbbs.Forum_ChanSetting(14))*1%></FONT>å¼ è®ºå›ç‚¹åˆ¸ã€‚
+	ï¼ˆæœ€ä½ 1 å…ƒäººæ°‘å¸ ï¼‰
+	<input type=submit name=submit value="ç½‘ä¸Šæ”¯ä»˜">
 	</td>
 	</tr>
 	</FORM>
 	<tr><td height=24 class="tablebody1">
-	<B>Äú³É¹¦Ö§¸¶ºóÓĞÏµÍ³¿ÉÄÜĞèÒª¼¸·ÖÖÓµÄÊ±¼äµÈ´ıÖ§¸¶½á¹û£¬Òò´Ë¿ÉÄÜÎŞ·¨Ë²¼äÈëÕË£¬Ö§¸¶³É¹¦ºóÇëË¢ĞÂ´ËÒ³Ãæ²¢²é¿´µãÈ¯ÊıÊÇ·ñÕıÈ·¡£</B>
+	<B>æ‚¨æˆåŠŸæ”¯ä»˜åæœ‰ç³»ç»Ÿå¯èƒ½éœ€è¦å‡ åˆ†é’Ÿçš„æ—¶é—´ç­‰å¾…æ”¯ä»˜ç»“æœï¼Œå› æ­¤å¯èƒ½æ— æ³•ç¬é—´å…¥è´¦ï¼Œæ”¯ä»˜æˆåŠŸåè¯·åˆ·æ–°æ­¤é¡µé¢å¹¶æŸ¥çœ‹ç‚¹åˆ¸æ•°æ˜¯å¦æ­£ç¡®ã€‚</B>
 	</td>
 	</tr>
 	<tr><td height=24 class="tablebody1">
@@ -83,12 +83,12 @@ Sub SmsPayMain()
 	</td>
 	</tr>
 	<%End If%>
-	<tr><td height=23 class="tablebody2" style="line-height: 18px"><B>µãÈ¯Ê¹ÓÃĞ¡ÌùÊ¿</B>£º<BR>
-	¢Ù ÂÛÌ³µãÈ¯¿ÉÓÃÓÚ¹ºÂòÂÛÌ³ÖĞ³öÊÛµÄ¸÷ÖÖÈ¤Î¶ĞÔµÀ¾ß<BR>
-	¢Ú ÂÛÌ³µãÈ¯ºÍ½ğ±Ò¿ÉÓÃÓÚ²ÎÓëÂÛÌ³ÖĞÒ»Ğ©ĞèÒªµãÈ¯¹ºÂòÌùµÄä¯ÀÀ¡¢µ±ÄúµÄÌû×ÓÓĞÈËÕıÈ·»Ø´ğºóÔùÓë»Ø¸´ÓÃ»§µÈ²Ù×÷<BR>
-	¢Û ¸÷ÖÖÂÛÌ³µÀ¾ßÓĞÆä²»Í¬µÄ¹¦ÄÜ£¬±ÈÈç»úÓö¿¨¿ÉÈÃÄ¿±êÓÃ»§£¨Ò²¿ÉÊÇÄú×Ô¼º£©Ëæ»ú³öÏÖÒ»Ğ©»úÓö£¨ÈçÔö¼õ½ğÇ®»ñ¶ªÊ§µÀ¾ßµÈ£©<BR>
-	¢Ü ÂÛÌ³µãÈ¯¿ÉÔÚÂÛÌ³ÓÃ»§ÖĞÏà»¥×ªÈÃ£¬Ç°ÌáÊÇÄ¿±êÓÃ»§±ØĞë·ûºÏÂÛÌ³ÉèÖÃÒÔ¼°¹ºÂòÁËµÀ¾ß×ªÈÃÆ÷<BR>
-	¢İ ÏµÍ³ÖĞ²¿·ÖÌØÊâµÄµÀ¾ß³öÓÚÏŞÖÆÊ¹ÓÃµÄÄ¿µÄ£¬ÊÇĞèÒªÓÃ»§Í¬Ê±ÓµÓĞ½ğ±ÒºÍµãÈ¯²ÅÄÜ¹ºÂòµÄ£¬ÓĞ²¿·ÖµÀ¾ßÖ»ÓĞÔÚÌØÊâµÄÇé¿öÏÂ²Å»á³öÏÖ£¬Õâ²¿·ÖµÀ¾ßÊÇÓÃµãÈ¯»ò½ğ±Ò¶¼²»ÄÜ¹ºÂòµ½µÄ¡£</td>
+	<tr><td height=23 class="tablebody2" style="line-height: 18px"><B>ç‚¹åˆ¸ä½¿ç”¨å°è´´å£«</B>ï¼š<BR>
+	â‘  è®ºå›ç‚¹åˆ¸å¯ç”¨äºè´­ä¹°è®ºå›ä¸­å‡ºå”®çš„å„ç§è¶£å‘³æ€§é“å…·<BR>
+	â‘¡ è®ºå›ç‚¹åˆ¸å’Œé‡‘å¸å¯ç”¨äºå‚ä¸è®ºå›ä¸­ä¸€äº›éœ€è¦ç‚¹åˆ¸è´­ä¹°è´´çš„æµè§ˆã€å½“æ‚¨çš„å¸–å­æœ‰äººæ­£ç¡®å›ç­”åèµ ä¸å›å¤ç”¨æˆ·ç­‰æ“ä½œ<BR>
+	â‘¢ å„ç§è®ºå›é“å…·æœ‰å…¶ä¸åŒçš„åŠŸèƒ½ï¼Œæ¯”å¦‚æœºé‡å¡å¯è®©ç›®æ ‡ç”¨æˆ·ï¼ˆä¹Ÿå¯æ˜¯æ‚¨è‡ªå·±ï¼‰éšæœºå‡ºç°ä¸€äº›æœºé‡ï¼ˆå¦‚å¢å‡é‡‘é’±è·ä¸¢å¤±é“å…·ç­‰ï¼‰<BR>
+	â‘£ è®ºå›ç‚¹åˆ¸å¯åœ¨è®ºå›ç”¨æˆ·ä¸­ç›¸äº’è½¬è®©ï¼Œå‰ææ˜¯ç›®æ ‡ç”¨æˆ·å¿…é¡»ç¬¦åˆè®ºå›è®¾ç½®ä»¥åŠè´­ä¹°äº†é“å…·è½¬è®©å™¨<BR>
+	â‘¤ ç³»ç»Ÿä¸­éƒ¨åˆ†ç‰¹æ®Šçš„é“å…·å‡ºäºé™åˆ¶ä½¿ç”¨çš„ç›®çš„ï¼Œæ˜¯éœ€è¦ç”¨æˆ·åŒæ—¶æ‹¥æœ‰é‡‘å¸å’Œç‚¹åˆ¸æ‰èƒ½è´­ä¹°çš„ï¼Œæœ‰éƒ¨åˆ†é“å…·åªæœ‰åœ¨ç‰¹æ®Šçš„æƒ…å†µä¸‹æ‰ä¼šå‡ºç°ï¼Œè¿™éƒ¨åˆ†é“å…·æ˜¯ç”¨ç‚¹åˆ¸æˆ–é‡‘å¸éƒ½ä¸èƒ½è´­ä¹°åˆ°çš„ã€‚</td>
 	</tr>
 </table>
 
@@ -103,7 +103,7 @@ function getinfo(v){
 function ShowChange(Ivalue,Iname,ShowID,Min){
 	if(isNaN(Ivalue)){
 		Iname.value = Min;
-		alert('ÇëÌîĞ´ÕıÈ·µÄÊıÖµ£¡');
+		alert('è¯·å¡«å†™æ­£ç¡®çš„æ•°å€¼ï¼');
 	}
 	else{
 		Ivalue = parseFloat(Ivalue);
@@ -111,7 +111,7 @@ function ShowChange(Ivalue,Iname,ShowID,Min){
 		if (Ivalue<Min){
 			Iname.value = Min;
 			document.getElementById(ShowID).innerHTML = Min;
-			alert('ÌîĞ´ÊıÖµµÍÓÚÏŞÖÆ£¡');
+			alert('å¡«å†™æ•°å€¼ä½äºé™åˆ¶ï¼');
 		}
 		else{
 			document.getElementById(ShowID).innerHTML = (Ivalue * ProductMoney).toFixed(1);
@@ -127,17 +127,17 @@ Sub AliPay()
 	Dim PayMoney
 	PayMoney = Request("paymoney")
 	If PayMoney = "" Or Not IsNumeric(PayMoney) Then
-		Response.redirect "showerr.asp?ErrCodes=<li>´íÎó£¬·Ç·¨µÄ¸¶¿î²ÎÊı¡£&action=OtherErr"
+		Response.redirect "showerr.asp?ErrCodes=<li>é”™è¯¯ï¼Œéæ³•çš„ä»˜æ¬¾å‚æ•°ã€‚&action=OtherErr"
 		Exit Sub
 	End If
 	If PayMoney < 1 Then
-		Response.redirect "showerr.asp?ErrCodes=<li>´íÎó£¬Ã¿±Ê¶©µ¥½ğ¶î×îĞ¡Îª <B>1</B> ÔªÈËÃñ±Ò¡£&action=iOtherErr"
+		Response.redirect "showerr.asp?ErrCodes=<li>é”™è¯¯ï¼Œæ¯ç¬”è®¢å•é‡‘é¢æœ€å°ä¸º <B>1</B> å…ƒäººæ°‘å¸ã€‚&action=iOtherErr"
 		Exit Sub
 	End If
 	PayMoney = FormatNumber(PayMoney,2,True,False,False)
 
-	'Éú³É¶©µ¥ºÅ:01+yyyyMMddhhmmss+ÁùÎ»Ëæ»úÊı
-	'Éú³ÉÈÕÆÚ×Ö´®
+	'ç”Ÿæˆè®¢å•å·:01+yyyyMMddhhmmss+å…­ä½éšæœºæ•°
+	'ç”Ÿæˆæ—¥æœŸå­—ä¸²
 	Dim NowTimes,PayMonth,PayDay,PayHour,PayMin,PaySe,PayDayStr,RandomizeStr,num1
 	Dim PayCode,PayCodeEnCode
 	NowTimes = Now()
@@ -152,7 +152,7 @@ Sub AliPay()
 	PaySe = Second(NowTimes)
 	If Len(PaySe)=1 Then PaySe = "0" & PaySe
 	PayDayStr = Year(NowTimes) & PayMonth & PayDay & PayHour & PayMin & PaySe
-	'Éú³ÉËæ»ú×Ö´®
+	'ç”Ÿæˆéšæœºå­—ä¸²
 	Randomize
 	Do While Len(RandomizeStr)<5
 		num1 = CStr(Chr((57-48)*rnd+48))
@@ -171,13 +171,13 @@ Sub AliPay()
 	EnCodeStr="body=Forum points Certificates&notify_url="&Dvbbs_PayTo_Url&"newpay.asp?action=newpay&out_trade_no="&PayCode&"&partner=2088002048522272&payment_type=1&return_url="&Dvbbs_PayTo_Url&"newpay.asp?action=newpay&seller_email="&Lcase(Dvbbs.Forum_ChanSetting(4))&"&service=create_direct_pay_by_user&show_url="&Dvbbs.Get_ScriptNameUrl&"&subject=Forum points Certificates&total_fee="&PayMoney&Dvbbs.Forum_ChanSetting(6)
 	EnCodeStr = MD5(EnCodeStr,32)
 
-	'½øÈëÂÛÌ³¶©µ¥¿â
+	'è¿›å…¥è®ºå›è®¢å•åº“
 	Dvbbs.Execute("InSert Into Dv_ChanOrders (O_type,O_Username,O_isApply,O_issuc,O_PayMoney,O_Paycode,O_AddTime) Values (1,'"&Dvbbs.MemberName&"',0,0,"&PayMoney&",'"&PayCode&"','"&NowTimes&"')")
 
-	'Ìá½»µ½¶¯Íø¹Ù·½Ö÷·şÎñÆ÷
+	'æäº¤åˆ°åŠ¨ç½‘å®˜æ–¹ä¸»æœåŠ¡å™¨
 	If Dvbbs.Forum_ChanSetting(5) <> "0" Then
 %>
-ÕıÔÚÌá½»Êı¾İ£¬Èç¹ûÄúµÄÂÛÌ³µØÖ·ÉèÖÃÁËURL×ª·¢£¬½«²»ÄÜÕıÈ·´«ÊäĞÅÏ¢£¬ÇëÉÔºó¡­¡­
+æ­£åœ¨æäº¤æ•°æ®ï¼Œå¦‚æœæ‚¨çš„è®ºå›åœ°å€è®¾ç½®äº†URLè½¬å‘ï¼Œå°†ä¸èƒ½æ­£ç¡®ä¼ è¾“ä¿¡æ¯ï¼Œè¯·ç¨åâ€¦â€¦
 <form name="redir" action="<%=Dvbbs_Server_Url%>alipay_t1.aspx?action=pay" method="post">
 <INPUT type=hidden name="username" value="<%=Dvbbs.MemberName%>">
 <INPUT type=hidden name="paycode" value="<%=PayCode%>">
@@ -192,7 +192,7 @@ redir.submit();
 <%
 	Else
 %>
-ÕıÔÚÌá½»Êı¾İ£¬Èç¹ûÄúµÄÂÛÌ³µØÖ·ÉèÖÃÁËURL×ª·¢£¬½«²»ÄÜÕıÈ·´«ÊäĞÅÏ¢£¬ÇëÉÔºó¡­¡­
+æ­£åœ¨æäº¤æ•°æ®ï¼Œå¦‚æœæ‚¨çš„è®ºå›åœ°å€è®¾ç½®äº†URLè½¬å‘ï¼Œå°†ä¸èƒ½æ­£ç¡®ä¼ è¾“ä¿¡æ¯ï¼Œè¯·ç¨åâ€¦â€¦
 <form name="redir" action="<%=Dvbbs_PayTo_Url%>newpay.asp?action=pay" method="post">
 <INPUT type=hidden name="buyer" value="<%=Dvbbs.MemberName%>">
 <INPUT type=hidden name="returnurl" value="<%=Dvbbs.Get_ScriptNameUrl%>">
@@ -210,7 +210,7 @@ redir.submit();
 	End If
 End Sub
 
-'ÔÚÏßÖ§¸¶·µ»Ø½á¹û´¦Àí£¬²»µÇÂ½Ò²¿ÉÖ´ĞĞ
+'åœ¨çº¿æ”¯ä»˜è¿”å›ç»“æœå¤„ç†ï¼Œä¸ç™»é™†ä¹Ÿå¯æ‰§è¡Œ
 Sub AliPay_Return()
 	If Dvbbs.Forum_ChanSetting(5) <> "0" Then
 		AliPay_Return_Old()
@@ -241,24 +241,24 @@ Sub AliPay_Return()
 End Sub
 
 Sub AliPay_Return_Old()		
-	'µÃµ½ºÍÅĞ¶Ï·µ»Ø²ÎÊı
+	'å¾—åˆ°å’Œåˆ¤æ–­è¿”å›å‚æ•°
 	Dim PayCode,SignStr,Success,UserInMoney
 	PayCode = Replace(Request("out_trade_no"),"'","")
 	Success = Request("is_success")
 	If PayCode = "" Or Success = "" Then
-		Response.redirect "showerr.asp?ErrCodes=<li>´íÎó£¬·Ç·¨µÄ¶©µ¥²ÎÊı¡£&action=OtherErr"
+		Response.redirect "showerr.asp?ErrCodes=<li>é”™è¯¯ï¼Œéæ³•çš„è®¢å•å‚æ•°ã€‚&action=OtherErr"
 		Exit Sub
 	End If
 	If Success<>"T" Then
-		Response.redirect "showerr.asp?ErrCodes=<li>¶©µ¥Ö§¸¶Ê§°Ü£¬ÇëÏêÏ¸¼ì²éÄúµÄÖ§¸¶ĞÅÏ¢£¬<a href=""UserPay.asp"">ÖØĞÂ½øÈëÖ§¸¶Ò³Ãæ</a>¡£&action=iOtherErr"
+		Response.redirect "showerr.asp?ErrCodes=<li>è®¢å•æ”¯ä»˜å¤±è´¥ï¼Œè¯·è¯¦ç»†æ£€æŸ¥æ‚¨çš„æ”¯ä»˜ä¿¡æ¯ï¼Œ<a href=""UserPay.asp"">é‡æ–°è¿›å…¥æ”¯ä»˜é¡µé¢</a>ã€‚&action=iOtherErr"
 		Exit Sub
 	End If
 
-	'ÑéÖ¤¶©µ¥ĞÅÏ¢
+	'éªŒè¯è®¢å•ä¿¡æ¯
 	Dim Rs
 	Set Rs = Dvbbs.Execute("Select * From [Dv_ChanOrders] Where O_PayCode='"&PayCode&"'")
 	If Rs.Eof And Rs.Bof Then
-		Response.redirect "showerr.asp?ErrCodes=<li>´íÎó£¬ÕÒ²»µ½¸Ã¶©µ¥ĞÅÏ¢»ò¸Ã¶©µ¥ÒÑÖ§¸¶³É¹¦¡£&action=OtherErr"
+		Response.redirect "showerr.asp?ErrCodes=<li>é”™è¯¯ï¼Œæ‰¾ä¸åˆ°è¯¥è®¢å•ä¿¡æ¯æˆ–è¯¥è®¢å•å·²æ”¯ä»˜æˆåŠŸã€‚&action=OtherErr"
 		Exit Sub
 	Else
 		If CInt(rs("O_issuc"))=3 Or CInt(rs("O_issuc"))=1 Then
@@ -270,46 +270,46 @@ Sub AliPay_Return_Old()
 			Retrieval.send()
 			ResponseTxt=Retrieval.ResponseText
 			Set Retrieval=Nothing
-			If ResponseTxt="false" Then Response.redirect "showerr.asp?ErrCodes=<li>´íÎó£¬·Ç·¨µÄ¶©µ¥²ÎÊı¡£&action=OtherErr":Exit Sub
-			'¸üĞÂÊı¾İ¿â×ÊÁÏ
+			If ResponseTxt="false" Then Response.redirect "showerr.asp?ErrCodes=<li>é”™è¯¯ï¼Œéæ³•çš„è®¢å•å‚æ•°ã€‚&action=OtherErr":Exit Sub
+			'æ›´æ–°æ•°æ®åº“èµ„æ–™
 			UserInMoney = Rs("O_PayMoney")
 			If CInt(rs("O_issuc"))=3 then
-			'¸üĞÂÓÃ»§×ÊÁÏ
+			'æ›´æ–°ç”¨æˆ·èµ„æ–™
 			Dvbbs.Execute("Update Dv_User Set UserTicket = UserTicket + " & Dvbbs.Forum_ChanSetting(14) * UserInMoney & " Where UserName='"&Rs("O_UserName")&"'")
 			If Dvbbs.UserID > 0 And Lcase(Dvbbs.MemberName)=Lcase(Rs("O_UserName")) Then
 				Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userticket").text=CCur(Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userticket").text) + cCur(Dvbbs.Forum_ChanSetting(14) * UserInMoney)
 			End If
-			'¸üĞÂ¶©µ¥×´Ì¬
+			'æ›´æ–°è®¢å•çŠ¶æ€
 			Dvbbs.Execute("Update Dv_ChanOrders Set O_IsSuc=1 Where O_ID = " & Rs("O_ID"))
 			End if
 		Else
-			Response.redirect "showerr.asp?ErrCodes=<li>´íÎó£¬ÕÒ²»µ½¸Ã¶©µ¥ĞÅÏ¢»ò¸Ã¶©µ¥ÒÑÖ§¸¶³É¹¦¡£&action=OtherErr"
+			Response.redirect "showerr.asp?ErrCodes=<li>é”™è¯¯ï¼Œæ‰¾ä¸åˆ°è¯¥è®¢å•ä¿¡æ¯æˆ–è¯¥è®¢å•å·²æ”¯ä»˜æˆåŠŸã€‚&action=OtherErr"
 			Exit Sub
 		End if
 	End If
 	Rs.Close
 	Set Rs=Nothing
 %>
-<!--ÂÛÌ³²Ù×÷³É¹¦ĞÅÏ¢-->
+<!--è®ºå›æ“ä½œæˆåŠŸä¿¡æ¯-->
 <br>
 <table cellpadding=0 cellspacing=1 align=center class="tableborder1" style="width:75%">
 <tr align=center>
-<th width="100%">ÂÛÌ³³É¹¦ĞÅÏ¢
+<th width="100%">è®ºå›æˆåŠŸä¿¡æ¯
 </td>
 </tr>
 <tr>
 <td width="100%" class="tablebody1">
-<b>²Ù×÷³É¹¦£º</b><br><br>
-<li>³É¹¦£¬Äú±¾´Î¶Ò»»ÁË <B><font color=red><%=(Dvbbs.Forum_ChanSetting(14) * UserInMoney)%></font></B> ÕÅÂÛÌ³µãÈ¯¡£
+<b>æ“ä½œæˆåŠŸï¼š</b><br><br>
+<li>æˆåŠŸï¼Œæ‚¨æœ¬æ¬¡å…‘æ¢äº† <B><font color=red><%=(Dvbbs.Forum_ChanSetting(14) * UserInMoney)%></font></B> å¼ è®ºå›ç‚¹åˆ¸ã€‚
 </td></tr>
 <tr align=center><td width="100%" class="tablebody2">
-<a href="usermanager.asp"> << ·µ»ØÓÃ»§¿ØÖÆÃæ°å</a> &nbsp;&nbsp;||&nbsp;&nbsp; <a href="UserPay.asp?action=UserCenter"> È¥°ÑµãÈ¯×ª»»³ÉÂÛÌ³½ğ±Ò>></a> 
+<a href="usermanager.asp"> << è¿”å›ç”¨æˆ·æ§åˆ¶é¢æ¿</a> &nbsp;&nbsp;||&nbsp;&nbsp; <a href="UserPay.asp?action=UserCenter"> å»æŠŠç‚¹åˆ¸è½¬æ¢æˆè®ºå›é‡‘å¸>></a> 
 </td></tr>
 </table><br>
 <%
 End sub
 '--------------------------------------------------------------------------------
-'ÓÃ»§ĞÅÏ¢
+'ç”¨æˆ·ä¿¡æ¯
 '--------------------------------------------------------------------------------
 Sub UserInfo()
 	Dim Sql,Rs,UserToolsCount
@@ -320,41 +320,41 @@ Sub UserInfo()
 %>
 <table cellpadding="0" cellspacing="1" align="center" class="tableborder1" Style="Width:100%">
 	<tr>
-		<th height=23 >¸öÈË×ÊÁÏ</th>
+		<th height=23 >ä¸ªäººèµ„æ–™</th>
 	</tr>
 	<tr>
 		<td align=center class="tablebody1">
 			<table border="0" cellpadding="0" cellspacing="1" align="center" Style="Width:90%">
 				<tr>
-					<td class="tablebody2" style="text-align:left;">½ğ±Ò£º
+					<td class="tablebody2" style="text-align:left;">é‡‘å¸ï¼š
 						<B>
 							<font color="<%=Dvbbs.mainsetting(1)%>">
 								<%=Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usermoney").text %>
 							</font>
-						</B> ¸ö
+						</B> ä¸ª
 					</td>
 				</tr>
 				<tr>
-					<td class="tablebody1" style="text-align:left;">µãÈ¯£º<B>
+					<td class="tablebody1" style="text-align:left;">ç‚¹åˆ¸ï¼š<B>
 						<font color="<%=Dvbbs.mainsetting(1)%>">
 							<%=Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userticket").text%>
-						</font></B> ÕÅ
+						</font></B> å¼ 
 					</td>
 				</tr>
 				<tr>
-					<td class="tablebody2" style="text-align:left;">½ğÇ®£º<%=Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userwealth").text%></td>
+					<td class="tablebody2" style="text-align:left;">é‡‘é’±ï¼š<%=Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userwealth").text%></td>
 				</tr>
 				<tr>
-					<td class="tablebody1" style="text-align:left;">ÎÄÕÂ£º<%=Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userpost").text%></td>
+					<td class="tablebody1" style="text-align:left;">æ–‡ç« ï¼š<%=Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userpost").text%></td>
 				</tr>
 				<tr>
-					<td class="tablebody2" style="text-align:left;">»ı·Ö£º<%=Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userep").text%></td>
+					<td class="tablebody2" style="text-align:left;">ç§¯åˆ†ï¼š<%=Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userep").text%></td>
 				</tr>
 				<tr>
-					<td class="tablebody1" style="text-align:left;">÷ÈÁ¦£º<%=Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usercp").text%></td>
+					<td class="tablebody1" style="text-align:left;">é­…åŠ›ï¼š<%=Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usercp").text%></td>
 				</tr>
 				<tr>
-					<td class="tablebody2" style="text-align:left;">ÍşÍû£º<%=Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userpower").text%></td>
+					<td class="tablebody2" style="text-align:left;">å¨æœ›ï¼š<%=Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userpower").text%></td>
 				</tr>
 				<tr><td class="tablebody1"></td></tr>
 			</table>
@@ -365,7 +365,7 @@ Sub UserInfo()
 End Sub
 
 '--------------------------------------------------------------------------------
-'½ğ±Ò×ª»»
+'é‡‘å¸è½¬æ¢
 '--------------------------------------------------------------------------------
 Sub UserCenter()
 	If Request("react") = "Savechange" Then
@@ -380,10 +380,10 @@ Sub UserCenter()
 		If userWealth<0 or userep<0 or usercp<0 or userticket<0 Then Dvbbs.AddErrCode(35):Dvbbs.Showerr()
 
 		Dim ErrMsg
-		If userWealth>0 And CCur(Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userwealth").text)<CCur(Dvbbs.Forum_setting(93)) Then ErrMsg="ÄãµÄ½ğÇ®²»×ã¡£"
-		If userep>0 And CCur(Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userep").text)<CCur(Dvbbs.Forum_setting(94)) Then ErrMsg="ÄãµÄ»ı·Ö²»×ã¡£"
-		If usercp>0 And CCur(Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usercp").text)<CCur(Dvbbs.Forum_setting(95)) Then ErrMsg="ÄãµÄ÷ÈÁ¦²»×ã¡£"
-		If userticket And CCur(Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userticket").text)<CCur(Dvbbs.Forum_setting(96)) Then ErrMsg="ÄãµÄµãÈ¯²»×ã¡£"
+		If userWealth>0 And CCur(Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userwealth").text)<CCur(Dvbbs.Forum_setting(93)) Then ErrMsg="ä½ çš„é‡‘é’±ä¸è¶³ã€‚"
+		If userep>0 And CCur(Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userep").text)<CCur(Dvbbs.Forum_setting(94)) Then ErrMsg="ä½ çš„ç§¯åˆ†ä¸è¶³ã€‚"
+		If usercp>0 And CCur(Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usercp").text)<CCur(Dvbbs.Forum_setting(95)) Then ErrMsg="ä½ çš„é­…åŠ›ä¸è¶³ã€‚"
+		If userticket And CCur(Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userticket").text)<CCur(Dvbbs.Forum_setting(96)) Then ErrMsg="ä½ çš„ç‚¹åˆ¸ä¸è¶³ã€‚"
 		If Trim(ErrMsg)<>"" Then
 			Response.redirect "showerr.asp?ErrCodes=<li>"&ErrMsg&"&action=OtherErr"
 		End If
@@ -435,66 +435,66 @@ Sub UserCenter()
 			userticket = 0
 		End If
 		If UpUserMoney < 1 Then 
-			 Response.redirect "showerr.asp?ErrCodes=<li>ÇëÌîĞ´×ª»»µÄÊı¾İ»ò»ñµÃµÄ½ğ±ÒÊıÌ«ÉÙ£¡&action=OtherErr"
+			 Response.redirect "showerr.asp?ErrCodes=<li>è¯·å¡«å†™è½¬æ¢çš„æ•°æ®æˆ–è·å¾—çš„é‡‘å¸æ•°å¤ªå°‘ï¼&action=OtherErr"
 		Else
 			Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usermoney").text  = cCur(Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usermoney").text ) + UpUserMoney
 			Sql = "Update Dv_user set userWealth = "&Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userwealth").text&",userEP="&Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userep").text&",userCP="&Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usercp").text&",UserMoney="&Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usermoney").text &",UserTicket="&Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userticket").text&" where UserID="&Dvbbs.UserID
 			Dvbbs.Execute(Sql)
 			Dim LogMsg
-			LogMsg = "½ğ±Ò×ª»»³É¹¦£¬»ñµÃ×Ü½ğ±ÒÊıÎª<b>"&UpUserMoney&"</b>,½ğÇ®¼õÉÙ<b>"&userWealth&"</b>,»ı·Ö¼õÉÙ<b>"&userep&"</b>,÷ÈÁ¦¼õÉÙ<b>"&usercp&"</b>,µãÈ¯¼õÉÙ<b>"&userticket&"</b>¡£"
+			LogMsg = "é‡‘å¸è½¬æ¢æˆåŠŸï¼Œè·å¾—æ€»é‡‘å¸æ•°ä¸º<b>"&UpUserMoney&"</b>,é‡‘é’±å‡å°‘<b>"&userWealth&"</b>,ç§¯åˆ†å‡å°‘<b>"&userep&"</b>,é­…åŠ›å‡å°‘<b>"&usercp&"</b>,ç‚¹åˆ¸å‡å°‘<b>"&userticket&"</b>ã€‚"
 			'Call Dvbbs.ToolsLog(0,0,0,0,0,LogMsg,Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usermoney").text &"|"&Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userticket").text)
 			Dvbbs.Dvbbs_Suc(LogMsg)
 		End If
 	Else
 %>
 	<table border=0 cellpadding=3 cellspacing=1 class="tableborder1" align=center style="width:100%">
-	<tr><th height=20 colspan="5">ÂÛÌ³½ğ±Ò×ª»»</th></tr>
-	<tr><td height=20 colspan="5" class="tablebody1"><li>ÔÊĞíÓÃ»§½«½ğÇ®¡¢»ı·Ö¡¢÷ÈÁ¦¡¢µãÈ¯×ª»»³É½ğ±Ò¡£</td></tr>
+	<tr><th height=20 colspan="5">è®ºå›é‡‘å¸è½¬æ¢</th></tr>
+	<tr><td height=20 colspan="5" class="tablebody1"><li>å…è®¸ç”¨æˆ·å°†é‡‘é’±ã€ç§¯åˆ†ã€é­…åŠ›ã€ç‚¹åˆ¸è½¬æ¢æˆé‡‘å¸ã€‚</td></tr>
     <tr>
-      <th width="30%" height="20">½ğ±Ò×ª»»»ãÂÊ</th>
-      <th width="15%">×ª»»ÏîÄ¿</th>
-	  <th width="20%">×ª»»ĞÅÏ¢</th>
-      <th width="15%">×ª»»ÉèÖÃ</th>
-	  <th width="20%">×ª»»ËùµÃ½ğ±Ò</th>
+      <th width="30%" height="20">é‡‘å¸è½¬æ¢æ±‡ç‡</th>
+      <th width="15%">è½¬æ¢é¡¹ç›®</th>
+	  <th width="20%">è½¬æ¢ä¿¡æ¯</th>
+      <th width="15%">è½¬æ¢è®¾ç½®</th>
+	  <th width="20%">è½¬æ¢æ‰€å¾—é‡‘å¸</th>
     </tr>
 	<form action="UserPay.asp?action=UserCenter&react=Savechange" method=post NAME=CenterForm>
     <tr>
       <td rowspan="5" class="tablebody1">
 		<table border="0" cellpadding=0 cellspacing=1 align=center Style="Width:90%">
-			<tr><td class="tablebody1">&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserPay.asp"><font color=red>Ç°Íù¹ºÂòÂÛÌ³µãÈ¯</font></a></td></tr>
-			<tr><td class="tablebody2">&nbsp;&nbsp;&nbsp;&nbsp;<b><font class=redfont>1</font> ½ğ±Ò = <font class=redfont><%=Dvbbs.Forum_setting(93)%></font> ½ğÇ®</b></td></tr>
-			<tr><td class="tablebody1">&nbsp;&nbsp;&nbsp;&nbsp;<b><font class=redfont>1</font> ½ğ±Ò = <font class=redfont><%=Dvbbs.Forum_setting(94)%></font> »ı·Ö</b></td></tr>
-			<tr><td class="tablebody2">&nbsp;&nbsp;&nbsp;&nbsp;<b><font class=redfont>1</font> ½ğ±Ò = <font class=redfont><%=Dvbbs.Forum_setting(95)%></font> ÷ÈÁ¦</b></td></tr>
-			<tr><td class="tablebody1">&nbsp;&nbsp;&nbsp;&nbsp;<b><font class=redfont>1</font> ½ğ±Ò = <font class=redfont><%=Dvbbs.Forum_setting(96)%></font> µãÈ¯</b></td></tr>
+			<tr><td class="tablebody1">&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserPay.asp"><font color=red>å‰å¾€è´­ä¹°è®ºå›ç‚¹åˆ¸</font></a></td></tr>
+			<tr><td class="tablebody2">&nbsp;&nbsp;&nbsp;&nbsp;<b><font class=redfont>1</font> é‡‘å¸ = <font class=redfont><%=Dvbbs.Forum_setting(93)%></font> é‡‘é’±</b></td></tr>
+			<tr><td class="tablebody1">&nbsp;&nbsp;&nbsp;&nbsp;<b><font class=redfont>1</font> é‡‘å¸ = <font class=redfont><%=Dvbbs.Forum_setting(94)%></font> ç§¯åˆ†</b></td></tr>
+			<tr><td class="tablebody2">&nbsp;&nbsp;&nbsp;&nbsp;<b><font class=redfont>1</font> é‡‘å¸ = <font class=redfont><%=Dvbbs.Forum_setting(95)%></font> é­…åŠ›</b></td></tr>
+			<tr><td class="tablebody1">&nbsp;&nbsp;&nbsp;&nbsp;<b><font class=redfont>1</font> é‡‘å¸ = <font class=redfont><%=Dvbbs.Forum_setting(96)%></font> ç‚¹åˆ¸</b></td></tr>
 			<tr><td class="tablebody2"></td></tr>
 		</table>
 	  </td>
-      <td class="tablebody2" align=center>ÓµÓĞ½ğÇ®Öµ£º</td>
+      <td class="tablebody2" align=center>æ‹¥æœ‰é‡‘é’±å€¼ï¼š</td>
       <td class="tablebody1"><font class=redfont><%=Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userwealth").text%></font></td>
 	  <td class="tablebody1"><INPUT TYPE="text" NAME="userWealth" value="0" onkeyup="ShowChange(this.value,this,'Show_Money',<%=Dvbbs.Forum_setting(93)%>,<%=Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userwealth").text%>)"></td>
 	  <td class="tablebody1" ID=Show_Money>0</td>
     </tr>
     <tr>
-      <td class="tablebody2" align=center>ÓµÓĞ»ı·ÖÖµ£º</td>
+      <td class="tablebody2" align=center>æ‹¥æœ‰ç§¯åˆ†å€¼ï¼š</td>
       <td class="tablebody1"><font class=redfont><%=Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userep").text%></font></td>
 	  <td class="tablebody1"><INPUT TYPE="text" NAME="userep" value="0" onkeyup="ShowChange(this.value,this,'Show_EP',<%=Dvbbs.Forum_setting(94)%>,<%=Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userep").text%>)"></td>
 	  <td class="tablebody1" ID=Show_EP>0</td>
     </tr>
     <tr>
-      <td class="tablebody2" align=center>ÓµÓĞ÷ÈÁ¦Öµ£º</td>
+      <td class="tablebody2" align=center>æ‹¥æœ‰é­…åŠ›å€¼ï¼š</td>
       <td class="tablebody1"><font class=redfont><%=Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usercp").text%></font></td>
 	  <td class="tablebody1"><INPUT TYPE="text" NAME="usercp" value="0" onkeyup="ShowChange(this.value,this,'Show_CP',<%=Dvbbs.Forum_setting(95)%>,<%=Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usercp").text%>)"></td>
 	  <td class="tablebody1" ID=Show_CP>0</td>
     </tr>
     <tr>
-      <td class="tablebody2" align=center>ÓµÓĞµãÈ¯Öµ£º</td>
+      <td class="tablebody2" align=center>æ‹¥æœ‰ç‚¹åˆ¸å€¼ï¼š</td>
       <td class="tablebody1"><font class=redfont><%=Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userticket").text%></font></td>
 	  <td class="tablebody1"><INPUT TYPE="text" NAME="userticket" value="0" onkeyup="ShowChange(this.value,this,'Show_Ticket',<%=Dvbbs.Forum_setting(96)%>,<%=Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userticket").text%>)"></td>
 	  <td class="tablebody1" ID=Show_Ticket>0</td>
     </tr>
 	<tr>
       <td class="tablebody2" align=center colspan="4">
-	  <INPUT TYPE="submit" value="È·¶¨×ª»»">&nbsp;&nbsp;<INPUT TYPE="reset" value="ÖØĞÂÉèÖÃ"></td>
+	  <INPUT TYPE="submit" value="ç¡®å®šè½¬æ¢">&nbsp;&nbsp;<INPUT TYPE="reset" value="é‡æ–°è®¾ç½®"></td>
     </tr>
 	</form>
 	</table>
@@ -503,7 +503,7 @@ Sub UserCenter()
 	function ShowChange(Ivalue,Iname,ShowID,Sys,User){
 		if(isNaN(Ivalue)){
 			Iname.value = 0;
-			alert('ÇëÌîĞ´ÕıÈ·µÄÊıÖµ£¡');
+			alert('è¯·å¡«å†™æ­£ç¡®çš„æ•°å€¼ï¼');
 		}
 		else{
 			Ivalue = parseFloat(Ivalue);
@@ -512,7 +512,7 @@ Sub UserCenter()
 			if (Ivalue>User||Ivalue<0){
 				Iname.value = 0;
 				document.getElementById(ShowID).innerHTML = 0;
-				alert('ÌîĞ´ÊıÖµ³¬¹ıÏŞÖÆ£¡');
+				alert('å¡«å†™æ•°å€¼è¶…è¿‡é™åˆ¶ï¼');
 			}
 			else{
 				document.getElementById(ShowID).innerHTML = (Ivalue / Sys).toFixed(1);
@@ -525,7 +525,7 @@ Sub UserCenter()
 	End If
 End Sub
 
-'ÓÃ»§¶©µ¥ÁĞ±í
+'ç”¨æˆ·è®¢å•åˆ—è¡¨
 Sub PayList()
 	Dim Success
 	Success = Dvbbs.CheckNumeric(Request("Suc"))
@@ -552,24 +552,24 @@ Sub PayList()
 	Dim Rs,Sql
 	Select Case Success
 	Case 0
-		Response.Write Dvbbs.MemberName & " µÄËùÓĞÂÛÌ³ÍøÂçÖ§¸¶½»Ò×¶©µ¥"
+		Response.Write Dvbbs.MemberName & " çš„æ‰€æœ‰è®ºå›ç½‘ç»œæ”¯ä»˜äº¤æ˜“è®¢å•"
 		Sql = "Select O_Type,O_PayCode,O_PayMoney,O_IsSuc,O_AddTime,O_ID From Dv_ChanOrders Where O_UserName = '"&Dvbbs.MemberName&"' Order By O_AddTime Desc"
 	Case 1
-		Response.Write Dvbbs.MemberName & " µÄËùÓĞÂÛÌ³ÍøÂçÖ§¸¶½»Ò×³É¹¦¶©µ¥"
+		Response.Write Dvbbs.MemberName & " çš„æ‰€æœ‰è®ºå›ç½‘ç»œæ”¯ä»˜äº¤æ˜“æˆåŠŸè®¢å•"
 		Sql = "Select O_Type,O_PayCode,O_PayMoney,O_IsSuc,O_AddTime,O_ID From Dv_ChanOrders Where O_IsSuc = 1 And O_UserName = '"&Dvbbs.MemberName&"' Order By O_AddTime Desc"
 	Case 2
-		Response.Write Dvbbs.MemberName & " µÄËùÓĞÂÛÌ³ÍøÂçÖ§¸¶½»Ò×Ê§°Ü¶©µ¥"
+		Response.Write Dvbbs.MemberName & " çš„æ‰€æœ‰è®ºå›ç½‘ç»œæ”¯ä»˜äº¤æ˜“å¤±è´¥è®¢å•"
 		Sql = "Select O_Type,O_PayCode,O_PayMoney,O_IsSuc,O_AddTime,O_ID From Dv_ChanOrders Where O_IsSuc = 0 And O_UserName = '"&Dvbbs.MemberName&"' Order By O_AddTime Desc"
 	End Select
 %>
 	</td></tr>
 	<tr>
-	<th height=23 width="15%">¶©µ¥ÀàĞÍ</th>
-	<th width="20%">¶©µ¥ºÅ</th>
-	<th width="15%">Ö§¸¶½ğ¶î</th>
-	<th width="15%">½»Ò××´Ì¬</th>
-	<th width="15%">½»Ò×Ê±¼ä</th>
-	<th width="20%">²Ù×÷</th>
+	<th height=23 width="15%">è®¢å•ç±»å‹</th>
+	<th width="20%">è®¢å•å·</th>
+	<th width="15%">æ”¯ä»˜é‡‘é¢</th>
+	<th width="15%">äº¤æ˜“çŠ¶æ€</th>
+	<th width="15%">äº¤æ˜“æ—¶é—´</th>
+	<th width="20%">æ“ä½œ</th>
 	</tr>
 <%
 	Dim i
@@ -577,7 +577,7 @@ Sub PayList()
 	If Not IsObject(Conn) Then ConnectionDatabase
 	Rs.Open Sql,Conn,1,1
 	If Rs.Eof And Rs.Bof Then
-		Response.Write "<tr><td height=23 class=""tablebody1"" colspan=6>µ±Ç°»¹Ã»ÓĞ¶©µ¥¡£</td></tr>"
+		Response.Write "<tr><td height=23 class=""tablebody1"" colspan=6>å½“å‰è¿˜æ²¡æœ‰è®¢å•ã€‚</td></tr>"
 		Response.Write "</table>"
 	Else
 		CountNum = Rs.RecordCount
@@ -601,9 +601,9 @@ Sub PayList()
 <%
 	Select Case SQL(0,i)
 	Case 1
-		Response.Write "ÍøÂçÖ§¸¶"
+		Response.Write "ç½‘ç»œæ”¯ä»˜"
 	Case Else
-		Response.Write "<font color=gray>Î´Öª</font>"
+		Response.Write "<font color=gray>æœªçŸ¥</font>"
 	End Select
 %>
 	</td>
@@ -613,11 +613,11 @@ Sub PayList()
 <%
 	Select Case SQL(3,i)
 	Case 0
-		Response.Write "<font color=gray>Ê§°Ü</font>"
+		Response.Write "<font color=gray>å¤±è´¥</font>"
 	Case 1
-		Response.Write "³É¹¦"
+		Response.Write "æˆåŠŸ"
 	Case Else
-		Response.Write "<font color=gray>Î´Öª</font>"
+		Response.Write "<font color=gray>æœªçŸ¥</font>"
 	End Select
 %>
 	</td>
@@ -636,20 +636,20 @@ Sub PayList()
 
 End Sub
 
-'ÖØĞÂ»ñµÃ½»Ò××´Ì¬
+'é‡æ–°è·å¾—äº¤æ˜“çŠ¶æ€
 Sub AliPay_1()
 	Dim ID,Rs
 	Dim PayMoney,PayCode
 	ID = Request("ID")
 	If ID = "" Or Not IsNumeric(ID) Then
-		Response.redirect "showerr.asp?ErrCodes=<li>´íÎó£¬·Ç·¨µÄ¶©µ¥²ÎÊı¡£&action=OtherErr"
+		Response.redirect "showerr.asp?ErrCodes=<li>é”™è¯¯ï¼Œéæ³•çš„è®¢å•å‚æ•°ã€‚&action=OtherErr"
 		Exit Sub
 	Else
 		ID = cCur(ID)
 	End If
 	Set Rs = Dvbbs.Execute("Select * From Dv_ChanOrders Where O_ID = "&ID&" And O_UserName = '"&Dvbbs.MemberName&"'")
 	If Rs.Eof And Rs.Bof Then
-		Response.redirect "showerr.asp?ErrCodes=<li>´íÎó£¬ÕÒ²»µ½Ïà¹ØµÄ¶©µ¥ĞÅÏ¢¡£&action=OtherErr"
+		Response.redirect "showerr.asp?ErrCodes=<li>é”™è¯¯ï¼Œæ‰¾ä¸åˆ°ç›¸å…³çš„è®¢å•ä¿¡æ¯ã€‚&action=OtherErr"
 		Exit Sub
 	Else
 		PayMoney = Rs("O_PayMoney")
@@ -658,9 +658,9 @@ Sub AliPay_1()
 	End If
 	Rs.Close
 	Set Rs=Nothing
-	'Ìá½»µ½¶¯Íø¹Ù·½Ö÷·şÎñÆ÷
+	'æäº¤åˆ°åŠ¨ç½‘å®˜æ–¹ä¸»æœåŠ¡å™¨
 %>
-ÕıÔÚÌá½»Êı¾İ£¬Èç¹ûÄúµÄÂÛÌ³µØÖ·ÉèÖÃÁËURL×ª·¢£¬½«²»ÄÜÕıÈ·´«ÊäĞÅÏ¢£¬ÇëÉÔºó¡­¡­
+æ­£åœ¨æäº¤æ•°æ®ï¼Œå¦‚æœæ‚¨çš„è®ºå›åœ°å€è®¾ç½®äº†URLè½¬å‘ï¼Œå°†ä¸èƒ½æ­£ç¡®ä¼ è¾“ä¿¡æ¯ï¼Œè¯·ç¨åâ€¦â€¦
 <form name="redir" action="<%=Dvbbs_Server_Url%>alipay_t1.aspx?action=pay_1" method="post">
 <INPUT type=hidden name="username" value="<%=Dvbbs.MemberName%>">
 <INPUT type=hidden name="paycode" value="<%=PayCode%>">
@@ -679,7 +679,7 @@ Sub UserToolsLog_List()
 
 	Dim Rs,Sql,i,LogType
 	Dim Page,MaxRows,Endpage,CountNum,PageSearch,SqlString
-	LogType = "Î´Öª|Ê¹ÓÃ|×ªÈÃ|³äÖµ|¹ºÂò|½±Àø|VIP½»Ò×"
+	LogType = "æœªçŸ¥|ä½¿ç”¨|è½¬è®©|å……å€¼|è´­ä¹°|å¥–åŠ±|VIPäº¤æ˜“"
 	LogType = Split(LogType,"|")
 	PageSearch = "action=UserToolsLog_List"
 	Endpage = 0
@@ -699,14 +699,14 @@ Sub UserToolsLog_List()
 		<tr><td colspan=3><hr style="BORDER: #807d76 1px dotted;height:1px;">
 <table border="0" cellpadding=3 cellspacing=1 align=center class="tableborder1" Style="Width:100%">
 	<tr>
-	<th height=23 width="15%">µÀ¾ßÃû³Æ</th>
-	<th width="10%">²Ù×÷</th>
-	<th width="*%">²Ù×÷ÄÚÈİ</th>
-	<th width="5%">½ğ±Ò</th>
-	<th width="5%">µãÈ¯</th>
-	<th width="5%">ÊıÁ¿</th>
-	<th width="13%">Ê¹ÓÃIP</th>
-	<th width="12%">Ê±¼ä</th>
+	<th height=23 width="15%">é“å…·åç§°</th>
+	<th width="10%">æ“ä½œ</th>
+	<th width="*%">æ“ä½œå†…å®¹</th>
+	<th width="5%">é‡‘å¸</th>
+	<th width="5%">ç‚¹åˆ¸</th>
+	<th width="5%">æ•°é‡</th>
+	<th width="13%">ä½¿ç”¨IP</th>
+	<th width="12%">æ—¶é—´</th>
 	</tr>
 <%
 	Dim ToolsNames
@@ -721,7 +721,7 @@ Sub UserToolsLog_List()
 		For i=0 to Ubound(Sql,2)
 			ToolsNames.add Sql(0,i),Sql(1,i)
 		Next
-		ToolsNames.add -88,"Ä§·¨±íÇé»òÍ·Ïñ"		'Ìí¼ÓµÀ¾ßÃûÄ§·¨±íÇé»òÍ·Ïñ£¬IDÎª-88
+		ToolsNames.add -88,"é­”æ³•è¡¨æƒ…æˆ–å¤´åƒ"		'æ·»åŠ é“å…·åé­”æ³•è¡¨æƒ…æˆ–å¤´åƒï¼ŒIDä¸º-88
 	End If
 
 	'T.ToolsName=0,L.CountNum=1,L.Log_Money=2,L.Log_Ticket=3,L.Log_IP=4,L.Log_Time=5,L.Log_Type=6,L.Conect=7
@@ -751,12 +751,12 @@ Sub UserToolsLog_List()
 		End if
 		SQL=Rs.GetRows(MaxRows)
 	Else
-		Response.Write "<tr><td class=""Tablebody1"" colspan=""8"" align=center>µÀ¾ß»¹Î´Ìí¼Ó£¡</td></tr></table>"
+		Response.Write "<tr><td class=""Tablebody1"" colspan=""8"" align=center>é“å…·è¿˜æœªæ·»åŠ ï¼</td></tr></table>"
 		Exit Sub
 	End If
 	Rs.close:Set Rs = Nothing
 	
-	'Êä³öµÀ¾ßÁĞ±í
+	'è¾“å‡ºé“å…·åˆ—è¡¨
 	For i=0 To Ubound(SQL,2)
 %>
 	<tr>
@@ -765,7 +765,7 @@ Sub UserToolsLog_List()
 	If Dvbbs.forum_setting(90)="1" Then
 		Response.Write ToolsNames(SQL(0,i))
 	Else
-		Response.Write "<font color=gray>Î´Öª</font>"
+		Response.Write "<font color=gray>æœªçŸ¥</font>"
 	End If
 %>
 	</td>
@@ -789,67 +789,25 @@ Sub MainReadMe(str)
 %>
 <table border="0" cellpadding=0 cellspacing=1 align=center class="tableborder1" Style="Width:100%">
 	<tr>
-	<th height=23>¹ºÂòÂÛÌ³µãÈ¯</th></tr>
-	<tr><td height=24 class="tablebody2" align=center><a href="?action=PayList">ËùÓĞ½»Ò×¼ÇÂ¼</a> | <a href="?action=PayList&Suc=1">ÒÑ³É¹¦¶©µ¥</a> | <a href="?action=PayList&Suc=2">Î´³É¹¦¶©µ¥</a> | <a href="?action=UserToolsLog_List">½ğ±Ò»òµãÈ¯Ê¹ÓÃ¼ÇÂ¼</a> | <a href="?action=UserCenter"><font color=red>¶Ò»»ÂÛÌ³½ğ±Ò</font></a> | <a href="UserPay.asp"><font color=red>¹ºÂòÂÛÌ³µãÈ¯</font></a></td>
+	<th height=23>è´­ä¹°è®ºå›ç‚¹åˆ¸</th></tr>
+	<tr><td height=24 class="tablebody2" align=center><a href="?action=PayList">æ‰€æœ‰äº¤æ˜“è®°å½•</a> | <a href="?action=PayList&Suc=1">å·²æˆåŠŸè®¢å•</a> | <a href="?action=PayList&Suc=2">æœªæˆåŠŸè®¢å•</a> | <a href="?action=UserToolsLog_List">é‡‘å¸æˆ–ç‚¹åˆ¸ä½¿ç”¨è®°å½•</a> | <a href="?action=UserCenter"><font color=red>å…‘æ¢è®ºå›é‡‘å¸</font></a> | <a href="UserPay.asp"><font color=red>è´­ä¹°è®ºå›ç‚¹åˆ¸</font></a></td>
 	</tr>
-	<tr><td height=23 class="tablebody1" style="line-height: 18px"><B>ËµÃ÷</B>£º<BR>
-	¢Ù Í¨¹ıÍøÂçÖ§¸¶¿É»ñ<font color=red>½±Àø</font>ÏàÓ¦µÄÂÛÌ³µãÈ¯<BR>
-	¢Ú Ã¿Í¨¹ıÍøÂçÖ§¸¶ <font color=red><B>1</B></font> Ôª¿É»ñ½±Àø <font color=red><B><%=Dvbbs.Forum_ChanSetting(14)%></B></font> ÕÅÂÛÌ³µãÈ¯<BR>
-	¢Û ÂÛÌ³µãÈ¯µÄ×÷ÓÃ£º¿É¹ºÂòÂÛÌ³ÖĞ¸÷ÖÖÈ¤Î¶µÀ¾ß£¬ÏíÊÜ¸ü¶àÓĞÈ¤µÄÂÛÌ³¹¦ÄÜ<BR>
-	¢Ü µãÈ¯µÄ»ñÈ¡Á÷³Ì£º¸ù¾İÏÂÃæÌáÊ¾Ñ¡ÔñÍøÂçÖ§¸¶ºó£¬Í¨¹ıÍøÂçÖ§¸¶³É¹¦µÄ½«»áÖ±½Ó¶ÔÄúÂÛÌ³ÕËºÅ½±ÀøÏàÓ¦µÄµãÈ¯<BR>
-	</td>
+	<tr><td height=23 class="tablebody1" style="line-height: 18px"><B>è¯´æ˜</B>ï¼š<BR>
+	â‘  é€šè¿‡ç½‘ç»œæ”¯ä»˜å¯è·<font color=red>å¥–åŠ±</font>ç›¸åº”çš„è®ºå›ç‚¹åˆ¸<BR>
+	â‘¡ æ¯é€šè¿‡ç½‘ç»œæ”¯ä»˜ <font color=red><B>1</B></font> å…ƒå¯è·å¥–åŠ± <font color=red><B><%=Dvbbs.Forum_ChanSetting(14)%></B></font> å¼ è®ºå›ç‚¹åˆ¸<BR>
+	â‘¢ è®ºå›ç‚¹åˆ¸çš„ä½œç”¨ï¼šå¯è´­ä¹°è®ºå›ä¸­å„ç§è¶£å‘³é“å…·ï¼Œäº«å—æ›´å¤šæœ‰è¶£çš„è®ºå›åŠŸèƒ½<BR>
+	â‘£ ç‚¹åˆ¸çš„è·å–æµç¨‹ï¼šæ ¹æ®ä¸‹é¢æç¤ºé€‰æ‹©ç½‘ç»œæ”¯ä»˜åï¼Œé€šè¿‡ç½‘ç»œ)%></td>
 	</tr>
 <%
-	If Str = 1 Then Response.Write "</table>"
+	Next
+	Set ToolsNames = Nothing
+	Response.Write "</table>"
+	PageSearch=Replace(Replace(PageSearch,"\","\\"),"""","\""")
+	Response.Write "<SCRIPT>PageList("&Page&",3,"&MaxRows&","&CountNum&","""&PageSearch&""",1);</SCRIPT>"
 End Sub
 
-Function URLDecode(enStr)
-	dim deStr
-	dim c,i,v
-	deStr=""
-	for i=1 to len(enStr)
-		c=Mid(enStr,i,1)
-		if c="%" then
-			v=eval("&h"+Mid(enStr,i+1,2))
-			if v<128 then
-				deStr=deStr&chr(v)
-				i=i+2
-			else
-				if isvalidhex(mid(enstr,i,3)) then
-				if isvalidhex(mid(enstr,i+3,3)) then
-					v=eval("&h"+Mid(enStr,i+1,2)+Mid(enStr,i+4,2))
-					deStr=deStr&chr(v)
-					i=i+5
-				else
-					v=eval("&h"+Mid(enStr,i+1,2)+cstr(hex(asc(Mid(enStr,i+3,1)))))
-					deStr=deStr&chr(v)
-					i=i+3 
-				end if 
-				else 
-					destr=destr&c
-				end if
-			end if
-		else
-			if c="+" then
-				deStr=deStr&" "
-			else
-				deStr=deStr&c
-			end if
-		end if
-	next
-	URLDecode=deStr
-End Function
-
-function isvalidhex(str)
-	dim c
-	isvalidhex=true
-	str=ucase(str)
-	if len(str)<>3 then isvalidhex=false:exit function
-	if left(str,1)<>"%" then isvalidhex=false:exit function
-	c=mid(str,2,1)
-	if not (((c>="0") and (c<="9")) or ((c>="A") and (c<="Z"))) then isvalidhex=false:exit function
-	c=mid(str,3,1)
-	if not (((c>="0") and (c<="9")) or ((c>="A") and (c<="Z"))) then isvalidhex=false:exit function
-end function
-
+Sub MainReadMe(str)
 %>
+<table border="0" cellpadding=0 cellspacing=1 align=center class="tableborder1" Style="Width:100%">
+	<tr>
+	<th height=23>ç’

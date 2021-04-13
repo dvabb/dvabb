@@ -4,17 +4,17 @@
 <!-- #include file="Dv_plus/Tools/plus_Tools_const.asp" -->
 <%
 Dim ToUserID,TopicID,ReplyID,Action,ChkAction,LogMsg
-Dvbbs.ErrType = 1 'ÉèÖÃ´íÎóÌáÊ¾ĞÅÏ¢ÏÔÊ¾Ä£Ê½
+Dvbbs.ErrType = 1 'è®¾ç½®é”™è¯¯æç¤ºä¿¡æ¯æ˜¾ç¤ºæ¨¡å¼
 ChkAction = True
-ToUserID = Dv_Tools.CheckNumeric(Request("ToUserID"))	'Ä¿±êÓÃ»§
-TopicID = Dv_Tools.CheckNumeric(Request("TopicID"))		'Ö÷ÌâID
-ReplyID = Dv_Tools.CheckNumeric(Request("ReplyID"))		'»Ø¸´ID
-Action = Dv_Tools.CheckNumeric(Request("Action"))		'Ö´ĞĞ·ÖÀà
+ToUserID = Dv_Tools.CheckNumeric(Request("ToUserID"))	'ç›®æ ‡ç”¨æˆ·
+TopicID = Dv_Tools.CheckNumeric(Request("TopicID"))		'ä¸»é¢˜ID
+ReplyID = Dv_Tools.CheckNumeric(Request("ReplyID"))		'å›å¤ID
+Action = Dv_Tools.CheckNumeric(Request("Action"))		'æ‰§è¡Œåˆ†ç±»
 If TopicID = 0 or ReplyID = 0 or Dvbbs.BoardID = 0 Then ChkAction = False
-Dvbbs.stats = "ÂÛÌ³µÀ¾ßÊ¹ÓÃ"
+Dvbbs.stats = "è®ºå›é“å…·ä½¿ç”¨"
 If Action=0 Then
 	Dv_Tools.ChkToolsLogin
-	Dvbbs.stats = "ÂÛÌ³µÀ¾ßÊ¹ÓÃ=="&Dv_Tools.ToolsInfo(1)
+	Dvbbs.stats = "è®ºå›é“å…·ä½¿ç”¨=="&Dv_Tools.ToolsInfo(1)
 End If
 Dvbbs.LoadTemplates("")
 Dvbbs.Head()
@@ -24,13 +24,13 @@ Dvbbs.mainsetting(0)="98%"
 Dvbbs.Footer()
 Dvbbs.PageEnd()
 '---------------------------------------------------
-'Dv_Tools.ToolsInfo µÀ¾ßÏµÍ³ĞÅÏ¢
+'Dv_Tools.ToolsInfo é“å…·ç³»ç»Ÿä¿¡æ¯
 'ID=0 ,ToolsName=1 ,ToolsInfo=2 ,IsStar=3 ,SysStock=4 ,UserStock=5 ,UserMoney=6 ,UserPost=7 ,UserWealth=8 ,UserEp=9 ,UserCp=10 ,UserGroupID=11 ,BoardID=12,UserTicket=13,BuyType=14,ToolsImg=15
 '---------------------------------------------------
-'ÊÂ¼ş¼ÇÂ¼¹ı³Ì£ºCall Dvbbs.ToolsLog(µÀ¾ßID£¬·¢ÉúÊıÁ¿£¬½ğ±Ò·¢Éú¶î£¬µãÈ¯·¢Éú¶î£¬¼ÇÂ¼ÊÂ¼şÀàĞÍ£¬±¸×¢ÄÚÈİ£¬ÓÃ»§×îºóÊ£Óà½ğ±ÒºÍµãÈ¯£¨½ğ±Ò|µãÈ¯£©)
+'äº‹ä»¶è®°å½•è¿‡ç¨‹ï¼šCall Dvbbs.ToolsLog(é“å…·IDï¼Œå‘ç”Ÿæ•°é‡ï¼Œé‡‘å¸å‘ç”Ÿé¢ï¼Œç‚¹åˆ¸å‘ç”Ÿé¢ï¼Œè®°å½•äº‹ä»¶ç±»å‹ï¼Œå¤‡æ³¨å†…å®¹ï¼Œç”¨æˆ·æœ€åå‰©ä½™é‡‘å¸å’Œç‚¹åˆ¸ï¼ˆé‡‘å¸|ç‚¹åˆ¸ï¼‰)
 '---------------------------------------------------
 Sub ToolsMain()
-	Dv_Tools.ChkUseTools '¼ì²éµÀ¾ßÊ¹ÓÃÈ¨ÏŞ
+	Dv_Tools.ChkUseTools 'æ£€æŸ¥é“å…·ä½¿ç”¨æƒé™
 	Select Case Dv_Tools.ToolsID
 	Case 1 :  Tools_1
 	Case 2 :  Tools_2
@@ -66,11 +66,11 @@ Sub ToolsMain()
 End Sub
 
 '------------------------------------------------------------------------------------------------------
-'µÀ¾ß´¦Àí¹ı³Ì
+'é“å…·å¤„ç†è¿‡ç¨‹
 '------------------------------------------------------------------------------------------------------
 
 '---------------------------------------------------
-'µÀ¾ß:×ªÈÃÆ÷£¬¿É½øĞĞµÀ¾ß¡¢½ğ±ÒºÍµãÈ¯µÄ×ªÈÃ
+'é“å…·:è½¬è®©å™¨ï¼Œå¯è¿›è¡Œé“å…·ã€é‡‘å¸å’Œç‚¹åˆ¸çš„è½¬è®©
 '---------------------------------------------------
 Sub Tools_1()
 	Dim Rs,Sql
@@ -79,7 +79,7 @@ Sub Tools_1()
 	ChkAction = True
 	If ToUserID = 0 Then ChkAction = False
 	If ChkAction = False Then Dvbbs.AddErrCode(42) : Exit Sub
-	'ÅĞ¶ÏÄ¿±êÓÃ»§Ê¹ÓÃÈ¨ÏŞ²¢È¡³öÄ¿±êÓÃ»§ĞÅÏ¢
+	'åˆ¤æ–­ç›®æ ‡ç”¨æˆ·ä½¿ç”¨æƒé™å¹¶å–å‡ºç›®æ ‡ç”¨æˆ·ä¿¡æ¯
 	Dv_Tools.ChkToUseTools(Request("ToUserID"))
 
 	If Request("ToolsAction")="SendTools" Then
@@ -89,55 +89,55 @@ Sub Tools_1()
 		SendMoneyNum = CCur(Abs(Dv_Tools.CheckNumeric(Request("SendMoneyNum"))))
 		SendTicketNum = CCur(Abs(Dv_Tools.CheckNumeric(Request("SendTicketNum"))))
 		If (SendToolsID=0 Or SendToolsNum=0) And SendMoneyNum=0 And SendTicketNum=0 Then
-			LogMsg = "ÓÉÓÚÄúÃ»ÓĞÕıÈ·ÌîĞ´ÏàÓ¦µÄ×ªÈÃÄÚÈİ£¬Ê¹ÓÃµÀ¾ß²»³É¹¦£¡"
+			LogMsg = "ç”±äºæ‚¨æ²¡æœ‰æ­£ç¡®å¡«å†™ç›¸åº”çš„è½¬è®©å†…å®¹ï¼Œä½¿ç”¨é“å…·ä¸æˆåŠŸï¼"
 		Else
 			If Dvbbs.UserID = Clng(Dv_Tools.ToUserInfo(0)) Then
 				Dv_Tools.ShowErr(14)
 				Exit Sub
 			End If
-			LogMsg = "Ê¹ÓÃ£º<B>"& Dv_Tools.ToolsInfo(1) &"</B>³É¹¦"
-			'½ğ±Ò×ªÈÃ
+			LogMsg = "ä½¿ç”¨ï¼š<B>"& Dv_Tools.ToolsInfo(1) &"</B>æˆåŠŸ"
+			'é‡‘å¸è½¬è®©
 			If SendMoneyNum > 0 Then
 				If CCur(Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usermoney").text) < SendMoneyNum Then Dv_Tools.ShowErr(17) : Exit Sub
 				Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usermoney").text = cCur(Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usermoney").text) - cCur(SendMoneyNum)
-				LogMsg = LogMsg & "£¬×ª¸ø"&Dv_Tools.ToUserInfo(1)&"<B>"&SendMoneyNum&"</B>¸ö½ğ±Ò"
+				LogMsg = LogMsg & "ï¼Œè½¬ç»™"&Dv_Tools.ToUserInfo(1)&"<B>"&SendMoneyNum&"</B>ä¸ªé‡‘å¸"
 				Dvbbs.Execute("Update Dv_User Set UserMoney = UserMoney - "&SendMoneyNum&" Where UserID=" & Dvbbs.UserID)
 				Dvbbs.Execute("Update Dv_User Set UserMoney = UserMoney + "&SendMoneyNum&" Where UserID=" & Dv_Tools.ToUserInfo(0))
 			End If
-			'µãÈ¯×ªÈÃ
+			'ç‚¹åˆ¸è½¬è®©
 			If SendTicketNum > 0 Then
 				If CCur(Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userticket").text) < SendTicketNum Then Dv_Tools.ShowErr(17) : Exit Sub
 				Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userticket").text = cCur(Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userticket").text) - cCur(SendTicketNum)
-				LogMsg = LogMsg & "£¬×ª¸ø"&Dv_Tools.ToUserInfo(1)&"<B>"&SendTicketNum&"</B>ÕÅµãÈ¯"
+				LogMsg = LogMsg & "ï¼Œè½¬ç»™"&Dv_Tools.ToUserInfo(1)&"<B>"&SendTicketNum&"</B>å¼ ç‚¹åˆ¸"
 				Dvbbs.Execute("Update Dv_User Set UserTicket = UserTicket - "&SendTicketNum&" Where UserID=" & Dvbbs.UserID)
 				Dvbbs.Execute("Update Dv_User Set UserTicket = UserTicket + "&SendTicketNum&" Where UserID=" & Dv_Tools.ToUserInfo(0))
 			End If
-			'µÀ¾ß×ªÈÃ
+			'é“å…·è½¬è®©
 			If SendToolsID > 0 And SendToolsNum > 0 Then
 				Dim Trs,UserToolsNum
 				UserToolsNum = 0
 				Sql = "Select ID,UserID,UserName,ToolsID,ToolsName,ToolsCount,SaleCount,UpdateTime From [Dv_Plus_Tools_Buss] Where ToolsCount>0 and UserID="& Dvbbs.UserID &" and ToolsID="& SendToolsID
 				Set Trs = Dvbbs.Plus_Execute(Sql)
 				If Trs.Eof Then
-					Response.redirect "showerr.asp?ErrCodes=<li>ËùÑ¡È¡×ªÈÃµÄµÀ¾ß²»´æÔÚ£¬Çë¹ºÂòÁËÏàÓ¦µÄµÀ¾ßÔÙÖ´ĞĞ×ªÈÃ£¡&action=NoHeadErr"
+					Response.redirect "showerr.asp?ErrCodes=<li>æ‰€é€‰å–è½¬è®©çš„é“å…·ä¸å­˜åœ¨ï¼Œè¯·è´­ä¹°äº†ç›¸åº”çš„é“å…·å†æ‰§è¡Œè½¬è®©ï¼&action=NoHeadErr"
 					Exit Sub
 				Else
 					UserToolsNum = Trs(5)
 					If UserToolsNum<SendToolsNum Then
-						Response.redirect "showerr.asp?ErrCodes=<li>ÄãÄ¿Ç°Ö»ÄÜ×ªÈÃ("&UserToolsNum&")¸öµÀ¾ß£¡&action=NoHeadErr"
+						Response.redirect "showerr.asp?ErrCodes=<li>ä½ ç›®å‰åªèƒ½è½¬è®©("&UserToolsNum&")ä¸ªé“å…·ï¼&action=NoHeadErr"
 						Exit Sub
 					End If
 				End If
 				Trs.Close
 				Set Trs = Dvbbs.Plus_Execute("Select ToolsName From Dv_Plus_Tools_Info Where ID=" & SendToolsID)
 				If Not (Trs.Eof And Trs.Bof) Then
-					LogMsg = LogMsg & "£¬×ª¸ø"&Dv_Tools.ToUserInfo(1)&"<B>"&SendToolsNum&"</B>¸ö"&Trs(0)&"µÀ¾ß"
+					LogMsg = LogMsg & "ï¼Œè½¬ç»™"&Dv_Tools.ToUserInfo(1)&"<B>"&SendToolsNum&"</B>ä¸ª"&Trs(0)&"é“å…·"
 				End If
 				Trs.Close
 				Set Trs=Nothing
-				'¸üĞÂÓÃ»§ºÍÏµÍ³Ê¹ÓÃÊıÁ¿
+				'æ›´æ–°ç”¨æˆ·å’Œç³»ç»Ÿä½¿ç”¨æ•°é‡
 				Call UpdateUserTools(Dvbbs.UserID,Dv_Tools.ToolsID,1)
-				'¸üĞÂÓÃ»§µÀ¾ßÊıÁ¿
+				'æ›´æ–°ç”¨æˆ·é“å…·æ•°é‡
 				Call UpdateBussTools(Dvbbs.UserID,SendToolsID,SendToolsNum)	
 				Call UpdateBussTools(Dv_Tools.ToUserInfo(0),SendToolsID,-SendToolsNum)
 			End If
@@ -148,53 +148,53 @@ Sub Tools_1()
 %>
 <table border="0" cellpadding=3 cellspacing=1 align=center class=Tableborder1 Style="Width:99%">
 	<tr>
-	<th height=23 colspan=2>Ê¹ÓÃµÀ¾ß <%=Dv_Tools.ToolsInfo(1)%></th></tr>
+	<th height=23 colspan=2>ä½¿ç”¨é“å…· <%=Dv_Tools.ToolsInfo(1)%></th></tr>
 	<tr><td height=23 class=Tablebody1 colspan=2>
-	<B>ËµÃ÷</B>£º<BR>1¡¢Ê¹ÓÃ±¾µÀ¾ß¿É½«Äú×Ô¼ºµÄ½ğÇ®¡¢µãÈ¯»òµÀ¾ß×ªÈÃ¸øÄ¿±êÓÃ»§<BR>2¡¢Ä¿±êÓÃ»§µÄÑ¡Ôñ·½·¨£ºÍ¨³£ÔÚÂÛÌ³µÄ¸÷ÖÖÎ»ÖÃÖ»Òªµã»÷ÓÃ»§ÃûÁ¬½Ó¼´¿É½øÈë¸ÃÓÃ»§×ÊÁÏÒ³Ãæ£¬ä¯ÀÀÌû×Ó¹ı³Ì¿Éµã»÷¸ÃÌùÓÃ»§¡°ĞÅÏ¢¡±Í¼±ê£¬½øÈëÓÃ»§×ÊÁÏÒ³Ãæºóµã»÷¡°Ê¹ÓÃµÀ¾ß¡±Á¬½Ó¼´¿É½øÈë¾ßÌåµÄµÀ¾ß²Ù×÷Ò³Ãæ</td></tr>
+	<B>è¯´æ˜</B>ï¼š<BR>1ã€ä½¿ç”¨æœ¬é“å…·å¯å°†æ‚¨è‡ªå·±çš„é‡‘é’±ã€ç‚¹åˆ¸æˆ–é“å…·è½¬è®©ç»™ç›®æ ‡ç”¨æˆ·<BR>2ã€ç›®æ ‡ç”¨æˆ·çš„é€‰æ‹©æ–¹æ³•ï¼šé€šå¸¸åœ¨è®ºå›çš„å„ç§ä½ç½®åªè¦ç‚¹å‡»ç”¨æˆ·åè¿æ¥å³å¯è¿›å…¥è¯¥ç”¨æˆ·èµ„æ–™é¡µé¢ï¼Œæµè§ˆå¸–å­è¿‡ç¨‹å¯ç‚¹å‡»è¯¥è´´ç”¨æˆ·â€œä¿¡æ¯â€å›¾æ ‡ï¼Œè¿›å…¥ç”¨æˆ·èµ„æ–™é¡µé¢åç‚¹å‡»â€œä½¿ç”¨é“å…·â€è¿æ¥å³å¯è¿›å…¥å…·ä½“çš„é“å…·æ“ä½œé¡µé¢</td></tr>
 	<tr>
-	<td height=23 class=Tablebody1 width="30%" align=right>Ä¿±êÓÃ»§£º</td>
+	<td height=23 class=Tablebody1 width="30%" align=right>ç›®æ ‡ç”¨æˆ·ï¼š</td>
 	<td height=23 class=Tablebody1 width="70%"><B><%=Dv_Tools.ToUserInfo(1)%></B></td>
 	</tr>
 	<FORM METHOD=POST ACTION="?ToolsAction=SendTools">
 	<input type=hidden value="<%=ToUserID%>" name="ToUserID">
 	<input type=hidden value="<%=Dv_Tools.ToolsID%>" name="ToolsID">
 	<tr>
-	<td height=23 class=Tablebody1 width="30%" align=right>×ªÈÃµÀ¾ß£º</td>
+	<td height=23 class=Tablebody1 width="30%" align=right>è½¬è®©é“å…·ï¼š</td>
 	<td height=23 class=Tablebody1 width="70%">
 	<Select Size=1 Name="SendToolsID">
-	<Option value=0 selected>ÇëÑ¡ÔñÒª×ªÈÃµÄµÀ¾ß</option>
+	<Option value=0 selected>è¯·é€‰æ‹©è¦è½¬è®©çš„é“å…·</option>
 <%
 	Set Rs=Dvbbs.Plus_Execute("Select ToolsID,ToolsName,ToolsCount From [Dv_Plus_Tools_Buss] where UserID="& Dvbbs.UserID &" ORDER BY ToolsCount Desc")
 	Do While Not Rs.Eof
-		Response.Write "<option value="""&Rs(0)&""">ÓµÓĞ"&Rs(1)&Rs(2)&"¸ö</option>"
+		Response.Write "<option value="""&Rs(0)&""">æ‹¥æœ‰"&Rs(1)&Rs(2)&"ä¸ª</option>"
 	Rs.MoveNext
 	Loop
 	Rs.Close
 	Set Rs=Nothing
 %>
 	</Select>
-	×ªÈÃÊıÁ¿£º
+	è½¬è®©æ•°é‡ï¼š
 	<input type=text size=5 value="0" name="SendToolsNum">
-	¸ö
+	ä¸ª
 	</td>
 	</tr>
 	<tr><td height=23 class=Tablebody1 colspan=2 align=center>
-	ÄúÓĞ <B><font color=red><%=Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usermoney").text%></font></B> ¸ö½ğ±ÒºÍ <B><font color=red><%=Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userticket").text%></font></B> ÕÅµãÈ¯¿É¹©×ªÈÃ
+	æ‚¨æœ‰ <B><font color=red><%=Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usermoney").text%></font></B> ä¸ªé‡‘å¸å’Œ <B><font color=red><%=Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userticket").text%></font></B> å¼ ç‚¹åˆ¸å¯ä¾›è½¬è®©
 	</td></tr>
 	<tr>
-	<td height=23 class=Tablebody1 width="30%" align=right>×ªÈÃ½ğ±Ò£º</td>
+	<td height=23 class=Tablebody1 width="30%" align=right>è½¬è®©é‡‘å¸ï¼š</td>
 	<td height=23 class=Tablebody1 width="70%">
 	<input type=text size=5 value="0" name="SendMoneyNum">
-	¸ö</td>
+	ä¸ª</td>
 	</tr>
 	<tr>
-	<td height=23 class=Tablebody1 width="30%" align=right>×ªÈÃµãÈ¯£º</td>
+	<td height=23 class=Tablebody1 width="30%" align=right>è½¬è®©ç‚¹åˆ¸ï¼š</td>
 	<td height=23 class=Tablebody1 width="70%">
 	<input type=text size=5 value="0" name="SendTicketNum">
-	¸ö</td>
+	ä¸ª</td>
 	</tr>
 	<tr><td height=23 class=Tablebody2 colspan=2 align=center>
-	<input type=submit value="È·ÈÏ×ªÈÃ" name=submit>
+	<input type=submit value="ç¡®è®¤è½¬è®©" name=submit>
 	</td></tr>
 	</FORM>
 </table>
@@ -202,7 +202,7 @@ Sub Tools_1()
 	End If
 End Sub
 '---------------------------------------------------
-'µÀ¾ß:ºó»ÚÒ©£¬¿ÉÉ¾³ı×Ô¼º·¢±íµÄÌû×Ó£¬ÓĞ»Ø¸´Ôò²»ÄÜÉ¾
+'é“å…·:åæ‚”è¯ï¼Œå¯åˆ é™¤è‡ªå·±å‘è¡¨çš„å¸–å­ï¼Œæœ‰å›å¤åˆ™ä¸èƒ½åˆ 
 '---------------------------------------------------
 Sub Tools_2()
 	Dim Rs,Sql
@@ -210,7 +210,7 @@ Sub Tools_2()
 	ToolsIsToday = 0
 '	If ToUserID = 0 Then ChkAction = False
 '	If ChkAction = False Then Dvbbs.AddErrCode(42) : Exit Sub
-	'ÅĞ¶ÏÄ¿±êÓÃ»§Ê¹ÓÃÈ¨ÏŞ²¢È¡³öÄ¿±êÓÃ»§ĞÅÏ¢
+	'åˆ¤æ–­ç›®æ ‡ç”¨æˆ·ä½¿ç”¨æƒé™å¹¶å–å‡ºç›®æ ‡ç”¨æˆ·ä¿¡æ¯
 	Dv_Tools.ChkToUseTools(Dvbbs.UserID)
 	If Dvbbs.UserID <> Clng(Dv_Tools.ToUserInfo(0)) Then
 		Dv_Tools.ShowErr(15)
@@ -219,11 +219,11 @@ Sub Tools_2()
 	Sql = "Select Title,UseTools,PostTable,Child From [Dv_Topic] Where TopicID="&TopicID&" And PostUserID="&Dvbbs.UserID
 	Set Rs = Dvbbs.Execute(Sql)
 	If Rs.Eof Then 
-		Response.redirect "showerr.asp?ErrCodes=<li>¸ÃÖ÷Ìâ²»´æÔÚ£¡&action=NoHeadErr"
+		Response.redirect "showerr.asp?ErrCodes=<li>è¯¥ä¸»é¢˜ä¸å­˜åœ¨ï¼&action=NoHeadErr"
 		Exit Sub
 	Else
 		If Rs(3)>0 Then
-			Response.redirect "showerr.asp?ErrCodes=<li>¸ÃÌùÒÑÓĞÈË»Ø¸´£¬²»ÄÜÉ¾³ı£¬Äú¿É×ÔĞĞ±à¼­Çå³ı¸ÃÌùÏà¹ØÄÚÈİ£¡&action=NoHeadErr"
+			Response.redirect "showerr.asp?ErrCodes=<li>è¯¥è´´å·²æœ‰äººå›å¤ï¼Œä¸èƒ½åˆ é™¤ï¼Œæ‚¨å¯è‡ªè¡Œç¼–è¾‘æ¸…é™¤è¯¥è´´ç›¸å…³å†…å®¹ï¼&action=NoHeadErr"
 			Exit Sub
 		End If
 		T_PostTable = Rs(2)
@@ -231,7 +231,7 @@ Sub Tools_2()
 	Rs.Close
 	Set Rs=Dvbbs.Execute("Select Topic,UseTools,Body,ParentID,DateAndTime From "&T_PostTable&" Where AnnounceID="&ReplyID&" And PostUserID=" & Dvbbs.UserID)
 	If Rs.Eof Then
-		Response.redirect "showerr.asp?ErrCodes=<li>¸ÃÌû×Ó²»´æÔÚ£¡&action=NoHeadErr"
+		Response.redirect "showerr.asp?ErrCodes=<li>è¯¥å¸–å­ä¸å­˜åœ¨ï¼&action=NoHeadErr"
 		Exit Sub
 	Else
 		If Rs(0)="" Or IsNull(Rs(0)) Then
@@ -253,30 +253,30 @@ Sub Tools_2()
 		Sql = "Update "&T_PostTable&" Set BoardID=444,locktopic="&Dvbbs.BoardID&",UseTools='"& T_UseTools &"' Where AnnounceID=" & ReplyID
 		Dvbbs.Execute(Sql)
 	End If
-	'¸üĞÂËùÓĞ°æÃæÌû×ÓÊı
+	'æ›´æ–°æ‰€æœ‰ç‰ˆé¢å¸–å­æ•°
 	AllboardNumSub ToolsIsToday,1,1
-	'¸üĞÂÏà¹Ø°æÃæÌû×ÓÊı
+	'æ›´æ–°ç›¸å…³ç‰ˆé¢å¸–å­æ•°
 	Call BoardNumSub(Dvbbs.BoardID,1,1,ToolsIsToday)
 	Call UpdateUserTools(Dvbbs.UserID,Dv_Tools.ToolsID,1)
-	LogMsg = "Ê¹ÓÃ£º<B>"& Dv_Tools.ToolsInfo(1) &"</B>³É¹¦£¬"&LoadTitle(T_Title)&"ÒÑ³É¹¦É¾³ıÈëÂÛÌ³»ØÊÕÕ¾£¡"
+	LogMsg = "ä½¿ç”¨ï¼š<B>"& Dv_Tools.ToolsInfo(1) &"</B>æˆåŠŸï¼Œ"&LoadTitle(T_Title)&"å·²æˆåŠŸåˆ é™¤å…¥è®ºå›å›æ”¶ç«™ï¼"
 	Call Dvbbs.ToolsLog(Dv_Tools.ToolsID,1,0,0,1,LogMsg,Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usermoney").text&"|"&Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userticket").text)
 	Dvbbs.Dvbbs_Suc(LogMsg)
 
 End Sub
 '---------------------------------------------------
-'µÀ¾ß:Ò»¼¶ÌØÉâÁî£¬¿É½â³ıµ¥ÌùÆÁ±Î
+'é“å…·:ä¸€çº§ç‰¹èµ¦ä»¤ï¼Œå¯è§£é™¤å•è´´å±è”½
 '---------------------------------------------------
 Sub Tools_3()
 	Dim Rs,Sql
 	Dim T_Title,T_UseTools,T_PostTable
 '	If ToUserID = 0 Then ChkAction = False
 '	If ChkAction = False Then Dvbbs.AddErrCode(42) : Exit Sub
-	'ÅĞ¶ÏÄ¿±êÓÃ»§Ê¹ÓÃÈ¨ÏŞ²¢È¡³öÄ¿±êÓÃ»§ĞÅÏ¢
+	'åˆ¤æ–­ç›®æ ‡ç”¨æˆ·ä½¿ç”¨æƒé™å¹¶å–å‡ºç›®æ ‡ç”¨æˆ·ä¿¡æ¯
 '	Dv_Tools.ChkToUseTools()
 	Sql = "Select Title,UseTools,PostTable From [Dv_Topic] Where TopicID="&TopicID
 	Set Rs = Dvbbs.Execute(Sql)
 	If Rs.Eof Then 
-		Response.redirect "showerr.asp?ErrCodes=<li>¸ÃÖ÷Ìâ²»´æÔÚ£¡&action=NoHeadErr"
+		Response.redirect "showerr.asp?ErrCodes=<li>è¯¥ä¸»é¢˜ä¸å­˜åœ¨ï¼&action=NoHeadErr"
 		Exit Sub
 	Else
 		T_PostTable = Rs(2)
@@ -284,7 +284,7 @@ Sub Tools_3()
 	Rs.Close
 	Set Rs=Dvbbs.Execute("Select topic,UseTools,Body,postuserid From "&T_PostTable&" Where AnnounceID="&ReplyID&" And LockTopic=2")
 	If Rs.Eof Then
-		Response.redirect "showerr.asp?ErrCodes=<li>¸ÃÌû×Ó²»´æÔÚ»ò²»ÊÇÆÁ±Î×´Ì¬£¡&action=NoHeadErr"
+		Response.redirect "showerr.asp?ErrCodes=<li>è¯¥å¸–å­ä¸å­˜åœ¨æˆ–ä¸æ˜¯å±è”½çŠ¶æ€ï¼&action=NoHeadErr"
 		Exit Sub
 	Else
 		If Rs(0)="" Or IsNull(Rs(0)) Then
@@ -294,18 +294,18 @@ Sub Tools_3()
 		End If
 		T_UseTools = LoadUserTools(Rs(1),Dv_Tools.ToolsID)
 	End If
-	'ÅĞ¶ÏÄ¿±êÓÃ»§Ê¹ÓÃÈ¨ÏŞ²¢È¡³öÄ¿±êÓÃ»§ĞÅÏ¢
+	'åˆ¤æ–­ç›®æ ‡ç”¨æˆ·ä½¿ç”¨æƒé™å¹¶å–å‡ºç›®æ ‡ç”¨æˆ·ä¿¡æ¯
 	Dv_Tools.ChkToUseTools(Rs(3))
 	Rs.Close
 	Sql = "Update "&T_PostTable&" Set LockTopic=0,UseTools='"& T_UseTools &"' Where AnnounceID=" & ReplyID
 	Dvbbs.Execute(Sql)
 	Call UpdateUserTools(Dvbbs.UserID,Dv_Tools.ToolsID,1)
-	LogMsg = "Ê¹ÓÃ£º<B>"& Dv_Tools.ToolsInfo(1) &"</B>³É¹¦£¬"&LoadTitle(T_Title)&"ÒÑ³É¹¦½â³ıµ¥ÌùÆÁ±Î×´Ì¬£¡"
+	LogMsg = "ä½¿ç”¨ï¼š<B>"& Dv_Tools.ToolsInfo(1) &"</B>æˆåŠŸï¼Œ"&LoadTitle(T_Title)&"å·²æˆåŠŸè§£é™¤å•è´´å±è”½çŠ¶æ€ï¼"
 	Call Dvbbs.ToolsLog(Dv_Tools.ToolsID,1,0,0,1,LogMsg,Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usermoney").text&"|"&Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userticket").text)
 	Dvbbs.Dvbbs_Suc(LogMsg)
 End Sub
 '---------------------------------------------------
-'µÀ¾ß:¶ş¼¶ÌØÉâÁî£¬¿É½â³ıÖ÷ÌâËø¶¨
+'é“å…·:äºŒçº§ç‰¹èµ¦ä»¤ï¼Œå¯è§£é™¤ä¸»é¢˜é”å®š
 '---------------------------------------------------
 Sub Tools_4()
 	Dim Rs,Sql
@@ -314,7 +314,7 @@ Sub Tools_4()
 	Sql = "Select Title,UseTools,PostTable From [Dv_Topic] Where TopicID="&TopicID&" And LockTopic=1"
 	Set Rs = Dvbbs.Execute(Sql)
 	If Rs.Eof Then 
-		Response.redirect "showerr.asp?ErrCodes=<li>¸ÃÖ÷Ìâ²»´æÔÚ»ò²»ÊÇËø¶¨×´Ì¬£¡&action=NoHeadErr"
+		Response.redirect "showerr.asp?ErrCodes=<li>è¯¥ä¸»é¢˜ä¸å­˜åœ¨æˆ–ä¸æ˜¯é”å®šçŠ¶æ€ï¼&action=NoHeadErr"
 		Exit Sub
 	Else
 		T_Title = Rs(0)
@@ -325,13 +325,13 @@ Sub Tools_4()
 	Sql = "Update [Dv_Topic] Set LockTopic=0,UseTools='"& T_UseTools &"' Where TopicID="&TopicID
 	Dvbbs.Execute(Sql)
 	Call UpdateUserTools(Dvbbs.UserID,Dv_Tools.ToolsID,1)
-	LogMsg = "Ê¹ÓÃ£º<B>"& Dv_Tools.ToolsInfo(1) &"</B>³É¹¦£¬"&LoadTitle(T_Title)&"ÒÑ³É¹¦½â³ıËø¶¨£¡"
+	LogMsg = "ä½¿ç”¨ï¼š<B>"& Dv_Tools.ToolsInfo(1) &"</B>æˆåŠŸï¼Œ"&LoadTitle(T_Title)&"å·²æˆåŠŸè§£é™¤é”å®šï¼"
 	Call Dvbbs.ToolsLog(Dv_Tools.ToolsID,1,0,0,1,LogMsg,Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usermoney").text&"|"&Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userticket").text)
 	Dvbbs.Dvbbs_Suc(LogMsg)
 End Sub
 
 '---------------------------------------------------
-'µÀ¾ß:Èı¼¶ÌØÉâÁî£¬½â³ı×Ô¼º»òËûÈËµÄÆÁ±Î»òËø¶¨×´Ì¬
+'é“å…·:ä¸‰çº§ç‰¹èµ¦ä»¤ï¼Œè§£é™¤è‡ªå·±æˆ–ä»–äººçš„å±è”½æˆ–é”å®šçŠ¶æ€
 '---------------------------------------------------
 Sub Tools_5()
 	Dim Rs,Sql
@@ -339,24 +339,24 @@ Sub Tools_5()
 	ChkAction = True
 	If ToUserID = 0 Then ChkAction = False
 	If ChkAction = False Then Dvbbs.AddErrCode(42) : Exit Sub
-	'ÅĞ¶ÏÄ¿±êÓÃ»§Ê¹ÓÃÈ¨ÏŞ²¢È¡³öÄ¿±êÓÃ»§ĞÅÏ¢
+	'åˆ¤æ–­ç›®æ ‡ç”¨æˆ·ä½¿ç”¨æƒé™å¹¶å–å‡ºç›®æ ‡ç”¨æˆ·ä¿¡æ¯
 	Dv_Tools.ChkToUseTools(ToUserID)
 	Sql = "Select UserID From Dv_User Where UserID="&ToUserID&" And LockUser>0"
 	Set Rs = Dvbbs.Execute(Sql)
 	If Rs.Eof Then 
-		Response.redirect "showerr.asp?ErrCodes=<li>¸ÃÓÃ»§²»´æÔÚ»ò²»ÊÇÆÁ±Î»òËø¶¨×´Ì¬£¡&action=NoHeadErr"
+		Response.redirect "showerr.asp?ErrCodes=<li>è¯¥ç”¨æˆ·ä¸å­˜åœ¨æˆ–ä¸æ˜¯å±è”½æˆ–é”å®šçŠ¶æ€ï¼&action=NoHeadErr"
 		Exit Sub
 	Else
 		Dvbbs.Execute("Update Dv_User Set LockUser=0 Where UserID="& Rs(0))
 	End If
 	Rs.Close
 	Call UpdateUserTools(Dvbbs.UserID,Dv_Tools.ToolsID,1)
-	LogMsg = "Ê¹ÓÃ£º<B>"& Dv_Tools.ToolsInfo(1) &"</B>³É¹¦£¬ÓÃ»§<B>"&Dv_Tools.ToUserInfo(1)&"</B>ÒÑ³É¹¦½â³ıËø¶¨»òÆÁ±Î×´Ì¬£¡"
+	LogMsg = "ä½¿ç”¨ï¼š<B>"& Dv_Tools.ToolsInfo(1) &"</B>æˆåŠŸï¼Œç”¨æˆ·<B>"&Dv_Tools.ToUserInfo(1)&"</B>å·²æˆåŠŸè§£é™¤é”å®šæˆ–å±è”½çŠ¶æ€ï¼"
 	Call Dvbbs.ToolsLog(Dv_Tools.ToolsID,1,0,0,1,LogMsg,Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usermoney").text&"|"&Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userticket").text)
 	Dvbbs.Dvbbs_Suc(LogMsg)
 End Sub
 '---------------------------------------------------
-'µÀ¾ß:ß¹àÛ¼¦£¬¿ÉÊ¹Ìû×ÓÌáÉıµ½µÚÒ»Ò³
+'é“å…·:å–å™—é¸¡ï¼Œå¯ä½¿å¸–å­æå‡åˆ°ç¬¬ä¸€é¡µ
 '---------------------------------------------------
 Sub Tools_6()
 	Dim Rs,Sql
@@ -365,7 +365,7 @@ Sub Tools_6()
 	Sql = "Select Title,UseTools,PostTable From [Dv_Topic] Where TopicID="&TopicID&" And LockTopic=1"
 	Set Rs = Dvbbs.Execute(Sql)
 	If Rs.Eof Then 
-		Response.redirect "showerr.asp?ErrCodes=<li>¸ÃÖ÷Ìâ²»´æÔÚ»ò²»ÊÇËø¶¨×´Ì¬£¡&action=NoHeadErr"
+		Response.redirect "showerr.asp?ErrCodes=<li>è¯¥ä¸»é¢˜ä¸å­˜åœ¨æˆ–ä¸æ˜¯é”å®šçŠ¶æ€ï¼&action=NoHeadErr"
 		Exit Sub
 	Else
 		T_Title = Rs(0)
@@ -376,12 +376,12 @@ Sub Tools_6()
 	Sql = "Update [Dv_Topic] Set LastPostTime="&SqlNowString&",UseTools='"& T_UseTools &"' Where TopicID="&TopicID
 	Dvbbs.Execute(Sql)
 	Call UpdateUserTools(Dvbbs.UserID,Dv_Tools.ToolsID,1)
-	LogMsg = "Ê¹ÓÃ£º<B>"& Dv_Tools.ToolsInfo(1) &"</B>³É¹¦£¬"&LoadTitle(T_Title)&"ÒÑ³É¹¦ÌáÉıµ½µÚÒ»Ò³£¡"
+	LogMsg = "ä½¿ç”¨ï¼š<B>"& Dv_Tools.ToolsInfo(1) &"</B>æˆåŠŸï¼Œ"&LoadTitle(T_Title)&"å·²æˆåŠŸæå‡åˆ°ç¬¬ä¸€é¡µï¼"
 	Call Dvbbs.ToolsLog(Dv_Tools.ToolsID,1,0,0,1,LogMsg,Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usermoney").text&"|"&Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userticket").text)
 	Dvbbs.Dvbbs_Suc(LogMsg)
 End Sub
 '---------------------------------------------------
-'µÀ¾ß:ĞÑÄ¿µÆ£¬¿É½«Ö÷Ìâ±äÉ«
+'é“å…·:é†’ç›®ç¯ï¼Œå¯å°†ä¸»é¢˜å˜è‰²
 '---------------------------------------------------
 Sub Tools_7()
 	Dim Rs,Sql,i
@@ -390,7 +390,7 @@ Sub Tools_7()
 	Sql = "Select Title,UseTools,PostTable From [Dv_Topic] Where TopicID="&TopicID
 	Set Rs = Dvbbs.Execute(Sql)
 	If Rs.Eof Then 
-		Response.redirect "showerr.asp?ErrCodes=<li>¸ÃÖ÷Ìâ²»´æÔÚ»ò²»ÊÇËø¶¨×´Ì¬£¡&action=NoHeadErr"
+		Response.redirect "showerr.asp?ErrCodes=<li>è¯¥ä¸»é¢˜ä¸å­˜åœ¨æˆ–ä¸æ˜¯é”å®šçŠ¶æ€ï¼&action=NoHeadErr"
 		Exit Sub
 	Else
 		T_Title = Rs(0)
@@ -401,14 +401,14 @@ Sub Tools_7()
 	ToolsColorList = "#000000,#F0F8FF,#FAEBD7,#00FFFF,#7FFFD4,#F0FFFF,#F5F5DC,#FFE4C4,#000000,#FFEBCD,#0000FF,#8A2BE2,#A52A2A,#DEB887,#5F9EA0,#7FFF00,#D2691E,#FF7F50,#6495ED,#FFF8DC,#DC143C,#00FFFF,#00008B,#008B8B,#B8860B,#A9A9A9,#006400,#BDB76B,#8B008B,#556B2F,#FF8C00,#9932CC,#8B0000,#E9967A,#8FBC8F,#483D8B,#2F4F4F,#00CED1,#9400D3,#FF1493,#00BFFF,#696969,#1E90FF,#B22222,#FFFAF0,#228B22,#FF00FF,#DCDCDC,#F8F8FF,#FFD700,#DAA520,#808080,#008000,#ADFF2F,#F0FFF0,#FF69B4,#CD5C5C,#4B0082,#FFFFF0,#F0E68C,#E6E6FA,#FFF0F5,#7CFC00,#FFFACD,#ADD8E6,#F08080,#E0FFFF,#FAFAD2,#90EE90,#D3D3D3,#FFB6C1,#FFA07A,#20B2AA,#87CEFA,#778899,#B0C4DE,#FFFFE0,#00FF00,#32CD32,#FAF0E6,#FF00FF,#800000,#66CDAA,#0000CD,#BA55D3,#9370DB,#3CB371,#7B68EE,#00FA9A,#48D1CC,#C71585,#191970,#F5FFFA,#FFE4E1,#FFE4B5,#FFDEAD,#000080,#FDF5E6,#808000,#6B8E23,#FFA500,#FF4500,#DA70D6,#EEE8AA,#98FB98,#AFEEEE,#DB7093,#FFEFD5,#FFDAB9,#CD853F,#FFC0CB,#DDA0DD,#B0E0E6,#800080,#FF0000,#BC8F8F,#4169E1,#8B4513,#FA8072,#F4A460,#2E8B57,#FFF5EE,#A0522D,#C0C0C0,#87CEEB,#6A5ACD,#708090,#FFFAFA,#00FF7F,#4682B4,#D2B48C,#008080,#D8BFD8,#FF6347,#40E0D0,#EE82EE,#F5DEB3,#FFFFFF,#F5F5F5,#FFFF00,#9ACD32"
 	If Request("ToolsAction")="SendColor" Then
 		If Instr("," & ToolsColorList & ",","," & Request("color") & ",")=0 Then
-			Response.redirect "showerr.asp?ErrCodes=<li>´íÎóµÄÑÕÉ«²ÎÊı£¡&action=NoHeadErr"
+			Response.redirect "showerr.asp?ErrCodes=<li>é”™è¯¯çš„é¢œè‰²å‚æ•°ï¼&action=NoHeadErr"
 			Exit Sub
 		End If
 		T_Title = "<font color="&Request("color")&">"&T_Title&"</font>"
 		Dvbbs.Execute("Update Dv_Topic Set Title='"&Replace(T_Title,"'","''")&"',TopicMode=1,UseTools='"& T_UseTools &"' Where TopicID=" & TopicID)
 		Dvbbs.Execute("Update "&T_PostTable&" Set Topic='"&Replace(T_Title,"'","''")&"',UseTools='"& T_UseTools &"' Where RootID="&TopicID&" And ParentID=0")
 		Call UpdateUserTools(Dvbbs.UserID,Dv_Tools.ToolsID,1)
-		LogMsg = "Ê¹ÓÃ£º<B>"& Dv_Tools.ToolsInfo(1) &"</B>³É¹¦£¬"&Replace(Replace(LoadTitle(T_Title),"&lt;","<"),"&gt;",">")&"ÒÑ³É¹¦²Ù×÷£¡"
+		LogMsg = "ä½¿ç”¨ï¼š<B>"& Dv_Tools.ToolsInfo(1) &"</B>æˆåŠŸï¼Œ"&Replace(Replace(LoadTitle(T_Title),"&lt;","<"),"&gt;",">")&"å·²æˆåŠŸæ“ä½œï¼"
 		Call Dvbbs.ToolsLog(Dv_Tools.ToolsID,1,0,0,1,LogMsg,Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usermoney").text&"|"&Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userticket").text)
 		Dvbbs.Dvbbs_Suc(LogMsg)
 	Else
@@ -416,9 +416,9 @@ Sub Tools_7()
 %>
 <table border="0" cellpadding=3 cellspacing=1 align=center class=Tableborder1 Style="Width:99%">
 	<tr>
-	<th height=23 colspan=2>Ê¹ÓÃµÀ¾ß <%=Dv_Tools.ToolsInfo(1)%></th></tr>
+	<th height=23 colspan=2>ä½¿ç”¨é“å…· <%=Dv_Tools.ToolsInfo(1)%></th></tr>
 	<tr><td height=23 class=Tablebody1 colspan=2>
-	<B>ËµÃ÷</B>£º±¾µÀ¾ß¿ÉÊ¹Ä¿±êÌû×Ó±êÌâ±ä³ÉÄúËùÑ¡ÔñµÄÑÕÉ«£¬ÇëÔÚÏÂÃæÑ¡ÔñÄúËùĞèÒªµÄÑÕÉ«</td></tr>
+	<B>è¯´æ˜</B>ï¼šæœ¬é“å…·å¯ä½¿ç›®æ ‡å¸–å­æ ‡é¢˜å˜æˆæ‚¨æ‰€é€‰æ‹©çš„é¢œè‰²ï¼Œè¯·åœ¨ä¸‹é¢é€‰æ‹©æ‚¨æ‰€éœ€è¦çš„é¢œè‰²</td></tr>
 	<FORM METHOD=POST ACTION="?ToolsAction=SendColor" name="theForm">
 <!--	<input type=hidden value="<%=ToUserID%>" name="ToUserID">  -->
 	<input type=hidden value="<%=Dvbbs.BoardID%>" name="BoardID">
@@ -426,7 +426,7 @@ Sub Tools_7()
 	<input type=hidden value="<%=ReplyID%>" name="ReplyID">
 	<input type=hidden value="<%=Dv_Tools.ToolsID%>" name="ToolsID">
 	<tr>
-	<td height=23 class=Tablebody1 width="30%" align=right>ÑÕÉ«ÁĞ±í£º</td>
+	<td height=23 class=Tablebody1 width="30%" align=right>é¢œè‰²åˆ—è¡¨ï¼š</td>
 	<td height=23 class=Tablebody1 width="70%">
 	<SELECT onChange="document.getElementById('TopicColor').color=options[selectedIndex].value;" name="color"> 
 	<%
@@ -438,11 +438,11 @@ Sub Tools_7()
 	</td>
 	</tr>
 	<tr>
-	<td height=23 class=Tablebody1 width="30%" align=right>Ê¹ÓÃĞ§¹û£º</td>
+	<td height=23 class=Tablebody1 width="30%" align=right>ä½¿ç”¨æ•ˆæœï¼š</td>
 	<td height=23 class=Tablebody1 width="70%"><font id=TopicColor><%=Server.HtmlEncode(T_Title)%></font></td>
 	</tr>
 	<tr><td height=23 class=Tablebody2 colspan=2 align=center>
-	<input type=submit value="È·ÈÏÊ¹ÓÃ" name=submit>
+	<input type=submit value="ç¡®è®¤ä½¿ç”¨" name=submit>
 	</td></tr>
 	</FORM>
 </table>
@@ -451,19 +451,19 @@ Sub Tools_7()
 End Sub
 
 '---------------------------------------------------
-'µÀ¾ß:Ë®¾§Çò£¬¿É²é¿´·¢ÌùÓÃ»§IP
+'é“å…·:æ°´æ™¶çƒï¼Œå¯æŸ¥çœ‹å‘è´´ç”¨æˆ·IP
 '---------------------------------------------------
 Sub Tools_8()
 	Dim Rs,Sql
 	Dim T_Title,T_UseTools,T_PostTable,ToUserToolsIP
 '	If ToUserID = 0 Then ChkAction = False
 '	If ChkAction = False Then Dvbbs.AddErrCode(42) : Exit Sub
-	'ÅĞ¶ÏÄ¿±êÓÃ»§Ê¹ÓÃÈ¨ÏŞ²¢È¡³öÄ¿±êÓÃ»§ĞÅÏ¢
+	'åˆ¤æ–­ç›®æ ‡ç”¨æˆ·ä½¿ç”¨æƒé™å¹¶å–å‡ºç›®æ ‡ç”¨æˆ·ä¿¡æ¯
 '	Dv_Tools.ChkToUseTools()
 	Sql = "Select Title,UseTools,PostTable From [Dv_Topic] Where TopicID="&TopicID
 	Set Rs = Dvbbs.Execute(Sql)
 	If Rs.Eof Then 
-		Response.redirect "showerr.asp?ErrCodes=<li>¸ÃÖ÷Ìâ²»´æÔÚ£¡&action=NoHeadErr"
+		Response.redirect "showerr.asp?ErrCodes=<li>è¯¥ä¸»é¢˜ä¸å­˜åœ¨ï¼&action=NoHeadErr"
 		Response.write "1"
 		Exit Sub
 	Else
@@ -472,7 +472,7 @@ Sub Tools_8()
 	Rs.Close
 	Set Rs=Dvbbs.Execute("Select Topic,UseTools,Body,IP,postuserid From "&T_PostTable&" Where AnnounceID="&ReplyID)
 	If Rs.Eof Then
-		Response.redirect "showerr.asp?ErrCodes=<li>¸ÃÌû×Ó²»´æÔÚ£¡&action=NoHeadErr"
+		Response.redirect "showerr.asp?ErrCodes=<li>è¯¥å¸–å­ä¸å­˜åœ¨ï¼&action=NoHeadErr"
 		Exit Sub
 	Else
 		If Rs(0)="" Or IsNull(Rs(0)) Then
@@ -483,30 +483,30 @@ Sub Tools_8()
 		T_UseTools = LoadUserTools(Rs(1),Dv_Tools.ToolsID)
 		ToUserToolsIP = Rs(3)
 	End If
-	'ÅĞ¶ÏÄ¿±êÓÃ»§Ê¹ÓÃÈ¨ÏŞ²¢È¡³öÄ¿±êÓÃ»§ĞÅÏ¢
+	'åˆ¤æ–­ç›®æ ‡ç”¨æˆ·ä½¿ç”¨æƒé™å¹¶å–å‡ºç›®æ ‡ç”¨æˆ·ä¿¡æ¯
 	Dv_Tools.ChkToUseTools(Rs(4))
 	Rs.Close
 	Sql = "Update "&T_PostTable&" Set UseTools='"& T_UseTools &"' Where AnnounceID=" & ReplyID
 	Dvbbs.Execute(Sql)
 	Call UpdateUserTools(Dvbbs.UserID,Dv_Tools.ToolsID,1)
-	LogMsg = "Ê¹ÓÃ£º<B>"& Dv_Tools.ToolsInfo(1) &"</B>³É¹¦£¬"&LoadTitle(T_Title)&"ÖĞÌû×Ó±àºÅÎª"&ReplyID&"µÄ·¢ÌùIPÊÇ£º"&ToUserToolsIP&"£¡"
+	LogMsg = "ä½¿ç”¨ï¼š<B>"& Dv_Tools.ToolsInfo(1) &"</B>æˆåŠŸï¼Œ"&LoadTitle(T_Title)&"ä¸­å¸–å­ç¼–å·ä¸º"&ReplyID&"çš„å‘è´´IPæ˜¯ï¼š"&ToUserToolsIP&"ï¼"
 	Call Dvbbs.ToolsLog(Dv_Tools.ToolsID,1,0,0,1,LogMsg,Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usermoney").text&"|"&Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userticket").text)
 	Dvbbs.Dvbbs_Suc(LogMsg)
 End Sub
 '---------------------------------------------------
-'µÀ¾ß:×·×ÙÆ÷£¬¿É²é¿´·¢ÌùÓÃ»§µÄIPºÍÀ´Ô´
+'é“å…·:è¿½è¸ªå™¨ï¼Œå¯æŸ¥çœ‹å‘è´´ç”¨æˆ·çš„IPå’Œæ¥æº
 '---------------------------------------------------
 Sub Tools_9()
 	Dim Rs,Sql
 	Dim T_Title,T_UseTools,T_PostTable,ToUserToolsIP,ToUserToolsIP_1,ToUserToolsAddress
 '	If ToUserID = 0 Then ChkAction = False
 '	If ChkAction = False Then Dvbbs.AddErrCode(42) : Exit Sub
-	'ÅĞ¶ÏÄ¿±êÓÃ»§Ê¹ÓÃÈ¨ÏŞ²¢È¡³öÄ¿±êÓÃ»§ĞÅÏ¢
+	'åˆ¤æ–­ç›®æ ‡ç”¨æˆ·ä½¿ç”¨æƒé™å¹¶å–å‡ºç›®æ ‡ç”¨æˆ·ä¿¡æ¯
 '	Dv_Tools.ChkToUseTools()
 	Sql = "Select Title,UseTools,PostTable From [Dv_Topic] Where TopicID="&TopicID
 	Set Rs = Dvbbs.Execute(Sql)
 	If Rs.Eof Then 
-		Response.redirect "showerr.asp?ErrCodes=<li>¸ÃÖ÷Ìâ²»´æÔÚ£¡&action=NoHeadErr"
+		Response.redirect "showerr.asp?ErrCodes=<li>è¯¥ä¸»é¢˜ä¸å­˜åœ¨ï¼&action=NoHeadErr"
 		Exit Sub
 	Else
 		T_PostTable = Rs(2)
@@ -514,7 +514,7 @@ Sub Tools_9()
 	Rs.Close
 	Set Rs=Dvbbs.Execute("Select Topic,UseTools,Body,IP,postuserid From "&T_PostTable&" Where AnnounceID="&ReplyID)
 	If Rs.Eof Then
-		Response.redirect "showerr.asp?ErrCodes=<li>¸ÃÌû×Ó²»´æÔÚ£¡&action=NoHeadErr"
+		Response.redirect "showerr.asp?ErrCodes=<li>è¯¥å¸–å­ä¸å­˜åœ¨ï¼&action=NoHeadErr"
 		Exit Sub
 	Else
 		If Rs(0)="" Or IsNull(Rs(0)) Then
@@ -525,7 +525,7 @@ Sub Tools_9()
 		T_UseTools = LoadUserTools(Rs(1),Dv_Tools.ToolsID)
 		ToUserToolsIP = Rs(3)
 	End If
-	'ÅĞ¶ÏÄ¿±êÓÃ»§Ê¹ÓÃÈ¨ÏŞ²¢È¡³öÄ¿±êÓÃ»§ĞÅÏ¢
+	'åˆ¤æ–­ç›®æ ‡ç”¨æˆ·ä½¿ç”¨æƒé™å¹¶å–å‡ºç›®æ ‡ç”¨æˆ·ä¿¡æ¯
 	Dv_Tools.ChkToUseTools(Rs(4))
 	Rs.Close
 	Sql = "Update "&T_PostTable&" Set UseTools='"& T_UseTools &"' Where AnnounceID=" & ReplyID
@@ -533,13 +533,13 @@ Sub Tools_9()
 	ToUserToolsIP_1 = ToUserToolsIP
 	ToUserToolsAddress = lookaddress(ToUserToolsIP_1)
 	Call UpdateUserTools(Dvbbs.UserID,Dv_Tools.ToolsID,1)
-	LogMsg = "Ê¹ÓÃ£º<B>"& Dv_Tools.ToolsInfo(1) &"</B>³É¹¦£¬"&LoadTitle(T_Title)&"ÖĞÌû×Ó±àºÅÎª"&ReplyID&"µÄ·¢ÌùIPÊÇ£º"&ToUserToolsIP&"£¬À´Ô´ÊÇ£º"&ToUserToolsAddress&"£¡"
+	LogMsg = "ä½¿ç”¨ï¼š<B>"& Dv_Tools.ToolsInfo(1) &"</B>æˆåŠŸï¼Œ"&LoadTitle(T_Title)&"ä¸­å¸–å­ç¼–å·ä¸º"&ReplyID&"çš„å‘è´´IPæ˜¯ï¼š"&ToUserToolsIP&"ï¼Œæ¥æºæ˜¯ï¼š"&ToUserToolsAddress&"ï¼"
 	Call Dvbbs.ToolsLog(Dv_Tools.ToolsID,1,0,0,1,LogMsg,Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usermoney").text&"|"&Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userticket").text)
 	Dvbbs.Dvbbs_Suc(LogMsg)
 
 End Sub
 '---------------------------------------------------
-'µÀ¾ß:Ò»ĞÇÁúÖé£¬¿É½«ÓÃ»§ËùÓĞ¸º·Ö×ªÎª0
+'é“å…·:ä¸€æ˜Ÿé¾™ç ï¼Œå¯å°†ç”¨æˆ·æ‰€æœ‰è´Ÿåˆ†è½¬ä¸º0
 '---------------------------------------------------
 Sub Tools_10()
 	Dim Rs,Sql
@@ -547,9 +547,9 @@ Sub Tools_10()
 	ChkAction = True
 	If ToUserID = 0 Then ChkAction = False
 	If ChkAction = False Then Dvbbs.AddErrCode(42) : Exit Sub
-	'ÅĞ¶ÏÄ¿±êÓÃ»§Ê¹ÓÃÈ¨ÏŞ²¢È¡³öÄ¿±êÓÃ»§ĞÅÏ¢
+	'åˆ¤æ–­ç›®æ ‡ç”¨æˆ·ä½¿ç”¨æƒé™å¹¶å–å‡ºç›®æ ‡ç”¨æˆ·ä¿¡æ¯
 	Dv_Tools.ChkToUseTools(ToUserID)
-	'¸üĞÂÓÃ»§·ÖÖµĞÅÏ¢
+	'æ›´æ–°ç”¨æˆ·åˆ†å€¼ä¿¡æ¯
 	Sql = "Select UserWealth,UserEP,UserCP,UserPower,UserDel From Dv_User Where UserID= " & Dv_Tools.ToUserInfo(0)
 	Set Rs = Dvbbs.iCreateObject ("adodb.recordset")
 	If Not IsObject(Conn) Then ConnectionDatabase
@@ -562,15 +562,15 @@ Sub Tools_10()
 	Rs.Update
 	Rs.Close
 	Set Rs=Nothing
-	'¸üĞÂÓÃ»§ºÍÏµÍ³Ê¹ÓÃÊıÁ¿
+	'æ›´æ–°ç”¨æˆ·å’Œç³»ç»Ÿä½¿ç”¨æ•°é‡
 	Call UpdateUserTools(Dvbbs.UserID,Dv_Tools.ToolsID,1)
-	LogMsg = "Ê¹ÓÃ£º<B>"& Dv_Tools.ToolsInfo(1) &"</B>³É¹¦£¬³É¹¦½«ÓÃ»§<b>"&Dv_Tools.ToUserInfo(1)&"</b>µÄËùÓĞ¸º·Ö×ªÕı£¡"
+	LogMsg = "ä½¿ç”¨ï¼š<B>"& Dv_Tools.ToolsInfo(1) &"</B>æˆåŠŸï¼ŒæˆåŠŸå°†ç”¨æˆ·<b>"&Dv_Tools.ToUserInfo(1)&"</b>çš„æ‰€æœ‰è´Ÿåˆ†è½¬æ­£ï¼"
 	Call Dvbbs.ToolsLog(Dv_Tools.ToolsID,1,0,0,1,LogMsg,Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usermoney").text&"|"&Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userticket").text)
 	Dvbbs.Dvbbs_Suc(LogMsg)
 
 End Sub
 '---------------------------------------------------
-'µÀ¾ß:¶şĞÇÁúÖé£¬¿É½«ÓÃ»§»ı·Ö¸º·Ö×ªÎª0
+'é“å…·:äºŒæ˜Ÿé¾™ç ï¼Œå¯å°†ç”¨æˆ·ç§¯åˆ†è´Ÿåˆ†è½¬ä¸º0
 '---------------------------------------------------
 Sub Tools_11()
 	Dim Rs,Sql
@@ -578,9 +578,9 @@ Sub Tools_11()
 	ChkAction = True
 	If ToUserID = 0 Then ChkAction = False
 	If ChkAction = False Then Dvbbs.AddErrCode(42) : Exit Sub
-	'ÅĞ¶ÏÄ¿±êÓÃ»§Ê¹ÓÃÈ¨ÏŞ²¢È¡³öÄ¿±êÓÃ»§ĞÅÏ¢
+	'åˆ¤æ–­ç›®æ ‡ç”¨æˆ·ä½¿ç”¨æƒé™å¹¶å–å‡ºç›®æ ‡ç”¨æˆ·ä¿¡æ¯
 	Dv_Tools.ChkToUseTools(ToUserID )
-	'¸üĞÂÓÃ»§·ÖÖµĞÅÏ¢
+	'æ›´æ–°ç”¨æˆ·åˆ†å€¼ä¿¡æ¯
 	Sql = "Select UserEP From Dv_User Where UserID= " & Dv_Tools.ToUserInfo(0)
 	Set Rs = Dvbbs.iCreateObject ("adodb.recordset")
 	If Not IsObject(Conn) Then ConnectionDatabase
@@ -589,14 +589,14 @@ Sub Tools_11()
 	Rs.Update
 	Rs.Close
 	Set Rs=Nothing
-	'¸üĞÂÓÃ»§ºÍÏµÍ³Ê¹ÓÃÊıÁ¿
+	'æ›´æ–°ç”¨æˆ·å’Œç³»ç»Ÿä½¿ç”¨æ•°é‡
 	Call UpdateUserTools(Dvbbs.UserID,Dv_Tools.ToolsID,1)
-	LogMsg = "Ê¹ÓÃ£º<B>"& Dv_Tools.ToolsInfo(1) &"</B>³É¹¦£¬³É¹¦½«ÓÃ»§<b>"&Dv_Tools.ToUserInfo(1)&"</b>µÄ»ı·Ö¸º·Ö×ªÕı£¡"
+	LogMsg = "ä½¿ç”¨ï¼š<B>"& Dv_Tools.ToolsInfo(1) &"</B>æˆåŠŸï¼ŒæˆåŠŸå°†ç”¨æˆ·<b>"&Dv_Tools.ToUserInfo(1)&"</b>çš„ç§¯åˆ†è´Ÿåˆ†è½¬æ­£ï¼"
 	Call Dvbbs.ToolsLog(Dv_Tools.ToolsID,1,0,0,1,LogMsg,Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usermoney").text&"|"&Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userticket").text)
 	Dvbbs.Dvbbs_Suc(LogMsg)
 End Sub
 '---------------------------------------------------
-'µÀ¾ß:¹·×Ğ¶Ó£¬¿ÉÔÚÓÃ»§ÉÏÏßµÚÒ»Ê±¼ä»ñÖª
+'é“å…·:ç‹—ä»”é˜Ÿï¼Œå¯åœ¨ç”¨æˆ·ä¸Šçº¿ç¬¬ä¸€æ—¶é—´è·çŸ¥
 '---------------------------------------------------
 Sub Tools_12()
 	Dim Rs,Sql
@@ -604,13 +604,13 @@ Sub Tools_12()
 	ChkAction = True
 	If ToUserID = 0 Then ChkAction = False
 	If ChkAction = False Then Dvbbs.AddErrCode(42) : Exit Sub
-	'ÅĞ¶ÏÄ¿±êÓÃ»§Ê¹ÓÃÈ¨ÏŞ²¢È¡³öÄ¿±êÓÃ»§ĞÅÏ¢
+	'åˆ¤æ–­ç›®æ ‡ç”¨æˆ·ä½¿ç”¨æƒé™å¹¶å–å‡ºç›®æ ‡ç”¨æˆ·ä¿¡æ¯
 	Dv_Tools.ChkToUseTools(ToUserID )
 	If Dvbbs.UserID = Clng(Dv_Tools.ToUserInfo(0)) Then
 		Dv_Tools.ShowErr(14)
 		Exit Sub
 	End If
-	'¸üĞÂÓÃ»§ĞÅÏ¢
+	'æ›´æ–°ç”¨æˆ·ä¿¡æ¯
 	Sql = "Select FollowMsgID From Dv_User Where UserID= " & Dv_Tools.ToUserInfo(0)
 	Set Rs = Dvbbs.iCreateObject ("adodb.recordset")
 	If Not IsObject(Conn) Then ConnectionDatabase
@@ -623,15 +623,15 @@ Sub Tools_12()
 	Rs.Update
 	Rs.Close
 	Set Rs=Nothing
-	'¸üĞÂÓÃ»§ºÍÏµÍ³Ê¹ÓÃÊıÁ¿
+	'æ›´æ–°ç”¨æˆ·å’Œç³»ç»Ÿä½¿ç”¨æ•°é‡
 	Call UpdateUserTools(Dvbbs.UserID,Dv_Tools.ToolsID,1)
-	LogMsg = "Ê¹ÓÃ£º<B>"& Dv_Tools.ToolsInfo(1) &"</B>³É¹¦£¬³É¹¦¸ú×ÙÓÃ»§<b>"&Dv_Tools.ToUserInfo(1)&"</b>£¬ÓÃ»§ÉÏÏßºó»áµÚÒ»Ê±¼äÍ¨ÖªÄú£¡"
+	LogMsg = "ä½¿ç”¨ï¼š<B>"& Dv_Tools.ToolsInfo(1) &"</B>æˆåŠŸï¼ŒæˆåŠŸè·Ÿè¸ªç”¨æˆ·<b>"&Dv_Tools.ToUserInfo(1)&"</b>ï¼Œç”¨æˆ·ä¸Šçº¿åä¼šç¬¬ä¸€æ—¶é—´é€šçŸ¥æ‚¨ï¼"
 	Call Dvbbs.ToolsLog(Dv_Tools.ToolsID,1,0,0,1,LogMsg,Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usermoney").text&"|"&Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userticket").text)
 	Dvbbs.Dvbbs_Suc(LogMsg)
 End Sub
 
 '---------------------------------------------------
-'µÀ¾ß:¾ÈÉúÈ¦£¬¿É½«Ìû×Ó¹Ì¶¥6Ğ¡Ê±
+'é“å…·:æ•‘ç”Ÿåœˆï¼Œå¯å°†å¸–å­å›ºé¡¶6å°æ—¶
 '---------------------------------------------------
 Sub Tools_13()
 	Dim Rs,Sql
@@ -640,7 +640,7 @@ Sub Tools_13()
 	Sql = "Select Title,UseTools,PostTable From [Dv_Topic] Where TopicID="&TopicID
 	Set Rs = Dvbbs.Execute(Sql)
 	If Rs.Eof Then 
-		Response.redirect "showerr.asp?ErrCodes=<li>¸ÃÖ÷Ìâ²»´æÔÚ£¡&action=NoHeadErr"
+		Response.redirect "showerr.asp?ErrCodes=<li>è¯¥ä¸»é¢˜ä¸å­˜åœ¨ï¼&action=NoHeadErr"
 		Exit Sub
 	Else
 		T_Title = Rs(0)
@@ -652,12 +652,12 @@ Sub Tools_13()
 	Sql = "Update [Dv_Topic] Set LastPostTime='"&LastPostTime&"',UseTools='"& T_UseTools &"' Where TopicID="&TopicID
 	Dvbbs.Execute(Sql)
 	Call UpdateUserTools(Dvbbs.UserID,Dv_Tools.ToolsID,1)
-	LogMsg = "Ê¹ÓÃ£º<B>"& Dv_Tools.ToolsInfo(1) &"</B>³É¹¦£¬"&LoadTitle(T_Title)&"ÒÑ³É¹¦¹Ì¶¥6Ğ¡Ê±£¡"
+	LogMsg = "ä½¿ç”¨ï¼š<B>"& Dv_Tools.ToolsInfo(1) &"</B>æˆåŠŸï¼Œ"&LoadTitle(T_Title)&"å·²æˆåŠŸå›ºé¡¶6å°æ—¶ï¼"
 	Call Dvbbs.ToolsLog(Dv_Tools.ToolsID,1,0,0,1,LogMsg,Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usermoney").text&"|"&Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userticket").text)
 	Dvbbs.Dvbbs_Suc(LogMsg)
 End Sub
 '---------------------------------------------------
-'µÀ¾ß:´ó¾ÈÉúÈ¦£¬¿É½«Ìû×Ó¹Ì¶¥12Ğ¡Ê±
+'é“å…·:å¤§æ•‘ç”Ÿåœˆï¼Œå¯å°†å¸–å­å›ºé¡¶12å°æ—¶
 '---------------------------------------------------
 Sub Tools_14()
 	Dim Rs,Sql
@@ -666,7 +666,7 @@ Sub Tools_14()
 	Sql = "Select Title,UseTools,PostTable From [Dv_Topic] Where TopicID="&TopicID
 	Set Rs = Dvbbs.Execute(Sql)
 	If Rs.Eof Then 
-		Response.redirect "showerr.asp?ErrCodes=<li>¸ÃÖ÷Ìâ²»´æÔÚ£¡&action=NoHeadErr"
+		Response.redirect "showerr.asp?ErrCodes=<li>è¯¥ä¸»é¢˜ä¸å­˜åœ¨ï¼&action=NoHeadErr"
 		Exit Sub
 	Else
 		T_Title = Rs(0)
@@ -678,20 +678,20 @@ Sub Tools_14()
 	Sql = "Update [Dv_Topic] Set LastPostTime='"&LastPostTime&"',UseTools='"& T_UseTools &"' Where TopicID="&TopicID
 	Dvbbs.Execute(Sql)
 	Call UpdateUserTools(Dvbbs.UserID,Dv_Tools.ToolsID,1)
-	LogMsg = "Ê¹ÓÃ£º<B>"& Dv_Tools.ToolsInfo(1) &"</B>³É¹¦£¬"&LoadTitle(T_Title)&"ÒÑ³É¹¦¹Ì¶¥12Ğ¡Ê±£¡"
+	LogMsg = "ä½¿ç”¨ï¼š<B>"& Dv_Tools.ToolsInfo(1) &"</B>æˆåŠŸï¼Œ"&LoadTitle(T_Title)&"å·²æˆåŠŸå›ºé¡¶12å°æ—¶ï¼"
 	Call Dvbbs.ToolsLog(Dv_Tools.ToolsID,1,0,0,1,LogMsg,Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usermoney").text&"|"&Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userticket").text)
 	Dvbbs.Dvbbs_Suc(LogMsg)
 End Sub
 
 '---------------------------------------------------
-'µÀ¾ß:Ê±¿Õ×ªÒÆ»ú ¿É½«×ÔÒÑµÄÌû×ÓÒÆ¶¯µ½ÈÎÒâ°æÃæ£¨Òşº¬¡¢ÌØÊâÏŞ¶¨°æÃæ³ıÍâ£©¡£
+'é“å…·:æ—¶ç©ºè½¬ç§»æœº å¯å°†è‡ªå·²çš„å¸–å­ç§»åŠ¨åˆ°ä»»æ„ç‰ˆé¢ï¼ˆéšå«ã€ç‰¹æ®Šé™å®šç‰ˆé¢é™¤å¤–ï¼‰ã€‚
 '---------------------------------------------------
 Sub Tools_15()
 
 End Sub
 
 '---------------------------------------------------
-'µÀ¾ß:ÕÕÑı¾µ ¿É²é¿´ÄäÃû·¢ÌûÓÃ»§Ãû¡£
+'é“å…·:ç…§å¦–é•œ å¯æŸ¥çœ‹åŒ¿åå‘å¸–ç”¨æˆ·åã€‚
 '---------------------------------------------------
 Sub Tools_16()
 	Dim Rs,Sql
@@ -699,830 +699,18 @@ Sub Tools_16()
 	Sql = "Select Title,UseTools,PostTable From [Dv_Topic] Where TopicID="&TopicID
 	Set Rs = Dvbbs.Execute(Sql)
 	If Rs.Eof Then 
-		Response.redirect "showerr.asp?ErrCodes=<li>¸ÃÖ÷Ìâ²»´æÔÚ£¡&action=NoHeadErr"
+		Response.redirect "showerr.asp?ErrCodes=<li>è¯¥ä¸»é¢˜ä¸å­˜åœ¨ï¼&action=NoHeadErr"
 		Exit Sub
 	Else
 		T_PostTable = Rs(2)
 	End If
 	Rs.Close
 	Set Rs=Dvbbs.Execute("Select Topic,UseTools,Body,postuserid From "&T_PostTable&" Where AnnounceID="&ReplyID)
-	If Rs.Eof Then
-		Response.redirect "showerr.asp?ErrCodes=<li>¸ÃÌû×Ó²»´æÔÚ£¡&action=NoHeadErr"
-		Exit Sub
-	Else
-		If Rs(0)="" Or IsNull(Rs(0)) Then
-			T_Title = Left(Rs(2),25)
-		Else
-			T_Title = Rs(0)
-		End If
-		T_UseTools = LoadUserTools(Rs(1),Dv_Tools.ToolsID)
-		ToUserToolsName = Rs(3)
+	If R
 	End If
-	'ÅĞ¶ÏÄ¿±êÓÃ»§Ê¹ÓÃÈ¨ÏŞ²¢È¡³öÄ¿±êÓÃ»§ĞÅÏ¢
-	Dv_Tools.ChkToUseTools(Rs(3))
 	Rs.Close
-	Sql = "Update "&T_PostTable&" Set UseTools='"& T_UseTools &"' Where AnnounceID=" & ReplyID
+	LastPostTime = DateAdd("h",12,now)
+	Sql = "Update [Dv_Topic] Set LastPostTime='"&LastPostTime&"',UseTools='"& T_UseTools &"' Where TopicID="&TopicID
 	Dvbbs.Execute(Sql)
 	Call UpdateUserTools(Dvbbs.UserID,Dv_Tools.ToolsID,1)
-	LogMsg = "Ê¹ÓÃ£º<B>"& Dv_Tools.ToolsInfo(1) &"</B>³É¹¦£¬"&LoadTitle(T_Title)&"µÄ·¢ÌùÈËÊÇ£º"&Dv_Tools.ToUserInfo(1)&"£¡"
-	Call Dvbbs.ToolsLog(Dv_Tools.ToolsID,1,0,0,1,LogMsg,Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usermoney").text&"|"&Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userticket").text)
-	Dvbbs.Dvbbs_Suc(LogMsg)
-End Sub
-
-'---------------------------------------------------
-'µÀ¾ß:¾§ÌåÌ½²âÆ÷ ¿É½«ÄäÃû·¢ÌûÓÃ»§ĞÅÏ¢Ö±½Ó×ªÎªÕæÊµĞÅÏ¢£¬²¢¹«¿ªÏÔÊ¾×´Ì¬¡£
-'---------------------------------------------------
-Sub Tools_17()
-	Dim Rs,Sql
-	Dim T_Title,T_UseTools,T_PostTable,ToUserToolsName
-	Sql = "Select Title,UseTools,PostTable From [Dv_Topic] Where TopicID="&TopicID
-	Set Rs = Dvbbs.Execute(Sql)
-	If Rs.Eof Then 
-		Response.redirect "showerr.asp?ErrCodes=<li>¸ÃÖ÷Ìâ²»´æÔÚ£¡&action=NoHeadErr"
-		Exit Sub
-	Else
-		T_PostTable = Rs(2)
-	End If
-	Rs.Close
-	Set Rs=Dvbbs.Execute("Select Topic,UseTools,Body,postuserid,ParentID From "&T_PostTable&" Where AnnounceID="&ReplyID)
-	If Rs.Eof Then
-		Response.redirect "showerr.asp?ErrCodes=<li>¸ÃÌû×Ó²»´æÔÚ£¡&action=NoHeadErr"
-		Exit Sub
-	Else
-		If Rs(0)="" Or IsNull(Rs(0)) Then
-			T_Title = Left(Rs(2),25)
-		Else
-			T_Title = Rs(0)
-		End If
-		T_UseTools = LoadUserTools(Rs(1),Dv_Tools.ToolsID)
-		ToUserToolsName = Rs(3)
-	End If
-	'ÅĞ¶ÏÄ¿±êÓÃ»§Ê¹ÓÃÈ¨ÏŞ²¢È¡³öÄ¿±êÓÃ»§ĞÅÏ¢
-	Dv_Tools.ChkToUseTools(Rs(3))
-	If Rs(4)=0 Then Dvbbs.Execute("Update Dv_Topic Set HideName=0 Where TopicID="&TopicID)
-	Rs.Close
-	Sql = "Update "&T_PostTable&" Set UseTools='"& T_UseTools &"',signflag=0 Where AnnounceID=" & ReplyID
-	Dvbbs.Execute(Sql)
-	Call UpdateUserTools(Dvbbs.UserID,Dv_Tools.ToolsID,1)
-	LogMsg = "Ê¹ÓÃ£º<B>"& Dv_Tools.ToolsInfo(1) &"</B>³É¹¦£¬"&LoadTitle(T_Title)&"µÄ·¢ÌùÈËÓÃ»§ĞÅÏ¢ÒÑ×ªÎªÏÔÊ¾×´Ì¬£¡"
-	Call Dvbbs.ToolsLog(Dv_Tools.ToolsID,1,0,0,1,LogMsg,Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usermoney").text&"|"&Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userticket").text)
-	Dvbbs.Dvbbs_Suc(LogMsg)
-End Sub
-
-
-'---------------------------------------------------
-'µÀ¾ß:¾«Áé¹­£¬¿ÉÆÆ»µĞ¡¾ÈÉúÈ¦Ğ§¹û£¬¶Ô´ó¾ÈÉúÈ¦Ğ§¹ûÆÆ»µ1/6
-'---------------------------------------------------
-Sub Tools_18()
-	Dim Rs,Sql,CanUserTools,UseTools
-	Dim T_Title,T_UseTools,T_PostTable
-	CanUserTools = False
-	If ChkAction = False Then Dvbbs.AddErrCode(42) : Exit Sub
-	Sql = "Select Title,UseTools,PostTable From [Dv_Topic] Where TopicID="&TopicID
-	Set Rs = Dvbbs.Execute(Sql)
-	If Rs.Eof Then 
-		Response.redirect "showerr.asp?ErrCodes=<li>¸ÃÖ÷Ìâ²»´æÔÚ£¡&action=NoHeadErr"
-		Exit Sub
-	Else
-		T_Title = Rs(0)
-		UseTools = Rs(1)
-		If UseTools="" Or IsNull(UseTools) Then
-			Response.redirect "showerr.asp?ErrCodes=<li>¸ÃÖ÷ÌâÃ»ÓĞ±»Ê¹ÓÃÏà¹ØµÀ¾ß£¡&action=NoHeadErr"
-			Exit Sub
-		End If
-		If InStr("," & UseTools & ",",",13,") Then CanUserTools = True
-		If InStr("," & UseTools & ",",",14,") Then CanUserTools = True
-		If Not CanUserTools Then
-			Response.redirect "showerr.asp?ErrCodes=<li>¸ÃÖ÷ÌâÃ»ÓĞ±»Ê¹ÓÃÏà¹ØµÀ¾ß£¡&action=NoHeadErr"
-			Exit Sub
-		End If
-		T_UseTools = LoadUserTools(UseTools,Dv_Tools.ToolsID)
-		T_PostTable = Rs(2)
-	End If
-	Rs.Close
-	Sql = ""
-	If IsSqlDataBase=1 Then
-		If InStr("," & UseTools & ",",",13,")>0 Then
-			Sql = "Update [Dv_Topic] Set LastPostTime=DateAdd(hour,-6,"&SqlNowString&"),UseTools='"& T_UseTools &"' Where TopicID="&TopicID
-		ElseIf InStr("," & UseTools & ",",",14,")>0 Then
-			Sql = "Update [Dv_Topic] Set LastPostTime=DateAdd(hour,-2,"&SqlNowString&"),UseTools='"& T_UseTools &"' Where TopicID="&TopicID
-		End If
-	Else
-		If InStr("," & UseTools & ",",",13,")>0 Then
-			Sql = "Update [Dv_Topic] Set LastPostTime=DateAdd('h',-6,"&SqlNowString&"),UseTools='"& T_UseTools &"' Where TopicID="&TopicID
-		ElseIf InStr("," & UseTools & ",",",14,")>0 Then
-			Sql = "Update [Dv_Topic] Set LastPostTime=DateAdd('h',-2,"&SqlNowString&"),UseTools='"& T_UseTools &"' Where TopicID="&TopicID
-		End If
-	End If
-	If Sql<>"" Then Dvbbs.Execute(Sql)
-	Call UpdateUserTools(Dvbbs.UserID,Dv_Tools.ToolsID,1)
-	LogMsg = "Ê¹ÓÃ£º<B>"& Dv_Tools.ToolsInfo(1) &"</B>³É¹¦£¬"&LoadTitle(T_Title)&"¶ÔÄ¿±êÌû×Ó²Ù×÷ÒÑ³É¹¦£¡"
-	Call Dvbbs.ToolsLog(Dv_Tools.ToolsID,1,0,0,1,LogMsg,Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usermoney").text&"|"&Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userticket").text)
-	Dvbbs.Dvbbs_Suc(LogMsg)
-End Sub
-'---------------------------------------------------
-'µÀ¾ß:Ë®Ö®Ä¸£¬¿ÉÑÓ³¤´óĞ¡¾ÈÉúÈ¦¹Ì¶¥Ğ§¹ûÊ±ÏŞµÄ1/6
-'---------------------------------------------------
-Sub Tools_19()
-	Dim Rs,Sql
-	Dim T_Title,T_UseTools,T_PostTable,CanUserTools,UseTools
-	CanUserTools = False
-	If ChkAction = False Then Dvbbs.AddErrCode(42) : Exit Sub
-	Sql = "Select Title,UseTools,PostTable From [Dv_Topic] Where TopicID="&TopicID
-	Set Rs = Dvbbs.Execute(Sql)
-	If Rs.Eof Then 
-		Response.redirect "showerr.asp?ErrCodes=<li>¸ÃÖ÷Ìâ²»´æÔÚ£¡&action=NoHeadErr"
-		Exit Sub
-	Else
-		T_Title = Rs(0)
-		UseTools = Rs(1)
-		If UseTools="" Or IsNull(UseTools) Then
-			Response.redirect "showerr.asp?ErrCodes=<li>¸ÃÖ÷ÌâÃ»ÓĞ±»Ê¹ÓÃÏà¹ØµÀ¾ß£¡&action=NoHeadErr"
-			Exit Sub
-		End If
-		If InStr("," & UseTools & ",",",13,") Then CanUserTools = True
-		If InStr("," & UseTools & ",",",14,") Then CanUserTools = True
-		If Not CanUserTools Then
-			Response.redirect "showerr.asp?ErrCodes=<li>¸ÃÖ÷ÌâÃ»ÓĞ±»Ê¹ÓÃÏà¹ØµÀ¾ß£¡&action=NoHeadErr"
-			Exit Sub
-		End If
-		T_UseTools = LoadUserTools(UseTools,Dv_Tools.ToolsID)
-		T_PostTable = Rs(2)
-	End If
-	Rs.Close
-	Sql = ""
-	If IsSqlDataBase=1 Then
-		If InStr("," & UseTools & ",",",13,")>0 Then
-			Sql = "Update [Dv_Topic] Set LastPostTime=DateAdd(hour,1,"&SqlNowString&"),UseTools='"& T_UseTools &"' Where TopicID="&TopicID
-		ElseIf InStr("," & UseTools & ",",",14,")>0 Then
-			Sql = "Update [Dv_Topic] Set LastPostTime=DateAdd(hour,2,"&SqlNowString&"),UseTools='"& T_UseTools &"' Where TopicID="&TopicID
-		End If
-	Else
-		If InStr("," & UseTools & ",",",13,")>0 Then
-			Sql = "Update [Dv_Topic] Set LastPostTime=DateAdd('h',1,"&SqlNowString&"),UseTools='"& T_UseTools &"' Where TopicID="&TopicID
-		ElseIf InStr("," & UseTools & ",",",14,")>0 Then
-			Sql = "Update [Dv_Topic] Set LastPostTime=DateAdd('h',2,"&SqlNowString&"),UseTools='"& T_UseTools &"' Where TopicID="&TopicID
-		End If
-	End If
-	If Sql<>"" Then Dvbbs.Execute(Sql)
-	Call UpdateUserTools(Dvbbs.UserID,Dv_Tools.ToolsID,1)
-	LogMsg = "Ê¹ÓÃ£º<B>"& Dv_Tools.ToolsInfo(1) &"</B>³É¹¦£¬"&LoadTitle(T_Title)&"¶ÔÄ¿±êÌû×Ó²Ù×÷ÒÑ³É¹¦£¡"
-	Call Dvbbs.ToolsLog(Dv_Tools.ToolsID,1,0,0,1,LogMsg,Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usermoney").text&"|"&Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userticket").text)
-	Dvbbs.Dvbbs_Suc(LogMsg)
-End Sub
-
-'---------------------------------------------------
-'µÀ¾ß:×ªÉúÖ®Ñ×,¿É½«¸ü¸Ä×ÔÒÑÔÚÂÛÌ³µÄÓÃ»§Ãû¡£¡£
-'---------------------------------------------------
-Sub Tools_20()
-	ChkAction = True
-	Dim NewUserName,TempLateStr,i,Rs,Sql
-	If Request("ToolsAction")="ChangID" Then
-		NewUserName = Dvbbs.Checkstr(Trim(Request.Form("name")))
-		If Dvbbs.chkpost = False Then Dvbbs.AddErrCode(16):Exit Sub
-		'ÑéÖ¤ÓÃ»§Ãû×Ö·û³¤¶ÈÊÇ·ñ·ûºÏÂÛÌ³±ê×¼
-		If NewUserName = "" or Dvbbs.strLength(NewUserName)>Cint(Dvbbs.Forum_Setting(41)) or Dvbbs.strLength(NewUserName)<Cint(Dvbbs.Forum_Setting(40)) Then
-			Dvbbs.AddErrCode(17)
-			ChkAction = False
-		End If
-		'ÑéÖ¤ÓÃ»§ÃûÊÇ·ñº¬ÓĞ½ûÖ¹×Ö·û£»
-		If Instr(NewUserName,"=")>0 or Instr(NewUserName,"%")>0 or Instr(NewUserName,chr(32))>0 or Instr(NewUserName,"?")>0 or Instr(NewUserName,"&")>0 or Instr(NewUserName,";")>0 or Instr(NewUserName,",")>0 or Instr(NewUserName,"'")>0 or Instr(NewUserName,chr(34))>0 or Instr(NewUserName,chr(9))>0 or Instr(NewUserName,"£ ")>0 or Instr(NewUserName,"$")>0 or Instr(NewUserName,"¡ì")>0 Then
-			Dvbbs.AddErrCode(19)
-			ChkAction = False
-		End If
-		'ÑéÖ¤ÓÃ»§ÃûÊÇ×¢²á¹ı½ûÖ¹×Ö·û£»
-		Dim RegSplitWords
-		RegSplitWords = Split(Dvbbs.Forum_setting(4),",")
-		For i = 0 To Ubound(RegSplitWords)
-			If Instr(NewUserName,RegSplitWords(i))>0 Then
-				Dvbbs.AddErrCode(19)
-				ChkAction = False
-				Exit For
-			End If
-		Next
-		If ChkAction = False Then Exit Sub
-		'ĞÂÓÃ»§ÃûÊÇ·ñÓĞÖØ¸´
-		Set Rs = Dvbbs.Execute("Select top 1 UserID From [Dv_user]  Where UserName = '"&NewUserName&"'")
-		If Not Rs.eof Then
-			Dvbbs.AddErrCode(21)	'ÄúÊäÈëµÄÓÃ»§ÃûÒÑ¾­±»×¢²á¡£
-			Exit Sub
-		End If
-		Rs.close
-
-		'-------------------------------------------------------------------------------------------------------------
-		'¸üĞÂµÀ¾ß±íÓÃ»§ÃûÊı¾İ
-		Dvbbs.Plus_Execute("update [Dv_Plus_Tools_Buss] set UserName = '"&NewUserName&"' Where UserID = "&Dvbbs.UserID)
-		Dvbbs.Plus_Execute("update [Dv_MoneyLog] set AddUserName = '"&NewUserName&"' Where AddUserID = "&Dvbbs.UserID)
-		'¸üĞÂÂÛÌ³ÓÃ»§ÃûËùÓĞÊı¾İ
-		Conn.Execute("update [Dv_Admin] set adduser = '"&NewUserName&"' Where adduser = '"&Dvbbs.MemberName&"'")
-		Dvbbs.Execute("update [Dv_User] set username = '"&NewUserName&"' Where UserID = "&Dvbbs.UserID)
-		Dvbbs.Execute("update [Dv_BbsNews] set username = '"&NewUserName&"' Where username = '"&Dvbbs.MemberName&"'")
-		Dvbbs.Execute("update [Dv_BestTopic] set PostUserName = '"&NewUserName&"' Where PostUserID = "&Dvbbs.UserID)
-		Dvbbs.Execute("update [Dv_BookMark] set username = '"&NewUserName&"' Where username = '"&Dvbbs.MemberName&"'")
-		Dvbbs.Execute("update [Dv_Friend] set F_username = '"&NewUserName&"' Where F_userid = "&Dvbbs.UserID)
-		Dvbbs.Execute("update [Dv_Friend] set F_friend = '"&NewUserName&"' Where F_friend = '"&Dvbbs.MemberName&"'")
-		Dvbbs.Execute("update [Dv_Log] set l_username = '"&NewUserName&"' Where l_username = '"&Dvbbs.MemberName&"'")
-		Dvbbs.Execute("update [Dv_Message] set sender = '"&NewUserName&"' Where sender = '"&Dvbbs.MemberName&"'")
-		Dvbbs.Execute("update [Dv_Message] set incept = '"&NewUserName&"' Where incept = '"&Dvbbs.MemberName&"'")
-		Dvbbs.Execute("update [Dv_Online] set username = '"&NewUserName&"' Where UserID = "&Dvbbs.UserID)
-		Dvbbs.Execute("update [Dv_SmallPaper] set S_UserName = '"&NewUserName&"' Where S_UserName = '"&Dvbbs.MemberName&"'")
-		Dvbbs.Execute("update [DV_Upfile] set F_Username = '"&NewUserName&"' Where F_UserID = "&Dvbbs.UserID)
-		Dvbbs.Execute("update [Dv_Topic] set PostUserName = '"&NewUserName&"' Where PostUserID = "&Dvbbs.UserID)
-		'¸üĞÂÈ¦×ÓÓÃ»§ÃûËùÓĞÊı¾İ
-		Dvbbs.Execute("update [Dv_GroupName] set AppUserName = '"&NewUserName&"' Where AppUserID = "&Dvbbs.UserID)
-		Dvbbs.Execute("update [Dv_GroupUser] set UserName = '"&NewUserName&"' Where UserID = "&Dvbbs.UserID)
-		Dvbbs.Execute("update [Dv_Group_Topic] set PostUserName = '"&NewUserName&"' Where PostUserID = "&Dvbbs.UserID)
-		Dvbbs.Execute("update [Dv_Group_BBS] set UserName = '"&NewUserName&"' Where PostUserID = "&Dvbbs.UserID)
-
-		SQL = "Select TableName,TableType From Dv_TableList"
-		Set Rs = Dvbbs.Execute(SQL)
-		Do while Not Rs.eof
-			Dvbbs.Execute("update "&Rs(0)&" set UserName = '"&NewUserName&"' Where PostUserID = "&Dvbbs.UserID)
-			'Response.Write SQL(1,i)&"¸üĞÂÍê³É£¡<br>"
-		Rs.Movenext
-		Loop
-		Rs.close
-		
-		'¸üĞÂ°æ¿é³öÏÖµÄÓÃ»§Ãû
-		TempStr1=""
-		SQL = "Select Boardid,BoardMaster,LastPost,boarduser From [Dv_Board]"
-		SET Rs = Dvbbs.Execute(SQL)
-		If Not Rs.eof Then
-			SQL = Rs.GetRows(-1)
-			Rs.close
-			For i = 0 To Ubound(SQL,2)
-				If GetInstr(SQL(1,i),Dvbbs.MemberName,"|")=True or GetInstr(SQL(2,i),Dvbbs.MemberName,"$")=True or GetInstr(SQL(3,i),Dvbbs.MemberName,",")=True Then
-					TempStr1 = StrReplace(SQL(1,i),"|",Dvbbs.MemberName,NewUserName)
-					TempStr2 = StrReplace(SQL(2,i),"$",Dvbbs.MemberName,NewUserName)
-					TempStr3 = StrReplace(SQL(3,i),",",Dvbbs.MemberName,NewUserName)
-					Dvbbs.Execute("update [Dv_Board] set BoardMaster = '"& TempStr1 &"',LastPost = '"& TempStr2 &"',boarduser = '"& TempStr3 &"' Where Boardid = "&SQL(0,i))
-					'¸üĞÂ°æÃæ»º´æ
-					Dvbbs.ReloadBoardInfo(SQL(0,i))
-				End If
-			Next
-		Else
-			Rs.close
-		End If
-		Dim TempStr1,TempStr2,TempStr3
-		'¸üĞÂÖ÷Ìâ»Ø¸´ÓÃ»§Ãû==================>¿¼ÂÇÈ¡Ïû(>_<)
-		TempStr2 = Dvbbs.MemberName & "$"
-		SQL = "Select TopicID,LastPost From [Dv_Topic] where LastPost Like '"&TempStr2&"%'"
-		SET Rs = Dvbbs.Execute(SQL)
-		If Not Rs.eof Then
-			SQL = Rs.GetRows(-1)
-			Rs.close:Set Rs = Nothing
-			For i = 0 To Ubound(SQL,2)
-				If GetInstr(SQL(1,i),Dvbbs.MemberName,"$")=True Then
-					TempStr1 = StrReplace(SQL(1,i),"$",Dvbbs.MemberName,NewUserName)
-					Dvbbs.Execute("update [Dv_Topic] set LastPost = '"& TempStr1 &"' Where TopicID = "&SQL(0,i))
-				End If
-			Next
-		Else
-			Rs.close:Set Rs = Nothing
-		End If
-		
-		'¸üĞÂÓÃ»§ºÍÏµÍ³Ê¹ÓÃÊıÁ¿
-		Call UpdateUserTools(Dvbbs.UserID,Dv_Tools.ToolsID,1)
-		LogMsg = "Ê¹ÓÃ£º<B>"& Dv_Tools.ToolsInfo(1) &"</B>³É¹¦£¬³É¹¦½«ÓÃ»§Ãû£º<b>"&Dvbbs.MemberName&"</b>¸ÄÎª£º<b>"&NewUserName&"</b>£¡"
-		Call Dvbbs.ToolsLog(Dv_Tools.ToolsID,1,0,0,1,LogMsg,Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usermoney").text&"|"&Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userticket").text)
-		'¸üĞÂÓÃ»§Session,CookiesĞÅÏ¢
-		Dvbbs.MemberName = NewUserName
-		Dvbbs.TrueCheckUserLogin
-		Dvbbs.NewPassword
-		Dvbbs.Dvbbs_Suc(LogMsg)
-	Else
-	%>
-		<FORM name=theForm action="?ToolsAction=ChangID" method=post>
-		<input type=hidden value="<%=Dv_Tools.ToolsID%>" name="ToolsID">
-		<table cellpadding=3 cellspacing=1 align=center class=tableborder1 Style="Width:99%">
-		<tr><th height=25 id="tabletitlelink" colspan="2">Ê¹ÓÃµÀ¾ß <%=Dv_Tools.ToolsInfo(1)%></th></tr>
-		<tr><td colspan="2" Class=tablebody2>
-		<li><%=Dv_Tools.ToolsInfo(2)%>
-		<li>×¢²áÓÃ»§Ãû³¤¶ÈÏŞÖÆÎª£º<font color="<%=Dvbbs.mainsetting(1)%>"><%=Dvbbs.Forum_Setting(40)%></font> £­<font color="<%=Dvbbs.mainsetting(1)%>"><%=Dvbbs.Forum_Setting(41)%></font>×Ö·û£»
-		<li>¸ÄÃûºóÏÂÒ»´Î½«»áÓÃĞÂÓÃ»§ÃûIDµÇÂ½£¬ËùÒÔ¸ü¸ÄÇ°Îñ±Ø¼ÇÏÂĞÂÓÃ»§ID£»
-		<li>×¢ÒâÊÂÏî£¬ÓÉÓÚ´óÁ¿Êı¾İ¸üĞÂ£¬ËùÒÔ¸üĞÂÊ±Çë²»ÒªË¢ĞÂ£¬Ö±µ½ÌáÊ¾Íê³ÉÎªÖ¹£¡
-		</td></tr>
-		<tr>
-		<td width="25%" height="25" Class=tablebody1 align=right>ĞÂÂÛÌ³ÓÃ»§Ãû£º</td>
-		<td width="75%" Class=tablebody1>
-		<INPUT maxLength="<%=Dvbbs.Forum_Setting(41)%>" size=30 name=name>
-		</td></tr>
-		<tr><td height=25 colspan="2" Class=tablebody2 align=center >
-		<INPUT TYPE="submit" value="È·¶¨" onclick ="if (document.theForm.name.value == ''){alert('ÓÃ»§Ãû²»ÄÜÎª¿Õ£¡');return false;}">&nbsp;&nbsp;&nbsp;
-		<INPUT TYPE="reset" value="ÖØÖÃ">
-		</td></tr>
-		</table>
-		</FORM>
-	<%
-	End If
-End Sub
-
-'---------------------------------------------------
-'µÀ¾ß:Èº·¢Æ÷,¿É·¢ËÍÂÛÌ³¶ÌÏûÏ¢¸øËùÓĞÔÚÏßÓÃ»§¡£
-'---------------------------------------------------
-Sub Tools_21()
-	ChkAction = True
-	If Request("ToolsAction")="SendMsg" Then
-		If Dvbbs.chkpost = False Then Dvbbs.AddErrCode(16):Exit Sub
-		Dim MsgTitle,MsgBody,ErrCodes,Rs,Sql,SendUser,i
-		MsgTitle = Dvbbs.Checkstr(Trim(Request.Form("MsgTitle")))
-		MsgBody = Dvbbs.Checkstr(Trim(Request.Form("MsgBody")))
-		If MsgTitle="" or Dvbbs.strLength(MsgTitle)>50 Then ErrCodes = ErrCodes & "<li>±êÌâÄÚÈİ²»ÄÜÎª¿Õ»ò³¬¹ı50×Ö½Ú£¡"
-		If MsgBody="" or Dvbbs.strLength(MsgBody)>Clng(Dvbbs.GroupSetting(34)) Then ErrCodes = ErrCodes & "<li>ÄÚÈİ²»ÄÜÎª¿Õ»ò³¬¹ı"&Dvbbs.GroupSetting(34)&"×Ö½Ú£¡"
-		If ErrCodes<>"" Then
-			Response.redirect "showerr.asp?ErrCodes="&ErrCodes&"&action=NoHeadErr"
-			Exit Sub
-		End If
-		LogMsg = "Ê¹ÓÃ£º<B>"& Dv_Tools.ToolsInfo(1) &"</B>³É¹¦£¬ÔÚÏß¶ÌĞÅÒÑ·¢ËÍÍê±Ï£¡"
-		Sql = "Select username From Dv_online Where UserID>0 and UserID<>"&Dvbbs.UserID
-		SET Rs = Dvbbs.Execute(SQL)
-		If Not Rs.eof Then
-			SendUser=Rs.GetRows(-1)
-		Else
-			Dvbbs.Dvbbs_Suc(LogMsg)
-			Exit Sub
-		End If
-		Rs.close:Set Rs = Nothing
-		MsgTitle = Dv_Tools.ToolsInfo(1)&"--"&MsgTitle
-		MsgTitle = Dvbbs.Checkstr(MsgTitle)
-		For i=0 To Ubound(SendUser,2)
-			SendUser(0,i) = Dvbbs.Checkstr(SendUser(0,i))
-			Sql="Insert into Dv_Message (incept,sender,title,content,sendtime,flag,issend) values ('"& SendUser(0,i)&"','"&Dvbbs.MemberName&"','"&MsgTitle&"','"&MsgBody&"',"&SqlNowString&",0,1)"
-			Dvbbs.Execute(SQL)
-			UPDATE_User_Msg(SendUser(0,i))
-		Next
-		'¸üĞÂÓÃ»§ºÍÏµÍ³Ê¹ÓÃÊıÁ¿
-		Call UpdateUserTools(Dvbbs.UserID,Dv_Tools.ToolsID,1)
-		LogMsg = LogMsg &"¹²·¢³ö"& i &"ÌõÂÛÌ³¶ÌĞÅ¡£"
-		Call Dvbbs.ToolsLog(Dv_Tools.ToolsID,1,0,0,1,LogMsg,Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usermoney").text&"|"&Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userticket").text)
-		Dvbbs.Dvbbs_Suc(LogMsg)
-	Else
-%>
-		<FORM name=theForm action="?ToolsAction=SendMsg" method=post>
-		<input type=hidden value="<%=Dv_Tools.ToolsID%>" name="ToolsID">
-		<table cellpadding=3 cellspacing=1 align=center class=tableborder1 Style="Width:99%">
-		<tr><th height=25 id="tabletitlelink" colspan="2">Ê¹ÓÃµÀ¾ß <%=Dv_Tools.ToolsInfo(1)%></th></tr>
-		<tr><td colspan="2" Class=tablebody2><li><%=Dv_Tools.ToolsInfo(2)%></td></tr>
-		<tr><td width="25%" height="25" Class=tablebody1 align=right><b>¶ÌĞÅ±êÌâ£º</td>
-		<td width="75%" Class=tablebody1><INPUT maxLength="50" size=50 name="MsgTitle">(*ÇëÔÚ50¸ö×Ö·ûÒÔÄÚ£¡)
-		</td></tr>
-		<tr><td height="25" Class=tablebody1 align=right Valign=Top><b>¶ÌĞÅÄÚÈİ£º</td>
-		<td Class=tablebody1><TEXTAREA NAME="MsgBody" Style="width:100%;height:250;"></TEXTAREA>
-		</td></tr>
-		<tr><td height=25 colspan="2" Class=tablebody2 align=center >
-		<INPUT TYPE="submit" value="È·¶¨" onclick ="if (document.theForm.name.value == ''){alert('ÓÃ»§Ãû²»ÄÜÎª¿Õ£¡');return false;}">&nbsp;&nbsp;&nbsp;
-		<INPUT TYPE="reset" value="ÖØÖÃ">
-		</td></tr>
-		</table>
-		</FORM>
-<%
-	End If
-End Sub
-
-'---------------------------------------------------
-'µÀ¾ß:Íµ¿úÆ÷£¬¿É²é¿´ËûÈË½ğ±Ò¡¢µãÈ¯ºÍµÀ¾ßµÈ±£ÃÜĞÅÏ¢
-'---------------------------------------------------
-Sub Tools_22()
-	Dim Rs,Sql
-	Dim T_Title,T_UseTools,T_PostTable
-	ChkAction = True
-	If ToUserID = 0 Then ChkAction = False
-	If ChkAction = False Then Dvbbs.AddErrCode(42) : Exit Sub
-	'ÅĞ¶ÏÄ¿±êÓÃ»§Ê¹ÓÃÈ¨ÏŞ²¢È¡³öÄ¿±êÓÃ»§ĞÅÏ¢
-	Dv_Tools.ChkToUseTools(ToUserID )
-%>
-<table border="0" cellpadding=3 cellspacing=1 align=center class=Tableborder1 Style="Width:99%">
-	<tr>
-	<th height=23 colspan=2>Ê¹ÓÃµÀ¾ß <%=Dv_Tools.ToolsInfo(1)%></th></tr>
-	<tr>
-	<td height=23 class=Tablebody1 width="30%" align=right>Ä¿±êÓÃ»§£º</td>
-	<td height=23 class=Tablebody1 width="70%"><B><%=Dv_Tools.ToUserInfo(1)%></B></td>
-	</tr>
-	<tr>
-	<td height=23 class=Tablebody1 width="30%" align=right>½ğ±ÒÊıÁ¿£º</td>
-	<td height=23 class=Tablebody1 width="70%">
-	<B><%=Dv_Tools.ToUserInfo(5)%></B>
-	¸ö
-	</td>
-	</tr>
-	<tr>
-	<td height=23 class=Tablebody1 width="30%" align=right>µãÈ¯ÊıÁ¿£º</td>
-	<td height=23 class=Tablebody1 width="70%">
-	<B><%=Dv_Tools.ToUserInfo(6)%></B>
-	ÕÅ
-	</td>
-	</tr>
-	<tr><td height=23 class=Tablebody1 colspan=2 align=center>
-	<B>¸ÃÓÃ»§µÀ¾ßĞÅÏ¢</B>
-	</td></tr>
-<%
-	Set Rs=Dvbbs.Plus_Execute("Select ToolsName,ToolsCount From [Dv_Plus_Tools_Buss] Where ToolsCount>0 and UserID="& Dv_Tools.ToUserInfo(0)&" Order By ToolsCount Desc")
-	Do While Not Rs.Eof
-%>
-	<tr>
-	<td height=23 class=Tablebody1 width="30%" align=right><%=Rs(0)%></td>
-	<td height=23 class=Tablebody1 width="70%">
-	<B><%=Rs(1)%></B>
-	¸ö
-	</td>
-	</tr>
-<%
-	Rs.MoveNext
-	Loop
-	Rs.Close
-	Set Rs=Nothing
-%>
-</table>
-<%
-	Call UpdateUserTools(Dvbbs.UserID,Dv_Tools.ToolsID,1)
-	LogMsg = "Ê¹ÓÃ£º<B>"& Dv_Tools.ToolsInfo(1) &"</B>³É¹¦£¬²é¿´<B>"&Dv_Tools.ToUserInfo(1)&"</B>µÄÓÃ»§ĞÅÏ¢£¡"
-	Call Dvbbs.ToolsLog(Dv_Tools.ToolsID,1,0,0,1,LogMsg,Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usermoney").text&"|"&Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userticket").text)
-	'Dvbbs.Dvbbs_Suc(LogMsg)
-End Sub
-
-'---------------------------------------------------
-'µÀ¾ß:²éË°¿¨£¬¿É¶ÔÓÃ»§µÄ½ğ±ÒÖ´ĞĞÒ»¶¨±ÈÀıµÄË°ÊÕ£¬ÊÕÈë¹éÊ¹ÓÃÕß£¬±ÈÀıÓÉÏµÍ³¶¨Òå
-'---------------------------------------------------
-Sub Tools_23()
-	Dim Rs,Sql
-	Dim T_Title,T_UseTools,T_PostTable
-	Dim GetPercent,GetPercentMoney
-	Dim iUserInfo
-	ChkAction = True
-	If ToUserID = 0 Then ChkAction = False
-	If ChkAction = False Then Dvbbs.AddErrCode(42) : Exit Sub
-	'ÅĞ¶ÏÄ¿±êÓÃ»§Ê¹ÓÃÈ¨ÏŞ²¢È¡³öÄ¿±êÓÃ»§ĞÅÏ¢
-	Dv_Tools.ChkToUseTools(ToUserID)
-	If Dvbbs.UserID = Clng(Dv_Tools.ToUserInfo(0)) Then
-		Dv_Tools.ShowErr(14)
-		Exit Sub
-	End If
-	GetPercent = cCur(Dv_Tools.ToolsSetting(4))
-	GetPercentMoney = cCur(Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usermoney").text) + cCur(Dv_Tools.ToUserInfo(5)) * GetPercent
-	Dvbbs.Execute("Update Dv_User Set UserMoney="&GetPercentMoney&" Where UserID="&Dvbbs.UserID)
-	Dvbbs.Execute("Update Dv_User Set UserMoney=UserMoney - "&cCur(Dv_Tools.ToUserInfo(5)) * GetPercent&" Where UserID="&Dv_Tools.ToUserInfo(0))
-	Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usermoney").text = GetPercentMoney
-	'·¢¶ÌĞÅÍ¨ÖªÄ¿±êÓÃ»§
-	Sql="Insert into Dv_Message (incept,sender,title,content,sendtime,flag,issend) values ('"& Dv_Tools.ToUserInfo(1)&"','"&Dvbbs.MemberName&"','ÄúÔÚÂÛÌ³ÉÏ±»"&Dvbbs.Membername&"Ê¹ÓÃÁË²éË°¿¨','ÄúÔÚÂÛÌ³ÉÏ±»"&Dvbbs.Membername&"Ê¹ÓÃÁË²éË°¿¨£¬±»¸ÃÓÃ»§ÊÕ×ßÁË "&cCur(Dv_Tools.ToUserInfo(5)) * GetPercent&" ¸ö½ğ±Ò£¬±»ÊÕ×ßµÄË°¶îÎªÄú×Ü½ğ±ÒÖµµÄ±ÈÀıÎª "&GetPercent&"£¬¹ØÓÚ²éË°¿¨ºÍÏà¹ØµÄµÀ¾ßĞÅÏ¢Çë¿´ÂÛÌ³µÀ¾ßÖĞĞÄ£¬¸ĞĞ»ÄúµÄ²ÎÓë¡£',"&SqlNowString&",0,1)"
-	Dvbbs.Execute(SQL)
-	UPDATE_User_Msg(Dv_Tools.ToUserInfo(1))
-
-	Call UpdateUserTools(Dvbbs.UserID,Dv_Tools.ToolsID,1)
-	LogMsg = "Ê¹ÓÃ£º<B>"& Dv_Tools.ToolsInfo(1) &"</B>³É¹¦£¬ÊÕÈ¡<B>"&Dv_Tools.ToUserInfo(1)&"</B>ÓÃ»§<B>"&cCur(Dv_Tools.ToUserInfo(5)) * GetPercent&"</B>¸ö½ğ±Ò£¡"
-	Call Dvbbs.ToolsLog(Dv_Tools.ToolsID,1,0,0,1,LogMsg,GetPercentMoney&"|"&Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userticket").text)
-	Dvbbs.Dvbbs_Suc(LogMsg)
-End Sub
-
-'---------------------------------------------------
-'µÀ¾ß:¾ù¸»¿¨£¬¿ÉÊ¹Ê¹ÓÃÓÃ»§ºÍÄ¿±êÓÃ»§½ğ±ÒÊıÏàÍ¬
-'---------------------------------------------------
-Sub Tools_24()
-	Dim Rs,Sql
-	Dim T_Title,T_UseTools,T_PostTable
-	Dim GetPercentMoney
-	Dim iUserInfo
-	ChkAction = True
-	If ToUserID = 0 Then ChkAction = False
-	If ChkAction = False Then Dvbbs.AddErrCode(42) : Exit Sub
-	'ÅĞ¶ÏÄ¿±êÓÃ»§Ê¹ÓÃÈ¨ÏŞ²¢È¡³öÄ¿±êÓÃ»§ĞÅÏ¢
-	Dv_Tools.ChkToUseTools(ToUserID )
-	If Dvbbs.UserID = Clng(Dv_Tools.ToUserInfo(0)) Then
-		Dv_Tools.ShowErr(14)
-		Exit Sub
-	End If
-	GetPercentMoney = cCur(Dv_Tools.ToUserInfo(5))
-	Dvbbs.Execute("Update Dv_User Set UserMoney="&GetPercentMoney&" Where UserID="&Dvbbs.UserID)
-	Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usermoney").text = GetPercentMoney
-	Call UpdateUserTools(Dvbbs.UserID,Dv_Tools.ToolsID,1)
-	LogMsg = "Ê¹ÓÃ£º<B>"& Dv_Tools.ToolsInfo(1) &"</B>³É¹¦£¬ÀûÈóÎª<B>"&GetPercentMoney - cCur(Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usermoney").text)&"</B>¸ö½ğ±Ò£¡"
-	Call Dvbbs.ToolsLog(Dv_Tools.ToolsID,1,0,0,1,LogMsg,GetPercentMoney&"|"&Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userticket").text)
-	Dvbbs.Dvbbs_Suc(LogMsg)
-End Sub
-
-'---------------------------------------------------
-'µÀ¾ß:¾ùÆ¶¿¨£¬¿ÉÊ¹Ä¿±êÓÃ»§ºÍÊ¹ÓÃÓÃ»§½ğ±ÒÊıÏàÍ¬
-'---------------------------------------------------
-Sub Tools_25()
-	Dim Rs,Sql
-	Dim T_Title,T_UseTools,T_PostTable
-	Dim GetPercentMoney
-	Dim iUserInfo
-	ChkAction = True
-	If ToUserID = 0 Then ChkAction = False
-	If ChkAction = False Then Dvbbs.AddErrCode(42) : Exit Sub
-	'ÅĞ¶ÏÄ¿±êÓÃ»§Ê¹ÓÃÈ¨ÏŞ²¢È¡³öÄ¿±êÓÃ»§ĞÅÏ¢
-	Dv_Tools.ChkToUseTools(ToUserID )
-	If Dvbbs.UserID = Clng(Dv_Tools.ToUserInfo(0)) Then
-		Dv_Tools.ShowErr(14)
-		Exit Sub
-	End If
-	If cCur(Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usermoney").text)<cCur(Dv_Tools.ToUserInfo(5)) Then
-		'¸üĞÂÄ¿±êÓÃ»§
-		GetPercentMoney = cCur(Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usermoney").text)
-		Dvbbs.Execute("Update Dv_User Set UserMoney="&GetPercentMoney&" Where UserID="&Dv_Tools.ToUserInfo(0))
-		LogMsg = "Ê¹ÓÃ£º<B>"& Dv_Tools.ToolsInfo(1) &"</B>³É¹¦£¬Ä¿±êÓÃ»§<b>"& Dv_Tools.ToUserInfo(1) &"</b>µÄ½ğ±ÒÊıÒÑ¾­ºÍÄúÏàµÈ£¡"
-		'¶ÌĞÅÍ¨ÖªÄ¿±êÓÃ»§
-		Sql="Insert into Dv_Message (incept,sender,title,content,sendtime,flag,issend) values ('"& Dv_Tools.ToUserInfo(1)&"','"&Dvbbs.MemberName&"','ÄúÔÚÂÛÌ³ÉÏ±»"&Dvbbs.Membername&"Ê¹ÓÃÁË¾ùÆ¶¿¨','ÄúÔÚÂÛÌ³ÉÏ±»"&Dvbbs.Membername&"Ê¹ÓÃÁË¾ùÆ¶¿¨£¬Ä¿Ç°½ğ±ÒÖµÎª "&GetPercentMoney&" ¸ö£¬±»ÏµÍ³ÊÕ×ßÁË "&cCur(Dv_Tools.ToUserInfo(5)) - cCur(Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usermoney").text)&" ¸ö½ğ±Ò£¬¹ØÓÚ¾ùÆ¶¿¨ºÍÏà¹ØµÄµÀ¾ßĞÅÏ¢Çë¿´ÂÛÌ³µÀ¾ßÖĞĞÄ£¬¸ĞĞ»ÄúµÄ²ÎÓë¡£',"&SqlNowString&",0,1)"
-		Dvbbs.Execute(SQL)
-		UPDATE_User_Msg(Dv_Tools.ToUserInfo(1))
-	Else
-		'¸üĞÂÊ¹ÓÃÓÃ»§
-		GetPercentMoney = cCur(Dv_Tools.ToUserInfo(5))
-		Dvbbs.Execute("Update Dv_User Set UserMoney="&GetPercentMoney&" Where UserID="&Dvbbs.UserID)
-		Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usermoney").text = GetPercentMoney
-		LogMsg = "Ê¹ÓÃ£º<B>"& Dv_Tools.ToolsInfo(1) &"</B>³É¹¦£¬ÄúµÄ½ğ±ÒÊıÒÑ¾­ºÍÄ¿±êÓÃ»§<b>"& Dv_Tools.ToUserInfo(1) &"</b>ÏàµÈ£¬ÀûÈóÎª<B>"&GetPercentMoney - cCur(Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usermoney").text)&"</B>¸ö½ğ±Ò£¡"
-	End If
-
-	Call UpdateUserTools(Dvbbs.UserID,Dv_Tools.ToolsID,1)
-	Call Dvbbs.ToolsLog(Dv_Tools.ToolsID,1,0,0,1,LogMsg,Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usermoney").text&"|"&Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userticket").text)
-	Dvbbs.Dvbbs_Suc(LogMsg)
-End Sub
-
-'---------------------------------------------------
-'µÀ¾ß:ÇÀ¶á¿¨£¬¿ÉËæ»úÇÀ¶áÄ¿±êÓÃ»§ÉíÉÏ1/3µ½1/2µÄ¿¨Æ¬
-'---------------------------------------------------
-Sub Tools_26()
-	Dim Rs,Sql
-	Dim rndnum,n,i
-	Dim ToolsCount,SucMsg
-	ChkAction = True
-	If ToUserID = 0 Then ChkAction = False
-	If ChkAction = False Then Dvbbs.AddErrCode(42) : Exit Sub
-	'ÅĞ¶ÏÄ¿±êÓÃ»§Ê¹ÓÃÈ¨ÏŞ²¢È¡³öÄ¿±êÓÃ»§ĞÅÏ¢
-	Dv_Tools.ChkToUseTools(ToUserID )
-	If Dvbbs.UserID = Clng(Dv_Tools.ToUserInfo(0)) Then
-		Dv_Tools.ShowErr(14)
-		Exit Sub
-	End If
-	Randomize
-	rndnum=Cint(9999*rnd+1)
-	If rndnum Mod 2 = 0 Then
-		n = 1
-	Else
-		n = 2
-  	End If
-	Sql = "Select Count(ID) From [Dv_Plus_Tools_Buss] Where ToolsCount>0 and UserID="&ToUserID
-	ToolsCount = Dvbbs.Plus_Execute(Sql)(0)
-	If ToolsCount=0 Then 
-		Dv_Tools.ShowErr(18)
-		Exit Sub
-	End If
-	Select Case n
-	'»ñÈ¡Ä¿±êÓÃ»§1/3µÀ¾ß	
-	Case 1
-		ToolsCount = ToolsCount \ 3
-	'»ñÈ¡Ä¿±êÓÃ»§1/2µÀ¾ß
-	Case 2
-		ToolsCount = ToolsCount \ 2
-	End Select
-	Sql = "Select TOP "&ToolsCount&" ID,UserName,ToolsID,ToolsName From [Dv_Plus_Tools_Buss] Where ToolsCount>0 and  UserID="&ToUserID
-	Set Rs = Dvbbs.Plus_Execute(SQL)
-	SQL = Rs.GetRows(-1)
-	Rs.close 
-	Set Rs = Nothing
-	For i=0 To Ubound(SQL,2)
-		Call UpdateBussTools(Dvbbs.UserID,Sql(2,i),-1)	'¸øÓÃ»§Ìí¼ÓµÀ¾ß
-		Dvbbs.Plus_Execute("Update [Dv_Plus_Tools_Buss] Set ToolsCount = ToolsCount-1 Where ID="&Sql(0,i))
-		LogMsg = "Ê¹ÓÃ£º<B>"& Dv_Tools.ToolsInfo(1) &"</B>³É¹¦£¬ÄãÒÑ³É¹¦´Ó<b>"&Sql(1,i)&"</b>ÓÃ»§»ñÈ¡µÀ¾ß¿¨¡¶<b>"&Sql(3,i)&"</b>¡·¡£"
-		Call Dvbbs.ToolsLog(Sql(2,i),1,0,0,1,LogMsg,Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usermoney").text&"|"&Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userticket").text)
-		SucMsg = SucMsg &"<li>"& LogMsg
-	Next
-	SucMsg = SucMsg & "<li>×Ü¹²»ñµÃ"&Ubound(SQL,2)+1&"ÕÅµÀ¾ß¡£"
-	Dvbbs.Dvbbs_Suc(SucMsg)
-End Sub
-
-'---------------------------------------------------
-'µÀ¾ß:¸´³ğ¿¨£¬µ±±»ÈËÊ¹ÓÃ¶ñĞÔµÀ¾ßÒıÆğËğÊ§£¬´ËµÀ¾ß»á×Ô¶¯Ê¹ÓÃ²¢³Í·£ËùÊ¹ÓÃ¶ñĞÔµÀ¾ß·½ÓÃ»§
-'---------------------------------------------------
-Sub Tools_27()
-	Dim Rs,Sql
-	ChkAction = True
-	If ToUserID = 0 Then ChkAction = False
-	If ChkAction = False Then Dvbbs.AddErrCode(42) : Exit Sub
-	'ÅĞ¶ÏÄ¿±êÓÃ»§Ê¹ÓÃÈ¨ÏŞ²¢È¡³öÄ¿±êÓÃ»§ĞÅÏ¢
-	Dv_Tools.ChkToUseTools(ToUserID)
-	If Dvbbs.UserID = Clng(Dv_Tools.ToUserInfo(0)) Then
-		Dv_Tools.ShowErr(14)
-		Exit Sub
-	End If
-	Dim GetPercent,GetPercentMoney
-
-	LogMsg = "Ê¹ÓÃ£º<B>"& Dv_Tools.ToolsInfo(1) &"</B>³É¹¦£¬ÄúµÄ½ğ±ÒÊıÒÑ¾­ºÍÄ¿±êÓÃ»§ÏàµÈ£¬ÀûÈóÎª<B>"&GetPercentMoney - cCur(Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usermoney").text)&"</B>¸ö½ğ±Ò£¡"
-	Call UpdateUserTools(Dvbbs.UserID,Dv_Tools.ToolsID,1)
-	Call Dvbbs.ToolsLog(Dv_Tools.ToolsID,1,0,0,1,LogMsg,Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usermoney").text&"|"&Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userticket").text)
-	Dvbbs.Dvbbs_Suc(LogMsg)
-End Sub
-
-'---------------------------------------------------
-'µÀ¾ß:»ñÔù½ğ±ÒÌû »Ø¸´ÓÃ»§¿É×Ô¶¨ÊıÁ¿½ğ±ÒÔùËÍ¸øÌûÖ÷£¬ÔùËÍ×ÜÊıÁ¿ÔÚÌû×ÓÖĞÌØÊâÏÔÊ¾¡£
-'---------------------------------------------------
-Sub Tools_28()
-Response.redirect "showerr.asp?ErrCodes=<li>¸ÃµÀ¾ßÖ»ÄÜ¶Ô²ÉÓÃÏà¹ØÊôĞÔÀàĞÍµÄÌû×Ó½øĞĞ²Ù×÷£¡&action=NoHeadErr"
-End Sub
-'---------------------------------------------------
-'µÀ¾ß:½ğ±Ò¹ºÂòÌû ·¢ÌûÕß¿ÉÒÔ¶¨ÒåÌû×Ó³öÊÛ½ğ±ÒÖµ£¬ä¯ÀÀÕßĞèÒªÖ§¸¶½ğ±Ò¹ºÂò²Å¿ÉÒÔ²é¿´Ìû×ÓÈ«²¿ÄÚÈİ¡£
-'---------------------------------------------------
-Sub Tools_29()
-Response.redirect "showerr.asp?ErrCodes=<li>¸ÃµÀ¾ßÖ»ÄÜ¶Ô²ÉÓÃÏà¹ØÊôĞÔÀàĞÍµÄÌû×Ó½øĞĞ²Ù×÷£¡&action=NoHeadErr"
-End Sub
-'------------------------------------------------------------------------------------------------------
-'
-'------------------------------------------------------------------------------------------------------
-'¸üĞÂÓÃ»§¼°ÏµÍ³µÀ¾ßÊıÁ¿(ÓÃ»§ID£¬µÀ¾ßID£¬¼õÉÙÊıÁ¿)
-Sub UpdateUserTools(U_UserID,U_ToolsID,n)
-	Dim Sql,Rs,UpdateNum
-	If Clng(n)<0 Then
-		UpdateNum = "+" & -n
-	Else
-		UpdateNum = "-" & n
-	End If
-	Set Rs = Dvbbs.Plus_Execute("Select ID From [Dv_Plus_Tools_Buss] Where UserID="& U_UserID &" and ToolsID="& U_ToolsID)
-	If Rs.Eof And Rs.Bof Then
-		Dim Trs
-		Set Trs = Dvbbs.Plus_Execute("Select ToolsName From Dv_Plus_Tools_Info Where ID=" & U_ToolsID)
-		If Not (Trs.Eof And Trs.Bof) Then
-			Sql = "Insert Into [Dv_Plus_Tools_Buss] (UserID,UserName,ToolsID,ToolsName,ToolsCount) Values ("&U_UserID&",'"&Dv_Tools.ToUserInfo(1)&"',"&U_ToolsID&",'"&Trs(0)&"',"&Clng(Replace(Replace(UpdateNum,"+",""),"-",""))&")"
-			Dvbbs.Plus_Execute(Sql)
-		End If
-		Trs.Close
-		Set Trs=Nothing
-	Else
-		Sql = "Update [Dv_Plus_Tools_Buss] Set ToolsCount = ToolsCount"&UpdateNum&" Where UserID="& U_UserID &" and ToolsID="& U_ToolsID
-		Dvbbs.Plus_Execute(Sql)
-	End If
-	Rs.Close
-	Set Rs=Nothing
-	Sql = "Update [Dv_Plus_Tools_Info] Set UserStock =  UserStock"&UpdateNum&" Where ID="& U_ToolsID
-	Dvbbs.Plus_Execute(Sql)
-End Sub
-
-'¸üĞÂÓÃ»§µÀ¾ßÊıÁ¿(ÓÃ»§ID£¬µÀ¾ßID£¬¼õÉÙÊıÁ¿)
-Sub UpdateBussTools(U_UserID,U_ToolsID,n)
-	Dim Sql,Rs,UpdateNum
-	If n<0 Then
-		UpdateNum = "+" & -n
-	Else
-		UpdateNum = "-" & n
-	End If
-	Set Rs = Dvbbs.Plus_Execute("Select ID From [Dv_Plus_Tools_Buss] Where UserID="& U_UserID &" and ToolsID="& U_ToolsID)
-	If Rs.Eof And Rs.Bof Then
-		Dim Trs
-		Set Trs = Dvbbs.Plus_Execute("Select ToolsName From Dv_Plus_Tools_Info Where ID=" & U_ToolsID)
-		If Not (Trs.Eof And Trs.Bof) Then
-			Sql = "Insert Into [Dv_Plus_Tools_Buss] (UserID,UserName,ToolsID,ToolsName,ToolsCount) Values ("&U_UserID&",'"&Dv_Tools.ToUserInfo(1)&"',"&U_ToolsID&",'"&Trs(0)&"',"&Clng(Replace(Replace(UpdateNum,"+",""),"-",""))&")"
-			Dvbbs.Plus_Execute(Sql)
-		End If
-		Trs.Close
-		Set Trs=Nothing
-	Else
-		Sql = "Update [Dv_Plus_Tools_Buss] Set ToolsCount = ToolsCount"&UpdateNum&" Where UserID="& U_UserID &" and ToolsID="& U_ToolsID
-		Dvbbs.Plus_Execute(Sql)
-	End If
-	Rs.Close
-	Set Rs=Nothing
-End Sub
-
-Function LoadTitle(Str)
-	LoadTitle = "Ìû×Ó¡¶<a href=""dispbbs.asp?BoardID="&Dvbbs.BoardID&"&ID="&TopicID&"&ReplyID="&ReplyID&"&Skin=1"" target=_blank><b>"&Server.HtmlEncode(Str)&"</b></a>¡·"
-	LoadTitle = Dvbbs.Checkstr(LoadTitle)
-End Function
-Function LoadUserTools(Str,AddID)
-	If Str="" or IsNull(Str) Then _
-		LoadUserTools = AddID _
-	Else _
-		LoadUserTools = Str & "," & AddID
-	LoadUserTools = Dvbbs.Checkstr(LoadUserTools)
-End Function
-
-'²ÎÊı£º¾ÉÔ­Ê¼Öµ£¬·Ö¸ô×Ö·û£¬¾ÉÃû£¬Ìæ»»µÄĞÂÃû
-Function StrReplace(str,splits,oldstr,newstr)
-	If str<>"" or Not Isnull(str) Then
-		Dim TempStr
-		TempStr = splits & str & splits
-		TempStr = Replace(TempStr , splits & oldstr & splits , splits & newstr & splits)
-		TempStr = Mid(TempStr,2,Len(TempStr)-2)	'È¥µôÏÈºóÁÙÊ±·Ö¸ô·û
-		StrReplace = Dvbbs.CheckStr(TempStr)
-	Else
-		StrReplace = ""
-	End If
-End Function
-'²ÎÊı£ºÄ¿±ê×Ö·û£¬±È½Ï×Ö·û£¬·Ö¸ô×Ö·û
-Function GetInstr(Str1,Str2,Strings)
-	GetInstr = False
-	If Str1="" or IsNull(Str1) Then Exit Function
-	If Instr(Strings & Str1 & Strings,Strings & Str2 & Strings) Then GetInstr = True
-End Function
-
-'¶ÌĞÅÏà¹Ø¸üĞÂ
-Sub UPDATE_User_Msg(username)
-	Dim msginfo
-	If newincept(username)>0 Then
-		msginfo=newincept(username) & "||" & inceptid(3,username)
-	Else
-		msginfo="0||0||null"
-	End If
-	Dvbbs.Execute("update [dv_user] set UserMsg='"&Dvbbs.CheckStr(msginfo)&"' where username='"&Dvbbs.CheckStr(username)&"'")
-End Sub
-Function inceptid(stype,iusername)
-	Dim Rs
-	Set Rs=Dvbbs.Execute("Select top 1 id,sender From Dv_Message Where Flag=0 and issend=1 and delR=0 And incept ='"& iusername &"'")
-		If stype=1 then
-			inceptid=Rs(0)
-		ElseIf stype=2 Then
-			inceptid=Rs(1)
-		Else
-			inceptid=Rs(0) &"||"& Rs(1)
-		End If
-	Set Rs = Nothing
-End Function
-'Í³¼ÆÁôÑÔ
-Function newincept(iusername)
-	Dim Rs
-	Rs=Dvbbs.Execute("Select Count(id) From Dv_Message Where Flag=0 and issend=1 and delR=0 And incept='"& iusername &"'")
-	newincept = Rs(0)
-	Set Rs=Nothing
-	If IsNull(newincept) Then newincept=0
-End Function
-
-'²é¿´ÓÃ»§À´Ô´
-Function lookaddress(sip)
-	Dim str1,str2,str3,str4
-	Dim num
-	Dim irs,SQL
-	If isnumeric(left(sip,2)) Then
-		If sip="127.0.0.1" Then sip="192.168.0.1"
-		str1=left(sip,instr(sip,".")-1)
-		sip=mid(sip,instr(sip,".")+1)
-		str2=left(sip,instr(sip,".")-1)
-		sip=mid(sip,instr(sip,".")+1)
-		str3=left(sip,instr(sip,".")-1)
-		str4=mid(sip,instr(sip,".")+1)
-		If isNumeric(str1)=0 Or isNumeric(str2)=0 Or isNumeric(str3)=0 Or isNumeric(str4)=0 Then
-
-		Else
-			num=cint(str1)*256*256*256+cint(str2)*256*256+cint(str3)*256+cint(str4)-1
-			Dim adb,aConnStr,AConn
-			adb = "data/ipaddress.mdb"
-			aConnStr = "Provider = Microsoft.Jet.OLEDB.4.0;Data Source = " & Server.MapPath(adb)
-			Set AConn = Dvbbs.iCreateObject("ADODB.Connection")
-			aConn.Open aConnStr
-			sql="select country,city from dv_address where ip1 <="&num&" and ip2 >="&num
-			Set irs=aConn.Execute(sql)
-			If irs.eof And irs.bof Then 
-				lookaddress=template.Strings(12)
-			Else
-				Do While Not irs.eof
-					lookaddress=lookaddress & "<br>" &irs(0) & irs(1)
-				irs.movenext
-				Loop
-			End If
-			irs.close
-			Set irs=nothing
-			Set AConn=Nothing
-		End If
-	Else
-		lookaddress=template.Strings(12)
-	End If
-End Function
-
-'ËùÓĞÂÛÌ³·¢ÌûÊı¼õÉÙ
-Function AllboardNumSub(todayNum,postNum,topicNum)
-	Dvbbs.Execute("Update dv_Setup Set Forum_TodayNum=Forum_TodayNum-"&todaynum&",Forum_PostNum=Forum_PostNum-"&postNum&",Forum_TopicNum=Forum_TopicNum-"&TopicNum)
-	Dvbbs.ReloadSetupCache CLng(Dvbbs.CacheData(7,0))-TopicNum,7
-	Dvbbs.ReloadSetupCache CLng(Dvbbs.CacheData(8,0))-postNum,8
-	Dvbbs.ReloadSetupCache CLng(Dvbbs.CacheData(9,0))-todaynum,9
-End Function
-
-'°æÃæ·¢ÌûÊı¼õÉÙ
-Sub BoardNumSub(boardID,topicNum,postNum,todayNum)
-	Dim iUpdateBoardID,UpdateBoardID
-	Dim trs,LastPostTime,LastpostuserID,Lastid,uploadpic_n
-	Dim Lasttopic,LastRootid,LastPostUser,LastPost,i,sql
-	UpdateBoardID = Application(Dvbbs.CacheName&"_boardlist").documentElement.selectSingleNode("board[@boardid='"&Dvbbs.BoardID&"']/@parentstr").text & "," & Dvbbs.BoardID
-	Set trs=Dvbbs.Execute("select top 1 T.title,b.Announceid,b.dateandtime,b.username,b.postuserid,b.rootid from "&Dvbbs.NowUseBBS&" b inner join dv_Topic T on b.rootid=T.TopicID where b.boardid="&boardid&" order by b.Announceid desc")
-	If not(trs.eof and trs.bof) Then
-		Lasttopic=replace(left(trs(0),15),"$","")
-		LastRootid=trs(1)
-		LastPostTime=trs(2)
-		LastPostUser=trs(3)
-		LastPostUserid=trs(4)
-		Lastid=trs(5)
-	else
-		LastTopic="ÎŞ"
-		LastRootid=0
-		LastPostTime=now()
-		LastPostUser="ÎŞ"
-		LastPostUserid=0
-		Lastid=0
-	End If
-	trs.close
-	Set trs=nothing	
-	LastPost=LastPostUser & "$" & LastRootid & "$" & LastPostTime & "$" & LastTopic & "$" & uploadpic_n & "$" & LastPostUserID & "$" & LastID & "$" & BoardID
-	'¸üĞÂ×îºó»Ø¸´¼°Ìû×ÓÊı 2005-12-13 Dv.Yz
-	Dvbbs.Execute("UPDATE Dv_Board SET Postnum = Postnum - " & PostNum & ", TopicNum = TopicNum - " & TopicNum & ", TodayNum = TodayNum - " & TodayNum & ", LastPost = '" & Dvbbs.CheckStr(LastPost) & "' WHERE BoardID IN (" & UpdateBoardID & ")")
-	iUpdateBoardID = Split(UpdateBoardID,",")
-	For i=0 To Ubound(iUpdateBoardID)
-		Dvbbs.LoadBoardinformation iUpdateBoardID(i)
-	Next
-End Sub
-%>
+	LogMsg = "æµ£è·¨æ•¤é”›

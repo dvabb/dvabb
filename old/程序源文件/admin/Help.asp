@@ -31,12 +31,12 @@ dim sel
 %>
 <table width="100%" border="0" cellspacing="1" cellpadding="3" align="center">
 <tr> 
-<th colspan="3" style="text-align:center;">ÂÛÌ³°ïÖú¹ÜÀí | <a href="../boardhelp.asp" target=_blank>Ô¤ÀÀ°ïÖú</a></th>
+<th colspan="3" style="text-align:center;">è®ºå›å¸®åŠ©ç®¡ç† | <a href="../boardhelp.asp" target=_blank>é¢„è§ˆå¸®åŠ©</a></th>
 </tr>
 <FORM METHOD=POST ACTION="help.asp?action=search">
 <tr>
 <td height="25" colspan="3" class="td1">
-<B>ÊäÈë°ïÖú¹Ø¼ü×Ö</B>£º<input type="text" name="keyword" size=50> <input type=submit class=button name=submit value="ËÑ Ë÷"><BR><BR>ÊäÈë°ïÖú¹Ø¼ü×Ö½øĞĞËÑË÷£¬²»ÊäÈë²éÑ¯Ìõ¼şÎªÏÔÊ¾ËùÓĞ°ïÖú
+<B>è¾“å…¥å¸®åŠ©å…³é”®å­—</B>ï¼š<input type="text" name="keyword" size=50> <input type=submit class=button name=submit value="æœ ç´¢"><BR><BR>è¾“å…¥å¸®åŠ©å…³é”®å­—è¿›è¡Œæœç´¢ï¼Œä¸è¾“å…¥æŸ¥è¯¢æ¡ä»¶ä¸ºæ˜¾ç¤ºæ‰€æœ‰å¸®åŠ©
 </td>
 </tr>
 </FORM>
@@ -45,20 +45,20 @@ dim sel
 search()
 %><BR>
 <table width="100%" border="0" cellspacing="1" cellpadding="3" align="center">
-<tr><th>ÂÛÌ³°ïÖúÌí¼Ó</th></tr>
+<tr><th>è®ºå›å¸®åŠ©æ·»åŠ </th></tr>
 <tr> 
 <td width="48%" class="td2" valign=top>
-<li>ËùÌí¼ÓÄÚÈİ½«×Ô¶¯ÏÔÊ¾ÓÚÇ°Ì¨µÄ°ïÖúÒ³Ãæ£»
-<li>Ìí¼ÓÒ»¼¶·ÖÀà·½·¨£ºÑ¡È¡ÏÂÀ­Ñ¡Ïî¡°<font color=blue>×÷ÎªÒ»¼¶·ÖÀà</font>¡±£¬²¢ÌîĞ´ÅÔ±ß·ÖÀà±êÌâ£¬±êÌâÓëÄÚÈİ¿ÉÒÔ²»ÌîĞ´£»
-<li><font color=blue>ËùÓĞÌîĞ´ÄÚÈİ¾ù¿ÉÊ¹ÓÃHTMLÓï·¨ÌîĞ´£¡</font><BR>
+<li>æ‰€æ·»åŠ å†…å®¹å°†è‡ªåŠ¨æ˜¾ç¤ºäºå‰å°çš„å¸®åŠ©é¡µé¢ï¼›
+<li>æ·»åŠ ä¸€çº§åˆ†ç±»æ–¹æ³•ï¼šé€‰å–ä¸‹æ‹‰é€‰é¡¹â€œ<font color=blue>ä½œä¸ºä¸€çº§åˆ†ç±»</font>â€ï¼Œå¹¶å¡«å†™æ—è¾¹åˆ†ç±»æ ‡é¢˜ï¼Œæ ‡é¢˜ä¸å†…å®¹å¯ä»¥ä¸å¡«å†™ï¼›
+<li><font color=blue>æ‰€æœ‰å¡«å†™å†…å®¹å‡å¯ä½¿ç”¨HTMLè¯­æ³•å¡«å†™ï¼</font><BR>
 </td>
 </tr>
 <tr> 
 <td width="48%" class="td1" valign=top>
 <FORM METHOD=POST ACTION="help.asp?action=save1">
 <table width=100% >
-<tr><td width=40>±êÌâ£º</td><td width=*><input type="text" name="title" size=50></td></tr>
-<tr><td width=40>·ÖÀà£º</td><td width=*>
+<tr><td width=40>æ ‡é¢˜ï¼š</td><td width=*><input type="text" name="title" size=50></td></tr>
+<tr><td width=40>åˆ†ç±»ï¼š</td><td width=*>
 <select name="classid">
 <%
 Dim rs
@@ -70,14 +70,14 @@ loop
 rs.close
 set rs=nothing
 %>
-<option value="0">×÷ÎªÒ»¼¶·ÖÀà</option>
+<option value="0">ä½œä¸ºä¸€çº§åˆ†ç±»</option>
 </select>&nbsp;<input type="text" name="classtitle" size=30>
 </td></tr>
-<tr><td width=40>ÀàĞÍ£º</td><td width=*><input type=checkbox class=checkbox name="stype" checked value="1">&nbsp;Ñ¡Ôñ´ËÏîËùÌí¼ÓÄÚÈİ½«²»ÏÔÊ¾ÔÚ°ïÖúÎÄ¼şÊ×Ò³ÖĞ</td></tr>
-<tr><td width=40>ÄÚÈİ£º</td><td width=*>
+<tr><td width=40>ç±»å‹ï¼š</td><td width=*><input type=checkbox class=checkbox name="stype" checked value="1">&nbsp;é€‰æ‹©æ­¤é¡¹æ‰€æ·»åŠ å†…å®¹å°†ä¸æ˜¾ç¤ºåœ¨å¸®åŠ©æ–‡ä»¶é¦–é¡µä¸­</td></tr>
+<tr><td width=40>å†…å®¹ï¼š</td><td width=*>
 <textarea name="content" cols="80" rows="8" ID="TDcontent"></textarea><a href="javascript:admin_Size(-8,'TDcontent')"><img src="skins/images/minus.gif" unselectable="on" border='0'></a> <a href="javascript:admin_Size(8,'TDcontent')"><img src="skins/images/plus.gif" unselectable="on" border='0'></a>
 </tr>
-<tr><td width=40>&nbsp;</td><td width=*><input type=submit class=button name=submit value="±£ ´æ"></td></tr>
+<tr><td width=40>&nbsp;</td><td width=*><input type=submit class=button name=submit value="ä¿ å­˜"></td></tr>
 </table>
 </FORM>
 </td>
@@ -90,7 +90,7 @@ sub save1()
 	dim title,content,parentid,stype,rs,sql
 	if Request.form("classid")="0" then
 		if request("classtitle")="" then
-			Errmsg="Èç¹ûÄúÑ¡ÔñÌí¼ÓÒ»¼¶·ÖÀà£¬ÇëÌîĞ´Ñ¡ÔñÏÂÀ­¿òµÄ×ó±ßÊäÈë¿ò"
+			Errmsg="å¦‚æœæ‚¨é€‰æ‹©æ·»åŠ ä¸€çº§åˆ†ç±»ï¼Œè¯·å¡«å†™é€‰æ‹©ä¸‹æ‹‰æ¡†çš„å·¦è¾¹è¾“å…¥æ¡†"
 			founderr=true
 			exit sub
 		else
@@ -99,7 +99,7 @@ sub save1()
 		ParentID=0
 	else
 		if request("title")="" then
-			Errmsg="ÇëÌîĞ´°ïÖú±êÌâ"
+			Errmsg="è¯·å¡«å†™å¸®åŠ©æ ‡é¢˜"
 			founderr=true
 			exit sub
 		else
@@ -125,14 +125,14 @@ sub save1()
 	rs.update
 	rs.close
 	set rs=nothing
-	dv_suc("±£´æÇ°Ì¨°ïÖú³É¹¦£¡")
+	dv_suc("ä¿å­˜å‰å°å¸®åŠ©æˆåŠŸï¼")
 end sub
 
 sub save3()
 	dim title,content,parentid,stype,rs,SQL
 	if request("classid")="0" then
 		if request("classtitle")="" then
-			Errmsg="Èç¹ûÄúÑ¡ÔñÌí¼ÓÒ»¼¶·ÖÀà£¬ÇëÌîĞ´Ñ¡ÔñÏÂÀ­¿òµÄ×ó±ßÊäÈë¿ò"
+			Errmsg="å¦‚æœæ‚¨é€‰æ‹©æ·»åŠ ä¸€çº§åˆ†ç±»ï¼Œè¯·å¡«å†™é€‰æ‹©ä¸‹æ‹‰æ¡†çš„å·¦è¾¹è¾“å…¥æ¡†"
 			founderr=true
 			exit sub
 		else
@@ -141,7 +141,7 @@ sub save3()
 		ParentID=0
 	else
 		if request("title")="" then
-			Errmsg="ÇëÌîĞ´°ïÖú±êÌâ"
+			Errmsg="è¯·å¡«å†™å¸®åŠ©æ ‡é¢˜"
 			founderr=true
 			exit sub
 		else
@@ -168,7 +168,7 @@ sub save3()
 	rs.update
 	rs.close
 	set rs=nothing
-	dv_suc("±£´æºóÌ¨°ïÖú³É¹¦£¡")
+	dv_suc("ä¿å­˜åå°å¸®åŠ©æˆåŠŸï¼")
 end sub
 Function FilterJS(v)
 If not isnull(v) then
@@ -199,7 +199,7 @@ t=re.Replace(t,"&#118bs:")
 re.Pattern="(on(mouse|exit|error|click|key))"
 t=re.Replace(t,"&#111n$2")
 re.Pattern="(&#)"
-t=re.Replace(t,"£¦#")
+t=re.Replace(t,"ï¼†#")
 FilterJS=t
 set re=nothing
 End if
@@ -209,7 +209,7 @@ function search()
 %>
 <table width="100%" border="0" cellspacing="1" cellpadding="5" align="center">
 <tr> 
-<th colspan=2 style="text-align:center;">ÂÛÌ³°ïÖúºÍºóÌ¨²Ëµ¥¹ÜÀíÁĞ±í</th>
+<th colspan=2 style="text-align:center;">è®ºå›å¸®åŠ©å’Œåå°èœå•ç®¡ç†åˆ—è¡¨</th>
 </tr>
 <%
 dim keyword,currentpage,page_count,totalrec,rs,sql
@@ -250,7 +250,7 @@ Response.Write rs("h_title")
 %></B>
 </td>
 <td class=td2 width=20% align=right nowrap>
-[<a href="help.asp?action=view&id=<%=rs(0)%>">²é¿´ÄÚÈİ</a>] [<a href="help.asp?action=edit&id=<%=rs(0)%>">±à¼­</a>] [<a href="help.asp?action=del&id=<%=rs(0)%>">É¾³ı</a>]
+[<a href="help.asp?action=view&id=<%=rs(0)%>">æŸ¥çœ‹å†…å®¹</a>] [<a href="help.asp?action=edit&id=<%=rs(0)%>">ç¼–è¾‘</a>] [<a href="help.asp?action=del&id=<%=rs(0)%>">åˆ é™¤</a>]
 </td>
 </tr>
 <tr><td class=td1 colspan=2>
@@ -259,9 +259,9 @@ if not isnull(rs("h_content")) and rs("h_content")<>"" then
 	Response.Write left(replace(replace(rs("h_content"),"<br>"," "),"<BR>"," "),100)
 else
 	if rs("H_ParentID")=0 then
-	Response.Write "<font color=red>´ËÏîÎªÒ»¼¶·ÖÀà±êÌâ!</font>"
+	Response.Write "<font color=red>æ­¤é¡¹ä¸ºä¸€çº§åˆ†ç±»æ ‡é¢˜!</font>"
 	Else
-	Response.Write "±¾Ìõ°ïÖúÃ»ÓĞÂ¼ÈëÄÚÈİ!"
+	Response.Write "æœ¬æ¡å¸®åŠ©æ²¡æœ‰å½•å…¥å†…å®¹!"
 	End If
 end if
 %>
@@ -273,7 +273,7 @@ end if
 else
 %>
 <tr> 
-<td height="23" class="td2" colspan=2>Ã»ÓĞÕÒµ½ÈÎºÎ°ïÖú</td>
+<td height="23" class="td2" colspan=2>æ²¡æœ‰æ‰¾åˆ°ä»»ä½•å¸®åŠ©</td>
 </tr>
 <%
 end if
@@ -286,9 +286,9 @@ dim pcount,endpage,i
      		Pcount= totalrec \ 10+1
   	end if
 	response.write "<tr><td valign=middle nowrap class=td2 height=23 colspan=2>"
-	response.write "<table width=""100%""><tr><td valign=middle nowrap class=td2>Ò³´Î£º<b>"&currentpage&"</b>/<b>"&Pcount&"</b>Ò³"
-	response.write "&nbsp;Ã¿Ò³<b>10</b> ×ÜÊı<b>"&totalrec&"</b></td>"
-	response.write "<td valign=middle nowrap align=right class=td2>·ÖÒ³£º"
+	response.write "<table width=""100%""><tr><td valign=middle nowrap class=td2>é¡µæ¬¡ï¼š<b>"&currentpage&"</b>/<b>"&Pcount&"</b>é¡µ"
+	response.write "&nbsp;æ¯é¡µ<b>10</b> æ€»æ•°<b>"&totalrec&"</b></td>"
+	response.write "<td valign=middle nowrap align=right class=td2>åˆ†é¡µï¼š"
 	if currentpage > 4 then
 	response.write "<a href=""?page=1&action="&request("action")&"&keyword="&request("keyword")&"&stype="&request("stype")&""">[1]</a> ..."
 	end if
@@ -320,18 +320,18 @@ function view()
 %>
 <table width="100%" border="0" cellspacing="0" cellpadding="3" align="center">
 <tr> 
-<th style="text-align:center;">²é¿´ÂÛÌ³°ïÖú</th>
+<th style="text-align:center;">æŸ¥çœ‹è®ºå›å¸®åŠ©</th>
 </tr><tr> 
 <td height="23" class="td2">
 <%
 Dim rs
 set rs=Dvbbs.Execute("select * from dv_help where h_id="&request("id"))
 if rs.eof and rs.bof then
-	Response.Write "Ã»ÓĞÕÒµ½°ïÖú"
+	Response.Write "æ²¡æœ‰æ‰¾åˆ°å¸®åŠ©"
 else
 	Response.Write "<BR><center><b>"&rs("h_title")&"</b></center><BR><BR><BR>"
 	Response.Write "<blockquote>"&rs("h_content")&"</blockquote>"
-	Response.Write "<div align=right>[<a href=help.asp?action=edit&id="&rs(0)&">±à¼­</a>] [<a href=help.asp?action=del&id="&rs(0)&">É¾³ı</a>]</div>"
+	Response.Write "<div align=right>[<a href=help.asp?action=edit&id="&rs(0)&">ç¼–è¾‘</a>] [<a href=help.asp?action=del&id="&rs(0)&">åˆ é™¤</a>]</div>"
 end if
 %>
 </td>
@@ -344,26 +344,26 @@ function edit()
 %>
 <table width="100%" border="0" cellspacing="0" cellpadding="3" align="center">
 <tr> 
-<th style="text-align:center;">ÂÛÌ³°ïÖú±à¼­</th>
+<th style="text-align:center;">è®ºå›å¸®åŠ©ç¼–è¾‘</th>
 </tr><tr> 
 <td height="23" class="td2">
 <%
 dim trs,rs
 set rs=Dvbbs.Execute("select * from dv_help where h_id="&request("id"))
 if rs.eof and rs.bof then
-	Response.Write "Ã»ÓĞÕÒµ½°ïÖú"
+	Response.Write "æ²¡æœ‰æ‰¾åˆ°å¸®åŠ©"
 else
 %>
 <FORM METHOD=POST ACTION="help.asp?action=save3">
 <input type=hidden value="<%=request("id")%>" name="id">
 <table width=100%>
-<tr><td width=40>±êÌâ£º</td><td width=*><input type="text" name="title" size=35 value="<%if not rs("h_parentid")=0 then Response.Write server.htmlencode(rs("h_title"))%>">&nbsp;&nbsp;
+<tr><td width=40>æ ‡é¢˜ï¼š</td><td width=*><input type="text" name="title" size=35 value="<%if not rs("h_parentid")=0 then Response.Write server.htmlencode(rs("h_title"))%>">&nbsp;&nbsp;
 <select name="ctype" size=1>
-<option value=0 <%if rs("h_type")=0 then Response.Write "selected"%>>Ç°Ì¨</option>
-<option value=1 <%if rs("h_type")=1 then Response.Write "selected"%>>ºóÌ¨</option>
+<option value=0 <%if rs("h_type")=0 then Response.Write "selected"%>>å‰å°</option>
+<option value=1 <%if rs("h_type")=1 then Response.Write "selected"%>>åå°</option>
 </select>
 </td></tr>
-<tr><td width=40>·ÖÀà£º</td><td width=*>
+<tr><td width=40>åˆ†ç±»ï¼š</td><td width=*>
 <select name="classid">
 <%
 set trs=Dvbbs.Execute("select * from dv_help where h_parentid=0 order by H_type ")
@@ -371,22 +371,22 @@ do while not trs.eof
 	Response.Write "<option value="&trs("h_id")
 	if rs("h_parentid")=trs(0) then Response.Write " selected"
 	Response.Write ">"&server.htmlencode(trs("h_title"))
-	if Cint(trs("H_type")) = 1 Then Response.Write " [ºóÌ¨]" Else Response.Write " [Ç°Ì¨]" 
+	if Cint(trs("H_type")) = 1 Then Response.Write " [åå°]" Else Response.Write " [å‰å°]" 
 	Response.Write "</option>"
 trs.movenext
 loop
 trs.close
 set trs=nothing
 %>
-<option value="0" <%if rs("h_parentid")=0 then Response.Write "selected"%>>×÷ÎªÒ»¼¶·ÖÀà</option>
+<option value="0" <%if rs("h_parentid")=0 then Response.Write "selected"%>>ä½œä¸ºä¸€çº§åˆ†ç±»</option>
 </select>&nbsp;<input type="text" name="classtitle" size=30 value="<%if rs("h_parentid")=0 then Response.Write server.htmlencode(rs("h_title"))%>">
 </td></tr>
-<tr><td width=40>ÀàĞÍ£º</td><td width=*><input type=checkbox class=checkbox name="stype" value="1" <%if rs("h_stype")=0 then Response.Write "checked"%>>&nbsp;Ñ¡Ôñ´ËÏîËùÌí¼ÓÄÚÈİ½«²»ÏÔÊ¾ÔÚ×ó±ß²Ëµ¥ÖĞ(ºóÌ¨ÓĞĞ§)</td></tr>
-<tr><td width=40>±³¾°£º</td><td width=*><input type="text" name="targeturl" size=35 value="<%=server.htmlencode(rs("h_bgimg"))%>"> ÌîĞ´Â·¾¶</td></tr>
-<tr><td width=40>ÄÚÈİ£º</td><td width=*>
+<tr><td width=40>ç±»å‹ï¼š</td><td width=*><input type=checkbox class=checkbox name="stype" value="1" <%if rs("h_stype")=0 then Response.Write "checked"%>>&nbsp;é€‰æ‹©æ­¤é¡¹æ‰€æ·»åŠ å†…å®¹å°†ä¸æ˜¾ç¤ºåœ¨å·¦è¾¹èœå•ä¸­(åå°æœ‰æ•ˆ)</td></tr>
+<tr><td width=40>èƒŒæ™¯ï¼š</td><td width=*><input type="text" name="targeturl" size=35 value="<%=server.htmlencode(rs("h_bgimg"))%>"> å¡«å†™è·¯å¾„</td></tr>
+<tr><td width=40>å†…å®¹ï¼š</td><td width=*>
 <textarea name="content" cols="80" rows="8"><%if not isnull(rs("h_content")) and rs("h_content")<>"" then%><%=server.htmlencode(replace(replace(rs("h_content"),"<br>",chr(10)),"<BR>",chr(10)))%><%end if%></textarea>
 </tr>
-<tr><td width=40>&nbsp;</td><td width=*><input type=submit class=button name=submit value="±£´æĞŞ¸Ä"></td></tr>
+<tr><td width=40>&nbsp;</td><td width=*><input type=submit class=button name=submit value="ä¿å­˜ä¿®æ”¹"></td></tr>
 </table>
 </FORM>
 <%
@@ -400,6 +400,6 @@ end function
 
 function del()
 	Dvbbs.Execute("delete from dv_help where (not h_id=1) and h_id="&Request("id"))
-	dv_suc("É¾³ıÂÛÌ³°ïÖú³É¹¦£¡")
+	dv_suc("åˆ é™¤è®ºå›å¸®åŠ©æˆåŠŸï¼")
 end function
 %>

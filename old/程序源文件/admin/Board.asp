@@ -19,19 +19,19 @@ Sub main()
 %>
 <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
 <tr> 
-<th width="100%" colspan=2 style="text-align:center;">ÂÛÌ³¹ÜÀí
+<th width="100%" colspan=2 style="text-align:center;">è®ºå›ç®¡ç†
 </th>
 </tr>
 <tr>
 <td class="td2" colspan=2>
-<p><B>×¢Òâ</B>£º<BR>¢ÙÉ¾³ıÂÛÌ³Í¬Ê±½«É¾³ı¸ÃÂÛÌ³ÏÂËùÓĞÌû×Ó£¡É¾³ı·ÖÀàÍ¬Ê±É¾³ıÏÂÊôÂÛÌ³ºÍÆäÖĞÌû×Ó£¡ ²Ù×÷Ê±ÇëÍêÕûÌîĞ´±íµ¥ĞÅÏ¢£»<BR>¢ÚÈç¹ûÑ¡Ôñ<B>¸´Î»ËùÓĞ°æÃæ</B>£¬ÔòËùÓĞ°æÃæ¶¼½«×÷ÎªÒ»¼¶ÂÛÌ³£¨·ÖÀà£©£¬ÕâÊ±ÄúĞèÒªÖØĞÂ¶Ô¸÷¸ö°æÃæ½øĞĞ¹éÊôµÄ»ù±¾ÉèÖÃ£¬<B>²»ÒªÇáÒ×Ê¹ÓÃ¸Ã¹¦ÄÜ</B>£¬½öÔÚ×ö³öÁË´íÎóµÄÉèÖÃ¶øÎŞ·¨¸´Ô­°æÃæÖ®¼äµÄ¹ØÏµºÍÅÅĞòµÄÊ±ºòÊ¹ÓÃ£¬ÔÚÕâÀïÄúÒ²¿ÉÒÔÖ»Õë¶ÔÄ³¸ö·ÖÀà½øĞĞ¸´Î»²Ù×÷(¼û·ÖÀàµÄ¸ü¶à²Ù×÷ÏÂÀ­²Ëµ¥)£¬¾ßÌåÇë¿´²Ù×÷ËµÃ÷¡£<BR><font color=blue>Ã¿¸ö°æÃæµÄ¸ü¶à²Ù×÷Çë¼ûÏÂÀ­²Ëµ¥£¬²Ù×÷Ç°Çë×ĞÏ¸ÔÄ¶ÁËµÃ÷£¬·ÖÀàÏÂÀ­²Ëµ¥ÖĞ±È±ğµÄ°æÃæÔö¼ÓÁË·ÖÀàÅÅĞòºÍ·ÖÀà¸´Î»¹¦ÄÜ</font><BR>
-<font color=red>Èç¹ûÄúÏ£ÍûÄ³¸ö°æÃæĞèÒª»áÔ±¸¶³öÒ»¶¨´ú¼Û£¨»õ±Ò£©²ÅÄÜ½øÈë£¬¿ÉÒÔÔÚ°æÃæ¸ß¼¶ÉèÖÃÖĞÉèÖÃÏàÓ¦°æÃæ½øÈëËùĞèµÄ½ğ±Ò»òµãÈ¯ÊıÒÔ¼°ÄÜ·ÃÎÊµÄÊ±¼äÊÇ¶àÉÙ</font>
+<p><B>æ³¨æ„</B>ï¼š<BR>â‘ åˆ é™¤è®ºå›åŒæ—¶å°†åˆ é™¤è¯¥è®ºå›ä¸‹æ‰€æœ‰å¸–å­ï¼åˆ é™¤åˆ†ç±»åŒæ—¶åˆ é™¤ä¸‹å±è®ºå›å’Œå…¶ä¸­å¸–å­ï¼ æ“ä½œæ—¶è¯·å®Œæ•´å¡«å†™è¡¨å•ä¿¡æ¯ï¼›<BR>â‘¡å¦‚æœé€‰æ‹©<B>å¤ä½æ‰€æœ‰ç‰ˆé¢</B>ï¼Œåˆ™æ‰€æœ‰ç‰ˆé¢éƒ½å°†ä½œä¸ºä¸€çº§è®ºå›ï¼ˆåˆ†ç±»ï¼‰ï¼Œè¿™æ—¶æ‚¨éœ€è¦é‡æ–°å¯¹å„ä¸ªç‰ˆé¢è¿›è¡Œå½’å±çš„åŸºæœ¬è®¾ç½®ï¼Œ<B>ä¸è¦è½»æ˜“ä½¿ç”¨è¯¥åŠŸèƒ½</B>ï¼Œä»…åœ¨åšå‡ºäº†é”™è¯¯çš„è®¾ç½®è€Œæ— æ³•å¤åŸç‰ˆé¢ä¹‹é—´çš„å…³ç³»å’Œæ’åºçš„æ—¶å€™ä½¿ç”¨ï¼Œåœ¨è¿™é‡Œæ‚¨ä¹Ÿå¯ä»¥åªé’ˆå¯¹æŸä¸ªåˆ†ç±»è¿›è¡Œå¤ä½æ“ä½œ(è§åˆ†ç±»çš„æ›´å¤šæ“ä½œä¸‹æ‹‰èœå•)ï¼Œå…·ä½“è¯·çœ‹æ“ä½œè¯´æ˜ã€‚<BR><font color=blue>æ¯ä¸ªç‰ˆé¢çš„æ›´å¤šæ“ä½œè¯·è§ä¸‹æ‹‰èœå•ï¼Œæ“ä½œå‰è¯·ä»”ç»†é˜…è¯»è¯´æ˜ï¼Œåˆ†ç±»ä¸‹æ‹‰èœå•ä¸­æ¯”åˆ«çš„ç‰ˆé¢å¢åŠ äº†åˆ†ç±»æ’åºå’Œåˆ†ç±»å¤ä½åŠŸèƒ½</font><BR>
+<font color=red>å¦‚æœæ‚¨å¸Œæœ›æŸä¸ªç‰ˆé¢éœ€è¦ä¼šå‘˜ä»˜å‡ºä¸€å®šä»£ä»·ï¼ˆè´§å¸ï¼‰æ‰èƒ½è¿›å…¥ï¼Œå¯ä»¥åœ¨ç‰ˆé¢é«˜çº§è®¾ç½®ä¸­è®¾ç½®ç›¸åº”ç‰ˆé¢è¿›å…¥æ‰€éœ€çš„é‡‘å¸æˆ–ç‚¹åˆ¸æ•°ä»¥åŠèƒ½è®¿é—®çš„æ—¶é—´æ˜¯å¤šå°‘</font>
 </td>
 </tr>
 <tr>
 <td class="td2" height=25>
-<B>ÂÛÌ³²Ù×÷Ñ¡Ïî</B></td>
-<td class="td2"><a href="board.asp">ÂÛÌ³¹ÜÀíÊ×Ò³</a> | <a href="board.asp?action=add">ĞÂ½¨ÂÛÌ³°æÃæ</a> | <a href="?action=settemplates">Ä£°å·ç¸ñÅúÁ¿ÉèÖÃ</a> | <a href="?action=orders">Ò»¼¶·ÖÀàÅÅĞò</a> | <a href="?action=boardorders">N¼¶·ÖÀàÅÅĞò</a> | <a href="?action=RestoreBoard" onclick="{if(confirm('¸´Î»ËùÓĞ°æÃæ½«°ÑËùÓĞ°æÃæ»Ö¸´³ÉÎªÒ»¼¶´ó·ÖÀà£¬¸´Î»ºóÒª¶ÔËùÓĞ°æÃæÖØĞÂ½øĞĞ¹éÊôµÄ»ù±¾ÉèÖÃ£¬ÇëÉ÷ÖØ²Ù×÷£¬È·¶¨¸´Î»Âğ?')){return true;}return false;}">¸´Î»ËùÓĞ°æÃæ</a> | <a href="?action=RestoreBoardCache" onclick="{if(confirm('ÓĞÊ±ºòÄú¶ÔÂÛÌ³°æÃæµÄĞŞ¸ÄÔÚÇ°Ì¨¿´²»³öĞŞ¸ÄĞ§¹û£¬ÕâºÜ¿ÉÄÜÊÇÏàÓ¦°æÃæµÄ»º´æÃ»ÓĞÉúĞ§ËùÖÂ£¬ÔÚÕâÀï½«ÖØ½¨ËùÓĞ°æÃæµÄ»º´æ£¬Èç¹ûÄúµÄ°æÃæºÜ¶à£¬Õâ½«ÏûºÄÄúÒ»¶¨µÄÊ±¼ä£¬È·¶¨Âğ?')){return true;}return false;}">ÖØ½¨°æÃæ»º´æ</a>
+<B>è®ºå›æ“ä½œé€‰é¡¹</B></td>
+<td class="td2"><a href="board.asp">è®ºå›ç®¡ç†é¦–é¡µ</a> | <a href="board.asp?action=add">æ–°å»ºè®ºå›ç‰ˆé¢</a> | <a href="?action=settemplates">æ¨¡æ¿é£æ ¼æ‰¹é‡è®¾ç½®</a> | <a href="?action=orders">ä¸€çº§åˆ†ç±»æ’åº</a> | <a href="?action=boardorders">Nçº§åˆ†ç±»æ’åº</a> | <a href="?action=RestoreBoard" onclick="{if(confirm('å¤ä½æ‰€æœ‰ç‰ˆé¢å°†æŠŠæ‰€æœ‰ç‰ˆé¢æ¢å¤æˆä¸ºä¸€çº§å¤§åˆ†ç±»ï¼Œå¤ä½åè¦å¯¹æ‰€æœ‰ç‰ˆé¢é‡æ–°è¿›è¡Œå½’å±çš„åŸºæœ¬è®¾ç½®ï¼Œè¯·æ…é‡æ“ä½œï¼Œç¡®å®šå¤ä½å—?')){return true;}return false;}">å¤ä½æ‰€æœ‰ç‰ˆé¢</a> | <a href="?action=RestoreBoardCache" onclick="{if(confirm('æœ‰æ—¶å€™æ‚¨å¯¹è®ºå›ç‰ˆé¢çš„ä¿®æ”¹åœ¨å‰å°çœ‹ä¸å‡ºä¿®æ”¹æ•ˆæœï¼Œè¿™å¾ˆå¯èƒ½æ˜¯ç›¸åº”ç‰ˆé¢çš„ç¼“å­˜æ²¡æœ‰ç”Ÿæ•ˆæ‰€è‡´ï¼Œåœ¨è¿™é‡Œå°†é‡å»ºæ‰€æœ‰ç‰ˆé¢çš„ç¼“å­˜ï¼Œå¦‚æœæ‚¨çš„ç‰ˆé¢å¾ˆå¤šï¼Œè¿™å°†æ¶ˆè€—æ‚¨ä¸€å®šçš„æ—¶é—´ï¼Œç¡®å®šå—?')){return true;}return false;}">é‡å»ºç‰ˆé¢ç¼“å­˜</a>
 </td>
 </tr>
 </table>
@@ -42,7 +42,7 @@ select case Request("action")
 		call add()
 	case "edit"
 		call edit()
-	case "savenew"'ĞÂÔöÂÛÌ³
+	case "savenew"'æ–°å¢è®ºå›
 		call savenew()
 	Case "savedit"
 		call savedit()
@@ -102,7 +102,7 @@ Sub upallsid()
 	For Each board in Application(Dvbbs.CacheName&"_boardlist").documentElement.selectNodes("board/@boardid")
 	Dvbbs.LoadBoardData(board.text)
 	Next
-	Dv_suc("ÂÛÌ³°æÃæ·ç¸ñÑùÊ½Í³Ò»ÉèÖÃ³É¹¦!")
+	Dv_suc("è®ºå›ç‰ˆé¢é£æ ¼æ ·å¼ç»Ÿä¸€è®¾ç½®æˆåŠŸ!")
 End Sub
 Sub savesid
 	Dim i,boardid,TempStr
@@ -133,7 +133,7 @@ Sub savesid
 		Dvbbs.Execute("Update Dv_board set sid="&CLng(sid(i))&" Where BoardId="&Clng(bid(i))&" ")
 		Dvbbs.LoadBoardData(Clng(bid(i)))
 	Next 
-	Dv_suc("ÂÛÌ³Ä£°åÅúÁ¿ÉèÖÃ³É¹¦!")
+	Dv_suc("è®ºå›æ¨¡æ¿æ‰¹é‡è®¾ç½®æˆåŠŸ!")
 End Sub
 
 Sub Settemplates
@@ -146,11 +146,11 @@ Dim Templateslist,rs,SQL
 <form action ="board.asp?action=upallsid" method=post name="dv">
 <table cellspacing="0" cellpadding="0" align="center" width="100%">
 <tr> 
-<th colspan="2" style="text-align:center;">Ä£ °å Í³ Ò» Éè ÖÃ
+<th colspan="2" style="text-align:center;">æ¨¡ æ¿ ç»Ÿ ä¸€ è®¾ ç½®
 </th>
 </tr>
 <tr>
-<td width="70%" align=Left class="td2"><B>ËùÓĞÂÛÌ³°æÃæ·ç¸ñÄ£°åÉèÖÃÎª£º</b>&nbsp; 
+<td width="70%" align=Left class="td2"><B>æ‰€æœ‰è®ºå›ç‰ˆé¢é£æ ¼æ¨¡æ¿è®¾ç½®ä¸ºï¼š</b>&nbsp; 
 <%
 	Dim forum_sid,iCssName,iCssID,iStyleName
 	Dim Forum_cid
@@ -172,16 +172,16 @@ Next
 </Select>
 </td>
 <td width="30%" align=Left  class="td2" >
-<Input type="submit" name="Submit" value="Éè ¶¨" class="button"></td>
+<Input type="submit" name="Submit" value="è®¾ å®š" class="button"></td>
 </tr>
 </table><BR>
 </form>
 <form action ="board.asp?action=savesid" method=post name="dv1">
 <table cellspacing="0" cellpadding="0" align="center" width="100%">
 <tr> 
-<th width="70%">&nbsp;ÂÛÌ³°æÃæ
+<th width="70%">&nbsp;è®ºå›ç‰ˆé¢
 </th>
-<th width="30%">²ÉÓÃ·ç¸ñÑùÊ½
+<th width="30%">é‡‡ç”¨é£æ ¼æ ·å¼
 </th>
 </tr>
 <%
@@ -227,7 +227,7 @@ set rs=nothing
 %>
 <tr>
 <td width=300 align=Left class="td2" >&nbsp;</td>
-<td width=300 align=Left class="td2" ><input type="submit" name="Submit" value="Éè ¶¨" class="button"></td>
+<td width=300 align=Left class="td2" ><input type="submit" name="Submit" value="è®¾ å®š" class="button"></td>
 </tr>
 </table><BR><BR>
 </form>
@@ -241,9 +241,9 @@ Dim Rs,classrow,iii,SQL,i
 <div class=menuskin id=popmenu onmouseover="clearhidemenu();" onmouseout="dynamichide(event)" style="Z-index:100"></div>
 <table width="100%" cellspacing="0" cellpadding="0" align="center">
 <tr> 
-<th width="35%">ÂÛÌ³°æÃæ
+<th width="35%">è®ºå›ç‰ˆé¢
 </th>
-<th width="35%">²Ù×÷
+<th width="35%">æ“ä½œ
 </th>
 </tr>
 <%
@@ -287,25 +287,25 @@ For iii=0 To Ubound(SQL,2)
 %>
 </td>
 <td width="45%" class="<%=classrow%>">
-<a href="board.asp?action=add&editid=<%=SQL(0,iii)%>"><font color="<%=Dvbbs.mainsetting(3)%>"><U>Ìí¼Ó°æÃæ</U></font></a> | <a href="board.asp?action=edit&editid=<%=SQL(0,iii)%>"><font color="<%=Dvbbs.mainsetting(3)%>"><U>»ù±¾ÉèÖÃ</U></font></a> | <a href="BoardSetting.asp?editid=<%=SQL(0,iii)%>"><font color="<%=Dvbbs.mainsetting(3)%>"><U>¸ß¼¶ÉèÖÃ</U></font></a>
+<a href="board.asp?action=add&editid=<%=SQL(0,iii)%>"><font color="<%=Dvbbs.mainsetting(3)%>"><U>æ·»åŠ ç‰ˆé¢</U></font></a> | <a href="board.asp?action=edit&editid=<%=SQL(0,iii)%>"><font color="<%=Dvbbs.mainsetting(3)%>"><U>åŸºæœ¬è®¾ç½®</U></font></a> | <a href="BoardSetting.asp?editid=<%=SQL(0,iii)%>"><font color="<%=Dvbbs.mainsetting(3)%>"><U>é«˜çº§è®¾ç½®</U></font></a>
 <%
 
-MoreMenu=MoreMenu & "<div class=menuitems><a href=update.asp?action=updat&submit=¸üĞÂÂÛÌ³Êı¾İ&boardid="&SQL(0,iii)&" title=¸üĞÂ×îºó»Ø¸´¡¢Ìû×ÓÊı¡¢»Ø¸´Êı><font color="&Dvbbs.mainsetting(3)&"><U>¸üĞÂÊı¾İ</U></font></a></div><div class=menuitems><a href=# onclick=alertreadme(\'Çå¿Õ½«°üÀ¨¸ÃÂÛÌ³ËùÓĞÌû×ÓÖÃÓÚ»ØÊÕÕ¾£¬È·¶¨Çå¿ÕÂğ?\',\'update.asp?action=delboard&boardid="&SQL(0,iii)&"\')><font color="&Dvbbs.mainsetting(3)&"><U>Çå¿Õ°æÃæÊı¾İ</U></font></a></div>"
+MoreMenu=MoreMenu & "<div class=menuitems><a href=update.asp?action=updat&submit=æ›´æ–°è®ºå›æ•°æ®&boardid="&SQL(0,iii)&" title=æ›´æ–°æœ€åå›å¤ã€å¸–å­æ•°ã€å›å¤æ•°><font color="&Dvbbs.mainsetting(3)&"><U>æ›´æ–°æ•°æ®</U></font></a></div><div class=menuitems><a href=# onclick=alertreadme(\'æ¸…ç©ºå°†åŒ…æ‹¬è¯¥è®ºå›æ‰€æœ‰å¸–å­ç½®äºå›æ”¶ç«™ï¼Œç¡®å®šæ¸…ç©ºå—?\',\'update.asp?action=delboard&boardid="&SQL(0,iii)&"\')><font color="&Dvbbs.mainsetting(3)&"><U>æ¸…ç©ºç‰ˆé¢æ•°æ®</U></font></a></div>"
 
 if SQL(4,iii)=0 then
-MoreMenu=MoreMenu & "<div class=menuitems><a href=# onclick=alertreadme(\'É¾³ı½«°üÀ¨¸ÃÂÛÌ³µÄËùÓĞÌû×Ó£¬È·¶¨É¾³ıÂğ?\',\'board.asp?action=del&editid="&SQL(0,iii)&"\')><font color="&Dvbbs.mainsetting(3)&"><U>É¾³ı°æÃæ</U></font></a></div>"
+MoreMenu=MoreMenu & "<div class=menuitems><a href=# onclick=alertreadme(\'åˆ é™¤å°†åŒ…æ‹¬è¯¥è®ºå›çš„æ‰€æœ‰å¸–å­ï¼Œç¡®å®šåˆ é™¤å—?\',\'board.asp?action=del&editid="&SQL(0,iii)&"\')><font color="&Dvbbs.mainsetting(3)&"><U>åˆ é™¤ç‰ˆé¢</U></font></a></div>"
 else
-MoreMenu=MoreMenu & "<div class=menuitems><a href=# onclick=alertreadme(\'¸ÃÂÛÌ³º¬ÓĞÏÂÊôÂÛÌ³£¬±ØĞëÏÈÉ¾³ıÆäÏÂÊôÂÛÌ³·½ÄÜÉ¾³ı±¾ÂÛÌ³£¡\',\'#\')><font color="&Dvbbs.mainsetting(3)&"><U>É¾³ı°æÃæ</U></font></a></div>"
+MoreMenu=MoreMenu & "<div class=menuitems><a href=# onclick=alertreadme(\'è¯¥è®ºå›å«æœ‰ä¸‹å±è®ºå›ï¼Œå¿…é¡»å…ˆåˆ é™¤å…¶ä¸‹å±è®ºå›æ–¹èƒ½åˆ é™¤æœ¬è®ºå›ï¼\',\'#\')><font color="&Dvbbs.mainsetting(3)&"><U>åˆ é™¤ç‰ˆé¢</U></font></a></div>"
 end if
-MoreMenu=MoreMenu & "<div class=menuitems><a href=Board.asp?action=clearDate&boardid="&SQL(0,iii)&"><font color="&Dvbbs.mainsetting(3)&"><u>ÇåÀíÊı¾İ</u></font></a></div>"
+MoreMenu=MoreMenu & "<div class=menuitems><a href=Board.asp?action=clearDate&boardid="&SQL(0,iii)&"><font color="&Dvbbs.mainsetting(3)&"><u>æ¸…ç†æ•°æ®</u></font></a></div>"
 If SQL(2,iii)=0 Then
-	MoreMenu=MoreMenu & "<div class=menuitems><a href=# onclick=alertreadme(\'¸´Î»¸Ã·ÖÀà½«»á°Ñ¸Ã·ÖÀàÏÂµÄËùÓĞ°æÃæ¶¼¸´Î»³É¶ş¼¶°æÃæ£¬°üÀ¨Ô­À´µÄ¶à¼¶·ÖÀà¶¼½«¸´Î»³É¶ş¼¶°æÃæ£¬ÇëÉ÷ÖØ²Ù×÷£¬È·¶¨¸´Î»Âğ?\',\'?action=RestoreClass&classid="&SQL(0,iii)&"\')><font color="&Dvbbs.mainsetting(3)&"><u>¸´Î»¸Ã·ÖÀà</u></font></a></div><div class=menuitems><a href=?action=handorders&classid="&SQL(0,iii)&"><font color="&Dvbbs.mainsetting(3)&"><u>·ÖÀàÅÅĞò(ÊÖ¶¯)</u></font></a></div>"
+	MoreMenu=MoreMenu & "<div class=menuitems><a href=# onclick=alertreadme(\'å¤ä½è¯¥åˆ†ç±»å°†ä¼šæŠŠè¯¥åˆ†ç±»ä¸‹çš„æ‰€æœ‰ç‰ˆé¢éƒ½å¤ä½æˆäºŒçº§ç‰ˆé¢ï¼ŒåŒ…æ‹¬åŸæ¥çš„å¤šçº§åˆ†ç±»éƒ½å°†å¤ä½æˆäºŒçº§ç‰ˆé¢ï¼Œè¯·æ…é‡æ“ä½œï¼Œç¡®å®šå¤ä½å—?\',\'?action=RestoreClass&classid="&SQL(0,iii)&"\')><font color="&Dvbbs.mainsetting(3)&"><u>å¤ä½è¯¥åˆ†ç±»</u></font></a></div><div class=menuitems><a href=?action=handorders&classid="&SQL(0,iii)&"><font color="&Dvbbs.mainsetting(3)&"><u>åˆ†ç±»æ’åº(æ‰‹åŠ¨)</u></font></a></div>"
 End If
 %>
- | <a href="#" onMouseOver="showmenu(event,'<%=MoreMenu%>')" style="CURSOR:hand"><font color=<%=Dvbbs.mainsetting(3)%>><u>¸ü¶à²Ù×÷</u></font></a>
+ | <a href="#" onMouseOver="showmenu(event,'<%=MoreMenu%>')" style="CURSOR:hand"><font color=<%=Dvbbs.mainsetting(3)%>><u>æ›´å¤šæ“ä½œ</u></font></a>
 <%
 if reBoard_Setting(2)=1 then
-	Response.Write "<a href=board.asp?action=mode&boardid="&SQL(0,iii)&"><font color="&Dvbbs.mainsetting(3)&"><U>ÈÏÖ¤ÓÃ»§</U></font></a>"
+	Response.Write "<a href=board.asp?action=mode&boardid="&SQL(0,iii)&"><font color="&Dvbbs.mainsetting(3)&"><U>è®¤è¯ç”¨æˆ·</U></font></a>"
 end if
 %>
 </td></tr>
@@ -353,45 +353,45 @@ rs_c.open sql,conn,1,1
 <input type="hidden" name="newboardid" value=<%=boardnum%>>
 <table width="100%" border="0" cellspacing="1" cellpadding="0" align="center">
 <tr> 
-<th colspan=2 style="text-align:center;"><B>Ìí¼ÓĞÂÂÛÌ³</th>
+<th colspan=2 style="text-align:center;"><B>æ·»åŠ æ–°è®ºå›</th>
 </tr>
 <tr> 
 <td width="100%" height=30 class="td2" colspan=2>
-ËµÃ÷£º<BR>1¡¢Ìí¼ÓÂÛÌ³°æÃæºó£¬Ïà¹ØµÄÉèÖÃ¾ùÎªÄ¬ÈÏÉèÖÃ£¬Çë·µ»ØÂÛÌ³°æÃæ¹ÜÀíÊ×Ò³°æÃæÁĞ±íµÄ¸ß¼¶ÉèÖÃÖĞÉèÖÃ¸ÃÂÛÌ³µÄÏàÓ¦ÊôĞÔ£¬Èç¹ûÄúÏë¶Ô¸ÃÂÛÌ³×ö¸ü¾ßÌåµÄÈ¨ÏŞÉèÖÃ£¬Çëµ½<A HREF="board.asp?action=permission"><font color=blue>ÂÛÌ³È¨ÏŞ¹ÜÀí</font></A>ÖĞÉèÖÃÏàÓ¦ÓÃ»§×éÔÚ¸Ã°æÃæµÄÈ¨ÏŞ¡£<BR>
-2¡¢<font color=blue>Èç¹ûÄúÌí¼ÓµÄÊÇÂÛÌ³·ÖÀà</font>£¬Ö»ĞèÒªÔÚËùÊô·ÖÀàÖĞÑ¡Ôñ×÷ÎªÂÛÌ³·ÖÀà¼´¿É£»<font color=blue>Èç¹ûÄúÌí¼ÓµÄÊÇÂÛÌ³°æÃæ</font>£¬ÔòÒªÔÚËùÊô·ÖÀàÖĞÈ·¶¨²¢Ñ¡Ôñ¸ÃÂÛÌ³°æÃæµÄÉÏ¼¶°æÃæ¡£
+è¯´æ˜ï¼š<BR>1ã€æ·»åŠ è®ºå›ç‰ˆé¢åï¼Œç›¸å…³çš„è®¾ç½®å‡ä¸ºé»˜è®¤è®¾ç½®ï¼Œè¯·è¿”å›è®ºå›ç‰ˆé¢ç®¡ç†é¦–é¡µç‰ˆé¢åˆ—è¡¨çš„é«˜çº§è®¾ç½®ä¸­è®¾ç½®è¯¥è®ºå›çš„ç›¸åº”å±æ€§ï¼Œå¦‚æœæ‚¨æƒ³å¯¹è¯¥è®ºå›åšæ›´å…·ä½“çš„æƒé™è®¾ç½®ï¼Œè¯·åˆ°<A HREF="board.asp?action=permission"><font color=blue>è®ºå›æƒé™ç®¡ç†</font></A>ä¸­è®¾ç½®ç›¸åº”ç”¨æˆ·ç»„åœ¨è¯¥ç‰ˆé¢çš„æƒé™ã€‚<BR>
+2ã€<font color=blue>å¦‚æœæ‚¨æ·»åŠ çš„æ˜¯è®ºå›åˆ†ç±»</font>ï¼Œåªéœ€è¦åœ¨æ‰€å±åˆ†ç±»ä¸­é€‰æ‹©ä½œä¸ºè®ºå›åˆ†ç±»å³å¯ï¼›<font color=blue>å¦‚æœæ‚¨æ·»åŠ çš„æ˜¯è®ºå›ç‰ˆé¢</font>ï¼Œåˆ™è¦åœ¨æ‰€å±åˆ†ç±»ä¸­ç¡®å®šå¹¶é€‰æ‹©è¯¥è®ºå›ç‰ˆé¢çš„ä¸Šçº§ç‰ˆé¢ã€‚
 </td>
 </tr>
 <tr> 
-<td width="40%" height=30 class="td1">ÂÛÌ³Ãû³Æ</td>
+<td width="40%" height=30 class="td1">è®ºå›åç§°</td>
 <td width="60%" class="td1"> 
 <input type="text" name="boardtype" size="35">
 </td>
 </tr>
 <tr> 
-<td width="40%" height=24 class="td1">°æÃæËµÃ÷<BR>¿ÉÒÔÊ¹ÓÃHTML´úÂë</td>
+<td width="40%" height=24 class="td1">ç‰ˆé¢è¯´æ˜<BR>å¯ä»¥ä½¿ç”¨HTMLä»£ç </td>
 <td width="60%" class="td1"> 
 <textarea name="Readme" cols="50" rows="5"></textarea>
 </td>
 </tr>
 <tr> 
-<td width="40%" height=24 class="td1">°æÃæ¹æÔò<BR>¿ÉÒÔÊ¹ÓÃHTML´úÂë</td>
+<td width="40%" height=24 class="td1">ç‰ˆé¢è§„åˆ™<BR>å¯ä»¥ä½¿ç”¨HTMLä»£ç </td>
 <td width="60%" class="td1"> 
 <textarea name="Rules" cols="50" rows="5"></textarea>
 </td>
 </tr>
 <tr> 
-<td width="40%" height=30 class="td1"><U>ËùÊôÀà±ğ</U></td>
+<td width="40%" height=30 class="td1"><U>æ‰€å±ç±»åˆ«</U></td>
 <td width="60%" class="td1"> 
 <select name="class" id="Boardid"></select>
 <SCRIPT LANGUAGE="JavaScript">
 <!--
-BoardJumpListSelect('<%=Dvbbs.CheckNumeric(Request("editid"))%>','Boardid','×öÎªÂÛÌ³·ÖÀà','0','0');
+BoardJumpListSelect('<%=Dvbbs.CheckNumeric(Request("editid"))%>','Boardid','åšä¸ºè®ºå›åˆ†ç±»','0','0');
 //-->
 </SCRIPT>
 </td>
 </tr>
 <tr> 
-<td width="40%" height=30 class="td1"><U>Ê¹ÓÃÑùÊ½·ç¸ñ</U><BR>Ïà¹ØÑùÊ½·ç¸ñÖĞ°üº¬ÂÛÌ³ÑÕÉ«¡¢Í¼Æ¬<BR>µÈĞÅÏ¢</td>
+<td width="40%" height=30 class="td1"><U>ä½¿ç”¨æ ·å¼é£æ ¼</U><BR>ç›¸å…³æ ·å¼é£æ ¼ä¸­åŒ…å«è®ºå›é¢œè‰²ã€å›¾ç‰‡<BR>ç­‰ä¿¡æ¯</td>
 <td width="60%" class="td1">
 <%
 	set rs_c=dvbbs.execute("select forum_sid,forum_cid from dv_setup")
@@ -411,13 +411,13 @@ Next
 </td>
 </tr>
 <tr> 
-<td width="40%" height=30 class="td1"><U>ÂÛÌ³°æÖ÷</U><BR>¶à°æÖ÷Ìí¼ÓÇëÓÃ|·Ö¸ô£¬Èç£ºÉ³Ì²Ğ¡×Ó|wodeail</td>
+<td width="40%" height=30 class="td1"><U>è®ºå›ç‰ˆä¸»</U><BR>å¤šç‰ˆä¸»æ·»åŠ è¯·ç”¨|åˆ†éš”ï¼Œå¦‚ï¼šæ²™æ»©å°å­|wodeail</td>
 <td width="60%" class="td1"> 
 <input type="text" name="boardmaster" size="35">
 </td>
 </tr>
 <tr> 
-<td width="40%" height=30 class="td1"><U>Ê×Ò³ÏÔÊ¾ÂÛÌ³Í¼Æ¬</U><BR>³öÏÖÔÚÊ×Ò³ÂÛÌ³°æÃæ½éÉÜ×ó±ß<BR>ÇëÖ±½ÓÌîĞ´Í¼Æ¬URL</td>
+<td width="40%" height=30 class="td1"><U>é¦–é¡µæ˜¾ç¤ºè®ºå›å›¾ç‰‡</U><BR>å‡ºç°åœ¨é¦–é¡µè®ºå›ç‰ˆé¢ä»‹ç»å·¦è¾¹<BR>è¯·ç›´æ¥å¡«å†™å›¾ç‰‡URL</td>
 <td width="60%" class="td1">
 <input type="text" name="indexIMG" size="35">
 </td>
@@ -425,7 +425,7 @@ Next
 <tr> 
 <td width="40%" height=24 class="td1">&nbsp;</td>
 <td width="60%" class="td1"> 
-<input type="submit" name="Submit" value="Ìí¼ÓÂÛÌ³" class="button">
+<input type="submit" name="Submit" value="æ·»åŠ è®ºå›" class="button">
 </td>
 </tr>
 </table>
@@ -452,42 +452,42 @@ forum_sid=rs("sid")
 <input type="hidden" name=editid value="<%=Request("editid")%>">
 <table width="100%" border="0" cellspacing="1" cellpadding="0" align="center">
 <tr> 
-<th colspan=2 style="text-align:center;">±à¼­ÂÛÌ³£º<%=rs("boardtype")%></th>
+<th colspan=2 style="text-align:center;">ç¼–è¾‘è®ºå›ï¼š<%=rs("boardtype")%></th>
 </tr>
 <tr> 
 <td width="100%" height=30 class="td2" colspan=2>
-ËµÃ÷£º<BR>1¡¢Ìí¼ÓÂÛÌ³°æÃæºó£¬Ïà¹ØµÄÉèÖÃ¾ùÎªÄ¬ÈÏÉèÖÃ£¬Çë·µ»ØÂÛÌ³°æÃæ¹ÜÀíÊ×Ò³°æÃæÁĞ±íµÄ¸ß¼¶ÉèÖÃÖĞÉèÖÃ¸ÃÂÛÌ³µÄÏàÓ¦ÊôĞÔ£¬Èç¹ûÄúÏë¶Ô¸ÃÂÛÌ³×ö¸ü¾ßÌåµÄÈ¨ÏŞÉèÖÃ£¬Çëµ½<A HREF="board.asp?action=permission"><font color=blue>ÂÛÌ³È¨ÏŞ¹ÜÀí</font></A>ÖĞÉèÖÃÏàÓ¦ÓÃ»§×éÔÚ¸Ã°æÃæµÄÈ¨ÏŞ¡£<BR>
-2¡¢<font color=blue>Èç¹ûÄúÌí¼ÓµÄÊÇÂÛÌ³·ÖÀà</font>£¬Ö»ĞèÒªÔÚËùÊô·ÖÀàÖĞÑ¡Ôñ×÷ÎªÂÛÌ³·ÖÀà¼´¿É£»<font color=blue>Èç¹ûÄúÌí¼ÓµÄÊÇÂÛÌ³°æÃæ</font>£¬ÔòÒªÔÚËùÊô·ÖÀàÖĞÈ·¶¨²¢Ñ¡Ôñ¸ÃÂÛÌ³°æÃæµÄÉÏ¼¶°æÃæ
+è¯´æ˜ï¼š<BR>1ã€æ·»åŠ è®ºå›ç‰ˆé¢åï¼Œç›¸å…³çš„è®¾ç½®å‡ä¸ºé»˜è®¤è®¾ç½®ï¼Œè¯·è¿”å›è®ºå›ç‰ˆé¢ç®¡ç†é¦–é¡µç‰ˆé¢åˆ—è¡¨çš„é«˜çº§è®¾ç½®ä¸­è®¾ç½®è¯¥è®ºå›çš„ç›¸åº”å±æ€§ï¼Œå¦‚æœæ‚¨æƒ³å¯¹è¯¥è®ºå›åšæ›´å…·ä½“çš„æƒé™è®¾ç½®ï¼Œè¯·åˆ°<A HREF="board.asp?action=permission"><font color=blue>è®ºå›æƒé™ç®¡ç†</font></A>ä¸­è®¾ç½®ç›¸åº”ç”¨æˆ·ç»„åœ¨è¯¥ç‰ˆé¢çš„æƒé™ã€‚<BR>
+2ã€<font color=blue>å¦‚æœæ‚¨æ·»åŠ çš„æ˜¯è®ºå›åˆ†ç±»</font>ï¼Œåªéœ€è¦åœ¨æ‰€å±åˆ†ç±»ä¸­é€‰æ‹©ä½œä¸ºè®ºå›åˆ†ç±»å³å¯ï¼›<font color=blue>å¦‚æœæ‚¨æ·»åŠ çš„æ˜¯è®ºå›ç‰ˆé¢</font>ï¼Œåˆ™è¦åœ¨æ‰€å±åˆ†ç±»ä¸­ç¡®å®šå¹¶é€‰æ‹©è¯¥è®ºå›ç‰ˆé¢çš„ä¸Šçº§ç‰ˆé¢
 </td>
 </tr>
 <tr> 
-<td width="40%" height=30 class="td1">ÂÛÌ³Ãû³Æ</td>
+<td width="40%" height=30 class="td1">è®ºå›åç§°</td>
 <td width="60%" class="td1"> 
 <input type="text" name="boardtype" size="35" value="<%=Server.htmlencode(rs("boardtype"))%>" >
 </td>
 </tr>
 <tr> 
-<td width="40%" height=24 class="td1">°æÃæËµÃ÷<BR>¿ÉÒÔÊ¹ÓÃHTML´úÂë</td>
+<td width="40%" height=24 class="td1">ç‰ˆé¢è¯´æ˜<BR>å¯ä»¥ä½¿ç”¨HTMLä»£ç </td>
 <td width="60%" class="td1"> 
 <textarea name="Readme" cols="50" rows="5"><%=server.HTMLEncode(Rs("readme")&"")%></textarea>
 </td>
 </tr>
 <tr> 
-<td width="40%" height=24 class="td1">°æÃæ¹æÔò<BR>¿ÉÒÔÊ¹ÓÃHTML´úÂë</td>
+<td width="40%" height=24 class="td1">ç‰ˆé¢è§„åˆ™<BR>å¯ä»¥ä½¿ç”¨HTMLä»£ç </td>
 <td width="60%" class="td1"> 
 <textarea name="Rules" cols="50" rows="5"><%=server.HTMLEncode(Rs("Rules")&"")%></textarea>
 </td>
 </tr>
 <tr> 
-<td width="40%" height=30 class="td1"><U>ËùÊôÀà±ğ</U><BR>ËùÊôÂÛÌ³²»ÄÜÖ¸¶¨Îªµ±Ç°°æÃæ<BR>ËùÊôÂÛÌ³²»ÄÜÖ¸¶¨Îªµ±Ç°°æÃæµÄÏÂÊôÂÛÌ³</td>
+<td width="40%" height=30 class="td1"><U>æ‰€å±ç±»åˆ«</U><BR>æ‰€å±è®ºå›ä¸èƒ½æŒ‡å®šä¸ºå½“å‰ç‰ˆé¢<BR>æ‰€å±è®ºå›ä¸èƒ½æŒ‡å®šä¸ºå½“å‰ç‰ˆé¢çš„ä¸‹å±è®ºå›</td>
 <td width="60%" class="td1"> 
 <select name=class>
-<option value="0">×öÎªÂÛÌ³·ÖÀà</option>
+<option value="0">åšä¸ºè®ºå›åˆ†ç±»</option>
 <% do while not rs_c.EOF%>
 <option value="<%=rs_c("boardid")%>" <% if cint(rs("parentid")) = rs_c("boardid") then%> selected <%end if%>>
 <%if rs_c("depth")>0 then%>
 <%for i=1 to rs_c("depth")%>&nbsp;&nbsp;|<%next%>
-<%end if%>&nbsp;©À&nbsp;<%=rs_c("boardtype")%></option>
+<%end if%>&nbsp;â”œ&nbsp;<%=rs_c("boardtype")%></option>
 <%
 rs_c.MoveNext 
 loop
@@ -497,7 +497,7 @@ rs_c.Close
 </td>
 </tr>
 <tr> 
-<td width="40%" height=30 class="td1"><U>Ê¹ÓÃÑùÊ½·ç¸ñ</U><BR>Ïà¹ØÑùÊ½·ç¸ñÖĞ°üº¬ÂÛÌ³ÑÕÉ«¡¢Í¼Æ¬<BR>µÈĞÅÏ¢</td>
+<td width="40%" height=30 class="td1"><U>ä½¿ç”¨æ ·å¼é£æ ¼</U><BR>ç›¸å…³æ ·å¼é£æ ¼ä¸­åŒ…å«è®ºå›é¢œè‰²ã€å›¾ç‰‡<BR>ç­‰ä¿¡æ¯</td>
 <td width="60%" class="td1">
 <%
 	set rs_c=dvbbs.execute("select forum_sid,forum_cid from dv_setup")
@@ -517,14 +517,14 @@ Next
 </td>
 </tr>
 <tr> 
-<td width="40%" height=30 class="td1"><U>ÂÛÌ³°æÖ÷</U><BR>¶à°ßÖñÌí¼ÓÇëÓÃ|·Ö¸ô£¬Èç£ºÉ³Ì²Ğ¡×Ó|wodeail</td>
+<td width="40%" height=30 class="td1"><U>è®ºå›ç‰ˆä¸»</U><BR>å¤šæ–‘ç«¹æ·»åŠ è¯·ç”¨|åˆ†éš”ï¼Œå¦‚ï¼šæ²™æ»©å°å­|wodeail</td>
 <td width="60%" class="td1"> 
 <input type="text" name="boardmaster" size="35" value='<%=rs("boardmaster")%>'>
 <input type="hidden" name="oldboardmaster" value='<%=rs("boardmaster")%>'>
 </td>
 </tr>
 <tr> 
-<td width="40%" height=30 class="td1"><U>Ê×Ò³ÏÔÊ¾ÂÛÌ³Í¼Æ¬</U><BR>³öÏÖÔÚÊ×Ò³ÂÛÌ³°æÃæ½éÉÜ×ó±ß<BR>ÇëÖ±½ÓÌîĞ´Í¼Æ¬URL</td>
+<td width="40%" height=30 class="td1"><U>é¦–é¡µæ˜¾ç¤ºè®ºå›å›¾ç‰‡</U><BR>å‡ºç°åœ¨é¦–é¡µè®ºå›ç‰ˆé¢ä»‹ç»å·¦è¾¹<BR>è¯·ç›´æ¥å¡«å†™å›¾ç‰‡URL</td>
 <td width="60%" class="td1">
 <input type="text" name="indexIMG" size="35" value="<%=rs("indexIMG")%>">
 </td>
@@ -532,17 +532,17 @@ Next
 <tr> 
 <td width="40%" height=24 class="td1">&nbsp;</td>
 <td width="60%" class="td1"> 
-<input type="submit" name="Submit" value="Ìá½»ĞŞ¸Ä" class="button">
+<input type="submit" name="Submit" value="æäº¤ä¿®æ”¹" class="button">
 </td>
 </tr>
 <tr> 
 <td width="100%" height=30 class="td2" colspan=2 align=right>
-<a href="board.asp?action=add&editid=<%=Request("editid")%>"><font color="<%=Dvbbs.mainsetting(3)%>"><U>Ìí¼Ó°æÃæ</U></font></a> | <a href="board.asp?action=edit&editid=<%=Request("editid")%>"><font color="<%=Dvbbs.mainsetting(3)%>"><U>»ù±¾ÉèÖÃ</U></font></a> | <a href="BoardSetting.asp?editid=<%=Request("editid")%>"><font color="<%=Dvbbs.mainsetting(3)%>"><U>¸ß¼¶ÉèÖÃ</U></font></a>
+<a href="board.asp?action=add&editid=<%=Request("editid")%>"><font color="<%=Dvbbs.mainsetting(3)%>"><U>æ·»åŠ ç‰ˆé¢</U></font></a> | <a href="board.asp?action=edit&editid=<%=Request("editid")%>"><font color="<%=Dvbbs.mainsetting(3)%>"><U>åŸºæœ¬è®¾ç½®</U></font></a> | <a href="BoardSetting.asp?editid=<%=Request("editid")%>"><font color="<%=Dvbbs.mainsetting(3)%>"><U>é«˜çº§è®¾ç½®</U></font></a>
 <%if reBoard_Setting(2)=1 then%>
-| <a href="board.asp?action=mode&boardid=<%=Request("editid")%>"><font color="<%=Dvbbs.mainsetting(3)%>"><U>ÈÏÖ¤ÓÃ»§</U></font></a>
+| <a href="board.asp?action=mode&boardid=<%=Request("editid")%>"><font color="<%=Dvbbs.mainsetting(3)%>"><U>è®¤è¯ç”¨æˆ·</U></font></a>
 <%end if%>
-| <a href="update.asp?action=updat&submit=¸üĞÂÂÛÌ³Êı¾İ&boardid=<%=Request("editid")%>" title="¸üĞÂ×îºó»Ø¸´¡¢Ìû×ÓÊı¡¢»Ø¸´Êı"><font color="<%=Dvbbs.mainsetting(3)%>"><U>¸üĞÂÊı¾İ</U></font></a> | <a href="update.asp?action=delboard&boardid=<%=Request("editid")%>" onclick="{if(confirm('Çå¿Õ½«°üÀ¨¸ÃÂÛÌ³ËùÓĞÌû×ÓÖÃÓÚ»ØÊÕÕ¾£¬È·¶¨Çå¿ÕÂğ?')){return true;}return false;}"><font color="<%=Dvbbs.mainsetting(3)%>"><U>Çå¿Õ</U></font></a> | <%if rs("child")=0 then%><a href="board.asp?action=del&editid=<%=Request("editid")%>" onclick="{if(confirm('É¾³ı½«°üÀ¨¸ÃÂÛÌ³µÄËùÓĞÌû×Ó£¬È·¶¨É¾³ıÂğ?')){return true;}return false;}"><font color="<%=Dvbbs.mainsetting(3)%>"><U>É¾³ı</U></a><%else%><a href="#" onclick="{if(confirm('¸ÃÂÛÌ³º¬ÓĞÏÂÊôÂÛÌ³£¬±ØĞëÏÈÉ¾³ıÆäÏÂÊôÂÛÌ³·½ÄÜÉ¾³ı±¾ÂÛÌ³£¡')){return true;}return false;}"><font color="<%=Dvbbs.mainsetting(3)%>"><U>É¾³ı</U></a><%end if%>
-| <a href="Board.asp?action=clearDate&boardid=<%=Request("editid")%>"> <font color="<%=Dvbbs.mainsetting(3)%>"><u>ÇåÀíÊı¾İ</u></a>
+| <a href="update.asp?action=updat&submit=æ›´æ–°è®ºå›æ•°æ®&boardid=<%=Request("editid")%>" title="æ›´æ–°æœ€åå›å¤ã€å¸–å­æ•°ã€å›å¤æ•°"><font color="<%=Dvbbs.mainsetting(3)%>"><U>æ›´æ–°æ•°æ®</U></font></a> | <a href="update.asp?action=delboard&boardid=<%=Request("editid")%>" onclick="{if(confirm('æ¸…ç©ºå°†åŒ…æ‹¬è¯¥è®ºå›æ‰€æœ‰å¸–å­ç½®äºå›æ”¶ç«™ï¼Œç¡®å®šæ¸…ç©ºå—?')){return true;}return false;}"><font color="<%=Dvbbs.mainsetting(3)%>"><U>æ¸…ç©º</U></font></a> | <%if rs("child")=0 then%><a href="board.asp?action=del&editid=<%=Request("editid")%>" onclick="{if(confirm('åˆ é™¤å°†åŒ…æ‹¬è¯¥è®ºå›çš„æ‰€æœ‰å¸–å­ï¼Œç¡®å®šåˆ é™¤å—?')){return true;}return false;}"><font color="<%=Dvbbs.mainsetting(3)%>"><U>åˆ é™¤</U></a><%else%><a href="#" onclick="{if(confirm('è¯¥è®ºå›å«æœ‰ä¸‹å±è®ºå›ï¼Œå¿…é¡»å…ˆåˆ é™¤å…¶ä¸‹å±è®ºå›æ–¹èƒ½åˆ é™¤æœ¬è®ºå›ï¼')){return true;}return false;}"><font color="<%=Dvbbs.mainsetting(3)%>"><U>åˆ é™¤</U></a><%end if%>
+| <a href="Board.asp?action=clearDate&boardid=<%=Request("editid")%>"> <font color="<%=Dvbbs.mainsetting(3)%>"><u>æ¸…ç†æ•°æ®</u></a>
 </td>
 </tr>
 </table>
@@ -561,17 +561,17 @@ Sub Mode()
 <form action ="board.asp?action=savemod" method=post>
 <table width="100%" cellspacing="1" cellpadding="1" align="center">
 <tr> 
-<th width="52%">ËµÃ÷£º</th>
-<th width="48%">²Ù×÷£º</th>
+<th width="52%">è¯´æ˜ï¼š</th>
+<th width="48%">æ“ä½œï¼š</th>
 </tr>
 <tr> 
-<td width="52%" height=22 class=td1><B>ÂÛÌ³Ãû³Æ</B></td>
+<td width="52%" height=22 class=td1><B>è®ºå›åç§°</B></td>
 <td width="48%" class=td1> 
 <%
 Sql = "SELECT Boardid, Boardtype, Boarduser FROM Dv_Board WHERE Boardid = " & Dvbbs.CheckNumeric(Request("boardid"))
 Set Rs = Dvbbs.Execute(Sql)
 If Rs.Eof And Rs.Bof Then
-	Response.Write "¸Ã°æÃæ²¢²»´æÔÚ»òÕß¸Ã°æÃæ²»ÊÇ¼ÓÃÜ°æÃæ¡£"
+	Response.Write "è¯¥ç‰ˆé¢å¹¶ä¸å­˜åœ¨æˆ–è€…è¯¥ç‰ˆé¢ä¸æ˜¯åŠ å¯†ç‰ˆé¢ã€‚"
 Else
 	Response.Write Rs(1)
 	Response.Write "<input type=hidden value=" & Rs(0) & " name=boardid>"
@@ -582,19 +582,19 @@ Set Rs = Nothing
 </td>
 </tr>
 <tr> 
-<td width="52%" class=td1 valign=top><B>ÈÏÖ¤ÓÃ»§</B>£º
+<td width="52%" class=td1 valign=top><B>è®¤è¯ç”¨æˆ·</B>ï¼š
 <%
 	If Not Isnull(Boarduser) Or Boarduser <> "" Then
 		BoarduserNum = Split(Boarduser,",")
-		Response.Write "£¨±¾°æ¹²ÓĞ<font color=red>" & Ubound(BoarduserNum)+1 & "</font>Î»ÈÏÖ¤ÓÃ»§£©"
+		Response.Write "ï¼ˆæœ¬ç‰ˆå…±æœ‰<font color=red>" & Ubound(BoarduserNum)+1 & "</font>ä½è®¤è¯ç”¨æˆ·ï¼‰"
 	Else
-		Response.Write "£¨±¾°æÔİÊ±Ã»ÓĞÈÏÖ¤ÓÃ»§£©"
+		Response.Write "ï¼ˆæœ¬ç‰ˆæš‚æ—¶æ²¡æœ‰è®¤è¯ç”¨æˆ·ï¼‰"
 	End If
 %>
 <br>
-Ö»ÓĞÉè¶¨ÎªÈÏÖ¤ÂÛÌ³µÄÂÛÌ³ĞèÒªÌîĞ´ÄÜ¹»½øÈë¸Ã°æÃæµÄÓÃ»§£¬Ã¿ÊäÈëÒ»¸öÓÃ»§ÇëÈ·ÈÏÓÃ»§ÃûÔÚÂÛÌ³ÖĞ´æÔÚ£¬Ã¿¸öÓÃ»§ÃûÓÃ<B>»Ø³µ</B>·Ö¿ª</font>
+åªæœ‰è®¾å®šä¸ºè®¤è¯è®ºå›çš„è®ºå›éœ€è¦å¡«å†™èƒ½å¤Ÿè¿›å…¥è¯¥ç‰ˆé¢çš„ç”¨æˆ·ï¼Œæ¯è¾“å…¥ä¸€ä¸ªç”¨æˆ·è¯·ç¡®è®¤ç”¨æˆ·ååœ¨è®ºå›ä¸­å­˜åœ¨ï¼Œæ¯ä¸ªç”¨æˆ·åç”¨<B>å›è½¦</B>åˆ†å¼€</font>
 <%
-If Clng(Dvbbs.Board_Setting(62))>0 Or Clng(Dvbbs.Board_Setting(63))>0 Then Response.Write "<BR><font color=blue>´Ë°æÃæÉèÖÃÁËÖ§¸¶½ğ±Ò»òµãÈ¯·½ÄÜ½øÈë£¬ÓĞĞ§ÆÚÎª<font color=red>" & Clng(Dvbbs.Board_Setting(64)) & "</font>¸öÔÂ£¬ÇëÔÚÃ¿¸öÓÃ»§ÃûºóÃæ¼ÓÉÏ£º=µ±Ç°Ê±¼ä£¬Ã¿ĞĞĞ§¹ûÈç£ºadmin="&Now&"</font>"
+If Clng(Dvbbs.Board_Setting(62))>0 Or Clng(Dvbbs.Board_Setting(63))>0 Then Response.Write "<BR><font color=blue>æ­¤ç‰ˆé¢è®¾ç½®äº†æ”¯ä»˜é‡‘å¸æˆ–ç‚¹åˆ¸æ–¹èƒ½è¿›å…¥ï¼Œæœ‰æ•ˆæœŸä¸º<font color=red>" & Clng(Dvbbs.Board_Setting(64)) & "</font>ä¸ªæœˆï¼Œè¯·åœ¨æ¯ä¸ªç”¨æˆ·ååé¢åŠ ä¸Šï¼š=å½“å‰æ—¶é—´ï¼Œæ¯è¡Œæ•ˆæœå¦‚ï¼šadmin="&Now&"</font>"
 %>
 </td>
 <td width="48%" class=td1> 
@@ -608,7 +608,7 @@ end if%></textarea>
 <tr> 
 <td width="52%" height=22 class=td1>&nbsp;</td>
 <td width="48%" class=td1> 
-<input type="submit" name="Submit" value="Éè ¶¨" class="button">
+<input type="submit" name="Submit" value="è®¾ å®š" class="button">
 </td>
 </tr>
 </table>
@@ -616,14 +616,14 @@ end if%></textarea>
 <%
 End Sub 
 
-'±£´æ±à¼­ÂÛÌ³ÈÏÖ¤ÓÃ»§ĞÅÏ¢
-'Èë¿Ú£ºÓÃ»§ÁĞ±í×Ö·û´®
+'ä¿å­˜ç¼–è¾‘è®ºå›è®¤è¯ç”¨æˆ·ä¿¡æ¯
+'å…¥å£ï¼šç”¨æˆ·åˆ—è¡¨å­—ç¬¦ä¸²
 sub savemod()
 	dim boarduser
 	dim boarduser_1
 	dim userlen
 	dim updateinfo,i
-	'ÇåÀí¸¶·ÑÂÛÌ³¹ıÆÚµÄÈÏÖ¤ÓÃ»§ 2005-3-10 Dv.Yz
+	'æ¸…ç†ä»˜è´¹è®ºå›è¿‡æœŸçš„è®¤è¯ç”¨æˆ· 2005-3-10 Dv.Yz
 	Dim Get_BoardUser_Money, BoardUser_Money
 	Get_BoardUser_Money = False
 	If Clng(Dvbbs.Board_Setting(62))>0 Or Clng(Dvbbs.Board_Setting(63))>0 Then Get_BoardUser_Money = True
@@ -648,32 +648,32 @@ sub savemod()
 			boarduser=left(boarduser_1,userlen-1)
 			updateinfo=" boarduser='"&boarduser&"' "
 			Dvbbs.Execute("update dv_board set "&updateinfo&" where boardid="&Dvbbs.CheckNumeric(request("boardid")))
-			Dv_suc("ÂÛÌ³ÉèÖÃ³É¹¦!<LI>³É¹¦Ìí¼ÓÈÏÖ¤ÓÃ»§£º"&boarduser&"<LI><a href=""?action=RestoreBoardCache"" >ÇëÖ´ĞĞÖØ½¨°æÃæ»º´æ²ÅÄÜÉúĞ§</a><br>")
+			Dv_suc("è®ºå›è®¾ç½®æˆåŠŸ!<LI>æˆåŠŸæ·»åŠ è®¤è¯ç”¨æˆ·ï¼š"&boarduser&"<LI><a href=""?action=RestoreBoardCache"" >è¯·æ‰§è¡Œé‡å»ºç‰ˆé¢ç¼“å­˜æ‰èƒ½ç”Ÿæ•ˆ</a><br>")
 			RestoreBoardCache()
 		else
-			Errmsg = errmsg + "ÄãÃ»ÓĞÌí¼ÓÈÏÖ¤ÓÃ»§£¡"'response.write "ÄãÃ»ÓĞÌí¼ÓÈÏÖ¤ÓÃ»§£¡"
+			Errmsg = errmsg + "ä½ æ²¡æœ‰æ·»åŠ è®¤è¯ç”¨æˆ·ï¼"'response.write "ä½ æ²¡æœ‰æ·»åŠ è®¤è¯ç”¨æˆ·ï¼"
 			Dvbbs_Error()
 			Exit Sub
 		end if
 	Else
-		Errmsg = errmsg + "ÄãÃ»ÓĞÌí¼ÓÈÏÖ¤ÓÃ»§£¡"'response.write "<p><font color=red>ÄãÃ»ÓĞÌí¼ÓÈÏÖ¤ÓÃ»§</font><br><br>"
+		Errmsg = errmsg + "ä½ æ²¡æœ‰æ·»åŠ è®¤è¯ç”¨æˆ·ï¼"'response.write "<p><font color=red>ä½ æ²¡æœ‰æ·»åŠ è®¤è¯ç”¨æˆ·</font><br><br>"
 		Dvbbs_Error()
 	End If
 	
 End Sub
 
-'±£´æÌí¼ÓÂÛÌ³ĞÅÏ¢
+'ä¿å­˜æ·»åŠ è®ºå›ä¿¡æ¯
 Sub savenew()
 	If request("boardtype")="" Then
-		Errmsg=Errmsg+"<br>"+"<li>ÇëÊäÈëÂÛÌ³Ãû³Æ¡£"
+		Errmsg=Errmsg+"<br>"+"<li>è¯·è¾“å…¥è®ºå›åç§°ã€‚"
 		founderr=true
 	End If
 	If request("class")="" Then
-		Errmsg=Errmsg+"<br>"+"<li>ÇëÑ¡ÔñÂÛÌ³·ÖÀà¡£"
+		Errmsg=Errmsg+"<br>"+"<li>è¯·é€‰æ‹©è®ºå›åˆ†ç±»ã€‚"
 		founderr=true
 	End If
 	If request("readme")="" Then
-		Errmsg=Errmsg+"<br>"+"<li>ÇëÊäÈëÂÛÌ³ËµÃ÷¡£"
+		Errmsg=Errmsg+"<br>"+"<li>è¯·è¾“å…¥è®ºå›è¯´æ˜ã€‚"
 		founderr=true
 	End If
 	If founderr=true Then
@@ -688,7 +688,7 @@ Sub savenew()
 		depth=rs(2)
 		orders=rs(3)
 		If depth+1>20 Then
-			Errmsg="±¾ÂÛÌ³ÏŞÖÆ×î¶àÖ»ÄÜÓĞ20¼¶·ÖÀà"
+			Errmsg="æœ¬è®ºå›é™åˆ¶æœ€å¤šåªèƒ½æœ‰20çº§åˆ†ç±»"
 		  dvbbs_error()
 		  Exit Sub
 		 End If 
@@ -701,7 +701,7 @@ Sub savenew()
 	sql="select boardid from dv_board where boardid="&Dvbbs.CheckNumeric(request("newboardid"))
 	Set rs=Dvbbs.Execute(sql)
 	If not (rs.eof and rs.bof) then
-		Errmsg="Äú²»ÄÜÖ¸¶¨ºÍ±ğµÄÂÛÌ³Ò»ÑùµÄĞòºÅ¡£"
+		Errmsg="æ‚¨ä¸èƒ½æŒ‡å®šå’Œåˆ«çš„è®ºå›ä¸€æ ·çš„åºå·ã€‚"
 		dvbbs_error()
 		exit sub
 	Else
@@ -741,7 +741,7 @@ Sub savenew()
 		rs("todaynum") = 0
 		rs("child")=0
 		rs("LastPost")="$0$"&Now()&"$$$$$"
-		rs("Board_Setting")="0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,16240,3,0,gif|jpg|jpeg|bmp|png|rar|txt|zip|mid,0,0,1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1,0,1,100,20,10,9,normal,1,10,10,0,0,0,0,1,0,0,1,4,0,0,0,200,0,0,,$$,0,0,0,1,0|0|0|0|0|0|0|0|0,0|0|0|0|0|0|0|0|0,0,0,0,0,0,0,0,0,0,¹àË®|¹ã¸æ|½±Àø|³Í·£|ºÃÎÄÕÂ|ÄÚÈİ²»·û|ÖØ¸´·¢Ìû,0,1,0,24,0,0"
+		rs("Board_Setting")="0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,16240,3,0,gif|jpg|jpeg|bmp|png|rar|txt|zip|mid,0,0,1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1,0,1,100,20,10,9,normal,1,10,10,0,0,0,0,1,0,0,1,4,0,0,0,200,0,0,,$$,0,0,0,1,0|0|0|0|0|0|0|0|0,0|0|0|0|0|0|0|0|0,0,0,0,0,0,0,0,0,0,çŒæ°´|å¹¿å‘Š|å¥–åŠ±|æƒ©ç½š|å¥½æ–‡ç« |å†…å®¹ä¸ç¬¦|é‡å¤å‘å¸–,0,1,0,24,0,0"
 		rs("sid")=Dvbbs.CheckNumeric(request.form("sid"))
 '		rs("cid")=Dvbbs.CheckNumeric(request.form("cid"))
 		rs("board_ads")=trs("forum_ads")
@@ -755,7 +755,7 @@ Sub savenew()
 	rs.Update 
 	rs.Close
 	If Request("boardmaster")<>"" Then Call addmaster(Request("boardmaster"),"none",0)
-	dv_suc("ÂÛÌ³Ìí¼Ó³É¹¦£¡<br>¸ÃÂÛÌ³Ä¿Ç°¸ß¼¶ÉèÖÃÎªÄ¬ÈÏÑ¡Ïî£¬½¨ÒéÄú·µ»ØÂÛÌ³¹ÜÀíÖĞĞÄÖØĞÂÉèÖÃ¸ÃÂÛÌ³µÄ¸ß¼¶Ñ¡Ïî£¬<A HREF=BoardSetting.asp?editid="&Request.form("newboardid")&">µã»÷´Ë´¦½øÈë¸Ã°æÃæ¸ß¼¶ÉèÖÃ</A><br>" & str)
+	dv_suc("è®ºå›æ·»åŠ æˆåŠŸï¼<br>è¯¥è®ºå›ç›®å‰é«˜çº§è®¾ç½®ä¸ºé»˜è®¤é€‰é¡¹ï¼Œå»ºè®®æ‚¨è¿”å›è®ºå›ç®¡ç†ä¸­å¿ƒé‡æ–°è®¾ç½®è¯¥è®ºå›çš„é«˜çº§é€‰é¡¹ï¼Œ<A HREF=BoardSetting.asp?editid="&Request.form("newboardid")&">ç‚¹å‡»æ­¤å¤„è¿›å…¥è¯¥ç‰ˆé¢é«˜çº§è®¾ç½®</A><br>" & str)
 	set rs=nothing
 	trs.close
 	set trs=nothing
@@ -763,10 +763,10 @@ Sub savenew()
 	RestoreBoardCache()
 End Sub
 
-'±£´æ±à¼­ÂÛÌ³ĞÅÏ¢
+'ä¿å­˜ç¼–è¾‘è®ºå›ä¿¡æ¯
 Sub savedit()
 	if clng(request("editid"))=clng(request("class")) then
-		Errmsg="ËùÊôÂÛÌ³²»ÄÜÖ¸¶¨×Ô¼º"
+		Errmsg="æ‰€å±è®ºå›ä¸èƒ½æŒ‡å®šè‡ªå·±"
 		dvbbs_error()
 		exit sub
 	end if
@@ -785,12 +785,12 @@ Sub savedit()
 	depth=rs("depth")
 	child=rs("child")
 	rootid=rs("rootid")
-	'ÅĞ¶ÏËùÖ¸¶¨µÄÂÛÌ³ÊÇ·ñÆäÏÂÊôÂÛÌ³
+	'åˆ¤æ–­æ‰€æŒ‡å®šçš„è®ºå›æ˜¯å¦å…¶ä¸‹å±è®ºå›
 	if ParentID=0 then
 		if clng(request("class"))<>0 then
 		set trs=Dvbbs.Execute("select rootid from dv_board where boardid="&request("class"))
 		if rootid=trs(0) then
-			errmsg="Äú²»ÄÜÖ¸¶¨¸Ã°æÃæµÄÏÂÊôÂÛÌ³×÷ÎªËùÊôÂÛÌ³1"
+			errmsg="æ‚¨ä¸èƒ½æŒ‡å®šè¯¥ç‰ˆé¢çš„ä¸‹å±è®ºå›ä½œä¸ºæ‰€å±è®ºå›1"
 			dvbbs_error()
 			exit sub
 		end if
@@ -798,7 +798,7 @@ Sub savedit()
 	else
 		set trs=Dvbbs.Execute("select boardid from dv_board where ParentStr like '%"&ParentStr&","&newboardid&"%' and boardid="&request("class"))
 		if not (trs.eof and trs.bof) then
-			errmsg="Äú²»ÄÜÖ¸¶¨¸Ã°æÃæµÄÏÂÊôÂÛÌ³×÷ÎªËùÊôÂÛÌ³2"
+			errmsg="æ‚¨ä¸èƒ½æŒ‡å®šè¯¥ç‰ˆé¢çš„ä¸‹å±è®ºå›ä½œä¸ºæ‰€å±è®ºå›2"
 			dvbbs_error()
 			exit sub
 		end if
@@ -813,7 +813,7 @@ Sub savedit()
 		mrs.close:Set mrs=Nothing
 		rs("rootid")=Maxrootid
 	End if
-	rs("boardtype") = Request.Form("boardtype")	'È¡ÏûJS¹ıÂË¡£
+	rs("boardtype") = Request.Form("boardtype")	'å–æ¶ˆJSè¿‡æ»¤ã€‚
 	rs("parentid") = Request.Form("class")
 	rs("boardmaster") = Request("boardmaster")
 	rs("readme") = Request("readme")
@@ -825,27 +825,27 @@ Sub savedit()
 	rs.Close:set rs=nothing
 	if request("oldboardmaster")<>Request("boardmaster") then call addmaster(Request("boardmaster"),request("oldboardmaster"),1)
 	
-	dv_suc("ÂÛÌ³ĞŞ¸Ä³É¹¦£¡<br>" & str)
+	dv_suc("è®ºå›ä¿®æ”¹æˆåŠŸï¼<br>" & str)
 	CheckAndFixBoard 0,1
 	Boardchild()
 	RestoreBoardCache()
 End sub
 
-'É¾³ı°æÃæ£¬É¾³ı°æÃæÌû×Ó£¬Èë¿Ú£º°æÃæID
+'åˆ é™¤ç‰ˆé¢ï¼Œåˆ é™¤ç‰ˆé¢å¸–å­ï¼Œå…¥å£ï¼šç‰ˆé¢ID
 Sub Del()
 	Dim Trs,EditId
 	EditId = Dvbbs.CheckNumeric(Request("editid"))
-	'¸üĞÂÆäÉÏ¼¶°æÃæÂÛÌ³Êı£¬Èç¹û¸ÃÂÛÌ³º¬ÓĞÏÂ¼¶ÂÛÌ³Ôò²»ÔÊĞíÉ¾³ı
+	'æ›´æ–°å…¶ä¸Šçº§ç‰ˆé¢è®ºå›æ•°ï¼Œå¦‚æœè¯¥è®ºå›å«æœ‰ä¸‹çº§è®ºå›åˆ™ä¸å…è®¸åˆ é™¤
 	Set tRs = Dvbbs.Execute("SELECT RootID FROM Dv_Board WHERE BoardID = " & EditId)
 	Dim UpdateRootID,Rs,sql,i
 	UpdateRootID = tRs(0)
 	Set Rs = Dvbbs.Execute("SELECT ParentStr, Child, Depth FROM Dv_Board WHERE BoardID = " &  EditId)
 	If Not (Rs.Eof And Rs.Bof) Then
 		If Rs(1) > 0 Then
-			Response.Write "¸ÃÂÛÌ³º¬ÓĞÏÂÊôÂÛÌ³£¬ÇëÉ¾³ıÆäÏÂÊôÂÛÌ³ºóÔÙ½øĞĞÉ¾³ı±¾ÂÛÌ³µÄ²Ù×÷"
+			Response.Write "è¯¥è®ºå›å«æœ‰ä¸‹å±è®ºå›ï¼Œè¯·åˆ é™¤å…¶ä¸‹å±è®ºå›åå†è¿›è¡Œåˆ é™¤æœ¬è®ºå›çš„æ“ä½œ"
 			Exit Sub
 		End If
-		'Èç¹ûÓĞÉÏ¼¶°æÃæ£¬Ôò¸üĞÂÊı¾İ
+		'å¦‚æœæœ‰ä¸Šçº§ç‰ˆé¢ï¼Œåˆ™æ›´æ–°æ•°æ®
 		If Rs(2) > 0 Then
 			Dvbbs.Execute("UPDATE Dv_Board SET Child = Child - 1 WHERE BoardID IN (" & Rs(0) & ")")
 		End If
@@ -859,995 +859,24 @@ Sub Del()
 		Dvbbs.Execute("DELETE FROM Dv_BestTopic WHERE BoardID = " & EditId)
 		Dvbbs.Execute("DELETE FROM Dv_Upfile WHERE F_BoardID = " & EditId)
 		Dvbbs.Execute("DELETE FROM Dv_Appraise WHERE BoardID = " & EditId)
-		'É¾³ı±»É¾³ıÂÛÌ³µÄ×Ô¶¨ÒåÓÃ»§È¨ÏŞ 2004-11-15 Dv.Yz
+		'åˆ é™¤è¢«åˆ é™¤è®ºå›çš„è‡ªå®šä¹‰ç”¨æˆ·æƒé™ 2004-11-15 Dv.Yz
 		Dvbbs.Execute("DELETE FROM Dv_UserAccess WHERE NOT Uc_BoardID IN (SELECT BoardID FROM Dv_Board)")
 	End If
 	Set Rs = Nothing
 	CheckAndFixBoard 0,1
 	RestoreBoardCache()
-	Dv_suc("ÂÛÌ³É¾³ı³É¹¦£¡")
+	Dv_suc("è®ºå›åˆ é™¤æˆåŠŸï¼")
 End Sub
 
 sub orders()
 	Dim rs,SQL
 %>
-<table width="100%" border="0" cellspacing="1" cellpadding="3" align="center">
-	<tr> 
-	<th style="text-align:center;">ÂÛÌ³Ò»¼¶·ÖÀàÖØĞÂÅÅĞòĞŞ¸Ä(ÇëÔÚÏàÓ¦ÂÛÌ³·ÖÀàµÄÅÅĞò±íµ¥ÄÚÊäÈëÏàÓ¦µÄÅÅÁĞĞòºÅ)
-	</th>
-	</tr>
-	<tr>
-	<td class="td1"><table width="50%">
-<%
-	set rs = server.CreateObject ("Adodb.recordset")
-	sql="select * from dv_Board where ParentID=0 order by RootID"
-	rs.open sql,conn,1,1
-	if rs.eof and rs.bof then
-		response.write "»¹Ã»ÓĞÏàÓ¦µÄÂÛÌ³·ÖÀà¡£"
-	else
-		do while not rs.eof
-		response.write "<form action=board.asp?action=updatorders method=post><tr><td width=""50%"">"&rs("boardtype")&"</td>"
-		response.write "<td width=""50%""><input type=text name=""OrderID"" size=4 value="""&rs("rootid")&"""><input type=hidden name=""cID"" value="""&rs("rootid")&""">&nbsp;&nbsp;<input type=submit name=Submit value=ĞŞ¸Ä class=button></td></tr></form>"
-		rs.movenext
-		loop
-%>
-</table>
-<BR>&nbsp;<font color=red>Çë×¢Òâ£¬ÕâÀïÏµÍ³»á<B>×Ô¶¯ĞŞ¸´</B>²»ÕıÈ·µÄĞòºÅ£¡</font>
-<%
-	end if
-	rs.close
-	set rs=nothing
-%>
-	</td>
-	</tr>
-</table>
-<%
-end sub
-
-sub updateorders()
-	dim cID,OrderID,ClassName,rs
-	cID=Dvbbs.CheckNumeric(request.form("cID"))
-	OrderID=Dvbbs.CheckNumeric(request.form("OrderID"))
-	set rs=Dvbbs.Execute("select boardid from dv_board where rootid="&orderid)
-	If rs.eof and rs.bof Then
-		Dvbbs.Execute("update dv_board set rootid="&OrderID&" where rootid="&cID)
-		Dv_suc("ÉèÖÃ³É¹¦")
-	Else
-		Errmsg = errmsg + "Çë²»ÒªºÍÆäËûÂÛÌ³ÉèÖÃÏàÍ¬µÄĞòºÅ"'response.write "Çë²»ÒªºÍÆäËûÂÛÌ³ÉèÖÃÏàÍ¬µÄĞòºÅ"
-		Dvbbs_Error()
-	end if
-	CheckAndFixBoard 0,1
-	RestoreBoardCache()
-end sub
-
-Sub Boardorders()
-%>
-<table width="100%" border="0" cellspacing="1" cellpadding="3" align="center">
-	<tr> 
-	<th style="text-align:center;">ÂÛÌ³N¼¶·ÖÀàÖØĞÂÅÅĞòĞŞ¸Ä(ÇëÔÚÏàÓ¦ÂÛÌ³·ÖÀàµÄÅÅĞò±íµ¥ÄÚÊäÈëÏàÓ¦µÄÅÅÁĞĞòºÅ)
-	</th>
-	</tr>
-	<tr>
-	<td class="td1"><table width="90%">
-<%
-	Dim Trs,Uporders,Doorders,Rs,SQL,i
-	Set Rs = Server.CreateObject ("Adodb.recordset")
-	Sql = "SELECT Depth, Child, Parentid, Boardtype, Orders, BoardId FROM Dv_Board ORDER BY RootID, Orders"
-	Set Rs = Dvbbs.Execute(Sql)
-	If Rs.Eof And Rs.Bof Then
-		Response.Write "»¹Ã»ÓĞÏàÓ¦µÄÂÛÌ³·ÖÀà¡£"
-	Else
-		Sql = Rs.GetRows(-1)
-		Dim Bn
-		Rs.Close:Set Rs = Nothing
-		For Bn = 0 To Ubound(Sql,2)
-			Response.Write "<form action=board.asp?action=updatboardorders method=post><tr><td width=""50%"">"
-			If Sql(0,Bn) > 0 Then
-				For i = 1 To Sql(0,Bn)
-					Response.Write "&nbsp;"
-				Next
-			End If
-			If Sql(1,Bn) > 0 Then
-				Response.Write "<img src=../skins/default/plus.gif>"
-			Else
-				Response.Write "<img src=../skins/default/nofollow.gif>"
-			End If
-			If Sql(2,Bn) = 0 Then
-				Response.Write "<b>"
-			End If
-			Response.Write Sql(3,Bn)
-			If Sql(1,Bn) > 0 Then
-				Response.Write "(" & Sql(1,Bn) & ")"
-			End If
-			Response.Write "</td><td width=""50%"">"
-			If Sql(2,Bn) > 0 Then
-				'Ëã³öÏàÍ¬Éî¶ÈµÄ°æÃæÊıÄ¿£¬µÃµ½¸Ã°æÃæÔÚÏàÍ¬Éî¶ÈµÄ°æÃæÖĞËù´¦Î»ÖÃ£¨Ö®ÉÏ»òÕßÖ®ÏÂµÄ°æÃæÊı£©
-				'ËùÄÜÌáÉı×î´ó·ù¶ÈÓ¦ÎªFor i=1 to ¸Ã°æÖ®ÉÏµÄ°æÃæÊı
-				Set Trs = Dvbbs.Execute("SELECT COUNT(*) FROM Dv_Board WHERE ParentID = " & Sql(2,Bn) & " AND ORDERS < " & Sql(4,Bn) &"")
-				Uporders = Trs(0)
-				If Isnull(Uporders) Then Uporders = 0
-				'ËùÄÜ½µµÍ×î´ó·ù¶ÈÓ¦ÎªFor i=1 to ¸Ã°æÖ®ÏÂµÄ°æÃæÊı
-				Set Trs = Dvbbs.Execute("SELECT COUNT(*) FROM Dv_Board WHERE ParentID = " & Sql(2,Bn) &" AND ORDERS > " & Sql(4,Bn) &"")
-				Doorders = Trs(0)
-				If Isnull(doorders) Then Doorders = 0
-				If Uporders > 0 Then
-					Response.Write "<select name=uporders size=1><option value=0>ÏòÉÏÒÆ¶¯</option>"
-					For i = 1 To Uporders
-						Response.Write "<option value=" & i & ">" & i & "</option>"
-					Next
-					Response.Write "</select>"
-				End If
-				If Doorders > 0 Then
-					If uporders > 0 Then Response.Write "&nbsp;"
-					Response.Write "<select name=doorders size=1><option value=0>ÏòÏÂÒÆ¶¯</option>"
-					For i = 1 To Doorders
-						Response.Write "<option value=" & i & ">" & i & "</option>"
-					Next
-					Response.Write "</select>"
-				End If
-				If Doorders > 0 Or Uporders > 0 Then
-					Response.Write "<input type=hidden name=""editID"" value=""" & Sql(5,Bn) & """>&nbsp;<input type=submit name=Submit value=ĞŞ¸Ä class=button>"
-				End If
-			End If
-			Response.Write "</td></tr></form>"
-			Uporders = 0
-			Doorders = 0
-		Next
-		Response.Write "</table>"
-	End If
-%>
-	</td>
-	</tr>
-</table>
-<%
-End Sub
-
-'N¼¶·ÖÀàÒÆ¶¯ 2004-10-18 Dv.Yz
-Sub Updateboardorders()
-	Dim Orders, tRs, Parentid
-	Dim Uporders, Doorders
-	Dim Frontorders, Nextorders, Lastorders
-	Dim Rootid, Depth, Child, Parentstr, Rs, SQL
-	If Not Isnumeric(Request("EditID")) Then
-		Response.Write "·Ç·¨µÄ²ÎÊı£¡"
-		Exit Sub
-	End If
-	If Request("Uporders") <> "" And Not Cint(Request("Uporders")) = 0 Then
-		If Not Isnumeric(Request("Uporders")) Then
-			Response.Write "·Ç·¨µÄ²ÎÊı£¡"
-			Exit Sub
-		Elseif Cint(Request("Uporders")) = 0 Then
-			Response.Write "ÇëÑ¡ÔñÒªÌáÉıµÄÊı×Ö£¡"
-			Exit Sub
-		End If
-		Uporders = Cint(Request("Uporders"))
-		'ÏòÉÏÒÆ¶¯
-		Set Rs = Dvbbs.Execute("SELECT Orders, Rootid, Depth, ParentID, Child, ParentStr FROM Dv_Board WHERE Boardid = " & Request("EditID"))
-		Orders = Rs(0)
-		Rootid = Rs(1)
-		Depth = Rs(2)
-		Parentid = Rs(3)
-		Child = Rs(4)
-		ParentStr = Rs(5) & "," & Request("EditID")
-		Set Rs = Nothing
-
-		'È¡LastordersÖµ
-		Sql = "SELECT Top 1 Orders FROM Dv_Board WHERE Rootid = " & Rootid & " ORDER BY Orders DESC"
-		Set Rs = Dvbbs.Execute(Sql)
-		Lastorders = Rs(0)
-		Set Rs = Nothing
-
-		'È¡È¡ÒÆ¶¯½áÊôORDERSÖµ
-		If Child > 0 Then
-			Sql = "SELECT COUNT(*) FROM Dv_Board WHERE ParentStr LIKE '%" & ParentStr & "%' AND Rootid = " & Rootid
-			Set Rs = Dvbbs.Execute(Sql)
-			Nextorders = Orders + Rs(0)
-		Else
-			Nextorders = Orders
-		End If
-		Doorders = Nextorders
-		Set Rs = Nothing
-
-		'È¡Í¬¼¶°æÃæÍùÉÏµÄ°æÃæORDERSÖµ
-		Sql = "SELECT Top " & Uporders & " Orders FROM Dv_Board WHERE Rootid = " & Rootid & " AND Depth = " & Depth & " AND ParentID = " & Parentid & " AND Orders < " & Orders & " ORDER BY Orders Desc"
-		Set Rs = Dvbbs.Execute(Sql)
-		If Rs.Eof And Rs.Bof Then
-			Frontorders = 0
-		Else
-			Sql = Rs.GetRows(-1)
-			Frontorders = Sql(0,Ubound(Sql,2))
-		End If
-
-		'Ò»´Î¸üĞÂOrders
-		Sql = "UPDATE Dv_Board SET Orders = Orders + " & Doorders & " WHERE Rootid = " & Rootid & " AND (Orders >= " & Frontorders & " AND Orders < " & Orders & " OR Orders > " & Nextorders & ")"
-'		Response.Write Sql
-		Dvbbs.Execute(Sql)
-
-	Elseif Request("Doorders") <> "" Then
-		If Not Isnumeric(Request("Doorders")) Then
-			Response.Write "·Ç·¨µÄ²ÎÊı£¡"
-			Exit Sub
-		Elseif Cint(Request("doorders")) = 0 Then
-			Response.Write "ÇëÑ¡ÔñÒªÏÂ½µµÄÊı×Ö£¡"
-			Exit Sub
-		End If
-		Uporders = Cint(Request("doorders"))
-		'ÏòÏÂÒÆ¶¯
-		Set Rs = Dvbbs.Execute("SELECT Orders, Rootid, Depth, ParentID, Child, ParentStr FROM Dv_Board WHERE Boardid = " & Request("EditID"))
-		Orders = Rs(0)
-		Rootid = Rs(1)
-		Depth = Rs(2)
-		Parentid = Rs(3)
-		Child = Rs(4)
-		ParentStr = Rs(5) & "," & Request("EditID")
-		Set Rs = Nothing
-
-		'È¡LastordersÖµ
-		Sql = "SELECT Top 1 Orders FROM Dv_Board WHERE Rootid = " & Rootid & " ORDER BY Orders DESC"
-		Set Rs = Dvbbs.Execute(Sql)
-		Lastorders = Rs(0)
-		Set Rs = Nothing
-
-		'È¡È¡ÒÆ¶¯½áÊôORDERSÖµ
-		If Child > 0 Then
-			Sql = "SELECT COUNT(*) FROM Dv_Board WHERE ParentStr LIKE '%" & ParentStr & "%' AND Rootid = " & Rootid
-			Set Rs = Dvbbs.Execute(Sql)
-			Nextorders = Orders + Rs(0)
-		Else
-			Nextorders = Orders
-		End If
-		Set Rs = Nothing
-
-		'È¡Í¬¼¶°æÃæÒÆÏÂºóÉÏÒ»¸ö°æÃæORDERSÖµ
-		Sql = "SELECT Top " & Uporders + 1 & " Orders, Child, ParentStr, BoardID FROM Dv_Board WHERE Rootid = " & Rootid & " AND Depth = " & Depth & " AND ParentID = " & Parentid & " AND Orders > " & Orders & " ORDER BY Orders"
-		Set Rs = Dvbbs.Execute(Sql)
-		If Rs.Eof And Rs.Bof Then
-			Frontorders = Lastorders
-		Else
-			Sql = Rs.GetRows(-1)
-			Frontorders = Sql(0,Ubound(Sql,2)) - 1
-			If Not Ubound(Sql,2) = Uporders Then
-				If Sql(1,Ubound(Sql,2)) > 0 Then
-					ParentStr = Sql(2,Ubound(Sql,2)) & "," & Sql(3,Ubound(Sql,2))
-					Set Rs = Dvbbs.Execute("SELECT COUNT(*) FROM Dv_Board WHERE ParentStr LIKE '%" & ParentStr & "%' AND Rootid = " & Rootid)
-					Frontorders = Sql(0,Ubound(Sql,2)) + Rs(0)
-				Else
-					Frontorders = Sql(0,Ubound(Sql,2))
-				End If
-			End If
-		End If
-		Doorders = Frontorders
-
-		'Ò»´Î¸üĞÂOrders
-		Sql = "UPDATE Dv_Board SET Orders = Orders + " & Doorders & " WHERE Rootid = " & Rootid & " AND Orders >= " & Orders & " AND Orders <= " & Nextorders & " OR Orders > " & Frontorders
-'		Response.Write Sql
-		Dvbbs.Execute(Sql)
-
-	End If
-	CheckAndFixBoard 0,1
-	RestoreBoardCache()
-	Response.Redirect "board.asp?action=boardorders"
-End Sub
-
-Sub Addmaster(s,o,n)
-	Dim Arr, Pw, Oarr
-	Dim Classname, Titlepic, Rs, Sql, i
-	Set Rs = Dvbbs.Execute("SELECT Usertitle, GroupPic FROM Dv_UserGroups WHERE Usergroupid = 3")
-	If Not (Rs.Eof And Rs.Bof) Then
-		Classname = Rs(0)
-		Titlepic = Rs(1)
-	End If
-	Randomize
-	Pw = CInt(Rnd * 9000) + CInt(Rnd * 9000) + 100000
-	Arr = Split(s,"|")
-	Oarr = Split(o,"|")
-	Set Rs = Server.Createobject("Adodb.Recordset")
-	For i = 0 To Ubound(Arr)
-		Sql = "SELECT * FROM [Dv_User] WHERE Username = '" & Arr(i) & "'"
-		Rs.Open Sql,Conn,1,3
-		If Rs.Eof And Rs.Bof Then
-			Rs.Addnew
-			Rs("Username") = Arr(i)
-			Rs("Userpassword") = Md5(Pw,16)
-			Rs("Userclass") = Classname
-			Rs("UserGroupID") = 3
-			Rs("Titlepic") = Titlepic
-			Rs("UserWealth") = 100
-			Rs("Userep") = 30
-			Rs("Usercp") = 30
-			Rs("Userisbest") = 0
-			Rs("Userdel") = 0
-			Rs("Userpower") = 0
-			Rs("Lockuser") = 0
-			'¼ÓÈë¸üÏêÏ¸×ÊÁÏÊ¹µÇÂ¼ÓëÏÔÊ¾×ÊÁÏ²»»á³ö´í¡£
-			Rs("UserSex") = 1
-			Rs("UserEmail") = Arr(i) & "@aspsky.net"
-			Rs("UserFace") = "Images/userface/image1.gif"
-			Rs("UserWidth") = 32
-			Rs("UserHeight") = 32
-			Rs("UserIM") = "||||||||||||||||||"
-			Rs("UserFav") = "Ä°ÉúÈË,ÎÒµÄºÃÓÑ,ºÚÃûµ¥"
-			Rs("LastLogin") = Now()
-			Rs("JoinDate") = Now()
-			Rs("Userpost") = 0
-			Rs("Usertopic") = 0
-			Rs.Update
-			Str = Str & "ÄãÌí¼ÓÁËÒÔÏÂÓÃ»§£º<b>" & Arr(i) & "</b> ÃÜÂë£º<b>" & Pw & "</b><br><br>"
-			Dvbbs.Execute("UPDATE Dv_Setup SET Forum_Usernum = Forum_Usernum + 1, Forum_Lastuser = '" & Arr(i) & "'")
-		Else
-			'ĞŞÕıÌí¼Ó°æÖ÷²»¸Ä±äµÈ¼¶µÄ´íÎó 2005-3-7 Dv.Yz
-			If Rs("UserGroupID") > 3 Then
-				Rs("Userclass") = Classname
-				Rs("UserGroupID") = 3
-				Rs("Titlepic") = Titlepic
-				Rs.Update
-			End If
-		End If
-		Rs.Close
-	Next
-	'ÅĞ¶ÏÔ­°æÖ÷ÔÚÆäËû°æÃæÊÇ·ñ»¹µ£ÈÎ°æÖ÷£¬ÈçÃ»ÓĞµ£ÈÎÔò³·»»¸ÃÓÃ»§Ö°Î»¡£
-	If n = 1 Then
-		Dim Iboardmaster
-		Dim UserGrade, Article
-		Iboardmaster = False
-		For i = 0 To Ubound(Oarr)
-			Set Rs = Dvbbs.Execute("SELECT Boardmaster FROM Dv_Board")
-			Do While Not Rs.Eof
-				If Instr("|" & Trim(Rs("Boardmaster")) & "|","|" & Trim(Oarr(i)) & "|") > 0 Then
-					Iboardmaster = True
-					Exit Do
-				End If
-				Rs.Movenext
-			Loop
-			If Not Iboardmaster Then
-				Set Rs = Dvbbs.Execute("SELECT Userid, UserGroupID, UserPost FROM [Dv_User] WHERE Username = '" & Trim(Oarr(i)) & "'")
-				If Not (Rs.Eof And Rs.Bof) Then
-					If Rs(1) > 2 Then
-						If Not Isnumeric(Rs(2)) Or Rs(2) = "" Then
-							Article = 0
-						Else
-							Article = Cstr(Rs(2))
-						End If
-						'È¡¶ÔÓ¦×¢²á»áÔ±µÄµÈ¼¶
-						Set UserGrade = Dvbbs.Execute("SELECT TOP 1 Usertitle, Grouppic,UserGroupID FROM Dv_Usergroups WHERE Minarticle <= " & Article & " AND NOT MinArticle = -1 AND ParentGID = 4 ORDER BY MinArticle DESC")
-						If Not (UserGrade.Eof And UserGrade.Bof) Then
-							Dvbbs.Execute("UPDATE [Dv_User] SET UserGroupID = 10, Titlepic = '" & UserGrade(1) & "', Userclass = '" & UserGrade(0) & "' WHERE Userid = " & Rs(0))
-						End If
-						UserGrade.Close:Set UserGrade = Nothing
-					End If
-				End If
-			End If
-			Iboardmaster = False
-		Next
-	End If
-	Set Rs = Nothing
-End Sub
-
-Rem ·Ö°æÃæÓÃ»§È¨ÏŞÉèÖÃ ÖØĞ´2004-5-2 Dvbbs.YangZheng
-Sub BoardPerMission()
-	Dim iUserGroupID(100), UserTitle(100),iParentID(100)
-	Dim Trs, Ars, k, ii
-	Dim Bn,Sql
-	Set Trs = Dvbbs.Execute("SELECT Usertitle,Usergroupid,ParentGID FROM Dv_UserGroups WHERE Not ParentGID=0 ORDER BY ParentGID,UserGroupId")
-	If Not (Trs.Eof And Trs.Bof) Then
-		Sql = Trs.GetRows(-1)
-		Trs.Close:Set Trs = Nothing
-		For ii = 0 To Ubound(Sql,2)
-			UserTitle(ii) = Sql(0,ii)
-			iUserGroupID(ii) = Sql(1,ii)
-			iParentID(ii) = Sql(2,ii)
-		Next
-	End If
-%>
-<table width="100%" border="0" cellspacing="1" cellpadding="3" align="center">
-	<tr>
-	<th style="text-align:center;">±à¼­ÂÛÌ³È¨ÏŞ</th>
-	</tr>
-	<tr>
-	<td class=td1>
-	¢ÙÄú¿ÉÒÔÉèÖÃ²»Í¬ÓÃ»§×éÔÚ²»Í¬ÂÛÌ³ÄÚµÄÈ¨ÏŞ£¬ºìÉ«±íÊ¾Îª¸ÃÂÛÌ³¸ÃÓÃ»§×éÊ¹ÓÃµÄÊÇÓÃ»§¶¨ÒåÊôĞÔ<BR>
-	¢Ú¸ÃÈ¨ÏŞ²»ÄÜ¼Ì³Ğ£¬±ÈÈçÄúÉèÖÃÁËÒ»¸ö°üº¬ÏÂ¼¶ÂÛÌ³µÄ°æÃæ£¬ÄÇÃ´Ö»¶ÔÄúÉèÖÃµÄ°æÃæÉúĞ§¶ø²»¶ÔÆäÏÂÊôÂÛÌ³ÉúĞ§<BR>
-	¢ÛÈç¹ûÄúÏëÉèÖÃÉúĞ§£¬±ØĞëÔÚÉèÖÃÒ³Ãæ<B>Ñ¡Ôñ×Ô¶¨ÒåÉèÖÃ</B>£¬Ñ¡ÔñÁË×Ô¶¨ÒåÉèÖÃºó£¬ÕâÀïÉèÖÃµÄÈ¨ÏŞ½«<B>ÓÅÏÈ</B>ÓÚÓÃ»§×éÉèÖÃ£¬±ÈÈçÓÃ»§×éÄ¬ÈÏ²»ÄÜ¹ÜÀíÌû×Ó£¬¶øÕâÀïÉèÖÃÁË¸ÃÓÃ»§×é¿É¹ÜÀíÌû×Ó£¬ÄÇÃ´¸ÃÓÃ»§×éÔÚÕâ¸ö°æÃæ¾Í¿ÉÒÔ¹ÜÀíÌû×Ó
-	</td>
-	</tr>
-</table><BR>
-<table width="100%" cellspacing="1" cellpadding="1" align="center">
-<tr> 
-<th width="35%">ÂÛÌ³°æÃæ
-</th>
-<th width="35%">ÉèÖÃÓÃ»§×éÈ¨ÏŞ
-</th>
-</tr>
-<%
-	Dim Percount,Rs,i
-	Dim hasc
-	Sql = "SELECT Depth, Child, Parentid, BoardType, Boardid,IsGroupSetting FROM Dv_Board ORDER BY Rootid, Orders"
-	Set Rs = Dvbbs.Execute(Sql)
-	If Not (Rs.Eof And Rs.Bof) Then
-		Sql = Rs.GetRows(-1)
-		Set Rs = Nothing
-		For Bn = 0 To Ubound(Sql,2)
-			Response.Write "<tr><td height=25 width=40% class=td1>"
-			If Sql(0,Bn) > 0 Then
-				For i = 1 To Sql(0,Bn)
-					Response.Write "&nbsp;"
-				Next
-			End If
-			If Sql(1,Bn) > 0 Then
-				Response.Write "<img src=../skins/default/plus.gif>"
-			Else
-				Response.Write "<img src=../skins/default/nofollow.gif>"
-			End If
-			If Sql(2,Bn) = 0 Then
-				Response.Write "<b>"
-			End If
-			Response.Write Sql(3,Bn)
-			If Sql(1,Bn) > 0 Then
-				Response.Write "(" & Sql(1,Bn) & ")"
-			End If
-			'Percount = Dvbbs.Execute("SELECT COUNT(*) FROM Dv_BoardPermission WHERE Boardid = " & Sql(4,Bn))(0)
-%>
-</td>
-<FORM METHOD=POST ACTION="?action=editpermission">
-<td width=60% class="td1">&nbsp;
-<select name="groupid" size=1>
-<%
-			hasc = 0
-			For k = 0 To ii-1
-				Response.Write "<option value=""" & iUserGroupID(k) & """>" & SysGroupName(iParentID(k)) & UserTitle(k)
-				If Sql(5,Bn)<>"" Then
-					Set Ars = Dvbbs.Execute("SELECT Pid FROM Dv_BoardPerMission WHERE BoardID = " & Sql(4,Bn) & " AND GroupID = " & iUserGroupID(k))
-					If Not Ars.Eof Then
-						Response.Write "(×Ô¶¨Òå)"
-						hasc=1
-					End If
-				End If
-				Response.Write "</option>"
-			Next
-			Response.Write "</select><input type=hidden value="
-			Response.Write Sql(4,Bn)
-			Response.Write " name=reboardid><input type=submit name=submit value=ÉèÖÃ class=button>"
-			If hasc=1 Then
-				Response.Write "(ÓĞ×Ô¶¨Òå°æÃæ)"
-			End If
-			Response.Write "</td></FORM></tr>"
-		Next
-	End If
-	Response.Write "</table><BR><BR>"
-	Set Ars = Nothing
-	Set Trs = Nothing
-End Sub
-
-Sub editpermission()
-	if not isnumeric(request("groupid")) Or request("groupid")="" Or request("reBoardID")="" Or not isnumeric(request("reBoardID")) then
-	response.write "´íÎóµÄ²ÎÊı£¬Çë·µ»Ø·Ö°æÃæÈ¨ÏŞÉèÖÃÊ×Ò³Ñ¡ÔñÕıÈ·µÄÉèÖÃ£¡"
-	exit sub
-	end if
-	if request("groupaction")="yes" then
-		dim GroupSetting,rspid,SaveGroupid,NewGroupid
-		Dim IsGroupSetting,MyIsGroupSetting
-		Dim Sql,i,k
-		Dim UpdateStr,OldStr,NewStr
-		GroupSetting=GetGroupPermission
-		If Not IsNumeric(Replace(Request.Form("GroupID"),",","")) or Request.Form("GroupID")="" Then
-			Errmsg = ErrMsg + "<BR><li>ÇëÑ¡Ôñ¶ÔÓ¦µÄÓÃ»§×é¡£"
-			Dvbbs_Error()
-			Exit Sub
-		End If
-		SaveGroupid = Request.Form("groupid")
-		Set rs= Server.CreateObject("ADODB.Recordset")
-		if Request("isdefault")=1 then
-			'ÇåÀíID
-			Dvbbs.Execute("Delete from dv_BoardPermission where BoardID="&request.Form("reBoardID")&" and GroupID in ("&SaveGroupid&")")
-		Else
-			'Ê¹ÓÃ×Ô¶¨Òå
-			sql="Select Pid,GroupID,PSetting from dv_BoardPermission where BoardID="&request("reBoardID")&" And GroupID in ("&SaveGroupid&") "
-			NewGroupid = ","&SaveGroupid&","
-			Set Rs=Dvbbs.Execute(sql)
-			If Not Rs.eof And Not Rs.bof Then
-				If Instr(SaveGroupid,",")=0 Then
-					sql="update dv_BoardPermission set PSetting='"&GroupSetting&"' where pid="&Rs(0)
-					Dvbbs.Execute(Sql)
-					NewGroupid = ""
-				Else
-					Do while Not Rs.Eof
-						NewStr = Split(GroupSetting,",")
-						OldStr = Split(Rs(2),",")
-						UpdateStr = ""
-						For K = 0 To 90
-							If Request.Form("CheckGroupSetting("&K&")")="on" Then
-								UpdateStr = UpdateStr & NewStr(k)
-							Else
-								UpdateStr = UpdateStr & OldStr(k)
-							End If
-							If K<90 Then
-								UpdateStr = UpdateStr & ","
-							End If
-						Next
-						sql="update dv_BoardPermission set PSetting='"&UpdateStr&"' where pid="&Rs(0)
-						Dvbbs.Execute(Sql)
-						NewGroupid = Replace(NewGroupid,","&Rs(1)&",",",")
-					Rs.MoveNext
-					Loop
-				End If
-			Else
-				Dim iSaveGroupID
-				iSaveGroupID = Split(SaveGroupid,",")
-				For i = 0 To Ubound(iSaveGroupID)
-					sql="insert into dv_BoardPermission (BoardID,GroupID,PSetting) values ("&request("reBoardID")&","&iSaveGroupID(i)&",'"&GroupSetting&"')"
-					Dvbbs.Execute(Sql)
-				Next
-				NewGroupid = ""
-			End If
-			Set Rs=Nothing
-
-
-			If Replace(NewGroupid,",","")<>"" Then
-				'ÓĞĞÂ×éÌí¼Ó
-				NewGroupid = Split(NewGroupid,",")
-				For i=1 to Ubound(NewGroupid)-1
-					Sql = Dvbbs.Execute("select GroupSetting From Dv_UserGroups where UserGroupID="&NewGroupid(i))(0)
-					If Sql<>"" Then
-						NewStr = Split(GroupSetting,",")
-						OldStr = Split(Sql,",")
-						UpdateStr = ""
-						For K = 0 To 90
-							If Request.Form("CheckGroupSetting("&K&")")="on" Then
-								UpdateStr = UpdateStr & NewStr(k)
-							Else
-								UpdateStr = UpdateStr & OldStr(k)
-							End If
-							If K<90 Then
-								UpdateStr = UpdateStr & ","
-							End If
-						Next
-						sql="insert into dv_BoardPermission (BoardID,GroupID,PSetting) values ("&request("reBoardID")&","&NewGroupid(i)&",'"&UpdateStr&"')"
-						Dvbbs.Execute(Sql)
-					End If
-				Next
-			End If
-		End If
-
-		'ÖØĞÂÌáÈ¡ÓĞ×Ô¶¨ÒåµÄID
-		Dim IsGroupSetting1
-		IsGroupSetting=Get_board_AccUserList(CLng(request("reBoardID")))
-		IsGroupSetting1=Get_Board_GroupSetting(CLng(request("reBoardID")))
-		If IsGroupSetting="" Then
-			IsGroupSetting=IsGroupSetting1
-		ElseIf IsGroupSetting1<>"" Then
-			IsGroupSetting=IsGroupSetting&","& IsGroupSetting1
-		End If
-		Dvbbs.Execute("update dv_Board set IsGroupSetting='"&IsGroupSetting&"' Where BoardID="&CLng(request("reBoardID")))
-		RestoreBoardCache()
-		Set Rs=Nothing
-		Dv_suc("ĞŞ¸Ä³É¹¦£¡")
-Else
-	Dim reGroupSetting,reBoardID,groupid
-	Dim Groupname,Boardname,founduserper,rs
-	founduserper=false
-	if request("GroupID")<>"" then
-	set rs=Dvbbs.Execute("select * from dv_BoardPermission where boardid="&request("reBoardID")&" and GroupID="&request("GroupID"))
-	if rs.eof and rs.bof then
-		founduserper=false
-	else
-	groupid=rs("groupid")
-	reGroupSetting=rs("PSetting")
-	reBoardID=rs("boardid")
-	set rs=Dvbbs.Execute("select usertitle from dv_UserGroups where usergroupid="&groupid)
-	groupname=rs("usertitle")
-	founduserper=true
-	end if
-	if not founduserper then
-	set rs=Dvbbs.Execute("select * from dv_usergroups where usergroupid="&request("groupid"))
-	if rs.eof and rs.bof then
-	response.write "Î´ÕÒµ½¸ÃÓÃ»§×é£¡"
-	exit sub
-	end if
-	groupid=request("groupid")
-	reGroupSetting=rs("GroupSetting")
-	reBoardID=request("reBoardID")
-	Groupname=rs("usertitle")
-	end if
-	end if
-	set rs=Dvbbs.Execute("select boardtype from dv_board where boardid="&reBoardID)
-	Boardname=rs("boardtype")
-%>
-<table width="100%" border="0" cellspacing="1" cellpadding="3" align="center">
-<FORM METHOD=POST ACTION="?action=editpermission">
-<input type=hidden name="groupid" value="<%=groupid%>">
-<input type=hidden name="reBoardID" value="<%=reBoardID%>">
-<input type=hidden name="pID" value="<%=request("pid")%>">
-<tr> 
-<th colspan="4" style="text-align:center;">±à¼­ÂÛÌ³ÓÃ»§×éÈ¨ÏŞ&nbsp;>> <%=boardname%>&nbsp;>> <%=groupname%></th>
-</tr>
-<tr> 
-<td height="23" colspan="4" class=td1><input type=radio class="radio" name="isdefault" value="1" <%if not founduserper then%>checked<%end if%>><B>Ê¹ÓÃÓÃ»§×éÄ¬ÈÏÖµ</B> (×¢Òâ: Õâ½«É¾³ıÈÎºÎÖ®Ç°Ëù×öµÄ×Ô¶¨ÒåÉèÖÃ)</td>
-</tr>
-<tr> 
-<td height="23" colspan="4" class=td1><input type=radio class="radio" name="isdefault" value="0" <%if founduserper then%>checked<%end if%>><B>Ê¹ÓÃ×Ô¶¨ÒåÉèÖÃ</B>&nbsp;(Ñ¡Ôñ×Ô¶¨Òå²ÅÄÜÊ¹ÒÔÏÂÉèÖÃÉúĞ§) </td>
-</tr>
-<tr> 
-<td height="23" colspan="4" class=td1>
-¢Ù<font color="red">ÔÚ¸üĞÂ¶à¸öÓÃ»§×éÉèÖÃÊ±£¬ÇëÑ¡È¡×î×ó±ßµÄ¸´Ñ¡±íµ¥£¬Ö»ÓĞÑ¡È¡µÄÉèÖÃÏîÄ¿²Å»á¸üĞÂ£»</font>
-<BR>¢Ú²»Ö´ĞĞ¶àÓÃ»§×é¸üĞÂÊ±£¬²»ĞèÒªÑ¡È¡×ó±ßµÄ¸´Ñ¡±íµ¥£»
-<br><b>ÅúÁ¿¸üĞÂÓÃ»§×éÉèÖÃ</b>£º<input type="button" value="Ñ¡ÔñÓÃ»§×é" class="button" onclick="getGroup('Select_Group');">
- <INPUT TYPE="checkbox" NAME="chkall" onclick="CheckAll(this.form);" class="checkbox">[È«Ñ¡]
-</td>
-</tr>
-<%
-GroupPermission(reGroupSetting)
-%>
-<input type=hidden value="yes" name="groupaction">
-</FORM>
-</table>
-<%
-Call Select_Group(Request("groupid"))
-end if
-end sub
-
-sub RestoreBoard()
-	'°´ÕÕÄ¿Ç°µÄÅÅĞòÑ­»·iÊıÖµ¸üĞÂrootid
-	'»¹Ô­ËùÓĞ°æÃæµÄdepth,orders,parentid,parentstr,childÎª0
-	Dim i,rs
-	i=0
-	set rs=Dvbbs.Execute("select boardid from dv_board order by rootid,orders")
-	do while not rs.eof
-	i=i+1
-	Dvbbs.Execute("update dv_board set rootid="&i&",depth=0,orders=0,ParentID=0,ParentStr='0',child=0 where boardid="&rs(0))
-	rs.movenext
-	loop
-	Set Rs=Nothing
-	Dv_suc("Çë·µ»Ø×öÂÛÌ³¹éÊôÉèÖÃ¡£¸´Î»")
-	RestoreBoardCache()
-End sub
-
-Sub clearDate
-	If Dvbbs.Boardid=0 Then
-		errmsg=errmsg+"<br><li>ÇëÑ¡ÔñÂÛÌ³°æÃæ"
-		dvbbs_error()
-		Exit Sub
-	End If
-	Dim Rs,str1,str2,str3,str4,i
-	Set Rs=Dvbbs.Execute("Select Count(*) from dv_topic where Boardid="& Dvbbs.boardid &"")
-	str1=Rs(0)
-	str3=0
-	str4=0
-	For i= 0 to UBound(AllPostTable)
-		Set Rs=Dvbbs.Execute("Select Count(*) from "&AllPostTable(i)&" where Boardid="& Dvbbs.boardid &"")
-		str2=str2&"ÆäÖĞÔÚ"&AllPostTable(i)&"ÓĞ"&Rs(0)&"ÆªÎÄÕÂ£¬"
-		str3=str3+Rs(0)
-		Set Rs=Dvbbs.Execute("Select Count(*) from "&AllPostTable(i)&" where Boardid="& Dvbbs.boardid &" and isbest=1")
-		str4=str4+Rs(0)
-	Next
-	Response.Write"<br>"
-	Response.Write"<table cellpadding=0 cellspacing=0 align=center width=""100%"">"
-	Response.Write"<tr align=center>"
-	Response.Write"<th width=""100%"" colspan=2 style=""text-align:center;"">"
-	Response.Write Dvbbs.BoardType
-	Response.Write "-Ìù×ÓĞÅÏ¢"
-	Response.Write"</td>"
-	Response.Write"</tr>"
-	Response.Write"<tr>"
-	Response.Write"<td width=""100%"" class=""td2"" colspan=2>"
-	Response.Write "<li>Ö÷Ìâ×ÜÊı:<b>"
-	Response.Write str1
-	Response.Write "</b><li>ÎÄÕÂ×ÜÊı:<b>"
-	Response.Write str3
-	Response.Write "</b><li>"
-	Response.Write str2
-	Response.Write "<li>ÓĞ<B>"&str4&"</B>Æª¾«»ªÎÄÕÂ"
-	Response.Write"</td></tr>"
-	Response.Write "<form action =""?action=delDate&boardid="&Dvbbs.boardid&""" method=post>"
-	Response.Write"<tr>"
-	Response.Write"<td class=""td2"" valign=middle colspan=2 align=left><li>  Çå³ı<b>"
-	Response.Write Dvbbs.BoardType
-	Response.Write "</b>ÔÚ "
-	Response.Write "<select name=""tablelist""><option value=""all"">ËùÓĞÊı¾İ±í</option>"
-	For i= 0 to UBound(AllPostTable)
-		Response.Write "<option value="""&AllPostTable(i)&""">"
-		Response.Write 	AllPostTableName(i)
-		Response.Write "</option>"
-	Next 
-	Response.Write "</select>"
-	Response.Write " ÖĞ <input type=text name=dd value=365 size=5 > ÌìÇ°µÄÌù×Ó"
-	Response.Write " <input type=""submit"" name=""Submit"" value=""Ö´ ĞĞ"" class=""button""> <b>×¢Òâ:´Ë²Ù×÷²»¿É»Ö¸´£¡</b>ÆäÖĞ¾«»ªÌù²»»á±»É¾³ı¡£<BR><BR>Èç¹ûÄúµÄÂÛÌ³Êı¾İÖÚ¶à£¬Ö´ĞĞ´Ë²Ù×÷½«ÏûºÄ´óÁ¿µÄ·şÎñÆ÷×ÊÔ´£¬Ö´ĞĞ¹ı³ÌÇëÄÍĞÄµÈºò£¬×îºÃÑ¡ÔñÒ¹¼äÔÚÏßÈËÉÙµÄÊ±ºò¸üĞÂ¡£"
-	Response.Write "</td></tr>"
-	Response.Write "</form>"
-	Response.Write"</table>"
-End Sub
-Sub delDate
-	Dim i,rs,sql
-	If Dvbbs.Boardid=0 Then
-		errmsg=errmsg+"<br><li>ÇëÑ¡ÔñÂÛÌ³°æÃæ"
-		dvbbs_error()
-		Exit Sub
-	End If
-	Dim tablelist
-	If request.form("tablelist")<>"all" Then
-		tablelist=Dvbbs.checkstr(request.form("tablelist"))
-	Else
-		For i= 0 to UBound(AllPostTable)
-		If i=0 Then
-			tablelist=AllPostTable(i)
-		Else
-			tablelist=tablelist&","&AllPostTable(i)
-		End If
-		Next
-	End If
-	tablelist=split(tablelist,",")
-	Dim SqlTopic
-	Dim k
-	k=0
-	For i= 0 to UBound(tablelist)
-		'É¾³ıÊı¾İ±í¼ÇÂ¼
-		If IsSqlDataBase=1 Then
-			SqlTopic="Select TopicID,isvote,PollID from dv_Topic where Boardid="&Dvbbs.boardid&" and isbest=0 and PostTable='"&tablelist(i)&"' and Datediff(d,LastPostTime,"&SqlNowString&") > "& CLng(request.form("dd"))&" "
-		Else
-			SqlTopic="Select TopicID,isvote,PollID from dv_Topic where Boardid="&Dvbbs.boardid&" and isbest=0 and PostTable='"&tablelist(i)&"' and Datediff('d',LastPostTime,"&SqlNowString&") > "& CLng(request.form("dd"))&" "
-		End If
-		Set rs=Dvbbs.Execute(SqlTopic)
-		Do While Not Rs.Eof
-			Sql="Delete from "&tablelist(i)&" where Boardid="&Dvbbs.boardid&" and rootid="&RS(0)&""
-			Dvbbs.Execute(Sql)
-			If Rs(1)=1 And Not IsNull(Rs(2)) Then
-				Sql="Delete from dv_vote where voteid="&RS(2)&""
-				Dvbbs.Execute(Sql)
-			End If 
-			Dvbbs.Execute("Delete from Dv_Appraise where Boardid="&Dvbbs.boardid&" and Topicid="&RS(0)&"")
-			Rs.movenext
-			k=k+1
-		Loop 
-		'É¾³ıÖ÷Ìâ±í¼ÇÂ¼
-		If IsSqlDataBase=1 Then
-		SqlTopic="Delete from dv_Topic where Boardid="&Dvbbs.boardid&" and isbest=0 and PostTable='"&tablelist(i)&"' and Datediff(d,LastPostTime,"&SqlNowString&") > "& CLng(request.form("dd"))&" "
-		Else
-		SqlTopic="Delete from dv_Topic where Boardid="&Dvbbs.boardid&" and isbest=0 and PostTable='"&tablelist(i)&"' and Datediff('d',LastPostTime,"&SqlNowString&") > "& CLng(request.form("dd"))&" "
-		End If
-		Dvbbs.Execute(SqlTopic) 
-		Set rs=Nothing 	
-	Next
-	Response.Write "É¾³ıÁË"&k&"¸öÖ÷Ìâ¡£"
-End Sub
-
-Sub RestoreClass()
-	Dim ClassID,RootID,RootIDNum,ParentID,Rs,i
-	ClassID=Request("ClassID")
-	If Not IsNumeric(ClassID) Or ClassID="" Then
-		Response.Write "´íÎóµÄ°æÃæ²ÎÊı£¡"
-		Exit Sub
-	Else
-		ClassID=Clng(ClassID)
-	End If
-	Set Rs=Dvbbs.Execute("Select RootID,BoardID From Dv_Board Where BoardID="&ClassID)
-	If Rs.Eof And Rs.Bof Then
-		Response.Write "´íÎóµÄ°æÃæ²ÎÊı£¡"
-		Exit Sub
-	Else
-		RootID=Rs(0)
-		ParentID=Rs(1)
-	End If
-	i=0
-	Set Rs=Dvbbs.Execute("Select BoardID,ParentID From Dv_Board Where RootID="&RootID&" Order By ParentID,Orders,Depth")
-	Do While Not Rs.Eof
-		If Rs(1)=0 Then
-			Dvbbs.Execute("UpDate Dv_Board Set Orders="&i&" Where BoardID="&Rs(0))
-		Else
-			Dvbbs.Execute("UpDate Dv_Board Set Orders="&i&",ParentID="&ParentID&",ParentStr='"&ParentID&"',Depth=1,child=0 Where BoardID="&Rs(0))
-		End If
-		i=i+1
-	Rs.MoveNext
-	Loop
-	Set Rs=Dvbbs.Execute("Select Count(*) From Dv_Board Where RootID="&RootID)
-	RootIDNum=Rs(0)
-	If IsNull(RootIDNum) Or RootIDNum="" Then
-		RootIDNum=0
-	Else
-		RootIDNum=RootIDNum-1
-	End If
-	Dvbbs.Execute("UpDate Dv_Board Set Child="&RootIDNum&" Where BoardID="&ClassID)
-	dv_suc("¸´Î»·ÖÀà³É¹¦£¡")
-	RestoreBoardCache()
-	Set Rs=Nothing
-End Sub
-
-Sub handorders()
-%>
-<table width="100%" border="0" cellspacing="1" cellpadding="3" align="center">
-	<tr> 
-	<th>ÂÛÌ³·ÖÀàÖØĞÂÅÅĞòĞŞ¸Ä(ÇëÔÚÏàÓ¦ÂÛÌ³·ÖÀàµÄÅÅĞò±íµ¥ÄÚÊäÈëÏàÓ¦µÄÅÅÁĞĞòºÅ)
-	</th>
-	</tr>
-	<tr>
-	<td class="td1">
-	<B>×¢Òâ</B>£º<BR>
-1¡¢ÓÉÓÚ±¾ÂÛÌ³ÅÅĞòËã·¨²»ÊÇµİ¹é£¬ËùÒÔÇëÕıÈ·ÊäÈëÅÅĞòµÄĞòºÅ£¬·ñÔò½«ÒıÆğÂÛÌ³ÏÔÊ¾²»Õı³££¬<font color=red>Èç¹ûÄúÎ´ÕıÈ·ÁË½âËµÃ÷£¬Çë²»ÒªËæÒâ¸ü¸Ä</font><BR>
-2¡¢Ò»¼¶·ÖÀàÅÅĞòĞòºÅÎª0£¬ÇëÕıÈ·ÊäÈë£¬<font color=blue>ËùÓĞÊäÈë¿òÇëÊäÈëÊı×Ö</font><BR>
-3¡¢ÅÅĞò¹æÔòÎªÊı×Ö×î´óµÄÅÅÔÚºóÃæ£¬<font color=blue>ÔÚÕâÀï²»ÄÜÓÃÅÅĞòÀ´Ö¸¶¨Ä³¸ö°æÃæµÄËùÊô·ÖÀà»ò°æÃæ</font>£¬ÈçÏÂÎªÕıÈ·µÄÅÅĞòÊäÈë·½Ê½£º<BR>
-<B>·ÖÀà</B> 0<BR>
---¶ş¼¶°æÃæA 1<BR>
---¶ş¼¶°æÃæB 2<BR>
-----Èı¼¶°æÃæA 3<BR>
-----Èı¼¶°æÃæB 4<BR>
-----Èı¼¶°æÃæC 5<BR>
---¶ş¼¶°æÃæC 6<BR>
-A.<font color=blue>Òª°ÑÈı¼¶°æÃæCÌáµ½Èı¼¶°æÃæAÉÏÃæ</font>£¬ÔòÒÀ´ÎÊäÈë£º·ÖÀà(0)-¶ş¼¶A(1)-¶ş¼¶B(2)-Èı¼¶A(<font color=red>4</font>)-Èı¼¶B(<font color=red>5</font>)-Èı¼¶C(<font color=red>3</font>)-¶ş¼¶C(6)<BR>
-B.<font color=blue>Òª°Ñ¶ş¼¶°æÃæCÌáµ½¶ş¼¶°æÃæBÉÏÃæ</font>£¬ÔòÒÀ´ÎÊäÈë£º·ÖÀà(0)-¶ş¼¶A(1)-¶ş¼¶B(<font color=red>3</font>)-Èı¼¶A(<font color=red>4</font>)-Èı¼¶B(<font color=red>5</font>)-Èı¼¶C(<font color=red>6</font>)-¶ş¼¶C(<font color=red>2</font>)<BR>
-B.<font color=blue>Òª°Ñ¶ş¼¶°æÃæBÌáµ½¶ş¼¶°æÃæAÉÏÃæ</font>£¬ÔòÒÀ´ÎÊäÈë£º·ÖÀà(0)-¶ş¼¶A(<font color=red>5</font>)-¶ş¼¶B(<font color=red>1</font>)-Èı¼¶A(<font color=red>2</font>)-Èı¼¶B(<font color=red>3</font>)-Èı¼¶C(<font color=red>4</font>)-¶ş¼¶C(6)
-	</td></tr>
-<form action="board.asp?action=savehandorders" method=post>
-	<tr>
-	<td class="td1"><table width="100%">
-<%
-dim trs,uporders,doorders,RootID,Rs,sql,i
-Set Rs=Dvbbs.Execute("Select RootID From Dv_Board Where BoardID="&Dvbbs.CheckNumeric(Request("classid")))
-If Rs.eof And Rs.bof Then
-	response.write "»¹Ã»ÓĞÏàÓ¦µÄÂÛÌ³·ÖÀà¡£"
-	exit sub
-Else
-	RootID=Rs(0)
-End If
-set rs = server.CreateObject ("Adodb.recordset")
-sql="select * from dv_Board Where RootID="&RootID&" order by RootID,orders"
-rs.open sql,conn,1,1
-if rs.eof and rs.bof then
-	response.write "»¹Ã»ÓĞÏàÓ¦µÄÂÛÌ³·ÖÀà¡£"
-else
-	do while not rs.eof
-	response.write "<tr><td width=""50%"">"
-	if rs("depth")>0 then
-	for i=1 to rs("depth")
-		response.write "&nbsp;"
-	next
-	end if
-	if rs("child")>0 then
-		response.write "<img src=../skins/default/plus.gif>"
-	else
-		response.write "<img src=../skins/default/nofollow.gif>"
-	end if
-	if rs("parentid")=0 then
-		response.write "<b>"
-	end if
-	response.write rs("boardtype")
-	if rs("child")>0 then
-		response.write "("&rs("child")&")"
-	end if
-	response.write "</td><td width=""50%"">"
-	Response.Write "<input type=hidden value="""&rs("boardid")&""" name=getboard>"
-	Response.Write "<input type=text size=5 value="""&rs("orders")&""" name=orders>"
-	response.write "</td></tr>"
-	uporders=0
-	doorders=0
-	rs.movenext
-	loop
-	Response.Write "<tr><td class=td1><input type=submit name=submit value=Ìá½» class=button></td></tr>"
-	response.write "</table>"
-end if
-rs.close
-set rs=nothing
-%>
-	</td>
-	</tr></form>
-</table>
-<%
-End Sub
-
-Sub savehandorders()
-	dim cID,OrderID,ClassName,i
-	cID=replace(request.form("getboard"),"'","")
-	OrderID=replace(request.form("Orders"),"'","")
-	For i=1 to request.form("getboard").count
-		cID=Dvbbs.CheckNumeric(request.form("getboard")(i))
-		OrderID=Dvbbs.CheckNumeric(request.form("Orders")(i))
-		Dvbbs.Execute("Update Dv_Board Set Orders="&OrderID&" Where BoardID="&cID)
-	next
-	Dv_suc("¸ü¸Ä·ÖÀàÅÅĞò³É¹¦£¡")
-	CheckAndFixBoard 0,1
-	RestoreBoardCache()
-End Sub
-
-Sub RestoreBoardCache()	
-	Dvbbs.Name="jsonboardlist0"
-	Dvbbs.RemoveCache
-	Dvbbs.Name="jsonboardlist1"
-	Dvbbs.RemoveCache
-	Dim Board
-	Dvbbs.Name="0"
-	Dvbbs.RemoveCache
-	Dvbbs.LoadBoardList()
-
-	For Each board in Application(Dvbbs.CacheName&"_boardlist").documentElement.selectNodes("board/@boardid")
-		Dvbbs.LoadBoardData board.text
-		Dvbbs.LoadBoardinformation board.text
-	Next
-	If Request("action")="RestoreBoardCache" Then dv_suc("ÖØ½¨ËùÓĞ°æÃæ»º´æ³É¹¦£¡")
-End Sub
-Sub CheckAndFixBoard(ParentID,orders)
-	Dim Rs,SQL,Child,ParentStr,i
-	If ParentID=0 Then
-		Dvbbs.Execute("update dv_board set Depth=0,ParentStr='0' where ParentID=0")
-	End If
-	Set Rs=Dvbbs.Execute("Select BoardID,rootid,ParentStr,Depth From Dv_Board where ParentID="&ParentID&" order by Rootid,orders")
-	If Not Rs.Eof Then
-		SQL = Rs.GetRows(-1)
-		Rs.Close:Set Rs=Nothing
-		For i=0 To Ubound(SQL,2)
-			If SQL(2,i)<>"0" Then
-				ParentStr=SQL(2,i)&","&SQL(0,i)
-			Else
-				ParentStr=SQL(0,i)
-			End If
-			Conn.Execute "update dv_board set Depth="&SQL(3,i)+1&",ParentStr='"&ParentStr&"',rootid="&SQL(1,i)&" where ParentID="&SQL(0,i)&"",Child
-			Dvbbs.Execute("update dv_board set Child="&Child&",orders="&orders&" Where BoardID="&SQL(0,i)&"")
-			orders=orders+1
-			CheckAndFixBoard SQL(0,i),orders
-		Next
-	End If
-End Sub
-Function Get_board_AccUserList(bid)
-	Dim Rs,tmp
-	Set Rs=Dvbbs.Execute("Select uc_userid from dv_UserAccess where uc_boardid="&bid&"")
-	tmp=""
-	If Not Rs.EOF Then
-		Do while Not Rs.EOF
-			If tmp="" Then
-				tmp="0_"&rs(0)
-			Else
-				tmp=tmp&",0_"&rs(0)
-			End If
-		Rs.MoveNext
-		Loop
-		Get_board_AccUserList=tmp
-	Else
-		Get_board_AccUserList=""
-	End If
-	Set Rs=Nothing
-End Function
-Function Get_Board_GroupSetting(bid)
-	Dim Rs,tmp
-	Set Rs=Dvbbs.Execute("select GroupID From Dv_BoardPermission Where BoardID="&bid)
-	tmp=""
-	If Not Rs.EOF Then
-		Do while Not Rs.EOF
-			If tmp="" Then
-				tmp=rs(0)
-			Else
-				tmp=tmp&","&rs(0)
-			End If
-		Rs.MoveNext
-		Loop
-		Get_Board_GroupSetting=tmp
-	Else
-		Get_Board_GroupSetting=""
-	End If
-	Set Rs=Nothing
-End Function
-Rem Í³¼ÆÏÂÊôÂÛÌ³º¯Êı 2004-5-3 Dvbbs.YangZheng
-Sub Boardchild()
-	Dim cBoardNum, cBoardid
-	Dim Trs,rs,Sql
-	Dim Bn,i
-	Dvbbs.Execute("UPDATE Dv_Board SET Child = 0")
-	Set Rs = Dvbbs.Execute("SELECT Boardid, Rootid, ParentID, Depth, Child, ParentStr FROM Dv_Board ORDER BY Boardid DESC")
-	If Not (Rs.Eof And Rs.Bof) Then
-		Sql = Rs.GetRows(-1)
-		Rs.Close:Set Rs = Nothing
-		For Bn = 0 To Ubound(Sql,2)
-			If Isnull(Sql(4,Bn)) And Cint(Sql(3,Bn)) > 0 Then
-				Dvbbs.Execute("UPDATE Dv_Board SET Child = 0 WHERE Boardid = " & Sql(0,Bn))
-			End If
-			If Cint(Sql(2,Bn)) = 0 And Cint(Sql(3,Bn)) = 0 Then
-				Set Trs = Dvbbs.Execute("SELECT COUNT(*) FROM Dv_Board WHERE RootID = " & Sql(1,Bn))
-				Cboardnum = Trs(0) - 1
-				Trs.Close:Set Trs = Nothing
-				If Isnull(Cboardnum) Or Cboardnum < 0 Then Cboardnum = 0
-				Dvbbs.Execute("UPDATE Dv_Board SET Child = " & Cboardnum & " WHERE Boardid = " & Sql(0,Bn))
-			Elseif Cint(Sql(3,Bn)) > 1 Then
-				cBoardid = Split(Sql(5,Bn),",")
-				For i = 1 To Ubound(cBoardid)
-					Dvbbs.Execute("UPDATE Dv_Board SET Child = Child + 1 WHERE Boardid = " & cBoardid(i))
-				Next
-			End If
-		Next
-	End If
-End Sub
-%>
+<table width="100%" border="0" cellspacing="1" cellpadding="3" aligs") = Request.form("Rules")
+	rs("indexIMG")=request.form("indexIMG")
+	rs("sid")=Cint(request.form("sid"))
+'	rs("cid")=Cint(request.form("cid"))
+	rs.Update 
+	rs.Close:set rs=nothing
+	if request("oldboardmaster")<>Request("boardmaster") then call addmaster(Request("boardmaster"),request("oldboardmaster"),1)
+	
+	dv_suc("ç’å“„æ½§æ·‡

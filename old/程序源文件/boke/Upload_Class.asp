@@ -1,67 +1,67 @@
 <!--#include FILE="Upload.inc"-->
 <%
 '-----------------------------------------------------------------------
-'--- ÉÏ´«´¦ÀíÀàÄ£¿é
+'--- ä¸Šä¼ å¤„ç†ç±»æ¨¡å—
 '--- Copyright (c) 2004 Aspsky, Inc.
 '--- Mail: Sunwin@artbbs.net   http://www.aspsky.net
 '--- 2004-12-18
 '-----------------------------------------------------------------------
 '-----------------------------------------------------------------------
-'-- InceptFileType	: ÉèÖÃÉÏ´«ÀàĞÍÊôĞÔ (ÒÔ¶ººÅ·Ö¸ô¶à¸öÎÄ¼şÀàĞÍ) String
-'-- MaxSize			: ÉèÖÃÉÏ´«ÎÄ¼ş´óĞ¡ÉÏÏŞ (µ¥Î»£ºkb) Long
-'-- InceptMaxFile	: ÉèÖÃÒ»´ÎÉÏ´«ÎÄ¼ş×î´ó¸öÊı Long
-'-- UploadPath		: ÉèÖÃ±£´æµÄÄ¿Â¼Ïà¶ÔÂ·¾¶ String
-'-- UploadType		: ÉèÖÃÉÏ´«×é¼şÀàĞÍ £¨0=ÎŞ×é¼şÉÏ´«Àà£¬1=Aspupload3.0 ,2=SA-FileUp 4.0 ,3=DvFile.Upload V1.0£©
-'-- SaveUpFile		: Ö´ĞĞÉÏ´«
-'-- GetBinary		: ÉèÖÃÉÏ´«ÊÇ·ñ·µ»ØÎÄ¼şÊı¾İÁ÷  BloonÖµ : True/False
-'-- ChkSessionName	: ÉèÖÃSESSIONÃû£¬·ÀÖ¹ÖØ¸´Ìá½»£¬SESSIONÃûÓëÌá½»µÄ±íµ¥ÃûÒªÒ»ÖÂ¡£
-'-- RNameÉèÖÃÎÄ¼şÃû	: ¶¨ÒåÎÄ¼şÃûÇ°×º (ÈçÄ¬ÈÏÉú³ÉµÄÎÄ¼şÃûÎª200412230402587123.jpg
-'									ÉèÖÃ£ºRName="PRE_",Éú³ÉµÄÎÄ¼şÃûÎª£ºPRE_200412230402587123.jpg)
+'-- InceptFileType	: è®¾ç½®ä¸Šä¼ ç±»å‹å±æ€§ (ä»¥é€—å·åˆ†éš”å¤šä¸ªæ–‡ä»¶ç±»å‹) String
+'-- MaxSize			: è®¾ç½®ä¸Šä¼ æ–‡ä»¶å¤§å°ä¸Šé™ (å•ä½ï¼škb) Long
+'-- InceptMaxFile	: è®¾ç½®ä¸€æ¬¡ä¸Šä¼ æ–‡ä»¶æœ€å¤§ä¸ªæ•° Long
+'-- UploadPath		: è®¾ç½®ä¿å­˜çš„ç›®å½•ç›¸å¯¹è·¯å¾„ String
+'-- UploadType		: è®¾ç½®ä¸Šä¼ ç»„ä»¶ç±»å‹ ï¼ˆ0=æ— ç»„ä»¶ä¸Šä¼ ç±»ï¼Œ1=Aspupload3.0 ,2=SA-FileUp 4.0 ,3=DvFile.Upload V1.0ï¼‰
+'-- SaveUpFile		: æ‰§è¡Œä¸Šä¼ 
+'-- GetBinary		: è®¾ç½®ä¸Šä¼ æ˜¯å¦è¿”å›æ–‡ä»¶æ•°æ®æµ  Bloonå€¼ : True/False
+'-- ChkSessionName	: è®¾ç½®SESSIONåï¼Œé˜²æ­¢é‡å¤æäº¤ï¼ŒSESSIONåä¸æäº¤çš„è¡¨å•åè¦ä¸€è‡´ã€‚
+'-- RNameè®¾ç½®æ–‡ä»¶å	: å®šä¹‰æ–‡ä»¶åå‰ç¼€ (å¦‚é»˜è®¤ç”Ÿæˆçš„æ–‡ä»¶åä¸º200412230402587123.jpg
+'									è®¾ç½®ï¼šRName="PRE_",ç”Ÿæˆçš„æ–‡ä»¶åä¸ºï¼šPRE_200412230402587123.jpg)
 '-----------------------------------------------------------------------
-'-- ÉèÖÃÍ¼Æ¬×é¼şÊôĞÔ
-'-- PreviewType		: ÉèÖÃ×é¼ş(0=CreatePreviewImage×é¼ş£¬1=AspJpegV1.2 ,2=SoftArtisans ImgWriter V1.21)
-'-- PreviewImageWidth	: ÉèÖÃÔ¤ÀÀÍ¼Æ¬¿í¶È
-'-- PreviewImageHeight	: ÉèÖÃÔ¤ÀÀÍ¼Æ¬¸ß¶È
-'-- DrawImageWidth	: ÉèÖÃË®Ó¡Í¼Æ¬»òÎÄ×ÖÇøÓò¿í¶È
-'-- DrawImageHeight	: ÉèÖÃË®Ó¡Í¼Æ¬»òÎÄ×ÖÇøÓò¸ß¶È
-'-- DrawGraph		: ÉèÖÃË®Ó¡Í¼Æ¬»òÎÄ×ÖÇøÓòÍ¸Ã÷¶È
-'-- DrawFontColor	: ÉèÖÃË®Ó¡ÎÄ×ÖÑÕÉ«
-'-- DrawFontFamily	: ÉèÖÃË®Ó¡ÎÄ×Ö×ÖÌå¸ñÊ½
-'-- DrawFontSize	: ÉèÖÃË®Ó¡ÎÄ×Ö×ÖÌå´óĞ¡
-'-- DrawFontBold	: ÉèÖÃË®Ó¡ÎÄ×ÖÊÇ·ñ´ÖÌå
-'-- DrawInfo		: ÉèÖÃË®Ó¡ÎÄ×ÖĞÅÏ¢»òÍ¼Æ¬ĞÅÏ¢
-'-- DrawType		: ÉèÖÃ¼ÓÔØË®Ó¡Ä£Ê½£º0=²»¼ÓÔØË®Ó¡ £¬1=¼ÓÔØË®Ó¡ÎÄ×Ö £¬2=¼ÓÔØË®Ó¡Í¼Æ¬
-'-- DrawXYType		: Í¼Æ¬Ìí¼ÓË®Ó¡LOGOÎ»ÖÃ×ø±ê£º"0" =×óÉÏ£¬"1"=×óÏÂ,"2"=¾ÓÖĞ,"3"=ÓÒÉÏ,"4"=ÓÒÏÂ
-'-- DrawSizeType	: Éú³ÉÔ¤ÀÀÍ¼Æ¬´óĞ¡¹æÔò£º"0"=¹Ì¶¨ËõĞ¡£¬"1"=µÈ±ÈÀıËõĞ¡
+'-- è®¾ç½®å›¾ç‰‡ç»„ä»¶å±æ€§
+'-- PreviewType		: è®¾ç½®ç»„ä»¶(0=CreatePreviewImageç»„ä»¶ï¼Œ1=AspJpegV1.2 ,2=SoftArtisans ImgWriter V1.21)
+'-- PreviewImageWidth	: è®¾ç½®é¢„è§ˆå›¾ç‰‡å®½åº¦
+'-- PreviewImageHeight	: è®¾ç½®é¢„è§ˆå›¾ç‰‡é«˜åº¦
+'-- DrawImageWidth	: è®¾ç½®æ°´å°å›¾ç‰‡æˆ–æ–‡å­—åŒºåŸŸå®½åº¦
+'-- DrawImageHeight	: è®¾ç½®æ°´å°å›¾ç‰‡æˆ–æ–‡å­—åŒºåŸŸé«˜åº¦
+'-- DrawGraph		: è®¾ç½®æ°´å°å›¾ç‰‡æˆ–æ–‡å­—åŒºåŸŸé€æ˜åº¦
+'-- DrawFontColor	: è®¾ç½®æ°´å°æ–‡å­—é¢œè‰²
+'-- DrawFontFamily	: è®¾ç½®æ°´å°æ–‡å­—å­—ä½“æ ¼å¼
+'-- DrawFontSize	: è®¾ç½®æ°´å°æ–‡å­—å­—ä½“å¤§å°
+'-- DrawFontBold	: è®¾ç½®æ°´å°æ–‡å­—æ˜¯å¦ç²—ä½“
+'-- DrawInfo		: è®¾ç½®æ°´å°æ–‡å­—ä¿¡æ¯æˆ–å›¾ç‰‡ä¿¡æ¯
+'-- DrawType		: è®¾ç½®åŠ è½½æ°´å°æ¨¡å¼ï¼š0=ä¸åŠ è½½æ°´å° ï¼Œ1=åŠ è½½æ°´å°æ–‡å­— ï¼Œ2=åŠ è½½æ°´å°å›¾ç‰‡
+'-- DrawXYType		: å›¾ç‰‡æ·»åŠ æ°´å°LOGOä½ç½®åæ ‡ï¼š"0" =å·¦ä¸Šï¼Œ"1"=å·¦ä¸‹,"2"=å±…ä¸­,"3"=å³ä¸Š,"4"=å³ä¸‹
+'-- DrawSizeType	: ç”Ÿæˆé¢„è§ˆå›¾ç‰‡å¤§å°è§„åˆ™ï¼š"0"=å›ºå®šç¼©å°ï¼Œ"1"=ç­‰æ¯”ä¾‹ç¼©å°
 '-----------------------------------------------------------------------
-'-- »ñÈ¡ÉÏ´«ĞÅÏ¢
-'-- ObjName			: ²ÉÓÃµÄ×é¼şÃû³Æ
-'-- Count			: ÉÏ´«ÎÄ¼ş×ÜÊı
-'-- CountSize		: ÉÏ´«×Ü´óĞ¡×Ö½ÚÊı
-'-- ErrCodes		: ´íÎóNUMBER (Ä¬ÈÏÎª0)
-'-- Description		: ´íÎóÃèÊö
+'-- è·å–ä¸Šä¼ ä¿¡æ¯
+'-- ObjName			: é‡‡ç”¨çš„ç»„ä»¶åç§°
+'-- Count			: ä¸Šä¼ æ–‡ä»¶æ€»æ•°
+'-- CountSize		: ä¸Šä¼ æ€»å¤§å°å­—èŠ‚æ•°
+'-- ErrCodes		: é”™è¯¯NUMBER (é»˜è®¤ä¸º0)
+'-- Description		: é”™è¯¯æè¿°
 '-----------------------------------------------------------------------
 '-- CreateView Imagename,TempFilename,FileExt
-'	´´½¨Ô¤ÀÀÍ¼Æ¬¹ı³Ì: Ô­Ê¼ÎÄ¼şµÄÏà¶ÔÂ·¾¶,Éú³ÉÔ¤ÀÀÎÄ¼şÏà¶ÔÂ·¾¶,Ô­ÎÄ¼şºó×º
+'	åˆ›å»ºé¢„è§ˆå›¾ç‰‡è¿‡ç¨‹: åŸå§‹æ–‡ä»¶çš„ç›¸å¯¹è·¯å¾„,ç”Ÿæˆé¢„è§ˆæ–‡ä»¶ç›¸å¯¹è·¯å¾„,åŸæ–‡ä»¶åç¼€
 '-----------------------------------------------------------------------
 '-----------------------------------------------------------------------
-'-- »ñÈ¡ÎÄ¼ş¶ÔÏóÊôĞÔ : UploadFiles
-'-- FormName		: ±íµ¥Ãû³Æ
-'-- FileName		: Éú³ÉµÄÎÄ¼şÃû³Æ
-'-- sFileName		: ÎÄ¼şÔ­Ê¼Ãû³Æ
-'-- FilePath		: ±£´æÎÄ¼şµÄÏà¶ÔÂ·¾¶
-'-- FileSize		: ÎÄ¼ş´óĞ¡
-'-- FileContentType	: ContentTypeÎÄ¼şÀàĞÍ
-'-- FileType		: 0=ÆäËü,1=Í¼Æ¬,2=FLASH,3=ÒôÀÖ,4=µçÓ°,5=Ñ¹Ëõ,6=ÎÄµµ
-'-- FileData		: ÎÄ¼şÊı¾İÁ÷ (Èô×é¼ş²»Ö§³ÖÖ±½Ó»ñÈ¡£¬Ôò·µ»ØNull)
-'-- FileExt			: ÎÄ¼şºó×º
-'-- FileWidth		: Í¼Æ¬/FlashÎÄ¼ş¿í¶È	£¨ÆäËûÎÄ¼şÄ¬ÈÏ=-1£©
-'-- FileHeight		: Í¼Æ¬/FlashÎÄ¼ş¸ß¶È	£¨ÆäËûÎÄ¼şÄ¬ÈÏ=-1£©
+'-- è·å–æ–‡ä»¶å¯¹è±¡å±æ€§ : UploadFiles
+'-- FormName		: è¡¨å•åç§°
+'-- FileName		: ç”Ÿæˆçš„æ–‡ä»¶åç§°
+'-- sFileName		: æ–‡ä»¶åŸå§‹åç§°
+'-- FilePath		: ä¿å­˜æ–‡ä»¶çš„ç›¸å¯¹è·¯å¾„
+'-- FileSize		: æ–‡ä»¶å¤§å°
+'-- FileContentType	: ContentTypeæ–‡ä»¶ç±»å‹
+'-- FileType		: 0=å…¶å®ƒ,1=å›¾ç‰‡,2=FLASH,3=éŸ³ä¹,4=ç”µå½±,5=å‹ç¼©,6=æ–‡æ¡£
+'-- FileData		: æ–‡ä»¶æ•°æ®æµ (è‹¥ç»„ä»¶ä¸æ”¯æŒç›´æ¥è·å–ï¼Œåˆ™è¿”å›Null)
+'-- FileExt			: æ–‡ä»¶åç¼€
+'-- FileWidth		: å›¾ç‰‡/Flashæ–‡ä»¶å®½åº¦	ï¼ˆå…¶ä»–æ–‡ä»¶é»˜è®¤=-1ï¼‰
+'-- FileHeight		: å›¾ç‰‡/Flashæ–‡ä»¶é«˜åº¦	ï¼ˆå…¶ä»–æ–‡ä»¶é»˜è®¤=-1ï¼‰
 '-----------------------------------------------------------------------
 '-----------------------------------------------------------------------
-'-- »ñÈ¡±íµ¥¶ÔÏóÊôĞÔ : UploadForms
-'-- Count			: ±íµ¥Êı
-'-- key				: ±íµ¥ÄÚÈİ
+'-- è·å–è¡¨å•å¯¹è±¡å±æ€§ : UploadForms
+'-- Count			: è¡¨å•æ•°
+'-- key				: è¡¨å•å†…å®¹
 '-----------------------------------------------------------------------
 '-----------------------------------------------------------------------
 
@@ -73,7 +73,7 @@ Class UpFile_Cls
 	Private RName_Str,Transition_Color
 	Public ErrCodes,ObjName,UploadFiles,UploadForms,Count,CountSize
 	'-----------------------------------------------------------------------------------
-	'³õÊ¼»¯Àà
+	'åˆå§‹åŒ–ç±»
 	'-----------------------------------------------------------------------------------
 	Private Sub Class_Initialize
 		SessionName = Empty
@@ -87,7 +87,7 @@ Class UpFile_Cls
 		MaxFile = 1
 		Upload_Type = -1
 		Preview_Type = 999
-		ObjName = "Î´Öª×é¼ş"
+		ObjName = "æœªçŸ¥ç»„ä»¶"
 		View_ImageWidth = 0
 		View_ImageHeight = 0
 		Draw_FontColor	= &H000000
@@ -103,7 +103,7 @@ Class UpFile_Cls
 	End Sub
 
 	'-----------------------------------------------------------------------------------
-	'Ïú»ÙÀà
+	'é”€æ¯ç±»
 	'-----------------------------------------------------------------------------------
 	Private Sub Class_Terminate
 		If IsObject(UploadObj) Then
@@ -119,28 +119,28 @@ Class UpFile_Cls
 	End Sub
 
 	'-----------------------------------------------------------------------------------
-	'ÉèÖÃÉÏ´«ÊÇ·ñ·µ»ØÎÄ¼şÊı¾İÁ÷
+	'è®¾ç½®ä¸Šä¼ æ˜¯å¦è¿”å›æ–‡ä»¶æ•°æ®æµ
 	'-----------------------------------------------------------------------------------
 	Public Property Let GetBinary(Byval Values)
 		IsBinary = Values
 	End Property
 
 	'-----------------------------------------------------------------------------------
-	'ÉèÖÃÉÏ´«ÀàĞÍÊôĞÔ (ÒÔ¶ººÅ·Ö¸ô¶à¸öÎÄ¼şÀàĞÍ)
+	'è®¾ç½®ä¸Šä¼ ç±»å‹å±æ€§ (ä»¥é€—å·åˆ†éš”å¤šä¸ªæ–‡ä»¶ç±»å‹)
 	'-----------------------------------------------------------------------------------
 	Public Property Let InceptFileType(Byval Values)
 		InceptFile = Lcase(Values)
 	End Property
 
 	'-----------------------------------------------------------------------------------
-	'ÉèÖÃÉÏ´«ÀàĞÍÊôĞÔ (ÒÔ¶ººÅ·Ö¸ô¶à¸öÎÄ¼şÀàĞÍ)
+	'è®¾ç½®ä¸Šä¼ ç±»å‹å±æ€§ (ä»¥é€—å·åˆ†éš”å¤šä¸ªæ–‡ä»¶ç±»å‹)
 	'-----------------------------------------------------------------------------------
 	Public Property Let ChkSessionName(Byval Values)
 		SessionName = Values
 	End Property
 
 	'-----------------------------------------------------------------------------------
-	'ÉèÖÃÉÏ´«ÎÄ¼ş´óĞ¡ÉÏÏŞ (µ¥Î»£ºkb)
+	'è®¾ç½®ä¸Šä¼ æ–‡ä»¶å¤§å°ä¸Šé™ (å•ä½ï¼škb)
 	'-----------------------------------------------------------------------------------
 	Public Property Let MaxSize(Byval Values)
 		FileMaxSize = ChkNumeric(Values) * 1024
@@ -150,14 +150,14 @@ Class UpFile_Cls
 	End Property
 
 	'-----------------------------------------------------------------------------------
-	'ÉèÖÃÃ¿´ÎÉÏ´«ÎÄ¼şÉÏÏŞ
+	'è®¾ç½®æ¯æ¬¡ä¸Šä¼ æ–‡ä»¶ä¸Šé™
 	'-----------------------------------------------------------------------------------
 	Public Property Let InceptMaxFile(Byval Values)
 		MaxFile = ChkNumeric(Values)
 	End Property
 
 	'-----------------------------------------------------------------------------------
-	'ÉèÖÃÉÏ´«Ä¿Â¼Â·¾¶
+	'è®¾ç½®ä¸Šä¼ ç›®å½•è·¯å¾„
 	'-----------------------------------------------------------------------------------
 	Public Property Let UploadPath(Byval Path)
 		FilePath = Replace(Path,Chr(0),"")
@@ -169,31 +169,31 @@ Class UpFile_Cls
 	End Property
 
 	'-----------------------------------------------------------------------------------
-	'»ñÈ¡´íÎóĞÅÏ¢
+	'è·å–é”™è¯¯ä¿¡æ¯
 	'-----------------------------------------------------------------------------------
 	Public Property Get Description
 		Select Case ErrCodes
-			Case 1 : Description = "²»Ö§³Ö " & ObjName & " ÉÏ´«£¬·şÎñÆ÷¿ÉÄÜÎ´°²×°¸Ã×é¼ş¡£"
-			Case 2 : Description = "ÔİÎ´Ñ¡ÔñÉÏ´«×é¼ş£¡"
-			Case 3 : Description = "ÇëÏÈÑ¡ÔñÄãÒªÉÏ´«µÄÎÄ¼ş!"
-			Case 4 : Description = "ÎÄ¼ş´óĞ¡³¬¹ıÁËÏŞÖÆ " & (FileMaxSize\1024) & "KB!"
-			Case 5 : Description = "ÎÄ¼şÀàĞÍ²»ÕıÈ·!"
-			Case 6 : Description = "ÒÑ´ïµ½ÉÏ´«ÊıµÄÉÏÏŞ£¡"
-			Case 7 : Description = "Çë²»ÒªÖØ¸´Ìá½»£¡"
+			Case 1 : Description = "ä¸æ”¯æŒ " & ObjName & " ä¸Šä¼ ï¼ŒæœåŠ¡å™¨å¯èƒ½æœªå®‰è£…è¯¥ç»„ä»¶ã€‚"
+			Case 2 : Description = "æš‚æœªé€‰æ‹©ä¸Šä¼ ç»„ä»¶ï¼"
+			Case 3 : Description = "è¯·å…ˆé€‰æ‹©ä½ è¦ä¸Šä¼ çš„æ–‡ä»¶!"
+			Case 4 : Description = "æ–‡ä»¶å¤§å°è¶…è¿‡äº†é™åˆ¶ " & (FileMaxSize\1024) & "KB!"
+			Case 5 : Description = "æ–‡ä»¶ç±»å‹ä¸æ­£ç¡®!"
+			Case 6 : Description = "å·²è¾¾åˆ°ä¸Šä¼ æ•°çš„ä¸Šé™ï¼"
+			Case 7 : Description = "è¯·ä¸è¦é‡å¤æäº¤ï¼"
 			Case Else
 				Description = Empty
 		End Select
 	End Property
 
 	'-----------------------------------------------------------------------------------
-	'ÉèÖÃÎÄ¼şÃûÇ°×º
+	'è®¾ç½®æ–‡ä»¶åå‰ç¼€
 	'-----------------------------------------------------------------------------------
 	Public Property Let RName(Byval Values)
 		RName_Str = Values
 	End Property
 
 	'-----------------------------------------------------------------------------------
-	'ÉèÖÃÉÏ´«×é¼şÊôĞÔ
+	'è®¾ç½®ä¸Šä¼ ç»„ä»¶å±æ€§
 	'-----------------------------------------------------------------------------------
 	Public Property Let UploadType(Byval Types)
 		Upload_Type = Types
@@ -203,7 +203,7 @@ Class UpFile_Cls
 	End Property
 
 	'-----------------------------------------------------------------------------------
-	'ÉèÖÃÉÏ´«Í¼Æ¬×é¼şÊôĞÔ
+	'è®¾ç½®ä¸Šä¼ å›¾ç‰‡ç»„ä»¶å±æ€§
 	'-----------------------------------------------------------------------------------
 	Public Property Let PreviewType(Byval Types)
 		Preview_Type = Types
@@ -215,15 +215,15 @@ Class UpFile_Cls
 				Select Case Preview_Type
 					Case 0
 					'---------------------CreatePreviewImage---------------
-						ObjName = "CreatePreviewImage×é¼ş"
+						ObjName = "CreatePreviewImageç»„ä»¶"
 						Set ImageObj = Dvbbs.iCreateObject("CreatePreviewImage.cGvbox")
 					Case 1
 					'---------------------AspJpegV1.2---------------
-						ObjName = "AspJpegV1.2×é¼ş"
+						ObjName = "AspJpegV1.2ç»„ä»¶"
 						Set ImageObj = Dvbbs.iCreateObject("Persits.Jpeg")
 					Case 2
 					'---------------------SoftArtisans ImgWriter V1.21---------------
-						ObjName = "SoftArtisans ImgWriter V1.21×é¼ş"
+						ObjName = "SoftArtisans ImgWriter V1.21ç»„ä»¶"
 						Set ImageObj = Dvbbs.iCreateObject("SoftArtisans.ImageGen")
 					Case Else
 						Preview_Type = 999
@@ -240,35 +240,35 @@ Class UpFile_Cls
 	End Property
 
 	'-----------------------------------------------------------------------------------
-	'ÉèÖÃÔ¤ÀÀÍ¼Æ¬¿í¶ÈÊôĞÔ
+	'è®¾ç½®é¢„è§ˆå›¾ç‰‡å®½åº¦å±æ€§
 	'-----------------------------------------------------------------------------------
 	Public Property Let PreviewImageWidth(Byval Values)
 		View_ImageWidth = ChkNumeric(Values)
 	End Property
 
 	'-----------------------------------------------------------------------------------
-	'ÉèÖÃÔ¤ÀÀÍ¼Æ¬¸ß¶ÈÊôĞÔ
+	'è®¾ç½®é¢„è§ˆå›¾ç‰‡é«˜åº¦å±æ€§
 	'-----------------------------------------------------------------------------------
 	Public Property Let PreviewImageHeight(Byval Values)
 		View_ImageHeight = ChkNumeric(Values)
 	End Property
 
 	'-----------------------------------------------------------------------------------
-	'ÉèÖÃË®Ó¡Í¼Æ¬»òÎÄ×ÖÇøÓò¿í¶ÈÊôĞÔ
+	'è®¾ç½®æ°´å°å›¾ç‰‡æˆ–æ–‡å­—åŒºåŸŸå®½åº¦å±æ€§
 	'-----------------------------------------------------------------------------------
 	Public Property Let DrawImageWidth(Byval Values)
 		Draw_ImageWidth = ChkNumeric(Values)
 	End Property
 
 	'-----------------------------------------------------------------------------------
-	'ÉèÖÃË®Ó¡Í¼Æ¬»òÎÄ×ÖÇøÓò¸ß¶ÈÊôĞÔ
+	'è®¾ç½®æ°´å°å›¾ç‰‡æˆ–æ–‡å­—åŒºåŸŸé«˜åº¦å±æ€§
 	'-----------------------------------------------------------------------------------
 	Public Property Let DrawImageHeight(Byval Values)
 		Draw_ImageHeight = ChkNumeric(Values)
 	End Property
 
 	'-----------------------------------------------------------------------------------
-	'ÉèÖÃË®Ó¡Í¼Æ¬»òÎÄ×ÖÇøÓòÍ¸Ã÷¶ÈÊôĞÔ
+	'è®¾ç½®æ°´å°å›¾ç‰‡æˆ–æ–‡å­—åŒºåŸŸé€æ˜åº¦å±æ€§
 	'-----------------------------------------------------------------------------------
 	Public Property Let DrawGraph(Byval Values)
 		If IsNumeric(Values) Then
@@ -279,7 +279,7 @@ Class UpFile_Cls
 	End Property
 
 	'-----------------------------------------------------------------------------------
-	'ÉèÖÃË®Ó¡Í¼Æ¬Í¸Ã÷¶ÈÈ¥³ıµ×É«Öµ
+	'è®¾ç½®æ°´å°å›¾ç‰‡é€æ˜åº¦å»é™¤åº•è‰²å€¼
 	'-----------------------------------------------------------------------------------
 	Public Property Let TransitionColor(Byval Values)
 		If Values<>"" or Values<>"0" Then
@@ -288,7 +288,7 @@ Class UpFile_Cls
 	End Property
 
 	'-----------------------------------------------------------------------------------
-	'ÉèÖÃË®Ó¡ÎÄ×ÖÑÕÉ«
+	'è®¾ç½®æ°´å°æ–‡å­—é¢œè‰²
 	'-----------------------------------------------------------------------------------
 	Public Property Let DrawFontColor(Byval Values)
 		If Values<>"" or Values<>"0" Then
@@ -297,48 +297,48 @@ Class UpFile_Cls
 	End Property
 
 	'-----------------------------------------------------------------------------------
-	'ÉèÖÃË®Ó¡ÎÄ×Ö×ÖÌå¸ñÊ½
+	'è®¾ç½®æ°´å°æ–‡å­—å­—ä½“æ ¼å¼
 	'-----------------------------------------------------------------------------------
 	Public Property Let DrawFontFamily(Byval Values)
 		Draw_FontFamily = Values
 	End Property
 
 	'-----------------------------------------------------------------------------------
-	'ÉèÖÃË®Ó¡ÎÄ×Ö×ÖÌå´óĞ¡
+	'è®¾ç½®æ°´å°æ–‡å­—å­—ä½“å¤§å°
 	'-----------------------------------------------------------------------------------
 	Public Property Let DrawFontSize(Byval Values)
 		Draw_FontSize = Values
 	End Property
 
 	'-----------------------------------------------------------------------------------
-	'ÉèÖÃË®Ó¡ÎÄ×ÖÊÇ·ñ´ÖÌå Boolean
+	'è®¾ç½®æ°´å°æ–‡å­—æ˜¯å¦ç²—ä½“ Boolean
 	'-----------------------------------------------------------------------------------
 	Public Property Let DrawFontBold(Byval Values)
 		Draw_FontBold = ChkBoolean(Values)
 	End Property
 	'-----------------------------------------------------------------------------------
-	'ÉèÖÃË®Ó¡ÎÄ×ÖĞÅÏ¢»òÍ¼Æ¬ĞÅÏ¢
+	'è®¾ç½®æ°´å°æ–‡å­—ä¿¡æ¯æˆ–å›¾ç‰‡ä¿¡æ¯
 	'-----------------------------------------------------------------------------------
 	Public Property Let DrawInfo(Byval Values)
 		Draw_Info = Values
 	End Property
 
 	'-----------------------------------------------------------------------------------
-	'¼ÓÔØÄ£Ê½£º0=²»¼ÓÔØË®Ó¡ £¬1=¼ÓÔØË®Ó¡ÎÄ×Ö £¬2=¼ÓÔØË®Ó¡Í¼Æ¬
+	'åŠ è½½æ¨¡å¼ï¼š0=ä¸åŠ è½½æ°´å° ï¼Œ1=åŠ è½½æ°´å°æ–‡å­— ï¼Œ2=åŠ è½½æ°´å°å›¾ç‰‡
 	'-----------------------------------------------------------------------------------
 	Public Property Let DrawType(Byval Values)
 		Draw_Type = ChkNumeric(Values)
 	End Property
 
 	'-----------------------------------------------------------------------------------
-	'Í¼Æ¬Ìí¼ÓË®Ó¡LOGOÎ»ÖÃ×ø±ê£º"0" =×óÉÏ£¬"1"=×óÏÂ,"2"=¾ÓÖĞ,"3"=ÓÒÉÏ,"4"=ÓÒÏÂ
+	'å›¾ç‰‡æ·»åŠ æ°´å°LOGOä½ç½®åæ ‡ï¼š"0" =å·¦ä¸Šï¼Œ"1"=å·¦ä¸‹,"2"=å±…ä¸­,"3"=å³ä¸Š,"4"=å³ä¸‹
 	'-----------------------------------------------------------------------------------
 	Public Property Let DrawXYType(Byval Values)
 		 Draw_XYType = Values
 	End Property
 
 	'-----------------------------------------------------------------------------------
-	'Éú³ÉÔ¤ÀÀÍ¼Æ¬´óĞ¡¹æÔò£º"0"=¹Ì¶¨ËõĞ¡£¬"1"=µÈ±ÈÀıËõĞ¡
+	'ç”Ÿæˆé¢„è§ˆå›¾ç‰‡å¤§å°è§„åˆ™ï¼š"0"=å›ºå®šç¼©å°ï¼Œ"1"=ç­‰æ¯”ä¾‹ç¼©å°
 	'-----------------------------------------------------------------------------------
 	Public Property Let DrawSizeType(Byval Values)
 		Draw_SizeType = Values
@@ -361,7 +361,7 @@ Class UpFile_Cls
 	End Function
 
 	'-----------------------------------------------------------------------------------
-	'ÈÕÆÚÊ±¼ä¶¨ÒåÎÄ¼şÃû
+	'æ—¥æœŸæ—¶é—´å®šä¹‰æ–‡ä»¶å
 	'-----------------------------------------------------------------------------------
 	Private Function FormatName(Byval FileExt)
 		Dim RanNum,TempStr
@@ -375,7 +375,7 @@ Class UpFile_Cls
 	End Function
 	
 	'-----------------------------------------------------------------------------------
-	'¸ñÊ½ºó×º
+	'æ ¼å¼åç¼€
 	'-----------------------------------------------------------------------------------
 	Private Function FixName(Byval UpFileExt)
 		If IsEmpty(UpFileExt) Then Exit Function
@@ -392,7 +392,7 @@ Class UpFile_Cls
 	End Function
 
 	'-----------------------------------------------------------------------------------
-	'ÅĞ¶ÏÎÄ¼şÀàĞÍÊÇ·ñºÏ¸ñ
+	'åˆ¤æ–­æ–‡ä»¶ç±»å‹æ˜¯å¦åˆæ ¼
 	'-----------------------------------------------------------------------------------
 	Private Function CheckFileExt(FileExt)
 		Dim Forumupload,i
@@ -417,7 +417,7 @@ Class UpFile_Cls
 	End Function
 
 	'-----------------------------------------------------------------------------------
-	'ÅĞ¶ÏÎÄ¼şÀàĞÍ:0=ÆäËü,1=Í¼Æ¬,2=FLASH,3=ÒôÀÖ,4=µçÓ°
+	'åˆ¤æ–­æ–‡ä»¶ç±»å‹:0=å…¶å®ƒ,1=å›¾ç‰‡,2=FLASH,3=éŸ³ä¹,4=ç”µå½±
 	'-----------------------------------------------------------------------------------
 	Private Function CheckFiletype(Byval FileExt)
 		FileExt = Lcase(Replace(FileExt,".",""))
@@ -440,13 +440,13 @@ Class UpFile_Cls
 	End Function
 
 	'-----------------------------------------------------------------------------------
-	'Ö´ĞĞ±£´æÉÏ´«ÎÄ¼ş
+	'æ‰§è¡Œä¿å­˜ä¸Šä¼ æ–‡ä»¶
 	'-----------------------------------------------------------------------------------
 	Public Sub SaveUpFile()
 		On Error Resume Next
 		Select Case (Upload_Type) 
 			Case 0
-				ObjName = "ÎŞ×é¼ş"
+				ObjName = "æ— ç»„ä»¶"
 				Set UploadObj = New UpFile_Class
 				If Err.Number<>0 Then
 					ErrCodes = 1
@@ -454,7 +454,7 @@ Class UpFile_Cls
 					SaveFile_0
 				End If
 			Case 1
-				ObjName = "Aspupload3.0×é¼ş"
+				ObjName = "Aspupload3.0ç»„ä»¶"
 				Set UploadObj = Dvbbs.iCreateObject("Persits.Upload") 
 				If Err.Number<>0 Then
 					ErrCodes = 1
@@ -462,7 +462,7 @@ Class UpFile_Cls
 					SaveFile_1
 				End If
 			Case 2
-				ObjName = "SA-FileUp 4.0×é¼ş"
+				ObjName = "SA-FileUp 4.0ç»„ä»¶"
 				Set UploadObj = Dvbbs.iCreateObject("SoftArtisans.FileUp")
 				If Err.Number<>0 Then
 					ErrCodes = 1
@@ -470,7 +470,7 @@ Class UpFile_Cls
 					SaveFile_2
 				End If
 			Case 3
-				ObjName = "DvFile.Upload V1.0×é¼ş"
+				ObjName = "DvFile.Upload V1.0ç»„ä»¶"
 				Set UploadObj = Dvbbs.iCreateObject("DvFile.Upload")
 				If Err.Number<>0 Then
 					ErrCodes = 1
@@ -483,17 +483,17 @@ Class UpFile_Cls
 	End Sub
 
 	''-----------------------------------------------------------------------------------
-	' ÉÏ´«´¦Àí¹ı³Ì
+	' ä¸Šä¼ å¤„ç†è¿‡ç¨‹
 	''-----------------------------------------------------------------------------------
 	''-----------------------------------------------------------------------------------
-	''ÎŞ×é¼şÉÏ´«
+	''æ— ç»„ä»¶ä¸Šä¼ 
 	''-----------------------------------------------------------------------------------
 	Private Sub SaveFile_0()
 		Dim FormName,Item,File
 		Dim FileExt,FileName,sFileName,FileType,FileToBinary
 		UploadObj.InceptFileType = InceptFile
 		UploadObj.MaxSize = FileMaxSize
-		UploadObj.GetDate ()	'È¡µÃÉÏ´«Êı¾İ
+		UploadObj.GetDate ()	'å–å¾—ä¸Šä¼ æ•°æ®
 		FileToBinary = Null
 		If Not IsEmpty(SessionName) Then
 			If Session(SessionName) <> UploadObj.Form(SessionName) or Session(SessionName) = Empty Then
@@ -509,7 +509,7 @@ Class UpFile_Cls
 			End Select
 			Exit Sub
 		Else
-			For Each FormName In UploadObj.File		''ÁĞ³öËùÓĞÉÏ´«ÁËµÄÎÄ¼ş
+			For Each FormName In UploadObj.File		''åˆ—å‡ºæ‰€æœ‰ä¸Šä¼ äº†çš„æ–‡ä»¶
 				If Count>MaxFile Then
 					ErrCodes = 6
 					Exit Sub
@@ -554,15 +554,15 @@ Class UpFile_Cls
 		End If
 	End Sub
 	''-----------------------------------------------------------------------------------
-	''Aspupload3.0×é¼şÉÏ´«
+	''Aspupload3.0ç»„ä»¶ä¸Šä¼ 
 	''-----------------------------------------------------------------------------------
 	Private Sub SaveFile_1()
 		Dim FileCount
 		Dim FormName,Item,File
 		Dim FileExt,FileName,sFileName,FileType,FileToBinary
-		UploadObj.OverwriteFiles = False		'²»ÄÜ¸´¸Ç
+		UploadObj.OverwriteFiles = False		'ä¸èƒ½å¤ç›–
 		UploadObj.IgnoreNoPost = True
-		UploadObj.SetMaxSize FileMaxSize, True	'ÏŞÖÆ´óĞ¡
+		UploadObj.SetMaxSize FileMaxSize, True	'é™åˆ¶å¤§å°
 		FileCount = UploadObj.Save
 		FileToBinary = Null
 		If Not IsEmpty(SessionName) Then
@@ -578,14 +578,14 @@ Class UpFile_Cls
 		Else 
 				If Err <> 0 Then
 					ErrCodes = -1
-					Response.Write "´íÎóĞÅÏ¢: " & Err.Description
+					Response.Write "é”™è¯¯ä¿¡æ¯: " & Err.Description
 					EXIT SUB
 				End If
 				If FileCount < 1 Then 
 					ErrCodes = 3
 					EXIT SUB
 				End If
-				For Each File In UploadObj.Files	'ÁĞ³öËùÓĞÉÏ´«ÎÄ¼ş
+				For Each File In UploadObj.Files	'åˆ—å‡ºæ‰€æœ‰ä¸Šä¼ æ–‡ä»¶
 					If Count>MaxFile Then
 						ErrCodes = 6
 						Exit Sub
@@ -629,7 +629,7 @@ Class UpFile_Cls
 		End If
 	End Sub
 	''-----------------------------------------------------------------------------------
-	''SA-FileUp 4.0×é¼şÉÏ´«FileUpSE V4.09
+	''SA-FileUp 4.0ç»„ä»¶ä¸Šä¼ FileUpSE V4.09
 	''-----------------------------------------------------------------------------------
 	Private Sub SaveFile_2()
 		Dim FormName,Item,File,FormNames
@@ -646,19 +646,19 @@ Class UpFile_Cls
 			FormNames = ""
 			If IsObject(UploadObj.Form(FormName)) Then
 				If Not UploadObj.Form(FormName).IsEmpty Then
-					UploadObj.Form(FormName).Maxbytes = FileMaxSize	'ÏŞÖÆ´óĞ¡
+					UploadObj.Form(FormName).Maxbytes = FileMaxSize	'é™åˆ¶å¤§å°
 					UploadObj.OverWriteFiles = False
 					Filesize = UploadObj.Form(FormName).TotalBytes
 					If Err.Number<>0 Then
 						ErrCodes = -1
-						Response.Write "´íÎóĞÅÏ¢: " & Err.Description
+						Response.Write "é”™è¯¯ä¿¡æ¯: " & Err.Description
 						EXIT SUB
 					End If
 					If Filesize>FileMaxSize then
 						ErrCodes = 4
 						Exit sub
 					End If
-					FileName	= UploadObj.Form(FormName).ShortFileName	 'Ô­ÎÄ¼şÃû
+					FileName	= UploadObj.Form(FormName).ShortFileName	 'åŸæ–‡ä»¶å
 					sFileName	= FileName
 					FileExt		= Mid(Filename, InStrRev(Filename, ".")+1)
 					FileExt		= FixName(FileExt)
@@ -671,7 +671,7 @@ Class UpFile_Cls
 					'If IsBinary Then
 						'FileToBinary = UploadContents (2)
 					'End If
-					'±£´æÎÄ¼ş
+					'ä¿å­˜æ–‡ä»¶
 					If Filesize>0 Then
 						UploadObj.Form(FormName).SaveAs Server.MapPath(FilePath & FileName)
 						AddData FormName , _ 
@@ -706,7 +706,7 @@ Class UpFile_Cls
 		If Not IsEmpty(SessionName) Then Session(SessionName) = Empty
 	End Sub
 	''-----------------------------------------------------------------------------------
-	''DvFile.Upload V1.0×é¼şÉÏ´«
+	''DvFile.Upload V1.0ç»„ä»¶ä¸Šä¼ 
 	''-----------------------------------------------------------------------------------
 	Private Sub SaveFile_3()
 		Dim FormName,Item,File
@@ -731,7 +731,7 @@ Class UpFile_Cls
 			End Select
 			Exit Sub
 		Else
-			For Each FormName In UploadObj.File		''ÁĞ³öËùÓĞÉÏ´«ÁËµÄÎÄ¼ş
+			For Each FormName In UploadObj.File		''åˆ—å‡ºæ‰€æœ‰ä¸Šä¼ äº†çš„æ–‡ä»¶
 				If Count>MaxFile Then
 					ErrCodes = 6
 					Exit Sub
@@ -790,7 +790,7 @@ Class UpFile_Cls
 		Set FileInfo = Nothing
 	End Sub
 
-	'´´½¨Ô¤ÀÀÍ¼Æ¬:Call CreateView(Ô­Ê¼ÎÄ¼şµÄÂ·¾¶,Ô¤ÀÀÎÄ¼şÃû¼°Â·¾¶,Ô­ÎÄ¼şºó×º)
+	'åˆ›å»ºé¢„è§ˆå›¾ç‰‡:Call CreateView(åŸå§‹æ–‡ä»¶çš„è·¯å¾„,é¢„è§ˆæ–‡ä»¶ååŠè·¯å¾„,åŸæ–‡ä»¶åç¼€)
 	Public Sub CreateView(Imagename,TempFilename,FileExt)
 		If ErrCodes <>0 Then Exit Sub
 		Select Case Preview_Type
@@ -806,19 +806,19 @@ Class UpFile_Cls
 	End Sub
 
 	Sub Image_Obj_0(Imagename,TempFilename,FileExt)
-			ImageObj.SetSavePreviewImagePath = Server.MapPath(TempFilename)			'Ô¤ÀÀÍ¼´æ·ÅÂ·¾¶
-			ImageObj.SetPreviewImageSize = SetPreviewImageSize						'Ô¤ÀÀÍ¼¿í¶È
-			ImageObj.SetImageFile = Trim(Server.MapPath(Imagename))					'ImagenameÔ­Ê¼ÎÄ¼şµÄÎïÀíÂ·¾¶
-			'´´½¨Ô¤ÀÀÍ¼µÄÎÄ¼ş
+			ImageObj.SetSavePreviewImagePath = Server.MapPath(TempFilename)			'é¢„è§ˆå›¾å­˜æ”¾è·¯å¾„
+			ImageObj.SetPreviewImageSize = SetPreviewImageSize						'é¢„è§ˆå›¾å®½åº¦
+			ImageObj.SetImageFile = Trim(Server.MapPath(Imagename))					'ImagenameåŸå§‹æ–‡ä»¶çš„ç‰©ç†è·¯å¾„
+			'åˆ›å»ºé¢„è§ˆå›¾çš„æ–‡ä»¶
 			If ImageObj.DoImageProcess = False Then
 				ErrCodes = -1
-				Response.Write "Éú³ÉÔ¤ÀÀÍ¼´íÎó: " & ImageObj.GetErrString
+				Response.Write "ç”Ÿæˆé¢„è§ˆå›¾é”™è¯¯: " & ImageObj.GetErrString
 			End If
 	End Sub
 
 	'---------------------AspJpegV1.2---------------
 	Sub Image_Obj_1(Imagename,TempFilename,FileExt)
-			' ¶ÁÈ¡Òª´¦ÀíµÄÔ­ÎÄ¼ş
+			' è¯»å–è¦å¤„ç†çš„åŸæ–‡ä»¶
 			Dim Draw_X,Draw_Y,Logobox
 			Draw_X = 0
 			Draw_Y = 0
@@ -833,27 +833,27 @@ Class UpFile_Cls
 					Draw_Y = DrawImage_y(ImageObj.Originalheight,Draw_ImageHeight,2)
 					If Draw_Type=2 Then
 						Set Logobox = Dvbbs.iCreateObject("Persits.Jpeg")
-						'*Ìí¼ÓË®Ó¡Í¼Æ¬	Ìí¼ÓÊ±Çë¹Ø±ÕË®Ó¡×ÖÌå*
-						'//¶ÁÈ¡Ìí¼ÓµÄÍ¼Æ¬
+						'*æ·»åŠ æ°´å°å›¾ç‰‡	æ·»åŠ æ—¶è¯·å…³é—­æ°´å°å­—ä½“*
+						'//è¯»å–æ·»åŠ çš„å›¾ç‰‡
 						Logobox.Open Server.MapPath(Draw_Info)
-						Logobox.Width = Draw_ImageWidth								'// ¼ÓÈëÍ¼Æ¬µÄÔ­¿í¶È
-						Logobox.Height = Draw_ImageHeight							'// ¼ÓÈëÍ¼Æ¬µÄÔ­¸ß¶È
-						ImageObj.DrawImage Draw_X, Draw_Y, Logobox, Draw_Graph,Transition_Color,90	'// ¼ÓÈëÍ¼Æ¬µÄÎ»ÖÃ¼Û×ø±ê£¨Ìí¼ÓË®Ó¡Í¼Æ¬£©
+						Logobox.Width = Draw_ImageWidth								'// åŠ å…¥å›¾ç‰‡çš„åŸå®½åº¦
+						Logobox.Height = Draw_ImageHeight							'// åŠ å…¥å›¾ç‰‡çš„åŸé«˜åº¦
+						ImageObj.DrawImage Draw_X, Draw_Y, Logobox, Draw_Graph,Transition_Color,90	'// åŠ å…¥å›¾ç‰‡çš„ä½ç½®ä»·åæ ‡ï¼ˆæ·»åŠ æ°´å°å›¾ç‰‡ï¼‰
 						'ImageObj.Sharpen 1, 130
 						ImageObj.Save Server.MapPath(Imagename)
 						Set Logobox=Nothing
 					Else
-						'//¹ØÓÚĞŞ¸Ä×ÖÌå¼°ÎÄ×ÖÑÕÉ«µÄ
-						ImageObj.Canvas.Font.Color		= Draw_FontColor	'// ÎÄ×ÖµÄÑÕÉ«
-						ImageObj.Canvas.Font.Family		= Draw_FontFamily	'// ÎÄ×ÖµÄ×ÖÌå
+						'//å…³äºä¿®æ”¹å­—ä½“åŠæ–‡å­—é¢œè‰²çš„
+						ImageObj.Canvas.Font.Color		= Draw_FontColor	'// æ–‡å­—çš„é¢œè‰²
+						ImageObj.Canvas.Font.Family		= Draw_FontFamily	'// æ–‡å­—çš„å­—ä½“
 						ImageObj.Canvas.Font.Bold		= Draw_FontBold
-						ImageObj.Canvas.Font.Size		= Draw_FontSize					'//×ÖÌå´óĞ¡
+						ImageObj.Canvas.Font.Size		= Draw_FontSize					'//å­—ä½“å¤§å°
 						' Draw frame: black, 2-pixel width
-						ImageObj.Canvas.Print Draw_X, Draw_Y, Draw_Info	'// ¼ÓÈëÎÄ×ÖµÄÎ»ÖÃ×ø±ê
-						ImageObj.Canvas.Pen.Color		= &H000000		'// ±ß¿òµÄÑÕÉ«
-						ImageObj.Canvas.Pen.Width		= 1				'// ±ß¿òµÄ´ÖÏ¸
-						ImageObj.Canvas.Brush.Solid	= False			'// Í¼Æ¬±ß¿òÄÚÊÇ·ñÌî³äÑÕÉ«
-						'ImageObj.Canvas.Bar 0, 0, ImageObj.Width, ImageObj.Height	'// Í¼Æ¬±ß¿òÏßµÄÎ»ÖÃ×ø±ê
+						ImageObj.Canvas.Print Draw_X, Draw_Y, Draw_Info	'// åŠ å…¥æ–‡å­—çš„ä½ç½®åæ ‡
+						ImageObj.Canvas.Pen.Color		= &H000000		'// è¾¹æ¡†çš„é¢œè‰²
+						ImageObj.Canvas.Pen.Width		= 1				'// è¾¹æ¡†çš„ç²—ç»†
+						ImageObj.Canvas.Brush.Solid	= False			'// å›¾ç‰‡è¾¹æ¡†å†…æ˜¯å¦å¡«å……é¢œè‰²
+						'ImageObj.Canvas.Bar 0, 0, ImageObj.Width, ImageObj.Height	'// å›¾ç‰‡è¾¹æ¡†çº¿çš„ä½ç½®åæ ‡
 						ImageObj.Save Server.MapPath(Imagename)
 					End If
 				End If
@@ -865,23 +865,23 @@ Class UpFile_Cls
 					ImageObj.Height = View_ImageHeight
 				End If
 				ImageObj.Sharpen 1, 120
-				ImageObj.Save Server.MapPath(TempFilename)		'// Éú³ÉÔ¤ÀÀÎÄ¼ş
+				ImageObj.Save Server.MapPath(TempFilename)		'// ç”Ÿæˆé¢„è§ˆæ–‡ä»¶
 			End If
 	End Sub
 
 	'SoftArtisans ImgWriter V1.21
 	Public Sub Image_Obj_2(Imagename,TempFilename,FileExt)
-			'¶¨Òå±äÁ¿
+			'å®šä¹‰å˜é‡
 			Dim Draw_X,Draw_Y
 			FileExt = Lcase(FileExt)
 			Draw_X = 0
 			Draw_Y = 0
-			' ¶ÁÈ¡Òª´¦ÀíµÄÔ­ÎÄ¼ş
+			' è¯»å–è¦å¤„ç†çš„åŸæ–‡ä»¶
 			ImageObj.LoadImage Trim(Server.MapPath(Imagename))
 			If ImageObj.ErrorDescription <> "" Then
 				TempFilename = ""
 				ErrCodes = -1
-				Response.Write "Éú³ÉÔ¤ÀÀÍ¼´íÎó: " &ImageObj.ErrorDescription
+				Response.Write "ç”Ÿæˆé¢„è§ˆå›¾é”™è¯¯: " &ImageObj.ErrorDescription
 				Exit Sub
 			End If
 			If ImageObj.Width<Cint(View_ImageWidth) or ImageObj.Height<Cint(View_ImageHeight) Then
@@ -893,101 +893,14 @@ Class UpFile_Cls
 					Draw_Y = DrawImage_y(ImageObj.Height,Draw_ImageHeight,2)
 					Dim saiTopMiddle
 					Select Case Draw_XYType
-						Case "0" '×óÉÏ
+						Case "0" 'å·¦ä¸Š
 							saiTopMiddle = 3
-						Case "1" '×óÏÂ
+						Case "1" 'å·¦ä¸‹
 							saiTopMiddle = 5
-						Case "2" '¾ÓÖĞ
-							saiTopMiddle = 1
-						Case "3" 'ÓÒÉÏ
-							saiTopMiddle = 6
-						Case "4" 'ÓÒÏÂ
-							saiTopMiddle = 8
-						Case Else '²»ÏÔÊ¾
-							saiTopMiddle = 0
-					End Select
-					If Draw_Type=2 Then
-						ImageObj.AddWatermark Server.MapPath(Draw_Info), saiTopMiddle, Draw_Graph,Transition_Color,True
-						'ImageObj.AddWatermark Server.MapPath(Request.QueryString("mimg")), 0, 0.3
-					Else
-						ImageObj.Font.Italic	= False			'Ğ±Ìå
-						ImageObj.Font.height	= Draw_FontSize
-						ImageObj.Font.name		= Draw_FontFamily
-						ImageObj.Font.Color		= Draw_FontColor
-						ImageObj.Text			= Draw_Info
-						ImageObj.DrawTextOnImage Draw_X, Draw_Y, ImageObj.TextWidth, ImageObj.TextHeight
-					End If
-					ImageObj.SaveImage 0, ImageObj.ImageFormat, Server.MapPath(Imagename)
+						Caidth,ImageObj.Originalheight,View_ImageWidth,View_ImageHeight)
+				Else
+					ImageObj.Width = ViewImage_Width(ImageObj.OriginalWidth,ImageObj.Originalheight,View_ImageWidth,View_ImageHeight)
+					ImageObj.Height = View_ImageHeight
 				End If
-				'ImageObj.SharpenImage 100
-				ImageObj.ColorResolution = 24	'24É«±£´æ
-				ImageObj.ResizeImage View_ImageWidth,View_ImageHeight,0,0
-				'0=saiFile,1=saiMemory,2=saiBrowser,4=saiDatabaseBlob
-				'saiBMP=1,saiGIF=2,saiJPG=3,saiPNG=4,saiPCX=5,saiTIFF=6,saiWMF=7,saiEMF=8,saiPSD=9 
-				ImageObj.SaveImage 0, 3, Server.MapPath(TempFilename)
-			End If
-	End Sub
-
-	'±ÈÀı»ò¹Ì¶¨ËõĞ¡
-	Private Function ViewImage_Width(Image_W,Image_H,xView_W,xView_H)
-		If Draw_SizeType = "1" Then
-			ViewImage_Width = Image_W * xView_H / Image_H
-		Else
-			ViewImage_Width = xView_W
-		End If
-	End Function
-
-	Private Function ViewImage_Height(Image_W,Image_H,xView_W,xView_H)
-		If Draw_SizeType = "1" Then
-			ViewImage_Height = xView_W * Image_H / Image_W
-		Else
-			ViewImage_Height = xView_H
-		End If
-	End Function
-
-	'SpaceVal XÖá×ø±ê±ßÔµ¾àÀë
-	Private Function DrawImage_X(xImage_W,xLogo_W,SpaceVal)
-		Select Case Draw_XYType
-			Case "0" '×óÉÏ
-				DrawImage_X = SpaceVal
-			Case "1" '×óÏÂ
-				DrawImage_X = SpaceVal
-			Case "2" '¾ÓÖĞ
-				DrawImage_X = (xImage_W + xLogo_W) / 2
-			Case "3" 'ÓÒÉÏ
-				DrawImage_X = xImage_W - xLogo_W - SpaceVal
-			Case "4" 'ÓÒÏÂ
-				DrawImage_X = xImage_W - xLogo_W - SpaceVal
-			Case Else '²»ÏÔÊ¾
-				DrawImage_X = 0
-		End Select
-	End Function
-
-	'SpaceVal YÖá×ø±ê±ßÔµ¾àÀë
-	Private Function DrawImage_Y(yImage_H,yLogo_H,SpaceVal)
-		Select Case Draw_XYType
-			Case "0" '×óÉÏ
-				DrawImage_Y = SpaceVal
-			Case "1" '×óÏÂ
-				DrawImage_Y = yImage_H - yLogo_H - SpaceVal
-			Case "2" '¾ÓÖĞ
-				DrawImage_Y = (yImage_H + yLogo_H) / 2
-			Case "3" 'ÓÒÉÏ
-				DrawImage_Y = SpaceVal
-			Case "4" 'ÓÒÏÂ
-				DrawImage_Y = yImage_H - yLogo_H - SpaceVal
-			Case Else '²»ÏÔÊ¾
-				DrawImage_Y = 0
-		End Select
-	End Function
-
-End Class
-
-Class FileInfo_Cls
-	Public FormName,FileName,sFileName,FilePath,FileSize,FileContentType,FileType,FileData,FileExt,FileWidth,FileHeight
-	Private Sub Class_Initialize
-		FileWidth = -1
-		FileHeight = -1
-	End Sub
-End Class
-%>
+				ImageObj.Sharpen 1, 120
+				ImageObj.Save Server.MapPath(TempFilename)		'// é¢ç†¸åšæ£°å‹®

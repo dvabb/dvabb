@@ -23,7 +23,7 @@ End If
 
 Dim dv_ubb
 Dim EmotPath
-EmotPath=Split(Dvbbs.Forum_emot,"|||")(0)		'emĞÄÇéÂ·¾¶
+EmotPath=Split(Dvbbs.Forum_emot,"|||")(0)		'emå¿ƒæƒ…è·¯å¾„
 Set dv_ubb=new Dvbbs_UbbCode
 dv_ubb.PostType=2
 If Cint(Dvbbs.GroupSetting(49))=0 then Dvbbs.AddErrCode(54)
@@ -46,7 +46,7 @@ Dvbbs.NewPassword()
 Set dv_ubb=Nothing 
 Dvbbs.Footer()
 Dvbbs.PageEnd()
-'=====================ºØ¿¨ÑİÊ¾====================
+'=====================è´ºå¡æ¼”ç¤º====================
 Sub showcard()
 	Dvbbs.stats=Template.Strings(49)
 	Dvbbs.Head_var 0,0,template.Strings(0),"show.asp"
@@ -70,7 +70,7 @@ Sub showcard()
 		msnid=clng(request("msmid"))
 	End If
 
-	'È¡³ö¶ÌĞÅÄÚÈİ
+	'å–å‡ºçŸ­ä¿¡å†…å®¹
 	Set Rs=Dvbbs.Execute("select sender,incept,title,content,sendtime from Dv_message where id="&msnid&" and (incept='"&Dvbbs.MemberName&"' or sender='"&Dvbbs.MemberName&"') order by id desc")
 	If not (rs.eof and rs.bof) Then
 		sender=Dvbbs.htmlencode(trim(rs(0)))
@@ -83,7 +83,7 @@ Sub showcard()
 	End If
 	Rs.close
 
-	'È¡³öÎÄ¼şÄÚÈİ
+	'å–å‡ºæ–‡ä»¶å†…å®¹
 	Set Rs=Dvbbs.Execute("select F_Filename,F_Type,F_Flag from [DV_Upfile] where F_ID="&cid&" order by F_ID desc")
 	If  Not (Rs.EOF And Rs.BOF) Then
 		F_Filename=rs(0)
@@ -95,7 +95,7 @@ Sub showcard()
 	End If
 	Rs.close:Set Rs=Nothing
 
-	'ÅĞ¶ÏÎÄ¼şÊÇ·ñ±¾ÂÛÌ³£¬Èô²»ÊÇÔò²ÉÓÃ±íÖĞµÄ¼ÇÂ¼£®
+	'åˆ¤æ–­æ–‡ä»¶æ˜¯å¦æœ¬è®ºå›ï¼Œè‹¥ä¸æ˜¯åˆ™é‡‡ç”¨è¡¨ä¸­çš„è®°å½•ï¼
 	If InStr(F_Filename,":")=0 or InStr(F_Filename,"//")=0 Then
 		If Dvbbs.Forum_Setting(75)="0" Then
 			F_Filename=bbsurl&Dvbbs.Forum_Setting(76)&F_Filename
@@ -130,7 +130,7 @@ Sub showcard()
 	Response.Write Tempwrite
 End Sub
 
-'Öü´æ·¢ËÍºØ¿¨
+'è´®å­˜å‘é€è´ºå¡
 Sub cardsave()
 	Dvbbs.stats=Template.Strings(36)
 	Dvbbs.Head_var 0,0,template.Strings(0),"show.asp"
@@ -142,7 +142,7 @@ Sub cardsave()
 	Dim msmid,cardurl,msmbody,Rs,SQl
 	cid = Dvbbs.checkStr(trim(request.form("saveid")))
 	sname = Dvbbs.checkStr(trim(request.form("sname")))
-	rname = Dvbbs.checkStr(trim(request.form("subject")))	'ÊÕĞÅÈËÃû
+	rname = Dvbbs.checkStr(trim(request.form("subject")))	'æ”¶ä¿¡äººå
 	ctitle = Dvbbs.checkStr(trim(request.form("title")))
 	body = Html2Ubb(request.form("Body"))
 	body = Dvbbs.checkStr(body)
@@ -183,7 +183,7 @@ Sub cardsave()
 				msg=Replace(msg,"{$rennum}",Dvbbs.GroupSetting(33))
 				msg=Replace(msg,"{$rname}",rname(i))
 			Else
-				'²åÈë¶ÌĞÅ²¢»ñµÃID
+				'æ’å…¥çŸ­ä¿¡å¹¶è·å¾—ID
 				sql="insert into dv_message (incept,sender,title,content,sendtime,flag,issend) values ('"&rname(i)&"','"&Dvbbs.membername&"','"&ctitle&"','"&body&"',"&SqlNowString&",0,1)"
 				Dvbbs.Execute(sql)
 				update_user_msg(rname(i))
@@ -204,7 +204,7 @@ Sub cardsave()
 		cardurl=""
 	Next
 	Set Rs=Nothing
-	'¸üĞÂÓÃ»§½ñÈÕ¶ÌĞÅÊı¾İ
+	'æ›´æ–°ç”¨æˆ·ä»Šæ—¥çŸ­ä¿¡æ•°æ®
 	If SendNum > 0 Then
 	Dim iUserInfo
 		iUserInfo = Dvbbs.UserToday(0) & "|" & Dvbbs.UserToday(1) + SendNum & "|" & Dvbbs.UserToday(2)
@@ -222,7 +222,7 @@ Sub cardsave()
 	Dvbbs.Dvbbs_suc(sucmsg)
 End Sub
 
- '±àĞ´ºØ¿¨ÄÚÈİ
+ 'ç¼–å†™è´ºå¡å†…å®¹
 Sub card()
 	Dvbbs.stats=Template.Strings(33)
 	dvbbs.Head_var 0,0,template.Strings(0),"show.asp"
@@ -241,7 +241,7 @@ Sub card()
 	Set Rs=Dvbbs.Execute("select * from [DV_Upfile] where F_ID="&sid)
 	If Not (Rs.EOF And Rs.BOF) Then
 		F_Filename=Dvbbs.htmlencode(rs("F_Filename"))
-		'ÅĞ¶ÏÎÄ¼şÊÇ·ñ±¾ÂÛÌ³£¬Èô²»ÊÇÔò²ÉÓÃ±íÖĞµÄ¼ÇÂ¼£®
+		'åˆ¤æ–­æ–‡ä»¶æ˜¯å¦æœ¬è®ºå›ï¼Œè‹¥ä¸æ˜¯åˆ™é‡‡ç”¨è¡¨ä¸­çš„è®°å½•ï¼
 		If InStr(F_Filename,":")=0 or InStr(F_Filename,"//")=0 Then
 			If Dvbbs.Forum_Setting(75)="0" Then
 				F_Filename=bbsurl&Dvbbs.Forum_Setting(76)&F_Filename
@@ -332,7 +332,7 @@ Sub main()
 	Else
 		F_Readme="<font color=gray>"&Template.Strings(24)&"</font>"
 	End If
-	'ÅĞ¶ÏÎÄ¼şÊÇ·ñ±¾ÂÛÌ³£¬Èô²»ÊÇÔò²ÉÓÃ±íÖĞµÄ¼ÇÂ¼£®
+	'åˆ¤æ–­æ–‡ä»¶æ˜¯å¦æœ¬è®ºå›ï¼Œè‹¥ä¸æ˜¯åˆ™é‡‡ç”¨è¡¨ä¸­çš„è®°å½•ï¼
 	If InStr(F_Filename,":")=0 or InStr(F_Filename,"//")=0 Then
 		If Dvbbs.Forum_Setting(75)="0" Then
 			F_Filename=bbsurl&Dvbbs.Forum_Setting(76)&F_Filename
@@ -348,7 +348,7 @@ Sub main()
 	End If
 	Select Case F_Type
 	Case 1
-		F_typename=Selfiletype(1) 'Í¼Æ¬¼¯
+		F_typename=Selfiletype(1) 'å›¾ç‰‡é›†
 		IF Renzhen(F_BoardID,Dvbbs.Membername) Then
 			showfile="[IMG]"&F_Filename&"[/img]"
 			ubblists=ubblist(showfile)&"39,"
@@ -359,7 +359,7 @@ Sub main()
 			showfile=Template.Strings(31)&F_typename
 		End if
 	case 2
-		F_typename=Selfiletype(2) 'Flash¼¯
+		F_typename=Selfiletype(2) 'Flashé›†
 		IF Renzhen(F_BoardID,Dvbbs.Membername) Then
 			Showfile = "[FLASH=500,350]" & F_Filename & "[/FLASH]"
 			Ubblists = Ubblist(Showfile) & "39,"
@@ -370,7 +370,7 @@ Sub main()
 			csend=""
 		End if
 	case 3
-		F_typename=Selfiletype(3) 'ÒôÀÖ¼¯
+		F_typename=Selfiletype(3) 'éŸ³ä¹é›†
 		IF Renzhen(F_BoardID,Dvbbs.Membername) Then
 			showfile="<img src=skins/default/filetype/"&F_FileType&".gif border=0><a href="&Dvbbs.htmlencode(F_Filename)&" target=_blank title="&Template.Strings(28)&">"&Dvbbs.htmlencode(F_Filename)&"</a>"
 			csend="<a href=fileshow.asp?action=send&amp;id="&f_id&"><img title="&Template.Strings(32)&" src=skins/default/newmail.gif border=0 width=28 height=11></a>"
@@ -379,7 +379,7 @@ Sub main()
 			csend=""
 		End if
 	Case 4
-		F_typename=Selfiletype(4) 'µçÓ°¼¯
+		F_typename=Selfiletype(4) 'ç”µå½±é›†
 		IF Renzhen(F_BoardID,Dvbbs.Membername) Then
 			showfile="<img src=skins/default/filetype/"&F_FileType&".gif border=0><a href="&Dvbbs.htmlencode(F_Filename)&" target=_blank title="&Template.Strings(28)&">"&Dvbbs.htmlencode(F_Filename)&"</a>"
 			csend="<a href=fileshow.asp?action=send&amp;id="&f_id&"><img title="&Template.Strings(32)&" src=skins/default/newmail.gif border=0 width=28 height=11></a>"
@@ -388,7 +388,7 @@ Sub main()
 			csend=""
 		End if
 	Case Else 
-		F_typename=Selfiletype(0) 'ÎÄ¼ş¼¯
+		F_typename=Selfiletype(0) 'æ–‡ä»¶é›†
 		IF Renzhen(F_BoardID,Dvbbs.Membername) Then
 			showfile="[upload="&F_FileType&"]viewfile.asp?ID="&F_ID&"[/upload]"
 			ubblists=ubblist(showfile)&"39,"
@@ -438,7 +438,7 @@ Function IsFind(UserName)
 	End If 
 End Function
 
-'ÓÃ»§ºÃÓÑÏÂÀ­Ãûµ¥
+'ç”¨æˆ·å¥½å‹ä¸‹æ‹‰åå•
 Function OPTION_Friend()
 DIM i,Rs
 Sql="SELECT F_friend FROM Dv_Friend WHERE F_userid="&Dvbbs.userid&" ORDER BY F_addtime DESC"
@@ -456,7 +456,7 @@ OPTION_Friend=""
 End If
 End Function
 
-'ºÚÃûµ¥ÑéÖ¤
+'é»‘åå•éªŒè¯
 Function CHKHateName(name)
 DIM Sql,Rs
 CHKHateName=False
@@ -469,7 +469,7 @@ If not Rs.eof Then
 End If
 End Function
 
-'¸üĞÂÓÃ»§¶ÌĞÅÍ¨ÖªĞÅÏ¢£¨ĞÂ¶ÌĞÅÌõÊı||ĞÂ¶ÌÑ¶ID||·¢ĞÅÈËÃû£©
+'æ›´æ–°ç”¨æˆ·çŸ­ä¿¡é€šçŸ¥ä¿¡æ¯ï¼ˆæ–°çŸ­ä¿¡æ¡æ•°||æ–°çŸ­è®¯ID||å‘ä¿¡äººåï¼‰
 Sub UPDATE_User_Msg(username)
 	Dim msginfo,i,UP_UserInfo,newmsg
 	newmsg=newincept(username)
@@ -486,7 +486,7 @@ Sub UPDATE_User_Msg(username)
 	End If
 End Sub
 
-'Í³¼ÆÁôÑÔ
+'ç»Ÿè®¡ç•™è¨€
 Function newincept(iusername)
 Dim Rs
 Rs=Dvbbs.execute("SELECT Count(id) FROM Dv_Message WHERE flag=0 And issend=1 And DelR=0 And incept='"& iusername &"'")
@@ -514,7 +514,7 @@ Function inceptid(stype,iusername)
 	Set Rs=nothing
 End Function
 
-'ÈÏÖ¤ÂÛÌ³µÄÎÄ¼şµÄÅĞ¶Ï
+'è®¤è¯è®ºå›çš„æ–‡ä»¶çš„åˆ¤æ–­
 Function renzhen(boardid,username)
 	Dim boarduser,rrs,Board_Setting,BoardMaster,i
 	Dim sql
@@ -560,7 +560,7 @@ Function renzhen(boardid,username)
 	End if
 End function
 
-'Ö»¶Á£¬»ñµÃUBBÄ£°å
+'åªè¯»ï¼Œè·å¾—UBBæ¨¡æ¿
 Function Temp_UBB()
 	Dvbbs.Loadtemplates("post")
 	Dim TempArray,i
@@ -570,7 +570,7 @@ Function Temp_UBB()
 		Temp_UBB = Replace(Temp_UBB,"{$ubb"&i&"}",TempArray(0) & TempArray(i))
 	Next
 End function
-'·¢ÌùÊ±ÓÃ£¬ÎªÁË¼õÉÙÈë¿âÁ¿
+'å‘è´´æ—¶ç”¨ï¼Œä¸ºäº†å‡å°‘å…¥åº“é‡
 Function Html2Ubb(str)
 	If Str<>"" And Not IsNull(Str) Then
 		Dim re

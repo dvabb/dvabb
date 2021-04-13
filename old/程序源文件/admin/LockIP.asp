@@ -18,7 +18,7 @@ If request("action")="add" or request("userip")<>"" then
 %>
 <table width="100%" border="0" cellspacing="1" cellpadding="3" align="center">
 <tr> 
-<th width="100%" colspan=2>IPÏÞÖÆ¹ÜÀí£­£­Ìí¼Ó</th>
+<th width="100%" colspan=2>IPé™åˆ¶ç®¡ç†ï¼ï¼æ·»åŠ </th>
 </tr>
 <%
 dim sip,str1,str2,str3,str4,num_1,num_2,i
@@ -35,23 +35,23 @@ if request.querystring("reaction")="save" then
 	end if
 %>
 <tr>
-<td width="100%" colspan=2 class=td1>Ìí¼Ó³É¹¦£¡</td>
+<td width="100%" colspan=2 class=td1>æ·»åŠ æˆåŠŸï¼</td>
 </tr>
 <%
 else
 %>
 <form action="LockIP.asp?action=add&reaction=save" method="post">
 <tr>
-<td width="100%" class=td1 colspan=2><B>ËµÃ÷</B>£ºÄú¿ÉÒÔÌí¼Ó¶à¸öÏÞÖÆIP£¬Ã¿¸öIPÓÃ|ºÅ·Ö¸ô£¬ÏÞÖÆIPµÄÊéÐ´·½Ê½Èç202.152.12.1¾ÍÏÞÖÆÁË202.152.12.1Õâ¸öIPµÄ·ÃÎÊ£¬Èç202.152.12.*¾ÍÏÞÖÆÁËÒÔ202.152.12¿ªÍ·µÄIP·ÃÎÊ£¬Í¬Àí*.*.*.*ÔòÏÞÖÆÁËËùÓÐIPµÄ·ÃÎÊ¡£ÔÚÌí¼Ó¶à¸öIPµÄÊ±ºò£¬Çë×¢Òâ×îºóÒ»¸öIPµÄºóÃæ²»Òª¼Ó|Õâ¸ö·ûºÅ</td>
+<td width="100%" class=td1 colspan=2><B>è¯´æ˜Ž</B>ï¼šæ‚¨å¯ä»¥æ·»åŠ å¤šä¸ªé™åˆ¶IPï¼Œæ¯ä¸ªIPç”¨|å·åˆ†éš”ï¼Œé™åˆ¶IPçš„ä¹¦å†™æ–¹å¼å¦‚202.152.12.1å°±é™åˆ¶äº†202.152.12.1è¿™ä¸ªIPçš„è®¿é—®ï¼Œå¦‚202.152.12.*å°±é™åˆ¶äº†ä»¥202.152.12å¼€å¤´çš„IPè®¿é—®ï¼ŒåŒç†*.*.*.*åˆ™é™åˆ¶äº†æ‰€æœ‰IPçš„è®¿é—®ã€‚åœ¨æ·»åŠ å¤šä¸ªIPçš„æ—¶å€™ï¼Œè¯·æ³¨æ„æœ€åŽä¸€ä¸ªIPçš„åŽé¢ä¸è¦åŠ |è¿™ä¸ªç¬¦å·</td>
 </tr>
 <tr>
-<td width="20%" class=td1>ÏÞÖÆI&nbsp;P</td>
-<td width="80%" class=td1><input type="text" name="ip1" size="30" value="<%=GetIp1%>">&nbsp;Èç202.152.12.*</td>
+<td width="20%" class=td1>é™åˆ¶I&nbsp;P</td>
+<td width="80%" class=td1><input type="text" name="ip1" size="30" value="<%=GetIp1%>">&nbsp;å¦‚202.152.12.*</td>
 </tr>
 <tr>
 <td width="20%" class=td1>&nbsp;</td>
 <td width="80%" class=td1>
-<input type="submit" class="button" name="Submit" value="Ìí ¼Ó">
+<input type="submit" class="button" name="Submit" value="æ·» åŠ ">
 </td>
 </tr>
 </form>
@@ -72,17 +72,17 @@ elseif request("action")="delip" then
 	next
 	dvbbs.execute("update dv_setup set forum_lockip='"&replace(getip1,"'","''")&"'")
 	Dvbbs.loadSetup()
-	Dv_suc("¸üÐÂÏÞÖÆIP³É¹¦£¡")
+	Dv_suc("æ›´æ–°é™åˆ¶IPæˆåŠŸï¼")
 else
 %>
 <FORM METHOD=POST ACTION="?action=delip">
 <table width="100%" border="0" cellspacing="1" cellpadding="3" align="center">
 <tr> 
-<th width="100%" colspan=2>IPÏÞÖÆ¹ÜÀí£­£­¹ÜÀí</th>
+<th width="100%" colspan=2>IPé™åˆ¶ç®¡ç†ï¼ï¼ç®¡ç†</th>
 </tr>
 <tr>
 <td width="100%" class=td1 colspan=2>
-<B>ËµÃ÷</B>£ºÄú¿ÉÒÔÌí¼Ó¶à¸öÏÞÖÆIP£¬Ã¿¸öIPÓÃ»Ø³µ·Ö¸ô£¬ÏÞÖÆIPµÄÊéÐ´·½Ê½Èç202.152.12.1¾ÍÏÞÖÆÁË202.152.12.1Õâ¸öIPµÄ·ÃÎÊ£¬Èç202.152.12.*¾ÍÏÞÖÆÁËÒÔ202.152.12¿ªÍ·µÄIP·ÃÎÊ£¬Í¬Àí*.*.*.*ÔòÏÞÖÆÁËËùÓÐIPµÄ·ÃÎÊ¡£ÔÚÌí¼Ó¶à¸öIPµÄÊ±ºò£¬Çë×¢Òâ×îºóÒ»¸öIPµÄºóÃæ²»Òª¼Ó»Ø³µ¡£
+<B>è¯´æ˜Ž</B>ï¼šæ‚¨å¯ä»¥æ·»åŠ å¤šä¸ªé™åˆ¶IPï¼Œæ¯ä¸ªIPç”¨å›žè½¦åˆ†éš”ï¼Œé™åˆ¶IPçš„ä¹¦å†™æ–¹å¼å¦‚202.152.12.1å°±é™åˆ¶äº†202.152.12.1è¿™ä¸ªIPçš„è®¿é—®ï¼Œå¦‚202.152.12.*å°±é™åˆ¶äº†ä»¥202.152.12å¼€å¤´çš„IPè®¿é—®ï¼ŒåŒç†*.*.*.*åˆ™é™åˆ¶äº†æ‰€æœ‰IPçš„è®¿é—®ã€‚åœ¨æ·»åŠ å¤šä¸ªIPçš„æ—¶å€™ï¼Œè¯·æ³¨æ„æœ€åŽä¸€ä¸ªIPçš„åŽé¢ä¸è¦åŠ å›žè½¦ã€‚
 </td>
 </tr>
 <tr>
@@ -100,7 +100,7 @@ Next
 <tr>
 <td width="20%" class=td1>&nbsp;</td>
 <td width="80%" class=td1>
-<input type="submit" class="button" name="Submit" value="ÐÞ ¸Ä">
+<input type="submit" class="button" name="Submit" value="ä¿® æ”¹">
 </td>
 </tr>
 </FORM>

@@ -6,9 +6,9 @@
 <!--#include file="dv_dpo/cls_dvapi.asp"-->
 <%
 '============================
-'7.2ĞŞ¸ÄËµÃ÷:               =
-'ÓÅ»¯²ÎÊıÌáÈ¡Á÷³Ì           =
-'¶Ô½±Àø»ò³Í·£ÊıÖµ×ö´óĞ¡ÏŞÖÆ =
+'7.2ä¿®æ”¹è¯´æ˜:               =
+'ä¼˜åŒ–å‚æ•°æå–æµç¨‹           =
+'å¯¹å¥–åŠ±æˆ–æƒ©ç½šæ•°å€¼åšå¤§å°é™åˆ¶ =
 '============================
 Dvbbs.Loadtemplates("")
 Dim username
@@ -37,10 +37,10 @@ action=Request("action")
 userid=Request("userid")
 username=Request("name")
 ip=Dvbbs.UserTrueIP
-Dvbbs.stats="¹ÜÀíÓÃ»§"
+Dvbbs.stats="ç®¡ç†ç”¨æˆ·"
 Dvbbs.nav()
 If username="" Then
-	Response.redirect "showerr.asp?ErrCodes=<li>ÇëÖ¸¶¨Ëù²Ù×÷µÄÓÃ»§£¡&action=OtherErr"
+	Response.redirect "showerr.asp?ErrCodes=<li>è¯·æŒ‡å®šæ‰€æ“ä½œçš„ç”¨æˆ·ï¼&action=OtherErr"
 Else
 	username=Dvbbs.CheckStr(username)
 End If
@@ -48,7 +48,7 @@ Dvbbs.Head_Var 2,0,"",""
 Dvbbs.ShowErr()
 If userid<> "" Then
 	userid=Dvbbs.CheckStr(userid)
-	If Not IsNumeric(userid) Then Response.redirect "showerr.asp?ErrCodes=<li>·Ç·¨µÄ²ÎÊı¡£&action=OtherErr"
+	If Not IsNumeric(userid) Then Response.redirect "showerr.asp?ErrCodes=<li>éæ³•çš„å‚æ•°ã€‚&action=OtherErr"
 Else
 	Set Rs=Dvbbs.Execute("SELECT UserID FROM [Dv_User] WHERE Username = '"&Username&"' ")
 	If Not Rs.EOF Then
@@ -60,7 +60,7 @@ Else
 End If 
 
 If Not Dvbbs.ChkPost()  Then
-	Response.redirect "showerr.asp?ErrCodes=<li>Äú²»Òª´ÓÍâ²¿Ìá½»Êı¾İ&action=OtherErr"
+	Response.redirect "showerr.asp?ErrCodes=<li>æ‚¨ä¸è¦ä»å¤–éƒ¨æäº¤æ•°æ®&action=OtherErr"
 End If
 If action="power" Then
 	Call Poweruser()
@@ -96,25 +96,25 @@ Sub lockuser()
 		canlockuser=False 
 	End If 
 
-	If Not canlockuser then Response.redirect "showerr.asp?ErrCodes=<li>ÄúÃ»ÓĞÈ¨ÏŞÖ´ĞĞ´Ë²Ù×÷¡£&action=OtherErr"
+	If Not canlockuser then Response.redirect "showerr.asp?ErrCodes=<li>æ‚¨æ²¡æœ‰æƒé™æ‰§è¡Œæ­¤æ“ä½œã€‚&action=OtherErr"
 	
 	Dim UserStatus
 	If action="lock_1" Then
 		UserStatus = 1
-		locktype="Ëø¶¨"
+		locktype="é”å®š"
 	ElseIf action="lock_2" then
 		UserStatus= 2
-		locktype="ÆÁ±Î"
+		locktype="å±è”½"
 	ElseIf action="lock_3" then
 		UserStatus = 0
-		locktype="½âËø"
+		locktype="è§£é”"
 	Else
-		Response.redirect "showerr.asp?ErrCodes=<li>ÇëÖ¸¶¨ÕıÈ·µÄ²ÎÊı£¡&action=OtherErr"
+		Response.redirect "showerr.asp?ErrCodes=<li>è¯·æŒ‡å®šæ­£ç¡®çš„å‚æ•°ï¼&action=OtherErr"
 		Exit Sub
 	End If
 
 	'-----------------------------------------------------------------
-	'ÏµÍ³ÕûºÏ
+	'ç³»ç»Ÿæ•´åˆ
 	'-----------------------------------------------------------------
 	Dim DvApi_Obj,DvApi_SaveCookie,SysKey
 	If DvApi_Enable Then
@@ -135,10 +135,10 @@ Sub lockuser()
 	'-----------------------------------------------------------------
 
 	Dvbbs.Execute("update [dv_user] set LockUser="&UserStatus&" where userid="&userid&" and UserGroupID > 1")
-	sql="insert into Dv_log (l_touser,l_username,l_content,l_ip,l_type) values ('"&username&"','"&Dvbbs.membername&"','ÓÃ»§²Ù×÷£º"&locktype& "','"&ip&"',6)"
+	sql="insert into Dv_log (l_touser,l_username,l_content,l_ip,l_type) values ('"&username&"','"&Dvbbs.membername&"','ç”¨æˆ·æ“ä½œï¼š"&locktype& "','"&ip&"',6)"
 	Dvbbs.Execute(sql)
 
-	Dvbbs.Dvbbs_suc("<li>ÄúÑ¡ÔñµÄÓÃ»§ÒÑ¾­"&locktype&"¡£ÄúµÄ²Ù×÷ÒÑ¾­¼ÇÂ¼ÔÚ°¸¡£")
+	Dvbbs.Dvbbs_suc("<li>æ‚¨é€‰æ‹©çš„ç”¨æˆ·å·²ç»"&locktype&"ã€‚æ‚¨çš„æ“ä½œå·²ç»è®°å½•åœ¨æ¡ˆã€‚")
 End Sub
 
 Sub Poweruser()
@@ -157,7 +157,7 @@ Sub Poweruser()
 		canlockuser=False
 	End If 
 
-	If Not canlockuser Then Response.redirect "showerr.asp?ErrCodes=<li>ÄúÃ»ÓĞÈ¨ÏŞÖ´ĞĞ´Ë²Ù×÷¡£&action=OtherErr"
+	If Not canlockuser Then Response.redirect "showerr.asp?ErrCodes=<li>æ‚¨æ²¡æœ‰æƒé™æ‰§è¡Œæ­¤æ“ä½œã€‚&action=OtherErr"
 	If request("checked")="yes" Then
 		Dim doWealth,douserEP,douserCP,douserPower
 		Dim doWealthMsg,douserEPMsg,douserCPMsg,douserPowerMsg,allMsg
@@ -173,7 +173,7 @@ Sub Poweruser()
 				doWealth="0"
 				doWealthMsg=""
 			Else
-				doWealthMsg="½ğÇ®" & doWealth & "£¬"
+				doWealthMsg="é‡‘é’±" & doWealth & "ï¼Œ"
 			End If
 		End If
 		
@@ -185,7 +185,7 @@ Sub Poweruser()
 				douserEP="0"
 				douserEPMsg=""
 			Else
-				douserEPMsg="»ı·Ö" & douserEP & "£¬"
+				douserEPMsg="ç§¯åˆ†" & douserEP & "ï¼Œ"
 			End If
 		End If 
 
@@ -197,7 +197,7 @@ Sub Poweruser()
 				douserCP="0"
 				douserCPMsg=""
 			Else
-				douserCPMsg="÷ÈÁ¦" & douserCP & "£¬"
+				douserCPMsg="é­…åŠ›" & douserCP & "ï¼Œ"
 			End If
 		End If
 
@@ -209,70 +209,70 @@ Sub Poweruser()
 				douserPower="0"
 				douserPowerMsg=""
 			Else
-				douserPowerMsg="ÍşÍû" & douserPower
+				douserPowerMsg="å¨æœ›" & douserPower
 			End If
 		End If
 
 		If doWealthMsg="" and douserEPMsg="" and douserCPMsg="" and douserPowerMsg="" Then
-			allmsg="Ã»ÓĞ¶ÔÓÃ»§½øĞĞ·ÖÖµ²Ù×÷"
+			allmsg="æ²¡æœ‰å¯¹ç”¨æˆ·è¿›è¡Œåˆ†å€¼æ“ä½œ"
 		Else
-			allmsg="ÓÃ»§²Ù×÷£º" & doWealthMsg & douserEPMsg & douserCPMsg & douserPowerMsg
+			allmsg="ç”¨æˆ·æ“ä½œï¼š" & doWealthMsg & douserEPMsg & douserCPMsg & douserPowerMsg
 		End If
 
 		allmsg=Dvbbs.Checkstr(allmsg)
 		title=request.form("title")
 		content=request.form("content")
-		content="Ô­Òò£º" & title & content
+		content="åŸå› ï¼š" & title & content
 		content=Dvbbs.Checkstr(content)
-		if request.form("title")="" and request.form("content")="" then Response.redirect "showerr.asp?ErrCodes=<li>ÇëĞ´Ã÷²Ù×÷Ô­Òò¡£&action=OtherErr"
+		if request.form("title")="" and request.form("content")="" then Response.redirect "showerr.asp?ErrCodes=<li>è¯·å†™æ˜æ“ä½œåŸå› ã€‚&action=OtherErr"
 
-		sql="insert into Dv_log (l_touser,l_username,l_content,l_ip,l_type) values ('"&username&"','"&Dvbbs.membername&"','ÓÃ»§²Ù×÷£º"&content& "£¬"&allmsg&"','"&ip&"',5)"
+		sql="insert into Dv_log (l_touser,l_username,l_content,l_ip,l_type) values ('"&username&"','"&Dvbbs.membername&"','ç”¨æˆ·æ“ä½œï¼š"&content& "ï¼Œ"&allmsg&"','"&ip&"',5)"
 		Dvbbs.Execute(sql)
 		If allmsg<>"" Then
 			Dvbbs.Execute("update [dv_user] set userWealth=userWealth+"&doWealth&",userCP=userCP+"&douserCP&",userEP=userEP+"&douserEP&",userPower=userPower+"&douserPower&" where userid="&userid&"")
 		End If
-		locktype="³É¹¦²Ù×÷"
-		Dvbbs.Dvbbs_suc("<li>ÄúÑ¡ÔñµÄÓÃ»§ÒÑ¾­"&locktype&"¡£<li>ÄúµÄ²Ù×÷ÒÑ¾­¼ÇÂ¼¡£")
+		locktype="æˆåŠŸæ“ä½œ"
+		Dvbbs.Dvbbs_suc("<li>æ‚¨é€‰æ‹©çš„ç”¨æˆ·å·²ç»"&locktype&"ã€‚<li>æ‚¨çš„æ“ä½œå·²ç»è®°å½•ã€‚")
 	Else
 %>
 <FORM METHOD=POST ACTION="admin_lockuser.asp?action=power">
 <table style="width:98%" cellspacing="1" cellpadding="0" align="center" class=tableborder1>
   <tr> 
-    <th height=24>ÂÛÌ³¹ÜÀíÖĞĞÄ£­£­ÄúÒª½øĞĞµÄ²Ù×÷ÊÇ½±ÀøÓÃ»§</th>
+    <th height=24>è®ºå›ç®¡ç†ä¸­å¿ƒï¼ï¼æ‚¨è¦è¿›è¡Œçš„æ“ä½œæ˜¯å¥–åŠ±ç”¨æˆ·</th>
   </tr>   
   <tr> 
     <td class=tablebody1 height=24><b>
-      ²Ù×÷ÀíÓÉ</b>£º  
+      æ“ä½œç†ç”±</b>ï¼š  
 	  <select name="title" size=1>
-<option value="">×Ô¶¨Òå</option>
-<option value="¶à´Î·¢±íºÃÎÄÕÂ">¶à´Î·¢±íºÃÎÄÕÂ</option>
-<option value="¶ÔÉçÇø½¨ÉèÓĞ¹±Ï×">¶ÔÉçÇø½¨ÉèÓĞ¹±Ï×</option>
-<option value="¶à´Î·¢±í¹àË®Ìû×Ó">¶à´Î·¢±í¹àË®Ìû×Ó</option>
-<option value="¶à´Î·¢±í¹ã¸æÌû×Ó">¶à´Î·¢±í¹ã¸æÌû×Ó</option>
+<option value="">è‡ªå®šä¹‰</option>
+<option value="å¤šæ¬¡å‘è¡¨å¥½æ–‡ç« ">å¤šæ¬¡å‘è¡¨å¥½æ–‡ç« </option>
+<option value="å¯¹ç¤¾åŒºå»ºè®¾æœ‰è´¡çŒ®">å¯¹ç¤¾åŒºå»ºè®¾æœ‰è´¡çŒ®</option>
+<option value="å¤šæ¬¡å‘è¡¨çŒæ°´å¸–å­">å¤šæ¬¡å‘è¡¨çŒæ°´å¸–å­</option>
+<option value="å¤šæ¬¡å‘è¡¨å¹¿å‘Šå¸–å­">å¤šæ¬¡å‘è¡¨å¹¿å‘Šå¸–å­</option>
 	  </select>
 	  <input type="text" name="content" size=50>  *</td>
   </tr>   
   <tr> 
     <td class=tablebody1 height=24><b>
-      ÓÃ»§²Ù×÷</b>£º  ½ğÇ®
+      ç”¨æˆ·æ“ä½œ</b>ï¼š  é‡‘é’±
 	<select name="doWealth" size=1>
 
 <%for i=-50 to 50%>
 <option value="<%=i%>" <%if cint(i)=cint(0) then%>selected<%end if%>><%=i%></option>
 <%next%>
-	</select>&nbsp;÷ÈÁ¦
+	</select>&nbsp;é­…åŠ›
 	<select name="douserCP" size=1>
 
 <%for i=-50 to 50%>
 <option value="<%=i%>" <%if cint(i)=cint(0) then%>selected<%end if%>><%=i%></option>
 <%next%>
-	</select>&nbsp;»ı·Ö
+	</select>&nbsp;ç§¯åˆ†
 	<select name="douserEP" size=1>
 
 <%for i=-50 to 50%>
 <option value="<%=i%>" <%if cint(i)=cint(0) then%>selected<%end if%>><%=i%></option>
 <%next%>
-	</select>&nbsp;ÍşÍû
+	</select>&nbsp;å¨æœ›
 	<select name="douserPower" size=1>
 
 <%for i=-5 to 5%>
@@ -286,7 +286,7 @@ Sub Poweruser()
 <input type=hidden value="<%=username%>" name="name">
   <tr> 
     <td class=tablebody2 height=24>
-      ÇëÉ÷ÖØÊ¹ÓÃ¹ÜÀíÔ±µÄ¹ÜÀíÖ°ÄÜ£¬¹ÜÀíÔ±ËùÓĞ²Ù×÷½«±»¼ÇÂ¼&nbsp;<input type="Submit" name=Submit value="È·ÈÏ²Ù×÷"></td>
+      è¯·æ…é‡ä½¿ç”¨ç®¡ç†å‘˜çš„ç®¡ç†èŒèƒ½ï¼Œç®¡ç†å‘˜æ‰€æœ‰æ“ä½œå°†è¢«è®°å½•&nbsp;<input type="Submit" name=Submit value="ç¡®è®¤æ“ä½œ"></td>
   </tr>   
 </table>
 </FORM>
@@ -294,7 +294,7 @@ Sub Poweruser()
 end if
 End Sub
 
-'É¾³ıÓÃ»§1£­10ÌìÄÚÖ÷Ìâ
+'åˆ é™¤ç”¨æˆ·1ï¼10å¤©å†…ä¸»é¢˜
 Sub Deltopic()
 	Dim DelDate, Suserid
 	Dim Todaynum
@@ -316,13 +316,13 @@ Sub Deltopic()
 		Canlockuser = False
 	End If
 
-	If Not canlockuser Then Response.redirect "showerr.asp?ErrCodes=<li>ÄúÃ»ÓĞÈ¨ÏŞÖ´ĞĞ´Ë²Ù×÷¡£&action=OtherErr"
-	if DelDate="" or Not IsNumeric(DelDate) Then Response.redirect "showerr.asp?ErrCodes=<li>·Ç·¨µÄ²ÎÊı¡£&action=OtherErr"
-	If suserid="" or not isnumeric(suserid) then Response.redirect "showerr.asp?ErrCodes=<li>·Ç·¨µÄ²ÎÊı¡£&action=OtherErr"
-	'É¾³ıÌû×Ó±íÖĞÊı¾İ
-	'¸üĞÂÓÃ»§Ìû×ÓÊı£¬ÓÃ»§É¾³ıÌû×ÓÊıÎª¸ÃÌûËùÓĞ»Ø¸´Êı£¬»Ø¸´ÈËµÄÉ¾³ıÌû×ÓÊı²»¸üĞÂ
+	If Not canlockuser Then Response.redirect "showerr.asp?ErrCodes=<li>æ‚¨æ²¡æœ‰æƒé™æ‰§è¡Œæ­¤æ“ä½œã€‚&action=OtherErr"
+	if DelDate="" or Not IsNumeric(DelDate) Then Response.redirect "showerr.asp?ErrCodes=<li>éæ³•çš„å‚æ•°ã€‚&action=OtherErr"
+	If suserid="" or not isnumeric(suserid) then Response.redirect "showerr.asp?ErrCodes=<li>éæ³•çš„å‚æ•°ã€‚&action=OtherErr"
+	'åˆ é™¤å¸–å­è¡¨ä¸­æ•°æ®
+	'æ›´æ–°ç”¨æˆ·å¸–å­æ•°ï¼Œç”¨æˆ·åˆ é™¤å¸–å­æ•°ä¸ºè¯¥å¸–æ‰€æœ‰å›å¤æ•°ï¼Œå›å¤äººçš„åˆ é™¤å¸–å­æ•°ä¸æ›´æ–°
 	ii = 0
-	REM ²éÑ¯¼ÓÈëTOPICIDÅÅĞò±ÜÃâÓĞ°ÙÍòÖ÷ÌâÊ±³¬Ê± 2004-5-22 Dv.Yz
+	REM æŸ¥è¯¢åŠ å…¥TOPICIDæ’åºé¿å…æœ‰ç™¾ä¸‡ä¸»é¢˜æ—¶è¶…æ—¶ 2004-5-22 Dv.Yz
 	If IsSqlDataBase=1 Then
 		Set Rs = Dvbbs.Execute("SELECT TopicID, Child, BoardID, PostTable, Dateandtime FROM [Dv_Topic] WHERE (NOT Boardid IN (444, 777)) AND PostUserID = " & Suserid & " AND DateDiff(d, DateAndTime, " & SqlNowString & ") < " & DelDate & " ORDER BY TopicID")
 	Else
@@ -334,36 +334,36 @@ Sub Deltopic()
 		For j = 0 To Ubound(Sql,2)
 			ii = ii + 1
 			TotalUseTable = Sql(3,j)
-			'¸üĞÂ·¢ÌùÓÃ»§Êı¾İ
+			'æ›´æ–°å‘è´´ç”¨æˆ·æ•°æ®
 			Dvbbs.Execute("UPDATE [Dv_User] SET Userpost = Userpost - 1, UserDel = UserDel - "&Sql(1,j)&"-1 WHERE userid="&suserid)
-			'¸üĞÂÖ÷Ìâ×´Ì¬
+			'æ›´æ–°ä¸»é¢˜çŠ¶æ€
 			Dvbbs.Execute("UPDATE [Dv_topic] SET locktopic = boardid, boardid = 444 WHERE topicid = "&Sql(0,j))
-			'¸üĞÂÌû×Ó×´Ì¬
+			'æ›´æ–°å¸–å­çŠ¶æ€
 			Dvbbs.Execute("UPDATE "&TotalUseTable&" SET locktopic = boardid, boardid=444 WHERE rootid = "&Sql(0,j))
 			If DateDiff("d",Sql(4,j),Now())=0 Then
 				todaynum=Sql(1,j)
 			Else
 				todaynum=0
 			End If
-			'µÃµ½¸ÃÌû×ÓËùÊôÂÛÌ³µÄÉÏ¼¶ÂÛÌ³ID
+			'å¾—åˆ°è¯¥å¸–å­æ‰€å±è®ºå›çš„ä¸Šçº§è®ºå›ID
 			Set Trs=Dvbbs.Execute("SELECT ParentStr, ParentID FROM Dv_board WHERE boardid ="&Sql(2,j))
 			If Trs(1)=0 Then
 				UpdateBoardID=Sql(2,j)
 			Else
 				UpdateBoardID=trs(0) & "," & Sql(2,j)
 			End If
-			'¸üĞÂ°æÃæÊı¾İ
+			'æ›´æ–°ç‰ˆé¢æ•°æ®
 			Dvbbs.Execute("update Dv_board set postnum=postnum-"&Sql(1,j)&"-1,topicNum=topicNum-1,todayNum=todayNum-"&todayNum&" where boardid in ("&UpdateBoardID&")")
 
-			'¸üĞÂ°æÃæ»º´æ
+			'æ›´æ–°ç‰ˆé¢ç¼“å­˜
 			
-			'¸üĞÂ×ÜÊı¾İ
+			'æ›´æ–°æ€»æ•°æ®
 			Dvbbs.Execute("update dv_setup set Forum_TodayNum=Forum_todayNum-"&todaynum&",Forum_postNum=Forum_postNum-"&Sql(1,j)&"-1,Forum_TopicNum=Forum_topicNum-1")
-			'¸üĞÂ×ÜÉèÖÃ»º´æ
+			'æ›´æ–°æ€»è®¾ç½®ç¼“å­˜
 			Dvbbs.ReloadSetupCache CLng(Dvbbs.CacheData(7,0))-1,7
 			Dvbbs.ReloadSetupCache CLng(Dvbbs.CacheData(8,0))-Sql(1,j)-1,8
 			Dvbbs.ReloadSetupCache CLng(Dvbbs.CacheData(9,0))-todaynum,9
-			'¸üĞÂ×îºó»Ø¸´Êı¾İ
+			'æ›´æ–°æœ€åå›å¤æ•°æ®
 			Dim UpdateBoardID1
 			UpdateBoardID1=UpdateBoardID
 			LastCount Sql(2,j),Sql(0,j),0,1
@@ -372,12 +372,12 @@ Sub Deltopic()
 	End If
 	Set Rs = Nothing 
 	set Trs = Nothing
-	Sql = "INSERT INTO Dv_Log (l_touser,l_username,l_content,l_ip,l_type) values ('"&username&"','"&Dvbbs.membername&"','ÓÃ»§²Ù×÷£ºÉ¾³ı¸ÃÓÃ»§Ö÷Ìâ "&ii&" Ìõ¡£','"&ip&"',6)"
+	Sql = "INSERT INTO Dv_Log (l_touser,l_username,l_content,l_ip,l_type) values ('"&username&"','"&Dvbbs.membername&"','ç”¨æˆ·æ“ä½œï¼šåˆ é™¤è¯¥ç”¨æˆ·ä¸»é¢˜ "&ii&" æ¡ã€‚','"&ip&"',6)"
 	Dvbbs.Execute(SQL)
-	Dvbbs.Dvbbs_suc("<li>É¾³ı¸ÃÓÃ»§Ö÷Ìâ "&ii&" Ìõ¡£<li>¸ÃÓÃ»§É¾³ıÌû×ÓÊıÎªËùÉ¾ÌûËùÓĞ»Ø¸´Êı£¬»Ø¸´ÈËµÄÉ¾³ıÌû×ÓÊı²»¸üĞÂ")
+	Dvbbs.Dvbbs_suc("<li>åˆ é™¤è¯¥ç”¨æˆ·ä¸»é¢˜ "&ii&" æ¡ã€‚<li>è¯¥ç”¨æˆ·åˆ é™¤å¸–å­æ•°ä¸ºæ‰€åˆ å¸–æ‰€æœ‰å›å¤æ•°ï¼Œå›å¤äººçš„åˆ é™¤å¸–å­æ•°ä¸æ›´æ–°")
 End Sub
 
-'É¾³ıÄ³ÓÃ»§Ö¸¶¨ÈÕÆÚÄÚËùÓĞ»Ø¸´Ìù
+'åˆ é™¤æŸç”¨æˆ·æŒ‡å®šæ—¥æœŸå†…æ‰€æœ‰å›å¤è´´
 Sub DelUserReply()
 	Dim DelDate,suserid,DelBBS
 	Dim todaynum
@@ -400,10 +400,10 @@ Sub DelUserReply()
 		canlockuser=False 
 	End If 
 
-	If  Not canlockuser Then Response.redirect "showerr.asp?ErrCodes=<li>ÄúÃ»ÓĞÈ¨ÏŞÖ´ĞĞ´Ë²Ù×÷¡£&action=OtherErr"
-	If DelDate="" or not isnumeric(DelDate) Then Response.redirect "showerr.asp?ErrCodes=<li>·Ç·¨µÄ²ÎÊı¡£&action=OtherErr"
-	If suserid="" or not isnumeric(suserid) Then Response.redirect "showerr.asp?ErrCodes=<li>·Ç·¨µÄ²ÎÊı¡£&action=OtherErr"
-	'É¾³ıÌû×Ó±íÖĞÊı¾İ
+	If  Not canlockuser Then Response.redirect "showerr.asp?ErrCodes=<li>æ‚¨æ²¡æœ‰æƒé™æ‰§è¡Œæ­¤æ“ä½œã€‚&action=OtherErr"
+	If DelDate="" or not isnumeric(DelDate) Then Response.redirect "showerr.asp?ErrCodes=<li>éæ³•çš„å‚æ•°ã€‚&action=OtherErr"
+	If suserid="" or not isnumeric(suserid) Then Response.redirect "showerr.asp?ErrCodes=<li>éæ³•çš„å‚æ•°ã€‚&action=OtherErr"
+	'åˆ é™¤å¸–å­è¡¨ä¸­æ•°æ®
 	ii=0
 	If IsSqlDataBase=1 then
 		Set Rs=Dvbbs.Execute("SELECT Announceid, rootid, boardid, dateandtime FROM "&DelBBS&" WHERE (NOT boardid IN (444, 777)) AND PostUserID = "&suserid&"AND NOT ParentID = 0 AND Datediff(d, Dateandtime, "&SqlNowString&") < "&DelDate)
@@ -415,7 +415,7 @@ Sub DelUserReply()
 		Rs.Close:Set Rs=Nothing
 		For j=0 To Ubound(Sql,2)
 			ii=ii+1
-			'¸üĞÂ·¢ÌùÓÃ»§Êı¾İ
+			'æ›´æ–°å‘è´´ç”¨æˆ·æ•°æ®
 			Dvbbs.Execute("UPDATE [dv_user] SET userpost = userpost - 1, UserDel = UserDel - 1, UserWealth = UserWealth - "&Dvbbs.Forum_user(3)&", userEP = userEP - "&Dvbbs.Forum_user(8)&", userCP = userCP - "&Dvbbs.Forum_user(13)&" WHERE userid = "&suserid)
 			Dvbbs.Execute("UPDATE "&DelBBS&" SET locktopic = boardid, boardid = 444 WHERE Announceid = "&Sql(0,j))
 			isEndReply Sql(1,j),Sql(0,j),1
@@ -425,46 +425,46 @@ Sub DelUserReply()
 			Else
 				todaynum=0
 			End If
-			'µÃµ½¸ÃÌû×ÓËùÊôÂÛÌ³µÄÉÏ¼¶ÂÛÌ³ID
+			'å¾—åˆ°è¯¥å¸–å­æ‰€å±è®ºå›çš„ä¸Šçº§è®ºå›ID
 			Set trs=Dvbbs.Execute("SELECT ParentStr, ParentID FROM dv_board WHERE boardid = "&Sql(2,j))
 			If trs(1)=0 Then
 				UpdateBoardID=Sql(2,j)
 			Else
 				UpdateBoardID=trs(0) & "," & Sql(2,j)
 			End If
-			'¸üĞÂ°æÃæÊı¾İ
+			'æ›´æ–°ç‰ˆé¢æ•°æ®
 			Dvbbs.Execute("UPDATE dv_board SET postnum = postnum - 1, todayNum = todayNum - "&todayNum&" WHERE boardid IN ("&UpdateBoardID&")")
-			'¸üĞÂ×ÜÊı¾İ
+			'æ›´æ–°æ€»æ•°æ®
 			Dvbbs.Execute("UPDATE dv_setup SET Forum_TodayNum = Forum_todayNum - "&todaynum&", Forum_postNum = Forum_postNum - 1")
-			'¸üĞÂ×ÜÉèÖÃ»º´æ
+			'æ›´æ–°æ€»è®¾ç½®ç¼“å­˜
 			Dvbbs.ReloadSetupCache CLng(Dvbbs.CacheData(8,0))-1,8
 			Dvbbs.ReloadSetupCache CLng(Dvbbs.CacheData(9,0))-todaynum,9
-			'¸üĞÂ×îºó»Ø¸´Êı¾İ
+			'æ›´æ–°æœ€åå›å¤æ•°æ®
 			LastCount Sql(2,j),Sql(1,j),Sql(0,j),2
 		Next
 	End if
 	Set Rs=Nothing
 	Set Trs=Nothing
-	Sql="insert into Dv_log (l_touser,l_username,l_content,l_ip,l_type) values ('"&username&"','"&Dvbbs.membername&"','ÓÃ»§²Ù×÷£ºÉ¾³ı¸ÃÓÃ»§»Ø¸´ "&ii&" Ìõ¡£','"&ip&"',6)"
+	Sql="insert into Dv_log (l_touser,l_username,l_content,l_ip,l_type) values ('"&username&"','"&Dvbbs.membername&"','ç”¨æˆ·æ“ä½œï¼šåˆ é™¤è¯¥ç”¨æˆ·å›å¤ "&ii&" æ¡ã€‚','"&ip&"',6)"
 	Dvbbs.Execute(SQL)
-	Dvbbs.Dvbbs_suc("<li>É¾³ı¸ÃÓÃ»§»Ø¸´ "&ii&" Ìõ¡£")
+	Dvbbs.Dvbbs_suc("<li>åˆ é™¤è¯¥ç”¨æˆ·å›å¤ "&ii&" æ¡ã€‚")
 End Sub
 
 Sub boardlist()
 	Dim trs
 	Dim dispboard
 	If Not AdminUserPer Then
-		Response.redirect "showerr.asp?ErrCodes=<li>ÄúÃ»ÓĞÈ¨ÏŞÖ´ĞĞ´Ë²Ù×÷¡£&action=OtherErr"
+		Response.redirect "showerr.asp?ErrCodes=<li>æ‚¨æ²¡æœ‰æƒé™æ‰§è¡Œæ­¤æ“ä½œã€‚&action=OtherErr"
 	Else
 		dispboard=True 
 	End If
-	If Not IsNumeric (request("userid")) then Response.redirect "showerr.asp?ErrCodes=<li>´íÎóµÄÓÃ»§²ÎÊı¡£&action=OtherErr"
+	If Not IsNumeric (request("userid")) then Response.redirect "showerr.asp?ErrCodes=<li>é”™è¯¯çš„ç”¨æˆ·å‚æ•°ã€‚&action=OtherErr"
 
 	Response.Write "<table style=""width:98%"" cellspacing=1 cellpadding=0 align=center class=tableborder1>"
-	Response.Write "<tr><th colspan=6 height=23 align=left>±à¼­"&request("username")&"ÂÛÌ³È¨ÏŞ£¨ºìÉ«±íÊ¾¸ÃÓÃ»§ÔÚ¸Ã°æÃæÓĞ×Ô¶¨ÒåÈ¨ÏŞ£©</th></tr>"
-	Response.Write "<tr><td colspan=6 class=tablebody1 height=25><a href=?action=userBoardPermission&boardid=0&userid="&request("userid")&">±à¼­¸ÃÓÃ»§ÔÚÆäËüÒ³ÃæµÄÈ¨ÏŞ</a>£¨Ö÷ÒªÕë¶Ô¶ÌĞÅ²¿·ÖÉèÖÃ£©</td></tr>"
+	Response.Write "<tr><th colspan=6 height=23 align=left>ç¼–è¾‘"&request("username")&"è®ºå›æƒé™ï¼ˆçº¢è‰²è¡¨ç¤ºè¯¥ç”¨æˆ·åœ¨è¯¥ç‰ˆé¢æœ‰è‡ªå®šä¹‰æƒé™ï¼‰</th></tr>"
+	Response.Write "<tr><td colspan=6 class=tablebody1 height=25><a href=?action=userBoardPermission&boardid=0&userid="&request("userid")&">ç¼–è¾‘è¯¥ç”¨æˆ·åœ¨å…¶å®ƒé¡µé¢çš„æƒé™</a>ï¼ˆä¸»è¦é’ˆå¯¹çŸ­ä¿¡éƒ¨åˆ†è®¾ç½®ï¼‰</td></tr>"
 	'----------------------boardinfo--------------------
-	Response.Write "<tr><td colspan=6 class=tablebody1><B>µã»÷ÂÛÌ³Ãû³Æ½øÈë±à¼­×´Ì¬</B><BR>"
+	Response.Write "<tr><td colspan=6 class=tablebody1><B>ç‚¹å‡»è®ºå›åç§°è¿›å…¥ç¼–è¾‘çŠ¶æ€</B><BR>"
 	Dim reBoard_Setting,FBoardMaster
 	FBoardMaster=False 
 	sql="select * from dv_board order by rootid,orders"
@@ -524,10 +524,10 @@ Sub boardlist()
 End Sub
 
 Sub GetUserPermission()
-	If Not AdminUserPer Then Response.redirect "showerr.asp?ErrCodes=<li>ÄúÃ»ÓĞÈ¨ÏŞÖ´ĞĞ´Ë²Ù×÷¡£&action=OtherErr"
+	If Not AdminUserPer Then Response.redirect "showerr.asp?ErrCodes=<li>æ‚¨æ²¡æœ‰æƒé™æ‰§è¡Œæ­¤æ“ä½œã€‚&action=OtherErr"
 	Dim usertitle
-	If Not IsNumeric(request("userid")) then Response.redirect "showerr.asp?ErrCodes=<li>´íÎóµÄÓÃ»§²ÎÊı¡£&action=OtherErr"
-	If Not IsNumeric(Dvbbs.boardid) then Response.redirect "showerr.asp?ErrCodes=<li>´íÎóµÄÓÃ»§²ÎÊı¡£&action=OtherErr"
+	If Not IsNumeric(request("userid")) then Response.redirect "showerr.asp?ErrCodes=<li>é”™è¯¯çš„ç”¨æˆ·å‚æ•°ã€‚&action=OtherErr"
+	If Not IsNumeric(Dvbbs.boardid) then Response.redirect "showerr.asp?ErrCodes=<li>é”™è¯¯çš„ç”¨æˆ·å‚æ•°ã€‚&action=OtherErr"
 	Dim UserGroupID,membername,boardtype
 	set rs=Dvbbs.Execute("select u.UserGroupID,ug.title,u.username from [dv_user] u inner join dv_UserGroups UG on u.userGroupID=ug.userGroupID where u.userid="&request("userid"))
 	UserGroupID=rs(0)
@@ -535,7 +535,7 @@ Sub GetUserPermission()
 	membername=rs(2)
 	set rs=Dvbbs.Execute("select boardtype from dv_board where boardid="&Dvbbs.boardid)
 	if rs.eof and rs.bof then
-		boardtype="ÂÛÌ³ÆäËûÒ³Ãæ"
+		boardtype="è®ºå›å…¶ä»–é¡µé¢"
 	else
 		boardtype=rs(0)
 	end if
@@ -563,7 +563,7 @@ Sub GetUserPermission()
 	if not foundgroup then
 		set Rs=Dvbbs.Execute("select * from dv_usergroups where usergroupid="&usergroupid)
 		If rs.eof And rs.bof Then
-			Response.Write "Î´ÕÒµ½¸ÃÓÃ»§×é£¡"
+			Response.Write "æœªæ‰¾åˆ°è¯¥ç”¨æˆ·ç»„ï¼"
 			response.end
 		Else
 			FoundGroup=true
@@ -580,13 +580,13 @@ Sub GetUserPermission()
 <input type="hidden" name="username" value="<%=membername%>"/>
 <input type="hidden" name="name" value="<%=membername%>"/>
 <table cellpadding="3" cellspacing="1" align="center" class="tableborder1">
-<tr><th colspan="6" height="23" align="left">±à¼­ <%=membername%> ÔÚ <%=boardtype%> È¨ÏŞ</th></tr>
-<tr><td colspan="6" height="25" class="tablebody1">×¢Òâ£º¸ÃÓÃ»§ÊôÓÚ <B><%=usertitle%></B> ÓÃ»§×éÖĞ£¬Èç¹ûÄúÉèÖÃÁËËûµÄ×Ô¶¨ÒåÈ¨ÏŞ£¬Ôò¸ÃÓÃ»§È¨ÏŞ½«ÒÔ×Ô¶¨ÒåÈ¨ÏŞÎªÖ÷</td></tr>
+<tr><th colspan="6" height="23" align="left">ç¼–è¾‘ <%=membername%> åœ¨ <%=boardtype%> æƒé™</th></tr>
+<tr><td colspan="6" height="25" class="tablebody1">æ³¨æ„ï¼šè¯¥ç”¨æˆ·å±äº <B><%=usertitle%></B> ç”¨æˆ·ç»„ä¸­ï¼Œå¦‚æœæ‚¨è®¾ç½®äº†ä»–çš„è‡ªå®šä¹‰æƒé™ï¼Œåˆ™è¯¥ç”¨æˆ·æƒé™å°†ä»¥è‡ªå®šä¹‰æƒé™ä¸ºä¸»</td></tr>
 <tr> 
-<td height="23" colspan="4" class="tablebody1"><input type="radio" name="isdefault" value="1" <%if FoundGroupPermission then%>checked<%end if%>><B>Ê¹ÓÃÓÃ»§×éÄ¬ÈÏÖµ</B> (×¢Òâ: Õâ½«É¾³ıÈÎºÎÖ®Ç°Ëù×öµÄ×Ô¶¨ÒåÉèÖÃ)</td>
+<td height="23" colspan="4" class="tablebody1"><input type="radio" name="isdefault" value="1" <%if FoundGroupPermission then%>checked<%end if%>><B>ä½¿ç”¨ç”¨æˆ·ç»„é»˜è®¤å€¼</B> (æ³¨æ„: è¿™å°†åˆ é™¤ä»»ä½•ä¹‹å‰æ‰€åšçš„è‡ªå®šä¹‰è®¾ç½®)</td>
 </tr>
 <tr> 
-<td height="23" colspan="4"  class="tablebody1"><input type="radio" name="isdefault" value="0" <%if FoundUserPermission then%>checked="true"<%end if%>><B>Ê¹ÓÃ×Ô¶¨ÒåÉèÖÃ</B> </td>
+<td height="23" colspan="4"  class="tablebody1"><input type="radio" name="isdefault" value="0" <%if FoundUserPermission then%>checked="true"<%end if%>><B>ä½¿ç”¨è‡ªå®šä¹‰è®¾ç½®</B> </td>
 </tr>
 <%
 GroupPermission(reGroupSetting)
@@ -598,11 +598,11 @@ GroupPermission(reGroupSetting)
 End Sub
 
 Sub SaveUserPermission()
-	if not AdminUserPer then Response.redirect "showerr.asp?ErrCodes=<li>ÄúÃ»ÓĞÈ¨ÏŞÖ´ĞĞ´Ë²Ù×÷¡£&action=OtherErr"
-	if not isnumeric(request("userid")) then Response.redirect "showerr.asp?ErrCodes=<li>´íÎóµÄÓÃ»§²ÎÊı¡£&action=OtherErr"
-	if not isnumeric(Dvbbs.boardid) then Response.redirect "showerr.asp?ErrCodes=<li>´íÎóµÄ°æÃæ²ÎÊı¡£&action=OtherErr"
+	if not AdminUserPer then Response.redirect "showerr.asp?ErrCodes=<li>æ‚¨æ²¡æœ‰æƒé™æ‰§è¡Œæ­¤æ“ä½œã€‚&action=OtherErr"
+	if not isnumeric(request("userid")) then Response.redirect "showerr.asp?ErrCodes=<li>é”™è¯¯çš„ç”¨æˆ·å‚æ•°ã€‚&action=OtherErr"
+	if not isnumeric(Dvbbs.boardid) then Response.redirect "showerr.asp?ErrCodes=<li>é”™è¯¯çš„ç‰ˆé¢å‚æ•°ã€‚&action=OtherErr"
 	Dim trs
-	'×îºóÒ»´Î½øĞĞÑéÖ¤£¬Ö÷ÒªÎªÑéÖ¤°æÖ÷ÊÇ·ñËù²Ù×÷µÄ°æÃæ°æÖ÷
+	'æœ€åä¸€æ¬¡è¿›è¡ŒéªŒè¯ï¼Œä¸»è¦ä¸ºéªŒè¯ç‰ˆä¸»æ˜¯å¦æ‰€æ“ä½œçš„ç‰ˆé¢ç‰ˆä¸»
 	Dim reboard_setting,fboardmaster
 	fboardmaster=false
 
@@ -627,10 +627,10 @@ Sub SaveUserPermission()
 				loop
 			end if
 			if not fboardmaster then
-				if instr("|"&rs(0)&"|","|"&membername&"|")=0 then Dvbbs.AddErrMsg "Äú²»ÊÇ¸Ã°æÃæµÄ°æÖ÷£¬ÎŞÈ¨½øĞĞÓÃ»§È¨ÏŞ²Ù×÷¡£"
+				if instr("|"&rs(0)&"|","|"&membername&"|")=0 then Dvbbs.AddErrMsg "æ‚¨ä¸æ˜¯è¯¥ç‰ˆé¢çš„ç‰ˆä¸»ï¼Œæ— æƒè¿›è¡Œç”¨æˆ·æƒé™æ“ä½œã€‚"
 			end if
 		Else
-			Response.redirect "showerr.asp?ErrCodes=<li>Äú²»ÊÇ¸Ã°æÃæµÄ°æÖ÷£¬ÎŞÈ¨½øĞĞÓÃ»§È¨ÏŞ²Ù×÷¡£&action=OtherErr"
+			Response.redirect "showerr.asp?ErrCodes=<li>æ‚¨ä¸æ˜¯è¯¥ç‰ˆé¢çš„ç‰ˆä¸»ï¼Œæ— æƒè¿›è¡Œç”¨æˆ·æƒé™æ“ä½œã€‚&action=OtherErr"
 		End If
 	End If
 
@@ -656,14 +656,14 @@ Sub SaveUserPermission()
 		IsGroupSetting=IsGroupSetting&","& IsGroupSetting1
 	End If
 	Dvbbs.Execute("update dv_Board set IsGroupSetting='"&IsGroupSetting&"' Where BoardID="&Dvbbs.boardid)
-	sql="insert into Dv_log (l_touser,l_username,l_content,l_ip,l_type) values ('"&username&"','"&Dvbbs.membername&"','ÓÃ»§²Ù×÷£ºÉèÖÃÈ¨ÏŞ¡£','"&ip&"',5)"
+	sql="insert into Dv_log (l_touser,l_username,l_content,l_ip,l_type) values ('"&username&"','"&Dvbbs.membername&"','ç”¨æˆ·æ“ä½œï¼šè®¾ç½®æƒé™ã€‚','"&ip&"',5)"
 	Dvbbs.Execute(SQL)
-	Dvbbs.Dvbbs_suc("<li>ÉèÖÃÓÃ»§È¨ÏŞ³É¹¦¡£ÄúµÄ²Ù×÷ÒÑ¾­¼ÇÂ¼")
+	Dvbbs.Dvbbs_suc("<li>è®¾ç½®ç”¨æˆ·æƒé™æˆåŠŸã€‚æ‚¨çš„æ“ä½œå·²ç»è®°å½•")
 	Dvbbs.ReloadBoardCache Dvbbs.boardid
 End Sub
 
-'¸üĞÂÖ¸¶¨ÂÛÌ³ĞÅÏ¢£¬È¡Ö÷ÌâºÍ×îºó»Ø¸´×÷Õß¼°Ê±¼ä
-'flag=1Îª¸ù¾İÖ÷ÌâIDÅĞ¶Ï£¬2Îª¸ù¾İ»Ø¸´IDÅĞ¶ÏÊÇ·ñ°æÃæ×îºó»Ø¸´
+'æ›´æ–°æŒ‡å®šè®ºå›ä¿¡æ¯ï¼Œå–ä¸»é¢˜å’Œæœ€åå›å¤ä½œè€…åŠæ—¶é—´
+'flag=1ä¸ºæ ¹æ®ä¸»é¢˜IDåˆ¤æ–­ï¼Œ2ä¸ºæ ¹æ®å›å¤IDåˆ¤æ–­æ˜¯å¦ç‰ˆé¢æœ€åå›å¤
 Function LastCount(boardid,topicid,ireplyid,flag)
 	LastCount=false
 	Dim LastTopic,LastRootid,LastPostTime,LastPostUser
@@ -691,10 +691,10 @@ Function LastCount(boardid,topicid,ireplyid,flag)
 			LastPostUserid=trs(4)
 			Lastid=trs(5)
 		else
-			LastTopic="ÎŞ"
+			LastTopic="æ— "
 			LastRootid=0
 			LastPostTime=now()
-			LastPostUser="ÎŞ"
+			LastPostUser="æ— "
 			LastPostUserid=0
 			Lastid=0
 		end if
@@ -717,12 +717,12 @@ Function LastCount(boardid,topicid,ireplyid,flag)
 	set trs=Nothing
 End function
 
-'É¾³ı»Ø¸´¹ı³ÌÖĞÅĞ¶Ï¸Ã»Ø¸´ÊÇ·ñ×îºó·¢ÑÔ£¬Èç¹ûÊÇÔò¸üĞÂÖ÷ÌâLastPostÊı¾İ²¢»Ø¸´-1
-'Èë¿Ú£º
-'TopicID--Ö÷ÌâID
-'iReplyID--»Ø¸´ID
-'isUpdate--ÊÇ·ñ¸üĞÂÊ±¼ä
-'³ö¿Ú£ºisEndReply=true/false
+'åˆ é™¤å›å¤è¿‡ç¨‹ä¸­åˆ¤æ–­è¯¥å›å¤æ˜¯å¦æœ€åå‘è¨€ï¼Œå¦‚æœæ˜¯åˆ™æ›´æ–°ä¸»é¢˜LastPostæ•°æ®å¹¶å›å¤-1
+'å…¥å£ï¼š
+'TopicID--ä¸»é¢˜ID
+'iReplyID--å›å¤ID
+'isUpdate--æ˜¯å¦æ›´æ–°æ—¶é—´
+'å‡ºå£ï¼šisEndReply=true/false
 Function IsEndReply(TopicID,iReplyID,isUpdate)
 	isEndReply=false
 	Dim trs
@@ -750,10 +750,10 @@ Function IsEndReply(TopicID,iReplyID,isUpdate)
 			LastID=trs(6)
 			BoardID=trs(7)
 		else
-			LastTopic="ÎŞ"
+			LastTopic="æ— "
 			LastRootid=0
 			LastPostTime=now()
-			LastPostUser="ÎŞ"
+			LastPostUser="æ— "
 			LastPostUserID=0
 			LastID=0
 			Boardid=0

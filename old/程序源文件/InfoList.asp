@@ -170,7 +170,7 @@ Sub Show_Toplist()
 			TempStr2 = Replace(TempStr2,"{$username}",Dvbbs.HtmlEncode(SQL(0,i)))
 			TempStr2 = Replace(TempStr2,"{$adddate}",SQL(5,i)&"")
 			TempStr2 = Replace(TempStr2,"{$userclass}",SQL(2,i)&"")
-			REM ĞŞÕıÎÄÕÂÊıNULLÖµ³ö´íÎÊÌâ 2004-5-21 Dv.Yz
+			REM ä¿®æ­£æ–‡ç« æ•°NULLå€¼å‡ºé”™é—®é¢˜ 2004-5-21 Dv.Yz
 			TempStr2 = Replace(TempStr2,"{$article}",SQL(4,i)&"")
 			TempStr2 = Replace(TempStr2,"{$wealth}",SQL(6,i))
 			
@@ -211,19 +211,19 @@ Sub Show_Toplist()
 		TempStr = Replace(TempStr,"{$homepagepic}",template.pic(2))
 		TempStr = Replace(TempStr,"{$msgpic}",template.pic(3))
 
-		'¹ÜÀíÍÅ¶Ó
+		'ç®¡ç†å›¢é˜Ÿ
 		If Dvbbs.Forum_Setting(18)<>"0" Then
 			TempStr = Replace(TempStr,"{$myselect3}",TopTempArray(3))
 		Else
 			TempStr = Replace(TempStr,"{$myselect3}","")
 		End If
-		'ÓÃ»§ÅÅĞĞ
+		'ç”¨æˆ·æ’è¡Œ
 		If Dvbbs.Forum_Setting(31)<>"0" Then
 			TempStr = Replace(TempStr,"{$myselect1}",TopTempArray(1))
 		Else
 			TempStr = Replace(TempStr,"{$myselect1}","")
 		End If
-		'ËùÓĞÓÃ»§
+		'æ‰€æœ‰ç”¨æˆ·
 		If Dvbbs.Forum_Setting(27)<>"0" Then
 			TempStr = Replace(TempStr,"{$myselect2}",TopTempArray(2))
 		Else
@@ -251,7 +251,7 @@ Sub Show_Paper()
 		Dvbbs.Head_var 1,Application(Dvbbs.CacheName&"_boardlist").documentElement.selectSingleNode("board[@boardid='"&Dvbbs.BoardID&"']/@depth").text,"",""
 	End If
 
-	If Not(Dvbbs.boardmaster or Dvbbs.master or Dvbbs.superboardmaster) Then Response.redirect "showerr.asp?ErrCodes=<li>Ö»ÓĞ¹ÜÀíÔ±²ÅÄÜµÇÂ¼¡£&action=OtherErr"
+	If Not(Dvbbs.boardmaster or Dvbbs.master or Dvbbs.superboardmaster) Then Response.redirect "showerr.asp?ErrCodes=<li>åªæœ‰ç®¡ç†å‘˜æ‰èƒ½ç™»å½•ã€‚&action=OtherErr"
 	'If Dvbbs.Forum_Setting(56)=0 Then Dvbbs.AddErrCode(52)
 	Dvbbs.ShowErr()
 	If request("action")="delpaper" Then
@@ -370,7 +370,7 @@ Sub boardpaper()
 	%>
 	<SCRIPT LANGUAGE="JavaScript">
 	<!--
-		//¸´Ñ¡±íµ¥È«Ñ¡ÊÂ¼ş form£º±íµ¥Ãû
+		//å¤é€‰è¡¨å•å…¨é€‰äº‹ä»¶ formï¼šè¡¨å•å
 	function CheckAll(form)  {
 	for (var i=0;i<form.elements.length;i++)
 	{
@@ -428,7 +428,7 @@ Sub batch()
 	Dvbbs.Execute("delete from dv_smallpaper where s_id in ("&sid&")")
 	LoadBoardNews_Paper()
 	Dvbbs.Dvbbs_Suc(template.Strings(2))
-	Dvbbs.Execute("Insert Into Dv_Log (l_AnnounceID,l_BoardID,l_touser,l_username,l_content,l_ip,l_type) values (0,"&Dvbbs.BoardID&",'Ğ¡×Ö±¨','" & Dvbbs.MemberName & "','ÔÚ "&Dvbbs.boardtype&"É¾³ıĞ¡×Ö±¨','" & Dvbbs.userTrueIP & "',3)")
+	Dvbbs.Execute("Insert Into Dv_Log (l_AnnounceID,l_BoardID,l_touser,l_username,l_content,l_ip,l_type) values (0,"&Dvbbs.BoardID&",'å°å­—æŠ¥','" & Dvbbs.MemberName & "','åœ¨ "&Dvbbs.boardtype&"åˆ é™¤å°å­—æŠ¥','" & Dvbbs.userTrueIP & "',3)")
 End Sub
 
 Sub boardeven()
@@ -481,7 +481,7 @@ Sub boardeven()
 			If isshow or Dvbbs.MemberName=rs("l_username") Then
 				TempStr3 = Replace(TempStr3,"{$postuser}","<a href=dispuser.asp?name="&TempArray(2)&" target=_blank>"&TempArray(2)&"</a>")
 			Else
-				TempStr3 = Replace(TempStr3,"{$postuser}","±£ÃÜ")
+				TempStr3 = Replace(TempStr3,"{$postuser}","ä¿å¯†")
 			End If
 			TempStr1 = TempStr1 & TempStr3
 			page_count = page_count + 1
@@ -597,7 +597,7 @@ Sub savepaper()
 		Response.redirect "showerr.asp?ErrCodes=<li>"&template.Strings(24)&"&action=OtherErr"
 	End If
 	Dvbbs.ShowErr()
-	'¿ÍÈË²»ÔÊĞí·¢£¬ÑéÖ¤ÓÃ»§
+	'å®¢äººä¸å…è®¸å‘ï¼ŒéªŒè¯ç”¨æˆ·
 	If cansmallpaper Then
 		If Not ChkUserLogin(password,username) Then
 			Dvbbs.AddErrCode(12)
@@ -630,18 +630,18 @@ Sub savepaper()
 		content&"')"
 		'response.write sql
 	Dvbbs.execute(sql)
-	'·¢±íĞ¡×Ö±¨³É¹¦ºóRELOAD»º´æ
+	'å‘è¡¨å°å­—æŠ¥æˆåŠŸåRELOADç¼“å­˜
 	LoadBoardNews_Paper()
 	Dvbbs.head_var 1,Application(Dvbbs.CacheName&"_boardlist").documentElement.selectSingleNode("board[@boardid='"&Dvbbs.BoardID&"']/@depth").text,"",""
 	Dvbbs.Dvbbs_suc("<li>"&Template.Strings(27))
 End Sub
 
-'¼ì²éÓÃ»§Éí·İ
+'æ£€æŸ¥ç”¨æˆ·èº«ä»½
 Public Function ChkUserLogin(password,username)
 	Dim SQL,Rs
 	ChkUserLogin=False
 	If PassWord<>Dvbbs.MemberWord Then PassWord=md5(PassWord,16)
-	'Ğ£ÑéÓÃ»§ÃûºÍÃÜÂëÊÇ·ñºÏ·¨
+	'æ ¡éªŒç”¨æˆ·åå’Œå¯†ç æ˜¯å¦åˆæ³•
 	If Not IstrueName(UserName) Then Dvbbs.AddErrCode(18)
 	If Len(PassWord)<>16 AND Len(PassWord)<>32 Then Dvbbs.AddErrCode(18)
 	If UserName=Dvbbs.MemberName Then PassWord=Dvbbs.MemberWord
@@ -660,7 +660,7 @@ Public Function ChkUserLogin(password,username)
 		Exit Function 
 	End If:Set Rs = Nothing 
 End Function
-'Í¨ÓÃº¯Êı
+'é€šç”¨å‡½æ•°
 Function IstrueName(uName)
 	IstrueName=False
 	If InStr(uName,"=")>0 Then Exit Function
@@ -673,9 +673,4 @@ Function IstrueName(uName)
 	If InStr(uName,"'")>0 Then Exit Function 
 	If InStr(uName,Chr(34))>0 Then Exit Function 
 	If InStr(uName,chr(9))>0 Then Exit Function 
-	If InStr(uName,"£ ")>0 Then Exit Function 
-	If InStr(uName,"$")>0 Then Exit Function
-	IstrueName=True 	
-End Function
-
-%>
+	If InStr(uName,"

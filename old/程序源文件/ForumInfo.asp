@@ -11,7 +11,7 @@ Sub CreatForumXml()
 	Set XmlDom = Dvbbs.CreateXmlDoc("msxml2.FreeThreadedDOMDocument")
 	XmlDom.appendChild(XmlDom.createElement("Dvbbs"))
 	Set forum = XmlDom.documentElement.appendChild(XmlDom.createNode(1,"forum",""))
-	Rem ---------------------- ½Úµã ----------------------
+	Rem ---------------------- èŠ‚ç‚¹ ----------------------
 	forum.setAttribute "Type",Dvbbs.forum_info(0)
 	forum.setAttribute "URL",Dvbbs.forum_info(1)
 	forum.setAttribute "Online",MyBoardOnline.Forum_Online
@@ -22,11 +22,11 @@ Sub CreatForumXml()
 	forum.setAttribute "Post",Dvbbs.CacheData(8,0)
 	forum.setAttribute "TodayPost",Dvbbs.CacheData(9,0)
 	forum.setAttribute "YesterdayPost",Dvbbs.CacheData(11,0)
-	Rem ---------------------- ½Úµã ----------------------
+	Rem ---------------------- èŠ‚ç‚¹ ----------------------
 
 	Response.Clear
-	Response.CharSet="gb2312"  'Êı¾İ¼¯
-	Response.ContentType="text/xml"  'Êı¾İÁ÷¸ñÊ½¶¨Òå
+	Response.CharSet="gb2312"  'æ•°æ®é›†
+	Response.ContentType="text/xml"  'æ•°æ®æµæ ¼å¼å®šä¹‰
 	Response.Write "<?xml version=""1.0"" encoding=""gb2312""?>"&vbNewLine
 	Response.Write XmlDom.xml
 	Response.End

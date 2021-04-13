@@ -86,7 +86,7 @@ SQL=" Select UserID,UserName,UserPassword,UserEmail,UserPost,UserTopic,UserSign,
 		SetUserTrue=0
 	End If
 
-	'Ä§·¨±íÇé²¿·Ö
+	'é­”æ³•è¡¨æƒ…éƒ¨åˆ†
 	iMagicFace = Split(UserInfo(8),"|")
 	If Ubound(iMagicFace) = 1 Then
 		UserInfo(8) = iMagicFace(1)
@@ -110,7 +110,7 @@ SQL=" Select UserID,UserName,UserPassword,UserEmail,UserPost,UserTopic,UserSign,
 	Response.Write TempPart4
 	Response.Write TempPart0
 
-'»ù±¾×ÊÁÏ²¿·Ö
+'åŸºæœ¬èµ„æ–™éƒ¨åˆ†
 If SetUserInfo=1 or ShowUserid=Dvbbs.userid Then
 	Dim UserIM,Sex,UserPhoto	'UserIM=========HomePage,UserOicq,UserIcq,UserMsn,UserAim,UserYahoo,UserUC
 	UserIM=DVbbs.htmlencode(UserInfo(11))
@@ -122,9 +122,9 @@ If SetUserInfo=1 or ShowUserid=Dvbbs.userid Then
 		Sex=split(template.Strings(5),",")(0)
 	End If
 	If UserInfo(27)<>"" Then UserPhoto="<img src="""&Dv_FilterJS(UserInfo(27)) &""" >"
-	Rem ÀÏÃÔ¼ÓÈë¹ÜÀíÔ±ºÍ³¬°æ¿ÉÒÔ¿´ÓÃ»§Ç©ÃûÄÚÈİ¡£2006-1-3
+	Rem è€è¿·åŠ å…¥ç®¡ç†å‘˜å’Œè¶…ç‰ˆå¯ä»¥çœ‹ç”¨æˆ·ç­¾åå†…å®¹ã€‚2006-1-3
 	If Dvbbs.Master Or Dvbbs.Superboardmaster Then
-		UserPhoto=UserPhoto&"<br /><b>Ç© Ãû ÄÚ Èİ</b><br />"& Server.htmlencode(userinfo(6))
+		UserPhoto=UserPhoto&"<br /><b>ç­¾ å å†… å®¹</b><br />"& Server.htmlencode(userinfo(6))
 	End If 
 	TempPart1=Replace(TempPart1,"{$UserBirthday}",UserInfo(23))
 	TempPart1=Replace(TempPart1,"{$UserName}",UserName)
@@ -144,7 +144,7 @@ If SetUserInfo=1 or ShowUserid=Dvbbs.userid Then
 	Response.Write TempPart1
 End If
 
-'ÏêÏ¸×ÊÁÏ²¿·Ö
+'è¯¦ç»†èµ„æ–™éƒ¨åˆ†
 If SetUserTrue=1 or ShowUserid=Dvbbs.userid Then
 	Dim UserTrueInFo
 	UserTrueInFo=DVbbs.htmlencode(UserInfo(32))
@@ -168,9 +168,9 @@ If SetUserTrue=1 or ShowUserid=Dvbbs.userid Then
 	Response.Write TempPart2
 End If
 
-'ÂÛÌ³ÊôĞÔ²¿·Ö
+'è®ºå›å±æ€§éƒ¨åˆ†
 TempPart3=Replace(TempPart3,"{$color}",Dvbbs.mainsetting(1))
-REM ĞŞÕı·¢ÌûÊıÎª¿ÕÖµÊ±ÏÔÊ¾³ö´í 2004-5-22 Dv.Yz
+REM ä¿®æ­£å‘å¸–æ•°ä¸ºç©ºå€¼æ—¶æ˜¾ç¤ºå‡ºé”™ 2004-5-22 Dv.Yz
 If Isnull(UserInfo(4)) Or Not Isnumeric(UserInfo(4)) Then UserInfo(4) = 0
 TempPart3=Replace(TempPart3,"{$UserPost}",UserInfo(4))
 TempPart3=Replace(TempPart3,"{$UserJoinDate}",UserInfo(12))
@@ -195,7 +195,7 @@ TempPart3=Replace(TempPart3,"{$UserAssets}",UserInfo(19))
 TempPart3=Replace(TempPart3,"{$UserAdmin}",GetAdminBoard(UserInfo(34),UserName))
 Response.Write TempPart3
 
-'¿ì½İ¹ÜÀíÑ¡Ïî²¿·Ö
+'å¿«æ·ç®¡ç†é€‰é¡¹éƒ¨åˆ†
 If Dvbbs.Superboardmaster or Dvbbs.Master or (Dvbbs.GroupSetting(43)=1 and Dvbbs.GroupSetting(28)=1 and Dvbbs.GroupSetting(29)=1 and Dvbbs.GroupSetting(30)=1) Then
 	TempPart5=Replace(TempPart5,"{$UserName}",UserName)
 	TempPart5=Replace(TempPart5,"{$UserID}",ShowUserid)
@@ -205,13 +205,13 @@ If Dvbbs.Superboardmaster or Dvbbs.Master or (Dvbbs.GroupSetting(43)=1 and Dvbbs
 End IF
 End Sub
 
-'(ÓÃ»§×é£É£Ä£¬ÓÃ»§Ãû)
+'(ç”¨æˆ·ç»„ï¼©ï¼¤ï¼Œç”¨æˆ·å)
 Function GetAdminBoard(UserGroupID,username)
 	Dim Srs,BoardMaster,i,ii,MyBoardMaster
 	ii=0
-	GetAdminBoard="<font color=gray>ÎŞÖ°Îñ</font>"
+	GetAdminBoard="<font color=gray>æ— èŒåŠ¡</font>"
 	If UserGroupID=1 Then
-		GetAdminBoard="ÂÛÌ³¹ÜÀíÔ±"
+		GetAdminBoard="è®ºå›ç®¡ç†å‘˜"
 	ElseIf UserGroupID<=3 Then
 		GetAdminBoard=""
 		Set Srs=Dvbbs.Execute("Select Boardmaster,Boardid,Boardtype From Dv_Board Where Boardmaster<>'' Order By Rootid,Orders")
@@ -222,29 +222,29 @@ Function GetAdminBoard(UserGroupID,username)
 			MyBoardMaster="|" & Trim(BoardMaster(0,i)) & "|"
 			If instr(MyBoardMaster,"|" & username & "|")>0 Then
 			ii=ii+1
-				GetAdminBoard=GetAdminBoard&(ii)&": <a href=list.asp?boardid="&BoardMaster(1,i)&">"&BoardMaster(2,i)&"</a>  °æÖ÷<br>"
+				GetAdminBoard=GetAdminBoard&(ii)&": <a href=list.asp?boardid="&BoardMaster(1,i)&">"&BoardMaster(2,i)&"</a>  ç‰ˆä¸»<br>"
 			End If
 			MyBoardMaster=""
 		Next
 		End if
-		If GetAdminBoard="" Then GetAdminBoard="<font color=gray>ÎŞÖ°Îñ</font>"
+		If GetAdminBoard="" Then GetAdminBoard="<font color=gray>æ— èŒåŠ¡</font>"
 	End If
 End Function
 
-'ÓÃ»§×´Ì¬ÑéÖ¤
+'ç”¨æˆ·çŠ¶æ€éªŒè¯
 Function LockUser(str)
 If not IsNumeric(str) Then Exit Function
 	Select case Cint(str)
 	case 1 
-		LockUser="Ëø¶¨"
+		LockUser="é”å®š"
 	case 2
-		LockUser="ÆÁ±Î"
+		LockUser="å±è”½"
 	case else
-		LockUser="Õı³£"
+		LockUser="æ­£å¸¸"
 	End Select
 End Function
 
-'Êı¾İÌû×ÓÁĞ±í
+'æ•°æ®å¸–å­åˆ—è¡¨
 Function UseTable()
 	DIM RS,SQL,i
 	SET RS=Dvbbs.Execute("Select TableName,TableType From Dv_TableList")
@@ -259,7 +259,7 @@ Function UseTable()
 	End If
 End Function
 
-'ÏÔÊ¾´íÎóĞÅÏ¢
+'æ˜¾ç¤ºé”™è¯¯ä¿¡æ¯
 Sub Showerr()
 Dim Show_Errmsg
 	If ErrCodes<>"" Then 
@@ -272,8 +272,8 @@ Dim Show_Errmsg
 	End If
 	Response.write Show_Errmsg
 End Sub
-'ÈÕÆÚ×ª»»ĞÇ×ùº¯Êı
-'°×Ñò×ù,½ğÅ£×ù,Ë«×Ó×ù,¾ŞĞ·×ù,Ê¨×Ó×ù,´¦Å®×ù,Ìì³Ó×ù,ÌìĞ«×ù,ÉäÊÖ×ù,Ä§ôÉ×ù,Ë®Æ¿×ù,Ë«Óã×ù
+'æ—¥æœŸè½¬æ¢æ˜Ÿåº§å‡½æ•°
+'ç™½ç¾Šåº§,é‡‘ç‰›åº§,åŒå­åº§,å·¨èŸ¹åº§,ç‹®å­åº§,å¤„å¥³åº§,å¤©ç§¤åº§,å¤©èåº§,å°„æ‰‹åº§,é­”ç¾¯åº§,æ°´ç“¶åº§,åŒé±¼åº§
 function astro(birth)
 if birth="" or not isdate(birth) Then birth=now()
 Dim birthday,birthmonth

@@ -11,16 +11,16 @@ Class Cls_DvBokeIndex
 	Private Cache_File,NodeName,TempXmlDoc,NeedUpdate
 
 	Private Sub Class_Initialize()
-		MustUpdate = 0	'ÉèÖÃÇ¿ÖÆ¸üĞÂ
-		UpTime = 10		'¸üĞÂÊ±¼ä£¬ÒÔ·ÖÖÓÎªµ¥Î»
-		LastTime = Now()	'Ä¬ÈÏ×îºó¸üĞÂÊ±¼ä
+		MustUpdate = 0	'è®¾ç½®å¼ºåˆ¶æ›´æ–°
+		UpTime = 10		'æ›´æ–°æ—¶é—´ï¼Œä»¥åˆ†é’Ÿä¸ºå•ä½
+		LastTime = Now()	'é»˜è®¤æœ€åæ›´æ–°æ—¶é—´
 		NeedUpdate = False
 		Cache_File = Server.MapPath(DvBoke.Cache_Path &"Sysindex.config")
 		Set XmlDoc=Dvbbs.CreateXmlDoc("Msxml2.FreeThreadedDOMDocument")
 		If Not XmlDoc.Load(Cache_File) Then
 			XmlDoc.LoadXml("<?xml version=""1.0"" encoding=""Gb2312""?><index/>")
 			MustUpdate = 1
-			'Response.Write "Çë¼ì²ìÏµÍ³Êı¾İSysindex.configÎÄ¼şÊÇ·ñ´æÔÚ£¡"
+			'Response.Write "è¯·æ£€å¯Ÿç³»ç»Ÿæ•°æ®Sysindex.configæ–‡ä»¶æ˜¯å¦å­˜åœ¨ï¼"
 			'Exit Sub
 		End If
 	End Sub
@@ -63,7 +63,7 @@ Class Cls_DvBokeIndex
 		End If
 	End Sub
 
-	'ÖØĞÂ¼ÓÔØÊı¾İ
+	'é‡æ–°åŠ è½½æ•°æ®
 	Public Sub ReLoadData()
 		If Not IsObject(TempXmlDoc) Then
 			Set TempXmlDoc = Dvbbs.CreateXmlDoc("Msxml2.FreeThreadedDOMDocument")

@@ -19,7 +19,7 @@ End If
 
 Select Case iArchiveLink
 	Case "show_user"
-		DvBoke.Stats = "²©¿ÍÓÃ»§Ë÷Òı"
+		DvBoke.Stats = "åšå®¢ç”¨æˆ·ç´¢å¼•"
 		DvBoke.Nav(1)
 		Page_SysCatMain()
 	Case "show_topic"
@@ -46,27 +46,27 @@ Select Case iArchiveLink
 		End If
 		Select Case iArchiveLink
 		Case "1"
-			DvBoke.Stats = "ÎÄÕÂ"
+			DvBoke.Stats = "æ–‡ç« "
 			Descriptions = DvBoke.Stats
 		Case "2"
-			DvBoke.Stats = "ÊÕ²Ø"
+			DvBoke.Stats = "æ”¶è—"
 			Descriptions = DvBoke.Stats
 		Case "3"
-			DvBoke.Stats = "ÊéÇ©"
+			DvBoke.Stats = "ä¹¦ç­¾"
 			Descriptions = DvBoke.Stats
 		Case "4"
-			DvBoke.Stats = "½»Ò×"
+			DvBoke.Stats = "äº¤æ˜“"
 			Descriptions = DvBoke.Stats
 		Case "5"
-			DvBoke.Stats = "Ïà²á"
+			DvBoke.Stats = "ç›¸å†Œ"
 			Descriptions = DvBoke.Stats
 		Case Else
-			DvBoke.Stats = "²©¿Í»°Ìâ·ÖÀà"
+			DvBoke.Stats = "åšå®¢è¯é¢˜åˆ†ç±»"
 		End Select
 		DvBoke.Nav(1)
 		Page_SysTopicMain()
 	Case Else
-		DvBoke.Stats = "Ê×Ò³"
+		DvBoke.Stats = "é¦–é¡µ"
 		DvBoke.Nav(1)
 		Page_IndexMain()
 End Select
@@ -77,7 +77,7 @@ DvBoke.Footer
 Dvbbs.PageEnd()
 
 '-----------------------------------------------------------
-'Ê×Ò³Ö÷ÌåÒ³Ãæ
+'é¦–é¡µä¸»ä½“é¡µé¢
 '-----------------------------------------------------------
 Sub Page_IndexMain()
 	Dim MainHtml,Node,Tempstr
@@ -194,7 +194,7 @@ Sub Page_SysTopicMain()
 	Response.Write MainHtml
 End Sub
 
-'Êı¾İÄ£°å¼ÓÔØ
+'æ•°æ®æ¨¡æ¿åŠ è½½
 Function Sys_Part(PagHtml)
 	Dim Str1,i
 	For i=5 To 18
@@ -208,22 +208,22 @@ Function Sys_Part(PagHtml)
 	Sys_Part = PagHtml
 End Function
 
-'µ÷ÓÃÊı¾İ×ª»»
+'è°ƒç”¨æ•°æ®è½¬æ¢
 Function Sys_Translate(PagHtml)
-	'ĞÂ¼ÓÈëÅÅĞĞ
+	'æ–°åŠ å…¥æ’è¡Œ
 	If Instr(PagHtml,"{$Page_NewJoinBoker}") Then
 		PagHtml = Replace(PagHtml,"{$Page_NewJoinBoker}",Page_NewJoinBoker())
 	End If
-	'ÈÈÃÅÅÅĞĞ
+	'çƒ­é—¨æ’è¡Œ
 	If Instr(PagHtml,"{$Page_HotBoker}") Then
 		PagHtml = Replace(PagHtml,"{$Page_HotBoker}",Page_HotBoker())
 	End If
 
-	'×îĞÂÎÄÕÂ
+	'æœ€æ–°æ–‡ç« 
 	If Instr(PagHtml,"{$Page_NewTopicList}") Then
 		PagHtml = Replace(PagHtml,"{$Page_NewTopicList}",Page_NewTopicList())
 	End If
-	'×îĞÂÆÀÂÛ
+	'æœ€æ–°è¯„è®º
 	If Instr(PagHtml,"{$Page_NewPostList}") Then
 		PagHtml = Replace(PagHtml,"{$Page_NewPostList}",Page_NewPostList())
 	End If
@@ -261,9 +261,9 @@ End Function
 
 
 '-----------------------------------------------------------
-'µ÷ÓÃÊı¾İ×ª»»
+'è°ƒç”¨æ•°æ®è½¬æ¢
 '-----------------------------------------------------------
-'ĞÂ¼ÓÈëÓÃ»§
+'æ–°åŠ å…¥ç”¨æˆ·
 Function Page_NewJoinBoker()
 	Dim Nodes,ChildNode
 	Dim TempHtml,TempStr,i
@@ -284,7 +284,7 @@ Function Page_NewJoinBoker()
 	Page_NewJoinBoker = TempStr
 End Function
 
-'ÈÈÃÅÓÃ»§£¬ÒÔÆÀÂÛÅÅĞò
+'çƒ­é—¨ç”¨æˆ·ï¼Œä»¥è¯„è®ºæ’åº
 Function Page_HotBoker()
 	Dim Nodes,ChildNode
 	Dim TempHtml,TempStr,i
@@ -304,7 +304,7 @@ Function Page_HotBoker()
 	Page_HotBoker = TempStr
 End Function
 
-'¸üĞÂÓÃ»§£¬ÒÔ¸üĞÂÊ±¼äÅÅĞò
+'æ›´æ–°ç”¨æˆ·ï¼Œä»¥æ›´æ–°æ—¶é—´æ’åº
 Function Page_UpBoker()
 	Dim Nodes,ChildNode
 	Dim TempHtml,TempStr
@@ -322,7 +322,7 @@ Function Page_UpBoker()
 	Page_UpBoker = TempStr
 End Function
 
-'×îĞÂÖ÷Ìâ
+'æœ€æ–°ä¸»é¢˜
 Function Page_NewTopicList()
 	Dim Nodes,ChildNode
 	Dim TempHtml,TempStr
@@ -363,7 +363,7 @@ Function Page_NewTopicList()
 	Page_NewTopicList = TempStr
 End Function
 
-'×îĞÂÆÀÂÛ
+'æœ€æ–°è¯„è®º
 Function Page_NewPostList()
 	Dim Nodes,ChildNode
 	Dim TempHtml,TempStr
@@ -411,7 +411,7 @@ Function Page_NewPostList()
 	Page_NewPostList = TempStr
 End Function
 
-'±¾ÖÜÈÈÆÀ
+'æœ¬å‘¨çƒ­è¯„
 Function Page_WeekPostList()
 	Dim Nodes,ChildNode
 	Dim TempHtml,TempStr,DayStr,i
@@ -449,7 +449,7 @@ Function Page_WeekPostList()
 	Page_WeekPostList = TempStr
 End Function
 
-'×îĞÂÊéÇ©
+'æœ€æ–°ä¹¦ç­¾
 Function Page_NewLinkList()
 	Dim Nodes,ChildNode
 	Dim TempHtml,TempStr,DayStr,i
@@ -481,10 +481,10 @@ Function Page_NewLinkList()
 	Page_NewLinkList = TempStr
 End Function
 
-'×îĞÂÍ¼Æ¬
+'æœ€æ–°å›¾ç‰‡
 Function Page_Photos()
 	Dim Rows
-	Rows = 6	'Ã¿ĞĞµÄ¸öÊı
+	Rows = 6	'æ¯è¡Œçš„ä¸ªæ•°
 	Dim Nodes,ChildNode,i
 	Dim TempHtml,TempStr,Temp,CountNum
 	DvBoke_Sys.GetNode = "newphotos"
@@ -563,7 +563,7 @@ Function GetChatCat(sType)
 End Function
 
 '-----------------------------------------------------------
-':²©¿ÍË÷Òı
+':åšå®¢ç´¢å¼•
 '-----------------------------------------------------------
 Function Sys_BokeUser(PageHtml,CatID)
 	Dim Rs,Sql
@@ -628,8 +628,8 @@ Function Sys_BokeUser(PageHtml,CatID)
 
 			Set SysCat = DvBoke.SysCat.selectSingleNode("rs:data/z:row[@scatid = '"&Sql(14,i)&"']")
 			If SysCat Is Nothing Then
-				Temp1 = Replace(Temp1,"{$CatName}","Î´·ÖÀà")
-				If i = 0 Then CatName = "Î´·ÖÀà"
+				Temp1 = Replace(Temp1,"{$CatName}","æœªåˆ†ç±»")
+				If i = 0 Then CatName = "æœªåˆ†ç±»"
 			Else
 				Temp1 = Replace(Temp1,"{$CatName}",SysCat.getAttribute("scattitle"))
 				If i = 0 Then CatName = SysCat.getAttribute("scattitle")
@@ -661,7 +661,7 @@ Function Sys_BokeUser(PageHtml,CatID)
 End Function
 
 '-----------------------------------------------------------
-':»°Ìâ£¬ÎÄÕÂ£¬ÊÕ²Ø,Á´½ÓÒ³Ãæ
+':è¯é¢˜ï¼Œæ–‡ç« ï¼Œæ”¶è—,é“¾æ¥é¡µé¢
 '-----------------------------------------------------------
 Function Sys_TopicList(PageHtml,sType,CatID)
 	Dim Rs,Sql,TopicNums
@@ -749,7 +749,7 @@ Function Sys_TopicList(PageHtml,sType,CatID)
 	If DvBoke.InputShowMsg <> "" Then
 		PageHtml = Replace(PageHtml,"{$BokeTopicList}",DvBoke.InputShowMsg)
 	Else
-		If Stype = 5 Then	'Ïà²á
+		If Stype = 5 Then	'ç›¸å†Œ
 			Dim ViewFile,ii,Rows
 			Rows = Cint(DvBoke.System_Setting(9))
 			For i=0 To Ubound(SQL,2)
@@ -782,7 +782,7 @@ Function Sys_TopicList(PageHtml,sType,CatID)
 			Next
 			PageHtml = Replace(PageHtml,"{$BokeTopicList}",DvBoke.Page_Strings(27).text)
 			PageHtml = Replace(PageHtml,"{$photo_list}",Temp)
-		'ElseIf Stype = 4 Then	'½»Ò×
+		'ElseIf Stype = 4 Then	'äº¤æ˜“
 
 		Else
 			For i=0 To Ubound(SQL,2)
@@ -801,8 +801,8 @@ Function Sys_TopicList(PageHtml,sType,CatID)
 				End If
 				Set SysCat = DvBoke.SysChatCat.selectSingleNode("rs:data/z:row[@scatid = '"&Sql(2,i)&"']")
 				If SysCat Is Nothing Then
-					Temp1 = Replace(Temp1,"{$CatName}","Î´·ÖÀà")
-					If i = 0 Then CatName = "Î´·ÖÀà"
+					Temp1 = Replace(Temp1,"{$CatName}","æœªåˆ†ç±»")
+					If i = 0 Then CatName = "æœªåˆ†ç±»"
 				Else
 					Temp1 = Replace(Temp1,"{$CatName}",SysCat.getAttribute("scattitle"))
 					If i = 0 Then CatName = SysCat.getAttribute("scattitle")
@@ -839,7 +839,7 @@ Function Sys_TopicList(PageHtml,sType,CatID)
 	Sys_TopicList = PageHtml
 End Function
 
-'ÏµÍ³ĞÅÏ¢
+'ç³»ç»Ÿä¿¡æ¯
 Function Page_SystemInfo()
 	Dim PageHtml
 	PageHtml = DvBoke.Page_Strings(39).text
@@ -851,7 +851,7 @@ Function Page_SystemInfo()
 	PageHtml = Replace(PageHtml,"{$TodayNum}",DvBoke.System_Node.getAttribute("s_todaynum"))
 	Page_SystemInfo = PageHtml
 End Function
-'ÓÃ»§ĞÅÏ¢
+'ç”¨æˆ·ä¿¡æ¯
 Function Page_UserInfo()
 	Dim PageHtml
 	If Dvbbs.UserID = 0 Then

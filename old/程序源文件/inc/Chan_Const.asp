@@ -1,6 +1,6 @@
 <%
 Function Get_ChallengeWord()
-	'ÌôÕ½Ëæ»úÊý
+	'æŒ‘æˆ˜éšæœºæ•°
 	Dim MaxUserID,MaxLength
 	Dim rs
 	MaxLength=12

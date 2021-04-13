@@ -1,8 +1,8 @@
 <%
-Rem ³ıÊ×Ò³ÍâÍ¨ÓÃº¯Êı
-'Dvbbs.Board_Setting(40)ÊÇ·ñ¼Ì³ĞÉÏ¼¶°æÖ÷£¬Ë³´øÈ¡³öÉÏ¼¶ÂÛÌ³°æÃæĞÅÏ¢
-'×î¶àÖ»È¡ÏòÉÏµÄ10¼¶°æÃæĞÅÏ¢
-'Êä³öµ¼º½²Ëµ¥×Ö´®
+Rem é™¤é¦–é¡µå¤–é€šç”¨å‡½æ•°
+'Dvbbs.Board_Setting(40)æ˜¯å¦ç»§æ‰¿ä¸Šçº§ç‰ˆä¸»ï¼Œé¡ºå¸¦å–å‡ºä¸Šçº§è®ºå›ç‰ˆé¢ä¿¡æ¯
+'æœ€å¤šåªå–å‘ä¸Šçš„10çº§ç‰ˆé¢ä¿¡æ¯
+'è¾“å‡ºå¯¼èˆªèœå•å­—ä¸²
 If Request("poststyle")="1" Then
 	Dvbbs.ErrType=1
 End If
@@ -32,7 +32,7 @@ Sub CheckBoardInfo()
 				If i=0 Then
 						NavStr=" <a href=""index.asp?boardid="& parentboard(i) &""" onmouseover=""showmenu(event,BoardJumpList("&Node.selectSingleNode("@boardid").text&"),'',0);"">"& Node.selectSingleNode("@boardtype").text &"</a> "
 					Else
-						NavStr=NavStr& "¡ú <a href=""index.asp?boardid="& parentboard(i) &""">"& Node.selectSingleNode("@boardtype").text &"</a> "
+						NavStr=NavStr& "â†’ <a href=""index.asp?boardid="& parentboard(i) &""">"& Node.selectSingleNode("@boardtype").text &"</a> "
 					End If
 			End If
 		Next
@@ -69,57 +69,57 @@ Sub GetBoardPermission()
 	End If
 	If Not Dvbbs.BoardMaster Then Chkboardlogin()
 End Sub
-Rem ÄÜ·ñ½øÈëÂÛÌ³µÄÅĞ¶Ï
+Rem èƒ½å¦è¿›å…¥è®ºå›çš„åˆ¤æ–­
 Public Sub Chkboardlogin()
 	If Dvbbs.Board_Setting(1)="1" And Dvbbs.GroupSetting(37)="0" Then Dvbbs.AddErrCode(26)
 	If Dvbbs.GroupSetting(0)="0"  Then Dvbbs.AddErrCode(27)
-	'·ÃÎÊÂÛÌ³ÏŞÖÆ(°üÀ¨ÎÄÕÂ¡¢»ı·Ö¡¢½ğÇ®¡¢÷ÈÁ¦¡¢ÍşÍû¡¢¾«»ª¡¢±»É¾Êı¡¢×¢²áÊ±¼ä)
+	'è®¿é—®è®ºå›é™åˆ¶(åŒ…æ‹¬æ–‡ç« ã€ç§¯åˆ†ã€é‡‘é’±ã€é­…åŠ›ã€å¨æœ›ã€ç²¾åã€è¢«åˆ æ•°ã€æ³¨å†Œæ—¶é—´)
 	Dim BoardUserLimited
 	BoardUserLimited = Split(Dvbbs.Board_Setting(54),"|")
 	If Ubound(BoardUserLimited)=8 Then
-		'ÎÄÕÂ
+		'æ–‡ç« 
 		If Trim(BoardUserLimited(0))<>"0" And IsNumeric(BoardUserLimited(0)) Then
-			If Dvbbs.UserID = 0 Then Response.redirect "showerr.asp?ShowErrType="&Dvbbs.ErrType&"&ErrCodes=<li>±¾°æÃæÉèÖÃÁËÓÃ»§·¢Ìù×îÉÙÎª <B>"&BoardUserLimited(0)&"</B> ²ÅÄÜ½øÈë&action=OtherErr"
-			If Clng(Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userpost").text)<Clng(BoardUserLimited(0)) Then Response.redirect "showerr.asp?ShowErrType="&Dvbbs.ErrType&"&ErrCodes=<li>±¾°æÃæÉèÖÃÁËÓÃ»§·¢Ìù×îÉÙÎª <B>"&BoardUserLimited(0)&"</B> ²ÅÄÜ½øÈë&action=OtherErr"
+			If Dvbbs.UserID = 0 Then Response.redirect "showerr.asp?ShowErrType="&Dvbbs.ErrType&"&ErrCodes=<li>æœ¬ç‰ˆé¢è®¾ç½®äº†ç”¨æˆ·å‘è´´æœ€å°‘ä¸º <B>"&BoardUserLimited(0)&"</B> æ‰èƒ½è¿›å…¥&action=OtherErr"
+			If Clng(Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userpost").text)<Clng(BoardUserLimited(0)) Then Response.redirect "showerr.asp?ShowErrType="&Dvbbs.ErrType&"&ErrCodes=<li>æœ¬ç‰ˆé¢è®¾ç½®äº†ç”¨æˆ·å‘è´´æœ€å°‘ä¸º <B>"&BoardUserLimited(0)&"</B> æ‰èƒ½è¿›å…¥&action=OtherErr"
 		End If
-		'»ı·Ö
+		'ç§¯åˆ†
 		If Trim(BoardUserLimited(1))<>"0" And IsNumeric(BoardUserLimited(1)) Then
-			If Dvbbs.UserID = 0 Then Response.redirect "showerr.asp?ShowErrType="&Dvbbs.ErrType&"&ErrCodes=<li>±¾°æÃæÉèÖÃÁËÓÃ»§»ı·Ö×îÉÙÎª <B>"&BoardUserLimited(1)&"</B> ²ÅÄÜ½øÈë&action=OtherErr"
-			If Clng(Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userep").text)<Clng(BoardUserLimited(1)) Then Response.redirect "showerr.asp?ShowErrType="&Dvbbs.ErrType&"&ErrCodes=<li>±¾°æÃæÉèÖÃÁËÓÃ»§»ı·Ö×îÉÙÎª <B>"&BoardUserLimited(1)&"</B> ²ÅÄÜ½øÈë&action=OtherErr"
+			If Dvbbs.UserID = 0 Then Response.redirect "showerr.asp?ShowErrType="&Dvbbs.ErrType&"&ErrCodes=<li>æœ¬ç‰ˆé¢è®¾ç½®äº†ç”¨æˆ·ç§¯åˆ†æœ€å°‘ä¸º <B>"&BoardUserLimited(1)&"</B> æ‰èƒ½è¿›å…¥&action=OtherErr"
+			If Clng(Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userep").text)<Clng(BoardUserLimited(1)) Then Response.redirect "showerr.asp?ShowErrType="&Dvbbs.ErrType&"&ErrCodes=<li>æœ¬ç‰ˆé¢è®¾ç½®äº†ç”¨æˆ·ç§¯åˆ†æœ€å°‘ä¸º <B>"&BoardUserLimited(1)&"</B> æ‰èƒ½è¿›å…¥&action=OtherErr"
 		End If
-		'½ğÇ®
+		'é‡‘é’±
 		If Trim(BoardUserLimited(2))<>"0" And IsNumeric(BoardUserLimited(2)) Then
-			If Dvbbs.UserID = 0 Then Response.redirect "showerr.asp?ShowErrType="&Dvbbs.ErrType&"&ErrCodes=<li>±¾°æÃæÉèÖÃÁËÓÃ»§½ğÇ®×îÉÙÎª <B>"&BoardUserLimited(2)&"</B> ²ÅÄÜ½øÈë&action=OtherErr"
-			If Clng(Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userwealth").text)<Clng(BoardUserLimited(2)) Then Response.redirect "showerr.asp?ShowErrType="&Dvbbs.ErrType&"&ErrCodes=<li>±¾°æÃæÉèÖÃÁËÓÃ»§½ğÇ®×îÉÙÎª <B>"&BoardUserLimited(2)&"</B> ²ÅÄÜ½øÈë&action=OtherErr"
+			If Dvbbs.UserID = 0 Then Response.redirect "showerr.asp?ShowErrType="&Dvbbs.ErrType&"&ErrCodes=<li>æœ¬ç‰ˆé¢è®¾ç½®äº†ç”¨æˆ·é‡‘é’±æœ€å°‘ä¸º <B>"&BoardUserLimited(2)&"</B> æ‰èƒ½è¿›å…¥&action=OtherErr"
+			If Clng(Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userwealth").text)<Clng(BoardUserLimited(2)) Then Response.redirect "showerr.asp?ShowErrType="&Dvbbs.ErrType&"&ErrCodes=<li>æœ¬ç‰ˆé¢è®¾ç½®äº†ç”¨æˆ·é‡‘é’±æœ€å°‘ä¸º <B>"&BoardUserLimited(2)&"</B> æ‰èƒ½è¿›å…¥&action=OtherErr"
 		End If
-		'÷ÈÁ¦
+		'é­…åŠ›
 		If Trim(BoardUserLimited(3))<>"0" And IsNumeric(BoardUserLimited(3)) Then
-			If Dvbbs.UserID = 0 Then Response.redirect "showerr.asp?ShowErrType="&Dvbbs.ErrType&"&ErrCodes=<li>±¾°æÃæÉèÖÃÁËÓÃ»§÷ÈÁ¦×îÉÙÎª <B>"&BoardUserLimited(3)&"</B> ²ÅÄÜ½øÈë&action=OtherErr"
-			If Clng(Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usercp").text)<Clng(BoardUserLimited(3)) Then Response.redirect "showerr.asp?ShowErrType="&Dvbbs.ErrType&"&ErrCodes=<li>±¾°æÃæÉèÖÃÁËÓÃ»§÷ÈÁ¦×îÉÙÎª <B>"&BoardUserLimited(3)&"</B> ²ÅÄÜ½øÈë&action=OtherErr"
+			If Dvbbs.UserID = 0 Then Response.redirect "showerr.asp?ShowErrType="&Dvbbs.ErrType&"&ErrCodes=<li>æœ¬ç‰ˆé¢è®¾ç½®äº†ç”¨æˆ·é­…åŠ›æœ€å°‘ä¸º <B>"&BoardUserLimited(3)&"</B> æ‰èƒ½è¿›å…¥&action=OtherErr"
+			If Clng(Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usercp").text)<Clng(BoardUserLimited(3)) Then Response.redirect "showerr.asp?ShowErrType="&Dvbbs.ErrType&"&ErrCodes=<li>æœ¬ç‰ˆé¢è®¾ç½®äº†ç”¨æˆ·é­…åŠ›æœ€å°‘ä¸º <B>"&BoardUserLimited(3)&"</B> æ‰èƒ½è¿›å…¥&action=OtherErr"
 		End If
-		'ÍşÍû
+		'å¨æœ›
 		If Trim(BoardUserLimited(4))<>"0" And IsNumeric(BoardUserLimited(4)) Then
-			If Dvbbs.UserID = 0 Then Response.redirect "showerr.asp?ShowErrType="&Dvbbs.ErrType&"&ErrCodes=<li>±¾°æÃæÉèÖÃÁËÓÃ»§ÍşÍû×îÉÙÎª <B>"&BoardUserLimited(4)&"</B> ²ÅÄÜ½øÈë&action=OtherErr"
-			If Clng(Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userpower").text)<Clng(BoardUserLimited(4)) Then Response.redirect "showerr.asp?ShowErrType="&Dvbbs.ErrType&"&ErrCodes=<li>±¾°æÃæÉèÖÃÁËÓÃ»§ÍşÍû×îÉÙÎª <B>"&BoardUserLimited(4)&"</B> ²ÅÄÜ½øÈë&action=OtherErr"
+			If Dvbbs.UserID = 0 Then Response.redirect "showerr.asp?ShowErrType="&Dvbbs.ErrType&"&ErrCodes=<li>æœ¬ç‰ˆé¢è®¾ç½®äº†ç”¨æˆ·å¨æœ›æœ€å°‘ä¸º <B>"&BoardUserLimited(4)&"</B> æ‰èƒ½è¿›å…¥&action=OtherErr"
+			If Clng(Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userpower").text)<Clng(BoardUserLimited(4)) Then Response.redirect "showerr.asp?ShowErrType="&Dvbbs.ErrType&"&ErrCodes=<li>æœ¬ç‰ˆé¢è®¾ç½®äº†ç”¨æˆ·å¨æœ›æœ€å°‘ä¸º <B>"&BoardUserLimited(4)&"</B> æ‰èƒ½è¿›å…¥&action=OtherErr"
 		End If
-		'¾«»ª
+		'ç²¾å
 		If Trim(BoardUserLimited(5))<>"0" And IsNumeric(BoardUserLimited(5)) Then
-			If Dvbbs.UserID = 0 Then Response.redirect "showerr.asp?ShowErrType="&Dvbbs.ErrType&"&ErrCodes=<li>±¾°æÃæÉèÖÃÁËÓÃ»§¾«»ª×îÉÙÎª <B>"&BoardUserLimited(5)&"</B> ²ÅÄÜ½øÈë&action=OtherErr"
-			If Clng(Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userisbest").text)<Clng(BoardUserLimited(5)) Then Response.redirect "showerr.asp?ShowErrType="&Dvbbs.ErrType&"&ErrCodes=<li>±¾°æÃæÉèÖÃÁËÓÃ»§¾«»ª×îÉÙÎª <B>"&BoardUserLimited(5)&"</B> ²ÅÄÜ½øÈë&action=OtherErr"
+			If Dvbbs.UserID = 0 Then Response.redirect "showerr.asp?ShowErrType="&Dvbbs.ErrType&"&ErrCodes=<li>æœ¬ç‰ˆé¢è®¾ç½®äº†ç”¨æˆ·ç²¾åæœ€å°‘ä¸º <B>"&BoardUserLimited(5)&"</B> æ‰èƒ½è¿›å…¥&action=OtherErr"
+			If Clng(Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userisbest").text)<Clng(BoardUserLimited(5)) Then Response.redirect "showerr.asp?ShowErrType="&Dvbbs.ErrType&"&ErrCodes=<li>æœ¬ç‰ˆé¢è®¾ç½®äº†ç”¨æˆ·ç²¾åæœ€å°‘ä¸º <B>"&BoardUserLimited(5)&"</B> æ‰èƒ½è¿›å…¥&action=OtherErr"
 		End If
-		'É¾Ìù
+		'åˆ è´´
 		If Trim(BoardUserLimited(6))<>"0" And IsNumeric(BoardUserLimited(6)) Then
-			If Dvbbs.UserID = 0 Then Response.redirect "showerr.asp?ShowErrType="&Dvbbs.ErrType&"&ErrCodes=<li>±¾°æÃæÉèÖÃÁËÓÃ»§±»É¾ÌùÉÙÓÚ <B>"&BoardUserLimited(6)&"</B> ²ÅÄÜ½øÈë&action=OtherErr"
-			If Clng(Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userdel").text)>Clng(BoardUserLimited(6)) Then Response.redirect "showerr.asp?ShowErrType="&Dvbbs.ErrType&"&ErrCodes=<li>±¾°æÃæÉèÖÃÁËÓÃ»§±»É¾ÌùÉÙÓÚ <B>"&BoardUserLimited(6)&"</B> ²ÅÄÜ½øÈë&action=OtherErr"
+			If Dvbbs.UserID = 0 Then Response.redirect "showerr.asp?ShowErrType="&Dvbbs.ErrType&"&ErrCodes=<li>æœ¬ç‰ˆé¢è®¾ç½®äº†ç”¨æˆ·è¢«åˆ è´´å°‘äº <B>"&BoardUserLimited(6)&"</B> æ‰èƒ½è¿›å…¥&action=OtherErr"
+			If Clng(Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userdel").text)>Clng(BoardUserLimited(6)) Then Response.redirect "showerr.asp?ShowErrType="&Dvbbs.ErrType&"&ErrCodes=<li>æœ¬ç‰ˆé¢è®¾ç½®äº†ç”¨æˆ·è¢«åˆ è´´å°‘äº <B>"&BoardUserLimited(6)&"</B> æ‰èƒ½è¿›å…¥&action=OtherErr"
 		End If
-		'×¢²áÊ±¼ä
+		'æ³¨å†Œæ—¶é—´
 		If Trim(BoardUserLimited(7))<>"0" And IsNumeric(BoardUserLimited(7)) Then
-			If Dvbbs.UserID = 0 Then Response.redirect "showerr.asp?ShowErrType="&Dvbbs.ErrType&"&ErrCodes=<li>±¾°æÃæÉèÖÃÁËÓÃ»§×¢²áÊ±¼ä´óÓÚ <B>"&BoardUserLimited(7)&"</B> ·ÖÖÓ²ÅÄÜ½øÈë&action=OtherErr"
-			If DateDiff("s",Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@joindate").text,Now)<Clng(BoardUserLimited(7))*60 Then Response.redirect "showerr.asp?ShowErrType="&Dvbbs.ErrType&"&ErrCodes=<li>±¾°æÃæÉèÖÃÁËÓÃ»§×¢²áÊ±¼ä´óÓÚ <B>"&BoardUserLimited(7)&"</B> ·ÖÖÓ²ÅÄÜ½øÈë&action=OtherErr"
+			If Dvbbs.UserID = 0 Then Response.redirect "showerr.asp?ShowErrType="&Dvbbs.ErrType&"&ErrCodes=<li>æœ¬ç‰ˆé¢è®¾ç½®äº†ç”¨æˆ·æ³¨å†Œæ—¶é—´å¤§äº <B>"&BoardUserLimited(7)&"</B> åˆ†é’Ÿæ‰èƒ½è¿›å…¥&action=OtherErr"
+			If DateDiff("s",Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@joindate").text,Now)<Clng(BoardUserLimited(7))*60 Then Response.redirect "showerr.asp?ShowErrType="&Dvbbs.ErrType&"&ErrCodes=<li>æœ¬ç‰ˆé¢è®¾ç½®äº†ç”¨æˆ·æ³¨å†Œæ—¶é—´å¤§äº <B>"&BoardUserLimited(7)&"</B> åˆ†é’Ÿæ‰èƒ½è¿›å…¥&action=OtherErr"
 		End If
 		
 	End If
-	'ÈÏÖ¤°æ¿éÅĞ¶ÏBoard_Setting(2)
+	'è®¤è¯ç‰ˆå—åˆ¤æ–­Board_Setting(2)
 	If Dvbbs.Board_Setting(2)="1" Then
 		Dim Get_BoardUser_Money,Canlogin,Boarduser,i,BoardUser_Money
 		Get_BoardUser_Money = False
@@ -138,7 +138,7 @@ Public Sub Chkboardlogin()
 					If Get_BoardUser_Money Then
 						BoardUser_Money = Split(Boarduser(i),"=")
 						If Trim(Lcase(BoardUser_Money(0))) = Trim(Lcase(Dvbbs.MemberName)) Then
-							'ĞŞ¸ÄÅĞ¶ÏÖ§¸¶½ğ±Ò»òµãÈ¯½øÈë°æÃæµÄÓĞĞ§ÆÚ 2004-8-29 Dv.Yz
+							'ä¿®æ”¹åˆ¤æ–­æ”¯ä»˜é‡‘å¸æˆ–ç‚¹åˆ¸è¿›å…¥ç‰ˆé¢çš„æœ‰æ•ˆæœŸ 2004-8-29 Dv.Yz
 							If Not DateDiff("d",BoardUser_Money(1),Now()) > Cint(Dvbbs.Board_Setting(64))*30 Then
 								Canlogin = True
 								Exit For
@@ -160,8 +160,8 @@ Public Sub Chkboardlogin()
 	End If
 	Dvbbs.showerr()
 End Sub
-'µÃµ½ÂÛÌ³ÎÄ×Ö¹ã¸æÎ»²¿·ÖÄÚÈİ,PageID=0ÎªÊ×Ò³,=1ÎªÌû×ÓÁĞ±íÒ³Ãæ,=2ÎªÌû×ÓÄÚÈİÒ³Ãæ
-Rem ÂÛÌ³ÎÄ×Ö¹ã¸æÒÑ¾­ÓÉ Sub ¸ÄÎª Function ĞèÒªResponse.Write Êä³ö 2007-10-10 By Dv.ßóßó
+'å¾—åˆ°è®ºå›æ–‡å­—å¹¿å‘Šä½éƒ¨åˆ†å†…å®¹,PageID=0ä¸ºé¦–é¡µ,=1ä¸ºå¸–å­åˆ—è¡¨é¡µé¢,=2ä¸ºå¸–å­å†…å®¹é¡µé¢
+Rem è®ºå›æ–‡å­—å¹¿å‘Šå·²ç»ç”± Sub æ”¹ä¸º Function éœ€è¦Response.Write è¾“å‡º 2007-10-10 By Dv.å”§å”§
 Function GetForumTextAd(PageID)
 	If Dvbbs.Forum_ads(12) = "1" Then
 		 Select Case PageID
@@ -224,7 +224,7 @@ Sub LoadBoardNews_Paper()
 	End If
 End Sub
 
-'¹ıÂËÌá½»²ÎÊı
+'è¿‡æ»¤æäº¤å‚æ•°
 On Error Resume Next
 if request.querystring<>"" then call stophacker(request.querystring,"'|\b(alert|confirm|prompt)\b|<[^>]*?>|^\+/v(8|9)|\bonmouse(over|move)=\b|\b(and|or)\b.+?(>|<|=|\bin\b|\blike\b)|/\*.+?\*/|<\s*script\b|\bEXEC\b|UNION.+?SELECT|UPDATE.+?SET|INSERT\s+INTO.+?VALUES|(SELECT|DELETE).+?FROM|(CREATE|ALTER|DROP|TRUNCATE)\s+(TABLE|DATABASE)")
 if Request.ServerVariables("HTTP_REFERER")<>"" then call test(Request.ServerVariables("HTTP_REFERER"),"'|\b(and|or)\b.+?(>|<|=|\bin\b|\blike\b)|/\*.+?\*/|<\s*script\b|\bEXEC\b|UNION.+?SELECT|UPDATE.+?SET|INSERT\s+INTO.+?VALUES|(SELECT|DELETE).+?FROM|(CREATE|ALTER|DROP|TRUNCATE)\s+(TABLE|DATABASE)")
@@ -243,7 +243,7 @@ function test(values,re)
                                   IP=Request.ServerVariables("REMOTE_ADDR")
                                 end if
                                 
-    Response.redirect "showerr.asp?ShowErrType="&Dvbbs.ErrType&"&ErrCodes=Ìá½»²ÎÊı´íÎó&action=OtherErr"
+    Response.redirect "showerr.asp?ShowErrType="&Dvbbs.ErrType&"&ErrCodes=æäº¤å‚æ•°é”™è¯¯&action=OtherErr"
     Response.end
    end if
    set regex = nothing
@@ -265,7 +265,7 @@ function stophacker(values,re)
                                   IP=Request.ServerVariables("REMOTE_ADDR")
                                 end if
                                 
-    Response.redirect "showerr.asp?ShowErrType="&Dvbbs.ErrType&"&ErrCodes=Ìá½»²ÎÊı´íÎó&action=OtherErr"
+    Response.redirect "showerr.asp?ShowErrType="&Dvbbs.ErrType&"&ErrCodes=æäº¤å‚æ•°é”™è¯¯&action=OtherErr"
     Response.end
    end if
    set regex = nothing

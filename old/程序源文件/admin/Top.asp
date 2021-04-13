@@ -82,15 +82,15 @@ function switchSysBar(){
 	<div class="system_logo"><img src="skins/images/logo_up.gif"></div>
 	<div id="tabs">
 		<ul>
-			<li><a href="setting.asp" onmouseover="parent.frmleft.disp(1);" target="frmright"><span>常规管理</span></a></li>
-			<li><a href="board.asp" onmouseover="parent.frmleft.disp(2);" target="frmright"><span>版面管理</span></a></li>
-			<li><a href="user.asp" onmouseover="parent.frmleft.disp(3);" target="frmright"><span>用户相关</span></a></li>
-			<li><a href="template.asp" onmouseover="parent.frmleft.disp(4);" target="frmright"><span>风格界面</span></a></li>
-			<li><a href="postdata.asp?action=Nowused" onmouseover="parent.frmleft.disp(5);" target="frmright"><span>帖子管理</span></a></li>
-			<li><a href="data.asp?action=BackupData" onmouseover="parent.frmleft.disp(6);" target="frmright"><span>数据处理</span></a></li>
-			<li><a href="uploadlist.asp" onmouseover="parent.frmleft.disp(7);" target="frmright"><span>文件管理</span></a></li>
-			<li><a href="plus.asp" onmouseover="parent.frmleft.disp(8);" target="frmright"><span>插件管理</span></a></li>
-			<li><a href="data.asp?action=SpaceSize" onmouseover="parent.frmleft.disp(9);" target="frmright"><span>系统相关</span></a></li>
+			<li><a href="setting.asp" onmouseover="parent.frmleft.disp(1);" target="frmright"><span>甯歌绠＄悊</span></a></li>
+			<li><a href="board.asp" onmouseover="parent.frmleft.disp(2);" target="frmright"><span>鐗堥潰绠＄悊</span></a></li>
+			<li><a href="user.asp" onmouseover="parent.frmleft.disp(3);" target="frmright"><span>鐢ㄦ埛鐩稿叧</span></a></li>
+			<li><a href="template.asp" onmouseover="parent.frmleft.disp(4);" target="frmright"><span>椋庢牸鐣岄潰</span></a></li>
+			<li><a href="postdata.asp?action=Nowused" onmouseover="parent.frmleft.disp(5);" target="frmright"><span>甯栧瓙绠＄悊</span></a></li>
+			<li><a href="data.asp?action=BackupData" onmouseover="parent.frmleft.disp(6);" target="frmright"><span>鏁版嵁澶勭悊</span></a></li>
+			<li><a href="uploadlist.asp" onmouseover="parent.frmleft.disp(7);" target="frmright"><span>鏂囦欢绠＄悊</span></a></li>
+			<li><a href="plus.asp" onmouseover="parent.frmleft.disp(8);" target="frmright"><span>鎻掍欢绠＄悊</span></a></li>
+			<li><a href="data.asp?action=SpaceSize" onmouseover="parent.frmleft.disp(9);" target="frmright"><span>绯荤粺鐩稿叧</span></a></li>
 		</ul>
 	</div>
 <div style="clear:both"></div>

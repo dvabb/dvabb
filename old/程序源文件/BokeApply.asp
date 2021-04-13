@@ -21,7 +21,7 @@ Else
 			DvBoke.ShowCode(44)
 			DvBoke.ShowMsg(0)
 		Else
-			DvBoke.Stats = "申请博客"
+			DvBoke.Stats = "鐢宠鍗氬"
 			DvBoke.Nav(1)
 			Page_Savereg()
 		End If
@@ -36,7 +36,7 @@ Else
 			DvBoke.ShowCode(44)
 			DvBoke.ShowMsg(0)
 		Else
-			DvBoke.Stats = "申请博客"
+			DvBoke.Stats = "鐢宠鍗氬"
 			DvBoke.Nav(1)
 			Page_Reg()
 		End If
@@ -66,12 +66,12 @@ End Sub
 
 Sub Page_Savereg()
 	Dim NickName,BokeName,Password,BokeTitle,BokeCTitle,CodeStr,tRs
-	'数据验证
+	'鏁版嵁楠岃瘉
 	If Dvbbs.UserID = 0 Then Dvbbs.AddErrCode(42):Dvbbs.Showerr()
 	If Not DvBoke.ChkPost() Then DvBoke.ShowCode(2):DvBoke.ShowMsg(0)
 
 	NickName = Request.Form("NickName")
-	BokeName = DvBoke.Checkstr(Lcase(Request.Form("BokeName")))	'唯一
+	BokeName = DvBoke.Checkstr(Lcase(Request.Form("BokeName")))	'鍞竴
 	Password = Request.Form("BokePassWord")
 	BokeTitle = Request.Form("BokeTitle")
 	BokeCTitle = Request.Form("BokeCTitle")
@@ -123,9 +123,9 @@ Sub Page_Savereg()
 		DvBoke.ShowCode(13)
 		DvBoke.ShowMsg(0)
 	Else
-		'提取默认个人分类
+		'鎻愬彇榛樿涓汉鍒嗙被
 		Set tRs=DvBoke.Execute("Select Top 1 * From Dv_Boke_Syscat Order By sCatID")
-		'更新该分类用户数
+		'鏇存柊璇ュ垎绫荤敤鎴锋暟
 		DvBoke.Execute("Update Dv_Boke_Syscat Set uCatNum = uCatNum + 1 Where sCatID = " & tRs("sCatID"))
 		Rs.AddNew
 		Rs("UserID") = DvBoke.UserID

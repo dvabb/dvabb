@@ -49,10 +49,10 @@ Sub Userinfo()
 		Dvbbs.AddErrCode(32)
 		Exit Sub
 	Else
-		Sql=Rs.GetString(,,"#¡ì¡ì#","","")
+		Sql=Rs.GetString(,,"#Â§Â§#","","")
 	End If
 	Rs.close :Set Rs=Nothing
-	My_info= Split(Sql,"#¡ì¡ì#")
+	My_info= Split(Sql,"#Â§Â§#")
 	If Cint(Dvbbs.Forum_Setting(6))=1 Then CanUseTitle=True
 
 	If CanUseTitle And Cint(Dvbbs.Forum_Setting(60)) > 0 And Clng(My_info(3)) > Cint(Dvbbs.Forum_Setting(60)) Then
@@ -103,7 +103,7 @@ Sub Userinfo()
 		ShowRe=0
 		userdsindex = 0
 	End If
-	'Ä§·¨Í·Ïñ²¿·Ö
+	'é­”æ³•å¤´åƒéƒ¨åˆ†
 	If Dvbbs.Forum_Setting(98)="1" And Dvbbs.GroupSetting(69)="1" Then My_infotemp=Replace(My_infotemp,"{$usermagicface}",Template.Html(20))
 	My_infotemp=Replace(My_infotemp,"{$usermagicface}","")
 	iMagicFace = Split(My_info(6),"|")
@@ -142,10 +142,10 @@ Sub Userinfo()
 		Set mRs=Nothing
 	End If
 	End If
-	'Ä§·¨Í·Ïñ²¿·Ö
-	'¹ÜÀíÔ±Óë³¬°æ×Ô¶¨ÒåÍ·Ïñ²»ÊÜ·¢ÌûÊıÏŞÖÆ 2005-3-10 Dv.Yz
+	'é­”æ³•å¤´åƒéƒ¨åˆ†
+	'ç®¡ç†å‘˜ä¸è¶…ç‰ˆè‡ªå®šä¹‰å¤´åƒä¸å—å‘å¸–æ•°é™åˆ¶ 2005-3-10 Dv.Yz
 	If (Dvbbs.Master Or Dvbbs.SuperBoardMaster) And Clng(My_info(3)) < Cint(Dvbbs.Forum_Setting(54)) Then My_info(3) = Cint(Dvbbs.Forum_Setting(54))
-	'ÓÃMy_info(3)ÅĞ¶ÏÊÇ·ñÓĞ×Ô¶¨ÒåÍ·ÏñÈ¨ÏŞ£¬¸üĞÂpage_usermanagerÄ£°å½çÃæ(5)¡¢(7) Dv.Yz 2005-1-27
+	'ç”¨My_info(3)åˆ¤æ–­æ˜¯å¦æœ‰è‡ªå®šä¹‰å¤´åƒæƒé™ï¼Œæ›´æ–°page_usermanageræ¨¡æ¿ç•Œé¢(5)ã€(7) Dv.Yz 2005-1-27
 	My_infotemp = Replace(My_infotemp, "{$SetFace_info}", SetUserFace(Cint(Dvbbs.Forum_UploadSetting(0)), My_info(6)&"", My_info(7), My_info(8), My_info(3)))
 
 	'If cint(Dvbbs.Forum_Setting(32))=1 Then
@@ -237,7 +237,7 @@ Sub update()
 	Else
 		Dvbbs.AddErrCode(18)
 	End If
-	'¹ÜÀíÔ±Óë³¬°æ×Ô¶¨ÒåÍ·Ïñ²»ÊÜ·¢ÌûÊıÏŞÖÆ 2005-3-10 Dv.Yz
+	'ç®¡ç†å‘˜ä¸è¶…ç‰ˆè‡ªå®šä¹‰å¤´åƒä¸å—å‘å¸–æ•°é™åˆ¶ 2005-3-10 Dv.Yz
 	Dim Mypost
 	Mypost=Clng(Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userpost").text) 
 	If (Dvbbs.Master Or Dvbbs.SuperBoardMaster) And Mypost < Cint(Dvbbs.Forum_Setting(54)) Then Mypost = Cint(Dvbbs.Forum_Setting(54))
@@ -276,7 +276,7 @@ Sub update()
 	face=Replace(face,"%","")
 	face=Replace(face,"|","")
 	face=Server.htmlencode(Left(face,200))
-	'Ä§·¨±íÇé¼ì²é²¿·Ö
+	'é­”æ³•è¡¨æƒ…æ£€æŸ¥éƒ¨åˆ†
 	tMagicFace = Request("tMagicFace")
 	If tMagicFace = "" Or Not IsNumeric(tMagicFace) Then tMagicFace = 0
 	tMagicFace = Cint(tMagicFace)
@@ -290,14 +290,14 @@ Sub update()
 			tMagicMoney = 0
 			tMagicTicket = 0
 		Else
-			If cCur(Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userticket").text) < Rs(1) And cCur(Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usermoney").text) < Rs(0) Then Response.redirect "showerr.asp?ErrCodes=<li>ÄúÃ»ÓĞ×ã¹»µÄ½ğ±Ò»òµãÈ¯Ê¹ÓÃÄ§·¨±íÇé£¬2Ãëºó×Ô¶¯·µ»ØÉÏÒ»Ò³Ãæ¡£&action=OtherErr&autoreload=1"
+			If cCur(Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userticket").text) < Rs(1) And cCur(Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usermoney").text) < Rs(0) Then Response.redirect "showerr.asp?ErrCodes=<li>æ‚¨æ²¡æœ‰è¶³å¤Ÿçš„é‡‘å¸æˆ–ç‚¹åˆ¸ä½¿ç”¨é­”æ³•è¡¨æƒ…ï¼Œ2ç§’åè‡ªåŠ¨è¿”å›ä¸Šä¸€é¡µé¢ã€‚&action=OtherErr&autoreload=1"
 			Dim iMagicSetting
 			iMagicSetting = Split(Rs(2),"|")
-			If cCur(iMagicSetting(0)) > cCur(Mypost) Then Response.redirect "showerr.asp?ErrCodes=<li>ÄúµÄÌû×ÓÊıÃ»ÓĞ´ïµ½Ê¹ÓÃÄ§·¨±íÇéµÄ±ê×¼£¬2Ãëºó×Ô¶¯·µ»ØÉÏÒ»Ò³Ãæ¡£&action=OtherErr&autoreload=1"
-			If cCur(iMagicSetting(1)) > cCur(Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userwealth").text) Then Response.redirect "showerr.asp?ErrCodes=<li>ÄúµÄ½ğÇ®ÊıÃ»ÓĞ´ïµ½Ê¹ÓÃÄ§·¨±íÇéµÄ±ê×¼£¬2Ãëºó×Ô¶¯·µ»ØÉÏÒ»Ò³Ãæ¡£&action=OtherErr&autoreload=1"
-			If cCur(iMagicSetting(2)) > cCur(Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userep").text) Then Response.redirect "showerr.asp?ErrCodes=<li>ÄúµÄ»ı·ÖÊıÃ»ÓĞ´ïµ½Ê¹ÓÃÄ§·¨±íÇéµÄ±ê×¼£¬2Ãëºó×Ô¶¯·µ»ØÉÏÒ»Ò³Ãæ¡£&action=OtherErr&autoreload=1"
-			If cCur(iMagicSetting(3)) > cCur(Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usercp").text) Then Response.redirect "showerr.asp?ErrCodes=<li>ÄúµÄ÷ÈÁ¦ÊıÃ»ÓĞ´ïµ½Ê¹ÓÃÄ§·¨±íÇéµÄ±ê×¼£¬2Ãëºó×Ô¶¯·µ»ØÉÏÒ»Ò³Ãæ¡£&action=OtherErr&autoreload=1"
-			If cCur(iMagicSetting(4)) > cCur(Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userpower").text) Then Response.redirect "showerr.asp?ErrCodes=<li>ÄúµÄÍşÍûÊıÃ»ÓĞ´ïµ½Ê¹ÓÃÄ§·¨±íÇéµÄ±ê×¼£¬2Ãëºó×Ô¶¯·µ»ØÉÏÒ»Ò³Ãæ¡£&action=OtherErr&autoreload=1"
+			If cCur(iMagicSetting(0)) > cCur(Mypost) Then Response.redirect "showerr.asp?ErrCodes=<li>æ‚¨çš„å¸–å­æ•°æ²¡æœ‰è¾¾åˆ°ä½¿ç”¨é­”æ³•è¡¨æƒ…çš„æ ‡å‡†ï¼Œ2ç§’åè‡ªåŠ¨è¿”å›ä¸Šä¸€é¡µé¢ã€‚&action=OtherErr&autoreload=1"
+			If cCur(iMagicSetting(1)) > cCur(Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userwealth").text) Then Response.redirect "showerr.asp?ErrCodes=<li>æ‚¨çš„é‡‘é’±æ•°æ²¡æœ‰è¾¾åˆ°ä½¿ç”¨é­”æ³•è¡¨æƒ…çš„æ ‡å‡†ï¼Œ2ç§’åè‡ªåŠ¨è¿”å›ä¸Šä¸€é¡µé¢ã€‚&action=OtherErr&autoreload=1"
+			If cCur(iMagicSetting(2)) > cCur(Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userep").text) Then Response.redirect "showerr.asp?ErrCodes=<li>æ‚¨çš„ç§¯åˆ†æ•°æ²¡æœ‰è¾¾åˆ°ä½¿ç”¨é­”æ³•è¡¨æƒ…çš„æ ‡å‡†ï¼Œ2ç§’åè‡ªåŠ¨è¿”å›ä¸Šä¸€é¡µé¢ã€‚&action=OtherErr&autoreload=1"
+			If cCur(iMagicSetting(3)) > cCur(Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usercp").text) Then Response.redirect "showerr.asp?ErrCodes=<li>æ‚¨çš„é­…åŠ›æ•°æ²¡æœ‰è¾¾åˆ°ä½¿ç”¨é­”æ³•è¡¨æƒ…çš„æ ‡å‡†ï¼Œ2ç§’åè‡ªåŠ¨è¿”å›ä¸Šä¸€é¡µé¢ã€‚&action=OtherErr&autoreload=1"
+			If cCur(iMagicSetting(4)) > cCur(Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userpower").text) Then Response.redirect "showerr.asp?ErrCodes=<li>æ‚¨çš„å¨æœ›æ•°æ²¡æœ‰è¾¾åˆ°ä½¿ç”¨é­”æ³•è¡¨æƒ…çš„æ ‡å‡†ï¼Œ2ç§’åè‡ªåŠ¨è¿”å›ä¸Šä¸€é¡µé¢ã€‚&action=OtherErr&autoreload=1"
 			face = iMagicFace & "|" & face
 			tMagicMoney = Rs(0)
 			tMagicTicket = Rs(1)
@@ -338,11 +338,11 @@ Sub update()
 				If cCur(Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usermoney").text) > tMagicMoney Then
 					Rs("UserMoney") = Rs("UserMoney") - tMagicMoney
 					Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usermoney").text=CCur(Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usermoney").text) - tMagicMoney
-					Dvbbs.ToolsLog -88,1,tMagicMoney,0,1,"Ê¹ÓÃ½ğ±Ò¹ºÂòÄ§·¨Í·Ïñ",Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usermoney").text & "|" & Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userticket").text
+					Dvbbs.ToolsLog -88,1,tMagicMoney,0,1,"ä½¿ç”¨é‡‘å¸è´­ä¹°é­”æ³•å¤´åƒ",Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usermoney").text & "|" & Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userticket").text
 				Else
 					Rs("UserTicket") = Rs("UserTicket") - tMagicTicket
 					Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userticket").text=CCur(Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userticket").text) - tMagicMoney
-					Dvbbs.ToolsLog -88,1,0,tMagicTicket,1,"Ê¹ÓÃµãÈ¯¹ºÂòÄ§·¨Í·Ïñ",Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usermoney").text & "|" & Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userticket").text
+					Dvbbs.ToolsLog -88,1,0,tMagicTicket,1,"ä½¿ç”¨ç‚¹åˆ¸è´­ä¹°é­”æ³•å¤´åƒ",Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usermoney").text & "|" & Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userticket").text
 				End If
 			End If
 		End If
@@ -354,7 +354,7 @@ Sub update()
 		Rs("UserSign")=Replace(Request.Form("Signature"),"|","")
 		Rs("UserPhoto")=Replace(Dv_FilterJS(Request.Form("userphoto")),"|","")
 
-		'ÅĞ¶ÏÊÇ·ñÔÊĞíÌá½»Í·ÏÎ
+		'åˆ¤æ–­æ˜¯å¦å…è®¸æäº¤å¤´è¡”
 		If Cint(Dvbbs.Forum_Setting(6))=1 Then
 			CanUseTitle=True 
 		End If
@@ -436,13 +436,13 @@ Function checkreal(v)
 	End If
 End Function
 
-'ÓÃ»§Í·ÏÎÊä³ö
+'ç”¨æˆ·å¤´è¡”è¾“å‡º
 Function SetUserTitle(str)
 	SetUserTitle=template.html(6)
 	SetUserTitle=Replace(SetUserTitle,"{$user_Title}",str)
 End Function
 
-'str=0 ¹Ø±ÕÏÔÊ¾ÉÏ´«Í·Ïñ±íµ¥
+'str=0 å…³é—­æ˜¾ç¤ºä¸Šä¼ å¤´åƒè¡¨å•
 Function SetUserFace(str,face,wid,hig,mypostnum)
 Dim tempstr,facetemp,userregface,i
 	tempstr = Split(template.html(7),"||")
@@ -468,7 +468,7 @@ Dim tempstr,facetemp,userregface,i
 	SetUserFace=Replace(SetUserFace,"{$facepostnum}",Dvbbs.Forum_Setting(54))
 End Function
 
-'ÏÂÀ­²Ëµ¥×ª»»Êä³ö
+'ä¸‹æ‹‰èœå•è½¬æ¢è¾“å‡º
 Function Chk_select(str1,str2)
 	Dim k
 	str2=Split(str2,",")
@@ -480,21 +480,21 @@ Function Chk_select(str1,str2)
 	Next
 End Function
 
-'¶àÏîÑ¡È¡×ª»»Êä³ö
+'å¤šé¡¹é€‰å–è½¬æ¢è¾“å‡º
 Function Chk_KidneyType(str0,str1,str2)
 	Dim k
 	str2=split(str2,",")
 	For k = 0 to ubound(str2)	
 		chk_KidneyType=chk_KidneyType+"<input type=""checkbox"" class=""chkbox"" name="""&str0&""" value="""&trim(str2(k))&""" "	 
-		If instr(str1,trim(str2(k)))>0 Then 'Èç¹ûÓĞ´ËÏîĞÔ¸ñ
+		If instr(str1,trim(str2(k)))>0 Then 'å¦‚æœæœ‰æ­¤é¡¹æ€§æ ¼
 		chk_KidneyType=chk_KidneyType + "checked" 
 		End If 
 		chk_KidneyType=chk_KidneyType + ">"&trim(str2(k))&" "
-	If ((k+1) mod 5)=0 Then chk_KidneyType=chk_KidneyType +  "<br>"  'Ã¿ĞĞÏÔÊ¾Áù¸öĞÔ¸ñ½øĞĞ»»ĞĞ
+	If ((k+1) mod 5)=0 Then chk_KidneyType=chk_KidneyType +  "<br>"  'æ¯è¡Œæ˜¾ç¤ºå…­ä¸ªæ€§æ ¼è¿›è¡Œæ¢è¡Œ
 	Next
 End Function
 
-Rem ÅĞ¶ÏÊı×ÖÊÇ·ñÕûĞÎ
+Rem åˆ¤æ–­æ•°å­—æ˜¯å¦æ•´å½¢
 Function isInteger(Para)
 	isInteger=False
 	If Not (IsNull(Para) Or Trim(Para)="" Or Not IsNumeric(Para)) Then

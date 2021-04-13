@@ -2,7 +2,7 @@
 <!-- #include file="inc/const.asp" -->
 <%
 Dvbbs.LoadTemplates("")
-Dvbbs.ErrType = 1	'×ªµ½²»ÏÔÊ¾¶¥²¿ºÍµ¼º½µÄ´íÎóÏÔÊ¾Ò³
+Dvbbs.ErrType = 1	'è½¬åˆ°ä¸æ˜¾ç¤ºé¡¶éƒ¨å’Œå¯¼èˆªçš„é”™è¯¯æ˜¾ç¤ºé¡µ
 Dvbbs.Head()
 
 	If Not (Dvbbs.master Or Dvbbs.GroupSetting(70)="1") Then
@@ -37,7 +37,7 @@ Dvbbs.PageEnd()
 Sub info()
 %>
 <br/>
-<div class="tableborder" style="width:97%;">µ¼º½£º<a href="?action=add">Ìí¼ÓÄ£°å</a> | <a href="plus_popwan_posttinput.asp">Ä£°åÁĞ±í</a></div>
+<div class="tableborder" style="width:97%;">å¯¼èˆªï¼š<a href="?action=add">æ·»åŠ æ¨¡æ¿</a> | <a href="plus_popwan_posttinput.asp">æ¨¡æ¿åˆ—è¡¨</a></div>
 <br/>
 <%
 End Sub
@@ -46,22 +46,22 @@ Sub add()
 %>
 <form action="?act=add&action=save" method="post" name="theform">
 <table class="tableborder" cellspacing="1">
-	<tr><th colspan="2">ĞÂ½¨Ä£°å</th></tr>
+	<tr><th colspan="2">æ–°å»ºæ¨¡æ¿</th></tr>
 	<tr>
-		<td width="20%">ÎÄ¼şÃû</td>
-		<td width="80%"><input type="text" name="f_name" size="35"><font color="red">*</font>¸ñÊ½£ºÓ¢ÎÄ+Êı×Ö+ÏÂ»®Ïß&nbsp;Èç£ºabc_123</td>
+		<td width="20%">æ–‡ä»¶å</td>
+		<td width="80%"><input type="text" name="f_name" size="35"><font color="red">*</font>æ ¼å¼ï¼šè‹±æ–‡+æ•°å­—+ä¸‹åˆ’çº¿&nbsp;å¦‚ï¼šabc_123</td>
 	</tr>
 	<tr>
-		<td>Ö÷Ìâ±êÌâ</td>
+		<td>ä¸»é¢˜æ ‡é¢˜</td>
 		<td><input type="text" name="topic" size="35"></td>
 	</tr>
 	<tr>
-		<td>Ö÷ÌâÄÚÈİ</td>
+		<td>ä¸»é¢˜å†…å®¹</td>
 		<td><textarea name="body" cols="80" rows="10"></textarea></td>
 	</tr>
 	<tr> 
 		<td height="24">&nbsp;</td>
-		<td><input type="submit" name="Submit" value="Ìá½»" class="button"></td>
+		<td><input type="submit" name="Submit" value="æäº¤" class="button"></td>
 	</tr>
 </table>
 </form>
@@ -77,23 +77,23 @@ If IsSafeParam(f_name,"^[a-zA-Z0-9_]+$") Then
 	%>
 	<form action="?act=edit&action=save" method="post" name="theform">
 	<table class="tableborder" cellspacing="1">
-		<tr><th colspan="2">±à¼­Ä£°å£º<%=f_name%></th></tr>
+		<tr><th colspan="2">ç¼–è¾‘æ¨¡æ¿ï¼š<%=f_name%></th></tr>
 		<tr>
-			<td width="20%">ÎÄ¼şÃû</td>
-			<td width="80%"><input type="text" name="f_name" size="35" value="<%=f_name%>"><font color="red">*</font>¸ñÊ½£ºÓ¢ÎÄ+Êı×Ö+ÏÂ»®Ïß&nbsp;Èç£ºabc_123</td>
+			<td width="20%">æ–‡ä»¶å</td>
+			<td width="80%"><input type="text" name="f_name" size="35" value="<%=f_name%>"><font color="red">*</font>æ ¼å¼ï¼šè‹±æ–‡+æ•°å­—+ä¸‹åˆ’çº¿&nbsp;å¦‚ï¼šabc_123</td>
 			<input type="hidden" name="f_oldname" value="<%=f_name%>"/>
 		</tr>
 		<tr>
-			<td>Ö÷Ìâ±êÌâ</td>
+			<td>ä¸»é¢˜æ ‡é¢˜</td>
 			<td><input type="text" name="topic" size="35"></td>
 		</tr>
 		<tr>
-			<td>Ö÷ÌâÄÚÈİ</td>
+			<td>ä¸»é¢˜å†…å®¹</td>
 			<td><textarea name="body" cols="80" rows="10"></textarea></td>
 		</tr>
 		<tr> 
 			<td height="24">&nbsp;</td>
-			<td><input type="submit" name="Submit" value="Ìá½»" class="button"></td>
+			<td><input type="submit" name="Submit" value="æäº¤" class="button"></td>
 		</tr>
 	</table>
 	</form>
@@ -105,7 +105,7 @@ If IsSafeParam(f_name,"^[a-zA-Z0-9_]+$") Then
 	</script>
 	<%
 Else
-	G_Msg = "´«µİ¹ıÀ´µÄ²ÎÊı²»¹æ·¶¡£ÎŞ·¨¶ÁÈ¡Ä£°åÎÄ¼ş¡£"
+	G_Msg = "ä¼ é€’è¿‡æ¥çš„å‚æ•°ä¸è§„èŒƒã€‚æ— æ³•è¯»å–æ¨¡æ¿æ–‡ä»¶ã€‚"
 	Response.Redirect "showerr.asp?ErrCodes=<li>"& G_Msg &"&action=NoHeadErr"
 	Exit Sub
 End If
@@ -143,14 +143,14 @@ Sub savetofile(content)
 	G_Msg=""
 	If IsSafeParam(sLabelName,"^[a-zA-Z0-9_]+$") Then
 		If act="add" Then
-			If FileIsExist(G_CurrentFolder&sLabelName&".html") Then G_Msg="¸ÃÄ£°åÃûÒÑ´æÔÚ£¬ÇëĞŞ¸ÄÄ£°åÃûºóÖØĞÂÌá½»¡£"
+			If FileIsExist(G_CurrentFolder&sLabelName&".html") Then G_Msg="è¯¥æ¨¡æ¿åå·²å­˜åœ¨ï¼Œè¯·ä¿®æ”¹æ¨¡æ¿ååé‡æ–°æäº¤ã€‚"
 		Else
 			If sLabelOldName<>"" And sLabelOldName<>sLabelName Then 
 				If FileIsExist(G_CurrentFolder&sLabelName&".html") Then
-					G_Msg="ÄúÊÔÍ¼ĞŞ¸ÄÄ£°åÃû£¬µ«ÊÇ¸ÃÄ£°åÃûÒÑ´æÔÚ£¬ÇëĞŞ¸ÄºóÖØĞÂÌá½»¡£"
+					G_Msg="æ‚¨è¯•å›¾ä¿®æ”¹æ¨¡æ¿åï¼Œä½†æ˜¯è¯¥æ¨¡æ¿åå·²å­˜åœ¨ï¼Œè¯·ä¿®æ”¹åé‡æ–°æäº¤ã€‚"
 				Else
 					If Not FileReName(G_CurrentFolder&sLabelOldName&".html", sLabelName&".html") Then 
-						G_Msg="ÄúÊÔÍ¼ĞŞ¸ÄÄ£°åÃû£¬µ«ÊÇÃ»ÓĞ³É¹¦¡£¿ÉÄÜÊÇÈ¨ÏŞ²»¹»¡£"
+						G_Msg="æ‚¨è¯•å›¾ä¿®æ”¹æ¨¡æ¿åï¼Œä½†æ˜¯æ²¡æœ‰æˆåŠŸã€‚å¯èƒ½æ˜¯æƒé™ä¸å¤Ÿã€‚"
 					End If
 				End If 
 			End If 
@@ -162,9 +162,9 @@ Sub savetofile(content)
 				Err.Description
 				Response.End
 				Err.Clear
-				G_Msg="Ä£°å±£´æÊ§°Ü¡£¿ÉÄÜÄúµÄÎÄ¼ş¼Ğ£¨Plus_popwan/DefaultInput/post£©¼°Æä×ÓÄ¿Â¼Ã»ÓĞĞ´ÈëºÍĞŞ¸ÄÈ¨ÏŞ¡£"
+				G_Msg="æ¨¡æ¿ä¿å­˜å¤±è´¥ã€‚å¯èƒ½æ‚¨çš„æ–‡ä»¶å¤¹ï¼ˆPlus_popwan/DefaultInput/postï¼‰åŠå…¶å­ç›®å½•æ²¡æœ‰å†™å…¥å’Œä¿®æ”¹æƒé™ã€‚"
 			Else
-				G_Msg="¹§Ï²£¬Ä£°å±£´æ³É¹¦£¡"
+				G_Msg="æ­å–œï¼Œæ¨¡æ¿ä¿å­˜æˆåŠŸï¼"
 			End If
 			Dvbbs.Dvbbs_suc(G_Msg)
 		Else
@@ -172,7 +172,7 @@ Sub savetofile(content)
 			Exit Sub
 		End If
 	Else
-		G_Msg="Ä£°åÃû²»¹æ·¶¡£Ä£°åÃûÖ»ÄÜÓÉ×ÖÄ¸¡¢Êı×ÖºÍÏÂ»®Ïß×é³É¡£ÇëĞŞ¸ÄºóÖØĞÂÌá½»¡£"
+		G_Msg="æ¨¡æ¿åä¸è§„èŒƒã€‚æ¨¡æ¿ååªèƒ½ç”±å­—æ¯ã€æ•°å­—å’Œä¸‹åˆ’çº¿ç»„æˆã€‚è¯·ä¿®æ”¹åé‡æ–°æäº¤ã€‚"
 		Response.Redirect "showerr.asp?ErrCodes=<li>"& G_Msg &"&action=NoHeadErr"
 		Exit Sub
 	End If
@@ -189,17 +189,17 @@ sLabelPath = Server.MapPath(sLabelPath)
 Set Folder = Fso.GetFolder(sLabelPath)
 %>
 <table class="tableborder" cellspacing="1">
-	<tr><th colspan="2">Ä£°åÁĞ±í</th></tr>
+	<tr><th colspan="2">æ¨¡æ¿åˆ—è¡¨</th></tr>
 <%
 	For Each File In Folder.Files
 		G_i = G_i + 1
 		response.write "<tr><td>" & File.name & "</td>" & vbNewLine
-		Response.Write "<td><a href=""javascript:;"" onclick=""fillform('"&G_CurrentFolder&File.name&"','"&Replace(File.name,".html","")&"')"">ÌîĞ´</a> | <a href='?action=edit&f_name="&File.name&"'>±à¼­</a> | <a href='?action=del&f_name="&File.name&"' onclick='return confirm(""ÄúÈ·¶¨ÒªÉ¾³ı"&File.name&"Ä£°åÂğ£¿É¾³ıÖ®ºó²»ÄÜ»Ö¸´¡£"")'>É¾³ı</a></td></tr>" & vbNewLine
+		Response.Write "<td><a href=""javascript:;"" onclick=""fillform('"&G_CurrentFolder&File.name&"','"&Replace(File.name,".html","")&"')"">å¡«å†™</a> | <a href='?action=edit&f_name="&File.name&"'>ç¼–è¾‘</a> | <a href='?action=del&f_name="&File.name&"' onclick='return confirm(""æ‚¨ç¡®å®šè¦åˆ é™¤"&File.name&"æ¨¡æ¿å—ï¼Ÿåˆ é™¤ä¹‹åä¸èƒ½æ¢å¤ã€‚"")'>åˆ é™¤</a></td></tr>" & vbNewLine
 	Next 
 	Set File = Nothing 
 	Set Fso	= Nothing 
 	If 0=G_i Then
-		response.write "<tr><td colspan=""2"">ÔİÎ´Ìí¼Ó£¡</td></tr>"
+		response.write "<tr><td colspan=""2"">æš‚æœªæ·»åŠ ï¼</td></tr>"
 	End If 
 %>
 </table>
@@ -214,12 +214,12 @@ Set Folder = Fso.GetFolder(sLabelPath)
 		a.src = path;
 		a.style.display = 'none';
 		document.body.appendChild(a);
-		alert('Ìí¼ÓÍê³É');
+		alert('æ·»åŠ å®Œæˆ');
 		var b=document.getElementById(file);
 		//b.contentWindow.document.location.reload();
 		var topic = b.contentWindow.document.getElementById('topic');
 		var body = b.contentWindow.document.getElementById('body');
-		//ÌîĞ´
+		//å¡«å†™
 		parent.document.Dvform.topic.value=topic.innerHTML;
 		parent.dvtextarea.clear();
 		parent.dvtextarea.insert(body.innerHTML);
@@ -238,7 +238,7 @@ Set Folder = Fso.GetFolder(sLabelPath)
 <%
 End Sub
 
-'É¾³ıÎÄ¼ş
+'åˆ é™¤æ–‡ä»¶
 Sub del()
 	Dim Fso, sLabelName, sRealPath
 	sLabelName=Replace(request("f_name"),".html","")
@@ -250,16 +250,16 @@ Sub del()
 			Fso.DeleteFile sRealPath,True
 			If Err Then
 				Err.Clear
-				G_Msg="ÔÚÉ¾³ıÎÄ¼şÊ±·¢Éú´íÎó£¬¿ÉÄÜÊÇÃ»ÓĞ×ã¹»µÄÈ¨ÏŞ¡£Çëµ½¿Õ¼äÉÏÊÖ¶¯É¾³ı´ËÎÄ¼ş¡£"
+				G_Msg="åœ¨åˆ é™¤æ–‡ä»¶æ—¶å‘ç”Ÿé”™è¯¯ï¼Œå¯èƒ½æ˜¯æ²¡æœ‰è¶³å¤Ÿçš„æƒé™ã€‚è¯·åˆ°ç©ºé—´ä¸Šæ‰‹åŠ¨åˆ é™¤æ­¤æ–‡ä»¶ã€‚"
 			Else
-				G_Msg="³É¹¦É¾³ıÎÄ¼ş£º"&sLabelName&""
+				G_Msg="æˆåŠŸåˆ é™¤æ–‡ä»¶ï¼š"&sLabelName&""
 			End If
 		Else
-			G_Msg="ÎÄ¼şÃ»ÓĞÕÒµ½¡£¿ÉÄÜÒÑ¾­±»É¾³ı£¬»òÕßÃ»ÓĞ×ã¹»µÄÈ¨ÏŞ¡£"
+			G_Msg="æ–‡ä»¶æ²¡æœ‰æ‰¾åˆ°ã€‚å¯èƒ½å·²ç»è¢«åˆ é™¤ï¼Œæˆ–è€…æ²¡æœ‰è¶³å¤Ÿçš„æƒé™ã€‚"
 		End If 
 		Set Fso=Nothing
 	Else
-		G_Msg = "´«µİ¹ıÀ´µÄÂ·¾¶ÒòÎª°²È«Ô­Òò±»½ûÖ¹¡£Çëµ½¿Õ¼äÉÏÊÖ¶¯É¾³ı¸ÃÎÄ¼ş¡£"
+		G_Msg = "ä¼ é€’è¿‡æ¥çš„è·¯å¾„å› ä¸ºå®‰å…¨åŸå› è¢«ç¦æ­¢ã€‚è¯·åˆ°ç©ºé—´ä¸Šæ‰‹åŠ¨åˆ é™¤è¯¥æ–‡ä»¶ã€‚"
 		Response.Redirect "showerr.asp?ErrCodes=<li>"& G_Msg &"&action=NoHeadErr"
 		Exit Sub
 	End If
@@ -272,7 +272,7 @@ Function CreateFSO()
 	Set CreateFSO = Dvbbs.iCreateObject("Scripting.FileSystemObject")
 	If Err Then 
 		Err.Clear
-		response.write "ÄúµÄ¿Õ¼ä²»Ö§³ÖFSO£¬»òÕßFSO¶ÔÏóÃûÓÉÓÚ°²È«Ô­Òò±»¸ü¸Ä¹ı£¬ÇëÓë¿Õ¼äÉÌÁªÏµ£¡"
+		response.write "æ‚¨çš„ç©ºé—´ä¸æ”¯æŒFSOï¼Œæˆ–è€…FSOå¯¹è±¡åç”±äºå®‰å…¨åŸå› è¢«æ›´æ”¹è¿‡ï¼Œè¯·ä¸ç©ºé—´å•†è”ç³»ï¼"
 		response.End 
 	End If
 End Function

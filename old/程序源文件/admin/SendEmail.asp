@@ -20,22 +20,22 @@ Footer()
 Sub Main()
 %>
 <table cellpadding="3" cellspacing="1" border="0" align="center" width="100%">
-<tr><th colspan="2" style="text-align:center;">ÓÃ»§ÓÊ¼şÍ¨Öª</th></tr>
+<tr><th colspan="2" style="text-align:center;">ç”¨æˆ·é‚®ä»¶é€šçŸ¥</th></tr>
 <tr>
 <td width="20%" class="td1" align="center">
-<button Style="width:80;height:50;border: 1px outset ;" class="button">×¢ÒâÊÂÏî</button>
+<button Style="width:80;height:50;border: 1px outset ;" class="button">æ³¨æ„äº‹é¡¹</button>
 </td>
 <td width="80%" class="td2">
-	¢Ù·¢ËÍÓÊ¼şÁĞ±íÖ»»á±£Áô×îĞÂÊ®Ìõ¼ÇÂ¼£»
-	<br>¢ÚÃ¿´Î·¢ËÍÓÊ¼şÇë²»ÒªÉèÖÃ¹ı¶à£¬Òª¸ù¾İ·şÎñÆ÷µÄÇé¿ö¶ø¶¨£»
-	<br>¢ÛÓÊ¼şÁĞ±í½«±£Áô·¢ËÍµÄ¼ÇÂ¼£¬»¹Î´·¢ËÍÍêµÄ¿ÉÒÔÔÚÏÂÒ»´ÎÖ´ĞĞ·¢ËÍ£»
-	<br>¢ÜÅúÁ¿·¢ËÍÓÊ¼ş£¬½«»áÕ¼ÓÃ·şÎñÆ÷×ÊÔ´£¬Çë¾¡Á¿ÔÚ·ÃÎÊÁ¿ÉÙµÄÊ±¼ä½øĞĞÅúÁ¿²Ù×÷¡£
-<!-- <br>¢İ
-	<br>¢Ş -->
+	â‘ å‘é€é‚®ä»¶åˆ—è¡¨åªä¼šä¿ç•™æœ€æ–°åæ¡è®°å½•ï¼›
+	<br>â‘¡æ¯æ¬¡å‘é€é‚®ä»¶è¯·ä¸è¦è®¾ç½®è¿‡å¤šï¼Œè¦æ ¹æ®æœåŠ¡å™¨çš„æƒ…å†µè€Œå®šï¼›
+	<br>â‘¢é‚®ä»¶åˆ—è¡¨å°†ä¿ç•™å‘é€çš„è®°å½•ï¼Œè¿˜æœªå‘é€å®Œçš„å¯ä»¥åœ¨ä¸‹ä¸€æ¬¡æ‰§è¡Œå‘é€ï¼›
+	<br>â‘£æ‰¹é‡å‘é€é‚®ä»¶ï¼Œå°†ä¼šå ç”¨æœåŠ¡å™¨èµ„æºï¼Œè¯·å°½é‡åœ¨è®¿é—®é‡å°‘çš„æ—¶é—´è¿›è¡Œæ‰¹é‡æ“ä½œã€‚
+<!-- <br>â‘¤
+	<br>â‘¥ -->
 </td>
 </tr>
 <tr><td colspan="2" class="td2">
-<a href="?">ÏµÍ³Èº·¢ÓÊ¼ş</a> | <a href="?Act=ShowLog">Èº·¢ÓÊ¼şÈÎÎñ¼ÇÂ¼</a>
+<a href="?">ç³»ç»Ÿç¾¤å‘é‚®ä»¶</a> | <a href="?Act=ShowLog">ç¾¤å‘é‚®ä»¶ä»»åŠ¡è®°å½•</a>
 </td></tr>
 </table>
 <%
@@ -49,12 +49,12 @@ Select Case Request("Act")
 End Select
 End Sub
 
-'É¾³ı¼ÇÂ¼
+'åˆ é™¤è®°å½•
 Sub DelSendLog()
 	Dim DelNodes,DelChildNodes
 	Set XmlDom = Dvbbs.iCreateObject("MSXML.DOMDocument")
 	If Not XmlDom.load(FilePath) Then
-		ErrMsg = "ÓÊ¼şÁĞ±íÖĞÎª¿Õ£¬ÇëÌîĞ´·¢ÓÊ¼şºóÔÙÖ´ĞĞ±¾²Ù×÷!"
+		ErrMsg = "é‚®ä»¶åˆ—è¡¨ä¸­ä¸ºç©ºï¼Œè¯·å¡«å†™å‘é‚®ä»¶åå†æ‰§è¡Œæœ¬æ“ä½œ!"
 		Dvbbs_Error()
 		Exit Sub
 	End If
@@ -67,16 +67,16 @@ Sub DelSendLog()
 	Next
 	XmlDom.save FilePath
 	Set XmlDom=Nothing
-	Dv_suc("ËùÑ¡µÄ¼ÇÂ¼ÒÑÉ¾³ı!")
+	Dv_suc("æ‰€é€‰çš„è®°å½•å·²åˆ é™¤!")
 End Sub
 
-'¸ù¾İ¼ÇÂ¼·¢ËÍÓÊ¼ş
+'æ ¹æ®è®°å½•å‘é€é‚®ä»¶
 Sub SendLog()
 	Dim SelNodes,SelChildNodes,SendOrders
 	SelNodes = Trim(Request.Form("DelNodes"))
 	SendOrders = Trim(Request.Form("SendOrders"))
 	If SendOrders="" or Not IsNumeric(SendOrders) Then
-		ErrMsg = "ÇëÌîĞ´Ã¿´Î·¢ËÍÓÊ¼şµÄ¼ÇÂ¼Êı!"
+		ErrMsg = "è¯·å¡«å†™æ¯æ¬¡å‘é€é‚®ä»¶çš„è®°å½•æ•°!"
 		Dvbbs_Error()
 		Exit Sub
 	Else
@@ -84,13 +84,13 @@ Sub SendLog()
 	End If
 	Set XmlDom = Dvbbs.iCreateObject("MSXML.DOMDocument")
 	If Not XmlDom.load(FilePath) Then
-		ErrMsg = "ÓÊ¼şÁĞ±íÖĞÎª¿Õ£¬ÇëÌîĞ´·¢ÓÊ¼şºóÔÙÖ´ĞĞ±¾²Ù×÷!"
+		ErrMsg = "é‚®ä»¶åˆ—è¡¨ä¸­ä¸ºç©ºï¼Œè¯·å¡«å†™å‘é‚®ä»¶åå†æ‰§è¡Œæœ¬æ“ä½œ!"
 		Dvbbs_Error()
 		Exit Sub
 	End If
 	Set SelChildNodes = XmlDom.DocumentElement.selectSingleNode("SendLog[@AddTime='"&SelNodes&"']")
 	If SelChildNodes is nothing Then
-		ErrMsg = "·¢ËÍµÄ¼ÇÂ¼²»´æÔÚ£¬ÇëÌîĞ´·¢ÓÊ¼şºóÔÙÖ´ĞĞ±¾²Ù×÷!"
+		ErrMsg = "å‘é€çš„è®°å½•ä¸å­˜åœ¨ï¼Œè¯·å¡«å†™å‘é‚®ä»¶åå†æ‰§è¡Œæœ¬æ“ä½œ!"
 		Dvbbs_Error()
 		Exit Sub
 	End If
@@ -106,7 +106,7 @@ Sub SendLog()
 	SearchStr = SelChildNodes.selectSingleNode("Search").text
 	LastUserID = Int(SelChildNodes.getAttribute("LasterUserID"))
 	If Remain="0" Then
-		ErrMsg = "ÒÑ¾­·¢ËÍÍê±Ï!"
+		ErrMsg = "å·²ç»å‘é€å®Œæ¯•!"
 		Dvbbs_Error()
 		Exit Sub
 	End If
@@ -120,14 +120,14 @@ Sub SendLog()
 		SQL=Rs.GetRows(-1)
 		Rs.close:Set Rs = Nothing
 	Else
-		ErrMsg = "ÒÑ¾­·¢ËÍÍê±Ï!"
+		ErrMsg = "å·²ç»å‘é€å®Œæ¯•!"
 		Dvbbs_Error()
 		Exit Sub
 	End If
 	%>
 	<table cellpadding="0" cellspacing="0" border="0" width="95%" class="tableBorder" align=center>
 	<tr><td colspan=2 class=td1>
-	ÏÂÃæ¿ªÊ¼·¢ËÍÓÊ¼ş¸øÄ¿±êÓÃ»§£¬×Ü¹²·¢ËÍ<%=Total%>·â£¬Ä¿Ç°Ê£Óà·¢ËÍ<%=Remain%>·â£¬Ã¿´Î·¢ËÍ×îÏŞÎª<%=SendOrders%>·â¡£
+	ä¸‹é¢å¼€å§‹å‘é€é‚®ä»¶ç»™ç›®æ ‡ç”¨æˆ·ï¼Œæ€»å…±å‘é€<%=Total%>å°ï¼Œç›®å‰å‰©ä½™å‘é€<%=Remain%>å°ï¼Œæ¯æ¬¡å‘é€æœ€é™ä¸º<%=SendOrders%>å°ã€‚
 	<table width="400" border="0" cellspacing="1" cellpadding="1">
 	<tr> 
 	<td bgcolor=000000>
@@ -144,15 +144,15 @@ Sub SendLog()
 	<%
 	Dim DvEmail
 	Set DvEmail = New Dv_SendMail
-	DvEmail.SendObject = Cint(Dvbbs.Forum_Setting(2))	'ÉèÖÃÑ¡È¡×é¼ş 1=Jmail,2=Cdonts,3=Aspemail
-	DvEmail.ServerLoginName = Dvbbs.Forum_info(12)	'ÄúµÄÓÊ¼ş·şÎñÆ÷µÇÂ¼Ãû
-	DvEmail.ServerLoginPass = Dvbbs.Forum_info(13)	'µÇÂ¼ÃÜÂë
-	DvEmail.SendSMTP = Dvbbs.Forum_info(4)			'SMTPµØÖ·
-	DvEmail.SendFromEmail = Dvbbs.Forum_info(5)		'·¢ËÍÀ´Ô´µØÖ·
-	DvEmail.SendFromName = Dvbbs.Forum_info(0)		'·¢ËÍÈËĞÅÏ¢
+	DvEmail.SendObject = Cint(Dvbbs.Forum_Setting(2))	'è®¾ç½®é€‰å–ç»„ä»¶ 1=Jmail,2=Cdonts,3=Aspemail
+	DvEmail.ServerLoginName = Dvbbs.Forum_info(12)	'æ‚¨çš„é‚®ä»¶æœåŠ¡å™¨ç™»å½•å
+	DvEmail.ServerLoginPass = Dvbbs.Forum_info(13)	'ç™»å½•å¯†ç 
+	DvEmail.SendSMTP = Dvbbs.Forum_info(4)			'SMTPåœ°å€
+	DvEmail.SendFromEmail = Dvbbs.Forum_info(5)		'å‘é€æ¥æºåœ°å€
+	DvEmail.SendFromName = Dvbbs.Forum_info(0)		'å‘é€äººä¿¡æ¯
 	For i=0 To Ubound(SQL,2)
 		If DvEmail.ErrCode = 0 Then
-			DvEmail.SendMail SQL(2,i),EmailTopic,EmailBody	'Ö´ĞĞ·¢ËÍÓÊ¼ş
+			DvEmail.SendMail SQL(2,i),EmailTopic,EmailBody	'æ‰§è¡Œå‘é€é‚®ä»¶
 			If Not DvEmail.ErrCode = 0 Then
 				ErrMsg = DvEmail.Description
 				Dvbbs_Error()
@@ -165,8 +165,8 @@ Sub SendLog()
 		End If
 		ii=ii+1
 		Response.Write "<script>img2.width=" & Fix((ii/Remain) * 400) & ";" & VbCrLf
-		Response.Write "txt2.innerHTML=""·¢ËÍ¸ø"&SQL(1,i)&"£¨"&SQL(2,i)&"£©µÄÓÊ¼şÍê³É£¬ÕıÔÚ·¢ËÍÏÂÒ»¸öÓÃ»§ÓÊ¼ş£¬" & FormatNumber(ii/Remain*100,4,-1) & """;" & VbCrLf
-		Response.Write "txt3.innerHTML+=""·¢ËÍ¸ø"&SQL(1,i)&"£¨"&SQL(2,i)&"£©µÄÓÊ¼şÍê³É<br>"";"
+		Response.Write "txt2.innerHTML=""å‘é€ç»™"&SQL(1,i)&"ï¼ˆ"&SQL(2,i)&"ï¼‰çš„é‚®ä»¶å®Œæˆï¼Œæ­£åœ¨å‘é€ä¸‹ä¸€ä¸ªç”¨æˆ·é‚®ä»¶ï¼Œ" & FormatNumber(ii/Remain*100,4,-1) & """;" & VbCrLf
+		Response.Write "txt3.innerHTML+=""å‘é€ç»™"&SQL(1,i)&"ï¼ˆ"&SQL(2,i)&"ï¼‰çš„é‚®ä»¶å®Œæˆ<br>"";"
 		Response.Write "</script>"
 		Response.Flush
 		LastUserID = SQL(0,i)
@@ -181,25 +181,25 @@ Sub SendLog()
 	XmlDom.save FilePath
 	Set XmlDom=Nothing
 	If Remain>0 Then
-		'¸Ä¼ÌĞø·¢ËÍ·½Ê½ 2005-10-6 Dv.Yz
+		'æ”¹ç»§ç»­å‘é€æ–¹å¼ 2005-10-6 Dv.Yz
 		Response.Write "<form method=""POST"" name=""resend"" action=""?Act=SendLog"">"
 		Response.Write "<input type=hidden name=""SendOrders"" value=""" & SendOrders & """>"
 		Response.Write "<input type=hidden name=""DelNodes"" value=""" & SelNodes & """>"
-		Response.Write "&nbsp;&nbsp;<input type=""submit"" class=""button"" value=¼ÌĞø·¢ËÍ></form>"
+		Response.Write "&nbsp;&nbsp;<input type=""submit"" class=""button"" value=ç»§ç»­å‘é€></form>"
 	End If
 End Sub
 
-'ÏÔÊ¾ÓÊ¼ş¼ÇÂ¼ÁĞ±í
+'æ˜¾ç¤ºé‚®ä»¶è®°å½•åˆ—è¡¨
 Sub ShowLog()
 Set XmlDom = Dvbbs.iCreateObject("MSXML.DOMDocument")
 If Not XmlDom.load(FilePath) Then
-	ErrMsg = "ÓÊ¼şÁĞ±íÖĞÎª¿Õ£¬ÇëÌîĞ´·¢ÓÊ¼şºóÔÙÖ´ĞĞ±¾²Ù×÷!"
+	ErrMsg = "é‚®ä»¶åˆ—è¡¨ä¸­ä¸ºç©ºï¼Œè¯·å¡«å†™å‘é‚®ä»¶åå†æ‰§è¡Œæœ¬æ“ä½œ!"
 	Dvbbs_Error()
 	Exit Sub
 End If
 Dim Node,SendLogNode,Childs
 Set SendLogNode = XmlDom.DocumentElement.SelectNodes("SendLog")
-Childs = SendLogNode.Length	'ÁĞ±íÊı
+Childs = SendLogNode.Length	'åˆ—è¡¨æ•°
 If Childs>10 Then
 	Dim objRemoveNode,i
 	For i=0 To (Childs-11)
@@ -210,21 +210,21 @@ End If
 %>
 <br>
 <table cellpadding="3" cellspacing="1" border="0" align="center" width="100%">
-<tr><th colspan="9" style="text-align:center;">·¢ËÍÓÊ¼şÁĞ±í</th></tr>
+<tr><th colspan="9" style="text-align:center;">å‘é€é‚®ä»¶åˆ—è¡¨</th></tr>
 <tr>
-<td width="1%" class=bodytitle align=center nowrap>Ñ¡È¡</td>
-<td width="20%" class=bodytitle align=center>±êÌâ</td>
-<td width="10%" class=bodytitle align=center nowrap>×Ü¹²·¢ËÍÊıÄ¿</td>
-<td width="10%" class=bodytitle align=center nowrap>Ê£Óà·¢ËÍÊıÄ¿</td>
-<td width="10%" class=bodytitle align=center>²Ù×÷Õß</td>
-<td width="10%" class=bodytitle align=center>²Ù×÷ÕßIP</td>
-<td width="10%" class=bodytitle align=center>Ìí¼ÓÊ±¼ä</td>
-<td width="10%" class=bodytitle align=center>¸üĞÂÊ±¼ä</td>
-<td width="10%" class=bodytitle align=center>²Ù×÷</td>
+<td width="1%" class=bodytitle align=center nowrap>é€‰å–</td>
+<td width="20%" class=bodytitle align=center>æ ‡é¢˜</td>
+<td width="10%" class=bodytitle align=center nowrap>æ€»å…±å‘é€æ•°ç›®</td>
+<td width="10%" class=bodytitle align=center nowrap>å‰©ä½™å‘é€æ•°ç›®</td>
+<td width="10%" class=bodytitle align=center>æ“ä½œè€…</td>
+<td width="10%" class=bodytitle align=center>æ“ä½œè€…IP</td>
+<td width="10%" class=bodytitle align=center>æ·»åŠ æ—¶é—´</td>
+<td width="10%" class=bodytitle align=center>æ›´æ–°æ—¶é—´</td>
+<td width="10%" class=bodytitle align=center>æ“ä½œ</td>
 </tr>
 <form action="?" method=post name="TheForm">
 <tr><td colspan="9" class="td2" height="23">
-Ã¿´Î·¢ËÍÓÊ¼ş<INPUT TYPE="text" NAME="SendOrders" value="10" size="4">·â
+æ¯æ¬¡å‘é€é‚®ä»¶<INPUT TYPE="text" NAME="SendOrders" value="10" size="4">å°
 </td></tr>
 <%
 Dim SearchStr,Topic
@@ -243,7 +243,7 @@ For Each Node in SendLogNode
 <td class="td1"><%=Node.getAttribute("MasterIP")%></td>
 <td class="td1"><%=Node.getAttribute("AddTime")%></td>
 <td class="td1"><%=Node.getAttribute("LastTime")%></td>
-<td class="td1" align=center><input type="submit" class="button" onclick="this.form.Act.value='SendLog';Selchecked(this.form.DelNodes,<%=i%>);" value="·¢ËÍ"></td>
+<td class="td1" align=center><input type="submit" class="button" onclick="this.form.Act.value='SendLog';Selchecked(this.form.DelNodes,<%=i%>);" value="å‘é€"></td>
 </tr>
 <%
 i=i+1
@@ -252,7 +252,7 @@ Next
 <tr>
 	<td colspan="9" class="td2">
 	<input type=hidden name=Act value="DelSendLog">
-	<input type=submit class="button" name=Submit value="É¾³ı¼ÇÂ¼"  onclick="{if(confirm('×¢Òâ£ºËùÉ¾³ıµÄÄ£°æ½«²»ÄÜ»Ö¸´£¡')){this.form.submit();return true;}return false;}">  <input type=checkbox class="checkbox" name=chkall value=on onclick="CheckAll(this.form)">È«Ñ¡</td>
+	<input type=submit class="button" name=Submit value="åˆ é™¤è®°å½•"  onclick="{if(confirm('æ³¨æ„ï¼šæ‰€åˆ é™¤çš„æ¨¡ç‰ˆå°†ä¸èƒ½æ¢å¤ï¼')){this.form.submit();return true;}return false;}">  <input type=checkbox class="checkbox" name=chkall value=on onclick="CheckAll(this.form)">å…¨é€‰</td>
 </tr>
 </form>
 </table>
@@ -271,36 +271,36 @@ if (obj[n]){
 Set XmlDom = Nothing
 End Sub
 
-'ÌîĞ´·¢ËÍÓÊ¼şĞÅÏ¢
+'å¡«å†™å‘é€é‚®ä»¶ä¿¡æ¯
 Sub SendStep1()
 %>
 <br>
 <table cellpadding="3" cellspacing="1" border="0" align="center" width="100%">
 <form METHOD=POST ACTION="?" name="TheForm">
-<tr><th colspan="2" style="text-align:center;">ÓÃ»§ÓÊ¼şÍ¨Öª</th></tr>
+<tr><th colspan="2" style="text-align:center;">ç”¨æˆ·é‚®ä»¶é€šçŸ¥</th></tr>
 <tr>
 <td width="15%" class="td2" align="right">
-Ñ¡ÔñÓÃ»§£º
+é€‰æ‹©ç”¨æˆ·ï¼š
 </td>
 <td width="85%" class="td1">
-<INPUT TYPE="text" NAME="UserName" size="40">(¶à¸öÓÃ»§ÃûÇëÒÔÓ¢ÎÄ¶ººÅ¡°,¡±·Ö¸ô£¬×¢ÒâÇø·Ö´óĞ¡Ğ´)
+<INPUT TYPE="text" NAME="UserName" size="40">(å¤šä¸ªç”¨æˆ·åè¯·ä»¥è‹±æ–‡é€—å·â€œ,â€åˆ†éš”ï¼Œæ³¨æ„åŒºåˆ†å¤§å°å†™)
 </td>
 </tr>
 <tr>
 <td class="td2" align="right">
-ÓÃ»§Àà±ğ£º
+ç”¨æˆ·ç±»åˆ«ï¼š
 </td>
 <td class="td1">
-<INPUT TYPE="radio" class="radio" NAME="UserType" value="0" checked onclick="UType(this.value)">ÓÃ»§Ãûµ¥
-<INPUT TYPE="radio" class="radio" NAME="UserType" value="1" onclick="UType(this.value)">ÓÃ»§×é
-<INPUT TYPE="radio" class="radio" NAME="UserType" value="2" onclick="UType(this.value)">ËùÓĞÓÃ»§
+<INPUT TYPE="radio" class="radio" NAME="UserType" value="0" checked onclick="UType(this.value)">ç”¨æˆ·åå•
+<INPUT TYPE="radio" class="radio" NAME="UserType" value="1" onclick="UType(this.value)">ç”¨æˆ·ç»„
+<INPUT TYPE="radio" class="radio" NAME="UserType" value="2" onclick="UType(this.value)">æ‰€æœ‰ç”¨æˆ·
 <div id="ToUserGroup" style="display:none;">
 	<br>
 	<table width="100%" border="0" cellspacing="1" cellpadding="3" align=center>
-	<tr><td height=20 class="td2">Ö¸¶¨ÓÃ»§×é</td></tr>
+	<tr><td height=20 class="td2">æŒ‡å®šç”¨æˆ·ç»„</td></tr>
 	<tr><td>
 	<%
-	'Response.Write "<INPUT TYPE=""checkbox"" NAME=""GetGroupID"" value=""-1"" checked>ËùÓĞÓÃ»§"
+	'Response.Write "<INPUT TYPE=""checkbox"" NAME=""GetGroupID"" value=""-1"" checked>æ‰€æœ‰ç”¨æˆ·"
 	Dim Rs
 	Set Rs=DvBBS.Execute("Select UserGroupID,Title,UserTitle,parentgid From Dv_UserGroups where parentgid>0  Order By parentgid,UserGroupID")
 	Do while not Rs.eof
@@ -312,32 +312,32 @@ Sub SendStep1()
 	Set Rs=Nothing
 	%>
 	</td></tr>
-	<tr><td height=20 class="td2"><input type="button" class="button" value="´ò¿ª¸ß¼¶ÉèÖÃ" NAME="OPENSET" onclick="openset(this,'UpSetting')"></td></tr>
+	<tr><td height=20 class="td2"><input type="button" class="button" value="æ‰“å¼€é«˜çº§è®¾ç½®" NAME="OPENSET" onclick="openset(this,'UpSetting')"></td></tr>
 	<tr><td height=20 ID="UpSetting" style="display:NONE" class="td2">
 		<table width="100%" border="0" cellspacing="1" cellpadding="3" align=center>
-		<tr><td height=20 colspan="4">·ûºÏÌõ¼şÉèÖÃ(Èô²»Ñ¡È¡ÓÃ»§×é£¬ÔòÒÔÏÂÌõ¼ş½«¶ÔËùÓĞÓÃ»§ÉúĞ§)</td></tr>
+		<tr><td height=20 colspan="4">ç¬¦åˆæ¡ä»¶è®¾ç½®(è‹¥ä¸é€‰å–ç”¨æˆ·ç»„ï¼Œåˆ™ä»¥ä¸‹æ¡ä»¶å°†å¯¹æ‰€æœ‰ç”¨æˆ·ç”Ÿæ•ˆ)</td></tr>
 		<tr>
-		<td class="td1" width="15%">×îºóµÇÂ½Ê±¼ä£º</td>
+		<td class="td1" width="15%">æœ€åç™»é™†æ—¶é—´ï¼š</td>
 		<td class="td1" width="35%">
-		<input type="text" name="LoginTime" onkeyup="CheckNumer(this.value,this,'')" size=6>Ìì &nbsp;<INPUT TYPE="radio" class="radio" NAME="LoginTimeType" checked value="0">¶àÓÚ <INPUT TYPE="radio" class="radio" NAME="LoginTimeType" value="1">ÉÙÓÚ
+		<input type="text" name="LoginTime" onkeyup="CheckNumer(this.value,this,'')" size=6>å¤© &nbsp;<INPUT TYPE="radio" class="radio" NAME="LoginTimeType" checked value="0">å¤šäº <INPUT TYPE="radio" class="radio" NAME="LoginTimeType" value="1">å°‘äº
 		</td>
-		<td class="td1" width="15%">×¢²áÊ±¼ä£º</td>
+		<td class="td1" width="15%">æ³¨å†Œæ—¶é—´ï¼š</td>
 		<td class="td1" width="35%">
-		<input type="text" name="RegTime" onkeyup="CheckNumer(this.value,this,'')" size=6>Ìì &nbsp;<INPUT TYPE="radio" class="radio" NAME="RegTimeType" checked value="0">¶àÓÚ <INPUT TYPE="radio" class="radio" NAME="RegTimeType" value="1">ÉÙÓÚ
+		<input type="text" name="RegTime" onkeyup="CheckNumer(this.value,this,'')" size=6>å¤© &nbsp;<INPUT TYPE="radio" class="radio" NAME="RegTimeType" checked value="0">å¤šäº <INPUT TYPE="radio" class="radio" NAME="RegTimeType" value="1">å°‘äº
 		</td>
 		</tr>
 		<tr>
-		<td class="td1">µÇÂ½´ÎÊı£º</td>
-		<td class="td1"><input type="text" name="Logins" size=6 onkeyup="CheckNumer(this.value,this,'')">´Î &nbsp;<INPUT TYPE="radio" class="radio" NAME="LoginsType" checked value="0">¶àÓÚ <INPUT TYPE="radio" class="radio" NAME="LoginsType" value="1">ÉÙÓÚ
+		<td class="td1">ç™»é™†æ¬¡æ•°ï¼š</td>
+		<td class="td1"><input type="text" name="Logins" size=6 onkeyup="CheckNumer(this.value,this,'')">æ¬¡ &nbsp;<INPUT TYPE="radio" class="radio" NAME="LoginsType" checked value="0">å¤šäº <INPUT TYPE="radio" class="radio" NAME="LoginsType" value="1">å°‘äº
 		</td>
-		<td class="td1">·¢±íÎÄÕÂ£º</td>
-		<td class="td1"><input type="text" name="UserPost" size=6 onkeyup="CheckNumer(this.value,this,'')">Æª &nbsp;<INPUT TYPE="radio" class="radio" NAME="UserPostType" checked value="0">¶àÓÚ <INPUT TYPE="radio" class="radio" NAME="UserPostType" value="1">ÉÙÓÚ</td>
+		<td class="td1">å‘è¡¨æ–‡ç« ï¼š</td>
+		<td class="td1"><input type="text" name="UserPost" size=6 onkeyup="CheckNumer(this.value,this,'')">ç¯‡ &nbsp;<INPUT TYPE="radio" class="radio" NAME="UserPostType" checked value="0">å¤šäº <INPUT TYPE="radio" class="radio" NAME="UserPostType" value="1">å°‘äº</td>
 		</tr>
 		<tr>
-		<td class="td1">Ö÷ÌâÎÄÕÂ£º</td>
-		<td class="td1"><input type="text" name="UserTopic" size=6 onkeyup="CheckNumer(this.value,this,'')">Æª &nbsp;<INPUT TYPE="radio" class="radio" NAME="UserTopicType" checked value="0">¶àÓÚ <INPUT TYPE="radio" class="radio" NAME="UserTopicType" value="1">ÉÙÓÚ</td>
-		<td class="td1">¾«»ªÎÄÕÂ£º</td>
-		<td class="td1"><input type="text" name="UserBest" size=6 onkeyup="CheckNumer(this.value,this,'')">Æª &nbsp;<INPUT TYPE="radio" class="radio" NAME="UserBestType" checked value="0">¶àÓÚ <INPUT TYPE="radio" class="radio" NAME="UserBestType" value="1">ÉÙÓÚ
+		<td class="td1">ä¸»é¢˜æ–‡ç« ï¼š</td>
+		<td class="td1"><input type="text" name="UserTopic" size=6 onkeyup="CheckNumer(this.value,this,'')">ç¯‡ &nbsp;<INPUT TYPE="radio" class="radio" NAME="UserTopicType" checked value="0">å¤šäº <INPUT TYPE="radio" class="radio" NAME="UserTopicType" value="1">å°‘äº</td>
+		<td class="td1">ç²¾åæ–‡ç« ï¼š</td>
+		<td class="td1"><input type="text" name="UserBest" size=6 onkeyup="CheckNumer(this.value,this,'')">ç¯‡ &nbsp;<INPUT TYPE="radio" class="radio" NAME="UserBestType" checked value="0">å¤šäº <INPUT TYPE="radio" class="radio" NAME="UserBestType" value="1">å°‘äº
 		</td>
 		</tr>
 		</table>
@@ -348,7 +348,7 @@ Sub SendStep1()
 </tr>
 <tr>
 <td class="td2" align="right">
-ÓÊ¼ş±êÌâ£º
+é‚®ä»¶æ ‡é¢˜ï¼š
 </td>
 <td class="td1">
 <INPUT TYPE="text" NAME="EmailTopic" size="80">
@@ -356,7 +356,7 @@ Sub SendStep1()
 </tr>
 <tr>
 <td class="td2" align="right">
-ÓÊ¼şÄÚÈİ£º
+é‚®ä»¶å†…å®¹ï¼š
 </td>
 <td class="td1">
 <TEXTAREA NAME="EmailBody" Style="width:100%;height:250;"></TEXTAREA>
@@ -367,7 +367,7 @@ Sub SendStep1()
 </td>
 <td class="td2" align="center">
 <INPUT TYPE="hidden" name="Act" value="sendemail">
-<INPUT TYPE="submit" class="button" value="Ìá½»">&nbsp;&nbsp;&nbsp;<INPUT TYPE="reset" class="button" value="ÖØÌî">
+<INPUT TYPE="submit" class="button" value="æäº¤">&nbsp;&nbsp;&nbsp;<INPUT TYPE="reset" class="button" value="é‡å¡«">
 </td>
 </tr>
 </form>
@@ -375,12 +375,12 @@ Sub SendStep1()
 <SCRIPT LANGUAGE="JavaScript">
 <!--
 function openset(v,s){
-	if (v.value=='´ò¿ª¸ß¼¶ÉèÖÃ'){
+	if (v.value=='æ‰“å¼€é«˜çº§è®¾ç½®'){
 		document.getElementById(s).style.display = "";
-		v.value="¹Ø±Õ¸ß¼¶ÉèÖÃ";
+		v.value="å…³é—­é«˜çº§è®¾ç½®";
 	}
 	else{
-		v.value="´ò¿ª¸ß¼¶ÉèÖÃ";
+		v.value="æ‰“å¼€é«˜çº§è®¾ç½®";
 		document.getElementById(s).style.display = "none";
 	}
 }
@@ -411,36 +411,36 @@ Sub SendStep2()
 	EmailTopic = Request.Form("EmailTopic")
 	EmailBody = Request.Form("EmailBody")
 	If EmailTopic="" or EmailBody="" Then
-		ErrMsg = "ÇëÌîĞ´ÓÊ¼şµÄ±êÌâºÍÄÚÈİ!"
+		ErrMsg = "è¯·å¡«å†™é‚®ä»¶çš„æ ‡é¢˜å’Œå†…å®¹!"
 		Dvbbs_Error()
 		Exit Sub
 	End If
 	Select Case UserType
-		Case "0" : Call Sendtype_0()	'°´Ö¸¶¨ÓÃ»§
-		Case "1" : Call Sendtype_1()	'°´Ö¸¶¨ÓÃ»§×é
-		Case "2" : Call Sendtype_2()	'°´ËùÓĞÓÃ»§
+		Case "0" : Call Sendtype_0()	'æŒ‰æŒ‡å®šç”¨æˆ·
+		Case "1" : Call Sendtype_1()	'æŒ‰æŒ‡å®šç”¨æˆ·ç»„
+		Case "2" : Call Sendtype_2()	'æŒ‰æ‰€æœ‰ç”¨æˆ·
 		Case Else
-			ErrMsg = "ÇëÑ¡ÊÕĞÅµÄÓÃ»§!"
+			ErrMsg = "è¯·é€‰æ”¶ä¿¡çš„ç”¨æˆ·!"
 			Dvbbs_Error()
 			Exit Sub
 	End Select
-	Dv_suc("ÒÑ¾­³É¹¦½«·¢ËÍÊÂ¼ş´æÈëÁĞ±í£¬ÇëÔÚ·¢ËÍÁĞ±íÖĞÑ¡È¡·¢ËÍ!")
+	Dv_suc("å·²ç»æˆåŠŸå°†å‘é€äº‹ä»¶å­˜å…¥åˆ—è¡¨ï¼Œè¯·åœ¨å‘é€åˆ—è¡¨ä¸­é€‰å–å‘é€!")
 End Sub
 
-'°´Ö¸¶¨ÓÃ»§
+'æŒ‰æŒ‡å®šç”¨æˆ·
 Sub Sendtype_0()
 	Dim Searchstr
 	Dim ToUserName,Rs,Sql,i,ToUserID,FirstUserID
 	ToUserName = Trim(Request.Form("UserName"))
 	If ToUserName = "" Then
-		ErrMsg = "ÇëÌîĞ´Ä¿±êÓÃ»§Ãû£¬×¢ÒâÇø·Ö´óĞ¡Ğ´¡£"
+		ErrMsg = "è¯·å¡«å†™ç›®æ ‡ç”¨æˆ·åï¼Œæ³¨æ„åŒºåˆ†å¤§å°å†™ã€‚"
 		Dvbbs_Error()
 		Exit Sub
 	End If
 	ToUserName = Replace(ToUserName,"'","")
 	ToUserName = Split(ToUserName,",")
 	If Ubound(ToUserName)>100 Then
-		ErrMsg = "ÏŞÖÆÒ»´Î²»ÄÜ³¬¹ı100Î»Ä¿±êÓÃ»§¡£"
+		ErrMsg = "é™åˆ¶ä¸€æ¬¡ä¸èƒ½è¶…è¿‡100ä½ç›®æ ‡ç”¨æˆ·ã€‚"
 		Dvbbs_Error()
 		Exit Sub
 	End If
@@ -460,7 +460,7 @@ Sub Sendtype_0()
 	Dim Total
 	Total = Ubound(Split(ToUserID,","))+1
 	If Total = 0 Then
-		ErrMsg = "ÏµÍ³ÕÒ²»µ½ÏàÓ¦Ä¿±êÓÃ»§Ãû£¬×¢ÒâÇø·Ö´óĞ¡Ğ´¡£"
+		ErrMsg = "ç³»ç»Ÿæ‰¾ä¸åˆ°ç›¸åº”ç›®æ ‡ç”¨æˆ·åï¼Œæ³¨æ„åŒºåˆ†å¤§å°å†™ã€‚"
 		Dvbbs_Error()
 		Exit Sub
 	Else
@@ -469,13 +469,13 @@ Sub Sendtype_0()
 	End If
 End Sub
 
-'°´Ö¸¶¨ÓÃ»§×é¼°Ìõ¼ş·¢ËÍ
+'æŒ‰æŒ‡å®šç”¨æˆ·ç»„åŠæ¡ä»¶å‘é€
 Sub Sendtype_1()
 	Dim GetGroupID
 	Dim SearchStr,TempValue,DayStr
 	GetGroupID = Replace(Request.Form("GetGroupID"),chr(32),"")
 	If GetGroupID<>"" and Not Isnumeric(Replace(GetGroupID,",","")) Then
-		ErrMsg = "ÇëÕıÈ·Ñ¡È¡ÏàÓ¦µÄÓÃ»§×é¡£"
+		ErrMsg = "è¯·æ­£ç¡®é€‰å–ç›¸åº”çš„ç”¨æˆ·ç»„ã€‚"
 '	Else
 '		GetGroupID = Dvbbs.Checkstr(GetGroupID)
 	End If
@@ -491,38 +491,38 @@ Sub Sendtype_1()
 			SearchStr = "UserGroupID in ("&Replace(GetGroupID,"'","")&")"
 		End If
 	End If
-	'µÇÂ½´ÎÊı
+	'ç™»é™†æ¬¡æ•°
 	TempValue = Request.Form("Logins")
 	If TempValue<>"" and IsNumeric(TempValue) Then
 		SearchStr = GetSearchString(TempValue,SearchStr,Request.Form("LoginsType"),"UserLogins")
 	End If
-	'·¢±íÎÄÕÂ
+	'å‘è¡¨æ–‡ç« 
 	TempValue = Request.Form("UserPost")
 	If TempValue<>"" and IsNumeric(TempValue) Then
 		SearchStr = GetSearchString(TempValue,SearchStr,Request.Form("UserPostType"),"UserPost")
 	End If
-	'Ö÷ÌâÎÄÕÂ
+	'ä¸»é¢˜æ–‡ç« 
 	TempValue = Request.Form("UserTopic")
 	If TempValue<>"" and IsNumeric(TempValue) Then
 		SearchStr = GetSearchString(TempValue,SearchStr,Request.Form("UserTopicType"),"UserTopic")
 	End If
-	'¾«»ªÎÄÕÂ
+	'ç²¾åæ–‡ç« 
 	TempValue = Request.Form("UserBest")
 	If TempValue<>"" and IsNumeric(TempValue) Then
 		SearchStr = GetSearchString(TempValue,SearchStr,Request.Form("UserBestType"),"UserIsBest")
 	End If
-	'×îºóµÇÂ½Ê±¼ä
+	'æœ€åç™»é™†æ—¶é—´
 	TempValue = Request.Form("LoginTime")
 	If TempValue<>"" and IsNumeric(TempValue) Then
 		SearchStr = GetSearchString(TempValue,SearchStr,Request.Form("LoginTimeType"),"Datediff("&DayStr&",Lastlogin,"&SqlNowString&")")
 	End If
-	'×¢²áÊ±¼ä
+	'æ³¨å†Œæ—¶é—´
 	TempValue = Request.Form("RegTime")
 	If TempValue<>"" and IsNumeric(TempValue) Then
 		SearchStr = GetSearchString(TempValue,SearchStr,Request.Form("RegTimeType"),"Datediff("&DayStr&",JoinDate,"&SqlNowString&")")
 	End If
 	If SearchStr="" Then
-		ErrMsg = "ÇëÌîĞ´·¢ËÍµÄÌõ¼şÑ¡Ïî¡£"
+		ErrMsg = "è¯·å¡«å†™å‘é€çš„æ¡ä»¶é€‰é¡¹ã€‚"
 	End If
 	If ErrMsg<>"" Then Dvbbs_Error() : Exit Sub
 	Dim Rs,Sql,Total,FirstUserID
@@ -533,13 +533,13 @@ Sub Sendtype_1()
 		FirstUserID = Dvbbs.Execute(Sql)(0)
 		Call CreateXmlLog(Total,SearchStr,FirstUserID)
 	Else
-		ErrMsg = "·¢ËÍÄ¿±êÓÃ»§Îª¿Õ£¬Çë¸ü¸Ä·¢ËÍÌõ¼şÔÙ½øĞĞ·¢ËÍ¡£"
+		ErrMsg = "å‘é€ç›®æ ‡ç”¨æˆ·ä¸ºç©ºï¼Œè¯·æ›´æ”¹å‘é€æ¡ä»¶å†è¿›è¡Œå‘é€ã€‚"
 		Dvbbs_Error()
 		Exit Sub
 	End If
 End Sub
 
-'°´ËùÓĞÓÃ»§
+'æŒ‰æ‰€æœ‰ç”¨æˆ·
 Sub Sendtype_2()
 	Dim SearchStr
 	Dim Rs,Sql,Total,FirstUserID
@@ -550,13 +550,13 @@ Sub Sendtype_2()
 		FirstUserID = Dvbbs.Execute(Sql)(0)
 		Call CreateXmlLog(Total,SearchStr,FirstUserID)
 	Else
-		ErrMsg = "·¢ËÍÄ¿±êÓÃ»§Îª¿Õ£¬Çë¸ü¸Ä·¢ËÍÌõ¼şÔÙ½øĞĞ·¢ËÍ¡£"
+		ErrMsg = "å‘é€ç›®æ ‡ç”¨æˆ·ä¸ºç©ºï¼Œè¯·æ›´æ”¹å‘é€æ¡ä»¶å†è¿›è¡Œå‘é€ã€‚"
 		Dvbbs_Error()
 		Exit Sub
 	End If
 End Sub
 
-'Ìí¼Ó·¢ËÍ¼ÇÂ¼
+'æ·»åŠ å‘é€è®°å½•
 Sub CreateXmlLog(SendTotal,Search,LasterUserID)
 	Dim node,attributes,createCDATASection,ChildNode
 	Set XmlDom = Dvbbs.iCreateObject("MSXML.DOMDocument")

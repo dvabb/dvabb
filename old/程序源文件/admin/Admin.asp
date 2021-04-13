@@ -8,7 +8,7 @@ Dim	admin_flag
 admin_flag=",18,"
 CheckAdmin(admin_flag)
 Dim body,username2,password2,oldpassword,oldusername,oldadduser,username1
-'È¡³öÓÃ»§×é¹ÜÀíÔ±µÄ×éÃû	2002-12-13
+'å–å‡ºç”¨æˆ·ç»„ç®¡ç†å‘˜çš„ç»„å	2002-12-13
 Dim	groupsname,titlepic,rs
 Set	rs=Dvbbs.Execute("select usertitle,grouppic	from [dv_UserGroups] where UserGroupID=1 ")
 groupsname=rs(0)
@@ -36,17 +36,17 @@ Sub	userlist()
 %>
 <table cellpadding="2" cellspacing="1" border="0" width="100%" align="center">
 				<tr>
-				  <th style="text-align:center;" colspan=5>¹ÜÀíÔ±¹ÜÀí(µã»÷ÓÃ»§Ãû½øĞĞ²Ù×÷)</th>
+				  <th style="text-align:center;" colspan=5>ç®¡ç†å‘˜ç®¡ç†(ç‚¹å‡»ç”¨æˆ·åè¿›è¡Œæ“ä½œ)</th>
 				</tr>
 				<tr	align=center>
-				  <td width="30%" height=22 class="td1"><B>ÓÃ»§Ãû</B></td><td width="25%" class="td2"><B>ÉÏ´ÎµÇÂ¼Ê±¼ä</B></td><td width="15%" class="td1"><B>ÉÏ´ÎµÇÂ½IP</B></td><td width="15%" class="td2"><B>²Ù×÷</B></td>
+				  <td width="30%" height=22 class="td1"><B>ç”¨æˆ·å</B></td><td width="25%" class="td2"><B>ä¸Šæ¬¡ç™»å½•æ—¶é—´</B></td><td width="15%" class="td1"><B>ä¸Šæ¬¡ç™»é™†IP</B></td><td width="15%" class="td2"><B>æ“ä½œ</B></td>
 				</tr>
 <%
 	set	rs=Dvbbs.Execute("select * from "&admintable&" order by LastLogin desc")
 	do while not rs.eof
 %>
 				<tr>
-				  <td class=td1><a	href="admin.asp?id=<%=rs("id")%>&action=pasword"><%=rs("username")%></a></td><td class=td2><%=rs("LastLogin")%></td><td class=td1><%=rs("LastLoginIP")%>&nbsp;</td><td class=td2><a	href="admin.asp?action=del&id=<%=rs("id")%>&name=<%=Rs("adduser")%>" onclick="{if(confirm('É¾³ıºó¸Ã¹ÜÀíÔ±½«²»¿É½øÈëºóÌ¨£¡\n\nÈ·¶¨É¾³ıÂğ?')){return true;}return false;}">É¾³ı</a>&nbsp;&nbsp;<a	href="admin.asp?id=<%=rs("id")%>&action=edit">±à¼­È¨ÏŞ</a></td>
+				  <td class=td1><a	href="admin.asp?id=<%=rs("id")%>&action=pasword"><%=rs("username")%></a></td><td class=td2><%=rs("LastLogin")%></td><td class=td1><%=rs("LastLoginIP")%>&nbsp;</td><td class=td2><a	href="admin.asp?action=del&id=<%=rs("id")%>&name=<%=Rs("adduser")%>" onclick="{if(confirm('åˆ é™¤åè¯¥ç®¡ç†å‘˜å°†ä¸å¯è¿›å…¥åå°ï¼\n\nç¡®å®šåˆ é™¤å—?')){return true;}return false;}">åˆ é™¤</a>&nbsp;&nbsp;<a	href="admin.asp?id=<%=rs("id")%>&action=edit">ç¼–è¾‘æƒé™</a></td>
 				</tr>
 <%
 	rs.movenext
@@ -60,17 +60,17 @@ Sub	userlist()
 
 Sub	Del()
 	Dim	UserTitle,sql,rs
-	Rem	¸üĞÂ³·Ïú¹ÜÀíÔ±ºóµÄµÈ¼¶Ãû³Æ 2004-4-29 Dvbbs.YangZheng
+	Rem	æ›´æ–°æ’¤é”€ç®¡ç†å‘˜åçš„ç­‰çº§åç§° 2004-4-29 Dvbbs.YangZheng
 	Sql	= "SELECT Top 1	UserTitle From Dv_UserGroups Where MinArticle >	0 And ParentGID	= 4	Order By UserGroupID"
 	Set	Rs = Dvbbs.Execute(Sql)
 	If Rs.Eof And Rs.Bof Then
-		UserTitle =	"ĞÂÊÖÉÏÂ·"
+		UserTitle =	"æ–°æ‰‹ä¸Šè·¯"
 	Else
 		UserTitle =	Rs(0)
 	End	If
 	Dvbbs.Execute("DELETE FROM " & Admintable &	" WHERE	Id = " & id)
 	Dvbbs.Execute("UPDATE [Dv_User]	SET	Usergroupid	= 4, UserClass = '"	& UserTitle	& "' WHERE Username	= '" & Replace(Request("name"),"'","")	& "'")
-	body="<li>¹ÜÀíÔ±É¾³ı³É¹¦¡£"
+	body="<li>ç®¡ç†å‘˜åˆ é™¤æˆåŠŸã€‚"
 	Dv_suc(body)
 End	Sub
 
@@ -88,29 +88,29 @@ Sub	pasword()
 <form action="?action=newpass" method=post>
 <table cellpadding="2" cellspacing="1" border="0" width="100%" align="center">
 			   <tr>
-				  <th colspan=2 style="text-align:center;">¹ÜÀíÔ±×ÊÁÏ¹ÜÀí£­£­ÃÜÂëĞŞ¸Ä
+				  <th colspan=2 style="text-align:center;">ç®¡ç†å‘˜èµ„æ–™ç®¡ç†ï¼ï¼å¯†ç ä¿®æ”¹
 				  </th>
 				</tr>
 			   <tr >
-			<td	width="26%"	align="right" class=td1>ºóÌ¨µÇÂ¼Ãû³Æ£º</td>
+			<td	width="26%"	align="right" class=td1>åå°ç™»å½•åç§°ï¼š</td>
 			<td	width="74%"	class=td1>
 			  <input type=hidden name="oldusername"	value="<%=rs("username")%>">
-			  <input type=text name="username2"	value="<%=rs("username")%>">  (¿ÉÓë×¢²áÃû²»Í¬)
+			  <input type=text name="username2"	value="<%=rs("username")%>">  (å¯ä¸æ³¨å†Œåä¸åŒ)
 			</td>
 		  </tr>
 		  <tr >
-			<td	width="26%"	align="right" class=td1>ºóÌ¨µÇÂ¼ÃÜÂë£º</td>
+			<td	width="26%"	align="right" class=td1>åå°ç™»å½•å¯†ç ï¼š</td>
 			<td	width="74%"	class=td1>
-			  <input type="password" name="password2" value="<%=oldpassword%>">	 (¿ÉÓë×¢²áÃÜÂë²»Í¬,ÈçÒªĞŞ¸ÄÇëÖ±½ÓÊäÈë)
+			  <input type="password" name="password2" value="<%=oldpassword%>">	 (å¯ä¸æ³¨å†Œå¯†ç ä¸åŒ,å¦‚è¦ä¿®æ”¹è¯·ç›´æ¥è¾“å…¥)
 			</td>
 		  </tr>
 		  <tr>
-			<td	width="26%"	align="right" class=td1 height=23>Ç°Ì¨ÓÃ»§Ãû³Æ£º</td>
+			<td	width="26%"	align="right" class=td1 height=23>å‰å°ç”¨æˆ·åç§°ï¼š</td>
 			<td	width="74%"	class=td1><%=oldadduser%>
 			</td>
 		 </tr>
 		<tr>
-			<td	width="26%"	align="right" class=td1 height=23>Ìí¼ÓÖ»ÔÊĞíµÇÂ½IPÁĞ±í£º
+			<td	width="26%"	align="right" class=td1 height=23>æ·»åŠ åªå…è®¸ç™»é™†IPåˆ—è¡¨ï¼š
 			</td>
 			<td	width="74%"	class=td1>
 			<textarea name="AddAcceptIP" cols="40" rows="8"><%
@@ -121,15 +121,15 @@ Sub	pasword()
 					If i<Ubound(AcceptIP) Then Response.Write vbCrLf
 				Next
 			End If
-			%></textarea><br><input type=button value="Ìí¼Ó×ÔÒÑµ±Ç°IP" onclick="AddAcceptIP.value+='\n<%=AddIP%>'"> <%=dvbbs.UserTrueIP%>
+			%></textarea><br><input type=button value="æ·»åŠ è‡ªå·²å½“å‰IP" onclick="AddAcceptIP.value+='\n<%=AddIP%>'"> <%=dvbbs.UserTrueIP%>
 			<fieldset class="fieldset" style="margin:2px 2px 2px 2px">
-			<legend><B>Ìí¼ÓËµÃ÷</B></legend>
+			<legend><B>æ·»åŠ è¯´æ˜</B></legend>
 			<ol>
-			<LI><b>Çå¿Õ²»ÌîĞ´¼´ÔÊĞíËùÓĞIPµÇÂ½ºóÌ¨¡£</b>
-			<LI><b><font color=red>¾¡Á¿²ÉÓÃIP¶ÎµÄ·½Ê½£¬Èç£º10.10.*.*¡£</font></b>
-			<LI><b>×¢Òâ£ºÌá½»ºóÔÚÏÂ´ÎµÇÂ½½«»áÉúĞ§£¬ÈôIPÌî´í½«»áÎŞ·¨µÇÂ½ºóÌ¨¡£</b>
-			<LI>Ìí¼ÓIPºó£¬¸Ã¹ÜÀíÔ±·ÃÎÊIP±ØĞè·ûºÏÔÊĞíIPÁĞ±í²ÅÄÜµÇÂ½ºóÌ¨¡£	<LI>Äú¿ÉÒÔÌí¼Ó¶à¸öÔÊĞíIP£¬Ã¿¸öIPÓÃ»Ø³µ·Ö¸ô£¬ÔÊĞíIPµÄÊéĞ´·½Ê½Èç202.152.12.1¾ÍÔÊĞíÁË202.152.12.1Õâ¸öIPµÄµÇÂ½ºóÌ¨£¬Èç202.152.12.*¾ÍÔÊĞíÁËÒÔ202.152.12¿ªÍ·µÄIPµÇÂ½ºóÌ¨¡£
-			<LI>ÔÚÌí¼Ó¶à¸öIPµÄÊ±ºò£¬Çë×¢Òâ×îºóÒ»¸öIPµÄºóÃæ²»Òª¼Ó»Ø³µ¡£
+			<LI><b>æ¸…ç©ºä¸å¡«å†™å³å…è®¸æ‰€æœ‰IPç™»é™†åå°ã€‚</b>
+			<LI><b><font color=red>å°½é‡é‡‡ç”¨IPæ®µçš„æ–¹å¼ï¼Œå¦‚ï¼š10.10.*.*ã€‚</font></b>
+			<LI><b>æ³¨æ„ï¼šæäº¤ååœ¨ä¸‹æ¬¡ç™»é™†å°†ä¼šç”Ÿæ•ˆï¼Œè‹¥IPå¡«é”™å°†ä¼šæ— æ³•ç™»é™†åå°ã€‚</b>
+			<LI>æ·»åŠ IPåï¼Œè¯¥ç®¡ç†å‘˜è®¿é—®IPå¿…éœ€ç¬¦åˆå…è®¸IPåˆ—è¡¨æ‰èƒ½ç™»é™†åå°ã€‚	<LI>æ‚¨å¯ä»¥æ·»åŠ å¤šä¸ªå…è®¸IPï¼Œæ¯ä¸ªIPç”¨å›è½¦åˆ†éš”ï¼Œå…è®¸IPçš„ä¹¦å†™æ–¹å¼å¦‚202.152.12.1å°±å…è®¸äº†202.152.12.1è¿™ä¸ªIPçš„ç™»é™†åå°ï¼Œå¦‚202.152.12.*å°±å…è®¸äº†ä»¥202.152.12å¼€å¤´çš„IPç™»é™†åå°ã€‚
+			<LI>åœ¨æ·»åŠ å¤šä¸ªIPçš„æ—¶å€™ï¼Œè¯·æ³¨æ„æœ€åä¸€ä¸ªIPçš„åé¢ä¸è¦åŠ å›è½¦ã€‚
 			</ol></fieldset>
 			</td>
 		  </tr>
@@ -137,7 +137,7 @@ Sub	pasword()
 			<td	colspan="2"	class=td1>
 			  <input type=hidden name="adduser"	value="<%=oldadduser%>">
 			  <input type=hidden name=id value="<%=id%>">
-			  <input type="submit" name="Submit" value="¸ü ĞÂ">
+			  <input type="submit" name="Submit" value="æ›´ æ–°">
 			</td>
 		  </tr>
 		</table>
@@ -152,13 +152,13 @@ Sub	newpass()
 	set	rs=Dvbbs.Execute("select * from	"&admintable&" where id="&id)
 	oldpassword=rs("password")
 	if request("username2")="" then
-		ErrMsg = "<li>ÇëÊäÈë¹ÜÀíÔ±Ãû×Ö¡£<a href=?>£Û <font color=red>·µ»Ø</font> £İ</a>"
+		ErrMsg = "<li>è¯·è¾“å…¥ç®¡ç†å‘˜åå­—ã€‚<a href=?>ï¼» <font color=red>è¿”å›</font> ï¼½</a>"
 		exit sub
 	else
 		usernw=trim(request("username2"))
 	end	if
 	if request("password2")="" then
-		ErrMsg = "<li>ÇëÊäÈëÄúµÄÃÜÂë¡£<a href=?>£Û <font color=red>·µ»Ø</font> £İ</a>"
+		ErrMsg = "<li>è¯·è¾“å…¥æ‚¨çš„å¯†ç ã€‚<a href=?>ï¼» <font color=red>è¿”å›</font> ï¼½</a>"
 		exit sub
 	elseif trim(request("password2"))=oldpassword then
 		passnw=request("password2")
@@ -166,7 +166,7 @@ Sub	newpass()
 		passnw=md5(request("password2"),16)
 	end	if
 	if request("adduser")="" then
-		ErrMsg = "<li>ÇëÊäÈë¹ÜÀíÔ±Ãû×Ö¡£<a	href=?>£Û <font	color=red>·µ»Ø</font> £İ</a>"
+		ErrMsg = "<li>è¯·è¾“å…¥ç®¡ç†å‘˜åå­—ã€‚<a	href=?>ï¼» <font	color=red>è¿”å›</font> ï¼½</a>"
 		exit sub
 	else
 		aduser=trim(request("adduser"))
@@ -185,7 +185,7 @@ Sub	newpass()
 		Next
 	End If
 	If Len(AcceptIP)>=255 Then
-		ErrMsg = "<li>ÔÊĞíIPÁĞ±íÌ«¶à£¬³¬³öÁËÏŞÖÆ¡£<a href=?>£Û <font color=red>·µ»Ø</font> £İ</a>"
+		ErrMsg = "<li>å…è®¸IPåˆ—è¡¨å¤ªå¤šï¼Œè¶…å‡ºäº†é™åˆ¶ã€‚<a href=?>ï¼» <font color=red>è¿”å›</font> ï¼½</a>"
 		exit sub
 	End If
 	set	rs=Dvbbs.iCreateObject("adodb.recordset")
@@ -197,9 +197,9 @@ Sub	newpass()
 	Rs("password") = passnw
 	Rs("AcceptIP") = AcceptIP
 ''''''''''''''
-'¸üĞÂÓÃ»§µÄµÄ¼¶±ğ
+'æ›´æ–°ç”¨æˆ·çš„çš„çº§åˆ«
 	'Dvbbs.Execute("update [dv_user]	set	usergroupid=1,userclass='"&groupsname&"',titlepic='"&titlepic&"' where username='"&trim(request("adduser"))&"'")	'
-	body="<li>¹ÜÀíÔ±×ÊÁÏ¸üĞÂ³É¹¦£¬Çë¼Ç×¡¸üĞÂĞÅÏ¢¡£<br> ¹ÜÀíÔ±£º"&request("username2")&"	<BR> ÃÜ	  Âë£º"&request("password2")&" <a href=?>£Û <font	color=red>·µ»Ø</font> £İ</a>"
+	body="<li>ç®¡ç†å‘˜èµ„æ–™æ›´æ–°æˆåŠŸï¼Œè¯·è®°ä½æ›´æ–°ä¿¡æ¯ã€‚<br> ç®¡ç†å‘˜ï¼š"&request("username2")&"	<BR> å¯†	  ç ï¼š"&request("password2")&" <a href=?>ï¼» <font	color=red>è¿”å›</font> ï¼½</a>"
 	Dv_suc(body)
 	rs.update
 	End	if
@@ -212,29 +212,29 @@ sub	addadmin()
 <form action="?action=savenew" method=post>
 <table cellpadding="2" cellspacing="1" border="0" width="100%" align="center">
 <tr>
-	<th colspan=2 style="text-align:center;">¹ÜÀíÔ±¹ÜÀí£­£­Ìí¼Ó¹ÜÀíÔ±</th>
+	<th colspan=2 style="text-align:center;">ç®¡ç†å‘˜ç®¡ç†ï¼ï¼æ·»åŠ ç®¡ç†å‘˜</th>
 </tr>
 <tr>
-	<td	width="26%"	align="right" class=td1>ºóÌ¨µÇÂ¼Ãû³Æ£º</td>
+	<td	width="26%"	align="right" class=td1>åå°ç™»å½•åç§°ï¼š</td>
 	<td	width="74%"	class=td1>
-	<input type=text name="username2" size=30>  (¿ÉÓë×¢²áÃû²»Í¬)
+	<input type=text name="username2" size=30>  (å¯ä¸æ³¨å†Œåä¸åŒ)
 	</td>
 </tr>
 <tr>
-	<td	width="26%"	align="right" class=td1>ºóÌ¨µÇÂ¼ÃÜÂë£º</td>
+	<td	width="26%"	align="right" class=td1>åå°ç™»å½•å¯†ç ï¼š</td>
 	<td	width="74%"	class=td1>
-	<input type="password" name="password2" size=33>	(¿ÉÓë×¢²áÃÜÂë²»Í¬)
+	<input type="password" name="password2" size=33>	(å¯ä¸æ³¨å†Œå¯†ç ä¸åŒ)
 	</td>
 </tr>
 <tr>
-	<td	width="26%"	align="right" class=td1 height=23>Ç°Ì¨ÓÃ»§Ãû³Æ£º</td>
-	<td	width="74%"	class=td1><input type=text	name="username1" size=30>  (±¾Ñ¡ÏîÌîĞ´ºó²»ÔÊĞíĞŞ¸Ä)
+	<td	width="26%"	align="right" class=td1 height=23>å‰å°ç”¨æˆ·åç§°ï¼š</td>
+	<td	width="74%"	class=td1><input type=text	name="username1" size=30>  (æœ¬é€‰é¡¹å¡«å†™åä¸å…è®¸ä¿®æ”¹)
 	</td>
 </tr>
 <tr align="center">
 	<td	colspan="2"	class=td1>
 	<input type="hidden" name="isdisp" value="1" />
-	<input type="submit" class="button" name="Submit" value="Ìí ¼Ó">
+	<input type="submit" class="button" name="Submit" value="æ·» åŠ ">
 	</td>
 </tr>
 </table>
@@ -245,15 +245,15 @@ end	sub
 sub	savenew()
 dim	adminuserid
 	if request.form("username2")=""	then
-		ErrMsg = "ÇëÊäÈëºóÌ¨µÇÂ¼ÓÃ»§Ãû£¡"
+		ErrMsg = "è¯·è¾“å…¥åå°ç™»å½•ç”¨æˆ·åï¼"
 		exit sub
 	end	if
 	if request.form("username1")=""	then
-		ErrMsg = "ÇëÊäÈëÇ°Ì¨µÇÂ¼ÓÃ»§Ãû£¡"
+		ErrMsg = "è¯·è¾“å…¥å‰å°ç™»å½•ç”¨æˆ·åï¼"
 		exit sub
 	end	if
 	if request.form("password2")=""	then
-		ErrMsg = "ÇëÊäÈëºóÌ¨µÇÂ¼ÃÜÂë£¡"
+		ErrMsg = "è¯·è¾“å…¥åå°ç™»å½•å¯†ç ï¼"
 		exit sub
 	end	if
 	dim isdisp,rs
@@ -265,7 +265,7 @@ dim	adminuserid
 
 	set	rs=Dvbbs.Execute("select userid	from [dv_user] where username='"&replace(request.form("username1"),"'","")&"'")
 	if rs.eof and rs.bof then
-		ErrMsg = "ÄúÊäÈëµÄÓÃ»§Ãû²»ÊÇÒ»¸öÓĞĞ§µÄ×¢²áÓÃ»§£¡"
+		ErrMsg = "æ‚¨è¾“å…¥çš„ç”¨æˆ·åä¸æ˜¯ä¸€ä¸ªæœ‰æ•ˆçš„æ³¨å†Œç”¨æˆ·ï¼"
 		exit sub
 	else
 		adminuserid=rs(0)
@@ -273,86 +273,86 @@ dim	adminuserid
 
 	set	rs=Dvbbs.Execute("select username from "&admintable&" where	username='"&replace(request.form("username2"),"'","")&"'")
 	if not (rs.eof and rs.bof) then
-		ErrMsg = "ÄúÊäÈëµÄÓÃ»§ÃûÒÑ¾­ÔÚ¹ÜÀíÓÃ»§ÖĞ´æÔÚ£¡"
+		ErrMsg = "æ‚¨è¾“å…¥çš„ç”¨æˆ·åå·²ç»åœ¨ç®¡ç†ç”¨æˆ·ä¸­å­˜åœ¨ï¼"
 		exit sub
 	end	if
 	if isdisp=1 then
 	Dvbbs.Execute("update [dv_user]	set	usergroupid=1 ,	userclass='"&groupsname&"',titlepic='"&titlepic&"' where userid="&adminuserid&" ")
 	end if
 	Dvbbs.Execute("insert into "&Admintable&" (username,[password],adduser)	values ('"&replace(request.form("username2"),"'","")&"','"&md5(replace(request.form("password2"),"'",""),16)&"','"&replace(request.form("username1"),"'","")&"')")
-	body="ÓÃ»§ID:"&adminuserid&" Ìí¼Ó³É¹¦£¬Çë¼Ç×¡ĞÂ¹ÜÀíÔ±ºóÌ¨µÇÂ¼ĞÅÏ¢£¬ÈçĞèĞŞ¸ÄÇë·µ»Ø¹ÜÀíÔ±¹ÜÀí£¡"
+	body="ç”¨æˆ·ID:"&adminuserid&" æ·»åŠ æˆåŠŸï¼Œè¯·è®°ä½æ–°ç®¡ç†å‘˜åå°ç™»å½•ä¿¡æ¯ï¼Œå¦‚éœ€ä¿®æ”¹è¯·è¿”å›ç®¡ç†å‘˜ç®¡ç†ï¼"
 	Dv_suc(body)
 end	sub
 
 sub	userinfo()
 dim	menu(10,10),trs,k
-menu(0,0)="³£¹æ¹ÜÀí"
-menu(0,1)="<a href=setting.asp target=frmright>»ù±¾ÉèÖÃ</a>@@1"
-menu(0,2)="<a href=ForumAds.asp target=frmright>¹ã¸æ¹ÜÀí</a>@@2"
-menu(0,3)="<a href=log.asp target=frmright>ÂÛÌ³ÈÕÖ¾</a>@@3"
-menu(0,4)="<a href=help.asp target=frmright>°ïÖú¹ÜÀí</a>@@4"
-menu(0,5)="<a href=wealth.asp target=frmright>»ı·ÖÉèÖÃ</a>@@5"
-menu(0,6)="<a href=message.asp target=frmright>¶ÌĞÅ¹ÜÀí</a>@@6"
-menu(0,7)="<a href=announcements.asp?boardid=0&action=AddAnn target=_blank>¹«¸æ¹ÜÀí</a>@@7"
-Rem Ğ¡Ò× È¥µôÈ¦×Ó
-menu(0,8)="<a href=""ForumPay.asp"" target=main>½»Ò×¹ÜÀí</a>@@8"
+menu(0,0)="å¸¸è§„ç®¡ç†"
+menu(0,1)="<a href=setting.asp target=frmright>åŸºæœ¬è®¾ç½®</a>@@1"
+menu(0,2)="<a href=ForumAds.asp target=frmright>å¹¿å‘Šç®¡ç†</a>@@2"
+menu(0,3)="<a href=log.asp target=frmright>è®ºå›æ—¥å¿—</a>@@3"
+menu(0,4)="<a href=help.asp target=frmright>å¸®åŠ©ç®¡ç†</a>@@4"
+menu(0,5)="<a href=wealth.asp target=frmright>ç§¯åˆ†è®¾ç½®</a>@@5"
+menu(0,6)="<a href=message.asp target=frmright>çŸ­ä¿¡ç®¡ç†</a>@@6"
+menu(0,7)="<a href=announcements.asp?boardid=0&action=AddAnn target=_blank>å…¬å‘Šç®¡ç†</a>@@7"
+Rem å°æ˜“ å»æ‰åœˆå­
+menu(0,8)="<a href=""ForumPay.asp"" target=main>äº¤æ˜“ç®¡ç†</a>@@8"
 menu(0,9)="<a href=""javascript:void(0);"" target=frmright>&nbsp;&nbsp;</a>@@9"
-menu(0,10)="<a href=""ForumNewsSetting.asp"" target=main>Ê×Ò³µ÷ÓÃ</a>@@10"
+menu(0,10)="<a href=""ForumNewsSetting.asp"" target=main>é¦–é¡µè°ƒç”¨</a>@@10"
 
-menu(1,0)="ÂÛÌ³¹ÜÀí"
-menu(1,1)="<a href=board.asp?action=add target=frmright>°æÃæ(·ÖÀà)Ìí¼Ó</a> | <a href=board.asp target=frmright>¹ÜÀí</a>@@11"
-menu(1,2)="<a href=board.asp?action=permission target=frmright>·Ö°æÃæÓÃ»§È¨ÏŞÉèÖÃ</a>@@12"
-menu(1,3)="<a href=boardunite.asp target=frmright>ºÏ²¢°æÃæÊı¾İ</a>@@13"
-menu(1,4)="<a href=update.asp target=frmright>ÖØ¼ÆÂÛÌ³Êı¾İºÍĞŞ¸´</a>@@14"
-menu(1,5)="<a href=link.asp?action=add target=frmright>ÓÑÇéÂÛÌ³Ìí¼Ó</a> | <a href=link.asp target=frmright>¹ÜÀí</a>@@15"
+menu(1,0)="è®ºå›ç®¡ç†"
+menu(1,1)="<a href=board.asp?action=add target=frmright>ç‰ˆé¢(åˆ†ç±»)æ·»åŠ </a> | <a href=board.asp target=frmright>ç®¡ç†</a>@@11"
+menu(1,2)="<a href=board.asp?action=permission target=frmright>åˆ†ç‰ˆé¢ç”¨æˆ·æƒé™è®¾ç½®</a>@@12"
+menu(1,3)="<a href=boardunite.asp target=frmright>åˆå¹¶ç‰ˆé¢æ•°æ®</a>@@13"
+menu(1,4)="<a href=update.asp target=frmright>é‡è®¡è®ºå›æ•°æ®å’Œä¿®å¤</a>@@14"
+menu(1,5)="<a href=link.asp?action=add target=frmright>å‹æƒ…è®ºå›æ·»åŠ </a> | <a href=link.asp target=frmright>ç®¡ç†</a>@@15"
 
-menu(2,0)="ÓÃ»§¹ÜÀí"
-menu(2,1)="<a href=user.asp target=frmright>ÓÃ»§×ÊÁÏ(È¨ÏŞ)¹ÜÀí</a>@@16"
-menu(2,2)="<a href=group.asp target=frmright>ÂÛÌ³ÓÃ»§×é(µÈ¼¶)¹ÜÀí</a>@@17"
-menu(2,3)="<a href=admin.asp?action=add target=frmright>¹ÜÀíÔ±Ìí¼Ó</a> | <a href=admin.asp target=frmright>¹ÜÀí</a>@@18"
-menu(2,4)="<a href=Update_User.asp target=frmright>½±³ÍÓÃ»§¹ÜÀí</a>@@19"
-menu(2,5)="<a href=update.asp?action=updateuser target=frmright>ÖØ¼ÆÓÃ»§¸÷ÏîÊı¾İ</a>@@20"
-menu(2,6)="<a href=SendEmail.asp target=frmright>ÓÃ»§ÓÊ¼şÈº·¢¹ÜÀí</a>@@21"
+menu(2,0)="ç”¨æˆ·ç®¡ç†"
+menu(2,1)="<a href=user.asp target=frmright>ç”¨æˆ·èµ„æ–™(æƒé™)ç®¡ç†</a>@@16"
+menu(2,2)="<a href=group.asp target=frmright>è®ºå›ç”¨æˆ·ç»„(ç­‰çº§)ç®¡ç†</a>@@17"
+menu(2,3)="<a href=admin.asp?action=add target=frmright>ç®¡ç†å‘˜æ·»åŠ </a> | <a href=admin.asp target=frmright>ç®¡ç†</a>@@18"
+menu(2,4)="<a href=Update_User.asp target=frmright>å¥–æƒ©ç”¨æˆ·ç®¡ç†</a>@@19"
+menu(2,5)="<a href=update.asp?action=updateuser target=frmright>é‡è®¡ç”¨æˆ·å„é¡¹æ•°æ®</a>@@20"
+menu(2,6)="<a href=SendEmail.asp target=frmright>ç”¨æˆ·é‚®ä»¶ç¾¤å‘ç®¡ç†</a>@@21"
 
-menu(3,0)="Íâ¹ÛÉèÖÃ"
-menu(3,1)="<a href=template.asp target=frmright>·ç¸ñ½çÃæÄ£°å×Ü¹ÜÀí</a>@@22"
-menu(3,2)="<a href=label.asp target=frmright>×Ô¶¨Òå±êÇ©¹ÜÀí</a>@@23"
+menu(3,0)="å¤–è§‚è®¾ç½®"
+menu(3,1)="<a href=template.asp target=frmright>é£æ ¼ç•Œé¢æ¨¡æ¿æ€»ç®¡ç†</a>@@22"
+menu(3,2)="<a href=label.asp target=frmright>è‡ªå®šä¹‰æ ‡ç­¾ç®¡ç†</a>@@23"
 
-menu(4,0)="ÂÛÌ³Ìû×Ó¹ÜÀí"
-menu(4,1)="<a href=alldel.asp target=frmright>ÅúÁ¿É¾³ı</a> | <a href=alldel.asp?action=moveinfo	target=frmright>ÅúÁ¿ÒÆ¶¯</a>@@24"
-menu(4,2)="<a href=../recycle.asp target=_blank>»ØÊÕÕ¾¹ÜÀí</a>@@25"
-menu(4,3)="<a href=postdata.asp?action=Nowused target=frmright>µ±Ç°Ìû×ÓÊı¾İ±í¹ÜÀí</a>@@26"
-menu(4,4)="<a href=postdata.asp target=frmright>Êı¾İ±í¼äÌû×Ó×ª»»</a>@@27"
+menu(4,0)="è®ºå›å¸–å­ç®¡ç†"
+menu(4,1)="<a href=alldel.asp target=frmright>æ‰¹é‡åˆ é™¤</a> | <a href=alldel.asp?action=moveinfo	target=frmright>æ‰¹é‡ç§»åŠ¨</a>@@24"
+menu(4,2)="<a href=../recycle.asp target=_blank>å›æ”¶ç«™ç®¡ç†</a>@@25"
+menu(4,3)="<a href=postdata.asp?action=Nowused target=frmright>å½“å‰å¸–å­æ•°æ®è¡¨ç®¡ç†</a>@@26"
+menu(4,4)="<a href=postdata.asp target=frmright>æ•°æ®è¡¨é—´å¸–å­è½¬æ¢</a>@@27"
 
-menu(5,0)="Ìæ»»/ÏŞÖÆ´¦Àí"
-menu(5,1)="<a href=badword.asp?reaction=badword target=frmright>Ôà»°¹ıÂËÉèÖÃ</a>@@28"
-menu(5,2)="<a href=badword.asp?reaction=splitreg target=frmright>×¢²á¹ıÂË×Ö·û</a>@@29"
-menu(5,3)="<a href=lockip.asp?action=add target=frmright>IPÀ´·ÃÏŞ¶¨Ìí¼Ó</a> | <a href=lockip.asp target=frmright>¹ÜÀí</a>@@30"
-menu(5,4)="<a href=address.asp?action=add target=frmright>ÂÛÌ³IP¿âÌí¼Ó</a> | <a href=address.asp target=frmright>¹ÜÀí</a>@@31"
+menu(5,0)="æ›¿æ¢/é™åˆ¶å¤„ç†"
+menu(5,1)="<a href=badword.asp?reaction=badword target=frmright>è„è¯è¿‡æ»¤è®¾ç½®</a>@@28"
+menu(5,2)="<a href=badword.asp?reaction=splitreg target=frmright>æ³¨å†Œè¿‡æ»¤å­—ç¬¦</a>@@29"
+menu(5,3)="<a href=lockip.asp?action=add target=frmright>IPæ¥è®¿é™å®šæ·»åŠ </a> | <a href=lockip.asp target=frmright>ç®¡ç†</a>@@30"
+menu(5,4)="<a href=address.asp?action=add target=frmright>è®ºå›IPåº“æ·»åŠ </a> | <a href=address.asp target=frmright>ç®¡ç†</a>@@31"
 
-menu(6,0)="Êı¾İ´¦Àí(Access)"
-menu(6,1)="<a href=data.asp?action=CompressData target=frmright>Ñ¹ËõÊı¾İ¿â</a>@@32"
-menu(6,2)="<a href=data.asp?action=BackupData target=frmright>±¸·İÊı¾İ¿â</a>@@33"
-menu(6,3)="<a href=data.asp?action=RestoreData target=frmright>»Ö¸´Êı¾İ¿â</a>@@34"
-menu(6,4)="<a href=data.asp?action=SpaceSize target=frmright>ÏµÍ³¿Õ¼äÕ¼ÓÃ</a>@@35"
+menu(6,0)="æ•°æ®å¤„ç†(Access)"
+menu(6,1)="<a href=data.asp?action=CompressData target=frmright>å‹ç¼©æ•°æ®åº“</a>@@32"
+menu(6,2)="<a href=data.asp?action=BackupData target=frmright>å¤‡ä»½æ•°æ®åº“</a>@@33"
+menu(6,3)="<a href=data.asp?action=RestoreData target=frmright>æ¢å¤æ•°æ®åº“</a>@@34"
+menu(6,4)="<a href=data.asp?action=SpaceSize target=frmright>ç³»ç»Ÿç©ºé—´å ç”¨</a>@@35"
 
-menu(7,0)="ÎÄ¼ş¹ÜÀí"
-menu(7,1)="<a href=upUserface.asp target=frmright>ÉÏ´«Í·Ïñ¹ÜÀí</a>@@36"
-menu(7,2)="<a href=uploadlist.asp target=frmright>ÉÏ´«ÎÄ¼ş¹ÜÀí</a>@@37"
-menu(7,3)="<a href=bbsface.asp?Stype=3 target=frmright>×¢²áÍ·Ïñ¹ÜÀí</a> | <a href=bbsface.asp?Stype=2 target=frmright>·¢ÌùĞÄÇé¹ÜÀí</a> | <a href=bbsface.asp?Stype=1 target=frmright>·¢Ìù±íÇé¹ÜÀí</a>@@38"
+menu(7,0)="æ–‡ä»¶ç®¡ç†"
+menu(7,1)="<a href=upUserface.asp target=frmright>ä¸Šä¼ å¤´åƒç®¡ç†</a>@@36"
+menu(7,2)="<a href=uploadlist.asp target=frmright>ä¸Šä¼ æ–‡ä»¶ç®¡ç†</a>@@37"
+menu(7,3)="<a href=bbsface.asp?Stype=3 target=frmright>æ³¨å†Œå¤´åƒç®¡ç†</a> | <a href=bbsface.asp?Stype=2 target=frmright>å‘è´´å¿ƒæƒ…ç®¡ç†</a> | <a href=bbsface.asp?Stype=1 target=frmright>å‘è´´è¡¨æƒ…ç®¡ç†</a>@@38"
 
-menu(8,0)="²Ëµ¥¹ÜÀí"
-menu(8,1)="<a href=plus.asp target=frmright>ÂÛÌ³²Ëµ¥¹ÜÀí</a>@@39"
+menu(8,0)="èœå•ç®¡ç†"
+menu(8,1)="<a href=plus.asp target=frmright>è®ºå›èœå•ç®¡ç†</a>@@39"
 
-menu(9,0)="µÀ¾ßÖĞĞÄ¹ÜÀí"
-menu(9,1)="<a href=plus_Tools_Info.asp?action=List target=frmright>µÀ¾ß×ÊÁÏÉèÖÃ</a>@@40"
-menu(9,2)="<a href=plus_Tools_User.asp target=frmright>ÓÃ»§µÀ¾ß¹ÜÀí</a> | <a href=plus_Tools_User.asp?action=paylist target=frmright>½»Ò×ĞÅÏ¢¹ÜÀí</a>@@41"
-menu(9,3)="<a href=MoneyLog.asp target=frmright>µÀ¾ßÖĞĞÄÈÕÖ¾</a>@@42"
-menu(9,4)="<a href=plus_Tools_Magicface.asp target=frmright>Ä§·¨±íÇéÉèÖÃ</a>@@43"
+menu(9,0)="é“å…·ä¸­å¿ƒç®¡ç†"
+menu(9,1)="<a href=plus_Tools_Info.asp?action=List target=frmright>é“å…·èµ„æ–™è®¾ç½®</a>@@40"
+menu(9,2)="<a href=plus_Tools_User.asp target=frmright>ç”¨æˆ·é“å…·ç®¡ç†</a> | <a href=plus_Tools_User.asp?action=paylist target=frmright>äº¤æ˜“ä¿¡æ¯ç®¡ç†</a>@@41"
+menu(9,3)="<a href=MoneyLog.asp target=frmright>é“å…·ä¸­å¿ƒæ—¥å¿—</a>@@42"
+menu(9,4)="<a href=plus_Tools_Magicface.asp target=frmright>é­”æ³•è¡¨æƒ…è®¾ç½®</a>@@43"
 
-menu(10,0)="À©Õ¹Ä£¿é¹ÜÀí"
-menu(10,1)="<a href=../bokeadmin.asp target=frmright>ÂÛÌ³²©¿ÍÏµÍ³¹ÜÀí</a>@@44"
-'menu(10,2)="<a href=myspace.asp target=frmright>ÂÛÌ³¸öÈË¿Õ¼ä¹ÜÀí</a>@@45"
+menu(10,0)="æ‰©å±•æ¨¡å—ç®¡ç†"
+menu(10,1)="<a href=../bokeadmin.asp target=frmright>è®ºå›åšå®¢ç³»ç»Ÿç®¡ç†</a>@@44"
+'menu(10,2)="<a href=myspace.asp target=frmright>è®ºå›ä¸ªäººç©ºé—´ç®¡ç†</a>@@45"
 
 Dim	j,tmpmenu,menuname,menurl
 Dim Rs,i,adminPower,admin_username
@@ -363,8 +363,8 @@ Rs.Close:Set Rs=Nothing
 %>
 <form action="admin.asp?action=updat"	method=post	name=adminflag>
 <table cellpadding="2" cellspacing="1" border="0" width="100%" align="center">
-	<tr><th	height=25><b>¹ÜÀíÔ±È¨ÏŞ¹ÜÀí</b>(ÇëÑ¡ÔñÏàÓ¦µÄÈ¨ÏŞ·ÖÅä¸ø¹ÜÀíÔ± <%=admin_username%>)</th></tr>
-	<tr><td	height=25 class="forumHeaderBackgroundAlternate"><b>>>È«¾ÖÈ¨ÏŞ</b></td></tr>
+	<tr><th	height=25><b>ç®¡ç†å‘˜æƒé™ç®¡ç†</b>(è¯·é€‰æ‹©ç›¸åº”çš„æƒé™åˆ†é…ç»™ç®¡ç†å‘˜ <%=admin_username%>)</th></tr>
+	<tr><td	height=25 class="forumHeaderBackgroundAlternate"><b>>>å…¨å±€æƒé™</b></td></tr>
 	<tr>
 		<td	class=td1>
 		<%
@@ -373,7 +373,7 @@ Rs.Close:Set Rs=Nothing
 			'on error resume next
 			For j=1	To UBound(menu,2)
 				If IsEmpty(menu(i,j)) Then exit for
-				'tmpmenu(0)ÎªÃû³Æ£¬tmpmenu(1)Îª±àºÅ
+				'tmpmenu(0)ä¸ºåç§°ï¼Œtmpmenu(1)ä¸ºç¼–å·
 				tmpmenu=Split(menu(i,j),"@@")
 				on error resume next
 				Response.Write "<input type=""checkbox"" class=""checkbox"" name=""flag"" value="""&tmpmenu(1)&""""
@@ -385,30 +385,4 @@ Rs.Close:Set Rs=Nothing
 		Next
 		%>
 		<input type=hidden name=id value="<%=id%>">
-		<input type="submit" class="button" name="Submit" value="¸üĞÂ">£ £ £ <input name=chkall type=checkbox class="checkbox" value=on	onclick=CheckAll(this.form)>Ñ¡ÔñËùÓĞÈ¨ÏŞ
-		</td>
-	</tr>
-</table>
-</form>
-<%
-End	Sub
-
-sub	update()
-	' 1, 2,	3, 4, 5, 6,	7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35
-	'Response.Write	request("flag")
-	'response.end
-	Dim rs,sql
-	set	rs=Dvbbs.iCreateObject("adodb.recordset")
-	sql="select	* from "&admintable&" where	id="&id
-	rs.open	sql,conn,1,3
-	if not rs.eof and not rs.bof then
-		rs("flag")=replace(Request("flag")," ","")
-			body="<li>¹ÜÀíÔ±¸üĞÂ³É¹¦£¬Çë¼Ç×¡¸üĞÂĞÅÏ¢¡£"
-			Dv_suc(body)
-		rs.update
-		if rs("adduser")=Dvbbs.membername then session("flag")=replace(request("flag")," ","")
-	end	if
-	rs.close
-	set	rs=nothing
-end	sub
-%>
+		<input type="submit" class="button" name="Submit" value="æ›´æ–°">

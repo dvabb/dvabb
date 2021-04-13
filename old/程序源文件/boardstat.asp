@@ -160,7 +160,7 @@ Function Onlinestat()
 	Dim Tempslist,Tempslist1,Tempslist2,i,k
 	Dim Othernum,OnlineNum
 	Othernum=Allnum
-	'ĞŞ¸Ä°´Ê×Ò³°æÃæÅÅĞò 2005-5-13 Dv.Yz
+	'ä¿®æ”¹æŒ‰é¦–é¡µç‰ˆé¢æ’åº 2005-5-13 Dv.Yz
 	Sql = "SELECT Boardid, BoardType, Board_Setting, (SELECT COUNT(Id) FROM Dv_Online WHERE Boardid = Dv_Board.Boardid) FROM [Dv_Board] ORDER BY RootID, Orders"
 	Set Yrs=Dvbbs.execute(Sql)
 	If Yrs.eof then
@@ -273,7 +273,7 @@ Function onlinemain(str)
 					Else
 						titlepic=Dvbbs.Forum_PicUrl&Yrs(9)
 					End if
-					Maslink1="<a title="&template.Strings(18)&" href=""javascript:;"" onclick=""DvWnd.open('¸ø"&Dvbbs.htmlencode(Yrs("username"))&"·¢ËÍ¶ÌĞÅ','messanger.asp?action=new&amp;touser="&Dvbbs.htmlencode(Yrs("username"))&"',800,600,1,{bgc:'black',opa:0.5});"">"
+					Maslink1="<a title="&template.Strings(18)&" href=""javascript:;"" onclick=""DvWnd.open('ç»™"&Dvbbs.htmlencode(Yrs("username"))&"å‘é€çŸ­ä¿¡','messanger.asp?action=new&amp;touser="&Dvbbs.htmlencode(Yrs("username"))&"',800,600,1,{bgc:'black',opa:0.5});"">"
 					Maslink2="</a>"
 				Else
 					onlinename=template.Strings(14)
@@ -293,7 +293,7 @@ Function onlinemain(str)
 					Maslink2=""
 				Else
 					onlinename="<a href=dispuser.asp?name="&Dvbbs.HtmlEncode(Yrs("username"))&" target=_blank>"&Dvbbs.HtmlEncode(Yrs("username"))&"</a>"
-					Maslink1="<a title="&template.Strings(18)&" href=""javascript:;"" onclick=""DvWnd.open('¸ø"&Dvbbs.htmlencode(Yrs("username"))&"·¢ËÍ¶ÌĞÅ','messanger.asp?action=new&amp;touser="&Dvbbs.htmlencode(Yrs("username"))&"',800,600,1,{bgc:'black',opa:0.5});"">"
+					Maslink1="<a title="&template.Strings(18)&" href=""javascript:;"" onclick=""DvWnd.open('ç»™"&Dvbbs.htmlencode(Yrs("username"))&"å‘é€çŸ­ä¿¡','messanger.asp?action=new&amp;touser="&Dvbbs.htmlencode(Yrs("username"))&"',800,600,1,{bgc:'black',opa:0.5});"">"
 					Maslink2="</a>"
 				End if
 			End if
@@ -321,7 +321,7 @@ Function onlinemain(str)
 			End if
 			Tempslist1=Replace(Tempslist1,"{$maslink1}",Maslink1)
 			Tempslist1=Replace(Tempslist1,"{$maslink2}",Maslink2)
-			REM £ºÒòĞÂ½¨×é¿ÉÄÜÃ»ÓĞÌîĞ´µÈ¼¶Í¼Æ¬ 2004-5-11 YZ
+			REM ï¼šå› æ–°å»ºç»„å¯èƒ½æ²¡æœ‰å¡«å†™ç­‰çº§å›¾ç‰‡ 2004-5-11 YZ
 			If Titlepic = "" Or Isnull(Titlepic) Then
 				Titlepic = Template.Pic(4)
 			End If
@@ -341,7 +341,7 @@ Function onlinemain(str)
 	End if
 END function
 
-'·ÖÒ³Êä³ö
+'åˆ†é¡µè¾“å‡º
 Function ShowPage(CurrentPage,Pcount,totalrec,PageNum,redcolor)
 	Dim SearchStr
 	SearchStr="Boardid="&Dvbbs.boardid&"&reaction=onlineinfo"
@@ -395,7 +395,7 @@ Function GetTimeStr(Str1,Str2)
 	Dim GetTime
 	GetTime=int(Datediff("n",str1,str2))
 	If GetTime>59 Then 
-		GetTimeStr=(GetTime \ 60)&"<font color="&redcolor&">h£º</font>"
+		GetTimeStr=(GetTime \ 60)&"<font color="&redcolor&">hï¼š</font>"
 		GetTimeStr=GetTimeStr&(GetTime mod 60)
 	Else
 		GetTimeStr=GetTime
@@ -403,7 +403,7 @@ Function GetTimeStr(Str1,Str2)
 	GetTimeStr=GetTimeStr&"<font color="&redcolor&">m</font>"
 	GetTime=int(Datediff("n",str2,Now()))
 	If GetTime>59 Then 
-		GetTimeStr=GetTimeStr&" | "& (GetTime \ 60)&"<font color="&redcolor&">h£º</font>"
+		GetTimeStr=GetTimeStr&" | "& (GetTime \ 60)&"<font color="&redcolor&">hï¼š</font>"
 		GetTimeStr=GetTimeStr&(GetTime mod 60)
 	Else
 		GetTimeStr=GetTimeStr&" | "& GetTime

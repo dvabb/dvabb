@@ -1,6 +1,6 @@
 <!--#include file="../inc/md5.asp"-->
 <%
-'ÓÎÏ·ÁªÃË²å¼þÖ÷Àà
+'æ¸¸æˆè”ç›Ÿæ’ä»¶ä¸»ç±»
 Dim Plus_Popwan
 
 Class Cls_Popwan
@@ -11,7 +11,7 @@ Class Cls_Popwan
 
 
 	Private Sub Class_Initialize()
-		Program = "ÉçÇøÓÎÏ·ÖÐÐÄ"
+		Program = "ç¤¾åŒºæ¸¸æˆä¸­å¿ƒ"
 		Version = "ASP 1.1 For DVBBS 8.3"
 		ConfigFile = "CacheFile/sn.config"
 		Folder = "Plus_popwan/"
@@ -44,9 +44,9 @@ Class Cls_Popwan
 		FilePath = Server.MapPath(Folder & Str)
 	End Function
 
-	'²âÊÔµØÖ·£º
+	'æµ‹è¯•åœ°å€ï¼š
 	'http://union.popwan.com/SelectedGames/?siteid=1998&sign=53ffcef88dde8d42dccce668d0c2bf9c&encode=utf-8
-	'²ÎÊýËµÃ÷£ºsiteid:Õ¾µãID    sign:Õ¾³¤Ç©Ãû  encode:±àÂë
+	'å‚æ•°è¯´æ˜Žï¼šsiteid:ç«™ç‚¹ID    sign:ç«™é•¿ç­¾å  encode:ç¼–ç 
 	'Sign = MD5(siteid+userkey)
 
 	Public Sub UpdateGamesInfo()	'webgames.xml
@@ -60,16 +60,16 @@ Class Cls_Popwan
 		Set XmlDom = HttpPost(PUrl)
 
 		If XmlDom Is Nothing Then
-			Response.Write "ÓÎÏ·ÁÐ±í²»´æÔÚ¡£"
+			Response.Write "æ¸¸æˆåˆ—è¡¨ä¸å­˜åœ¨ã€‚"
 			Exit Sub
 		End If
 
 		Set Node = XmlDom.selectSingleNode("//masterselgames")
 		If Not (Node Is Nothing) Then
 			Config.documentElement.replaceChild Node.cloneNode(true),GameNode
-			Response.Write "±¾Õ¾ÓÎÏ·ÁÐ±íÊý¾ÝÒÑ³É¹¦¸üÐÂ£¡"
+			Response.Write "æœ¬ç«™æ¸¸æˆåˆ—è¡¨æ•°æ®å·²æˆåŠŸæ›´æ–°ï¼"
 		Else
-			Response.Write "ÓÎÏ·ÁÐ±í²»´æÔÚ¡£"
+			Response.Write "æ¸¸æˆåˆ—è¡¨ä¸å­˜åœ¨ã€‚"
 		End If
 		Set XmlDom = Nothing
 		Update_Config()
@@ -96,7 +96,7 @@ Class Cls_Popwan
 	End Function
 
 
-	'´´½¨ÅäÖÃÎÄ¼þ
+	'åˆ›å»ºé…ç½®æ–‡ä»¶
 	Public Sub CreatConfig()
 		Dim Node
 		Config.LoadXml("<webgame_api/>")
@@ -116,7 +116,7 @@ Class Cls_Popwan
 		Update_Config()
 	End Sub
 
-	'¸üÐÂÅäÖÃÎÄ¼þÊý¾Ý
+	'æ›´æ–°é…ç½®æ–‡ä»¶æ•°æ®
 	Public Sub Update_Config()
 		Config.save FilePath(ConfigFile)
 	End Sub
@@ -124,7 +124,7 @@ End Class
 
 Set Plus_Popwan = New Cls_Popwan
 
-'Ò³Ãæ¹«¹²´úÂë
+'é¡µé¢å…¬å…±ä»£ç 
 
 Sub Page_main()
 %>
@@ -132,7 +132,7 @@ Sub Page_main()
 	<script language="javascript" src="<%=Plus_Popwan.Folder%>fuc_script.js" type="text/javascript"></script>
 	<div class="mainbox">
 	<div id="pw_l">
-		<!-- ¹¦ÄÜ²Ëµ¥ -->
+		<!-- åŠŸèƒ½èœå• -->
 		<%
 		Admin_Setting()
 		User_Setting()
@@ -140,7 +140,7 @@ Sub Page_main()
 		%>
 	</div>
 	<div id="pw_m">
-		<!-- ÄÚÈÝ -->
+		<!-- å†…å®¹ -->
 		<%Page_Center()%>
 	</div>
 	<div style="clear:both;"></div>
@@ -158,7 +158,7 @@ Sub Copyright()
 <span class="img"><img src="http://game.popwan.com/templates/%7BMainTemplates%7D/simple/client/skins/blue/images/gamebto2.gif" border="0"/></span>
 <br/>
 
-<%=Plus_Popwan.Program &" °æ±¾£º"& Plus_Popwan.Version%>
+<%=Plus_Popwan.Program &" ç‰ˆæœ¬ï¼š"& Plus_Popwan.Version%>
 </div>
 <%
 End Sub
@@ -169,19 +169,19 @@ If Not Plus_Popwan.IsMaster Then
 End If
 %>
 <div class="pw_a">
-	<span class="t bluefont">Õ¾³¤¹ÜÀí</span>
+	<span class="t bluefont">ç«™é•¿ç®¡ç†</span>
 	<ul class="b">
 	<%If Plus_Popwan.ConfigNode.getAttribute("joined")="1" Then%>
-	<li><a href="plus_popwan.asp?view=popmng">ÁªÃËÐÅÏ¢¹ÜÀí</a></li>
+	<li><a href="plus_popwan.asp?view=popmng">è”ç›Ÿä¿¡æ¯ç®¡ç†</a></li>
 	<%Else%>
-	<li><a href="plus_popwan.asp?view=popmng">ÉêÇëÓÎÏ·ÁªÃË</a></li>
+	<li><a href="plus_popwan.asp?view=popmng">ç”³è¯·æ¸¸æˆè”ç›Ÿ</a></li>
 	<%End If%>
-	<li><a href="plus_popwan.asp?view=nav">ÂÛÌ³µ¼º½±à¼­</a></li>
-	<li><a href="plus_popwan_forum.asp">ÓÎÏ·°æÃæÉèÖÃ</a></li>
-	<li><a href="plus_popwan_ads.asp">Ðû´«ÐÅÏ¢·¢²¼</a></li>
-	<li><a href="plus_popwan_Message.asp">·¢±íÓÃ»§¶ÌÐÅ</a></li>
-	<li><a href="<%=Plus_Popwan.p_configdb & Plus_Popwan.p_advurl%>" target="_blank">²é¿´ÍÆ¹ãÊÕÒæ</a></li>
-	<li><a href="<%=Plus_Popwan.p_configdb & Plus_Popwan.p_serviceurl%>" target="_blank">¿Í»§·þÎñÁªÏµ</a></li>
+	<li><a href="plus_popwan.asp?view=nav">è®ºå›å¯¼èˆªç¼–è¾‘</a></li>
+	<li><a href="plus_popwan_forum.asp">æ¸¸æˆç‰ˆé¢è®¾ç½®</a></li>
+	<li><a href="plus_popwan_ads.asp">å®£ä¼ ä¿¡æ¯å‘å¸ƒ</a></li>
+	<li><a href="plus_popwan_Message.asp">å‘è¡¨ç”¨æˆ·çŸ­ä¿¡</a></li>
+	<li><a href="<%=Plus_Popwan.p_configdb & Plus_Popwan.p_advurl%>" target="_blank">æŸ¥çœ‹æŽ¨å¹¿æ”¶ç›Š</a></li>
+	<li><a href="<%=Plus_Popwan.p_configdb & Plus_Popwan.p_serviceurl%>" target="_blank">å®¢æˆ·æœåŠ¡è”ç³»</a></li>
 	</ul>
 </div>
 <%
@@ -191,12 +191,12 @@ Sub User_Setting()
 If Dvbbs.Userid=0 Then Exit Sub
 %>
 <div class="pw_a">
-	<span class="t bluefont">ÓÃ»§ÆµµÀ</span>
+	<span class="t bluefont">ç”¨æˆ·é¢‘é“</span>
 	<ul class="b">
-	<li><a href="plus_popwan.asp?view=mygames">ÎÒµÄÓÎÏ·</a></li>
-	<li><a href="<%=Plus_Popwan.ConfigNode.getAttribute("gamesite")%>/MoneyIn/?username=<%=dvbbs.membername%>&siteid=<%=Plus_Popwan.ConfigNode.getAttribute("siteid")%>&encode=gb2312" target="_blank">ÓÃ»§³äÖµ</a></li>
-	<!-- <li><a href="plus_popwan.asp?view=userchannel">Íæ¼ÒÆµµÀ</a></li> -->
-	<li><a href="<%=Plus_Popwan.ConfigNode.getAttribute("gamesite")%>/help/?username=<%=dvbbs.membername%>&siteid=<%=Plus_Popwan.ConfigNode.getAttribute("siteid")%>&encode=gb2312" target="_blank">ÓÎÏ·°ïÖú</a></li>
+	<li><a href="plus_popwan.asp?view=mygames">æˆ‘çš„æ¸¸æˆ</a></li>
+	<li><a href="<%=Plus_Popwan.ConfigNode.getAttribute("gamesite")%>/MoneyIn/?username=<%=dvbbs.membername%>&siteid=<%=Plus_Popwan.ConfigNode.getAttribute("siteid")%>&encode=gb2312" target="_blank">ç”¨æˆ·å……å€¼</a></li>
+	<!-- <li><a href="plus_popwan.asp?view=userchannel">çŽ©å®¶é¢‘é“</a></li> -->
+	<li><a href="<%=Plus_Popwan.ConfigNode.getAttribute("gamesite")%>/help/?username=<%=dvbbs.membername%>&siteid=<%=Plus_Popwan.ConfigNode.getAttribute("siteid")%>&encode=gb2312" target="_blank">æ¸¸æˆå¸®åŠ©</a></li>
 	</ul>
 </div>
 <%

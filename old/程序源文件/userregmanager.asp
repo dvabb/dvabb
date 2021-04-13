@@ -2,8 +2,8 @@
 <!-- #include file="inc/const.asp" -->
 <!-- #include file="inc/dv_clsother.asp" -->
 <%
-Rem Ò³ÃæËµÃ÷,Ç°Ì¨µÄ×¢²áÉèÖÃ¹ÜÀíÒ³Ãæ,Ö»ÓĞ³¬¼¶°æÖ÷ºÍ¹ÜÀíÔ±¿ÉÒÔ½øÈë
-If Not Dvbbs.Master and  Not Dvbbs.superboardmaster Then Response.redirect "showerr.asp?ErrCodes=<li>ÄúÃ»ÓĞÈ¨ÏŞ½øĞĞÓÃ»§×¢²á¹ÜÀí¡£</li>&action=OtherErr"
+Rem é¡µé¢è¯´æ˜,å‰å°çš„æ³¨å†Œè®¾ç½®ç®¡ç†é¡µé¢,åªæœ‰è¶…çº§ç‰ˆä¸»å’Œç®¡ç†å‘˜å¯ä»¥è¿›å…¥
+If Not Dvbbs.Master and  Not Dvbbs.superboardmaster Then Response.redirect "showerr.asp?ErrCodes=<li>æ‚¨æ²¡æœ‰æƒé™è¿›è¡Œç”¨æˆ·æ³¨å†Œç®¡ç†ã€‚</li>&action=OtherErr"
 Dim XMLDom,paramnode,page
 Set XMLDom=Dvbbs.CreateXmlDoc("Msxml2.FreeThreadedDOMDocument"& MsxmlVersion)
 XMLDom.appendChild(XMLDom.createElement("xml"))
@@ -14,7 +14,7 @@ If page="" or Not IsNumeric(Page) Then page=1
 paramnode.attributes.setNamedItem(XMLDom.createNode(2,"page","")).text=page
 Dvbbs.LoadTemplates("query")
 If Not Dvbbs.ChkPost() and Request("action") <> "" Then  Response.Redirect "userregmanager.asp"
-Dvbbs.stats="ÓÃ»§×¢²á¹ÜÀí"
+Dvbbs.stats="ç”¨æˆ·æ³¨å†Œç®¡ç†"
 Dvbbs.Nav
 Dvbbs.Head_var 2,0,"",""
  Select Case Request("action")

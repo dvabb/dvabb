@@ -17,29 +17,29 @@ Sub boardinfo()
 %>
 <table width="100%" border="0" cellspacing="1" cellpadding="3" align="center">
 	<tr>
-	<th style="text-align:center;">ºÏ²¢ÂÛÌ³Êı¾İ
+	<th style="text-align:center;">åˆå¹¶è®ºå›æ•°æ®
 	</th>
 	</tr>
 	<form action=boardunite.asp?action=unite method=post>
 	<tr>
 	<td class=td1>
-	<B>ºÏ²¢ÂÛÌ³Ñ¡Ïî</B>£º<BR>
-<B>½«±¾ÂÛÌ³¼°ÆäÏÂÊô°æÃæµÄÌû×Ó¶¼×ªÒÆÖÁÄ¿±êÂÛÌ³£¬²¢É¾³ı±¾ÂÛÌ³¼°ÆäÏÂÊô°æÃæ</B><BR><BR>
+	<B>åˆå¹¶è®ºå›é€‰é¡¹</B>ï¼š<BR>
+<B>å°†æœ¬è®ºå›åŠå…¶ä¸‹å±ç‰ˆé¢çš„å¸–å­éƒ½è½¬ç§»è‡³ç›®æ ‡è®ºå›ï¼Œå¹¶åˆ é™¤æœ¬è®ºå›åŠå…¶ä¸‹å±ç‰ˆé¢</B><BR><BR>
 <%
 	Dim rs,sql,i
 	set rs = Dvbbs.iCreateObject ("Adodb.recordset")
 	sql="select boardid,boardtype,depth from dv_board order by rootid,orders"
 	rs.open sql,conn,1,1
 	if rs.eof and rs.bof then
-		response.write "Ã»ÓĞÂÛÌ³"
+		response.write "æ²¡æœ‰è®ºå›"
 	else
-		response.write " ½«ÂÛÌ³ "
+		response.write " å°†è®ºå› "
 		response.write "<select name=oldboard size=1>"
 		do while not rs.eof
 %>
 <option value="<%=rs("boardid")%>"><%if rs("depth")>0 then%>
 <%for i=1 to rs("depth")%>
-£­
+ï¼
 <%next%>
 <%end if%><%=rs("boardtype")%></option>
 <%
@@ -51,15 +51,15 @@ Sub boardinfo()
 	sql="select boardid,boardtype,depth from dv_board order by rootid,orders"
 	rs.open sql,conn,1,1
 	if rs.eof and rs.bof then
-		response.write "Ã»ÓĞÂÛÌ³"
+		response.write "æ²¡æœ‰è®ºå›"
 	else
-		response.write " ºÏ²¢µ½ "
+		response.write " åˆå¹¶åˆ° "
 		response.write "<select name=newboard size=1>"
 		do while not rs.eof
 %>
 <option value="<%=rs("boardid")%>"><%if rs("depth")>0 then%>
 <%for i=1 to rs("depth")%>
-£­
+ï¼
 <%next%>
 <%end if%><%=rs("boardtype")%></option>
 <%
@@ -69,12 +69,12 @@ Sub boardinfo()
 	end if
 	rs.close
 	set rs=nothing
-	response.write " <BR><BR><input type=submit class=button name=Submit value=ºÏ²¢ÂÛÌ³><BR><BR>"
+	response.write " <BR><BR><input type=submit class=button name=Submit value=åˆå¹¶è®ºå›><BR><BR>"
 %>
 	</td>
 	</tr>
 	<tr>
-	<td class=td1><B>×¢ÒâÊÂÏî</B>£º<BR><FONT COLOR="red">ËùÓĞ²Ù×÷²»¿ÉÄæ£¬ÇëÉ÷ÖØ²Ù×÷</FONT><BR> ²»ÄÜÔÚÍ¬Ò»¸ö°æÃæÄÚ½øĞĞ²Ù×÷¡¢²»ÄÜ½«Ò»¸ö°æÃæºÏ²¢µ½ÆäÏÂÊôÂÛÌ³ÖĞ¡£<BR>ºÏ²¢ºóÄúËùÖ¸¶¨µÄÂÛÌ³£¨»òÕß°üÀ¨ÆäÏÂÊôÂÛÌ³£©½«±»É¾³ı£¬ËùÓĞÌû×Ó½«×ªÒÆµ½ÄúËùÖ¸¶¨µÄÄ¿±êÂÛÌ³ÖĞ
+	<td class=td1><B>æ³¨æ„äº‹é¡¹</B>ï¼š<BR><FONT COLOR="red">æ‰€æœ‰æ“ä½œä¸å¯é€†ï¼Œè¯·æ…é‡æ“ä½œ</FONT><BR> ä¸èƒ½åœ¨åŒä¸€ä¸ªç‰ˆé¢å†…è¿›è¡Œæ“ä½œã€ä¸èƒ½å°†ä¸€ä¸ªç‰ˆé¢åˆå¹¶åˆ°å…¶ä¸‹å±è®ºå›ä¸­ã€‚<BR>åˆå¹¶åæ‚¨æ‰€æŒ‡å®šçš„è®ºå›ï¼ˆæˆ–è€…åŒ…æ‹¬å…¶ä¸‹å±è®ºå›ï¼‰å°†è¢«åˆ é™¤ï¼Œæ‰€æœ‰å¸–å­å°†è½¬ç§»åˆ°æ‚¨æ‰€æŒ‡å®šçš„ç›®æ ‡è®ºå›ä¸­
 	</td>
 	</tr></form>
 	</table>
@@ -89,14 +89,14 @@ Sub Unite()
 	Dim ParentID, RootID
 	Dim rs,i
 	If Clng(Request("newboard")) = Clng(Request("oldboard")) Then
-		Errmsg = "Çë²»ÒªÔÚÏàÍ¬°æÃæÄÚ½øĞĞ²Ù×÷¡£"
+		Errmsg = "è¯·ä¸è¦åœ¨ç›¸åŒç‰ˆé¢å†…è¿›è¡Œæ“ä½œã€‚"
 		dvbbs_error()
 		Exit Sub
 	End If
 	Newboard = Clng(Request("newboard"))
 	Oldboard = Clng(Request("oldboard"))
-	'½«±¾ÂÛÌ³¼°ÆäÏÂÊô°æÃæµÄÌû×Ó¶¼×ªÒÆÖÁÄ¿±êÂÛÌ³£¬²¢É¾³ı±¾ÂÛÌ³¼°ÆäÏÂÊô°æÃæ
-	'µÃµ½µ±Ç°°æÃæÏÂÊôÂÛÌ³
+	'å°†æœ¬è®ºå›åŠå…¶ä¸‹å±ç‰ˆé¢çš„å¸–å­éƒ½è½¬ç§»è‡³ç›®æ ‡è®ºå›ï¼Œå¹¶åˆ é™¤æœ¬è®ºå›åŠå…¶ä¸‹å±ç‰ˆé¢
+	'å¾—åˆ°å½“å‰ç‰ˆé¢ä¸‹å±è®ºå›
 set rs=Dvbbs.Execute("select ParentStr,Boardid,depth,ParentID,child,RootID from dv_board where boardid="&oldboard)
 if rs(0)="0" then
 	ParentStr=rs(1)
@@ -118,10 +118,10 @@ Else
 set rs=Dvbbs.Execute("select Boardid from dv_board where boardid="&newboard&" and ParentStr like '%"&ParentStr&"%'")
 End If
 if not (rs.eof and rs.bof) then
-	response.write "²»ÄÜ½«Ò»¸ö°æÃæºÏ²¢µ½ÆäÏÂÊôÂÛÌ³ÖĞ"
+	response.write "ä¸èƒ½å°†ä¸€ä¸ªç‰ˆé¢åˆå¹¶åˆ°å…¶ä¸‹å±è®ºå›ä¸­"
 	exit sub
 end if
-'µÃµ½µ±Ç°°æÃæÏÂÊôÂÛÌ³ID
+'å¾—åˆ°å½“å‰ç‰ˆé¢ä¸‹å±è®ºå›ID
 i=0
 set rs=Dvbbs.Execute("select Boardid from dv_board where RootID="&RootID&" And ParentStr like '%"&ParentStr&"%'")
 if not (rs.eof and rs.bof) then
@@ -140,12 +140,12 @@ if i>0 then
 else
 	ParentStr=oldboard
 end if
-'¸üĞÂÆäÔ­À´ËùÊôÂÛÌ³°æÃæÊı
+'æ›´æ–°å…¶åŸæ¥æ‰€å±è®ºå›ç‰ˆé¢æ•°
 if depth>0 then
 Dvbbs.Execute("update dv_board set child=child-"&child&" where boardid="&iparentid)
-'¸üĞÂÆäÔ­À´ËùÊôÂÛÌ³Êı¾İ£¬ÅÅĞòÏàµ±ÓÚ¼ôÖ¦¶ø²»Ğè¿¼ÂÇ
+'æ›´æ–°å…¶åŸæ¥æ‰€å±è®ºå›æ•°æ®ï¼Œæ’åºç›¸å½“äºå‰ªæè€Œä¸éœ€è€ƒè™‘
 for i=1 to depth
-	'µÃµ½Æä¸¸ÀàµÄ¸¸ÀàµÄ°æÃæID
+	'å¾—åˆ°å…¶çˆ¶ç±»çš„çˆ¶ç±»çš„ç‰ˆé¢ID
 	set rs=Dvbbs.Execute("select parentid from dv_board where boardid="&iparentid)
 	if not (rs.eof and rs.bof) then
 		iparentid=rs(0)
@@ -154,34 +154,34 @@ for i=1 to depth
 next
 end if
 Conn.CommandTimeOut = 0
-'¸üĞÂÂÛÌ³Ìû×ÓÊı¾İ
+'æ›´æ–°è®ºå›å¸–å­æ•°æ®
 For i=0 to ubound(AllPostTable)
 	Dvbbs.Execute("update "&AllPostTable(i)&" set boardid="&newboard&" where boardid in ("&ParentStr&")")
-	'¸üĞÂ»ØÊÕÕ¾²¿·ÖÄÚÈİ
+	'æ›´æ–°å›æ”¶ç«™éƒ¨åˆ†å†…å®¹
 	Dvbbs.Execute("Update "&AllPostTable(i)&" Set LockTopic="&newboard&" Where BoardID=444 And LockTopic In ("&ParentStr&")")
-	Response.Write "¸üĞÂÂÛÌ³Ìû×Ó±í" & AllPostTable(i) & "Êı¾İ³É¹¦£¡<br>"
+	Response.Write "æ›´æ–°è®ºå›å¸–å­è¡¨" & AllPostTable(i) & "æ•°æ®æˆåŠŸï¼<br>"
 	Response.Flush
 Next
 Dvbbs.Execute("update dv_topic set boardid="&newboard&",mode=0 where boardid in ("&ParentStr&")")
-Response.Write "¸üĞÂÖ÷Ìâ±íÊı¾İ³É¹¦£¡<br>"
+Response.Write "æ›´æ–°ä¸»é¢˜è¡¨æ•°æ®æˆåŠŸï¼<br>"
 Response.Flush
 Dvbbs.Execute("update dv_besttopic set boardid="&newboard&" where boardid in ("&ParentStr&")")
-Response.Write "¸üĞÂ¾«»ªÌûÊı¾İ³É¹¦£¡<br>"
+Response.Write "æ›´æ–°ç²¾åå¸–æ•°æ®æˆåŠŸï¼<br>"
 Response.Flush
-'¸üĞÂ»ØÊÕÕ¾²¿·ÖÄÚÈİ
+'æ›´æ–°å›æ”¶ç«™éƒ¨åˆ†å†…å®¹
 Dvbbs.Execute("Update Dv_Topic Set LockTopic="&newboard&" Where BoardID=444 And LockTopic In ("&ParentStr&")")
-Response.Write "¸üĞÂ»ØÊÕÕ¾Êı¾İ³É¹¦£¡<br>"
+Response.Write "æ›´æ–°å›æ”¶ç«™æ•°æ®æˆåŠŸï¼<br>"
 Response.Flush
-'shinzeal¼ÓÈë¸üĞÂÉÏ´«ÎÄ¼şÊı¾İ
+'shinzealåŠ å…¥æ›´æ–°ä¸Šä¼ æ–‡ä»¶æ•°æ®
 Dvbbs.Execute("update DV_Upfile set F_boardid="&newboard&" where F_boardid in ("&ParentStr&")")
-Response.Write "¸üĞÂÉÏ´«±íÊı¾İ³É¹¦£¡<br>"
+Response.Write "æ›´æ–°ä¸Šä¼ è¡¨æ•°æ®æˆåŠŸï¼<br>"
 Response.Flush
-'É¾³ı±»ºÏ²¢ÂÛÌ³
+'åˆ é™¤è¢«åˆå¹¶è®ºå›
 set rs=Dvbbs.Execute("select sum(postnum),sum(topicnum),sum(todayNum) from dv_board where RootID="&RootID&" And boardid in ("&ParentStr&")")
 Dvbbs.Execute("delete from dv_board where RootID="&RootID&" And boardid in ("&ParentStr&")")
-	'É¾³ı±»ºÏ²¢ÂÛÌ³µÄ×Ô¶¨ÒåÓÃ»§È¨ÏŞ
+	'åˆ é™¤è¢«åˆå¹¶è®ºå›çš„è‡ªå®šä¹‰ç”¨æˆ·æƒé™
 	Dvbbs.Execute("DELETE FROM Dv_UserAccess WHERE NOT Uc_BoardID IN (SELECT BoardID FROM Dv_Board)")
-'¸üĞÂĞÂÂÛÌ³Ìû×Ó¼ÆÊı
+'æ›´æ–°æ–°è®ºå›å¸–å­è®¡æ•°
 dim trs
 set trs=Dvbbs.Execute("select ParentStr,boardid from dv_board where boardid="&newboard)
 if trs(0)="0" then
@@ -189,9 +189,9 @@ ParentStr=trs(1)
 else
 ParentStr=trs(0)
 end if
-	'¸üĞÂºÏ²¢ºó°æÃæÌû×ÓÊıĞÅÏ¢
+	'æ›´æ–°åˆå¹¶åç‰ˆé¢å¸–å­æ•°ä¿¡æ¯
 	Dvbbs.Execute("UPDATE Dv_Board SET Postnum = Postnum + " & Rs(0) & ", Topicnum = Topicnum + " & Rs(1) & ", Todaynum = Todaynum + " & Rs(2) & " WHERE Boardid = " & NewBoard)
-	Response.Write "ºÏ²¢³É¹¦£¬ÒÑ¾­½«±»ºÏ²¢ÂÛÌ³ËùÓĞÊı¾İ×ªÈëÄúËùºÏ²¢µÄÂÛÌ³£¬Çë¸üĞÂÒ»ÏÂÂÛÌ³Êı¾İ¡£"
+	Response.Write "åˆå¹¶æˆåŠŸï¼Œå·²ç»å°†è¢«åˆå¹¶è®ºå›æ‰€æœ‰æ•°æ®è½¬å…¥æ‚¨æ‰€åˆå¹¶çš„è®ºå›ï¼Œè¯·æ›´æ–°ä¸€ä¸‹è®ºå›æ•°æ®ã€‚"
 set rs=nothing
 set trs=nothing
 RestoreBoardCache()
@@ -202,6 +202,6 @@ Sub RestoreBoardCache()
 	For Each board in Application(Dvbbs.CacheName&"_boardlist").documentElement.selectNodes("board/@boardid")
 		Dvbbs.LoadBoardData(board.text)
 	Next
-	If Request("action")="RestoreBoardCache" Then dv_suc("ÖØ½¨ËùÓĞ°æÃæ»º´æ³É¹¦£¡")
+	If Request("action")="RestoreBoardCache" Then dv_suc("é‡å»ºæ‰€æœ‰ç‰ˆé¢ç¼“å­˜æˆåŠŸï¼")
 End Sub
 %>

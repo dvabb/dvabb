@@ -3,24 +3,24 @@
 <!--#Include File="Inc/dv_classpageac.asp" -->
 <!--#Include File="Inc/dv_pageclass.asp" -->
 <%
-'×îºóĞŞ¸Ä£º2010-3-19by Ğ¡Ò×
+'æœ€åä¿®æ”¹ï¼š2010-3-19by å°æ˜“
 
-'Ñ«ÕÂÍ¼Æ¬ÊıÄ¿£¬Ä¬ÈÏÊÇ10£¬Èç¹ûÏëÔö¼ÓÖ±½Ó°Ñ¸ÃÊı×Ö¸Ä´ó²¢ÔÚDv_plus/medal/images/ÏÂÌí¼Ó¶ÔÓ¦±àºÅµÄÍ¼Æ¬¡£
+'å‹‹ç« å›¾ç‰‡æ•°ç›®ï¼Œé»˜è®¤æ˜¯10ï¼Œå¦‚æœæƒ³å¢åŠ ç›´æ¥æŠŠè¯¥æ•°å­—æ”¹å¤§å¹¶åœ¨Dv_plus/medal/images/ä¸‹æ·»åŠ å¯¹åº”ç¼–å·çš„å›¾ç‰‡ã€‚
 Const MedalPicNum = 10 
 
 If Dvbbs.UserId = 0 Then 
-	Response.redirect "showerr.asp?ErrCodes=<li>ÓÎ¿ÍÃ»ÓĞ²é¿´Ñ«ÕÂ²å¼şµÄÈ¨ÏŞ£¬ÇëÏÈµÇÂ½¡£&action=OtherErr"
+	Response.redirect "showerr.asp?ErrCodes=<li>æ¸¸å®¢æ²¡æœ‰æŸ¥çœ‹å‹‹ç« æ’ä»¶çš„æƒé™ï¼Œè¯·å…ˆç™»é™†ã€‚&action=OtherErr"
 	Reseponse.end
 end if
 If Cint(dvbbs.Forum_Setting(104))=0 Then
-	Response.redirect "showerr.asp?ErrCodes=<li>Ñ«ÕÂ¹¦ÄÜÒÑ±»¹ÜÀíÔ±¹Ø±Õ¡£&action=OtherErr"
+	Response.redirect "showerr.asp?ErrCodes=<li>å‹‹ç« åŠŸèƒ½å·²è¢«ç®¡ç†å‘˜å…³é—­ã€‚&action=OtherErr"
 	Reseponse.end
 end if
 
 Dvbbs.LoadTemplates("")
-Dvbbs.Stats = "ÈÙÓşÑ«ÕÂ"
+Dvbbs.Stats = "è£èª‰å‹‹ç« "
 Dvbbs.Nav
-Dvbbs.Head_Var 0,0,"ÈÙÓşÑ«ÕÂ","medal_index.asp"
+Dvbbs.Head_Var 0,0,"è£èª‰å‹‹ç« ","medal_index.asp"
 Dvbbs.Name = "Medal"
 
 Medal_Nav()
@@ -48,24 +48,24 @@ End Select
 Dvbbs.Footer()
 Dvbbs.PageEnd()
 
-'¹¦ÄÜ²Ëµ¥
+'åŠŸèƒ½èœå•
 Sub Medal_Nav()
 	Dim Html
-	Html = "<div style=""width:97%;margin:0 auto;border: #DBE1E9 1px solid; background:#fff;""><h3 style=""margin:0;padding:0 10px""><a href='medal_index.asp'>ÎÒµÄÑ«ÕÂ</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href='medal_index.asp?action=users'>»ñ½±Ãûµ¥</a>"
+	Html = "<div style=""width:97%;margin:0 auto;border: #DBE1E9 1px solid; background:#fff;""><h3 style=""margin:0;padding:0 10px""><a href='medal_index.asp'>æˆ‘çš„å‹‹ç« </a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href='medal_index.asp?action=users'>è·å¥–åå•</a>"
 	If Dvbbs.Master Then
-		Html = Html & "&nbsp;&nbsp;|&nbsp;&nbsp;<a href='medal_index.asp?action=medal'>Ñ«ÕÂ¹ÜÀí</a> | <a href='medal_index.asp?action=award'>°ä·¢Ñ«ÕÂ</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href='medal_index.asp?action=awardlog'>°ä·¢¼ÇÂ¼</a>"
+		Html = Html & "&nbsp;&nbsp;|&nbsp;&nbsp;<a href='medal_index.asp?action=medal'>å‹‹ç« ç®¡ç†</a> | <a href='medal_index.asp?action=award'>é¢å‘å‹‹ç« </a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href='medal_index.asp?action=awardlog'>é¢å‘è®°å½•</a>"
 	End If
 	Html = Html & "</h3></div><br />"
 	Response.Write Html
 End Sub
 
-'ÎÒµÄÑ«ÕÂ
+'æˆ‘çš„å‹‹ç« 
 Sub Main()
 	Dim Html,Rs,Data,i,MedalData
 	If Dvbbs.ObjIsEmpty() Then ReloadCache()
 	MedalData = Dvbbs.Value
 
-	Html = "<table class='tableborder1' cellspacing='1'><tr><th colspan='4'>ÎÒµÄÑ«ÕÂ</th></tr><tr class='tabletitle2'><td>Ñ«ÕÂÃû³Æ</td><td>°ä½±ÈË</td><td>»ñ½±Ô­Òò</td><td>»ñ½±Ê±¼ä</td></tr>"
+	Html = "<table class='tableborder1' cellspacing='1'><tr><th colspan='4'>æˆ‘çš„å‹‹ç« </th></tr><tr class='tabletitle2'><td>å‹‹ç« åç§°</td><td>é¢å¥–äºº</td><td>è·å¥–åŸå› </td><td>è·å¥–æ—¶é—´</td></tr>"
 	Set Rs = Dvbbs.Execute("SELECT M.MedalName,M.MedalPic,L.AwardUser,L.AwardDesc,L.AddTime FROM Dv_Medal M,Dv_MedalLog L WHERE M.id = L.MedalId AND L.UserId ="&Dvbbs.UserId)
 	If Not Rs.Eof Then
 		Data = Rs.GetRows(-1)
@@ -73,12 +73,12 @@ Sub Main()
 			Html = Html & "<tr class='tablebody1'><td><img src='Dv_plus/medal/images/"&Data(1,i)&"' /> "&Data(0,i)&"</td><td>"&Data(2,i)&"</td><td>"&Data(3,i)&"</td><td>"&Data(4,i)&"</td></tr>"
 		Next
 	Else
-		Html = Html & "<tr class='tablebody1'><td colspan='4'>ÔİÎŞÑ«ÕÂ...</td></tr>"
+		Html = Html & "<tr class='tablebody1'><td colspan='4'>æš‚æ— å‹‹ç« ...</td></tr>"
 	End If
 	Rs.Close : Set Rs = Nothing
 	Html = Html & "<table><br />"
 
-	Html = Html & "<table class='tableborder1' cellspacing='1'><tr><th colspan='3'>Ñ«ÕÂÁĞ±í</th></tr><tr class='tabletitle2'><td>Í¼±ê</td><td>Ãû³Æ</td><td>ËµÃ÷</td></tr>"
+	Html = Html & "<table class='tableborder1' cellspacing='1'><tr><th colspan='3'>å‹‹ç« åˆ—è¡¨</th></tr><tr class='tabletitle2'><td>å›¾æ ‡</td><td>åç§°</td><td>è¯´æ˜</td></tr>"
 	If IsArray(MedalData) Then
 		For i = 0 To UBound(MedalData,2)
 			Html = Html & "<tr class='tablebody1'><td><img src='Dv_plus/medal/images/"&MedalData(2,i)&"' /></td><td>"&MedalData(1,i)&"</td><td>"&MedalData(3,i)&"</td></tr>"
@@ -89,19 +89,19 @@ Sub Main()
 	Response.write Html
 End Sub
 
-'»ñ½±Ãûµ¥
+'è·å¥–åå•
 Sub Users()
 	Dim Html,Users,UserMedal(1),Medals,Rs,Rs2,i,j,k
 	Dim Page,Url,TotalCount,PageSize,TotalPage,StarNum,EndNum
 	Page = 1 : TotalCount = 1 : PageSize = 1 : Url = "action=users"
 	Html = "<script language=""javascript"" type=""text/javascript"" src=""inc/Pagination.js"" /></script>"
-	Html = Html & "<table class='tableborder1' cellspacing='1'><tr><th colspan='4'>»ñ½±Ãûµ¥</th></tr><tr class='tabletitle2'><td width='100'>ÓÃ»§</td><td>Ñ«ÕÂ</td></tr>"
+	Html = Html & "<table class='tableborder1' cellspacing='1'><tr><th colspan='4'>è·å¥–åå•</th></tr><tr class='tabletitle2'><td width='100'>ç”¨æˆ·</td><td>å‹‹ç« </td></tr>"
 
-	Rem ·ÖÒ³
+	Rem åˆ†é¡µ
 	Dim mypage,truekeyword
 	truekeyword=" TyMedaled=1"
 
-	PageSize=10	'¶¨Òå·ÖÒ³Ã¿Ò»Ò³µÄ¼ÇÂ¼Êı
+	PageSize=10	'å®šä¹‰åˆ†é¡µæ¯ä¸€é¡µçš„è®°å½•æ•°
 
     If Not isobject(conn) then ConnectionDatabase
 	
@@ -111,9 +111,9 @@ Sub Users()
 		Set mypage=new Pager2
 	end if
 
-	mypage.getconn=conn 'µÃµ½Êı¾İ¿âÁ¬½Ó
+	mypage.getconn=conn 'å¾—åˆ°æ•°æ®åº“è¿æ¥
 	mypage.pagesize=PageSize 
-	mypage.TableName="Dv_User" 'Òª²éÑ¯µÄ±íÃû
+	mypage.TableName="Dv_User" 'è¦æŸ¥è¯¢çš„è¡¨å
 	mypage.Tablezd=" UserId,UserName,UserMedal"
 	mypage.KeyName="UserId"
 	mypage.OrderType=1
@@ -149,7 +149,7 @@ Sub Users()
 
 	Else
 		rs.close:Set rs=Nothing
-		Html = Html & "<tr class='tablebody1'><td colspan='2'>ÔİÎŞ...</td></tr>"
+		Html = Html & "<tr class='tablebody1'><td colspan='2'>æš‚æ— ...</td></tr>"
 	End If
 	
 
@@ -160,36 +160,36 @@ Sub Users()
 	Response.write Html
 End Sub
 
-'Ñ«ÕÂ¹ÜÀí
+'å‹‹ç« ç®¡ç†
 Sub Medal()
-	If Not Dvbbs.Master Then ShowMsg "¶Ô²»Æğ£¬Äã²»ÊÇ¹ÜÀíÔ±£¬²»ÄÜ½øÈë¹ÜÀíÒ³Ãæ£¡" : Exit Sub
+	If Not Dvbbs.Master Then ShowMsg "å¯¹ä¸èµ·ï¼Œä½ ä¸æ˜¯ç®¡ç†å‘˜ï¼Œä¸èƒ½è¿›å…¥ç®¡ç†é¡µé¢ï¼" : Exit Sub
 	Dim Html,Rs,PicStr,i,Data,TyUsed
-	Html = "<form name='m' method='post' action='?action=savemedal&type=edit'><table class='tableborder1' cellspacing='1'><tr><th colspan='6'>Ñ«ÕÂ¹ÜÀí</th></tr><tr class='tabletitle2'><td>±àºÅ</td><td>½±ÏîÃû³Æ</td><td>Ïà¹ØËµÃ÷</td><td>Ñ«ÕÂÍ¼Æ¬</td><td>Í¼Æ¬ÑİÊ¾</td><td>²Ù×÷</td></tr>"
+	Html = "<form name='m' method='post' action='?action=savemedal&type=edit'><table class='tableborder1' cellspacing='1'><tr><th colspan='6'>å‹‹ç« ç®¡ç†</th></tr><tr class='tabletitle2'><td>ç¼–å·</td><td>å¥–é¡¹åç§°</td><td>ç›¸å…³è¯´æ˜</td><td>å‹‹ç« å›¾ç‰‡</td><td>å›¾ç‰‡æ¼”ç¤º</td><td>æ“ä½œ</td></tr>"
 	Set Rs = Dvbbs.Execute("SELECT Id,MedalName,MedalDesc,MedalPic FROM [Dv_Medal]")
 	If Not Rs.Eof Then
 		Data = Rs.GetRows(-1)
 		For i = 0 To Ubound(Data,2)
 			TyUsed=TyUsed&Data(3,i)&","
-			Html = Html & "<tr class='tablebody1'><td><input type='text' name='id' readonly='true' size='3' value='"&Data(0,i)&"' /></td><td><input type='text' name='m_name' value='"&Data(1,i)&"' /></td><td><textarea name='m_desc' cols='50' rows='2'>"&Data(2,i)&"</textarea></td><td><input type='text' name='m_pic' value='"&Data(3,i)&"' /></td><td><img src='dv_plus/medal/images/"&Data(3,i)&"' /></td><td><a href='?action=delmedal&id="&Data(0,i)&"' onclick=""if (confirm('±¾²Ù×÷½«»á¶ÔËùÓĞ¾ßÓĞ¸ÃÑ«ÕÂµÄÓÃ»§Ö´ĞĞÊÕ»Ø²Ù×÷£¬È·¶¨Âğ£¿')){return true}else{return false;}"">É¾³ı</a></td></tr>"
+			Html = Html & "<tr class='tablebody1'><td><input type='text' name='id' readonly='true' size='3' value='"&Data(0,i)&"' /></td><td><input type='text' name='m_name' value='"&Data(1,i)&"' /></td><td><textarea name='m_desc' cols='50' rows='2'>"&Data(2,i)&"</textarea></td><td><input type='text' name='m_pic' value='"&Data(3,i)&"' /></td><td><img src='dv_plus/medal/images/"&Data(3,i)&"' /></td><td><a href='?action=delmedal&id="&Data(0,i)&"' onclick=""if (confirm('æœ¬æ“ä½œå°†ä¼šå¯¹æ‰€æœ‰å…·æœ‰è¯¥å‹‹ç« çš„ç”¨æˆ·æ‰§è¡Œæ”¶å›æ“ä½œï¼Œç¡®å®šå—ï¼Ÿ')){return true}else{return false;}"">åˆ é™¤</a></td></tr>"
 		Next
-		Html = Html & "<tr class='tablebody1'><td colspan='6' align='center'><input type='submit' value='Ìá ½»' /></td></tr>"
+		Html = Html & "<tr class='tablebody1'><td colspan='6' align='center'><input type='submit' value='æ äº¤' /></td></tr>"
 	Else
-		Html = Html & "<tr class='tablebody1'><td colspan='6'>ÔİÎŞ...</td></tr>"
+		Html = Html & "<tr class='tablebody1'><td colspan='6'>æš‚æ— ...</td></tr>"
 	End If
 	Rs.Close : Set Rs = Nothing
 	For i = 1 to MedalPicNum
 		PicStr = PicStr & " <input type='radio' name='m_pic' value='"&i&".gif' "
-		Rem ·ÀÖ¹²»Í¬Ñ«ÕÂÊ¹ÓÃÍ¬ÑùµÄÍ¼±ê£¬Ğ¡Ò× 2009.9.25
+		Rem é˜²æ­¢ä¸åŒå‹‹ç« ä½¿ç”¨åŒæ ·çš„å›¾æ ‡ï¼Œå°æ˜“ 2009.9.25
 		if instr(TyUsed,i)>0 then PicStr=PicStr & "disabled" 
 		PicStr = PicStr & " /><img src='Dv_Plus/medal/images/"&i&".gif' />&nbsp;&nbsp;"
 	Next
-	Html = Html & "</table></form><br /><form name='add' method='post' action='?action=savemedal&type=add'><table class='tableborder1' cellspacing='1'><tr><th colspan='2'>Ìí¼Ó½±Ïî</th></tr><tr class='tablebody1'><td>½±ÏîÃû³Æ</td><td><input type='text' name='m_name' size='50' /></td></tr><tr class='tablebody1'><td>½±ÏîËµÃ÷</td><td><textarea name='m_desc' rows='5' cols='45'></textarea></td></tr><tr class='tablebody1'><td>½±ÏîÍ¼Æ¬</td><td>"&PicStr&"</td></tr><tr class='tablebody1'><td></td><td><input type='submit' value='Ìá½»' /></td></tr></table></form>"
+	Html = Html & "</table></form><br /><form name='add' method='post' action='?action=savemedal&type=add'><table class='tableborder1' cellspacing='1'><tr><th colspan='2'>æ·»åŠ å¥–é¡¹</th></tr><tr class='tablebody1'><td>å¥–é¡¹åç§°</td><td><input type='text' name='m_name' size='50' /></td></tr><tr class='tablebody1'><td>å¥–é¡¹è¯´æ˜</td><td><textarea name='m_desc' rows='5' cols='45'></textarea></td></tr><tr class='tablebody1'><td>å¥–é¡¹å›¾ç‰‡</td><td>"&PicStr&"</td></tr><tr class='tablebody1'><td></td><td><input type='submit' value='æäº¤' /></td></tr></table></form>"
 	Response.write Html
 End Sub
 
-'±£´æ½±Ïî
+'ä¿å­˜å¥–é¡¹
 Sub SaveMedal()
-	If Not Dvbbs.Master Then ShowMsg "¶Ô²»Æğ£¬Äã²»ÊÇ¹ÜÀíÔ±£¬²»ÄÜ½øÈë¹ÜÀíÒ³Ãæ£¡" : Exit Sub
+	If Not Dvbbs.Master Then ShowMsg "å¯¹ä¸èµ·ï¼Œä½ ä¸æ˜¯ç®¡ç†å‘˜ï¼Œä¸èƒ½è¿›å…¥ç®¡ç†é¡µé¢ï¼" : Exit Sub
 	Dim id,m_name,m_desc,m_pic,i
 	id = Dvbbs.Checkstr(Dvbbs.iHtmlEncode(Request.Form("id")))
 	m_name = Dvbbs.Checkstr(Dvbbs.iHtmlEncode(Request.Form("m_name")))
@@ -201,10 +201,10 @@ Sub SaveMedal()
 			ReloadCache()
 			Response.Redirect "medal_index.asp?action=medal"
 		Else
-			ShowMsg "½±ÏîÃû³ÆºÍ½±ÏîÍ¼Æ¬²»ÄÜÎª¿Õ£¡",""
+			ShowMsg "å¥–é¡¹åç§°å’Œå¥–é¡¹å›¾ç‰‡ä¸èƒ½ä¸ºç©ºï¼",""
 		End If
 	ElseIf Request("type")="edit" Then
-		Rem fish ĞŞ¸´±à¼­³ö´í
+		Rem fish ä¿®å¤ç¼–è¾‘å‡ºé”™
 		id=Replace(id,"&#44;&nbsp;",", ") 
 		m_name=Replace(m_name,"&#44;&nbsp;",", ") 
 		m_desc=Replace(m_desc,"&#44;&nbsp;",", ") 
@@ -218,9 +218,9 @@ Sub SaveMedal()
 	End If
 End Sub
 
-'É¾³ı½±Ïî
+'åˆ é™¤å¥–é¡¹
 Sub DelMedal()
-	If Not Dvbbs.Master Then ShowMsg "¶Ô²»Æğ£¬Äã²»ÊÇ¹ÜÀíÔ±£¬²»ÄÜ½øÈë¹ÜÀíÒ³Ãæ£¡" : Exit Sub
+	If Not Dvbbs.Master Then ShowMsg "å¯¹ä¸èµ·ï¼Œä½ ä¸æ˜¯ç®¡ç†å‘˜ï¼Œä¸èƒ½è¿›å…¥ç®¡ç†é¡µé¢ï¼" : Exit Sub
 	Dim Id,Rs,Data,i,j,UserMedal(1),TyMedaled
 	Id = Trim(Request.QueryString("id"))
 	If isNumeric(Id) Then
@@ -247,15 +247,15 @@ Sub DelMedal()
 		Dvbbs.Execute("DELETE FROM Dv_Medal WHERE id = "&Id)
 		Dvbbs.Execute("DELETE FROM Dv_MedalLog WHERE MedalId = "&Id)
 		ReloadCache()
-		ShowMsg "²Ù×÷³É¹¦£¡","medal_index.asp?action=medal"
+		ShowMsg "æ“ä½œæˆåŠŸï¼","medal_index.asp?action=medal"
 	Else
-		ShowMsg "Çë²»Òª´«µİ·Ç·¨²ÎÊı£¡","medal_index.asp?action=medal"
+		ShowMsg "è¯·ä¸è¦ä¼ é€’éæ³•å‚æ•°ï¼","medal_index.asp?action=medal"
 	End If
 End Sub
 
-'°ä·¢Ò³Ãæ
+'é¢å‘é¡µé¢
 Sub Award()
-	If Not Dvbbs.Master Then ShowMsg "¶Ô²»Æğ£¬Äã²»ÊÇ¹ÜÀíÔ±£¬²»ÄÜ½øÈë¹ÜÀíÒ³Ãæ£¡" : Exit Sub
+	If Not Dvbbs.Master Then ShowMsg "å¯¹ä¸èµ·ï¼Œä½ ä¸æ˜¯ç®¡ç†å‘˜ï¼Œä¸èƒ½è¿›å…¥ç®¡ç†é¡µé¢ï¼" : Exit Sub
 	Dim Html,Options,Rs
 	Set Rs = Dvbbs.Execute("SELECT id,MedalName FROM Dv_Medal")
 	Do While Not Rs.Eof
@@ -263,25 +263,25 @@ Sub Award()
 		Rs.MoveNext
 	Loop
 	Rs.Close : Set Rs = Nothing
-	Html = "<form name='award' method='post' action='medal_index.asp?action=saveaward'><table class='tableborder1' cellspacing='1'><tr><th colspan='2'>°ä·¢Ñ«ÕÂ</th></tr><tr class='tablebody1'><td>»ñ½±Õß£º</td><td><input type='text' name='UserName' /></td></tr><tr class='tablebody1'><td>°ä·¢Ñ«ÕÂ£º</td><td><select name='MedalId'>"&Options&"</select></td></tr><tr class='tablebody1'><td>°ä·¢Ô­Òò£º</td><td><textarea name='Desc' rows='3' cols='50'></textarea></td></tr><tr class='tablebody1'><td></td><td><input type='submit' value='Ìá ½»' /></td></tr></table></form>"
+	Html = "<form name='award' method='post' action='medal_index.asp?action=saveaward'><table class='tableborder1' cellspacing='1'><tr><th colspan='2'>é¢å‘å‹‹ç« </th></tr><tr class='tablebody1'><td>è·å¥–è€…ï¼š</td><td><input type='text' name='UserName' /></td></tr><tr class='tablebody1'><td>é¢å‘å‹‹ç« ï¼š</td><td><select name='MedalId'>"&Options&"</select></td></tr><tr class='tablebody1'><td>é¢å‘åŸå› ï¼š</td><td><textarea name='Desc' rows='3' cols='50'></textarea></td></tr><tr class='tablebody1'><td></td><td><input type='submit' value='æ äº¤' /></td></tr></table></form>"
 	
 	Response.Write Html
 End Sub
 
-'±£´æ°ä·¢
+'ä¿å­˜é¢å‘
 Sub SaveAward()
-	If Not Dvbbs.Master Then ShowMsg "¶Ô²»Æğ£¬Äã²»ÊÇ¹ÜÀíÔ±£¬²»ÄÜ½øÈë¹ÜÀíÒ³Ãæ£¡" : Exit Sub
+	If Not Dvbbs.Master Then ShowMsg "å¯¹ä¸èµ·ï¼Œä½ ä¸æ˜¯ç®¡ç†å‘˜ï¼Œä¸èƒ½è¿›å…¥ç®¡ç†é¡µé¢ï¼" : Exit Sub
 	Dim Rs,UserName,MedalId,Desc,UserInfo,UserMedal(1),i,MedalName
 	UserName = Dvbbs.Checkstr(Dvbbs.iHtmlEncode(Request.Form("UserName")))
 	MedalId = Dvbbs.CheckNumeric(Request.Form("MedalId"))
 	Desc = Dvbbs.Checkstr(Dvbbs.iHtmlEncode(Request.Form("Desc")))
 	If UserName = "" Or MedalId = "" Or Desc = "" Then
-		ShowMsg "Ã¿Ò»Ïî¶¼±ØĞëÌîĞ´£¬Çë·µ»ØÌîĞ´ÍêÕû£¡","" : Exit Sub
+		ShowMsg "æ¯ä¸€é¡¹éƒ½å¿…é¡»å¡«å†™ï¼Œè¯·è¿”å›å¡«å†™å®Œæ•´ï¼","" : Exit Sub
 	End If
 	If isNumeric(MedalId) Then
 		MedalName = Dvbbs.Execute("SELECT MedalName FROM Dv_Medal WHERE id = "&MedalId)(0)
 		If MedalName = "" Or isNull(MedalName) Then
-			ShowMsg "²»´æÔÚ¸Ã½±Ïî£¬Çë²»Òª´«µİ·Ç·¨²ÎÊı£¡","" : Exit Sub
+			ShowMsg "ä¸å­˜åœ¨è¯¥å¥–é¡¹ï¼Œè¯·ä¸è¦ä¼ é€’éæ³•å‚æ•°ï¼","" : Exit Sub
 		End If
 		Set Rs = Dvbbs.Execute("SELECT UserId,UserName,UserMedal FROM Dv_User WHERE UserName = '"&UserName&"'")		
 		If Not Rs.Eof Then
@@ -291,7 +291,7 @@ Sub SaveAward()
 				UserMedal(1) = UserInfo(2,0)
 				For i = 0 To Ubound(UserMedal(0))
 					If CLng(UserMedal(0)(i)) = CLng(MedalId) Then
-						ShowMsg "<strong>"&UserName&"</strong> ÒÑ¾­ÓµÓĞ¸ÃÑ«ÕÂ£¬²»ÄÜÖØ¸´°ä·¢£¡","" : Exit Sub
+						ShowMsg "<strong>"&UserName&"</strong> å·²ç»æ‹¥æœ‰è¯¥å‹‹ç« ï¼Œä¸èƒ½é‡å¤é¢å‘ï¼","" : Exit Sub
 					End If
 				Next
 				UserMedal(1) = UserMedal(1) & "," & MedalId
@@ -301,23 +301,23 @@ Sub SaveAward()
 			Dvbbs.Execute("UPDATE Dv_User Set UserMedal = '"& UserMedal(1) &"',TyMedaled=1 WHERE UserId = "&UserInfo(0,0))
 			Dvbbs.Execute("INSERT INTO Dv_MedalLog (UserId,UserName,MedalId,AwardUser,AwardDesc) VALUES ("&UserInfo(0,0)&",'"&UserInfo(1,0)&"',"&MedalId&",'"&Dvbbs.MemberName&"','"&Desc&"')")
 
-			ShowMsg "Ñ«ÕÂ <strong>"&MedalName&"</strong> ÒÑ¾­³É¹¦°ä·¢¸ø <strong>"&UserName&"</strong>","medal_index.asp?action=awardlog"
+			ShowMsg "å‹‹ç«  <strong>"&MedalName&"</strong> å·²ç»æˆåŠŸé¢å‘ç»™ <strong>"&UserName&"</strong>","medal_index.asp?action=awardlog"
 		Else
-			ShowMsg "²»´æÔÚ¸ÃÓÃ»§£¬Çë·µ»Ø¼ì²éÄúµÄÊäÈëÊÇ·ñÕıÈ·£¡",""
+			ShowMsg "ä¸å­˜åœ¨è¯¥ç”¨æˆ·ï¼Œè¯·è¿”å›æ£€æŸ¥æ‚¨çš„è¾“å…¥æ˜¯å¦æ­£ç¡®ï¼",""
 		End If
 	End If
 End Sub
 
-'°ä·¢ÈÕÖ¾
+'é¢å‘æ—¥å¿—
 Sub AwardLog()
-	If Not Dvbbs.Master Then ShowMsg "¶Ô²»Æğ£¬Äã²»ÊÇ¹ÜÀíÔ±£¬²»ÄÜ½øÈë¹ÜÀíÒ³Ãæ£¡" : Exit Sub
+	If Not Dvbbs.Master Then ShowMsg "å¯¹ä¸èµ·ï¼Œä½ ä¸æ˜¯ç®¡ç†å‘˜ï¼Œä¸èƒ½è¿›å…¥ç®¡ç†é¡µé¢ï¼" : Exit Sub
 	Dim Html,Rs,Data,i,UserName,Sql
 	Dim Page,Url,TotalCount,PageSize,TotalPage,StarNum,EndNum
 	Page = 1 : TotalCount = 1 : PageSize = 1
 	UserName = Dvbbs.Checkstr(Dvbbs.iHtmlEncode(Request.QueryString("u")))
 	Html = "<script language=""javascript"" type=""text/javascript"" src=""inc/Pagination.js"" /></script>"
-	Html = Html & "<table class='tableborder1' cellspacing='1'><tr><th colspan='8'>°ä·¢¼ÇÂ¼</th>"
-	hTML = Html & "</tr><tr class='tabletitle2'><td>»ñ½±Õß</td><td>Ñ«ÕÂÃû³Æ</td><td>°ä·¢Õß</td><td>°ä·¢Ô­Òò</td><td>°ä·¢Ê±¼ä</td><td>²Ù×÷</td></tr>"
+	Html = Html & "<table class='tableborder1' cellspacing='1'><tr><th colspan='8'>é¢å‘è®°å½•</th>"
+	hTML = Html & "</tr><tr class='tabletitle2'><td>è·å¥–è€…</td><td>å‹‹ç« åç§°</td><td>é¢å‘è€…</td><td>é¢å‘åŸå› </td><td>é¢å‘æ—¶é—´</td><td>æ“ä½œ</td></tr>"
 	If UserName <> "" Then
 		Url = "action=awardlog&u="&UserName
 		Sql = "SELECT L.*,M.MedalName,M.MedalPic,M.id FROM Dv_MedalLog L,Dv_Medal M  WHERE L.MedalId = M.Id AND L.UserName = '"&UserName&"' ORDER BY L.id DESC"
@@ -328,7 +328,7 @@ Sub AwardLog()
 	Set Rs = Dvbbs.Execute(Sql)
 	If Not Rs.Eof Then
 		Data = Rs.GetRows(-1)
-		'---·ÖÒ³ÉèÖÃ---
+		'---åˆ†é¡µè®¾ç½®---
 		TotalCount = Ubound(Data,2) + 1
 		PageSize = 10
 		TotalPage = Int(TotalCount / PageSize)
@@ -341,21 +341,21 @@ Sub AwardLog()
 		EndNum = Page * PageSize
 		If EndNum > TotalCount Then EndNum = TotalCount
 		For i = StarNum To EndNum - 1
-			Html = Html & "<tr class='tablebody1'><td><strong>"&Data(2,i)&"</strong></td><td><img src='dv_plus/medal/images/"&Data(8,i)&"' /> "&Data(7,i)&"</td><td><u>"&Data(4,i)&"</u></td><td>"&Data(5,i)&"</td><td>"&Data(6,i)&"</td><td><a href='?action=remedal&uid="&Data(1,i)&"&mid="&Data(9,i)&"&lid="&Data(0,i)&"' onclick=""if (confirm('È·¶¨ÊÕ»Ø¸ÃÓÃ»§µÄÑ«ÕÂÂğ£¿')){return true}else{return false;}"">ÊÕ»ØÑ«ÕÂ</a></td></tr>"
+			Html = Html & "<tr class='tablebody1'><td><strong>"&Data(2,i)&"</strong></td><td><img src='dv_plus/medal/images/"&Data(8,i)&"' /> "&Data(7,i)&"</td><td><u>"&Data(4,i)&"</u></td><td>"&Data(5,i)&"</td><td>"&Data(6,i)&"</td><td><a href='?action=remedal&uid="&Data(1,i)&"&mid="&Data(9,i)&"&lid="&Data(0,i)&"' onclick=""if (confirm('ç¡®å®šæ”¶å›è¯¥ç”¨æˆ·çš„å‹‹ç« å—ï¼Ÿ')){return true}else{return false;}"">æ”¶å›å‹‹ç« </a></td></tr>"
 		Next
 
 	End If
-	Html = Html & "</table><table width='100%'><tr><td colspan='8'><span style=""float:right"">ÓÃ»§Ãû£º<input type='text' id='UserName' name='UserName' /> <input type='button' onclick=""window.location='medal_index.asp?action=awardlog&u='+document.getElementById('UserName').value"" value='²éÕÒ' /></span><script language=""javascript"">PageList("&Page&",10,"&PageSize&","&TotalCount&",'"&Url&"',4);</script></table>"
+	Html = Html & "</table><table width='100%'><tr><td colspan='8'><span style=""float:right"">ç”¨æˆ·åï¼š<input type='text' id='UserName' name='UserName' /> <input type='button' onclick=""window.location='medal_index.asp?action=awardlog&u='+document.getElementById('UserName').value"" value='æŸ¥æ‰¾' /></span><script language=""javascript"">PageList("&Page&",10,"&PageSize&","&TotalCount&",'"&Url&"',4);</script></table>"
 	Response.write Html
 End Sub
 
-'ÊÕ»ØÑ«ÕÂ
+'æ”¶å›å‹‹ç« 
 Sub ReAward()
-	If Not Dvbbs.Master Then ShowMsg "¶Ô²»Æğ£¬Äã²»ÊÇ¹ÜÀíÔ±£¬²»ÄÜ½øÈë¹ÜÀíÒ³Ãæ£¡" : Exit Sub
+	If Not Dvbbs.Master Then ShowMsg "å¯¹ä¸èµ·ï¼Œä½ ä¸æ˜¯ç®¡ç†å‘˜ï¼Œä¸èƒ½è¿›å…¥ç®¡ç†é¡µé¢ï¼" : Exit Sub
 	Dim UserId,MedalId,LogId,Rs,UserInfo,UserMedal(1),i,TyMedaled
 	UserId = Request("uid") : MedalId = Request("mid") : LogId = Request("lid")
 	If Not (isNumeric(UserId) And isNumeric(MedalId) And isNumeric(LogId)) Then
-		ShowMsg "²ÎÊı´íÎó£¬Çë²»Òª³¢ÊÔ´«µİ·Ç·¨²ÎÊı£¡","" : Exit Sub
+		ShowMsg "å‚æ•°é”™è¯¯ï¼Œè¯·ä¸è¦å°è¯•ä¼ é€’éæ³•å‚æ•°ï¼","" : Exit Sub
 	End If
 	Set Rs = Dvbbs.Execute("SELECT UserId,UserName,UserMedal,TyMedaled from Dv_User WHERE UserId = "&Clng(UserId))
 	If Not Rs.Eof Then
@@ -374,9 +374,9 @@ Sub ReAward()
 		if UserMedal(1)<>"" then TyMedaled=1
 		Dvbbs.Execute("UPDATE Dv_User SET UserMedal = '"&UserMedal(1)&"',TyMedaled="&TyMedaled&" WHERE UserId = "&Clng(UserId))
 		Dvbbs.Execute("DELETE FROM Dv_MedalLog WHERE id = "&Clng(LogId))
-		ShowMsg "³É¹¦ÊÕ»Ø <strong>"&UserInfo(1,0)&"</strong>µÄÑ«ÕÂ£¡","medal_index.asp?action=awardlog"
+		ShowMsg "æˆåŠŸæ”¶å› <strong>"&UserInfo(1,0)&"</strong>çš„å‹‹ç« ï¼","medal_index.asp?action=awardlog"
 	Else
-		ShowMsg "ÓÃ»§²»´æÔÚ£¡",""
+		ShowMsg "ç”¨æˆ·ä¸å­˜åœ¨ï¼",""
 	End If
 End Sub
 
@@ -394,11 +394,11 @@ End Sub
 
 Sub ShowMsg(Msg,url)
 	Dim Html
-	Html = "<table class='tableborder1' cellspacing='1'><tr><th>ÌáÊ¾ĞÅÏ¢</th></tr><tr class='tablebody1'><td height='50'>"&Msg&"</td></tr><tr class='tabletitle1'><td align='center'><input type='button' onclick="""
+	Html = "<table class='tableborder1' cellspacing='1'><tr><th>æç¤ºä¿¡æ¯</th></tr><tr class='tablebody1'><td height='50'>"&Msg&"</td></tr><tr class='tabletitle1'><td align='center'><input type='button' onclick="""
 	If Url = "" Then
-		Html = Html & "javascript:history.back()"" value='·µ»ØÉÏÒ»Ò³' /></td></tr></table>"
+		Html = Html & "javascript:history.back()"" value='è¿”å›ä¸Šä¸€é¡µ' /></td></tr></table>"
 	Else
-		Html = Html & "javascript:window.location='"&url&"'"" value='µã»÷·µ»Ø' /></td></tr></table>"
+		Html = Html & "javascript:window.location='"&url&"'"" value='ç‚¹å‡»è¿”å›' /></td></tr></table>"
 	End If
 	Response.Write Html
 End Sub

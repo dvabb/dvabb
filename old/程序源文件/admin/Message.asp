@@ -25,17 +25,17 @@ Sub Savemsg()
 	message=Dvbbs.checkStr(message)
 	TyIncept=""
 	If Len(Title)=0 Then 
-		Errmsg = Errmsg + "ÏûÏ¢±êÌâ²»ÄÜÎª¿Õ"
+		Errmsg = Errmsg + "æ¶ˆæ¯æ ‡é¢˜ä¸èƒ½ä¸ºç©º"
 		Dvbbs_Error()
 		Exit Sub			
 	End If
 	If Len(message)=0 Then
-		Errmsg = Errmsg + "ÏûÏ¢ÄÚÈİ²»ÄÜÎª¿Õ"
+		Errmsg = Errmsg + "æ¶ˆæ¯å†…å®¹ä¸èƒ½ä¸ºç©º"
 		Dvbbs_Error()
 		Exit Sub			
 	End If
 	If Len(message)>255 Then
-		Errmsg = Errmsg + "ÏûÏ¢ÄÚÈİ²»ÄÜ¶àÓÚ255×Ö½Ú"
+		Errmsg = Errmsg + "æ¶ˆæ¯å†…å®¹ä¸èƒ½å¤šäº255å­—èŠ‚"
 		Dvbbs_Error()
 		Exit Sub			
 	End If 
@@ -85,7 +85,7 @@ Sub Savemsg()
 		sql = "SELECT UserName FROM [Dv_User] WHERE UserGroupID = 2 ORDER BY UserID DESC"
 		TyIncept=",2,"
 	Case Else
-		REM ¼ÓÈë×Ô¶¨ÒåÓÃ»§×éÈº·¢¶ÌĞÅ¹¦ÄÜ 2004-5-19 Dv.Yz
+		REM åŠ å…¥è‡ªå®šä¹‰ç”¨æˆ·ç»„ç¾¤å‘çŸ­ä¿¡åŠŸèƒ½ 2004-5-19 Dv.Yz
 		Sql = "SELECT COUNT(*) FROM [Dv_User] WHERE Usergroupid = " & Cint(Request("stype"))
 		Set Rs = Dvbbs.Execute(Sql)
 		Numc = Rs(0)
@@ -95,7 +95,7 @@ Sub Savemsg()
 %>
 <br><table cellpadding="0" cellspacing="0" border="0" width="100%" align="center">
 <tr><td colspan=2 class=td1>
-ÏÂÃæ¿ªÊ¼·¢ËÍ¶ÌÏûÏ¢£¬Ô¤¼Æ±¾´Î·¢ËÍ<%=Numc%>¸öÓÃ»§¡£
+ä¸‹é¢å¼€å§‹å‘é€çŸ­æ¶ˆæ¯ï¼Œé¢„è®¡æœ¬æ¬¡å‘é€<%=Numc%>ä¸ªç”¨æˆ·ã€‚
 <table width="400" border="0" cellspacing="1" cellpadding="1">
 <tr> 
 <td bgcolor=#000000>
@@ -106,8 +106,8 @@ Sub Savemsg()
 </table>
 <%
 Response.Flush
-	Rem ¿ìËÙ·¢¸ø¶ÔÓ¦µÄÓÃ»§×é£¬¶ø²»ÊÇÒ»¸ö¸öµÄ·¢ËÍ ¶¯Íø.Ğ¡Ò× 2010-3-3
-	Const TySendAuto = 1 'Èç¹ûÏëÓÃÒÔÇ°µÄÀÏ·½Ê½Ò»¸ö¸öµÄ·¨Ö»Ğè°ÑÕâ¸ö²ÎÊı¸Ä³É0
+	Rem å¿«é€Ÿå‘ç»™å¯¹åº”çš„ç”¨æˆ·ç»„ï¼Œè€Œä¸æ˜¯ä¸€ä¸ªä¸ªçš„å‘é€ åŠ¨ç½‘.å°æ˜“ 2010-3-3
+	Const TySendAuto = 1 'å¦‚æœæƒ³ç”¨ä»¥å‰çš„è€æ–¹å¼ä¸€ä¸ªä¸ªçš„æ³•åªéœ€æŠŠè¿™ä¸ªå‚æ•°æ”¹æˆ0
 	IF TyIncept<>"" and TySendAuto=1 Then
 		if TyIncept=",1,2,3," or TyIncept=",0," Then
 			Dim TyMaxID
@@ -123,25 +123,25 @@ Response.Flush
 			Dvbbs.Execute(Sql)
 		End If
 		Response.Write "<script>img2.width=400;" & VbCrLf
-		Response.Write "txt2.innerHTML=""100%£¬·¢ËÍÍê³É"";" & VbCrLf
-		Response.Write "img2.title=""·¢ËÍ¶ÌĞÅ¸ø"&Numc&"ÈËÍê³É...."";</script>" & VbCrLf
+		Response.Write "txt2.innerHTML=""100%ï¼Œå‘é€å®Œæˆ"";" & VbCrLf
+		Response.Write "img2.title=""å‘é€çŸ­ä¿¡ç»™"&Numc&"äººå®Œæˆ...."";</script>" & VbCrLf
 	else
 		Set Rs = Dvbbs.Execute(Sql)
-		'ĞŞÕıËùÊôÓÃ»§×éÓÃ»§ÊıÎª0Ê±µÄ´íÎó Dv.Yz 2005-1-27
+		'ä¿®æ­£æ‰€å±ç”¨æˆ·ç»„ç”¨æˆ·æ•°ä¸º0æ—¶çš„é”™è¯¯ Dv.Yz 2005-1-27
 		If Not (Rs.Eof And Rs.Bof) Then
 			userlist=Rs.GetRows(-1)
 			Set Rs = Nothing
 			Response.Write "<script>img2.width=" & Fix((i/Numc) * 400) & ";" & VbCrLf
-			Response.Write "txt2.innerHTML=""ÕıÔÚ·¢ËÍ£¬..."";" & VbCrLf
-			Response.Write "img2.title=""·¢ËÍ¶ÌĞÅ¸ø...."";</script>" & VbCrLf
+			Response.Write "txt2.innerHTML=""æ­£åœ¨å‘é€ï¼Œ..."";" & VbCrLf
+			Response.Write "img2.title=""å‘é€çŸ­ä¿¡ç»™...."";</script>" & VbCrLf
 			Response.Flush
 			For i=0 to UBound(userlist,2)
 				userlist(0,i)=Dvbbs.checkStr(userlist(0,i))
 				If Response.IsClientConnected Then
 					If isshow="1" Then
 						Response.Write "<script>img2.width=" & Fix((i/Numc) * 400) & ";" & VbCrLf
-						Response.Write "txt2.innerHTML=""" & FormatNumber(i/Numc*100,4,-1) & "%£¬·¢ËÍ¶ÌĞÅ¸ø" & userlist(0,i) & "³É¹¦£¡"";" & VbCrLf
-						Response.Write "img2.title=""·¢ËÍ¶ÌĞÅ¸ø" & userlist(0,i)  & "³É¹¦£¡"";</script>" & VbCrLf
+						Response.Write "txt2.innerHTML=""" & FormatNumber(i/Numc*100,4,-1) & "%ï¼Œå‘é€çŸ­ä¿¡ç»™" & userlist(0,i) & "æˆåŠŸï¼"";" & VbCrLf
+						Response.Write "img2.title=""å‘é€çŸ­ä¿¡ç»™" & userlist(0,i)  & "æˆåŠŸï¼"";</script>" & VbCrLf
 						Response.Flush
 					End If
 					Sql = "INSERT into dv_message(incept, sender, title, content, sendtime, flag, issend) values('"&userlist(0,i) &"', '"&sender&"', '"&Title&"', '"&Trim(message)&"', "&SqlNowString&",0,1)"
@@ -151,80 +151,80 @@ Response.Flush
 				End If 
 			Next 
 			Response.Write "<script>img2.width=400;" & VbCrLf
-			Response.Write "txt2.innerHTML=""100%£¬·¢ËÍÍê³É"";" & VbCrLf
-			Response.Write "img2.title=""·¢ËÍ¶ÌĞÅ¸ø...."";</script>" & VbCrLf
+			Response.Write "txt2.innerHTML=""100%ï¼Œå‘é€å®Œæˆ"";" & VbCrLf
+			Response.Write "img2.title=""å‘é€çŸ­ä¿¡ç»™...."";</script>" & VbCrLf
 			Response.Flush
 		End If
 	end If
-	Dv_Suc("²Ù×÷³É¹¦£¡Çë¼ÌĞø±ğµÄ²Ù×÷¡£")
+	Dv_Suc("æ“ä½œæˆåŠŸï¼è¯·ç»§ç»­åˆ«çš„æ“ä½œã€‚")
 End Sub
 
 sub sendmsg()
 %>
 <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
                 <tr> 
-                  <th colspan="2" style="text-align:center;">ÂÛÌ³¶ÌĞÅ¹ÜÀí
+                  <th colspan="2" style="text-align:center;">è®ºå›çŸ­ä¿¡ç®¡ç†
                   </th>
                 </tr>
             <form action="message.asp?action=del" method=post>
                 <tr> 
                   <td colspan="2" class=td2>
-                      ÅúÁ¿É¾³ıÄ³ÓÃ»§¶ÌÏûÏ¢£¨Ö÷ÒªÓÃÓÚÉ¾³ıÏµÍ³ÅúÁ¿ĞÅÏ¢£º¶¯ÍøĞ¡¾«Áé£©£º<br><input type="text" name="username" size="20">
-			<input type="submit" class="button" name="Submit" value="Ìá ½»">
+                      æ‰¹é‡åˆ é™¤æŸç”¨æˆ·çŸ­æ¶ˆæ¯ï¼ˆä¸»è¦ç”¨äºåˆ é™¤ç³»ç»Ÿæ‰¹é‡ä¿¡æ¯ï¼šåŠ¨ç½‘å°ç²¾çµï¼‰ï¼š<br><input type="text" name="username" size="20">
+			<input type="submit" class="button" name="Submit" value="æ äº¤">
                   </td>
                 </tr>
             </form>
 			<form action="message.asp?action=delall" method=post>
                 <tr> 
                   <td colspan="2" class=td1>
-                      ÅúÁ¿É¾³ıÓÃ»§Ö¸¶¨ÈÕÆÚÄÚ¶ÌÏûÏ¢£¨Ä¬ÈÏÎªÉ¾³ıÒÑ¶ÁĞÅÏ¢£©£º<br>
+                      æ‰¹é‡åˆ é™¤ç”¨æˆ·æŒ‡å®šæ—¥æœŸå†…çŸ­æ¶ˆæ¯ï¼ˆé»˜è®¤ä¸ºåˆ é™¤å·²è¯»ä¿¡æ¯ï¼‰ï¼š<br>
 					  <select name="delDate" size=1>
-						<option value=7>Ò»¸öĞÇÆÚÇ°</option>
-						<option value=30>Ò»¸öÔÂÇ°</option>
-						<option value=60>Á½¸öÔÂÇ°</option>
-						<option value=180>°ëÄêÇ°</option>
-						<option value="all">ËùÓĞĞÅÏ¢</option>
+						<option value=7>ä¸€ä¸ªæ˜ŸæœŸå‰</option>
+						<option value=30>ä¸€ä¸ªæœˆå‰</option>
+						<option value=60>ä¸¤ä¸ªæœˆå‰</option>
+						<option value=180>åŠå¹´å‰</option>
+						<option value="all">æ‰€æœ‰ä¿¡æ¯</option>
 					  </select>
-					  &nbsp;<input type="checkbox" class="checkbox" name="isread" value="yes">°üÀ¨Î´¶ÁĞÅÏ¢
-			<input type="submit" class="button" name="Submit" value="Ìá ½»">
+					  &nbsp;<input type="checkbox" class="checkbox" name="isread" value="yes">åŒ…æ‹¬æœªè¯»ä¿¡æ¯
+			<input type="submit" class="button" name="Submit" value="æ äº¤">
                   </td>
                 </tr>
             </form>
 			<form action="message.asp?action=delchk" method=post>
                 <tr> 
                   <td colspan="2" class=td2>
-				  ÅúÁ¿É¾³ıº¬ÓĞÄ³¹Ø¼ü×Ö¶ÌĞÅ£¨×¢Òâ£º±¾²Ù×÷½«É¾³ıËùÓĞÒÑ¶ÁºÍÎ´¶ÁĞÅÏ¢£©£º<br>
-				  ¹Ø¼ü×Ö£º<input type="text" name="keyword" size=30>&nbsp;ÔÚ
+				  æ‰¹é‡åˆ é™¤å«æœ‰æŸå…³é”®å­—çŸ­ä¿¡ï¼ˆæ³¨æ„ï¼šæœ¬æ“ä½œå°†åˆ é™¤æ‰€æœ‰å·²è¯»å’Œæœªè¯»ä¿¡æ¯ï¼‰ï¼š<br>
+				  å…³é”®å­—ï¼š<input type="text" name="keyword" size=30>&nbsp;åœ¨
 					  <select name="selaction" size=1>
-						<option value=1>±êÌâÖĞ</option>
-						<option value=2>ÄÚÈİÖĞ</option>
+						<option value=1>æ ‡é¢˜ä¸­</option>
+						<option value=2>å†…å®¹ä¸­</option>
 					  </select>
-					  &nbsp;<input type="submit" class="button" name="Submit" value="Ìá ½»">
+					  &nbsp;<input type="submit" class="button" name="Submit" value="æ äº¤">
                   </td>
                 </tr>
             </form>
                 <tr> 
-                  <th colspan="2" style="text-align:center;">ÂÛÌ³¶ÌĞÅ¹ã²¥
+                  <th colspan="2" style="text-align:center;">è®ºå›çŸ­ä¿¡å¹¿æ’­
                   </th>
                 </tr>
             <form action="message.asp?action=add" method=post>
                 <tr> 
-                  <td width="22%" class=td1>ÏûÏ¢±êÌâ</td>
+                  <td width="22%" class=td1>æ¶ˆæ¯æ ‡é¢˜</td>
                   <td width="78%" class=td1> 
                     <input type="text" name="title" size="70">
                   </td>
                 </tr>
                 <tr> 
-                  <td width="22%" class=td1>½ÓÊÕ·½Ñ¡Ôñ</td>
+                  <td width="22%" class=td1>æ¥æ”¶æ–¹é€‰æ‹©</td>
                   <td width="78%" class=td1> 
                     <select name=stype size=1>
-					<option value="1">ËùÓĞÔÚÏßÓÃ»§</option>
-					<option value="2">ËùÓĞ¹ó±ö</option>
-					<option value="3">ËùÓĞ°æÖ÷</option>
-					<option value="4">ËùÓĞ¹ÜÀíÔ±</option>
-					<option value="5">°æÖ÷/³¬°æ/¹ÜÀíÔ±</option>
-					<option value="6">ËùÓĞÓÃ»§</option>
-					<option value="7">ËùÓĞ³¬°æ</option>
+					<option value="1">æ‰€æœ‰åœ¨çº¿ç”¨æˆ·</option>
+					<option value="2">æ‰€æœ‰è´µå®¾</option>
+					<option value="3">æ‰€æœ‰ç‰ˆä¸»</option>
+					<option value="4">æ‰€æœ‰ç®¡ç†å‘˜</option>
+					<option value="5">ç‰ˆä¸»/è¶…ç‰ˆ/ç®¡ç†å‘˜</option>
+					<option value="6">æ‰€æœ‰ç”¨æˆ·</option>
+					<option value="7">æ‰€æœ‰è¶…ç‰ˆ</option>
 <%
 	Dim Rs,Sql
 	Sql = "SELECT UserGroupID, Title From Dv_UserGroups WHERE UserGroupID > 8 AND ParentGID = 0 ORDER BY UserGroupID"
@@ -244,12 +244,12 @@ sub sendmsg()
                 </tr>
                 <tr> 
                   <td width="22%" height="20" valign="top" class=td1>
-                    <p>ÏûÏ¢ÄÚÈİ</p>
-                    <p>(<font color="red">HTML´úÂëÖ§³Ö</font>)</p>
+                    <p>æ¶ˆæ¯å†…å®¹</p>
+                    <p>(<font color="red">HTMLä»£ç æ”¯æŒ</font>)</p>
                   </td>
                   <td width="78%" height="20" class=td1> 
                     <textarea name="message" cols="80" rows="10"></textarea>
-                    <br><input type="radio" class="radio" name="isshow" value="1" checked>ÏÔÊ¾·¢ËÍ¹ı³Ì <input type="radio" class="radio" name="isshow" value="0" > ²»ÏÔÊ¾·¢ËÍ¹ı³Ì£¨ËÙ¶È½Ï¿ì£©
+                    <br><input type="radio" class="radio" name="isshow" value="1" checked>æ˜¾ç¤ºå‘é€è¿‡ç¨‹ <input type="radio" class="radio" name="isshow" value="0" > ä¸æ˜¾ç¤ºå‘é€è¿‡ç¨‹ï¼ˆé€Ÿåº¦è¾ƒå¿«ï¼‰
                   </td>
                 </tr>
                 <tr> 
@@ -258,8 +258,8 @@ sub sendmsg()
                   </td>
                   <td width="78%" height="23" class=td1> 
                     <div align="center"> 
-                      <input type="submit" class="button" name="Submit" value="·¢ËÍÏûÏ¢">
-                      <input type="reset" class="button" name="Submit2" value="ÖØĞÂÌîĞ´">
+                      <input type="submit" class="button" name="Submit" value="å‘é€æ¶ˆæ¯">
+                      <input type="reset" class="button" name="Submit2" value="é‡æ–°å¡«å†™">
                     </div>
                   </td>
                 </tr>
@@ -271,20 +271,20 @@ end sub
 Sub Del()
 	Dim Dnum,Rs,Sql
 	If Request("username") = "" Then
-		Errmsg = Errmsg+ "ÇëÊäÈëÒªÅúÁ¿É¾³ıµÄÓÃ»§Ãû¡£"
+		Errmsg = Errmsg+ "è¯·è¾“å…¥è¦æ‰¹é‡åˆ é™¤çš„ç”¨æˆ·åã€‚"
 		Dvbbs_error()
 		Exit Sub
 	End If
 	Sql = "SELECT COUNT(*) FROM Dv_Message WHERE Sender = '" & Dvbbs.CheckStr(Request("username")) & "'"
 	Set Rs = Dvbbs.Execute(Sql)
-	Dnum = Rs(0)	'Í³¼ÆÉ¾³ı¶ÌĞÅ 2005-10-21 Dv.Yz
+	Dnum = Rs(0)	'ç»Ÿè®¡åˆ é™¤çŸ­ä¿¡ 2005-10-21 Dv.Yz
 	Sql = "DELETE FROM Dv_Message WHERE Sender = '" & Dvbbs.CheckStr(Request("username")) & "'"
 	Dvbbs.Execute(Sql)
-	Dv_Suc("¹²É¾³ı[" & Dnum & "]Ìõ¶ÌĞÅ£¬²Ù×÷³É¹¦£¡Çë¼ÌĞø±ğµÄ²Ù×÷¡£")
+	Dv_Suc("å…±åˆ é™¤[" & Dnum & "]æ¡çŸ­ä¿¡ï¼Œæ“ä½œæˆåŠŸï¼è¯·ç»§ç»­åˆ«çš„æ“ä½œã€‚")
 End Sub
 
 Sub Delall()
-	REM ¸ÄÊı×éÑ­»·±ÜÃâÉ¾³ıÂÛÌ³¶ÌĞÅ³¬Ê± 2004-5-11 Dvbbs.YangZheng
+	REM æ”¹æ•°ç»„å¾ªç¯é¿å…åˆ é™¤è®ºå›çŸ­ä¿¡è¶…æ—¶ 2004-5-11 Dvbbs.YangZheng
 	Dim Selflag, Summid,Rs,Sql,i
 	If Request("isread") = "yes" Then
 		Selflag = " ORDER BY Id"
@@ -329,23 +329,23 @@ Sub Delall()
 			Summid = Summid + 1
 		Next
 	End If
-	Dv_Suc("²Ù×÷É¾³ı" & Summid & "ÌõÂÛÌ³¶ÌĞÅ³É¹¦£¡Çë¼ÌĞø±ğµÄ²Ù×÷¡£")
+	Dv_Suc("æ“ä½œåˆ é™¤" & Summid & "æ¡è®ºå›çŸ­ä¿¡æˆåŠŸï¼è¯·ç»§ç»­åˆ«çš„æ“ä½œã€‚")
 End Sub
 
 sub delchk()
 	if request.form("keyword")="" then
-		Errmsg = Errmsg + "ÇëÊäÈë¹Ø¼ü×Ö£¡"
+		Errmsg = Errmsg + "è¯·è¾“å…¥å…³é”®å­—ï¼"
 		Dvbbs_Error()
 		exit sub
 	end if
 	if request.form("selaction")=1 then
 		Dvbbs.Execute("delete from dv_message where title like '%"&replace(request.form("keyword"),"'","")&"%'")
-		Dv_Suc("²Ù×÷³É¹¦£¡Çë¼ÌĞø±ğµÄ²Ù×÷¡£")
+		Dv_Suc("æ“ä½œæˆåŠŸï¼è¯·ç»§ç»­åˆ«çš„æ“ä½œã€‚")
 	elseif request.form("selaction")=2 then
 		Dvbbs.Execute("delete from dv_message where content like '%"&replace(request.form("keyword"),"'","")&"%'")
-		Dv_Suc("²Ù×÷³É¹¦£¡Çë¼ÌĞø±ğµÄ²Ù×÷¡£")
+		Dv_Suc("æ“ä½œæˆåŠŸï¼è¯·ç»§ç»­åˆ«çš„æ“ä½œã€‚")
 	else
-		Errmsg = Errmsg + "Î´Ö¸¶¨Ïà¹Ø²ÎÊı£¡"
+		Errmsg = Errmsg + "æœªæŒ‡å®šç›¸å…³å‚æ•°ï¼"
 		Dvbbs_Error()
 		exit sub
 	end if
@@ -369,7 +369,7 @@ Function update_user_msg(username)
 	End If
 	Dvbbs.Execute("update [dv_user] set UserMsg='"&dvbbs.CheckStr(msginfo)&"' where username='"&dvbbs.CheckStr(username)&"'")
 End Function
-'Í³¼ÆÁôÑÔ
+'ç»Ÿè®¡ç•™è¨€
 Function newincept(iusername)
 	Dim rs
 	Rs=Dvbbs.Execute("Select Count(id) from dv_Message Where flag=0 and issend=1 and delR=0 And incept='"& iusername &"'")

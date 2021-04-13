@@ -7,8 +7,8 @@ Function GroupPermission(GroupSetting)
 	Else
 		reGroupSetting = Split(GroupSetting,",")
 	End If
-	If reGroupSetting(58)="0" Then reGroupSetting(58)="¡ì"
-	UserHtml = Split(reGroupSetting(58),"¡ì")
+	If reGroupSetting(58)="0" Then reGroupSetting(58)="Â§"
+	UserHtml = Split(reGroupSetting(58),"Â§")
 	If Ubound(UserHtml)=1 Then
 		UserHtmlA=UserHtml(0)
 		UserHtmlB=UserHtml(1)
@@ -19,702 +19,313 @@ Function GroupPermission(GroupSetting)
 %>
 
 <tr> 
-<th colspan="4"><a name="setting2"></a>£½£½ä¯ÀÀÏà¹ØÑ¡Ïî</th>
+<th colspan="4"><a name="setting2"></a>ï¼ï¼æµè§ˆç›¸å…³é€‰é¡¹</th>
 </tr>
 <tr>
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckGroupSetting(58)"></td>
-<td class=tablebody1>ÓÃ»§ÃûÔÚÌû×ÓÄÚÈÝÖÐÏÔÊ¾±ê¼Ç<BR>HTMLÓï·¨£¬×óÓÒ±ê¼Ç´úÂë½«¼ÓÓÚÓÃ»§ÃûÇ°ºóÁ½Í·</td>
-<td class=tablebody1>×ó±ê¼Ç <input name="GroupSetting(58)A" type=text size=30 value="<%=Server.HtmlEncode(UserHtmlA)%>"> <br>ÓÒ±ê¼Ç <input name="GroupSetting(58)B" type=text size=30 value="<%=Server.HtmlEncode(UserHtmlB)%>"></td>
-<td class=tablebody1><input type="hidden" id="g1" value="<b>ÓÃ»§ÃûÔÚÌû×ÓÄÚÈÝÖÐÏÔÊ¾±ê¼Ç</b><br><li>HTMLÓï·¨£¬×óÓÒ±ê¼Ç´úÂë½«¼ÓÓÚÓÃ»§ÃûÇ°ºóÁ½Í·<br><li>ÈçÄúÉèÖÃÁËÇ°ºó·Ö±ðÎª¡¶b¡·ºÍ¡¶/b¡·£¬ÔòÔÚÌû×ÓÄÚÈÝÖÐ¸Ã×éÓÃ»§»òÕßÏà¹ØµÈ¼¶ÓÃ»§ÃûÏÔÊ¾Îª<B>´ÖÌå</B>">
-<a href=# onclick="helpscript(g1);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
+<td class=tablebody1>ç”¨æˆ·ååœ¨å¸–å­å†…å®¹ä¸­æ˜¾ç¤ºæ ‡è®°<BR>HTMLè¯­æ³•ï¼Œå·¦å³æ ‡è®°ä»£ç å°†åŠ äºŽç”¨æˆ·åå‰åŽä¸¤å¤´</td>
+<td class=tablebody1>å·¦æ ‡è®° <input name="GroupSetting(58)A" type=text size=30 value="<%=Server.HtmlEncode(UserHtmlA)%>"> <br>å³æ ‡è®° <input name="GroupSetting(58)B" type=text size=30 value="<%=Server.HtmlEncode(UserHtmlB)%>"></td>
+<td class=tablebody1><input type="hidden" id="g1" value="<b>ç”¨æˆ·ååœ¨å¸–å­å†…å®¹ä¸­æ˜¾ç¤ºæ ‡è®°</b><br><li>HTMLè¯­æ³•ï¼Œå·¦å³æ ‡è®°ä»£ç å°†åŠ äºŽç”¨æˆ·åå‰åŽä¸¤å¤´<br><li>å¦‚æ‚¨è®¾ç½®äº†å‰åŽåˆ†åˆ«ä¸ºã€Šbã€‹å’Œã€Š/bã€‹ï¼Œåˆ™åœ¨å¸–å­å†…å®¹ä¸­è¯¥ç»„ç”¨æˆ·æˆ–è€…ç›¸å…³ç­‰çº§ç”¨æˆ·åæ˜¾ç¤ºä¸º<B>ç²—ä½“</B>">
+<a href=# onclick="helpscript(g1);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="ç‚¹å‡»æŸ¥é˜…ç®¡ç†å¸®åŠ©ï¼"></a></td>
 </tr>
 <tr>
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckGroupSetting(57)"></td>
-<td class=tablebody1>ÔÊÐíÓÃ»§×ÔÑ¡·ç¸ñ</td>
-<td class=tablebody1>ÊÇ<input name="GroupSetting(57)" type=radio class="radio" value="1" <%if reGroupSetting(57)="1" then%>checked<%end if%>>&nbsp;·ñ<input name="GroupSetting(57)" type=radio class="radio" value="0" <%if reGroupSetting(57)="0" then%>checked<%end if%>></td>
-<td class=tablebody1><input type="hidden" id="g2" value="<b>ÔÊÐíÓÃ»§×ÔÑ¡·ç¸ñ</b><br><li>Èç¹û¹Ø±ÕÁË±¾Ñ¡Ïî£¬ÂÛÌ³ÖÐÓÃ»§½«²»ÄÜ×Ô¼ºÑ¡Ôñä¯ÀÀÏÔÊ¾µÄ·ç¸ñ£¨°üÀ¨ÓÃ»§ÔÚ¸öÈËÐÅÏ¢ÖÐÉè¶¨µÄ·ç¸ñ£©">
-<a href=# onclick="helpscript(g2);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
+<td class=tablebody1>å…è®¸ç”¨æˆ·è‡ªé€‰é£Žæ ¼</td>
+<td class=tablebody1>æ˜¯<input name="GroupSetting(57)" type=radio class="radio" value="1" <%if reGroupSetting(57)="1" then%>checked<%end if%>>&nbsp;å¦<input name="GroupSetting(57)" type=radio class="radio" value="0" <%if reGroupSetting(57)="0" then%>checked<%end if%>></td>
+<td class=tablebody1><input type="hidden" id="g2" value="<b>å…è®¸ç”¨æˆ·è‡ªé€‰é£Žæ ¼</b><br><li>å¦‚æžœå…³é—­äº†æœ¬é€‰é¡¹ï¼Œè®ºå›ä¸­ç”¨æˆ·å°†ä¸èƒ½è‡ªå·±é€‰æ‹©æµè§ˆæ˜¾ç¤ºçš„é£Žæ ¼ï¼ˆåŒ…æ‹¬ç”¨æˆ·åœ¨ä¸ªäººä¿¡æ¯ä¸­è®¾å®šçš„é£Žæ ¼ï¼‰">
+<a href=# onclick="helpscript(g2);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="ç‚¹å‡»æŸ¥é˜…ç®¡ç†å¸®åŠ©ï¼"></a></td>
 </tr>
 <tr>
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckGroupSetting(0)"></td>
-<td class=tablebody1>¿ÉÒÔä¯ÀÀÂÛÌ³</td>
-<td class=tablebody1>ÊÇ<input name="GroupSetting(0)" type=radio class="radio" value="1" <%if reGroupSetting(0)="1" then%>checked<%end if%>>&nbsp;·ñ<input name="GroupSetting(0)" type=radio class="radio" value="0" <%if reGroupSetting(0)="0" then%>checked<%end if%>></td>
-<td class=tablebody1><input type="hidden" id="g3" value="<b>ÓÃ»§ÃûÔÚÌû×ÓÄÚÈÝÖÐÏÔÊ¾±ê¼Ç</b><br><li>¹Ø±Õ´ËÑ¡Ïî£¬Ïà¹Ø×é»òµÈ¼¶ÓÃ»§½«²»ÄÜä¯ÀÀÂÛÌ³<br><li>Ê¹ÓÃ¼¼ÇÉ£ºÄú¿ÉÒÔÉè¶¨Ä³¸öÓÃ»§×é²»ÄÜÊ¹ÓÃ±¾ÉèÖÃ£¬¶øµ±ÆäÉí·Ý±ä»¯ºóµÄÓÃ»§×é¿ÉÊ¹ÓÃ±¾ÉèÖÃ£¬ÈçÉèÖÃ¿ÍÈË²»ÄÜÊ¹ÓÃ±¾ÉèÖÃ£¬ÕâÑù½«ÆÈÊ¹ËûµÇÂ¼">
-<a href=# onclick="helpscript(g3);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
+<td class=tablebody1>å¯ä»¥æµè§ˆè®ºå›</td>
+<td class=tablebody1>æ˜¯<input name="GroupSetting(0)" type=radio class="radio" value="1" <%if reGroupSetting(0)="1" then%>checked<%end if%>>&nbsp;å¦<input name="GroupSetting(0)" type=radio class="radio" value="0" <%if reGroupSetting(0)="0" then%>checked<%end if%>></td>
+<td class=tablebody1><input type="hidden" id="g3" value="<b>ç”¨æˆ·ååœ¨å¸–å­å†…å®¹ä¸­æ˜¾ç¤ºæ ‡è®°</b><br><li>å…³é—­æ­¤é€‰é¡¹ï¼Œç›¸å…³ç»„æˆ–ç­‰çº§ç”¨æˆ·å°†ä¸èƒ½æµè§ˆè®ºå›<br><li>ä½¿ç”¨æŠ€å·§ï¼šæ‚¨å¯ä»¥è®¾å®šæŸä¸ªç”¨æˆ·ç»„ä¸èƒ½ä½¿ç”¨æœ¬è®¾ç½®ï¼Œè€Œå½“å…¶èº«ä»½å˜åŒ–åŽçš„ç”¨æˆ·ç»„å¯ä½¿ç”¨æœ¬è®¾ç½®ï¼Œå¦‚è®¾ç½®å®¢äººä¸èƒ½ä½¿ç”¨æœ¬è®¾ç½®ï¼Œè¿™æ ·å°†è¿«ä½¿ä»–ç™»å½•">
+<a href=# onclick="helpscript(g3);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="ç‚¹å‡»æŸ¥é˜…ç®¡ç†å¸®åŠ©ï¼"></a></td>
 </tr>
 <tr>
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckGroupSetting(1)"></td>
-<td class=tablebody1>¿ÉÒÔ²é¿´»áÔ±ÐÅÏ¢£¨°üÀ¨ÆäËû»áÔ±µÄ×ÊÁÏºÍ»áÔ±ÁÐ±í£©
+<td class=tablebody1>å¯ä»¥æŸ¥çœ‹ä¼šå‘˜ä¿¡æ¯ï¼ˆåŒ…æ‹¬å…¶ä»–ä¼šå‘˜çš„èµ„æ–™å’Œä¼šå‘˜åˆ—è¡¨ï¼‰
 </td>
-<td  class=tablebody1>ÊÇ<input name="GroupSetting(1)" type=radio class="radio" value="1" <%if reGroupSetting(1)="1" then%>checked<%end if%>>&nbsp;·ñ<input name="GroupSetting(1)" type=radio class="radio" value="0" <%if reGroupSetting(1)="0" then%>checked<%end if%>></td>
-<td class=tablebody1><input type="hidden" id="g4" value="<b>¿ÉÒÔ²é¿´»áÔ±ÐÅÏ¢</b><br><li>¹Ø±Õ´ËÑ¡Ïî£¬Ïà¹Ø×é»òµÈ¼¶ÓÃ»§½«²»ÄÜä¯ÀÀÂÛÌ³ÓÃ»§×ÊÁÏ£¬°üÀ¨»áÔ±×ÊÁÏºÍ»áÔ±ÁÐ±í×ÊÁÏ<br><li>Ê¹ÓÃ¼¼ÇÉ£ºÄú¿ÉÒÔÉè¶¨Ä³¸öÓÃ»§×é²»ÄÜÊ¹ÓÃ±¾ÉèÖÃ£¬¶øµ±ÆäÉí·Ý±ä»¯ºóµÄÓÃ»§×é¿ÉÊ¹ÓÃ±¾ÉèÖÃ£¬ÈçÉèÖÃ¿ÍÈË²»ÄÜÊ¹ÓÃ±¾ÉèÖÃ£¬ÕâÑù½«ÆÈÊ¹ËûµÇÂ¼">
-<a href=# onclick="helpscript(g4);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
+<td  class=tablebody1>æ˜¯<input name="GroupSetting(1)" type=radio class="radio" value="1" <%if reGroupSetting(1)="1" then%>checked<%end if%>>&nbsp;å¦<input name="GroupSetting(1)" type=radio class="radio" value="0" <%if reGroupSetting(1)="0" then%>checked<%end if%>></td>
+<td class=tablebody1><input type="hidden" id="g4" value="<b>å¯ä»¥æŸ¥çœ‹ä¼šå‘˜ä¿¡æ¯</b><br><li>å…³é—­æ­¤é€‰é¡¹ï¼Œç›¸å…³ç»„æˆ–ç­‰çº§ç”¨æˆ·å°†ä¸èƒ½æµè§ˆè®ºå›ç”¨æˆ·èµ„æ–™ï¼ŒåŒ…æ‹¬ä¼šå‘˜èµ„æ–™å’Œä¼šå‘˜åˆ—è¡¨èµ„æ–™<br><li>ä½¿ç”¨æŠ€å·§ï¼šæ‚¨å¯ä»¥è®¾å®šæŸä¸ªç”¨æˆ·ç»„ä¸èƒ½ä½¿ç”¨æœ¬è®¾ç½®ï¼Œè€Œå½“å…¶èº«ä»½å˜åŒ–åŽçš„ç”¨æˆ·ç»„å¯ä½¿ç”¨æœ¬è®¾ç½®ï¼Œå¦‚è®¾ç½®å®¢äººä¸èƒ½ä½¿ç”¨æœ¬è®¾ç½®ï¼Œè¿™æ ·å°†è¿«ä½¿ä»–ç™»å½•">
+<a href=# onclick="helpscript(g4);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="ç‚¹å‡»æŸ¥é˜…ç®¡ç†å¸®åŠ©ï¼"></a></td>
 </tr>
 <tr>
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckGroupSetting(2)"></td>
-<td  class=tablebody1>¿ÉÒÔ²é¿´ÆäËûÈË·¢²¼µÄÖ÷Ìâ
+<td  class=tablebody1>å¯ä»¥æŸ¥çœ‹å…¶ä»–äººå‘å¸ƒçš„ä¸»é¢˜
 </td>
-<td  class=tablebody1>ÊÇ<input name="GroupSetting(2)" type=radio class="radio" value="1" <%if reGroupSetting(2)="1" then%>checked<%end if%>>&nbsp;·ñ<input name="GroupSetting(2)" type=radio class="radio" value="0" <%if reGroupSetting(2)="0" then%>checked<%end if%>></td>
-<td class=tablebody1><input type="hidden" id="g5" value="<b>¿ÉÒÔ²é¿´ÆäËûÈË·¢²¼µÄÖ÷Ìâ</b><br><li>¹Ø±Õ´ËÑ¡Ïî£¬Ïà¹Ø×é»òµÈ¼¶ÓÃ»§½«²»ÄÜä¯ÀÀÂÛÌ³ÖÐÆäËûÈË·¢²¼µÄÌû×Ó<br><li>Ê¹ÓÃ¼¼ÇÉ£ºÄú¿ÉÒÔÉè¶¨Ä³¸öÓÃ»§×é²»ÄÜÊ¹ÓÃ±¾ÉèÖÃ£¬¶øµ±ÆäÉí·Ý±ä»¯ºóµÄÓÃ»§×é¿ÉÊ¹ÓÃ±¾ÉèÖÃ£¬ÈçÉèÖÃ¿ÍÈË²»ÄÜÊ¹ÓÃ±¾ÉèÖÃ£¬ÕâÑù½«ÆÈÊ¹ËûµÇÂ¼">
-<a href=# onclick="helpscript(g5);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
+<td  class=tablebody1>æ˜¯<input name="GroupSetting(2)" type=radio class="radio" value="1" <%if reGroupSetting(2)="1" then%>checked<%end if%>>&nbsp;å¦<input name="GroupSetting(2)" type=radio class="radio" value="0" <%if reGroupSetting(2)="0" then%>checked<%end if%>></td>
+<td class=tablebody1><input type="hidden" id="g5" value="<b>å¯ä»¥æŸ¥çœ‹å…¶ä»–äººå‘å¸ƒçš„ä¸»é¢˜</b><br><li>å…³é—­æ­¤é€‰é¡¹ï¼Œç›¸å…³ç»„æˆ–ç­‰çº§ç”¨æˆ·å°†ä¸èƒ½æµè§ˆè®ºå›ä¸­å…¶ä»–äººå‘å¸ƒçš„å¸–å­<br><li>ä½¿ç”¨æŠ€å·§ï¼šæ‚¨å¯ä»¥è®¾å®šæŸä¸ªç”¨æˆ·ç»„ä¸èƒ½ä½¿ç”¨æœ¬è®¾ç½®ï¼Œè€Œå½“å…¶èº«ä»½å˜åŒ–åŽçš„ç”¨æˆ·ç»„å¯ä½¿ç”¨æœ¬è®¾ç½®ï¼Œå¦‚è®¾ç½®å®¢äººä¸èƒ½ä½¿ç”¨æœ¬è®¾ç½®ï¼Œè¿™æ ·å°†è¿«ä½¿ä»–ç™»å½•">
+<a href=# onclick="helpscript(g5);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="ç‚¹å‡»æŸ¥é˜…ç®¡ç†å¸®åŠ©ï¼"></a></td>
 </tr>
 <tr>
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckGroupSetting(41)"></td>
-<td  class=tablebody1>¿ÉÒÔä¯ÀÀ¾«»ªÌû×Ó
+<td  class=tablebody1>å¯ä»¥æµè§ˆç²¾åŽå¸–å­
 </td>
-<td  class=tablebody1>ÊÇ<input name="GroupSetting(41)" type=radio class="radio" value="1" <%if reGroupSetting(41)="1" then%>checked<%end if%>>&nbsp;·ñ<input name="GroupSetting(41)" type=radio class="radio" value="0" <%if reGroupSetting(41)="0" then%>checked<%end if%>></td>
-<td class=tablebody1><input type="hidden" id="g6" value="<b>¿ÉÒÔä¯ÀÀ¾«»ªÌû×Ó</b><br><li>¹Ø±Õ´ËÑ¡Ïî£¬Ïà¹Ø×é»òµÈ¼¶ÓÃ»§½«²»ÄÜä¯ÀÀÂÛÌ³ÖÐµÄ¾«»ªÌû×Ó<br><li>Ê¹ÓÃ¼¼ÇÉ£ºÄú¿ÉÒÔÉè¶¨Ä³¸öÓÃ»§×é²»ÄÜÊ¹ÓÃ±¾ÉèÖÃ£¬¶øµ±ÆäÉí·Ý±ä»¯ºóµÄÓÃ»§×é¿ÉÊ¹ÓÃ±¾ÉèÖÃ£¬ÈçÉèÖÃ¿ÍÈË²»ÄÜÊ¹ÓÃ±¾ÉèÖÃ£¬ÕâÑù½«ÆÈÊ¹ËûµÇÂ¼">
-<a href=# onclick="helpscript(g6);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
+<td  class=tablebody1>æ˜¯<input name="GroupSetting(41)" type=radio class="radio" value="1" <%if reGroupSetting(41)="1" then%>checked<%end if%>>&nbsp;å¦<input name="GroupSetting(41)" type=radio class="radio" value="0" <%if reGroupSetting(41)="0" then%>checked<%end if%>></td>
+<td class=tablebody1><input type="hidden" id="g6" value="<b>å¯ä»¥æµè§ˆç²¾åŽå¸–å­</b><br><li>å…³é—­æ­¤é€‰é¡¹ï¼Œç›¸å…³ç»„æˆ–ç­‰çº§ç”¨æˆ·å°†ä¸èƒ½æµè§ˆè®ºå›ä¸­çš„ç²¾åŽå¸–å­<br><li>ä½¿ç”¨æŠ€å·§ï¼šæ‚¨å¯ä»¥è®¾å®šæŸä¸ªç”¨æˆ·ç»„ä¸èƒ½ä½¿ç”¨æœ¬è®¾ç½®ï¼Œè€Œå½“å…¶èº«ä»½å˜åŒ–åŽçš„ç”¨æˆ·ç»„å¯ä½¿ç”¨æœ¬è®¾ç½®ï¼Œå¦‚è®¾ç½®å®¢äººä¸èƒ½ä½¿ç”¨æœ¬è®¾ç½®ï¼Œè¿™æ ·å°†è¿«ä½¿ä»–ç™»å½•">
+<a href=# onclick="helpscript(g6);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="ç‚¹å‡»æŸ¥é˜…ç®¡ç†å¸®åŠ©ï¼"></a></td>
 </tr>
 <tr> 
-<th colspan="4"><a name="setting3"></a>£½£½·¢ÌûÈ¨ÏÞ</th>
+<th colspan="4"><a name="setting3"></a>ï¼ï¼å‘å¸–æƒé™</th>
 </tr>
 <tr>
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckGroupSetting(3)"></td>
-<td  class=tablebody1>¿ÉÒÔ·¢²¼ÐÂÖ÷Ìâ</td>
-<td  class=tablebody1>ÊÇ<input name="GroupSetting(3)" type=radio class="radio" value="1" <%if reGroupSetting(3)="1" then%>checked<%end if%>>&nbsp;·ñ<input name="GroupSetting(3)" type=radio class="radio" value="0" <%if reGroupSetting(3)="0" then%>checked<%end if%>></td>
-<td class=tablebody1><input type="hidden" id="g9" value="<b>¿ÉÒÔ·¢²¼ÐÂÖ÷Ìâ</b><br><li>´ò¿ª´ËÑ¡Ïî£¬Ïà¹Ø×é»òµÈ¼¶ÓÃ»§½«¿ÉÒÔ¿ÉÒÔ·¢²¼ÐÂÖ÷Ìâ¡£¼øÓÚ¹ú¼Ò¹æ¶¨£¬ÂÛÌ³Ä¬ÈÏµÄÎ´µÇÂ¼ÓÃ»§×é½«¼´Ê¹ÉèÖÃ´ËÑ¡ÏîÒ²²»ÄÜ·¢Ìù">
-<a href=# onclick="helpscript(g9);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
+<td  class=tablebody1>å¯ä»¥å‘å¸ƒæ–°ä¸»é¢˜</td>
+<td  class=tablebody1>æ˜¯<input name="GroupSetting(3)" type=radio class="radio" value="1" <%if reGroupSetting(3)="1" then%>checked<%end if%>>&nbsp;å¦<input name="GroupSetting(3)" type=radio class="radio" value="0" <%if reGroupSetting(3)="0" then%>checked<%end if%>></td>
+<td class=tablebody1><input type="hidden" id="g9" value="<b>å¯ä»¥å‘å¸ƒæ–°ä¸»é¢˜</b><br><li>æ‰“å¼€æ­¤é€‰é¡¹ï¼Œç›¸å…³ç»„æˆ–ç­‰çº§ç”¨æˆ·å°†å¯ä»¥å¯ä»¥å‘å¸ƒæ–°ä¸»é¢˜ã€‚é‰´äºŽå›½å®¶è§„å®šï¼Œè®ºå›é»˜è®¤çš„æœªç™»å½•ç”¨æˆ·ç»„å°†å³ä½¿è®¾ç½®æ­¤é€‰é¡¹ä¹Ÿä¸èƒ½å‘è´´">
+<a href=# onclick="helpscript(g9);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="ç‚¹å‡»æŸ¥é˜…ç®¡ç†å¸®åŠ©ï¼"></a></td>
 </tr>
 <tr>
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckGroupSetting(64)"></td>
-<td class=tablebody1>ÔÚÉóºËÄ£Ê½ÏÂ¿ÉÖ±½Ó·¢Ìù¶ø²»Ðè¾­¹ýÉóºË</td>
-<td class=tablebody1>ÊÇ<input name="GroupSetting(64)" type=radio class="radio" value="1" <%if reGroupSetting(64)="1" then%>checked<%end if%>>&nbsp;·ñ<input name="GroupSetting(64)" type=radio class="radio" value="0" <%if reGroupSetting(64)="0" then%>checked<%end if%>></td>
-<td class=tablebody1><input type="hidden" id="g10" value="<b>ÔÚÉóºËÄ£Ê½ÏÂ¿ÉÖ±½Ó·¢Ìù¶ø²»Ðè¾­¹ýÉóºË</b><br><li>´ò¿ª´ËÑ¡Ïî£¬Ïà¹Ø×é»òµÈ¼¶ÓÃ»§½«¿ÉÒÔ¿ÉÒÔ·¢²¼ÐÂÖ÷Ìâ»ò»Ø¸´¶ø²»¾­ÉóºË<br><li>µ±ÂÛÌ³°æÃæÉèÖÃÎªÉóºË×´Ì¬Ê±¸ÃÑ¡ÏîÓÐÐ§">
-<a href=# onclick="helpscript(g10);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
+<td class=tablebody1>åœ¨å®¡æ ¸æ¨¡å¼ä¸‹å¯ç›´æŽ¥å‘è´´è€Œä¸éœ€ç»è¿‡å®¡æ ¸</td>
+<td class=tablebody1>æ˜¯<input name="GroupSetting(64)" type=radio class="radio" value="1" <%if reGroupSetting(64)="1" then%>checked<%end if%>>&nbsp;å¦<input name="GroupSetting(64)" type=radio class="radio" value="0" <%if reGroupSetting(64)="0" then%>checked<%end if%>></td>
+<td class=tablebody1><input type="hidden" id="g10" value="<b>åœ¨å®¡æ ¸æ¨¡å¼ä¸‹å¯ç›´æŽ¥å‘è´´è€Œä¸éœ€ç»è¿‡å®¡æ ¸</b><br><li>æ‰“å¼€æ­¤é€‰é¡¹ï¼Œç›¸å…³ç»„æˆ–ç­‰çº§ç”¨æˆ·å°†å¯ä»¥å¯ä»¥å‘å¸ƒæ–°ä¸»é¢˜æˆ–å›žå¤è€Œä¸ç»å®¡æ ¸<br><li>å½“è®ºå›ç‰ˆé¢è®¾ç½®ä¸ºå®¡æ ¸çŠ¶æ€æ—¶è¯¥é€‰é¡¹æœ‰æ•ˆ">
+<a href=# onclick="helpscript(g10);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="ç‚¹å‡»æŸ¥é˜…ç®¡ç†å¸®åŠ©ï¼"></a></td>
 </tr>
 <tr>
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckGroupSetting(62)"></td>
-<td class=tablebody1>Ò»Ìì×î¶à·¢ÌùÊýÄ¿
+<td class=tablebody1>ä¸€å¤©æœ€å¤šå‘è´´æ•°ç›®
 </td>
 <td  class=tablebody1><input name="GroupSetting(62)" type=text size=4 value="<%=reGroupSetting(62)%>"></td>
-<td class=tablebody1><input type="hidden" id="g11" value="<b>Ò»Ìì×î¶à·¢ÌùÊýÄ¿</b><br><li>ÌîÐ´0Îª²»×÷ÏÞÖÆ£¬³öÓÚ¶Ô¸¶¹àË®»òÕßÊ¹ÓÃÈí¼þ·¢ÌùµÄÓÃ»§£¬ÇëÔÚ´ËÉèÖÃºÏÀíµÄÊý×Ö<br><li>Ê¹ÓÃ¼¼ÇÉ£ºÄú¿ÉÒÔ¸ø²»Í¬ÓÃ»§×éÉèÖÃ²»Í¬µÄÊý×Ö">
-<a href=# onclick="helpscript(g11);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
+<td class=tablebody1><input type="hidden" id="g11" value="<b>ä¸€å¤©æœ€å¤šå‘è´´æ•°ç›®</b><br><li>å¡«å†™0ä¸ºä¸ä½œé™åˆ¶ï¼Œå‡ºäºŽå¯¹ä»˜çŒæ°´æˆ–è€…ä½¿ç”¨è½¯ä»¶å‘è´´çš„ç”¨æˆ·ï¼Œè¯·åœ¨æ­¤è®¾ç½®åˆç†çš„æ•°å­—<br><li>ä½¿ç”¨æŠ€å·§ï¼šæ‚¨å¯ä»¥ç»™ä¸åŒç”¨æˆ·ç»„è®¾ç½®ä¸åŒçš„æ•°å­—">
+<a href=# onclick="helpscript(g11);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="ç‚¹å‡»æŸ¥é˜…ç®¡ç†å¸®åŠ©ï¼"></a></td>
 </tr>
 <tr>
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckGroupSetting(4)"></td>
-<td  class=tablebody1>¿ÉÒÔ»Ø¸´×Ô¼ºµÄÖ÷Ìâ
+<td  class=tablebody1>å¯ä»¥å›žå¤è‡ªå·±çš„ä¸»é¢˜
 </td>
-<td  class=tablebody1>ÊÇ<input name="GroupSetting(4)" type=radio class="radio" value="1" <%if reGroupSetting(4)="1" then%>checked<%end if%>>&nbsp;·ñ<input name="GroupSetting(4)" type=radio class="radio" value="0" <%if reGroupSetting(4)="0" then%>checked<%end if%>></td>
-<td class=tablebody1><input type="hidden" id="g12" value="<b>¿ÉÒÔ»Ø¸´×Ô¼ºµÄÖ÷Ìâ</b><br><li>´ò¿ª´ËÑ¡Ïî£¬Ïà¹ØÓÃ»§×é»òµÈ¼¶ÓÃ»§¿ÉÒÔ»Ø¸´×Ô¼º·¢²¼µÄÖ÷Ìâ">
-<a href=# onclick="helpscript(g12);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
+<td  class=tablebody1>æ˜¯<input name="GroupSetting(4)" type=radio class="radio" value="1" <%if reGroupSetting(4)="1" then%>checked<%end if%>>&nbsp;å¦<input name="GroupSetting(4)" type=radio class="radio" value="0" <%if reGroupSetting(4)="0" then%>checked<%end if%>></td>
+<td class=tablebody1><input type="hidden" id="g12" value="<b>å¯ä»¥å›žå¤è‡ªå·±çš„ä¸»é¢˜</b><br><li>æ‰“å¼€æ­¤é€‰é¡¹ï¼Œç›¸å…³ç”¨æˆ·ç»„æˆ–ç­‰çº§ç”¨æˆ·å¯ä»¥å›žå¤è‡ªå·±å‘å¸ƒçš„ä¸»é¢˜">
+<a href=# onclick="helpscript(g12);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="ç‚¹å‡»æŸ¥é˜…ç®¡ç†å¸®åŠ©ï¼"></a></td>
 </tr>
 <tr>
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckGroupSetting(5)"></td>
-<td  class=tablebody1>¿ÉÒÔ»Ø¸´ÆäËûÈËµÄÖ÷Ìâ
+<td  class=tablebody1>å¯ä»¥å›žå¤å…¶ä»–äººçš„ä¸»é¢˜
 </td>
-<td  class=tablebody1>ÊÇ<input name="GroupSetting(5)" type=radio class="radio" value="1" <%if reGroupSetting(5)="1" then%>checked<%end if%>>&nbsp;·ñ<input name="GroupSetting(5)" type=radio class="radio" value="0" <%if reGroupSetting(5)="0" then%>checked<%end if%>></td>
-<td class=tablebody1><input type="hidden" id="g13" value="<b>¿ÉÒÔ»Ø¸´ÆäËûÈËµÄÖ÷Ìâ</b><br><li>´ò¿ª´ËÑ¡Ïî£¬Ïà¹ØÓÃ»§×é»òµÈ¼¶ÓÃ»§¿ÉÒÔ»Ø¸´ÆäËûÈËµÄÖ÷Ìâ">
-<a href=# onclick="helpscript(g13);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
+<td  class=tablebody1>æ˜¯<input name="GroupSetting(5)" type=radio class="radio" value="1" <%if reGroupSetting(5)="1" then%>checked<%end if%>>&nbsp;å¦<input name="GroupSetting(5)" type=radio class="radio" value="0" <%if reGroupSetting(5)="0" then%>checked<%end if%>></td>
+<td class=tablebody1><input type="hidden" id="g13" value="<b>å¯ä»¥å›žå¤å…¶ä»–äººçš„ä¸»é¢˜</b><br><li>æ‰“å¼€æ­¤é€‰é¡¹ï¼Œç›¸å…³ç”¨æˆ·ç»„æˆ–ç­‰çº§ç”¨æˆ·å¯ä»¥å›žå¤å…¶ä»–äººçš„ä¸»é¢˜">
+<a href=# onclick="helpscript(g13);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="ç‚¹å‡»æŸ¥é˜…ç®¡ç†å¸®åŠ©ï¼"></a></td>
 </tr>
 <tr>
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckGroupSetting(8)"></td>
-<td  class=tablebody1>¿ÉÒÔ·¢²¼ÐÂÍ¶Æ±</td>
-<td  class=tablebody1>ÊÇ<input name="GroupSetting(8)" type=radio class="radio" value="1" <%if reGroupSetting(8)="1" then%>checked<%end if%>>&nbsp;·ñ<input name="GroupSetting(8)" type=radio class="radio" value="0" <%if reGroupSetting(8)="0" then%>checked<%end if%>></td>
-<td class=tablebody1><input type="hidden" id="g21" value="<b>¿ÉÒÔ·¢²¼ÐÂÍ¶Æ±</b><br><li>ÔÚÕâÀïÄú¿ÉÒÔ¸ù¾ÝÐèÒªÉèÖÃ²»Í¬ÓÃ»§×é»òµÈ¼¶ÓÃ»§ÊÇ·ñ¿ÉÒÔ·¢²¼ÐÂÍ¶Æ±">
-<a href=# onclick="helpscript(g21);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
+<td  class=tablebody1>å¯ä»¥å‘å¸ƒæ–°æŠ•ç¥¨</td>
+<td  class=tablebody1>æ˜¯<input name="GroupSetting(8)" type=radio class="radio" value="1" <%if reGroupSetting(8)="1" then%>checked<%end if%>>&nbsp;å¦<input name="GroupSetting(8)" type=radio class="radio" value="0" <%if reGroupSetting(8)="0" then%>checked<%end if%>></td>
+<td class=tablebody1><input type="hidden" id="g21" value="<b>å¯ä»¥å‘å¸ƒæ–°æŠ•ç¥¨</b><br><li>åœ¨è¿™é‡Œæ‚¨å¯ä»¥æ ¹æ®éœ€è¦è®¾ç½®ä¸åŒç”¨æˆ·ç»„æˆ–ç­‰çº§ç”¨æˆ·æ˜¯å¦å¯ä»¥å‘å¸ƒæ–°æŠ•ç¥¨">
+<a href=# onclick="helpscript(g21);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="ç‚¹å‡»æŸ¥é˜…ç®¡ç†å¸®åŠ©ï¼"></a></td>
 </tr>
 <tr>
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckGroupSetting(9)"></td>
-<td  class=tablebody1>¿ÉÒÔ²ÎÓëÍ¶Æ±</td>
-<td  class=tablebody1>ÊÇ<input name="GroupSetting(9)" type=radio class="radio" value="1" <%if reGroupSetting(9)="1" then%>checked<%end if%>>&nbsp;·ñ<input name="GroupSetting(9)" type=radio class="radio" value="0" <%if reGroupSetting(9)="0" then%>checked<%end if%>></td>
-<td class=tablebody1><input type="hidden" id="g22" value="<b>¿ÉÒÔ·¢²¼ÐÂÍ¶Æ±</b><br><li>ÔÚÕâÀïÄú¿ÉÒÔ¸ù¾ÝÐèÒªÉèÖÃ²»Í¬ÓÃ»§×é»òµÈ¼¶ÓÃ»§ÊÇ·ñ¿ÉÒÔ²ÎÓëÍ¶Æ±">
-<a href=# onclick="helpscript(g22);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
+<td  class=tablebody1>å¯ä»¥å‚ä¸ŽæŠ•ç¥¨</td>
+<td  class=tablebody1>æ˜¯<input name="GroupSetting(9)" type=radio class="radio" value="1" <%if reGroupSetting(9)="1" then%>checked<%end if%>>&nbsp;å¦<input name="GroupSetting(9)" type=radio class="radio" value="0" <%if reGroupSetting(9)="0" then%>checked<%end if%>></td>
+<td class=tablebody1><input type="hidden" id="g22" value="<b>å¯ä»¥å‘å¸ƒæ–°æŠ•ç¥¨</b><br><li>åœ¨è¿™é‡Œæ‚¨å¯ä»¥æ ¹æ®éœ€è¦è®¾ç½®ä¸åŒç”¨æˆ·ç»„æˆ–ç­‰çº§ç”¨æˆ·æ˜¯å¦å¯ä»¥å‚ä¸ŽæŠ•ç¥¨">
+<a href=# onclick="helpscript(g22);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="ç‚¹å‡»æŸ¥é˜…ç®¡ç†å¸®åŠ©ï¼"></a></td>
 </tr>
 <tr>
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckGroupSetting(68)"></td>
-<td  class=tablebody1>Í¶Æ±¿ÉÒÔÊ¹ÓÃHTMLÓï·¨</td>
-<td  class=tablebody1>ÊÇ<input name="GroupSetting(68)" type=radio class="radio" value="1" <%if reGroupSetting(68)="1" then%>checked<%end if%>>&nbsp;·ñ<input name="GroupSetting(68)" type=radio class="radio" value="0" <%if reGroupSetting(68)="0" then%>checked<%end if%>></td>
-<td class=tablebody1><input type="hidden" id="g_u_HTML" value="<b>Í¶Æ±¿ÉÒÔÊ¹ÓÃHTMLÓï·¨</b><br><li>ÔÚÕâÀïÄú¿ÉÒÔ¸ù¾ÝÐèÒªÉèÖÃ²»Í¬ÓÃ»§×é»òµÈ¼¶ÓÃ»§ÊÇ·ñ¿ÉÒÔÔÚÍ¶Æ±ÖÐÊ¹ÓÃHTMLÓï·¨">
-<a href=# onclick="helpscript(g_u_HTML);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
+<td  class=tablebody1>æŠ•ç¥¨å¯ä»¥ä½¿ç”¨HTMLè¯­æ³•</td>
+<td  class=tablebody1>æ˜¯<input name="GroupSetting(68)" type=radio class="radio" value="1" <%if reGroupSetting(68)="1" then%>checked<%end if%>>&nbsp;å¦<input name="GroupSetting(68)" type=radio class="radio" value="0" <%if reGroupSetting(68)="0" then%>checked<%end if%>></td>
+<td class=tablebody1><input type="hidden" id="g_u_HTML" value="<b>æŠ•ç¥¨å¯ä»¥ä½¿ç”¨HTMLè¯­æ³•</b><br><li>åœ¨è¿™é‡Œæ‚¨å¯ä»¥æ ¹æ®éœ€è¦è®¾ç½®ä¸åŒç”¨æˆ·ç»„æˆ–ç­‰çº§ç”¨æˆ·æ˜¯å¦å¯ä»¥åœ¨æŠ•ç¥¨ä¸­ä½¿ç”¨HTMLè¯­æ³•">
+<a href=# onclick="helpscript(g_u_HTML);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="ç‚¹å‡»æŸ¥é˜…ç®¡ç†å¸®åŠ©ï¼"></a></td>
 </tr>
 <tr>
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckGroupSetting(17)"></td>
-<td  class=tablebody1>¿ÉÒÔ·¢²¼Ð¡×Ö±¨</td>
-<td  class=tablebody1>ÊÇ<input name="GroupSetting(17)" type=radio class="radio" value="1"  <%if reGroupSetting(17)="1" then%>checked<%end if%>>&nbsp;·ñ<input name="GroupSetting(17)" type=radio class="radio" value="0" <%if reGroupSetting(17)="0" then%>checked<%end if%>></td>
-<td class=tablebody1><input type="hidden" id="g23" value="<b>¿ÉÒÔ·¢²¼Ð¡×Ö±¨</b><br><li>ÔÚÕâÀïÄú¿ÉÒÔ¸ù¾ÝÐèÒªÉèÖÃ²»Í¬ÓÃ»§×é»òµÈ¼¶ÓÃ»§ÊÇ·ñ¿ÉÒÔ·¢²¼Ð¡×Ö±¨">
-<a href=# onclick="helpscript(g23);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
+<td  class=tablebody1>å¯ä»¥å‘å¸ƒå°å­—æŠ¥</td>
+<td  class=tablebody1>æ˜¯<input name="GroupSetting(17)" type=radio class="radio" value="1"  <%if reGroupSetting(17)="1" then%>checked<%end if%>>&nbsp;å¦<input name="GroupSetting(17)" type=radio class="radio" value="0" <%if reGroupSetting(17)="0" then%>checked<%end if%>></td>
+<td class=tablebody1><input type="hidden" id="g23" value="<b>å¯ä»¥å‘å¸ƒå°å­—æŠ¥</b><br><li>åœ¨è¿™é‡Œæ‚¨å¯ä»¥æ ¹æ®éœ€è¦è®¾ç½®ä¸åŒç”¨æˆ·ç»„æˆ–ç­‰çº§ç”¨æˆ·æ˜¯å¦å¯ä»¥å‘å¸ƒå°å­—æŠ¥">
+<a href=# onclick="helpscript(g23);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="ç‚¹å‡»æŸ¥é˜…ç®¡ç†å¸®åŠ©ï¼"></a></td>
 </tr>
 <tr>
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckGroupSetting(46)"></td>
-<td  class=tablebody1>·¢²¼Ð¡×Ö±¨ËùÐè½ðÇ®</td>
+<td  class=tablebody1>å‘å¸ƒå°å­—æŠ¥æ‰€éœ€é‡‘é’±</td>
 <td  class=tablebody1><input name="GroupSetting(46)" type=text value="<%=reGroupSetting(46)%>" size=4></td>
-<td class=tablebody1><input type="hidden" id="g24" value="<b>·¢²¼Ð¡×Ö±¨ËùÐè½ðÇ®</b><br><li>ÔÚÕâÀïÄú¿ÉÒÔ¸ù¾ÝÐèÒªÉèÖÃ²»Í¬ÓÃ»§×é»òµÈ¼¶ÓÃ»§·¢²¼Ð¡×Ö±¨ËùÐè½ðÇ®">
-<a href=# onclick="helpscript(g24);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
+<td class=tablebody1><input type="hidden" id="g24" value="<b>å‘å¸ƒå°å­—æŠ¥æ‰€éœ€é‡‘é’±</b><br><li>åœ¨è¿™é‡Œæ‚¨å¯ä»¥æ ¹æ®éœ€è¦è®¾ç½®ä¸åŒç”¨æˆ·ç»„æˆ–ç­‰çº§ç”¨æˆ·å‘å¸ƒå°å­—æŠ¥æ‰€éœ€é‡‘é’±">
+<a href=# onclick="helpscript(g24);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="ç‚¹å‡»æŸ¥é˜…ç®¡ç†å¸®åŠ©ï¼"></a></td>
 </tr>
 <tr>
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckGroupSetting(51)"></td>
-<td  class=tablebody1>¿ÉÒÔ·¢²¼ÌØÊâ±êÌâÌû×Ó£¨Èç±êÌâ¼Óºì¡¢UBBÓï·¨µÈ£©</td>
-<td  class=tablebody1>ÊÇ<input name="GroupSetting(51)" type=radio class="radio" value="1"  <%if reGroupSetting(51)="1" then%>checked<%end if%>>&nbsp;·ñ<input name="GroupSetting(51)" type=radio class="radio" value="0" <%if reGroupSetting(51)="0" then%>checked<%end if%>></td>
-<td class=tablebody1><input type="hidden" id="g25" value="<b>¿ÉÒÔ·¢²¼ÌØÊâ±êÌâÌû×Ó</b><br><li>ÔÚÕâÀïÄú¿ÉÒÔ¸ù¾ÝÐèÒªÉèÖÃ²»Í¬ÓÃ»§×é»òµÈ¼¶ÓÃ»§¿ÉÒÔ·¢²¼ÌØÊâ±êÌâÌû×Ó£¬Èç±êÌâ¼ÓÑÕÉ«¡¢HTMLÓï·¨¡¢UBBÓï·¨µÈ£¬Äú¿ÉÕë¶Ô¸ö±ðÓÃ»§×é¿ÉÊ¹ÓÃ´ËÌØÊâ¹¦ÄÜ">
-<a href=# onclick="helpscript(g25);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
+<td  class=tablebody1>å¯ä»¥å‘å¸ƒç‰¹æ®Šæ ‡é¢˜å¸–å­ï¼ˆå¦‚æ ‡é¢˜åŠ çº¢ã€UBBè¯­æ³•ç­‰ï¼‰</td>
+<td  class=tablebody1>æ˜¯<input name="GroupSetting(51)" type=radio class="radio" value="1"  <%if reGroupSetting(51)="1" then%>checked<%end if%>>&nbsp;å¦<input name="GroupSetting(51)" type=radio class="radio" value="0" <%if reGroupSetting(51)="0" then%>checked<%end if%>></td>
+<td class=tablebody1><input type="hidden" id="g25" value="<b>å¯ä»¥å‘å¸ƒç‰¹æ®Šæ ‡é¢˜å¸–å­</b><br><li>åœ¨è¿™é‡Œæ‚¨å¯ä»¥æ ¹æ®éœ€è¦è®¾ç½®ä¸åŒç”¨æˆ·ç»„æˆ–ç­‰çº§ç”¨æˆ·å¯ä»¥å‘å¸ƒç‰¹æ®Šæ ‡é¢˜å¸–å­ï¼Œå¦‚æ ‡é¢˜åŠ é¢œè‰²ã€HTMLè¯­æ³•ã€UBBè¯­æ³•ç­‰ï¼Œæ‚¨å¯é’ˆå¯¹ä¸ªåˆ«ç”¨æˆ·ç»„å¯ä½¿ç”¨æ­¤ç‰¹æ®ŠåŠŸèƒ½">
+<a href=# onclick="helpscript(g25);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="ç‚¹å‡»æŸ¥é˜…ç®¡ç†å¸®åŠ©ï¼"></a></td>
 </tr>
 
 <tr>
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckGroupSetting(59)"></td>
-<td  class=tablebody1>¿ÉÒÔ·¢²¼ÔùËÍ½ð±ÒÌù£¬»ñÔù½ð±ÒÌù£¬ÂÛÌ³½»Ò×Ìû</td>
-<td  class=tablebody1>ÊÇ<input name="GroupSetting(59)" type=radio class="radio" value="1"  <%if reGroupSetting(59)="1" then%>checked<%end if%>>&nbsp;·ñ<input name="GroupSetting(59)" type=radio class="radio" value="0" <%if reGroupSetting(59)="0" then%>checked<%end if%>></td>
-<td class=tablebody1>¡¡</td>
+<td  class=tablebody1>å¯ä»¥å‘å¸ƒèµ é€é‡‘å¸è´´ï¼ŒèŽ·èµ é‡‘å¸è´´ï¼Œè®ºå›äº¤æ˜“å¸–</td>
+<td  class=tablebody1>æ˜¯<input name="GroupSetting(59)" type=radio class="radio" value="1"  <%if reGroupSetting(59)="1" then%>checked<%end if%>>&nbsp;å¦<input name="GroupSetting(59)" type=radio class="radio" value="0" <%if reGroupSetting(59)="0" then%>checked<%end if%>></td>
+<td class=tablebody1>ã€€</td>
 </tr>
 <tr>
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckGroupSetting(67)"></td>
-<td  class=tablebody1>·¢±íÄ£Ê½Ñ¡Ôñ</td>
+<td  class=tablebody1>å‘è¡¨æ¨¡å¼é€‰æ‹©</td>
 <td  class=tablebody1>
 <select name="GroupSetting(67)" >
-<option value="0"  <%if reGroupSetting(67)="0" then%>selected<%end if%>>¹Ø±ÕHTML±à¼­
-<option value="1"  <%if reGroupSetting(67)="1" then%>selected<%end if%>>ÔÊÐíHTML±à¼­
-<option value="2"  <%if reGroupSetting(67)="2" then%>selected<%end if%>>¼òµ¥Ä£Ê½±à¼­
-<option value="3"  <%if reGroupSetting(67)="3" then%>selected<%end if%>>È«¹¦ÄÜ±à¼­
+<option value="0"  <%if reGroupSetting(67)="0" then%>selected<%end if%>>å…³é—­HTMLç¼–è¾‘
+<option value="1"  <%if reGroupSetting(67)="1" then%>selected<%end if%>>å…è®¸HTMLç¼–è¾‘
+<option value="2"  <%if reGroupSetting(67)="2" then%>selected<%end if%>>ç®€å•æ¨¡å¼ç¼–è¾‘
+<option value="3"  <%if reGroupSetting(67)="3" then%>selected<%end if%>>å…¨åŠŸèƒ½ç¼–è¾‘
 </select>
 </td>
-<td class=tablebody1><input type="hidden" id="g0" value="<b>·¢±íÄ£Ê½Ñ¡Ôñ</b><br><li>·¢±íÄ£Ê½°üÀ¨£ºDesign±à¼­Ä£Ê½,Ubb¼òµ¥Ä£Ê½£¬HTML¿É±à¼­Ä£Ê½£»<li>¹Ø±ÕHTML±à¼­£ºµ±°æ¿éÔÊÐí·¢±í¸ß¼¶Ä£Ê½ÏÂ£¬ÓÃ»§Ö»±£ÁôDesign±à¼­Ä£Ê½ºÍUbb¼òµ¥Ä£Ê½£»<li>ÔÊÐíHTML±à¼­£ºµ±°æ¿éÔÊÐí·¢±í¸ß¼¶Ä£Ê½ÏÂ£¬ÓÃ»§ÓµÓÐDesign±à¼­Ä£Ê½ºÍHTML¿É±à¼­Ä£Ê½£»<li>¼òµ¥Ä£Ê½±à¼­£ºµ±°æ¿éÔÊÐí·¢±í¸ß¼¶Ä£Ê½ÏÂ£¬ÓÃ»§Ö»±£ÁôUbb¼òµ¥Ä£Ê½£»<li>È«¹¦ÄÜ±à¼­£ºµ±°æ¿éÔÚ·¢±í¼òµ¥Ä£Ê½ÏÂ£¬ÓµÓÐËùÓÐ·¢±íÄ£Ê½£»<li>Îª±ÜÃâÓÃ»§ÀÄÓÃHTMLµÄ¸÷ÖÖÓï·¨£¬½¨ÒéÖ»¶Ô²¿·ÖÓÃ»§¹Ø±ÕHTML±à¼­£»">
-<a href=# onclick="helpscript(g0);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
+<td class=tablebody1><input type="hidden" id="g0" value="<b>å‘è¡¨æ¨¡å¼é€‰æ‹©</b><br><li>å‘è¡¨æ¨¡å¼åŒ…æ‹¬ï¼šDesignç¼–è¾‘æ¨¡å¼,Ubbç®€å•æ¨¡å¼ï¼ŒHTMLå¯ç¼–è¾‘æ¨¡å¼ï¼›<li>å…³é—­HTMLç¼–è¾‘ï¼šå½“ç‰ˆå—å…è®¸å‘è¡¨é«˜çº§æ¨¡å¼ä¸‹ï¼Œç”¨æˆ·åªä¿ç•™Designç¼–è¾‘æ¨¡å¼å’ŒUbbç®€å•æ¨¡å¼ï¼›<li>å…è®¸HTMLç¼–è¾‘ï¼šå½“ç‰ˆå—å…è®¸å‘è¡¨é«˜çº§æ¨¡å¼ä¸‹ï¼Œç”¨æˆ·æ‹¥æœ‰Designç¼–è¾‘æ¨¡å¼å’ŒHTMLå¯ç¼–è¾‘æ¨¡å¼ï¼›<li>ç®€å•æ¨¡å¼ç¼–è¾‘ï¼šå½“ç‰ˆå—å…è®¸å‘è¡¨é«˜çº§æ¨¡å¼ä¸‹ï¼Œç”¨æˆ·åªä¿ç•™Ubbç®€å•æ¨¡å¼ï¼›<li>å…¨åŠŸèƒ½ç¼–è¾‘ï¼šå½“ç‰ˆå—åœ¨å‘è¡¨ç®€å•æ¨¡å¼ä¸‹ï¼Œæ‹¥æœ‰æ‰€æœ‰å‘è¡¨æ¨¡å¼ï¼›<li>ä¸ºé¿å…ç”¨æˆ·æ»¥ç”¨HTMLçš„å„ç§è¯­æ³•ï¼Œå»ºè®®åªå¯¹éƒ¨åˆ†ç”¨æˆ·å…³é—­HTMLç¼–è¾‘ï¼›">
+<a href=# onclick="helpscript(g0);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="ç‚¹å‡»æŸ¥é˜…ç®¡ç†å¸®åŠ©ï¼"></a></td>
 </tr>
 <tr>
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckGroupSetting(65)"></td>
-<td  class=tablebody1>¿ÉÒÔ·¢±íÂÛÌ³×¨Ìâ</td>
-<td  class=tablebody1>ÊÇ<input name="GroupSetting(65)" type=radio class="radio" value="1"  <%if reGroupSetting(65)="1" then%>checked<%end if%>>&nbsp;±ØÑ¡<input name="GroupSetting(65)" type=radio class="radio" value="2"  <%if reGroupSetting(65)="2" then%>checked<%end if%>>&nbsp;·ñ<input name="GroupSetting(65)" type=radio class="radio" value="0" <%if reGroupSetting(65)="0" then%>checked<%end if%>></td>
-<td class=tablebody1><a href=# class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
+<td  class=tablebody1>å¯ä»¥å‘è¡¨è®ºå›ä¸“é¢˜</td>
+<td  class=tablebody1>æ˜¯<input name="GroupSetting(65)" type=radio class="radio" value="1"  <%if reGroupSetting(65)="1" then%>checked<%end if%>>&nbsp;å¿…é€‰<input name="GroupSetting(65)" type=radio class="radio" value="2"  <%if reGroupSetting(65)="2" then%>checked<%end if%>>&nbsp;å¦<input name="GroupSetting(65)" type=radio class="radio" value="0" <%if reGroupSetting(65)="0" then%>checked<%end if%>></td>
+<td class=tablebody1><a href=# class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="ç‚¹å‡»æŸ¥é˜…ç®¡ç†å¸®åŠ©ï¼"></a></td>
 </tr>
 <tr>
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckGroupSetting(52)"></td>
-<td  class=tablebody1>ÐÂ×¢²áÓÃ»§¶àÉÙ·ÖÖÓºó²ÅÄÜ·¢ÑÔ</td>
-<td  class=tablebody1><input name="GroupSetting(52)" type=text value="<%=reGroupSetting(52)%>" size=4> ·ÖÖÓ</td>
-<td class=tablebody1><input type="hidden" id="g26" value="<b>ÐÂ×¢²áÓÃ»§¶àÉÙ·ÖÖÓºó²ÅÄÜ·¢ÑÔ</b><br><li>ÔÚÕâÀïÄú¿ÉÒÔ¸ù¾ÝÐèÒªÉèÖÃ²»Í¬ÓÃ»§×é»òµÈ¼¶ÓÃ»§ÐÂ×¢²áÐèÒª¶àÉÙ·ÖÖÓºó²ÅÄÜ·¢ÑÔ£¬½¨ÒéºÏÀíÉèÖÃ´ËÑ¡Ïî£¬ÒÔ±ÜÃâÒ»Ð©¶ñÒâÓÃ»§ÂÒ×¢²áÉ¢·¢·Ç·¨Ìû×Ó»ò¹ã¸æÌû×Ó">
-<a href=# onclick="helpscript(g26);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
+<td  class=tablebody1>æ–°æ³¨å†Œç”¨æˆ·å¤šå°‘åˆ†é’ŸåŽæ‰èƒ½å‘è¨€</td>
+<td  class=tablebody1><input name="GroupSetting(52)" type=text value="<%=reGroupSetting(52)%>" size=4> åˆ†é’Ÿ</td>
+<td class=tablebody1><input type="hidden" id="g26" value="<b>æ–°æ³¨å†Œç”¨æˆ·å¤šå°‘åˆ†é’ŸåŽæ‰èƒ½å‘è¨€</b><br><li>åœ¨è¿™é‡Œæ‚¨å¯ä»¥æ ¹æ®éœ€è¦è®¾ç½®ä¸åŒç”¨æˆ·ç»„æˆ–ç­‰çº§ç”¨æˆ·æ–°æ³¨å†Œéœ€è¦å¤šå°‘åˆ†é’ŸåŽæ‰èƒ½å‘è¨€ï¼Œå»ºè®®åˆç†è®¾ç½®æ­¤é€‰é¡¹ï¼Œä»¥é¿å…ä¸€äº›æ¶æ„ç”¨æˆ·ä¹±æ³¨å†Œæ•£å‘éžæ³•å¸–å­æˆ–å¹¿å‘Šå¸–å­">
+<a href=# onclick="helpscript(g26);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="ç‚¹å‡»æŸ¥é˜…ç®¡ç†å¸®åŠ©ï¼"></a></td>
 </tr>
 <tr> 
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckGroupSetting(69)"></td>
-<td class=tablebody1>ÊÇ·ñÔÊÐíÊ¹ÓÃÄ§·¨±íÇé</td>
+<td class=tablebody1>æ˜¯å¦å…è®¸ä½¿ç”¨é­”æ³•è¡¨æƒ…</td>
 <td class=tablebody1>
-<input type=radio class="radio" name="GroupSetting(69)" value=1 <%if reGroupSetting(69)="1" then%>checked<%end if%>>ÊÇ&nbsp;
-<input type=radio class="radio" name="GroupSetting(69)" value=0 <%if reGroupSetting(69)="0" then%>checked<%end if%>>·ñ&nbsp;
+<input type=radio class="radio" name="GroupSetting(69)" value=1 <%if reGroupSetting(69)="1" then%>checked<%end if%>>æ˜¯&nbsp;
+<input type=radio class="radio" name="GroupSetting(69)" value=0 <%if reGroupSetting(69)="0" then%>checked<%end if%>>å¦&nbsp;
 </td>
-<td class=tablebody1>¡¡</td>
+<td class=tablebody1>ã€€</td>
 </tr>
 <tr> 
-<th colspan="4"><a name="setting4"></a>£½£½<b>Ìû×Ó/Ö÷Ìâ±à¼­È¨ÏÞ</b></th>
+<th colspan="4"><a name="setting4"></a>ï¼ï¼<b>å¸–å­/ä¸»é¢˜ç¼–è¾‘æƒé™</b></th>
 </tr>
 <tr>
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckGroupSetting(10)"></td>
-<td  class=tablebody1>¿ÉÒÔ±à¼­×Ô¼ºµÄÌû×Ó
+<td  class=tablebody1>å¯ä»¥ç¼–è¾‘è‡ªå·±çš„å¸–å­
 </td>
-<td  class=tablebody1>ÊÇ<input name="GroupSetting(10)" type=radio class="radio" value="1" <%if reGroupSetting(10)="1" then%>checked<%end if%>>&nbsp;·ñ<input name="GroupSetting(10)" type=radio class="radio" value="0" <%if reGroupSetting(10)="0" then%>checked<%end if%>></td>
-<td class=tablebody1><input type="hidden" id="g27" value="<b>¿ÉÒÔ±à¼­×Ô¼ºµÄÌû×Ó</b><br><li>ÔÚÕâÀïÄú¿ÉÒÔ¸ù¾ÝÐèÒªÉèÖÃ²»Í¬ÓÃ»§×é»òµÈ¼¶ÓÃ»§ÊÇ·ñ¿ÉÒÔ±à¼­×Ô¼ºµÄÌû×Ó">
-<a href=# onclick="helpscript(g27);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
+<td  class=tablebody1>æ˜¯<input name="GroupSetting(10)" type=radio class="radio" value="1" <%if reGroupSetting(10)="1" then%>checked<%end if%>>&nbsp;å¦<input name="GroupSetting(10)" type=radio class="radio" value="0" <%if reGroupSetting(10)="0" then%>checked<%end if%>></td>
+<td class=tablebody1><input type="hidden" id="g27" value="<b>å¯ä»¥ç¼–è¾‘è‡ªå·±çš„å¸–å­</b><br><li>åœ¨è¿™é‡Œæ‚¨å¯ä»¥æ ¹æ®éœ€è¦è®¾ç½®ä¸åŒç”¨æˆ·ç»„æˆ–ç­‰çº§ç”¨æˆ·æ˜¯å¦å¯ä»¥ç¼–è¾‘è‡ªå·±çš„å¸–å­">
+<a href=# onclick="helpscript(g27);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="ç‚¹å‡»æŸ¥é˜…ç®¡ç†å¸®åŠ©ï¼"></a></td>
 </tr>
 <tr>
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckGroupSetting(11)"></td>
-<td  class=tablebody1>¿ÉÒÔÉ¾³ý×Ô¼ºµÄÌû×Ó
+<td  class=tablebody1>å¯ä»¥åˆ é™¤è‡ªå·±çš„å¸–å­
 </td>
-<td  class=tablebody1>ÊÇ<input name="GroupSetting(11)" type=radio class="radio" value="1" <%if reGroupSetting(11)="1" then%>checked<%end if%>>&nbsp;·ñ<input name="GroupSetting(11)" type=radio class="radio" value="0" <%if reGroupSetting(11)="0" then%>checked<%end if%>></td>
-<td class=tablebody1><input type="hidden" id="g28" value="<b>¿ÉÒÔÉ¾³ý×Ô¼ºµÄÌû×Ó</b><br><li>ÔÚÕâÀïÄú¿ÉÒÔ¸ù¾ÝÐèÒªÉèÖÃ²»Í¬ÓÃ»§×é»òµÈ¼¶ÓÃ»§ÊÇ·ñ¿ÉÒÔÉ¾³ý×Ô¼ºµÄÌû×Ó£¬Çë¸ù¾Ý×Ô¼ºµÄÐèÒªºÏÀíÉèÖÃ´ËÑ¡Ïî">
-<a href=# onclick="helpscript(g28);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
+<td  class=tablebody1>æ˜¯<input name="GroupSetting(11)" type=radio class="radio" value="1" <%if reGroupSetting(11)="1" then%>checked<%end if%>>&nbsp;å¦<input name="GroupSetting(11)" type=radio class="radio" value="0" <%if reGroupSetting(11)="0" then%>checked<%end if%>></td>
+<td class=tablebody1><input type="hidden" id="g28" value="<b>å¯ä»¥åˆ é™¤è‡ªå·±çš„å¸–å­</b><br><li>åœ¨è¿™é‡Œæ‚¨å¯ä»¥æ ¹æ®éœ€è¦è®¾ç½®ä¸åŒç”¨æˆ·ç»„æˆ–ç­‰çº§ç”¨æˆ·æ˜¯å¦å¯ä»¥åˆ é™¤è‡ªå·±çš„å¸–å­ï¼Œè¯·æ ¹æ®è‡ªå·±çš„éœ€è¦åˆç†è®¾ç½®æ­¤é€‰é¡¹">
+<a href=# onclick="helpscript(g28);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="ç‚¹å‡»æŸ¥é˜…ç®¡ç†å¸®åŠ©ï¼"></a></td>
 </tr>
 <tr>
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckGroupSetting(12)"></td>
-<td  class=tablebody1>¿ÉÒÔÒÆ¶¯×Ô¼ºµÄÌû×Óµ½ÆäËûÂÛÌ³
+<td  class=tablebody1>å¯ä»¥ç§»åŠ¨è‡ªå·±çš„å¸–å­åˆ°å…¶ä»–è®ºå›
 </td>
-<td  class=tablebody1>ÊÇ<input name="GroupSetting(12)" type=radio class="radio" value="1" <%if reGroupSetting(12)="1" then%>checked<%end if%>>&nbsp;·ñ<input name="GroupSetting(12)" type=radio class="radio" value="0" <%if reGroupSetting(12)="0" then%>checked<%end if%>></td>
-<td class=tablebody1><input type="hidden" id="g29" value="<b>¿ÉÒÔÒÆ¶¯×Ô¼ºµÄÌû×Óµ½ÆäËûÂÛÌ³</b><br><li>ÔÚÕâÀïÄú¿ÉÒÔ¸ù¾ÝÐèÒªÉèÖÃ²»Í¬ÓÃ»§×é»òµÈ¼¶ÓÃ»§ÊÇ·ñ¿ÉÒÔÒÆ¶¯×Ô¼ºµÄÌû×Óµ½ÆäËûÂÛÌ³£¬Çë¸ù¾Ý×Ô¼ºµÄÐèÒªºÏÀíÉèÖÃ´ËÑ¡Ïî">
-<a href=# onclick="helpscript(g29);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
+<td  class=tablebody1>æ˜¯<input name="GroupSetting(12)" type=radio class="radio" value="1" <%if reGroupSetting(12)="1" then%>checked<%end if%>>&nbsp;å¦<input name="GroupSetting(12)" type=radio class="radio" value="0" <%if reGroupSetting(12)="0" then%>checked<%end if%>></td>
+<td class=tablebody1><input type="hidden" id="g29" value="<b>å¯ä»¥ç§»åŠ¨è‡ªå·±çš„å¸–å­åˆ°å…¶ä»–è®ºå›</b><br><li>åœ¨è¿™é‡Œæ‚¨å¯ä»¥æ ¹æ®éœ€è¦è®¾ç½®ä¸åŒç”¨æˆ·ç»„æˆ–ç­‰çº§ç”¨æˆ·æ˜¯å¦å¯ä»¥ç§»åŠ¨è‡ªå·±çš„å¸–å­åˆ°å…¶ä»–è®ºå›ï¼Œè¯·æ ¹æ®è‡ªå·±çš„éœ€è¦åˆç†è®¾ç½®æ­¤é€‰é¡¹">
+<a href=# onclick="helpscript(g29);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="ç‚¹å‡»æŸ¥é˜…ç®¡ç†å¸®åŠ©ï¼"></a></td>
 </tr>
 <tr>
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckGroupSetting(13)"></td>
-<td  class=tablebody1>¿ÉÒÔ´ò¿ª/¹Ø±Õ×Ô¼º·¢²¼µÄÖ÷Ìâ
+<td  class=tablebody1>å¯ä»¥æ‰“å¼€/å…³é—­è‡ªå·±å‘å¸ƒçš„ä¸»é¢˜
 </td>
-<td  class=tablebody1>ÊÇ<input name="GroupSetting(13)" type=radio class="radio" value="1" <%if reGroupSetting(13)="1" then%>checked<%end if%>>&nbsp;·ñ<input name="GroupSetting(13)" type=radio class="radio" value="0" <%if reGroupSetting(13)="0" then%>checked<%end if%>></td>
-<td class=tablebody1><input type="hidden" id="g30" value="<b>¿ÉÒÔ´ò¿ª/¹Ø±Õ×Ô¼º·¢²¼µÄÖ÷Ìâ</b><br><li>ÔÚÕâÀïÄú¿ÉÒÔ¸ù¾ÝÐèÒªÉèÖÃ²»Í¬ÓÃ»§×é»òµÈ¼¶ÓÃ»§ÊÇ·ñ¿ÉÒÔ´ò¿ª/¹Ø±Õ×Ô¼º·¢²¼µÄÖ÷Ìâ£¬Çë¸ù¾Ý×Ô¼ºµÄÐèÒªºÏÀíÉèÖÃ´ËÑ¡Ïî">
-<a href=# onclick="helpscript(g30);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
+<td  class=tablebody1>æ˜¯<input name="GroupSetting(13)" type=radio class="radio" value="1" <%if reGroupSetting(13)="1" then%>checked<%end if%>>&nbsp;å¦<input name="GroupSetting(13)" type=radio class="radio" value="0" <%if reGroupSetting(13)="0" then%>checked<%end if%>></td>
+<td class=tablebody1><input type="hidden" id="g30" value="<b>å¯ä»¥æ‰“å¼€/å…³é—­è‡ªå·±å‘å¸ƒçš„ä¸»é¢˜</b><br><li>åœ¨è¿™é‡Œæ‚¨å¯ä»¥æ ¹æ®éœ€è¦è®¾ç½®ä¸åŒç”¨æˆ·ç»„æˆ–ç­‰çº§ç”¨æˆ·æ˜¯å¦å¯ä»¥æ‰“å¼€/å…³é—­è‡ªå·±å‘å¸ƒçš„ä¸»é¢˜ï¼Œè¯·æ ¹æ®è‡ªå·±çš„éœ€è¦åˆç†è®¾ç½®æ­¤é€‰é¡¹">
+<a href=# onclick="helpscript(g30);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="ç‚¹å‡»æŸ¥é˜…ç®¡ç†å¸®åŠ©ï¼"></a></td>
 </tr>
 <tr> 
-<th colspan="4"><a name="setting5"></a>£½£½ÉÏ´«È¨ÏÞÉèÖÃ</th>
+<th colspan="4"><a name="setting5"></a>ï¼ï¼ä¸Šä¼ æƒé™è®¾ç½®</th>
 </tr>
 <tr>
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckGroupSetting(7)"></td>
-<td  class=tablebody1>¿ÉÒÔÉÏ´«¸½¼þ
+<td  class=tablebody1>å¯ä»¥ä¸Šä¼ é™„ä»¶
 </td>
-<td  class=tablebody1>ÊÇ<input name="GroupSetting(7)" type=radio class="radio" value="1" <%if reGroupSetting(7)="1" then%>checked<%end if%>>&nbsp;·ñ<input name="GroupSetting(7)" type=radio class="radio" value="0" <%if reGroupSetting(7)="0" then%>checked<%end if%>>
-&nbsp;·¢Ìû¿ÉÒÔÉÏ´«<input name="GroupSetting(7)" type=radio class="radio" value="2" <%if reGroupSetting(7)="2" then%>checked<%end if%>>&nbsp;»Ø¸´¿ÉÒÔÉÏ´«<input name="GroupSetting(7)" type=radio class="radio" value="3" <%if reGroupSetting(7)="3" then%>checked<%end if%>>
+<td  class=tablebody1>æ˜¯<input name="GroupSetting(7)" type=radio class="radio" value="1" <%if reGroupSetting(7)="1" then%>checked<%end if%>>&nbsp;å¦<input name="GroupSetting(7)" type=radio class="radio" value="0" <%if reGroupSetting(7)="0" then%>checked<%end if%>>
+&nbsp;å‘å¸–å¯ä»¥ä¸Šä¼ <input name="GroupSetting(7)" type=radio class="radio" value="2" <%if reGroupSetting(7)="2" then%>checked<%end if%>>&nbsp;å›žå¤å¯ä»¥ä¸Šä¼ <input name="GroupSetting(7)" type=radio class="radio" value="3" <%if reGroupSetting(7)="3" then%>checked<%end if%>>
 </td>
-<td class=tablebody1><input type="hidden" id="g16" value="<b>¿ÉÒÔÉÏ´«¸½¼þ</b><br><li>ÔÚÕâÀïÄú¿ÉÒÔ¸ù¾ÝÐèÒªÉèÖÃ²»Í¬ÓÃ»§×é»òµÈ¼¶ÓÃ»§ÊÇ·ñ¿ÉÒÔÉÏ´«¸½¼þ£¬Ñ¡ÔñÊÇÔò·¢ÌùºÍ»ØÌù¶¼¿ÉÒÔÉÏ´«£¬·ñÔò²»ÐÐ¡£ÄúÒ²¿ÉÒÔ¿ÉÒÔ¸ù¾ÝÐèÒª·Ö±ðÉèÖÃ·¢Ìù»ò»ØÌûÊÇ·ñ¿ÉÒÔÉÏ´«">
-<a href=# onclick="helpscript(g16);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
+<td class=tablebody1><input type="hidden" id="g16" value="<b>å¯ä»¥ä¸Šä¼ é™„ä»¶</b><br><li>åœ¨è¿™é‡Œæ‚¨å¯ä»¥æ ¹æ®éœ€è¦è®¾ç½®ä¸åŒç”¨æˆ·ç»„æˆ–ç­‰çº§ç”¨æˆ·æ˜¯å¦å¯ä»¥ä¸Šä¼ é™„ä»¶ï¼Œé€‰æ‹©æ˜¯åˆ™å‘è´´å’Œå›žè´´éƒ½å¯ä»¥ä¸Šä¼ ï¼Œå¦åˆ™ä¸è¡Œã€‚æ‚¨ä¹Ÿå¯ä»¥å¯ä»¥æ ¹æ®éœ€è¦åˆ†åˆ«è®¾ç½®å‘è´´æˆ–å›žå¸–æ˜¯å¦å¯ä»¥ä¸Šä¼ ">
+<a href=# onclick="helpscript(g16);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="ç‚¹å‡»æŸ¥é˜…ç®¡ç†å¸®åŠ©ï¼"></a></td>
 </tr>
 <tr>
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckGroupSetting(66)"></td>
-<td  class=tablebody1>Ò»´ÎÅúÁ¿ÉÏ´«ÊýÁ¿£¨ÉèÖÃÎª0£¬¼´²»ÔÊÐíÊ¹ÓÃ´Ë¹¦ÄÜ£»½¨Òé²»Òª³¬¹ý5¸ö£©
+<td  class=tablebody1>ä¸€æ¬¡æ‰¹é‡ä¸Šä¼ æ•°é‡ï¼ˆè®¾ç½®ä¸º0ï¼Œå³ä¸å…è®¸ä½¿ç”¨æ­¤åŠŸèƒ½ï¼›å»ºè®®ä¸è¦è¶…è¿‡5ä¸ªï¼‰
 </td>
 <td  class=tablebody1><input name="GroupSetting(66)" type=text size=4 value="<%=reGroupSetting(66)%>"></td>
-<td class=tablebody1><input type="hidden" id="GroupSetting66" value="<b>Ò»´ÎÅúÁ¿ÉÏ´«ÊýÁ¿</b><br><li>ÉèÖÃÎª0£¬¼´²»ÔÊÐíÊ¹ÓÃ´Ë¹¦ÄÜ;<li>½¨Òé²»Òª³¬¹ý5¸ö£¬ÒòÎªÉÏ´«²Ù×÷½«ÏûºÄ´óÁ¿·þÎñÆ÷×ÊÔ´">
-<a href=# onclick="helpscript(GroupSetting66);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
+<td class=tablebody1><input type="hidden" id="GroupSetting66" value="<b>ä¸€æ¬¡æ‰¹é‡ä¸Šä¼ æ•°é‡</b><br><li>è®¾ç½®ä¸º0ï¼Œå³ä¸å…è®¸ä½¿ç”¨æ­¤åŠŸèƒ½;<li>å»ºè®®ä¸è¦è¶…è¿‡5ä¸ªï¼Œå› ä¸ºä¸Šä¼ æ“ä½œå°†æ¶ˆè€—å¤§é‡æœåŠ¡å™¨èµ„æº">
+<a href=# onclick="helpscript(GroupSetting66);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="ç‚¹å‡»æŸ¥é˜…ç®¡ç†å¸®åŠ©ï¼"></a></td>
 </tr>
 <tr>
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckGroupSetting(40)"></td>
-<td  class=tablebody1>Ò»´Î×î¶àÉÏ´«ÎÄ¼þ¸öÊý
+<td  class=tablebody1>ä¸€æ¬¡æœ€å¤šä¸Šä¼ æ–‡ä»¶ä¸ªæ•°
 </td>
 <td  class=tablebody1><input name="GroupSetting(40)" type=text size=4 value="<%=reGroupSetting(40)%>"></td>
-<td class=tablebody1><input type="hidden" id="g17" value="<b>Ò»´Î×î¶àÉÏ´«ÎÄ¼þ¸öÊý</b><br><li>ÔÚÕâÀïÄú¿ÉÒÔ¸ù¾ÝÐèÒªÉèÖÃ²»Í¬ÓÃ»§×é»òµÈ¼¶ÓÃ»§Ò»´Î×î¶àÉÏ´«ÎÄ¼þ¸öÊý£¬½¨Òé²»ÒªÉèÖÃ¹ý´ó£¬ÒòÎªÉÏ´«²Ù×÷½«ÏûºÄ´óÁ¿·þÎñÆ÷×ÊÔ´">
-<a href=# onclick="helpscript(g17);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
+<td class=tablebody1><input type="hidden" id="g17" value="<b>ä¸€æ¬¡æœ€å¤šä¸Šä¼ æ–‡ä»¶ä¸ªæ•°</b><br><li>åœ¨è¿™é‡Œæ‚¨å¯ä»¥æ ¹æ®éœ€è¦è®¾ç½®ä¸åŒç”¨æˆ·ç»„æˆ–ç­‰çº§ç”¨æˆ·ä¸€æ¬¡æœ€å¤šä¸Šä¼ æ–‡ä»¶ä¸ªæ•°ï¼Œå»ºè®®ä¸è¦è®¾ç½®è¿‡å¤§ï¼Œå› ä¸ºä¸Šä¼ æ“ä½œå°†æ¶ˆè€—å¤§é‡æœåŠ¡å™¨èµ„æº">
+<a href=# onclick="helpscript(g17);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="ç‚¹å‡»æŸ¥é˜…ç®¡ç†å¸®åŠ©ï¼"></a></td>
 </tr>
 <tr>
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckGroupSetting(50)"></td>
-<td  class=tablebody1>Ò»Ìì×î¶àÉÏ´«ÎÄ¼þ¸öÊý
+<td  class=tablebody1>ä¸€å¤©æœ€å¤šä¸Šä¼ æ–‡ä»¶ä¸ªæ•°
 </td>
 <td  class=tablebody1><input name="GroupSetting(50)" type=text size=4 value="<%=reGroupSetting(50)%>"></td>
-<td class=tablebody1><input type="hidden" id="g18" value="<b>Ò»Ìì×î¶àÉÏ´«ÎÄ¼þ¸öÊý</b><br><li>ÔÚÕâÀïÄú¿ÉÒÔ¸ù¾ÝÐèÒªÉèÖÃ²»Í¬ÓÃ»§×é»òµÈ¼¶ÓÃ»§Ò»Ìì×î¶àÉÏ´«ÎÄ¼þ¸öÊý£¬½¨Òé²»ÒªÉèÖÃ¹ý´ó£¬ÒòÎªÉÏ´«²Ù×÷½«ÏûºÄ´óÁ¿·þÎñÆ÷×ÊÔ´">
-<a href=# onclick="helpscript(g18);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
+<td class=tablebody1><input type="hidden" id="g18" value="<b>ä¸€å¤©æœ€å¤šä¸Šä¼ æ–‡ä»¶ä¸ªæ•°</b><br><li>åœ¨è¿™é‡Œæ‚¨å¯ä»¥æ ¹æ®éœ€è¦è®¾ç½®ä¸åŒç”¨æˆ·ç»„æˆ–ç­‰çº§ç”¨æˆ·ä¸€å¤©æœ€å¤šä¸Šä¼ æ–‡ä»¶ä¸ªæ•°ï¼Œå»ºè®®ä¸è¦è®¾ç½®è¿‡å¤§ï¼Œå› ä¸ºä¸Šä¼ æ“ä½œå°†æ¶ˆè€—å¤§é‡æœåŠ¡å™¨èµ„æº">
+<a href=# onclick="helpscript(g18);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="ç‚¹å‡»æŸ¥é˜…ç®¡ç†å¸®åŠ©ï¼"></a></td>
 </tr>
 <tr>
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckGroupSetting(44)"></td>
-<td  class=tablebody1>ÉÏ´«ÎÄ¼þ´óÐ¡ÏÞÖÆ
+<td  class=tablebody1>ä¸Šä¼ æ–‡ä»¶å¤§å°é™åˆ¶
 </td>
 <td  class=tablebody1><input name="GroupSetting(44)" type=text size=4 value="<%=reGroupSetting(44)%>"> KB</td>
-<td class=tablebody1><input type="hidden" id="g19" value="<b>ÉÏ´«ÎÄ¼þ´óÐ¡ÏÞÖÆ</b><br><li>ÔÚÕâÀïÄú¿ÉÒÔ¸ù¾ÝÐèÒªÉèÖÃ²»Í¬ÓÃ»§×é»òµÈ¼¶ÓÃ»§ÉÏ´«ÎÄ¼þ´óÐ¡£¬½¨Òé²»ÒªÉèÖÃ¹ý´ó£¬ÒòÎªÉÏ´«²Ù×÷½«ÏûºÄ´óÁ¿·þÎñÆ÷×ÊÔ´">
-<a href=# onclick="helpscript(g19);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
+<td class=tablebody1><input type="hidden" id="g19" value="<b>ä¸Šä¼ æ–‡ä»¶å¤§å°é™åˆ¶</b><br><li>åœ¨è¿™é‡Œæ‚¨å¯ä»¥æ ¹æ®éœ€è¦è®¾ç½®ä¸åŒç”¨æˆ·ç»„æˆ–ç­‰çº§ç”¨æˆ·ä¸Šä¼ æ–‡ä»¶å¤§å°ï¼Œå»ºè®®ä¸è¦è®¾ç½®è¿‡å¤§ï¼Œå› ä¸ºä¸Šä¼ æ“ä½œå°†æ¶ˆè€—å¤§é‡æœåŠ¡å™¨èµ„æº">
+<a href=# onclick="helpscript(g19);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="ç‚¹å‡»æŸ¥é˜…ç®¡ç†å¸®åŠ©ï¼"></a></td>
 </tr>
 <tr>
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckGroupSetting(61)"></td>
-<td  class=tablebody1>¿ÉÒÔÏÂÔØ¸½¼þ</td>
-<td  class=tablebody1>ÊÇ<input name="GroupSetting(61)" type=radio class="radio" value="1" <%if reGroupSetting(61)="1" then%>checked<%end if%>>&nbsp;·ñ<input name="GroupSetting(61)" type=radio class="radio" value="0" <%if reGroupSetting(61)="0" then%>checked<%end if%>></td>
-<td class=tablebody1><input type="hidden" id="g20" value="<b>¿ÉÒÔÏÂÔØ¸½¼þ</b><br><li>ÔÚÕâÀïÄú¿ÉÒÔ¸ù¾ÝÐèÒªÉèÖÃ²»Í¬ÓÃ»§×é»òµÈ¼¶ÓÃ»§ÊÇ·ñ¿ÉÒÔÏÂÔØ¸½¼þ£¬±ÈÈç¿ÉÒÔÉèÖÃÎ´µÇÂ¼ÓÃ»§²»ÐíÏÂÔØ">
-<a href=# onclick="helpscript(g20);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
+<td  class=tablebody1>å¯ä»¥ä¸‹è½½é™„ä»¶</td>
+<td  class=tablebody1>æ˜¯<input name="GroupSetting(61)" type=radio class="radio" value="1" <%if reGroupSetting(61)="1" then%>checked<%end if%>>&nbsp;å¦<input name="GroupSetting(61)" type=radio class="radio" value="0" <%if reGroupSetting(61)="0" then%>checked<%end if%>></td>
+<td class=tablebody1><input type="hidden" id="g20" value="<b>å¯ä»¥ä¸‹è½½é™„ä»¶</b><br><li>åœ¨è¿™é‡Œæ‚¨å¯ä»¥æ ¹æ®éœ€è¦è®¾ç½®ä¸åŒç”¨æˆ·ç»„æˆ–ç­‰çº§ç”¨æˆ·æ˜¯å¦å¯ä»¥ä¸‹è½½é™„ä»¶ï¼Œæ¯”å¦‚å¯ä»¥è®¾ç½®æœªç™»å½•ç”¨æˆ·ä¸è®¸ä¸‹è½½">
+<a href=# onclick="helpscript(g20);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="ç‚¹å‡»æŸ¥é˜…ç®¡ç†å¸®åŠ©ï¼"></a></td>
 </tr>
 <tr> 
-<th colspan="4"><a name="setting6"></a>£½£½¹ÜÀíÈ¨ÏÞ</th>
+<th colspan="4"><a name="setting6"></a>ï¼ï¼ç®¡ç†æƒé™</th>
 </tr>
 <tr>
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckGroupSetting(18)"></td>
-<td  class=tablebody1>¿ÉÒÔÉ¾³ýÆäËüÈËÌû×Ó
+<td  class=tablebody1>å¯ä»¥åˆ é™¤å…¶å®ƒäººå¸–å­
 </td>
-<td  class=tablebody1>ÊÇ<input name="GroupSetting(18)" type=radio class="radio" value="1" <%if reGroupSetting(18)="1" then%>checked<%end if%>>&nbsp;·ñ<input name="GroupSetting(18)" type=radio class="radio" value="0"  <%if reGroupSetting(18)="0" then%>checked<%end if%>></td>
-<td class=tablebody1><input type="hidden" id="g38" value="<b>¿ÉÒÔÉ¾³ýÆäËüÈËÌû×Ó</b><br><li>ÔÚÕâÀïÄú¿ÉÒÔ¸ù¾ÝÐèÒªÉèÖÃ²»Í¬ÓÃ»§×é»òµÈ¼¶ÓÃ»§ÊÇ·ñ¿ÉÒÔÉ¾³ýÆäËüÈËÌû×Ó£¬Çë¸ù¾Ý×Ô¼ºµÄÐèÒªºÏÀíÉèÖÃ´ËÑ¡Ïî£¬½¨Òé¶Ô°æÖ÷¼°ÆäÒÔÉÏÓÃ»§×éÉèÖÃ´ËÈ¨ÏÞ">
-<a href=# onclick="helpscript(g38);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
+<td  class=tablebody1>æ˜¯<input name="GroupSetting(18)" type=radio class="radio" value="1" <%if reGroupSetting(18)="1" then%>checked<%end if%>>&nbsp;å¦<input name="GroupSetting(18)" type=radio class="radio" value="0"  <%if reGroupSetting(18)="0" then%>checked<%end if%>></td>
+<td class=tablebody1><input type="hidden" id="g38" value="<b>å¯ä»¥åˆ é™¤å…¶å®ƒäººå¸–å­</b><br><li>åœ¨è¿™é‡Œæ‚¨å¯ä»¥æ ¹æ®éœ€è¦è®¾ç½®ä¸åŒç”¨æˆ·ç»„æˆ–ç­‰çº§ç”¨æˆ·æ˜¯å¦å¯ä»¥åˆ é™¤å…¶å®ƒäººå¸–å­ï¼Œè¯·æ ¹æ®è‡ªå·±çš„éœ€è¦åˆç†è®¾ç½®æ­¤é€‰é¡¹ï¼Œå»ºè®®å¯¹ç‰ˆä¸»åŠå…¶ä»¥ä¸Šç”¨æˆ·ç»„è®¾ç½®æ­¤æƒé™">
+<a href=# onclick="helpscript(g38);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="ç‚¹å‡»æŸ¥é˜…ç®¡ç†å¸®åŠ©ï¼"></a></td>
 </tr>
 <tr>
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckGroupSetting(19)"></td>
-<td  class=tablebody1>¿ÉÒÔÒÆ¶¯ÆäËüÈËÌû×Ó
+<td  class=tablebody1>å¯ä»¥ç§»åŠ¨å…¶å®ƒäººå¸–å­
 </td>
-<td  class=tablebody1>ÊÇ<input name="GroupSetting(19)" type=radio class="radio" value="1" <%if reGroupSetting(19)="1" then%>checked<%end if%>>&nbsp;·ñ<input name="GroupSetting(19)" type=radio class="radio" value="0"  <%if reGroupSetting(19)="0" then%>checked<%end if%>></td>
-<td class=tablebody1><input type="hidden" id="g39" value="<b>¿ÉÒÔÒÆ¶¯ÆäËüÈËÌû×Ó</b><br><li>ÔÚÕâÀïÄú¿ÉÒÔ¸ù¾ÝÐèÒªÉèÖÃ²»Í¬ÓÃ»§×é»òµÈ¼¶ÓÃ»§ÊÇ·ñ¿ÉÒÔÒÆ¶¯ÆäËüÈËÌû×Ó£¬Çë¸ù¾Ý×Ô¼ºµÄÐèÒªºÏÀíÉèÖÃ´ËÑ¡Ïî£¬½¨Òé¶Ô°æÖ÷¼°ÆäÒÔÉÏÓÃ»§×éÉèÖÃ´ËÈ¨ÏÞ">
-<a href=# onclick="helpscript(g39);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
+<td  class=tablebody1>æ˜¯<input name="GroupSetting(19)" type=radio class="radio" value="1" <%if reGroupSetting(19)="1" then%>checked<%end if%>>&nbsp;å¦<input name="GroupSetting(19)" type=radio class="radio" value="0"  <%if reGroupSetting(19)="0" then%>checked<%end if%>></td>
+<td class=tablebody1><input type="hidden" id="g39" value="<b>å¯ä»¥ç§»åŠ¨å…¶å®ƒäººå¸–å­</b><br><li>åœ¨è¿™é‡Œæ‚¨å¯ä»¥æ ¹æ®éœ€è¦è®¾ç½®ä¸åŒç”¨æˆ·ç»„æˆ–ç­‰çº§ç”¨æˆ·æ˜¯å¦å¯ä»¥ç§»åŠ¨å…¶å®ƒäººå¸–å­ï¼Œè¯·æ ¹æ®è‡ªå·±çš„éœ€è¦åˆç†è®¾ç½®æ­¤é€‰é¡¹ï¼Œå»ºè®®å¯¹ç‰ˆä¸»åŠå…¶ä»¥ä¸Šç”¨æˆ·ç»„è®¾ç½®æ­¤æƒé™">
+<a href=# onclick="helpscript(g39);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="ç‚¹å‡»æŸ¥é˜…ç®¡ç†å¸®åŠ©ï¼"></a></td>
 </tr>
 <tr>
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckGroupSetting(20)"></td>
-<td  class=tablebody1>¿ÉÒÔ´ò¿ª/¹Ø±ÕÆäËüÈËÌû×Ó
+<td  class=tablebody1>å¯ä»¥æ‰“å¼€/å…³é—­å…¶å®ƒäººå¸–å­
 </td>
-<td  class=tablebody1>ÊÇ<input name="GroupSetting(20)" type=radio class="radio" value="1" <%if reGroupSetting(20)="1" then%>checked<%end if%>>&nbsp;·ñ<input name="GroupSetting(20)" type=radio class="radio" value="0"  <%if reGroupSetting(20)="0" then%>checked<%end if%>></td>
-<td class=tablebody1><input type="hidden" id="g40" value="<b>¿ÉÒÔ´ò¿ª/¹Ø±ÕÆäËüÈËÌû×Ó</b><br><li>ÔÚÕâÀïÄú¿ÉÒÔ¸ù¾ÝÐèÒªÉèÖÃ²»Í¬ÓÃ»§×é»òµÈ¼¶ÓÃ»§ÊÇ·ñ¿ÉÒÔ´ò¿ª/¹Ø±ÕÆäËüÈËÌû×Ó£¬Çë¸ù¾Ý×Ô¼ºµÄÐèÒªºÏÀíÉèÖÃ´ËÑ¡Ïî£¬½¨Òé¶Ô°æÖ÷¼°ÆäÒÔÉÏÓÃ»§×éÉèÖÃ´ËÈ¨ÏÞ">
-<a href=# onclick="helpscript(g40);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
+<td  class=tablebody1>æ˜¯<input name="GroupSetting(20)" type=radio class="radio" value="1" <%if reGroupSetting(20)="1" then%>checked<%end if%>>&nbsp;å¦<input name="GroupSetting(20)" type=radio class="radio" value="0"  <%if reGroupSetting(20)="0" then%>checked<%end if%>></td>
+<td class=tablebody1><input type="hidden" id="g40" value="<b>å¯ä»¥æ‰“å¼€/å…³é—­å…¶å®ƒäººå¸–å­</b><br><li>åœ¨è¿™é‡Œæ‚¨å¯ä»¥æ ¹æ®éœ€è¦è®¾ç½®ä¸åŒç”¨æˆ·ç»„æˆ–ç­‰çº§ç”¨æˆ·æ˜¯å¦å¯ä»¥æ‰“å¼€/å…³é—­å…¶å®ƒäººå¸–å­ï¼Œè¯·æ ¹æ®è‡ªå·±çš„éœ€è¦åˆç†è®¾ç½®æ­¤é€‰é¡¹ï¼Œå»ºè®®å¯¹ç‰ˆä¸»åŠå…¶ä»¥ä¸Šç”¨æˆ·ç»„è®¾ç½®æ­¤æƒé™">
+<a href=# onclick="helpscript(g40);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="ç‚¹å‡»æŸ¥é˜…ç®¡ç†å¸®åŠ©ï¼"></a></td>
 </tr>
 <tr>
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckGroupSetting(21)"></td>
-<td  class=tablebody1>¿ÉÒÔ¹Ì¶¥/½â³ý¹Ì¶¥Ìû×Ó
+<td  class=tablebody1>å¯ä»¥å›ºé¡¶/è§£é™¤å›ºé¡¶å¸–å­
 </td>
-<td  class=tablebody1>ÊÇ<input name="GroupSetting(21)" type=radio class="radio" value="1" <%if reGroupSetting(21)="1" then%>checked<%end if%>>&nbsp;·ñ<input name="GroupSetting(21)" type=radio class="radio" value="0"  <%if reGroupSetting(21)="0" then%>checked<%end if%>></td>
-<td class=tablebody1><input type="hidden" id="g41" value="<b>¿ÉÒÔ¹Ì¶¥/½â³ý¹Ì¶¥Ìû×Ó</b><br><li>ÔÚÕâÀïÄú¿ÉÒÔ¸ù¾ÝÐèÒªÉèÖÃ²»Í¬ÓÃ»§×é»òµÈ¼¶ÓÃ»§ÊÇ·ñ¿ÉÒÔ¹Ì¶¥/½â³ý¹Ì¶¥Ìû×Ó£¬Çë¸ù¾Ý×Ô¼ºµÄÐèÒªºÏÀíÉèÖÃ´ËÑ¡Ïî£¬½¨Òé¶Ô°æÖ÷¼°ÆäÒÔÉÏÓÃ»§×éÉèÖÃ´ËÈ¨ÏÞ">
-<a href=# onclick="helpscript(g41);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
+<td  class=tablebody1>æ˜¯<input name="GroupSetting(21)" type=radio class="radio" value="1" <%if reGroupSetting(21)="1" then%>checked<%end if%>>&nbsp;å¦<input name="GroupSetting(21)" type=radio class="radio" value="0"  <%if reGroupSetting(21)="0" then%>checked<%end if%>></td>
+<td class=tablebody1><input type="hidden" id="g41" value="<b>å¯ä»¥å›ºé¡¶/è§£é™¤å›ºé¡¶å¸–å­</b><br><li>åœ¨è¿™é‡Œæ‚¨å¯ä»¥æ ¹æ®éœ€è¦è®¾ç½®ä¸åŒç”¨æˆ·ç»„æˆ–ç­‰çº§ç”¨æˆ·æ˜¯å¦å¯ä»¥å›ºé¡¶/è§£é™¤å›ºé¡¶å¸–å­ï¼Œè¯·æ ¹æ®è‡ªå·±çš„éœ€è¦åˆç†è®¾ç½®æ­¤é€‰é¡¹ï¼Œå»ºè®®å¯¹ç‰ˆä¸»åŠå…¶ä»¥ä¸Šç”¨æˆ·ç»„è®¾ç½®æ­¤æƒé™">
+<a href=# onclick="helpscript(g41);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="ç‚¹å‡»æŸ¥é˜…ç®¡ç†å¸®åŠ©ï¼"></a></td>
 </tr>
 <tr>
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckGroupSetting(54)"></td>
-<td  class=tablebody1>¿ÉÒÔ½øÐÐÌû×ÓÇøÓò¹Ì¶¥²Ù×÷
+<td  class=tablebody1>å¯ä»¥è¿›è¡Œå¸–å­åŒºåŸŸå›ºé¡¶æ“ä½œ
 </td>
-<td  class=tablebody1>ÊÇ<input name="GroupSetting(54)" type=radio class="radio" value="1" <%if reGroupSetting(54)="1" then%>checked<%end if%>>&nbsp;·ñ<input name="GroupSetting(54)" type=radio class="radio" value="0"  <%if reGroupSetting(54)="0" then%>checked<%end if%>></td>
-<td class=tablebody1><input type="hidden" id="g42" value="<b>¿ÉÒÔ½øÐÐÌû×ÓÇøÓò¹Ì¶¥²Ù×÷</b><br><li>ÔÚÕâÀïÄú¿ÉÒÔ¸ù¾ÝÐèÒªÉèÖÃ²»Í¬ÓÃ»§×é»òµÈ¼¶ÓÃ»§ÊÇ·ñ¿ÉÒÔ½øÐÐÌû×ÓÇøÓò¹Ì¶¥²Ù×÷£¬Çë¸ù¾Ý×Ô¼ºµÄÐèÒªºÏÀíÉèÖÃ´ËÑ¡Ïî£¬½¨Òé¶Ô³¬¼¶°æÖ÷¼°ÆäÒÔÉÏÓÃ»§×éÉèÖÃ´ËÈ¨ÏÞ">
-<a href=# onclick="helpscript(g42);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
+<td  class=tablebody1>æ˜¯<input name="GroupSetting(54)" type=radio class="radio" value="1" <%if reGroupSetting(54)="1" then%>checked<%end if%>>&nbsp;å¦<input name="GroupSetting(54)" type=radio class="radio" value="0"  <%if reGroupSetting(54)="0" then%>checked<%end if%>></td>
+<td class=tablebody1><input type="hidden" id="g42" value="<b>å¯ä»¥è¿›è¡Œå¸–å­åŒºåŸŸå›ºé¡¶æ“ä½œ</b><br><li>åœ¨è¿™é‡Œæ‚¨å¯ä»¥æ ¹æ®éœ€è¦è®¾ç½®ä¸åŒç”¨æˆ·ç»„æˆ–ç­‰çº§ç”¨æˆ·æ˜¯å¦å¯ä»¥è¿›è¡Œå¸–å­åŒºåŸŸå›ºé¡¶æ“ä½œï¼Œè¯·æ ¹æ®è‡ªå·±çš„éœ€è¦åˆç†è®¾ç½®æ­¤é€‰é¡¹ï¼Œå»ºè®®å¯¹è¶…çº§ç‰ˆä¸»åŠå…¶ä»¥ä¸Šç”¨æˆ·ç»„è®¾ç½®æ­¤æƒé™">
+<a href=# onclick="helpscript(g42);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="ç‚¹å‡»æŸ¥é˜…ç®¡ç†å¸®åŠ©ï¼"></a></td>
 </tr>
 <tr>
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckGroupSetting(38)"></td>
-<td  class=tablebody1>¿ÉÒÔ½øÐÐÌû×Ó×Ü¹Ì¶¥²Ù×÷
+<td  class=tablebody1>å¯ä»¥è¿›è¡Œå¸–å­æ€»å›ºé¡¶æ“ä½œ
 </td>
-<td  class=tablebody1>ÊÇ<input name="GroupSetting(38)" type=radio class="radio" value="1"  <%if reGroupSetting(38)="1" then%>checked<%end if%>>&nbsp;·ñ<input name="GroupSetting(38)" type=radio class="radio" value="0" <%if reGroupSetting(38)="0" then%>checked<%end if%>></td>
-<td class=tablebody1><input type="hidden" id="g43" value="<b>¿ÉÒÔ½øÐÐÌû×Ó×Ü¹Ì¶¥²Ù×÷</b><br><li>ÔÚÕâÀïÄú¿ÉÒÔ¸ù¾ÝÐèÒªÉèÖÃ²»Í¬ÓÃ»§×é»òµÈ¼¶ÓÃ»§ÊÇ·ñ¿ÉÒÔ½øÐÐÌû×Ó×Ü¹Ì¶¥²Ù×÷£¬Çë¸ù¾Ý×Ô¼ºµÄÐèÒªºÏÀíÉèÖÃ´ËÑ¡Ïî£¬½¨Òé¶Ô³¬¼¶°æÖ÷¼°ÆäÒÔÉÏÓÃ»§×éÉèÖÃ´ËÈ¨ÏÞ">
-<a href=# onclick="helpscript(g43);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
-</tr>
-<tr>
-<td class=tablebody1><input type="checkbox" class="checkbox" name="CheckGroupSetting(22)"></td>
-<td  class=tablebody1>¿ÉÒÔ¶ÔÓÃ»§ÆÀ·Ö
-</td>
-<td  class=tablebody1>ÊÇ<input name="GroupSetting(22)" type=radio class="radio" value="1" <%if reGroupSetting(22)="1" then%>checked<%end if%>>&nbsp;·ñ<input name="GroupSetting(22)" type=radio class="radio" value="0"  <%if reGroupSetting(22)="0" then%>checked<%end if%>></td>
-<td class=tablebody1><input type="hidden" id="g44" value="<b>¿ÉÒÔ½±Àø/³Í·£·¢ÌùÓÃ»§</b><br><li>ÔÚÕâÀïÄú¿ÉÒÔ¸ù¾ÝÐèÒªÉèÖÃ²»Í¬ÓÃ»§×é»òµÈ¼¶ÓÃ»§ÊÇ·ñ¿ÉÒÔ½±Àø/³Í·£·¢ÌùÓÃ»§£¬Çë¸ù¾Ý×Ô¼ºµÄÐèÒªºÏÀíÉèÖÃ´ËÑ¡Ïî£¬½¨Òé¶Ô°æÖ÷¼°ÆäÒÔÉÏÓÃ»§×éÉèÖÃ´ËÈ¨ÏÞ">
-<a href=# onclick="helpscript(g44);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
-</tr>
-<tr>
-<td class=tablebody1><input type="checkbox" class="checkbox" name="CheckGroupSetting(43)"></td>
-<td  class=tablebody1>¿ÉÒÔ¶Ô¶ÀÁ¢ÓÃ»§½øÐÐ½±Àø/³Í·£
-</td>
-<td  class=tablebody1>ÊÇ<input name="GroupSetting(43)" type=radio class="radio" value="1" <%if reGroupSetting(43)="1" then%>checked<%end if%>>&nbsp;·ñ<input name="GroupSetting(43)" type=radio class="radio" value="0"  <%if reGroupSetting(43)="0" then%>checked<%end if%>></td>
-<td class=tablebody1><input type="hidden" id="g45" value="<b>¿ÉÒÔ½±Àø/³Í·£ÓÃ»§</b><br><li>ÔÚÕâÀïÄú¿ÉÒÔ¸ù¾ÝÐèÒªÉèÖÃ²»Í¬ÓÃ»§×é»òµÈ¼¶ÓÃ»§ÊÇ·ñ¿ÉÒÔ½±Àø/³Í·£ÓÃ»§£¬Çë¸ù¾Ý×Ô¼ºµÄÐèÒªºÏÀíÉèÖÃ´ËÑ¡Ïî£¬½¨Òé¶Ô³¬¼¶°æÖ÷¼°ÆäÒÔÉÏÓÃ»§×éÉèÖÃ´ËÈ¨ÏÞ">
-<a href=# onclick="helpscript(g45);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
-</tr>
-<tr>
-<td class=tablebody1><input type="checkbox" class="checkbox" name="CheckGroupSetting(23)"></td>
-<td  class=tablebody1>¿ÉÒÔ±à¼­ÆäËüÈËÌû×Ó
-</td>
-<td  class=tablebody1>ÊÇ<input name="GroupSetting(23)" type=radio class="radio" value="1" <%if reGroupSetting(23)="1" then%>checked<%end if%>>&nbsp;·ñ<input name="GroupSetting(23)" type=radio class="radio" value="0" <%if reGroupSetting(23)="0" then%>checked<%end if%>></td>
-<td class=tablebody1><input type="hidden" id="g46" value="<b>¿ÉÒÔ±à¼­ÆäËüÈËÌû×Ó</b><br><li>ÔÚÕâÀïÄú¿ÉÒÔ¸ù¾ÝÐèÒªÉèÖÃ²»Í¬ÓÃ»§×é»òµÈ¼¶ÓÃ»§ÊÇ·ñ¿ÉÒÔ±à¼­ÆäËüÈËÌû×Ó£¬Çë¸ù¾Ý×Ô¼ºµÄÐèÒªºÏÀíÉèÖÃ´ËÑ¡Ïî£¬½¨Òé¶Ô°æÖ÷¼°ÆäÒÔÉÏÓÃ»§×éÉèÖÃ´ËÈ¨ÏÞ">
-<a href=# onclick="helpscript(g46);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
-</tr>
-<tr>
-<td class=tablebody1><input type="checkbox" class="checkbox" name="CheckGroupSetting(24)"></td>
-<td  class=tablebody1>¿ÉÒÔ¼ÓÈë/½â³ý¾«»ªÌû×Ó
-</td>
-<td  class=tablebody1>ÊÇ<input name="GroupSetting(24)" type=radio class="radio" value="1" <%if reGroupSetting(24)="1" then%>checked<%end if%>>&nbsp;·ñ<input name="GroupSetting(24)" type=radio class="radio" value="0"  <%if reGroupSetting(24)="0" then%>checked<%end if%>></td>
-<td class=tablebody1><input type="hidden" id="g47" value="<b>¿ÉÒÔ¼ÓÈë/½â³ý¾«»ªÌû×Ó</b><br><li>ÔÚÕâÀïÄú¿ÉÒÔ¸ù¾ÝÐèÒªÉèÖÃ²»Í¬ÓÃ»§×é»òµÈ¼¶ÓÃ»§ÊÇ·ñ¿ÉÒÔ¼ÓÈë/½â³ý¾«»ªÌû×Ó£¬Çë¸ù¾Ý×Ô¼ºµÄÐèÒªºÏÀíÉèÖÃ´ËÑ¡Ïî£¬½¨Òé¶Ô°æÖ÷¼°ÆäÒÔÉÏÓÃ»§×éÉèÖÃ´ËÈ¨ÏÞ">
-<a href=# onclick="helpscript(g47);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
-</tr>
-<tr>
-<td class=tablebody1><input type="checkbox" class="checkbox" name="CheckGroupSetting(25)"></td>
-<td  class=tablebody1>¿ÉÒÔ·¢²¼¹«¸æ
-</td>
-<td  class=tablebody1>ÊÇ<input name="GroupSetting(25)" type=radio class="radio" value="1" <%if reGroupSetting(25)="1" then%>checked<%end if%>>&nbsp;·ñ<input name="GroupSetting(25)" type=radio class="radio" value="0"  <%if reGroupSetting(25)="0" then%>checked<%end if%>></td>
-<td class=tablebody1><input type="hidden" id="g48" value="<b>¿ÉÒÔ·¢²¼¹«¸æ</b><br><li>ÔÚÕâÀïÄú¿ÉÒÔ¸ù¾ÝÐèÒªÉèÖÃ²»Í¬ÓÃ»§×é»òµÈ¼¶ÓÃ»§ÊÇ·ñ¿ÉÒÔ·¢²¼¹«¸æ£¬Çë¸ù¾Ý×Ô¼ºµÄÐèÒªºÏÀíÉèÖÃ´ËÑ¡Ïî£¬½¨Òé¶Ô°æÖ÷¼°ÆäÒÔÉÏÓÃ»§×éÉèÖÃ´ËÈ¨ÏÞ">
-<a href=# onclick="helpscript(g48);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
-</tr>
-<tr>
-<td class=tablebody1><input type="checkbox" class="checkbox" name="CheckGroupSetting(26)"></td>
-<td  class=tablebody1>¿ÉÒÔ¹ÜÀí¹«¸æ
-</td>
-<td  class=tablebody1>ÊÇ<input name="GroupSetting(26)" type=radio class="radio" value="1" <%if reGroupSetting(26)="1" then%>checked<%end if%>>&nbsp;·ñ<input name="GroupSetting(26)" type=radio class="radio" value="0"  <%if reGroupSetting(26)="0" then%>checked<%end if%>></td>
-<td class=tablebody1><input type="hidden" id="g49" value="<b>¿ÉÒÔ¹ÜÀí¹«¸æ</b><br><li>ÔÚÕâÀïÄú¿ÉÒÔ¸ù¾ÝÐèÒªÉèÖÃ²»Í¬ÓÃ»§×é»òµÈ¼¶ÓÃ»§ÊÇ·ñ¿ÉÒÔ¹ÜÀí¹«¸æ£¬Çë¸ù¾Ý×Ô¼ºµÄÐèÒªºÏÀíÉèÖÃ´ËÑ¡Ïî£¬½¨Òé¶Ô³¬¼¶°æÖ÷¼°ÆäÒÔÉÏÓÃ»§×éÉèÖÃ´ËÈ¨ÏÞ">
-<a href=# onclick="helpscript(g49);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
-</tr>
-<tr>
-<td class=tablebody1><input type="checkbox" class="checkbox" name="CheckGroupSetting(27)"></td>
-<td  class=tablebody1>¿ÉÒÔ¹ÜÀíÐ¡×Ö±¨
-</td>
-<td  class=tablebody1>ÊÇ<input name="GroupSetting(27)" type=radio class="radio" value="1" <%if reGroupSetting(27)="1" then%>checked<%end if%>>&nbsp;·ñ<input name="GroupSetting(27)" type=radio class="radio" value="0"  <%if reGroupSetting(27)="0" then%>checked<%end if%>></td>
-<td class=tablebody1><input type="hidden" id="g50" value="<b>¿ÉÒÔ¹ÜÀíÐ¡×Ö±¨</b><br><li>ÔÚÕâÀïÄú¿ÉÒÔ¸ù¾ÝÐèÒªÉèÖÃ²»Í¬ÓÃ»§×é»òµÈ¼¶ÓÃ»§ÊÇ·ñ¿ÉÒÔ¹ÜÀíÐ¡×Ö±¨£¬Çë¸ù¾Ý×Ô¼ºµÄÐèÒªºÏÀíÉèÖÃ´ËÑ¡Ïî£¬½¨Òé¶Ô³¬¼¶°æÖ÷¼°ÆäÒÔÉÏÓÃ»§×éÉèÖÃ´ËÈ¨ÏÞ">
-<a href=# onclick="helpscript(g50);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
-</tr>
-<tr>
-<td class=tablebody1><input type="checkbox" class="checkbox" name="CheckGroupSetting(28)"></td>
-<td  class=tablebody1>¿ÉÒÔËø¶¨/ÆÁ±Î/½â³ýËø¶¨ÓÃ»§
-</td>
-<td  class=tablebody1>ÊÇ<input name="GroupSetting(28)" type=radio class="radio" value="1" <%if reGroupSetting(28)="1" then%>checked<%end if%>>&nbsp;·ñ<input name="GroupSetting(28)" type=radio class="radio" value="0"  <%if reGroupSetting(28)="0" then%>checked<%end if%>></td>
-<td class=tablebody1><input type="hidden" id="g51" value="<b>¿ÉÒÔËø¶¨/ÆÁ±Î/½â³ýËø¶¨ÓÃ»§</b><br><li>ÔÚÕâÀïÄú¿ÉÒÔ¸ù¾ÝÐèÒªÉèÖÃ²»Í¬ÓÃ»§×é»òµÈ¼¶ÓÃ»§ÊÇ·ñ¿ÉÒÔËø¶¨/ÆÁ±Î/½â³ýËø¶¨ÓÃ»§£¬Çë¸ù¾Ý×Ô¼ºµÄÐèÒªºÏÀíÉèÖÃ´ËÑ¡Ïî£¬½¨Òé¶Ô³¬¼¶°æÖ÷¼°ÆäÒÔÉÏÓÃ»§×éÉèÖÃ´ËÈ¨ÏÞ">
-<a href=# onclick="helpscript(g51);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
-</tr>
-<tr>
-<td class=tablebody1><input type="checkbox" class="checkbox" name="CheckGroupSetting(29)"></td>
-<td  class=tablebody1>¿ÉÒÔÉ¾³ýÓÃ»§1£­10ÌìÄÚËù·¢Ìû×Ó
-</td>
-<td  class=tablebody1>ÊÇ<input name="GroupSetting(29)" type=radio class="radio" value="1" <%if reGroupSetting(29)="1" then%>checked<%end if%>>&nbsp;·ñ<input name="GroupSetting(29)" type=radio class="radio" value="0"  <%if reGroupSetting(29)="0" then%>checked<%end if%>></td>
-<td class=tablebody1><input type="hidden" id="g52" value="<b>¿ÉÒÔÉ¾³ýÓÃ»§1£­10ÌìÄÚËù·¢Ìû×Ó</b><br><li>ÔÚÕâÀïÄú¿ÉÒÔ¸ù¾ÝÐèÒªÉèÖÃ²»Í¬ÓÃ»§×é»òµÈ¼¶ÓÃ»§ÊÇ·ñ¿ÉÒÔÉ¾³ýÓÃ»§1£­10ÌìÄÚËù·¢Ìû×Ó£¬Çë¸ù¾Ý×Ô¼ºµÄÐèÒªºÏÀíÉèÖÃ´ËÑ¡Ïî£¬½¨Òé¶Ô³¬¼¶°æÖ÷¼°ÆäÒÔÉÏÓÃ»§×éÉèÖÃ´ËÈ¨ÏÞ">
-<a href=# onclick="helpscript(g52);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
-</tr>
-<tr>
-<td class=tablebody1><input type="checkbox" class="checkbox" name="CheckGroupSetting(30)"></td>
-<td  class=tablebody1>¿ÉÒÔ²é¿´À´·ÃIP¼°À´Ô´
-</td>
-<td  class=tablebody1>ÊÇ<input name="GroupSetting(30)" type=radio class="radio" value="1" <%if reGroupSetting(30)="1" then%>checked<%end if%>>&nbsp;·ñ<input name="GroupSetting(30)" type=radio class="radio" value="0"  <%if reGroupSetting(30)="0" then%>checked<%end if%>></td>
-<td class=tablebody1><input type="hidden" id="g53" value="<b>¿ÉÒÔ²é¿´À´·ÃIP¼°À´Ô´</b><br><li>ÔÚÕâÀïÄú¿ÉÒÔ¸ù¾ÝÐèÒªÉèÖÃ²»Í¬ÓÃ»§×é»òµÈ¼¶ÓÃ»§ÊÇ·ñ¿ÉÒÔ²é¿´À´·ÃIP¼°À´Ô´£¬Çë¸ù¾Ý×Ô¼ºµÄÐèÒªºÏÀíÉèÖÃ´ËÑ¡Ïî£¬½¨Òé¶Ô°æÖ÷¼°ÆäÒÔÉÏÓÃ»§×éÉèÖÃ´ËÈ¨ÏÞ">
-<a href=# onclick="helpscript(g53);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
-</tr>
-<tr>
-<td class=tablebody1><input type="checkbox" class="checkbox" name="CheckGroupSetting(31)"></td>
-<td  class=tablebody1>¿ÉÒÔÏÞ¶¨IPÀ´·Ã
-</td>
-<td  class=tablebody1>ÊÇ<input name="GroupSetting(31)" type=radio class="radio" value="1" <%if reGroupSetting(31)="1" then%>checked<%end if%>>&nbsp;·ñ<input name="GroupSetting(31)" type=radio class="radio" value="0"  <%if reGroupSetting(31)="0" then%>checked<%end if%>></td>
-<td class=tablebody1><input type="hidden" id="g54" value="<b>¿ÉÒÔÏÞ¶¨IPÀ´·Ã</b><br><li>ÔÚÕâÀïÄú¿ÉÒÔ¸ù¾ÝÐèÒªÉèÖÃ²»Í¬ÓÃ»§×é»òµÈ¼¶ÓÃ»§ÊÇ·ñ¿ÉÒÔÏÞ¶¨IPÀ´·Ã£¬Çë¸ù¾Ý×Ô¼ºµÄÐèÒªºÏÀíÉèÖÃ´ËÑ¡Ïî£¬½¨Òé¶Ô³¬¼¶°æÖ÷¼°ÆäÒÔÉÏÓÃ»§×éÉèÖÃ´ËÈ¨ÏÞ">
-<a href=# onclick="helpscript(g54);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
-</tr>
-<tr>
-<td class=tablebody1><input type="checkbox" class="checkbox" name="CheckGroupSetting(42)"></td>
-<td  class=tablebody1>¿ÉÒÔ¹ÜÀíÓÃ»§È¨ÏÞ
-</td>
-<td  class=tablebody1>ÊÇ<input name="GroupSetting(42)" type=radio class="radio" value="1" <%if reGroupSetting(42)="1" then%>checked<%end if%>>&nbsp;·ñ<input name="GroupSetting(42)" type=radio class="radio" value="0"  <%if reGroupSetting(42)="0" then%>checked<%end if%>></td>
-<td class=tablebody1><input type="hidden" id="g55" value="<b>¿ÉÒÔ¹ÜÀíÓÃ»§È¨ÏÞ</b><br><li>ÔÚÕâÀïÄú¿ÉÒÔ¸ù¾ÝÐèÒªÉèÖÃ²»Í¬ÓÃ»§×é»òµÈ¼¶ÓÃ»§ÊÇ·ñ¿ÉÒÔ¹ÜÀíÓÃ»§È¨ÏÞ£¬Çë¸ù¾Ý×Ô¼ºµÄÐèÒªºÏÀíÉèÖÃ´ËÑ¡Ïî£¬½¨Òé¶Ô³¬¼¶°æÖ÷¼°ÆäÒÔÉÏÓÃ»§×éÉèÖÃ´ËÈ¨ÏÞ">
-<a href=# onclick="helpscript(g55);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
-</tr>
-<tr>
-<td class=tablebody1><input type="checkbox" class="checkbox" name="CheckGroupSetting(45)"></td>
-<td  class=tablebody1>¿ÉÒÔÅúÁ¿É¾³ýÌû×Ó£¨Ç°Ì¨£©
-</td>
-<td  class=tablebody1>ÊÇ<input name="GroupSetting(45)" type=radio class="radio" value="1" <%if reGroupSetting(45)="1" then%>checked<%end if%>>&nbsp;·ñ<input name="GroupSetting(45)" type=radio class="radio" value="0"  <%if reGroupSetting(45)="0" then%>checked<%end if%>></td>
-<td class=tablebody1><input type="hidden" id="g56" value="<b>¿ÉÒÔÅúÁ¿É¾³ýÌû×Ó£¨Ç°Ì¨£©</b><br><li>ÔÚÕâÀïÄú¿ÉÒÔ¸ù¾ÝÐèÒªÉèÖÃ²»Í¬ÓÃ»§×é»òµÈ¼¶ÓÃ»§ÊÇ·ñ¿ÉÒÔÅúÁ¿É¾³ýÌû×Ó£¨Ç°Ì¨£©£¬Çë¸ù¾Ý×Ô¼ºµÄÐèÒªºÏÀíÉèÖÃ´ËÑ¡Ïî£¬½¨Òé¶Ô°æÖ÷¼°ÆäÒÔÉÏÓÃ»§×éÉèÖÃ´ËÈ¨ÏÞ">
-<a href=# onclick="helpscript(g56);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
-</tr>
-<tr>
-<td class=tablebody1><input type="checkbox" class="checkbox" name="CheckGroupSetting(36)"></td>
-<td  class=tablebody1>ÊÇ·ñÓÐÉóºËÌû×ÓµÄÈ¨ÏÞ
-</td>
-<td  class=tablebody1>ÊÇ<input name="GroupSetting(36)" type=radio class="radio" value="1" <%if reGroupSetting(36)="1" then%>checked<%end if%>>&nbsp;·ñ<input name="GroupSetting(36)" type=radio class="radio" value="0" <%if reGroupSetting(36)="0" then%>checked<%end if%>></td>
-<td class=tablebody1><input type="hidden" id="g57" value="<b>ÊÇ·ñÓÐÉóºËÌû×ÓµÄÈ¨ÏÞ</b><br><li>ÔÚÕâÀïÄú¿ÉÒÔ¸ù¾ÝÐèÒªÉèÖÃ²»Í¬ÓÃ»§×é»òµÈ¼¶ÓÃ»§ÊÇ·ñÓÐÉóºËÌû×ÓµÄÈ¨ÏÞ£¬Çë¸ù¾Ý×Ô¼ºµÄÐèÒªºÏÀíÉèÖÃ´ËÑ¡Ïî£¬½¨Òé¶Ô°æÖ÷¼°ÆäÒÔÉÏÓÃ»§×éÉèÖÃ´ËÈ¨ÏÞ">
-<a href=# onclick="helpscript(g57);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
-</tr>
-<tr>
-<td class=tablebody1><input type="checkbox" class="checkbox" name="CheckGroupSetting(37)"></td>
-<td  class=tablebody1>ÊÇ·ñÓÐ½øÈëÒþº¬ÂÛÌ³µÄÈ¨ÏÞ
-</td>
-<td  class=tablebody1>ÊÇ<input name="GroupSetting(37)" type=radio class="radio" value="1"  <%if reGroupSetting(37)="1" then%>checked<%end if%>>&nbsp;·ñ<input name="GroupSetting(37)" type=radio class="radio" value="0" <%if reGroupSetting(37)="0" then%>checked<%end if%>></td>
-<td class=tablebody1><input type="hidden" id="g58" value="<b>ÊÇ·ñÓÐ½øÈëÒþº¬ÂÛÌ³µÄÈ¨ÏÞ</b><br><li>ÔÚÕâÀïÄú¿ÉÒÔ¸ù¾ÝÐèÒªÉèÖÃ²»Í¬ÓÃ»§×é»òµÈ¼¶ÓÃ»§ÊÇ·ñÓÐ½øÈëÒþº¬ÂÛÌ³µÄÈ¨ÏÞ£¬Çë¸ù¾Ý×Ô¼ºµÄÐèÒªºÏÀíÉèÖÃ´ËÑ¡Ïî">
-<a href=# onclick="helpscript(g58);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
-</tr>
-<tr>
-<td class=tablebody1><input type="checkbox" class="checkbox" name="CheckGroupSetting(48)"></td>
-<td  class=tablebody1>ÓÐÂÛÌ³ÎÄ¼þ¹ÜÀíÈ¨ÏÞ
-</td>
-<td  class=tablebody1>ÊÇ<input name="GroupSetting(48)" type=radio class="radio" value="1" <%if reGroupSetting(48)="1" then%>checked<%end if%>>&nbsp;·ñ<input name="GroupSetting(48)" type=radio class="radio" value="0" <%if reGroupSetting(48)="0" then%>checked<%end if%>></td>
-<td class=tablebody1><input type="hidden" id="g59" value="<b>ÓÐÂÛÌ³ÎÄ¼þ¹ÜÀíÈ¨ÏÞ</b><br><li>ÔÚÕâÀïÄú¿ÉÒÔ¸ù¾ÝÐèÒªÉèÖÃ²»Í¬ÓÃ»§×é»òµÈ¼¶ÓÃ»§ÊÇ·ñÓÐÂÛÌ³ÎÄ¼þ¹ÜÀíÈ¨ÏÞ£¬Çë¸ù¾Ý×Ô¼ºµÄÐèÒªºÏÀíÉèÖÃ´ËÑ¡Ïî£¬½¨Òé¶Ô°æÖ÷¼°ÆäÒÔÉÏÓÃ»§×éÉèÖÃ´ËÈ¨ÏÞ£¬Ïà¹Ø¹ÜÀí²Ù×÷ÔÚÂÛÌ³Õ¹Çø">
-<a href=# onclick="helpscript(g59);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
-</tr>
-<tr> 
-<th colspan="4"><a name="setting7"></a>£½£½¶ÌÐÅÈ¨ÏÞ</th>
-</tr>
-<tr>
-<td class=tablebody1><input type="checkbox" class="checkbox" name="CheckGroupSetting(32)"></td>
-<td  class=tablebody1>¿ÉÒÔ·¢ËÍ¶ÌÐÅ
-</td>
-<td  class=tablebody1>ÊÇ<input name="GroupSetting(32)" type=radio class="radio" value="1"  <%if reGroupSetting(32)="1" then%>checked<%end if%>>&nbsp;·ñ<input name="GroupSetting(32)" type=radio class="radio" value="0" <%if reGroupSetting(32)="0" then%>checked<%end if%>></td>
-<td class=tablebody1><input type="hidden" id="g60" value="<b>¿ÉÒÔ·¢ËÍ¶ÌÐÅ</b><br><li>ÔÚÕâÀïÄú¿ÉÒÔ¸ù¾ÝÐèÒªÉèÖÃ²»Í¬ÓÃ»§×é»òµÈ¼¶ÓÃ»§ÊÇ·ñÓÐ¿ÉÒÔ·¢ËÍ¶ÌÐÅµÄÈ¨ÏÞ£¬Çë¸ù¾Ý×Ô¼ºµÄÐèÒªºÏÀíÉèÖÃ´ËÑ¡Ïî">
-<a href=# onclick="helpscript(g60);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
-</tr>
-<tr>
-<td class=tablebody1><input type="checkbox" class="checkbox" name="CheckGroupSetting(33)"></td>
-<td  class=tablebody1>×î¶à·¢ËÍÓÃ»§
-</td>
-<td  class=tablebody1><input name="GroupSetting(33)" size=5 type=text value="<%=reGroupSetting(33)%>"></td>
-<td class=tablebody1><input type="hidden" id="g61" value="<b>×î¶à·¢ËÍÓÃ»§</b><br><li>ÔÚÕâÀïÄú¿ÉÒÔ¸ù¾ÝÐèÒªÉèÖÃ²»Í¬ÓÃ»§×é»òµÈ¼¶ÓÃ»§×î¶à·¢ËÍÓÃ»§£¬Çë¸ù¾Ý×Ô¼ºµÄÐèÒªºÏÀíÉèÖÃ´ËÑ¡Ïî£¬½¨Òé²»ÒªÉèÖÃ¹ý´óÒÔÃâÏûºÄÂÛÌ³×ÊÔ´¡£">
-<a href=# onclick="helpscript(g61);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
-</tr>
-<tr>
-<td class=tablebody1><input type="checkbox" class="checkbox" name="CheckGroupSetting(34)"></td>
-<td  class=tablebody1>¶ÌÐÅÄÚÈÝ´óÐ¡ÏÞÖÆ
-</td>
-<td  class=tablebody1><input name="GroupSetting(34)" size=5 type=text value="<%=reGroupSetting(34)%>"> byte</td>
-<td class=tablebody1><input type="hidden" id="g62" value="<b>¶ÌÐÅÄÚÈÝ´óÐ¡ÏÞÖÆ</b><br><li>ÔÚÕâÀïÄú¿ÉÒÔ¸ù¾ÝÐèÒªÉèÖÃ²»Í¬ÓÃ»§×é»òµÈ¼¶ÓÃ»§¶ÌÐÅÄÚÈÝ´óÐ¡ÏÞÖÆ£¬Çë¸ù¾Ý×Ô¼ºµÄÐèÒªºÏÀíÉèÖÃ´ËÑ¡Ïî£¬½¨Òé²»ÒªÉèÖÃ¹ý´óÒÔÃâÏûºÄÂÛÌ³×ÊÔ´.">
-<a href=# onclick="helpscript(g62);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
-</tr>
-<tr>
-<td class=tablebody1><input type="checkbox" class="checkbox" name="CheckGroupSetting(35)"></td>
-<td  class=tablebody1>ÐÅÏä´óÐ¡ÏÞÖÆ
-</td>
-<td  class=tablebody1><input name="GroupSetting(35)" size=5 type=text value="<%=reGroupSetting(35)%>"> Ìõ¼ÇÂ¼</td>
-<td class=tablebody1><input type="hidden" id="g63" value="<b>ÐÅÏä´óÐ¡ÏÞÖÆ</b><br><li>ÔÚÕâÀïÄú¿ÉÒÔ¸ù¾ÝÐèÒªÉèÖÃ²»Í¬ÓÃ»§×é»òµÈ¼¶ÓÃ»§ÐÅÏä´óÐ¡ÏÞÖÆ£¬Çë¸ù¾Ý×Ô¼ºµÄÐèÒªºÏÀíÉèÖÃ´ËÑ¡Ïî£¬½¨Òé²»ÒªÉèÖÃ¹ý´óÒÔÃâÏûºÄÂÛÌ³×ÊÔ´">
-<a href=# onclick="helpscript(g63);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
-</tr>
-<tr>
-<td class=tablebody1><input type="checkbox" class="checkbox" name="CheckGroupSetting(53)"></td>
-<td  class=tablebody1>ÐÂ×¢²áÓÃ»§¶àÉÙ·ÖÖÓºó²ÅÄÜ·¢¶ÌÐÅ</td>
-<td  class=tablebody1><input name="GroupSetting(53)" type=text value="<%=reGroupSetting(53)%>" size=4> ·ÖÖÓ</td>
-<td class=tablebody1><input type="hidden" id="g64" value="<b>ÐÂ×¢²áÓÃ»§¶àÉÙ·ÖÖÓºó²ÅÄÜ·¢¶ÌÐÅ</b><br><li>ÔÚÕâÀïÄú¿ÉÒÔ¸ù¾ÝÐèÒªÉèÖÃ²»Í¬ÓÃ»§×é»òµÈ¼¶ÐÂ×¢²áÓÃ»§¶àÉÙ·ÖÖÓºó²ÅÄÜ·¢¶ÌÐÅ£¬³öÓÚ·ÀÖ¹¶ñÒâÈº·¢»òÊ¹ÓÃÈí¼þÈº·¢¶ÌÐÅµÄÄ¿µÄ£¬½¨ÒéºÏÀíÉèÖÃ´ËÑ¡Ïî">
-<a href=# onclick="helpscript(g64);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
-</tr>
-<tr>
-<td class=tablebody1><input type="checkbox" class="checkbox" name="CheckGroupSetting(63)"></td>
-<td  class=tablebody1>Ò»Ìì×î¶à·¢¶ÌÐÅÊýÄ¿</td>
-<td  class=tablebody1><input name="GroupSetting(63)" type=text value="<%=reGroupSetting(63)%>" size=4></td>
-<td class=tablebody1><input type="hidden" id="g65" value="<b>Ò»Ìì×î¶à·¢¶ÌÐÅÊýÄ¿</b><br><li>ÔÚÕâÀïÄú¿ÉÒÔ¸ù¾ÝÐèÒªÉèÖÃ²»Í¬ÓÃ»§×é»òµÈ¼¶ÓÃ»§Ò»Ìì×î¶à·¢¶ÌÐÅÊýÄ¿£¬³öÓÚ·ÀÖ¹¶ñÒâÈº·¢»òÊ¹ÓÃÈí¼þÈº·¢¶ÌÐÅµÄÄ¿µÄ£¬½¨ÒéºÏÀíÉèÖÃ´ËÑ¡Ïî">
-<a href=# onclick="helpscript(g65);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
-</tr>
-<tr> 
-<th colspan="4"><a name="setting8"></a>£½£½ÆäËûÈ¨ÏÞ</th>
-</tr>
-<tr>
-<td class=tablebody1><input type="checkbox" class="checkbox" name="CheckGroupSetting(14)"></td>
-<td  class=tablebody1>¿ÉÒÔËÑË÷ÂÛÌ³
-</td>
-<td  class=tablebody1>ÊÇ<input name="GroupSetting(14)" type=radio class="radio" value="1" <%if reGroupSetting(14)="1" then%>checked<%end if%>>&nbsp;·ñ<input name="GroupSetting(14)" type=radio class="radio" value="0" <%if reGroupSetting(14)="0" then%>checked<%end if%>></td>
-<td class=tablebody1><input type="hidden" id="g31" value="<b>¿ÉÒÔËÑË÷ÂÛÌ³</b><br><li>ÔÚÕâÀïÄú¿ÉÒÔ¸ù¾ÝÐèÒªÉèÖÃ²»Í¬ÓÃ»§×é»òµÈ¼¶ÓÃ»§ÊÇ·ñ¿ÉÒÔËÑË÷ÂÛÌ³£¬Çë¸ù¾Ý×Ô¼ºµÄÐèÒªºÏÀíÉèÖÃ´ËÑ¡Ïî£¬½¨Òé¶ÔÎ´µÇÂ¼ÓÃ»§¹Ø±Õ´ËÑ¡Ïî">
-<a href=# onclick="helpscript(g31);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
-</tr>
-<tr>
-<td class=tablebody1><input type="checkbox" class="checkbox" name="CheckGroupSetting(73)"></td>
-<td  class=tablebody1>¿ÉÒÔÉêÇë¸öÐÔÈ¦×Ó
-</td>
-<td  class=tablebody1>ÊÇ<input name="GroupSetting(73)" type=radio class="radio" value="1" <%if reGroupSetting(73)="1" then%>checked<%end if%>>&nbsp;·ñ<input name="GroupSetting(73)" type=radio class="radio" value="0" <%if reGroupSetting(73)="0" then%>checked<%end if%>></td>
-<td class=tablebody1><input type="hidden" id="g73" value="<b>¿ÉÒÔÉêÇë¸öÐÔÈ¦×Ó</b><br><li>ÔÚÕâÀïÄú¿ÉÒÔ¸ù¾ÝÐèÒªÉèÖÃ²»Í¬ÓÃ»§×é»òµÈ¼¶ÓÃ»§ÊÇ·ñ¿ÉÒÔÉêÇë¸öÐÔÈ¦×Ó£¬Çë¸ù¾Ý×Ô¼ºµÄÐèÒªºÏÀíÉèÖÃ´ËÑ¡Ïî£¬Î´µÇÂ¼ÓÃ»§´ËÑ¡ÏîÉèÖÃÎÞÐ§">
-<a href=# onclick="helpscript(g73);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
-</tr>
-<tr>
-<td class=tablebody1><input type="checkbox" class="checkbox" name="CheckGroupSetting(74)"></td>
-<td  class=tablebody1>¸öÐÔÈ¦×Ó³ÉÔ±ÉÏÏÞ
-</td>
-<td  class=tablebody1><input name="GroupSetting(74)" type="text" value="<%=reGroupSetting(74)%>" size="4"> ¸ö</td>
-<td class=tablebody1><input type="hidden" id="g74" value="<b>¸öÐÔÈ¦×Ó³ÉÔ±ÉÏÏÞ</b><br><li>ÔÚÕâÀïÄú¿ÉÒÔ¸ù¾ÝÐèÒªÉèÖÃ²»Í¬ÓÃ»§×é»òµÈ¼¶ÓÃ»§ÉêÇëµÄ¸öÐÔÈ¦×Ó×î¶àÄÜ¼ÓÈëµÄ³ÉÔ±Êý">
-<a href=# onclick="helpscript(g73);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
-</tr>
-<tr>
-<td class=tablebody1><input type="checkbox" class="checkbox" name="CheckGroupSetting(15)"></td>
-<td  class=tablebody1>¿ÉÒÔÊ¹ÓÃ¡®·¢ËÍ±¾Ò³¸øºÃÓÑ¡¯¹¦ÄÜ
-</td>
-<td  class=tablebody1>ÊÇ<input name="GroupSetting(15)" type=radio class="radio" value="1" <%if reGroupSetting(15)="1" then%>checked<%end if%>>&nbsp;·ñ<input name="GroupSetting(15)" type=radio class="radio" value="0" <%if reGroupSetting(15)="0" then%>checked<%end if%>></td>
-<td class=tablebody1><input type="hidden" id="g32" value="<b>¿ÉÒÔÊ¹ÓÃ'·¢ËÍ±¾Ò³¸øºÃÓÑ'¹¦ÄÜ</b><br><li>ÔÚÕâÀïÄú¿ÉÒÔ¸ù¾ÝÐèÒªÉèÖÃ²»Í¬ÓÃ»§×é»òµÈ¼¶ÓÃ»§ÊÇ·ñ¿ÉÒÔÊ¹ÓÃ'·¢ËÍ±¾Ò³¸øºÃÓÑ'¹¦ÄÜ£¬Çë¸ù¾Ý×Ô¼ºµÄÐèÒªºÏÀíÉèÖÃ´ËÑ¡Ïî£¬½¨Òé¶ÔÎ´µÇÂ¼ÓÃ»§¹Ø±Õ´ËÑ¡Ïî">
-<a href=# onclick="helpscript(g32);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
-</tr>
-<tr>
-<td class=tablebody1><input type="checkbox" class="checkbox" name="CheckGroupSetting(16)"></td>
-<td  class=tablebody1>¿ÉÒÔÐÞ¸Ä¸öÈË×ÊÁÏ
-</td>
-<td  class=tablebody1>ÊÇ<input name="GroupSetting(16)" type=radio class="radio" value="1" <%if reGroupSetting(16)="1" then%>checked<%end if%>>&nbsp;·ñ<input name="GroupSetting(16)" type=radio class="radio" value="0" <%if reGroupSetting(16)="0" then%>checked<%end if%>></td>
-<td class=tablebody1><input type="hidden" id="g33" value="<b>¿ÉÒÔÐÞ¸Ä¸öÈË×ÊÁÏ</b><br><li>ÔÚÕâÀïÄú¿ÉÒÔ¸ù¾ÝÐèÒªÉèÖÃ²»Í¬ÓÃ»§×é»òµÈ¼¶ÓÃ»§ÊÇ·ñ¿ÉÒÔÐÞ¸Ä¸öÈË×ÊÁÏ">
-<a href=# onclick="helpscript(g33);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
-</tr>
-<tr>
-<td class=tablebody1><input type="checkbox" class="checkbox" name="CheckGroupSetting(39)"></td>
-<td  class=tablebody1>¿ÉÒÔä¯ÀÀÂÛÌ³ÊÂ¼þ
-</td>
-<td  class=tablebody1>ÊÇ<input name="GroupSetting(39)" type=radio class="radio" value="1"  <%if reGroupSetting(39)="1" then%>checked<%end if%>>&nbsp;·ñ<input name="GroupSetting(39)" type=radio class="radio" value="0" <%if reGroupSetting(39)="0" then%>checked<%end if%>></td>
-<td class=tablebody1><input type="hidden" id="g34" value="<b>¿ÉÒÔä¯ÀÀÂÛÌ³ÊÂ¼þ</b><br><li>ÔÚÕâÀïÄú¿ÉÒÔ¸ù¾ÝÐèÒªÉèÖÃ²»Í¬ÓÃ»§×é»òµÈ¼¶ÓÃ»§ÊÇ·ñ¿ÉÒÔä¯ÀÀÂÛÌ³ÊÂ¼þ£¬Çë¸ù¾Ý×Ô¼ºµÄÐèÒªºÏÀíÉèÖÃ´ËÑ¡Ïî£¬½¨Òé¶ÔÎ´µÇÂ¼ÓÃ»§¹Ø±Õ´ËÑ¡Ïî">
-<a href=# onclick="helpscript(g34);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
-</tr>
-<tr>
-<td class=tablebody1><input type="checkbox" class="checkbox" name="CheckGroupSetting(49)"></td>
-<td  class=tablebody1>¿Éä¯ÀÀÂÛÌ³Õ¹ÇøµÄÈ¨ÏÞ
-</td>
-<td  class=tablebody1>ÊÇ<input name="GroupSetting(49)" type=radio class="radio" value="1"  <%if reGroupSetting(49)="1" then%>checked<%end if%>>&nbsp;·ñ<input name="GroupSetting(49)" type=radio class="radio" value="0" <%if reGroupSetting(49)="0" then%>checked<%end if%>></td>
-<td class=tablebody1><input type="hidden" id="g35" value="<b>¿Éä¯ÀÀÂÛÌ³Õ¹ÇøµÄÈ¨ÏÞ</b><br><li>ÔÚÕâÀïÄú¿ÉÒÔ¸ù¾ÝÐèÒªÉèÖÃ²»Í¬ÓÃ»§×é»òµÈ¼¶ÓÃ»§ÊÇ·ñ¿Éä¯ÀÀÂÛÌ³Õ¹ÇøµÄÈ¨ÏÞ£¬Çë¸ù¾Ý×Ô¼ºµÄÐèÒªºÏÀíÉèÖÃ´ËÑ¡Ïî£¬½¨Òé¶ÔÎ´µÇÂ¼ÓÃ»§¹Ø±Õ´ËÑ¡Ïî">
-<a href=# onclick="helpscript(g35);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
-</tr>
-<tr>
-<td class=tablebody1><input type="checkbox" class="checkbox" name="CheckGroupSetting(55)"></td>
-<td  class=tablebody1>ÊÇ·ñ¿ÉÒÔÊ¹ÓÃÇ©Ãû
-</td>
-<td  class=tablebody1>ÊÇ<input name="GroupSetting(55)" type=radio class="radio" value="1"  <%if reGroupSetting(55)="1" then%>checked<%end if%>>&nbsp;·ñ<input name="GroupSetting(55)" type=radio class="radio" value="0" <%if reGroupSetting(55)="0" then%>checked<%end if%>></td>
-<td class=tablebody1><input type="hidden" id="g36" value="<b>ÊÇ·ñ¿ÉÒÔÊ¹ÓÃÇ©Ãû</b><br><li>ÔÚÕâÀïÄú¿ÉÒÔ¸ù¾ÝÐèÒªÉèÖÃ²»Í¬ÓÃ»§×é»òµÈ¼¶ÓÃ»§ÊÇ·ñÊÇ·ñ¿ÉÒÔÊ¹ÓÃÇ©Ãû£¬Çë¸ù¾Ý×Ô¼ºµÄÐèÒªºÏÀíÉèÖÃ´ËÑ¡Ïî">
-<a href=# onclick="helpscript(g36);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
-</tr>
-<tr>
-<td class=tablebody1><input type="checkbox" class="checkbox" name="CheckGroupSetting(56)"></td>
-<td  class=tablebody1>Ç©ÃûµÄ×î´ó³¤¶È</td>
-<td  class=tablebody1><input name="GroupSetting(56)" type=text value="<%=reGroupSetting(56)%>" size=4> ×Ö½Ú</td>
-<td class=tablebody1><input type="hidden" id="g37" value="<b>Ç©ÃûµÄ×î´ó³¤¶È</b><br><li>ÔÚÕâÀïÄú¿ÉÒÔ¸ù¾ÝÐèÒªÉèÖÃ²»Í¬ÓÃ»§×é»òµÈ¼¶ÓÃ»§Ç©ÃûµÄ×î´ó³¤¶È£¬Çë¸ù¾Ý×Ô¼ºµÄÐèÒªºÏÀíÉèÖÃ´ËÑ¡Ïî£¬ÎªÁË±ÜÃâÓ°ÏìÌû×ÓÄÚÈÝä¯ÀÀ£¬²»½¨Òé¶Ô´ËÏîÉèÖÃ¹ý´ó×Ö½ÚÊý">
-<a href=# onclick="helpscript(g37);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
-</tr>
-<tr>
-<td class=tablebody1><input type="checkbox" class="checkbox" name="CheckGroupSetting(72)"></td>
-<td  class=tablebody1>ÊÇ·ñÖ±½ÓÏÔÊ¾ÔÚÏß¶àÃ½Ìå²¥·Å±êÇ©
-</td>
-<td  class=tablebody1>ÊÇ<input name="GroupSetting(72)" type=radio class="radio" value="1"  <%if reGroupSetting(72)="1" then%>checked<%end if%>>&nbsp;·ñ<input name="GroupSetting(72)" type=radio class="radio" value="0" <%if reGroupSetting(72)="0" then%>checked<%end if%>></td>
-<td class=tablebody1><input type="hidden" id="mt" value="<b>·ñÖ±½ÓÏÔÊ¾ÔÚÏß¶àÃ½Ìå²¥·Å±êÇ©</b><br><li>ÔÚÕâÀïÄú¿ÉÒÔ¸ù¾ÝÐèÒªÉèÖÃ²»Í¬ÓÃ»§×é»òµÈ¼¶ÓÃ»§ÊÇ·ñÊÇ·ñ¿ÉÒÔÖ±½ÓÏÔÊ¾²¥·Å¶àÃ½Ìå±êÇ©¡£">
-<a href=# onclick="helpscript(mt);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
-</tr>
-<%
-If InStr(Dvbbs.Scriptname,"admin_lockuser")=0 And Dvbbs.BoardID = 0 Then
-%>
-<tr> 
-<th colspan="4"><a name="setting9"></a>£½£½ÖØÒªÈ¨ÏÞÉèÖÃ</th>
-</tr>
-<tr>
-<td class=tablebody1><input type="checkbox" class="checkbox" name="CheckGroupSetting(70)"></td>
-<td  class=tablebody1>ÊÇ·ñÔÊÐí½øÈëºóÌ¨<BR>Í¨³£´ËÉèÖÃ½ö¶Ô¹ÜÀíÔ±×é¿ªÍ¨£¬×îºÃ²»Òª¿ªÍ¨ÆäËûÓÃ»§×é´ËÈ¨ÏÞ£¬Èç¹ûÏëÈÃÄ³¸öÓÃ»§½øÈëºóÌ¨¿ÉÔÚÓÃ»§×Ô¶¨ÒåÈ¨ÏÞÖÐÉèÖÃ£¨ÉèÖÃºó»¹ÐèÒªÔÚ¹ÜÀíÔ±¹ÜÀíÖÐÌí¼Óºó²ÅÕýÊ½ÉúÐ§£©</td>
-<td  class=tablebody1>¿ªÆô<input name="GroupSetting(70)" type=radio class="radio" value="1"  <%if reGroupSetting(70)="1" then%>checked<%end if%>>&nbsp;¹Ø±Õ<input name="GroupSetting(70)" type=radio class="radio" value="0" <%if reGroupSetting(70)="0" then%>checked<%end if%>></td>
-<td class=tablebody1><input type="hidden" id="g70" value="<b>ÊÇ·ñÔÊÐí½øÈëºóÌ¨</b><br><li>Í¨³£´ËÉèÖÃ½ö¶Ô¹ÜÀíÔ±×é¿ªÍ¨£¬×îºÃ²»Òª¿ªÍ¨ÆäËûÓÃ»§×é´ËÈ¨ÏÞ£¬Èç¹ûÏëÈÃÄ³¸öÓÃ»§½øÈëºóÌ¨¿ÉÔÚÓÃ»§×Ô¶¨ÒåÈ¨ÏÞÖÐÉèÖÃ£¨ÉèÖÃºó»¹ÐèÒªÔÚ¹ÜÀíÔ±¹ÜÀíÖÐÌí¼Óºó²ÅÕýÊ½ÉúÐ§£©">
-<a href=# onclick="helpscript(g70);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
-</tr>
-<%
-Else
-	Response.Write "<input name=""GroupSetting(70)"" type=hidden value="""&reGroupSetting(70)&""">"
-End If
-
-If Ubound(reGroupSetting)<90 Then
-	Redim reGroupSetting(90)
-End If
-Dim VipMoneySetting
-If Instr(reGroupSetting(71),"¡ì") and Ubound(Split(reGroupSetting(71),"¡ì"))=3 Then
-	VipMoneySetting = Split(reGroupSetting(71),"¡ì")
-Else
-	ReDim VipMoneySetting(3)
-	VipMoneySetting(0)=0
-	VipMoneySetting(1)=0
-	VipMoneySetting(2)=0
-	VipMoneySetting(3)=0
-End If
-%>
-<tr> 
-<th colspan="4"><a name="setting9"></a>£½£½ÓÃ»§ÊÕ·ÑÉèÖÃ</th>
-</tr>
-<tr>
-<td class=tablebody1><input type="checkbox" class="checkbox" name="CheckGroupSetting(71)"></td>
-<td class=tablebody1>Éý¼¶µ½¸Ã×éËùÐè½ð±ÒÊý<br>
-ÈçÓÃ»§ÐèÒªÉý¼¶µ½¸ÃÓÃ»§×é£¬ÓÃ»§Ö»Òª¸¶ÏàÓ¦µÄ½ð±ÒºÍµãÈ¯¾ÍÄÜµÃµ½¸Ã×éµÄÊ¹ÓÃÊ±ÏÞ£¨ÒÔÌìÎªµ¥Î»£©¡£Ã¿ÏîÉèÖÃ²»ÄÜÎª¿Õ
-</td>
-<td class=tablebody1>
-<input type="text" name="GroupSetting(71)A" Value="<%=VipMoneySetting(0)%>" Size="4">½ð±ÒÊý£¬
-<input type="text" name="GroupSetting(71)B" Value="<%=VipMoneySetting(1)%>" Size="4">µãÈ¯Êý£¬
-<input type="text" name="GroupSetting(71)C" Value="<%=VipMoneySetting(2)%>" Size="4">ÌìÓÐÐ§Ê±ÏÞ£¬
-<input type="text" name="GroupSetting(71)D" Value="<%=VipMoneySetting(3)%>" Size="4">¸¶·Ñ×îµÍÌìÊý
-</td>
-<td class=tablebody1><input type="hidden" id="g71" value="±¾ÉèÖÃÖ»¶ÔVIP×éÓÐÐ§¡£VIPÓÃ»§×é¿ÉÒÔÔÚÂÛÌ³ÓÃ»§×é¹ÜÀíÀïÌí¼Ó¡£">
-<a href=# onclick="helpscript(g71);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
-</tr>
-<tr> 
-<td class=tablebody1>¡¡</td>
-<td  class=tablebody1 colspan=3><input type="submit" name="submit" value="Ìá ½»" class="button"></td>
-</tr>
-<%
-End Function
-
-Function GetGroupPermission()
-	'ÒÑÓÃµ½90¸ö¶¨Òå
-	Dim i,TempSetting
-	For i = 0 To 90
-		If Trim(Request.Form("GroupSetting("&i&")"))="" Then
-			TempSetting = 0
-		Else
-			TempSetting = Replace(Trim(Request.Form("GroupSetting("&i&")")),",","")
-		End If
-		If i = 0 Then
-			GetGroupPermission = TempSetting
-		ElseIf i = 58 Then
-			GetGroupPermission = GetGroupPermission & "," & Replace(Replace(Trim(Request.Form("GroupSetting("&i&")A")),",",""),"|||","") & "¡ì" & Replace(Replace(Trim(Request.Form("GroupSetting("&i&")B")),",",""),"|||","")
-		ElseIf i = 71 Then
-			GetGroupPermission = GetGroupPermission & "," & Replace(Replace(Trim(Request.Form("GroupSetting("&i&")A")),",",""),"|||","") & "¡ì" & Replace(Replace(Trim(Request.Form("GroupSetting("&i&")B")),",",""),"|||","") & "¡ì" & Replace(Replace(Trim(Request.Form("GroupSetting("&i&")C")),",",""),"|||","") & "¡ì" & Replace(Replace(Trim(Request.Form("GroupSetting("&i&")D")),",",""),"|||","")
-		Else
-			GetGroupPermission = GetGroupPermission & "," & TempSetting
-		End If
-	Next
-	GetGroupPermission = Replace(GetGroupPermission,"'","''")
-End Function
-
-Function SysGroupname(ParentGID)
-	Dim Groupname
-	Select Case ParentGID
-	Case 1
-		Groupname = "ÏµÍ³ÓÃ»§×é >> "
-	Case 2
-		Groupname = "ÌØÊâÓÃ»§×é >> "
-	Case 3
-		Groupname = "×¢²áÓÃ»§×é(µÈ¼¶) >> "
-	Case 4
-		Groupname = "¶àÊôÐÔÓÃ»§×é >> "
-	Case 5
-		Groupname = "VIPÓÃ»§×é >> "
-	Case 0
-		Groupname = "ÏµÍ³Ä¬ÈÏÈ¨ÏÞ±à¼­ >> "
-	End Select
-	SysGroupname = Groupname
-End Function
-
-Sub Select_Group(SelGroupID)
-Dim Rs,Sql,i
-SelGroupID = ","&SelGroupID&","
-Sql = "Select UserGroupID,Title,UserTitle,ParentGid,IsSetting From Dv_UserGroups where ParentGid>0  Order by ParentGid,UserGroupID"
-Set Rs = Dvbbs.Execute(SQL)
-If Not Rs.eof Then
-	SQL=Rs.GetRows(-1)
-	Rs.close:Set Rs = Nothing
-Else
-	Exit Sub
-End If
-%>
-<div id="Select_Group" style="POSITION:absolute;Z-INDEX: 99;display:none;">
-<table width="400" border=0><tr><td class=tablebody1>
-<select name="SelGroupid" id="SelGroupid" size="28" style="width:100%" multiple>
-<%
-For i=0 To Ubound(SQL,2)
-%>
-<option value="<%=SQL(0,i)%>" <%If Instr(SelGroupID,","&SQL(0,i)&",") Then Response.Write "Selected"%>> <%=SysGroupname(SQL(3,i))%> -- <%=SQL(1,i)%>--<%=SQL(2,i)%></option>
-<%
-Next
-%>
-</select>
-</td></tr>
-<tr><td class=tablebody1>
-<input type="button" value="È·¶¨" class="button" onclick="getGroup('Select_Group')"> Çë°´ CTRL ¼ü¶àÑ¡!
-</td></tr>
-</table>
-</div>
-<%
-End Sub
-%>
+<td  class=tablebody1>æ˜¯<input name="GroupSetting(38)" type=radio class="radio" value="1"  <%if reGroupSetting(38)="1" then%>checked<%end if%>>&nbsp;å¦<input name="GroupSetting(38)" type=radio class="radio" value="0" <%if reGroupSetting(38)="0" then%>checked<%end if%>></td>
+<td class=tablebody1><input type="hidden" id="g43" val class="checkbox" name="CheckGroupSetting(20)"></td>
+<td  class=tablebody1>é™

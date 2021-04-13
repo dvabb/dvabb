@@ -1,30 +1,30 @@
 <%
 '-----------------------------------------------------------------------
-'--- EMAILÓÊ¼ş´¦ÀíÀàÄ£¿é
+'--- EMAILé‚®ä»¶å¤„ç†ç±»æ¨¡å—
 '--- Copyright (c) 2004 Aspsky, Inc.
 '--- Mail: Sunwin@artbbs.net   http://www.aspsky.net
 '--- 2004-12-18
 '-----------------------------------------------------------------------
-'--- ÉèÖÃÏî
+'--- è®¾ç½®é¡¹
 '-----------------------------------------------------------------------
-'--- ServerLoginName	ÉèÖÃÄúµÄÓÊ¼ş·şÎñÆ÷µÇÂ¼Ãû
-'--- ServerLoginPass	ÉèÖÃµÇÂ¼ÃÜÂë
-'--- SendSMTP			ÉèÖÃSMTPÓÊ¼ş·şÎñÆ÷µØÖ·
-'--- SendFromEmail		ÉèÖÃ·¢¼şÈËµÄE-MAILµØÖ·
-'--- SendFromName		ÉèÖÃ·¢ËÍÈËÃû³Æ
-'--- ContentType		ÉèÖÃÓÊ¼şÀàĞÍ Ä¬ÈÏ£ºtext/html
-'--- CharsetType		ÉèÖÃ±àÂëÀàĞÍ Ä¬ÈÏ£ºgb2312
-'--- SendObject			ÉèÖÃÑ¡È¡×é¼ş 1=Jmail,2=Cdonts,3=Aspemail
+'--- ServerLoginName	è®¾ç½®æ‚¨çš„é‚®ä»¶æœåŠ¡å™¨ç™»å½•å
+'--- ServerLoginPass	è®¾ç½®ç™»å½•å¯†ç 
+'--- SendSMTP			è®¾ç½®SMTPé‚®ä»¶æœåŠ¡å™¨åœ°å€
+'--- SendFromEmail		è®¾ç½®å‘ä»¶äººçš„E-MAILåœ°å€
+'--- SendFromName		è®¾ç½®å‘é€äººåç§°
+'--- ContentType		è®¾ç½®é‚®ä»¶ç±»å‹ é»˜è®¤ï¼štext/html
+'--- CharsetType		è®¾ç½®ç¼–ç ç±»å‹ é»˜è®¤ï¼šgb2312
+'--- SendObject			è®¾ç½®é€‰å–ç»„ä»¶ 1=Jmail,2=Cdonts,3=Aspemail
 '-----------------------------------------------------------------------
-'--- ÊôĞÔ
+'--- å±æ€§
 '-----------------------------------------------------------------------
-'--- SendMail Email, Topic, MailBody	ÊÕ¼şÈËµØÖ·£¬±êÌâ£¬ÓÊ¼şÄÚÈİ
+'--- SendMail Email, Topic, MailBody	æ”¶ä»¶äººåœ°å€ï¼Œæ ‡é¢˜ï¼Œé‚®ä»¶å†…å®¹
 '-----------------------------------------------------------------------
-'--- »ñÈ¡ĞÅÏ¢
+'--- è·å–ä¿¡æ¯
 '-----------------------------------------------------------------------
-'--- ErrCode			ĞÅÏ¢±àºÅ 0=Õı³£
-'--- Description		ÏàÓ¦²Ù×÷ĞÅÏ¢
-'--- Count				·¢ËÍÓÊ¼şÊı
+'--- ErrCode			ä¿¡æ¯ç¼–å· 0=æ­£å¸¸
+'--- Description		ç›¸åº”æ“ä½œä¿¡æ¯
+'--- Count				å‘é€é‚®ä»¶æ•°
 '-----------------------------------------------------------------------
 Class Dv_SendMail
 	Public Count,ErrCode,ErrMsg
@@ -48,40 +48,40 @@ Class Dv_SendMail
 		End If
 	End Sub
 
-	'ÉèÖÃÄúµÄÓÊ¼ş·şÎñÆ÷µÇÂ¼Ãû
+	'è®¾ç½®æ‚¨çš„é‚®ä»¶æœåŠ¡å™¨ç™»å½•å
 	Public Property Let ServerLoginName(Byval Value)
 		LoginName = Value
 	End Property
 
-	'ÉèÖÃµÇÂ¼ÃÜÂë
+	'è®¾ç½®ç™»å½•å¯†ç 
 	Public Property Let ServerLoginPass(Byval Value)
 		LoginPass = Value
 	End Property
-	'ÉèÖÃSMTPÓÊ¼ş·şÎñÆ÷µØÖ·
+	'è®¾ç½®SMTPé‚®ä»¶æœåŠ¡å™¨åœ°å€
 	Public Property Let SendSMTP(Byval Value)
 		SMTP = Value
 	End Property
-	'ÉèÖÃ·¢¼şÈËµÄE-MAILµØÖ·
+	'è®¾ç½®å‘ä»¶äººçš„E-MAILåœ°å€
 	Public Property Let SendFromEmail(Byval Value)
 		FromEmail = Value
 	End Property
-	'ÉèÖÃ·¢ËÍÈËÃû³Æ
+	'è®¾ç½®å‘é€äººåç§°
 	Public Property Let SendFromName(Byval Value)
 		FromName = Value
 	End Property
-	'ÉèÖÃÓÊ¼şÀàĞÍ
+	'è®¾ç½®é‚®ä»¶ç±»å‹
 	Public Property Let ContentType(Byval Value)
 		Content_Type = Value
 	End Property
-	'ÉèÖÃ±àÂëÀàĞÍ
+	'è®¾ç½®ç¼–ç ç±»å‹
 	Public Property Let CharsetType(Byval Value)
 		Charset_Type = Cstr(Value)
 	End Property
-	'»ñÈ¡´íÎóĞÅÏ¢
+	'è·å–é”™è¯¯ä¿¡æ¯
 	Public Property Get Description()
 		Description = ErrMsg
 	End Property
-	'ÉèÖÃÑ¡È¡×é¼ş SendObject 0=Jmail,1=Cdonts,2=Aspemail
+	'è®¾ç½®é€‰å–ç»„ä»¶ SendObject 0=Jmail,1=Cdonts,2=Aspemail
 	Public Property Let SendObject(Byval Value)
 		Object = Value
 		On Error Resume Next
@@ -110,15 +110,15 @@ Class Dv_SendMail
 		Dim MsgValue
 		Select Case ErrCode
 		Case 1
-			MsgValue = "Î´Ñ¡È¡ÓÊ¼ş×é¼ş»ò·şÎñÆ÷²»Ö§³Ö¸Ã×é¼ş£¡"
+			MsgValue = "æœªé€‰å–é‚®ä»¶ç»„ä»¶æˆ–æœåŠ¡å™¨ä¸æ”¯æŒè¯¥ç»„ä»¶ï¼"
 		Case 2
-			MsgValue = "ËùÑ¡µÄ×é¼ş²»´æÔÚ£¡"
+			MsgValue = "æ‰€é€‰çš„ç»„ä»¶ä¸å­˜åœ¨ï¼"
 		Case 3
-			MsgValue = "´íÎó£º·şÎñÆ÷²»Ö§³Ö¸Ã×é¼ş!"
+			MsgValue = "é”™è¯¯ï¼šæœåŠ¡å™¨ä¸æ”¯æŒè¯¥ç»„ä»¶!"
 		Case 4
-			MsgValue = "·¢ËÍÊ§°Ü!"
+			MsgValue = "å‘é€å¤±è´¥!"
 		Case Else
-			MsgValue = "Õı³£¡£"
+			MsgValue = "æ­£å¸¸ã€‚"
 		End Select
 		Msg = MsgValue
 	End Function
@@ -152,8 +152,8 @@ Class Dv_SendMail
 		Obj.Logging = True
 		Obj.Charset = Charset_Type
 		If Not(LoginName = "" Or LoginPass = "") Then
-			Obj.MailServerUserName = LoginName 'ÄúµÄÓÊ¼ş·şÎñÆ÷µÇÂ¼Ãû
-			Obj.MailServerPassword = LoginPass 'µÇÂ¼ÃÜÂë
+			Obj.MailServerUserName = LoginName 'æ‚¨çš„é‚®ä»¶æœåŠ¡å™¨ç™»å½•å
+			Obj.MailServerPassword = LoginPass 'ç™»å½•å¯†ç 
 		End If
 		Obj.ContentType = Content_Type
 		Obj.Priority = 1
@@ -163,17 +163,17 @@ Class Dv_SendMail
 		Obj.Subject = Topic
 		Obj.Body = Mailbody
 		If Err<>0 Then
-			ErrMsg = ErrMsg & "·¢ËÍÊ§°Ü!Ô­Òò£º" & Err.Description
+			ErrMsg = ErrMsg & "å‘é€å¤±è´¥!åŸå› ï¼š" & Err.Description
 			ErrNumber = 4
 		Else
 			Obj.Send (SMTP)
 			Obj.ClearRecipients()
 			If Err<>0 Then
-				ErrMsg = ErrMsg & "·¢ËÍÊ§°Ü!Ô­Òò£º" & Err.Description
+				ErrMsg = ErrMsg & "å‘é€å¤±è´¥!åŸå› ï¼š" & Err.Description
 				ErrNumber = 4
 			Else
 				Count = Count + 1
-				ErrMsg = ErrMsg & "·¢ËÍ³É¹¦!"
+				ErrMsg = ErrMsg & "å‘é€æˆåŠŸ!"
 			End If
 		End If
 	End Sub
@@ -187,16 +187,16 @@ Class Dv_SendMail
 		Obj.MailFormat = 0 
 		Obj.Body = Mailbody
 		If Err<>0 Then
-			ErrMsg = ErrMsg & "·¢ËÍÊ§°Ü!Ô­Òò£º" & Err.Description
+			ErrMsg = ErrMsg & "å‘é€å¤±è´¥!åŸå› ï¼š" & Err.Description
 			ErrNumber = 4
 		Else
 			Obj.Send
 			If Err<>0 Then
-				ErrMsg = ErrMsg & "·¢ËÍÊ§°Ü!Ô­Òò£º" & Err.Description
+				ErrMsg = ErrMsg & "å‘é€å¤±è´¥!åŸå› ï¼š" & Err.Description
 				ErrNumber = 4
 			Else
 				Count = Count + 1
-				ErrMsg = ErrMsg & "·¢ËÍ³É¹¦!"
+				ErrMsg = ErrMsg & "å‘é€æˆåŠŸ!"
 			End If
 		End If
 	End Sub
@@ -205,27 +205,27 @@ Class Dv_SendMail
 		On Error Resume Next
 		Obj.Charset = Charset_Type
 		Obj.IsHTML = True
-		Obj.username = LoginName	'·şÎñÆ÷ÉÏÓĞĞ§µÄÓÃ»§Ãû
-		Obj.password = LoginPass	'·şÎñÆ÷ÉÏÓĞĞ§µÄÃÜÂë
+		Obj.username = LoginName	'æœåŠ¡å™¨ä¸Šæœ‰æ•ˆçš„ç”¨æˆ·å
+		Obj.password = LoginPass	'æœåŠ¡å™¨ä¸Šæœ‰æ•ˆçš„å¯†ç 
 		Obj.Priority = 1
 		Obj.Host = SMTP
-		'Obj.Port = 25			' ¸ÃÏî¿ÉÑ¡.¶Ë¿Ú25ÊÇÄ¬ÈÏÖµ
+		'Obj.Port = 25			' è¯¥é¡¹å¯é€‰.ç«¯å£25æ˜¯é»˜è®¤å€¼
 		Obj.From = FromEmail
-		Obj.FromName = FromName	' ¸ÃÏî¿ÉÑ¡
+		Obj.FromName = FromName	' è¯¥é¡¹å¯é€‰
 		Obj.AddAddress Email,Email
 		Obj.Subject = Topic
 		Obj.Body = Mailbody
 		If Err<>0 Then
-			ErrMsg = ErrMsg & "·¢ËÍÊ§°Ü!Ô­Òò£º" & Err.Description
+			ErrMsg = ErrMsg & "å‘é€å¤±è´¥!åŸå› ï¼š" & Err.Description
 			ErrNumber = 4
 		Else
 			Obj.Send
 			If Err<>0 Then
-				ErrMsg = ErrMsg & "·¢ËÍÊ§°Ü!Ô­Òò£º" & Err.Description
+				ErrMsg = ErrMsg & "å‘é€å¤±è´¥!åŸå› ï¼š" & Err.Description
 				ErrNumber = 4
 			Else
 				Count = Count + 1
-				ErrMsg = ErrMsg & "·¢ËÍ³É¹¦!"
+				ErrMsg = ErrMsg & "å‘é€æˆåŠŸ!"
 			End If
 		End If
 	End Sub
@@ -245,11 +245,11 @@ Class Dv_SendMail
 			.Send
 		End With
 		If Err<>0 Then
-			ErrMsg = ErrMsg & "·¢ËÍÊ§°Ü!Ô­Òò£º" & Err.Description
+			ErrMsg = ErrMsg & "å‘é€å¤±è´¥!åŸå› ï¼š" & Err.Description
 			ErrNumber = 4
 		Else
 			Count = Count + 1
-			ErrMsg = ErrMsg & "·¢ËÍ³É¹¦!"
+			ErrMsg = ErrMsg & "å‘é€æˆåŠŸ!"
 		End If
 	End Sub
 
@@ -271,7 +271,7 @@ Class Dv_SendMail
 			.update 
 		End With
 		If Err<>0 Then
-			ErrMsg = ErrMsg & "·¢ËÍÊ§°Ü!Ô­Òò£º" & Err.Description
+			ErrMsg = ErrMsg & "å‘é€å¤±è´¥!åŸå› ï¼š" & Err.Description
 			ErrNumber = 4
 		End If
 	End Sub

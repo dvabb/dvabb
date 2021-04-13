@@ -2,17 +2,17 @@
 <!--#include file="inc/const.asp"-->
 <%
 Dvbbs.LoadTemplates("usermanager")
-Dvbbs.Stats=Dvbbs.MemberName&"Éı¼¶³ÉÎªVIPÓÃ»§"
+Dvbbs.Stats=Dvbbs.MemberName&"å‡çº§æˆä¸ºVIPç”¨æˆ·"
 Dvbbs.mainsetting(0)="98%"
 Dvbbs.Head()
-Dvbbs.ErrType = 1	'×ªµ½²»ÏÔÊ¾¶¥²¿ºÍµ¼º½µÄ´íÎóÏÔÊ¾Ò³
+Dvbbs.ErrType = 1	'è½¬åˆ°ä¸æ˜¾ç¤ºé¡¶éƒ¨å’Œå¯¼èˆªçš„é”™è¯¯æ˜¾ç¤ºé¡µ
 Page_Main()
 Dvbbs.Footer()
 Dvbbs.PageEnd()
 Sub Page_Main()
-	If Dvbbs.userid=0 Then Dvbbs.AddErrCode(6):Dvbbs.Showerr()	'ÅĞ¶ÏÓÃ»§ÊÇ·ñÔÚÏß¡£
+	If Dvbbs.userid=0 Then Dvbbs.AddErrCode(6):Dvbbs.Showerr()	'åˆ¤æ–­ç”¨æˆ·æ˜¯å¦åœ¨çº¿ã€‚
 	If Dvbbs.Master Then
-		Response.redirect "showerr.asp?ErrCodes=<li>ÂÛÌ³¹ÜÀíÔ±²»ĞèÒªÖ´ĞĞÉı¼¶²Ù×÷¡£&action=NoHeadErr"
+		Response.redirect "showerr.asp?ErrCodes=<li>è®ºå›ç®¡ç†å‘˜ä¸éœ€è¦æ‰§è¡Œå‡çº§æ“ä½œã€‚&action=NoHeadErr"
 	End If
 	Select Case Request("action")
 	Case "UpVipUser"
@@ -29,7 +29,7 @@ Sub UpVipUser()
 	vipmoney = Dvbbs.CheckNumeric(Request.Form("vipmoney"))
 	vipticket = Dvbbs.CheckNumeric(Request.Form("vipticket"))
 	If GroupID = 0 or not (vipmoney>0 Or vipticket>0) Then
-		Response.redirect "showerr.asp?ErrCodes=<li>²ÎÊı´íÎó£¬Çë°´ÒªÇóÌîĞ´ºóÔÙ½øĞĞ²Ù×÷¡£&action=NoHeadErr"
+		Response.redirect "showerr.asp?ErrCodes=<li>å‚æ•°é”™è¯¯ï¼Œè¯·æŒ‰è¦æ±‚å¡«å†™åå†è¿›è¡Œæ“ä½œã€‚&action=NoHeadErr"
 		Exit Sub
 	End If
 	Dim Rs,Sql,VipGroupSetting,UpSetting
@@ -45,39 +45,39 @@ Sub UpVipUser()
 	SET Rs = Dvbbs.Execute(SQL)
 	If Not Rs.eof Then
 		VipGroupSetting = Split(Rs(3),",")
-		UpSetting = Split(VipGroupSetting(71),"¡ì") 'Éı¼¶µ½¸Ã×éËùĞè½ğ±ÒÊı ½ğ±ÒÊı¡ìµãÈ¯Êı¡ìÓĞĞ§ÌìÊı¡ì×îµÍÌìÊı
-		If Btype=1 Then	'µãÈ¯Ö§¸¶
+		UpSetting = Split(VipGroupSetting(71),"Â§") 'å‡çº§åˆ°è¯¥ç»„æ‰€éœ€é‡‘å¸æ•° é‡‘å¸æ•°Â§ç‚¹åˆ¸æ•°Â§æœ‰æ•ˆå¤©æ•°Â§æœ€ä½å¤©æ•°
+		If Btype=1 Then	'ç‚¹åˆ¸æ”¯ä»˜
 			vipmoney = 0
-			If Dvbbs.CheckNumeric(UpSetting(3))>0 Then	'µ±ÓĞ×îµÍÌìÊıÏŞÖÆ
+			If Dvbbs.CheckNumeric(UpSetting(3))>0 Then	'å½“æœ‰æœ€ä½å¤©æ•°é™åˆ¶
 				MustNum = Dvbbs.CheckNumeric(UpSetting(3))*Dvbbs.CheckNumeric(UpSetting(1))/Dvbbs.CheckNumeric(UpSetting(2))
 				If MustNum>0 Then
 					MustNum = cCur(FormatNumber(MustNum,0))
 				Else
-					Response.redirect "showerr.asp?ErrCodes=<li>ÄúÒªÖ§¸¶µÄµãÈ¯Êı²»ÄÜÎª0£¬ÇëÖØĞÂÈ·ÈÏºóÔÙ½øĞĞ²Ù×÷¡£&action=NoHeadErr"
+					Response.redirect "showerr.asp?ErrCodes=<li>æ‚¨è¦æ”¯ä»˜çš„ç‚¹åˆ¸æ•°ä¸èƒ½ä¸º0ï¼Œè¯·é‡æ–°ç¡®è®¤åå†è¿›è¡Œæ“ä½œã€‚&action=NoHeadErr"
 					Exit Sub			
 				End If
 			End If
 			'If Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userticket").text<vipticket or vipticket<MustNum Then
 			If CCur(Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userticket").text)<vipticket or vipticket<MustNum Then
-				Response.redirect "showerr.asp?ErrCodes=<li>ÄúµÄµãÈ¯Êı²»×ã£¬ÇëÖØĞÂÈ·ÈÏºóÔÙ½øĞĞ²Ù×÷¡£&action=NoHeadErr"
+				Response.redirect "showerr.asp?ErrCodes=<li>æ‚¨çš„ç‚¹åˆ¸æ•°ä¸è¶³ï¼Œè¯·é‡æ–°ç¡®è®¤åå†è¿›è¡Œæ“ä½œã€‚&action=NoHeadErr"
 				Exit Sub
 			End If
 			Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userticket").text = CCur(Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userticket").text) - vipticket
 			UpDats = vipticket*Dvbbs.CheckNumeric(UpSetting(2))/Dvbbs.CheckNumeric(UpSetting(1))
 			UpDats = Int(FormatNumber(UpDats,0))
-		Else	'½ğ±ÒÖ§¸¶
+		Else	'é‡‘å¸æ”¯ä»˜
 			vipticket = 0
-			If Dvbbs.CheckNumeric(UpSetting(3))>0 Then	'µ±ÓĞ×îµÍÌìÊıÏŞÖÆ
+			If Dvbbs.CheckNumeric(UpSetting(3))>0 Then	'å½“æœ‰æœ€ä½å¤©æ•°é™åˆ¶
 				MustNum = Dvbbs.CheckNumeric(UpSetting(3))*Dvbbs.CheckNumeric(UpSetting(0))/Dvbbs.CheckNumeric(UpSetting(2))
 				If MustNum>0 Then
 					MustNum = cCur(FormatNumber(MustNum,0))
 				Else
-					Response.redirect "showerr.asp?ErrCodes=<li>ÄúÒªÖ§¸¶µÄ½ğ±ÒÊı²»ÄÜÎª0£¬ÇëÖØĞÂÈ·ÈÏºóÔÙ½øĞĞ²Ù×÷¡£&action=NoHeadErr"
+					Response.redirect "showerr.asp?ErrCodes=<li>æ‚¨è¦æ”¯ä»˜çš„é‡‘å¸æ•°ä¸èƒ½ä¸º0ï¼Œè¯·é‡æ–°ç¡®è®¤åå†è¿›è¡Œæ“ä½œã€‚&action=NoHeadErr"
 					Exit Sub			
 				End If			
 			End If
 			If CCur(Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usermoney").text)< vipmoney or vipmoney<MustNum Then
-				Response.redirect "showerr.asp?ErrCodes=<li>ÄúµÄ½ğ±ÒÊı²»×ã£¬ÇëÖØĞÂÈ·ÈÏºóÔÙ½øĞĞ²Ù×÷¡£&action=NoHeadErr"
+				Response.redirect "showerr.asp?ErrCodes=<li>æ‚¨çš„é‡‘å¸æ•°ä¸è¶³ï¼Œè¯·é‡æ–°ç¡®è®¤åå†è¿›è¡Œæ“ä½œã€‚&action=NoHeadErr"
 				Exit Sub
 			End If
 			Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usermoney").text = CCur(Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usermoney").text) - vipmoney
@@ -100,24 +100,24 @@ Sub UpVipUser()
 		'Response.Write sql
 		Dvbbs.Execute(Sql)
 		Dim LogMsg
-		LogMsg = "¹§Ï²Äú£º²Ù×÷³É¹¦£¬»ñµÃ( "&Rs(1)&"--"&Rs(2)&" ) <b>"&UpDats &"</b> ÌìµÄÊ¹ÓÃÆÚÏŞ£¬½ğ±Ò¼õÉÙ<b>"&vipmoney&"</b>,µãÈ¯¼õÉÙ<b>"&vipticket&"</b>¡£"
+		LogMsg = "æ­å–œæ‚¨ï¼šæ“ä½œæˆåŠŸï¼Œè·å¾—( "&Rs(1)&"--"&Rs(2)&" ) <b>"&UpDats &"</b> å¤©çš„ä½¿ç”¨æœŸé™ï¼Œé‡‘å¸å‡å°‘<b>"&vipmoney&"</b>,ç‚¹åˆ¸å‡å°‘<b>"&vipticket&"</b>ã€‚"
 		Call Dvbbs.ToolsLog(0,0,vipmoney,vipticket,6,LogMsg,Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usermoney").text&"|"&Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userticket").text)
 		Dvbbs.Dvbbs_Suc(LogMsg)
 	Else
-		Response.redirect "showerr.asp?ErrCodes=<li>²ÎÊı´íÎó£¬ËùÑ¡È¡µÄVIPÓÃ»§×é²»´æÔÚ£¬Çë°´ÒªÇóÌîĞ´ºóÔÙ½øĞĞ²Ù×÷¡£&action=NoHeadErr"
+		Response.redirect "showerr.asp?ErrCodes=<li>å‚æ•°é”™è¯¯ï¼Œæ‰€é€‰å–çš„VIPç”¨æˆ·ç»„ä¸å­˜åœ¨ï¼Œè¯·æŒ‰è¦æ±‚å¡«å†™åå†è¿›è¡Œæ“ä½œã€‚&action=NoHeadErr"
 		Exit Sub
 	End If
 	Rs.close:Set Rs = Nothing
 End Sub
 
-'ÉêÇë¼°Ğø·ÑVIP±íµ¥
+'ç”³è¯·åŠç»­è´¹VIPè¡¨å•
 Sub JoinVip()
 	Call JS_VipGroupInfo()
 	Response.Write template.html(21)
 	Call UserInfo()
 End Sub
 
-'¹¹ÔìVIPÓÃ»§×éĞÅÏ¢JS¶ÔÏó
+'æ„é€ VIPç”¨æˆ·ç»„ä¿¡æ¯JSå¯¹è±¡
 Sub JS_VipGroupInfo()
 	Dim Rs,Sql,VipGroupSetting,i
 	Sql = "SELECT UserGroupID,Title,Usertitle,GroupSetting FROM Dv_UserGroups WHERE ParentGID=5"
@@ -126,8 +126,8 @@ Sub JS_VipGroupInfo()
 		SQL=Rs.GetRows(-1)
 		Rs.close:Set Rs = Nothing
 	Else
-		'Î´Ìí¼ÓVIPÓÃ»§×é
-		Response.redirect "showerr.asp?ErrCodes=<li>ÏµÍ³»¹Î´Ìí¼ÓVIPÓÃ»§×é£¬ÇëÁªÏµÏµÍ³¹ÜÀíÔ±¡£&action=NoHeadErr"
+		'æœªæ·»åŠ VIPç”¨æˆ·ç»„
+		Response.redirect "showerr.asp?ErrCodes=<li>ç³»ç»Ÿè¿˜æœªæ·»åŠ VIPç”¨æˆ·ç»„ï¼Œè¯·è”ç³»ç³»ç»Ÿç®¡ç†å‘˜ã€‚&action=NoHeadErr"
 		Exit Sub
 	End If
 	Dim VID,VTitle,VUTitle,VMSetting,VTSetting,VSetting
@@ -141,7 +141,7 @@ Sub JS_VipGroupInfo()
 		VTitle = VTitle &""""& Replace(Replace(Replace(Replace(SQL(1,i),"\","\\"),"""","\"""),VbCrLf,""),chr(13),"") &""""
 		VUTitle = VUTitle &""""& Replace(Replace(Replace(Replace(SQL(2,i),"\","\\"),"""","\"""),VbCrLf,""),chr(13),"") &""""
 		VSetting = Split(SQL(3,i),",")
-		VMSetting = Split(VSetting(71),"¡ì") 'Éı¼¶µ½¸Ã×éËùĞè½ğ±ÒÊı ½ğ±ÒÊı¡ìµãÈ¯Êı¡ìÓĞĞ§ÌìÊı¡ì×îµÍÌìÊı
+		VMSetting = Split(VSetting(71),"Â§") 'å‡çº§åˆ°è¯¥ç»„æ‰€éœ€é‡‘å¸æ•° é‡‘å¸æ•°Â§ç‚¹åˆ¸æ•°Â§æœ‰æ•ˆå¤©æ•°Â§æœ€ä½å¤©æ•°
 		NMoney = NMoney & VMSetting(0)
 		NTicket = NTicket & VMSetting(1)
 		Mdays = Mdays & VMSetting(2)
@@ -169,7 +169,7 @@ Sub JS_VipGroupInfo()
 End Sub
 
 '--------------------------------------------------------------------------------
-'ÓÃ»§ĞÅÏ¢
+'ç”¨æˆ·ä¿¡æ¯
 '--------------------------------------------------------------------------------
 Sub UserInfo()
 	Dim Sql,Rs,UserToolsCount
@@ -177,20 +177,20 @@ Sub UserInfo()
 <div id="GetUserInfo" Style="display:none;">
 <table border="0" cellpadding=3 cellspacing=1 align=center class=Tableborder1 Style="Width:100%;">
 	<tr>
-	<th height=23 >¸öÈË×ÊÁÏ</th>
+	<th height=23 >ä¸ªäººèµ„æ–™</th>
 	</tr>
 	<tr>
 	<td align=center class=TableBody1>
 	<table border="0" cellpadding=3 cellspacing=1 align=center Style="Width:90%">
-	<tr><td class=TableBody2>½ğ±Ò£º<B><font color="<%=Dvbbs.mainsetting(1)%>"><%=Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usermoney").text%></font></B> ¸ö</td></tr>
-	<tr><td class=TableBody1>µãÈ¯£º<B><font color="<%=Dvbbs.mainsetting(1)%>"><%=Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userticket").text%></font></B> ÕÅ</td></tr>
-	<tr><td class=TableBody2>½ğÇ®£º<%=Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userwealth").text%></td></tr>
-	<tr><td class=TableBody1>ÎÄÕÂ£º<%=Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userpost").text%></td></tr>
-	<tr><td class=TableBody2>»ı·Ö£º<%=Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userep").text%></td></tr>
-	<tr><td class=TableBody1>÷ÈÁ¦£º<%=Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usercp").text%></td></tr>
-	<tr><td class=TableBody2>ÍşÍû£º<%=Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userpower").text%></td></tr>
-	<tr><td class=TableBody2>VIPÈ¨ÏŞµÇ¼ÇÊ±¼ä£º<br><%=Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@vip_startime").text%></td></tr>
-	<tr><td class=TableBody2>VIPÈ¨ÏŞ½ØÖ¹Ê±¼ä£º<br><%=Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@vip_endtime").text%></td></tr>
+	<tr><td class=TableBody2>é‡‘å¸ï¼š<B><font color="<%=Dvbbs.mainsetting(1)%>"><%=Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usermoney").text%></font></B> ä¸ª</td></tr>
+	<tr><td class=TableBody1>ç‚¹åˆ¸ï¼š<B><font color="<%=Dvbbs.mainsetting(1)%>"><%=Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userticket").text%></font></B> å¼ </td></tr>
+	<tr><td class=TableBody2>é‡‘é’±ï¼š<%=Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userwealth").text%></td></tr>
+	<tr><td class=TableBody1>æ–‡ç« ï¼š<%=Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userpost").text%></td></tr>
+	<tr><td class=TableBody2>ç§¯åˆ†ï¼š<%=Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userep").text%></td></tr>
+	<tr><td class=TableBody1>é­…åŠ›ï¼š<%=Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usercp").text%></td></tr>
+	<tr><td class=TableBody2>å¨æœ›ï¼š<%=Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userpower").text%></td></tr>
+	<tr><td class=TableBody2>VIPæƒé™ç™»è®°æ—¶é—´ï¼š<br><%=Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@vip_startime").text%></td></tr>
+	<tr><td class=TableBody2>VIPæƒé™æˆªæ­¢æ—¶é—´ï¼š<br><%=Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@vip_endtime").text%></td></tr>
 	<tr><td class=TableBody1></td></tr>
 	</table>
 	</td>

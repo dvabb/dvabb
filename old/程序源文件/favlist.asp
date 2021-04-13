@@ -9,7 +9,7 @@ Dim abgcolor,dv_ubb
 Dim username,PostBuyUser,bgcolor,EmotPath
 Dim MailBody,Email,TotalUseTable
 Dim T_GetMoneyType,replyid_a,AnnounceID_a,RootID_a
-Dim IsThisBoardMaster 'È·¶¨µ±Ç°ÓÃ»§ÊÇ·ñ±¾°æ°æÖ÷£¬·ÀÖ¹ÏÂÃæµÄ²Ù×÷Ó°Ïìµ½ Dvbbs.BoardMasterµ¼ÖÂ³ö´í
+Dim IsThisBoardMaster 'ç¡®å®šå½“å‰ç”¨æˆ·æ˜¯å¦æœ¬ç‰ˆç‰ˆä¸»ï¼Œé˜²æ­¢ä¸‹é¢çš„æ“ä½œå½±å“åˆ° Dvbbs.BoardMasterå¯¼è‡´å‡ºé”™
 IsThisBoardMaster = Dvbbs.BoardMaster
 
 If Request("action")="add" Then
@@ -25,20 +25,20 @@ Dvbbs.PageEnd()
 
 Sub FavAdd_Boke()
 	Dvbbs.LoadTemplates("usermanager")
-	If Dvbbs.Forum_Setting(99) = "0" Then Response.Redirect "showerr.asp?ErrCodes=<li>±¾ÏµÍ³Î´¿ª·Å²©¿Í¹¦ÄÜ¡£&action=OtherErr"
-	If Dvbbs.UserID = 0 Then Response.Redirect "showerr.asp?ErrCodes=<li>ÇëµÇÂ¼ÏµÍ³ºóÊ¹ÓÃ´Ë¹¦ÄÜ¡£&action=OtherErr"
+	If Dvbbs.Forum_Setting(99) = "0" Then Response.Redirect "showerr.asp?ErrCodes=<li>æœ¬ç³»ç»Ÿæœªå¼€æ”¾åšå®¢åŠŸèƒ½ã€‚&action=OtherErr"
+	If Dvbbs.UserID = 0 Then Response.Redirect "showerr.asp?ErrCodes=<li>è¯·ç™»å½•ç³»ç»Ÿåä½¿ç”¨æ­¤åŠŸèƒ½ã€‚&action=OtherErr"
 	Dim TopicMode
 	TopicID = Request("ID")
 	ReplyID = Request("replyID")
 	If TopicID = "" Or Not IsNumeric(TopicID) Then
-		Response.Redirect "showerr.asp?ErrCodes=<li>·Ç·¨µÄÌû×Ó²ÎÊı¡£&action=OtherErr"
+		Response.Redirect "showerr.asp?ErrCodes=<li>éæ³•çš„å¸–å­å‚æ•°ã€‚&action=OtherErr"
 		Exit Sub
 	Else
 		TopicID = cCur(TopicID)
 		AnnounceID = TopicID
 	End If
 	If ReplyID = "" Or Not IsNumeric(ReplyID) Then
-		Response.Redirect "showerr.asp?ErrCodes=<li>·Ç·¨µÄÌû×Ó²ÎÊı¡£&action=OtherErr"
+		Response.Redirect "showerr.asp?ErrCodes=<li>éæ³•çš„å¸–å­å‚æ•°ã€‚&action=OtherErr"
 		Exit Sub
 	Else
 		ReplyID = cCur(ReplyID)
@@ -64,7 +64,7 @@ Sub FavAdd_Boke()
 		If Dvbbs.UserID <> Rs("PostUserID") And Cint(Dvbbs.GroupSetting(2)) = 0 Then Dvbbs.AddErrCode(31)
 		PostBuyUser=Rs("PostBuyUser")
 		If Rs("GetMoneyType") = 3 And Rs("ParentID") = 0 And Not Dvbbs.Boardmaster Then
-			If Instr(PostBuyUser,"|||"&Dvbbs.MemberName&"|||")=0 Then Response.Redirect "showerr.asp?ErrCodes=<li>¸ÃÌùÎª½ğ±Ò¹ºÂòÌù£¬ÄúÃ»ÓĞä¯ÀÀ´ËÌùµÄÈ¨ÏŞ¡£&action=OtherErr"
+			If Instr(PostBuyUser,"|||"&Dvbbs.MemberName&"|||")=0 Then Response.Redirect "showerr.asp?ErrCodes=<li>è¯¥è´´ä¸ºé‡‘å¸è´­ä¹°è´´ï¼Œæ‚¨æ²¡æœ‰æµè§ˆæ­¤è´´çš„æƒé™ã€‚&action=OtherErr"
 		End If
 		Dvbbs.Showerr()
 		If Rs("PostUserID")=0 Then
@@ -91,9 +91,9 @@ Sub FavAdd_Boke()
 		Topic = Dvbbs.ChkBadWords(Topic)
 		Topic = Dvbbs.Replacehtml(Topic)
 		If Rs("signflag")=2 Then
-			UserName = "ÄäÃûÓÃ»§"
+			UserName = "åŒ¿åç”¨æˆ·"
 		ElseIf UserGroupID = 7 Then
-			UserName = "¿ÍÈË"
+			UserName = "å®¢äºº"
 		Else
 			UserName = Dvbbs.ChkBadWords(Dvbbs.HtmlEncode(Rs("UserName")))
 		End If
@@ -103,13 +103,13 @@ Sub FavAdd_Boke()
 		Else
 			Body = dv_ubb.Dv_UbbCode(Body,UserGroupID,1,1)
 		End If
-		iBody = "±êÌâ£º" & Topic & "<BR><BR>"
-		iBody = iBody & "×÷Õß£º" & UserName & "<BR><BR>"
+		iBody = "æ ‡é¢˜ï¼š" & Topic & "<BR><BR>"
+		iBody = iBody & "ä½œè€…ï¼š" & UserName & "<BR><BR>"
 		iBody = iBody & Body & "<BR><BR>"
-		iBody = iBody & "Ô­ÌùµØÖ·£º" & Dvbbs.Get_ScriptNameUrl() & "dispbbs.asp?BoardID="&Dvbbs.BoardID&"&ID="&RootID_a&"&replyID="&ReplyID_a&"&skin=1"
+		iBody = iBody & "åŸè´´åœ°å€ï¼š" & Dvbbs.Get_ScriptNameUrl() & "dispbbs.asp?BoardID="&Dvbbs.BoardID&"&ID="&RootID_a&"&replyID="&ReplyID_a&"&skin=1"
 		iBody = Replace(iBody,"onload=""javascript:if(this.width>500)this.style.width=500;""","")
 		Dvbbs.UserSession.documentElement.selectSingleNode("userinfo").attributes.setNamedItem(Dvbbs.UserSession.createNode(2,"cachebokebody","")).text = iBody
-		Dvbbs.UserSession.documentElement.selectSingleNode("userinfo").attributes.setNamedItem(Dvbbs.UserSession.createNode(2,"cacheboketopic","")).text = "[×ª]" & Topic
+		Dvbbs.UserSession.documentElement.selectSingleNode("userinfo").attributes.setNamedItem(Dvbbs.UserSession.createNode(2,"cacheboketopic","")).text = "[è½¬]" & Topic
 		'Response.Write Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@cacheboketopic").text
 		'Response.Write Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@cachebokebody").text
 		'Set Session(Dvbbs.CacheName & "UserID")= Dvbbs.UserSession.cloneNode(True)
@@ -225,7 +225,7 @@ Sub delete()
 	Dvbbs.Dvbbs_Suc("<li>"+template.Strings(46))
 End Sub
 
-'·ÖÒ³Êä³ö
+'åˆ†é¡µè¾“å‡º
 Function ShowPage(CurrentPage,Pcount,totalrec,PageNum)
 	Dim SearchStr
 	SearchStr=Request("action")

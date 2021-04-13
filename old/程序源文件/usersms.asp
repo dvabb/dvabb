@@ -7,9 +7,9 @@ Dvbbs.Nav()
 Dvbbs.Head_var 0,0,template.Strings(0),"usermanager.asp"
 Dim Sql,Rs,TempStr,ErrCodes
 Dim Sms_max
-Sms_max=Cint(Dvbbs.GroupSetting(35))				'ÓÃ»§×é¶ÌĞÅÏŞÖÆ£¬ÌõÊı
+Sms_max=Cint(Dvbbs.GroupSetting(35))				'ç”¨æˆ·ç»„çŸ­ä¿¡é™åˆ¶ï¼Œæ¡æ•°
 If Sms_max = 0 Then Sms_Max = 9999
-If Cint(Dvbbs.GroupSetting(16)) = 0 And Cint(Dvbbs.GroupSetting(32)) = 0 Then	'²»ÄÜĞŞ¸Ä¸öÈË×ÊÁÏÇÒ²»ÄÜ·¢¶ÌĞÅÊ±
+If Cint(Dvbbs.GroupSetting(16)) = 0 And Cint(Dvbbs.GroupSetting(32)) = 0 Then	'ä¸èƒ½ä¿®æ”¹ä¸ªäººèµ„æ–™ä¸”ä¸èƒ½å‘çŸ­ä¿¡æ—¶
 	Dvbbs.AddErrCode(28)
 End If
 If Dvbbs.userid=0 Then
@@ -30,7 +30,7 @@ SmsCount=0
 boxinfo=split(template.Strings(63),",")
 Set Rs=Dvbbs.Execute("Select Count(id) From DV_Message Where incept='"&Dvbbs.MemberName&"'")
 SmsCount=Rs(0)
-'ÒÔÏÂÅĞ¶ÏÎª×Ô¶¯É¾³ı¶à³öÀ´µÄ¶ÌÏûÏ¢(2003-12-26 FIX BY YZ)
+'ä»¥ä¸‹åˆ¤æ–­ä¸ºè‡ªåŠ¨åˆ é™¤å¤šå‡ºæ¥çš„çŸ­æ¶ˆæ¯(2003-12-26 FIX BY YZ)
 If SmsCount>Sms_max Then
 	i=SmsCount-Sms_max
 	Set Rs=Dvbbs.Execute("Select top "&i&" id From DV_Message Where incept='"&Dvbbs.MemberName&"' Order by id,delR Desc")
@@ -50,7 +50,7 @@ Select Case request("action")
 		TempLateStr=Replace(TempLateStr,"{$Sms_outbox}", template.pic(1))
 		TempLateStr=Replace(TempLateStr,"{$Sms_issend}", template.pic(2))
 		TempLateStr=Replace(TempLateStr,"{$Sms_recycle}", template.pic(3))
-		boxName = boxinfo(0)'"ÊÕ¼şÏä"
+		boxName = boxinfo(0)'"æ”¶ä»¶ç®±"
 		smstype = "inbox"
 		readaction = "read"
 		turl = "readsms"
@@ -60,7 +60,7 @@ Select Case request("action")
 		TempLateStr=Replace(TempLateStr,"{$Sms_outbox}", template.pic(20))
 		TempLateStr=Replace(TempLateStr,"{$Sms_issend}", template.pic(2))
 		TempLateStr=Replace(TempLateStr,"{$Sms_recycle}", template.pic(3))
-		boxName = boxinfo(1)'"²İ¸åÏä"
+		boxName = boxinfo(1)'"è‰ç¨¿ç®±"
 		smstype = "outbox"
 		readaction = "edit"
 		turl = "sms"
@@ -70,7 +70,7 @@ Select Case request("action")
 		TempLateStr=Replace(TempLateStr,"{$Sms_outbox}", template.pic(1))
 		TempLateStr=Replace(TempLateStr,"{$Sms_issend}", template.pic(21))
 		TempLateStr=Replace(TempLateStr,"{$Sms_recycle}", template.pic(3))
-		boxName = boxinfo(2)'"ÒÑ·¢ËÍµÄÏûÏ¢"
+		boxName = boxinfo(2)'"å·²å‘é€çš„æ¶ˆæ¯"
 		smstype = "issend"
 		readaction = "outread"
 		turl = "readsms"
@@ -80,7 +80,7 @@ Select Case request("action")
 		TempLateStr=Replace(TempLateStr,"{$Sms_outbox}", template.pic(1))
 		TempLateStr=Replace(TempLateStr,"{$Sms_issend}", template.pic(2))
 		TempLateStr=Replace(TempLateStr,"{$Sms_recycle}", template.pic(22))
-		boxName = boxinfo(3)'"À¬»øÏä"
+		boxName = boxinfo(3)'"åƒåœ¾ç®±"
 		smstype = "recycle"
 		readaction = "read"
 		turl = "readsms"
@@ -90,7 +90,7 @@ Select Case request("action")
 		TempLateStr=Replace(TempLateStr,"{$Sms_outbox}", template.pic(1))
 		TempLateStr=Replace(TempLateStr,"{$Sms_issend}", template.pic(2))
 		TempLateStr=Replace(TempLateStr,"{$Sms_recycle}", template.pic(3))
-		boxName = boxinfo(0)'"ÊÕ¼şÏä"
+		boxName = boxinfo(0)'"æ”¶ä»¶ç®±"
 		smstype = "inbox"
 		readaction = "read"
 		turl = "readsms"
@@ -171,7 +171,7 @@ Sub smsbox()
 	Response.Write "<script>dvbbs_usersms_smsbox_footer('"&boxname&"')</script>"
 End Sub
 
-'·ÖÒ³Êä³ö
+'åˆ†é¡µè¾“å‡º
 Function ShowPage(CurrentPage,Pcount,totalrec,PageNum)
 	Dim SearchStr
 	SearchStr = "action="&Request("action")
@@ -185,7 +185,7 @@ Function ShowPage(CurrentPage,Pcount,totalrec,PageNum)
 	ShowPage = Replace(ShowPage,"{$redcolor}",Dvbbs.mainsetting(1))
 End Function
 
-'£¨Í¼Æ¬¶ÔÏóÃû³Æ£¬±êÌâ¶ÔÏóÃû³Æ£¬¸üĞÂÊı£¬×ÜÊı£©
+'ï¼ˆå›¾ç‰‡å¯¹è±¡åç§°ï¼Œæ ‡é¢˜å¯¹è±¡åç§°ï¼Œæ›´æ–°æ•°ï¼Œæ€»æ•°ï¼‰
 Function ShowTable(SrcName,TxtName,str,c)
 Dim Tempstr,Src_js,Txt_js,TempPercent
 If C = 0 Then C = 99999999
@@ -195,12 +195,12 @@ Src_js = "document.getElementById(""" + SrcName + """)"
 Txt_js = "document.getElementById(""" + TxtName + """)"
 	ShowTable = VbCrLf + "<script>"
 	ShowTable = ShowTable + Src_js + ".width=""" & FormatNumber(tempstr*600,0,-1) & """;"
-	ShowTable = ShowTable + Src_js + ".title=""ÈİÁ¿ÉÏÏŞÎª£º"&c&"Ìõ£¬×Ü¹²ÒÑ´¢´æ£¨"&str&"£©ÌõÂÛÌ³¶ÌĞÅ£¡"";"
+	ShowTable = ShowTable + Src_js + ".title=""å®¹é‡ä¸Šé™ä¸ºï¼š"&c&"æ¡ï¼Œæ€»å…±å·²å‚¨å­˜ï¼ˆ"&str&"ï¼‰æ¡è®ºå›çŸ­ä¿¡ï¼"";"
 	ShowTable = ShowTable + Txt_js + ".innerHTML="""
 	If FormatNumber(tempstr*100,0,-1) < 80 Then
-		ShowTable = ShowTable + "ÒÑÊ¹ÓÃ:" & TempPercent & """;"
+		ShowTable = ShowTable + "å·²ä½¿ç”¨:" & TempPercent & """;"
 	Else
-		ShowTable = ShowTable + "<font color=\"""&Dvbbs.mainsetting(1)&"\"">ÒÑÊ¹ÓÃ:" & TempPercent & ",Çë¸Ï¿ìÇåÀí£¡</font>"";"
+		ShowTable = ShowTable + "<font color=\"""&Dvbbs.mainsetting(1)&"\"">å·²ä½¿ç”¨:" & TempPercent & ",è¯·èµ¶å¿«æ¸…ç†ï¼</font>"";"
 	End If
 	ShowTable = ShowTable + "</script>"
 End Function

@@ -38,37 +38,37 @@ End Sub
 Sub addlink()
 	Response.Write "<table width=""100%"" border=""0"" cellspacing=""1"" cellpadding=""3"" align=""center"">"
 	Response.Write "<form action=""link.asp?action=savenew"" method = post> <tr>"
-	Response.Write "<th width=""100%"" colspan=2 style=""text-align:center;"">Ìí¼ÓÁªÃËÂÛÌ³ </th>"
+	Response.Write "<th width=""100%"" colspan=2 style=""text-align:center;"">æ·»åŠ è”ç›Ÿè®ºå› </th>"
 	Response.Write "</tr>"
 	Response.Write "<tr>"
-	Response.Write "<td width=""40%"" height=25 class=td1>ÂÛÌ³Ãû³Æ</td>"
+	Response.Write "<td width=""40%"" height=25 class=td1>è®ºå›åç§°</td>"
 	Response.Write "<td width=""60%"" height=25 class=td1>"
 	Response.Write "<input type=""text"" name=""name"" size=40>"
 	Response.Write "</td>"
 	Response.Write "</tr>"
 	Response.Write "<tr>"
-	Response.Write "<td width=""40%"" height=25 class=td2>Á¬½ÓURL</td>"
+	Response.Write "<td width=""40%"" height=25 class=td2>è¿æ¥URL</td>"
 	Response.Write "<td width=""60%"" class=td2>"
 	Response.Write "<input type=""text"" name=""url"" size=40>"
 	Response.Write "</td>"
 	Response.Write "</tr>"
 	Response.Write "<tr>"
-	Response.Write "<td width=""40%"" height=25 class=td1>Á¬½ÓLOGOµØÖ·</td>"
+	Response.Write "<td width=""40%"" height=25 class=td1>è¿æ¥LOGOåœ°å€</td>"
 	Response.Write "<td width=""60%"" class=td1>"
 	Response.Write "<input type=""text"" name=""logo"" size=40>"
 	Response.Write "</td>"
 	Response.Write "</tr>"
 	Response.Write "<tr>"
-	Response.Write "<td width=""40%"" height=25 class=td2>ÂÛÌ³¼ò½é</td>"
+	Response.Write "<td width=""40%"" height=25 class=td2>è®ºå›ç®€ä»‹</td>"
 	Response.Write "<td width=""60%"" class=td2>"
 	Response.Write "<input type=""text"" name=""readme"" size=40>"
 	Response.Write "</td>"
 	Response.Write "</tr>"
 	Response.Write "<tr>"
-	Response.Write "<td width=""40%"" height=25 class=td1>ÔÚÊ×Ò³ÊÇÎÄ×ÖÁ¬½Ó»¹ÊÇLOGOÁ¬½Ó</td>"
+	Response.Write "<td width=""40%"" height=25 class=td1>åœ¨é¦–é¡µæ˜¯æ–‡å­—è¿æ¥è¿˜æ˜¯LOGOè¿æ¥</td>"
 	Response.Write "<td width=""60%"" class=td1>"
-	Response.Write "ÎÄ×ÖÁ¬½Ó<input type=""radio"" class=""radio"" name=""islogo"" value=0 checked>&nbsp;&nbsp;LOGOÁ¬½Ó<input type=""radio"" class=""radio"" name=""islogo"" value=1>"
-	Response.Write "&nbsp;&nbsp;<Input type=""submit"" class=""button"" name=""Submit"" value=""Ìí ¼Ó"">"
+	Response.Write "æ–‡å­—è¿æ¥<input type=""radio"" class=""radio"" name=""islogo"" value=0 checked>&nbsp;&nbsp;LOGOè¿æ¥<input type=""radio"" class=""radio"" name=""islogo"" value=1>"
+	Response.Write "&nbsp;&nbsp;<Input type=""submit"" class=""button"" name=""Submit"" value=""æ·» åŠ "">"
 	Response.Write "</td>"
 	Response.Write "</tr>"
 	Response.Write "</form>"
@@ -84,10 +84,10 @@ sub editlink()
 	Response.Write "<form action=""link.asp?action=savedit"" method=post>"
 	Response.Write "<input type=hidden name=id value="
 	Response.Write Request("id")
-	Response.Write "><tr> <th width=""100%"" colspan=2 style=""text-align:center;"">±à¼­ÁªÃËÂÛÌ³</th>"
+	Response.Write "><tr> <th width=""100%"" colspan=2 style=""text-align:center;"">ç¼–è¾‘è”ç›Ÿè®ºå›</th>"
 	Response.Write "</tr><tr> "
 	Response.Write "<td width=""40%"" class=td1>"
-	Response.Write "ÂÛÌ³Ãû³Æ£º </td>"
+	Response.Write "è®ºå›åç§°ï¼š </td>"
 	Response.Write "<td width=""60%"" class=td1>"
 	Response.Write "<input type=""text"" name=""name"" size=40 value="
 	Response.Write server.htmlencode(rs("boardname"))
@@ -96,7 +96,7 @@ sub editlink()
 	Response.Write "</tr>"
 	Response.Write "<tr>"
 	Response.Write "<td width=""40%"" class=td1>"
-	Response.Write "Á¬½ÓURL£º </td>"
+	Response.Write "è¿æ¥URLï¼š </td>"
 	Response.Write "<td width=""60%"" class=td1>"
 	Response.Write "<input type=""text"" name=""url"" size=40 value="
 	Response.Write server.htmlencode(rs("url"))
@@ -105,7 +105,7 @@ sub editlink()
 	Response.Write "</tr>"
 	Response.Write "<tr>"
 	Response.Write "<td width=""40%"" class=td1>"
-	Response.Write "Á¬½ÓLOGOµØÖ·£º </td>"
+	Response.Write "è¿æ¥LOGOåœ°å€ï¼š </td>"
 	Response.Write "<td width=""60%"" class=td1>"
 	Response.Write "<input type=""text"" name=""logo"" size=40 value="""
 	If Rs("logo")<>"" or Not IsNull(Rs("logo")) Then Response.Write server.htmlencode(rs("logo"))
@@ -114,7 +114,7 @@ sub editlink()
 	Response.Write "</tr>"
 	Response.Write "<tr>"
 	Response.Write "<td width=""40%"" class=td1>"
-	Response.Write "ÂÛÌ³¼ò½é£º</td>"
+	Response.Write "è®ºå›ç®€ä»‹ï¼š</td>"
 	Response.Write "<td width=""60%"" class=td1>"
 	Response.Write "<input type=""text"" name=""readme"" size=40 value="
 	If Rs("readme")<>"" or Not IsNull(Rs("readme")) Then Response.Write server.htmlencode(rs("readme"))
@@ -122,13 +122,13 @@ sub editlink()
 	Response.Write "</td>"
 	Response.Write "</tr>"
 	Response.Write "<tr>"
-	Response.Write "<td width=""40%"" height=25 class=td1>ÔÚÊ×Ò³ÊÇÎÄ×ÖÁ¬½Ó»¹ÊÇLOGOÁ¬½Ó</td>"
+	Response.Write "<td width=""40%"" height=25 class=td1>åœ¨é¦–é¡µæ˜¯æ–‡å­—è¿æ¥è¿˜æ˜¯LOGOè¿æ¥</td>"
 	Response.Write "<td width=""60%"" class=td1>"
-	Response.Write "ÎÄ×ÖÁ¬½Ó<input type=""radio"" class=""radio"" name=""islogo"" value=0 "
+	Response.Write "æ–‡å­—è¿æ¥<input type=""radio"" class=""radio"" name=""islogo"" value=0 "
 	If rs("islogo")=0 Then
 	 	Response.Write " checked"
 	End If
-	Response.Write ">&nbsp;&nbsp;LOGOÁ¬½Ó<input type=""radio"" class=""radio"" name=""islogo"" value=1 "
+	Response.Write ">&nbsp;&nbsp;LOGOè¿æ¥<input type=""radio"" class=""radio"" name=""islogo"" value=1 "
 	If rs("islogo")=1 Then
 		Response.Write " checked"
 	End If 
@@ -138,7 +138,7 @@ sub editlink()
 	Response.Write "<tr>"
 	Response.Write "<td height=""15"" colspan=""2"" class=td1>"
 	Response.Write "<div align=""center"">"
-	Response.Write "<input type=""submit"" class=""button"" name=""Submit"" value=""ĞŞ ¸Ä"">"
+	Response.Write "<input type=""submit"" class=""button"" name=""Submit"" value=""ä¿® æ”¹"">"
 	Response.Write "</div>"
 	Response.Write "</td>"
 	Response.Write "</tr></form>"
@@ -157,55 +157,55 @@ Sub linkinfo()
 	Response.Write "<br><table width=""100%"" border=""0"" cellspacing=""1"" cellpadding=""3"" align=""center"">"
 	Response.Write "<form action=""link.asp?action=saveall"" method = post>"
 	Response.Write "<tr>"
-	Response.Write "<th style=""text-align:center;"" colspan=4>ÁªÃËÂÛÌ³ÁĞ±íÅúÁ¿ĞŞ¸Ä </th>"
+	Response.Write "<th style=""text-align:center;"" colspan=4>è”ç›Ÿè®ºå›åˆ—è¡¨æ‰¹é‡ä¿®æ”¹ </th>"
 	Response.Write "</tr>"
 	Response.Write "<tr>"
-	Response.Write "<td height=""22"" colspan=4 class=td2><b>×¢ÒâÊÂÏî£º</b><li>Äã¿ÉÒÔ±à¼­ËùÓĞÓÑÇéÁ´½ÓĞÅÏ¢È»ºóÒ»´ÎĞÔÌá½»¡£<li>ÆäÖĞĞòºÅ²¿·Ö¿ÉÒÔ°´ÕÕÄãµÄĞèÒªĞŞ¸Ä£¬²»ÄÜÓĞÖØ¸´¡£<li>ÆäËûÄÚÈİ¾¡Á¿±ÜÃâÊ¹ÓÃµ¥ÒıºÅ£¬ÒÔÃâÆÆ»µÒ³Ãæ´úÂëÖ´ĞĞ¡£</td>"
+	Response.Write "<td height=""22"" colspan=4 class=td2><b>æ³¨æ„äº‹é¡¹ï¼š</b><li>ä½ å¯ä»¥ç¼–è¾‘æ‰€æœ‰å‹æƒ…é“¾æ¥ä¿¡æ¯ç„¶åä¸€æ¬¡æ€§æäº¤ã€‚<li>å…¶ä¸­åºå·éƒ¨åˆ†å¯ä»¥æŒ‰ç…§ä½ çš„éœ€è¦ä¿®æ”¹ï¼Œä¸èƒ½æœ‰é‡å¤ã€‚<li>å…¶ä»–å†…å®¹å°½é‡é¿å…ä½¿ç”¨å•å¼•å·ï¼Œä»¥å…ç ´åé¡µé¢ä»£ç æ‰§è¡Œã€‚</td>"
 	Response.Write "</tr>"
 	If rs.eof and rs.bof Then
-		Response.Write "<tr><td height=""25"" colspan=4 align=""center"" class=td2>ÉĞÎ´Ìí¼ÓÓÑÇéÂÛÌ³</td></tr>"
+		Response.Write "<tr><td height=""25"" colspan=4 align=""center"" class=td2>å°šæœªæ·»åŠ å‹æƒ…è®ºå›</td></tr>"
 	Else
 		
 	Do While Not Rs.EOF
 	Response.Write "<tr align=left>"
     Response.Write "<td height=25 class=td1>"
-    Response.Write "<B>ĞòºÅ£º</B> <input type=""text"" name=""id"" size=4 value="
+    Response.Write "<B>åºå·ï¼š</B> <input type=""text"" name=""id"" size=4 value="
 	Response.Write Rs("id")
 	Response.Write "></td>"
 	Response.Write "<td class=td1>"
-	Response.Write "<B>Ãû³Æ£º</B><input type=""text"" name=""boardname"&i&""" size=30 value="
+	Response.Write "<B>åç§°ï¼š</B><input type=""text"" name=""boardname"&i&""" size=30 value="
 	Response.Write server.htmlencode(Rs("boardname")&"")
 	Response.Write "></td>"
 	Response.Write "<td class=td1>"
-	Response.Write "<B> URL£º</B><input type=""text"" name=""url"&i&""" size=35 value="
+	Response.Write "<B> URLï¼š</B><input type=""text"" name=""url"&i&""" size=35 value="
 	Response.Write server.htmlencode(Rs("url")&"")
 	Response.Write "></td>"
 	Response.Write "<td class=td1><a href=""link.asp?action=orders&id="
 	Response.Write Rs("id")
-	Response.Write """>ÅÅĞò</a>  <a href=""link.asp?action=edit&id="
+	Response.Write """>æ’åº</a>  <a href=""link.asp?action=edit&id="
 	Response.Write Rs("id")
-	Response.Write """>±à¼­</a>  <a href=""link.asp?action=del&id="
+	Response.Write """>ç¼–è¾‘</a>  <a href=""link.asp?action=del&id="
 	Response.Write Rs("id")
-	Response.Write """ onclick=""{if(confirm('É¾³ıºó²»¿É»Ö¸´£¬È·¶¨É¾³ıÂğ?')){return true;}return false;}"">É¾³ı</a></td>"
+	Response.Write """ onclick=""{if(confirm('åˆ é™¤åä¸å¯æ¢å¤ï¼Œç¡®å®šåˆ é™¤å—?')){return true;}return false;}"">åˆ é™¤</a></td>"
 	Response.Write "</tr><tr>"
-	Response.Write "<td class=td2><b>ÊÇ·ñÍ¼Æ¬</b><br>"
-	Response.Write "ÊÇ<input type=""radio"" class=""radio"" name=""islogo"&i&""" value=""1"" "
+	Response.Write "<td class=td2><b>æ˜¯å¦å›¾ç‰‡</b><br>"
+	Response.Write "æ˜¯<input type=""radio"" class=""radio"" name=""islogo"&i&""" value=""1"" "
 	If Rs("islogo")=1 Then	
 		Response.Write " checked"
 	End If
 	Response.Write ">"
 	
-	Response.Write "·ñ<input type=""radio"" class=""radio"" name=""islogo"&i&""" value=""0"" "
+	Response.Write "å¦<input type=""radio"" class=""radio"" name=""islogo"&i&""" value=""0"" "
 	If Rs("islogo")=0 Then	
 		Response.Write " checked"
 	End If
 	Response.Write ">"
 	Response.Write "</td><td class=td2>"
-	Response.Write "<b>logo£º</b>"
+	Response.Write "<b>logoï¼š</b>"
 	Response.Write "<input type=""text"" name=""logo"&i&""" size=30 value="
 	If Rs("logo")<>"" or Not IsNull(Rs("logo")) Then Response.Write server.htmlencode(Rs("logo"))
 	Response.Write "></td>"
-	Response.Write "<td class=td2 colspan=4><B>¼ò½é£º</B>"
+	Response.Write "<td class=td2 colspan=4><B>ç®€ä»‹ï¼š</B>"
 	Response.Write "<input type=""text"" name=""readme"&i&""" size=50 value="
 	If Rs("readme")<>"" or Not IsNull(Rs("readme")) Then Response.Write server.htmlencode(Rs("readme"))
 	Response.Write "></td></tr>"
@@ -214,7 +214,7 @@ Sub linkinfo()
 	rs.movenext
 	loop
 	
-	Response.Write "<tr><td height=""25"" colspan=4 align=""center""><input type=""submit"" class=""button"" name=""Submit"" value=""ÅúÁ¿¸üĞÂ""></td></tr>"
+	Response.Write "<tr><td height=""25"" colspan=4 align=""center""><input type=""submit"" class=""button"" name=""Submit"" value=""æ‰¹é‡æ›´æ–°""></td></tr>"
 	Response.Write "</from>"
 	End If
 	Response.Write "</table>"
@@ -238,9 +238,9 @@ if Request("url")<>"" and Request("readme")<>"" and request("name")<>"" then
 	rs.Close
 	set rs=Nothing 
 	Call loadlinkList()
-	body=body+"<br>"+"¸üĞÂ³É¹¦£¬Çë¼ÌĞøÆäËû²Ù×÷¡£"
+	body=body+"<br>"+"æ›´æ–°æˆåŠŸï¼Œè¯·ç»§ç»­å…¶ä»–æ“ä½œã€‚"
 else
-	body=body+"<br>"+"ÇëÊäÈëÍêÕûÁªÃËÂÛÌ³ĞÅÏ¢¡£"
+	body=body+"<br>"+"è¯·è¾“å…¥å®Œæ•´è”ç›Ÿè®ºå›ä¿¡æ¯ã€‚"
 end if
 end sub
 
@@ -251,7 +251,7 @@ if Request("url")<>"" and Request("readme")<>"" and request("name")<>"" then
 	sql = "select * from dv_bbslink where id="&Dvbbs.CheckNumeric(request("id"))
 	rs.Open sql,conn,1,3
 	if rs.eof and rs.bof then
-	body=body+"<br>"+"´íÎó£¬Ã»ÓĞÕÒµ½ÁªÃËÂÛÌ³¡£"
+	body=body+"<br>"+"é”™è¯¯ï¼Œæ²¡æœ‰æ‰¾åˆ°è”ç›Ÿè®ºå›ã€‚"
 	else
 	rs("boardname") = fixjs(Trim(Request.Form ("name")))
 	rs("readme") =  fixjs(Trim(Request.Form ("readme")))
@@ -263,9 +263,9 @@ if Request("url")<>"" and Request("readme")<>"" and request("name")<>"" then
 	rs.Close
 	set rs=nothing
 	Call loadlinkList()
-	body=body+"<br>"+"¸üĞÂ³É¹¦£¬Çë¼ÌĞøÆäËû²Ù×÷¡£"
+	body=body+"<br>"+"æ›´æ–°æˆåŠŸï¼Œè¯·ç»§ç»­å…¶ä»–æ“ä½œã€‚"
 Else
-	body=body+"<br>"+"ÇëÊäÈëÍêÕûÁªÃËÂÛÌ³ĞÅÏ¢¡£"
+	body=body+"<br>"+"è¯·è¾“å…¥å®Œæ•´è”ç›Ÿè®ºå›ä¿¡æ¯ã€‚"
 End If
 end sub
 
@@ -274,17 +274,17 @@ sub del
 	id = Dvbbs.CheckNumeric(request("id"))
 	sql="delete from dv_bbslink where id="&id
 	Dvbbs.Execute(sql)
-	body=body+"<br>"+"É¾³ı³É¹¦£¬Çë¼ÌĞøÆäËû²Ù×÷¡£"
+	body=body+"<br>"+"åˆ é™¤æˆåŠŸï¼Œè¯·ç»§ç»­å…¶ä»–æ“ä½œã€‚"
 	Call loadlinkList()
 end sub
 
 sub orders()
 	Response.Write "<br>"
 	Response.Write "<table width=""100%"" border=""0"" cellspacing=""0"" cellpadding=""0"" align=center>"
-	Response.Write "			<tr><th style=""text-align:center;"">ÁªÃËÂÛÌ³ÖØĞÂÅÅĞò</th></tr>"
+	Response.Write "			<tr><th style=""text-align:center;"">è”ç›Ÿè®ºå›é‡æ–°æ’åº</th></tr>"
 	Response.Write "<tr>"
 	Response.Write "<td height=""23"" class=td2>"
-	Response.Write "×¢Òâ£ºÇëÔÚÏàÓ¦ÂÛÌ³µÄÅÅĞò±íµ¥ÄÚÊäÈëÏàÓ¦µÄÅÅÁĞĞòºÅ£¬<font color=red>×¢Òâ²»ÄÜºÍ±ğµÄÁªÃËÂÛÌ³ÓĞÏàÍ¬µÄÅÅÁĞĞòºÅ</font>¡£</font>"
+	Response.Write "æ³¨æ„ï¼šè¯·åœ¨ç›¸åº”è®ºå›çš„æ’åºè¡¨å•å†…è¾“å…¥ç›¸åº”çš„æ’åˆ—åºå·ï¼Œ<font color=red>æ³¨æ„ä¸èƒ½å’Œåˆ«çš„è”ç›Ÿè®ºå›æœ‰ç›¸åŒçš„æ’åˆ—åºå·</font>ã€‚</font>"
 	Response.Write "</td>"
 	Response.Write "</tr>"
 	Response.Write "<td class=td1>"
@@ -294,12 +294,12 @@ sub orders()
 	sql="select * from dv_bbslink where id="&Dvbbs.CheckNumeric(request("id"))
 	rs.open sql,conn,1,1
 	if rs.eof and rs.bof then
-		response.write "Ã»ÓĞÕÒµ½ÏàÓ¦µÄÁªÃËÂÛÌ³¡£"
+		response.write "æ²¡æœ‰æ‰¾åˆ°ç›¸åº”çš„è”ç›Ÿè®ºå›ã€‚"
 	else
 		response.write "<form action=link.asp?action=updatorders method=post>"
 		response.write ""&rs("boardname")&"  <input type=text name=newid size=2 value="&rs("id")&">"
 		response.write "<input type=hidden name=id value="&request("id")&">"
-		response.write "<input type=submit class=button name=Submit value=ĞŞ¸Ä></form>"
+		response.write "<input type=submit class=button name=Submit value=ä¿®æ”¹></form>"
 	end if
 	rs.close
 	set rs=Nothing
@@ -308,7 +308,7 @@ sub orders()
 	Response.write"<tr>"
 	Response.write"<td>"
 	Response.write"<table width=""100%"" border=""0"" cellspacing=""0"" cellpadding=""0"">"
-	Response.write"<tr><th style=""text-align:center;"" colspan=4>µ±Ç°ÅÅĞòÇé¿ö</th></tr>"
+	Response.write"<tr><th style=""text-align:center;"" colspan=4>å½“å‰æ’åºæƒ…å†µ</th></tr>"
 	Response.Write "<tr>"
 	Dim a
 	a=0		
@@ -316,7 +316,7 @@ sub orders()
 	Do While Not Rs.EOF
 	Response.Write "<td height=22 width=""25%"">"
 	Response.Write Rs(0)
-	Response.Write "¡¢"
+	Response.Write "ã€"
 	Response.Write Rs(1)
 	Response.Write "</td>"
 	
@@ -342,12 +342,12 @@ sub updateorders()
 		if rs.eof and rs.bof then
 		sql="update dv_bbslink set id="&request("newid")&" where id="&cstr(request("id"))
 		Dvbbs.Execute(sql)
-		response.write "¸üĞÂ³É¹¦£¡"
+		response.write "æ›´æ–°æˆåŠŸï¼"
 		else
-		response.write "¸üĞÂÊ§°Ü£¬ÄúÖ¸¶¨ÁËºÍÆäËûÁªÃËÂÛÌ³ÏàÍ¬µÄĞòºÅ£¡"
+		response.write "æ›´æ–°å¤±è´¥ï¼Œæ‚¨æŒ‡å®šäº†å’Œå…¶ä»–è”ç›Ÿè®ºå›ç›¸åŒçš„åºå·ï¼"
 		end if
 	else
-		response.write "¸üĞÂÊ§°Ü£¡ÄúÊäÈëµÄ×Ö·û²»ºÏ·¨£¬»òÕßÊäÈëÁËºÍÔ­À´ÏàÍ¬µÄĞòºÅ£¡"
+		response.write "æ›´æ–°å¤±è´¥ï¼æ‚¨è¾“å…¥çš„å­—ç¬¦ä¸åˆæ³•ï¼Œæˆ–è€…è¾“å…¥äº†å’ŒåŸæ¥ç›¸åŒçš„åºå·ï¼"
 	end if
 end sub
 
@@ -361,7 +361,7 @@ Sub saveall()
 		tmpstr=","&ID(i)&","
 		If InStr(IDlist,tmpstr)>0 Then
 			If InStr(Len(tmpstr)-1+InStr(IDlist,tmpstr),IDlist,tmpstr)>0 Then
-			Errmsg=ErrMsg + "·¢ÏÖÏàÍ¬µÄĞòºÅ£º"&ID(i)&",Çë·µ»Ø×ĞÏ¸¼ì²é¡£"
+			Errmsg=ErrMsg + "å‘ç°ç›¸åŒçš„åºå·ï¼š"&ID(i)&",è¯·è¿”å›ä»”ç»†æ£€æŸ¥ã€‚"
 			Exit For
 			End If 
 		End If	
@@ -369,9 +369,9 @@ Sub saveall()
 	If Errmsg<>"" Then
 		dvbbs_error()
 	End If
-	'Çå³ıÔ­À´Êı¾İ±íÖĞµÄÊı¾İ,´òÀºÇò£¬Îå½øÎå³öÁË¡££º£©
+	'æ¸…é™¤åŸæ¥æ•°æ®è¡¨ä¸­çš„æ•°æ®,æ‰“ç¯®çƒï¼Œäº”è¿›äº”å‡ºäº†ã€‚ï¼šï¼‰
 	Dvbbs.Execute("Delete from dv_bbslink")
-	'¿ªÊ¼ÀûÓÃÑ­»·²åÈëÊı¾İ
+	'å¼€å§‹åˆ©ç”¨å¾ªç¯æ’å…¥æ•°æ®
 	Dim sql,boardname,readme,url,logo,islogo
 	For i= 0 to UBound(id)
 		boardname=fixjs(Request.form("boardname"&i))
@@ -383,7 +383,7 @@ Sub saveall()
 		Dvbbs.Execute(sql)	
 	Next
 	loadlinkList()
-	Dv_suc("ÂÛÌ³ÅúÁ¿¸üĞÂ³É¹¦£¡")
+	Dv_suc("è®ºå›æ‰¹é‡æ›´æ–°æˆåŠŸï¼")
 End Sub 
 Sub LoadlinkList()
 	Dim rs

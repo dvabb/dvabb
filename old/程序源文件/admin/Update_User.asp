@@ -15,88 +15,88 @@ If ErrMsg<>"" Then Dvbbs_Error
 If founderr then call dvbbs_error()
 footer()
 
-'¶¥²¿ËµÃ÷¼°×¢ÒâÊÂÏî
+'é¡¶éƒ¨è¯´æ˜åŠæ³¨æ„äº‹é¡¹
 Sub Main_head
 
 End Sub
 
-'Ïà¹ØÉèÖÃ
+'ç›¸å…³è®¾ç½®
 Sub SendForm
 Dim Rs
 %>
 <form METHOD=POST ACTION="?action=SendMoney">
 <table width="100%" border="0" cellspacing="1" cellpadding="3" align="center">
-<tr><th style="text-align:center;" colspan="4">½±ÀøÔùËÍÉèÖÃ</th></tr>
+<tr><th style="text-align:center;" colspan="4">å¥–åŠ±èµ é€è®¾ç½®</th></tr>
 <tr>
-<td class="td1" align=right width="15%"><U>ÔùËÍ½ğ±Ò</U>£º</td>
+<td class="td1" align=right width="15%"><U>èµ é€é‡‘å¸</U>ï¼š</td>
 <td class="td1" width="40%">
 <INPUT TYPE="text" NAME="SendMoney" size=10 onkeyup="CheckNumer(this.value,this,'')">
-<INPUT TYPE="radio" class="radio" class= NAME="SendMoneyType" checked value="0">Ôö¼Ó <INPUT TYPE="radio" class="radio" NAME="SendMoneyType" value="1">¼õÉÙ <INPUT TYPE="radio" class="radio" NAME="SendMoneyType" value="2">¸üĞÂ
+<INPUT TYPE="radio" class="radio" class= NAME="SendMoneyType" checked value="0">å¢åŠ  <INPUT TYPE="radio" class="radio" NAME="SendMoneyType" value="1">å‡å°‘ <INPUT TYPE="radio" class="radio" NAME="SendMoneyType" value="2">æ›´æ–°
 </td>
-<td class="td1" width="10%"><INPUT TYPE="checkbox" class="checkbox" NAME="SelectType" value="SendMoney">Ñ¡È¡</td>
+<td class="td1" width="10%"><INPUT TYPE="checkbox" class="checkbox" NAME="SelectType" value="SendMoney">é€‰å–</td>
 <td class="td2" width="*" rowspan="6" valign=top>
-<li>ÇëÕıÈ·ÌîĞ´Ïà¹ØÊıÖµ£»
-<li>Ñ¡È¡ºó¸ÃÏî¸üĞÂ²ÅÄÜÉúĞ§£»
-<li>ÈôÑ¡È¡¸üĞÂ£¬ÔòÄ¿±êÓÃ»§Ïà¹ØÊı¾İ½«¸üĞÂÎª¸ÃÉèÖÃ£»
+<li>è¯·æ­£ç¡®å¡«å†™ç›¸å…³æ•°å€¼ï¼›
+<li>é€‰å–åè¯¥é¡¹æ›´æ–°æ‰èƒ½ç”Ÿæ•ˆï¼›
+<li>è‹¥é€‰å–æ›´æ–°ï¼Œåˆ™ç›®æ ‡ç”¨æˆ·ç›¸å…³æ•°æ®å°†æ›´æ–°ä¸ºè¯¥è®¾ç½®ï¼›
 </td>
 </tr>
 <tr>
-<td class="td1" align=right><U>ÔùËÍµãÈ¯</U>£º</td>
+<td class="td1" align=right><U>èµ é€ç‚¹åˆ¸</U>ï¼š</td>
 <td class="td1"><INPUT TYPE="text" NAME="SendTicket" size=10 onkeyup="CheckNumer(this.value,this,'')">
-<INPUT TYPE="radio" class="radio" NAME="SendTicketType" checked value="0">Ôö¼Ó <INPUT TYPE="radio" class="radio" NAME="SendTicketType" value="1">¼õÉÙ <INPUT TYPE="radio" class="radio" NAME="SendTicketType" value="2">¸üĞÂ
+<INPUT TYPE="radio" class="radio" NAME="SendTicketType" checked value="0">å¢åŠ  <INPUT TYPE="radio" class="radio" NAME="SendTicketType" value="1">å‡å°‘ <INPUT TYPE="radio" class="radio" NAME="SendTicketType" value="2">æ›´æ–°
 </td>
-<td class="td1"><INPUT TYPE="checkbox" class="checkbox" NAME="SelectType" value="SendTicket">Ñ¡È¡</td>
+<td class="td1"><INPUT TYPE="checkbox" class="checkbox" NAME="SelectType" value="SendTicket">é€‰å–</td>
 </tr>
 <tr>
-<td class="td1" align=right><U>ÔùËÍ»ı·Ö</U>£º</td>
+<td class="td1" align=right><U>èµ é€ç§¯åˆ†</U>ï¼š</td>
 <td class="td1"><INPUT TYPE="text" NAME="SendUserEP" size=10 onkeyup="CheckNumer(this.value,this,'')">
-<INPUT TYPE="radio" class="radio" NAME="SendUserEPType" checked value="0">Ôö¼Ó <INPUT TYPE="radio" class="radio" NAME="SendUserEPType" value="1">¼õÉÙ <INPUT TYPE="radio" class="radio" NAME="SendUserEPType" value="2">¸üĞÂ
+<INPUT TYPE="radio" class="radio" NAME="SendUserEPType" checked value="0">å¢åŠ  <INPUT TYPE="radio" class="radio" NAME="SendUserEPType" value="1">å‡å°‘ <INPUT TYPE="radio" class="radio" NAME="SendUserEPType" value="2">æ›´æ–°
 </td>
-<td class="td1"><INPUT TYPE="checkbox" class="checkbox" NAME="SelectType" value="SendUserEP">Ñ¡È¡</td>
+<td class="td1"><INPUT TYPE="checkbox" class="checkbox" NAME="SelectType" value="SendUserEP">é€‰å–</td>
 </tr>
 <tr>
-<td class="td1" align=right><U>ÔùËÍ÷ÈÁ¦</U>£º</td>
+<td class="td1" align=right><U>èµ é€é­…åŠ›</U>ï¼š</td>
 <td class="td1"><INPUT TYPE="text" NAME="SendUserCP" size=10 onkeyup="CheckNumer(this.value,this,'')">
-<INPUT TYPE="radio" class="radio" NAME="SendUserCPType" checked value="0">Ôö¼Ó <INPUT TYPE="radio" class="radio" NAME="SendUserCPType" value="1">¼õÉÙ <INPUT TYPE="radio" class="radio" NAME="SendUserCPType" value="2">¸üĞÂ
+<INPUT TYPE="radio" class="radio" NAME="SendUserCPType" checked value="0">å¢åŠ  <INPUT TYPE="radio" class="radio" NAME="SendUserCPType" value="1">å‡å°‘ <INPUT TYPE="radio" class="radio" NAME="SendUserCPType" value="2">æ›´æ–°
 </td>
-<td class="td1"><INPUT TYPE="checkbox" class="checkbox" NAME="SelectType" value="SendUserCP">Ñ¡È¡</td>
+<td class="td1"><INPUT TYPE="checkbox" class="checkbox" NAME="SelectType" value="SendUserCP">é€‰å–</td>
 </tr>
 <tr>
-<td class="td1" align=right><U>ÔùËÍ½ğÇ®</U>£º</td>
+<td class="td1" align=right><U>èµ é€é‡‘é’±</U>ï¼š</td>
 <td class="td1"><INPUT TYPE="text" NAME="SendUserWealth" size=10 onkeyup="CheckNumer(this.value,this,'')">
-<INPUT TYPE="radio" class="radio" NAME="SendUserWealthType" checked value="0">Ôö¼Ó <INPUT TYPE="radio" class="radio" NAME="SendUserWealthType" value="1">¼õÉÙ <INPUT TYPE="radio" class="radio" NAME="SendUserWealthType" value="2">¸üĞÂ
+<INPUT TYPE="radio" class="radio" NAME="SendUserWealthType" checked value="0">å¢åŠ  <INPUT TYPE="radio" class="radio" NAME="SendUserWealthType" value="1">å‡å°‘ <INPUT TYPE="radio" class="radio" NAME="SendUserWealthType" value="2">æ›´æ–°
 </td>
-<td class="td1"><INPUT TYPE="checkbox" class="checkbox" NAME="SelectType" value="SendUserWealth">Ñ¡È¡</td>
+<td class="td1"><INPUT TYPE="checkbox" class="checkbox" NAME="SelectType" value="SendUserWealth">é€‰å–</td>
 </tr>
 <tr>
-<td class="td1" align=right><U>ÔùËÍÍşÍû</U>£º</td>
+<td class="td1" align=right><U>èµ é€å¨æœ›</U>ï¼š</td>
 <td class="td1"><INPUT TYPE="text" NAME="SendUserPower" size=10 onkeyup="CheckNumer(this.value,this,'')">
-<INPUT TYPE="radio" class="radio" NAME="SendUserPowerType" checked value="0">Ôö¼Ó <INPUT TYPE="radio" class="radio" NAME="SendUserPowerType" value="1">¼õÉÙ <INPUT TYPE="radio" class="radio" NAME="SendUserPowerType" value="2">¸üĞÂ
+<INPUT TYPE="radio" class="radio" NAME="SendUserPowerType" checked value="0">å¢åŠ  <INPUT TYPE="radio" class="radio" NAME="SendUserPowerType" value="1">å‡å°‘ <INPUT TYPE="radio" class="radio" NAME="SendUserPowerType" value="2">æ›´æ–°
 </td>
-<td class="td1"><INPUT TYPE="checkbox" class="checkbox" NAME="SelectType" value="SendUserPower">Ñ¡È¡</td>
+<td class="td1"><INPUT TYPE="checkbox" class="checkbox" NAME="SelectType" value="SendUserPower">é€‰å–</td>
 </tr>
-<tr><th style="text-align:center;" colspan="4">½±ÀøÔùËÍÄ¿±ê</th></tr>
+<tr><th style="text-align:center;" colspan="4">å¥–åŠ±èµ é€ç›®æ ‡</th></tr>
 <tr><td class="td2" height=20 colspan="4">
-<INPUT TYPE="radio" class="radio" NAME="Sendtype" value="0" onclick="formstep(0)">°´Ö¸¶¨ÓÃ»§
-<INPUT TYPE="radio" class="radio" NAME="Sendtype" value="1" onclick="formstep(1)">°´Ö¸¶¨ÓÃ»§×é
-<INPUT TYPE="radio" class="radio" NAME="Sendtype" value="2" onclick="formstep(2)">°´ËùÓĞÓÃ»§
+<INPUT TYPE="radio" class="radio" NAME="Sendtype" value="0" onclick="formstep(0)">æŒ‰æŒ‡å®šç”¨æˆ·
+<INPUT TYPE="radio" class="radio" NAME="Sendtype" value="1" onclick="formstep(1)">æŒ‰æŒ‡å®šç”¨æˆ·ç»„
+<INPUT TYPE="radio" class="radio" NAME="Sendtype" value="2" onclick="formstep(2)">æŒ‰æ‰€æœ‰ç”¨æˆ·
 </td></tr>
 </table>
 <div id="ToUser" style="display:none;">
 	<br>
 	<table width="100%" border="0" cellspacing="1" cellpadding="3" align="center">
-	<tr><th style="text-align:center;" colspan="2">Ö¸¶¨ÓÃ»§</th></tr>
-	<tr><td height=20 colspan="2">ÓÃ»§ÃûÒÔÓ¢ÎÄ¶ººÅ¡°,¡±·Ö¸ô£»Îª½ÚÊ¡×ÊÔ´£¬Ã¿´Î¸üĞÂÏŞÖÆ10Î»ÓÃ»§¡£×¢ÒâÇø·Ö´óĞ¡Ğ´¡£</td></tr>
-	<td class="td1"><u>ÓÃ»§Ãûµ¥</u>£º</td>
+	<tr><th style="text-align:center;" colspan="2">æŒ‡å®šç”¨æˆ·</th></tr>
+	<tr><td height=20 colspan="2">ç”¨æˆ·åä»¥è‹±æ–‡é€—å·â€œ,â€åˆ†éš”ï¼›ä¸ºèŠ‚çœèµ„æºï¼Œæ¯æ¬¡æ›´æ–°é™åˆ¶10ä½ç”¨æˆ·ã€‚æ³¨æ„åŒºåˆ†å¤§å°å†™ã€‚</td></tr>
+	<td class="td1"><u>ç”¨æˆ·åå•</u>ï¼š</td>
 	<td class="td1"><INPUT TYPE="text" NAME="ToUserName" size="80"></td>
 	</table>
 </div>
 <div id="ToUserGroup" style="display:none;">
 	<br>
 	<table width="100%" border="0" cellspacing="1" cellpadding="3" align="center">
-	<tr><th style="text-align:center;">Ö¸¶¨ÓÃ»§×é</th></tr>
+	<tr><th style="text-align:center;">æŒ‡å®šç”¨æˆ·ç»„</th></tr>
 	<tr><td>
-	<li>ÇëÑ¡È¡Ö¸¶¨¸üĞÂµÄÓÃ»§×é<LI>ÈôÖ»¶ÔÄ³²¿·ÖÓÃ»§×é¸üĞÂ£¬Çë²»ÒªÑ¡È¡ËùÓĞÓÃ»§¡£<br>
+	<li>è¯·é€‰å–æŒ‡å®šæ›´æ–°çš„ç”¨æˆ·ç»„<LI>è‹¥åªå¯¹æŸéƒ¨åˆ†ç”¨æˆ·ç»„æ›´æ–°ï¼Œè¯·ä¸è¦é€‰å–æ‰€æœ‰ç”¨æˆ·ã€‚<br>
 	<%
 	Set Rs=DvBBS.Execute("Select UserGroupID,Title,UserTitle,parentgid From Dv_UserGroups where parentgid>0  Order By parentgid,UserGroupID")
 	Do while not Rs.eof
@@ -108,32 +108,32 @@ Dim Rs
 	Set Rs=Nothing
 	%>
 	</td></tr>
-	<tr><td height=20 class="td2" ><input type="button" class="button" value="´ò¿ª¸ß¼¶ÉèÖÃ" NAME="OPENSET" onclick="openset(this,'UpSetting')"></td></tr>
+	<tr><td height=20 class="td2" ><input type="button" class="button" value="æ‰“å¼€é«˜çº§è®¾ç½®" NAME="OPENSET" onclick="openset(this,'UpSetting')"></td></tr>
 	<tr><td height=20 ID="UpSetting" style="display:NONE" class="td2">
 		<table width="100%" border="0" cellspacing="1" cellpadding="3" align=center>
-		<tr><th style="text-align:center;" colspan="4">·ûºÏÌõ¼şÉèÖÃ</th></tr>
+		<tr><th style="text-align:center;" colspan="4">ç¬¦åˆæ¡ä»¶è®¾ç½®</th></tr>
 		<tr>
-		<td class="td1" width="15%">×îºóµÇÂ½Ê±¼ä£º</td>
+		<td class="td1" width="15%">æœ€åç™»é™†æ—¶é—´ï¼š</td>
 		<td class="td1" width="35%">
-		<input type="text" name="LoginTime" onkeyup="CheckNumer(this.value,this,'')" size=6>Ìì &nbsp;<INPUT TYPE="radio" class="radio" NAME="LoginTimeType" checked value="0">¶àÓÚ <INPUT TYPE="radio" class="radio" NAME="LoginTimeType" value="1">ÉÙÓÚ
+		<input type="text" name="LoginTime" onkeyup="CheckNumer(this.value,this,'')" size=6>å¤© &nbsp;<INPUT TYPE="radio" class="radio" NAME="LoginTimeType" checked value="0">å¤šäº <INPUT TYPE="radio" class="radio" NAME="LoginTimeType" value="1">å°‘äº
 		</td>
-		<td class="td1" width="15%">×¢²áÊ±¼ä£º</td>
+		<td class="td1" width="15%">æ³¨å†Œæ—¶é—´ï¼š</td>
 		<td class="td1" width="35%">
-		<input type="text" name="RegTime" onkeyup="CheckNumer(this.value,this,'')" size=6>Ìì &nbsp;<INPUT TYPE="radio" class="radio" NAME="RegTimeType" checked value="0">¶àÓÚ <INPUT TYPE="radio" class="radio" NAME="RegTimeType" value="1">ÉÙÓÚ
+		<input type="text" name="RegTime" onkeyup="CheckNumer(this.value,this,'')" size=6>å¤© &nbsp;<INPUT TYPE="radio" class="radio" NAME="RegTimeType" checked value="0">å¤šäº <INPUT TYPE="radio" class="radio" NAME="RegTimeType" value="1">å°‘äº
 		</td>
 		</tr>
 		<tr>
-		<td class="td1">µÇÂ½´ÎÊı£º</td>
-		<td class="td1"><input type="text" name="Logins" size=6 onkeyup="CheckNumer(this.value,this,'')">´Î &nbsp;<INPUT TYPE="radio" class="radio" NAME="LoginsType" checked value="0">¶àÓÚ <INPUT TYPE="radio" class="radio" NAME="LoginsType" value="1">ÉÙÓÚ
+		<td class="td1">ç™»é™†æ¬¡æ•°ï¼š</td>
+		<td class="td1"><input type="text" name="Logins" size=6 onkeyup="CheckNumer(this.value,this,'')">æ¬¡ &nbsp;<INPUT TYPE="radio" class="radio" NAME="LoginsType" checked value="0">å¤šäº <INPUT TYPE="radio" class="radio" NAME="LoginsType" value="1">å°‘äº
 		</td>
-		<td class="td1">·¢±íÎÄÕÂ£º</td>
-		<td class="td1"><input type="text" name="UserPost" size=6 onkeyup="CheckNumer(this.value,this,'')">Æª &nbsp;<INPUT TYPE="radio" class="radio" NAME="UserPostType" checked value="0">¶àÓÚ <INPUT TYPE="radio" class="radio" NAME="UserPostType" value="1">ÉÙÓÚ</td>
+		<td class="td1">å‘è¡¨æ–‡ç« ï¼š</td>
+		<td class="td1"><input type="text" name="UserPost" size=6 onkeyup="CheckNumer(this.value,this,'')">ç¯‡ &nbsp;<INPUT TYPE="radio" class="radio" NAME="UserPostType" checked value="0">å¤šäº <INPUT TYPE="radio" class="radio" NAME="UserPostType" value="1">å°‘äº</td>
 		</tr>
 		<tr>
-		<td class="td1">Ö÷ÌâÎÄÕÂ£º</td>
-		<td class="td1"><input type="text" name="UserTopic" size=6 onkeyup="CheckNumer(this.value,this,'')">Æª &nbsp;<INPUT TYPE="radio" class="radio" NAME="UserTopicType" checked value="0">¶àÓÚ <INPUT TYPE="radio" class="radio" NAME="UserTopicType" value="1">ÉÙÓÚ</td>
-		<td class="td1">¾«»ªÎÄÕÂ£º</td>
-		<td class="td1"><input type="text" name="UserBest" size=6 onkeyup="CheckNumer(this.value,this,'')">Æª &nbsp;<INPUT TYPE="radio" class="radio" NAME="UserBestType" checked value="0">¶àÓÚ <INPUT TYPE="radio" class="radio" NAME="UserBestType" value="1">ÉÙÓÚ
+		<td class="td1">ä¸»é¢˜æ–‡ç« ï¼š</td>
+		<td class="td1"><input type="text" name="UserTopic" size=6 onkeyup="CheckNumer(this.value,this,'')">ç¯‡ &nbsp;<INPUT TYPE="radio" class="radio" NAME="UserTopicType" checked value="0">å¤šäº <INPUT TYPE="radio" class="radio" NAME="UserTopicType" value="1">å°‘äº</td>
+		<td class="td1">ç²¾åæ–‡ç« ï¼š</td>
+		<td class="td1"><input type="text" name="UserBest" size=6 onkeyup="CheckNumer(this.value,this,'')">ç¯‡ &nbsp;<INPUT TYPE="radio" class="radio" NAME="UserBestType" checked value="0">å¤šäº <INPUT TYPE="radio" class="radio" NAME="UserBestType" value="1">å°‘äº
 		</td>
 		</tr>
 		</table>
@@ -141,33 +141,33 @@ Dim Rs
 	</table>
 </div>
 <table width="100%" border="0" cellspacing="1" cellpadding="3" align="center">
-	<tr><td height=20 align=center><input type="submit" class="button" value="Ö´ĞĞ¸üĞÂ"></td></tr>
+	<tr><td height=20 align=center><input type="submit" class="button" value="æ‰§è¡Œæ›´æ–°"></td></tr>
 </table>
 <form>
 <SCRIPT LANGUAGE="JavaScript">
 <!--
 function openset(v,s){
-	if (v.value=='´ò¿ª¸ß¼¶ÉèÖÃ'){
+	if (v.value=='æ‰“å¼€é«˜çº§è®¾ç½®'){
 		document.getElementById(s).style.display = "";
-		v.value="¹Ø±Õ¸ß¼¶ÉèÖÃ";
+		v.value="å…³é—­é«˜çº§è®¾ç½®";
 	}
 	else{
-		v.value="´ò¿ª¸ß¼¶ÉèÖÃ";
+		v.value="æ‰“å¼€é«˜çº§è®¾ç½®";
 		document.getElementById(s).style.display = "none";
 	}
 }
-//ÑéÖ¤±íµ¥ÊıÖµ n:number ±íµ¥Öµ | v:value object ±íµ¥¶ÔÏó | n_max ×î´óÖµ
+//éªŒè¯è¡¨å•æ•°å€¼ n:number è¡¨å•å€¼ | v:value object è¡¨å•å¯¹è±¡ | n_max æœ€å¤§å€¼
 function CheckNumer(n,v,n_max)
 {
 	if (isNaN(n)){
 		v.value = "";
-		alert("ÇëÌîĞ´ÕıÈ·µÄÊıÖµ£¡");
+		alert("è¯·å¡«å†™æ­£ç¡®çš„æ•°å€¼ï¼");
 	}
 	else{
 		n = parseInt(n);
 		if (!isNaN(n_max)){
 			n_max = parseInt(n_max);
-			if (n>n_max){v.value = "";alert("¸ÃÏîÊıÖµ²»ÄÜ¸ßÓÚ£º"+n_max);}
+			if (n>n_max){v.value = "";alert("è¯¥é¡¹æ•°å€¼ä¸èƒ½é«˜äºï¼š"+n_max);}
 		}
 	}
 }
@@ -193,59 +193,59 @@ function formstep(OpenID){
 <%
 End Sub
 
-'±£´æ¸üĞÂÉèÖÃ
+'ä¿å­˜æ›´æ–°è®¾ç½®
 Sub SendMoney
 	Dim SelectType,UPString,TempData
 	SelectType = Replace(Request.Form("SelectType"),chr(32),"")
 	If SelectType="" Then
-		ErrMsg = "ÇëÑ¡È¡½±ÀøÉèÖÃÏî!"
+		ErrMsg = "è¯·é€‰å–å¥–åŠ±è®¾ç½®é¡¹!"
 		Exit Sub
 	End If
 	SelectType = ","&SelectType&","
 	UPString = ""
-	'¸üĞÂ½ğ±Ò
+	'æ›´æ–°é‡‘å¸
 	If Instr(SelectType,"SendMoney") Then
 		UPString = GetUPString(Request.Form("SendMoney"),UPString,Request.Form("SendMoneyType"),"UserMoney")
 	End If
-	'¸üĞÂµãÈ¯
+	'æ›´æ–°ç‚¹åˆ¸
 	If Instr(SelectType,"SendTicket") Then
 		UPString = GetUPString(Request.Form("SendTicket"),UPString,Request.Form("SendTicketType"),"UserTicket")
 	End If
-	'¸üĞÂ»ı·Ö
+	'æ›´æ–°ç§¯åˆ†
 	If Instr(SelectType,"SendUserEP") Then
 		UPString = GetUPString(Request.Form("SendUserEP"),UPString,Request.Form("SendUserEPType"),"UserEP")
 	End If
-	'¸üĞÂ÷ÈÁ¦
+	'æ›´æ–°é­…åŠ›
 	If Instr(SelectType,"SendUserCP") Then
 		UPString = GetUPString(Request.Form("SendUserCP"),UPString,Request.Form("SendUserCPType"),"UserCP")
 	End If
-	'¸üĞÂ½ğÇ®
+	'æ›´æ–°é‡‘é’±
 	If Instr(SelectType,"SendUserWealth") Then
 		UPString = GetUPString(Request.Form("SendUserWealth"),UPString,Request.Form("SendUserWealthType"),"UserWealth")
 	End If
-	'¸üĞÂÍşÍû
+	'æ›´æ–°å¨æœ›
 	If Instr(SelectType,"SendUserPower") Then
 		UPString = GetUPString(Request.Form("SendUserPower"),UPString,Request.Form("SendUserPowerType"),"UserPower")
 	End If
 	'Response.Write UPString
 	Select Case Request.Form("Sendtype")
-		Case "0" : Call Sendtype_0(UPString)	'°´Ö¸¶¨ÓÃ»§
-		Case "1" : Call Sendtype_1(UPString)	'°´Ö¸¶¨ÓÃ»§×é
-		Case "2" : Call Sendtype_2(UPString)	'°´ËùÓĞÓÃ»§
+		Case "0" : Call Sendtype_0(UPString)	'æŒ‰æŒ‡å®šç”¨æˆ·
+		Case "1" : Call Sendtype_1(UPString)	'æŒ‰æŒ‡å®šç”¨æˆ·ç»„
+		Case "2" : Call Sendtype_2(UPString)	'æŒ‰æ‰€æœ‰ç”¨æˆ·
 		Case Else
-			ErrMsg = "ÇëÑ¡È¡½±ÀøÔùËÍÄ¿±ê!"
+			ErrMsg = "è¯·é€‰å–å¥–åŠ±èµ é€ç›®æ ‡!"
 			Exit Sub
 	End Select
 End Sub
 
-'°´Ö¸¶¨ÓÃ»§
+'æŒ‰æŒ‡å®šç”¨æˆ·
 Sub Sendtype_0(Str)
 	Dim ToUserName,Rs,Sql,i,ToUserID
 	ToUserName = Trim(Request.Form("ToUserName"))
-	If ToUserName = "" Then ErrMsg = "ÇëÌîĞ´Ä¿±êÓÃ»§Ãû£¬×¢ÒâÇø·Ö´óĞ¡Ğ´¡£" : Exit Sub
+	If ToUserName = "" Then ErrMsg = "è¯·å¡«å†™ç›®æ ‡ç”¨æˆ·åï¼Œæ³¨æ„åŒºåˆ†å¤§å°å†™ã€‚" : Exit Sub
 	ToUserName = Replace(ToUserName,"'","")
 	ToUserName = Split(ToUserName,",")
-	If Ubound(ToUserName)>10 Then ErrMsg = "ÏŞÖÆÒ»´Î²»ÄÜ³¬¹ı10Î»Ä¿±êÓÃ»§¡£" : Exit Sub
+	If Ubound(ToUserName)>10 Then ErrMsg = "é™åˆ¶ä¸€æ¬¡ä¸èƒ½è¶…è¿‡10ä½ç›®æ ‡ç”¨æˆ·ã€‚" : Exit Sub
 	For i=0 To Ubound(ToUserName)
 		SQL = "Select UserID From [Dv_user] Where UserName = '"&ToUserName(i)&"'"
 		SET Rs = Dvbbs.Execute(SQL)
@@ -256,26 +256,26 @@ Sub Sendtype_0(Str)
 				ToUserID = ToUserID &","& Rs(0)
 			End If
 		Else
-			ErrMsg = "Ä¿±êÓÃ»§²»´æÔÚ£¬×¢ÒâÇø·Ö´óĞ¡Ğ´¡£" : Exit Sub
+			ErrMsg = "ç›®æ ‡ç”¨æˆ·ä¸å­˜åœ¨ï¼Œæ³¨æ„åŒºåˆ†å¤§å°å†™ã€‚" : Exit Sub
 		End If
 	Next
 	Rs.Close : Set Rs = Nothing
 	If ToUserID<>"" Then
 		SQL = "Update [Dv_user] Set "&Dvbbs.Checkstr(Str)&" where UserID in ("&ToUserID&") "
 		Dvbbs.Execute(SQL)
-		Dv_suc("¹²Î»"&Ubound(ToUserName)+1&"Ä¿±ê»áÔ±¸üĞÂ³É¹¦!")
+		Dv_suc("å…±ä½"&Ubound(ToUserName)+1&"ç›®æ ‡ä¼šå‘˜æ›´æ–°æˆåŠŸ!")
 	Else
-		ErrMsg = "Ä¿±êÓÃ»§²»´æÔÚ£¬×¢ÒâÇø·Ö´óĞ¡Ğ´¡£" : Exit Sub
+		ErrMsg = "ç›®æ ‡ç”¨æˆ·ä¸å­˜åœ¨ï¼Œæ³¨æ„åŒºåˆ†å¤§å°å†™ã€‚" : Exit Sub
 	End If
 End Sub
 
-'°´Ö¸¶¨ÓÃ»§×é
+'æŒ‰æŒ‡å®šç”¨æˆ·ç»„
 Sub Sendtype_1(Str)
 	Dim GetGroupID
 	Dim SearchStr,TempValue,DayStr
 	GetGroupID = Replace(Request.Form("GetGroupID"),chr(32),"")
 	If GetGroupID="" or Not Isnumeric(Replace(GetGroupID,",","")) Then
-		ErrMsg = "ÇëÕıÈ·Ñ¡È¡ÏàÓ¦µÄÓÃ»§×é¡£" : Exit Sub
+		ErrMsg = "è¯·æ­£ç¡®é€‰å–ç›¸åº”çš„ç”¨æˆ·ç»„ã€‚" : Exit Sub
 	Else
 		GetGroupID = Dvbbs.Checkstr(GetGroupID)
 	End If
@@ -293,32 +293,32 @@ Sub Sendtype_1(Str)
 			SearchStr = "UserGroupID in ("&GetGroupID&")"
 		End If
 	End If
-	'µÇÂ½´ÎÊı
+	'ç™»é™†æ¬¡æ•°
 	TempValue = Request.Form("Logins")
 	If TempValue<>"" and IsNumeric(TempValue) Then
 		SearchStr = GetSearchString(TempValue,SearchStr,Request.Form("LoginsType"),"UserLogins")
 	End If
-	'·¢±íÎÄÕÂ
+	'å‘è¡¨æ–‡ç« 
 	TempValue = Request.Form("UserPost")
 	If TempValue<>"" and IsNumeric(TempValue) Then
 		SearchStr = GetSearchString(TempValue,SearchStr,Request.Form("UserPostType"),"UserPost")
 	End If
-	'Ö÷ÌâÎÄÕÂ
+	'ä¸»é¢˜æ–‡ç« 
 	TempValue = Request.Form("UserTopic")
 	If TempValue<>"" and IsNumeric(TempValue) Then
 		SearchStr = GetSearchString(TempValue,SearchStr,Request.Form("UserTopicType"),"UserTopic")
 	End If
-	'¾«»ªÎÄÕÂ
+	'ç²¾åæ–‡ç« 
 	TempValue = Request.Form("UserBest")
 	If TempValue<>"" and IsNumeric(TempValue) Then
 		SearchStr = GetSearchString(TempValue,SearchStr,Request.Form("UserBestType"),"UserIsBest")
 	End If
-	'×îºóµÇÂ½Ê±¼ä
+	'æœ€åç™»é™†æ—¶é—´
 	TempValue = Request.Form("LoginTime")
 	If TempValue<>"" and IsNumeric(TempValue) Then
 		SearchStr = GetSearchString(TempValue,SearchStr,Request.Form("LoginTimeType"),"Datediff("&DayStr&",Lastlogin,"&SqlNowString&")")
 	End If
-	'×¢²áÊ±¼ä
+	'æ³¨å†Œæ—¶é—´
 	TempValue = Request.Form("RegTime")
 	If TempValue<>"" and IsNumeric(TempValue) Then
 		SearchStr = GetSearchString(TempValue,SearchStr,Request.Form("RegTimeType"),"Datediff("&DayStr&",JoinDate,"&SqlNowString&")")
@@ -327,15 +327,15 @@ Sub Sendtype_1(Str)
 	Dim SQL
 	SQL = "Update [Dv_user] Set "&Dvbbs.Checkstr(Str)&" Where "&SearchStr
 	Dvbbs.Execute(SQL)
-	Dv_suc("Ä¿±ê»áÔ±¸üĞÂ³É¹¦!")
+	Dv_suc("ç›®æ ‡ä¼šå‘˜æ›´æ–°æˆåŠŸ!")
 End Sub
 
-'°´ËùÓĞÓÃ»§
+'æŒ‰æ‰€æœ‰ç”¨æˆ·
 Sub Sendtype_2(Str)
 	Dim sql
 	SQL = "Update [Dv_user] Set "& Dvbbs.Checkstr(Str)
 	Dvbbs.Execute(SQL)
-	Dv_suc("ËùÓĞ»áÔ±¸üĞÂ³É¹¦!")
+	Dv_suc("æ‰€æœ‰ä¼šå‘˜æ›´æ–°æˆåŠŸ!")
 End Sub
 
 Function GetSearchString(Get_Value,Get_SearchStr,UpType,UpColumn)

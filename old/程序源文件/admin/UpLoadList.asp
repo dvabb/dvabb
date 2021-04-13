@@ -47,29 +47,29 @@ seachstr="&filesearch="&Request("filesearch")
 end if
 
 '----------------------------------
-'¶àÌõ¼ş²éÑ¯±íµ¥´¦Àí¿ªÊ¼
+'å¤šæ¡ä»¶æŸ¥è¯¢è¡¨å•å¤„ç†å¼€å§‹
 '----------------------------------
 if Request("filesearch")=7 and IsNumeric(Request("filesearch")) then
 
-	'ËùÊô°æ¿éÌõ¼ş
+	'æ‰€å±ç‰ˆå—æ¡ä»¶
 	if Request("class")<>"" and IsNumeric(Request("class")) and Request("class")<>0 then
 	seachstr=seachstr+"&class="&cint(Request("class"))
 	sqlstr=" and F_BoardID="&cint(Request("class"))
 	end if
 
-	'¸½¼ş·ÖÀàÌõ¼ş
+	'é™„ä»¶åˆ†ç±»æ¡ä»¶
 	if Request("f_type")<>"" and IsNumeric(Request("f_type")) then
 	seachstr=seachstr+"&f_type="&cint(Request("f_type"))
 	sqlstr=sqlstr+" and f_type="&cint(Request("f_type"))
 	end if
 
-	'¸½¼şÀàĞÍÌõ¼ş
+	'é™„ä»¶ç±»å‹æ¡ä»¶
 	if Request("f_filetype")<>"" then
 	seachstr=seachstr+"&f_filetype="&Request("f_filetype")
 	sqlstr=sqlstr+" and f_filetype='"&dvbbs.checkstr(Request("f_filetype"))&"'"
 	end if
 
-	'ÏÂÔØ´ÎÊıÌõ¼şf_downnum
+	'ä¸‹è½½æ¬¡æ•°æ¡ä»¶f_downnum
 	if Request("f_downnum")<>"" and IsNumeric(Request("f_downnum")) then
 		if Request("downtype")="more" then
 		sqlstr=sqlstr+" and f_downnum>="&clng(Request("f_downnum"))
@@ -79,7 +79,7 @@ if Request("filesearch")=7 and IsNumeric(Request("filesearch")) then
 		seachstr=seachstr+"&f_downnum="&cint(Request("f_downnum"))&"&downtype="&Request("downtype")
 	end if
 
-	'ä¯ÀÀ´ÎÊıÌõ¼şf_viewnum
+	'æµè§ˆæ¬¡æ•°æ¡ä»¶f_viewnum
 	if Request("f_viewnum")<>"" and IsNumeric(Request("f_viewnum")) then
 		if Request("viewtype")="more" then
 		sqlstr=sqlstr+" and f_viewnum>="&clng(Request("f_viewnum"))
@@ -89,7 +89,7 @@ if Request("filesearch")=7 and IsNumeric(Request("filesearch")) then
 		seachstr=seachstr+"&f_viewnum="&cint(Request("f_viewnum"))&"&viewtype="&Request("viewtype")
 	end if
 
-	'¸½¼ş´óĞ¡Ìõ¼şf_size
+	'é™„ä»¶å¤§å°æ¡ä»¶f_size
 	if Request("f_size")<>"" and IsNumeric(Request("f_size")) then
 		if Request("sizetype")="more" then
 		sqlstr=sqlstr+" and F_FileSize>="&clng(Request("f_size"))*1024
@@ -99,7 +99,7 @@ if Request("filesearch")=7 and IsNumeric(Request("filesearch")) then
 		seachstr=seachstr+"&f_size="&cint(Request("f_size"))&"&sizetype="&Request("sizetype")
 	end if
 
-	'¶àÉÙÌìÄÚ·¢²¼Ìõ¼şf_adddatenum
+	'å¤šå°‘å¤©å†…å‘å¸ƒæ¡ä»¶f_adddatenum
 	if Request("f_adddatenum")<>"" and IsNumeric(Request("f_adddatenum")) then
 		If IsSqlDataBase=1 Then
 			if Request("timetype")="more" then
@@ -117,7 +117,7 @@ if Request("filesearch")=7 and IsNumeric(Request("filesearch")) then
 		seachstr=seachstr+"&f_adddatenum="&cint(Request("f_adddatenum"))&"&timetype="&Request("timetype")
 	end if
 
-	'¸½¼ş×÷Õß£º
+	'é™„ä»¶ä½œè€…ï¼š
 	if Request("f_username")<>"" then
 		if Request("usernamechk")="yes" then
 		sqlstr=sqlstr+" and f_username='"&dvbbs.checkstr(Request("f_username"))&"'"
@@ -126,7 +126,7 @@ if Request("filesearch")=7 and IsNumeric(Request("filesearch")) then
 		end if
 		seachstr=seachstr+"&f_username="&Request("f_username")&"&usernamechk="&Request("usernamechk")
 	end if
-	'¸½¼şËµÃ÷£º
+	'é™„ä»¶è¯´æ˜ï¼š
 	if Request("f_readme")<>"" then
 		if Request("f_readmechk")="yes" then
 		sqlstr=sqlstr+" and f_readme='"&dvbbs.checkstr(Request("f_readme"))&"'"
@@ -137,43 +137,43 @@ if Request("filesearch")=7 and IsNumeric(Request("filesearch")) then
 	end if
 end if
 '----------------------------------
-'¶àÌõ¼ş²éÑ¯±íµ¥´¦Àí½áÊø
+'å¤šæ¡ä»¶æŸ¥è¯¢è¡¨å•å¤„ç†ç»“æŸ
 '----------------------------------
 %>
   <table border="0" cellpadding="3" cellspacing="1" width="100%" align=center>
     <tr>
-      <th style="text-align:center;" colspan="2">ÂÛÌ³ÉÏ´«¸½¼ş¹ÜÀí</th>
+      <th style="text-align:center;" colspan="2">è®ºå›ä¸Šä¼ é™„ä»¶ç®¡ç†</th>
     </tr>
     <tr>
-      <td width="20%" height="23" class="td2">×¢ÒâÊÂÏî£º</td>
+      <td width="20%" height="23" class="td2">æ³¨æ„äº‹é¡¹ï¼š</td>
       <td width="80%" class=td1>
-	 ¢Ù¡¢±¾¹¦ÄÜ±ØĞë·şÎñÆ÷Ö§³ÖFSOÈ¨ÏŞ·½ÄÜÊ¹ÓÃ£¬FSOÊ¹ÓÃ°ïÖúÇëä¯ÀÀÎ¢ÈíÍøÕ¾¡£Èç¹ûÄú·şÎñÆ÷²»Ö§³ÖFSOÇëÊÖ¶¯¹ÜÀí¡£	<BR>¢Ú¡¢ĞÂ°æ£¨£Ä£Ö£¶£©Ö®ºóµÄ°æ±¾ÉÏ´«Ä¿Â¼Ç¿ÖÆ¶¨ÒåÎªUploadFile£¬Ö»ÓĞ¸ÃÄ¿Â¼ÏÂÎÄ¼ş¿É½øĞĞÎÄ¼ş×Ô¶¯ÇåÀí¹¤×÷£¬ĞÂ°æÖ®Ç°µÄ°æ±¾ÉÏ´«ÎÄ¼şÖ»ÄÜÊÖ¶¯Çå³ıÀ¬»øÉÏ´«ÎÄ¼ş£»£¨£Ä£Ö£¶£®£±£©°æºóËùÓĞÉÏ´«¸½¼ş»á×Ô¶¯´æ·Åµ½ĞÂ×Ô¶¨ÒåµÄÎÄ¼ş¼ĞÖĞ£¬ÎÄ¼şÄ¿Â¼ÒÔµ±ÄêÔÂÃ÷Ãû¡££¨ĞèÒª¿Õ¼äÖ§³Ö£Æ£Ó£Ï¶ÁĞ´È¨ÏŞ£©
-	 <br>¢Û¡¢×Ô¶¯ÇåÀíÎÄ¼ş£º½«¶ÔËùÓĞÉÏ´«ÎÄ¼ş½øĞĞºËÊµ£¬Èç·¢ÏÖÎÄ¼şÃ»ÓĞ±»Ïà¹ØÌû×ÓËùÊ¹ÓÃ£¬½«Ö´ĞĞ×Ô¶¯Çå³ıÃüÁî
+	 â‘ ã€æœ¬åŠŸèƒ½å¿…é¡»æœåŠ¡å™¨æ”¯æŒFSOæƒé™æ–¹èƒ½ä½¿ç”¨ï¼ŒFSOä½¿ç”¨å¸®åŠ©è¯·æµè§ˆå¾®è½¯ç½‘ç«™ã€‚å¦‚æœæ‚¨æœåŠ¡å™¨ä¸æ”¯æŒFSOè¯·æ‰‹åŠ¨ç®¡ç†ã€‚	<BR>â‘¡ã€æ–°ç‰ˆï¼ˆï¼¤ï¼¶ï¼–ï¼‰ä¹‹åçš„ç‰ˆæœ¬ä¸Šä¼ ç›®å½•å¼ºåˆ¶å®šä¹‰ä¸ºUploadFileï¼Œåªæœ‰è¯¥ç›®å½•ä¸‹æ–‡ä»¶å¯è¿›è¡Œæ–‡ä»¶è‡ªåŠ¨æ¸…ç†å·¥ä½œï¼Œæ–°ç‰ˆä¹‹å‰çš„ç‰ˆæœ¬ä¸Šä¼ æ–‡ä»¶åªèƒ½æ‰‹åŠ¨æ¸…é™¤åƒåœ¾ä¸Šä¼ æ–‡ä»¶ï¼›ï¼ˆï¼¤ï¼¶ï¼–ï¼ï¼‘ï¼‰ç‰ˆåæ‰€æœ‰ä¸Šä¼ é™„ä»¶ä¼šè‡ªåŠ¨å­˜æ”¾åˆ°æ–°è‡ªå®šä¹‰çš„æ–‡ä»¶å¤¹ä¸­ï¼Œæ–‡ä»¶ç›®å½•ä»¥å½“å¹´æœˆæ˜åã€‚ï¼ˆéœ€è¦ç©ºé—´æ”¯æŒï¼¦ï¼³ï¼¯è¯»å†™æƒé™ï¼‰
+	 <br>â‘¢ã€è‡ªåŠ¨æ¸…ç†æ–‡ä»¶ï¼šå°†å¯¹æ‰€æœ‰ä¸Šä¼ æ–‡ä»¶è¿›è¡Œæ ¸å®ï¼Œå¦‚å‘ç°æ–‡ä»¶æ²¡æœ‰è¢«ç›¸å…³å¸–å­æ‰€ä½¿ç”¨ï¼Œå°†æ‰§è¡Œè‡ªåŠ¨æ¸…é™¤å‘½ä»¤
 	  </td>
     </tr>
 	<tr>
 	<form action="?action=FileSearch" method=post>
-      <td width="20%" height="23" class="td2">¿ìËÙ²éÑ¯£º</td>
+      <td width="20%" height="23" class="td2">å¿«é€ŸæŸ¥è¯¢ï¼š</td>
       <td width="80%" class=td1>
 	  <select size=1 name="FileSearch" onchange="javascript:submit()">
-	<option value="0">ÇëÑ¡Ôñ²éÑ¯Ìõ¼ş</option>
-	<option value="1" <%if Request("FileSearch")=1 then%>selected<%end if%>>ÁĞ³öËùÓĞÉÏ´«¸½¼ş</option>
-	<option value="2" <%if Request("FileSearch")=2 then%>selected<%end if%>>×î½ü	£²£´Ğ¡Ê±ÄÚÉÏ´«µÄ¸½¼ş</option>
-	<option value="3" <%if Request("FileSearch")=3 then%>selected<%end if%>>×î½ü£±¸öÔÂÄÚÉÏ´«µÄ¸½¼ş</option>
-	<option value="4" <%if Request("FileSearch")=4 then%>selected<%end if%>>×î½ü£³¸öÔÂÄÚÉÏ´«µÄ¸½¼ş</option>
-	<option value="5" <%if Request("FileSearch")=5 then%>selected<%end if%>>ÏÂÔØÇ°£±£°£°ÃûµÄ¸½¼ş</option>
-	<option value="6" <%if Request("FileSearch")=6 then%>selected<%end if%>>µã»÷Ç°£±£°£°ÃûµÄ¸½¼ş</option>
+	<option value="0">è¯·é€‰æ‹©æŸ¥è¯¢æ¡ä»¶</option>
+	<option value="1" <%if Request("FileSearch")=1 then%>selected<%end if%>>åˆ—å‡ºæ‰€æœ‰ä¸Šä¼ é™„ä»¶</option>
+	<option value="2" <%if Request("FileSearch")=2 then%>selected<%end if%>>æœ€è¿‘	ï¼’ï¼”å°æ—¶å†…ä¸Šä¼ çš„é™„ä»¶</option>
+	<option value="3" <%if Request("FileSearch")=3 then%>selected<%end if%>>æœ€è¿‘ï¼‘ä¸ªæœˆå†…ä¸Šä¼ çš„é™„ä»¶</option>
+	<option value="4" <%if Request("FileSearch")=4 then%>selected<%end if%>>æœ€è¿‘ï¼“ä¸ªæœˆå†…ä¸Šä¼ çš„é™„ä»¶</option>
+	<option value="5" <%if Request("FileSearch")=5 then%>selected<%end if%>>ä¸‹è½½å‰ï¼‘ï¼ï¼åçš„é™„ä»¶</option>
+	<option value="6" <%if Request("FileSearch")=6 then%>selected<%end if%>>ç‚¹å‡»å‰ï¼‘ï¼ï¼åçš„é™„ä»¶</option>
 	</select>
 	  </td>
 	 </FORM>
     </tr>
   </table>
 <%
-	if Request("Submit")="ÇåÀíËùÓĞÉÏ´«¼ÇÂ¼" then
+	if Request("Submit")="æ¸…ç†æ‰€æœ‰ä¸Šä¼ è®°å½•" then
 		call delall()
-	elseif Request("Submit")="Çå³ıÎ´¼ÇÂ¼ÎÄ¼ş" then
+	elseif Request("Submit")="æ¸…é™¤æœªè®°å½•æ–‡ä»¶" then
 		call delall1()
-	elseif Request("Submit")="ÇåÀíµ±Ç°ÁĞ±í¼ÇÂ¼" then
+	elseif Request("Submit")="æ¸…ç†å½“å‰åˆ—è¡¨è®°å½•" then
 		call delall()
 	elseif Request("action")="FileSearch" then
 		call FileSearch()
@@ -189,17 +189,17 @@ sub main()
 <br><table border="0" cellpadding="3" cellspacing="1" width="100%" align=center>
 <form action="?action=FileSearch" method=post>
 <tr>
-	<th colspan="2">¸ß¼¶²éÑ¯</th>
+	<th colspan="2">é«˜çº§æŸ¥è¯¢</th>
 </tr>
 <tr>
-<td width=20% class="td2">×¢ÒâÊÂÏî</td>
-<td width=80% class=td1 colspan=5>ÔÚ¼ÇÂ¼ºÜ¶àµÄÇé¿öÏÂËÑË÷Ìõ¼şÔ½¶à²éÑ¯Ô½Âı£¬Çë¾¡Á¿¼õÉÙ²éÑ¯Ìõ¼ş£»</td>
+<td width=20% class="td2">æ³¨æ„äº‹é¡¹</td>
+<td width=80% class=td1 colspan=5>åœ¨è®°å½•å¾ˆå¤šçš„æƒ…å†µä¸‹æœç´¢æ¡ä»¶è¶Šå¤šæŸ¥è¯¢è¶Šæ…¢ï¼Œè¯·å°½é‡å‡å°‘æŸ¥è¯¢æ¡ä»¶ï¼›</td>
 </tr>
 <tr>
-	<td width="20%" height="23" class="td2">ËùÊô°æ¿é£º</td>
+	<td width="20%" height="23" class="td2">æ‰€å±ç‰ˆå—ï¼š</td>
 	<td width="80%" class=td1>
 	<select name=class>
-	<option value="0">ËùÓĞÂÛÌ³°æ¿é</option>
+	<option value="0">æ‰€æœ‰è®ºå›ç‰ˆå—</option>
 <%
 Dim rs_c,sql,i
 set rs_c= Dvbbs.iCreateObject ("adodb.recordset")
@@ -209,7 +209,7 @@ do while not rs_c.EOF%>
 <option value="<%=rs_c("boardid")%>" <%if Request("editid")<>"" and clng(Request("editid"))=rs_c("boardid") then%>selected<%end if%>>
 <%if rs_c("depth")>0 then%>
 <%for i=1 to rs_c("depth")%>
-£­
+ï¼
 <%next%>
 <%end if%><%=rs_c("boardtype")%></option>
 <%
@@ -222,63 +222,63 @@ set rs_c=nothing
 	</td>
 </tr>
 <tr>
-	<td width="20%" height="23" class="td2">ÎÄ¼şÏÂÔØ´ÎÊı£º</td>
+	<td width="20%" height="23" class="td2">æ–‡ä»¶ä¸‹è½½æ¬¡æ•°ï¼š</td>
 	<td width="80%" class=td1><input size=45 name="f_downnum" type=text>
-	<input type=radio class="radio" value=more name="downtype" checked >&nbsp;¶àÓÚ&nbsp;
-	<input type=radio class="radio" value=less name="downtype" >&nbsp;ÉÙÓÚ
+	<input type=radio class="radio" value=more name="downtype" checked >&nbsp;å¤šäº&nbsp;
+	<input type=radio class="radio" value=less name="downtype" >&nbsp;å°‘äº
 	</td>
 </tr>
 <tr>
-	<td width="20%" height="23" class="td2">¸½¼şä¯ÀÀ´ÎÊı£º</td>
+	<td width="20%" height="23" class="td2">é™„ä»¶æµè§ˆæ¬¡æ•°ï¼š</td>
 	<td width="80%" class=td1><input size=45 name="f_viewnum" type=text>
-	<input type=radio class="radio" value=more name="viewtype" checked >&nbsp;¶àÓÚ&nbsp;
-	<input type=radio class="radio" value=less name="viewtype" >&nbsp;ÉÙÓÚ
+	<input type=radio class="radio" value=more name="viewtype" checked >&nbsp;å¤šäº&nbsp;
+	<input type=radio class="radio" value=less name="viewtype" >&nbsp;å°‘äº
 	</td>
 </tr>
 <tr>
-	<td width="20%" height="23" class="td2">ÉÏ´«ÌìÊı£º</td>
+	<td width="20%" height="23" class="td2">ä¸Šä¼ å¤©æ•°ï¼š</td>
 	<td width="80%" class=td1><input size=45 name="f_adddatenum" type=text>
-	<input type=radio class="radio" value=more name="timetype" checked >&nbsp;¶àÓÚ&nbsp;
-	<input type=radio class="radio" value=less name="timetype" >&nbsp;ÉÙÓÚ
+	<input type=radio class="radio" value=more name="timetype" checked >&nbsp;å¤šäº&nbsp;
+	<input type=radio class="radio" value=less name="timetype" >&nbsp;å°‘äº
 	</td>
 </tr>
 <tr>
-	<td width="20%" height="23" class="td2">¸½¼ş×÷Õß£º</td>
+	<td width="20%" height="23" class="td2">é™„ä»¶ä½œè€…ï¼š</td>
 	<td width="80%" class=td1><input size=45 name="f_username" type=text>
-	&nbsp;<input type=checkbox class="checkbox" name="usernamechk" value="yes" checked>ÓÃ»§ÃûÍêÕûÆ¥Åä
+	&nbsp;<input type=checkbox class="checkbox" name="usernamechk" value="yes" checked>ç”¨æˆ·åå®Œæ•´åŒ¹é…
 	</td>
 </tr>
 <tr>
-	<td width="20%" height="23" class="td2">¸½¼şËµÃ÷£º</td>
+	<td width="20%" height="23" class="td2">é™„ä»¶è¯´æ˜ï¼š</td>
 	<td width="80%" class=td1><input size=45 name="f_readme" type=text>
-	&nbsp;<input type=checkbox class="checkbox" name="f_readmechk" value="yes" checked>ËµÃ÷ÄÚÈİÍêÕûÆ¥Åä
+	&nbsp;<input type=checkbox class="checkbox" name="f_readmechk" value="yes" checked>è¯´æ˜å†…å®¹å®Œæ•´åŒ¹é…
 	</td>
 </tr>
 <tr>
-	<td width="20%" height="23" class="td2">¸½¼ş´óĞ¡£º</td>
-	<td width="80%" class=td1><input size=45 name="f_size" type=text>&nbsp;(µ¥Î»£ºK)
-	<input type=radio class="radio" value=more name="sizetype" checked >&nbsp;´óÓÚ&nbsp;
-	<input type=radio class="radio" value=less name="sizetype" >&nbsp;Ğ¡ÓÚ
+	<td width="20%" height="23" class="td2">é™„ä»¶å¤§å°ï¼š</td>
+	<td width="80%" class=td1><input size=45 name="f_size" type=text>&nbsp;(å•ä½ï¼šK)
+	<input type=radio class="radio" value=more name="sizetype" checked >&nbsp;å¤§äº&nbsp;
+	<input type=radio class="radio" value=less name="sizetype" >&nbsp;å°äº
 	</td>
 </tr>
 <tr>
-	<td width="20%" height="23" class="td2">¸½¼ş·ÖÀà£º</td>
+	<td width="20%" height="23" class="td2">é™„ä»¶åˆ†ç±»ï¼š</td>
 	<td width="80%" class=td1>
 	<select name="f_type">
-	<option value="all">ËùÓĞ·ÖÀà</option>
-	<option value="1">Í¼Æ¬¼¯·ÖÀà</option>
-	<option value="2">FLASH¼¯·ÖÀà</option>
-	<option value="3">ÒôÀÖ¼¯·ÖÀà</option>
-	<option value="4">µçÓ°¼¯·ÖÀà</option>
-	<option value="0">ÎÄ¼ş¼¯·ÖÀà</option>
+	<option value="all">æ‰€æœ‰åˆ†ç±»</option>
+	<option value="1">å›¾ç‰‡é›†åˆ†ç±»</option>
+	<option value="2">FLASHé›†åˆ†ç±»</option>
+	<option value="3">éŸ³ä¹é›†åˆ†ç±»</option>
+	<option value="4">ç”µå½±é›†åˆ†ç±»</option>
+	<option value="0">æ–‡ä»¶é›†åˆ†ç±»</option>
 	</select>
 	</td>
 </tr>
 <tr>
-	<td width="20%" height="23" class="td2">¸½¼şÀàĞÍ£º</td>
+	<td width="20%" height="23" class="td2">é™„ä»¶ç±»å‹ï¼š</td>
 	<td width="80%" class=td1>
 	<select name="f_filetype">
-	<option value="">ËùÓĞÎÄ¼şÀàĞÍ</option>
+	<option value="">æ‰€æœ‰æ–‡ä»¶ç±»å‹</option>
 	<option value="gif">gif</option><option value="jpg">jpg</option>
 	<option value="bmp">bmp</option><option value="zip">zip</option>
 	<option value="rar">rar</option><option value="exe">exe</option>
@@ -290,7 +290,7 @@ set rs_c=nothing
 	</td>
 </tr>
 <tr>
-<th style="text-align:center;" colspan="2"><input name="submit" type=submit class="button" value="¿ªÊ¼ËÑË÷"></th>
+<th style="text-align:center;" colspan="2"><input name="submit" type=submit class="button" value="å¼€å§‹æœç´¢"></th>
 </tr>
 <input type=hidden value="7" name="FileSearch">
 </form>
@@ -303,23 +303,23 @@ sub FileSearch()
 <form method=post action="?action=delfiles" name="formpost">
 <table cellpadding="2" cellspacing="1" border="0" width="100%" align=center>
 <tr>
-<th colspan=8 ID=TableTitleLink><a href=uploadlist.asp>ÉÏ´«ÎÄ¼ş¹ÜÀí</a> -->ËÑË÷½á¹û</th>
+<th colspan=8 ID=TableTitleLink><a href=uploadlist.asp>ä¸Šä¼ æ–‡ä»¶ç®¡ç†</a> -->æœç´¢ç»“æœ</th>
 </tr>
 <tr>
-<td class=td2 align=center><B>ÀàĞÍ</B></td>
-<td class=td2 height=23 align=center><B>ÓÃ»§Ãû</B></td>
-<td class=td2 align=center><B>ÎÄ ¼ş Ãû</B></td>
-<td class=td2 align=center><B>ËùÊô°æ¿é</B></td>
-<td class=td2 align=center><B>´óĞ¡</B></td>
-<td class=td2 align=center><B>Ê±¼ä/µã»÷/ÏÂÔØ</B></td>
-<td class=td2 align=center><B>·ÖÀà</B></td>
-<td class=td2 align=center><B>É¾³ı</B></td>
+<td class=td2 align=center><B>ç±»å‹</B></td>
+<td class=td2 height=23 align=center><B>ç”¨æˆ·å</B></td>
+<td class=td2 align=center><B>æ–‡ ä»¶ å</B></td>
+<td class=td2 align=center><B>æ‰€å±ç‰ˆå—</B></td>
+<td class=td2 align=center><B>å¤§å°</B></td>
+<td class=td2 align=center><B>æ—¶é—´/ç‚¹å‡»/ä¸‹è½½</B></td>
+<td class=td2 align=center><B>åˆ†ç±»</B></td>
+<td class=td2 align=center><B>åˆ é™¤</B></td>
 </tr>
 <%
 	Dim rs,sql
 	Set rs= Dvbbs.iCreateObject("ADODB.Recordset")
 	sql="select F_ID,F_AnnounceID,F_BoardID,F_Filename,F_Username,F_FileType,F_Type,F_FileSize,F_DownNum,F_ViewNum,F_AddTime ,B.Boardtype from [DV_Upfile] U inner join dv_Board B on B.boardid=U.F_BoardID where F_Flag=0 "
-	'Ìõ¼ş²éÑ¯
+	'æ¡ä»¶æŸ¥è¯¢
 	select case Request("FileSearch")
 	case 1
 		sql=sql+" order by F_ID desc"
@@ -359,14 +359,14 @@ sub FileSearch()
 	'response.write SQL
 	rs.open sql,conn,1
 	if rs.eof and rs.bof then
-		response.write "<tr><td colspan=8 class=td1>Ã»ÓĞÕÒµ½Ïà¹Ø¼ÇÂ¼¡£</td></tr>"
+		response.write "<tr><td colspan=8 class=td1>æ²¡æœ‰æ‰¾åˆ°ç›¸å…³è®°å½•ã€‚</td></tr>"
 	else
 		rs.PageSize = Cint(Dvbbs.Forum_Setting(11))
 		rs.AbsolutePage=currentpage
 		page_count=0
 		totalrec=rs.recordcount
 		while (not rs.eof) and (not page_count = Cint(Dvbbs.Forum_Setting(11)))
-		'ÁĞ±íÄÚÈİ'''''''''''''''''''''
+		'åˆ—è¡¨å†…å®¹'''''''''''''''''''''
 %>
 <tr>
 <td class=td2 align=center width=20>
@@ -396,36 +396,36 @@ sub FileSearch()
 	if Request("FileSearch")=7 and sqlstr="" then sql=""
 %>
 <input type=hidden value="<%=sql%>" name="delsql">
-<tr><th colspan=8>ÎÄ¼ş¼ÇÂ¼¿âÇåÀí²Ù×÷</th></tr>
+<tr><th colspan=8>æ–‡ä»¶è®°å½•åº“æ¸…ç†æ“ä½œ</th></tr>
 <tr>
-<td colspan=5 height=25 class="td2"><LI>ÇëÑ¡È¡ÒªÉ¾³ıµÄÎÄ¼ş£¬È»ºóÖ´ĞĞÉ¾³ı²Ù×÷£¬<font color=red>¸½¼ş½«Ö±½Ó´Ó·şÎñÆ÷ÉÏÉ¾³ı²¢²»ÄÜ»Ö¸´£¡</font></td>
-<td colspan=3 height=25 class="td2"><input type="submit" class="button" name="Submit" value="Ö´ĞĞÉ¾³ıËùÑ¡ÎÄ¼ş"></td></tr>
+<td colspan=5 height=25 class="td2"><LI>è¯·é€‰å–è¦åˆ é™¤çš„æ–‡ä»¶ï¼Œç„¶åæ‰§è¡Œåˆ é™¤æ“ä½œï¼Œ<font color=red>é™„ä»¶å°†ç›´æ¥ä»æœåŠ¡å™¨ä¸Šåˆ é™¤å¹¶ä¸èƒ½æ¢å¤ï¼</font></td>
+<td colspan=3 height=25 class="td2"><input type="submit" class="button" name="Submit" value="æ‰§è¡Œåˆ é™¤æ‰€é€‰æ–‡ä»¶"></td></tr>
 <tr>
-<td colspan=5 height=25 class="td1"><LI>ÇåÀíÍ¬Ê±ÊÇ·ñÖ±½Ó´Ó·şÎñÆ÷ÉÏÉ¾³ıÎÄ¼ş£¬<font color=red>É¾³ıµÄÎÄ¼ş½«²»ÄÜ»Ö¸´ £¡</font></td>
+<td colspan=5 height=25 class="td1"><LI>æ¸…ç†åŒæ—¶æ˜¯å¦ç›´æ¥ä»æœåŠ¡å™¨ä¸Šåˆ é™¤æ–‡ä»¶ï¼Œ<font color=red>åˆ é™¤çš„æ–‡ä»¶å°†ä¸èƒ½æ¢å¤ ï¼</font></td>
 <td colspan=3 height=25 class="td1">
-<input type=radio class="radio" name=delfile value=1 >ÊÇ&nbsp;
-<input type=radio class="radio" name=delfile value=2 checked>·ñ
+<input type=radio class="radio" name=delfile value=1 >æ˜¯&nbsp;
+<input type=radio class="radio" name=delfile value=2 checked>å¦
 </td></tr>
 <tr>
-<td colspan=5 height=25 class="td2"><li>¸ù¾İµ±Ç°ÁĞ±íÊı¾İ½øĞĞÇåÀí£¬Çå³ıÆäÖĞËùÊôµÄÌû×ÓÒÑÉ¾¸ÄµÄ¸½¼ş¡£</td>
+<td colspan=5 height=25 class="td2"><li>æ ¹æ®å½“å‰åˆ—è¡¨æ•°æ®è¿›è¡Œæ¸…ç†ï¼Œæ¸…é™¤å…¶ä¸­æ‰€å±çš„å¸–å­å·²åˆ æ”¹çš„é™„ä»¶ã€‚</td>
 <td colspan=3 height=25 class="td2">
-<input type="submit" class="button" name="Submit" value="ÇåÀíµ±Ç°ÁĞ±í¼ÇÂ¼">
+<input type="submit" class="button" name="Submit" value="æ¸…ç†å½“å‰åˆ—è¡¨è®°å½•">
 </td></tr>
 <tr>
-<td colspan=5 height=25 class="td1"><li>´ÓÉÏ´«¼ÇÂ¼ÖĞ£¬¸ù¾İÏà¹Ø·¢±íµÄÌû×ÓÄÚÈİ½øĞĞÇå³ıËùÓĞÒÑÉ¾¸ÄµÄ¸½¼ş¡£</td>
+<td colspan=5 height=25 class="td1"><li>ä»ä¸Šä¼ è®°å½•ä¸­ï¼Œæ ¹æ®ç›¸å…³å‘è¡¨çš„å¸–å­å†…å®¹è¿›è¡Œæ¸…é™¤æ‰€æœ‰å·²åˆ æ”¹çš„é™„ä»¶ã€‚</td>
 <td colspan=3 height=25 class="td1">
-<input type="submit" class="button" name="Submit" value="ÇåÀíËùÓĞÉÏ´«¼ÇÂ¼">
+<input type="submit" class="button" name="Submit" value="æ¸…ç†æ‰€æœ‰ä¸Šä¼ è®°å½•">
 </td></tr>
-<tr><th colspan=8>¿Õ¼ä¸½¼şÇåÀí²Ù×÷</th></tr>
+<tr><th colspan=8>ç©ºé—´é™„ä»¶æ¸…ç†æ“ä½œ</th></tr>
 <tr><td style="text-align:center;" colspan=8 class="td2">
-<li>Çå³ı´æÔÚ·şÎñÆ÷¿Õ¼ä¶øÃ»ÓĞ¼ÇÂ¼µ½ÉÏ´«¿âÖĞµÄËùÓĞÉÏ´«¸½¼ş¡£
-<li>ÇëÌîĞ´ÇåÀíµÄÉÏ´«Ä¿Â¼£¬Ä¬ÈÏ¸ùÄ¿Â¼Îª£º¡°<%=SysFilePath%>¡±¡£
-<li>Ä¿Â¼¸ñÊ½¹æ¶¨£ºÄê£­ÔÂ£¨Èç£º2003-8)¡£
+<li>æ¸…é™¤å­˜åœ¨æœåŠ¡å™¨ç©ºé—´è€Œæ²¡æœ‰è®°å½•åˆ°ä¸Šä¼ åº“ä¸­çš„æ‰€æœ‰ä¸Šä¼ é™„ä»¶ã€‚
+<li>è¯·å¡«å†™æ¸…ç†çš„ä¸Šä¼ ç›®å½•ï¼Œé»˜è®¤æ ¹ç›®å½•ä¸ºï¼šâ€œ<%=SysFilePath%>â€ã€‚
+<li>ç›®å½•æ ¼å¼è§„å®šï¼šå¹´ï¼æœˆï¼ˆå¦‚ï¼š2003-8)ã€‚
 </td></tr>
-<tr><td colspan=5 height=25 class="td1">ĞèÒªÇåÀíµÄÉÏ´«Ä¿Â¼£º
+<tr><td colspan=5 height=25 class="td1">éœ€è¦æ¸…ç†çš„ä¸Šä¼ ç›®å½•ï¼š
 <INPUT TYPE="text" NAME="path" Id="path" value="<%=path%>">
 <select onchange="Changepath(this.options[this.selectedIndex].value)">
-<option value="<%=SysFilePath%>">Ñ¡È¡ĞèÒªÇåÀíµÄÄ¿Â¼</option>
+<option value="<%=SysFilePath%>">é€‰å–éœ€è¦æ¸…ç†çš„ç›®å½•</option>
 <%
 Dim uploadpath,ii
 for ii=0 to datediff("m","2003-8",now())
@@ -437,7 +437,7 @@ next
 </select>
 </td>
 <td colspan=3 height=25 class="td1">
-<input type="submit" class="button" name="Submit" value="Çå³ıÎ´¼ÇÂ¼ÎÄ¼ş" onclick="{if(confirm('ÄúÈ·¶¨Ö´ĞĞµÄ²Ù×÷Âğ?½«É¾³ıËùÒÔÎ´ÓĞ¼ÇÂ¼µÄÉÏ´«ÎÄ¼ş,²¢²»ÄÜ»Ö¸´¡£')){this.document.formpost.submit();return true;}return false;}">
+<input type="submit" class="button" name="Submit" value="æ¸…é™¤æœªè®°å½•æ–‡ä»¶" onclick="{if(confirm('æ‚¨ç¡®å®šæ‰§è¡Œçš„æ“ä½œå—?å°†åˆ é™¤æ‰€ä»¥æœªæœ‰è®°å½•çš„ä¸Šä¼ æ–‡ä»¶,å¹¶ä¸èƒ½æ¢å¤ã€‚')){this.document.formpost.submit();return true;}return false;}">
 </td></tr>
 </form>
 <SCRIPT LANGUAGE="JavaScript">
@@ -457,9 +457,9 @@ end sub
 
 SUB LIST()
 Dim i
-'·ÖÒ³´úÂë
+'åˆ†é¡µä»£ç 
 If totalrec="" Then totalrec=0:Pcount=0
-response.write "<table cellspacing=0 cellpadding=0 align=center width=""100%""><form method=post action=""?action=FileSearch"&seachstr&""" ><tr><td width=35% class=""td2"">¹²<b>"&totalrec&"</b>¸öÎÄ¼ş£¬¹²·Ö<b><font color=red>"&Pcount&"</font></b>Ò³£º</td><td width=* valign=middle align=right nowrap class=""td2"">"
+response.write "<table cellspacing=0 cellpadding=0 align=center width=""100%""><form method=post action=""?action=FileSearch"&seachstr&""" ><tr><td width=35% class=""td2"">å…±<b>"&totalrec&"</b>ä¸ªæ–‡ä»¶ï¼Œå…±åˆ†<b><font color=red>"&Pcount&"</font></b>é¡µï¼š</td><td width=* valign=middle align=right nowrap class=""td2"">"
 
 if currentpage > 4 then
 	response.write "<a href=""?action=FileSearch&currentpage=1"&seachstr&""">[1]</a> ..."
@@ -481,7 +481,7 @@ next
 if currentpage+3 < Pcount then 
 	response.write "... <a href=""?action=FileSearch&currentpage="&Pcount&seachstr&""">["&Pcount&"]</a>"
 end if
-response.write " ×ªµ½:<input type=text name=currentpage size=3 maxlength=10  value='"& currentpage &"'><input type=submit class=button value=Go  id=button1 name=button1 >"     
+response.write " è½¬åˆ°:<input type=text name=currentpage size=3 maxlength=10  value='"& currentpage &"'><input type=submit class=button value=Go  id=button1 name=button1 >"     
 response.write "</td></tr></form></table>"
 END SUB
 
@@ -492,16 +492,16 @@ if instrRev(path,"/")=0 then path=path&"/"
 response.write "<table cellspacing=1 cellpadding=3 align=center width=""100%""><tr><td>"
 delid=replace(Request.form("delid"),"'","")
 if delid="" then 
-response.write "ÇëÑ¡ÔñÒªÉ¾³ıµÄÎÄ¼ş£¡"
+response.write "è¯·é€‰æ‹©è¦åˆ é™¤çš„æ–‡ä»¶ï¼"
 else
 Set objFSO = Dvbbs.iCreateObject("Scripting.FileSystemObject")
 Set rs= Dvbbs.iCreateObject("ADODB.Recordset")
 	sql="select F_id,F_Filename from DV_Upfile where F_ID in ("&delid&")"
 	rs.open sql,conn,1
 	if not rs.eof then
-	response.write "×Ü¹²É¾³ı¼ÇÂ¼ºÍÎÄ¼ş"&rs.recordcount&"¸ö¡£<br>"
+	response.write "æ€»å…±åˆ é™¤è®°å½•å’Œæ–‡ä»¶"&rs.recordcount&"ä¸ªã€‚<br>"
 	do while not rs.eof
-		if InStr(rs(1),":")=0 or InStr(rs(1),"//")=0 then 'ÅĞ¶ÏÎÄ¼şÊÇ·ñ±¾ÂÛÌ³£¬Èô²»ÊÇÔò²ÉÓÃ±íÖĞµÄ¼ÇÂ¼£®
+		if InStr(rs(1),":")=0 or InStr(rs(1),"//")=0 then 'åˆ¤æ–­æ–‡ä»¶æ˜¯å¦æœ¬è®ºå›ï¼Œè‹¥ä¸æ˜¯åˆ™é‡‡ç”¨è¡¨ä¸­çš„è®°å½•ï¼
 			F_filename=path&rs(1)
 		else
 			F_filename=rs(1)
@@ -510,7 +510,7 @@ Set rs= Dvbbs.iCreateObject("ADODB.Recordset")
 		objFSO.DeleteFile(Server.MapPath(F_filename))
 		end if
 		Dvbbs.Execute("delete from DV_Upfile where F_ID="&rs(0))
-		response.write "ÒÑ¾­É¾³ıÎÄ¼ş"&F_filename&" £¡<br>"
+		response.write "å·²ç»åˆ é™¤æ–‡ä»¶"&F_filename&" ï¼<br>"
 	rs.movenext
 	loop
 	end if
@@ -521,7 +521,7 @@ end if
 response.write "</td></tr></table>"
 END SUB
 
-'ÇåÀíËùÓĞ¼ÇÂ¼
+'æ¸…ç†æ‰€æœ‰è®°å½•
 sub delall()
 Server.ScriptTimeout=9999999
 response.write "<table cellspacing=1 cellpadding=3 align=center width=""100%""><tr><td>"
@@ -532,14 +532,14 @@ Dim drs,delfile
 Dim delinfo,i,rs
 delfile=trim(Request.form("delfile"))
 if cint(delfile)=1 then
-delinfo="ÒÑ±»É¾³ı£¡"
+delinfo="å·²è¢«åˆ é™¤ï¼"
 else
-delinfo="Î´±»É¾³ı£¡"
+delinfo="æœªè¢«åˆ é™¤ï¼"
 end if
 
 if Request.form("delsql")<>"" then
 	If Dvbbs.chkpost=False Then
-		Dvbbs.AddErrmsg "ÄúÌá½»µÄÊı¾İ²»ºÏ·¨£¬Çë²»Òª´ÓÍâ²¿Ìá½»·¢ÑÔ¡£"
+		Dvbbs.AddErrmsg "æ‚¨æäº¤çš„æ•°æ®ä¸åˆæ³•ï¼Œè¯·ä¸è¦ä»å¤–éƒ¨æäº¤å‘è¨€ã€‚"
 		exit sub
 		else
 		delsql=Request.form("delsql")
@@ -554,36 +554,36 @@ Else
 End If
 'response.write delsql
 if rs.eof then
-	response.write "»¹Î´ÓĞ"
+	response.write "è¿˜æœªæœ‰"
 else
 	do while not rs.eof
 	F_ID=rs(0)
 	F_boardid=rs(2)
-	if InStr(rs(3),":")=0 or InStr(rs(3),"//")=0 then 'ÅĞ¶ÏÎÄ¼şÊÇ·ñ±¾ÂÛÌ³£¬Èô²»ÊÇÔò²ÉÓÃ±íÖĞµÄ¼ÇÂ¼£®
+	if InStr(rs(3),":")=0 or InStr(rs(3),"//")=0 then 'åˆ¤æ–­æ–‡ä»¶æ˜¯å¦æœ¬è®ºå›ï¼Œè‹¥ä¸æ˜¯åˆ™é‡‡ç”¨è¡¨ä¸­çš„è®°å½•ï¼
 		F_filename=path&rs(3)
 	else
 		F_filename=rs(3)
 	end if
 	'Response.Write Rs("F_Type")&"<br>"
-	If Rs("F_Type")<>1 Then		'³ıÍ¼Æ¬ÎÄ¼şÍâ
+	If Rs("F_Type")<>1 Then		'é™¤å›¾ç‰‡æ–‡ä»¶å¤–
 		TempFileName="viewfile.asp?ID="&F_ID
 	Else
 		TempFileName=F_filename
 	End If
 	TempFileName=Lcase(TempFileName)
 	if rs(1)="" or isnull(rs(1)) then
-		if InStr(rs(3),":")=0 or InStr(rs(3),"//")=0 then 'ÅĞ¶ÏÎÄ¼şÊÇ·ñ±¾ÂÛÌ³£¬Èô²»ÊÇÔò²ÉÓÃ±íÖĞµÄ¼ÇÂ¼£®
+		if InStr(rs(3),":")=0 or InStr(rs(3),"//")=0 then 'åˆ¤æ–­æ–‡ä»¶æ˜¯å¦æœ¬è®ºå›ï¼Œè‹¥ä¸æ˜¯åˆ™é‡‡ç”¨è¡¨ä¸­çš„è®°å½•ï¼
 			if objFSO.fileExists(Server.MapPath(F_filename)) then
 				if delfile=1 then
 					Dvbbs.Execute("delete from DV_Upfile where F_ID="&F_ID)
 					objFSO.DeleteFile(Server.MapPath(F_filename))
 				end if
-				response.write "ÎÄ¼şÎ´Ğ´Ìû×Ó,<a href="&F_filename&" target=""_blank"">"&F_filename&"</a> "&delinfo&"<br>"
+				response.write "æ–‡ä»¶æœªå†™å¸–å­,<a href="&F_filename&" target=""_blank"">"&F_filename&"</a> "&delinfo&"<br>"
 			else
-				response.write "ÎÄ¼şÎ´Ğ´Ìû×Ó,<a href="&F_filename&" target=""_blank"">"&F_filename&"</a> ÒÑ²»´æÔÚ£¡<br>"
+				response.write "æ–‡ä»¶æœªå†™å¸–å­,<a href="&F_filename&" target=""_blank"">"&F_filename&"</a> å·²ä¸å­˜åœ¨ï¼<br>"
 			end if
 		else
-			response.write "Íâ²¿ÎÄ¼ş<a href="&F_filename&" target=""_blank"">"&F_filename&"</a> "&delinfo&"<br>"
+			response.write "å¤–éƒ¨æ–‡ä»¶<a href="&F_filename&" target=""_blank"">"&F_filename&"</a> "&delinfo&"<br>"
 		end if
 		i=i+1
 	else
@@ -596,9 +596,9 @@ else
 		end if
 		'Response.Write rs(1)&"<br>"
 		If S_AnnounceID="" Then
-			Response.Write F_filename &"ÎÄ¼şÊı¾İÓĞÎÊÌâ<br>"
+			Response.Write F_filename &"æ–‡ä»¶æ•°æ®æœ‰é—®é¢˜<br>"
 		Else
-		'È¡³öËùÊôÌû×Ó±íÃû
+		'å–å‡ºæ‰€å±å¸–å­è¡¨å
 		Dim PostTablename
 		set drs=Dvbbs.Execute("select PostTable from dv_topic where TopicID="&s_Rootid)
 			if not drs.eof then
@@ -608,7 +608,7 @@ else
 			end if
 		drs.close
 
-		'ÕÒ³öÏàÓ¦µÄÌû×Ó½øĞĞÅĞ¶ÏÎÄ¼şÊÇ·ñ´æÔÚÌû×ÓÄÚÈİ
+		'æ‰¾å‡ºç›¸åº”çš„å¸–å­è¿›è¡Œåˆ¤æ–­æ–‡ä»¶æ˜¯å¦å­˜åœ¨å¸–å­å†…å®¹
 		'Response.Write "select body from "&PostTablename&" where AnnounceID="&S_AnnounceID&"<br>"
 		set drs=Dvbbs.Execute("select body from "&PostTablename&" where AnnounceID="&S_AnnounceID)
 		if drs.eof then
@@ -619,9 +619,9 @@ else
 				if delfile=1 then
 				objFSO.DeleteFile(Server.MapPath(F_filename))
 				end if
-				response.write "Ìû×ÓÎ´ÕÒµ½,<a href="&F_filename&" target=""_blank"">"&F_filename&"</a> "&delinfo&"<br>"
+				response.write "å¸–å­æœªæ‰¾åˆ°,<a href="&F_filename&" target=""_blank"">"&F_filename&"</a> "&delinfo&"<br>"
 			else
-				response.write "Ìû×ÓÎ´ÕÒµ½,<a href="&F_filename&" target=""_blank"">"&F_filename&"</a> ÒÑ²»´æÔÚ£¡<br>"
+				response.write "å¸–å­æœªæ‰¾åˆ°,<a href="&F_filename&" target=""_blank"">"&F_filename&"</a> å·²ä¸å­˜åœ¨ï¼<br>"
 			end if
 			i=i+1
 		else
@@ -632,9 +632,9 @@ else
 						objFSO.DeleteFile(Server.MapPath(F_filename))
 						Dvbbs.Execute("delete from DV_Upfile where F_ID="&F_ID)
 					end if
-					response.write "Ìû×ÓÄÚÈİ²»·û,<a href="&F_filename&" target=""_blank"">"&F_filename&"</a> "&delinfo&"[<a href=""dispbbs.asp?Boardid="&F_boardid&"&ID="&s_Rootid&"&replyID="&S_AnnounceID&"&skin=1"" target=""_blank"" title=""ä¯ÀÀÏà¹ØÌû×Ó""><font color=red>²é¿´Ïà¹ØÌÖÂÛ</font></a> | <a href=myfile.asp?action=edit&editid="&F_ID&" target=""_blank"" title=""±à¼­ÎÄ¼ş""><font color=red>±à¼­</font></a>]<br>"
+					response.write "å¸–å­å†…å®¹ä¸ç¬¦,<a href="&F_filename&" target=""_blank"">"&F_filename&"</a> "&delinfo&"[<a href=""dispbbs.asp?Boardid="&F_boardid&"&ID="&s_Rootid&"&replyID="&S_AnnounceID&"&skin=1"" target=""_blank"" title=""æµè§ˆç›¸å…³å¸–å­""><font color=red>æŸ¥çœ‹ç›¸å…³è®¨è®º</font></a> | <a href=myfile.asp?action=edit&editid="&F_ID&" target=""_blank"" title=""ç¼–è¾‘æ–‡ä»¶""><font color=red>ç¼–è¾‘</font></a>]<br>"
 				else
-					response.write "Ìû×ÓÄÚÈİ²»·û,<a href="&F_filename&" target=""_blank"">"&F_filename&"</a> ÒÑ²»´æÔÚ£¡[<a href=""dispbbs.asp?Boardid="&F_boardid&"&ID="&s_Rootid&"&replyID="&S_AnnounceID&"&skin=1"" target=""_blank"" title=""ä¯ÀÀÏà¹ØÌû×Ó""><font color=red>²é¿´Ïà¹ØÌÖÂÛ</font></a> | <a href=myfile.asp?action=edit&editid="&F_ID&" target=""_blank"" title=""±à¼­ÎÄ¼ş""><font color=red>±à¼­</font></a>]<br>"
+					response.write "å¸–å­å†…å®¹ä¸ç¬¦,<a href="&F_filename&" target=""_blank"">"&F_filename&"</a> å·²ä¸å­˜åœ¨ï¼[<a href=""dispbbs.asp?Boardid="&F_boardid&"&ID="&s_Rootid&"&replyID="&S_AnnounceID&"&skin=1"" target=""_blank"" title=""æµè§ˆç›¸å…³å¸–å­""><font color=red>æŸ¥çœ‹ç›¸å…³è®¨è®º</font></a> | <a href=myfile.asp?action=edit&editid="&F_ID&" target=""_blank"" title=""ç¼–è¾‘æ–‡ä»¶""><font color=red>ç¼–è¾‘</font></a>]<br>"
 				end if
 				i=i+1
 			end if
@@ -650,22 +650,22 @@ set drs=nothing
 set rs=nothing
 set objFSO=nothing
 
-response.write"¹²ÇåÀí¡¡"&i&"¡¡¸öÎŞÓÃÎÄ¼ş £Û<a href=?path="&path&" >·µ»Ø</a>£İ"
+response.write"å…±æ¸…ç†ã€€"&i&"ã€€ä¸ªæ— ç”¨æ–‡ä»¶ ï¼»<a href=?path="&path&" >è¿”å›</a>ï¼½"
 response.write "</td></tr></table>"
 end sub
 
 
-'É¾³ıËùÓĞÎ´¼ÇÂ¼µ½ÉÏ´«¿âÖĞµÄÎÄ¼ş
+'åˆ é™¤æ‰€æœ‰æœªè®°å½•åˆ°ä¸Šä¼ åº“ä¸­çš„æ–‡ä»¶
 Sub Delall1()
-	REM ·À½Å±¾³¬Ê± 2004-8-26.Dv.Yz
+	REM é˜²è„šæœ¬è¶…æ—¶ 2004-8-26.Dv.Yz
 	Server.ScriptTimeout = 9999999
 response.write "<table cellspacing=1 cellpadding=3 align=center width=""100%""><tr><td>"
 Dim delfile,delinfo,datepath,i,rs
 delfile=dvbbs.checkStr(trim(Request.form("delfile")))
 if cint(delfile)=1 then
-	delinfo="Ä¿Ç°ÒÑ±»É¾³ı£¡"
+	delinfo="ç›®å‰å·²è¢«åˆ é™¤ï¼"
 else
-	delinfo="Ä¿Ç°Î´±»É¾³ı£¡"
+	delinfo="ç›®å‰æœªè¢«åˆ é™¤ï¼"
 end if
 
 if instrRev(path,"/")=0 then path=path&"/"
@@ -676,7 +676,7 @@ End If
 
 Set objFSO = Dvbbs.iCreateObject("Scripting.FileSystemObject")
 if objFSO.FolderExists(Server.MapPath(path))=false then
-	response.write "Â·¾¶£º"&Path&"²»´æÔÚ£¡"
+	response.write "è·¯å¾„ï¼š"&Path&"ä¸å­˜åœ¨ï¼"
 else
 	Set uploadFolder=objFSO.GetFolder(Server.MapPath(path))
 	Set uploadFiles=uploadFolder.Files
@@ -691,12 +691,12 @@ else
 			objFSO.DeleteFile(Server.MapPath(upfilename))
 			end if
 			response.write "<a href="&upfilename&" target=""_blank"">"
-			response.write upfilename&"</a>ÔÚ¿âÖĞÃ»ÓĞ¼ÇÂ¼£¡"&delinfo&"<br>"
+			response.write upfilename&"</a>åœ¨åº“ä¸­æ²¡æœ‰è®°å½•ï¼"&delinfo&"<br>"
 		end if
 		rs.close
 		set rs=nothing
 	next
-	response.write"¹²É¾³ı¡¡"&i&"¡¡¸öÎŞÓÃÎÄ¼ş £Û<a href=?path="&path&" >·µ»Ø</a>£İ"
+	response.write"å…±åˆ é™¤ã€€"&i&"ã€€ä¸ªæ— ç”¨æ–‡ä»¶ ï¼»<a href=?path="&path&" >è¿”å›</a>ï¼½"
 	set uploadFolder=nothing
 	set uploadFiles=nothing
 end if
@@ -713,7 +713,7 @@ on error resume  next
 		  response.end
 		  end if
           For Each UpFolder In uploadFolder.SubFolders
-            response.write "¡º<A HREF=?path="&path&"/"&upfolder.name&" >"&upfolder.name&"</a>¡» | "
+            response.write "ã€<A HREF=?path="&path&"/"&upfolder.name&" >"&upfolder.name&"</a>ã€ | "
 next
 set uploadFolder=nothing
 end function
@@ -735,15 +735,15 @@ function filetypename(stype)
 if isempty(stype) or not isnumeric(stype) then exit function
 select case cint(stype)
 case 1
-filetypename="Í¼Æ¬¼¯"
+filetypename="å›¾ç‰‡é›†"
 case 2
-filetypename="FLASH¼¯"
+filetypename="FLASHé›†"
 case 3
-filetypename="ÒôÀÖ¼¯"
+filetypename="éŸ³ä¹é›†"
 case 4
-filetypename="µçÓ°¼¯"
+filetypename="ç”µå½±é›†"
 case else
-filetypename="ÎÄ¼ş¼¯"
+filetypename="æ–‡ä»¶é›†"
 end select 
 end function
 

@@ -16,8 +16,8 @@
 	End If
 
 	Response.Clear
-	Response.CharSet="gb2312"  'Êı¾İ¼¯
-	Response.ContentType="text/xml"  'Êı¾İÁ÷¸ñÊ½¶¨Òå
+	Response.CharSet="gb2312"  'æ•°æ®é›†
+	Response.ContentType="text/xml"  'æ•°æ®æµæ ¼å¼å®šä¹‰
 	Response.Write "<?xml version=""1.0"" encoding=""gb2312""?>"&vbNewLine
 	Response.Write "<rss version=""2.0"">"&vbNewLine
 	Response.Write "<channel>"&vbNewLine

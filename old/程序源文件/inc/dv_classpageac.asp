@@ -4,8 +4,8 @@ public int_totalRecord
 Private LAM_PageCount,LAM_Conn,LAM_Rs,LAM_SQL,LAM_PageSize,Str_errors,int_curpage,str_URL,int_totalPage,LAM_sURL,LAM_Style,int_style,LAM_CountRs
 Private str_TableName,LAM_TableName,str_KeyName,LAM_KeyName,str_PageWhere,LAM_PageWhere,LAM_OrderType,int_OrderType,str_Tablezd,LAM_Tablezd
 '=================================================================
-'TableName ÊôĞÔ
-'ÉèÖÃ °üº¬Êı¾İµÄ±íÃû
+'TableName å±æ€§
+'è®¾ç½® åŒ…å«æ•°æ®çš„è¡¨å
 Public i
 '=================================================================
 Public Property Let TableName(str_TableName)
@@ -15,41 +15,41 @@ Public Property Let Tablezd(str_Tablezd)
 	LAM_Tablezd=str_Tablezd
 End Property
 '=================================================================
-'KeyName ÊôĞÔ
-'ÉèÖÃ ¹Ø¼ü×Ö¶ÎÃû
+'KeyName å±æ€§
+'è®¾ç½® å…³é”®å­—æ®µå
 '=================================================================
 Public Property Let KeyName(str_KeyName)
 	LAM_KeyName=Trim(str_KeyName)
 End Property
 '=================================================================
-'PageSize ÊôĞÔ
-'ÉèÖÃ Ã¿Ò»Ò³µÄ·ÖÒ³´óĞ¡
+'PageSize å±æ€§
+'è®¾ç½® æ¯ä¸€é¡µçš„åˆ†é¡µå¤§å°
 '=================================================================
 Public Property Let PageSize(int_PageSize)
 	LAM_PageSize=CLng(int_PageSize)
 End Property
 '=================================================================
-'OrderType ÊôĞÔ
-'ÉèÖÃ ÅÅĞòÀàĞÍ, 0 - ÉıĞò, 1 - ½µĞò
+'OrderType å±æ€§
+'è®¾ç½® æ’åºç±»å‹, 0 - å‡åº, 1 - é™åº
 '=================================================================
 Public Property Let OrderType(int_OrderType)
 	LAM_OrderType=CLng(int_OrderType)
 End Property
 '=================================================================
-'PageWhere ÊôĞÔ
-'ÉèÖÃ ²éÑ¯Ìõ¼ş
+'PageWhere å±æ€§
+'è®¾ç½® æŸ¥è¯¢æ¡ä»¶
 '=================================================================
 Public Property Let PageWhere(str_PageWhere)
 	LAM_PageWhere=Trim(str_PageWhere)
 End Property
 
 '=================================================================
-'GetRS ÊôĞÔ
-'·µ»Ø·ÖÒ³ºóµÄ¼ÇÂ¼¼¯
+'GetRS å±æ€§
+'è¿”å›åˆ†é¡µåçš„è®°å½•é›†
 '=================================================================
 Public Property Get GetRs()
 	Set LAM_CountRs = LAM_Conn.Execute("select count(*) from ["&LAM_TableName&"] where "&LAM_PageWhere)
-	'¼ÆËã×Ü¼ÇÂ¼
+	'è®¡ç®—æ€»è®°å½•
 	If Not LAM_CountRs.eof Then
 		int_totalRecord = Int(LAM_CountRs.Fields(0))
 	Else
@@ -58,7 +58,7 @@ Public Property Get GetRs()
 	End If
 	LAM_CountRs.Close
 	set LAM_CountRs=nothing
-	'¼ÆËã×ÜÒ³Êı
+	'è®¡ç®—æ€»é¡µæ•°
 	if int_totalRecord<>0 then
 		int_totalPage = Int(int_totalRecord/LAM_PageSize)
 		if int_totalRecord mod LAM_PageSize <>0 then
@@ -79,7 +79,7 @@ Public Property Get GetRs()
 End Property
 
 '================================================================
-'GetConn  µÃµ½Êı¾İ¿âÁ¬½Ó
+'GetConn  å¾—åˆ°æ•°æ®åº“è¿æ¥
 '
 '================================================================ 
 Public Property Let GetConn(obj_Conn)
@@ -87,7 +87,7 @@ Public Property Let GetConn(obj_Conn)
 End Property
 
 '================================================================
-'GetStyle   µÃµ½µ¼º½ÌõÑùÊ½
+'GetStyle   å¾—åˆ°å¯¼èˆªæ¡æ ·å¼
 '
 '================================================================
 Public Property Let GetStyle(int_style)
@@ -95,8 +95,8 @@ Public Property Let GetStyle(int_style)
 End Property 
 
 '==================================================================
-'Class_Initialize ÀàµÄ³õÊ¼»¯
-'³õÊ¼»¯Òª»ñÈ¡µÄÒ³Âë
+'Class_Initialize ç±»çš„åˆå§‹åŒ–
+'åˆå§‹åŒ–è¦è·å–çš„é¡µç 
 '================================================================== 
 Private Sub Class_Initialize
 	If request("page")="" Then
@@ -111,8 +111,8 @@ Private Sub Class_Initialize
 End Sub
 
 '====================================================================
-'ShowPage  ´´½¨·ÖÒ³µ¼º½Ìõ
-'Ä£Ê½ (10Ò³ËõÂÔ,Ê×Ò³,Ç°Ò³,ºóÒ³,Î²Ò³)	
+'ShowPage  åˆ›å»ºåˆ†é¡µå¯¼èˆªæ¡
+'æ¨¡å¼ (10é¡µç¼©ç•¥,é¦–é¡µ,å‰é¡µ,åé¡µ,å°¾é¡µ)	
 '
 '====================================================================
 Public Function ShowPage()
@@ -120,22 +120,22 @@ Public Function ShowPage()
 	LAM_sURL = GetUrl()
 	int_TotalPage=int_totalPage 
  '==================================================================
- 'ÏÔÊ¾·ÖÒ³ĞÅÏ¢£¬¸÷¸öÄ£¿é¸ù¾İ×Ô¼ºÒªÇó¸ü¸ÄÏÔÇóÎ»ÖÃ
+ 'æ˜¾ç¤ºåˆ†é¡µä¿¡æ¯ï¼Œå„ä¸ªæ¨¡å—æ ¹æ®è‡ªå·±è¦æ±‚æ›´æ”¹æ˜¾æ±‚ä½ç½®
  '==================================================================
 	Dim strHtml,prevPage,nextPage,startPage
 if LAM_Style=1 then
-'Ä£Ê½1 (10Ò³ËõÂÔ,Ê×Ò³,Ç°Ò³,ºóÒ³,Î²Ò³)	
+'æ¨¡å¼1 (10é¡µç¼©ç•¥,é¦–é¡µ,å‰é¡µ,åé¡µ,å°¾é¡µ)	
 	prevPage = Int_curpage - 1
 	nextPage = Int_curpage + 1
 	
 	strHtml = "<div class=""quotes"" style=""border:0px;padding:0px""><form method=post style=""margin:0px"" onsubmit=""window.location.href='"& LAM_sURL &"'+document.getElementById('page').value;return false;"">"
 	if int_totalrecord>0 then
 		if (prevPage < 1) then
-			strHtml = strHtml& "<span title=""µÚÒ»Ò³"" class=""disabled"">·µ»ØÊ×Ò³</span>"
-			strHtml = strHtml& "<span title=""ÉÏÒ»Ò³"" class=""disabled"">ÉÏÒ»Ò³</span>"
+			strHtml = strHtml& "<span title=""ç¬¬ä¸€é¡µ"" class=""disabled"">è¿”å›é¦–é¡µ</span>"
+			strHtml = strHtml& "<span title=""ä¸Šä¸€é¡µ"" class=""disabled"">ä¸Šä¸€é¡µ</span>"
 		else
-			strHtml = strHtml& "<span title=""µÚÒ»Ò³"" class=""current1""><a href="""& LAM_sURL &"1"">·µ»ØÊ×Ò³</a></span>"
-			strHtml = strHtml& "<span title=""ÉÏÒ»Ò³"" class=""current1""><a href="""& LAM_sURL &prevPage&""">ÉÏÒ»Ò³</a></span>"
+			strHtml = strHtml& "<span title=""ç¬¬ä¸€é¡µ"" class=""current1""><a href="""& LAM_sURL &"1"">è¿”å›é¦–é¡µ</a></span>"
+			strHtml = strHtml& "<span title=""ä¸Šä¸€é¡µ"" class=""current1""><a href="""& LAM_sURL &prevPage&""">ä¸Šä¸€é¡µ</a></span>"
 		end if
 		if (Int_curpage mod 10 =0) then
 			startPage = Int_curpage - 9
@@ -143,48 +143,48 @@ if LAM_Style=1 then
 			startPage = Int_curpage - Int_curpage mod 10 + 1
 		end if
 		if (startPage > 10) then
-			strHtml = strHtml& "<span title=""ÉÏÊ®Ò³"" class=""current1""><a href="""& LAM_sURL &startPage-1&""">ÉÏÊ®Ò³</a></span>"
+			strHtml = strHtml& "<span title=""ä¸Šåé¡µ"" class=""current1""><a href="""& LAM_sURL &startPage-1&""">ä¸Šåé¡µ</a></span>"
 		end if
 		for i = startPage to startPage + 9
 			if (i > int_totalpage) then
 				exit for
 			end if
 			if (i =Int_curpage) then
-				strHtml = strHtml& "<span title=""µÚ" & i & "Ò³"" class=""current"">" & i & "</span>"
+				strHtml = strHtml& "<span title=""ç¬¬" & i & "é¡µ"" class=""current"">" & i & "</span>"
 			else 
-				strHtml = strHtml& "<span title=""µÚ" & i & "Ò³"" class=""current1""><a href="""& LAM_sURL &i&""">" & i & "</a></span>"
+				strHtml = strHtml& "<span title=""ç¬¬" & i & "é¡µ"" class=""current1""><a href="""& LAM_sURL &i&""">" & i & "</a></span>"
 			end if
 		next
 		if (int_totalpage>1) then
 		'strHtml = strHtml& "<input name=""page"" value="""&Int_curpage&""" type=""text"" style=""border: 1px solid #cccccc;height=18px;width:25px;text-align:right;background-color: #fff;vertical-align : middle ;"" onkeypress=""if (event.keyCode == 8 || (event.keyCode >= 48 && event.keyCode <= 57) || event.keyCode == 13) return true;else return false;"" onfocus=""this.select();""/>"
 		end if
 		if (int_totalpage >= startPage + 10) then
-			strHtml = strHtml& "<span title=""ÏÂÊ®Ò³"" class=""current1""><a href="""& LAM_sURL &startPage+10&""">ÏÂÊ®Ò³</a></span>"
+			strHtml = strHtml& "<span title=""ä¸‹åé¡µ"" class=""current1""><a href="""& LAM_sURL &startPage+10&""">ä¸‹åé¡µ</a></span>"
 		end if
 		if (nextPage > int_totalpage) then
-			strHtml = strHtml& "<span title=""ÏÂÒ»Ò³"" class=""disabled"">ÏÂÒ»Ò³</span>"
-			strHtml = strHtml& "<span title=""Î²Ò³"" class=""disabled"">Î²Ò³</span>"
+			strHtml = strHtml& "<span title=""ä¸‹ä¸€é¡µ"" class=""disabled"">ä¸‹ä¸€é¡µ</span>"
+			strHtml = strHtml& "<span title=""å°¾é¡µ"" class=""disabled"">å°¾é¡µ</span>"
 		else
-			strHtml = strHtml& "<span title=""ÏÂÒ»Ò³"" class=""current1""><a href="""& LAM_sURL &nextPage&""">ÏÂÒ»Ò³</a></span>"
-			strHtml = strHtml& "<span title=""Î²Ò³"" class=""current1""><a href="""& LAM_sURL &int_totalpage&""" >Î²Ò³</a></span>"
+			strHtml = strHtml& "<span title=""ä¸‹ä¸€é¡µ"" class=""current1""><a href="""& LAM_sURL &nextPage&""">ä¸‹ä¸€é¡µ</a></span>"
+			strHtml = strHtml& "<span title=""å°¾é¡µ"" class=""current1""><a href="""& LAM_sURL &int_totalpage&""" >å°¾é¡µ</a></span>"
 		end if
 	End If
-	strHtml = strHtml& "<span class=""disabled"">"&int_curpage&"/"&int_totalpage&"Ò³ ¹²"&int_totalrecord&"Ìõ "&LAM_PageSize&"Ìõ/Ò³</span></form></div>"
+	strHtml = strHtml& "<span class=""disabled"">"&int_curpage&"/"&int_totalpage&"é¡µ å…±"&int_totalrecord&"æ¡ "&LAM_PageSize&"æ¡/é¡µ</span></form></div>"
 	
 end if
 if LAM_Style=2 then
-'Ä£Ê½1 (10Ò³ËõÂÔ,Ê×Ò³,Ç°Ò³,ºóÒ³,Î²Ò³)	
+'æ¨¡å¼1 (10é¡µç¼©ç•¥,é¦–é¡µ,å‰é¡µ,åé¡µ,å°¾é¡µ)	
 	prevPage = Int_curpage - 1
 	nextPage = Int_curpage + 1
 	
-	strHtml = "<table  height=""20""  border=""1"" cellpadding=""0"" cellspacing=""0"" bordercolorlight=""#FFFFFF"" bordercolordark=""#FFFFFF""  class=""Pager"" style=""BORDER-COLLAPSE: collapse;font-weight: normal;padding: 0px;text-decoration: none;margin: 0px ;"" bgcolor=""#e4e4e4""><form method=post onsubmit=""window.location.href='"& LAM_sURL &"'+document.getElementById('page').value;return false;""><tr><td bgcolor=""#FFFFFF"">Ò³´Î:"&int_curpage&"/"&int_totalpage&"Ò³ ¹²"&int_totalrecord&"Ìõ¼ÇÂ¼ "&LAM_PageSize&"Ìõ/Ò³</td>"
+	strHtml = "<table  height=""20""  border=""1"" cellpadding=""0"" cellspacing=""0"" bordercolorlight=""#FFFFFF"" bordercolordark=""#FFFFFF""  class=""Pager"" style=""BORDER-COLLAPSE: collapse;font-weight: normal;padding: 0px;text-decoration: none;margin: 0px ;"" bgcolor=""#e4e4e4""><form method=post onsubmit=""window.location.href='"& LAM_sURL &"'+document.getElementById('page').value;return false;""><tr><td bgcolor=""#FFFFFF"">é¡µæ¬¡:"&int_curpage&"/"&int_totalpage&"é¡µ å…±"&int_totalrecord&"æ¡è®°å½• "&LAM_PageSize&"æ¡/é¡µ</td>"
 	if int_totalrecord>0 then
 		if (prevPage < 1) then
-			strHtml = strHtml& "<td title=""Ê×Ò³"" width=20 align=middle style=""font-family: Webdings;margin: 0px 0px 0px 1px;color: #999999;"">9</td>"
-			strHtml = strHtml& "<td title=""ÉÏÒ³"" width=20 align=middle style=""font-family: Webdings;margin: 0px 0px 0px 1px;color: #999999;"">7</td>"
+			strHtml = strHtml& "<td title=""é¦–é¡µ"" width=20 align=middle style=""font-family: Webdings;margin: 0px 0px 0px 1px;color: #999999;"">9</td>"
+			strHtml = strHtml& "<td title=""ä¸Šé¡µ"" width=20 align=middle style=""font-family: Webdings;margin: 0px 0px 0px 1px;color: #999999;"">7</td>"
 		else
-			strHtml = strHtml& "<td title=""Ê×Ò³"" width=20 align=middle ><a href="""& LAM_sURL &"1"" style=""font-family: Webdings;margin: 0px 0px 0px 1px;"">9</a></td>"
-			strHtml = strHtml& "<td title=""ÉÏÒ³"" width=20 align=middle ><a href="""& LAM_sURL &prevPage&""" style=""font-family: Webdings;margin: 0px 0px 0px 1px;"">7</a></td>"
+			strHtml = strHtml& "<td title=""é¦–é¡µ"" width=20 align=middle ><a href="""& LAM_sURL &"1"" style=""font-family: Webdings;margin: 0px 0px 0px 1px;"">9</a></td>"
+			strHtml = strHtml& "<td title=""ä¸Šé¡µ"" width=20 align=middle ><a href="""& LAM_sURL &prevPage&""" style=""font-family: Webdings;margin: 0px 0px 0px 1px;"">7</a></td>"
 		end if
 		if (Int_curpage mod 10 =0) then
 			startPage = Int_curpage - 9
@@ -192,48 +192,48 @@ if LAM_Style=2 then
 			startPage = Int_curpage - Int_curpage mod 10 + 1
 		end if
 		if (startPage > 10) then
-			strHtml = strHtml& "<td title=""ÉÏÊ®Ò³"" width=20 align=middle  style=""margin: 0px 0px 0px 1px;""><a href="""& LAM_sURL &startPage-1&""">...</a></td>"
+			strHtml = strHtml& "<td title=""ä¸Šåé¡µ"" width=20 align=middle  style=""margin: 0px 0px 0px 1px;""><a href="""& LAM_sURL &startPage-1&""">...</a></td>"
 		end if
 		for i = startPage to startPage + 9
 			if (i > int_totalpage) then
 				exit for
 			end if
 			if (i =Int_curpage) then
-				strHtml = strHtml& "<td title=""µÚ" & i & "Ò³""  bgcolor=""#eaf0f8"" width=20 align=middle  style=""color: #999999;margin: 0px 0px 0px 1px;""><b>" & i & "</b></td>"
+				strHtml = strHtml& "<td title=""ç¬¬" & i & "é¡µ""  bgcolor=""#eaf0f8"" width=20 align=middle  style=""color: #999999;margin: 0px 0px 0px 1px;""><b>" & i & "</b></td>"
 			else 
-				strHtml = strHtml& "<td title=""µÚ" & i & "Ò³"" width=20 align=middle style=""margin: 0px 0px 0px 1px;""><a href="""& LAM_sURL &i&""">" & i & "</a></td>"
+				strHtml = strHtml& "<td title=""ç¬¬" & i & "é¡µ"" width=20 align=middle style=""margin: 0px 0px 0px 1px;""><a href="""& LAM_sURL &i&""">" & i & "</a></td>"
 			end if
 		next
 		if (int_totalpage>1) then
 		strHtml = strHtml& "<td width=20 align=middle ><input name=""page"" value="""&Int_curpage&""" type=""text"" style=""border: 1px solid #cccccc;height=18px;width:25px;text-align:right;background-color: #fff;vertical-align : middle ;"" onkeypress=""if (event.keyCode == 8 || (event.keyCode >= 48 && event.keyCode <= 57) || event.keyCode == 13) return true;else return false;"" onfocus=""this.select();""/></td>"
 		end if
 		if (int_totalpage >= startPage + 10) then
-			strHtml = strHtml& "<td title=""ÏÂÊ®Ò³"" width=20 align=middle  style=""margin: 0px 0px 0px 1px;""><a href="""& LAM_sURL &startPage+10&""">...</a></td>"
+			strHtml = strHtml& "<td title=""ä¸‹åé¡µ"" width=20 align=middle  style=""margin: 0px 0px 0px 1px;""><a href="""& LAM_sURL &startPage+10&""">...</a></td>"
 		end if
 		if (nextPage > int_totalpage) then
-			strHtml = strHtml& "<td title=""ÏÂÒ³"" width=20 align=middle  style=""font-family: Webdings;margin: 0px 0px 0px 1px;color: #999999;"">8</td>"
-			strHtml = strHtml& "<td title=""Î²Ò³"" width=20 align=middle  style=""font-family: Webdings;margin: 0px 0px 0px 1px;color: #999999;"">:</td>"
+			strHtml = strHtml& "<td title=""ä¸‹é¡µ"" width=20 align=middle  style=""font-family: Webdings;margin: 0px 0px 0px 1px;color: #999999;"">8</td>"
+			strHtml = strHtml& "<td title=""å°¾é¡µ"" width=20 align=middle  style=""font-family: Webdings;margin: 0px 0px 0px 1px;color: #999999;"">:</td>"
 		else
-			strHtml = strHtml& "<td title=""ÏÂÒ³"" width=20 align=middle ><a href="""& LAM_sURL &nextPage&""" style=""font-family: Webdings;margin: 0px 0px 0px 1px;"">8</a></td>"
-			strHtml = strHtml& "<td title=""Î²Ò³"" width=20 align=middle ><a href="""& LAM_sURL &int_totalpage&""" style=""font-family: Webdings;margin: 0px 0px 0px 1px;"">:</a></td>"
+			strHtml = strHtml& "<td title=""ä¸‹é¡µ"" width=20 align=middle ><a href="""& LAM_sURL &nextPage&""" style=""font-family: Webdings;margin: 0px 0px 0px 1px;"">8</a></td>"
+			strHtml = strHtml& "<td title=""å°¾é¡µ"" width=20 align=middle ><a href="""& LAM_sURL &int_totalpage&""" style=""font-family: Webdings;margin: 0px 0px 0px 1px;"">:</a></td>"
 		end if
 	end if
 	strHtml = strHtml& "</tr></form></table>"
 
 end if
 if LAM_Style=3 then
-'Ä£Ê½3 (10Ò³ËõÂÔ,Ê×Ò³,Ç°Ò³,ºóÒ³,Î²Ò³) inputÑùÊ½
+'æ¨¡å¼3 (10é¡µç¼©ç•¥,é¦–é¡µ,å‰é¡µ,åé¡µ,å°¾é¡µ) inputæ ·å¼
 	prevPage = Int_curpage - 1
 	nextPage = Int_curpage + 1
 	
-	strHtml = "<table  border=""0"" cellpadding=""0"" cellspacing=""0"" style=""font:12px;""><form method=post onsubmit=""window.location.href='"& LAM_sURL &"'+document.getElementById('page').value;return false;""><tr><td>Ò³´Î:"&int_curpage&"/"&int_totalpage&"Ò³ ¹²"&int_totalrecord&"Ìõ¼ÇÂ¼ "&LAM_PageSize&"Ìõ/Ò³</td>"
+	strHtml = "<table  border=""0"" cellpadding=""0"" cellspacing=""0"" style=""font:12px;""><form method=post onsubmit=""window.location.href='"& LAM_sURL &"'+document.getElementById('page').value;return false;""><tr><td>é¡µæ¬¡:"&int_curpage&"/"&int_totalpage&"é¡µ å…±"&int_totalrecord&"æ¡è®°å½• "&LAM_PageSize&"æ¡/é¡µ</td>"
 	if int_totalrecord>0 then
 		if (prevPage < 1) then
-			strHtml = strHtml& "<td><input type=button  value=""|<<"" title=""µÚÒ»Ò³"" disabled></td>"
-			strHtml = strHtml& "<td><input type=button  value=""<<"" title=""ÉÏÒ»Ò³"" disabled></td>"
+			strHtml = strHtml& "<td><input type=button  value=""|<<"" title=""ç¬¬ä¸€é¡µ"" disabled></td>"
+			strHtml = strHtml& "<td><input type=button  value=""<<"" title=""ä¸Šä¸€é¡µ"" disabled></td>"
 		else
-			strHtml = strHtml& "<td><input type=button  value=""|<<"" title=""µÚÒ»Ò³"" onclick=""window.location.href='"& LAM_sURL &"1';"" >"
-			strHtml = strHtml& "<td><input type=button  value=""<<"" title=""ÉÏÒ»Ò³"" onclick=""window.location.href='"& LAM_sURL &prevPage&"';"" >"
+			strHtml = strHtml& "<td><input type=button  value=""|<<"" title=""ç¬¬ä¸€é¡µ"" onclick=""window.location.href='"& LAM_sURL &"1';"" >"
+			strHtml = strHtml& "<td><input type=button  value=""<<"" title=""ä¸Šä¸€é¡µ"" onclick=""window.location.href='"& LAM_sURL &prevPage&"';"" >"
 		end if
 		if (Int_curpage mod 10 =0) then
 			startPage = Int_curpage - 9
@@ -241,30 +241,30 @@ if LAM_Style=3 then
 			startPage = Int_curpage - Int_curpage mod 10 + 1
 		end if
 		if (startPage > 10) then
-			strHtml = strHtml& "<td><input type=button  value=""..."" title=""ÉÏÊ®Ò³"" onclick=""window.location.href='"& LAM_sURL &startPage-1&"';"" >"
+			strHtml = strHtml& "<td><input type=button  value=""..."" title=""ä¸Šåé¡µ"" onclick=""window.location.href='"& LAM_sURL &startPage-1&"';"" >"
 		end if
 		for i = startPage to startPage + 9
 			if (i > int_totalpage) then
 				exit for
 			end if
 			if (i =Int_curpage) then
-				strHtml = strHtml& "<td><input type=button  value=""" & i & """ title=""µÚ" & i & "Ò³"" disabled></td>"
+				strHtml = strHtml& "<td><input type=button  value=""" & i & """ title=""ç¬¬" & i & "é¡µ"" disabled></td>"
 			else 
-				strHtml = strHtml& "<td><input type=button  value=""" & i & """ title=""µÚ" & i & "Ò³"" onclick=""window.location.href='"& LAM_sURL &i&"';"" >"
+				strHtml = strHtml& "<td><input type=button  value=""" & i & """ title=""ç¬¬" & i & "é¡µ"" onclick=""window.location.href='"& LAM_sURL &i&"';"" >"
 			end if
 		next
 		if (int_totalpage>1) then
-		strHtml = strHtml& "<td><input name=""page"" title=""ÇëÊäÈëÒªÌø×ªµÄÒ³Âë,È»ºó°´»Ø³µ¼´¿É.""  value="""&Int_curpage&""" type=""text"" style=""border: 1px solid #cccccc;height=18px;width:25px;text-align:right;background-color: #fff;vertical-align : middle ;"" onkeypress=""javascript:if (event.keyCode == 8 || (event.keyCode >= 48 && event.keyCode <= 57) || event.keyCode == 13) return true;else return false;"" onfocus=""this.select();""/></td>"
+		strHtml = strHtml& "<td><input name=""page"" title=""è¯·è¾“å…¥è¦è·³è½¬çš„é¡µç ,ç„¶åæŒ‰å›è½¦å³å¯.""  value="""&Int_curpage&""" type=""text"" style=""border: 1px solid #cccccc;height=18px;width:25px;text-align:right;background-color: #fff;vertical-align : middle ;"" onkeypress=""javascript:if (event.keyCode == 8 || (event.keyCode >= 48 && event.keyCode <= 57) || event.keyCode == 13) return true;else return false;"" onfocus=""this.select();""/></td>"
 		end if
 		if (int_totalpage >= startPage + 10) then
-			strHtml = strHtml& "<td><input type=button  value=""..."" title=""ÏÂÊ®Ò³"" onclick=""window.location.href='"& LAM_sURL &startPage+10&"';"" >"
+			strHtml = strHtml& "<td><input type=button  value=""..."" title=""ä¸‹åé¡µ"" onclick=""window.location.href='"& LAM_sURL &startPage+10&"';"" >"
 		end if
 		if (nextPage > int_totalpage) then
-			strHtml = strHtml& "<td><input type=button  value="">>"" title=""ÏÂÒ»Ò³"" disabled></td>"
-			strHtml = strHtml& "<td><input type=button  value="">>|"" title=""×îºóÒ³"" disabled></td>"
+			strHtml = strHtml& "<td><input type=button  value="">>"" title=""ä¸‹ä¸€é¡µ"" disabled></td>"
+			strHtml = strHtml& "<td><input type=button  value="">>|"" title=""æœ€åé¡µ"" disabled></td>"
 		else
-			strHtml = strHtml& "<td><input type=button  value="">>"" title=""ÏÂÒ»Ò³"" onclick=""window.location.href='"& LAM_sURL &nextPage&"';"" >"
-			strHtml = strHtml& "<td><input type=button  value="">>|"" title=""×îºóÒ³"" onclick=""window.location.href='"& LAM_sURL &int_totalpage&"';"" >"
+			strHtml = strHtml& "<td><input type=button  value="">>"" title=""ä¸‹ä¸€é¡µ"" onclick=""window.location.href='"& LAM_sURL &nextPage&"';"" >"
+			strHtml = strHtml& "<td><input type=button  value="">>|"" title=""æœ€åé¡µ"" onclick=""window.location.href='"& LAM_sURL &int_totalpage&"';"" >"
 		end if
 	end if
 	strHtml = strHtml& "</tr></form></table>"

@@ -24,47 +24,47 @@ Sub main()
 %>
 <table width="100%" border="0" cellspacing="1" cellpadding="3" align="center">
 	<tr>
-		<td height="23" colspan="2" class=td1><B>ËµÃ÷</B>£º<BR>Äú¿ÉÒÔÑ¡ÔñÏÂÁĞÆäÖĞÖ®Ò»ÖÖÄ£Ê½½øĞĞÌû×ÓÊı¾İÔÚ²»Í¬±íÖ®¼äµÄ×ª»»¡£</td>
+		<td height="23" colspan="2" class=td1><B>è¯´æ˜</B>ï¼š<BR>æ‚¨å¯ä»¥é€‰æ‹©ä¸‹åˆ—å…¶ä¸­ä¹‹ä¸€ç§æ¨¡å¼è¿›è¡Œå¸–å­æ•°æ®åœ¨ä¸åŒè¡¨ä¹‹é—´çš„è½¬æ¢ã€‚</td>
 	</tr>
 	<tr>
-		<th colspan="2">Ä£Ê½Ò»£ºËÑË÷Òª×ªÒÆµÄÌû×Ó</th>
+		<th colspan="2">æ¨¡å¼ä¸€ï¼šæœç´¢è¦è½¬ç§»çš„å¸–å­</th>
 	</tr>
 	<FORM METHOD=POST ACTION="?action=search">
 	<tr>
-		<td height="23" width="20%" class=td1><B>ËÑË÷Ìõ¼ş</B></td>
+		<td height="23" width="20%" class=td1><B>æœç´¢æ¡ä»¶</B></td>
 		<td height="23" width="80%" class=td1>
 			<input type="text" name="keyword">&nbsp;
 			<select name="tablename">
 			<%=TableSelectForm%>
-			</select>&nbsp;<!--shinzeal edit username and topic to searchWhat in 2004/7/4 ÕâÖÖµ¥Ñ¡µÄ±êµ¥ÓÃradio±È½ÏºÏÀí-->
-			<input type="radio" class="radio" name="searchWhat" value="username" checked>ÓÃ»§&nbsp;
-			<input type="radio" class="radio" name="searchWhat" value="topic">Ö÷Ìâ&nbsp;
-			<input type="submit" class="button" name="submit" value="ËÑË÷">
+			</select>&nbsp;<!--shinzeal edit username and topic to searchWhat in 2004/7/4 è¿™ç§å•é€‰çš„æ ‡å•ç”¨radioæ¯”è¾ƒåˆç†-->
+			<input type="radio" class="radio" name="searchWhat" value="username" checked>ç”¨æˆ·&nbsp;
+			<input type="radio" class="radio" name="searchWhat" value="topic">ä¸»é¢˜&nbsp;
+			<input type="submit" class="button" name="submit" value="æœç´¢">
 		</td>
 	</tr>
 	</FORM>
 	<tr>
-		<td height="23" colspan="2" class=td1><B>×¢Òâ</B>£ºÕâÀï½öËÑË÷ËùÔÚ±íµÄÖ÷ÌâºÍ·¢±íÓÃ»§Êı¾İ£¬ËÑË÷ºó¶ÔËÑË÷½á¹û½øĞĞ²Ù×÷</td>
+		<td height="23" colspan="2" class=td1><B>æ³¨æ„</B>ï¼šè¿™é‡Œä»…æœç´¢æ‰€åœ¨è¡¨çš„ä¸»é¢˜å’Œå‘è¡¨ç”¨æˆ·æ•°æ®ï¼Œæœç´¢åå¯¹æœç´¢ç»“æœè¿›è¡Œæ“ä½œ</td>
 	</tr>
 	<tr>
-		<th colspan="2">Ä£Ê½¶ş£ºÔÚ²»Í¬±í×ªÒÆÊı¾İ</th>
+		<th colspan="2">æ¨¡å¼äºŒï¼šåœ¨ä¸åŒè¡¨è½¬ç§»æ•°æ®</th>
 	</tr>
 	<FORM METHOD=POST ACTION="?action=update2">
 	<tr>
 		<td height="23" width="100%" class=td1 colspan="2">&nbsp;
 		<select name="OutTablename">
 		<%=TableSelectForm%>
-		</select><!--shinzeal edit top1000 and end1000 to TopOrEnd in 2004/7/4 ÕâÖÖµ¥Ñ¡µÄ±êµ¥ÓÃradio±È½ÏºÏÀí-->
-		 <input type="radio" class="radio" name="TopOrEnd" value="Top" checked>Ç° <input type="radio" class="radio" name="TopOrEnd" value="End">ºó <input type=text name="selnum" value="100" size=3>Ìõ ¼ÇÂ¼×ªÒÆµ½
+		</select><!--shinzeal edit top1000 and end1000 to TopOrEnd in 2004/7/4 è¿™ç§å•é€‰çš„æ ‡å•ç”¨radioæ¯”è¾ƒåˆç†-->
+		 <input type="radio" class="radio" name="TopOrEnd" value="Top" checked>å‰ <input type="radio" class="radio" name="TopOrEnd" value="End">å <input type=text name="selnum" value="100" size=3>æ¡ è®°å½•è½¬ç§»åˆ°
 		<select name="InTablename">
 		<%=TableSelectForm%>
 		</select>
-		&nbsp;<input type="submit" class="button" name="submit" value="Ìá½»">
+		&nbsp;<input type="submit" class="button" name="submit" value="æäº¤">
 		</td>
 	</tr>
 	</FORM>
 	<tr>
-		<td height="23" colspan="2" class=td1><B>×¢Òâ</B>£º×îÇ°NÌõ¼ÇÂ¼Ö¸Êı¾İ¿âÖĞ×îÔç·¢±íµÄÌû×Ó£¨Èç¹ûÆ½¾ùÃ¿¸öÌû×ÓÓĞ5¸ö»Ø¸´£¬ÄÇÃ´100¸öÖ÷ÌâÔÚÕâÀïµÄ¸üĞÂÁ¿½«ÊÇ500Ìõ¼ÇÂ¼£©£¬ÕâÍ¨³£Òª»¨ºÜ³¤µÄÊ±¼ä£¬¸üĞÂµÄËÙ¶ÈÈ¡¾öÓÚÄúµÄ·şÎñÆ÷ĞÔÄÜÒÔ¼°¸üĞÂÊı¾İµÄ¶àÉÙ¡£Ö´ĞĞ±¾²½Öè½«ÏûºÄ´óÁ¿µÄ·şÎñÆ÷×ÊÔ´£¬½¨ÒéÄúÔÚ·ÃÎÊÈËÊı½ÏÉÙµÄÊ±ºò»òÕß±¾µØ½øĞĞ¸üĞÂ²Ù×÷¡£</td>
+		<td height="23" colspan="2" class=td1><B>æ³¨æ„</B>ï¼šæœ€å‰Næ¡è®°å½•æŒ‡æ•°æ®åº“ä¸­æœ€æ—©å‘è¡¨çš„å¸–å­ï¼ˆå¦‚æœå¹³å‡æ¯ä¸ªå¸–å­æœ‰5ä¸ªå›å¤ï¼Œé‚£ä¹ˆ100ä¸ªä¸»é¢˜åœ¨è¿™é‡Œçš„æ›´æ–°é‡å°†æ˜¯500æ¡è®°å½•ï¼‰ï¼Œè¿™é€šå¸¸è¦èŠ±å¾ˆé•¿çš„æ—¶é—´ï¼Œæ›´æ–°çš„é€Ÿåº¦å–å†³äºæ‚¨çš„æœåŠ¡å™¨æ€§èƒ½ä»¥åŠæ›´æ–°æ•°æ®çš„å¤šå°‘ã€‚æ‰§è¡Œæœ¬æ­¥éª¤å°†æ¶ˆè€—å¤§é‡çš„æœåŠ¡å™¨èµ„æºï¼Œå»ºè®®æ‚¨åœ¨è®¿é—®äººæ•°è¾ƒå°‘çš„æ—¶å€™æˆ–è€…æœ¬åœ°è¿›è¡Œæ›´æ–°æ“ä½œã€‚</td>
 	</tr>
 </table>
 <%
@@ -75,17 +75,17 @@ sub nowused()
 <form method="POST" action="?action=update">
 <table width="100%" border="0" cellspacing="1" cellpadding="3" align="center">
 <tr>
-<td height="23" colspan="5" class=td1><B>ËµÃ÷</B>£º<BR>ÏÂÁĞÊı¾İ±íÖĞÑ¡ÖĞµÄÎªµ±Ç°ÂÛÌ³ËùÊ¹ÓÃÀ´±£´æÌû×ÓÊı¾İµÄ±í£¬Ò»°ãÇé¿öÏÂÃ¿¸ö±íÖĞµÄÊı¾İÔ½ÉÙÂÛÌ³Ìû×ÓÏÔÊ¾ËÙ¶ÈÔ½¿ì£¬µ±ÄúÏÂÁĞµ¥¸öÌû×ÓÊı¾İ±íÖĞµÄÊı¾İÓĞ³¬¹ı¼¸ÍòµÄÌû×ÓÊ±²»·ÁĞÂÌíÒ»¸öÊı¾İ±íÀ´±£´æÌû×ÓÊı¾İ£¨SQL°æ±¾ÓÃ»§½¨ÒéÃ¿¸ö±íÊı¾İ´ïµ½20ÍòÒÔºó½øĞĞÌí¼Ó±í²Ù×÷£©£¬Äú»á·¢ÏÖÂÛÌ³ËÙ¶È¿ìºÜ¶àºÜ¶à¡£<BR>ÄúÒ²¿ÉÒÔ½«µ±Ç°ËùÊ¹ÓÃµÄÊı¾İ±íÔÚÏÂÁĞÊı¾İ±íÖĞÇĞ»»£¬µ±Ç°ËùÊ¹ÓÃµÄÌû×ÓÊı¾İ±í¼´µ±Ç°ÂÛÌ³ÓÃ»§·¢ÌùÊ±Ä¬ÈÏµÄ±£´æÌû×ÓÊı¾İ±í</td>
+<td height="23" colspan="5" class=td1><B>è¯´æ˜</B>ï¼š<BR>ä¸‹åˆ—æ•°æ®è¡¨ä¸­é€‰ä¸­çš„ä¸ºå½“å‰è®ºå›æ‰€ä½¿ç”¨æ¥ä¿å­˜å¸–å­æ•°æ®çš„è¡¨ï¼Œä¸€èˆ¬æƒ…å†µä¸‹æ¯ä¸ªè¡¨ä¸­çš„æ•°æ®è¶Šå°‘è®ºå›å¸–å­æ˜¾ç¤ºé€Ÿåº¦è¶Šå¿«ï¼Œå½“æ‚¨ä¸‹åˆ—å•ä¸ªå¸–å­æ•°æ®è¡¨ä¸­çš„æ•°æ®æœ‰è¶…è¿‡å‡ ä¸‡çš„å¸–å­æ—¶ä¸å¦¨æ–°æ·»ä¸€ä¸ªæ•°æ®è¡¨æ¥ä¿å­˜å¸–å­æ•°æ®ï¼ˆSQLç‰ˆæœ¬ç”¨æˆ·å»ºè®®æ¯ä¸ªè¡¨æ•°æ®è¾¾åˆ°20ä¸‡ä»¥åè¿›è¡Œæ·»åŠ è¡¨æ“ä½œï¼‰ï¼Œæ‚¨ä¼šå‘ç°è®ºå›é€Ÿåº¦å¿«å¾ˆå¤šå¾ˆå¤šã€‚<BR>æ‚¨ä¹Ÿå¯ä»¥å°†å½“å‰æ‰€ä½¿ç”¨çš„æ•°æ®è¡¨åœ¨ä¸‹åˆ—æ•°æ®è¡¨ä¸­åˆ‡æ¢ï¼Œå½“å‰æ‰€ä½¿ç”¨çš„å¸–å­æ•°æ®è¡¨å³å½“å‰è®ºå›ç”¨æˆ·å‘è´´æ—¶é»˜è®¤çš„ä¿å­˜å¸–å­æ•°æ®è¡¨</td>
 </tr>
 <tr>
-<th colspan="5">µ±Ç°Êı¾İ±íÉè¶¨</th>
+<th colspan="5">å½“å‰æ•°æ®è¡¨è®¾å®š</th>
 </tr>
 <tr>
-<td width="20%"><b>±íÃû<B></td>
-<td width="20%"><B>ËµÃ÷</B></td>
-<td width="20%"><B>µ±Ç°ÌûÊı</B></td>
-<td width="20%"><B>µ±Ç°Ä¬ÈÏ</B></td>
-<td width="20%"><B>É¾³ı</B></td>
+<td width="20%"><b>è¡¨å<B></td>
+<td width="20%"><B>è¯´æ˜</B></td>
+<td width="20%"><B>å½“å‰å¸–æ•°</B></td>
+<td width="20%"><B>å½“å‰é»˜è®¤</B></td>
+<td width="20%"><B>åˆ é™¤</B></td>
 </tr>
 <%
 Dim i,rs
@@ -97,10 +97,10 @@ for i=0 to ubound(AllPostTable)
 %>
 	<tr>
 		<td width="20%" class=td1><%=AllPostTable(i)%></td>
-		<td width="20%" class=td1>¸Ã¼ÇÂ¼¶ÔÓ¦µÄÌû×ÓÊı¾İ±í²»´æÔÚ»òÒÑ¾­±»É¾³ı</td>
+		<td width="20%" class=td1>è¯¥è®°å½•å¯¹åº”çš„å¸–å­æ•°æ®è¡¨ä¸å­˜åœ¨æˆ–å·²ç»è¢«åˆ é™¤</td>
 		<td width="20%" class=td1>-1</td>
 		<td width="20%" class=td1><input value="<%=AllPostTable(i)%>" name="TableName" type="radio" class="radio" disabled="true"></td>
-		<td width="20%" class=td1><a href="?action=del&tablename=<%=AllPostTable(i)%>">É¾³ı</a></td>
+		<td width="20%" class=td1><a href="?action=del&tablename=<%=AllPostTable(i)%>">åˆ é™¤</a></td>
 	</tr>
 <%	Else%>
 	<tr>
@@ -108,7 +108,7 @@ for i=0 to ubound(AllPostTable)
 		<td width="20%" class=td1><%=AllPostTableName(i)%></td>
 		<td width="20%" class=td1><%=Rs(0)%></td>
 		<td width="20%" class=td1><input value="<%=AllPostTable(i)%>" name="TableName" type="radio" class="radio" <%if Trim(Lcase(Dvbbs.NowUseBBS))=Lcase(AllPostTable(i)) then%>checked<%end if%>></td>
-		<td width="20%" class=td1><a href="?action=del&tablename=<%=AllPostTable(i)%>"  onclick="{if(confirm('É¾³ı½«°üÀ¨¸ÃÊı¾İ±íËùÓĞÌû×Ó£¬±¾²Ù×÷ËùÉ¾³ıµÄÄÚÈİ½«²»¿É»Ö¸´£¬È·¶¨É¾³ıÂğ?')){return true;}return false;}">É¾³ı</a></td>
+		<td width="20%" class=td1><a href="?action=del&tablename=<%=AllPostTable(i)%>"  onclick="{if(confirm('åˆ é™¤å°†åŒ…æ‹¬è¯¥æ•°æ®è¡¨æ‰€æœ‰å¸–å­ï¼Œæœ¬æ“ä½œæ‰€åˆ é™¤çš„å†…å®¹å°†ä¸å¯æ¢å¤ï¼Œç¡®å®šåˆ é™¤å—?')){return true;}return false;}">åˆ é™¤</a></td>
 	</tr>
 <%
 	End IF
@@ -116,25 +116,25 @@ next
 %>
 <tr>
 <td width="100%" colspan=5 class=td1>
-<input type="submit" class="button" name="Submit" value="Ìá ½»">
+<input type="submit" class="button" name="Submit" value="æ äº¤">
 </td>
 </tr>
 </form>
 <FORM METHOD=POST ACTION="?action=CreatTable">
 <tr>
-<th colspan="5">Ìí¼ÓÊı¾İ±í</th>
+<th colspan="5">æ·»åŠ æ•°æ®è¡¨</th>
 </tr>
 <tr>
-<td width="20%" class=td1>Ìí¼ÓµÄ±íÃû</td>
-<td width="80%" class=td1 colspan=4><input type=text name="tablename" value="Dv_bbs<%=ubound(AllPostTable)+2%>">&nbsp;Ö»ÄÜÓÃDv_bbs+Êı×Ö±íÊ¾£¬ÈçDv_bbs5£¬×îºóµÄÊı×Ö×î¶à²»ÄÜ³¬¹ı9</td>
+<td width="20%" class=td1>æ·»åŠ çš„è¡¨å</td>
+<td width="80%" class=td1 colspan=4><input type=text name="tablename" value="Dv_bbs<%=ubound(AllPostTable)+2%>">&nbsp;åªèƒ½ç”¨Dv_bbs+æ•°å­—è¡¨ç¤ºï¼Œå¦‚Dv_bbs5ï¼Œæœ€åçš„æ•°å­—æœ€å¤šä¸èƒ½è¶…è¿‡9</td>
 </tr>
 <tr>
-<td width="20%" class=td1>Ìí¼Ó±íµÄËµÃ÷</td>
-<td width="80%" class=td1 colspan=4><input type=text name="tablereadme">&nbsp;¼òµ¥ÃèÊö¸Ã±íµÄÓÃÍ¾£¬ÔÚËÑË÷Ìû×ÓºÍÆäËûÏà¹Ø²Ù×÷²¿·ÖÏÔÊ¾</td>
+<td width="20%" class=td1>æ·»åŠ è¡¨çš„è¯´æ˜</td>
+<td width="80%" class=td1 colspan=4><input type=text name="tablereadme">&nbsp;ç®€å•æè¿°è¯¥è¡¨çš„ç”¨é€”ï¼Œåœ¨æœç´¢å¸–å­å’Œå…¶ä»–ç›¸å…³æ“ä½œéƒ¨åˆ†æ˜¾ç¤º</td>
 </tr>
 <tr>
 <td width="100%" colspan=5 class=td1>
-<input type="submit" class="button" name="Submit" value="Ìá ½»">
+<input type="submit" class="button" name="Submit" value="æ äº¤">
 </td>
 </tr>
 </FORM>
@@ -145,14 +145,14 @@ end sub
 sub update()
 	Dvbbs.Execute("update Dv_setup set Forum_NowUseBBS='"&Dvbbs.CheckStr(request.form("TableName"))&"'")
 	Dvbbs.loadSetup()
-	Dv_suc("¸üĞÂ³É¹¦£¡")
+	Dv_suc("æ›´æ–°æˆåŠŸï¼")
 end sub
 
 sub del()
 	dim nAllPostTable,nAllPostTableName,ii,TableName
 	TableName = Dvbbs.CheckStr(trim(request("tablename")))
 	if TableName=Trim(Dvbbs.NowUseBBS) then
-		Errmsg=ErrMsg + "<BR><li>µ±Ç°ÕıÔÚÊ¹ÓÃµÄ±í²»ÄÜÉ¾³ı¡£"
+		Errmsg=ErrMsg + "<BR><li>å½“å‰æ­£åœ¨ä½¿ç”¨çš„è¡¨ä¸èƒ½åˆ é™¤ã€‚"
 		dvbbs_error()
 		exit sub
 	end if
@@ -162,43 +162,43 @@ sub del()
 	On Error Resume Next
 	Dvbbs.Execute("drop table "&TableName&"")
 	If Err Then Err.Clear
-	Dv_suc("É¾³ı³É¹¦£¡")
+	Dv_suc("åˆ é™¤æˆåŠŸï¼")
 end sub
 
 sub CreatTable()
 if request.form("tablename")="" then
-	Errmsg=ErrMsg + "<BR><li>ÇëÊäÈë±íÃû¡£"
+	Errmsg=ErrMsg + "<BR><li>è¯·è¾“å…¥è¡¨åã€‚"
 	dvbbs_error()
 	exit sub
 elseif len(request.form("tablename"))<>7 then
-	Errmsg=ErrMsg + "<BR><li>ÊäÈëµÄ±íÃû²»ºÏ·¨¡£"
+	Errmsg=ErrMsg + "<BR><li>è¾“å…¥çš„è¡¨åä¸åˆæ³•ã€‚"
 	dvbbs_error()
 	exit sub
 elseif not isnumeric(right(request.form("tablename"),1)) then
-	Errmsg=ErrMsg + "<BR><li>ÊäÈëµÄ±íÃû²»ºÏ·¨¡£"
+	Errmsg=ErrMsg + "<BR><li>è¾“å…¥çš„è¡¨åä¸åˆæ³•ã€‚"
 	dvbbs_error()
 	exit sub
 elseif cint(right(request.form("tablename"),1))>9 or cint(right(request.form("tablename"),1))<0 then
-	Errmsg=ErrMsg + "<BR><li>ÊäÈëµÄ±íÃû²»ºÏ·¨¡£"
+	Errmsg=ErrMsg + "<BR><li>è¾“å…¥çš„è¡¨åä¸åˆæ³•ã€‚"
 	dvbbs_error()
 	exit sub
 end if
 if request.form("tablereadme")="" then
-	Errmsg=ErrMsg + "<BR><li>ÇëÊäÈë±íµÄËµÃ÷¡£"
+	Errmsg=ErrMsg + "<BR><li>è¯·è¾“å…¥è¡¨çš„è¯´æ˜ã€‚"
 	dvbbs_error()
 	exit sub
 end If
 Dim i,sql
 for i=0 to ubound(AllPostTable)
 	if AllPostTable(i)=request.form("tablename") then
-		Errmsg=ErrMsg + "<BR><li>ÄúÊäÈëµÄ±íÃûÒÑ¾­´æÔÚ£¬ÇëÖØĞÂÊäÈë¡£"
+		Errmsg=ErrMsg + "<BR><li>æ‚¨è¾“å…¥çš„è¡¨åå·²ç»å­˜åœ¨ï¼Œè¯·é‡æ–°è¾“å…¥ã€‚"
 		dvbbs_error()
 		exit sub
 	end if
 next
 
 Dim NewAllPostTable,NewAllPostTableName
-'¸üĞÂÊı¾İ±íÁĞ±í
+'æ›´æ–°æ•°æ®è¡¨åˆ—è¡¨
 
 Dvbbs.Execute("insert into dv_TableList(TableName,TableType)Values('"&request.form("tablename")&"','"&request.form("tablereadme")&"') ")
 'NewAllPostTable=rs(0) & "|" & request.form("tablename")
@@ -207,7 +207,7 @@ Dvbbs.Execute("insert into dv_TableList(TableName,TableType)Values('"&request.fo
 'Set conn = Dvbbs.iCreateObject("ADODB.connection")
 'connstr="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" & Server.MapPath("dvbbs5.mdb")
 'conn.open connstr
-'½¨Á¢ĞÂ±í
+'å»ºç«‹æ–°è¡¨
 If IsSqlDataBase=1 Then
 	sql="CREATE TABLE ["&request.form("tablename")&"] (AnnounceID int IDENTITY (1, 1) NOT NULL CONSTRAINT PK_"&request.form("tablename")&" PRIMARY KEY,"&_
 		"ParentID int default 0,"&_
@@ -269,16 +269,16 @@ Else
 End If
 Dvbbs.Execute(sql)
 
-'Ìí¼ÓË÷Òı
+'æ·»åŠ ç´¢å¼•
 Dvbbs.Execute("create index dispbbs on "&request.form("tablename")&" (boardid,rootid)")
 Dvbbs.Execute("create index save_1 on "&request.form("tablename")&" (rootid,orders)")
 Dvbbs.Execute("create index disp on "&request.form("tablename")&" (boardid)")
 Dvbbs.Execute("create index PostUserID on "&request.form("tablename")&" (PostUserID)")
 'Dvbbs.Execute("update config set AllPostTable='"&NewAllPostTable&"',AllPostTableName='"&NewAllPostTableName&"'")
-Dv_suc("Ìí¼Ó±í³É¹¦£¬Çë·µ»Ø¡£")
+Dv_suc("æ·»åŠ è¡¨æˆåŠŸï¼Œè¯·è¿”å›ã€‚")
 end sub
 
-'Ä£Ê½2¸üĞÂ
+'æ¨¡å¼2æ›´æ–°
 sub update2()
 dim trs
 dim ForNum,TopNum
@@ -286,12 +286,12 @@ Dim orderby,PostUserID,OutTableName,InTableName
 OutTableName = Dvbbs.CheckStr(request.form("outtablename"))
 InTableName = Dvbbs.CheckStr(request.form("intablename"))
 if OutTableName=InTableName then
-	Errmsg=ErrMsg + "<BR><li>²»ÄÜÔÚÏàÍ¬Êı¾İ±íÄÚ×ªÒÆÊı¾İ¡£"
+	Errmsg=ErrMsg + "<BR><li>ä¸èƒ½åœ¨ç›¸åŒæ•°æ®è¡¨å†…è½¬ç§»æ•°æ®ã€‚"
 	dvbbs_error()
 	exit sub
 end if
 if (not isnumeric(request.form("selnum"))) or request.form("selnum")="" then
-	Errmsg=ErrMsg + "<BR><li>ÇëÌîĞ´ÕıÈ·µÄ¸üĞÂÊıÁ¿¡£"
+	Errmsg=ErrMsg + "<BR><li>è¯·å¡«å†™æ­£ç¡®çš„æ›´æ–°æ•°é‡ã€‚"
 	dvbbs_error()
 	exit sub
 end if
@@ -314,7 +314,7 @@ C1=TopNum
 &nbsp;<BR>
 <table cellpadding="0" cellspacing="0" border="0" width="100%" align="center">
 <tr><td colspan=2 class=td1>
-ÏÂÃæ¿ªÊ¼×ªÒÆÂÛÌ³Ìû×Ó×ÊÁÏ£¬Ô¤¼Æ±¾´Î¹²ÓĞ<%=C1%>¸öÌû×ÓĞèÒª¸üĞÂ
+ä¸‹é¢å¼€å§‹è½¬ç§»è®ºå›å¸–å­èµ„æ–™ï¼Œé¢„è®¡æœ¬æ¬¡å…±æœ‰<%=C1%>ä¸ªå¸–å­éœ€è¦æ›´æ–°
 <table width="400" border="0" cellspacing="1" cellpadding="1">
 <tr>
 <td bgcolor=#000000>
@@ -330,23 +330,23 @@ dim myrs,maxannid,i,rs
 for i=1 to ForNum
 set rs=Dvbbs.Execute("select top "&TopNum&" topicid,title from dv_topic where PostTable='"&OutTableName&"' order by topicid "&orderby&"")
 if rs.eof and rs.bof then
-	Errmsg=ErrMsg + "<BR><li>ÄúËùÑ¡Ôñµ¼³öµÄÊı¾İ±íÒÑ¾­Ã»ÓĞÈÎºÎÄÚÈİ"
+	Errmsg=ErrMsg + "<BR><li>æ‚¨æ‰€é€‰æ‹©å¯¼å‡ºçš„æ•°æ®è¡¨å·²ç»æ²¡æœ‰ä»»ä½•å†…å®¹"
 	dvbbs_error()
 	exit sub
 else
 	do while not rs.eof
-		'¶ÁÈ¡µ¼³öÌû×ÓÊı¾İ±í
+		'è¯»å–å¯¼å‡ºå¸–å­æ•°æ®è¡¨
 		set trs=Dvbbs.Execute("select * from "&OutTableName&" where rootid="&rs("topicid")&" order by Announceid")
 		if not (trs.eof and trs.bof) then
 		do while not trs.eof
-		'²åÈëµ¼ÈëÌû×ÓÊı¾İ±í
+		'æ’å…¥å¯¼å…¥å¸–å­æ•°æ®è¡¨
 		If IsNull(trs("postuserid")) Or trs("postuserid")="" Then
 			PostUserID=0
 		Else
 			PostUserID=trs("postuserid")
 		End If
 		Dvbbs.Execute("insert into "&InTableName&"(Boardid,ParentID,username,topic,body,DateAndTime,length,rootid,layer,orders,ip,Expression,locktopic,signflag,emailflag,isbest,PostUserID,isagree,isupload,isaudit,PostBuyUser,UbbList,GetMoney,UseTools,GetMoneyType,FlashId) values ("&trs("boardid")&","&trs("parentid")&",'"&Dvbbs.checkstr(trs("username"))&"','"&Dvbbs.checkstr(trs("topic"))&"','"&Dvbbs.checkstr(trs("body"))&"','"&trs("dateandtime")&"',"&trs("length")&","&trs("rootid")&","&trs("layer")&","&trs("orders")&",'"&trs("ip")&"','"&trs("Expression")&"',"&trs("locktopic")&","&trs("signflag")&","&trs("emailflag")&","&trs("isbest")&","&PostUserID&",'"&trs("isagree")&"',"&trs("isupload")&","&trs("isaudit")&",'"&trs("PostBuyUser")&"','"&Dvbbs.checkstr(trs("UbbList"))&"',"&trs("GetMoney")&",'"&Dvbbs.checkstr(trs("UseTools"))&"',"&trs("GetMoneyType")&",'"&Dvbbs.checkstr(trs("FlashId"))&"')")
-		'¸üĞÂ¾«»ª'¸üĞÂÉÏ´«	'shinzeal add this in 2004/7/4
+		'æ›´æ–°ç²¾å'æ›´æ–°ä¸Šä¼ 	'shinzeal add this in 2004/7/4
 		If ( Not IsNull(Trs("isbest")) And Trs("isbest")<>"" ) Or ( Not IsNull(Trs("isupload")) And Trs("isupload")<>"" ) Then
 			If Trs("isbest")=1 Or Trs("isupload")=1 Then
 				Set myrs=Dvbbs.Execute("select max(announceid) from "&Request.Form("intablename")&" where boardid="&Trs("BoardID"))
@@ -360,14 +360,14 @@ else
 		trs.movenext
 		loop
 		end if
-		'É¾³ıµ¼³öÌû×ÓÊı¾İ±í¶ÔÓ¦Êı¾İ
+		'åˆ é™¤å¯¼å‡ºå¸–å­æ•°æ®è¡¨å¯¹åº”æ•°æ®
 		Dvbbs.Execute("delete from "&OutTableName&" where RootID="&rs("TopicID"))
-		'¸üĞÂÖ÷ÌâÖ¸¶¨Ìû×Ó±í
+		'æ›´æ–°ä¸»é¢˜æŒ‡å®šå¸–å­è¡¨
 		Dvbbs.Execute("update dv_topic set PostTable='"&InTableName&"' where TopicID="&rs("topicid"))
 		i=i+1
 		'If (i mod 100) = 0 Then
 		Response.Write "<script>img2.width=" & Fix((i/C1) * 400) & ";" & VbCrLf
-		Response.Write "txt2.innerHTML=""¸üĞÂÍê"&Server.HtmlEncode(rs(1))&"µÄÊı¾İ£¬ÕıÔÚ¸üĞÂÏÂÒ»¸öÌû×ÓÊı¾İ£¬" & FormatNumber(i/C1*100,4,-1) & """;" & VbCrLf
+		Response.Write "txt2.innerHTML=""æ›´æ–°å®Œ"&Server.HtmlEncode(rs(1))&"çš„æ•°æ®ï¼Œæ­£åœ¨æ›´æ–°ä¸‹ä¸€ä¸ªå¸–å­æ•°æ®ï¼Œ" & FormatNumber(i/C1*100,4,-1) & """;" & VbCrLf
 		Response.Write "img2.title=""" & Server.HtmlEncode(Rs(1)) & "(" & i & ")"";</script>" & VbCrLf
 		Response.Flush
 		'End If
@@ -378,7 +378,7 @@ next
 set trs=nothing
 set rs=nothing
 Response.Write "<script>img2.width=400;txt2.innerHTML=""100"";</script>"
-dv_suc("×ªÒÆÊı¾İ¸üĞÂ³É¹¦£¡")
+dv_suc("è½¬ç§»æ•°æ®æ›´æ–°æˆåŠŸï¼")
 end sub
 
 sub search()
@@ -393,7 +393,7 @@ else
 	currentpage=clng(currentpage)
 end if
 if request("keyword")="" then
-	Errmsg=ErrMsg + "<BR><li>ÇëÊäÈëÄúÒª²éÑ¯µÄ¹Ø¼ü×Ö¡£"
+	Errmsg=ErrMsg + "<BR><li>è¯·è¾“å…¥æ‚¨è¦æŸ¥è¯¢çš„å…³é”®å­—ã€‚"
 	dvbbs_error()
 	exit sub
 else
@@ -402,7 +402,7 @@ end if
 if request("searchWhat")="username" then
 Set Rs=Dvbbs.Execute("Select UserID From Dv_User Where UserName='"&keyword&"'")
 If Rs.Eof And Rs.Bof Then
-	Errmsg=ErrMsg + "<BR><li>Ä¿±êÓÃ»§²¢²»´æÔÚ£¬ÇëÖØĞÂÊäÈë¡£"
+	Errmsg=ErrMsg + "<BR><li>ç›®æ ‡ç”¨æˆ·å¹¶ä¸å­˜åœ¨ï¼Œè¯·é‡æ–°è¾“å…¥ã€‚"
 	dvbbs_error()
 	exit sub
 Else
@@ -412,7 +412,7 @@ sql="select * from dv_topic where PostTable='"&Dvbbs.CheckStr(request("tablename
 elseif request("topic")="yes" then
 sql="select * from dv_topic where PostTable='"&Dvbbs.CheckStr(request("tablename"))&"' and title like '%"&keyword&"%' order by LastPostTime desc"
 else
-	Errmsg=ErrMsg + "<BR><li>ÇëÑ¡ÔñÄú²éÑ¯µÄ·½Ê½¡£"
+	Errmsg=ErrMsg + "<BR><li>è¯·é€‰æ‹©æ‚¨æŸ¥è¯¢çš„æ–¹å¼ã€‚"
 	dvbbs_error()
 	exit sub
 end if
@@ -426,24 +426,24 @@ end if
 <input type=hidden name="tablename" value="<%=request("tablename")%>">
 <table width="100%" border="0" cellspacing="1" cellpadding="3" align="center">
 <tr>
-<td height="23" colspan="6" class=td1><B>ËµÃ÷</B>£º<BR>Äú¿ÉÒÔ¶ÔÏÂÁĞµÄËÑË÷½á¹û½øĞĞ×ªÒÆÊı¾İ±íµÄ²Ù×÷£¬²»ÄÜÔÚÏàÍ¬±íÄÚ½øĞĞ×ª»»²Ù×÷¡£</td>
+<td height="23" colspan="6" class=td1><B>è¯´æ˜</B>ï¼š<BR>æ‚¨å¯ä»¥å¯¹ä¸‹åˆ—çš„æœç´¢ç»“æœè¿›è¡Œè½¬ç§»æ•°æ®è¡¨çš„æ“ä½œï¼Œä¸èƒ½åœ¨ç›¸åŒè¡¨å†…è¿›è¡Œè½¬æ¢æ“ä½œã€‚</td>
 </tr>
 <tr>
-<th colspan="6">ËÑË÷<%=request("tablename")%>½á¹û</th>
+<th colspan="6">æœç´¢<%=request("tablename")%>ç»“æœ</th>
 </tr>
 <tr>
-<td width="6%" align=center><b>×´Ì¬<B></td>
-<td width="45%" align=center><B>±êÌâ</B></td>
-<td width="15%" align=center><B>×÷Õß</B></td>
-<td width="6%" align=center><B>»Ø¸´</B></td>
-<td width="22%" align=center><B>Ê±¼ä</B></td>
-<td width="6%" align=center><B>²Ù×÷</B></td>
+<td width="6%" align=center><b>çŠ¶æ€<B></td>
+<td width="45%" align=center><B>æ ‡é¢˜</B></td>
+<td width="15%" align=center><B>ä½œè€…</B></td>
+<td width="6%" align=center><B>å›å¤</B></td>
+<td width="22%" align=center><B>æ—¶é—´</B></td>
+<td width="6%" align=center><B>æ“ä½œ</B></td>
 </tr>
 <%
 set rs=Dvbbs.iCreateObject("adodb.recordset")
 rs.open sql,conn,1,1
 if rs.bof and rs.eof then
-	response.write "<tr> <td class=td1 colspan=6 height=25>Ã»ÓĞËÑË÷µ½Ïà¹ØÄÚÈİ¡£</td></tr>"
+	response.write "<tr> <td class=td1 colspan=6 height=25>æ²¡æœ‰æœç´¢åˆ°ç›¸å…³å†…å®¹ã€‚</td></tr>"
 else
 	rs.PageSize = Dvbbs.Forum_Setting(11)
 	rs.AbsolutePage=currentpage
@@ -455,13 +455,13 @@ else
 <td width="6%" class=td1 align=center>
 <%
 if rs("locktopic")=1 then
-	response.write "Ëø¶¨"
+	response.write "é”å®š"
 elseif rs("isvote")=1 then
-	response.write "Í¶Æ±"
+	response.write "æŠ•ç¥¨"
 elseif rs("isbest")=1 then
-	response.write "¾«»ª"
+	response.write "ç²¾å"
 else
-	response.write "Õı³£"
+	response.write "æ­£å¸¸"
 end if
 %>
 </td>
@@ -477,7 +477,7 @@ end if
 	wend
 	dim endpage
 	Pcount=rs.PageCount
-	response.write "<tr><td valign=middle nowrap colspan=2 class=td1 height=25>&nbsp;&nbsp;·ÖÒ³£º "
+	response.write "<tr><td valign=middle nowrap colspan=2 class=td1 height=25>&nbsp;&nbsp;åˆ†é¡µï¼š "
 
 	if currentpage > 4 then
 	response.write "<a href=""?page=1&action=search&keyword="&keyword&"&searchWhat="&Request("searchWhat")&"&tablename="&request("tablename")&""">[1]</a> ..."	'shinzeal add searchWhat="&Request("searchWhat")&" in 2004/7/4
@@ -501,14 +501,14 @@ end if
 	response.write "... <a href=""?page="&Pcount&"&action=search&keyword="&keyword&"&searchWhat="&Request("searchWhat")&"&tablename="&request("tablename")&""">["&Pcount&"]</a>"	'shinzeal add searchWhat="&Request("searchWhat")&" in 2004/7/4
 	end if
 	response.write "</td>"
-	response.write "<td colspan=3 class=td1>ËùÓĞ²éÑ¯½á¹û<input type=checkbox class=checkbox name=allsearch value=yes>"
+	response.write "<td colspan=3 class=td1>æ‰€æœ‰æŸ¥è¯¢ç»“æœ<input type=checkbox class=checkbox name=allsearch value=yes>"
 	response.write "&nbsp;<select name=toTablename>"
 
 	for i=0 to ubound(AllPostTable)
 		response.write "<option value="""&AllPostTable(i)&""">"&AllPostTableName(i)& "--" &AllPostTable(i)&"</option>"
 	next
 
-	response.write "</select>&nbsp;<input type=submit class=button name=submit value=×ª»»>"
+	response.write "</select>&nbsp;<input type=submit class=button name=submit value=è½¬æ¢>"
 	response.write "</td>"
 	response.write "<td class=td1 align=center><input type=checkbox class=checkbox name=chkall value=on onclick=""CheckAll(this.form)"">"
 	response.write "</td></tr>"
@@ -518,20 +518,20 @@ set rs=nothing
 response.write "</table></form><BR><BR>"
 end sub
 
-'¸ù¾İËÑË÷½á¹û¸üĞÂ
+'æ ¹æ®æœç´¢ç»“æœæ›´æ–°
 sub update3()
 dim keyword,trs,PostUserID,TableName,TopicIdStr
 Dim Rs,SQL,i
 TableName = Dvbbs.CheckStr(request("tablename"))
 
 if request.form("tablename")=request.form("totablename") then
-	Errmsg=ErrMsg + "<BR><li>²»ÄÜÔÚÏàÍ¬Êı¾İ±íÄÚ½øĞĞÊı¾İ×ª»»¡£"
+	Errmsg=ErrMsg + "<BR><li>ä¸èƒ½åœ¨ç›¸åŒæ•°æ®è¡¨å†…è¿›è¡Œæ•°æ®è½¬æ¢ã€‚"
 	dvbbs_error()
 	exit sub
 end if
 if request.form("allsearch")="yes" then
 	if request("keyword")="" then
-		Errmsg=ErrMsg + "<BR><li>ÇëÊäÈëÄúÒª²éÑ¯µÄ¹Ø¼ü×Ö¡£"
+		Errmsg=ErrMsg + "<BR><li>è¯·è¾“å…¥æ‚¨è¦æŸ¥è¯¢çš„å…³é”®å­—ã€‚"
 		dvbbs_error()
 		exit sub
 	else
@@ -540,7 +540,7 @@ if request.form("allsearch")="yes" then
 	if request("searchWhat")="username" then	'shinzeal add searchWhat in 2004/7/4
 		Set Rs=Dvbbs.Execute("Select UserID From Dv_User Where UserName='"&keyword&"'")
 		If Rs.Eof And Rs.Bof Then
-			Errmsg=ErrMsg + "<BR><li>Ä¿±êÓÃ»§²¢²»´æÔÚ£¬ÇëÖØĞÂÊäÈë¡£"
+			Errmsg=ErrMsg + "<BR><li>ç›®æ ‡ç”¨æˆ·å¹¶ä¸å­˜åœ¨ï¼Œè¯·é‡æ–°è¾“å…¥ã€‚"
 			dvbbs_error()
 			exit sub
 		Else
@@ -550,13 +550,13 @@ if request.form("allsearch")="yes" then
 	elseif request("topic")="yes" then
 		sql="select topicid,title from dv_topic where PostTable='"&TableName&"' and title like '%"&keyword&"%' order by LastPostTime desc"
 	else
-		Errmsg=ErrMsg + "<BR><li>ÇëÑ¡ÔñÄú²éÑ¯µÄ·½Ê½¡£"
+		Errmsg=ErrMsg + "<BR><li>è¯·é€‰æ‹©æ‚¨æŸ¥è¯¢çš„æ–¹å¼ã€‚"
 		dvbbs_error()
 		exit sub
 	end if
 else
 	if request.form("topicid")="" then
-		Errmsg=ErrMsg + "<BR><li>ÇëÑ¡ÔñÒª×ªÒÆµÄÌû×Ó¡£"
+		Errmsg=ErrMsg + "<BR><li>è¯·é€‰æ‹©è¦è½¬ç§»çš„å¸–å­ã€‚"
 		dvbbs_error()
 		exit sub
 	end if
@@ -582,7 +582,7 @@ C1=Rs.ReCordCount
 &nbsp;<BR>
 <table cellpadding="0" cellspacing="0" border="0" width="100%" align="center">
 <tr><td colspan=2 class=td1>
-ÏÂÃæ¿ªÊ¼×ªÒÆÂÛÌ³Ìû×Ó×ÊÁÏ£¬Ô¤¼Æ±¾´Î¹²ÓĞ<%=C1%>¸öÌû×ÓĞèÒª¸üĞÂ
+ä¸‹é¢å¼€å§‹è½¬ç§»è®ºå›å¸–å­èµ„æ–™ï¼Œé¢„è®¡æœ¬æ¬¡å…±æœ‰<%=C1%>ä¸ªå¸–å­éœ€è¦æ›´æ–°
 <table width="400" border="0" cellspacing="1" cellpadding="1">
 <tr>
 <td bgcolor=#000000>
@@ -594,15 +594,15 @@ C1=Rs.ReCordCount
 <%
 Response.Flush
 if rs.eof and rs.bof then
-	Errmsg=ErrMsg + "<BR><li>Ã»ÓĞÈÎºÎ¼ÇÂ¼¿É×ª»»¡£"
+	Errmsg=ErrMsg + "<BR><li>æ²¡æœ‰ä»»ä½•è®°å½•å¯è½¬æ¢ã€‚"
 	dvbbs_error()
 	exit sub
 else
 	do while not rs.eof
-	'È¡³öÔ­±íÊı¾İ
+	'å–å‡ºåŸè¡¨æ•°æ®
 	set trs=Dvbbs.Execute("select * from "&TableName&" where rootid="&rs("topicid")&" order by Announceid")
 	if not (trs.eof and trs.bof) then
-	'²åÈëĞÂ±í
+	'æ’å…¥æ–°è¡¨
 	do while not trs.eof
 		If IsNull(trs("postuserid")) Or trs("postuserid")="" Then
 			PostUserID=0
@@ -610,7 +610,7 @@ else
 			PostUserID=trs("postuserid")
 		End If
 	Dvbbs.Execute("insert into "&Dvbbs.CheckStr(request("totablename"))&"(Boardid,ParentID,username,topic,body,DateAndTime,length,rootid,layer,orders,ip,Expression,locktopic,signflag,emailflag,isbest,PostUserID,isagree,isupload,isaudit,PostBuyUser,UbbList,GetMoney,UseTools,GetMoneyType,FlashId) values ("&trs("boardid")&","&trs("parentid")&",'"&Dvbbs.checkstr(trs("username"))&"','"&Dvbbs.checkstr(trs("topic"))&"','"&Dvbbs.checkstr(trs("body"))&"','"&trs("dateandtime")&"',"&trs("length")&","&trs("rootid")&","&trs("layer")&","&trs("orders")&",'"&trs("ip")&"','"&trs("Expression")&"',"&trs("locktopic")&","&trs("signflag")&","&trs("emailflag")&","&trs("isbest")&","&PostUserID&",'"&trs("isagree")&"',"&trs("isupload")&","&trs("isaudit")&",'"&trs("PostBuyUser")&"','"&Dvbbs.checkstr(trs("UbbList"))&"',"&trs("GetMoney")&",'"&Dvbbs.checkstr(trs("UseTools"))&"',"&trs("GetMoneyType")&",'"&Dvbbs.checkstr(trs("FlashId"))&"')")
-	'¸üĞÂ¾«»ª'¸üĞÂÉÏ´«	'shinzeal add this in 2004/7/4
+	'æ›´æ–°ç²¾å'æ›´æ–°ä¸Šä¼ 	'shinzeal add this in 2004/7/4
 	If ( Not IsNull(Trs("isbest")) And Trs("isbest")<>"" ) Or ( Not IsNull(Trs("isupload")) And Trs("isupload")<>"" ) Then
 		If Trs("isbest")=1 Or Trs("isupload")=1 Then
 			Set myrs=Dvbbs.Execute("select max(announceid) from "&Request.Form("totablename")&" where boardid="&Trs("BoardID"))
@@ -624,14 +624,14 @@ else
 	trs.movenext
 	loop
 	end if
-	'É¾³ıÔ­±í¸ÃÌû×ÓÊı¾İ
+	'åˆ é™¤åŸè¡¨è¯¥å¸–å­æ•°æ®
 	Dvbbs.Execute("delete from "&TableName&" where rootid="&rs("topicid"))
-	'¸üĞÂ¸ÃÖ÷Ìâ±íÃû
+	'æ›´æ–°è¯¥ä¸»é¢˜è¡¨å
 	Dvbbs.Execute("update dv_topic set PostTable='"&Dvbbs.CheckStr(request("totablename"))&"' where topicid="&rs("topicid"))
 		i=i+1
 		'If (i mod 100) = 0 Then
 		Response.Write "<script>img2.width=" & Fix((i/C1) * 400) & ";" & VbCrLf
-		Response.Write "txt2.innerHTML=""¸üĞÂÍê"&Server.HtmlEncode(rs(1))&"µÄÊı¾İ£¬ÕıÔÚ¸üĞÂÏÂÒ»¸öÌû×ÓÊı¾İ£¬" & FormatNumber(i/C1*100,4,-1) & """;" & VbCrLf
+		Response.Write "txt2.innerHTML=""æ›´æ–°å®Œ"&Server.HtmlEncode(rs(1))&"çš„æ•°æ®ï¼Œæ­£åœ¨æ›´æ–°ä¸‹ä¸€ä¸ªå¸–å­æ•°æ®ï¼Œ" & FormatNumber(i/C1*100,4,-1) & """;" & VbCrLf
 		Response.Write "img2.title=""" & Server.HtmlEncode(Rs(1)) & "(" & i & ")"";</script>" & VbCrLf
 		Response.Flush
 		'End If
@@ -641,7 +641,7 @@ end if
 set trs=nothing
 set rs=nothing
 Response.Write "<script>img2.width=400;txt2.innerHTML=""100"";</script>"
-dv_suc("×ªÒÆÊı¾İ¸üĞÂ³É¹¦£¡")
+dv_suc("è½¬ç§»æ•°æ®æ›´æ–°æˆåŠŸï¼")
 end sub
 
 Function TableSelectForm()

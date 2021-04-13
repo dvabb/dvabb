@@ -9,7 +9,7 @@
 	Dim popwan_ads,Forum_Api,AdsList
 	
 	Dvbbs.LoadTemplates("")
-	Dvbbs.Stats = "Í¶·Å¹ã¸æÍÆ¹ã"
+	Dvbbs.Stats = "æŠ•æ”¾å¹¿å‘Šæ¨å¹¿"
 	Dvbbs.Nav()
 	Dvbbs.Head_var 0,0,Plus_Popwan.Program,"plus_popwan_ads.asp"
 	Dvbbs.ActiveOnline()
@@ -21,7 +21,7 @@
 	End If
 	Dvbbs.PageEnd()
 
-'Ò³ÃæÓÒ²àÄÚÈİ²¿·Ö
+'é¡µé¢å³ä¾§å†…å®¹éƒ¨åˆ†
 Sub Page_Center()
 	If Not (Dvbbs.master Or Dvbbs.GroupSetting(70)="1") Then
 		Dvbbs.AddErrcode(28)
@@ -37,17 +37,17 @@ Sub Page_Center()
 	Page_main1()
 
 	Select Case Act
-		Case "addads"	'·¢²¼¹ã¸æÎ»
+		Case "addads"	'å‘å¸ƒå¹¿å‘Šä½
 			Addads()
-		Case "saveads"	'±£´æ¹ã¸æÎ»
+		Case "saveads"	'ä¿å­˜å¹¿å‘Šä½
 			Call saveads()
-		Case "adslist"	'ÎÒµÄ¹ã¸æÎ»
+		Case "adslist"	'æˆ‘çš„å¹¿å‘Šä½
 			Call MyAdsList()
-		Case "editads"  '±à¼­¹ã¸æÎ»
+		Case "editads"  'ç¼–è¾‘å¹¿å‘Šä½
 			Call Editads()
-		Case "saveeditads"  '±£´æ±à¼­¹ã¸æÎ»
+		Case "saveeditads"  'ä¿å­˜ç¼–è¾‘å¹¿å‘Šä½
 			Call SaveEditads()
-		Case "restore"	'Çåµô¹ã¸æ
+		Case "restore"	'æ¸…æ‰å¹¿å‘Š
 			Call Restore()
 		Case Else
 			Addads()
@@ -62,23 +62,23 @@ table {width:100%;}
 td {padding-left:5px;}
 </style>
 <table cellspacing="0" cellpadding="0" class="pw_tb1">
-<tr><th>ÓÎÏ·ÁªÃËËµÃ÷</th></tr>
+<tr><th>æ¸¸æˆè”ç›Ÿè¯´æ˜</th></tr>
 <tr><td>
 <ul>
-<li>ËµÃ÷¢Ù£º¹ã¸æÎ»Ãû³ÆÎ¨Ò»£¬²»ÄÜÖØ¸´£»</li>
-<li>ËµÃ÷¢Ú£ºÇë×¢Òâ<font color="green">Ñ¡ÔñÔÚÒ³ÃæÖĞÏÔÊ¾µÄÎ»ÖÃ</font>¡£</li>
+<li>è¯´æ˜â‘ ï¼šå¹¿å‘Šä½åç§°å”¯ä¸€ï¼Œä¸èƒ½é‡å¤ï¼›</li>
+<li>è¯´æ˜â‘¡ï¼šè¯·æ³¨æ„<font color="green">é€‰æ‹©åœ¨é¡µé¢ä¸­æ˜¾ç¤ºçš„ä½ç½®</font>ã€‚</li>
 </ul>
 </td></tr>
 <tr><td>
-<a href="?act=addads">·¢²¼¹ã¸æÎ»</a>
-| <a href="?act=adslist">ÎÒµÄ¹ã¸æÎ»</a>
-| <a href="?act=restore">Çåµô¹ã¸æ</a>
+<a href="?act=addads">å‘å¸ƒå¹¿å‘Šä½</a>
+| <a href="?act=adslist">æˆ‘çš„å¹¿å‘Šä½</a>
+| <a href="?act=restore">æ¸…æ‰å¹¿å‘Š</a>
 </td></tr>
 </table><br/>
 <%
 End Sub
 
-'Ìí¼Ó/±à¼­¹ã¸æÎ»
+'æ·»åŠ /ç¼–è¾‘å¹¿å‘Šä½
 Sub Addads()
 %>
 <style>
@@ -95,38 +95,38 @@ function _setdemo(v){
 
 <table cellspacing="0" cellpadding="0" class="pw_tb1">
 <form method="post" action="?act=saveads" name="adsform">
-<tr><th colspan="2" style="text-align:center;">·¢²¼¹ã¸æÎ»ĞÅÏ¢(<font class="font2">ÒÔÏÂÎª±ØÌîÏî</font>)</th></tr>
-<tr><td align="right">¹ã¸æÎ»ĞÅÏ¢ÑİÊ¾£º</td>
+<tr><th colspan="2" style="text-align:center;">å‘å¸ƒå¹¿å‘Šä½ä¿¡æ¯(<font class="font2">ä»¥ä¸‹ä¸ºå¿…å¡«é¡¹</font>)</th></tr>
+<tr><td align="right">å¹¿å‘Šä½ä¿¡æ¯æ¼”ç¤ºï¼š</td>
 <td width="85%"><div id="adsshow"></div></td>
 </tr>
 <tr>
-<td width="15%" align="right">¹ã¸æÎ»Ãû³Æ£º</td>
+<td width="15%" align="right">å¹¿å‘Šä½åç§°ï¼š</td>
 <td width="85%">
-<input type="text" name="zonename" size="20" value=""/>(ÀıÈç£ºxxxÍøÕ¾¶¥²¿¹ã¸æÎ») 
+<input type="text" name="zonename" size="20" value=""/>(ä¾‹å¦‚ï¼šxxxç½‘ç«™é¡¶éƒ¨å¹¿å‘Šä½) 
 <br/>
 <font class="font1"></font>
 </td>
 </tr>
 <tr>
-<td  align="right">¹ã¸æĞÎÊ½£º</td>
+<td  align="right">å¹¿å‘Šå½¢å¼ï¼š</td>
 <td>
-<input type="radio" name="format" class="radio" value="1"/>ÎÄ×Ö¹ã¸æ  <input type="radio" name="format" checked="true" class="radio"  value="2"/>Í¼Æ¬¹ã¸æ
+<input type="radio" name="format" class="radio" value="1"/>æ–‡å­—å¹¿å‘Š  <input type="radio" name="format" checked="true" class="radio"  value="2"/>å›¾ç‰‡å¹¿å‘Š
 </td>
 </tr>
 <tr>
-<td  align="right">¹ã¸æ´úÂë£º</td>
+<td  align="right">å¹¿å‘Šä»£ç ï¼š</td>
 <td>
 <textarea name="zonedesc" style="width:96%;height:80px;"></textarea>
-<br/><button name="pw" onclick="window.open('http://union.popwan.com/my/site/spread/<%=Plus_Popwan.ConfigNode.getAttribute("siteid")%>','popwanads');">»ñÈ¡¹ã¸æ´úÂë</button>
+<br/><button name="pw" onclick="window.open('http://union.popwan.com/my/site/spread/<%=Plus_Popwan.ConfigNode.getAttribute("siteid")%>','popwanads');">è·å–å¹¿å‘Šä»£ç </button>
 </td>
 </tr>
 <tr>
-<td  align="right">¹ã¸æÏÔÊ¾Î»ÖÃ£º</td>
+<td  align="right">å¹¿å‘Šæ˜¾ç¤ºä½ç½®ï¼š</td>
 <td>
 <div style="float:left;width:40%;">
-<input type="checkbox" name="getskinid" value="1" class="checkbox"/>ÂÛÌ³Ä¬ÈÏ¹ã¸æ<font class="font1">£º£¨³ı¾ßÌå°æÃæÄÚÈİÒÔÍâµÄÒ³Ãæ£©</font>
+<input type="checkbox" name="getskinid" value="1" class="checkbox"/>è®ºå›é»˜è®¤å¹¿å‘Š<font class="font1">ï¼šï¼ˆé™¤å…·ä½“ç‰ˆé¢å†…å®¹ä»¥å¤–çš„é¡µé¢ï¼‰</font>
 <br/>
-Ñ¡ÔñÏÔÊ¾µÄ°æÃæ<font class="font1">£º£¨Çë°´ CTRL ¼ü½øĞĞ¶àÑ¡£©</font>
+é€‰æ‹©æ˜¾ç¤ºçš„ç‰ˆé¢<font class="font1">ï¼šï¼ˆè¯·æŒ‰ CTRL é”®è¿›è¡Œå¤šé€‰ï¼‰</font>
 <select name="getboard" style="width:98%;" size="12" multiple="true">
 <%
 	Dim node,BoardNode,ii
@@ -135,15 +135,15 @@ function _setdemo(v){
 		Response.Write "<option value="""&node.getAttribute("boardid")&""">"
 		Select Case node.getAttribute("depth")
 			Case 0
-				Response.Write "©ï"
+				Response.Write "â•‹"
 			Case 1
-				Response.Write "&nbsp;&nbsp;©À"
+				Response.Write "&nbsp;&nbsp;â”œ"
 		End Select
 		If node.getAttribute("depth")>1 Then
 			For ii=2 To node.getAttribute("depth")
-				Response.Write "&nbsp;&nbsp;©¦"
+				Response.Write "&nbsp;&nbsp;â”‚"
 			Next
-			Response.Write "&nbsp;&nbsp;©À"
+			Response.Write "&nbsp;&nbsp;â”œ"
 		End If
 		Response.Write node.getAttribute("boardtype")
 		Response.Write "</option>"&vbNewline
@@ -153,83 +153,83 @@ function _setdemo(v){
 <br/>
 </div>
 <div style="float:left;width:20%;">
-<font class="green">Ñ¡ÔñÔÚÒ³ÃæÖĞÏÔÊ¾µÄÎ»ÖÃ</font>
+<font class="green">é€‰æ‹©åœ¨é¡µé¢ä¸­æ˜¾ç¤ºçš„ä½ç½®</font>
 <br/>
-Ò³Ãæ¶¥²¿¹ã¸æÎ»£º<input type="radio" name="adsset" value="1" class="radio" onclick="_setdemo(this.value);"/><br/>
-Ò³Ãæµ×²¿¹ã¸æÎ»£º<input type="radio" name="adsset" value="2" class="radio" onclick="_setdemo(this.value);"/><br/>
-<!-- Ò³ÃæÎÄ×Ö¹ã¸æÎ»£º<input type="radio" name="adsset" value="6" class="radio" onclick="_setdemo(this.value);"/><br/>
-Ìû¼äËæ»úÎÄ×Ö¹ã¸æÎ»£º<input type="radio" name="adsset" value="5" class="radio" onclick="_setdemo(this.value);"/><br/> -->
-Ìû×ÓÂ¥Ö÷¶¥²¿¹ã¸æÎ»£º<input type="radio" name="adsset" value="7" class="radio" onclick="_setdemo(this.value);"/><br/>
-Ìû×ÓÂ¥Ö÷×ó±ß¹ã¸æÎ»£º<input type="radio" name="adsset" value="8" class="radio" onclick="_setdemo(this.value);"/><br/>
-Ìû×ÓÂ¥Ö÷ÓÒ±ß¹ã¸æÎ»£º<input type="radio" name="adsset" value="9" class="radio" onclick="_setdemo(this.value);"/><br/>
-Ìû×ÓÂ¥Ö÷µ×²¿¹ã¸æÎ»£º<input type="radio" name="adsset" value="10" class="radio" onclick="_setdemo(this.value);"/><br/>
+é¡µé¢é¡¶éƒ¨å¹¿å‘Šä½ï¼š<input type="radio" name="adsset" value="1" class="radio" onclick="_setdemo(this.value);"/><br/>
+é¡µé¢åº•éƒ¨å¹¿å‘Šä½ï¼š<input type="radio" name="adsset" value="2" class="radio" onclick="_setdemo(this.value);"/><br/>
+<!-- é¡µé¢æ–‡å­—å¹¿å‘Šä½ï¼š<input type="radio" name="adsset" value="6" class="radio" onclick="_setdemo(this.value);"/><br/>
+å¸–é—´éšæœºæ–‡å­—å¹¿å‘Šä½ï¼š<input type="radio" name="adsset" value="5" class="radio" onclick="_setdemo(this.value);"/><br/> -->
+å¸–å­æ¥¼ä¸»é¡¶éƒ¨å¹¿å‘Šä½ï¼š<input type="radio" name="adsset" value="7" class="radio" onclick="_setdemo(this.value);"/><br/>
+å¸–å­æ¥¼ä¸»å·¦è¾¹å¹¿å‘Šä½ï¼š<input type="radio" name="adsset" value="8" class="radio" onclick="_setdemo(this.value);"/><br/>
+å¸–å­æ¥¼ä¸»å³è¾¹å¹¿å‘Šä½ï¼š<input type="radio" name="adsset" value="9" class="radio" onclick="_setdemo(this.value);"/><br/>
+å¸–å­æ¥¼ä¸»åº•éƒ¨å¹¿å‘Šä½ï¼š<input type="radio" name="adsset" value="10" class="radio" onclick="_setdemo(this.value);"/><br/>
 </div>
 <div style="float:left;width:36%;height:220px;">
-<img id="ads_setdemo" src="<%=Plus_Popwan.Folder%>images/ads_set.gif" border="0" alt="¹ã¸æÎ»ÖÃÔ¤ÀÀ"/>
+<img id="ads_setdemo" src="<%=Plus_Popwan.Folder%>images/ads_set.gif" border="0" alt="å¹¿å‘Šä½ç½®é¢„è§ˆ"/>
 </div>
 </td>
 </tr>
 <tr><td colspan="2" align="center">
-<input type="submit" name="submit" value="·¢²¼ÎÒµÄ¹ã¸æÎ»"/>
+<input type="submit" name="submit" value="å‘å¸ƒæˆ‘çš„å¹¿å‘Šä½"/>
 </td></tr>
 </form>
 </table>
 <%
 End Sub
 
-'±£´æ¹ã¸æÎ»ĞÅÏ¢
+'ä¿å­˜å¹¿å‘Šä½ä¿¡æ¯
 Sub SaveAds()
 	Dim zonename,format,adsize,getboard,adsset,zonedesc
 	Dim homepage
-	zonename = Trim(Request.Form("zonename")) '¹ã¸æÎ»Ãû³Æ
-	format = Trim(Request.Form("format")) '¹ã¸æĞÎÊ½
-	getboard = Trim(Request.Form("getboard")) 'Ñ¡ÔñÏÔÊ¾µÄ°æÃæ
+	zonename = Trim(Request.Form("zonename")) 'å¹¿å‘Šä½åç§°
+	format = Trim(Request.Form("format")) 'å¹¿å‘Šå½¢å¼
+	getboard = Trim(Request.Form("getboard")) 'é€‰æ‹©æ˜¾ç¤ºçš„ç‰ˆé¢
 	adsset = Trim(Request.Form("adsset"))
-	zonedesc  = Trim(Request.Form("zonedesc")) '¹ã¸æ´úÂë
-	'Ìá½»ĞÅÏ¢ÑéÖ¤
+	zonedesc  = Trim(Request.Form("zonedesc")) 'å¹¿å‘Šä»£ç 
+	'æäº¤ä¿¡æ¯éªŒè¯
 	If zonename=""or Len(zonename)<1 or Len(zonename)>32 Then
-		Errmsg=ErrMsg + "<BR/>¹ã¸æÎ»Ãû³Æ²»ÄÜÎª¿Õ»ò³¬¹ı32¸ö×Ö·û£¡"
+		Errmsg=ErrMsg + "<BR/>å¹¿å‘Šä½åç§°ä¸èƒ½ä¸ºç©ºæˆ–è¶…è¿‡32ä¸ªå­—ç¬¦ï¼"
 		Response.Redirect "showerr.asp?ErrCodes=<li>"& Errmsg &"&action=OtherErr"
 		Exit Sub
 	End If
 	If format="" or Not IsNumeric(format) Then
-		Errmsg=ErrMsg + "<BR/>ÇëÕıÈ·Ñ¡Ôñ¹ã¸æĞÎÊ½£¡"
+		Errmsg=ErrMsg + "<BR/>è¯·æ­£ç¡®é€‰æ‹©å¹¿å‘Šå½¢å¼ï¼"
 		Response.Redirect "showerr.asp?ErrCodes=<li>"& Errmsg &"&action=OtherErr"
 		Exit Sub
 	End If
 	If zonedesc="" Then
-		Errmsg=ErrMsg + "<BR/>¹ã¸æ´úÂë²»ÄÜÎª¿Õ£¡"
+		Errmsg=ErrMsg + "<BR/>å¹¿å‘Šä»£ç ä¸èƒ½ä¸ºç©ºï¼"
 		Response.Redirect "showerr.asp?ErrCodes=<li>"& Errmsg &"&action=OtherErr"
 		Exit Sub
 	End If
 	If adsset = "" or Not Isnumeric(adsset) Then
-		Errmsg=ErrMsg + "<BR/>ÇëÑ¡È¡¹ã¸æÔÚÒ³ÃæÖĞÏÔÊ¾µÄÎ»ÖÃ£¡"
+		Errmsg=ErrMsg + "<BR/>è¯·é€‰å–å¹¿å‘Šåœ¨é¡µé¢ä¸­æ˜¾ç¤ºçš„ä½ç½®ï¼"
 		Response.Redirect "showerr.asp?ErrCodes=<li>"& Errmsg &"&action=OtherErr"
 		Exit Sub
 	End If
 	If format = "1" and (adsset="3" or adsset="4") Then
-		Errmsg=ErrMsg + "<BR/>ÎÄ×Ö¹ã¸æÀàĞÍ£¬²»ÄÜÉèÖÃÔÚ¸¡¶¯»òÓÒÏÂ¹Ì¶¨¹ã¸æÎ»£¡"
+		Errmsg=ErrMsg + "<BR/>æ–‡å­—å¹¿å‘Šç±»å‹ï¼Œä¸èƒ½è®¾ç½®åœ¨æµ®åŠ¨æˆ–å³ä¸‹å›ºå®šå¹¿å‘Šä½ï¼"
 		Response.Redirect "showerr.asp?ErrCodes=<li>"& Errmsg &"&action=OtherErr"
 		Exit Sub
 	End If
 
-	'ÊÇ·ñÏÔÊ¾ÔÚÊ×Ò³ÀàĞÍ
-	homepage = Request.Form("getskinid") 'ÔÚÊ×Ò³:1 ÂÛÌ³Ä¬ÈÏ¹ã¸æ
+	'æ˜¯å¦æ˜¾ç¤ºåœ¨é¦–é¡µç±»å‹
+	homepage = Request.Form("getskinid") 'åœ¨é¦–é¡µ:1 è®ºå›é»˜è®¤å¹¿å‘Š
 
 		Set AdsList = popwan_ads.selectNodes("ads[@name='"&zonename&"']")
 		If AdsList.Length>0 Then
-			Errmsg=ErrMsg + "<BR/>¹ã¸æÎ»Ãû³Æ²»ÄÜÓĞÖØ¸´£¡"
+			Errmsg=ErrMsg + "<BR/>å¹¿å‘Šä½åç§°ä¸èƒ½æœ‰é‡å¤ï¼"
 			Response.Redirect "showerr.asp?ErrCodes=<li>"& Errmsg &"&action=OtherErr"
 			Exit Sub
 		End If
 		Set AdsList = popwan_ads.selectNodes("ads[@adsset='"&adsset&"' and @getboard='"&getboard&"' ]")
 		If AdsList.Length>0 Then
-			Errmsg=ErrMsg + "<BR/>ÒÑ¾­ÓĞ¸ÃÏàÍ¬ÉèÖÃµÄ¹ã¸æĞÅÏ¢£¬Çë²»ÒªÖØ¸´ĞÂÔöÉèÖÃ£¡"
+			Errmsg=ErrMsg + "<BR/>å·²ç»æœ‰è¯¥ç›¸åŒè®¾ç½®çš„å¹¿å‘Šä¿¡æ¯ï¼Œè¯·ä¸è¦é‡å¤æ–°å¢è®¾ç½®ï¼"
 			Response.Redirect "showerr.asp?ErrCodes=<li>"& Errmsg &"&action=OtherErr"
 			Exit Sub
 		End If
 
-		'´´½¨Ò»¸öĞÂµÄ¹ã¸æÊı¾İ½Úµã
+		'åˆ›å»ºä¸€ä¸ªæ–°çš„å¹¿å‘Šæ•°æ®èŠ‚ç‚¹
 		Set AdsList = popwan_ads.appendChild(Forum_Api.createNode(1,"ads",""))
 		AdsList.setAttribute "createtime",Now()
 		AdsList.setAttribute "updatetime",Now()
@@ -243,14 +243,14 @@ Sub SaveAds()
 
 		Update_Forum_Api()
 		UpdateAdsSeting()
-		Dvbbs.Dvbbs_suc("·¢²¼¹ã¸æÎ»³É¹¦£¡")
+		Dvbbs.Dvbbs_suc("å‘å¸ƒå¹¿å‘Šä½æˆåŠŸï¼")
 End Sub
 
-'ÎÒµÄ¹ã¸æÎ»
+'æˆ‘çš„å¹¿å‘Šä½
 Sub MyAdsList()
 	Set AdsList = popwan_ads.selectNodes("ads")
 	If AdsList.Length=0 Then
-		Errmsg=ErrMsg + "<BR/>ÔİÎ´ÓĞ¹ã¸æÎ»Êı¾İ£¡"
+		Errmsg=ErrMsg + "<BR/>æš‚æœªæœ‰å¹¿å‘Šä½æ•°æ®ï¼"
 		Response.Redirect "showerr.asp?ErrCodes=<li>"& Errmsg &"&action=OtherErr"
 		Exit Sub
 	End If
@@ -258,13 +258,13 @@ Sub MyAdsList()
 %>
 <br/>
 <table cellspacing="0" cellpadding="0" class="pw_tb1">
-<tr><th colspan="7" style="text-align:center;" colspan="4">ÎÒµÄ¹ã¸æÎ»ĞÅÏ¢</th></tr>
+<tr><th colspan="7" style="text-align:center;" colspan="4">æˆ‘çš„å¹¿å‘Šä½ä¿¡æ¯</th></tr>
 <tr>
-<td class="td2 title" >¹ã¸æÎ»Ãû³Æ</td>
-<td class="td2 title" width="10%">¹ã¸æÎ»ĞÎÊ½</td>
-<td class="td2 title" width="15%">´´½¨Ê±¼ä</td>
-<td class="td2 title" width="15%">¸üĞÂÊ±¼ä</td>
-<td class="td2 title" >²Ù×÷</td>
+<td class="td2 title" >å¹¿å‘Šä½åç§°</td>
+<td class="td2 title" width="10%">å¹¿å‘Šä½å½¢å¼</td>
+<td class="td2 title" width="15%">åˆ›å»ºæ—¶é—´</td>
+<td class="td2 title" width="15%">æ›´æ–°æ—¶é—´</td>
+<td class="td2 title" >æ“ä½œ</td>
 </tr>
 <%
 	For Each Node In AdsList
@@ -288,7 +288,7 @@ Else
 Response.Write Node.getAttribute("updatetime")
 End If
 %></td>
-<td><a href="?act=editads&name=<%=Node.getAttribute("name")%>">±à¼­</a></td>
+<td><a href="?act=editads&name=<%=Node.getAttribute("name")%>">ç¼–è¾‘</a></td>
 </tr>
 <%
 	Next
@@ -299,25 +299,25 @@ Set AdsList = Nothing
 End Sub
 Function adssettype(num)
 	Select Case num
-		Case "1" : adssettype = "Ò³Ãæ¶¥²¿"
-		Case "2" : adssettype = "Ò³Ãæµ×²¿"
-		Case "7" : adssettype = "Ìû×ÓÂ¥Ö÷¶¥²¿"
-		Case "8" : adssettype = "Ìû×ÓÂ¥Ö÷×ó±ß"
-		Case "9" : adssettype = "Ìû×ÓÂ¥Ö÷ÓÒ±ß"
-		Case "10" : adssettype = "Ìû×ÓÂ¥Ö÷µ×²¿"
+		Case "1" : adssettype = "é¡µé¢é¡¶éƒ¨"
+		Case "2" : adssettype = "é¡µé¢åº•éƒ¨"
+		Case "7" : adssettype = "å¸–å­æ¥¼ä¸»é¡¶éƒ¨"
+		Case "8" : adssettype = "å¸–å­æ¥¼ä¸»å·¦è¾¹"
+		Case "9" : adssettype = "å¸–å­æ¥¼ä¸»å³è¾¹"
+		Case "10" : adssettype = "å¸–å­æ¥¼ä¸»åº•éƒ¨"
 		Case Else
-			adssettype = "Î´Öª"
+			adssettype = "æœªçŸ¥"
 	End Select
 End Function
 
-'±à¼­¹ã¸æÎ»
+'ç¼–è¾‘å¹¿å‘Šä½
 Sub Editads()
 	Dim adzoneid
 	Adzoneid = Request.QueryString("name")
 	If Adzoneid<>"" Then
 		Set AdsList = popwan_ads.selectSingleNode("ads[@name='"&Adzoneid&"']")
 		If AdsList is Nothing  Then
-			Errmsg=ErrMsg + "<BR/>ÄúĞèÒª±à¼­µÄ¹ã¸æÎ»²»´æÔÚ£¡"
+			Errmsg=ErrMsg + "<BR/>æ‚¨éœ€è¦ç¼–è¾‘çš„å¹¿å‘Šä½ä¸å­˜åœ¨ï¼"
 			Response.Redirect "showerr.asp?ErrCodes=<li>"& Errmsg &"&action=OtherErr"
 			Exit Sub
 		End If
@@ -328,38 +328,38 @@ Sub Editads()
 </style>
 <table cellspacing="0" cellpadding="0" class="pw_tb1">
 <form method="post" action="?act=saveeditads" name="adsform">
-<tr><th colspan="2" style="text-align:center;">±à¼­¹ã¸æÎ»ĞÅÏ¢(<font class="font2">ÒÔÏÂÎª±ØÌîÏî</font>)</th></tr>
-<tr><td align="right">¹ã¸æÎ»ĞÅÏ¢ÑİÊ¾£º</td>
+<tr><th colspan="2" style="text-align:center;">ç¼–è¾‘å¹¿å‘Šä½ä¿¡æ¯(<font class="font2">ä»¥ä¸‹ä¸ºå¿…å¡«é¡¹</font>)</th></tr>
+<tr><td align="right">å¹¿å‘Šä½ä¿¡æ¯æ¼”ç¤ºï¼š</td>
 <td width="85%"><div id="adsshow"></div></td>
 </tr>
 <tr>
-<td width="15%" align="right">¹ã¸æÎ»Ãû³Æ£º</td>
+<td width="15%" align="right">å¹¿å‘Šä½åç§°ï¼š</td>
 <td width="85%">
-<input type="text" name="zonename" size="20" value="<%=AdsList.getAttribute("name")%>" disabled/>(ÀıÈç£ºxxxÍøÕ¾¶¥²¿¹ã¸æÎ») 
+<input type="text" name="zonename" size="20" value="<%=AdsList.getAttribute("name")%>" disabled/>(ä¾‹å¦‚ï¼šxxxç½‘ç«™é¡¶éƒ¨å¹¿å‘Šä½) 
 <br/>
 <font class="font1"></font>
 </td>
 </tr>
 <tr>
-<td  align="right">¹ã¸æĞÎÊ½£º</td>
+<td  align="right">å¹¿å‘Šå½¢å¼ï¼š</td>
 <td>
-<input type="radio" name="format" class="radio" value="1"/>ÎÄ×Ö¹ã¸æ  <input type="radio" name="format" checked="true" class="radio"  value="2"/>Í¼Æ¬¹ã¸æ
+<input type="radio" name="format" class="radio" value="1"/>æ–‡å­—å¹¿å‘Š  <input type="radio" name="format" checked="true" class="radio"  value="2"/>å›¾ç‰‡å¹¿å‘Š
 </td>
 </tr>
 <tr>
-<td  align="right">¹ã¸æ´úÂë£º</td>
+<td  align="right">å¹¿å‘Šä»£ç ï¼š</td>
 <td>
 <textarea name="zonedesc" style="width:96%;height:80px;"><%=AdsList.getAttribute("zonedesc")%></textarea>
-<br/><button name="pw" onclick="alert('´ò¿ªÓÎÏ·¹ã¸æÁªÃË´úÂëÒ³Ãæ¡£');">»ñÈ¡¹ã¸æ´úÂë</button>
+<br/><button name="pw" onclick="alert('æ‰“å¼€æ¸¸æˆå¹¿å‘Šè”ç›Ÿä»£ç é¡µé¢ã€‚');">è·å–å¹¿å‘Šä»£ç </button>
 </td>
 </tr>
 <tr>
-<td  align="right">¹ã¸æÏÔÊ¾Î»ÖÃ£º</td>
+<td  align="right">å¹¿å‘Šæ˜¾ç¤ºä½ç½®ï¼š</td>
 <td>
 <div style="float:left;width:40%;">
-<input type="checkbox" name="getskinid" value="1" class="checkbox"/>ÂÛÌ³Ä¬ÈÏ¹ã¸æ<font class="font1">£º£¨³ı¾ßÌå°æÃæÄÚÈİÒÔÍâµÄÒ³Ãæ£©</font>
+<input type="checkbox" name="getskinid" value="1" class="checkbox"/>è®ºå›é»˜è®¤å¹¿å‘Š<font class="font1">ï¼šï¼ˆé™¤å…·ä½“ç‰ˆé¢å†…å®¹ä»¥å¤–çš„é¡µé¢ï¼‰</font>
 <br/>
-Ñ¡ÔñÏÔÊ¾µÄ°æÃæ<font class="font1">£º£¨Çë°´ CTRL ¼ü½øĞĞ¶àÑ¡£©</font>
+é€‰æ‹©æ˜¾ç¤ºçš„ç‰ˆé¢<font class="font1">ï¼šï¼ˆè¯·æŒ‰ CTRL é”®è¿›è¡Œå¤šé€‰ï¼‰</font>
 <select name="getboard" style="width:98%;" size="12" multiple="true">
 <%
 	Dim node,BoardNode,ii
@@ -368,15 +368,15 @@ Sub Editads()
 		Response.Write "<option value="""&node.getAttribute("boardid")&""">"
 		Select Case node.getAttribute("depth")
 			Case 0
-				Response.Write "©ï"
+				Response.Write "â•‹"
 			Case 1
-				Response.Write "&nbsp;&nbsp;©À"
+				Response.Write "&nbsp;&nbsp;â”œ"
 		End Select
 		If node.getAttribute("depth")>1 Then
 			For ii=2 To node.getAttribute("depth")
-				Response.Write "&nbsp;&nbsp;©¦"
+				Response.Write "&nbsp;&nbsp;â”‚"
 			Next
-			Response.Write "&nbsp;&nbsp;©À"
+			Response.Write "&nbsp;&nbsp;â”œ"
 		End If
 		Response.Write node.getAttribute("boardtype")
 		Response.Write "</option>"&vbNewline
@@ -386,24 +386,24 @@ Sub Editads()
 <br/>
 </div>
 <div style="float:left;width:20%;">
-<font class="green">Ñ¡ÔñÔÚÒ³ÃæÖĞÏÔÊ¾µÄÎ»ÖÃ</font>
+<font class="green">é€‰æ‹©åœ¨é¡µé¢ä¸­æ˜¾ç¤ºçš„ä½ç½®</font>
 <br/>
-Ò³Ãæ¶¥²¿¹ã¸æÎ»£º<input type="radio" name="adsset" value="1" class="radio" onclick="_setdemo(this.value);"/><br/>
-Ò³Ãæµ×²¿¹ã¸æÎ»£º<input type="radio" name="adsset" value="2" class="radio" onclick="_setdemo(this.value);"/><br/>
-<!-- Ò³ÃæÎÄ×Ö¹ã¸æÎ»£º<input type="radio" name="adsset" value="6" class="radio" onclick="_setdemo(this.value);"/><br/>
-Ìû¼äËæ»úÎÄ×Ö¹ã¸æÎ»£º<input type="radio" name="adsset" value="5" class="radio" onclick="_setdemo(this.value);"/><br/> -->
-Ìû×ÓÂ¥Ö÷¶¥²¿¹ã¸æÎ»£º<input type="radio" name="adsset" value="7" class="radio" onclick="_setdemo(this.value);"/><br/>
-Ìû×ÓÂ¥Ö÷×ó±ß¹ã¸æÎ»£º<input type="radio" name="adsset" value="8" class="radio" onclick="_setdemo(this.value);"/><br/>
-Ìû×ÓÂ¥Ö÷ÓÒ±ß¹ã¸æÎ»£º<input type="radio" name="adsset" value="9" class="radio" onclick="_setdemo(this.value);"/><br/>
-Ìû×ÓÂ¥Ö÷µ×²¿¹ã¸æÎ»£º<input type="radio" name="adsset" value="10" class="radio" onclick="_setdemo(this.value);"/><br/>
+é¡µé¢é¡¶éƒ¨å¹¿å‘Šä½ï¼š<input type="radio" name="adsset" value="1" class="radio" onclick="_setdemo(this.value);"/><br/>
+é¡µé¢åº•éƒ¨å¹¿å‘Šä½ï¼š<input type="radio" name="adsset" value="2" class="radio" onclick="_setdemo(this.value);"/><br/>
+<!-- é¡µé¢æ–‡å­—å¹¿å‘Šä½ï¼š<input type="radio" name="adsset" value="6" class="radio" onclick="_setdemo(this.value);"/><br/>
+å¸–é—´éšæœºæ–‡å­—å¹¿å‘Šä½ï¼š<input type="radio" name="adsset" value="5" class="radio" onclick="_setdemo(this.value);"/><br/> -->
+å¸–å­æ¥¼ä¸»é¡¶éƒ¨å¹¿å‘Šä½ï¼š<input type="radio" name="adsset" value="7" class="radio" onclick="_setdemo(this.value);"/><br/>
+å¸–å­æ¥¼ä¸»å·¦è¾¹å¹¿å‘Šä½ï¼š<input type="radio" name="adsset" value="8" class="radio" onclick="_setdemo(this.value);"/><br/>
+å¸–å­æ¥¼ä¸»å³è¾¹å¹¿å‘Šä½ï¼š<input type="radio" name="adsset" value="9" class="radio" onclick="_setdemo(this.value);"/><br/>
+å¸–å­æ¥¼ä¸»åº•éƒ¨å¹¿å‘Šä½ï¼š<input type="radio" name="adsset" value="10" class="radio" onclick="_setdemo(this.value);"/><br/>
 </div>
 <div style="float:left;width:36%;height:220px;">
-<img id="ads_setdemo" src="<%=Plus_Popwan.Folder%>images/ads_set.gif" border="0" alt="¹ã¸æÎ»ÖÃÔ¤ÀÀ"/>
+<img id="ads_setdemo" src="<%=Plus_Popwan.Folder%>images/ads_set.gif" border="0" alt="å¹¿å‘Šä½ç½®é¢„è§ˆ"/>
 </div>
 </td>
 </tr>
 <tr><td colspan="2" align="center">
-<input type="submit" name="submit" value="È·ÈÏ"/>
+<input type="submit" name="submit" value="ç¡®è®¤"/>
 </td></tr>
 </form>
 </table>
@@ -422,43 +422,43 @@ _setdemo('<%=AdsList.getAttribute("adsset")%>');
 <%
 End Sub
 
-'±£´æ¹ã¸æÎ»ÉèÖÃ
+'ä¿å­˜å¹¿å‘Šä½è®¾ç½®
 Sub SaveEditads()
 	Dim zonename,format,adsize,getboard,adsset,zonedesc
 	Dim homepage
-	zonename = Trim(Request.Form("zonename")) '¹ã¸æÎ»Ãû³Æ
-	format = Trim(Request.Form("format")) '¹ã¸æĞÎÊ½
-	getboard = Trim(Request.Form("getboard")) 'Ñ¡ÔñÏÔÊ¾µÄ°æÃæ
+	zonename = Trim(Request.Form("zonename")) 'å¹¿å‘Šä½åç§°
+	format = Trim(Request.Form("format")) 'å¹¿å‘Šå½¢å¼
+	getboard = Trim(Request.Form("getboard")) 'é€‰æ‹©æ˜¾ç¤ºçš„ç‰ˆé¢
 	adsset = Trim(Request.Form("adsset"))
-	zonedesc  = Trim(Request.Form("zonedesc")) '¹ã¸æ´úÂë
-	'Ìá½»ĞÅÏ¢ÑéÖ¤
+	zonedesc  = Trim(Request.Form("zonedesc")) 'å¹¿å‘Šä»£ç 
+	'æäº¤ä¿¡æ¯éªŒè¯
 	If format="" or Not IsNumeric(format) Then
-		Errmsg=ErrMsg + "<BR/>ÇëÕıÈ·Ñ¡Ôñ¹ã¸æĞÎÊ½£¡"
+		Errmsg=ErrMsg + "<BR/>è¯·æ­£ç¡®é€‰æ‹©å¹¿å‘Šå½¢å¼ï¼"
 		Response.Redirect "showerr.asp?ErrCodes=<li>"& Errmsg &"&action=OtherErr"
 		Exit Sub
 	End If
 	If zonedesc="" Then
-		Errmsg=ErrMsg + "<BR/>¹ã¸æ´úÂë²»ÄÜÎª¿Õ£¡"
+		Errmsg=ErrMsg + "<BR/>å¹¿å‘Šä»£ç ä¸èƒ½ä¸ºç©ºï¼"
 		Response.Redirect "showerr.asp?ErrCodes=<li>"& Errmsg &"&action=OtherErr"
 		Exit Sub
 	End If
 	If adsset = "" or Not Isnumeric(adsset) Then
-		Errmsg=ErrMsg + "<BR/>ÇëÑ¡È¡¹ã¸æÔÚÒ³ÃæÖĞÏÔÊ¾µÄÎ»ÖÃ£¡"
+		Errmsg=ErrMsg + "<BR/>è¯·é€‰å–å¹¿å‘Šåœ¨é¡µé¢ä¸­æ˜¾ç¤ºçš„ä½ç½®ï¼"
 		Response.Redirect "showerr.asp?ErrCodes=<li>"& Errmsg &"&action=OtherErr"
 		Exit Sub
 	End If
 	If format = "1" and (adsset="3" or adsset="4") Then
-		Errmsg=ErrMsg + "<BR/>ÎÄ×Ö¹ã¸æÀàĞÍ£¬²»ÄÜÉèÖÃÔÚ¸¡¶¯»òÓÒÏÂ¹Ì¶¨¹ã¸æÎ»£¡"
+		Errmsg=ErrMsg + "<BR/>æ–‡å­—å¹¿å‘Šç±»å‹ï¼Œä¸èƒ½è®¾ç½®åœ¨æµ®åŠ¨æˆ–å³ä¸‹å›ºå®šå¹¿å‘Šä½ï¼"
 		Response.Redirect "showerr.asp?ErrCodes=<li>"& Errmsg &"&action=OtherErr"
 		Exit Sub
 	End If
 
-	'ÊÇ·ñÏÔÊ¾ÔÚÊ×Ò³ÀàĞÍ
-	homepage = Request.Form("getskinid") 'ÔÚÊ×Ò³:1 ÂÛÌ³Ä¬ÈÏ¹ã¸æ
+	'æ˜¯å¦æ˜¾ç¤ºåœ¨é¦–é¡µç±»å‹
+	homepage = Request.Form("getskinid") 'åœ¨é¦–é¡µ:1 è®ºå›é»˜è®¤å¹¿å‘Š
 
 	Set AdsList = popwan_ads.selectSingleNode("ads[@adzoneid="&Adzoneid&"]")
 	If AdsList is Nothing  Then
-		Errmsg=ErrMsg + "<BR/>ÄúĞèÒª±à¼­µÄ¹ã¸æÎ»²»´æÔÚ£¡"
+		Errmsg=ErrMsg + "<BR/>æ‚¨éœ€è¦ç¼–è¾‘çš„å¹¿å‘Šä½ä¸å­˜åœ¨ï¼"
 		Response.Redirect "showerr.asp?ErrCodes=<li>"& Errmsg &"&action=OtherErr"
 		Exit Sub
 	End If
@@ -470,11 +470,11 @@ Sub SaveEditads()
 	AdsList.setAttribute "zonedesc",zonedesc
 	Update_Forum_Api()
 	UpdateAdsSeting()
-	Dvbbs.Dvbbs_suc("¹ã¸æÎ»ÖÃĞŞ¸Ä³É¹¦£¡")
+	Dvbbs.Dvbbs_suc("å¹¿å‘Šä½ç½®ä¿®æ”¹æˆåŠŸï¼")
 End Sub
 
 
-'²âÊÔÓÃ
+'æµ‹è¯•ç”¨
 Sub Restore()
 	Set Forum_Api = Server.CreateObject("Msxml2.FreeThreadedDOMDocument"& MsxmlVersion)
 	Forum_Api.LoadXml("<forum_api/>")
@@ -516,57 +516,57 @@ Sub Update_Forum_Api()
 End Sub
 
 
-'ÉèÖÃ¹ã¸æÎ»Êı¾İÔÚÒ³ÃæÏÔÊ¾µÄÎ»ÖÃ
+'è®¾ç½®å¹¿å‘Šä½æ•°æ®åœ¨é¡µé¢æ˜¾ç¤ºçš„ä½ç½®
 Sub UpdateAdsSeting()
 	Dim iSetting,i,Forum_ads
 	Dim adsset,adsstr
 	Dim Sql
 	
-	'¹ã¸æ´úÂë×Ö´®
-	'mm_alimama»áÔ±id_ÍøÕ¾id_¹ã¸æÎ»id
+	'å¹¿å‘Šä»£ç å­—ä¸²
+	'mm_alimamaä¼šå‘˜id_ç½‘ç«™id_å¹¿å‘Šä½id
 	adsset = AdsList.getAttribute("adsset")
 	Adsstr = AdsList.getAttribute("zonedesc")
 
-	Adsstr = Replace(Adsstr,"$","") '¹ıÂËÎ´ÍêÕû
+	Adsstr = Replace(Adsstr,"$","") 'è¿‡æ»¤æœªå®Œæ•´
 	If AdsList.getAttribute("homepage")="1" Then
 		For i = 0 To 30
 			iSetting = Trim(Dvbbs.Forum_ads(i))
 			If (i = 2 or i = 7 or i = 13 or i=12 or i=15 or i = 17) and Dvbbs.Forum_ads(i)="" Then iSetting = 0
 
-			If adsset = "1" and i=0 Then	'¶¥²¿
+			If adsset = "1" and i=0 Then	'é¡¶éƒ¨
 				iSetting = adsstr
 			End If
-			If adsset = "2" and i=1 Then	'µ×²¿
+			If adsset = "2" and i=1 Then	'åº•éƒ¨
 				iSetting = adsstr
 			End If
-			If adsset = "7" Then			'Ìû×ÓÂ¥Ö÷¶¥²¿¹ã¸æÎ»
+			If adsset = "7" Then			'å¸–å­æ¥¼ä¸»é¡¶éƒ¨å¹¿å‘Šä½
 				If i = 18 Then
-					iSetting = 1			'¿ªÆôÌû×ÓÂ¥Ö÷¶¥²¿¹ã¸æÎ»
+					iSetting = 1			'å¼€å¯å¸–å­æ¥¼ä¸»é¡¶éƒ¨å¹¿å‘Šä½
 				End If
 				If i = 19 Then
 					iSetting = Adsstr
 				End If
 			End If
 
-			If adsset = "8" Then			'Ìû×ÓÂ¥Ö÷×ó±ß¹ã¸æÎ»
+			If adsset = "8" Then			'å¸–å­æ¥¼ä¸»å·¦è¾¹å¹¿å‘Šä½
 				If i = 22 Then
-					iSetting = 1			'¿ªÆôÌû×ÓÂ¥Ö÷×ó±ß¹ã¸æÎ»
+					iSetting = 1			'å¼€å¯å¸–å­æ¥¼ä¸»å·¦è¾¹å¹¿å‘Šä½
 				End If
 				If i = 23 Then
 					iSetting = Adsstr
 				End If
 			End If
-			If adsset = "9" Then			'Ìû×ÓÂ¥Ö÷ÓÒ±ß¹ã¸æÎ»
+			If adsset = "9" Then			'å¸–å­æ¥¼ä¸»å³è¾¹å¹¿å‘Šä½
 				If i = 22 Then
-					iSetting = 2			'¿ªÆôÌû×ÓÂ¥Ö÷ÓÒ±ß¹ã¸æÎ»
+					iSetting = 2			'å¼€å¯å¸–å­æ¥¼ä¸»å³è¾¹å¹¿å‘Šä½
 				End If
 				If i = 23 Then
 					iSetting = Adsstr
 				End If
 			End If
-			If adsset = "10" Then			'Ìû×ÓÂ¥Ö÷µ×²¿¹ã¸æÎ»
+			If adsset = "10" Then			'å¸–å­æ¥¼ä¸»åº•éƒ¨å¹¿å‘Šä½
 				If i = 20 Then
-					iSetting = 1			'¿ªÆôÌû×ÓÂ¥Ö÷µ×²¿¹ã¸æÎ»
+					iSetting = 1			'å¼€å¯å¸–å­æ¥¼ä¸»åº•éƒ¨å¹¿å‘Šä½
 				End If
 				If i = 21 Then
 					iSetting = Adsstr
@@ -582,7 +582,7 @@ Sub UpdateAdsSeting()
 		Dvbbs.Execute(sql)
 	End If
 	If AdsList.getAttribute("getboard")<>"" Then
-		'²é»ñ¸üĞÂ°æÃæÊı¾İ£¬Ö»¸üĞÂÉèÖÃÍ¶·Å¹ã¸æÏî£¬±ÜÃâÇå¿ÕÔ­¹ã¸æÆäËûÉèÖÃ
+		'æŸ¥è·æ›´æ–°ç‰ˆé¢æ•°æ®ï¼Œåªæ›´æ–°è®¾ç½®æŠ•æ”¾å¹¿å‘Šé¡¹ï¼Œé¿å…æ¸…ç©ºåŸå¹¿å‘Šå…¶ä»–è®¾ç½®
 		Dim Rs
 		Set Rs = Dvbbs.Execute("select Boardid,Board_Ads from Dv_board where boardid in ("&Dvbbs.Checkstr(AdsList.getAttribute("getboard"))&")")
 		do while not rs.eof
@@ -591,40 +591,40 @@ Sub UpdateAdsSeting()
 				iSetting = Trim(Dvbbs.Forum_ads(i))
 				If (i = 2 or i = 7 or i = 13 or i=12 or i=15 or i = 17) and Dvbbs.Forum_ads(i)="" Then iSetting = 0
 
-				If adsset = "1" and i=0 Then	'¶¥²¿
+				If adsset = "1" and i=0 Then	'é¡¶éƒ¨
 					iSetting = adsstr
 				End If
-				If adsset = "2" and i=1 Then	'µ×²¿
+				If adsset = "2" and i=1 Then	'åº•éƒ¨
 					iSetting = adsstr
 				End If
-				If adsset = "7" Then			'Ìû×ÓÂ¥Ö÷¶¥²¿¹ã¸æÎ»
+				If adsset = "7" Then			'å¸–å­æ¥¼ä¸»é¡¶éƒ¨å¹¿å‘Šä½
 					If i = 18 Then
-						iSetting = 1			'¿ªÆôÌû×ÓÂ¥Ö÷¶¥²¿¹ã¸æÎ»
+						iSetting = 1			'å¼€å¯å¸–å­æ¥¼ä¸»é¡¶éƒ¨å¹¿å‘Šä½
 					End If
 					If i = 19 Then
 						iSetting = Adsstr
 					End If
 				End If
 
-				If adsset = "8" Then			'Ìû×ÓÂ¥Ö÷×ó±ß¹ã¸æÎ»
+				If adsset = "8" Then			'å¸–å­æ¥¼ä¸»å·¦è¾¹å¹¿å‘Šä½
 					If i = 22 Then
-						iSetting = 1			'¿ªÆôÌû×ÓÂ¥Ö÷×ó±ß¹ã¸æÎ»
+						iSetting = 1			'å¼€å¯å¸–å­æ¥¼ä¸»å·¦è¾¹å¹¿å‘Šä½
 					End If
 					If i = 23 Then
 						iSetting = Adsstr
 					End If
 				End If
-				If adsset = "9" Then			'Ìû×ÓÂ¥Ö÷ÓÒ±ß¹ã¸æÎ»
+				If adsset = "9" Then			'å¸–å­æ¥¼ä¸»å³è¾¹å¹¿å‘Šä½
 					If i = 22 Then
-						iSetting = 2			'¿ªÆôÌû×ÓÂ¥Ö÷ÓÒ±ß¹ã¸æÎ»
+						iSetting = 2			'å¼€å¯å¸–å­æ¥¼ä¸»å³è¾¹å¹¿å‘Šä½
 					End If
 					If i = 23 Then
 						iSetting = Adsstr
 					End If
 				End If
-				If adsset = "10" Then			'Ìû×ÓÂ¥Ö÷µ×²¿¹ã¸æÎ»
+				If adsset = "10" Then			'å¸–å­æ¥¼ä¸»åº•éƒ¨å¹¿å‘Šä½
 					If i = 20 Then
-						iSetting = 1			'¿ªÆôÌû×ÓÂ¥Ö÷µ×²¿¹ã¸æÎ»
+						iSetting = 1			'å¼€å¯å¸–å­æ¥¼ä¸»åº•éƒ¨å¹¿å‘Šä½
 					End If
 					If i = 21 Then
 						iSetting = Adsstr
@@ -647,7 +647,7 @@ Sub UpdateAdsSeting()
 	Dvbbs.loadSetup()
 End Sub
 
-'¸üĞÂ°æÃæ¹ã¸æ»º´æÊı¾İ
+'æ›´æ–°ç‰ˆé¢å¹¿å‘Šç¼“å­˜æ•°æ®
 Sub RestoreBoardCache()
 	Dim Board,node
 	Dvbbs.LoadBoardList()

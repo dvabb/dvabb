@@ -24,16 +24,16 @@ End Select
 If founderr then call dvbbs_error()
 footer()
 
-'¶¥²¿±êÌâ
+'é¡¶éƒ¨æ ‡é¢˜
 Sub Main_head()
 %>
 <table width="100%" border="0" cellspacing="1" cellpadding="3" align="center">
-<tr><th style="text-align:center;">µÀ¾ßÖĞĞÄÓÃ»§ĞÅÏ¢¹ÜÀí</th></tr>
-<tr><td class="td2"><B>ËµÃ÷</B>£º<BR>
-1¡¢ÁĞ±íÖĞµÄ½ğ±ÒºÍµãÈ¯Ö¸ÓÃ»§µÄ×ÜÓµÓĞÁ¿£¬¶ø²»ÊÇµÀ¾ß¼Û¸ñ£¬²é¿´Ïà¹ØÓÃ»§µÀ¾ßĞÅÏ¢Çëµã»÷ÓÃ»§Ãû½øÈë<BR>
-2¡¢¹Ø¼ü×ÖËÑË÷ÄÚÈİ£ºÓÃ»§ÃûÄ£ºıËÑË÷
+<tr><th style="text-align:center;">é“å…·ä¸­å¿ƒç”¨æˆ·ä¿¡æ¯ç®¡ç†</th></tr>
+<tr><td class="td2"><B>è¯´æ˜</B>ï¼š<BR>
+1ã€åˆ—è¡¨ä¸­çš„é‡‘å¸å’Œç‚¹åˆ¸æŒ‡ç”¨æˆ·çš„æ€»æ‹¥æœ‰é‡ï¼Œè€Œä¸æ˜¯é“å…·ä»·æ ¼ï¼ŒæŸ¥çœ‹ç›¸å…³ç”¨æˆ·é“å…·ä¿¡æ¯è¯·ç‚¹å‡»ç”¨æˆ·åè¿›å…¥<BR>
+2ã€å…³é”®å­—æœç´¢å†…å®¹ï¼šç”¨æˆ·åæ¨¡ç³Šæœç´¢
 </td></tr>
-<tr><td class="td1"><B>²Ù×÷</B>£º<a href="plus_Tools_User.asp">ÓÃ»§µÀ¾ß¹ÜÀíÊ×Ò³</a> | <a href="?action=paylist">³öÊÛÖĞµÄÓÃ»§µÀ¾ß</a> <!-- | <a href="?action=paylist1">µÍÓÚÏµÍ³ÊÛ¼ÛµÄ³öÊÛµÀ¾ß</a> --> | <a href="?action=SendTools">¸øÓÃ»§Ìí¼ÓµÀ¾ß»ò½ğ±Ò</a>
+<tr><td class="td1"><B>æ“ä½œ</B>ï¼š<a href="plus_Tools_User.asp">ç”¨æˆ·é“å…·ç®¡ç†é¦–é¡µ</a> | <a href="?action=paylist">å‡ºå”®ä¸­çš„ç”¨æˆ·é“å…·</a> <!-- | <a href="?action=paylist1">ä½äºç³»ç»Ÿå”®ä»·çš„å‡ºå”®é“å…·</a> --> | <a href="?action=SendTools">ç»™ç”¨æˆ·æ·»åŠ é“å…·æˆ–é‡‘å¸</a>
 </td></tr>
 </table><br>
 <%
@@ -83,7 +83,7 @@ Sub UserList(ListType)
 		DataDescStr = DataDescStr & " Desc"
 	End If
 
-	If ListType > 1 Then ToolsValues_1 = "¼Û¸ñ"
+	If ListType > 1 Then ToolsValues_1 = "ä»·æ ¼"
 
 	If ListType = 3 Then
 		If SearchStr <> "" Then
@@ -109,11 +109,11 @@ Sub UserList(ListType)
 <tr>
 <FORM METHOD=POST ACTION="plus_Tools_User.asp">
 <td class="td2" colspan=5>
-ÓÃ»§Ãû : <input type=text size=15 name="keyword">
+ç”¨æˆ·å : <input type=text size=15 name="keyword">
 <input type=hidden value="<%=ToolsType%>" name="ToolsType">
 <input type=hidden value="<%=DataDesc%>" name="DataDesc">
 <input type=hidden value="<%=Request("action")%>" name="action">
-<input type=submit class="button" name=submit value="ËÑË÷">
+<input type=submit class="button" name=submit value="æœç´¢">
 </td>
 </FORM>
 <FORM METHOD=POST ACTION="plus_Tools_User.asp">
@@ -121,15 +121,15 @@ Sub UserList(ListType)
 <input type=hidden value="<%=Request("action")%>" name="action">
 <td class="td2" colspan=2 align=right>
 <Select Name="DataDesc" Size=1 onchange='javascript:submit()'>
-<Option value="0" Selected>ÁĞ±íÅÅĞò</Option>
-<Option value="1" <%If DataDesc = 1 Then Response.Write "Selected"%>>³öÊÛ½ğ±ÒÊı</Option>
-<Option value="2" <%If DataDesc = 2 Then Response.Write "Selected"%>>³öÊÛµãÈ¯Êı</Option>
-<Option value="3" <%If DataDesc = 3 Then Response.Write "Selected"%>>ÓµÓĞÊı</Option>
-<Option value="4" <%If DataDesc = 4 Then Response.Write "Selected"%>>³öÊÛÊı</Option>
+<Option value="0" Selected>åˆ—è¡¨æ’åº</Option>
+<Option value="1" <%If DataDesc = 1 Then Response.Write "Selected"%>>å‡ºå”®é‡‘å¸æ•°</Option>
+<Option value="2" <%If DataDesc = 2 Then Response.Write "Selected"%>>å‡ºå”®ç‚¹åˆ¸æ•°</Option>
+<Option value="3" <%If DataDesc = 3 Then Response.Write "Selected"%>>æ‹¥æœ‰æ•°</Option>
+<Option value="4" <%If DataDesc = 4 Then Response.Write "Selected"%>>å‡ºå”®æ•°</Option>
 </Select>
 <Select Name="UpDesc" Size=1 onchange='javascript:submit()'>
-<Option value="0" <%If UpDesc = "0" Then Response.Write "Selected"%>>ÉıĞò</Option>
-<Option value="1" <%If UpDesc = "1" Then Response.Write "Selected"%>>½µĞò</Option>
+<Option value="0" <%If UpDesc = "0" Then Response.Write "Selected"%>>å‡åº</Option>
+<Option value="1" <%If UpDesc = "1" Then Response.Write "Selected"%>>é™åº</Option>
 </Select>
 </td>
 </FORM>
@@ -138,7 +138,7 @@ Sub UserList(ListType)
 <input type=hidden value="<%=DataDesc%>" name="DataDesc">
 <td class="td2" align=right>
 <Select Name="ToolsType" size=1 onchange='javascript:submit()'>
-<Option value="0" Selected>ÓµÓĞÄ³µÀ¾ßÓÃ»§ÁĞ±í</option>
+<Option value="0" Selected>æ‹¥æœ‰æŸé“å…·ç”¨æˆ·åˆ—è¡¨</option>
 <%
 	SQL = "Select ID,ToolsName From Dv_Plus_Tools_Info Order By ID"
 	Set Rs = Dvbbs.iCreateObject ("adodb.recordset")
@@ -163,14 +163,14 @@ Sub UserList(ListType)
 </FORM>
 </tr>
 <tr>
-<th width="20%">ÓÃ»§Ãû</th>
-<th width="8%">½ğ±Ò<%=ToolsValues_1%></th>
-<th width="8%">µãÈ¯<%=ToolsValues_1%></th>
-<th width="15%">µÀ¾ßÃû</th>
-<th width="7%">ÓµÓĞÊı</th>
-<th width="7%">³öÊÛÊı</th>
-<th width="15%">²Ù×÷Ê±¼ä</th>
-<th width="21%">×îºóµÇÂ¼</th>
+<th width="20%">ç”¨æˆ·å</th>
+<th width="8%">é‡‘å¸<%=ToolsValues_1%></th>
+<th width="8%">ç‚¹åˆ¸<%=ToolsValues_1%></th>
+<th width="15%">é“å…·å</th>
+<th width="7%">æ‹¥æœ‰æ•°</th>
+<th width="7%">å‡ºå”®æ•°</th>
+<th width="15%">æ“ä½œæ—¶é—´</th>
+<th width="21%">æœ€åç™»å½•</th>
 </tr>
 <%
 	'T.ToolsName=0,T.ToolsCount=1,T.SaleCount=2,U.UserName=3,U.UserMoney=4,U.UserTicket=5,U.UserLastIP=6,U.LastLogin=7,T.ID=8
@@ -201,7 +201,7 @@ Sub UserList(ListType)
 		End if
 		SQL=Rs.GetRows(MaxRows)
 	Else
-		Response.Write "<tr><td class=""td1"" colspan=""8"" align=center>»¹Î´ÓĞĞÅÏ¢£¡</td></tr></table>"
+		Response.Write "<tr><td class=""td1"" colspan=""8"" align=center>è¿˜æœªæœ‰ä¿¡æ¯ï¼</td></tr></table>"
 		Exit Sub
 	End If
 	Rs.close:Set Rs = Nothing
@@ -228,7 +228,7 @@ Sub EditInfo()
 	Dim ID,rs
 	ID=Request("ID")
 	If Not IsNumeric(ID) Or ID="" Then
-		Errmsg=ErrMsg + "<BR><li>·Ç·¨µÄ²ÎÊı¡£"
+		Errmsg=ErrMsg + "<BR><li>éæ³•çš„å‚æ•°ã€‚"
 		founderr=True
 	Else
 		ID=Clng(ID)
@@ -237,7 +237,7 @@ Sub EditInfo()
 	Set Rs=Dvbbs.Plus_Execute("Select * From Dv_Plus_Tools_Buss Where ID=" & ID)
 
 	If Rs.Eof And Rs.Bof Then
-		Errmsg=ErrMsg + "<BR><li>Ã»ÓĞÕÒµ½Ïà¹ØµÄÊı¾İ¡£"
+		Errmsg=ErrMsg + "<BR><li>æ²¡æœ‰æ‰¾åˆ°ç›¸å…³çš„æ•°æ®ã€‚"
 		founderr=True
 	End If
 	If founderr Then Exit Sub
@@ -245,41 +245,41 @@ Sub EditInfo()
 <table width="100%" border="0" cellspacing="1" cellpadding="3" align="center">
 <FORM METHOD=POST ACTION="?action=SaveEdit">
 <input type=hidden value="<%=ID%>" name="ID">
-<tr><th style="text-align:center;" colspan=2><%=Rs("UserName")%> µÄÂÛÌ³µÀ¾ß <%=Rs("ToolsName")%> ¹ÜÀí</th></tr>
-<tr><td class="td1" colspan=2><B>²Ù×÷</B>£º
-<a href="plus_Tools_Info.asp?action=Editinfo&EditID=<%=Rs("ToolsID")%>">²é¿´¸ÃµÀ¾ß×ÊÁÏ</a> | <a href="?action=Not_Apply_Sale&ID=<%=Rs("ID")%>">È¡Ïû¸ÃµÀ¾ßÏúÊÛ×´Ì¬</a> | <a href="?action=Del_UserTools&ID=<%=Rs("ID")%>" onclick="{if(confirm('É¾³ı´ËÓÃ»§¸ÃµÀ¾ßĞÅÏ¢£¬²Ù×÷½«²»¿É»Ö¸´£¬È·¶¨Âğ?')){return true;}return false;}">É¾³ı´ËÓÃ»§¸ÃµÀ¾ßĞÅÏ¢</a>
+<tr><th style="text-align:center;" colspan=2><%=Rs("UserName")%> çš„è®ºå›é“å…· <%=Rs("ToolsName")%> ç®¡ç†</th></tr>
+<tr><td class="td1" colspan=2><B>æ“ä½œ</B>ï¼š
+<a href="plus_Tools_Info.asp?action=Editinfo&EditID=<%=Rs("ToolsID")%>">æŸ¥çœ‹è¯¥é“å…·èµ„æ–™</a> | <a href="?action=Not_Apply_Sale&ID=<%=Rs("ID")%>">å–æ¶ˆè¯¥é“å…·é”€å”®çŠ¶æ€</a> | <a href="?action=Del_UserTools&ID=<%=Rs("ID")%>" onclick="{if(confirm('åˆ é™¤æ­¤ç”¨æˆ·è¯¥é“å…·ä¿¡æ¯ï¼Œæ“ä½œå°†ä¸å¯æ¢å¤ï¼Œç¡®å®šå—?')){return true;}return false;}">åˆ é™¤æ­¤ç”¨æˆ·è¯¥é“å…·ä¿¡æ¯</a>
 </td></tr>
 <tr>
-<td class="td1" width="20%" align=right><B>µÀ¾ßÃû</B>£º</td>
+<td class="td1" width="20%" align=right><B>é“å…·å</B>ï¼š</td>
 <td class="td1" width="80%"><%=Rs("ToolsName")%></td>
 </tr>
 <tr>
-<td class="td1" width="20%" align=right><B>ËùÊôÓÃ»§</B>£º</td>
+<td class="td1" width="20%" align=right><B>æ‰€å±ç”¨æˆ·</B>ï¼š</td>
 <td class="td1" width="80%"><%=Rs("UserName")%></td>
 </tr>
 <tr>
-<td class="td1" width="20%" align=right><B>×îºó²Ù×÷Ê±¼ä</B>£º</td>
+<td class="td1" width="20%" align=right><B>æœ€åæ“ä½œæ—¶é—´</B>ï¼š</td>
 <td class="td1" width="80%"><%=Rs("UpdateTime")%></td>
 </tr>
 <tr>
-<td class="td1" width="20%" align=right><B>¿ÉÊ¹ÓÃÊıÁ¿</B>£º</td>
-<td class="td1" width="80%"><input type=text size=10 value="<%=Rs("ToolsCount")%>" name="ToolsCount"> ¸ö</td>
+<td class="td1" width="20%" align=right><B>å¯ä½¿ç”¨æ•°é‡</B>ï¼š</td>
+<td class="td1" width="80%"><input type=text size=10 value="<%=Rs("ToolsCount")%>" name="ToolsCount"> ä¸ª</td>
 </tr>
 <tr>
-<td class="td1" width="20%" align=right><B>³öÊÛÖĞÊıÁ¿</B>£º</td>
-<td class="td1" width="80%"><input type=text size=10 value="<%=Rs("SaleCount")%>" name="SaleCount"> ¸ö</td>
+<td class="td1" width="20%" align=right><B>å‡ºå”®ä¸­æ•°é‡</B>ï¼š</td>
+<td class="td1" width="80%"><input type=text size=10 value="<%=Rs("SaleCount")%>" name="SaleCount"> ä¸ª</td>
 </tr>
 <tr>
-<td class="td1" width="20%" align=right><B>³öÊÛ¼Û¸ñ£¨½ğ±Ò£©</B>£º</td>
-<td class="td1" width="80%"><input type=text size=10 value="<%=Rs("SaleMoney")%>" name="SaleMoney"> ¸ö</td>
+<td class="td1" width="20%" align=right><B>å‡ºå”®ä»·æ ¼ï¼ˆé‡‘å¸ï¼‰</B>ï¼š</td>
+<td class="td1" width="80%"><input type=text size=10 value="<%=Rs("SaleMoney")%>" name="SaleMoney"> ä¸ª</td>
 </tr>
 <tr>
-<td class="td1" width="20%" align=right><B>³öÊÛ¼Û¸ñ£¨µãÈ¯£©</B>£º</td>
-<td class="td1" width="80%"><input type=text size=10 value="<%=Rs("SaleTicket")%>" name="SaleTicket"> ÕÅ</td>
+<td class="td1" width="20%" align=right><B>å‡ºå”®ä»·æ ¼ï¼ˆç‚¹åˆ¸ï¼‰</B>ï¼š</td>
+<td class="td1" width="80%"><input type=text size=10 value="<%=Rs("SaleTicket")%>" name="SaleTicket"> å¼ </td>
 </tr>
 <tr><td class="td2" colspan=2 align=center>
-<input type=submit class="button" value="±£´æĞŞ¸Ä" name=submit>
-´Ë²¿·Ö¹ØÏµÓÃ»§¸öÈË²Æ²ú£¬ĞŞ¸ÄÇëÉ÷ÖØ£¬Ëù×öĞŞ¸Ä½«½øµÀ¾ßÈÕÖ¾
+<input type=submit class="button" value="ä¿å­˜ä¿®æ”¹" name=submit>
+æ­¤éƒ¨åˆ†å…³ç³»ç”¨æˆ·ä¸ªäººè´¢äº§ï¼Œä¿®æ”¹è¯·æ…é‡ï¼Œæ‰€åšä¿®æ”¹å°†è¿›é“å…·æ—¥å¿—
 </td></tr>
 </FORM>
 </table>
@@ -293,35 +293,35 @@ Sub SaveEdit()
 	Dim ToolsCount,SaleCount,SaleMoney,SaleTicket
 	ID=Request("ID")
 	If Not IsNumeric(ID) Or ID="" Then
-		Errmsg=ErrMsg + "<BR><li>·Ç·¨µÄ²ÎÊı¡£"
+		Errmsg=ErrMsg + "<BR><li>éæ³•çš„å‚æ•°ã€‚"
 		founderr=True
 	Else
 		ID=Clng(ID)
 	End If
 	ToolsCount=Request("ToolsCount")
 	If Not IsNumeric(ToolsCount) Or ToolsCount="" Then
-		Errmsg=ErrMsg + "<BR><li>·Ç·¨µÄ²ÎÊı¡£"
+		Errmsg=ErrMsg + "<BR><li>éæ³•çš„å‚æ•°ã€‚"
 		founderr=True
 	Else
 		ToolsCount=Clng(ToolsCount)
 	End If
 	SaleCount=Request("SaleCount")
 	If Not IsNumeric(SaleCount) Or SaleCount="" Then
-		Errmsg=ErrMsg + "<BR><li>·Ç·¨µÄ²ÎÊı¡£"
+		Errmsg=ErrMsg + "<BR><li>éæ³•çš„å‚æ•°ã€‚"
 		founderr=True
 	Else
 		SaleCount=Clng(SaleCount)
 	End If
 	SaleMoney=Request("SaleMoney")
 	If Not IsNumeric(SaleMoney) Or SaleMoney="" Then
-		Errmsg=ErrMsg + "<BR><li>·Ç·¨µÄ²ÎÊı¡£"
+		Errmsg=ErrMsg + "<BR><li>éæ³•çš„å‚æ•°ã€‚"
 		founderr=True
 	Else
 		SaleMoney=Clng(SaleMoney)
 	End If
 	SaleTicket=Request("SaleTicket")
 	If Not IsNumeric(SaleTicket) Or SaleTicket="" Then
-		Errmsg=ErrMsg + "<BR><li>·Ç·¨µÄ²ÎÊı¡£"
+		Errmsg=ErrMsg + "<BR><li>éæ³•çš„å‚æ•°ã€‚"
 		founderr=True
 	Else
 		SaleTicket=Clng(SaleTicket)
@@ -338,13 +338,13 @@ Sub SaveEdit()
 		Rs.Open Sql,Conn,1,3
 	End If
 	If Rs.Eof And Rs.Bof Then
-		Errmsg=ErrMsg + "<BR><li>Ã»ÓĞÕÒµ½Ïà¹ØµÄÊı¾İ¡£"
+		Errmsg=ErrMsg + "<BR><li>æ²¡æœ‰æ‰¾åˆ°ç›¸å…³çš„æ•°æ®ã€‚"
 		founderr=True
 	End If
 	If founderr Then Exit Sub
 	'ToolsCount,SaleCount,SaleMoney,SaleTicket
 	Set Trs=Dvbbs.Execute("Select UserMoney,UserTicket From Dv_User Where UserID=" & Rs("UserID"))
-	Sql = "Insert into [Dv_MoneyLog] (ToolsID,AddUserName,AddUserID,Log_IP,Log_Type,BoardID,Conect,HMoney) values ("&Rs("ToolsID")&",'"&Rs("UserName")&"','"&Rs("UserID")&"','"&Dvbbs.UserTrueIP&"',0,-1,'"&Dvbbs.Membername&"¹ÜÀíÔ±±à¼­ÓÃ»§µÀ¾ß×ÊÁÏ£¬¿ÉÊ¹ÓÃÊıÁ¿±ä¶¯<B>"&ToolsCount-Rs("ToolsCount")&"</B>¡¢³öÊÛÊıÁ¿±ä¶¯<B>"&SaleCount-Rs("SaleCount")&"</B>¡¢³öÊÛ¼Û¸ñ±ä¶¯£¨½ğ±Ò£©<B>"&SaleMoney-Rs("SaleMoney")&"</B>¡¢³öÊÛ¼Û¸ñ±ä¶¯£¨µãÈ¯£©<B>"&SaleTicket-Rs("SaleTicket")&"</B>','"&Trs("UserMoney")&"|"&Trs("UserTicket")&"')"
+	Sql = "Insert into [Dv_MoneyLog] (ToolsID,AddUserName,AddUserID,Log_IP,Log_Type,BoardID,Conect,HMoney) values ("&Rs("ToolsID")&",'"&Rs("UserName")&"','"&Rs("UserID")&"','"&Dvbbs.UserTrueIP&"',0,-1,'"&Dvbbs.Membername&"ç®¡ç†å‘˜ç¼–è¾‘ç”¨æˆ·é“å…·èµ„æ–™ï¼Œå¯ä½¿ç”¨æ•°é‡å˜åŠ¨<B>"&ToolsCount-Rs("ToolsCount")&"</B>ã€å‡ºå”®æ•°é‡å˜åŠ¨<B>"&SaleCount-Rs("SaleCount")&"</B>ã€å‡ºå”®ä»·æ ¼å˜åŠ¨ï¼ˆé‡‘å¸ï¼‰<B>"&SaleMoney-Rs("SaleMoney")&"</B>ã€å‡ºå”®ä»·æ ¼å˜åŠ¨ï¼ˆç‚¹åˆ¸ï¼‰<B>"&SaleTicket-Rs("SaleTicket")&"</B>','"&Trs("UserMoney")&"|"&Trs("UserTicket")&"')"
 	Dvbbs.Plus_Execute(SQL)
 	Rs("ToolsCount")=ToolsCount
 	Rs("SaleCount")=SaleCount
@@ -355,7 +355,7 @@ Sub SaveEdit()
 	Set Rs=Nothing
 	Trs.Close
 	Set Trs=Nothing
-	Dv_Suc("ĞŞ¸ÄÓÃ»§µÀ¾ß×ÊÁÏ³É¹¦£¡")
+	Dv_Suc("ä¿®æ”¹ç”¨æˆ·é“å…·èµ„æ–™æˆåŠŸï¼")
 	Footer()
 	Response.End
 End Sub
@@ -364,7 +364,7 @@ Sub Not_Apply_Sale()
 	Dim ID,SQL,Trs,Rs
 	ID=Request("ID")
 	If Not IsNumeric(ID) Or ID="" Then
-		Errmsg=ErrMsg + "<BR><li>·Ç·¨µÄ²ÎÊı¡£"
+		Errmsg=ErrMsg + "<BR><li>éæ³•çš„å‚æ•°ã€‚"
 		founderr=True
 	Else
 		ID=Clng(ID)
@@ -374,13 +374,13 @@ Sub Not_Apply_Sale()
 	Dvbbs.Plus_Execute(SQL)
 	Set Rs=Dvbbs.Plus_Execute("Select * From Dv_Plus_Tools_Buss Where ID=" & ID)
 	Set Trs=Dvbbs.Execute("Select UserMoney,UserTicket From Dv_User Where UserID=" & Rs("UserID"))
-	Sql = "Insert into [Dv_MoneyLog] (ToolsID,AddUserName,AddUserID,Log_IP,Log_Type,BoardID,Conect,HMoney) values ("&Rs("ToolsID")&",'"&Rs("UserName")&"','"&Rs("UserID")&"','"&Dvbbs.UserTrueIP&"',0,-1,'"&Dvbbs.Membername&"¹ÜÀíÔ±±à¼­ÓÃ»§µÀ¾ß×ÊÁÏ£¬È¡Ïû´ËÓÃ»§¸ÃµÀ¾ßÏúÊÛ×Ê¸ñ¡£','"&Trs("UserMoney")&"|"&Trs("UserTicket")&"')"
+	Sql = "Insert into [Dv_MoneyLog] (ToolsID,AddUserName,AddUserID,Log_IP,Log_Type,BoardID,Conect,HMoney) values ("&Rs("ToolsID")&",'"&Rs("UserName")&"','"&Rs("UserID")&"','"&Dvbbs.UserTrueIP&"',0,-1,'"&Dvbbs.Membername&"ç®¡ç†å‘˜ç¼–è¾‘ç”¨æˆ·é“å…·èµ„æ–™ï¼Œå–æ¶ˆæ­¤ç”¨æˆ·è¯¥é“å…·é”€å”®èµ„æ ¼ã€‚','"&Trs("UserMoney")&"|"&Trs("UserTicket")&"')"
 	Dvbbs.Plus_Execute(SQL)
 	Rs.Close
 	Set Rs=Nothing
 	Trs.Close
 	Set Trs=Nothing
-	Dv_Suc("ĞŞ¸ÄÓÃ»§µÀ¾ß×ÊÁÏ³É¹¦£¡")
+	Dv_Suc("ä¿®æ”¹ç”¨æˆ·é“å…·èµ„æ–™æˆåŠŸï¼")
 	Footer()
 	Response.End
 End Sub
@@ -389,7 +389,7 @@ Sub Del_UserTools()
 	Dim ID,SQL,Trs,Rs
 	ID=Request("ID")
 	If Not IsNumeric(ID) Or ID="" Then
-		Errmsg=ErrMsg + "<BR><li>·Ç·¨µÄ²ÎÊı¡£"
+		Errmsg=ErrMsg + "<BR><li>éæ³•çš„å‚æ•°ã€‚"
 		founderr=True
 	Else
 		ID=Clng(ID)
@@ -397,14 +397,14 @@ Sub Del_UserTools()
 	If founderr Then Exit Sub
 	Set Rs=Dvbbs.Plus_Execute("Select * From Dv_Plus_Tools_Buss Where ID=" & ID)
 	Set Trs=Dvbbs.Execute("Select UserMoney,UserTicket From Dv_User Where UserID=" & Rs("UserID"))
-	Sql = "Insert into [Dv_MoneyLog] (ToolsID,AddUserName,AddUserID,Log_IP,Log_Type,BoardID,Conect,HMoney) values ("&Rs("ToolsID")&",'"&Rs("UserName")&"','"&Rs("UserID")&"','"&Dvbbs.UserTrueIP&"',0,-1,'"&Dvbbs.Membername&"¹ÜÀíÔ±±à¼­ÓÃ»§µÀ¾ß×ÊÁÏ£¬É¾³ı´ËÓÃ»§¸ÃµÀ¾ßĞÅÏ¢¡£','"&Trs("UserMoney")&"|"&Trs("UserTicket")&"')"
+	Sql = "Insert into [Dv_MoneyLog] (ToolsID,AddUserName,AddUserID,Log_IP,Log_Type,BoardID,Conect,HMoney) values ("&Rs("ToolsID")&",'"&Rs("UserName")&"','"&Rs("UserID")&"','"&Dvbbs.UserTrueIP&"',0,-1,'"&Dvbbs.Membername&"ç®¡ç†å‘˜ç¼–è¾‘ç”¨æˆ·é“å…·èµ„æ–™ï¼Œåˆ é™¤æ­¤ç”¨æˆ·è¯¥é“å…·ä¿¡æ¯ã€‚','"&Trs("UserMoney")&"|"&Trs("UserTicket")&"')"
 	Dvbbs.Plus_Execute(SQL)
 	Dvbbs.Plus_Execute("Delete From Dv_Plus_Tools_Buss Where ID=" & ID)
 	Rs.Close
 	Set Rs=Nothing
 	Trs.Close
 	Set Trs=Nothing
-	Dv_Suc("É¾³ıÓÃ»§µÀ¾ß×ÊÁÏ³É¹¦£¡")
+	Dv_Suc("åˆ é™¤ç”¨æˆ·é“å…·èµ„æ–™æˆåŠŸï¼")
 	Footer()
 	Response.End
 End Sub
@@ -413,15 +413,15 @@ Sub SendTools()
 %>
 <table width="100%" border="0" cellspacing="1" cellpadding="3" align="center">
 <FORM METHOD=POST ACTION="?action=SaveSend">
-<tr><th style="text-align:center;" colspan=2>¸øÓÃ»§ÔùËÍµÀ¾ß</th></tr>
-<tr><td height=24 class="td1" colspan=2>ËµÃ÷£º²¿·ÖÏµÍ³²»³öÊÛµÄÄÚ²¿µÀ¾ßÇëÉ÷ÖØÔùËÍ</td></tr>
+<tr><th style="text-align:center;" colspan=2>ç»™ç”¨æˆ·èµ é€é“å…·</th></tr>
+<tr><td height=24 class="td1" colspan=2>è¯´æ˜ï¼šéƒ¨åˆ†ç³»ç»Ÿä¸å‡ºå”®çš„å†…éƒ¨é“å…·è¯·æ…é‡èµ é€</td></tr>
 <tr>
 <td class="td1" width="30%" align=right>
-<B>µÀ¾ßÃû³Æ</B>£º
+<B>é“å…·åç§°</B>ï¼š
 </td>
 <td class="td1" width="70%">
 <Select Size=1 Name="ToolsID">
-<Option value="0" Selected>ÇëÑ¡ÔñÄúÒªÔùËÍµÄµÀ¾ß</Option>
+<Option value="0" Selected>è¯·é€‰æ‹©æ‚¨è¦èµ é€çš„é“å…·</Option>
 <%
 	Dim rs
 	Set Rs=Dvbbs.Plus_Execute("Select * From Dv_Plus_Tools_Info Order By ID")
@@ -437,7 +437,7 @@ Sub SendTools()
 </tr>
 <tr>
 <td class="td1" width="30%" align=right>
-<B>Ä¿±êÓÃ»§</B>£º
+<B>ç›®æ ‡ç”¨æˆ·</B>ï¼š
 </td>
 <td class="td1" width="70%">
 <input type=text size=20 name="SendName">
@@ -445,7 +445,7 @@ Sub SendTools()
 </tr>
 <tr>
 <td class="td1" width="30%" align=right>
-<B>ÔùËÍÊıÁ¿</B>£º
+<B>èµ é€æ•°é‡</B>ï¼š
 </td>
 <td class="td1" width="70%">
 <input type=text size=10 value=0 name="ToolsNum">
@@ -453,13 +453,13 @@ Sub SendTools()
 </tr>
 <tr>
 <td class="td1" width="30%" align=right>
-<B>Í¬Ê±ËÍ³ö½ğ±Ò</B>£º
+<B>åŒæ—¶é€å‡ºé‡‘å¸</B>ï¼š
 </td>
 <td class="td1" width="70%">
 <input type=text size=10 value=0 name="ToolsMoney">
 </td>
 </tr>
-<tr><td height=24 class="td1" colspan=2 align=center><input type=submit class="button" name=submit value="ËÍ³öµÀ¾ß»ò½ğ±Ò"></td></tr>
+<tr><td height=24 class="td1" colspan=2 align=center><input type=submit class="button" name=submit value="é€å‡ºé“å…·æˆ–é‡‘å¸"></td></tr>
 </form>
 </table>
 <%
@@ -473,7 +473,7 @@ Sub SaveSend()
 	ToolsMoney = Dv_Tools.CheckNumeric(Request("ToolsMoney"))
 	SendName = Request("SendName")
 	If (ToolsID = 0 Or ToolsNum = 0 Or SendName = "") And ToolsMoney = 0 Then
-		Errmsg=ErrMsg + "<BR><li>·Ç·¨µÄµÀ¾ß»òÊıÁ¿»òÓÃ»§Ãû²ÎÊı¡£"
+		Errmsg=ErrMsg + "<BR><li>éæ³•çš„é“å…·æˆ–æ•°é‡æˆ–ç”¨æˆ·åå‚æ•°ã€‚"
 		founderr=True
 	End If
 	If founderr Then Exit Sub
@@ -481,18 +481,18 @@ Sub SaveSend()
 	If SendName<>"" And ToolsID>0 And ToolsNum>0 Then
 	Set Rs=Dvbbs.Plus_Execute("Select ToolsName From Dv_Plus_Tools_Info Where ID="&ToolsID)
 	If Rs.Eof And Rs.Bof Then
-		Errmsg=ErrMsg + "<BR><li>ÄúÒªÔùËÍµÄÏµÍ³µÀ¾ß²¢²»´æÔÚ¡£"
+		Errmsg=ErrMsg + "<BR><li>æ‚¨è¦èµ é€çš„ç³»ç»Ÿé“å…·å¹¶ä¸å­˜åœ¨ã€‚"
 		Exit Sub
 	Else
 		ToolsName = Rs(0)
 	End If
 	Set Rs=Dvbbs.Execute("Select UserID,UserName,UserMoney,UserTicket From Dv_User Where UserName='"&SendName&"'")
 	If Rs.Eof And Rs.Bof Then
-		Errmsg=ErrMsg + "<BR><li>ÄúÒªÔùËÍµÄÄ¿±êÓÃ»§Ãû²¢²»´æÔÚ¡£"
+		Errmsg=ErrMsg + "<BR><li>æ‚¨è¦èµ é€çš„ç›®æ ‡ç”¨æˆ·åå¹¶ä¸å­˜åœ¨ã€‚"
 		founderr=True
 		Exit Sub
 	Else
-		'¸üĞÂÓÃ»§µÀ¾ß¼ÇÂ¼
+		'æ›´æ–°ç”¨æˆ·é“å…·è®°å½•
 		Set Trs=Dvbbs.Plus_Execute("Select ID From [Dv_Plus_Tools_Buss] Where UserID="& Rs(0) &" and ToolsID="& ToolsID)
 		If Trs.Eof And Trs.Bof Then
 			Sql = "Insert Into [Dv_Plus_Tools_Buss] (UserID,UserName,ToolsID,ToolsName,ToolsCount) Values ("&Rs(0)&",'"&SendName&"',"&ToolsID&",'"&ToolsName&"',"&ToolsNum&")"
@@ -501,8 +501,8 @@ Sub SaveSend()
 			Sql = "Update [Dv_Plus_Tools_Buss] Set ToolsCount = ToolsCount+"&ToolsNum&" Where UserID="& Rs(0) &" and ToolsID="& ToolsID
 			Dvbbs.Plus_Execute(Sql)
 		End If
-		'²åÈëÂÛÌ³ÈÕÖ¾
-		Dvbbs.Plus_Execute("Insert into [Dv_MoneyLog] (ToolsID,AddUserName,AddUserID,Log_IP,Log_Type,BoardID,Conect,HMoney) values ("&ToolsID&",'"&Rs("UserName")&"','"&Rs("UserID")&"','"&Dvbbs.UserTrueIP&"',0,-1,'"&Dvbbs.Membername&"¹ÜÀíÔ±ÔùËÍ<B>"&ToolsNum&"</B>¸ö<B>"&ToolsName&"</B>µÀ¾ß¸ø<B>"&Rs("UserName")&"</B>ÓÃ»§¡£','"&Rs("UserMoney")&"|"&Rs("UserTicket")&"')")
+		'æ’å…¥è®ºå›æ—¥å¿—
+		Dvbbs.Plus_Execute("Insert into [Dv_MoneyLog] (ToolsID,AddUserName,AddUserID,Log_IP,Log_Type,BoardID,Conect,HMoney) values ("&ToolsID&",'"&Rs("UserName")&"','"&Rs("UserID")&"','"&Dvbbs.UserTrueIP&"',0,-1,'"&Dvbbs.Membername&"ç®¡ç†å‘˜èµ é€<B>"&ToolsNum&"</B>ä¸ª<B>"&ToolsName&"</B>é“å…·ç»™<B>"&Rs("UserName")&"</B>ç”¨æˆ·ã€‚','"&Rs("UserMoney")&"|"&Rs("UserTicket")&"')")
 	End If
 	Rs.Close
 	Set Rs=Nothing
@@ -514,16 +514,16 @@ Sub SaveSend()
 	If ToolsMoney<>0 And SendName<>"" Then
 		Set Rs=Dvbbs.Execute("Select UserID,UserName,UserMoney,UserTicket From Dv_User Where UserName='"&SendName&"'")
 		If Rs.Eof And Rs.Bof Then
-			Errmsg=ErrMsg + "<BR><li>ÄúÒªÔùËÍµÄÄ¿±êÓÃ»§Ãû²¢²»´æÔÚ¡£"
+			Errmsg=ErrMsg + "<BR><li>æ‚¨è¦èµ é€çš„ç›®æ ‡ç”¨æˆ·åå¹¶ä¸å­˜åœ¨ã€‚"
 			founderr=True
 			Exit Sub
 		Else
 			Dvbbs.Execute("Update Dv_User Set UserMoney = UserMoney + "&ToolsMoney&" Where UserID="&Rs(0))
-			'²åÈëÂÛÌ³ÈÕÖ¾
-			Dvbbs.Plus_Execute("Insert into [Dv_MoneyLog] (ToolsID,AddUserName,AddUserID,Log_IP,Log_Type,BoardID,Conect,HMoney) values ("&ToolsID&",'"&Rs("UserName")&"','"&Rs("UserID")&"','"&Dvbbs.UserTrueIP&"',0,-1,'"&Dvbbs.Membername&"¹ÜÀíÔ±ÔùËÍ<B>"&ToolsMoney&"</B>¸ö½ğ±Ò¸ø<B>"&Rs("UserName")&"</B>ÓÃ»§¡£','"&Rs("UserMoney")+ToolsMoney&"|"&Rs("UserTicket")&"')")
+			'æ’å…¥è®ºå›æ—¥å¿—
+			Dvbbs.Plus_Execute("Insert into [Dv_MoneyLog] (ToolsID,AddUserName,AddUserID,Log_IP,Log_Type,BoardID,Conect,HMoney) values ("&ToolsID&",'"&Rs("UserName")&"','"&Rs("UserID")&"','"&Dvbbs.UserTrueIP&"',0,-1,'"&Dvbbs.Membername&"ç®¡ç†å‘˜èµ é€<B>"&ToolsMoney&"</B>ä¸ªé‡‘å¸ç»™<B>"&Rs("UserName")&"</B>ç”¨æˆ·ã€‚','"&Rs("UserMoney")+ToolsMoney&"|"&Rs("UserTicket")&"')")
 		End If
 	End If
-	Dv_Suc("ÔùËÍÓÃ»§µÀ¾ß³É¹¦£¡")
+	Dv_Suc("èµ é€ç”¨æˆ·é“å…·æˆåŠŸï¼")
 	Footer()
 	Response.End
 End Sub

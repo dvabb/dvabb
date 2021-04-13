@@ -10,13 +10,13 @@
 ' Web: http://www.aspsky.net,http://www.dvbbs.net
 ' Email: eway@aspsky.net
 '=========================================================
-'ÊÇ·ñÉÌÒµ°æ£¬·Ç¹Ù·½SQL°æ±¾ÇëÔÚ´ËÉèÖÃÎª0ÒÔ¼°ÔÚConnÖĞÉèÖÃÂÛÌ³ÎªSQLÊı¾İ¿â£¬·ñÔòÏÔÊ¾²»Õı³£
+'æ˜¯å¦å•†ä¸šç‰ˆï¼Œéå®˜æ–¹SQLç‰ˆæœ¬è¯·åœ¨æ­¤è®¾ç½®ä¸º0ä»¥åŠåœ¨Connä¸­è®¾ç½®è®ºå›ä¸ºSQLæ•°æ®åº“ï¼Œå¦åˆ™æ˜¾ç¤ºä¸æ­£å¸¸
 Const IsBuss=1
 Const Dvbbs_Server_Url = "http://server.dvbbs.net/"
 Const Dvbbs_PayTo_Url = "http://pay.dvbbs.net/"
 Const fversion="8.3.0"
 Dim IP_MAX
-Const guestxml="<?xml version=""1.0"" encoding=""gb2312""?><xml><userinfo statuserid=""0"" userid=""0"" username=""¿ÍÈË"" userclass=""¿ÍÈË"" usergroupid=""7"" cometime="""" boardid=""0"" activetime="""" statusstr=""""/></xml>"
+Const guestxml="<?xml version=""1.0"" encoding=""gb2312""?><xml><userinfo statuserid=""0"" userid=""0"" username=""å®¢äºº"" userclass=""å®¢äºº"" usergroupid=""7"" cometime="""" boardid=""0"" activetime="""" statusstr=""""/></xml>"
 Class Cls_Forum
 	Rem Const
 	Public BoardID,SqlQueryNum,Forum_Info,Forum_Setting,Forum_user,Forum_Copyright,Forum_ads,Forum_ChanSetting,Forum_UploadSetting
@@ -37,9 +37,9 @@ Class Cls_Forum
 	Public GroupName,ScriptPath,Forum_apis,TyClsGroup,TyReadOnly,TyClsGroupM	'fish
 	Rem Const
 	Function iCreateObject(str)
-		'iis5´´½¨¶ÔÏó·½·¨Server.CreateObject(ObjectName);
-		'iis6´´½¨¶ÔÏó·½·¨CreateObject(ObjectName);
-		'Ä¬ÈÏÎªiis6£¬Èç¹ûÔÚiis5ÖĞÊ¹ÓÃ£¬ĞèÒª¸ÄÎªServer.CreateObject(str);
+		'iis5åˆ›å»ºå¯¹è±¡æ–¹æ³•Server.CreateObject(ObjectName);
+		'iis6åˆ›å»ºå¯¹è±¡æ–¹æ³•CreateObject(ObjectName);
+		'é»˜è®¤ä¸ºiis6ï¼Œå¦‚æœåœ¨iis5ä¸­ä½¿ç”¨ï¼Œéœ€è¦æ”¹ä¸ºServer.CreateObject(str);
 		Set iCreateObject=CreateObject(str)
 	End Function
 
@@ -61,7 +61,7 @@ Class Cls_Forum
 			err.Clear
 			PageEnd()
 			Response.Clear
-			Response.Write ScriptPath&fileName & "ÎÄ¼ş²»´æÔÚ£¡Çë¼ì²é,»òÕß»Ö¸´¹Ù·½Ä£°åÊı¾İ£¡"
+			Response.Write ScriptPath&fileName & "æ–‡ä»¶ä¸å­˜åœ¨ï¼è¯·æ£€æŸ¥,æˆ–è€…æ¢å¤å®˜æ–¹æ¨¡æ¿æ•°æ®ï¼"
 			Response.End
 		End If
 	End Function
@@ -80,12 +80,12 @@ Class Cls_Forum
 
 	public Sub PageInit()
 		ScriptPath="./"
-		Forum_sn="DvForum 8.3"'Èç¹ûÒ»¸öĞéÄâÄ¿Â¼»òÕ¾µã¿ª¶à¸öÂÛÌ³£¬ÔòÃ¿¸öÒª´í¿ª£¬²»ÄÜ¶¨ÒåÍ¬Ò»¸öÃû³Æ
+		Forum_sn="DvForum 8.3"'å¦‚æœä¸€ä¸ªè™šæ‹Ÿç›®å½•æˆ–ç«™ç‚¹å¼€å¤šä¸ªè®ºå›ï¼Œåˆ™æ¯ä¸ªè¦é”™å¼€ï¼Œä¸èƒ½å®šä¹‰åŒä¸€ä¸ªåç§°
 		Forum_sn=Forum_sn & "_" & Request.servervariables("SERVER_NAME")
-		CacheName="DvCache 8.3"'Èç¹ûÒ»¸öĞéÄâÄ¿Â¼»òÕ¾µã¿ª¶à¸öÂÛÌ³£¬ÔòÃ¿¸öÒª´í¿ª£¬²»ÄÜ¶¨ÒåÍ¬Ò»¸öÃû³Æ
+		CacheName="DvCache 8.3"'å¦‚æœä¸€ä¸ªè™šæ‹Ÿç›®å½•æˆ–ç«™ç‚¹å¼€å¤šä¸ªè®ºå›ï¼Œåˆ™æ¯ä¸ªè¦é”™å¼€ï¼Œä¸èƒ½å®šä¹‰åŒä¸€ä¸ªåç§°
 		IsUserPermissionOnly = 0
 		IsUserPermissionAll = 0
-		ShowErrType = 0 '´íÎóĞÅÏ¢ÏÔÊ¾Ä£Ê½
+		ShowErrType = 0 'é”™è¯¯ä¿¡æ¯æ˜¾ç¤ºæ¨¡å¼
 		SqlQueryNum = 0
 		Reloadtime=600
 		IsTopTable = 0
@@ -113,7 +113,7 @@ Class Cls_Forum
 		Page_Admin=False
 		If InStr(ScriptName,"showerr")>0 Or InStr(ScriptName,"login")>0 Or InStr(ScriptName,"admin_")>0 Or InStr(ScriptName,"ajax")>0 Then Page_Admin=True
 		sendmsgnum=0:sendmsgid=0:sendmsguser=""
-		'Ä£ÄâHTML²¿·Ö¿ªÊ¼
+		'æ¨¡æ‹ŸHTMLéƒ¨åˆ†å¼€å§‹
 		Is_Isapi_Rewrite = 0
 		If Is_Isapi_Rewrite = 0 Then ModHtmlLinked = "?"
 		ArchiverType = 0
@@ -254,7 +254,7 @@ Class Cls_Forum
 	End Property
 
 	Public Function ObjIsEmpty()
-		'Response.Write DateDiff("s",CDate(Application(CacheName & "_" & LocalCacheName &"_-time")),Now())&"Ãë"
+		'Response.Write DateDiff("s",CDate(Application(CacheName & "_" & LocalCacheName &"_-time")),Now())&"ç§’"
 		ObjIsEmpty=False
 		If  IsDate(Application(CacheName & "_" & LocalCacheName &"_-time")) Then
 			If DateDiff("s",CDate(Application(CacheName & "_" & LocalCacheName &"_-time")),Now()) > (60*Reloadtime) Then ObjIsEmpty=True
@@ -270,7 +270,7 @@ Class Cls_Forum
 		Application.Contents.Remove(CacheName & "_" & LocalCacheName &"_-time")
 		Application.unLock
 	End Sub
-	'È¡µÃ»ù±¾ÉèÖÃÊı¾İ
+	'å–å¾—åŸºæœ¬è®¾ç½®æ•°æ®
 	Public Sub loadSetup()
 		Dim Rs,locklist,ip,ip1,XMLDom,Node,i
 		Name="setup"
@@ -380,7 +380,7 @@ Class Cls_Forum
 		Application.unLock
 	End Sub
 
-	Public Sub LoadBoardinformation(bid)'¼ÓÔØ¶¯Ì¬°åÃæĞÅÏ¢Êı¾İ
+	Public Sub LoadBoardinformation(bid)'åŠ è½½åŠ¨æ€æ¿é¢ä¿¡æ¯æ•°æ®
 		Dim Rs,lastpost,i
 		Application.Lock
 		Set Rs=Execute("select boardid,boardtopstr,postnum,topicnum,todaynum,lastpost as lastpost_0 From Dv_board Where Boardid="&bid)
@@ -395,7 +395,7 @@ Class Cls_Forum
 		Application.unLock
 	End Sub
 
-	Public Sub LoadAllBoardinformation()'¼ÓÔØËùÓĞ°åÃæĞÅÏ¢Êı¾İ
+	Public Sub LoadAllBoardinformation()'åŠ è½½æ‰€æœ‰æ¿é¢ä¿¡æ¯æ•°æ®
 		Dim Rs,lastpost,i
 		Dim TempXmlDom,Node,TempNode,TempXmlDom1
 		Set Rs=Execute("select boardid,boardtopstr,postnum,topicnum,todaynum,lastpost as lastpost_0 From Dv_board Order by Orders")
@@ -420,7 +420,7 @@ Class Cls_Forum
 
 	Public Sub LoadGroupSetting()
 		Dim Rs
-		Set Rs=Dvbbs.Execute("Select GroupSetting,UserGroupID,ParentGID,IsSetting,UserTitle,TyClsGroup,TyClsGroupM From Dv_UserGroups")	'fish£¬ĞÂÔöÓÃ»§×é¿ª¹Ø
+		Set Rs=Dvbbs.Execute("Select GroupSetting,UserGroupID,ParentGID,IsSetting,UserTitle,TyClsGroup,TyClsGroupM From Dv_UserGroups")	'fishï¼Œæ–°å¢ç”¨æˆ·ç»„å¼€å…³
 		Set Application(CacheName &"_groupsetting")=RecordsetToxml(rs,"usergroup","")
 		Set Rs=Dvbbs.Execute("Select UserGroupID,usertitle,titlepic,orders From Dv_UserGroups order by orders")
 		Set Application(CacheName &"_grouppic")=RecordsetToxml(rs,"usergroup","grouppic")
@@ -439,10 +439,10 @@ Class Cls_Forum
 		LoadStyleMenu()
 	End Sub
 
-	Public Sub LoadStyleMenu()'Éú³É·ç¸ñÑ¡µ¥Êı¾İ
+	Public Sub LoadStyleMenu()'ç”Ÿæˆé£æ ¼é€‰å•æ•°æ®
 		Name="style_list"
 		Dim HTMLstr
-		HTMLStr="<a href=""cookies.asp?action=stylemod&amp;boardid=$boardid"" >»Ö¸´Ä¬ÈÏÉèÖÃ</a>"
+		HTMLStr="<a href=""cookies.asp?action=stylemod&amp;boardid=$boardid"" >æ¢å¤é»˜è®¤è®¾ç½®</a>"
 		Dim Node
 		For Each Node in Application(CacheName &"_style").documentElement.selectNodes("style")
 			HTMLstr=(HTMLstr&"<br /><a href=""cookies.asp?action=stylemod&amp;skinid="& node.selectSingleNode("@id").text & "&amp;boardid=$boardid"">"& node.selectSingleNode("@type").text& "</a>")
@@ -450,7 +450,7 @@ Class Cls_Forum
   	value=HTMLstr
 	End Sub
 
-	Public Sub UpdateForum_Info(act)'act=0 ²»´¦Àí»º´æ,act=1 ´¦Àí»º´æ
+	Public Sub UpdateForum_Info(act)'act=0 ä¸å¤„ç†ç¼“å­˜,act=1 å¤„ç†ç¼“å­˜
 		If value <> "1900-1-1" Then 
 			value="1900-1-1"
 			Dim Rs,LastPostInfo,TempStr,i,Board
@@ -464,7 +464,7 @@ Class Cls_Forum
 			Set Rs=Nothing
 			LastPostInfo = Split(Forum_LastPost,"$")
 			If Not IsDate(LastPostInfo(2)) Then LastPostInfo(2)=Now()	
-			If DateDiff("d",CDate(LastPostInfo(2)),Now())<>0 Then'×îºó·¢ÌûÊ±¼ä²»ÊÇ½ñÌì£¬	
+			If DateDiff("d",CDate(LastPostInfo(2)),Now())<>0 Then'æœ€åå‘å¸–æ—¶é—´ä¸æ˜¯ä»Šå¤©ï¼Œ	
 				TempStr=LastPostInfo(0)&"$"&LastPostInfo(1)&"$"&Now()&"$"&LastPostInfo(3)&"$"&LastPostInfo(4)&"$"&LastPostInfo(5)&"$"&LastPostInfo(6)&"$"&LastPostInfo(7)
 				Execute("Update Dv_Setup Set Forum_YesterdayNum="&Forum_TodayNum&",Forum_LastPost='"&TempStr&"',Forum_TodayNum=0")
 				Execute("update Dv_board Set TodayNum=0")
@@ -530,7 +530,7 @@ Class Cls_Forum
 		End if
 		rBadWord = Split(CacheData(4,0),"|"):	Main_Sid=CacheData(17,0):Maxonline = CacheData(5,0):NowUseBBS = CacheData(19,0):Cookiepath = CacheData(26,0)
 		If ScriptFolder = Lcase(CacheData(33,0)) Then Page_Admin = True
-		Rem ½ûÖ¹´úÀí·şÎñÆ÷·ÃÎÊ¿ªÊ¼,ÈçĞèÒªÔÊĞí·ÃÎÊ£¬ÇëÆÁ±Î´Ë¶Î´úÂë¡£
+		Rem ç¦æ­¢ä»£ç†æœåŠ¡å™¨è®¿é—®å¼€å§‹,å¦‚éœ€è¦å…è®¸è®¿é—®ï¼Œè¯·å±è”½æ­¤æ®µä»£ç ã€‚
 		If Forum_Setting(100)="1" Then
 			If actforip <> "" Then
 				Session(CacheName & "UserID")=empty
@@ -544,7 +544,7 @@ Class Cls_Forum
 				IP_MAX=0
 			End If
 		End If
-		Rem ½ûÖ¹´úÀí·şÎñÆ÷·ÃÎÊ½áÊø
+		Rem ç¦æ­¢ä»£ç†æœåŠ¡å™¨è®¿é—®ç»“æŸ
 		Rem Hantg 2007-12-05
 		If UBound(Forum_Setting)<107 Then
 			Redim Preserve Forum_Setting(106)
@@ -553,7 +553,7 @@ Class Cls_Forum
 		If BoardID <>0 Then
 			If Application(CacheName&"_boardlist").documentElement.selectSingleNode("board[@boardid='"&BoardID&"']") Is Nothing Then
 				Set Dvbbs=Nothing
-				Response.Write "´íÎóµÄ°æÃæ²ÎÊı"
+				Response.Write "é”™è¯¯çš„ç‰ˆé¢å‚æ•°"
   				Response.End
 			End If
 		End If
@@ -584,11 +584,11 @@ Class Cls_Forum
 			If Not IsNumeric(ischeck) Then ischeck=0
 			ischeck=CLng(ischeck)		
 		End If
-		'¶¨Ê±¿ª·ÅÅĞ¶Ï
+		'å®šæ—¶å¼€æ”¾åˆ¤æ–­
 		If Not Page_Admin And Cint(setting)=1 Then
 			If OpenTime(Hour(Now))="1" Then Response.redirect "showerr.asp?action=stop&boardid="&Dvbbs.BoardID&""
 		End If
-		'ÔÚÏßÈËÊıÏŞÖÆ
+		'åœ¨çº¿äººæ•°é™åˆ¶
 		If ischeck > 0 And Not Page_Admin Then
 			If MyBoardOnline.Forum_Online > ischeck And BoardID=0 Then
 				If Not IsONline(Membername,1) Then Set Dvbbs=Nothing:Response.Redirect "showerr.asp?action=limitedonline&lnum="&ischeck
@@ -652,7 +652,7 @@ Class Cls_Forum
 		If(Node is Nothing) Then
 			Set Node=Application(CacheName &"_style").documentElement.selectSingleNode("style")
 			If (Node is Nothing) Then
-				Response.Write "Ã»ÓĞ×¢²á¿ÉÓÃ·ç¸ñÄ£°å£¬Çëµ½ºóÌ¨ÉèÖÃ"
+				Response.Write "æ²¡æœ‰æ³¨å†Œå¯ç”¨é£æ ¼æ¨¡æ¿ï¼Œè¯·åˆ°åå°è®¾ç½®"
 				Response.End
 			Else
 				Skinid=node.selectSingleNode("@id").text
@@ -715,7 +715,7 @@ Class Cls_Forum
 		Template.Cache=Cache
 	End Function
 
-	Rem ÅĞ¶Ï·¢ÑÔÊÇ·ñÀ´×ÔÍâ²¿
+	Rem åˆ¤æ–­å‘è¨€æ˜¯å¦æ¥è‡ªå¤–éƒ¨
 	Public Function ChkPost()
 		Dim server_v1,server_v2
 		Chkpost=False 
@@ -724,13 +724,13 @@ Class Cls_Forum
 		If Mid(server_v1,8,len(server_v2))=server_v2 Then Chkpost=True 
 	End Function
 
-	Public Sub ReloadSetupCache(MyValue,N)'¸üĞÂ×ÜÉèÖÃ±í²¿·Ö»º´æÊı×é£¬Èë¿Ú£º¸üĞÂÄÚÈİ¡¢Êı×éÎ»ÖÃ
+	Public Sub ReloadSetupCache(MyValue,N)'æ›´æ–°æ€»è®¾ç½®è¡¨éƒ¨åˆ†ç¼“å­˜æ•°ç»„ï¼Œå…¥å£ï¼šæ›´æ–°å†…å®¹ã€æ•°ç»„ä½ç½®
 		CacheData(N,0) = MyValue
 		Name="setup"
 		value=CacheData
 	End Sub
 
-	Public Sub NeedUpdateList(username,act)'¸üĞÂÓÃ»§×ÊÁÏ»º´æ(»º´æÓÃ»§Ãû,ÊÇ·ñĞèÒªÌí¼Ó)[0=²»Ìí¼Ó,Ö»×÷ÇåÀí,1=ĞèÒªÌí¼Ó]
+	Public Sub NeedUpdateList(username,act)'æ›´æ–°ç”¨æˆ·èµ„æ–™ç¼“å­˜(ç¼“å­˜ç”¨æˆ·å,æ˜¯å¦éœ€è¦æ·»åŠ )[0=ä¸æ·»åŠ ,åªä½œæ¸…ç†,1=éœ€è¦æ·»åŠ ]
 		Dim Tmpstr,TmpUsername
 		Name="NeedToUpdate"
 		If ObjIsEmpty() Then Value=""
@@ -751,7 +751,7 @@ Class Cls_Forum
 		Value=Tmpstr
 	End Sub
 
-	Public Sub LetGuestSession()'Ğ´Èë¿ÍÈËsession
+	Public Sub LetGuestSession()'å†™å…¥å®¢äººsession
 		Dim StatUserID,UserSessionID
 		StatUserID = checkStr(Trim(Request.Cookies(Forum_sn)("StatUserID")))
 		If IsNumeric(StatUserID) = 0 or StatUserID = "" Then
@@ -766,1580 +766,4 @@ Class Cls_Forum
 		Response.Cookies(Forum_sn)("StatUserID") = StatUserID
 		Set UserSession=Dvbbs.CreateXmlDoc("msxml2.FreeThreadedDOMDocument"& MsxmlVersion)
 		UserSession.Loadxml guestxml
-		UserSession.documentElement.selectSingleNode("userinfo/@statuserid").text=StatUserID
-		UserSession.documentElement.selectSingleNode("userinfo/@cometime").text=Now()
-		UserSession.documentElement.selectSingleNode("userinfo/@activetime").text=DateAdd("s",-3600,Now())
-		UserSession.documentElement.selectSingleNode("userinfo/@boardid").text=boardid
-		Dim BS
-		Set Bs=GetBrowser()
-		UserSession.documentElement.appendChild(Bs.documentElement)
-		If EnabledSession Then
-			Session(CacheName & "UserID")=UserSession.xml
-		End If
-	End Sub 
-	'¸ù¾İÒ³ÃæÀ´ÅĞ¶ÏÊÇ·ñĞèÒªÖ´ĞĞTrueCheckUserLogin
-	Public Function NeedChecklongin()
-		NeedChecklongin=True
-		If UserID > 0 Then
-			If InStr(ScriptName,"admin_")>0 Then Exit Function
-			Dim pagelist
-			pagelist=",post.asp,usermanager.asp,mymodify.asp,modifypsw.asp,modifyadd.asp,usersms.asp,"
-			pagelist=pagelist & "friendlist.asp,favlist.asp,myfile.asp,friendlist.asp,recycle.asp,"
-			pagelist=pagelist & "fileshow.asp,bbseven.asp,dispuser.asp,savepost.asp,plus_tools_pay.asp,joinvipgroup.asp,plus_tools_center.asp"
-			If InStr(pagelist,","&ScriptName&",")>0 Then Exit Function
-		End If
-		NeedChecklongin=False
-	End Function 
-	'ÑéÖ¤ÓÃ»§µÇÂ½
-	Public Sub CheckUserLogin()
-		If EnabledSession Then
-			Set UserSession=Dvbbs.CreateXmlDoc("msxml2.FreeThreadedDOMDocument"& MsxmlVersion)
-			If Not UserSession.loadxml(Session(CacheName & "UserID")&"") Then
-				If UserID > 0 Then 
-					TrueCheckUserLogin
-				Else
-					Call LetGuestSession()
-				End If
-			Else
-				If UserID >0 Or UserSession.documentElement.selectSingleNode("userinfo/@userid").text<>"0"  Then
-				
-					Dim NeedToUpdate,toupdate
-					toupdate=False
-					Name="NeedToUpdate"
-					If Not ObjIsEmpty() Then 
-						NeedToUpdate=","&Value&","
-						If InStr(NeedToUpdate,","&MemberName&",")>0 Then
-							Call NeedUpdateList(MemberName,0)
-							toupdate=True
-						End If
-					End If
-					
-					If NeedChecklongin Or toupdate Then TrueCheckUserLogin
-				Else
-		
-				End If
-			End If
-		Else
-			If UserID > 0 Then 
-					TrueCheckUserLogin
-				Else
-					Call LetGuestSession()
-						
-			End If	
-		End If
-		If UserID=0 Then
-			UserToday = Split("0|0|0|0|0","|")
-		End If
-		UserID=CLng(UserSession.documentElement.selectSingleNode("userinfo/@userid").text)
-
-		UserGroupID=CLng(UserSession.documentElement.selectSingleNode("userinfo/@usergroupid").text)
-			
-		If UserID > 0 Then
-			GetCacheUserInfo
-		Else
-			UserGroupID = 7
-			Lastlogin = Now()
-		End If
-		
-		Browser=Checkstr(UserSession.documentElement.selectSingleNode("agent/@browser").text)
-		version=replace(Checkstr(UserSession.documentElement.selectSingleNode("agent/@version").text),"--","")
-		platform=Checkstr(UserSession.documentElement.selectSingleNode("agent/@platform").text)
-		If (Browser="unknown" And version="unknown" And platform="unknown") Or Request("IsSearch")="1" Then
-			If IsWebSearch Then
-				IsSearch = True
-			Else
-				IsSearch = False
-			End If
-			If Request("IsSearch") = "1" Then IsSearch = True
-			Cls_IsSearch = True
-		End If
-		'IPËø¶¨
-		If UserSession.documentElement.selectSingleNode("agent/@lockip").text="1"  Then
-			If Not Page_Admin Then Set Dvbbs=Nothing:Response.Redirect "showerr.asp?action=iplock"
-		End If	
-		Call GetGroupSetting()
-	End Sub
-	Rem xmlroot¸ú½ÚµãÃû³Æ row¼ÇÂ¼ĞĞ½ÚµãÃû³Æ
-	Public Function RecordsetToxml(Recordset,row,xmlroot)
-		Dim i,node,rs,j,DataArray
-		If xmlroot="" Then xmlroot="xml"
-		If row="" Then row="row"
-		Set RecordsetToxml=Dvbbs.CreateXmlDoc("msxml2.FreeThreadedDOMDocument"& MsxmlVersion)
-		RecordsetToxml.appendChild(RecordsetToxml.createElement(xmlroot))
-		If Not Recordset.EOF Then
-			DataArray=Recordset.GetRows(-1)
-			For i=0 To UBound(DataArray,2)
-				Set Node=RecordsetToxml.createNode(1,row,"")
-				j=0
-				For Each rs in Recordset.Fields
-						 node.attributes.setNamedItem(RecordsetToxml.createNode(2,LCase(rs.name),"")).text= DataArray(j,i)& ""
-						 j=j+1
-				Next
-				RecordsetToxml.documentElement.appendChild(Node)
-			Next
-		End If
-		DataArray=Null
-	End Function
-
-	Public Function ArrayToxml(DataArray,Recordset,row,xmlroot)
-		Dim i,node,rs,j
-		If xmlroot="" Then xmlroot="xml"
-		Set ArrayToxml=Dvbbs.CreateXmlDoc("msxml2.FreeThreadedDOMDocument"& MsxmlVersion)
-		ArrayToxml.appendChild(ArrayToxml.createElement(xmlroot))
-		If row="" Then row="row"
-		For i=0 To UBound(DataArray,2)
-			Set Node=ArrayToxml.createNode(1,row,"")
-			j=0
-			For Each rs in Recordset.Fields
-					 node.attributes.setNamedItem(ArrayToxml.createNode(2,LCase(rs.name),"")).text= DataArray(j,i)& ""
-					 j=j+1
-			Next
-			ArrayToxml.documentElement.appendChild(Node)
-		Next
-	End Function
-
-	Public Function Createpass()'ÏµÍ³·ÖÅäËæ»úÃÜÂë
-		Dim Ran,i,LengthNum
-		LengthNum=16
-		Createpass=""
-		For i=1 To LengthNum
-			Randomize
-			Ran = CInt(Rnd * 2)
-			Randomize
-			If Ran = 0 Then
-				Ran = CInt(Rnd * 25) + 97
-				Createpass =Createpass& UCase(Chr(Ran))
-			ElseIf Ran = 1 Then
-				Ran = CInt(Rnd * 9)
-				Createpass = Createpass & Ran
-			ElseIf Ran = 2 Then
-				Ran = CInt(Rnd * 25) + 97
-				Createpass =Createpass& Chr(Ran)
-			End If
-		Next
-	End Function
-
-	Public Sub NewPassword()'¸üĞÂÓÃ»§ÑéÖ¤ÃÜÂë
-		If UserID=0 Then Exit Sub
-	'Response.Write "<iframe style=""border:0px;width:0px;height:0px;""  src=""newpass.asp"" name=""Dvnewpass""></iframe>"
-		Dim TruePassWord,usercookies,i
-		usercookies=Request.Cookies(Dvbbs.Forum_sn)("usercookies")
-		TruePassWord=Dvbbs.Createpass
-		If (Isnull(usercookies) or usercookies="") And Not Isnumeric(usercookies) Then usercookies=0
-
-		Call updateCookiesInfo(usercookies,TruePassWord)
-		'¼ì²éĞ´ÈëÊÇ·ñ³É¹¦Èç¹û³É¹¦Ôò¸üĞÂÊı¾İ
-		i=0
-		Do While i<3
-			If Dvbbs.checkStr(Trim(Request.Cookies(Dvbbs.Forum_sn)("password")))=TruePassWord Then
-				Dvbbs.Execute("Update [Dv_user] Set TruePassWord='"&TruePassWord&"' where UserID="&Dvbbs.UserID)
-				Dvbbs.MemberWord = TruePassWord
-				Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@truepassword").text= TruePassWord
-				Exit Do
-			Else
-				Call updateCookiesInfo(usercookies,TruePassWord)
-			End If
-			i=i+1
-		Loop
-	End Sub
-
-	'¸üĞÂÓÃ»§CookiesĞÅÏ¢
-	Sub updateCookiesInfo(usercookies,TruePassWord)
-		Select Case Cint(usercookies)
-			Case 0
-				Response.Cookies(Dvbbs.Forum_sn)("usercookies") = usercookies
-			Case 1
-				Response.Cookies(Dvbbs.Forum_sn).Expires=Date+1
-				Response.Cookies(Dvbbs.Forum_sn)("usercookies") = usercookies
-			Case 2
-				Response.Cookies(Dvbbs.Forum_sn).Expires=Date+31
-				Response.Cookies(Dvbbs.Forum_sn)("usercookies") = usercookies
-			Case 3
-				Response.Cookies(Dvbbs.Forum_sn).Expires=Date+365
-				Response.Cookies(Dvbbs.Forum_sn)("usercookies") = usercookies
-		End Select
-		Response.Cookies(Dvbbs.Forum_sn).path=Dvbbs.cookiepath
-		Response.Cookies(Dvbbs.Forum_sn)("username") = Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@username").text
-		Response.Cookies(Dvbbs.Forum_sn)("UserID") = Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userid").text
-		Response.Cookies(Dvbbs.Forum_sn)("userclass") = Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userclass").text 
-		Response.Cookies(Dvbbs.Forum_sn)("userhidden") = Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userhidden").text
-		Response.Cookies(Dvbbs.Forum_sn)("password") = TruePassWord
-		Response.Flush
-	End Sub
-	
-	Public Sub TrueCheckUserLogin()	
-		Dim Rs,SQL,FoundMyGroupID
-		FoundMyGroupID = 0
-
-		Sql="Select UserID,UserName,UserPassword,UserEmail,UserPost,UserTopic,UserSex,UserFace,UserWidth,UserHeight,JoinDate,LastMsg,LastLogin as cometime ,LastLogin,LastLogin as activetime,UserLogins,Lockuser,Userclass,UserGroupID,UserGroup,userWealth,userEP,userCP,UserPower,UserBirthday,UserLastIP,UserDel,UserIsBest,UserHidden,UserMsg,IsChallenge,UserMobile,TitlePic,UserTitle,TruePassWord,UserToday,UserMoney,UserTicket,FollowMsgID,Vip_StarTime,Vip_EndTime,userid as boardid,Usersetting"
-		Sql=Sql & " From [Dv_User] Where UserID = " & UserID
-		Set Rs = Execute(Sql)
-
-		If Rs.EOF Then
-			UserID = 0:LetGuestSession():Exit Sub
-		Else
-			If Not (LCase(Rs("UserName"))=LCase(Membername) and Rs("TruePassWord")=Memberword) Then
-				If EnabledSession Then
-					Set UserSession=Dvbbs.CreateXmlDoc("msxml2.FreeThreadedDOMDocument"& MsxmlVersion)
-					If UserSession.loadxml(Session(CacheName & "UserID")&"")  Then
-						If UserSession.documentElement.selectSingleNode("userinfo/@username") Is Nothing Or UserSession.documentElement.selectSingleNode("userinfo/@userpassword") Is Nothing Then
-							UserID = 0:LetGuestSession():Exit Sub
-						Else
-							If Not (LCase(Rs("UserName"))=LCase(UserSession.documentElement.selectSingleNode("userinfo/@username").text) and Rs("UserPassword")=UserSession.documentElement.selectSingleNode("userinfo/@userpassword").text) Then
-									UserID = 0:LetGuestSession():Exit Sub
-							End If
-						End If
-					Else
-						UserID = 0:LetGuestSession():Exit Sub
-					End If
-				Else
-					UserID = 0:LetGuestSession():Exit Sub
-				End If
-			End If
-
-			If Rs("LockUser")=1 Then
-				UserID = 0:LetGuestSession():Exit Sub
-			End if
-		End If
-		Set UserSession = RecordsetToxml(rs,"userinfo","xml")
-		UserSession.documentElement.selectSingleNode("userinfo/@cometime").text=Now()
-		UserSession.documentElement.selectSingleNode("userinfo/@activetime").text=DateAdd("s",-3600,Now())
-		UserSession.documentElement.selectSingleNode("userinfo/@boardid").text=boardid
-		UserSession.documentElement.selectSingleNode("userinfo").attributes.setNamedItem(UserSession.createNode(2,"isuserpermissionall","")).text=FoundUserPermission_All()
-		Dim BS
-		Set Bs=GetBrowser()
-		UserSession.documentElement.appendChild(Bs.documentElement)
-		If EnabledSession Then
-			Session(CacheName & "UserID")= UserSession.xml
-		End If
-		Rs.close()
-		Set Rs=Nothing
-		GetCacheUserInfo()
-	End Sub
-
-	Public Sub GetCacheUserInfo()	'ÓÃ»§µÇÂ¼³É¹¦ºó£¬²ÉÓÃ±¾º¯Êı¶ÁÈ¡ÓÃ»§Êı×é²¢ÅĞ¶ÏÒ»Ğ©³£ÓÃĞÅÏ¢
-		UserID = Clng(UserSession.documentElement.selectSingleNode("userinfo/@userid").text)
-		MemberName = UserSession.documentElement.selectSingleNode("userinfo/@username").text
-		Lastlogin = UserSession.documentElement.selectSingleNode("userinfo/@lastlogin").text
-		LastMsg = UserSession.documentElement.selectSingleNode("userinfo/@lastmsg").text
-		If Not IsDate(LastLogin) Then LastLogin = Now()
-		If Not IsDate(LastMsg) Then LastMsg = LastLogin
-		'Response.write LastMsg & ".." & LastLogin	'Test
-		UserGroupID = CLng(UserSession.documentElement.selectSingleNode("userinfo/@usergroupid").text)
-		If Trim(UserSession.documentElement.selectSingleNode("userinfo/@usertoday").text)="" Then
-			Execute("Update [Dv_User] Set UserToday='0|0|0|0|0' Where UserID = " & UserID)
-			UserSession.documentElement.selectSingleNode("userinfo/@usertoday").text="0|0|0|0|0"
-			UserToday = Split("0|0|0|0|0","|")
-		Else
-			UserToday = Split(UserSession.documentElement.selectSingleNode("userinfo/@usertoday").text,"|")
-			If Ubound(UserToday) <> 4 Then
-				Execute("Update [Dv_User] Set UserToday='0|0|0|0|0' Where UserID = " & UserID)
-				UserSession.documentElement.selectSingleNode("userinfo/@usertoday").text="0|0|0|0|0"
-				UserToday = Split("0|0|0|0|0","|")
-			End If
-		End If
-		'ÅĞ¶ÏÊÇ·ñVIP×é³ÉÔ±
-			If IsDate(UserSession.documentElement.selectSingleNode("userinfo/@vip_startime").text) Then
-				If DateDiff("d",Now(),UserSession.documentElement.selectSingleNode("userinfo/@vip_endtime").text)>0 Then
-					VipGroupUser = True
-				Else
-					Dim tRs
-					'½«ÒÑ¹ıÆÚµÄVIPÓÃ»§ÒÆ»Ø×¢²á×é²¢Çå¿ÕÓĞĞ§Ê±¼ä
-					If UserGroupID>8 Then
-						Set tRs=Execute("Select Top 1 * From Dv_UserGroups Where ParentGID=3 And MinArticle<="& CCur(UserSession.documentElement.selectSingleNode("userinfo/@userpost").text) &" Order By MinArticle Desc")
-							If not tRs.Eof Then
-								Execute("Update Dv_User Set UserClass='"&tRs("UserTitle")&"',TitlePic='"&tRs("GroupPic")&"',UserGroupID="&tRs("UserGroupID")&",Vip_StarTime=null,Vip_EndTime=null Where UserID="&UserID)
-							End If
-						Set tRs=Nothing
-					Else
-						Execute("Update Dv_User Set Vip_StarTime=null,Vip_EndTime=null Where UserID="&UserID)
-					End If
-					UserSession.documentElement.selectSingleNode("userinfo/@vip_startime").text = ""
-					UserSession.documentElement.selectSingleNode("userinfo/@vip_endtime").text =""
-				End If
-		End If
-		Select Case UserGroupID
-		Case 8
-			Vipuser = True
-		Case 3
-			If BoardID=0 Then 	Boardmaster = True
-		Case 2
-			Superboardmaster = True
-			Boardmaster = True
-		Case 1
-			Master = True
-			Boardmaster = True
-		End Select
-		If UserSession.documentElement.selectSingleNode("userinfo/@ischallenge").text  = "1" Then FoundIsChallenge = True
-		If DateDiff("d",LastLogin,Now())<>0 Then
-			'¼ì²éÊÇ·ñÓĞĞÂ¶ÌĞÅ
-			Call TyUserMsg(Dvbbs.MemberName,0)
-			Execute("Update [Dv_User] Set UserToday='0|0|0|0|0',LastLogin = " & SqlNowString & " Where UserID = " & UserID)
-			UserSession.documentElement.selectSingleNode("userinfo/@usertoday").text = "0|0|0|0|0"
-			LastLogin = Now()
-		End If
-		If Userhidden = 2 and DateDiff("s",Lastlogin,Now())>Clng(Forum_Setting(8))*60 Then
-			'¼ì²éÊÇ·ñÓĞĞÂ¶ÌĞÅ
-			Call TyUserMsg(Dvbbs.MemberName,0)
-			Execute("Update [Dv_User] Set UserLastIP = '" & UserTrueIP & "',LastLogin = " & SqlNowString & " Where UserID = " & UserID)
-			Lastlogin = Now()
-		End If
-		sendmsgnum=0:sendmsgid=0:sendmsguser=""
-		If UserSession.documentElement.selectSingleNode("userinfo/@usermsg").text<>"" Then
-			Dim Usermsg
-			Usermsg=Split(UserSession.documentElement.selectSingleNode("userinfo/@usermsg").text,"||")
-			If Ubound(Usermsg)=2 Then
-				sendmsgnum=Usermsg(0)
-				sendmsgid=Usermsg(1)
-				sendmsguser=Usermsg(2)
-			End If
-		End If
-		'¸ú×ÙÓÃ»§´¦Àí
-		Dim FollowMsgID
-		Set FollowMsgID=UserSession.documentElement.selectSingleNode("userinfo/@followmsgid")
-		If Not ( FollowMsgID Is Nothing) Then
-		If FollowMsgID.text <>"" Then
-			Dim ToolsFollowUserID,i,Rs,Tools_inceptid,Tools_newincept,Tools_msginfo
-		ToolsFollowUserID = Split( FollowMsgID.text,",")
-		For i=0 To Ubound(ToolsFollowUserID)
-				If Len(ToolsFollowUserID(i))>0 and Len(ToolsFollowUserID(i))<50 and ToolsFollowUserID(i)<>"" Then
-					ToolsFollowUserID(i) = CheckStr(ToolsFollowUserID(i))
-						Execute("Insert into Dv_Message (incept,sender,title,content,sendtime,flag,issend) values ('"& ToolsFollowUserID(i)&"','ÏµÍ³ÏûÏ¢','Äú¸ú×ÙµÄÓÃ»§"&Dvbbs.MemberName&"ÒÑµÇÂ¼','ÄúÊ¹ÓÃÁËÂÛÌ³µÀ¾ß¡°¹·×Ğ¶Ó¡±£¬ÄúËù¸ú×ÙµÄÓÃ»§ "&Dvbbs.Membername&" ÓÚ "&Now()&" µÇÂ¼ÁËÂÛÌ³£¬ÇëÄú¼°Ê±ºÍ¸ÃÓÃ»§È¡µÃÁªÏµ£¬¸ĞĞ»Äú²ÉÓÃÎÒÃÇµÄ·şÎñ¡£',"&SqlNowString&",0,1)")
-					Set Rs=Execute("Select top 1 id,sender From Dv_Message Where incept ='"& ToolsFollowUserID(i) &"'")
-						Tools_inceptid=Rs(0) &"||"& Rs(1)
-						Set Rs=Execute("Select Count(id) From Dv_Message Where Flag=0 and issend=1 and delR=0 And incept='"& ToolsFollowUserID(i) &"'")
-						Tools_newincept = Rs(0)
-						Rs.close()
-						Set Rs=Nothing
-					If IsNull(Tools_newincept) Then Tools_newincept=0
-						Tools_msginfo=Tools_newincept & "||" & Tools_inceptid
-						Execute("update [dv_user] set UserMsg='"&CheckStr(Tools_msginfo)&"' where username='"&ToolsFollowUserID(i)&"'")
-				End If
-			Next
-			 FollowMsgID.text = ""
-			Execute("UpDate Dv_User Set FollowMsgID='' Where UserID="&UserID)
-		End If
-		End If
-		FoundUser=True
-		UserSession.documentElement.selectSingleNode("userinfo/@lastlogin").text=Lastlogin
-		Dim iUserMagicFace'ÓÃ»§Í·Ïñ´¦Àí
-		iUserMagicFace = Split(UserSession.documentElement.selectSingleNode("userinfo/@userface").text,"|")
-		If Ubound(iUserMagicFace) = 1 Then UserSession.documentElement.selectSingleNode("userinfo/@userface").text = iUserMagicFace(1)
-	End Sub
-
-	Private Sub GetGroupSetting()
-		If Not IsObject(Application(CacheName &"_groupsetting")) Then LoadGroupSetting()
-		If Application(CacheName &"_groupsetting").documentElement.selectSingleNode("usergroup[@usergroupid='"& UserGroupID &"']/@groupsetting") Is nothing Then UserGroupID=7
-		GroupSetting = Split(Application(CacheName &"_groupsetting").documentElement.selectSingleNode("usergroup[@usergroupid='"& UserGroupID &"']/@groupsetting").text,",")
-		TyReadOnly=False
-		TyClsGroup=Cint(Application(CacheName &"_groupsetting").documentElement.selectSingleNode("usergroup[@usergroupid='"& UserGroupID &"']/@tyclsgroup").text)	'FIsh
-		If ScriptName="reg.asp"  or ScriptName ="login.asp" or Page_Admin Then GroupSetting(0)=1
-		If Cint(GroupSetting(0))=0  Then AddErrCode "8":Showerr()
-		UserGroupParent = Cint(Application(CacheName &"_groupsetting").documentElement.selectSingleNode("usergroup[@usergroupid='"& UserGroupID &"']/@parentgid").text)
-		If UserID > 0 Then IsUserPermissionAll = CLng(UserSession.documentElement.selectSingleNode("userinfo/@isuserpermissionall").text)
-		If BoardID > 0 And Not ScriptName="showerr.asp" Then CheckBoardInfo()
-		If UserID > 0 And BoardID=0 Then
-			If IsUserPermissionAll="1" Then LoadUserPermission_All()
-		End If
-		Rem ÅĞ¶ÏÓÃ»§×éÊÇ·ñ¶¨Ê±¹Ø±Õ·ÃÎÊ 2010-2-2 ¶¯Íø.Ğ¡Ò× 
-		TyClsGroupM=Application(CacheName &"_groupsetting").documentElement.selectSingleNode("usergroup[@usergroupid='"& UserGroupID &"']/@tyclsgroupm").text
-		If TyClsGroup<>0 and boardid>0 Then
-			Dim TyTmpTime
-			TyTmpTime=split(TyClsGroupM,"|")
-			if TyTmpTime(Hour(Now)) ="1" then 
-			TyReadOnly=True
-			if TyClsGroup=1 Then Response.redirect "showerr.asp?ShowErrType="&Dvbbs.ErrType&"&action=stop"
-			end if
-		End If
-	End Sub
-	'ÓÃ»§ÊÇ·ñ´æÔÚÂÛÌ³È«¾Ö×Ô¶¨ÒåÈ¨ÏŞ
-	Public Function FoundUserPermission_All()
-		Dim PerRs
-		FoundUserPermission_All = 0
-		Set PerRs=Execute("Select Uc_Setting From Dv_UserAccess Where Uc_Boardid=0 And uc_UserID= "& UserID )
-		If Not (PerRs.Eof And PerRs.Bof) Then FoundUserPermission_All = 1
-		PerRs.Close:Set PerRs=Nothing
-	End Function
-
-	Public Sub LoadUserPermission_All()
-		Dim Rs
-		Set Rs=Dvbbs.execute("Select Uc_Setting From Dv_UserAccess Where Uc_Boardid=0 And uc_UserID="&UserID)
-		If Not(Rs.Eof And Rs.Bof) Then
-			UserPermission=Split(Rs(0),",")
-			GroupSetting = Split(Rs(0),",")
-			FoundUserPer=True
-		End If
-		Rs.close()
-		Set Rs=Nothing
-	End Sub
-
-	Public Sub ActiveOnline()
-		Response.Write "<script language=""JavaScript"">"
-		Response.Write "setTimeout('ActiveOnline("&boardid&")',2000);"
-		Response.Write "</script>"
-	End Sub
-
-	Rem ¼ì²éÊÇ·ñÓĞÈº·¢¶ÌĞÅ£¬Dv.Ğ¡Ò×
-	Public Sub TyUserMsg(username,ChkNow)
-		Dim TyRs,TySql,TyTmpStr,TyMsgInf,TyMsgNum,TyUpdateNeed,ChkMsgTime,TyMsgC,i
-		ChkMsgTime= int(Dvbbs.forum_setting(115))			' ¶à¾Ã¼ì²éÒ»´ÎÊÇ·ñÓĞĞÂ¶ÌĞÅ£¬µ¥Î»£º·ÖÖÓ£¬Èç¹ûChkNow²ÎÊıÎª0Ôò¼´Ê±¼ì²é
-		ChkMsgTime = ChkMsgTime * 60
-		if ChkNow = 1 Then ChkMsgTime = 0
-		if not isdate(LastMsg) Then  LastMsg = UserSession.documentElement.selectSingleNode("userinfo/@lastmsg").text
-		If DateDiff("s",LastMsg,now) < ChkMsgTime Then 
-			Exit Sub
-		End If
-
-		Set TyRs=Dvbbs.Execute("Select sender,Title,Content,sendtime From Dv_Message where incept =',"&UserGroupID&",'")	'ÓÃ»§×é
-		If TyRs.eof and TyRs.Bof Then
-			TyRs.close
-			set TyRs=nothing
-			Exit Sub
-		else
-			TyMsgC=TyRs.GetRows(-1)
-			TyRs.Close : Set TyRs = Nothing
-		end if
-
-		TyUpdateNeed= False
-
-		If IsArray(TyMsgC) Then
-			for i = 0 to ubound(TyMsgC,2)
-				If DateDiff("s",LastMsg,TyMsgC(3,i)) > 0 Then
-					TySql = "INSERT into dv_message(incept, sender, title, content, sendtime, flag, issend) values('"&username&"', '"&TyMsgC(0,i)&"', '"&TyMsgC(1,i)&"', '"&TyMsgC(2,i)&"', '"&TyMsgC(3,i)&"',0,1)"
-					TyTmpStr="0||"&TyMsgC(1,i)
-					Dvbbs.Execute(TySql)
-					TyUpdateNeed = True
-				End If
-			Next
-		end If
-
-		If TyUpdateNeed Then
-			TySql = "Select Count(id) from dv_Message Where flag=0 and issend=1 and delR=0 And incept='"& username &"'"
-			Set TyRs=Dvbbs.Execute(TySql)
-			TyMsgNum=TyRs(0)
-			TyRs.close
-			If IsNull(TyMsgNum) Then TyMsgNum=0
-			TyMsgInf=TyMsgNum&"||"&TyTmpStr
-			Dvbbs.Execute("update [dv_user] set UserMsg='"&dvbbs.CheckStr(TyMsgInf)&"',LastMsg=" & SqlNowString & " where username='"&username&"'")
-			Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usermsg").text=TyMsgInf
-			Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@lastmsg").text=Now()
-			LastMsg=Now()
-		End If
-		set TyRs=nothing
-	End Sub
-
-	Public Sub ActiveOnline1()
-		'µ±ÔÚ120ÃëÄÚË¢ĞÂÍ¬Ò»¸öÒ³ÃæÔò²»¸üĞÂonlineÊı¾İ
-		If Not IsNumeric(UserSession.documentElement.selectSingleNode("userinfo/@boardid").text) Or UserSession.documentElement.selectSingleNode("userinfo/@boardid").text="" Then UserSession.documentElement.selectSingleNode("userinfo/@boardid").text="0"
-		If DateDiff("s",UserSession.documentElement.selectSingleNode("userinfo/@activetime").text,Now()) < 120 And CLng(UserSession.documentElement.selectSingleNode("userinfo/@boardid").text) = BoardID  And Not InStr(ScriptName,"showerr")>0 Then Exit Sub
-		'¸üĞÂÊı×é
-		UserSession.documentElement.selectSingleNode("userinfo/@activetime").text=Now()
-		UserSession.documentElement.selectSingleNode("userinfo/@boardid").text=boardid
-		UserActiveOnline
-		'ĞÂÔö¸üĞÂÓÃ»§×îºóµÇÂ¼Ê±¼ä£¬ÒÔ±£Ö¤Ìù×ÓÖĞÔÚÏßÅĞ¶ÏµÄ×¼È·ĞÔ
-		If UserSession.documentElement.selectSingleNode("userinfo/@userid").text <> "0" Then
-			If UserSession.documentElement.selectSingleNode("userinfo/@userhidden").text="2" Then
-				'¼ì²éÊÇ·ñÓĞĞÂ¶ÌĞÅ
-				Call TyUserMsg(Dvbbs.MemberName,0)
-				Execute("update [Dv_user] set lastlogin=" & SqlNowString & " where userid="&Dvbbs.userid)
-			End If
-		End If
-	End Sub
-
-	Private Sub UserActiveOnline()
-		Dim Actcome,SQl,Rs
-		Dim uip,StatsStr
-			uip = UserTrueIP
-        	StatsStr = Stats
-        	StatsStr = Replace(StatsStr, "'", "")
-        	StatsStr = Replace(StatsStr, Chr(0), "")
-        	StatsStr = Replace(StatsStr, "--", "¡ª¡ª")
-        	StatsStr = Left(StatsStr, 250)
-		If UserID = 0 Then
-			Dim StatUserID
-			StatUserID = UserSession.documentElement.selectSingleNode("userinfo/@statuserid").text
-			SQL = "Select ID,Boardid From [Dv_Online] Where ID = " & Ccur(StatUserID)
-			Set Rs = Execute(SQL)
-			If Rs.EOF  Then
-				If IP_MAX>0 Then
-					If Onlineip(UserTrueIP) > IP_MAX Then
-						Session(CacheName & "UserID")=empty
-						Set Dvbbs=Nothing
-						Response.Status = "302 Object Moved" 
-						Response.End  	
-					End If
-				End if
-				If CInt(Forum_Setting(36)) = 0 Then
-					Actcome = ""
-				Else
-					Actcome = address(uip)
-				End If
-				If Cls_IsSearch Then Exit Sub  
-				SQL = "Insert Into [Dv_Online](ID,Username,Userclass,Ip,Startime,Lastimebk,Boardid,Browser,Stats,Usergroupid,Actcome,Userhidden,actforip) Values (" & StatUserID & ",'¿ÍÈË','¿ÍÈË','" & UserTrueIP & "'," & SqlNowString & "," & SqlNowString & "," & Boardid & ",'" & platform&"|"&Browser&version & "','" & StatsStr & "',7,'" & Actcome & "'," & Userhidden & ",'"& checkstr(actforip)&"')"
-				'¸üĞÂ»º´æ×ÜÔÚÏßÊı¾İ
-				MyBoardOnline.Forum_Online=MyBoardOnline.Forum_Online+1
-				Name="Forum_Online"
-				value=MyBoardOnline.Forum_Online 
-			Else
-				Dim TempUserInfo,TempHidden
-				Set TempUserInfo=UserSession.documentElement.selectSingleNode("userinfo")
-				If TempUserInfo Is Nothing Then
-					TempHidden=2
-				Else
-					TempHidden=Dvbbs.CheckNumeric(TempUserInfo.getAttribute("userhidden"))
-				End If
-				SQL = "Update [Dv_Online] Set Lastimebk = " & SqlNowString & ",Boardid = " & Boardid & ",Stats = '" & StatsStr & "',Userhidden="&TempHidden&" Where ID = " & Ccur(StatUserID)
-			End If
-			Rs.Close
-			Set Rs = Nothing
-			Execute(SQL)
-		Else
-			SQL = "Select ID,Boardid From [DV_Online] Where UserID = " & UserID
-			Set Rs = Execute(SQL)
-			If Rs.Eof And Rs.Bof Then
-				If CInt(forum_setting(36)) = 0 Then
-					Actcome = ""
-				Else
-					Actcome = address(uip)
-				End If
-				SQL = "Insert Into [Dv_Online](ID,Username,Userclass,Ip,Startime,Lastimebk,Boardid,Browser,Stats,Usergroupid,Actcome,Userhidden,UserID,actforip) Values (" & Session.SessionID & ",'" & Membername & "','" & Memberclass & "','" & UserTrueIP & "'," & SqlNowString & "," & SqlNowString & "," & Boardid & ",'" & platform&"|"&Browser&version & "','" & StatsStr & "'," & UserGroupID & ",'" & Actcome & "'," & Userhidden & "," & UserID & ",'"& checkstr(actforip)&"')"
-				'¸üĞÂ»º´æ×ÜÔÚÏßÊı¾İ
-				MyBoardOnline.Forum_Online=MyBoardOnline.Forum_Online+1
-				Name="Forum_Online"
-				Dvbbs.value=MyBoardOnline.Forum_Online
-				'¸üĞÂ»º´æ×ÜÓÃ»§ÔÚÏßÊı¾İ
-				MyBoardOnline.Forum_UserOnline=MyBoardOnline.Forum_UserOnline+1
-				Name="Forum_UserOnline"
-				value=MyBoardOnline.Forum_UserOnline
-			Else
-				SQL = "Update [Dv_Online] Set Lastimebk = " & SqlNowString & ",Boardid = " & Boardid & ",Stats = '" & StatsStr & "' Where UserID = " & UserID
-			End If
-			Rs.Close
-			Set Rs = Nothing
-			Execute(SQL)
-		End If	
-		'¸üĞÂÔÚÏß·åÖµ
-		If CLng(MyBoardOnline.Forum_Online) > CLng(Maxonline) Then
-			Execute("update [Dv_setup] set Forum_Maxonline="&CLng(MyBoardOnline.Forum_Online)&",Forum_MaxonlineDate="& SqlNowString) 
-			CacheData(5,0)=MyBoardOnline.Forum_Online
-			CacheData(6,0)=Now()
-			Name="setup"
-			value=CacheData
-		End If
-		Rem É¾³ı³¬Ê±ÓÃ»§
-		MyBoardOnline.OnlineQuery
-	End Sub
-
-	Function Onlineip(ip)
-		Dim SQl
-		SQL="Select Count(*) From Dv_online where ip='"&ip&"'"
-		Onlineip=Execute(SQL)(0)
-		If IsNull(Onlineip) Then Onlineip=0
-	End Function
-
-	Public Sub Nav()
-		Head()
-		ShowTopTable()
-		IsTopTable = 1
-	End Sub
-	
-	Private Function GetBody(RootID)
-	Dim TableName
-	TableName=Execute("Select PostTable from dv_topic where topicid="&RootID&"")(0)
-	GetBody=Execute("Select body from "&TableName&" where rootid="&RootID&" and parentid=0")(0)
-	End Function 
-
-
-    'ËÑË÷ÒıÇæÓÅ»¯²¿·Ö
-	Public Sub head()
-	    Dim description,keyword
-		Response.Write MainHtml(18)
-		Nowstats=stats
-		keyword=Replace(Forum_info(8),"|",",")
-        description=Forum_info(10)
-		If ScriptName="index.asp" Then
-			If BoardType<>"" Then 
-			   Stats=Replacehtml(BoardType & " - " )
-			   keyword=Replacehtml(BoardType)
-			   description=Left(Replacehtml(BoardType & " " & boardreadme),60)
-			Else
-               keyword=Replacehtml(Replace(Forum_info(8),"|",","))
-			   description=(Left(Replacehtml(Forum_info(10)),60))
-			End if
-		ElseIf ScriptName <> "dispbbs.asp" Then
-			If BoardType<>"" Then Stats=Replacehtml(BoardType&("-"&Stats))
-        Elseif scriptname="dispbbs.asp" Then 
-		    If BoardType<>"" Then 
-			     Stats=Replacehtml(Stats & " - " & BoardType & " - ")
-			     keyword=Replacehtml(Nowstats & " " & BoardType)
-                 description=Left(Replacehtml(BoardType & " " & GetBody(CheckNumeric(Request("ID")))),60)
-			End if	 
-		End If
-			   
-		'µ±Ò³Ãæ´¦ÓÚÌû×ÓÒ³Ãæ£¬¼ò½éÅĞ¶Ï
-		Stats=Replace(Stats,Chr(13),"")
-		stats=Replacehtml(stats)
-		
-		If Request("IsSearch_a") <> "" Then stats = stats & "-ÍøÕ¾µØÍ¼"
-		Nowstats=Replacehtml(Nowstats)
-		If IsSearch Then
-			Response.Write Replace(Replace(Replace(MainHtml(1),"{$keyword}",keyword & Replace(Forum_info(8),"|",",")),"{$description}",description),"{$title}",stats & Forum_Info(0) & " " & Forum_setting(111) & " -- Powered By Dvbbs.net," & Now())
-		Else
-			Response.Write Replace(Replace(Replace(MainHtml(1),"{$keyword}",keyword),"{$description}",description),"{$title}",(stats & Forum_Info(0) & " - "&Forum_setting(111) ))
-		End If
-		'ËÑË÷ÒıÇæÓÅ»¯½áÊø-0909
-		If Boardid=0 Then
-			Response.Write "<link title="""& Forum_Info(0) &"-ÆµµÀÁĞ±í"" type=""application/rss+xml"" rel=""alternate"" href=""rssfeed.asp"" />"
-			Response.Write Chr(10)
-			Response.Write "<link title="""& Forum_Info(0) &"-×îĞÂ20ÆªÂÛÌ³Ö÷Ìâ"" type=""application/rss+xml"" rel=""alternate"" href=""rssfeed.asp?rssid=4"" />"
-		Else
-			Response.Write "<link title="""& Replacehtml(BoardType) &"-×îĞÂ20ÆªÂÛÌ³Ö÷Ìâ"" type=""application/rss+xml"" rel=""alternate"" href=""rssfeed.asp?boardid="&boardid&"&amp;rssid=4"" />"
-		End If
-		Response.Write Chr(10)
-		Response.Write MainHtml(2)
-		Dim node,XMLDOM
-		If Not Cls_IsSearch Then
-			Response.Write "<script language=""javascript"" type=""text/javascript"">"
-			Response.Write "var boardxml='',ISAPI_ReWrite = "&isUrlreWrite&",forum_picurl='"&Forum_PicUrl&"';"
-			Response.Write "</script>"
-		Else
-			Exit Sub
-		End If
-		If Forum_Setting(19)="1" And Not Page_Admin Then
-			If ( Trim(Forum_Setting(64))<>"" And InStr(LCase(Forum_Setting(64)),ScriptName) >0 And Cint(Forum_Setting(20))>0) Then
-				If DateDiff("s",UserSession.documentElement.selectSingleNode("userinfo/@activetime").text,Now())< Cint(Forum_Setting(20)) and boardid=CLng(UserSession.documentElement.selectSingleNode("userinfo/@boardid").text) and InStr(LCase(Cstr(Request.ServerVariables("HTTP_REFERER"))),ScriptName) > 0 Then
-					Response.Write "<div style=""margin-top:24px;text-align:left;text-indent :24px;"">±¾Ò³ÃæÆôÓÃÁË·ÀË¢ĞÂÉèÖÃ,Çë²»ÒªÔÚ"& Forum_Setting(20) &"ÃëÄÚÁ¬ĞøË¢ĞÂ±¾Ò³Ãæ.</div>"
-					Response.Write "<div style=""text-align:left;text-indent :24px;"">"&(Forum_Setting(20)-DateDiff("s",UserSession.documentElement.selectSingleNode("userinfo/@activetime").text,Now()))&"Ãëºó½«ÖØĞÂ¼ÓÔØÒ³ÃæÇëÉÔµÈ....</div>"
-					Response.Write "<script language=""javascript"" type=""text/javascript"">"
-					Response.Write "setTimeout('location.reload();',"&(Forum_Setting(20)-DateDiff("s",UserSession.documentElement.selectSingleNode("userinfo/@activetime").text,Now()))*1000&");"
-					Response.Write "</script>"
-					Response.Write "</body></html>"
-					Set Dvbbs=Nothing
-					Response.End
-				Else
-						UserSession.documentElement.selectSingleNode("userinfo/@activetime").text=Now()
-						UserSession.documentElement.selectSingleNode("userinfo/@boardid").text=Boardid
-				End If
-			End If 
-		End If
-	End Sub 
-
-	Public Sub ShowTopTable()
-		Dim TempStr,ForumMenu,Tempstr1
-		Dim RayMenuInfo,RayMenu
-		If IsSearch Then
-			'ËÑË÷ÒıÇæÓÅ»¯²¿·Ö
-			'¼ÓÈëÕë¶ÔËÑË÷ÒıÇæµÄµ¼º½À¸,Í¬Ê±Ôö¼Ó¹Ù·½Á´½Ó(¿ÉÔö¼Ó×ÔÉíÍøÕ¾PageRankÒÔ¼°¸ø¹Ù·½Ôö¼ÓËÑË÷ÒıÇæÓÑºÃ¶È),ÇëÎğÉÃ×ÔÈ¡Ïû
-			sysmenu = MainHtml(20)
-			Dim node,XMLDom,iTempStr
-			Set XMLDOM=Application(Dvbbs.CacheName&"_boardlist")
-			iTempStr = "&nbsp;&nbsp;"
-			For each node in XMLDOM.documentElement.selectNodes("board[@parentid=0]")
-				iTempStr = iTempStr & ("<a href=""index.asp?IsSearch_a=2&BoardID="&Node.selectSingleNode("@boardid").text&""">" & Node.selectSingleNode("@boardtype").text & "</a>&nbsp;&nbsp;")
-			Next
-			sysmenu = Replace(sysmenu,"{$catlist}",(iTempStr & "<a href=""http://www.cndw.com"" title=""ÂÛÌ³,bbs,Ãâ·ÑÂÛÌ³,¹úÄÚ×î´óµÄÂÛÌ³Èí¼ş·şÎñÌá¹©ÉÌ,blog,boke,²©¿Í,·À»ğÇ½,²å¼ş"">¶¯ÍøÂÛÌ³</a>&nbsp;&nbsp;<a href=""http://bbs.cndw.com"" title=""ÂÛÌ³,bbs,Ãâ·ÑÂÛÌ³,¹úÄÚ×î´óµÄÂÛÌ³Èí¼ş·şÎñÌá¹©ÉÌ¹Ù·½ÌÖÂÛÇø,blog,boke,²©¿Í,asp,asp.net,µçÄÔ,Èí¼ş,¹àË®,·À»ğÇ½,¿ª·¢,²å¼ş"">¹Ù·½ÂÛÌ³</a>&nbsp;&nbsp;<a href=http://tool.cndw.com>Õ¾³¤¹¤¾ß</a>"))
-			'ËÑË÷ÒıÇæÓÅ»¯½áÊø
-		ElseIf UserID = 0 Then 
-			sysmenu = MainHtml(7)
-		Else
-			sysmenu = Replace(MainHtml(6),"{$username}",Membername)
-			If UserHidden=2 Then
-				sysmenu = Replace(sysmenu,"{$hiddeninfo}",LanStr(3))
-			Else
-				sysmenu = Replace(sysmenu,"{$hiddeninfo}",LanStr(4))
-			End If
-
-			Rem µ¼º½À¸ÏÔÊ¾¶ÌĞÅĞÅÏ¢ Fish
-			If sendmsgnum>0 Then
-				sysmenu = Replace(sysmenu,"{$TyMsgStr}"," ÊÕ¼şÏä(<b style='color:red'>"&sendmsgnum&"</b>) ")
-			Else
-				sysmenu = Replace(sysmenu,"{$TyMsgStr}"," ÊÕ¼şÏä(0) ")
-			End If
-
-			If Master Or GroupSetting(70)="1" Then
-				sysmenu = Replace(sysmenu,"{$manageinfo}",MainHtml(10))
-			ElseIf Superboardmaster Then
-				sysmenu = Replace(sysmenu,"{$manageinfo}",MainHtml(19))
-			Else
-				sysmenu = Replace(sysmenu,"{$manageinfo}","")
-			End If
-			sysmenu = Replace(sysmenu,"{$raymenuinfo}","")
-	
-			sysmenu = Replace(sysmenu,"{$userid}",UserID)
-
-		End If
-		Tempstr1 = Replace(MainHtml(17),"{$boardid}",boardid)
-
-		If (Dvbbs.Forum_ChanSetting(13)="1" And Dvbbs.Forum_ChanSetting(0)="1") Or Dvbbs.Forum_ChanSetting(3)="0" Then
-			Tempstr1 = Replace(Tempstr1,"{$UserTicket}",("<br />" & LanStr(11)))
-		Else
-			Tempstr1 = Replace(Tempstr1,"{$UserTicket}","")
-		End If
-		Tempstr1=Split(Tempstr1&"","||")
-		If UBound(Tempstr1)=2 Then
-			sysmenu = Replace(sysmenu&"","{$menu_membertools}",Tempstr1(0))
-			sysmenu = Replace(sysmenu&"","{$menu_show}",Tempstr1(2))
-		Else
-			sysmenu = Replace(sysmenu&"","{$menu_membertools}","")
-			sysmenu = Replace(sysmenu&"","{$menu_show}","")
-		End If
-		If Dvbbs.Forum_setting(99) = "1" Then
-			sysmenu = Replace(sysmenu,"{$isboke}",MainHtml(21))
-		Else
-			sysmenu = Replace(sysmenu,"{$isboke}","")
-		End If
-		If Forum_Setting(90)=0 Then 
-			sysmenu = Replace(sysmenu,"{$Plus_Tools}","")
-		Else
-			sysmenu = Replace(sysmenu,"{$Plus_Tools}",MainHtml(16))
-		End If
-
-		If Forum_Setting(104)=0 Then 
-			sysmenu = Replace(sysmenu,"{$Ty_medal}","")
-		Else
-			sysmenu = Replace(sysmenu,"{$Ty_medal}","<a href='medal_index.asp'>ÈÙÓşÑ«ÕÂ</a><br/>")
-		End If
-
-		
-		If GroupSetting(57) = "1" Then
-			Name = "style_list"
-			Tempstr1=replace(Value,"$boardid",boardid)
-			If Dvbbs.BoardID = 0 Then
-				TempStr1 = Replace(TempStr1,"{$dskinid}",CacheData(17,0))
-			Else
-				TempStr1 = Replace(TempStr1,"{$dskinid}",Sid)
-			End If
-		Else
-			Dim MainHtml_9
-			MainHtml_9=MainHtml(9)
-			MainHtml_9 = Split(MainHtml_9,"||")
-			Tempstr1=Replace(Replace(MainHtml_9(0),"{$dskinid}",CacheData(17,0)),"{$csslist}","")
-		End If
-		sysmenu = Replace(sysmenu,"{$syles}",Tempstr1)
-		TempStr = TempStr & (Chr(10) & MainHtml(4))
-		TempStr = Replace(TempStr,"{$width}",MainSetting(0))
-		TempStr = Replace(TempStr,"{$link}",Forum_Info(1))
-		If Boardid>0 Then 
-			If Board_Setting(51)="" Or Board_Setting(51) = "0"  Then
-				TempStr = Replace(TempStr,"{$logo}",Forum_Info(6))
-			Else
-				TempStr = Replace(TempStr,"{$logo}",Board_Setting(51))
-			End If
-		Else
-			TempStr = Replace(TempStr,"{$logo}",Forum_Info(6))
-		End If
-		If Trim(Forum_info(7))<>"0" And Trim(Forum_info(7))<>""  Then
-			TempStr = Replace(TempStr,"{$mailto}",Forum_Info(7))
-		Else
-			TempStr = Replace(TempStr,"{$mailto}",("mailto:" & Forum_Info(5)))
-		End If
-		TempStr = Replace(TempStr,"{$title}",(Forum_Info(0) & "-" & Replace(stats,"'","\'")))
-		TempStr = Replace(TempStr,"{$top_ads}",Forum_ads(0))
-		TempStr = Replace(TempStr,"{$menu}",Chr(10) & sysmenu)
-		TempStr = Replace(TempStr,"{$boardid}",boardid)
-		TempStr = Replace(TempStr,"{$alertcolor}",MainSetting(1))
-		Name = "ForumPlusMenu"
-		If ObjIsEmpty Then LoadPlusMenu()
-		ForumMenu = Value
-		If ForumMenu <> "" Then
-			TempStr = Replace(TempStr,"{$plusmenu}",ForumMenu)
-		Else
-			TempStr = Replace(TempStr,"{$plusmenu}","")
-		End If
-		Response.Write TempStr
-		TempStr = ""
-		If Request.Cookies("geturl")<>Request.ServerVariables("PATH_INFO")&"?"&Request.QueryString Then
-			Response.Cookies("geturl") = Request.ServerVariables("PATH_INFO")&"?"&Request.QueryString
-		End If
-	End Sub 
-
-	Public Sub Head_var(IsBoard,idepth,GetTitle,GetUrl)
-		Dim NavStr,AllBoardList
-		If Dvbbs.BoardID=0 Then BoardReadme=LanStr(2) & " <b>" & Forum_Info(0) & "</b>"
-		If BoardID>0 Then
-			'ÊÇ·ñ¼ÓÔØÊ×Ò³°æ¿éµ¼º½£¬µ±°æ¿éÌ«¶àÊ±¼ÓÔØ»áÂı£¬½¨Òé¹Ø±Õ´Ë¹¦ÄÜ by Å£Í·
-			Dim isindexmenu
-			If Dvbbs.Checknumeric(Dvbbs.forum_setting(112))-0=0 Then
-			    isindexmenu=" onmouseover=""showmenu(event,BoardJumpList(0),'',0);"""
-			Else
-			    isindexmenu=""
-			End If
-			NavStr = " <a href="""&(Forum_Info(11)&"""" & isindexmenu &"   style=""cursor:hand;""><b>"&Forum_info(0)&"</b></a> ¡ú ")
-		Else
-			NavStr = " <a href="""&(Forum_Info(11)&""">"&Forum_info(0)&"</a> ¡ú ")
-		End If
-		If IsBoard=1 Then
-			If BoardParentID=0 Then
-				NavStr = NavStr & (" <a href=""index.asp?boardid="&BoardID&""" onMouseOver=""showmenu(event,BoardJumpList("&Dvbbs.Boardid&"),'',0);"">"&BoardType&"</a>")
-				'NavStr = NavStr & ("<li class=""mainmenu_li"" onmouseover=""appMenu(this,0,"&BoardID&");""><a href=""index.asp?boardid="&BoardID&""">"&BoardType&"</a> <div class=""submenu"" onmouseout=""hidemenu(1);hidemenu(0)""></div></li>")				
-			Else
-				If ScriptName="dispbbs.asp" Then 
-					NavStr = NavStr & (BoardInfoData & " ¡ú <a href=""index.asp?boardid="&BoardID&"&page="&Request("page")&""">"&BoardType&"</a>")
-				Else
-					NavStr = NavStr & (BoardInfoData & " ¡ú <a href=""index.asp?boardid="&BoardID&""">"&BoardType&"</a>")
-				End If
-			End If
-			NavStr = NavStr & (" ¡ú " & Nowstats)
-		Elseif IsBoard=2 Then
-			NavStr = NavStr & Nowstats
-		Else
-			NavStr = NavStr & ("<a href="&GetUrl&">"&GetTitle&"</a> ¡ú " & Nowstats)
-		End If
-		NavStr = Replace(MainHtml(5),"{$nav}",NavStr)
-		NavStr = Replace(NavStr,"{$width}",MainSetting(0))
-		NavStr = Replace(NavStr,"{$boardreadme}",BoardReadme)
-		If ScriptName="dispbbs.asp" Then
-			If Second(Now()) Mod 2 = 0 Then
-				NavStr = Replace(NavStr,"{$SearchStr}","<a href=""query.asp?stype=8&keyword="&Server.HtmlEncode(Nowstats&"")&"&isWeb=2"" target=""_blank"" title=""ÔÚ¸ü¶àÍøÕ¾ÖĞËÑË÷´ËÀàÎÊÌâ,ËÑË÷ºÍ²é¿´¸ü¶àÏà¹ØµÄ¾«²ÊÖ÷Ìâ""><font color=""green""><b>ËÑÒ»ËÑ¸ü¶à´ËÀàÎÊÌâ</b></font></a>")
-			Else
-				NavStr = Replace(NavStr,"{$SearchStr}","<a href=""query.asp?stype=8&keyword="&Server.HtmlEncode(Nowstats&"")&"&isWeb=2"" target=""_blank"" title=""ÔÚ¸ü¶àÍøÕ¾ÖĞËÑË÷´ËÀàÎÊÌâ,ËÑË÷ºÍ²é¿´¸ü¶àÏà¹ØµÄ¾«²ÊÖ÷Ìâ""><font class=""redfont""><b>ËÑÒ»ËÑÏà¹Ø¾«²ÊÖ÷Ìâ</b></font></a>")
-			End If
-		Else
-			NavStr = Replace(NavStr,"{$SearchStr}","")
-		End If
-		If UserID>0 Then
-			'sendmsgnum,sendmsgid,sendmsguser
-			IsBoard = Split(MainHtml(12),"||")
-			If Clng(SendMsgNum)>0 Then
-				BoardReadme = IsBoard(0)
-				If Forum_Setting(10)=1 Then
-					BoardReadme = BoardReadme & IsBoard(1) & IsBoard(2)
-				Else
-					BoardReadme = BoardReadme & IsBoard(2)
-				End If
-				BoardReadme = Replace(BoardReadme,"{$smsid}",sendmsgid)
-				BoardReadme = Replace(BoardReadme,"{$sender}",sendmsguser)
-				BoardReadme = Replace(BoardReadme,"{$newmsgnum}",sendmsgnum)
-			Else
-				BoardReadme = IsBoard(3)
-			End If
-			Dim i,UserGroupList,iGroupName
-
-			NavStr = Replace(NavStr,"{$umsg}",BoardReadme)
-		Else
-			NavStr = Replace(NavStr,"{$umsg}","")
-		End If
-		NavStr = Replace(NavStr,"{$alertcolor}",MainSetting(1))
-		NavStr = Replace(NavStr,"{$showstr}","")
-		'NavStr =NavStr&"</li>"
-		Response.Write ArchiveHtml((vbNewLine & NavStr))
-	End Sub
-
-	Public Sub AddErrCode(ErrCode)
-		If ErrCodes = "" Then
-			ErrCodes = ErrCode
-		Else
-			ErrCodes = ErrCodes & "," & ErrCode
-		End If
-	End Sub
-
-	Public Property Let ErrType(ByVal Value)
-		ShowErrType = Value
-	End Property
-
-	Public Property Get ErrType()
-		ErrType = ShowErrType
-	End Property
-
-	Public Sub Showerr()
-		If ErrCodes<>"" Then
-			If Stats="" Then 
-			If BoardID=0 Then
-				Stats="·ÃÎÊ"& Forum_Info(0)
-			Else
-				Stats="·ÃÎÊ"& BoardType
-			End If
-			End If
-			Dim parameter
-			If ShowErrType = 1 Then
-				parameter = MyDbPath& "showerr.asp?BoardID="&Boardid&"&ErrCodes="&ErrCodes&"&action="&server.URLEncode(Stats)&"&ShowErrType=1"
-				PageEnd()
-				Response.redirect parameter
-			Else
-				parameter = MyDbPath& "showerr.asp?BoardID="&Boardid&"&ErrCodes="&ErrCodes&"&action="&server.URLEncode(Stats)
-				PageEnd()
-				Response.redirect parameter
-			End If
-		End If
-	End Sub 
-
-	Public Sub Showmessanger(title,messangertext)
-		Response.Write "<div style=""position:absolute;top:220px;right:10px;width:350px;height : 90px;background:#fff;border: 5px solid #e4e8ef; "" id=""dv_msg"">"
-		Response.Write "<div class=""th""><div>"&title&"</div></div>"
-		Response.Write "<div class=""mainbar3"" style=""height : 36px;overflow :auto;"">"
-		Response.Write messangertext
-		Response.Write "</div>"
-		Response.Write "<div class=""mainbar2"" style=""height : 20px;line-height : 20px;""><input type=""button"" value=""  ¹Ø±Õ  "" onclick=""document.getElementById('dv_msg').style.visibility='hidden';"" />"
-		Response.Write "</div></div>"
-	End Sub
-
-	Public Sub Footer()
-		Dim Tmp,node
-		If IsTopTable=1 Then
-			If UserID>0  Then
-				If IsObject( Application(Dvbbs.CacheName&"_messanger")) Then	
-					Set Node=Application(Dvbbs.CacheName&"_messanger").documentElement.selectSingleNode("messanger[@touserid="&userid&"]")
-					If Not Node is Nothing Then
-						Showmessanger Node.selectSingleNode("@senduser").text,Node.text
-						Application(Dvbbs.CacheName&"_messanger").documentElement.removeChild(Node)
-					End If
-				End If
-			End If	
-			Tmp = MainHtml(8)
-			If Forum_Setting(30) = "1" Then 
-				Dim Endtime
-				Endtime = Timer()
-				Tmp = Replace(Tmp,"{$runtime}","Ò³ÃæÖ´ĞĞÊ±¼ä 0"&FormatNumber((Endtime-Startime),5)&" Ãë, "&SqlQueryNum&" ´ÎÊı¾İ²éÑ¯<br />")
-			Else
-				Tmp = Replace(Tmp,"{$runtime}","")
-			End If
-			Dim Alibaba_Ad
-			If IsSqlDataBase = 0 Or (IsBuss = 0 And IsSqlDataBase = 1) Or Forum_Info(0)="¶¯ÍøÏÈ·æÂÛÌ³" Then
-				Alibaba_Ad = "<div></div>"
-			End If
-			Tmp = Replace(Tmp,"{$powered}","Powered By <a href = ""http://www.dvbbs.net/"" target = ""_blank"">Dvbbs</a>  <a href = ""http://www.dvbbs.net/download.asp"" target = ""_blank"">Version " & fVersion & "</a>" )
-			If Dvbbs.Forum_ChanSetting(3)="0" Then
-				Tmp = Replace(Tmp,"{$alipaymsg}","")
-			Else
-				Tmp = Replace(Tmp,"{$alipaymsg}","")
-			End If
-			Tmp = Replace(Tmp,"{$Footer_ads}",Forum_ads(1) & Alibaba_Ad)
-			Tmp = Replace(Tmp,"{$copyright}",Forum_Copyright)
-			Tmp = Replace(Tmp,"{$boardid}",BoardID)
-		Else
-			Tmp ="</body></html>"
-		End If
-		Response.Write Tmp
-		
-	End Sub
-
-	Public Sub Dvbbs_Suc(sucmsg)
-		Dim TempStr
-		TempStr = MainHtml(13)
-		TempStr = Replace(TempStr,"{$sucmsg}",sucmsg)
-		TempStr = Replace(TempStr,"{$returnurl}",Request.ServerVariables("HTTP_REFERER"))
-		Response.Write TempStr
-		TempStr = ""
-	End Sub
-
-	Public Function Execute(Command)
-		If Not IsObject(Conn) Then ConnectionDatabase	
-		If IsDeBug = 0 Then 
-			On Error Resume Next
-			Set Execute = Conn.Execute(Command)
-			If Err Then
-				err.Clear
-				Set Conn = Nothing
-				Response.Write "²éÑ¯Êı¾İµÄÊ±ºò·¢ÏÖ´íÎó£¬Çë¼ì²éÄúµÄ²éÑ¯´úÂëÊÇ·ñÕıÈ·¡£"
-				Response.End
-			End If
-		Else
-			If ShowSQL=1 Then
-				Response.Write command & "<br>"
-			End If
-			Set Execute = Conn.Execute(Command)
-		End If	
-		SqlQueryNum = SqlQueryNum+1
-	End Function
-	'-----------------------------------------------------------------------------------------------------
-	'¶ÀÁ¢µÀ¾ß²éÑ¯
-	Public Function Plus_Execute(Command)
-		If Cint(Forum_Setting(92))=1 Then
-			If Not IsObject(Plus_Conn) Then Plus_ConnectionDatabase
-		Else
-			If Not IsObject(Conn) Then ConnectionDatabase
-		End If			
-		If IsDeBug = 0 Then 
-			On Error Resume Next
-			If Cint(Forum_Setting(92))=1 Then
-				Set Plus_Execute = Plus_Conn.Execute(Command)
-			Else
-				Set Plus_Execute = Conn.Execute(Command)
-			End If
-			If Err Then
-				err.Clear
-				If Cint(Forum_Setting(92))=1 Then
-					Set Plus_Conn = Nothing
-				Else
-					Set Conn = Nothing
-				End If
-				Response.Write "²éÑ¯Êı¾İµÄÊ±ºò·¢ÏÖ´íÎó£¬Çë¼ì²éÄúµÄ²éÑ¯´úÂëÊÇ·ñÕıÈ·¡£"
-				Response.End
-			End If
-		Else
-			'Response.Write command & "<br>"
-			If Cint(Forum_Setting(92))=1 Then
-				Set Plus_Execute = Plus_Conn.Execute(Command)
-			Else
-				Set Plus_Execute = Conn.Execute(Command)
-			End If
-		End If	
-		SqlQueryNum = SqlQueryNum+1
-	End Function
-	'IP/À´Ô´
-	Public Function address(sip)
-		Dim aConnStr,aConn,adb
-		Dim str1,str2,str3,str4
-		Dim  num
-		Dim country,city
-		Dim irs,SQL
-		address="Î´Öª"
-		If IsNumeric(Left(sip,2)) Then
-			If sip="127.0.0.1" Then sip="192.168.0.1"
-			str1=Left(sip,InStr(sip,".")-1)
-			sip=mid(sip,instr(sip,".")+1)
-			str2=Left(sip,instr(sip,".")-1)
-			sip=Mid(sip,InStr(sip,".")+1)
-			str3=Left(sip,instr(sip,".")-1)
-			str4=Mid(sip,instr(sip,".")+1)
-			If isNumeric(str1)=0 or isNumeric(str2)=0 or isNumeric(str3)=0 or isNumeric(str4)=0 Then
-			Else		
-				num=CLng(str1)*16777216+CLng(str2)*65536+CLng(str3)*256+CLng(str4)-1
-				adb = "data/ipaddress.mdb"
-				aConnStr = "Provider = Microsoft.Jet.OLEDB.4.0;Data Source = " & Server.MapPath(adb)
-				Set AConn = Dvbbs.iCreateObject("ADODB.Connection")
-				aConn.Open aConnStr
-				country="ÑÇÖŞ"
-				city=""
-				sql="select top 1 country,city from dv_address where ip1 <="& num &" and ip2 >="& num 
-				Set irs=aConn.execute(sql)
-				If Not(irs.EOF And irs.bof) Then
-					country=irs(0)
-					city=irs(1)
-				End If
-				irs.close
-				Set irs=Nothing
-				aConn.Close
-				Set aConn = Nothing 
-				SqlQueryNum = SqlQueryNum+1
-			End If
-			address=country&city
-		End If
-	End Function
-	'ÏÔÊ¾ÑéÖ¤Âë
-	Public Function GetCode()
-
-            GetCode= Dvbbs.MainHtml(15)
-
-	End Function
-	Public Function GetCode2()
-            GetCode2= Dvbbs.MainHtml(25)
-	End Function
-
-	'¼ì²éÑéÖ¤ÂëÊÇ·ñÕıÈ· modifty by reoaiq at 091020
-	Public Function CodeIsTrue()
-		Dim CodeStr
-		If LCase(CStr(Request.form("winaction")))="winaction" Then 
-			If forum_setting(120)="1" Then 
-            CodeStr=CStr(Lcase(Trim(request.Form("codestryuyinwin"))))
-			Else 
-			CodeStr=CStr(Lcase(Trim(request.Form("codestrwin"))))
-			End If 
-		Else 
-			If forum_setting(120)="1" Then 
-            CodeStr=CStr(Lcase(Trim(Request.Form("codestryuyin"))))
-			Else 
-			CodeStr=CStr(Lcase(Trim(Request.Form("codestr"))))
-			End If 
-		End If 
-		If Session("GetCode")=CodeStr And CodeStr<>""  Then
-			CodeIsTrue=True
-			Session("GetCode")=empty
-		Else
-			CodeIsTrue=False
-			Session("GetCode")=empty
-		End If	
-	End Function
-	
-	'È¥µôHTML±ê¼Ç
-	Public Function Replacehtml(Textstr)
-		Dim Str,re
-		Str=Textstr
-		Set re=new RegExp
-		re.IgnoreCase =True
-		re.Global=True
-		re.Pattern="<(.[^>]*)>"
-		Str=re.Replace(Str, "")
-		Set Re=Nothing
-		Replacehtml=Str
-	End Function
-	'ÓÃÓÚÓÃ»§·¢²¼µÄ¸÷ÖÖĞÅÏ¢¹ıÂË£¬´øÔà»°¹ıÂË
-	Public Function HTMLEncode(fString)
-		If Not IsNull(fString) Then
-			fString = replace(fString, ">", "&gt;")
-			fString = replace(fString, "<", "&lt;")
-			fString = Replace(fString, CHR(32), " ")		'&nbsp;
-			fString = Replace(fString, CHR(9), " ")			'&nbsp;
-			fString = Replace(fString, CHR(34), "&quot;")
-			'fString = Replace(fString, CHR(39), "&#39;")	'µ¥ÒıºÅ¹ıÂË
-			fString = Replace(fString, CHR(13), "")
-			fString = Replace(fString, CHR(10) & CHR(10), "</p><p> ")
-			fString = Replace(fString, CHR(10), "<br/> ")
-			fString=ChkBadWords(fString)
-			HTMLEncode = fString
-		End If
-	End Function
-	'ÓÃÓÚÓÃ»§·¢²¼µÄ¸÷ÖÖĞÅÏ¢¹ıÂË£¬´øÔà»°¹ıÂË ²»¹ıÂËHTML ÓÃÓÚ ¹«¸æ ¶ÌĞÅ Ğ¡×Ö±¨µÈ
-	Public Function TextEnCode(fString)
-		If Not IsNull(fString) Then
-			fString = Replace(fString, CHR(32), " ")
-			fString = Replace(fString, CHR(9), "&nbsp;")
-			fString = Replace(fString, CHR(13), "")
-			fString = Replace(fString, CHR(10) & CHR(10), "</P><P>")
-			fString = Replace(fString, CHR(10), "<br/>")
-			fString=ChkBadWords(fString)
-			TextEnCode = fString
-		End If
-	End Function
-	'ÓÃÓÚÂÛÌ³±¾ÉíµÄ¹ıÂË£¬²»´øÔà»°¹ıÂË
-	Public Function iHTMLEncode(fString)
-		If Not IsNull(fString) Then
-			fString = replace(fString, ">", "&gt;")
-			fString = replace(fString, "<", "&lt;")
-			fString = Replace(fString, CHR(32), " ")
-			fString = Replace(fString, CHR(9), " ")
-			fString = Replace(fString, CHR(34), "&quot;")
-			'fString = Replace(fString, CHR(39), "&#39;")
-			fString = Replace(fString, CHR(13), "")
-			fString = Replace(fString, CHR(10) & CHR(10), "</p><p> ")
-			fString = Replace(fString, CHR(10), "<br/> ")
-			iHTMLEncode = fString
-		End If
-	End Function
-
-	Public Function CheckNumeric(Byval CHECK_ID)
-		If CHECK_ID<>"" and IsNumeric(CHECK_ID) Then _
-			CHECK_ID = cCur(CHECK_ID) _
-		Else _
-			CHECK_ID = 0
-		CheckNumeric = CHECK_ID
-	End Function
-
-	Public Function strLength(str)
-		If isNull(str) Or Str = "" Then
-			StrLength = 0
-			Exit Function
-		End If
-		Dim WINNT_CHINESE
-		WINNT_CHINESE=(len("Àı×Ó")=2)
-		If WINNT_CHINESE Then
-			Dim l,t,c
-			Dim i
-			l=len(str)
-			t=l
-			For i=1 To l
-				c=asc(mid(str,i,1))
-				If c<0 Then c=c+65536
-				If c>255 Then t=t+1
-			Next
-			strLength=t
-		Else 
-			strLength=len(str)
-		End If
-	End Function
-
-	Function strCut(str,strlen)
-		Dim l,t,c,i
-		'On Error Resume Next
-		str = Replacehtml(str) Rem È¥µôHTML±ê¼Ç
-		l=len(str):t=0
-		For i=1 To l
-			c=Abs(Asc(Mid(str,i,1)))
-			If c>255 Then
-				t=t+2
-			Else
-				t=t+1
-			End If
-			If t>=strlen Then
-				strCut=left(str,i)&"..."
-				Exit Function
-			Else
-				strCut=str
-			End If
-		Next
-		strCut=Left(str,strlen)
-	End Function
-
-	Function GetIndex(S)
-		Dim i
-		GetIndex=-1
-		For i = 0 To UBound(BadWords)
-			if(BadWords(i)=s) Then
-				GetIndex=i
-				Exit For
-			End If
-		Next
-	End Function
-
-	Public Function ChkBadWords(Str)
-		If IsNull(Str) Then Exit Function
-		Dim i
-		For i = 0 To UBound(BadWords)
-			If InStr(Str,BadWords(i))>0 Then
-				If i > UBound(rBadWord) Then
-					Str = Replace(Str,BadWords(i),"*")
-				Else
-					Str = Replace(Str,BadWords(i),rBadWord(i))
-				End If
-			End If
-		Next
-		ChkBadWords = Str
-	End Function
-
-	Public Function Checkstr(Str)
-		If Isnull(Str) Then
-			CheckStr = ""
-			Exit Function 
-		End If
-		Str = Replace(Str,Chr(0),"")
-		CheckStr = Replace(Str,"'","''")
-	End Function
-
-	Public Sub ReloadBoardCache(lboardid)
-		Dim Boardidlist,bid
-		Boardidlist=Split(lboardid,",")
-		For Each bid in Boardidlist
-			If Bid<> 0 and Bid<>"" Then
-				LoadBoardData CLng(bid)
-			End If
-		Next
-	End Sub
-
-	Public Sub ReloadBoardInfo(lboardid)
-		Dim Boardidlist,bid
-		Boardidlist=Split(lboardid,",")
-		For Each bid in Boardidlist
-			If Bid<> 0 and Bid<>"" Then
-				bid=CLng(Trim(bid))
-				'ÊÇ·ñ¸üĞÂ»º´æµÄÅĞ¶Ï£¬¶¨ÒåÎª30ÃëÄÚ²»ÖØ¸´¸üĞÂ¡£
-				If Not IsObject(Application(CacheName &"_information_" & bid)) Then
-						LoadBoardinformation bid
-						Application.Lock
-						Application(CacheName &"_information_" & bid).documentElement.attributes.setNamedItem(Application(CacheName &"_information_" & bid).createNode(2,"lastupdate","")).text=Now()
-						Application.unLock
-				Else
-					If Application(CacheName &"_information_" & bid).documentElement.selectSingleNode("@lastupdate") is Nothing Then
-						Application.Lock
-						Application(CacheName &"_information_" & bid).documentElement.attributes.setNamedItem(Application(CacheName &"_information_" & bid).createNode(2,"lastupdate","")).text=Now()
-						Application.unLock
-						LoadBoardinformation bid
-						Application.Lock
-						Application(CacheName &"_information_" & bid).documentElement.attributes.setNamedItem(Application(CacheName &"_information_" & bid).createNode(2,"lastupdate","")).text=Now()
-						Application.unLock
-					Else
-						If DateDiff("s",Application(CacheName &"_information_" & bid).documentElement.selectSingleNode("@lastupdate").text,Now()) > 30 Then
-						Application.Lock
-						Application(CacheName &"_information_" & bid).documentElement.attributes.setNamedItem(Application(CacheName &"_information_" & bid).createNode(2,"lastupdate","")).text=Now()
-						Application.unLock
-						LoadBoardinformation bid
-						Application.Lock
-						Application(CacheName &"_information_" & bid).documentElement.attributes.setNamedItem(Application(CacheName &"_information_" & bid).createNode(2,"lastupdate","")).text=Now()
-						Application.unLock
-						End If
-						End If
-				End If
-			'Application.Lock
-			'Application.Contents.Remove(CacheName &"_information_" & bid)
-			'Application.unLock
-			End If
-		Next
-	End Sub
-	'È¡µÃ´ø¶Ë¿ÚµÄURL
-	Property Get Get_ScriptNameUrl()
-		If request.servervariables("SERVER_PORT")="80" Then
-			Get_ScriptNameUrl="http://" & request.servervariables("server_name")&replace(lcase(request.servervariables("script_name")),ScriptName,"")
-		Else
-			Get_ScriptNameUrl="http://" & request.servervariables("server_name")&":"&request.servervariables("SERVER_PORT")&replace(lcase(request.servervariables("script_name")),ScriptName,"")
-		End If
-	End Property
-
-	Public Function GetBrowser()
-		Dim Agent,XSLTemplate,proc
-		Set Agent=Application(CacheName&"_forum_lockip").cloneNode(True)
-		Agent.documentElement.attributes.setNamedItem(Agent.createNode(2,"ip","")).text=UserTrueIP
-		Agent.documentElement.attributes.setNamedItem(Agent.createNode(2,"actforip","")).text=actforip
-		Agent.documentElement.appendChild(Agent.createTextNode(Request.ServerVariables("HTTP_USER_AGENT")))
-		Set XSLTemplate=Application(CacheName & "_getbrowser")		
-		Set proc = XSLTemplate.createProcessor()
-		proc.input = Agent
-		proc.transform()
-		Set Agent=Nothing
-		Set GetBrowser=Dvbbs.CreateXmlDoc("msxml2.FreeThreadedDOMDocument"& MsxmlVersion)
-		GetBrowser.loadxml proc.output
-	End Function
-	'---------------------------------------------------
-	'¼ÇÂ¼µÀ¾ß²Ù×÷ÈÕÖ¾ĞÅÏ¢(·¢ÉúÊıÁ¿£¬¼ÇÂ¼ÊÂ¼şÀàĞÍ£¬±¸×¢ÄÚÈİ£¬ÓÃ»§×îºóÊ£Óà½ğ±ÒºÍµãÈ¯£¨½ğ±Ò|µãÈ¯£©)
-	'Log_ID,ToolsID,CountNum,Log_Money,Log_Ticket,AddUserName,AddUserID,Log_IP,Log_Time,Log_Type,BoardID,Conect,HMoney
-	'Log_TypeÀàĞÍ(0=ÆäËü,1=Ê¹ÓÃ,2=×ªÈÃ,3=³äÖµ,4=¹ºÂò,5=½±Àø,6=vip½»Ò×)
-	'HMoney×îºóÊ£Óà½ğ±ÒºÍµãÈ¯£¨½ğ±Ò|µãÈ¯£©
-	'boardid ¼ÇÂ¼°æÃæ²ÎÊı£¬ºóÌ¨Îª-1
-	'---------------------------------------------------
-	Public Sub ToolsLog(Log_ToolsID,CountNum,Log_Money,Log_Ticket,Log_Type,Conect,HMoney)
-		Dim Sql
-		Conect = CheckStr(Conect)
-		HMoney = CheckStr(HMoney)
-		Sql = "Insert into [Dv_MoneyLog] (ToolsID,CountNum,Log_Money,Log_Ticket,AddUserName,AddUserID,Log_IP,Log_Type,BoardID,Conect,HMoney) values (" &_
-			CheckNumeric(Log_ToolsID) &","&_
-			CheckNumeric(CountNum) &","&_
-			CheckNumeric(Log_Money) &","&_
-			CheckNumeric(Log_Ticket) &",'"&_
-			MemberName &"',"&_
-			UserID &",'"&_
-			UserTrueIP &"',"&_
-			Log_Type &","&_
-			BoardID &",'"&_
-			Conect &"','"&_
-			HMoney &"'"&_
-			")"
-		'Response.Write Sql
-		Dvbbs.Plus_Execute(Sql)
-	End Sub
-	'ÊÇ·ñÕæÕıµÄËÑË÷ÒıÇæ
-	Public Function IsWebSearch()
-		IsWebSearch = False
-		Dim Botlist,i
-		BotList = "Google,Isaac,SurveyBot,Baiduspider,yahoo,yisou,3721,ia_archiver,P.Arthur,FAST-WebCrawler,Java,Microsoft-ATL-Native,TurnitinBot,WebGather,Sleipnir"
-		Botlist = Split(Botlist,",")
-		For i = 0 To Ubound(Botlist)
-			If InStr(Lcase(Request.ServerVariables("HTTP_USER_AGENT")),Lcase(Botlist(i))) > 0 Then
-				IsWebSearch = True
-				Exit For
-			End If
-		Next
-	End Function
-
-	Public Sub Cache_GroupName()
-		Dim Rs,Sql
-		Set Rs = Dvbbs.Execute("Select ID,GroupName,UserNum,Stats From Dv_GroupName order by id")
-		If Not Rs.Eof Then
-			Sql = Rs.GetRows(-1)
-		End If
-		Rs.Close
-		Set Rs = Nothing
-		Application(CacheName & "_GroupName") = Sql
-		'Response.Write "¸üĞÂ"
-	End Sub
-
-	Rem  Flash ×éÍ¼²å¼ş¿ªÊ¼
-	Public Sub Load_qcomic_plus()
-		If Not IsObject( Application(Dvbbs.CacheName&"_qcomic_plus")) Then
-			Dim XMLDom_,rs_,Node
-			Set rs_ = Dvbbs.Execute("Select * From Dv_Qcomic")
-			Set XMLDom_=Dvbbs.RecordsetToxml(rs_,"setting","qcomic")
-			If Not XMLDom_.documentElement.hasChildNodes Then
-				Set Node = XMLDom_.documentElement.appendChild(XMLDom_.createNode(1,"setting",""))
-				Node.setAttribute "senable",0
-			End If
-			Application.Lock
-			Set Application(Dvbbs.CacheName & "_qcomic_plus") = XMLDom_'.documentElement.cloneNode(True)
-			Application.UnLock
-		End If
-	End Sub
-	
-	Property Get qcomic_plus()
-		Load_qcomic_plus()
-		
-		Dim str_senable,senable,boardlist,plus_enable
-		str_senable = Application(Dvbbs.CacheName & "_qcomic_plus").documentElement.selectSingleNode("setting/@senable").text
-		senable = Split(str_senable,"|||")(0)
-		boardlist = Split(str_senable,"|||")(1)
-		plus_enable = false
-		If (Instr(boardlist, ",0,")>0 And senable="1") Then plus_enable = True
-		If (Instr(boardlist, ","&Dvbbs.Boardid&",")>0 And senable="1") Then plus_enable = True
-		If (plus_enable=True) Then
-			qcomic_plus = True
-		Else
-			qcomic_plus = False
-		End If
-	End Property
-	
-	Function qcomic_plus_setting()
-		Load_qcomic_plus()
-	
-		qcomic_plus_setting = Application(Dvbbs.CacheName & "_qcomic_plus").documentElement.selectSingleNode("setting/@semail").text
-		qcomic_plus_setting = qcomic_plus_setting & "||||" & Application(Dvbbs.CacheName & "_qcomic_plus").documentElement.selectSingleNode("setting/@sid").text
-		qcomic_plus_setting = qcomic_plus_setting & "||||" & Application(Dvbbs.CacheName & "_qcomic_plus").documentElement.selectSingleNode("setting/@spassword").text
-		qcomic_plus_setting = qcomic_plus_setting & "||||" & Application(Dvbbs.CacheName & "_qcomic_plus").documentElement.selectSingleNode("setting/@skey").text
-		qcomic_plus_setting = qcomic_plus_setting & "||||" & Application(Dvbbs.CacheName & "_qcomic_plus").documentElement.selectSingleNode("setting/@owidth").text
-		qcomic_plus_setting = qcomic_plus_setting & "||||" & Application(Dvbbs.CacheName & "_qcomic_plus").documentElement.selectSingleNode("setting/@oheight").text
-		qcomic_plus_setting = qcomic_plus_setting & "||||" & Application(Dvbbs.CacheName & "_qcomic_plus").documentElement.selectSingleNode("setting/@iwidth").text
-		qcomic_plus_setting = qcomic_plus_setting & "||||" & Application(Dvbbs.CacheName & "_qcomic_plus").documentElement.selectSingleNode("setting/@iheight").text
-	End Function
-	
-	Public Function ReplaceUbb(Textstr)
-		Dim Str,re
-		Str=Textstr
-		Set re=new RegExp
-			re.IgnoreCase =True
-			re.Global=True
-			re.Pattern="\[(.[^]]*)\]"
-			Str=re.Replace(Str, "")
-			Set Re=Nothing
-			ReplaceUbb=Str
-	End Function
-	Rem  Flash ×éÍ¼²å¼ş½áÊø
-
-End Class
-
-Class cls_Templates
-	Public Folder,ChildFolder,tplname,Cache
-	Private Sub Class_Initialize()
-		Folder="Resource"
-		ChildFolder="Template_1"
-		Cache=False
-	End Sub
-
-	Public Function Html(index)
-		if(Not Cache ) Then
-			Html=Dvbbs.ReadTextFile(Folder&"\"&ChildFolder&"\"&tplname&"_html"&index&".htm")
-		Else
-			Dvbbs.Name="tpl" & Folder&"\"&ChildFolder&"\"&tplname&"_html"&index
-			if Dvbbs.ObjIsEmpty() Then
-				Dvbbs.Value=Dvbbs.ReadTextFile(Folder&"\"&ChildFolder&"\"&tplname&"_html"&index&".htm")
-			End if
-			Html=Dvbbs.Value
-		End If
-		html=Replace(html,"{$PicUrl}",Dvbbs.Forum_PicUrl)
-	End Function
-
-	Public Function Pic(index)
-		if(Not Cache ) Then
-			Pic=Dvbbs.Forum_PicUrl&Dvbbs.ReadTextFile((Folder&"\"&ChildFolder&"\")&tplname&"_Pic"&index&".htm")
-		Else
-			Dvbbs.Name="tpl" & Folder&"\"&ChildFolder&"\"&tplname&"_Pic"&index
-			if Dvbbs.ObjIsEmpty() Then
-				Dvbbs.Value=Dvbbs.ReadTextFile(Folder&"\"&ChildFolder&"\"&tplname&"_Pic"&index&".htm")
-			End If
-			If InStr(Dvbbs.Value,"{$PicUrl}")>0 Then
-				Pic=Dvbbs.Forum_PicUrl&Dvbbs.Value
-			Else
-				Pic=Dvbbs.Value
-			End if
-		End If
-		Pic=Replace(Pic,"{$PicUrl}","")
-	End Function
-
-	Public Function Strings(index)
-		if(Not Cache ) Then
-			Strings=Dvbbs.ReadTextFile((Folder&"\"&ChildFolder&"\")&tplname&"_Strings"&index&".htm")
-		Else
-			Dvbbs.Name="tpl" & Folder&"\"&ChildFolder&"\"&tplname&"_Strings"&index
-			if Dvbbs.ObjIsEmpty() Then
-				Dvbbs.Value=Dvbbs.ReadTextFile(Folder&"\"&ChildFolder&"\"&tplname&"_Strings"&index&".htm")
-			End if
-			Strings=Dvbbs.Value
-		End If
-	End Function
-
-	Private Sub class_terminate()
-	End Sub
-End Class
-
-Class cls_UserOnlne
-	Public Forum_Online,Forum_UserOnline,Forum_GuestOnline
-	Private l_Online,l_GuestOnline
-	Private Sub Class_Initialize()
-		Dim Reloadtime
-		Reloadtime=Dvbbs.Reloadtime
-		Dvbbs.Name="Forum_Online"
-		Dvbbs.Reloadtime=60
-		If Dvbbs.ObjIsEmpty() Then ReflashOnlineNum
-		Dvbbs.Name="Forum_Online"
-		Forum_Online = Dvbbs.Value
-		Dvbbs.Name="Forum_UserOnline"
-		If Dvbbs.ObjIsEmpty() Then ReflashOnlineNum
-		Forum_UserOnline=Dvbbs.Value
-		If Forum_Online < 0  Or Forum_UserOnline < 0 Or Forum_UserOnline > Forum_Online Then ReflashOnlineNum
-		Forum_GuestOnline = Forum_Online - Forum_UserOnline
-		l_Online=-1:l_GuestOnline=-1
-		Dvbbs.Reloadtime=Reloadtime
-	End Sub
-
-	Public Sub OnlineQuery()
-		Dim SQL,SQL1,Delflag
-		Dim TempNum,TempNum1
-		Delflag=False
-		Dvbbs.Name="delOnline_time"
-		If Dvbbs.ObjIsEmpty() Then
-			Delflag=True:Dvbbs.Value=Now()
-		Else
-			If DateDiff("s",Dvbbs.Value,Now()) > Clng(Dvbbs.Forum_Setting(8))*10 Then Delflag=True
-		End If
-		If Delflag Then
-			Dvbbs.Value=Now()
-			If Not IsObject(Conn) Then ConnectionDatabase
-			If IsSqlDataBase = 1 Then
-				SQL = "Delete From [DV_Online] Where UserID=0 And Datediff(Mi, Lastimebk, " & SqlNowString & ") > " & Clng(Dvbbs.Forum_Setting(8))
-				SQL1 = "Delete From [DV_Online] Where UserID>0 And Datediff(Mi, Lastimebk, " & SqlNowString & ") > " & Clng(Dvbbs.Forum_Setting(8))
-			Else
-				SQL = "Delete From [Dv_Online] Where UserID=0 And Datediff('s', Lastimebk, " & SqlNowString & ") > " & Dvbbs.Forum_Setting(8) & "*60" 
-				SQL1 = "Delete From [Dv_Online] Where UserID>0 And Datediff('s', Lastimebk, " & SqlNowString & ") > " & Dvbbs.Forum_Setting(8) & "*60"
-			End If
-			Conn.Execute SQL,TempNum
-			Conn.Execute SQL1,TempNum1
-			Dvbbs.SqlQueryNum = Dvbbs.SqlQueryNum + 2
-			'Èç¹ûÉ¾³ı¿ÍÈËÊı´óÓÚ0£¬ÔòÓ¦¸Ã¸üĞÂ×ÜÊı
-			If TempNum>0 Then
-				'¸üĞÂ»º´æ×ÜÔÚÏßÊı¾İ
-				Forum_Online = Forum_Online - TempNum
-				Forum_GuestOnline = Forum_GuestOnline - TempNum
-			End If
-			'Èç¹ûÉ¾³ıÓÃ»§Êı´óÓÚ0£¬ÔòÓ¦¸Ã¸üĞÂ×ÜÊıºÍÓÃ»§Êı
-			If TempNum1>0 Or  TempNum>0 Then
-				'¸üĞÂ»º´æ×ÜÔÚÏßÊı¾İ
-				Forum_Online = Forum_Online - TempNum1
-				Forum_UserOnline = Forum_UserOnline - TempNum1
-				
-			End If
-			Dvbbs.Name="Forum_Online"
-			Dvbbs.Value=Forum_Online
-			'¸üĞÂ»º´æ×ÜÓÃ»§ÔÚÏßÊı¾İ
-			Dvbbs.Name="Forum_UserOnline"
-			Dvbbs.Value=Forum_UserOnline
-			Forum_Online = Forum_Online - TempNum1
-		End If
-	End Sub
-	'Ë¢ĞÂÔÚÏßÊı¾İ»º´æ
-	Public Sub ReflashOnlineNum
-		Dim Rs
-		Dvbbs.Name="Forum_Online"
-		Set Rs=Dvbbs.Execute("Select Count(*) From Dv_Online")
-		Dvbbs.Value=Rs(0)
-		Forum_Online = Dvbbs.Value
-		Dvbbs.Name="Forum_UserOnline"
-		Set Rs=Dvbbs.Execute("Select Count(*) From Dv_Online Where UserID>0")
-		If Not IsNull(Rs(0)) Then
-			Dvbbs.Value=Rs(0)
-		Else
-			Dvbbs.Value=0
-		End If
-		Forum_UserOnline = Dvbbs.Value
-		Rs.close()
-		Set Rs=Nothing
-	End Sub
-	'²éÑ¯ÔÚÄ³°æÃæµÄÔÚÏß×ÜÊı
-	Public Property Get Board_Online
-		Board_Online=Board_UserOnline+Board_GuestOnline
-	End Property
-
-	Public Property Get Board_GuestOnline
-		If l_GuestOnline=-1 Then
-			Dim Rs
-			Set Rs=Dvbbs.Execute("Select Count(*) From Dv_Online where BoardID="&Dvbbs.BoardID&" and UserID=0")
-			l_GuestOnline=Rs(0):Rs.Close:Set Rs= Nothing 
-		End If
-		If IsNull(l_GuestOnline) Then l_GuestOnline=0
-		Board_GuestOnline=l_GuestOnline
-	End Property
-
-	Public Property Get Board_UserOnline
-		If l_Online=-1 Then
-			Dim Rs
-			Set Rs=Dvbbs.Execute("Select Count(*) From Dv_Online where BoardID="&Dvbbs.BoardID&" and UserID>0")
-			l_Online=Rs(0):Rs.Close:Set Rs= Nothing 
-		End If
-		Board_UserOnline=l_Online
-	End Property
-End Class
-Dvbbs.PageInit()
-%>
+		UserSession.documentElement.se

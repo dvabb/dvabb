@@ -3,7 +3,7 @@
 <!-- #include file="inc/Dv_ClsOther.asp" -->
 <%
 Dim Str
-Dvbbs.Stats="²é¿´ÎÄ¼ş"
+Dvbbs.Stats="æŸ¥çœ‹æ–‡ä»¶"
 Dim Downid,Rs
 If CInt(Dvbbs.GroupSetting(49))=0 Or Dvbbs.GroupSetting(61)=0 Then Dvbbs.AddErrCode(54)
 If request("id")="" Then
@@ -15,10 +15,10 @@ Else
 End If
 Dvbbs.ShowErr()
 
-'ÂÛÌ³ÏÂÔØÏŞÖÆ(°üÀ¨ÎÄÕÂ¡¢»ı·Ö¡¢½ğÇ®¡¢÷ÈÁ¦¡¢ÍşÍû¡¢¾«»ª¡¢±»É¾Êı¡¢×¢²áÊ±¼ä)
+'è®ºå›ä¸‹è½½é™åˆ¶(åŒ…æ‹¬æ–‡ç« ã€ç§¯åˆ†ã€é‡‘é’±ã€é­…åŠ›ã€å¨æœ›ã€ç²¾åã€è¢«åˆ æ•°ã€æ³¨å†Œæ—¶é—´)
 Dim BoardUserLimited,i,UploadUserQStr,DownUserQStr,UserInfo
 BoardUserLimited = Split(Dvbbs.Board_Setting(55),"|")
-'ÏÂÔØ¿Û³ı¸º·ÖĞŞ¸Ä
+'ä¸‹è½½æ‰£é™¤è´Ÿåˆ†ä¿®æ”¹
 Dim Sql,UserSession
 		Sql="Select UserID,UserName,UserPassword,UserEmail,UserPost,UserTopic,userWealth,userEP,userCP,UserPower,UserMoney,UserTicket"
 		Sql=Sql & " From [Dv_User] Where UserID = " & Dvbbs.UserID
@@ -30,51 +30,51 @@ Dim Sql,UserSession
 		End If 
 		Rs.close()
 		Set Rs=Nothing
-'ÏÂÔØ¿Û³ı¸º·ÖĞŞ¸Ä
+'ä¸‹è½½æ‰£é™¤è´Ÿåˆ†ä¿®æ”¹
 Set UserInfo=UserSession.documentElement.selectSingleNode("userinfo")
 If Ubound(BoardUserLimited)=12 Then
 	For i=0 To 12
 		BoardUserLimited(i)=Dvbbs.CheckNumeric(BoardUserLimited(i))
 	Next
-	'ÎÄÕÂ
+	'æ–‡ç« 
 	If BoardUserLimited(0)>0 Then
-		If Dvbbs.UserID = 0 Then Response.redirect "showerr.asp?ErrCodes=<li>±¾°æÃæÉèÖÃÁËÓÃ»§·¢Ìù×îÉÙÎª <B>"&BoardUserLimited(0)&"</B> ²ÅÄÜÏÂÔØ&action=OtherErr"
-		If Clng(UserInfo.getAttribute("userpost"))<=Clng(BoardUserLimited(0)) Then Response.redirect "showerr.asp?ErrCodes=<li>±¾°æÃæÉèÖÃÁËÓÃ»§·¢Ìù×îÉÙÎª <B>"&BoardUserLimited(0)&"</B> ²ÅÄÜÏÂÔØ&action=OtherErr"
+		If Dvbbs.UserID = 0 Then Response.redirect "showerr.asp?ErrCodes=<li>æœ¬ç‰ˆé¢è®¾ç½®äº†ç”¨æˆ·å‘è´´æœ€å°‘ä¸º <B>"&BoardUserLimited(0)&"</B> æ‰èƒ½ä¸‹è½½&action=OtherErr"
+		If Clng(UserInfo.getAttribute("userpost"))<=Clng(BoardUserLimited(0)) Then Response.redirect "showerr.asp?ErrCodes=<li>æœ¬ç‰ˆé¢è®¾ç½®äº†ç”¨æˆ·å‘è´´æœ€å°‘ä¸º <B>"&BoardUserLimited(0)&"</B> æ‰èƒ½ä¸‹è½½&action=OtherErr"
 	End If
-	'»ı·Ö
+	'ç§¯åˆ†
 	If BoardUserLimited(1)>0 Then
-		If Dvbbs.UserID = 0 Then Response.redirect "showerr.asp?ErrCodes=<li>±¾°æÃæÉèÖÃÁËÓÃ»§»ı·Ö×îÉÙÎª <B>"&BoardUserLimited(1)&"</B> ²ÅÄÜÏÂÔØ&action=OtherErr"
-		If Clng(UserInfo.getAttribute("userep"))<=Clng(BoardUserLimited(1)) Then Response.redirect "showerr.asp?ErrCodes=<li>±¾°æÃæÉèÖÃÁËÓÃ»§»ı·Ö×îÉÙÎª <B>"&BoardUserLimited(1)&"</B> ²ÅÄÜÏÂÔØ&action=OtherErr"
+		If Dvbbs.UserID = 0 Then Response.redirect "showerr.asp?ErrCodes=<li>æœ¬ç‰ˆé¢è®¾ç½®äº†ç”¨æˆ·ç§¯åˆ†æœ€å°‘ä¸º <B>"&BoardUserLimited(1)&"</B> æ‰èƒ½ä¸‹è½½&action=OtherErr"
+		If Clng(UserInfo.getAttribute("userep"))<=Clng(BoardUserLimited(1)) Then Response.redirect "showerr.asp?ErrCodes=<li>æœ¬ç‰ˆé¢è®¾ç½®äº†ç”¨æˆ·ç§¯åˆ†æœ€å°‘ä¸º <B>"&BoardUserLimited(1)&"</B> æ‰èƒ½ä¸‹è½½&action=OtherErr"
 	End If
-	'½ğÇ®
+	'é‡‘é’±
 	If BoardUserLimited(2)>0 Then
-		If Dvbbs.UserID = 0 Then Response.redirect "showerr.asp?ErrCodes=<li>±¾°æÃæÉèÖÃÁËÓÃ»§½ğÇ®×îÉÙÎª <B>"&BoardUserLimited(2)&"</B> ²ÅÄÜÏÂÔØ&action=OtherErr"
-		If Clng(UserInfo.getAttribute("userwealth"))<=Clng(BoardUserLimited(2)) Then Response.redirect "showerr.asp?ErrCodes=<li>±¾°æÃæÉèÖÃÁËÓÃ»§½ğÇ®×îÉÙÎª <B>"&BoardUserLimited(2)&"</B> ²ÅÄÜÏÂÔØ&action=OtherErr"
+		If Dvbbs.UserID = 0 Then Response.redirect "showerr.asp?ErrCodes=<li>æœ¬ç‰ˆé¢è®¾ç½®äº†ç”¨æˆ·é‡‘é’±æœ€å°‘ä¸º <B>"&BoardUserLimited(2)&"</B> æ‰èƒ½ä¸‹è½½&action=OtherErr"
+		If Clng(UserInfo.getAttribute("userwealth"))<=Clng(BoardUserLimited(2)) Then Response.redirect "showerr.asp?ErrCodes=<li>æœ¬ç‰ˆé¢è®¾ç½®äº†ç”¨æˆ·é‡‘é’±æœ€å°‘ä¸º <B>"&BoardUserLimited(2)&"</B> æ‰èƒ½ä¸‹è½½&action=OtherErr"
 	End If
-	'÷ÈÁ¦
+	'é­…åŠ›
 	If BoardUserLimited(3)>0 Then
-		If Dvbbs.UserID = 0 Then Response.redirect "showerr.asp?ErrCodes=<li>±¾°æÃæÉèÖÃÁËÓÃ»§÷ÈÁ¦×îÉÙÎª <B>"&BoardUserLimited(3)&"</B> ²ÅÄÜÏÂÔØ&action=OtherErr"
-		If Clng(UserInfo.getAttribute("usercp"))<=Clng(BoardUserLimited(3)) Then Response.redirect "showerr.asp?ErrCodes=<li>±¾°æÃæÉèÖÃÁËÓÃ»§÷ÈÁ¦×îÉÙÎª <B>"&BoardUserLimited(3)&"</B> ²ÅÄÜÏÂÔØ&action=OtherErr"
+		If Dvbbs.UserID = 0 Then Response.redirect "showerr.asp?ErrCodes=<li>æœ¬ç‰ˆé¢è®¾ç½®äº†ç”¨æˆ·é­…åŠ›æœ€å°‘ä¸º <B>"&BoardUserLimited(3)&"</B> æ‰èƒ½ä¸‹è½½&action=OtherErr"
+		If Clng(UserInfo.getAttribute("usercp"))<=Clng(BoardUserLimited(3)) Then Response.redirect "showerr.asp?ErrCodes=<li>æœ¬ç‰ˆé¢è®¾ç½®äº†ç”¨æˆ·é­…åŠ›æœ€å°‘ä¸º <B>"&BoardUserLimited(3)&"</B> æ‰èƒ½ä¸‹è½½&action=OtherErr"
 	End If
-	'ÍşÍû
+	'å¨æœ›
 	If BoardUserLimited(4)>0 Then
-		If Dvbbs.UserID = 0 Then Response.redirect "showerr.asp?ErrCodes=<li>±¾°æÃæÉèÖÃÁËÓÃ»§ÍşÍû×îÉÙÎª <B>"&BoardUserLimited(4)&"</B> ²ÅÄÜÏÂÔØ&action=OtherErr"
-		If Clng(UserInfo.getAttribute("userpower"))<=Clng(BoardUserLimited(4)) Then Response.redirect "showerr.asp?ErrCodes=<li>±¾°æÃæÉèÖÃÁËÓÃ»§ÍşÍû×îÉÙÎª <B>"&BoardUserLimited(4)&"</B> ²ÅÄÜÏÂÔØ&action=OtherErr"
+		If Dvbbs.UserID = 0 Then Response.redirect "showerr.asp?ErrCodes=<li>æœ¬ç‰ˆé¢è®¾ç½®äº†ç”¨æˆ·å¨æœ›æœ€å°‘ä¸º <B>"&BoardUserLimited(4)&"</B> æ‰èƒ½ä¸‹è½½&action=OtherErr"
+		If Clng(UserInfo.getAttribute("userpower"))<=Clng(BoardUserLimited(4)) Then Response.redirect "showerr.asp?ErrCodes=<li>æœ¬ç‰ˆé¢è®¾ç½®äº†ç”¨æˆ·å¨æœ›æœ€å°‘ä¸º <B>"&BoardUserLimited(4)&"</B> æ‰èƒ½ä¸‹è½½&action=OtherErr"
 	End If
-	'¾«»ª
+	'ç²¾å
 	If BoardUserLimited(5)>0 Then
-		If Dvbbs.UserID = 0 Then Response.redirect "showerr.asp?ErrCodes=<li>±¾°æÃæÉèÖÃÁËÓÃ»§¾«»ª×îÉÙÎª <B>"&BoardUserLimited(5)&"</B> ²ÅÄÜÏÂÔØ&action=OtherErr"
-		If Clng(UserInfo.getAttribute("userisbest"))<=Clng(BoardUserLimited(5)) Then Response.redirect "showerr.asp?ErrCodes=<li>±¾°æÃæÉèÖÃÁËÓÃ»§¾«»ª×îÉÙÎª <B>"&BoardUserLimited(5)&"</B> ²ÅÄÜÏÂÔØ&action=OtherErr"
+		If Dvbbs.UserID = 0 Then Response.redirect "showerr.asp?ErrCodes=<li>æœ¬ç‰ˆé¢è®¾ç½®äº†ç”¨æˆ·ç²¾åæœ€å°‘ä¸º <B>"&BoardUserLimited(5)&"</B> æ‰èƒ½ä¸‹è½½&action=OtherErr"
+		If Clng(UserInfo.getAttribute("userisbest"))<=Clng(BoardUserLimited(5)) Then Response.redirect "showerr.asp?ErrCodes=<li>æœ¬ç‰ˆé¢è®¾ç½®äº†ç”¨æˆ·ç²¾åæœ€å°‘ä¸º <B>"&BoardUserLimited(5)&"</B> æ‰èƒ½ä¸‹è½½&action=OtherErr"
 	End If
-	'É¾Ìù
+	'åˆ è´´
 	If BoardUserLimited(6)>0 Then
-		If Dvbbs.UserID = 0 Then Response.redirect "showerr.asp?ErrCodes=<li>±¾°æÃæÉèÖÃÁËÓÃ»§±»É¾ÌùÉÙÓÚ <B>"&BoardUserLimited(6)&"</B> ²ÅÄÜÏÂÔØ&action=OtherErr"
-		If Clng(UserInfo.getAttribute("userdel"))>=Clng(BoardUserLimited(6)) Then Response.redirect "showerr.asp?ErrCodes=<li>±¾°æÃæÉèÖÃÁËÓÃ»§±»É¾ÌùÉÙÓÚ <B>"&BoardUserLimited(6)&"</B> ²ÅÄÜÏÂÔØ&action=OtherErr"
+		If Dvbbs.UserID = 0 Then Response.redirect "showerr.asp?ErrCodes=<li>æœ¬ç‰ˆé¢è®¾ç½®äº†ç”¨æˆ·è¢«åˆ è´´å°‘äº <B>"&BoardUserLimited(6)&"</B> æ‰èƒ½ä¸‹è½½&action=OtherErr"
+		If Clng(UserInfo.getAttribute("userdel"))>=Clng(BoardUserLimited(6)) Then Response.redirect "showerr.asp?ErrCodes=<li>æœ¬ç‰ˆé¢è®¾ç½®äº†ç”¨æˆ·è¢«åˆ è´´å°‘äº <B>"&BoardUserLimited(6)&"</B> æ‰èƒ½ä¸‹è½½&action=OtherErr"
 	End If
-	'×¢²áÊ±¼ä
+	'æ³¨å†Œæ—¶é—´
 	If BoardUserLimited(7)>0 Then
-		If Dvbbs.UserID = 0 Then Response.redirect "showerr.asp?ErrCodes=<li>±¾°æÃæÉèÖÃÁËÓÃ»§×¢²áÊ±¼ä´óÓÚ <B>"&BoardUserLimited(7)&"</B> ·ÖÖÓ²ÅÄÜÏÂÔØ&action=OtherErr"
-		If DateDiff("s",UserInfo.getAttribute("joindate"),Now)<Clng(BoardUserLimited(7))*60 Then Response.redirect "showerr.asp?ErrCodes=<li>±¾°æÃæÉèÖÃÁËÓÃ»§×¢²áÊ±¼ä´óÓÚ <B>"&BoardUserLimited(7)&"</B> ·ÖÖÓ²ÅÄÜÏÂÔØ&action=OtherErr"
+		If Dvbbs.UserID = 0 Then Response.redirect "showerr.asp?ErrCodes=<li>æœ¬ç‰ˆé¢è®¾ç½®äº†ç”¨æˆ·æ³¨å†Œæ—¶é—´å¤§äº <B>"&BoardUserLimited(7)&"</B> åˆ†é’Ÿæ‰èƒ½ä¸‹è½½&action=OtherErr"
+		If DateDiff("s",UserInfo.getAttribute("joindate"),Now)<Clng(BoardUserLimited(7))*60 Then Response.redirect "showerr.asp?ErrCodes=<li>æœ¬ç‰ˆé¢è®¾ç½®äº†ç”¨æˆ·æ³¨å†Œæ—¶é—´å¤§äº <B>"&BoardUserLimited(7)&"</B> åˆ†é’Ÿæ‰èƒ½ä¸‹è½½&action=OtherErr"
 	End If
 	Dim DownUserMoney,DownUserWealth,DownUserEp
 	If Dvbbs.UserID >0 Then
@@ -87,30 +87,30 @@ If Ubound(BoardUserLimited)=12 Then
 		DownUserEp = 0
 	End If
 	If BoardUserLimited(9)>0 Then
-		If Dvbbs.UserID = 0 Then Response.redirect "showerr.asp?ErrCodes=<li>±¾°æÃæÉèÖÃÁËÓÃ»§ÏÂÔØ¿Û³ı½ğ±Ò <B>"&BoardUserLimited(9)&"</B> ¸ö£¬ÄãÎ´µÇÂ½£¬²»ÄÜÏÂÔØ¡£&action=OtherErr"
+		If Dvbbs.UserID = 0 Then Response.redirect "showerr.asp?ErrCodes=<li>æœ¬ç‰ˆé¢è®¾ç½®äº†ç”¨æˆ·ä¸‹è½½æ‰£é™¤é‡‘å¸ <B>"&BoardUserLimited(9)&"</B> ä¸ªï¼Œä½ æœªç™»é™†ï¼Œä¸èƒ½ä¸‹è½½ã€‚&action=OtherErr"
 		If DownUserMoney >= Clng(BoardUserLimited(9)) Then
 			DownUserQStr = DownUserQStr & ",UserMoney=UserMoney-"&BoardUserLimited(9)
 			UploadUserQStr = UploadUserQStr & ",UserMoney=UserMoney+"&(BoardUserLimited(9)*BoardUserLimited(12))\100
 		Else
-			Response.redirect "showerr.asp?ErrCodes=<li>±¾°æÃæÉèÖÃÁËÓÃ»§ÏÂÔØ¿Û³ı½ğ±Ò <B>"&BoardUserLimited(9)&"</B> ¸ö£¬Äã½ğ±ÒÊı²»¹»£¬²»ÄÜÏÂÔØ¡£&action=OtherErr"
+			Response.redirect "showerr.asp?ErrCodes=<li>æœ¬ç‰ˆé¢è®¾ç½®äº†ç”¨æˆ·ä¸‹è½½æ‰£é™¤é‡‘å¸ <B>"&BoardUserLimited(9)&"</B> ä¸ªï¼Œä½ é‡‘å¸æ•°ä¸å¤Ÿï¼Œä¸èƒ½ä¸‹è½½ã€‚&action=OtherErr"
 		End If
 	End If
 	If BoardUserLimited(10)>0 Then
-		If Dvbbs.UserID = 0 Then Response.redirect "showerr.asp?ErrCodes=<li>±¾°æÃæÉèÖÃÁËÓÃ»§ÏÂÔØ¿Û³ı½ğÇ® <B>"&BoardUserLimited(10)&"</B> ¸ö£¬ÄãÎ´µÇÂ½£¬²»ÄÜÏÂÔØ¡£&action=OtherErr"
+		If Dvbbs.UserID = 0 Then Response.redirect "showerr.asp?ErrCodes=<li>æœ¬ç‰ˆé¢è®¾ç½®äº†ç”¨æˆ·ä¸‹è½½æ‰£é™¤é‡‘é’± <B>"&BoardUserLimited(10)&"</B> ä¸ªï¼Œä½ æœªç™»é™†ï¼Œä¸èƒ½ä¸‹è½½ã€‚&action=OtherErr"
 		If DownUserWealth >= Clng(BoardUserLimited(10)) Then
 			DownUserQStr = DownUserQStr & ",UserWealth=UserWealth-"&BoardUserLimited(10)
 			UploadUserQStr = UploadUserQStr & ",UserWealth=UserWealth+"&(BoardUserLimited(10)*BoardUserLimited(12))\100
 		Else
-			Response.redirect "showerr.asp?ErrCodes=<li>±¾°æÃæÉèÖÃÁËÓÃ»§ÏÂÔØ¿Û³ı½ğÇ® <B>"&BoardUserLimited(10)&"</B> ¸ö£¬Äã½ğÇ®Êı²»¹»£¬²»ÄÜÏÂÔØ¡£&action=OtherErr"
+			Response.redirect "showerr.asp?ErrCodes=<li>æœ¬ç‰ˆé¢è®¾ç½®äº†ç”¨æˆ·ä¸‹è½½æ‰£é™¤é‡‘é’± <B>"&BoardUserLimited(10)&"</B> ä¸ªï¼Œä½ é‡‘é’±æ•°ä¸å¤Ÿï¼Œä¸èƒ½ä¸‹è½½ã€‚&action=OtherErr"
 		End If
 	End If
 	If BoardUserLimited(11)>0 Then
-		If Dvbbs.UserID = 0 Then Response.redirect "showerr.asp?ErrCodes=<li>±¾°æÃæÉèÖÃÁËÓÃ»§ÏÂÔØ¿Û³ı»ı·Ö <B>"&BoardUserLimited(11)&"</B> ¸ö£¬ÄãÎ´µÇÂ½£¬²»ÄÜÏÂÔØ¡£&action=OtherErr"
+		If Dvbbs.UserID = 0 Then Response.redirect "showerr.asp?ErrCodes=<li>æœ¬ç‰ˆé¢è®¾ç½®äº†ç”¨æˆ·ä¸‹è½½æ‰£é™¤ç§¯åˆ† <B>"&BoardUserLimited(11)&"</B> ä¸ªï¼Œä½ æœªç™»é™†ï¼Œä¸èƒ½ä¸‹è½½ã€‚&action=OtherErr"
 		If DownUserEp >= Clng(BoardUserLimited(11)) Then
 			DownUserQStr = DownUserQStr & ",UserEp=UserEp-"&BoardUserLimited(11)
 			UploadUserQStr = UploadUserQStr & ",UserEp=UserEp+"&(BoardUserLimited(11)*BoardUserLimited(12))\100
 		Else
-			Response.redirect "showerr.asp?ErrCodes=<li>±¾°æÃæÉèÖÃÁËÓÃ»§ÏÂÔØ¿Û³ı»ı·Ö <B>"&BoardUserLimited(11)&"</B> ¸ö£¬Äã»ı·Ö²»¹»£¬²»ÄÜÏÂÔØ¡£&action=OtherErr"
+			Response.redirect "showerr.asp?ErrCodes=<li>æœ¬ç‰ˆé¢è®¾ç½®äº†ç”¨æˆ·ä¸‹è½½æ‰£é™¤ç§¯åˆ† <B>"&BoardUserLimited(11)&"</B> ä¸ªï¼Œä½ ç§¯åˆ†ä¸å¤Ÿï¼Œä¸èƒ½ä¸‹è½½ã€‚&action=OtherErr"
 		End If
 	End If
 End If
@@ -122,7 +122,7 @@ Set Rs=Dvbbs.Execute("Select * From dv_upfile Where F_id="&downid)
 If Rs.Eof And Rs.Bof Then
 	Dvbbs.AddErrCode(32)
 ElseIf Dvbbs.BoardID <> Int(Rs("F_BoardID")) Then
-	Dvbbs.AddErrCode(32)	Rem ÅĞ¶Ï°æÃæÀ´Ô´
+	Dvbbs.AddErrCode(32)	Rem åˆ¤æ–­ç‰ˆé¢æ¥æº
 Else
 	If DownUserQStr <> "" Then
 		UserInfo.setAttribute "usermoney", (DownUserMoney - BoardUserLimited(9))
@@ -163,14 +163,14 @@ Sub downloadFile(strFile,FileOldName)
 	s.Type = 1
 	Set fso = Dvbbs.iCreateObject("Scripting.FileSystemObject")
 	If Not fso.FileExists(strFilename) Then
-		Response.Write("<h1>´íÎó: </h1><br>ÏµÍ³ÕÒ²»µ½Ö¸¶¨ÎÄ¼ş")
+		Response.Write("<h1>é”™è¯¯: </h1><br>ç³»ç»Ÿæ‰¾ä¸åˆ°æŒ‡å®šæ–‡ä»¶")
 		Exit Sub
 	End If
 	Set f = fso.GetFile(strFilename)
 		intFilelength = f.size
 		s.LoadFromFile(strFilename)
 		If err Then
-			Response.Write("<h1>´íÎó: </h1>" & err.Description & "<p>")
+			Response.Write("<h1>é”™è¯¯: </h1>" & err.Description & "<p>")
 			Response.End
 		End If
 		Set fso=Nothing

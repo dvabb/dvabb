@@ -81,42 +81,42 @@ End If
 %>
 <form action=log.asp method=post">
 <table cellPadding=1 cellSpacing=1 align=center width=100%>
-<tr><th style="text-align:center;">ÂÛÌ³ÈÕÖ¾²é¿´</th></tr>
+<tr><th style="text-align:center;">è®ºå›æ—¥å¿—æŸ¥çœ‹</th></tr>
 <tr><td width="*">
-&nbsp;ËÑ Ë÷ ·¶ Î§£º<Select Name="l_boardid">
+&nbsp;æœ ç´¢ èŒƒ å›´ï¼š<Select Name="l_boardid">
 </Select>
-&nbsp;ÈÕÖ¾ÀàĞÍ£º<Select name="l_type">
+&nbsp;æ—¥å¿—ç±»å‹ï¼š<Select name="l_type">
 <Option value="" 
-<%If Request("l_type")="" Then Response.Write " selected"%>>È«²¿ÈÕÖ¾</Option>
-<Option value="3"<%If Request("l_type")="3" Then Response.Write " selected"%>>Ìù×Ó¹ÜÀí</Option>
-<Option value="4"<%If Request("l_type")="4" Then Response.Write " selected"%>>¹Ì¶¥²Ù×÷</Option>
-<Option value="5"<%If Request("l_type")="5" Then Response.Write " selected"%>>½±³Í²Ù×÷</Option>
-<Option value="6"<%If Request("l_type")="6" Then Response.Write " selected"%>>ÓÃ»§´¦Àí</Option>
-<Option value="0"<%If Request("l_type")="0" Then Response.Write " selected"%>>ºóÌ¨ÈÕÖ¾A</Option>
-<Option value="1"<%If Request("l_type")="1" Then Response.Write " selected"%>>ºóÌ¨ÈÕÖ¾B</Option>
-<Option value="2"<%If Request("l_type")="2" Then Response.Write " selected"%>>ºóÌ¨ÈÕÖ¾C</Option>
+<%If Request("l_type")="" Then Response.Write " selected"%>>å…¨éƒ¨æ—¥å¿—</Option>
+<Option value="3"<%If Request("l_type")="3" Then Response.Write " selected"%>>è´´å­ç®¡ç†</Option>
+<Option value="4"<%If Request("l_type")="4" Then Response.Write " selected"%>>å›ºé¡¶æ“ä½œ</Option>
+<Option value="5"<%If Request("l_type")="5" Then Response.Write " selected"%>>å¥–æƒ©æ“ä½œ</Option>
+<Option value="6"<%If Request("l_type")="6" Then Response.Write " selected"%>>ç”¨æˆ·å¤„ç†</Option>
+<Option value="0"<%If Request("l_type")="0" Then Response.Write " selected"%>>åå°æ—¥å¿—A</Option>
+<Option value="1"<%If Request("l_type")="1" Then Response.Write " selected"%>>åå°æ—¥å¿—B</Option>
+<Option value="2"<%If Request("l_type")="2" Then Response.Write " selected"%>>åå°æ—¥å¿—C</Option>
 </Select>
 </td>
 
 </tr>
-<tr><td class=td1 width="*">&nbsp;&nbsp;&nbsp;&nbsp;¹Ø ¼ü ×Ö£º<Input Type="text" Name="keyword" value="<%=Request("keyword")%>" Size="28">
-&nbsp;¹Ø¼ü×ÖÆ¥Åä£º<Select name="checkvalue">
-<Option value="" <%If Request("checkvalue")="" Then Response.Write " selected"%>>È«²¿ÁĞ</Option>
-<Option value="l_touser"<%If Request("checkvalue")="l_touser" Then Response.Write " selected"%>>²Ù×÷¶ÔÏó</Option>
-<Option value="l_content"<%If Request("checkvalue")="l_content" Then Response.Write " selected"%>>ÊÂ¼şÄÚÈİ</Option>
-<Option value="l_ip"<%If Request("checkvalue")="l_ip" Then Response.Write " selected"%>>IPµØÖ·</Option>
-<Option value="l_username"<%If Request("checkvalue")="l_username" Then Response.Write " selected"%>>²Ù×÷ÈË</Option>
+<tr><td class=td1 width="*">&nbsp;&nbsp;&nbsp;&nbsp;å…³ é”® å­—ï¼š<Input Type="text" Name="keyword" value="<%=Request("keyword")%>" Size="28">
+&nbsp;å…³é”®å­—åŒ¹é…ï¼š<Select name="checkvalue">
+<Option value="" <%If Request("checkvalue")="" Then Response.Write " selected"%>>å…¨éƒ¨åˆ—</Option>
+<Option value="l_touser"<%If Request("checkvalue")="l_touser" Then Response.Write " selected"%>>æ“ä½œå¯¹è±¡</Option>
+<Option value="l_content"<%If Request("checkvalue")="l_content" Then Response.Write " selected"%>>äº‹ä»¶å†…å®¹</Option>
+<Option value="l_ip"<%If Request("checkvalue")="l_ip" Then Response.Write " selected"%>>IPåœ°å€</Option>
+<Option value="l_username"<%If Request("checkvalue")="l_username" Then Response.Write " selected"%>>æ“ä½œäºº</Option>
 </Select>
 </td>
 
 </tr>
-<tr><td width="100%" align=center><input type=submit value="ËÑ Ë÷" class="button">
+<tr><td width="100%" align=center><input type=submit value="æœ ç´¢" class="button">
 </td>
 </tr>
 </table>
 </form>
 <SCRIPT LANGUAGE="JavaScript">
-BoardJumpListSelect('<%=l_boardID%>',"l_boardid","ËùÓĞÂÛÌ³","",0)
+BoardJumpListSelect('<%=l_boardID%>',"l_boardid","æ‰€æœ‰è®ºå›","",0)
 </SCRIPT>
 <br>
 <%
@@ -141,22 +141,22 @@ Response.Write "<table width=""100%"" border=""0"" cellspacing=""0"" cellpadding
 Response.Write "<form action=log.asp?action=dellog&l_type="&l_type&" method=post name=even>"
 Response.Write "<tr align=center>"
 Response.Write "<th width=""10%"">"
-Response.Write "¶ÔÏó"
+Response.Write "å¯¹è±¡"
 Response.Write "</td>"
 Response.Write "<th width=""45%"">"
-Response.Write "ÊÂ¼şÄÚÈİ"
+Response.Write "äº‹ä»¶å†…å®¹"
 Response.Write "</td>"
 Response.Write "<th width=""15%"">"
-Response.Write "²Ù×÷Ê±¼ä"
+Response.Write "æ“ä½œæ—¶é—´"
 Response.Write "</td>"
 Response.Write "<th width=""15%"">"
 Response.Write "IP"
 Response.Write "</td>"
 Response.Write "<th width=""10%"">"
-Response.Write "²Ù×÷ÈË"
+Response.Write "æ“ä½œäºº"
 Response.Write "</td>"
 Response.Write "<th width=""5%"">"
-Response.Write "²Ù×÷"
+Response.Write "æ“ä½œ"
 Response.Write "</th>"
 Response.Write "</tr>"
 If Not(Rs.eof or Rs.bof) Then
@@ -197,8 +197,8 @@ If Not(Rs.eof or Rs.bof) Then
 	page_count = page_count + 1
 	Rs.MoveNext
 	Wend
-	Response.Write "<tr><td class=td2 colspan=6>ÇëÑ¡ÔñÒªÉ¾³ıµÄÊÂ¼ş£¬<input type=checkbox class=checkbox name=chkall value=on onclick=""CheckAll(this.form)"">È«Ñ¡ <input type=submit name=act value=É¾³ı class=button onclick=""{if(confirm('ÄúÈ·¶¨Ö´ĞĞµÄ²Ù×÷Âğ?')){this.document.even.submit();return true;}return false;}"">"
-	Response.Write "¡¡<input type=submit class=button name=act onclick=""{if(confirm('È·¶¨Çå³ıËùÓĞµÄ¼ÇÂ¼Âğ?')){this.document.even.submit();return true;}return false;}"" value=Çå¿ÕÈÕÖ¾></td></tr>"
+	Response.Write "<tr><td class=td2 colspan=6>è¯·é€‰æ‹©è¦åˆ é™¤çš„äº‹ä»¶ï¼Œ<input type=checkbox class=checkbox name=chkall value=on onclick=""CheckAll(this.form)"">å…¨é€‰ <input type=submit name=act value=åˆ é™¤ class=button onclick=""{if(confirm('æ‚¨ç¡®å®šæ‰§è¡Œçš„æ“ä½œå—?')){this.document.even.submit();return true;}return false;}"">"
+	Response.Write "ã€€<input type=submit class=button name=act onclick=""{if(confirm('ç¡®å®šæ¸…é™¤æ‰€æœ‰çš„è®°å½•å—?')){this.document.even.submit();return true;}return false;}"" value=æ¸…ç©ºæ—¥å¿—></td></tr>"
 	If totalrec mod Dvbbs.Forum_Setting(11)=0 Then
 		Pcount= totalrec \ Dvbbs.Forum_Setting(11)
   	Else
@@ -206,9 +206,9 @@ If Not(Rs.eof or Rs.bof) Then
   	End If
   	Response.Write "<table border=0 cellpadding=0 cellspacing=3 width=""100%"" align=center>"
   	Response.Write "<tr><td valign=middle nowrap>"
-	Response.Write "Ò³´Î£º<b>"&currentpage&"</b>/<b>"&Pcount&"</b>Ò³"
-	Response.Write "&nbsp;Ã¿Ò³<b>"&Dvbbs.Forum_Setting(11)&"</b> ×ÜÊı<b>"&totalrec&"</b></td>"
-	Response.Write "<td valign=middle nowrap align=right>·ÖÒ³£º"
+	Response.Write "é¡µæ¬¡ï¼š<b>"&currentpage&"</b>/<b>"&Pcount&"</b>é¡µ"
+	Response.Write "&nbsp;æ¯é¡µ<b>"&Dvbbs.Forum_Setting(11)&"</b> æ€»æ•°<b>"&totalrec&"</b></td>"
+	Response.Write "<td valign=middle nowrap align=right>åˆ†é¡µï¼š"
 	If currentpage > 4 Then
 		Response.Write "<a href="""&pagestr&"page=1"">[1]</a> ..."
 	End If
@@ -233,7 +233,7 @@ If Not(Rs.eof or Rs.bof) Then
 Else
 	Response.Write "<tr align=center>"
 	Response.Write "<td class=""td1"" width=""100%"" colspan=""6"" >"
-	Response.Write "ÎŞÏà¹Ø¼ÇÂ¼¡£"
+	Response.Write "æ— ç›¸å…³è®°å½•ã€‚"
 	Response.Write "</td>"
 	Response.Write "</tr>"
 End If
@@ -246,7 +246,7 @@ End Sub
 Sub batch()
 	Dim lid
 	If request.form("lid")="" Then
-		Errmsg=ErrMsg + "ÇëÖ¸¶¨Ïà¹ØÊÂ¼ş¡£"
+		Errmsg=ErrMsg + "è¯·æŒ‡å®šç›¸å…³äº‹ä»¶ã€‚"
 		Founderr = True
 		Exit Sub
 	End If
@@ -254,9 +254,9 @@ Sub batch()
 	lid=replace(lid,";","")
 	lid=replace(lid,"--","")
 	lid=replace(lid,")","")
-	If request("act")="É¾³ı" Then
+	If request("act")="åˆ é™¤" Then
 		Dvbbs.Execute("delete from dv_log where Datediff(""D"",l_addtime, "&SqlNowString&") > 2 and l_id in ("&lid&")")
-	ElseIf request("act")="Çå¿ÕÈÕÖ¾" Then
+	ElseIf request("act")="æ¸…ç©ºæ—¥å¿—" Then
 		If request("l_type")="" or IsNull(request("l_type")) Then 
 			If IsSqlDataBase = 1 Then
 			Dvbbs.Execute("delete from dv_log Where Datediff(D,l_addtime, "&SqlNowString&") > 2")
@@ -271,10 +271,10 @@ Sub batch()
 			end if
 		End If
 	End If
-	Dv_suc("³É¹¦É¾³ıÈÕÖ¾¡£×¢Òâ£ºÁ½ÌìÄÚµÄÈÕÖ¾»á±»ÏµÍ³±£Áô¡£")
+	Dv_suc("æˆåŠŸåˆ é™¤æ—¥å¿—ã€‚æ³¨æ„ï¼šä¸¤å¤©å†…çš„æ—¥å¿—ä¼šè¢«ç³»ç»Ÿä¿ç•™ã€‚")
 End Sub
 
-'¹Ø¼ü×ÖÍ»³öÏÔÊ¾ by ÇáÆ®Æ®
+'å…³é”®å­—çªå‡ºæ˜¾ç¤º by è½»é£˜é£˜
 Function HighLigth(Str,keyword)
 	If keyword="" Then
 		HighLigth=Str
@@ -288,7 +288,7 @@ Function HighLigth(Str,keyword)
 	HighLigth=re.Replace(Str,"<font color=""red"">$1</font>")
 End Function
 
-'URL½âÂëº¯Êı by ÇáÆ®Æ®
+'URLè§£ç å‡½æ•° by è½»é£˜é£˜
 Function URLDecode(enStr)
 	On Error Resume Next
 	Dim deStr,c,i,v:deStr=""
@@ -301,12 +301,12 @@ Function URLDecode(enStr)
 				i=i+2
 			Else
 				If isvalidhex(Mid(enstr,i,3)) Then
-					If isvalidhex(Mid(enstr,i+3,3)) Then	'Õâ¸öÅĞ¶Ï¼ì²âÊÇ·ñË«×Ö½Ú--²»ÊÇ
+					If isvalidhex(Mid(enstr,i+3,3)) Then	'è¿™ä¸ªåˆ¤æ–­æ£€æµ‹æ˜¯å¦åŒå­—èŠ‚--ä¸æ˜¯
 						v=eval("&h"+Mid(enStr,i+1,2)+Mid(enStr,i+4,2))
 						deStr=deStr&Chr(v)
 						i=i+5
 					Else
-						v=eval("&h"+Mid(enStr,i+1,2)+Cstr(Hex(Asc(Mid(enStr,i+3,1)))))	'--ÊÇ
+						v=eval("&h"+Mid(enStr,i+1,2)+Cstr(Hex(Asc(Mid(enStr,i+3,1)))))	'--æ˜¯
 						deStr=deStr&Chr(v)
 						i=i+3 
 					End If

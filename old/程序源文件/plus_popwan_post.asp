@@ -7,7 +7,7 @@
 <%
 	Dim Action
 	Dvbbs.LoadTemplates("")
-	Dvbbs.Stats = "·¢±íÌû×Ó"
+	Dvbbs.Stats = "å‘è¡¨å¸–å­"
 	Dvbbs.Nav()
 	Dvbbs.Head_var 0,0,Plus_Popwan.Program,"plus_popwan_post.asp"
 	Dvbbs.ActiveOnline()
@@ -19,7 +19,7 @@
 	End If
 	Dvbbs.PageEnd()
 
-'Ò³ÃæÓÒ²àÄÚÈİ²¿·Ö
+'é¡µé¢å³ä¾§å†…å®¹éƒ¨åˆ†
 Sub Page_Center()
 	If Not (Dvbbs.master Or Dvbbs.GroupSetting(70)="1") Then
 		Dvbbs.AddErrcode(28)
@@ -27,7 +27,7 @@ Sub Page_Center()
 	End If
 %>
 
-<!--post.asp##·¢Ìû¡¢»ØÌû¡¢Í¶Æ±¡¢±à¼­ÕûÌåÒ³Ãæ ¸üĞÂÊ±¼ä2007-3ÔÂ20ÈÕ£¬×¢ÒâÒªºÍpost.aspÒ»Æğ¸üĞÂ-->
+<!--post.asp##å‘å¸–ã€å›å¸–ã€æŠ•ç¥¨ã€ç¼–è¾‘æ•´ä½“é¡µé¢ æ›´æ–°æ—¶é—´2007-3æœˆ20æ—¥ï¼Œæ³¨æ„è¦å’Œpost.aspä¸€èµ·æ›´æ–°-->
 <center>
 <script language = "JavaScript" src="inc/dv_setvote.js" type="text/javascript"></script>
 <script language = "JavaScript" src="inc/ajaxpost.js" type="text/javascript"></script>
@@ -78,28 +78,28 @@ function PostSubmit(frm,e){
 
 
 <table cellpadding="1" cellspacing="1" align="center" class="tableborder1" style="text-align:left;text-indent:10px;">
-<tr><th align="left" colspan="2" style="padding-top:0px;">&nbsp;&nbsp;<%=Application(Dvbbs.CacheName&"_boardlist").documentElement.selectSingleNode("board[@boardid='"&Dvbbs.BoardID&"']/@boardtype").text%>&nbsp;&nbsp;·¢±íÌû×Ó
+<tr><th align="left" colspan="2" style="padding-top:0px;">&nbsp;&nbsp;<%=Application(Dvbbs.CacheName&"_boardlist").documentElement.selectSingleNode("board[@boardid='"&Dvbbs.BoardID&"']/@boardtype").text%>&nbsp;&nbsp;å‘è¡¨å¸–å­
 </th></tr>
-<tr><td width="20%" class="tablebody2"><b>ÓÃ»§Ãû£º</b></td>
+<tr><td width="20%" class="tablebody2"><b>ç”¨æˆ·åï¼š</b></td>
 <td width="80%" class="tablebody2" style="text-indent:0;" ><input name="username" value="<%=Dvbbs.MemberName%>" class="FormClass" readonly/>
-&nbsp;&nbsp;µã»÷ (<a title="ÌîĞ´±íµ¥" href="javascript:;" onclick="DvWnd.open('ÌîĞ´±íµ¥','plus_popwan_posttinput.asp?sh=520&amp;sw=500',800,520,1,{bgc:'black',opa:0.5});">ÌîĞ´±íµ¥</a>) ¿É¿ìËÙÌîĞ´±íµ¥
+&nbsp;&nbsp;ç‚¹å‡» (<a title="å¡«å†™è¡¨å•" href="javascript:;" onclick="DvWnd.open('å¡«å†™è¡¨å•','plus_popwan_posttinput.asp?sh=520&amp;sw=500',800,520,1,{bgc:'black',opa:0.5});">å¡«å†™è¡¨å•</a>) å¯å¿«é€Ÿå¡«å†™è¡¨å•
 </td></tr>
 
-<tr><td width="20%" class="tablebody2"><b>Ö÷Ìâ±êÌâ£º</b>
+<tr><td width="20%" class="tablebody2"><b>ä¸»é¢˜æ ‡é¢˜ï¼š</b>
 <select name="font" onchange="DoTitle(this.options[this.selectedIndex].value)">
-<option selected="selected" value="">Ñ¡Ôñ»°Ìâ</option>
-<option value="[Ô­´´]">[Ô­´´]</option><option value="[×ªÌû]">[×ªÌû]</option><option value="[¹àË®]">[¹àË®]</option><option value="[ÌÖÂÛ]">[ÌÖÂÛ]</option><option value="[ÇóÖú]">[ÇóÖú]</option><option value="[ÍÆ¼ö]">[ÍÆ¼ö]</option><option value="[¹«¸æ]">[¹«¸æ]</option><option value="[×¢Òâ]">[×¢Òâ]</option><option value="[ÌùÍ¼]">[ÌùÍ¼]</option><option value="[½¨Òé]">[½¨Òé]</option><option value="[ÏÂÔØ]">[ÏÂÔØ]</option><option value="[·ÖÏí]">[·ÖÏí]</option>
+<option selected="selected" value="">é€‰æ‹©è¯é¢˜</option>
+<option value="[åŸåˆ›]">[åŸåˆ›]</option><option value="[è½¬å¸–]">[è½¬å¸–]</option><option value="[çŒæ°´]">[çŒæ°´]</option><option value="[è®¨è®º]">[è®¨è®º]</option><option value="[æ±‚åŠ©]">[æ±‚åŠ©]</option><option value="[æ¨è]">[æ¨è]</option><option value="[å…¬å‘Š]">[å…¬å‘Š]</option><option value="[æ³¨æ„]">[æ³¨æ„]</option><option value="[è´´å›¾]">[è´´å›¾]</option><option value="[å»ºè®®]">[å»ºè®®]</option><option value="[ä¸‹è½½]">[ä¸‹è½½]</option><option value="[åˆ†äº«]">[åˆ†äº«]</option>
 </select></td>
 <td width="80%" class="tablebody2" style="text-indent:0;">
 <input name="topic" id="topic" size="45" class="FormClass" value="" />
 
-<select name="topicximoo" onchange="titleColor(this.options[this.selectedIndex].value)"><option value="0">±êÌâĞÑÄ¿</option><option value="1">HTMLÖ§³Ö</option><option value="2">ºìÉ«ĞÑÄ¿</option><option value="3">À¶É«ĞÑÄ¿</option><option value="4">ÂÌÉ«ĞÑÄ¿</option></select>
+<select name="topicximoo" onchange="titleColor(this.options[this.selectedIndex].value)"><option value="0">æ ‡é¢˜é†’ç›®</option><option value="1">HTMLæ”¯æŒ</option><option value="2">çº¢è‰²é†’ç›®</option><option value="3">è“è‰²é†’ç›®</option><option value="4">ç»¿è‰²é†’ç›®</option></select>
 <span id="mode_chk"></span>
-&nbsp;<font color="#FF0000"><b>*</b></font>²»µÃ³¬¹ı <%=Dvbbs.Board_Setting(45)%> ¸öºº×Ö<span id="topic_chk"></span>
+&nbsp;<font color="#FF0000"><b>*</b></font>ä¸å¾—è¶…è¿‡ <%=Dvbbs.Board_Setting(45)%> ä¸ªæ±‰å­—<span id="topic_chk"></span>
 </td></tr>
 
-<tr><td width="20%" valign="top" class="tablebody1"><b>µ±Ç°ĞÄÇé</b><br />
-  <ul><li>½«·ÅÔÚÌû×ÓµÄÇ°Ãæ</li><br /><li>²¿·ÖÍ¼Æ¬ÓÉ<a href="http://www.qq.com/" target="_blank">QQÊÚÈ¨Ìá¹©</a></li></ul></td>
+<tr><td width="20%" valign="top" class="tablebody1"><b>å½“å‰å¿ƒæƒ…</b><br />
+  <ul><li>å°†æ”¾åœ¨å¸–å­çš„å‰é¢</li><br /><li>éƒ¨åˆ†å›¾ç‰‡ç”±<a href="http://www.qq.com/" target="_blank">QQæˆæƒæä¾›</a></li></ul></td>
 <td width="70%" class="tablebody1" style="text-indent:0;">
 <table border="0" align="left" cellpadding="2" cellspacing="1">
 <tr>
@@ -107,10 +107,10 @@ function PostSubmit(frm,e){
 <table border="0" cellpadding="2" cellspacing="1" align="left">
 <tr>
 <td id="ShowBack" width="1" class="tablebody2" valign="middle">
-<img style="cursor: pointer;" onclick="show_post_face(-1);" src="Images/post/Previous.gif" alt="ÉÏÒ»Ò³" id="ShowBack" />
+<img style="cursor: pointer;" onclick="show_post_face(-1);" src="Images/post/Previous.gif" alt="ä¸Šä¸€é¡µ" id="ShowBack" />
 </td>
-<td class="tablebody1" width="100%" id="ShowFace">·¢Ìû±íÇé</td>
-<td id="ShowNext" width="1" class="tablebody2" align="right" valign="middle"><img style="cursor: pointer;" onclick="show_post_face(1);" src="Images/post/Next.gif" alt="ÏÂÒ»Ò³"></td>
+<td class="tablebody1" width="100%" id="ShowFace">å‘å¸–è¡¨æƒ…</td>
+<td id="ShowNext" width="1" class="tablebody2" align="right" valign="middle"><img style="cursor: pointer;" onclick="show_post_face(1);" src="Images/post/Next.gif" alt="ä¸‹ä¸€é¡µ"></td>
 </tr>
 </table>
 </td>
@@ -126,7 +126,7 @@ var Forum_PostFace=Forum_PostFace.split("\|\|\|");
 var retitle='';
 var Forum_Emot='images/emot/<><><>em01.gif<><><>em02.gif<><><>em03.gif<><><>em04.gif<><><>em05.gif<><><>em06.gif<><><>em07.gif<><><>em08.gif<><><>em09.gif<><><>em10.gif<><><>em11.gif<><><>em12.gif<><><>em13.gif<><><>em14.gif<><><>em15.gif<><><>em16.gif<><><>em17.gif<><><>em18.gif<><><>em19.gif<><><>em20.gif<><><>em21.gif<><><>em22.gif<><><>em23.gif<><><>em24.gif<><><>em25.gif<><><>em26.gif<><><>em27.gif<><><>em28.gif<><><>em29.gif<><><>em30.gif<><><>em31.gif<><><>em32.gif<><><>em33.gif<><><>em34.gif<><><>em35.gif<><><>em36.gif<><><>em37.gif<><><>em38.gif<><><>em39.gif<><><>em40.gif<><><>em41.gif<><><>em42.gif<><><>em43.gif<><><>em44.gif<><><>em45.gif<><><>em46.gif<><><>em47.gif<><><>em48.gif<><><>em49.gif<><><>em50.gif<><><>em51.gif<><><>em52.gif<><><>em53.gif<><><>em54.gif<><><>em55.gif<><><>em56.gif<><><>em57.gif<><><>em58.gif<><><>em59.gif<><><>em60.gif<><><>em61.gif<><><>em62.gif<><><>em63.gif<><><>em64.gif<><><>em65.gif<><><>em66.gif<><><>em67.gif<><><>em68.gif<><><>em69.gif<><><>em70.gif<><><>em71.gif<><><>em72.gif<><><>em73.gif<><><>em74.gif<><><>em75.gif<><><>em76.gif<><><>em77.gif<><><>em78.gif<><><>em79.gif<><><>em80.gif<><><>em81.gif<><><>em82.gif<><><>em83.gif<><><>em84.gif<><><>em85.gif<><><>em86.gif<><><>em87.gif<><><>em88.gif<><><>em89.gif<><><>em90.gif<><><>em91.gif<><><>em92.gif<><><>em93.gif<><><>em94.gif<><><>em95.gif<><><>em96.gif<><><>em97.gif<><><>em98.gif<><><>em99.gif<><><>em100.gif<><><>em101.gif<><><>em102.gif<><><>em103.gif<><><>em104.gif<><><>em105.gif<><><>em106.gif<><><>em107.gif<><><>em108.gif<><><>em109.gif<><><>em110.gif<><><>em111.gif<><><>em112.gif<><><>em113.gif<><><>em114.gif<><><>em115.gif<><><>';
 Forum_Emot=Forum_Emot.split("<><><>");
-var Emot_PageSize=15; //ĞÄÇéÒ»ĞĞ¸öÊı
+var Emot_PageSize=15; //å¿ƒæƒ…ä¸€è¡Œä¸ªæ•°
 if (document.Dvform.topicximoo){
 	document.Dvform.topicximoo.options[0].selected=true;
 }
@@ -149,13 +149,13 @@ function showtitle(){
 		if (document.Dvform.topic.value==''){
 			document.Dvform.topic.value=retitle;
 		}
-		document.getElementById("advance").innerText="²»²ÉÓÃ";
+		document.getElementById("advance").innerText="ä¸é‡‡ç”¨";
 	}
 	else{
 		if (document.Dvform.topic.value==retitle){
 			document.Dvform.topic.value='';
 		}
-		document.getElementById("advance").innerText="²ÉÓÃ";
+		document.getElementById("advance").innerText="é‡‡ç”¨";
 	}
 }
 function lookmagic()
@@ -185,8 +185,8 @@ function closemagic()
 //-->
 </script>
 
-<!--post.asp##ÉÏ´«ÎÄ¼ş²¿·Ö-->
-<tr><td width="20%" valign="top" class="tablebody2"><b>ÎÄ¼şÉÏ´«</b> <a onmouseover="showmenu(event,'<div class=menuitems><a href=#>gif</a></div><div class=menuitems><a href=#>jpg</a></div><div class=menuitems><a href=#>jpeg</a></div><div class=menuitems><a href=#>bmp</a></div><div class=menuitems><a href=#>png</a></div><div class=menuitems><a href=#>rar</a></div><div class=menuitems><a href=#>txt</a></div><div class=menuitems><a href=#>zip</a></div><div class=menuitems><a href=#>mid</a></div>')" style="cursor:pointer" title="²é¿´¿ÉÉÏ´«µÄÎÄ¼şÀàĞÍ" >ÀàĞÍ</a>
+<!--post.asp##ä¸Šä¼ æ–‡ä»¶éƒ¨åˆ†-->
+<tr><td width="20%" valign="top" class="tablebody2"><b>æ–‡ä»¶ä¸Šä¼ </b> <a onmouseover="showmenu(event,'<div class=menuitems><a href=#>gif</a></div><div class=menuitems><a href=#>jpg</a></div><div class=menuitems><a href=#>jpeg</a></div><div class=menuitems><a href=#>bmp</a></div><div class=menuitems><a href=#>png</a></div><div class=menuitems><a href=#>rar</a></div><div class=menuitems><a href=#>txt</a></div><div class=menuitems><a href=#>zip</a></div><div class=menuitems><a href=#>mid</a></div>')" style="cursor:pointer" title="æŸ¥çœ‹å¯ä¸Šä¼ çš„æ–‡ä»¶ç±»å‹" >ç±»å‹</a>
 </td><td width="80%" class="tablebody2" style="text-indent:0;">
 <!--<iframe name="ad" frameborder="0" width="100%" height="25" scrolling="no" src="post_upload.asp?boardid=2"></iframe>-->
 <iframe id="ad" name="ad" align="left" frameborder="0" width="100%" height="20" scrolling="no" src="savefile.asp?boardid=<%=Dvbbs.Boardid%>"></iframe>
@@ -198,8 +198,8 @@ var ShowFacePage=0;
 function show_post_face(n){
 	var CountLength=Forum_PostFace.length-2;
 	var j=1;
-	var page_size=18;//Ã¿Ò³¸öÊı
-	var br=9;	//»»ĞĞ¸öÊı
+	var page_size=18;//æ¯é¡µä¸ªæ•°
+	var br=9;	//æ¢è¡Œä¸ªæ•°
 	var post_face='';
 	var SelectFace ='';
 	var thispage=ShowFacePage + n;
@@ -244,7 +244,7 @@ function gopreview(){
 //-->
 </script>
 <td colspan="2" width="80%" class="tablebody1" style="padding:0px;margin:0px;border:0px;" valign="top">
-	<!--post.asp##Dvbbs¶à¹¦ÄÜ±à¼­Æ÷-->
+	<!--post.asp##Dvbbså¤šåŠŸèƒ½ç¼–è¾‘å™¨-->
 <script language="javascript" src="images/emot/config.js"></script>
 <script language="javascript" src="dv_edit/main.js"></script>
 <script language="javascript" src="inc/dv_savepost.js"></script>
@@ -257,7 +257,7 @@ var plus_cc="";
 if(3==Dvbbs_Mode){Dvbbs_Mode=1;}
 switch(Dvbbs_Mode){
 	case 1:edit_mode_='design';toolbar_=[];break;
-//	case 2:edit_mode_='design';toolbar_=['tenpay','<div style="float:left;padding-top:5px;position:relative;color:red" onclick="specialform(this)">[²åÈëÌØÊâÄÚÈİ]</div>',plus_cc];break;
+//	case 2:edit_mode_='design';toolbar_=['tenpay','<div style="float:left;padding-top:5px;position:relative;color:red" onclick="specialform(this)">[æ’å…¥ç‰¹æ®Šå†…å®¹]</div>',plus_cc];break;
 	default:edit_mode_='text';
 }
 var dveditconfig={
@@ -289,7 +289,7 @@ function Dv_Signal(token,param_title,value_title){
 	var pn='',s='';
 	if(param_title){s+='<div style="width:200px;">'+param_title+'<br/><input type="text" name="dv_signal_param" style="width:200px;" id="dv_signal_param" /></div>'}
 	if(value_title){s+='<div style="width:200px;height:100px;">'+value_title+'<br/><textarea name="dv_signal_value" id="dv_signal_value" style="width:200px;height:100px;"></textarea></div>'};
-	s+='<div><input type="button" value=" ²åÈë " onclick="Dv_Signal_Do(\''+token+'\',gid(\'dv_signal_param\')?gid(\'dv_signal_param\').value:null,document.getElementById(\'dv_signal_value\').value)"></div>';
+	s+='<div><input type="button" value=" æ’å…¥ " onclick="Dv_Signal_Do(\''+token+'\',gid(\'dv_signal_param\')?gid(\'dv_signal_param\').value:null,document.getElementById(\'dv_signal_value\').value)"></div>';
 	dvtextarea.t.close();
 	dvtextarea.t.open(dv_signal_click,s);
 }
@@ -302,24 +302,24 @@ function specialform(o){
 </td>
 </tr>
 <tr  class="tablebody1" style="border:0">
-	<td><b>¸ß¼¶ÉèÖÃ£º</b></td>
+	<td><b>é«˜çº§è®¾ç½®ï¼š</b></td>
 	<td>
-	Ç©Ãû£º<input type="radio" id="signflag_1" name="signflag" value="0"   class="radio"/><label for="signflag_1">²»ÏÔÊ¾</label>
-	<input type="radio" id="signflag_2" name="signflag" value="1" checked="checked" class="radio"/><label for="signflag_2">ÏÔÊ¾</label>
-	<input type="radio" id="signflag_3" name="signflag" value="2" disabled="disabled" class="radio"/><label for="signflag_3">ÄäÃû&nbsp;&nbsp;</label>
-	»ØÌûÍ¨Öª£º<input type="radio" id="emailflag_1" name="emailflag" value="0" checked="checked" class="radio"/><label for="emailflag_1" style=" cursor:hand">²»Í¨Öª</label>
-	 <input type="radio" id="emailflag_2" name="emailflag" value="1"  class="radio"/><label for="emailflag_2" style=" cursor:hand">ÓÊ¼şÍ¨Öª</label>
-	 <input type="radio" id="emailflag_3" name="emailflag" value="2"  class="radio"/><label for="emailflag_3" style=" cursor:hand">¶ÌĞÅÍ¨Öª</label>
-	 <input type="radio" id="emailflag_4" name="emailflag" value="3"  class="radio"/><label for="emailflag_4" style=" cursor:hand">ÓÊ¼şºÍ¶ÌĞÅÍ¨Öª</label>
+	ç­¾åï¼š<input type="radio" id="signflag_1" name="signflag" value="0"   class="radio"/><label for="signflag_1">ä¸æ˜¾ç¤º</label>
+	<input type="radio" id="signflag_2" name="signflag" value="1" checked="checked" class="radio"/><label for="signflag_2">æ˜¾ç¤º</label>
+	<input type="radio" id="signflag_3" name="signflag" value="2" disabled="disabled" class="radio"/><label for="signflag_3">åŒ¿å&nbsp;&nbsp;</label>
+	å›å¸–é€šçŸ¥ï¼š<input type="radio" id="emailflag_1" name="emailflag" value="0" checked="checked" class="radio"/><label for="emailflag_1" style=" cursor:hand">ä¸é€šçŸ¥</label>
+	 <input type="radio" id="emailflag_2" name="emailflag" value="1"  class="radio"/><label for="emailflag_2" style=" cursor:hand">é‚®ä»¶é€šçŸ¥</label>
+	 <input type="radio" id="emailflag_3" name="emailflag" value="2"  class="radio"/><label for="emailflag_3" style=" cursor:hand">çŸ­ä¿¡é€šçŸ¥</label>
+	 <input type="radio" id="emailflag_4" name="emailflag" value="3"  class="radio"/><label for="emailflag_4" style=" cursor:hand">é‚®ä»¶å’ŒçŸ­ä¿¡é€šçŸ¥</label>
 	
-<br />&nbsp;&nbsp;Ñ¡Ïî£º<input type="checkbox" name="locktopic" value="yes" class="checkbox"/>Ìû×ÓËø¶¨&nbsp;&nbsp;<input type="checkbox" name="istop" value="yes" class="checkbox" checked/><font color="red">Ìû×Ó¹Ì¶¥</font>&nbsp;&nbsp;<input type="checkbox" name="istopall" value="yes" class="checkbox"/><font color="red">Ìû×Ó×Ü¹Ì¶¥</font>
+<br />&nbsp;&nbsp;é€‰é¡¹ï¼š<input type="checkbox" name="locktopic" value="yes" class="checkbox"/>å¸–å­é”å®š&nbsp;&nbsp;<input type="checkbox" name="istop" value="yes" class="checkbox" checked/><font color="red">å¸–å­å›ºé¡¶</font>&nbsp;&nbsp;<input type="checkbox" name="istopall" value="yes" class="checkbox"/><font color="red">å¸–å­æ€»å›ºé¡¶</font>
 
 	<br/><span id="body_chk"></span><span id="ajaxMsg_1" class="ajaxMsg" style="display:none;"></span>
 	</td>
 </tr>
 <tr>
   <td valign="middle" colspan="2" class="tablebody2" style="text-align : center; ">
-<input class="input0" type="submit" value="       ·¢ ±í £¨±à¼­¿òÄÚ°´CTRL+ENTER¿ì½İ·¢Ìû£©       " id="submit" name="submit" />&nbsp;<input class="input0" type="button" value="Ô¤ ÀÀ" name="Button" onclick="gopreview()" />
+<input class="input0" type="submit" value="       å‘ è¡¨ ï¼ˆç¼–è¾‘æ¡†å†…æŒ‰CTRL+ENTERå¿«æ·å‘å¸–ï¼‰       " id="submit" name="submit" />&nbsp;<input class="input0" type="button" value="é¢„ è§ˆ" name="Button" onclick="gopreview()" />
 </td>
 </tr>
 </table></form>
@@ -327,7 +327,7 @@ function specialform(o){
 <input type="hidden" name="Dvtitle" value="" /><input type="hidden" name="theBody" value="" />
 </form>
 
-<!--Z-INDEX£º999999£¬Modify By Dv_Xiaoxian£¬Date:2008.0.14-->
+<!--Z-INDEXï¼š999999ï¼ŒModify By Dv_Xiaoxianï¼ŒDate:2008.0.14-->
 <div id="MagicFace" style="POSITION:absolute;Z-INDEX: 999999;visibility:hidden;"></div>
 <div id="magicframe" style="visibility:hidden; position: absolute;">
 <iframe id="magic_frame" class="magicframe" src="" frameborder="0" scrolling="no" width="0px" height="0px"></iframe>

@@ -3,16 +3,16 @@
 <!--#include file="inc/dv_clsother.asp"-->
 <!--#include file="inc/plus_check.asp"-->
 <%
-Dv_plus.name="myplus"'¶¨Òå²å¼şID£¬²¢ÌáÈ¡ÉèÖÃ¡£
-Dv_plus.checklogin'ÑéÖ¤ÓÃ»§½øÈëµÄÈ¨ÏŞ¡£
-Dvbbs.LoadTemplates("index")'ÌáÈ¡Ä£°åÊı¾İ£¬Èç¹ûÄãÌí¼ÓÁË×Ô¼ºµÄÄ£°å¿ÉÒÔÕâÑùµ÷ÓÃ:Dvbbs.LoadTemplates("Ãû³Æ")
-Dvbbs.Stats="²å¼ş¿ª·¢Ê¾·¶ËµÃ÷"
+Dv_plus.name="myplus"'å®šä¹‰æ’ä»¶IDï¼Œå¹¶æå–è®¾ç½®ã€‚
+Dv_plus.checklogin'éªŒè¯ç”¨æˆ·è¿›å…¥çš„æƒé™ã€‚
+Dvbbs.LoadTemplates("index")'æå–æ¨¡æ¿æ•°æ®ï¼Œå¦‚æœä½ æ·»åŠ äº†è‡ªå·±çš„æ¨¡æ¿å¯ä»¥è¿™æ ·è°ƒç”¨:Dvbbs.LoadTemplates("åç§°")
+Dvbbs.Stats="æ’ä»¶å¼€å‘ç¤ºèŒƒè¯´æ˜"
 Dvbbs.Nav()
-Dvbbs.Head_var 0,"","²å¼ş¿ª·¢°ïÖú","myplus.asp"
-'ÓÉÓÚ±¾Ò³ÃæÊÇÊ¾·¶Ò³Ãæ£¬¹Ê²»²ÉÓÃÒ³ÃæÄ£°å¡£ÑùÊ½È«²¿ÔÚ´úÂëÖĞÊä³ö¡£
+Dvbbs.Head_var 0,"","æ’ä»¶å¼€å‘å¸®åŠ©","myplus.asp"
+'ç”±äºæœ¬é¡µé¢æ˜¯ç¤ºèŒƒé¡µé¢ï¼Œæ•…ä¸é‡‡ç”¨é¡µé¢æ¨¡æ¿ã€‚æ ·å¼å…¨éƒ¨åœ¨ä»£ç ä¸­è¾“å‡ºã€‚
 %>
 <table border="0" cellspacing="1" cellpadding="3" width="100%" class=tableborder2 align=center>
-<tr><th height="22">Ê¾·¶´úÂë</th></tr>
+<tr><th height="22">ç¤ºèŒƒä»£ç </th></tr>
 <tr>
   <td align=center width="98%" class=tablebody1> 
     <TEXTAREA id="edittxt" ROWS="20" COLS="120" style="width:98%;overflow-y:visible; border:0px; overflow:visible; border-width:1px;border-style: dotted;color: #000000;" >
@@ -23,9 +23,9 @@ Dvbbs.Head_var 0,"","²å¼ş¿ª·¢°ïÖú","myplus.asp"
 Dv_plus.name=&quot;myplus&quot;
 Dv_plus.checklogin()
 Dvbbs.LoadTemplates(&quot;&quot;)
-Dvbbs.Stats=&quot;²å¼ş¿ª·¢Ê¾·¶´úÂë&quot;
+Dvbbs.Stats=&quot;æ’ä»¶å¼€å‘ç¤ºèŒƒä»£ç &quot;
 Dvbbs.Nav()
-Dvbbs.Head_var 0,&quot;&quot;,&quot;²å¼ş¿ª·¢Ê¾·¶&quot;,&quot;myplus.asp&quot;
+Dvbbs.Head_var 0,&quot;&quot;,&quot;æ’ä»¶å¼€å‘ç¤ºèŒƒ&quot;,&quot;myplus.asp&quot;
 Set Dv_plus=Nothing 
 Dvbbs.Footer
 %&gt;
@@ -33,28 +33,28 @@ Dvbbs.Footer
 </table>
 <br>
 <table border="0" cellspacing="1" cellpadding="3" width="100%" class=tableborder2 align=center>
-<tr><th height="22">±äÁ¿ËµÃ÷</th></tr>
-<tr><td height="22"><li>Dv_plus.Mian_settings(0) ÊÇ·ñ¶¨Ê±¼ä¿ª·Å¡£È±Ê¡ÖµÎª£º<%=Dv_plus.Mian_settings(0)%></td></tr>
-<tr><td height="22"><li>Dv_plus.Mian_settings(1) ¶¨Ê±¿ª·ÅÆğÖ¹Ê±¼ä¡£È±Ê¡ÖµÎª£º<%=Dv_plus.Mian_settings(1)%></td></tr>
-<tr><td height="22"><li>Dv_plus.Mian_settings(2) ¿ÉÊ¹ÓÃ²å¼şµÄÓÃ»§×éÁĞ±í£¬·Ö¸ô·ûºÅÎª¡°@¡±¡£È±Ê¡ÖµÎª£º<%=Dv_plus.Mian_settings(2)%></td></tr>
-<tr><td height="22"><li>Dv_plus.Mian_settings(3) ¹ÜÀíÈËÔ±,·Ö¸ô·ûºÅÎª¡°|¡±¡£È±Ê¡ÖµÎª£º<%=Dv_plus.Mian_settings(3)%></td></tr>
-<tr><td height="22"><li>Dv_plus.Mian_settings(4) ÄÜÊ¹ÓÃ²å¼şµÄ×îÉÙÎÄÕÂ¡£È±Ê¡ÖµÎª£º<%=Dv_plus.Mian_settings(4)%></td></tr>
-<tr><td height="22"><li>Dv_plus.Mian_settings(5) ÄÜÊ¹ÓÃ²å¼şµÄ×îµÍ½ğÇ®¡£È±Ê¡ÖµÎª£º<%=Dv_plus.Mian_settings(5)%></td></tr>
-<tr><td height="22"><li>Dv_plus.Mian_settings(6) ÄÜÊ¹ÓÃ²å¼şµÄ×îµÍ»ı·Ö¡£È±Ê¡ÖµÎª£º<%=Dv_plus.Mian_settings(6)%></td></tr>
-<tr><td height="22"><li>Dv_plus.Mian_settings(7) ÄÜÊ¹ÓÃ²å¼şµÄ×îµÍ÷ÈÁ¦¡£È±Ê¡ÖµÎª£º<%=Dv_plus.Mian_settings(7)%></td></tr>
-<tr><td height="22"><li>Dv_plus.Mian_settings(8) ÄÜÊ¹ÓÃ²å¼şµÄ×îµÍÍşÍû¡£È±Ê¡ÖµÎª£º<%=Dv_plus.Mian_settings(8)%></td></tr>
-<tr><td height="22"><li>Dv_plus.Mian_settings(9) Ã¿´ÎÊ¹ÓÃ²å¼ş½ğÇ®±ä»¯¡£È±Ê¡ÖµÎª£º<%=Dv_plus.Mian_settings(9)%></td></tr>
-<tr><td height="22"><li>Dv_plus.Mian_settings(10) Ã¿´ÎÊ¹ÓÃ²å¼ş»ı·Ö±ä»¯¡£È±Ê¡ÖµÎª£º<%=Dv_plus.Mian_settings(10)%></td></tr>
-<tr><td height="22"><li>Dv_plus.Mian_settings(11) Ã¿´ÎÊ¹ÓÃ²å¼ş÷ÈÁ¦±ä»¯¡£È±Ê¡ÖµÎª£º<%=Dv_plus.Mian_settings(11)%></td></tr>
-<tr><td height="22"><li>Dv_plus.Mian_settings(12) Ã¿´ÎÊ¹ÓÃ²å¼şÍşÍû±ä»¯¡£È±Ê¡ÖµÎª£º<%=Dv_plus.Mian_settings(12)%></td></tr>
-<tr><td height="22"><li>Dv_plus.plus_Settings ÎªÊı×é±äÁ¿£¬ÕâÊÇÀ©Õ¹µÄÉèÖÃ±äÁ¿£¬ÓÉ²å¼ş×÷Õß×Ô¼º¶¨Òå¡£</td></tr>
-<tr><td height="22"><li>Dv_plus.plus_Settingnames ÎªÊı×é±äÁ¿£¬ÕâÊÇÀ©Õ¹µÄÉèÖÃ±äÁ¿µÄº¬Òå£¬ÓÉ²å¼ş×÷Õß×Ô¼º¶¨Òå¡£</td></tr>
-<tr><td height="22"><li>ÖØÒª·½·¨Dv_plus.name»ñµÃËùÓĞ²å¼şµÄÉèÖÃ¡£±ØĞëÊ×ÏÈµ÷ÓÃ¡£</td></tr>
-<tr><td height="22"><li>·½·¨Dv_plus.checkloginÑéÖ¤ÓÃ»§Ê¹ÓÃ²å¼şµÄÈ¨ÏŞ¡£</td></tr>
-<tr><td height="22"><li>±äÁ¿Dv_plus.plus_Copyright´æ´¢²å¼şµÄ°æÈ¨ĞÅÏ¢</td></tr>
-<tr><td height="22"><li> ±äÁ¿Dv_plus.Plus_Name´æ´¢²å¼şÔÚ²Ëµ¥ÉÏÏÔÊ¾µÄÃû³Æ</td></tr>
-<tr><td height="22"><li>±äÁ¿Dv_plus.plus_masterÊÇ²¼¶û±äÁ¿£¬ÎªTrueµÄÊ±ºò±íÊ¾ÓÃ»§ÊÇ²å¼şµÄ¹ÜÀíÔ±¡£Èç¹ûÊÇÂÛÌ³¹ÜÀíÔ±£¬Ôò×Ô¶¯ÊÇ²å¼şµÄ¹ÜÀíÔ±¡£</td></tr>
-<tr><td height="22"><li>·½·¨Dv_plus.updateuser() ¿É×Ô¶¯¸ù¾İÉèÖÃ¸üĞÂÓÃ»§µÄ½ğÇ®¡¢»ı·Ö¡¢÷ÈÁ¦¡¢ÍşÍû.²å¼ş¿ª·¢Õß¿É¸ù¾İ×Ô¼ºµÄĞèÒªµ÷ÓÃ¡£</td></tr>
+<tr><th height="22">å˜é‡è¯´æ˜</th></tr>
+<tr><td height="22"><li>Dv_plus.Mian_settings(0) æ˜¯å¦å®šæ—¶é—´å¼€æ”¾ã€‚ç¼ºçœå€¼ä¸ºï¼š<%=Dv_plus.Mian_settings(0)%></td></tr>
+<tr><td height="22"><li>Dv_plus.Mian_settings(1) å®šæ—¶å¼€æ”¾èµ·æ­¢æ—¶é—´ã€‚ç¼ºçœå€¼ä¸ºï¼š<%=Dv_plus.Mian_settings(1)%></td></tr>
+<tr><td height="22"><li>Dv_plus.Mian_settings(2) å¯ä½¿ç”¨æ’ä»¶çš„ç”¨æˆ·ç»„åˆ—è¡¨ï¼Œåˆ†éš”ç¬¦å·ä¸ºâ€œ@â€ã€‚ç¼ºçœå€¼ä¸ºï¼š<%=Dv_plus.Mian_settings(2)%></td></tr>
+<tr><td height="22"><li>Dv_plus.Mian_settings(3) ç®¡ç†äººå‘˜,åˆ†éš”ç¬¦å·ä¸ºâ€œ|â€ã€‚ç¼ºçœå€¼ä¸ºï¼š<%=Dv_plus.Mian_settings(3)%></td></tr>
+<tr><td height="22"><li>Dv_plus.Mian_settings(4) èƒ½ä½¿ç”¨æ’ä»¶çš„æœ€å°‘æ–‡ç« ã€‚ç¼ºçœå€¼ä¸ºï¼š<%=Dv_plus.Mian_settings(4)%></td></tr>
+<tr><td height="22"><li>Dv_plus.Mian_settings(5) èƒ½ä½¿ç”¨æ’ä»¶çš„æœ€ä½é‡‘é’±ã€‚ç¼ºçœå€¼ä¸ºï¼š<%=Dv_plus.Mian_settings(5)%></td></tr>
+<tr><td height="22"><li>Dv_plus.Mian_settings(6) èƒ½ä½¿ç”¨æ’ä»¶çš„æœ€ä½ç§¯åˆ†ã€‚ç¼ºçœå€¼ä¸ºï¼š<%=Dv_plus.Mian_settings(6)%></td></tr>
+<tr><td height="22"><li>Dv_plus.Mian_settings(7) èƒ½ä½¿ç”¨æ’ä»¶çš„æœ€ä½é­…åŠ›ã€‚ç¼ºçœå€¼ä¸ºï¼š<%=Dv_plus.Mian_settings(7)%></td></tr>
+<tr><td height="22"><li>Dv_plus.Mian_settings(8) èƒ½ä½¿ç”¨æ’ä»¶çš„æœ€ä½å¨æœ›ã€‚ç¼ºçœå€¼ä¸ºï¼š<%=Dv_plus.Mian_settings(8)%></td></tr>
+<tr><td height="22"><li>Dv_plus.Mian_settings(9) æ¯æ¬¡ä½¿ç”¨æ’ä»¶é‡‘é’±å˜åŒ–ã€‚ç¼ºçœå€¼ä¸ºï¼š<%=Dv_plus.Mian_settings(9)%></td></tr>
+<tr><td height="22"><li>Dv_plus.Mian_settings(10) æ¯æ¬¡ä½¿ç”¨æ’ä»¶ç§¯åˆ†å˜åŒ–ã€‚ç¼ºçœå€¼ä¸ºï¼š<%=Dv_plus.Mian_settings(10)%></td></tr>
+<tr><td height="22"><li>Dv_plus.Mian_settings(11) æ¯æ¬¡ä½¿ç”¨æ’ä»¶é­…åŠ›å˜åŒ–ã€‚ç¼ºçœå€¼ä¸ºï¼š<%=Dv_plus.Mian_settings(11)%></td></tr>
+<tr><td height="22"><li>Dv_plus.Mian_settings(12) æ¯æ¬¡ä½¿ç”¨æ’ä»¶å¨æœ›å˜åŒ–ã€‚ç¼ºçœå€¼ä¸ºï¼š<%=Dv_plus.Mian_settings(12)%></td></tr>
+<tr><td height="22"><li>Dv_plus.plus_Settings ä¸ºæ•°ç»„å˜é‡ï¼Œè¿™æ˜¯æ‰©å±•çš„è®¾ç½®å˜é‡ï¼Œç”±æ’ä»¶ä½œè€…è‡ªå·±å®šä¹‰ã€‚</td></tr>
+<tr><td height="22"><li>Dv_plus.plus_Settingnames ä¸ºæ•°ç»„å˜é‡ï¼Œè¿™æ˜¯æ‰©å±•çš„è®¾ç½®å˜é‡çš„å«ä¹‰ï¼Œç”±æ’ä»¶ä½œè€…è‡ªå·±å®šä¹‰ã€‚</td></tr>
+<tr><td height="22"><li>é‡è¦æ–¹æ³•Dv_plus.nameè·å¾—æ‰€æœ‰æ’ä»¶çš„è®¾ç½®ã€‚å¿…é¡»é¦–å…ˆè°ƒç”¨ã€‚</td></tr>
+<tr><td height="22"><li>æ–¹æ³•Dv_plus.checkloginéªŒè¯ç”¨æˆ·ä½¿ç”¨æ’ä»¶çš„æƒé™ã€‚</td></tr>
+<tr><td height="22"><li>å˜é‡Dv_plus.plus_Copyrightå­˜å‚¨æ’ä»¶çš„ç‰ˆæƒä¿¡æ¯</td></tr>
+<tr><td height="22"><li> å˜é‡Dv_plus.Plus_Nameå­˜å‚¨æ’ä»¶åœ¨èœå•ä¸Šæ˜¾ç¤ºçš„åç§°</td></tr>
+<tr><td height="22"><li>å˜é‡Dv_plus.plus_masteræ˜¯å¸ƒå°”å˜é‡ï¼Œä¸ºTrueçš„æ—¶å€™è¡¨ç¤ºç”¨æˆ·æ˜¯æ’ä»¶çš„ç®¡ç†å‘˜ã€‚å¦‚æœæ˜¯è®ºå›ç®¡ç†å‘˜ï¼Œåˆ™è‡ªåŠ¨æ˜¯æ’ä»¶çš„ç®¡ç†å‘˜ã€‚</td></tr>
+<tr><td height="22"><li>æ–¹æ³•Dv_plus.updateuser() å¯è‡ªåŠ¨æ ¹æ®è®¾ç½®æ›´æ–°ç”¨æˆ·çš„é‡‘é’±ã€ç§¯åˆ†ã€é­…åŠ›ã€å¨æœ›.æ’ä»¶å¼€å‘è€…å¯æ ¹æ®è‡ªå·±çš„éœ€è¦è°ƒç”¨ã€‚</td></tr>
 </table>
 <%
 Set Dv_plus=Nothing 

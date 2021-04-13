@@ -38,7 +38,7 @@ var DvFileInput={
 		var oBtn=document.createElement('input');
 		oBtn.id='dv_fileinput_btn_'+(DvFileInput.count-1);
         oBtn.type='button';
-        oBtn.value='É¾³ý';
+        oBtn.value='åˆ é™¤';
 		oDiv.style.font='normal 12px verdana';
 		var o=DvFileInput.$('dv_fileinput_'+(DvFileInput.count-1));
 		DvFileInput.ae(oBtn,'click',function(){
@@ -51,7 +51,7 @@ var DvFileInput={
 	},
 	init:function(){
 		var a=document;
-		a.writeln('<div id="dv_fileinput_formarea"><a href="javascript:;" class="addfile"><input id="dv_fileinput_0" name="dv_fileinput_0" class="addfile" size="1" type="file" onchange="DvFileInput.add();");></a><br/><div id="dv_fileinput_list"></div><div id="dv_fileinput_show"></div><input type="button" onclick="DvFileInput.send()" value="ÉÏ´«" /></div>');
+		a.writeln('<div id="dv_fileinput_formarea"><a href="javascript:;" class="addfile"><input id="dv_fileinput_0" name="dv_fileinput_0" class="addfile" size="1" type="file" onchange="DvFileInput.add();");></a><br/><div id="dv_fileinput_list"></div><div id="dv_fileinput_show"></div><input type="button" onclick="DvFileInput.send()" value="ä¸Šä¼ " /></div>');
 	},
 	send:function(){
 		var f=document.createElement("form");

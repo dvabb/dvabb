@@ -4,7 +4,7 @@
 <!-- #include file="Dv_plus/Tools/plus_MagicFace_const.asp" -->
 <%
 Dvbbs.LoadTemplates("")
-Dvbbs.Stats = "Ä§·¨±íÇéÁĞ±í"
+Dvbbs.Stats = "é­”æ³•è¡¨æƒ…åˆ—è¡¨"
 Dvbbs.Head()
 If Dvbbs.UserID=0 Then Dvbbs.AddErrCode(6):Dvbbs.Showerr()
 Dim s,sv
@@ -13,9 +13,9 @@ If s = "" Or Not IsNumeric(s) Then s = 0
 s = Cint(s)
 If s <> 0 And s <> 1 Then s = 0
 If s = 0 Then
-	sv = "±íÇé"
+	sv = "è¡¨æƒ…"
 Else
-	sv = "Í·Ïñ"
+	sv = "å¤´åƒ"
 End If
 %>
 <!-- #include file="Dv_plus/Tools/DrawMagicFace.asp" -->
@@ -29,12 +29,12 @@ End If
 		var UserEP = <%=Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userep").text%>;
 		var UserCP = <%=Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usercp").text%>;
 		var UserPower = <%=Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userpower").text%>;
-		if(UserMoney < M && UserTicket < T){alert("ÄúÃ»ÓĞ×ã¹»µÄ½ğ±Ò»òµãÈ¯Ê¹ÓÃ´ËÄ§·¨<%=sv%>¡£");return false;}
-		if(UserArticle < A1){alert("ÄúµÄÌû×ÓÊıÃ»ÓĞ´ïµ½Ê¹ÓÃÄ§·¨<%=sv%>µÄ±ê×¼¡£");return false;}
-		if(UserWealth < A2){alert("ÄúµÄÌû×ÓÊıÃ»ÓĞ´ïµ½Ê¹ÓÃÄ§·¨<%=sv%>µÄ±ê×¼¡£");return false;}
-		if(UserEP < A3){alert("ÄúµÄÌû×ÓÊıÃ»ÓĞ´ïµ½Ê¹ÓÃÄ§·¨<%=sv%>µÄ±ê×¼¡£");return false;}
-		if(UserCP < A4){alert("ÄúµÄÌû×ÓÊıÃ»ÓĞ´ïµ½Ê¹ÓÃÄ§·¨<%=sv%>µÄ±ê×¼¡£");return false;}
-		if(UserPower < A5){alert("ÄúµÄÌû×ÓÊıÃ»ÓĞ´ïµ½Ê¹ÓÃÄ§·¨<%=sv%>µÄ±ê×¼¡£");return false;}
+		if(UserMoney < M && UserTicket < T){alert("æ‚¨æ²¡æœ‰è¶³å¤Ÿçš„é‡‘å¸æˆ–ç‚¹åˆ¸ä½¿ç”¨æ­¤é­”æ³•<%=sv%>ã€‚");return false;}
+		if(UserArticle < A1){alert("æ‚¨çš„å¸–å­æ•°æ²¡æœ‰è¾¾åˆ°ä½¿ç”¨é­”æ³•<%=sv%>çš„æ ‡å‡†ã€‚");return false;}
+		if(UserWealth < A2){alert("æ‚¨çš„å¸–å­æ•°æ²¡æœ‰è¾¾åˆ°ä½¿ç”¨é­”æ³•<%=sv%>çš„æ ‡å‡†ã€‚");return false;}
+		if(UserEP < A3){alert("æ‚¨çš„å¸–å­æ•°æ²¡æœ‰è¾¾åˆ°ä½¿ç”¨é­”æ³•<%=sv%>çš„æ ‡å‡†ã€‚");return false;}
+		if(UserCP < A4){alert("æ‚¨çš„å¸–å­æ•°æ²¡æœ‰è¾¾åˆ°ä½¿ç”¨é­”æ³•<%=sv%>çš„æ ‡å‡†ã€‚");return false;}
+		if(UserPower < A5){alert("æ‚¨çš„å¸–å­æ•°æ²¡æœ‰è¾¾åˆ°ä½¿ç”¨é­”æ³•<%=sv%>çš„æ ‡å‡†ã€‚");return false;}
 		var image2 = 'dv_plus/tools/magicface/gif/'+image1+'.gif';
 		parent.document.images['magicfacepic'].src=image2;
 		parent.document.getElementById("magicmoney").innerHTML = M;
@@ -69,7 +69,7 @@ Sub MagicList()
 <div><img height=3></div>
 <table cellspacing=0 cellpadding=3 align=center class=tableBorder2 style="width:98%" border=0>
 <tr>
-<th align=left height=25 ID="TableTitleLink" colspan=8>Ä§·¨<%=sv%>£º<a href="?BoardID=<%=Dvbbs.BoardID%>&s=<%=s%>">È«²¿</a> | <a href="?BoardID=<%=Dvbbs.BoardID%>&stype=-1&s=<%=s%>">Ãâ·Ñ</a> | 
+<th align=left height=25 ID="TableTitleLink" colspan=8>é­”æ³•<%=sv%>ï¼š<a href="?BoardID=<%=Dvbbs.BoardID%>&s=<%=s%>">å…¨éƒ¨</a> | <a href="?BoardID=<%=Dvbbs.BoardID%>&stype=-1&s=<%=s%>">å…è´¹</a> | 
 <%
 For i = 0 To Ubound(iMagicFaceType)
 	If i <> Ubound(iMagicFaceType) Then
@@ -79,17 +79,17 @@ For i = 0 To Ubound(iMagicFaceType)
 	End If
 Next
 %>
-| <a href="UserPay.asp" target=_blank>µãÈ¯</a>
+| <a href="UserPay.asp" target=_blank>ç‚¹åˆ¸</a>
 </th>
 </tr>
 <tr>
 <!--
-Modify By Dv_Xiaoxian£¬For:Del. Old Link 
+Modify By Dv_Xiaoxianï¼ŒFor:Del. Old Link 
 Date:2008.0.14
 -->
-<td rowspan="5" width="5"  style="border-right : 1px dotted gray;background-color:#F0F0F0;"><div align=right style="float:right;font-size:11px;word-spacing: 2;font-family:Verdana;font-weight:bold;writing-mode:tb-rl;" title="¶¯ÍøÏÈ·æÄ§·¨±íÇé"><font style="color:#CC00FF;"><font style="color:#33CCFF;">DV</font>-<font style="color:#D98200;">M</font>agic<font style="color:#D98200;">F</font>ace</font></div>
+<td rowspan="5" width="5"  style="border-right : 1px dotted gray;background-color:#F0F0F0;"><div align=right style="float:right;font-size:11px;word-spacing: 2;font-family:Verdana;font-weight:bold;writing-mode:tb-rl;" title="åŠ¨ç½‘å…ˆé”‹é­”æ³•è¡¨æƒ…"><font style="color:#CC00FF;"><font style="color:#33CCFF;">DV</font>-<font style="color:#D98200;">M</font>agic<font style="color:#D98200;">F</font>ace</font></div>
 </td>
-<td class="tablebody2" colspan=7>&nbsp;ÄúÄ¿Ç°ÓĞ <font color=red><B><%=Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usermoney").text%></B></font> ¸ö½ğ±ÒºÍ <font color=red><B><%=Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userticket").text%></B></font> ÕÅµãÈ¯</td>
+<td class="tablebody2" colspan=7>&nbsp;æ‚¨ç›®å‰æœ‰ <font color=red><B><%=Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usermoney").text%></B></font> ä¸ªé‡‘å¸å’Œ <font color=red><B><%=Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userticket").text%></B></font> å¼ ç‚¹åˆ¸</td>
 </tr>
 <%
 	Dim MagicSetting,ii,iii,svsql
@@ -136,7 +136,7 @@ Date:2008.0.14
 			Response.Write "<div align=""center"" bgcolor=""F8F8F8"">"
 			Response.Write "<img src=""dv_plus/tools/magicface/gif/"&SQL(2,i)&".gif"" title="""&SQL(1,i)&""" width=""40"" height=""39"" border=""0"" alt="""&SQL(1,i)&""" class=ImgOnclick onClick=""select('"&SQL(2,i)&"',"&SQL(4,i)&","&SQL(5,i)&","&MagicSetting(0)&","&MagicSetting(1)&","&MagicSetting(2)&","&MagicSetting(3)&","&MagicSetting(4)&")"" onMouseDown=""DispMagicEmot(event,"&SQL(2,i)&",350,500)"">"
 			Response.Write "</div><div align=""center"" style=""padding:2px"">"
-			Response.Write "<font color=gray style=""font-size: 11px"" title=""Ê¹ÓÃ¸ÃÄ§·¨±íÇéĞèÒª"&SQL(4,i)&"¸ö½ğ±Ò»ò"&SQL(5,i)&"ÕÅµãÈ¯"">"&SQL(4,i)&" / "&SQL(5,i)&"</font></td>"
+			Response.Write "<font color=gray style=""font-size: 11px"" title=""ä½¿ç”¨è¯¥é­”æ³•è¡¨æƒ…éœ€è¦"&SQL(4,i)&"ä¸ªé‡‘å¸æˆ–"&SQL(5,i)&"å¼ ç‚¹åˆ¸"">"&SQL(4,i)&" / "&SQL(5,i)&"</font></td>"
 
 			Response.Write "</div>"
 			Response.Write "</td>"
@@ -181,8 +181,8 @@ Date:2008.0.14
       <td width="90" height="22"><img src="dv_plus/tools/magicface/dot.gif" width="7" height="7">
         <b><font color="#D98200">
 <%
-If stype = -2 Then Response.Write "È«²¿"
-If stype = -1 Then Response.Write "Ãâ·Ñ"
+If stype = -2 Then Response.Write "å…¨éƒ¨"
+If stype = -1 Then Response.Write "å…è´¹"
 For i = 0 To Ubound(iMagicFaceType)
 	If i = stype Then
 		Response.Write iMagicFaceType(i)
@@ -191,25 +191,25 @@ For i = 0 To Ubound(iMagicFaceType)
 Next
 %>
         </font></b></td>
-	  <td width="120"><font color=blue>µã»÷Ñ¡ÖĞ ÓÒ¼üÔ¤ÀÀ</font></td>
+	  <td width="120"><font color=blue>ç‚¹å‡»é€‰ä¸­ å³é”®é¢„è§ˆ</font></td>
 	  <td width="58" height="22" align="right">
 	  
 <%
 If Page = 1 Then
-	If Endpage > 1 Then Response.Write "<a href='?BoardID="&Dvbbs.BoardID&"&stype="&stype&"&Page="&Page+1&"&s="&s&"'>ÏÂÒ³</a>"
+	If Endpage > 1 Then Response.Write "<a href='?BoardID="&Dvbbs.BoardID&"&stype="&stype&"&Page="&Page+1&"&s="&s&"'>ä¸‹é¡µ</a>"
 Else
 	If Endpage = Page Then
-		Response.Write "<a href='?BoardID="&Dvbbs.BoardID&"&stype="&stype&"&Page="&Page-1&"&s="&s&"'>ÉÏÒ³</a>"
+		Response.Write "<a href='?BoardID="&Dvbbs.BoardID&"&stype="&stype&"&Page="&Page-1&"&s="&s&"'>ä¸Šé¡µ</a>"
 	Else
-		Response.Write "<a href='?BoardID="&Dvbbs.BoardID&"&stype="&stype&"&Page="&Page-1&"&s="&s&"'>ÉÏÒ³</a>&nbsp;"
-		Response.Write "<a href='?BoardID="&Dvbbs.BoardID&"&stype="&stype&"&Page="&Page+1&"&s="&s&"'>ÏÂÒ³</a>"
+		Response.Write "<a href='?BoardID="&Dvbbs.BoardID&"&stype="&stype&"&Page="&Page-1&"&s="&s&"'>ä¸Šé¡µ</a>&nbsp;"
+		Response.Write "<a href='?BoardID="&Dvbbs.BoardID&"&stype="&stype&"&Page="&Page+1&"&s="&s&"'>ä¸‹é¡µ</a>"
 	End If
 End If
 %>
 	  </td>
 	  <td width="50" align="right"><font class=RedFont><%=Page%></font>/<%=Endpage%>&nbsp;&nbsp;</td>
 	  <td width="26" align="right"><input type="text" name="Page" size="1" style="BORDER-top: #C4C4C4 1px solid; BORDER-bottom: #C4C4C4 1px solid; BORDER-left: #C4C4C4 1px solid; BORDER-right: #C4C4C4 1px solid; font-size: 12px;"></td>
-	  <td width="18">&nbsp;Ò³ </td>
+	  <td width="18">&nbsp;é¡µ </td>
       <td width="44" valign="center" height="22" align="center">
 		<INPUT TYPE="hidden" NAME="stype" value="<%=Stype%>"><INPUT TYPE="hidden" NAME="s" value="<%=s%>">
         <input type="image" src="dv_plus/tools/magicface/bt_go.gif" onClick="this.form.submit()" style="cursor:hand" name="Submit" value="Submit">

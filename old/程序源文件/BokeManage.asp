@@ -13,11 +13,11 @@ If Is_Isapi_Rewrite = 0 Then DvBoke.ModHtmlLinked = "boke.asp?"
 DvBoke.LoadPage("Manage.xslt")
 If Session("BokeManage") = "" Then
 	If Request("Action")="Login" Then
-		DvBoke.Stats = "—È÷§”√ªß–≈œ¢"
+		DvBoke.Stats = "È™åËØÅÁî®Êà∑‰ø°ÊÅØ"
 		DvBoke.Top(0)
 		Page_ChkLogin()
 	Else
-		DvBoke.Stats = "≤©øÕπ‹¿Ìµ«¬Ω"
+		DvBoke.Stats = "ÂçöÂÆ¢ÁÆ°ÁêÜÁôªÈôÜ"
 		DvBoke.Nav(0)
 		Page_Login()
 	End If
@@ -31,49 +31,49 @@ Else
 	Case "1"
 		Select Case t
 		Case "1"
-			tStr = "Œƒ’¬"
+			tStr = "ÊñáÁ´†"
 			tStr_1 = "?s=1&t=1"
 			sTypeID = 0
 		Case "2"
-			tStr = " ’≤ÿ"
+			tStr = "Êî∂Ëóè"
 			tStr_1 = "?s=1&t=2"
 			sTypeID = 1
 		Case "3"
-			tStr = "¡¥Ω”"
+			tStr = "ÈìæÊé•"
 			tStr_1 = "?s=1&t=3"
 			sTypeID = 2
 		Case "4"
-			tStr = "Ωª“◊"
+			tStr = "‰∫§Êòì"
 			tStr_1 = "?s=1&t=4"
 			sTypeID = 3
 		Case "5"
-			tStr = "œ‡≤·"
+			tStr = "Áõ∏ÂÜå"
 			tStr_1 = "?s=1&t=5"
 			sTypeID = 4
 		Case Else
-			tStr = "Œƒ’¬"
+			tStr = "ÊñáÁ´†"
 			tStr_1 = "?s=1&t=1"
 			sTypeID = 0
 		End Select
-		DvBoke.Stats = "≤©øÕπ‹¿Ì - " & tStr
+		DvBoke.Stats = "ÂçöÂÆ¢ÁÆ°ÁêÜ - " & tStr
 		DvBoke.Top(0)
 		Page_Nav_Left()
 		Page_UserInput()
 	Case "2"
-		tStr = "∆¿¬€π‹¿Ì"
-		DvBoke.Stats = "≤©øÕπ‹¿Ì - " & tStr
+		tStr = "ËØÑËÆ∫ÁÆ°ÁêÜ"
+		DvBoke.Stats = "ÂçöÂÆ¢ÁÆ°ÁêÜ - " & tStr
 		DvBoke.Top(0)
 		Page_Nav_Left()
 		Page_UserPost()
 	Case "3"
-		tStr = "Œƒº˛π‹¿Ì"
-		DvBoke.Stats = "≤©øÕπ‹¿Ì - " & tStr
+		tStr = "Êñá‰ª∂ÁÆ°ÁêÜ"
+		DvBoke.Stats = "ÂçöÂÆ¢ÁÆ°ÁêÜ - " & tStr
 		DvBoke.Top(0)
 		Page_Nav_Left()
 		Page_UserFile()
 	Case "4"
-		tStr = "ƒ£∞Âπ‹¿Ì"
-		DvBoke.Stats = "≤©øÕπ‹¿Ì - " & tStr
+		tStr = "Ê®°ÊùøÁÆ°ÁêÜ"
+		DvBoke.Stats = "ÂçöÂÆ¢ÁÆ°ÁêÜ - " & tStr
 		DvBoke.Top(0)
 		Page_Nav_Left()
 		If Request.QueryString("action")="Saveskin" Then
@@ -84,36 +84,36 @@ Else
 	Case "5"
 		Select Case t
 		Case "1"
-			tStr = "∏ˆ»À◊ ¡œ"
+			tStr = "‰∏™‰∫∫ËµÑÊñô"
 		Case "2"
-			tStr = "≤©øÕ√‹¬Î"
+			tStr = "ÂçöÂÆ¢ÂØÜÁ†Å"
 		Case "3"
-			tStr = "≤©øÕ…Ë÷√"
+			tStr = "ÂçöÂÆ¢ËÆæÁΩÆ"
 		Case "4"
-			tStr = "πÿº¸◊÷…Ë÷√"
+			tStr = "ÂÖ≥ÈîÆÂ≠óËÆæÁΩÆ"
 		Case Else
-			tStr = "∏ˆ»À◊ ¡œ"
+			tStr = "‰∏™‰∫∫ËµÑÊñô"
 		End Select
-		DvBoke.Stats = "≤©øÕπ‹¿Ì - ∏ˆ»À≈‰÷√ - " & tStr
+		DvBoke.Stats = "ÂçöÂÆ¢ÁÆ°ÁêÜ - ‰∏™‰∫∫ÈÖçÁΩÆ - " & tStr
 		DvBoke.Top(0)
 		Page_Nav_Left()
 		Page_UserSetting()
-	Case "6"	' ˝æ›∏¸–¬
+	Case "6"	'Êï∞ÊçÆÊõ¥Êñ∞
 		Select Case t
 			Case "1"
-			tStr = "∆µµ¿∏¸–¬"
+			tStr = "È¢ëÈÅìÊõ¥Êñ∞"
 		End Select
-		DvBoke.Stats = "≤©øÕπ‹¿Ì -  ˝æ›∏¸–¬ - " & tStr
+		DvBoke.Stats = "ÂçöÂÆ¢ÁÆ°ÁêÜ - Êï∞ÊçÆÊõ¥Êñ∞ - " & tStr
 		DvBoke.Top(0)
 		Page_Nav_Left()
 		Page_Upate()
-	Case "7"	' ˝æ›Õ≥º∆
-		DvBoke.Stats = "≤©øÕπ‹¿Ì -  ˝æ›∏¸–¬ - " & tStr
+	Case "7"	'Êï∞ÊçÆÁªüËÆ°
+		DvBoke.Stats = "ÂçöÂÆ¢ÁÆ°ÁêÜ - Êï∞ÊçÆÊõ¥Êñ∞ - " & tStr
 		DvBoke.Top(0)
 		Page_Nav_Left()
 		Page_Count()
 	Case Else
-		DvBoke.Stats = "≤©øÕπ‹¿Ì"
+		DvBoke.Stats = "ÂçöÂÆ¢ÁÆ°ÁêÜ"
 		DvBoke.Top(0)
 		Page_Nav_Left()
 		Page_Manage()
@@ -142,7 +142,7 @@ End Sub
 
 Sub Page_ChkLogin()
 	Dim PassWord,f
-	' ˝æ›—È÷§
+	'Êï∞ÊçÆÈ™åËØÅ
 	If Not DvBoke.ChkPost() Then DvBoke.ShowCode(2):DvBoke.ShowMsg(0)
 	If Not Dvbbs.CodeIsTrue() Then
 		DvBoke.ShowCode(7)
@@ -200,7 +200,7 @@ Sub Page_UserInput()
 	Dim PageHtml,UserPageInput
 	PageHtml = DvBoke.Page_Strings(5).text
 	Select Case m
-	Case "1"	'∑¢±ÌŒƒ’¬
+	Case "1"	'ÂèëË°®ÊñáÁ´†
 		Select Case LCase(Request("Action"))
 			Case "savepost"
 				Post_Save(0)
@@ -246,7 +246,7 @@ Sub Page_Upate()
 End Sub
 
 
-'ÃÌº”Œƒ’¬
+'Ê∑ªÂä†ÊñáÁ´†
 Function Post_News()
 	Dim PageHtml
 	Dim Stype
@@ -265,7 +265,7 @@ Function Post_News()
 	Set DvBokePost = New Cls_DvBoke_Post
 	DvBokePost.Action = "?s="&s&"&t="&t&"&m="&m&"&action=savepost"
 	DvBokePost.EditMode = "Default"
-	DvBokePost.Show_Upload = 1	'‘ –Ì…œ¥´
+	DvBokePost.Show_Upload = 1	'ÂÖÅËÆ∏‰∏ä‰º†
 	DvBokePost.IsTopic = 1
 	DvBokePost.sType = Stype
 	DvBokePost.PostUserName = DvBoke.BokeUserName
@@ -276,14 +276,14 @@ Function Post_News()
 	Post_News = PageHtml
 End Function
 
-'Act 0=±£¥Ê–¬Ã˚
+'Act 0=‰øùÂ≠òÊñ∞Â∏ñ
 Sub Post_Save(Act)
 	Dim P_Title,P_SearchKey,P_DDateTime,P_sType,P_sCatID,P_Catid,P_Lock,P_Best,P_PostContent,P_PostTitleNote,P_Weather,P_iWeather
 	Dim P_UpFileID,HaveUpFile
 	Dim PostID,RootID
 
 	'-----------------------------------------------------------------------------
-	'ªÒ»°±Ìµ• ˝æ› ----------------------------------------------------------------
+	'Ëé∑ÂèñË°®ÂçïÊï∞ÊçÆ ----------------------------------------------------------------
 	'-----------------------------------------------------------------------------
 	P_Title = DvBoke.Checkstr(Trim(Request.Form("Title")))
 	P_SearchKey = DvBoke.Checkstr(Trim(Request.Form("SearchKey")))
@@ -318,7 +318,7 @@ Sub Post_Save(Act)
 	End If
 
 	'-----------------------------------------------------------------------------
-	' ˝æ›—È÷§ --------------------------------------------------------------------
+	'Êï∞ÊçÆÈ™åËØÅ --------------------------------------------------------------------
 	'-----------------------------------------------------------------------------
 	If Not DvBoke.ChkPost() Then DvBoke.ShowCode(2):DvBoke.ShowMsg(0)
 	If StrLength(P_Title)>250 or StrLength(P_Title)="" Then
@@ -387,15 +387,15 @@ Sub Post_Save(Act)
 		Num_P=1
 	End Select
 	'-----------------------------------------------------------------------------
-	' ˝æ›¥¶¿Ì --------------------------------------------------------------------
+	'Êï∞ÊçÆÂ§ÑÁêÜ --------------------------------------------------------------------
 	'-----------------------------------------------------------------------------
 	'TopicID,CatID,sCatID,UserID,UserName,Title,TitleNote,PostTime,Child,Hits,IsView,IsLock,sType,LastPostTime,LastPoster,LastPostID,IsBest,S_Key,Weather
 
-	' ˝æ›±Ì[Dv_Boke_Topic]£∫TopicID=0 ,CatID=1 ,sCatID=2 ,UserID=3 ,UserName=4 ,Title=5 ,TitleNote=6 ,PostTime=7 ,Child=8 ,Hits=9 ,IsView=10 ,IsLock=11 ,sType=12 ,LastPostTime=13 ,LastPoster=14 ,LastPostID=15 ,IsBest=16 ,S_Key=17
+	'Êï∞ÊçÆË°®[Dv_Boke_Topic]ÔºöTopicID=0 ,CatID=1 ,sCatID=2 ,UserID=3 ,UserName=4 ,Title=5 ,TitleNote=6 ,PostTime=7 ,Child=8 ,Hits=9 ,IsView=10 ,IsLock=11 ,sType=12 ,LastPostTime=13 ,LastPoster=14 ,LastPostID=15 ,IsBest=16 ,S_Key=17
 
 	'PostID,CatID,sCatID,ParentID,RootID,UserID,UserName,Title,Content,JoinTime,IP,sType,Weather
 
-	' ˝æ›±Ì[Dv_Boke_Post]£∫PostID=0 ,CatID=1 ,sCatID=2 ,ParentID=3 ,RootID=4 ,UserID=5 ,UserName=6 ,Title=7 ,Content=8 ,JoinTime=9 ,IP=10 ,sType=11
+	'Êï∞ÊçÆË°®[Dv_Boke_Post]ÔºöPostID=0 ,CatID=1 ,sCatID=2 ,ParentID=3 ,RootID=4 ,UserID=5 ,UserName=6 ,Title=7 ,Content=8 ,JoinTime=9 ,IP=10 ,sType=11
 	Dim Rs,Sql
 	If Act = 0 Then
 		SQL = "INSERT INTO [Dv_Boke_Topic] (CatID,sCatID,UserID,UserName,Title,TitleNote,PostTime,IsLock,sType,LastPostTime,IsBest,S_Key,Weather) Values (" & P_Catid & "," & P_sCatID & "," & DvBoke.BokeUserID & ",'" & DvBoke.BokeUserName & "','" & P_Title & "','" & P_PostTitleNote & "','"  & P_DDateTime & "',"& P_Lock &"," & P_sType & ",'"& P_DDateTime &"',"& P_Best &",'"& P_SearchKey &"',"& P_Weather &")"
@@ -424,11 +424,11 @@ Sub Post_Save(Act)
 			DvBoke.Execute Sql
 		End If
 		Update_TopicToXml()
-		'∏¸–¬œµÕ≥XML ˝æ›------------
+		'Êõ¥Êñ∞Á≥ªÁªüXMLÊï∞ÊçÆ------------
 		DvBoke.Update_SysCat P_Catid&","&DvBoke.BokeNode.getAttribute("syscatid"),0,1,Num_T,0,Now()
 		DvBoke.Update_System 0,1,Num_F,Num_P,Num_T,0,Now()
 		DvBoke.SaveSystemCache()
-		'∏¸–¬œµÕ≥XML ˝æ›------------
+		'Êõ¥Êñ∞Á≥ªÁªüXMLÊï∞ÊçÆ------------
 
 		DvBoke.ShowCode(37)
 		DvBoke.ShowMsg(0)
@@ -443,7 +443,7 @@ Sub Post_Save(Act)
 
 End Sub
 
-'”√ªß¿∏ƒø…Ë÷√
+'Áî®Êà∑Ê†èÁõÆËÆæÁΩÆ
 Function Page_UserInput_Cat()
 	Dim PageHtml,PageHtml_Str,Rs
 	PageHtml = DvBoke.Page_Strings(12).text
@@ -475,7 +475,7 @@ Function Page_UserInput_Cat()
 			PageHtml_Str = PageHtml_Str & "<li class=""Set3"">"&Rs("uCatTitle")&"</li>"
 			'PageHtml_Str = PageHtml_Str & "<li class=""Set3"">"&DvBoke.Cat_Type(Rs("utype"))&"</li>"
 			PageHtml_Str = PageHtml_Str & "<li class=""Set5"">"&Left(Rs("uCatNote"),35)&"</li>"
-			PageHtml_Str = PageHtml_Str & "<li class=""Set3""><a href="""&tStr_1&"&m=2&uCatID="&Rs("uCatID")&""">±‡º≠</a>&nbsp;&nbsp;<a href=""#"" onclick=""alertreadme('ƒ˙»∑∂®…æ≥˝¿∏ƒø "&Rs("uCatTitle")&" ¬?','"&tStr_1&"&m=2&Action=Del&uCatID="&Rs("uCatID")&"')"">…æ≥˝</a></li>"
+			PageHtml_Str = PageHtml_Str & "<li class=""Set3""><a href="""&tStr_1&"&m=2&uCatID="&Rs("uCatID")&""">ÁºñËæë</a>&nbsp;&nbsp;<a href=""#"" onclick=""alertreadme('ÊÇ®Á°ÆÂÆöÂà†Èô§Ê†èÁõÆ "&Rs("uCatTitle")&" Âêó?','"&tStr_1&"&m=2&Action=Del&uCatID="&Rs("uCatID")&"')"">Âà†Èô§</a></li>"
 			PageHtml_Str = PageHtml_Str & "</ul>"
 		Rs.MoveNext
 		Loop
@@ -486,7 +486,7 @@ Function Page_UserInput_Cat()
 	Page_UserInput_Cat = PageHtml
 End Function
 
-'±£¥Ê”√ªß¿∏ƒø…Ë÷√
+'‰øùÂ≠òÁî®Êà∑Ê†èÁõÆËÆæÁΩÆ
 Sub Page_UserInput_Cat_Save()
 	Dim uCatID,uCatTitle,uCatNote,IsView,sType
 	uCatID = Request.Form("uCatID")
@@ -518,7 +518,7 @@ Sub Page_UserInput_Cat_Save()
 	DvBoke.ShowMsg(0)
 End Sub
 
-'∏¸–¬”√ªß¿∏ƒø ˝æ›
+'Êõ¥Êñ∞Áî®Êà∑Ê†èÁõÆÊï∞ÊçÆ
 Sub Update_UserCatToXml()
 	'uCatID=0 ,UserID=1 ,uCatTitle=2 ,uCatNote=3 ,OpenTime=4 ,uType=5 ,TopicNum=6 ,PostNum=7 ,TodayNum=8 ,IsView=9,LastUpTime=10
 	Dim Rs,Sql
@@ -549,7 +549,7 @@ Sub Update_UserCatToXml()
 	Update_KeyWordToXml()
 	DvBoke.ShowCode(27)
 End Sub
-'∏¸–¬ ◊“≥÷˜Ã‚ ˝æ›
+'Êõ¥Êñ∞È¶ñÈ°µ‰∏ªÈ¢òÊï∞ÊçÆ
 Sub Update_TopicToXml()
 	Dim Node,XmlDoc,NodeList,ChildNode,BokeBody
 	Dim DvCode
@@ -579,7 +579,7 @@ Sub Update_TopicToXml()
 			Else
 				BokeBody = Rs("TitleNote")
 			End If
-			BokeBody = DvCode.UbbCode(BokeBody) & "...<br/>[<a href=""boke.asp?"&DvBoke.BokeName&".showtopic."&Rs("TopicID")&".html"">‘ƒ∂¡»´Œƒ</a>]"
+			BokeBody = DvCode.UbbCode(BokeBody) & "...<br/>[<a href=""boke.asp?"&DvBoke.BokeName&".showtopic."&Rs("TopicID")&".html"">ÈòÖËØªÂÖ®Êñá</a>]"
 			NodeList.attributes.getNamedItem("titlenote").text = BokeBody
 			NodeList.attributes.getNamedItem("posttime").text = Rs("PostTime")
 			NodeList.attributes.getNamedItem("lastposttime").text = Rs("LastPostTime")
@@ -595,7 +595,7 @@ Sub Update_TopicToXml()
 End Sub
 
 
-'∏¸–¬ ◊“≥∆¿¬€ ˝æ›
+'Êõ¥Êñ∞È¶ñÈ°µËØÑËÆ∫Êï∞ÊçÆ
 Sub Update_PostToXml()
 	Dim Node,XmlDoc,NodeList,ChildNode
 	Set Node = DvBoke.BokeCat.selectNodes("xml/bokepost")
@@ -628,7 +628,7 @@ Sub Update_PostToXml()
 	DvBoke.Execute("Update Dv_Boke_User set XmlData = '"&Replace(DvBoke.BokeCat.documentElement.xml,"'","''")&"' where UserID="&DvBoke.BokeUserID)
 End Sub
 
-'∏¸–¬ ◊“≥¡¥Ω” ˝æ›
+'Êõ¥Êñ∞È¶ñÈ°µÈìæÊé•Êï∞ÊçÆ
 Sub Update_LinkToXml()
 	Dim Nums
 	Dim Node,XmlDoc,NodeList,ChildNode
@@ -664,7 +664,7 @@ Sub Update_LinkToXml()
 	DvBoke.Execute("Update Dv_Boke_User set XmlData = '"&Replace(DvBoke.BokeCat.documentElement.xml,"'","''")&"' where UserID="&DvBoke.UserID)
 End Sub
 
-'∏¸–¬ ◊“≥Õº∆¨ ˝æ›
+'Êõ¥Êñ∞È¶ñÈ°µÂõæÁâáÊï∞ÊçÆ
 Sub Update_PhotoToXml()
 	Dim Nums
 	Dim Node,XmlDoc,NodeList,ChildNode
@@ -698,7 +698,7 @@ Sub Update_PhotoToXml()
 	DvBoke.Execute("Update Dv_Boke_User set XmlData = '"&Replace(DvBoke.BokeCat.documentElement.xml,"'","''")&"' where UserID="&DvBoke.BokeUserID)
 End Sub
 
-'∏¸–¬πÿº¸◊÷◊™ªª ˝æ›
+'Êõ¥Êñ∞ÂÖ≥ÈîÆÂ≠óËΩ¨Êç¢Êï∞ÊçÆ
 Sub Update_KeyWordToXml()
 	Dim Node,XmlDoc,NodeList,ChildNode
 	Set Node = DvBoke.BokeCat.selectNodes("xml/bokekeyword")
@@ -751,7 +751,7 @@ Function Page_UserInput_mTopic()
 		iKeyWord = " And (Title Like '%"&KeyWord&"%' Or Content Like '%"&KeyWord&"%')"
 	End If
 
-	'◊÷∂Œ≈≈–Ú TopicID=0 ,CatID=1 ,sCatID=2 ,UserID=3 ,UserName=4 ,Title=5 ,Content=6 ,JoinTime=7 ,sType=8
+	'Â≠óÊÆµÊéíÂ∫è TopicID=0 ,CatID=1 ,sCatID=2 ,UserID=3 ,UserName=4 ,Title=5 ,Content=6 ,JoinTime=7 ,sType=8
 
 	Sql = "Select RootID,CatID,sCatID,UserID,UserName,Title,Content,JoinTime,sType,PostID From Dv_Boke_Post Where UserID = "&DvBoke.UserID&" And sType = "&sTypeID&" And ParentID = 0 "&iKeyWord&" order by PostID Desc"
 	Set Rs = Dvbbs.iCreateObject ("adodb.recordset")
@@ -791,7 +791,7 @@ Function Page_UserInput_mTopic()
 		Temp1 = Replace(Temp1,"{$Topic}",Sql(5,i))
 		Temp1 = Replace(Temp1,"{$DateTime}",FormatDateTime(Sql(7,i),2) & " " & FormatDateTime(Sql(7,i),4))
 		If Sql(1,i)=0 Then
-			Temp1 = Replace(Temp1,"{$cat}","Œ¥πÈ¿‡")
+			Temp1 = Replace(Temp1,"{$cat}","Êú™ÂΩíÁ±ª")
 		Else
 			Temp1 = Replace(Temp1,"{$cat}",DvBoke.ChannelTitle(Sql(1,i)))
 		End If
@@ -862,7 +862,7 @@ Function Page_UserInput_mTopic_Del()
 	uCatID = cCur(uCatID)
 	TopicID = Replace(TopicID," ","")
 	TopicID = Split(TopicID,",")
-	'ºÏ≤‚ƒø±Í¿∏ƒø «∑Ò∫œ∑®
+	'Ê£ÄÊµãÁõÆÊ†áÊ†èÁõÆÊòØÂê¶ÂêàÊ≥ï
 	If uCatID = -1 And iTopic = 1 Then
 		DvBoke.ShowCode(49)
 		DvBoke.ShowMsg(2)
@@ -901,14 +901,14 @@ Function Page_UserInput_mTopic_Del()
 					Case 4
 						Num_P = 1
 					End Select
-					'…æ≥˝∞¸¿®∆‰∆¿¬€
+					'Âà†Èô§ÂåÖÊã¨ÂÖ∂ËØÑËÆ∫
 					Set tRs=DvBoke.Execute("Select * From Dv_Boke_Post Where RootID = " & TopicID(i))
 					PostNum = 0
 					tPostNum = 0
 					Do While Not tRs.Eof
 						PostNum = PostNum + 1
 						If DateDiff("d",tRs("JoinTime"),Now()) = 0 Then tPostNum = tPostNum + 1
-						'…œ¥´Œƒº˛«Â¿Ì
+						'‰∏ä‰º†Êñá‰ª∂Ê∏ÖÁêÜ
 						If tRs("IsUpfile")=1 Then DvBoke.SysDeleteFile(tRs("PostID"))
 					tRs.MoveNext
 					Loop
@@ -916,958 +916,8 @@ Function Page_UserInput_mTopic_Del()
 					tRs.Close:Set tRs=Nothing
 					TopicNum = TopicNum + tPostNum
 					DvBoke.Execute("Delete From Dv_Boke_Post Where RootID = " & TopicID(i))
-					'∏¸–¬œµÕ≥ ˝æ›
+					'Êõ¥Êñ∞Á≥ªÁªüÊï∞ÊçÆ
 					DvBoke.Execute("Update [Dv_Boke_SysCat] Set TopicNum = TopicNum - 1,PostNum = PostNum - "&PostNum&",TodayNum = TodayNum - "&TopicNum&" Where sCatID in ("&Rs("sCatID")&","&DvBoke.BokeNode.getAttribute("syscatid")&")")
 					
 					DvBoke.Execute("Update [Dv_Boke_System] Set S_TopicNum=S_TopicNum - "&Num_T&",S_PostNum=S_PostNum - "&PostNum&",S_PhotoNum=S_PhotoNum - "&Num_P&",S_FavNum=S_FavNum - "&Num_F&",S_TodayNum=S_TodayNum - "&TopicNum)
-					'∏¸–¬”√ªß◊‹ ˝æ›
-					DvBoke.Execute("Update [Dv_Boke_User] Set TopicNum = TopicNum - "&Num_T&",PostNum = PostNum - "&PostNum&",FavNum=FavNum - "&Num_F&",PhotoNum=PhotoNum - "&Num_P&",TodayNum=TodayNum - "&TopicNum&" Where UserID="&DvBoke.BokeUserID)
-					'∏¸–¬”√ªß¿∏ƒø ˝æ›
-					DvBoke.Execute("Update [Dv_Boke_UserCat] Set TopicNum = TopicNum - 1,PostNum = PostNum - "&PostNum&",TodayNum=TodayNum - "&TopicNum&" Where uCatID="&Rs("CatID"))
-					'…æ≥˝÷˜Ã‚
-					DvBoke.Execute("Delete From Dv_Boke_Topic Where TopicID = " & TopicID(i))
-					Num_T=0:Num_F=0:Num_L=0:Num_P=0
-				End If
-				Rs.Close:Set Rs=Nothing
-			Case 1
-				Set Rs=DvBoke.Execute("Select * From Dv_Boke_Topic Where UserID = "&DvBoke.UserID&" And TopicID = " & TopicID(i))
-				If Not (Rs.Eof And Rs.Bof) Then
-					TopicNum = 0
-					If DateDiff("d",Rs("PostTime"),Now()) = 0 Then TopicNum = 1
-					Select Case Rs("sType")
-					Case 0
-						Num_T = 1
-					Case 1
-						Num_F = 1
-					Case 2
-						Num_L = 1
-					Case 4
-						Num_P = 1
-					End Select
-					'“∆∂Ø∞¸¿®∆‰∆¿¬€
-					Set tRs=DvBoke.Execute("Select * From Dv_Boke_Post Where RootID = " & TopicID(i))
-					PostNum = 0
-					tPostNum = 0
-					Do While Not tRs.Eof
-						PostNum = PostNum + 1
-						If DateDiff("d",tRs("JoinTime"),Now()) = 0 Then tPostNum = tPostNum + 1
-						'…œ¥´Œƒº˛“∆∂Ø
-						If tRs("IsUpfile")=1 Then DvBoke.Execute("Update Dv_Boke_Upfile Set CatID = "&uCatID&",sType = "&sTypeID_a&" Where PostID = " & tRs("PostID"))
-					tRs.MoveNext
-					Loop
-					PostNum = PostNum - 1
-					tRs.Close:Set tRs=Nothing
-					TopicNum = TopicNum + tPostNum
-					DvBoke.Execute("UpDate Dv_Boke_Post Set CatID = "&uCatID&",sType = "&sTypeID_a&" Where RootID = " & TopicID(i))
-					'∏¸–¬”√ªß¿∏ƒø ˝æ›
-					DvBoke.Execute("Update [Dv_Boke_UserCat] Set TopicNum = TopicNum - 1,PostNum = PostNum - "&PostNum&",TodayNum=TodayNum - "&TopicNum&" Where uCatID="&Rs("CatID"))
-					DvBoke.Execute("Update [Dv_Boke_UserCat] Set TopicNum = TopicNum + 1,PostNum = PostNum + "&PostNum&",TodayNum=TodayNum + "&TopicNum&" Where uCatID="&uCatID)
-					'“∆∂Ø÷˜Ã‚
-					DvBoke.Execute("Update Dv_Boke_Topic Set CatID = "&uCatID&",sType = "&sTypeID_a&" Where TopicID = " & TopicID(i))
-					Num_T=0:Num_F=0:Num_L=0:Num_P=0
-				End If
-				Rs.Close:Set Rs=Nothing
-			End Select
-		End If
-	Next
-	'∏¸–¬”√ªß ◊“≥ ˝æ›
-	Update_TopicToXml()
-	DvBoke.LoadSetup(1)
-	'∏¸–¬œµÕ≥ª∫¥Ê ˝æ›
-	DvBoke.ShowCode(50)
-	DvBoke.ShowMsg(2)
-	Page_UserInput_mTopic_Del = DvBoke.InputShowMsg
-End Function
-
-Function Page_UserInput_mPost()
-	Dim PageHtml,KeyWord,iKeyWord,iTopic
-	PageHtml = DvBoke.Page_Strings(22).text
-	Dim Rs,Sql
-	Dim Page,MaxRows,Endpage,CountNum,PageSearch
-	Endpage = 0
-	MaxRows = DvBoke.System_Setting(7)
-	Page = Request("Page")
-	If IsNumeric(Page) = 0 or Page="" Then Page=1
-	Page = Clng(Page)
-	KeyWord = Request("KeyWord")
-	If KeyWord <> "" Then
-		KeyWord = DvBoke.CheckStr(KeyWord)
-		iKeyWord = " And (Title Like '%"&KeyWord&"%' Or Content Like '%"&KeyWord&"%')"
-	End If
-
-	'◊÷∂Œ≈≈–Ú TopicID=0 ,CatID=1 ,sCatID=2 ,UserID=3 ,UserName=4 ,Title=5 ,Content=6 ,JoinTime=7 ,sType=8
-
-	Sql = "Select RootID,CatID,sCatID,UserID,UserName,Title,Content,JoinTime,sType,PostID,Content From Dv_Boke_Post Where UserID = "&DvBoke.UserID&" And (Not ParentID = 0) "&iKeyWord&" order by PostID Desc"
-	Set Rs = Dvbbs.iCreateObject ("adodb.recordset")
-	If Dv_Boke_InDvbbsData = 1 Then
-		Rs.Open Sql,Boke_Conn,1,1
-	Else
-		Rs.Open Sql,Conn,1,1
-	End If
-	DvBoke.SqlQueryNum = DvBoke.SqlQueryNum + 1
-	If Not Rs.eof Then
-		CountNum = Rs.RecordCount
-		If CountNum Mod MaxRows=0 Then
-			Endpage = CountNum \ MaxRows
-		Else
-			Endpage = CountNum \ MaxRows+1
-		End If
-		Rs.MoveFirst
-		If Page > Endpage Then Page = Endpage
-		If Page < 1 Then Page = 1
-		If Page >1 Then 				
-			Rs.Move (Page-1) * MaxRows
-		End if
-		SQL=Rs.GetRows(MaxRows)
-	Else
-		DvBoke.ShowCode(48)
-		DvBoke.ShowMsg(2)
-		'Page_UserInput_mTopic = DvBoke.InputShowMsg
-		'Exit Function
-	End If
-	Rs.close:Set Rs = Nothing
-	Dim i,Temp,Temp1
-	If DvBoke.InputShowMsg = "" Then
-		For i=0 To Ubound(SQL,2)
-		Temp1 = DvBoke.Page_Strings(23).text
-		Temp1 = Replace(Temp1,"{$EditID}",Sql(9,i))
-		Temp1 = Replace(Temp1,"{$topicid}",Sql(0,i))
-		Temp1 = Replace(Temp1,"{$postid}",Sql(9,i))
-		If Sql(5,i) = "" Or IsNull(Sql(5,i)) Then
-			If strLength(Sql(10,i)) > 24 Then Sql(10,i) = CutStr(Sql(10,i),24) & "..."
-			iTopic = Server.HtmlEncode(Sql(10,i))
-		Else
-			If strLength(Sql(5,i)) > 24 Then Sql(5,i) = CutStr(Sql(5,i),24) & "..."
-			iTopic = Server.HtmlEncode(Sql(5,i))
-		End If
-		Temp1 = Replace(Temp1,"{$Topic}",iTopic)
-		Temp1 = Replace(Temp1,"{$DateTime}",FormatDateTime(Sql(7,i),2) & " " & FormatDateTime(Sql(7,i),4))
-		Temp1 = Replace(Temp1,"{$cat}",Sql(4,i))
-		Temp = Temp & Temp1
-		Next
-	Else
-		Temp = DvBoke.InputShowMsg
-	End If
-
-	PageHtml = Replace(PageHtml,"{$InfoList}",Temp)
-	PageHtml = Replace(PageHtml,"{$Page}",Page)
-	PageHtml = Replace(PageHtml,"{$MaxRows}",MaxRows)
-	PageHtml = Replace(PageHtml,"{$CountNum}",CountNum)
-	PageSearch = "KeyWord="&KeyWord&"&s=2"
-	PageHtml = Replace(PageHtml,"{$PageSearch}",PageSearch)
-	If Is_Isapi_Rewrite = 0 Then DvBoke.ModHtmlLinked = "boke.asp?"
-	PageHtml = Replace(PageHtml,"{$bokeurl}",DvBoke.ModHtmlLinked)
-	PageHtml = Replace(PageHtml,"{$bokename}",DvBoke.BokeName)
-	PageHtml = Replace(PageHtml,"{$KeyWord}",KeyWord)
-	PageHtml = Replace(PageHtml,"{$t}",sTypeID)
-	
-	Temp = ""
-	Set Rs=DvBoke.Execute("Select * From Dv_Boke_UserCat Where UserID = " & DvBoke.UserID)
-	If Not (Rs.Eof And Rs.Bof) Then
-		Do While Not Rs.Eof
-			Temp = Temp & "<Option value="""&Rs("uCatID")&""">"&Server.HtmlEncode(Rs("uCatTitle")&"")&"</Option>"
-		Rs.MoveNext
-		Loop
-		PageHtml = Replace(PageHtml,"{$uCatList}",Temp)
-	Else
-		PageHtml = Replace(PageHtml,"{$uCatList}","")
-	End If
-	Rs.Close:Set Rs=Nothing
-	Page_UserInput_mPost = PageHtml
-End Function
-
-Function Page_UserInput_mPost_Del()
-	Dim TopicID,iTopic,i,Rs,Sql,tRs,PostNum,tPostNum,TopicNum
-	TopicID = Request("TopicID")
-	iTopic = Request("iTopic")
-	If TopicID = "" Or iTopic = "" Then
-		DvBoke.ShowCode(9)
-		DvBoke.ShowMsg(2)
-		Page_UserInput_mPost_Del = DvBoke.InputShowMsg
-		Exit Function
-	End If
-	If Not IsNumeric(iTopic) Then
-		DvBoke.ShowCode(9)
-		DvBoke.ShowMsg(2)
-		Page_UserInput_mPost_Del = DvBoke.InputShowMsg
-		Exit Function
-	End If
-	iTopic = Cint(iTopic)
-	If iTopic <> 0 Then
-		DvBoke.ShowCode(9)
-		DvBoke.ShowMsg(2)
-		Page_UserInput_mPost_Del = DvBoke.InputShowMsg
-		Exit Function
-	End If
-	TopicID = Replace(TopicID," ","")
-	TopicID = Split(TopicID,",")
-	
-	For i = 0 To Ubound(TopicID)
-		If IsNumeric(TopicID(i)) Then
-			'…æ≥˝∆¿¬€
-			Set Rs=DvBoke.Execute("Select * From Dv_Boke_Post Where PostID = " & TopicID(i))
-			tPostNum = 0
-			If Not (Rs.Eof And Rs.Bof) Then
-				If DateDiff("d",Rs("JoinTime"),Now()) = 0 Then tPostNum = 1
-				'∏¸–¬œµÕ≥ ˝æ›
-				DvBoke.Execute("Update [Dv_Boke_SysCat] Set PostNum = PostNum - 1,TodayNum = TodayNum - "&tPostNum&" Where sCatID in ("&Rs("sCatID")&","&DvBoke.BokeNode.getAttribute("syscatid")&")")
-
-
-				DvBoke.Execute("Update [Dv_Boke_System] Set S_PostNum = S_PostNum - 1,S_TodayNum = S_TodayNum - "&tPostNum)
-				'∏¸–¬”√ªß◊‹ ˝æ›
-				DvBoke.Execute("Update [Dv_Boke_User] Set PostNum = PostNum - 1,TodayNum=TodayNum - "&tPostNum&" Where UserID="&DvBoke.BokeUserID)
-				'∏¸–¬”√ªß¿∏ƒø ˝æ›
-				DvBoke.Execute("Update [Dv_Boke_UserCat] Set PostNum = PostNum - 1,TodayNum=TodayNum - "&tPostNum&" Where uCatID="&Rs("CatID"))
-				'…œ¥´Œƒº˛«Â¿Ì
-				If Rs("IsUpfile")=1 Then DvBoke.SysDeleteFile(Rs("PostID"))
-				'∏¸–¬÷˜Ã‚ ˝æ›
-				DvBoke.Execute("UpDate [Dv_Boke_Topic] Set Child=Child-1 Where TopicID = " & Rs("RootID"))
-				DvBoke.Execute("Delete From Dv_Boke_Post Where PostID = " & TopicID(i))
-			End If
-			Rs.Close:Set Rs=Nothing
-		End If
-	Next
-	'∏¸–¬”√ªß ◊“≥ ˝æ›
-	Update_TopicToXml()
-	DvBoke.LoadSetup(1)
-	'∏¸–¬œµÕ≥ª∫¥Ê ˝æ›
-	DvBoke.ShowCode(50)
-	DvBoke.ShowMsg(0)
-	'Page_UserInput_mPost_Del = DvBoke.InputShowMsg
-End Function
-
-Sub Page_UserSetting()
-	Dim PageHtml,UserPageHtml
-	PageHtml = DvBoke.Page_Strings(6).text
-	Select Case t
-	Case "1"
-		If Request.QueryString("Action") = "Save" Then
-			Page_UserSetting_Info_Save()
-		Else
-			UserPageHtml = Page_UserSetting_Info()
-		End If
-	Case "2"
-		If Request.QueryString("Action") = "Save" Then
-			Page_UserSetting_Pass_Save()
-		Else
-			UserPageHtml = Page_UserSetting_Pass()
-		End If
-	Case "3"
-		If Request.QueryString("Action") = "Save" Then
-			Page_UserSetting_Set_Save()
-		Else
-			UserPageHtml = Page_UserSetting_Set()
-		End If
-	Case "4"
-		If Request.QueryString("Action") = "Save" Then
-			Page_UserSetting_Key_Save()
-		ElseIf Request.QueryString("Action") = "Del" Then
-			Page_UserSetting_Key_Del()
-		Else
-			UserPageHtml = Page_UserSetting_Key()
-		End If
-	Case Else
-		If Request.QueryString("Action") = "Save" Then
-			Page_UserSetting_Info_Save()
-		Else
-			UserPageHtml = Page_UserSetting_Info()
-		End If
-	End Select
-	PageHtml = Replace(PageHtml,"{$UserSettingInfo}",UserPageHtml)
-	Response.Write PageHtml
-End Sub
-
-Function Page_UserSetting_Info()
-	Dim PageHtml
-	PageHtml = DvBoke.Page_Strings(7).text
-	PageHtml = Replace(PageHtml,"{$BokeName}",Server.HtmlEncode(DvBoke.BokeNode.getAttribute("bokename")&""))
-	PageHtml = Replace(PageHtml,"{$NickName}",Server.HtmlEncode(DvBoke.BokeNode.getAttribute("nickname")&""))
-	PageHtml = Replace(PageHtml,"{$BokeTitle}",Server.HtmlEncode(DvBoke.BokeNode.getAttribute("boketitle")&""))
-	PageHtml = Replace(PageHtml,"{$BokeCTitle}",Server.HtmlEncode(DvBoke.BokeNode.getAttribute("bokechildtitle")&""))
-	PageHtml = Replace(PageHtml,"{$BokeNote}",Server.HtmlEncode(DvBoke.BokeNode.getAttribute("bokenote")&""))
-	Page_UserSetting_Info = PageHtml
-End Function
-
-Sub Page_UserSetting_Info_Save()
-	Dim NickName,BokeTitle,BokeCTitle,BokeNote
-	If Not DvBoke.ChkPost() Then DvBoke.ShowCode(2):DvBoke.ShowMsg(0)
-	NickName = Request.Form("NickName")
-	BokeTitle = Request.Form("BokeTitle")
-	BokeCTitle = Request.Form("BokeCTitle")
-	BokeNote = Request.Form("BokeNote")
-
-	If NickName = "" or strLength(NickName)>50 or strLength(NickName)<1 Then
-		DvBoke.ShowCode(8)
-	Else
-		NickName = Server.Htmlencode(NickName)
-	End If
-	If BokeTitle = "" or strLength(BokeTitle)>150 or strLength(BokeTitle)<1 Then
-		DvBoke.ShowCode(12)
-	Else
-		BokeTitle = Server.Htmlencode(BokeTitle)
-	End If
-	If BokeCTitle = "" or strLength(BokeCTitle)>250 or strLength(BokeCTitle)<1 Then
-		DvBoke.ShowCode(12)
-	Else
-		BokeCTitle = Server.Htmlencode(BokeCTitle)
-	End If
-	If BokeNote <> "" Then
-		If CheckText(BokeNote) = False Then
-			DvBoke.ShowCode(9)
-		Else
-			BokeNote = Server.Htmlencode(BokeNote)
-		End If
-	End If
-	If CheckText(NickName) = False Then DvBoke.ShowCode(9)
-	DvBoke.ShowMsg(0)
-
-	Dim Rs,SQL
-	Sql  = "Select * From [Dv_Boke_User] Where UserID = " & DvBoke.BokeUserID
-	If Not IsObject(Boke_Conn) Then Boke_ConnectionDatabase
-	Set Rs=Dvbbs.iCreateObject("Adodb.RecordSet")
-	Rs.Open Sql,Boke_Conn,1,3
-	If Lcase(Rs("NickName")) <> Lcase(NickName) Then
-		'∏¸–¬÷˜Ã‚±Ì
-		DvBoke.Execute("Update Dv_Boke_Topic Set UserName = '"&DvBoke.CheckStr(NickName)&"' Where UserID = " & DvBoke.BokeUserID)
-		'∏¸–¬Ã˚◊”±Ì
-		DvBoke.Execute("Update Dv_Boke_Post Set UserName = '"&DvBoke.CheckStr(NickName)&"' Where UserID = " & DvBoke.BokeUserID)
-		'∏¸–¬…œ¥´±Ì
-		DvBoke.Execute("Update Dv_Boke_Upfile Set UserName = '"&DvBoke.CheckStr(NickName)&"' Where UserID = " & DvBoke.BokeUserID)
-	End If
-	Rs("NickName") = NickName
-	Rs("BokeTitle") = BokeTitle
-	Rs("BokeChildTitle") = BokeCTitle
-	Rs("BokeNote") = BokeNote
-	Rs.Update
-	Rs.Close
-	Set Rs=Nothing
-	'∏¸–¬”√ªß ◊“≥ ˝æ›
-	Update_TopicToXml()
-	DvBoke.LoadSetup(1)
-	DvBoke.ShowCode(16)
-	DvBoke.ShowMsg(0)
-End Sub
-
-Function Page_UserSetting_Pass()
-	Page_UserSetting_Pass = DvBoke.Page_Strings(8).text
-End Function
-
-Sub Page_UserSetting_Pass_Save()
-	Dim PassWord,nPassWord,rnPassWord
-	If Not DvBoke.ChkPost() Then DvBoke.ShowCode(2):DvBoke.ShowMsg(0)
-	PassWord = Request.Form("PassWord")
-	nPassWord = Request.Form("nPass")
-	rnPassWord = Request.Form("rnPass")
-
-	If PassWord = "" Or nPassWord = "" Or rnPassWord = "" Then
-		DvBoke.ShowCode(11)
-	End If
-	If nPassWord <> rnPassWord Then
-		DvBoke.ShowCode(17)
-	End If
-	nPassWord = MD5(nPassWord,16)
-	PassWord = MD5(PassWord,16)
-	DvBoke.ShowMsg(0)
-
-	Dim Rs
-	Set Rs = DvBoke.Execute("Select PassWord From Dv_Boke_User Where UserID = " & DvBoke.UserID)
-	If PassWord <> Rs(0) Then
-		DvBoke.ShowCode(15)
-		DvBoke.ShowMsg(0)
-	End If
-	Rs.Close : Set Rs = Nothing
-	DvBoke.Execute("Update Dv_Boke_User Set [PassWord]='"&nPassWord&"' Where UserID = " & DvBoke.UserID)
-	DvBoke.ShowCode(18)
-	DvBoke.ShowMsg(0)
-End Sub
-
-Function Page_UserSetting_Set()
-	Dim PageHtml,i,Rs,PageHtml_Str
-	PageHtml = DvBoke.Page_Strings(9).text
-	For i = 0 To 50
-		PageHtml = Replace(PageHtml,"{$Setting"&i&"}",DvBoke.BokeSetting(i))
-	Next
-	Set Rs = DvBoke.Execute("Select * From Dv_Boke_SysCat Where sType = 0 Order By sCatID")
-	Do While Not Rs.Eof
-		PageHtml_Str = PageHtml_Str & "<Option value="""&Rs("sCatID")&""" "
-		If Cint(DvBoke.BokeNode.getAttribute("syscatid")) = Rs("sCatID") Then PageHtml_Str = PageHtml_Str & "selected"
-		PageHtml_Str = PageHtml_Str & ">"&Rs("sCatTitle")&"</Option>"
-	Rs.MoveNext
-	Loop
-	Rs.Close
-	Set Rs=Nothing
-	PageHtml = Replace(PageHtml,"{$CatList}",PageHtml_Str)
-	Page_UserSetting_Set = PageHtml
-End Function
-
-Sub Page_UserSetting_Set_Save()
-	Dim iSetting,BokeSetting,i
-	Dim SysCatID
-	SysCatID = Request.Form("SysCatID")
-	If SysCatID = "" Or Not IsNumeric(SysCatID) Then SysCatID = 1
-	SysCatID = Clng(SysCatID)
-	For i = 0 To 50
-		If Trim(Request.Form("Setting"&i)) = "" Then
-			iSetting= 1
-		Else
-			iSetting = Replace(Trim(Request.Form("Setting"&i)),",","")
-		End If
-		If i < 12 Then
-			If Not IsNumeric(iSetting) Then
-				DvBoke.ShowCode(9)
-				Exit For
-			End If
-		End If
-		If i = 0 Then
-			BokeSetting = iSetting
-		Else
-			BokeSetting = BokeSetting & "," & iSetting
-		End If
-	Next
-	DvBoke.ShowMsg(0)
-	BokeSetting = DvBoke.CheckStr(BokeSetting)
-	BokeSetting = Server.HtmlEncode(BokeSetting)
-	BokeSetting = Dv_FilterJS(BokeSetting)
-	
-	'µ±”√ªßÀ˘—°œµÕ≥∑÷¿‡∏ƒ±‰ ±œ‡”¶∏¸–¬∑÷¿‡”√ªß ˝
-	If DvBoke.BokeNode.getAttribute("syscatid")<>SysCatID Then
-		DvBoke.Execute("Update Dv_Boke_SysCat Set ucatnum = ucatnum - 1 Where scatid = " & DvBoke.BokeNode.getAttribute("syscatid"))
-		DvBoke.Execute("Update Dv_Boke_SysCat Set ucatnum = ucatnum + 1 Where scatid = " & SysCatID)
-
-		DvBoke.Update_SysCat DvBoke.BokeNode.getAttribute("syscatid"),-1,0,0,0,Null
-		DvBoke.Update_SysCat SysCatID,1,0,0,0,Null
-		DvBoke.SaveSystemCache()
-	End If
-
-	DvBoke.Execute("Update Dv_Boke_User Set BokeSetting = '"&BokeSetting&"',SysCatID = "&SysCatID&" Where UserID = " & DvBoke.BokeUserID)
-
-	DvBoke.ShowCode(19)
-	DvBoke.ShowMsg(0)
-End Sub
-
-Function Page_UserSetting_Key()
-	Dim PageHtml,PageHtml_Str,Rs
-	PageHtml = DvBoke.Page_Strings(10).text
-	If Request("KeyID")<>"" And IsNumeric(Request("KeyID")) Then
-		Set Rs = DvBoke.Execute("Select * From Dv_Boke_KeyWord Where KeyID = " & Request("KeyID") & " And UserID = " & DvBoke.UserID)
-		If Not (Rs.Eof And Rs.Bof) Then
-			PageHtml = Replace(PageHtml,"{$KeyID}",Rs("KeyID"))
-			PageHtml = Replace(PageHtml,"{$KeyWord}",Rs("KeyWord"))
-			PageHtml = Replace(PageHtml,"{$nKeyWord}",Rs("nKeyWord"))
-			PageHtml = Replace(PageHtml,"{$LinkUrl}",Rs("LinkUrl") & "")
-			If Rs("NewWindows")=1 Then
-				PageHtml = Replace(PageHtml,"{$NewWindows}","checked")
-			Else
-				PageHtml = Replace(PageHtml,"{$NewWindows}","")
-			End If
-			PageHtml = Replace(PageHtml,"{$LinkTitle}",Rs("LinkTitle") & "")
-		End If
-		Rs.Close
-		Set Rs = Nothing
-	End If
-	PageHtml = Replace(PageHtml,"{$KeyID}","0")
-	PageHtml = Replace(PageHtml,"{$KeyWord}","")
-	PageHtml = Replace(PageHtml,"{$nKeyWord}","")
-	PageHtml = Replace(PageHtml,"{$LinkUrl}","")
-	PageHtml = Replace(PageHtml,"{$NewWindows}","checked")
-	PageHtml = Replace(PageHtml,"{$LinkTitle}","")
-	Set Rs = DvBoke.Execute("Select * From Dv_Boke_KeyWord Where UserID = " & DvBoke.UserID & " Order By KeyID")
-	If Not (Rs.Eof And Rs.Bof) Then
-		Do While Not Rs.Eof
-			PageHtml_Str = PageHtml_Str & "<ul>"
-			PageHtml_Str = PageHtml_Str & "<li class=""Set33"">"&Rs("KeyWord")&"</li>"
-			PageHtml_Str = PageHtml_Str & "<li class=""Set33"">"&Rs("nKeyWord")&"</li>"
-			PageHtml_Str = PageHtml_Str & "<li class=""Set44""><a href="""&Rs("LinkUrl")&""" target=""_blank"" title="""&Server.HtmlEncode(Rs("LinkTitle")&"")&""">"&Left(Rs("LinkUrl"),25)&"</a></li>"
-			PageHtml_Str = PageHtml_Str & "<li class=""Set55""><a href=""?s=5&t=4&KeyID="&Rs("KeyID")&""">±‡º≠</a>&nbsp;&nbsp;<a href=""#"" onclick=""alertreadme('ƒ˙»∑∂®…æ≥˝πÿº¸◊÷ "&Rs("KeyWord")&" ¬?','?s=5&t=4&Action=Del&KeyID="&Rs("KeyID")&"')"">…æ≥˝</a></li>"
-			PageHtml_Str = PageHtml_Str & "</ul>"
-		Rs.MoveNext
-		Loop
-	End If
-	Rs.Close
-	Set Rs=Nothing
-	PageHtml = Replace(PageHtml,"{$KeyWordList}",PageHtml_Str)
-	Page_UserSetting_Key = PageHtml
-End Function
-
-Sub Page_UserSetting_Key_Save()
-	Dim KeyID,KeyWord,nKeyWord,LinkUrl,LinkTitle,NewWindows
-	Dim Rs
-	KeyID = Request.Form("KeyID")
-	KeyWord = Replace(DvBoke.CheckStr(Request.Form("KeyWord")),"|","")
-	nKeyWord = Replace(DvBoke.CheckStr(Request.Form("nKeyWord")),"|","")
-	LinkUrl = Request.Form("LinkUrl")
-	LinkTitle = Request.Form("LinkTitle")
-	NewWindows = Request.Form("NewWindows")
-
-	If KeyID = "" Or Not IsNumeric(KeyID) Then KeyID = 0
-	KeyID = cCur(KeyID)
-	If NewWindows = "" Or Not IsNumeric(NewWindows) Then NewWindows = 0
-	NewWindows = Cint(NewWindows)
-	If KeyWord = "" Or nKeyWord = "" Then
-		DvBoke.ShowCode(20)
-	Else
-		KeyWord = Server.HtmlEncode(KeyWord)
-		nKeyWord = Server.HtmlEncode(nKeyWord)
-	End If
-	If LinkUrl <> "" Then LinkUrl = DvBoke.CheckStr(Server.HtmlEncode(Dv_FilterJS(LinkUrl)))
-	If LinkTitle <> "" Then LinkTitle = DvBoke.CheckStr(Server.HtmlEncode(Dv_FilterJS(LinkTitle)))
-	DvBoke.ShowMsg(0)
-	If KeyID > 0 Then
-		Set Rs = DvBoke.Execute("Select KeyID From Dv_Boke_KeyWord Where (Not KeyID = "&KeyID&") And UserID = "&DvBoke.UserID&" And KeyWord = '"&KeyWord&"'")
-		If Not (Rs.Eof And Rs.Bof) Then
-			DvBoke.ShowCode(22)
-			DvBoke.ShowMsg(0)
-		End If
-		Rs.Close
-		Set Rs = Nothing
-		DvBoke.Execute("Update Dv_Boke_KeyWord Set KeyWord = '"&KeyWord&"',nKeyWord = '"&nKeyWord&"',LinkUrl = '"&LinkUrl&"',LinkTitle = '"&LinkTitle&"',NewWindows = "&NewWindows&" Where KeyID = " & KeyID & " And UserID = " & DvBoke.UserID)
-	Else
-		Set Rs = DvBoke.Execute("Select KeyID From Dv_Boke_KeyWord Where UserID = "&DvBoke.UserID&" And KeyWord = '"&KeyWord&"'")
-		If Not (Rs.Eof And Rs.Bof) Then
-			DvBoke.ShowCode(22)
-			DvBoke.ShowMsg(0)
-		End If
-		Rs.Close
-		Set Rs = Nothing
-		DvBoke.Execute("Insert Into Dv_Boke_KeyWord (KeyWord,nKeyWord,LinkUrl,LinkTitle,NewWindows,UserID) Values ('"&KeyWord&"','"&nKeyWord&"','"&LinkUrl&"','"&LinkTitle&"',"&NewWindows&","&DvBoke.UserID&")")
-	End If
-	DvBoke.ShowCode(21)
-	DvBoke.ShowMsg(0)
-End Sub
-
-Sub Page_UserSetting_Key_Del()
-	Dim KeyID
-	KeyID = Request("KeyID")
-	If KeyID = "" Or Not IsNumeric(KeyID) Then KeyID = 0
-	KeyID = cCur(KeyID)
-	DvBoke.Execute("Delete From Dv_Boke_KeyWord Where KeyID = "&KeyID&" And UserID = " & DvBoke.UserID)
-	DvBoke.ShowCode(23)
-	DvBoke.ShowMsg(0)
-End Sub
-
-'∑Á∏Òƒ£∞Â¡–±Ì
-Sub Page_SkinSetting()
-	Dim Rs,Sql
-	Dim Page,MaxRows,Endpage,CountNum,PageSearch
-	Dim PageHtml
-		
-	PageHtml = DvBoke.Page_Strings(18).text
-	Endpage = 0
-	MaxRows = 9
-	Page = Request("Page")
-	If IsNumeric(Page) = 0 or Page="" Then Page=1
-	Page = Clng(Page)
-
-	'S_ID=0 ,S_SkinName=1 ,S_Path=2 ,S_ViewPic=3 ,S_Info=4 ,S_Builder=5
-	Sql = "Select S_ID,S_SkinName,S_Path,S_ViewPic,S_Info,S_Builder From [Dv_Boke_Skins] "
-	'Set Rs = DvBoke.Execute(Sql)
-	Set Rs = Dvbbs.iCreateObject ("adodb.recordset")
-	If Dv_Boke_InDvbbsData = 1 Then
-		Rs.Open Sql,Boke_Conn,1,1
-	Else
-		Rs.Open Sql,Conn,1,1
-	End If
-	DvBoke.SqlQueryNum = DvBoke.SqlQueryNum + 1
-	If Not Rs.eof Then
-		CountNum = Rs.RecordCount
-		If CountNum Mod MaxRows=0 Then
-			Endpage = CountNum \ MaxRows
-		Else
-			Endpage = CountNum \ MaxRows+1
-		End If
-		Rs.MoveFirst
-		If Page > Endpage Then Page = Endpage
-		If Page < 1 Then Page = 1
-		If Page >1 Then 				
-			Rs.Move (Page-1) * MaxRows
-		End if
-		SQL=Rs.GetRows(MaxRows)
-	Else
-		DvBoke.ShowCode(28)
-		DvBoke.ShowMsg(0)
-		Exit Sub
-	End If
-	Rs.close:Set Rs = Nothing
-	Dim i,ii,Temp1,Temp2,TempHtml,ViewLogo
-	PageSearch = "s=4"
-
-	Temp2 = DvBoke.Page_Strings(20).text
-
-	For i=0 To Ubound(SQL,2)
-		Temp1 = DvBoke.Page_Strings(19).text
-		If SQL(3,i)<>"" or not IsNull(SQL(3,i)) Then
-			ViewLogo = SQL(3,i)
-		Else
-			ViewLogo = "boke/images/viewskins.png"
-		End If
-		Temp1 = Replace(Temp1,"{$ViewLogo}",ViewLogo)
-		Temp1 = Replace(Temp1,"{$S_Name}",SQL(1,i))
-		Temp1 = Replace(Temp1,"{$S_id}",SQL(0,i))
-
-		TempHtml = TempHtml & Temp1
-
-		If ii=3 Then
-			TempHtml = TempHtml & Temp2
-			ii=0
-		Else
-			ii=ii+1
-		End If
-	Next
-
-	PageHtml = Replace(PageHtml,"{$skin_list}",TempHtml)
-	PageHtml = Replace(PageHtml,"{$S_id}",DvBoke.BokeNode.getAttribute("skinid"))
-	PageHtml = Replace(PageHtml,"{$Page}",Page)
-	PageHtml = Replace(PageHtml,"{$MaxRows}",MaxRows)
-	PageHtml = Replace(PageHtml,"{$CountNum}",CountNum)
-	PageHtml = Replace(PageHtml,"{$PageSearch}",PageSearch)
-	Response.Write PageHtml
-End Sub
-
-'±£¥Êƒ£∞Â∑Á∏Ò…Ë÷√
-Sub Page_SaveSkins()
-	Dim Skinid
-	Skinid = Request.Form("Skinid")
-	If Not DvBoke.ChkPost() Then DvBoke.ShowCode(2)
-	If DvBoke.CheckNumeric(Skinid) = 0 Then
-		DvBoke.ShowCode(4)
-	End If
-	DvBoke.ShowMsg(0)
-	Dim Rs,Sql
-	Set Rs = DvBoke.Execute("Select S_ID From Dv_Boke_Skins Where S_ID="&Skinid)
-	If Not Rs.Eof Then
-		DvBoke.Execute("Update Dv_Boke_User Set Skinid="&Skinid&" where UserID="&DvBoke.UserID)
-		DvBoke.ShowCode(29)
-	Else
-		DvBoke.ShowCode(4)
-	End If
-	DvBoke.ShowMsg(0)
-End Sub
-
-Sub Page_UserFile()
-	Dim PageHtml,mStr,KeyWord,iKeyWord,iFileType
-	Dim Sql,Rs,TopicHtml,i,Title,ii
-	Dim Page,MaxRows,Endpage,CountNum,PageSearch
-	Endpage = 0
-	MaxRows = Cint(DvBoke.BokeSetting(7))
-	'MaxRows = 2
-	Page = Request("Page")
-	If IsNumeric(Page) = 0 or Page="" Then Page=1
-	Page = Clng(Page)
-	PageHtml = DvBoke.Page_Strings(24).text
-	KeyWord = DvBoke.CheckStr(Request("keyword"))
-	If KeyWord <> "" Then iKeyWord = " And (Title Like '%"&KeyWord&"%' Or sFileName Like '%"&KeyWord&"%')"
-	Select Case m
-	Case "1"
-		mStr = "À˘”–"
-	Case "2"
-		mStr = "Õº∆¨"
-		iFileType = " And FileType = 1"
-	Case "3"
-		mStr = "—πÀı"
-		iFileType = " And FileType = 5"
-	Case "4"
-		mStr = "Œƒµµ"
-		iFileType = " And FileType = 6"
-	Case "5"
-		mStr = "√ΩÃÂ"
-		iFileType = " And FileType In (2,3,4)"
-	Case Else
-		mStr = "À˘”–"
-	End Select
-	Sql = "Select ID,BokeUserID,UserName,CatID,sType,TopicID,PostID,IsTopic,Title,FileName,FileType,FileSize,FileNote,DownNum,ViewNum,DateAndTime,PreviewImage,IsLock,sFileName From Dv_Boke_Upfile where Userid="&DvBoke.BokeUserID&" "&iFileType&" "&iKeyWord&" order by DateAndTime Desc"
-	'Response.Write sql
-	PageHtml = Replace(PageHtml,"{$ActionInfo}",mStr)
-	PageHtml = Replace(PageHtml,"{$KeyWord}",KeyWord)
-	If Request("Action")="Del" Then
-		PageHtml = Replace(PageHtml,"{$topiclist}",Page_UserFile_Del())
-		Response.Write PageHtml
-		Exit Sub
-	End If
-
-	Set Rs = Dvbbs.iCreateObject ("adodb.recordset")
-	If Dv_Boke_InDvbbsData = 1 Then
-		Rs.Open Sql,Boke_Conn,1,1
-	Else
-		Rs.Open Sql,Conn,1,1
-	End If
-	DvBoke.SqlQueryNum = DvBoke.SqlQueryNum + 1
-	If Not Rs.eof Then
-		CountNum = Rs.RecordCount
-		If CountNum Mod MaxRows=0 Then
-			Endpage = CountNum \ MaxRows
-		Else
-			Endpage = CountNum \ MaxRows+1
-		End If
-		Rs.MoveFirst
-		If Page > Endpage Then Page = Endpage
-		If Page < 1 Then Page = 1
-		If Page >1 Then 				
-			Rs.Move (Page-1) * MaxRows
-		End if
-		SQL=Rs.GetRows(MaxRows)
-	Else
-		DvBoke.ShowCode(48)
-		DvBoke.ShowMsg(2)
-		TopicHtml = DvBoke.InputShowMsg
-	End If
-	Rs.close:Set Rs = Nothing
-
-	If TopicHtml = "" Then
-		Dim Temp,Temp2
-		Temp2 = DvBoke.Page_Strings(27).text
-		Dim ViewFile
-		If Not IsNumeric(DvBoke.System_Setting(9)) Then
-			DvBoke.System_Setting(9) = 3
-		Else
-			DvBoke.System_Setting(9) = Cint(DvBoke.System_Setting(9))
-		End If
-		For i=0 To Ubound(SQL,2)
-			TopicHtml = DvBoke.Page_Strings(26).text
-			Title = Sql(8,i)
-			If Len(Title)>150 Then
-				Title = Left(Title,150) &"......"
-			End If
-			If Title = "" Or IsNull(Title) Then
-				If Sql(18,i)<>"" Then
-					Title = Sql(18,i)
-				Else
-					Title = Split(Sql(9,i),"/")(2)
-				End If
-			End If
-
-			ViewFile = Sql(16,i)
-			If ViewFile="" or IsNull(ViewFile) Then
-				ViewFile = Sql(9,i)
-			End If
-			ViewFile = DvBoke.System_UpSetting(19) & ViewFile
-			If Sql(10,i) <> 1 Then
-				ViewFile = "boke/images/info.gif"
-			End If
-			TopicHtml = Replace(TopicHtml,"{$ViewPhoto}",ViewFile)
-			If Sql(17,i) = 4 Then
-				Title = "Œ¥‘¯ π”√"
-				TopicHtml = Replace(TopicHtml,"{$topic}",DvBoke.HTMLEncode(Title))
-			Else
-				If Sql(7,i)=0 Then
-					TopicHtml = Replace(TopicHtml,"{$topic}","<a href="""&DvBoke.ModHtmlLinked&DvBoke.BokeName&".showtopic."&Sql(5,i)&".html"" target=""_blank"">" & DvBoke.HTMLEncode(Title) & "</a>")
-				ElseIf Sql(7,i)=1 Then
-					TopicHtml = Replace(TopicHtml,"{$topic}","<a href="""&DvBoke.ModHtmlLinked&DvBoke.BokeName&".showtopic."&Sql(5,i)&"."&Sql(6,i)&".html"" target=""_blank"">" & DvBoke.HTMLEncode(Title) & "</a>")
-				Else
-					TopicHtml = Replace(TopicHtml,"{$topic}",DvBoke.HTMLEncode(Title))
-				End If
-			End If
-			TopicHtml = Replace(TopicHtml,"{$PostDate}",FormatDateTime(Sql(15,i),1))
-			TopicHtml = Replace(TopicHtml,"{$PostUserName}",Sql(2,i))
-			TopicHtml = Replace(TopicHtml,"{$TopicID}",Sql(5,i))
-			TopicHtml = Replace(TopicHtml,"{$fileid}",Sql(0,i))
-			Temp = Temp & TopicHtml
-			If ii >= Cint(DvBoke.System_Setting(9))-1 Then
-				Temp = Temp & Temp2
-				ii = 0
-			Else
-				ii = ii+1
-			End If
-		Next
-		Temp = Replace(Temp,"{$width}",Dvboke.System_UpSetting(14))
-		Temp = Replace(Temp,"{$height}",Dvboke.System_UpSetting(15))
-		PageHtml = Replace(PageHtml,"{$topiclist}",DvBoke.Page_Strings(25).text)
-		PageHtml = Replace(PageHtml,"{$photo_list}",Temp)
-	Else
-		PageHtml = Replace(PageHtml,"{$topiclist}",TopicHtml)
-	End If
-	PageSearch = "s=3&m="&m&"&keyword="&keyword
-	PageHtml = Replace(PageHtml,"{$Page}",Page)
-	PageHtml = Replace(PageHtml,"{$MaxRows}",MaxRows)
-	PageHtml = Replace(PageHtml,"{$CountNum}",CountNum)
-	PageHtml = Replace(PageHtml,"{$PageSearch}",PageSearch)
-	PageHtml = Replace(PageHtml,"{$bokename}",DvBoke.BokeName)
-	PageHtml = Replace(PageHtml,"{$bokeurl}",DvBoke.ModHtmlLinked)
-
-	Response.Write PageHtml
-End Sub
-
-Function Page_UserFile_Del()
-	Dim FileID,iTopic,i,Rs,tRs
-	Dim PostContent,objFSO,FilePath,ViewFilepath,IsUpfile
-	'On Error Resume Next
-	Set objFSO = Dvbbs.iCreateObject("Scripting.FileSystemObject")
-	FilePath = DvBoke.System_UpSetting(19)
-	FileID = Request("fileid")
-	iTopic = Request("iTopic")
-	If FileID = "" Or iTopic = "" Then
-		DvBoke.ShowCode(9)
-		DvBoke.ShowMsg(2)
-		Page_UserFile_Del = DvBoke.InputShowMsg
-		Exit Function
-	End If
-	If Not IsNumeric(iTopic) Then
-		DvBoke.ShowCode(9)
-		DvBoke.ShowMsg(2)
-		Page_UserFile_Del = DvBoke.InputShowMsg
-		Exit Function
-	End If
-	iTopic = Cint(iTopic)
-	If iTopic <> 0 Then
-		DvBoke.ShowCode(9)
-		DvBoke.ShowMsg(2)
-		Page_UserFile_Del = DvBoke.InputShowMsg
-		Exit Function
-	End If
-	FileID = Replace(FileID," ","")
-	FileID = Split(FileID,",")
-	
-	For i = 0 To Ubound(FileID)
-		If IsNumeric(FileID(i)) Then
-			Set Rs=DvBoke.Execute("Select * From Dv_Boke_Upfile Where BokeUserID = " & DvBoke.BokeUserID & " And ID = " & FileID(i))
-			If Not (Rs.Eof And Rs.Bof) Then
-				'»Áπÿ¡™Ã˚◊”,‘Ú∏¸–¬œ‡”¶ ˝æ›
-				If (Rs("IsTopic")=0 Or Rs("IsTopic")=1) And Rs("PostID")>0 Then
-					Set tRs=DvBoke.Execute("Select * From Dv_Boke_Post Where PostID=" & Rs("PostID"))
-					If Not (tRs.Eof And tRs.Bof) Then
-						IsUpfile = 0
-						PostContent = tRs("Content")
-						PostContent = Replace(PostContent,"[upload="&Split(Rs("FileName"),".")(1)&"]"&Rs("FileName")&"[/upload]","")
-						PostContent = DvBoke.CheckStr(PostContent)
-						If InStr(PostContent,"[/upload]") > 0 Then IsUpfile = 1
-						DvBoke.Execute("Update Dv_Boke_Post Set Content = '" & PostContent & "',IsUpfile="&IsUpfile&" Where PostID = " & Rs("PostID"))
-					End If
-					tRs.Close:Set tRs=Nothing
-				End If
-				'…æ≥˝∏Ωº˛
-				If DvBoke.SysObjFso=True Then
-					If objFSO.FileExists(Server.MapPath(FilePath & Rs("FileName"))) Then
-						objFSO.DeleteFile(Server.MapPath(FilePath & Rs("FileName")))
-					End If
-					ViewFilepath = Rs("PreviewImage")
-					IF Not IsNull(ViewFilepath) And ViewFilepath<>"" Then
-						ViewFilepath=Replace(ViewFilepath,"..","")
-						If objFSO.FileExists(Server.MapPath(ViewFilepath)) Then
-							objFSO.DeleteFile(Server.MapPath(ViewFilepath))
-						End If
-					End IF
-				End If
-				'…æ≥˝∏Ωº˛±Ìº«¬º
-				DvBoke.Execute("Delete From Dv_Boke_Upfile Where ID = " & Rs("ID"))
-			End If
-			Rs.Close:Set Rs=Nothing
-		End If
-	Next
-	DvBoke.ShowCode(51)
-	DvBoke.ShowMsg(2)
-	Page_UserFile_Del = DvBoke.InputShowMsg
-End Function
-
-'∏ˆ»À≤©øÕ ˝æ›∏¸–¬ªÚÕ≥º∆
-Sub Page_Count()
-	Dim PageHtml
-	PageHtml = DvBoke.Page_Strings(28).text
-	Select Case t
-		Case "1"
-			Update_UserNickName()
-		Case "2"
-			Update_UserCatData()
-		Case "3"
-			Update_UserBokeData()
-	Case Else
-	End Select
-	Response.Write PageHtml
-End Sub
-
-'∏¸–¬”√ªß± √˚
-Sub Update_UserNickName()
-	Dim Sql
-	'[Dv_Boke_Topic]
-	Sql = "Update [Dv_Boke_Topic] Set UserName = '"&DvBoke.CheckStr(DvBoke.BokeUserName)&"' Where UserID="&DvBoke.BokeUserID
-	DvBoke.Execute Sql
-	DvBoke.ShowCode("÷˜Ã‚–≈œ¢∏¸–¬ÕÍ≥…£°")
-	'[Dv_Boke_Upfile]
-	Sql = "Update [Dv_Boke_Upfile] Set UserName = '"&DvBoke.CheckStr(DvBoke.BokeUserName)&"' Where UserID="&DvBoke.BokeUserID
-	DvBoke.Execute Sql
-	DvBoke.ShowCode("…œ¥´Œƒº˛–≈œ¢∏¸–¬ÕÍ≥…£°")
-	'[Dv_Boke_Post]
-	Sql = "Update [Dv_Boke_Post] Set UserName = '"&DvBoke.CheckStr(DvBoke.BokeUserName)&"' Where UserID="&DvBoke.BokeUserID
-	DvBoke.Execute Sql
-	DvBoke.ShowCode("ªÿ∏¥–≈œ¢∏¸–¬ÕÍ≥…£°")
-	DvBoke.ShowMsg(0)
-End Sub
-'∏¸–¬¿∏ƒø ˝æ›
-Sub Update_UserCatData()
-	Dim Rs,Sql,DayStr
-	Dim ChildNode,uCatID
-	Dim TopicNum,PostNum,TodayNum,LastUpTime
-	If Dv_Boke_DataBase = 1 Then
-		DayStr = "d"
-	Else
-		DayStr = "'d'"
-	End If
-	If DvBoke.BokeCatNode.length>0 Then
-		For Each ChildNode In DvBoke.BokeCatNode
-			uCatID = DvBoke.CheckNumeric(ChildNode.getAttribute("ucatid"))
-			If uCatID>0 Then
-				TopicNum = DvBoke.Execute("Select Count(*) From [Dv_Boke_Topic] Where CatID = "&uCatID)(0)
-				PostNum = DvBoke.Execute("Select Count(*) From [Dv_Boke_Post] Where ParentID>0 and CatID = "&uCatID)(0)
-				TodayNum = DvBoke.Execute("Select Count(*) From [Dv_Boke_Post] Where CatID = "&uCatID&" and DateDiff("&DayStr&",JoinTime,"&bSqlNowString&") = 0")(0)
-				
-				'Response.Write "Select Top 1 JoinTime From [Dv_Boke_Post] Where CatID = "&uCatID&" order by JoinTime,postid desc"
-
-				Set Rs = DvBoke.Execute("Select Top 1 JoinTime From [Dv_Boke_Post] Where CatID = "&uCatID&" order by JoinTime desc")
-				If Rs.Eof Then
-					LastUpTime = Now()
-				Else
-					LastUpTime = Rs(0)
-				End If
-				Rs.Close
-				ChildNode.attributes.getNamedItem("topicnum").text = TopicNum
-				ChildNode.attributes.getNamedItem("postnum").text = PostNum
-				ChildNode.attributes.getNamedItem("todaynum").text = TodayNum
-				ChildNode.attributes.getNamedItem("lastuptime").text = LastUpTime
-				DvBoke.Execute("Update Dv_Boke_UserCat Set TopicNum="&TopicNum&",PostNum="&PostNum&",TodayNum="&TodayNum&",LastUpTime = '"&LastUpTime&"' where  uCatID = "&uCatID)
-				DvBoke.ShowCode("["&ChildNode.getAttribute("ucattitle")&"] ∏¸–¬ÕÍ≥…£∫÷˜Ã‚π≤ "&TopicNum&" ∆™£¨∆¿¬€π≤ "&PostNum&" ∆™£¨ΩÒ»’Ã˚π≤ "&TodayNum&" ∆™£ª ")
-			End If
-		Next
-		DvBoke.Execute("Update Dv_Boke_User set XmlData = '"&Replace(DvBoke.BokeCat.documentElement.xml,"'","''")&"' where UserID="&DvBoke.BokeUserID)
-	End If
-	DvBoke.ShowCode(DvBoke.BokeCatNode.length&" ∏ˆ∑÷¿∏∏¸–¬ÕÍ≥…£°")
-	DvBoke.ShowMsg(0)
-End Sub
-'∏¸–¬∏ˆ»À≤©øÕ◊‹ ˝æ›
-Sub Update_UserBokeData()
-	'[Dv_Boke_User]
-	Dim DayStr,Rs
-	Dim TopicNum,FavNum,PhotoNum,PostNum,TodayNum,LastUpTime,SpaceSize
-	TopicNum = DvBoke.Execute("Select Count(*) From [Dv_Boke_Topic] Where sType=0 and UserID = "&DvBoke.BokeUserID)(0)
-	FavNum = DvBoke.Execute("Select Count(*) From [Dv_Boke_Topic] Where sType=1 and UserID = "&DvBoke.BokeUserID)(0)
-	PhotoNum = DvBoke.Execute("Select Count(*) From [Dv_Boke_Topic] Where sType=4 and UserID = "&DvBoke.BokeUserID)(0)
-	PostNum = DvBoke.Execute("Select Count(*) From [Dv_Boke_Post] Where ParentID>0 and BokeUserID = "&DvBoke.BokeUserID)(0)
-	If Dv_Boke_DataBase = 1 Then
-		DayStr = "d"
-	Else
-		DayStr = "'d'"
-	End If
-	TodayNum = DvBoke.Execute("Select Count(*) From [Dv_Boke_Post] Where BokeUserID = "&DvBoke.BokeUserID&" and DateDiff("&DayStr&",JoinTime,"&bSqlNowString&") = 0")(0)
-	Set Rs = DvBoke.Execute("Select Top 1 JoinTime From [Dv_Boke_Post] Where BokeUserID = "&DvBoke.BokeUserID&" order by JoinTime desc")
-	If Rs.Eof Then
-		LastUpTime = Now()
-	Else
-		LastUpTime = Rs(0)
-	End If
-	DvBoke.ShowCode("≤©øÕ◊‹ ˝æ›∏¸–¬ÕÍ≥…£∫÷˜Ã‚π≤ "&TopicNum&" ∆™£¨ ’≤ÿπ≤ "&FavNum&" ∆™£¨œ‡≤·π≤ "&PhotoNum&" ’≈£¨∆¿¬€π≤ "&PostNum&" ∆™£¨ΩÒ»’Ã˚π≤ "&TodayNum&" ∆™°£ ")
-	Dvboke.BokeNode.attributes.getNamedItem("spacesize").text = cCur(Dvboke.BokeNode.getAttribute("spacesize"))
-	If Dvboke.BokeNode.getAttribute("spacesize")>0 Then
-		SpaceSize = DvBoke.Execute("Select Sum(FileSize) From [Dv_Boke_Upfile] Where BokeUserID = "&DvBoke.BokeUserID)(0)
-		If SpaceSize>0 Then
-			SpaceSize = Formatnumber((SpaceSize/1024)/1024,2)
-			Dvboke.BokeNode.attributes.getNamedItem("spacesize").Text = cCur(DvBoke.System_Setting(15)) - SpaceSize
-			If Dvboke.BokeNode.getAttribute("spacesize")<0 Then Dvboke.BokeNode.attributes.getNamedItem("spacesize").text = 0
-		End If
-		If Dvboke.BokeNode.getAttribute("spacesize") = 0 Then
-			DvBoke.ShowCode("ƒ˙µƒ≤©øÕ“—≥¨≥ˆ"&DvBoke.System_Setting(15)&"MB£¨–Ë“™∏¸∂‡µƒø’º‰«Î”Îπ‹¿Ì‘±¡™œµ£°")
-		Else
-			DvBoke.ShowCode("ƒ˙µƒ…œ¥´ø’º‰ªπ”–"&Dvboke.BokeNode.getAttribute("spacesize")&"MB°£")
-		End If
-	End If
-	DvBoke.Execute("Update Dv_Boke_User set TopicNum="&TopicNum&",FavNum="&FavNum&",PhotoNum="&PhotoNum&",PostNum="&PostNum&",TodayNum="&TodayNum&",LastUpTime='"&LastUpTime&"',spacesize = "&Dvboke.BokeNode.getAttribute("spacesize")&" where UserID="&DvBoke.BokeUserID)
-	DvBoke.ShowMsg(0)
-End Sub
-
-%>
+					'Êõ¥Êñ∞Áî®Êà∑ÊÄªÊï∞ÊçÆ

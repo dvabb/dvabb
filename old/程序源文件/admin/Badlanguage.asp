@@ -15,17 +15,17 @@ Sub savebadlanguage()
     Dim content1
 	content1=Replace(dvbbs.checkstr(Getabout("content")),Chr(10),"|")
 	dvbbs.execute("update Dv_Badlanguage set content='"&content1&"'")
-	Dv_suc("ÉèÖÃÂÛÌ³Ôà»°¹Ø¼ü´Ê³É¹¦!")
+	Dv_suc("è®¾ç½®è®ºå›è„è¯å…³é”®è¯æˆåŠŸ!")
 End Sub
 Sub main()
 %>
 <table border="0" cellspacing="1" cellpadding="3"  align="center" width="100%">
 <form method="POST" action="?action=save" name="theform">
 <tr> 
-<th width="100%" colspan="3" style="text-align:center;">ÂÛÌ³º¬ÓÐ¹Ø¼ü´Ê²»ÔÊÐí·¢²¼¹¦ÄÜ
+<th width="100%" colspan="3" style="text-align:center;">è®ºå›å«æœ‰å…³é”®è¯ä¸å…è®¸å‘å¸ƒåŠŸèƒ½
 </th></tr>
 <tr> 
-<td class="td2"><U>ÇëÊäÈë¹Ø¼ü´Ê</U><BR>ÒÔ»Ø³µ·Ö¸ô</td>
+<td class="td2"><U>è¯·è¾“å…¥å…³é”®è¯</U><BR>ä»¥å›žè½¦åˆ†éš”</td>
 <td class="td2"> 
 <%
 Dim rs,content
@@ -37,12 +37,12 @@ Else
 End If
 %>
 <TEXTAREA NAME="content" ROWS="30" COLS="100"><%=content%></TEXTAREA>
-<td class="td2"><a href=# onclick="helpscript(forum_open);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
+<td class="td2"><a href=# onclick="helpscript(forum_open);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="ç‚¹å‡»æŸ¥é˜…ç®¡ç†å¸®åŠ©ï¼"></a></td>
 </tr>
 <tr> 
 <td class="td2"> &nbsp;</td>
 <td class="td2">
-<input type="submit" name="Submit" value="Ìá ½»" class="button">
+<input type="submit" name="Submit" value="æ äº¤" class="button">
 </td>
 <td class="td2">&nbsp;</td>
 </tr>

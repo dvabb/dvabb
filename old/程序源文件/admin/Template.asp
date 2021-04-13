@@ -14,7 +14,7 @@ If Application(Dvbbs.CacheName &"_style").documentElement.selectSingleNode("styl
 	If Not Application(Dvbbs.CacheName &"_style").documentElement.selectSingleNode("style/@id") Is Nothing Then
 		StyleID=Application(Dvbbs.CacheName &"_style").documentElement.selectSingleNode("style/@id").text 
 	Else
-		Response.Write "Ä£°åÊı¾İÎŞ·¨ÌáÈ¡,Çë¼ì²é»òÖØĞÂµ¼Èë"
+		Response.Write "æ¨¡æ¿æ•°æ®æ— æ³•æå–,è¯·æ£€æŸ¥æˆ–é‡æ–°å¯¼å…¥"
 		Response.End
 	End If
 End If
@@ -27,19 +27,19 @@ typeList = Split("0,strings,pic,html",",")
 
 Response.Write "<table border=""0"" cellspacing=""1"" cellpadding=""3"" align=""center"" width=""100%"">"
 Response.Write "<tr>"
-Response.Write "<th width=""100%"" style=""text-align:center;"" colspan=""2"">ÂÛÌ³Ä£°å¹ÜÀí"
+Response.Write "<th width=""100%"" style=""text-align:center;"" colspan=""2"">è®ºå›æ¨¡æ¿ç®¡ç†"
 Response.Write "</th>"
 Response.Write "</tr>"
 Response.Write "<tr>"
 Response.Write "<td class=""td2"" colspan=""2"">"
-Response.Write "<p><b>×¢Òâ</b>£º<br />¢ÙÔÚÕâÀï£¬Äú¿ÉÒÔĞÂ½¨ºÍĞŞ¸ÄÄ£°å£¬¿ÉÒÔ±à¼­ÂÛÌ³ÓïÑÔ°üºÍ·ç¸ñ£¬¿ÉÒÔĞÂ½¨Ä£°åÒ³Ãæ£¬²Ù×÷Ê±Çë°´ÕÕÏà¹ØÒ³ÃæÌáÊ¾ÍêÕûÌîĞ´±íµ¥ĞÅÏ¢¡£<br />¢ÚÂÛÌ³µ±Ç°ÕıÔÚÊ¹ÓÃµÄÄ¬ÈÏÄ£°å²»ÄÜÉ¾³ı<br />¢ÛÈç¹ûĞŞ¸Ä·ÖÄ£°åÒ³ÃæÃû³Æ»òÉ¾³ı·ÖÄ£°åÒ³ÃæÇëÔÚ¹Ø±ÕÂÛÌ³Ö®ºó²Ù×÷£¬·ñÔò¿ÉÄÜ»áÓ°ÏìÂÛÌ³·ÃÎÊ¡£"
+Response.Write "<p><b>æ³¨æ„</b>ï¼š<br />â‘ åœ¨è¿™é‡Œï¼Œæ‚¨å¯ä»¥æ–°å»ºå’Œä¿®æ”¹æ¨¡æ¿ï¼Œå¯ä»¥ç¼–è¾‘è®ºå›è¯­è¨€åŒ…å’Œé£æ ¼ï¼Œå¯ä»¥æ–°å»ºæ¨¡æ¿é¡µé¢ï¼Œæ“ä½œæ—¶è¯·æŒ‰ç…§ç›¸å…³é¡µé¢æç¤ºå®Œæ•´å¡«å†™è¡¨å•ä¿¡æ¯ã€‚<br />â‘¡è®ºå›å½“å‰æ­£åœ¨ä½¿ç”¨çš„é»˜è®¤æ¨¡æ¿ä¸èƒ½åˆ é™¤<br />â‘¢å¦‚æœä¿®æ”¹åˆ†æ¨¡æ¿é¡µé¢åç§°æˆ–åˆ é™¤åˆ†æ¨¡æ¿é¡µé¢è¯·åœ¨å…³é—­è®ºå›ä¹‹åæ“ä½œï¼Œå¦åˆ™å¯èƒ½ä¼šå½±å“è®ºå›è®¿é—®ã€‚"
 Response.Write "</td>"
 Response.Write "</tr>"
 Response.Write "<tr>"
 Response.Write "<td class=""td2"" width=""20%"" height=""25"" align=""left"">"
-Response.Write "<b>ÂÛÌ³Ä£°å²Ù×÷Ñ¡Ïî</b></td>"
-Response.Write "<td class=""td2"" width=""80%""><a href=""template.asp"">Ä£°å¹ÜÀíÊ×Ò³</a>"
-Response.Write " | <a href=""http://bbs.dvbbs.net/loadtemplates.asp"" target = ""_blank"" title="""">»ñÈ¡¹Ù·½Ä£°åÊı¾İ</a></td>"
+Response.Write "<b>è®ºå›æ¨¡æ¿æ“ä½œé€‰é¡¹</b></td>"
+Response.Write "<td class=""td2"" width=""80%""><a href=""template.asp"">æ¨¡æ¿ç®¡ç†é¦–é¡µ</a>"
+Response.Write " | <a href=""http://bbs.dvbbs.net/loadtemplates.asp"" target = ""_blank"" title="""">è·å–å®˜æ–¹æ¨¡æ¿æ•°æ®</a></td>"
 Response.Write "</tr>"
 Response.Write "</table>"
 
@@ -47,9 +47,9 @@ Select Case action
 	Case "edit"
 		Call Edit() 
 	Case "manage"
-		If Request("mostyle")="±à ¼­" Then
+		If Request("mostyle")="ç¼– è¾‘" Then
 			Main()
-		ElseIf Request("mostyle") = "É¾ ³ı" Then
+		ElseIf Request("mostyle") = "åˆ  é™¤" Then
 			'DelStyle()
 		End If
 	Case "saveedit"
@@ -66,19 +66,19 @@ End Select
 %>
 
 <%
-Rem Ê×Ò³Ãæ Ä£°åÒ³ÁĞ±í 2007-10-9
+Rem é¦–é¡µé¢ æ¨¡æ¿é¡µåˆ—è¡¨ 2007-10-9
 Sub Main()
 	Response.Write "<p></p>"
 	Response.Write "<table border=""0"" cellspacing=""1"" cellpadding=""3"" align=""center"" width=""100%"">"
 	Response.Write "<tr>"
-	Response.Write "<th width=""100%"" style=""text-align:center;"" colspan=""2"">µ±Ç°ÂÛÌ³Ä£°å¹ÜÀí"
+	Response.Write "<th width=""100%"" style=""text-align:center;"" colspan=""2"">å½“å‰è®ºå›æ¨¡æ¿ç®¡ç†"
 	Response.Write "</th>"
 	Response.Write "</tr>"
 	Response.Write "<tr>"
 	Response.Write "<form method=post action=""?action=manage"">"
 	Response.Write "<td class=""td2"" height=30 align=left>"
-	Response.Write "ÇëÑ¡ÔñÏà¹ØÄ£°å£º "
-	'ÀûÓÃÏµÍ³»º´æÊı¾İÈ¡µÃËùÓĞÄ£°åÃû³ÆºÍID
+	Response.Write "è¯·é€‰æ‹©ç›¸å…³æ¨¡æ¿ï¼š "
+	'åˆ©ç”¨ç³»ç»Ÿç¼“å­˜æ•°æ®å–å¾—æ‰€æœ‰æ¨¡æ¿åç§°å’ŒID
 	Dim Templateslist,rs,i
 	Response.Write "<select name=""StyleID"" size=""1"">"
 	For Each Templateslist in Application(Dvbbs.CacheName &"_style").documentElement.selectNodes("style")
@@ -90,9 +90,9 @@ Sub Main()
 	Next 
 	Response.Write "</select>"
 	Response.Write "&nbsp;&nbsp;"
-	Response.Write "<input type=submit class=""button"" value=""±à ¼­"" name=""mostyle"">&nbsp;&nbsp;&nbsp;"
-	'Response.Write "<input type=submit class=""button"" value=""É¾ ³ı"" name=""mostyle"">"
-	Response.Write "<br /><br /><b>ËµÃ÷£º</b>É¾³ı²Ù×÷½«É¾³ı¸ÃÄ£°åËùÓĞÊı¾İ£¬É÷ÓÃ¡£"
+	Response.Write "<input type=submit class=""button"" value=""ç¼– è¾‘"" name=""mostyle"">&nbsp;&nbsp;&nbsp;"
+	'Response.Write "<input type=submit class=""button"" value=""åˆ  é™¤"" name=""mostyle"">"
+	Response.Write "<br /><br /><b>è¯´æ˜ï¼š</b>åˆ é™¤æ“ä½œå°†åˆ é™¤è¯¥æ¨¡æ¿æ‰€æœ‰æ•°æ®ï¼Œæ…ç”¨ã€‚"
 	Response.Write "</td>"
 	Response.Write "</form>"
 	Response.Write "<form method=post action=""?action=rename"">"
@@ -107,9 +107,9 @@ Sub Main()
 	Next 
 	Response.Write "</select>"
 	Response.Write "&nbsp;&nbsp;"
-	Response.Write "¸ÄÃûÎª£º<input type=text size=20 name=""StyleName"" value="""
+	Response.Write "æ”¹åä¸ºï¼š<input type=text size=20 name=""StyleName"" value="""
 	Response.Write """>&nbsp;&nbsp;"
-	Response.Write "<input type=submit class=""button"" name=submit value=""ĞŞ¸Ä"">"
+	Response.Write "<input type=submit class=""button"" name=submit value=""ä¿®æ”¹"">"
 	Response.Write "</td>"
 	Response.Write "</form>"
 
@@ -117,8 +117,8 @@ Sub Main()
 
 	Response.Write "<tr>"
 	Response.Write "<th style=""text-align:center;"" colspan=2>"
-	Response.Write Application(Dvbbs.CacheName &"_style").documentElement.selectSingleNode("style[@id='"& StyleID &"']/@type").text &"£­£­Ä£°å×ÊÔ´¹ÜÀí</th></tr><tr><td height=25 class=""bodytitle"" colspan=2>"
-	Response.Write "Í¨³£À´Ëµ£¬·ÖÒ³ÃæÄ£°å¾ÍÊÇÂÛÌ³ÖĞÃ¿¸öÒ³ÃæµÄ·ç¸ñÄ£°å£¬À¨ºÅÖĞÊÇ×Ö¶ÎÃû£¬×Ö¶ÎµÄÃüÃû¹æÔòÎª£ºPage_Ò³ÃæÃû£¨²»Òªºó×º£©"
+	Response.Write Application(Dvbbs.CacheName &"_style").documentElement.selectSingleNode("style[@id='"& StyleID &"']/@type").text &"ï¼ï¼æ¨¡æ¿èµ„æºç®¡ç†</th></tr><tr><td height=25 class=""bodytitle"" colspan=2>"
+	Response.Write "é€šå¸¸æ¥è¯´ï¼Œåˆ†é¡µé¢æ¨¡æ¿å°±æ˜¯è®ºå›ä¸­æ¯ä¸ªé¡µé¢çš„é£æ ¼æ¨¡æ¿ï¼Œæ‹¬å·ä¸­æ˜¯å­—æ®µåï¼Œå­—æ®µçš„å‘½åè§„åˆ™ä¸ºï¼šPage_é¡µé¢åï¼ˆä¸è¦åç¼€ï¼‰"
 	Response.Write "</td>"
 	Response.Write "</tr>"
 
@@ -131,16 +131,16 @@ Sub Main()
 		Response.Write "<td height=""25"">"
 		Response.Write "<li>"
 		If i=0 Then
-			Response.Write "·ÖÒ³ÃæÄ£°å(Main_Style) &nbsp;&nbsp;</li></td><td height=""25"" align=""left"">"
+			Response.Write "åˆ†é¡µé¢æ¨¡æ¿(Main_Style) &nbsp;&nbsp;</li></td><td height=""25"" align=""left"">"
 		Else
-			Response.Write "·ÖÒ³ÃæÄ£°å(page_"&pageName(i)&") &nbsp;&nbsp;</li></td><td height=""25"" align=""left"">"
+			Response.Write "åˆ†é¡µé¢æ¨¡æ¿(page_"&pageName(i)&") &nbsp;&nbsp;</li></td><td height=""25"" align=""left"">"
 		End If
-		Response.Write "±à¼­¸ÃÄ£¿é£º"
-		Response.Write "<a href=""?action=edit&stype=1&page="&pageName(i)&"&StyleID="& StyleID &""">ÓïÑÔ°ü</a>"
-		Response.Write " | <a href=""?action=edit&stype=2&page="&pageName(i)&"&StyleID="& StyleID &""">Í¼Æ¬</a>"
-		Response.Write " | <a href=""?action=edit&stype=3&page="&pageName(i)&"&StyleID="& StyleID &""">½çÃæ·ç¸ñ</a>"
+		Response.Write "ç¼–è¾‘è¯¥æ¨¡å—ï¼š"
+		Response.Write "<a href=""?action=edit&stype=1&page="&pageName(i)&"&StyleID="& StyleID &""">è¯­è¨€åŒ…</a>"
+		Response.Write " | <a href=""?action=edit&stype=2&page="&pageName(i)&"&StyleID="& StyleID &""">å›¾ç‰‡</a>"
+		Response.Write " | <a href=""?action=edit&stype=3&page="&pageName(i)&"&StyleID="& StyleID &""">ç•Œé¢é£æ ¼</a>"
 		If i=0 Then
-			Response.Write " | <a href=""?action=editmain&stype=2&StyleID="&StyleID&""">»ù±¾ÉèÖÃ</a>"
+			Response.Write " | <a href=""?action=editmain&stype=2&StyleID="&StyleID&""">åŸºæœ¬è®¾ç½®</a>"
 		End if
 		Response.Write "</td>"
 		Response.Write "</tr>"
@@ -149,30 +149,30 @@ Sub Main()
 	Response.Write "</table><p></p>"
 End Sub
 
-Rem ĞŞ¸ÄÄ£°åÃû³Æ 2007-10-8 By Dv.ßóßó
+Rem ä¿®æ”¹æ¨¡æ¿åç§° 2007-10-8 By Dv.å”§å”§
 Sub rename()
 	Dim stylename
 	stylename=Dvbbs.checkStr(Request("stylename"))
 	If Trim(stylename)=""  Then 
-		Errmsg=ErrMsg + "<br /><li>ĞŞ¸ÄÃû³ÆÇëÊäÈëĞÂµÄÄ£°åÃû³Æ¡£"
+		Errmsg=ErrMsg + "<br /><li>ä¿®æ”¹åç§°è¯·è¾“å…¥æ–°çš„æ¨¡æ¿åç§°ã€‚"
 		Dvbbs_error()
 	End If
 	Dvbbs.Execute("update [Dv_Templates] set Type='"&StyleName&"' where id="&StyleID&"")
-	Dv_suc("Ä£°åÃûĞŞ¸Ä³É¹¦!")
+	Dv_suc("æ¨¡æ¿åä¿®æ”¹æˆåŠŸ!")
 	Dvbbs.loadSetup()
 	Dvbbs.Loadstyle()
 End Sub
 
-Sub editmain() '»ù±¾ÉèÖÃ²¿·Ö
+Sub editmain() 'åŸºæœ¬è®¾ç½®éƒ¨åˆ†
 	Dim stype,NowEditinfo
 	Dim mystr
 	stype=Request("stype")	
 	Select Case stype
 		Case "2"
-			NowEditinfo="»ù±¾ÉèÖÃ"
+			NowEditinfo="åŸºæœ¬è®¾ç½®"
 			mystr="mainsetting"
 		Case Else
-			Errmsg=ErrMsg + "<br /><li>ÄúÌá½»ÁË´íÎóµÄ²ÎÊı."
+			Errmsg=ErrMsg + "<br /><li>æ‚¨æäº¤äº†é”™è¯¯çš„å‚æ•°."
 			Dvbbs_error()	
 	End Select
 	Dim TemplateStr
@@ -181,7 +181,7 @@ Sub editmain() '»ù±¾ÉèÖÃ²¿·Ö
 	Response.Write "<tr>"
 	Response.Write "<th width=""100%"" style=""text-align:center;"" colspan=2>"
 	Response.Write NowEditinfo
-	Response.Write "("&mystr&")ÉèÖÃ</th></tr>"
+	Response.Write "("&mystr&")è®¾ç½®</th></tr>"
 	Select Case stype
 		Case "2"		
 			TemplateStr = Dvbbs.ReadTextFile(FilePath &"pub_html0.htm")
@@ -193,13 +193,13 @@ Sub editmain() '»ù±¾ÉèÖÃ²¿·Ö
 			Response.Write "<tr><td class=""td2"" height=40 align=""center"" colspan=2>"
 			Response.Write "<table cellspacing=""1"" cellpadding=""0"" border=""0"" align=""left"" width=""100%"">"
 			Response.Write "<tr>"
-			Response.Write "<td width=""300"" align=""right"" colspan=""1"" class=""td2"">±í¸ñ¿í¶È£º</td>"
+			Response.Write "<td width=""300"" align=""right"" colspan=""1"" class=""td2"">è¡¨æ ¼å®½åº¦ï¼š</td>"
 			Response.Write "<td align=""left"" class=""td2"" colspan=""3"" >"
-			Response.Write "<input type=""text"" size=""5"" name=""TemplateStr"" value="""&TemplateStr(0)&""">&nbsp;(Êµ¼ÊÏñËØ:Èç<b>780px</b> Ò»¶¨ÒªĞ´µ¥Î»(px),»òÕß°Ù·Ö±È ,Èç<b>98%</b>)&nbsp;"&mystr&"(0)"
+			Response.Write "<input type=""text"" size=""5"" name=""TemplateStr"" value="""&TemplateStr(0)&""">&nbsp;(å®é™…åƒç´ :å¦‚<b>780px</b> ä¸€å®šè¦å†™å•ä½(px),æˆ–è€…ç™¾åˆ†æ¯” ,å¦‚<b>98%</b>)&nbsp;"&mystr&"(0)"
 			Response.Write "</td>"
 			Response.Write "</tr>"
 			Dim j,vtitle
-			vtitle="aa|¾¯¸æÌáĞÑÓï¾äµÄÑÕÉ«£º|ÏÔÊ¾Ìû×ÓµÄÊ±ºò£¬Ïà¹ØÌû×Ó£¬×ª·¢Ìû×Ó£¬»Ø¸´µÈµÄÑÕÉ«£º|Ê×Ò³Á¬½ÓÑÕÉ«£º|Ò»°ãÓÃ»§Ãû³Æ×ÖÌåÑÕÉ«£º|Ò»°ãÓÃ»§Ãû³ÆÉÏµÄ¹âÔÎÑÕÉ«£º|°æÖ÷Ãû³Æ×ÖÌåÑÕÉ«£º|°æÖ÷Ãû³ÆÉÏµÄ¹âÔÎÑÕÉ«£º|¹ÜÀíÔ±Ãû³Æ×ÖÌåÑÕÉ«£º|¹ÜÀíÔ±Ãû³ÆÉÏµÄ¹âÔÎÑÕÉ«£º|¹ó±öÃû³Æ×ÖÌåÑÕÉ«£º|¹ó±öÃû³ÆÉÏµÄ¹âÔÎÑÕÉ«£º|±í¸ñ±ß¿òÑÕÉ«£º|·ç¸ñÍ¼Æ¬Â·¾¶£º"
+			vtitle="aa|è­¦å‘Šæé†’è¯­å¥çš„é¢œè‰²ï¼š|æ˜¾ç¤ºå¸–å­çš„æ—¶å€™ï¼Œç›¸å…³å¸–å­ï¼Œè½¬å‘å¸–å­ï¼Œå›å¤ç­‰çš„é¢œè‰²ï¼š|é¦–é¡µè¿æ¥é¢œè‰²ï¼š|ä¸€èˆ¬ç”¨æˆ·åç§°å­—ä½“é¢œè‰²ï¼š|ä¸€èˆ¬ç”¨æˆ·åç§°ä¸Šçš„å…‰æ™•é¢œè‰²ï¼š|ç‰ˆä¸»åç§°å­—ä½“é¢œè‰²ï¼š|ç‰ˆä¸»åç§°ä¸Šçš„å…‰æ™•é¢œè‰²ï¼š|ç®¡ç†å‘˜åç§°å­—ä½“é¢œè‰²ï¼š|ç®¡ç†å‘˜åç§°ä¸Šçš„å…‰æ™•é¢œè‰²ï¼š|è´µå®¾åç§°å­—ä½“é¢œè‰²ï¼š|è´µå®¾åç§°ä¸Šçš„å…‰æ™•é¢œè‰²ï¼š|è¡¨æ ¼è¾¹æ¡†é¢œè‰²ï¼š|é£æ ¼å›¾ç‰‡è·¯å¾„ï¼š"
 			vtitle=split(vtitle,"|")
 			For j=1 to UBound(vtitle)
 				'If j=4 or j=6 or j=8 or j=10 Then
@@ -223,21 +223,21 @@ Sub editmain() '»ù±¾ÉèÖÃ²¿·Ö
 				
 	End Select
 	Response.Write "<tr><td class=""td2"" height=""25"" align=""center"">"
-	Response.Write "<input type=""reset"" class=""button"" name=""Submit"" value=""ÖØ Ìî"">"
+	Response.Write "<input type=""reset"" class=""button"" name=""Submit"" value=""é‡ å¡«"">"
 	Response.Write "</td>"
 	Response.Write "<td class=""td2"" height=""25"" align=""center"">"
-	Response.Write "<input type=""submit"" class=""button"" name=""B1"" value=""ĞŞ ¸Ä"">"
+	Response.Write "<input type=""submit"" class=""button"" name=""B1"" value=""ä¿® æ”¹"">"
 	Response.Write "</table>"
 	Response.Write "</form>"
 End Sub
 
-Sub savemain() ' ±£´æ»ù±¾ÉèÖÃ
+Sub savemain() ' ä¿å­˜åŸºæœ¬è®¾ç½®
 	Dim stype,NowEditinfo,TemplateStr,tempstr,Main_Style,FileName
 	stype=Request("stype")
 	TemplateStr=""
 	Select Case stype
 		Case "2"
-			NowEditinfo="»ù±¾ÉèÖÃ"
+			NowEditinfo="åŸºæœ¬è®¾ç½®"
 			For Each TempStr in Request.form("TemplateStr")
 				If TempStr<>"" Then
 					TemplateStr=TemplateStr&TempStr&"||"
@@ -249,14 +249,14 @@ Sub savemain() ' ±£´æ»ù±¾ÉèÖÃ
 			
 			FileName = FilePath &"pub_html0.htm"
 		Case Else
-			Errmsg=ErrMsg + "<br /><li>ÄúÌá½»ÁË´íÎóµÄ²ÎÊı."
+			Errmsg=ErrMsg + "<br /><li>æ‚¨æäº¤äº†é”™è¯¯çš„å‚æ•°."
 			Dvbbs_error()	
 	End Select
 	TemplateStr=Dvbbs.checkStr(TemplateStr)
 	'Response.Write TemplateStr
 	Dvbbs.writeToFile FileName,TemplateStr
 	Dvbbs.Loadstyle()
-	Dv_suc("Ö÷Ä£°å"&NowEditinfo&"ĞŞ¸Ä³É¹¦!")
+	Dv_suc("ä¸»æ¨¡æ¿"&NowEditinfo&"ä¿®æ”¹æˆåŠŸ!")
 	If stype=2 Then
 			'createsccfile()
 	End If
@@ -272,7 +272,7 @@ Sub Edit()
 	FileName = page &"_"& typeList(stype)
 
 	If Not IsNumeric(stype) Then 
-		Errmsg=ErrMsg + "<br /><li>´íÎóµÄÑùÊ½²ÎÊı"
+		Errmsg=ErrMsg + "<br /><li>é”™è¯¯çš„æ ·å¼å‚æ•°"
 		Dvbbs_error()
 	End If
 	
@@ -281,26 +281,26 @@ Sub Edit()
 	Response.Write "<tr>"
 	Response.Write "<th width=""100%"" style=""text-align:center;"" colspan=3>"
 	'Response.Write Rs(1)
-	Response.Write "·ÖÒ³ÃæÄ£°å("
+	Response.Write "åˆ†é¡µé¢æ¨¡æ¿("
 	Response.Write page
 	Response.Write ")"
 	Response.Write "<input Type=""hidden"" name=""dvbbs"" value=""OK!"">"
 	Select Case stype
 		Case 1
-			Response.Write "ÓïÑÔ°ü"
+			Response.Write "è¯­è¨€åŒ…"
 			mystr="template.Strings"
 			If page="main_style" Then mystr="Dvbbs.lanstr"
 		Case 2
-			Response.Write "Í¼Æ¬×ÊÔ´(µ±Ç°Ä¬ÈÏÂ·¾¶{$PicUrl}Îª£º"&Dvbbs.Forum_PicUrl&")"
+			Response.Write "å›¾ç‰‡èµ„æº(å½“å‰é»˜è®¤è·¯å¾„{$PicUrl}ä¸ºï¼š"&Dvbbs.Forum_PicUrl&")"
 			mystr="template.pic"
 			If page="main_style" Then mystr="Dvbbs.mainpic"
 		Case 3
-			Response.Write "½çÃæ·ç¸ñ"
+			Response.Write "ç•Œé¢é£æ ¼"
 			mystr="template.html"
 			If page="main_style" Then mystr="Dvbbs.mainhtml"
 	End Select
 	
-	Response.Write "¹ÜÀí</th></tr>"
+	Response.Write "ç®¡ç†</th></tr>"
 
 	'If TemplateStr(Ubound(TemplateStr))="" Then TemplateStr(Ubound(TemplateStr))="del"
 	'Response.Write CountFilesNumber(FilePath,FileName)
@@ -309,7 +309,7 @@ Sub Edit()
 
 		Response.Write "<tr><td class=""td2"" width=20% height=40 align=left>"
 		Response.Write mystr&"("&i&")"
-		Response.Write "<br /><a href=""javascript:;"" onclick=""rundvscript(t"&i&",'page="&page&"&index="&i&"&stype="&stype&"');"" title=""µãÕâÀï»ñÈ¡Õâ²¿·ÖÄ£°åµÄ¹Ù·½Êı¾İ"">»ñÈ¡¹Ù·½Êı¾İ</a>"
+		Response.Write "<br /><a href=""javascript:;"" onclick=""rundvscript(t"&i&",'page="&page&"&index="&i&"&stype="&stype&"');"" title=""ç‚¹è¿™é‡Œè·å–è¿™éƒ¨åˆ†æ¨¡æ¿çš„å®˜æ–¹æ•°æ®"">è·å–å®˜æ–¹æ•°æ®</a>"
 		Response.Write "</td>"		
 		Response.Write "<td class=""td2"" width=80% height=25 align=left>"
 		Select Case stype
@@ -324,7 +324,7 @@ Sub Edit()
 				Response.Write """ size=50>"
 				End If
 				Response.Write "<INPUT TYPE=""hidden"" NAME=""ReadME"" id=""r"&i&""" value="""&StyleHelpValue&""">"
-				Response.Write "<a href=# onclick=""helpscript(r"&i&");return false;"" class=""helplink""><img src=""skins/images/help.gif"" border=0 title=""µã»÷²éÔÄ¹ÜÀí°ïÖú£¡""></a>"
+				Response.Write "<a href=# onclick=""helpscript(r"&i&");return false;"" class=""helplink""><img src=""skins/images/help.gif"" border=0 title=""ç‚¹å‡»æŸ¥é˜…ç®¡ç†å¸®åŠ©ï¼""></a>"
 			Case 2
 				Response.Write "<input Type=""text"" name=""TemplateStr"" id=""t"&i&""" value="""
 				Response.Write server.htmlencode(TemplateStr)
@@ -341,9 +341,9 @@ Sub Edit()
 					Response.Write "<input type=hidden name=""TemplateStr"" value="""
 					Response.Write server.htmlencode(TemplateStr)
 					Response.Write """>"
-					Response.Write "´Ë×Ö¶ÎÊôÓÚ»ù±¾ÉèÖÃ£¬  <a href=""?action=editmain&stype=2&StyleID="&StyleID&""">µãÕâÀïĞŞ¸Ä»ù±¾ÉèÖÃ</a>"
+					Response.Write "æ­¤å­—æ®µå±äºåŸºæœ¬è®¾ç½®ï¼Œ  <a href=""?action=editmain&stype=2&StyleID="&StyleID&""">ç‚¹è¿™é‡Œä¿®æ”¹åŸºæœ¬è®¾ç½®</a>"
 					Response.Write "</td><td class=""td2"">"
-					Response.Write "<a href=# onclick=""helpscript(r"&i&");return false;"" class=""helplink""><img src=""skins/images/help.gif"" border=0 title=""µã»÷²éÔÄ¹ÜÀí°ïÖú£¡""></a>"
+					Response.Write "<a href=# onclick=""helpscript(r"&i&");return false;"" class=""helplink""><img src=""skins/images/help.gif"" border=0 title=""ç‚¹å‡»æŸ¥é˜…ç®¡ç†å¸®åŠ©ï¼""></a>"
 				Else
 					
 					Response.Write "<textarea name=""TemplateStr"" id=""t"&i&""" cols=""100"" rows=""5"">"
@@ -351,7 +351,7 @@ Sub Edit()
 					Response.Write "</textarea>"
 					Response.Write "</td><td class=""td2""><a href=""javascript:admin_Size(-5,'t"&i&"')""><img src=""skins/images/minus.gif"" unselectable=""on"" border='0'></a> <a href=""javascript:admin_Size(5,'t"&i&"')""><img src=""skins/images/plus.gif"" unselectable=""on"" border='0'></a>"
 					Response.Write "<img src=skins/images/viewpic.gif onclick=runscript(t"&i&")>"
-					Response.Write "<a href=# onclick=""helpscript(r"&i&");return false;"" class=""helplink""><img src=""skins/images/help.gif"" border=0 title=""µã»÷²éÔÄ¹ÜÀí°ïÖú£¡""></a> "		
+					Response.Write "<a href=# onclick=""helpscript(r"&i&");return false;"" class=""helplink""><img src=""skins/images/help.gif"" border=0 title=""ç‚¹å‡»æŸ¥é˜…ç®¡ç†å¸®åŠ©ï¼""></a> "		
 				End If
 				Response.Write "<INPUT TYPE=""hidden"" NAME=""ReadME"" id=""r"&i&""" value="""&StyleHelpValue&""">"
 			End Select
@@ -361,16 +361,16 @@ Sub Edit()
 	Response.Write "<tr><td class=""td2"" height=""25"" align=""center"" colspan=""3"">&nbsp;"
 	Response.Write "</td></tr>"
 	Response.Write "<tr><td class=""td2"" height=""25"" align=""center"">"
-	Response.Write "<input type=""reset"" class=""button"" name=""Submit"" value=""ÖØ Ìî"">"
+	Response.Write "<input type=""reset"" class=""button"" name=""Submit"" value=""é‡ å¡«"">"
 	Response.Write "</td>"
 	Response.Write "<td class=""td2"" height=""25"" colspan=2 align=""center"">"
-	Response.Write "<input type=""submit"" class=""button"" name=""B1"" value=""ĞŞ ¸Ä"">"
+	Response.Write "<input type=""submit"" class=""button"" name=""B1"" value=""ä¿® æ”¹"">"
 	Response.Write "</td></tr>"
 	Response.Write "<tr>"
 	Response.Write "<td colspan=3 Class=""td2"">"
-	Response.Write "<br /><li>ÖØÒªÌáÊ¾£¬Ä£°åÖĞº¬XSLT´úÂëµÄ£¬ĞŞ¸Ä±ØĞëÑÏ¸ñ°´ÕÕXMLÓï·¨±ê×¼¡£"
-	Response.Write "<br /><li>Ä£°å±à¼­¹æÔò£ºÈç¹ûÏëÇå³ı¸Ã×Ö¶Î£¬ÇëÔÚ¶ÔÓ¦µÄÎÄ±¾¿òÖĞÊäÈë""del""£¬ÄÇÃ´Ä£°åÊı¾İµÄĞòºÅ¾Í»áÇ°ÒÆ¡£"
-	Response.Write "<br /><li>Èç¹û²»Ïë¸Ä±äÄ£°åÊı¾İµÄĞòºÅ£¬½ö°Ñ¸ÃÏîÄ¿µÄÊı¾İÇå¿Õ£¬ÔòÖ»ĞèÒª°ÑÄÚÈİÇå¿Õ¡£"
+	Response.Write "<br /><li>é‡è¦æç¤ºï¼Œæ¨¡æ¿ä¸­å«XSLTä»£ç çš„ï¼Œä¿®æ”¹å¿…é¡»ä¸¥æ ¼æŒ‰ç…§XMLè¯­æ³•æ ‡å‡†ã€‚"
+	Response.Write "<br /><li>æ¨¡æ¿ç¼–è¾‘è§„åˆ™ï¼šå¦‚æœæƒ³æ¸…é™¤è¯¥å­—æ®µï¼Œè¯·åœ¨å¯¹åº”çš„æ–‡æœ¬æ¡†ä¸­è¾“å…¥""del""ï¼Œé‚£ä¹ˆæ¨¡æ¿æ•°æ®çš„åºå·å°±ä¼šå‰ç§»ã€‚"
+	Response.Write "<br /><li>å¦‚æœä¸æƒ³æ”¹å˜æ¨¡æ¿æ•°æ®çš„åºå·ï¼Œä»…æŠŠè¯¥é¡¹ç›®çš„æ•°æ®æ¸…ç©ºï¼Œåˆ™åªéœ€è¦æŠŠå†…å®¹æ¸…ç©ºã€‚"
 	Response.Write "</td></tr>"
 	Response.Write "</table><p></p>"
 	Response.Write "</form>"
@@ -378,7 +378,7 @@ End Sub
 
 Sub SaveEdit()
 	If Request("dvbbs")<>"OK!" Then
-		Errmsg=ErrMsg + "<br /><li>ÄúÌá½»ÁË·Ç·¨Êı¾İ"
+		Errmsg=ErrMsg + "<br /><li>æ‚¨æäº¤äº†éæ³•æ•°æ®"
 		Dvbbs_error()
 		Exit Sub
 	End If
@@ -388,17 +388,17 @@ Sub SaveEdit()
 	stype=Dvbbs.checkStr(request("stype"))
 	page=Dvbbs.checkStr(request("page"))
 	If Not IsNumeric(stype) Then 
-		Errmsg=ErrMsg + "<br /><li>´íÎóµÄÑùÊ½²ÎÊı"
+		Errmsg=ErrMsg + "<br /><li>é”™è¯¯çš„æ ·å¼å‚æ•°"
 		Dvbbs_error()
 	End If
-	'Ä£°å²é´í,¸üĞÂ»º´æ.	
+	'æ¨¡æ¿æŸ¥é”™,æ›´æ–°ç¼“å­˜.	
 	If stype="3" Then
 		Select Case Request("page")
 			Case "page_dispbbs"
 				TemplateStr=Request.form("TemplateStr")(1)
 				Set TempStr=Dvbbs.CreateXmlDoc("msxml2.FreeThreadedDOMDocument" & MsxmlVersion)
 				If Not TempStr.Loadxml(TemplateStr) Then
-					Errmsg=ErrMsg + "ÂÛÌ³Ê×Ò³Ä£°åtemplate.html(0)Î´ÄÜÍ¨¹ıXMLĞ£Ñé,ÇëÖØĞÂ±à¼­ĞŞ¸Ä,È·±£ÎŞÎó."
+					Errmsg=ErrMsg + "è®ºå›é¦–é¡µæ¨¡æ¿template.html(0)æœªèƒ½é€šè¿‡XMLæ ¡éªŒ,è¯·é‡æ–°ç¼–è¾‘ä¿®æ”¹,ç¡®ä¿æ— è¯¯."
 					Set TempStr=Nothing
 					Dvbbs_error()
 					Exit Sub
@@ -407,7 +407,7 @@ Sub SaveEdit()
 				TemplateStr=Request.form("TemplateStr")(1)
 				Set TempStr=Dvbbs.CreateXmlDoc("msxml2.FreeThreadedDOMDocument" & MsxmlVersion)
 				If Not TempStr.Loadxml(TemplateStr) Then
-					Errmsg=ErrMsg + "ÂÛÌ³Ê×Ò³Ä£°åtemplate.html(0)Î´ÄÜÍ¨¹ıXMLĞ£Ñé,ÇëÖØĞÂ±à¼­ĞŞ¸Ä,È·±£ÎŞÎó."
+					Errmsg=ErrMsg + "è®ºå›é¦–é¡µæ¨¡æ¿template.html(0)æœªèƒ½é€šè¿‡XMLæ ¡éªŒ,è¯·é‡æ–°ç¼–è¾‘ä¿®æ”¹,ç¡®ä¿æ— è¯¯."
 					Set TempStr=Nothing
 					Dvbbs_error()
 					Exit Sub
@@ -415,7 +415,7 @@ Sub SaveEdit()
 				TemplateStr=Request.form("TemplateStr")(2)
 				Set TempStr=Dvbbs.CreateXmlDoc("msxml2.FreeThreadedDOMDocument"& MsxmlVersion)
 				If Not TempStr.Loadxml(TemplateStr)  Then
-					Errmsg=ErrMsg + "ÂÛÌ³Ê×Ò³Ä£°åtemplate.html(1)Î´ÄÜÍ¨¹ıXMLĞ£Ñé,ÇëÖØĞÂ±à¼­ĞŞ¸Ä,È·±£ÎŞÎó."
+					Errmsg=ErrMsg + "è®ºå›é¦–é¡µæ¨¡æ¿template.html(1)æœªèƒ½é€šè¿‡XMLæ ¡éªŒ,è¯·é‡æ–°ç¼–è¾‘ä¿®æ”¹,ç¡®ä¿æ— è¯¯."
 					Set TempStr=Nothing
 					Dvbbs_error()
 					Exit Sub
@@ -423,7 +423,7 @@ Sub SaveEdit()
 				TemplateStr=Request.form("TemplateStr")(4)
 				Set TempStr=Dvbbs.CreateXmlDoc("msxml2.FreeThreadedDOMDocument"& MsxmlVersion)
 				If Not TempStr.Loadxml(TemplateStr)  Then
-					Errmsg=ErrMsg + "ÂÛÌ³Ê×Ò³Ä£°åtemplate.html(3)Î´ÄÜÍ¨¹ıXMLĞ£Ñé,ÇëÖØĞÂ±à¼­ĞŞ¸Ä,È·±£ÎŞÎó."
+					Errmsg=ErrMsg + "è®ºå›é¦–é¡µæ¨¡æ¿template.html(3)æœªèƒ½é€šè¿‡XMLæ ¡éªŒ,è¯·é‡æ–°ç¼–è¾‘ä¿®æ”¹,ç¡®ä¿æ— è¯¯."
 					Set TempStr=Nothing
 					Dvbbs_error()
 					Exit Sub
@@ -432,7 +432,7 @@ Sub SaveEdit()
 				TemplateStr=Request.form("TemplateStr")(1)
 				Set TempStr=Dvbbs.CreateXmlDoc("msxml2.FreeThreadedDOMDocument" & MsxmlVersion)
 				If Not TempStr.Loadxml(TemplateStr) Then
-					Errmsg=ErrMsg + "ÂÛÌ³Ê×Ò³Ä£°åtemplate.html(0)Î´ÄÜÍ¨¹ıXMLĞ£Ñé,ÇëÖØĞÂ±à¼­ĞŞ¸Ä,È·±£ÎŞÎó."
+					Errmsg=ErrMsg + "è®ºå›é¦–é¡µæ¨¡æ¿template.html(0)æœªèƒ½é€šè¿‡XMLæ ¡éªŒ,è¯·é‡æ–°ç¼–è¾‘ä¿®æ”¹,ç¡®ä¿æ— è¯¯."
 					Set TempStr=Nothing
 					Dvbbs_error()
 					Exit Sub
@@ -441,7 +441,7 @@ Sub SaveEdit()
 				TemplateStr=Request.form("TemplateStr")(23)
 				Set TempStr=Dvbbs.CreateXmlDoc("msxml2.FreeThreadedDOMDocument" & MsxmlVersion)
 				If Not TempStr.Loadxml(TemplateStr) Then
-					Errmsg=ErrMsg + "ÂÛÌ³Ê×Ò³Ä£°åDvbbs.mainhtml(22)Î´ÄÜÍ¨¹ıXMLĞ£Ñé,ÇëÖØĞÂ±à¼­ĞŞ¸Ä,È·±£ÎŞÎó."
+					Errmsg=ErrMsg + "è®ºå›é¦–é¡µæ¨¡æ¿Dvbbs.mainhtml(22)æœªèƒ½é€šè¿‡XMLæ ¡éªŒ,è¯·é‡æ–°ç¼–è¾‘ä¿®æ”¹,ç¡®ä¿æ— è¯¯."
 					Set TempStr=Nothing
 					Dvbbs_error()
 					Exit Sub
@@ -453,7 +453,7 @@ Sub SaveEdit()
 	i=0
 	Dim FileName
 	FileName = page &"_"& typeList(stype)
-	REM »ñÈ¡±íµ¥×Ö¶ÎÄÚÈİ ºÍ Ğ´ÈëÄ£°åÎÄ¼ş By Dv.ßóßó  2007-10-9
+	REM è·å–è¡¨å•å­—æ®µå†…å®¹ å’Œ å†™å…¥æ¨¡æ¿æ–‡ä»¶ By Dv.å”§å”§  2007-10-9
 	For Each TempStr in Request.form("TemplateStr")
 		Dvbbs.writeToFile FilePath & FileName &i&".htm",Replace(TempStr,Chr(13)&Chr(10)&Chr(13)&Chr(10),Chr(13)&Chr(10))
 		Dvbbs.Name="tpl" & LCase(Replace(Replace(FilePath,"../",""),"/","\")&FileName&i)
@@ -485,18 +485,18 @@ Sub SaveEdit()
 
 	Select Case stype
 		Case 1
-			Dv_suc(page&"ÓïÑÔ°üĞŞ¸Ä³É¹¦!")
+			Dv_suc(page&"è¯­è¨€åŒ…ä¿®æ”¹æˆåŠŸ!")
 		Case 2
-			Dv_suc(page&"Í¼Æ¬×ÊÔ´ĞŞ¸Ä³É¹¦!")
+			Dv_suc(page&"å›¾ç‰‡èµ„æºä¿®æ”¹æˆåŠŸ!")
 		Case 3
-			Dv_suc(page&"½çÃæ·ç¸ñĞŞ¸Ä³É¹¦!")		
+			Dv_suc(page&"ç•Œé¢é£æ ¼ä¿®æ”¹æˆåŠŸ!")		
 	End Select
-	'¸üĞÂ»º´æ¡£´Ë´¦ÊÇÔÚÄ£°åÊı¾İ±ä»¯µÄÊ±ºòĞèÒª¸üĞÂµÄ´úÂë¡£ÈçÓĞÂ©µô£¬¿ÉÒÔÔÚÕâÌí¼Ó¡£
+	'æ›´æ–°ç¼“å­˜ã€‚æ­¤å¤„æ˜¯åœ¨æ¨¡æ¿æ•°æ®å˜åŒ–çš„æ—¶å€™éœ€è¦æ›´æ–°çš„ä»£ç ã€‚å¦‚æœ‰æ¼æ‰ï¼Œå¯ä»¥åœ¨è¿™æ·»åŠ ã€‚
 	Dvbbs.Loadstyle()
 End Sub
 
 'Response.Write CountFilesNumber("../Resource/Style_1/","pub_html")
-Rem ·µ»ØÖ¸¶¨ÎÄ¼ş¼ĞÏÂ ÏàÍ¬Ç°×ºµÄÎÄ¼şÊıÁ¿  By Dv.ßóßó  2007-10-9
+Rem è¿”å›æŒ‡å®šæ–‡ä»¶å¤¹ä¸‹ ç›¸åŒå‰ç¼€çš„æ–‡ä»¶æ•°é‡  By Dv.å”§å”§  2007-10-9
 Function CountFilesNumber(ByVal path,ByVal folderspec)
     Dim objfso,f,fc,i
     Set objfso=Dvbbs.iCreateObject("Scripting.FileSystemObject")

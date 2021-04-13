@@ -150,7 +150,7 @@ Sub main()
 			End If
 			useradmin=useradmin+"<a href=?action=edit&editid="&rs("F_ID")&"  >"&Mylist(0)&"</a>  | <a href=fileshow.asp?action=send&id="&rs("F_ID")&"  >"&Mylist(1)&"</a>"
 		Else
-			useradmin=" ¡ª¡ª "
+			useradmin=" â€”â€” "
 		End If
 		page_count = page_count + 1
 		Toplist=Toplist&Template.html(8)
@@ -176,7 +176,7 @@ Sub main()
 	Response.Write Dhlint&MainTable
 End Sub
 
-'·ÖÒ³´úÂë
+'åˆ†é¡µä»£ç 
 Function ShowPage(CurrentPage,Pcount,totalrec,PageNum,redcolor)
 	Dim SearchStr,Stype
 	If Request("Stype")="" Then
@@ -194,7 +194,7 @@ Function ShowPage(CurrentPage,Pcount,totalrec,PageNum,redcolor)
 	ShowPage=Replace(ShowPage,"{$redcolor}",redcolor)
 End Function
 
-'±à¼­ÎÄ¼ş
+'ç¼–è¾‘æ–‡ä»¶
 Sub edit()
 	Dim editid
 	Dim F_Type,F_typename,filename,chefile,con,body
@@ -300,7 +300,7 @@ Sub edit()
 	rs.close:set rs=nothing
 End sub
 
-'±£´æĞŞ¸Ä
+'ä¿å­˜ä¿®æ”¹
 Sub filesave()
 	If Dvbbs.GroupSetting(48)=0 Then
 		Dvbbs.AddErrCode(28)
@@ -344,7 +344,7 @@ Sub filesave()
 	Dvbbs.Dvbbs_suc("<li>"&Template.Strings(14))
 End sub
 
-'ĞÂÔöÎÄ¼ş
+'æ–°å¢æ–‡ä»¶
 Sub addnew()
 	Dim Tempwrite
 	Dim filetypelist
@@ -360,7 +360,7 @@ Sub addnew()
 	Response.Write Dhlint&Tempwrite
 End sub 
 
-'±£´æĞÂÔöÎÄ¼ş
+'ä¿å­˜æ–°å¢æ–‡ä»¶
 Sub savenew()
 	Dim sucmsg
 	If dvbbs.GroupSetting(48)=0 then
@@ -428,7 +428,7 @@ Sub savenew()
 	Dvbbs.Dvbbs_suc("<li>"&Template.Strings(19))
 end sub
 
-'É¾³ıÎÄ¼ş
+'åˆ é™¤æ–‡ä»¶
 Sub fdel()
 	Dim delid,fixid
 	If dvbbs.GroupSetting(48)=0 then
@@ -458,7 +458,7 @@ Sub fdel()
 	End if
 End sub
 
-'É¾³ıËùÓĞÎÄ¼ş
+'åˆ é™¤æ‰€æœ‰æ–‡ä»¶
 Sub alldel()
 	If dvbbs.GroupSetting(48)=0 then
 		Dvbbs.AddErrCode(28)

@@ -1,13 +1,13 @@
 <!--#include file="conn.asp"-->
 <!-- #include file="inc/const.asp" -->
 <%
-If Not Dvbbs.master  and Not Dvbbs.Superboardmaster Then Response.redirect "showerr.asp?ErrCodes=<li>ÄúÃ»ÓĞÈ¨ÏŞä¯ÀÀ±¾Ò³¡£&action=OtherErr"
+If Not Dvbbs.master  and Not Dvbbs.Superboardmaster Then Response.redirect "showerr.asp?ErrCodes=<li>æ‚¨æ²¡æœ‰æƒé™æµè§ˆæœ¬é¡µã€‚&action=OtherErr"
 Server.ScriptTimeOut=999999
 Dim maxcount
 Dvbbs.LoadTemplates("query")
 Dim XMLDom,TableList
 Dim bid,keyword,tableid,posttable
-Dvbbs.stats="»ØÊÕÕ¾¹ÜÀí"
+Dvbbs.stats="å›æ”¶ç«™ç®¡ç†"
 Dvbbs.nav()
 Dvbbs.Head_var 2,0,"",""
 LoadTableList()
@@ -19,7 +19,7 @@ ElseIf Request("action")="view" Then
 	View()
 ElseIf Request("action")="delpic" Then
 	If Not Dvbbs.Master Then
-		Response.redirect "showerr.asp?ErrCodes=<li>Ö»ÓĞ¹ÜÀíÔ±²Å¿ÉÒÔÔÚ»ØÊÕÕ¾ÖĞÉ¾³ıÌù×Ó.</li>&action=OtherErr"
+		Response.redirect "showerr.asp?ErrCodes=<li>åªæœ‰ç®¡ç†å‘˜æ‰å¯ä»¥åœ¨å›æ”¶ç«™ä¸­åˆ é™¤è´´å­.</li>&action=OtherErr"
 		Response.End
 	Else
 		delpic()
@@ -28,7 +28,7 @@ ElseIf Request("action")="alldel" Then
 	If session("flag")<>"" Or Not Dvbbs.Master Then 
 		alldel
 	Else
-		Response.redirect "showerr.asp?ErrCodes=<li>±¾²Ù×÷Òª¹ÜÀíÔ±Éí·İ²¢µÇÂ¼ÁËºóÌ¨·Å¿ÉÍê³É¡£</li>&action=OtherErr"
+		Response.redirect "showerr.asp?ErrCodes=<li>æœ¬æ“ä½œè¦ç®¡ç†å‘˜èº«ä»½å¹¶ç™»å½•äº†åå°æ”¾å¯å®Œæˆã€‚</li>&action=OtherErr"
 		Response.End
 	End If
 Else
@@ -44,12 +44,12 @@ Sub Dodel()
 	If Request.form("dv_submit")="" Then Exit Sub
 	Dim i,Rs,SQL,k,isvote,PollID
 	Response.Flush
-	Response.Write "<script language=""javascript"" type=""text/javascript"">document.getElementById('dv_submit').disabled=true;document.getElementById('dv_submit').value='¼Ì Ğø';plantext('ÕıÔÚÇå¿Õ»ØÊÕÕ¾£¬ÇëÄÍĞÄµÈ´ı£¬ÖĞÍ¾²»ÒªÀë¿ª±¾Ò³Ãæ¡£');</script>"
+	Response.Write "<script language=""javascript"" type=""text/javascript"">document.getElementById('dv_submit').disabled=true;document.getElementById('dv_submit').value='ç»§ ç»­';plantext('æ­£åœ¨æ¸…ç©ºå›æ”¶ç«™ï¼Œè¯·è€å¿ƒç­‰å¾…ï¼Œä¸­é€”ä¸è¦ç¦»å¼€æœ¬é¡µé¢ã€‚');</script>"
 	Response.Flush
 	Set Rs=Dvbbs.Execute("SELECT Top " & Maxcount & " TopicId, PostTable,isvote,PollID From Dv_Topic Where BoardId = 444 ORDER BY TopicId")
 	If Rs.Eof Then
 		DelAllRepost()
-		Response.Write "<script language=""javascript"" type=""text/javascript"">plantext('»ØÊÕÕ¾ÖĞÒÑ¾­Çå¿Õ');</script>"
+		Response.Write "<script language=""javascript"" type=""text/javascript"">plantext('å›æ”¶ç«™ä¸­å·²ç»æ¸…ç©º');</script>"
 		Response.Flush
 	Else
 		SQL=Rs.GetRows(-1)
@@ -64,7 +64,7 @@ Sub Dodel()
 			If isvote=1 Then
 					Dvbbs.Execute("delete From Dv_vote  Where voteid="& PollID &"")
 			End If
-			Response.Write "<script language=""javascript"" type=""text/javascript"">plantext('É¾³ıµÚ"&i+1&"¸öÖ÷Ìâ');</script>"
+			Response.Write "<script language=""javascript"" type=""text/javascript"">plantext('åˆ é™¤ç¬¬"&i+1&"ä¸ªä¸»é¢˜');</script>"
 			Response.Flush
 			If k > 0 Then 
 				If (i+1) mod k = 0 Or (i+1)= maxcount Then
@@ -80,12 +80,12 @@ Sub Dodel()
 		Next
 		Set Rs=Dvbbs.Execute("SELECT Count(*) From Dv_Topic Where BoardId = 444")
 		If Not IsNull(Rs(0)) and Rs(0) <> 0 Then
-			Response.Write "<script language=""javascript"" type=""text/javascript"">plantext('±¾´Î¹²É¾³ı"&i&"¸öÖ÷Ìâ£¬¼ì²âµ½»ØÊÕÕ¾ÖĞ»¹ÓĞ "&Rs(0)&" ¸öÖ÷Ìâ¡£');</script>"
-			Tolog("É¾³ı"&i&"¸öÖ÷Ìâ")
+			Response.Write "<script language=""javascript"" type=""text/javascript"">plantext('æœ¬æ¬¡å…±åˆ é™¤"&i&"ä¸ªä¸»é¢˜ï¼Œæ£€æµ‹åˆ°å›æ”¶ç«™ä¸­è¿˜æœ‰ "&Rs(0)&" ä¸ªä¸»é¢˜ã€‚');</script>"
+			Tolog("åˆ é™¤"&i&"ä¸ªä¸»é¢˜")
 		Else
-			Tolog("É¾³ı"&i&"¸öÖ÷Ìâ£¬Ö÷Ìâ»ØÊÕÕ¾±»Çå¿Õ¡£")
+			Tolog("åˆ é™¤"&i&"ä¸ªä¸»é¢˜ï¼Œä¸»é¢˜å›æ”¶ç«™è¢«æ¸…ç©ºã€‚")
 			DelAllRepost()
-			Response.Write "<script language=""javascript"" type=""text/javascript"">plantext('±¾´Î¹²É¾³ı"&i&"¸öÖ÷Ìâ£¬»ØÊÕÕ¾ÒÑ¾­Çå¿Õ£¡');</script>"
+			Response.Write "<script language=""javascript"" type=""text/javascript"">plantext('æœ¬æ¬¡å…±åˆ é™¤"&i&"ä¸ªä¸»é¢˜ï¼Œå›æ”¶ç«™å·²ç»æ¸…ç©ºï¼');</script>"
 			Response.Flush
 		
 		End If
@@ -97,9 +97,9 @@ Sub DelAllRepost()
 	Dim i,tmp
 	For i= 0 to UBound(TableList,2)
 		Conn.Execute "Delete From "& TableList(1,i) &" where BoardID=444",tmp
-		Response.Write "<script language=""javascript"" type=""text/javascript"">plantext('³¹µ×É¾³ı±í"& TableList(1,i) &" ÖĞµÄ±»É¾»Ø¸´"&tmp&"¸ö');</script>"
+		Response.Write "<script language=""javascript"" type=""text/javascript"">plantext('å½»åº•åˆ é™¤è¡¨"& TableList(1,i) &" ä¸­çš„è¢«åˆ å›å¤"&tmp&"ä¸ª');</script>"
 		Response.Flush
-		Tolog("³¹µ×É¾³ı±í"& TableList(1,i) &" ÖĞµÄ±»É¾»Ø¸´"&tmp&"¸ö")
+		Tolog("å½»åº•åˆ é™¤è¡¨"& TableList(1,i) &" ä¸­çš„è¢«åˆ å›å¤"&tmp&"ä¸ª")
 	Next
 End Sub
 Sub LoadTableList()
@@ -125,18 +125,18 @@ Sub delpic()
 	id=Request("id")
 	replyid=Request("replyid")
 	If Not IsNumeric(id) Then
-			Response.redirect "showerr.asp?ErrCodes=<li>²ÎÊı´íÎó</li>&action=OtherErr"
+			Response.redirect "showerr.asp?ErrCodes=<li>å‚æ•°é”™è¯¯</li>&action=OtherErr"
 			Response.End
 	End If
 	If 	replyid <>"" Then
 		If Not IsNumeric(replyid) Then
-				Response.redirect "showerr.asp?ErrCodes=<li>²ÎÊı´íÎó</li>&action=OtherErr"
+				Response.redirect "showerr.asp?ErrCodes=<li>å‚æ•°é”™è¯¯</li>&action=OtherErr"
 				Response.End
 		End If
 	End If
 	Set rs=Dvbbs.Execute("Select posttable,boardid,title,isvote,PollID From Dv_topic Where topicid="&Id)
 	If Rs.EOF Then
-		Response.redirect "showerr.asp?ErrCodes=<li>¼ÇÂ¼²»´æÔÚ</li>&action=OtherErr"
+		Response.redirect "showerr.asp?ErrCodes=<li>è®°å½•ä¸å­˜åœ¨</li>&action=OtherErr"
 		Exit Sub
 		Response.End
 	End If
@@ -147,23 +147,23 @@ Sub delpic()
 	PollID=Rs("PollID")
 	If replyid="" Then
 		If Boardid<>444 Then
-			Response.redirect "showerr.asp?ErrCodes=<li>´ËÖ÷Ìâ²»ÔÚ»ØÊÕÕ¾ÖĞ£¬²»ÄÜÉ¾³ı!</li>&action=OtherErr"
+			Response.redirect "showerr.asp?ErrCodes=<li>æ­¤ä¸»é¢˜ä¸åœ¨å›æ”¶ç«™ä¸­ï¼Œä¸èƒ½åˆ é™¤!</li>&action=OtherErr"
 			Exit Sub
 			Response.End
 		End If
 		Dvbbs.Execute("delete From "&posttable&" Where RootID ="&ID)
 		Dvbbs.Execute("delete From dv_topic where topicid ="&ID)
-		Tolog("É¾³ıÖ÷Ìâ£º"&title)
+		Tolog("åˆ é™¤ä¸»é¢˜ï¼š"&title)
 	Else
 		Set Rs=Dvbbs.Execute("select ParentID From " &posttable &" where AnnounceID=" &CLng(replyid))
 		If Rs.EOF Then
-			Response.redirect "showerr.asp?ErrCodes=<li>¼ÇÂ¼²»´æÔÚ</li>&action=OtherErr"
+			Response.redirect "showerr.asp?ErrCodes=<li>è®°å½•ä¸å­˜åœ¨</li>&action=OtherErr"
 			Exit Sub
 			Response.End
 		Else
 			If Rs(0)=0 Then
 					If Boardid<>444 Then
-						Response.redirect "showerr.asp?ErrCodes=<li>´ËÖ÷Ìâ²»ÔÚ»ØÊÕÕ¾ÖĞ£¬²»ÄÜÉ¾³ı!</li>&action=OtherErr"
+						Response.redirect "showerr.asp?ErrCodes=<li>æ­¤ä¸»é¢˜ä¸åœ¨å›æ”¶ç«™ä¸­ï¼Œä¸èƒ½åˆ é™¤!</li>&action=OtherErr"
 						Exit Sub
 						Response.End
 					End If
@@ -172,10 +172,10 @@ Sub delpic()
 					End If
 					Dvbbs.Execute("delete From "&posttable&" Where RootID ="&ID)
 					Dvbbs.Execute("delete From dv_topic where topicid ="&ID)
-					Tolog("É¾³ıÖ÷Ìâ£º"&title)
+					Tolog("åˆ é™¤ä¸»é¢˜ï¼š"&title)
 			Else
 				Dvbbs.Execute("delete From "&posttable&" Where RootID ="&ID &" and AnnounceID=" &CLng(replyid))
-				Tolog("É¾³ıÖ÷Ìâ£º"&title&"µÄ»Ø¸´Ò»Ìõ")
+				Tolog("åˆ é™¤ä¸»é¢˜ï¼š"&title&"çš„å›å¤ä¸€æ¡")
 			End If	
 		End If
 	End If
@@ -189,7 +189,7 @@ Sub Manage_Main()
 	tmpid=split(TmpID,",")
 	For each id in tmpid
 		If Not IsNumeric(id) Then
-			Response.redirect "showerr.asp?ErrCodes=<li>²ÎÊı´íÎó</li>&action=OtherErr"
+			Response.redirect "showerr.asp?ErrCodes=<li>å‚æ•°é”™è¯¯</li>&action=OtherErr"
 			Exit For
 			Response.End
 		End If
@@ -202,17 +202,17 @@ Sub Manage_Main()
 			If AnnounceID="" Then AnnounceID=rootid
 			Node.attributes.setNamedItem(XMLDom.createNode(2,"rootid","")).text=rootid
 			Node.attributes.setNamedItem(XMLDom.createNode(2,"announceid","")).text=AnnounceID
-			Rem ¼ì²éÖ÷Ìâ±íÊÇ·ñÓĞ¼ÇÂ¼£¬²¢ÇÒÈ¡µÃÆäÖ÷Ìù×´Ì¬
+			Rem æ£€æŸ¥ä¸»é¢˜è¡¨æ˜¯å¦æœ‰è®°å½•ï¼Œå¹¶ä¸”å–å¾—å…¶ä¸»è´´çŠ¶æ€
 			Set Rs=Dvbbs.Execute("select Boardid,LockTopic,PostTable From Dv_topic Where topicid="& rootid &" and boardid<> 777")
 			If Rs.EOF Then
 				Node.attributes.setNamedItem(XMLDom.createNode(2,"topic","")).text=0
 				Node.attributes.setNamedItem(XMLDom.createNode(2,"child","")).text=0
-				Node.attributes.setNamedItem(XMLDom.createNode(2,"stats","")).text="Ê§°Ü£¬Ô­Òò£ºÕÒ²»µ½Ïà¹Ø¼ÇÂ¼¡£"
+				Node.attributes.setNamedItem(XMLDom.createNode(2,"stats","")).text="å¤±è´¥ï¼ŒåŸå› ï¼šæ‰¾ä¸åˆ°ç›¸å…³è®°å½•ã€‚"
 			Else
 				posttable=Rs("posttable")
 				LockTopic=Rs("boardid")
 				boardid=rs("LockTopic")
-				If AnnounceID=rootid Then 'AnnounceID=rootidËµÃ÷Òª»¹Ô­µÄÊÇÖ÷Ìâ
+				If AnnounceID=rootid Then 'AnnounceID=rootidè¯´æ˜è¦è¿˜åŸçš„æ˜¯ä¸»é¢˜
 					If LockTopic=444  Then
 						Set Rs=Dvbbs.Execute("Select Count(*) From " & posttable &" where RootID="& Rootid &" and boardid<> 777")
 						Child=Rs(0)
@@ -221,22 +221,22 @@ Sub Manage_Main()
 						Node.attributes.setNamedItem(XMLDom.createNode(2,"topic","")).text=1
 						Node.attributes.setNamedItem(XMLDom.createNode(2,"child","")).text=Child
 						Node.attributes.setNamedItem(XMLDom.createNode(2,"boardid","")).text=boardid
-						Node.attributes.setNamedItem(XMLDom.createNode(2,"stats","")).text="³É¹¦¡£"
+						Node.attributes.setNamedItem(XMLDom.createNode(2,"stats","")).text="æˆåŠŸã€‚"
 						Dvbbs.Execute("update " & posttable &" set boardid="&boardid&",LockTopic=0 Where RootID="& Rootid &" and boardid<> 777")
 						Dvbbs.Execute("update dv_topic Set boardid="&boardid&",LockTopic=0,Child="&Child&"  Where topicid="& rootid)
 					Else
 						Node.attributes.setNamedItem(XMLDom.createNode(2,"topic","")).text=0
 						Node.attributes.setNamedItem(XMLDom.createNode(2,"child","")).text=0
-						Node.attributes.setNamedItem(XMLDom.createNode(2,"stats","")).text="Ê§°Ü£¬Ô­Òò£ºÖ÷Ìâ²»ÔÚ»ØÊÕÕ¾ÖĞ¡£"
+						Node.attributes.setNamedItem(XMLDom.createNode(2,"stats","")).text="å¤±è´¥ï¼ŒåŸå› ï¼šä¸»é¢˜ä¸åœ¨å›æ”¶ç«™ä¸­ã€‚"
 					End If
 				Else
 					Set Rs=Dvbbs.Execute("Select ParentID  From " & posttable &" where RootID="& Rootid &" and AnnounceID="& AnnounceID &" and boardid=444")
 					If Rs.EOF Then
 						Node.attributes.setNamedItem(XMLDom.createNode(2,"topic","")).text=0
 						Node.attributes.setNamedItem(XMLDom.createNode(2,"child","")).text=0
-						Node.attributes.setNamedItem(XMLDom.createNode(2,"stats","")).text="Ê§°Ü£¬Ô­Òò£º´ËÌù²»ÔÚ»ØÊÕÕ¾ÖĞ¡£"
+						Node.attributes.setNamedItem(XMLDom.createNode(2,"stats","")).text="å¤±è´¥ï¼ŒåŸå› ï¼šæ­¤è´´ä¸åœ¨å›æ”¶ç«™ä¸­ã€‚"
 					Else
-						If Rs(0)=0 Then 'Ö÷ÌâÌù£¬»¹Ô­µ¥¸öÖ÷ÌâÌù¡£¸úÌù²»»¹Ô­¡£
+						If Rs(0)=0 Then 'ä¸»é¢˜è´´ï¼Œè¿˜åŸå•ä¸ªä¸»é¢˜è´´ã€‚è·Ÿè´´ä¸è¿˜åŸã€‚
 							Child=0
 							If LockTopic <> 444  Then
 								boardid=LockTopic
@@ -246,7 +246,7 @@ Sub Manage_Main()
 							Node.attributes.setNamedItem(XMLDom.createNode(2,"topic","")).text=1
 							Node.attributes.setNamedItem(XMLDom.createNode(2,"child","")).text=Child
 							Node.attributes.setNamedItem(XMLDom.createNode(2,"boardid","")).text=boardid
-							Node.attributes.setNamedItem(XMLDom.createNode(2,"stats","")).text="³É¹¦¡£"
+							Node.attributes.setNamedItem(XMLDom.createNode(2,"stats","")).text="æˆåŠŸã€‚"
 						Else
 							If LockTopic <> 444  Then
 								boardid=LockTopic
@@ -255,11 +255,11 @@ Sub Manage_Main()
 								Node.attributes.setNamedItem(XMLDom.createNode(2,"topic","")).text=0
 								Node.attributes.setNamedItem(XMLDom.createNode(2,"child","")).text=1
 								Node.attributes.setNamedItem(XMLDom.createNode(2,"boardid","")).text=boardid
-								Node.attributes.setNamedItem(XMLDom.createNode(2,"stats","")).text="³É¹¦¡£"
+								Node.attributes.setNamedItem(XMLDom.createNode(2,"stats","")).text="æˆåŠŸã€‚"
 							Else
 								Node.attributes.setNamedItem(XMLDom.createNode(2,"topic","")).text=0
 								Node.attributes.setNamedItem(XMLDom.createNode(2,"child","")).text=0
-								Node.attributes.setNamedItem(XMLDom.createNode(2,"stats","")).text="Ê§°Ü£¬Ô­Òò£ºÖ÷ÌâÌù»¹ÔÚ»ØÊÕÕ¾ÖĞ£¬ÇëÏÈ»¹Ô­Ö÷Ìâ¡£"
+								Node.attributes.setNamedItem(XMLDom.createNode(2,"stats","")).text="å¤±è´¥ï¼ŒåŸå› ï¼šä¸»é¢˜è´´è¿˜åœ¨å›æ”¶ç«™ä¸­ï¼Œè¯·å…ˆè¿˜åŸä¸»é¢˜ã€‚"
 							End If
 						End If
 					End If
@@ -269,7 +269,7 @@ Sub Manage_Main()
 	Dim allpost,alltopic
 	allpost=0
 	alltopic=0
-	'Í³¼ÆÒ»ÏÂ¸üĞÂÇé¿ö
+	'ç»Ÿè®¡ä¸€ä¸‹æ›´æ–°æƒ…å†µ
 	For each boardid in Application(Dvbbs.CacheName&"_boardlist").documentElement.selectNodes("board/@boardid")
 		Set Node =XMLDom.documentElement.selectNodes("result[@boardid="& boardid.text &"]")
 		If Node.length > 0 Then
@@ -290,7 +290,7 @@ Sub Manage_Main()
 		Dvbbs.Execute("update dv_setup Set forum_postNum=forum_postNum+"& allpost &",forum_TopicNum=forum_topicNum +"& alltopic )
 		Dvbbs.loadSetup
 	End If
-	Tolog("»¹Ô­Ö÷Ìâ£º"&alltopic&"¸ö£¬Ìù×Ó"& allpost &"Ìõ")
+	Tolog("è¿˜åŸä¸»é¢˜ï¼š"&alltopic&"ä¸ªï¼Œè´´å­"& allpost &"æ¡")
 End Sub
 Sub Main()
 	bid=Request("bid")
@@ -315,8 +315,8 @@ Sub Main()
 	If Not IsNumeric(Page) Then Page="1"
 	If Page="" Then Page="1"
 	Page=CLng(Page)
-	'´«ËÍ²ÎÊıµ½xml
-	Pagesize=30'ÊÖ¹¤ÉèÖÃÃ¿Ò³×î´óÏÔÊ¾30Ìõ
+	'ä¼ é€å‚æ•°åˆ°xml
+	Pagesize=30'æ‰‹å·¥è®¾ç½®æ¯é¡µæœ€å¤§æ˜¾ç¤º30æ¡
 	Set Node = XMLDom.documentElement.appendChild(XMLDom.createNode(1,"param",""))
 	Node.attributes.setNamedItem(XMLDom.createNode(2,"bid","")).text=bid
 	Node.attributes.setNamedItem(XMLDom.createNode(2,"tableid","")).text=tableid
@@ -327,7 +327,7 @@ Sub Main()
 	If session("flag")<>"" Then
 		Node.attributes.setNamedItem(XMLDom.createNode(2,"admin","")).text=1
 	End If
-	'¸ù¾İÒ³Ãæ²ÎÊı²úÉú²éÑ¯´úÂë
+	'æ ¹æ®é¡µé¢å‚æ•°äº§ç”ŸæŸ¥è¯¢ä»£ç 
 	keyword=Dvbbs.Checkstr(keyword)
 	SQl ="Select "
 	SQl1 ="Select Count(*) as length From "& posttable
@@ -355,7 +355,7 @@ Sub Main()
 	End If
 	Set Rs=Dvbbs.Execute(SQL1)
 	Node.attributes.setNamedItem(XMLDom.createNode(2,"count","")).text =Rs(0)
-	'¼ÆËãÒ»ÏÂµ±Ç°Page²ÎÊıÊÇ·ñºÏ·¨¡£Èç¹û³¬³ö·¶Î§£¬Ç¿ÖÆÎª×îºóÒ»Ò³
+	'è®¡ç®—ä¸€ä¸‹å½“å‰Pageå‚æ•°æ˜¯å¦åˆæ³•ã€‚å¦‚æœè¶…å‡ºèŒƒå›´ï¼Œå¼ºåˆ¶ä¸ºæœ€åä¸€é¡µ
 	If Rs(0) mod Pagesize =0 then
 			PageCount= Rs(0) \ Pagesize
 	Else
@@ -383,12 +383,12 @@ Sub View()
 	replyid=Request("replyid")
 	If Not IsNumeric(replyid) Or replyid="" Then replyid=0
 	If Not IsNumeric(id) Or id="" Then
-		Response.redirect "showerr.asp?ErrCodes=<li>ÇëÖ¸¶¨ËùĞè²ÎÊı¡£&action=OtherErr"
+		Response.redirect "showerr.asp?ErrCodes=<li>è¯·æŒ‡å®šæ‰€éœ€å‚æ•°ã€‚&action=OtherErr"
 	End If
 	Id =CLng(id)
 	Set rs=Dvbbs.Execute("Select posttable,boardid From Dv_topic Where topicid="&Id)
 	If Rs.EOF Then
-			Response.redirect "showerr.asp?ErrCodes=<li>¼ÇÂ¼²»´æÔÚ£¡&action=OtherErr"
+			Response.redirect "showerr.asp?ErrCodes=<li>è®°å½•ä¸å­˜åœ¨ï¼&action=OtherErr"
 	Else
 		posttable=Rs(0)
 		Node.attributes.setNamedItem(XMLDom.createNode(2,"boardid","")).text=Rs(1)
@@ -399,7 +399,7 @@ Sub View()
 		End If
 		Set Rs=Dvbbs.Execute(SQL)
 		If Rs.EOF Then
-			Response.redirect "showerr.asp?ErrCodes=<li>ÕÒ²»µ½Æ¥Åä¼ÇÂ¼£¡&action=OtherErr"
+			Response.redirect "showerr.asp?ErrCodes=<li>æ‰¾ä¸åˆ°åŒ¹é…è®°å½•ï¼&action=OtherErr"
 		Else
 			XMLDom.documentElement.appendChild(Dvbbs.RecordsetToxml(rs,"row","").documentElement.firstChild)
 		End If
@@ -440,6 +440,6 @@ Sub UpDate_BoardInfoAndCache(BoardID,topic,Child)
 		Next
 	End Sub
 	Sub Tolog(Info)
-		Dvbbs.Execute("Insert Into Dv_Log (l_AnnounceID,l_BoardID,l_touser,l_username,l_content,l_ip,l_type) values (0,0,'»ØÊÕÕ¾','" & Dvbbs.MemberName & "','" & Dvbbs.CheckStr(Info) & "','" & Dvbbs.userTrueIP & "',0)")
+		Dvbbs.Execute("Insert Into Dv_Log (l_AnnounceID,l_BoardID,l_touser,l_username,l_content,l_ip,l_type) values (0,0,'å›æ”¶ç«™','" & Dvbbs.MemberName & "','" & Dvbbs.CheckStr(Info) & "','" & Dvbbs.userTrueIP & "',0)")
 	End Sub
 %>

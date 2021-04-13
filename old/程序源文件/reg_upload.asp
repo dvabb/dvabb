@@ -31,9 +31,9 @@ Sub Main()
 	<input type="file" name="file1">
 	<input type="hidden" name="fname">
 	<%If useFor<>"grouplogo" Then%>
-		<input type="submit" name="Submit" value="ÉÏ´«" onclick="fname.value=file1.value,parent.document.theForm.Submit.disabled=true,parent.document.theForm.Submit2.disabled=true;" />
+		<input type="submit" name="Submit" value="ä¸Šä¼ " onclick="fname.value=file1.value,parent.document.theForm.Submit.disabled=true,parent.document.theForm.Submit2.disabled=true;" />
 	<%Else%>
-		<input type="submit" name="Submit" value="ÉÏ´«" />
+		<input type="submit" name="Submit" value="ä¸Šä¼ " />
 	<%End If%>
 	</form>
 </body>
@@ -63,28 +63,28 @@ Sub Upfile_Main()
 <%
 End Sub
 '---------------------------------------------------------------
-'Í·ÏñÉÏ´«¿ªÊ¼
+'å¤´åƒä¸Šä¼ å¼€å§‹
 '---------------------------------------------------------------
 Sub UploadFile()
 	'-----------------------------------------------------------------------------
-	'Ìá½»ÑéÖ¤
+	'æäº¤éªŒè¯
 	'-----------------------------------------------------------------------------
 	If Not Dvbbs.ChkPost Then
 		Exit Sub
 	End If
 	If Session("upface")="done" And useFor<>"grouplogo" Then
-		Response.Write "ÄúÒÑ¾­ÉÏ´«ÁËÍ·Ïñ"
+		Response.Write "æ‚¨å·²ç»ä¸Šä¼ äº†å¤´åƒ"
 		Exit Sub
 	End If
 	If SysSetting(Dvbbs.Forum_UploadSetting(0)) = False or Clng(Dvbbs.Forum_Setting(53)) = 0 And useFor<>"grouplogo" Then
-		Response.Write "±¾ÏµÍ³Î´¿ª·ÅÉÏ´«ÁËÍ·Ïñ¹¦ÄÜ"
+		Response.Write "æœ¬ç³»ç»Ÿæœªå¼€æ”¾ä¸Šä¼ äº†å¤´åƒåŠŸèƒ½"
 		Exit Sub
 	End If
 	If Dvbbs.UserID>0 And useFor<>"grouplogo" Then
 		If Clng(Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userpost").text)>Clng(Dvbbs.Forum_Setting(54)) Then
-			UpUserFace()	'É¾³ı¾ÉµÄÍ·ÏñÎÄ¼ş
+			UpUserFace()	'åˆ é™¤æ—§çš„å¤´åƒæ–‡ä»¶
 		Else
-			Response.Write "Ö»ÓĞÎÄÕÂÊı¶àÓÚ"& Dvbbs.Forum_Setting(54) &"Æª²Å¿ÉÒÔ×Ô¶¨ÒåÍ·Ïñ£¡"
+			Response.Write "åªæœ‰æ–‡ç« æ•°å¤šäº"& Dvbbs.Forum_Setting(54) &"ç¯‡æ‰å¯ä»¥è‡ªå®šä¹‰å¤´åƒï¼"
 			Exit Sub
 		End If
 	End If
@@ -95,17 +95,17 @@ Sub UploadFile()
 	If Dvbbs.UserID>0 Then UserID = Dvbbs.UserID&"_"
 	FilePath = "UploadFace/"
 	Set Upload = New UpFile_Cls
-		Upload.UploadType			= Cint(Dvbbs.Forum_UploadSetting(2))	'ÉèÖÃÉÏ´«×é¼şÀàĞÍ
-		Upload.UploadPath			= FilePath								'ÉèÖÃÉÏ´«Â·¾¶
-		Upload.MaxSize				= Int(Dvbbs.Forum_UploadSetting(1))		'µ¥Î» KB
-		Upload.InceptMaxFile		= 1										'Ã¿´ÎÉÏ´«ÎÄ¼ş¸öÊıÉÏÏŞ
-		Upload.InceptFileType		= "gif,jpg,bmp,jpeg,png"				'ÉèÖÃÉÏ´«ÎÄ¼şÏŞÖÆ
+		Upload.UploadType			= Cint(Dvbbs.Forum_UploadSetting(2))	'è®¾ç½®ä¸Šä¼ ç»„ä»¶ç±»å‹
+		Upload.UploadPath			= FilePath								'è®¾ç½®ä¸Šä¼ è·¯å¾„
+		Upload.MaxSize				= Int(Dvbbs.Forum_UploadSetting(1))		'å•ä½ KB
+		Upload.InceptMaxFile		= 1										'æ¯æ¬¡ä¸Šä¼ æ–‡ä»¶ä¸ªæ•°ä¸Šé™
+		Upload.InceptFileType		= "gif,jpg,bmp,jpeg,png"				'è®¾ç½®ä¸Šä¼ æ–‡ä»¶é™åˆ¶
 		Upload.RName				= UserID
 		Upload.ChkSessionName		= "UploadCode"
-		'Ö´ĞĞÉÏ´«
+		'æ‰§è¡Œä¸Šä¼ 
 		Upload.SaveUpFile
 		If Upload.ErrCodes<>0 Then
-			Response.write "´íÎó£º"& Upload.Description & "[ <a href=""reg_upload.asp"">ÖØĞÂÉÏ´«</a> ]"
+			Response.write "é”™è¯¯ï¼š"& Upload.Description & "[ <a href=""reg_upload.asp"">é‡æ–°ä¸Šä¼ </a> ]"
 			Exit Sub
 		End If
 		If Upload.Count > 0 Then
@@ -122,17 +122,17 @@ Sub UploadFile()
 						End If
 					End If
 					Session("upface")="done"
-					Response.Write "Í¼Æ¬"& F_FileName &"ÉÏ´«³É¹¦!"
+					Response.Write "å›¾ç‰‡"& F_FileName &"ä¸Šä¼ æˆåŠŸ!"
 				Set File = Nothing
 			Next
 		Else
-			Response.write "ÇëÕıÈ·Ñ¡ÔñÒªÉÏ´«µÄÎÄ¼ş¡£[ <a href=""reg_upload.asp"">ÖØĞÂÉÏ´«</a> ]"
+			Response.write "è¯·æ­£ç¡®é€‰æ‹©è¦ä¸Šä¼ çš„æ–‡ä»¶ã€‚[ <a href=""reg_upload.asp"">é‡æ–°ä¸Šä¼ </a> ]"
 			Exit Sub
 		End If
 	Set Upload = Nothing
 End Sub
 
-'É¾³ı¾ÉÍ·Ïñ
+'åˆ é™¤æ—§å¤´åƒ
 Sub UpUserFace()
 	If Dvbbs.UserID=0 Then Exit Sub
 	If not IsNumeric(Dvbbs.UserID) Then Exit Sub
@@ -147,7 +147,7 @@ Sub UpUserFace()
 	Set objFSO = Nothing
 End Sub
 
-'ÏµÍ³ÉèÖÃ
+'ç³»ç»Ÿè®¾ç½®
 Function SysSetting(Setting)
 	SysSetting = False
 	Select Case Clng(Setting)

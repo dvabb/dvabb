@@ -166,7 +166,7 @@ Function friendlist()
 			OnlineTime=Replace(OnlineTime,"{$color}",Dvbbs.mainsetting(1))
 			OnlineTime=Replace(OnlineTime,"{$OnlineTime}",DatedIff("n",SQL(1,i),Now()))
 		End If
-		friendlist=friendlist & "<a href=""javascript:;"" onclick=""DvWnd.open('¸ø"&F_friend&"·¢ËÍ¶ÌÐÅ','messanger.asp?action=new&amp;touser="&F_friend&"',800,600,1,{bgc:'black',opa:0.5});""><img src="""&Dvbbs.mainpic(15)&""" alt='·¢¶ÌÐÅ' border=0></a>&nbsp;<a href=dispuser.asp?name="&F_friend&" >"&F_friend&"</a> "&OnlineTime&" <br>"
+		friendlist=friendlist & "<a href=""javascript:;"" onclick=""DvWnd.open('ç»™"&F_friend&"å‘é€çŸ­ä¿¡','messanger.asp?action=new&amp;touser="&F_friend&"',800,600,1,{bgc:'black',opa:0.5});""><img src="""&Dvbbs.mainpic(15)&""" alt='å‘çŸ­ä¿¡' border=0></a>&nbsp;<a href=dispuser.asp?name="&F_friend&" >"&F_friend&"</a> "&OnlineTime&" <br>"
 	Next
 End Function
 

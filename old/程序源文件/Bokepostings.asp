@@ -10,35 +10,35 @@ Action = Request.QueryString("Action")
 
 Select Case Lcase(Action)
 Case "isbest"
-	DvBoke.Stats = "Ìû×Ó¾«»ª¹ÜÀí"
+	DvBoke.Stats = "å¸–å­ç²¾åç®¡ç†"
 	DvBoke.Nav(0)
 	Admin_isbest()
 Case "delete"
-	DvBoke.Stats = "Ìû×ÓÉ¾³ı¹ÜÀí"
+	DvBoke.Stats = "å¸–å­åˆ é™¤ç®¡ç†"
 	DvBoke.Nav(0)
 	Admin_delete()
 Case "edit"
-	DvBoke.Stats = "Ìû×Ó±à¼­"
+	DvBoke.Stats = "å¸–å­ç¼–è¾‘"
 	DvBoke.Nav(0)
 	Admin_Edit()
 Case "reply"
-	DvBoke.Stats = "»Ø¸´Ìû×Ó"
+	DvBoke.Stats = "å›å¤å¸–å­"
 	DvBoke.Nav(0)
 	Admin_reply()
 Case "save_edit"
-	DvBoke.Stats = "±£´æÌû×Ó±à¼­"
+	DvBoke.Stats = "ä¿å­˜å¸–å­ç¼–è¾‘"
 	DvBoke.Nav(0)
 	Admin_SaveEdit()
 Case "save_reply"
-	DvBoke.Stats = "±£´æ»Ø¸´"
+	DvBoke.Stats = "ä¿å­˜å›å¤"
 	DvBoke.Nav(0)
 	Admin_SaveReply()
 Case "visit"
-	DvBoke.Stats = "Ìí¼ÓÓ¡¼Ç"
+	DvBoke.Stats = "æ·»åŠ å°è®°"
 	DvBoke.Nav(0)
 	VisitMart()
 Case "bokestats"
-	DvBoke.Stats = "¸ü¸Ä²©¿Í×´Ì¬"
+	DvBoke.Stats = "æ›´æ”¹åšå®¢çŠ¶æ€"
 	DvBoke.Nav(0)
 	BokeStats()
 Case Else
@@ -47,7 +47,7 @@ Case Else
 End Select
 DvBoke.Footer
 Dvbbs.PageEnd()
-'¸ü¸Ä²©¿Í×´Ì¬
+'æ›´æ”¹åšå®¢çŠ¶æ€
 Sub BokeStats()
 	If Not DvBoke.IsMaster Then
 		DvBoke.ShowCode(43)
@@ -60,7 +60,7 @@ Sub BokeStats()
 		Stats = 0
 	End If
 	DvBoke.Execute("Update [Dv_Boke_User] Set Stats="&Stats&" where UserID="&DvBoke.BokeUserID)
-	DvBoke.ShowCode("²©¿ÍµÄ×´Ì¬¸ü¸Ä³É¹¦£¡")
+	DvBoke.ShowCode("åšå®¢çš„çŠ¶æ€æ›´æ”¹æˆåŠŸï¼")
 	DvBoke.ShowMsg(0)
 End Sub
 
@@ -97,7 +97,7 @@ Sub VisitMart()
 		Else
 			Set Node = VisitXml.DocumentElement.selectSingleNode("UserList[@uid='"&Dvboke.UserID&"']")
 			If Not (Node is nothing) Then
-				DvBoke.ShowCode("Çë²»ÒªÖØ¸´Ìí¼ÓÓ¡¼Ç")
+				DvBoke.ShowCode("è¯·ä¸è¦é‡å¤æ·»åŠ å°è®°")
 				DvBoke.ShowMsg(0)
 				Response.Redirect Request.ServerVariables("HTTP_REFERER")
 				Exit Sub
@@ -256,7 +256,7 @@ Sub Admin_SaveEdit()
 	Dim PostID,RootID
 	Dim P_UpFileID,HaveUpFile,IsTopic
 	'-----------------------------------------------------------------------------
-	'»ñÈ¡±íµ¥Êı¾İ ----------------------------------------------------------------
+	'è·å–è¡¨å•æ•°æ® ----------------------------------------------------------------
 	'-----------------------------------------------------------------------------
 	P_Title = DvBoke.Checkstr(Trim(Request.Form("Title")))
 	P_SearchKey = DvBoke.Checkstr(Trim(Request.Form("SearchKey")))
@@ -289,7 +289,7 @@ Sub Admin_SaveEdit()
 		HaveUpFile=0
 	End If
 	'-----------------------------------------------------------------------------
-	'Êı¾İÑéÖ¤ --------------------------------------------------------------------
+	'æ•°æ®éªŒè¯ --------------------------------------------------------------------
 	'-----------------------------------------------------------------------------
 	If Not DvBoke.ChkPost() Then DvBoke.ShowCode(2):DvBoke.ShowMsg(0)
 	If StrLength(P_Title)>250 or StrLength(P_Title)="" Then
@@ -403,10 +403,10 @@ Sub Admin_SaveEdit()
 		Rs.Close
 		Sql = "Update [Dv_Boke_Post] Set CatID = "&P_Catid&",sCatID = "&P_sCatID&",sType = "&P_sType&",IsLock="&P_Lock&" Where RootID="&Rootid
 		DvBoke.Execute Sql
-		ActMsg = "Ö÷Ìâ¡¶"&P_Title&"¡·±à¼­³É¹¦£¡"
+		ActMsg = "ä¸»é¢˜ã€Š"&P_Title&"ã€‹ç¼–è¾‘æˆåŠŸï¼"
 	Else
 		IsTopic = 1
-		ActMsg = "»Ø¸´Ìû×Ó±à¼­³É¹¦£¡"
+		ActMsg = "å›å¤å¸–å­ç¼–è¾‘æˆåŠŸï¼"
 	End If
 
 	''CatID,sType,TopicID,PostID,IsTopic,Title,FileNote,IsLock
@@ -427,7 +427,7 @@ Sub Admin_SaveEdit()
 					P_PostTitleNote = P_PostContent
 				End If
 			End If
-			P_PostTitleNote = DvCode.UbbCode(P_PostTitleNote) & "...<br/>[<a href="""&DvBoke.ModHtmlLinked&DvBoke.BokeName&".showtopic."&Rootid&".html"">ÔÄ¶ÁÈ«ÎÄ</a>]"
+			P_PostTitleNote = DvCode.UbbCode(P_PostTitleNote) & "...<br/>[<a href="""&DvBoke.ModHtmlLinked&DvBoke.BokeName&".showtopic."&Rootid&".html"">é˜…è¯»å…¨æ–‡</a>]"
 			Node.attributes.getNamedItem("titlenote").text = P_PostTitleNote
 			Node.attributes.getNamedItem("title").text = P_Title
 		End If
@@ -463,7 +463,7 @@ Sub Admin_SaveReply()
 	End If
 	DvBoke.ShowMsg(0)
 	'-----------------------------------------------------------------------------
-	'»ñÈ¡±íµ¥Êı¾İ ----------------------------------------------------------------
+	'è·å–è¡¨å•æ•°æ® ----------------------------------------------------------------
 	'-----------------------------------------------------------------------------
 	P_PostUserName = DvBoke.Checkstr(Trim(Request.Form("PostUserName")))
 	P_Title = DvBoke.Checkstr(Trim(Request.Form("Title")))
@@ -545,15 +545,15 @@ Sub Admin_SaveReply()
 		Exit Sub
 	Else
 		Select Case Rs(5)
-			Case 3 'Ö»ÓĞ×÷Õß¿ÉÒÔ»Ø¸´
+			Case 3 'åªæœ‰ä½œè€…å¯ä»¥å›å¤
 				If Not DvBoke.IsBokeOwner Then
 					DvBoke.ShowCode(38)
 				End If
-			Case 2	'Ö»ÓĞ¹ÜÀíÔ±ºÍ×÷Õß¿ÉÒÔ»Ø¸´
+			Case 2	'åªæœ‰ç®¡ç†å‘˜å’Œä½œè€…å¯ä»¥å›å¤
 				If Not (DvBoke.IsMaster or DvBoke.IsBokeOwner) Then
 					DvBoke.ShowCode(38)
 				End If
-			Case 1	'ÈÏÖ¤
+			Case 1	'è®¤è¯
 				
 			Case Else
 		End Select
@@ -579,19 +579,19 @@ Sub Admin_SaveReply()
 	
 	PostID = DvBoke.Execute("Select Top 1 PostID From [Dv_Boke_Post] order by PostID desc")(0)
 	'-----------------------------------------------------------------------------------
-	'ÓÃ»§²©¿Í 
+	'ç”¨æˆ·åšå®¢ 
 	Sql = "Update [Dv_Boke_User] Set PostNum=PostNum+1,TodayNum=TodayNum+1,LastUpTime="&bSqlNowString&" Where UserID="&TopicUserID
 	DvBoke.Execute Sql
-	'²©¿Í»°Ìâ
+	'åšå®¢è¯é¢˜
 	Sql = "Update [Dv_Boke_SysCat] Set PostNum=PostNum+1,TodayNum=TodayNum+1,LastUpTime="&bSqlNowString&" Where sCatID="&sCatID
 	DvBoke.Execute Sql
-	'SysCatID ¸üĞÂ²©¿ÍËùÊôµÄ·ÖÀà
+	'SysCatID æ›´æ–°åšå®¢æ‰€å±çš„åˆ†ç±»
 	Sql = "Update [Dv_Boke_SysCat] Set PostNum=PostNum+1,TodayNum=TodayNum+1,LastUpTime="&bSqlNowString&" Where sCatID="&DvBoke.BokeNode.getAttribute("syscatid")
 	DvBoke.Execute Sql
-	'ÓÃ»§À¸Ä¿¸üĞÂ
+	'ç”¨æˆ·æ ç›®æ›´æ–°
 	Sql = "Update [Dv_Boke_UserCat] Set PostNum=PostNum+1,TodayNum=TodayNum+1,LastUpTime="&bSqlNowString&" Where uCatID="&Catid
 	DvBoke.Execute Sql
-	'²©¿ÍÏµÍ³
+	'åšå®¢ç³»ç»Ÿ
 	Sql = "Update [Dv_Boke_System] Set S_TodayNum=S_TodayNum+1,S_PostNum=S_PostNum+1,S_LastPostTime="&bSqlNowString
 	DvBoke.Execute Sql
 	'-----------------------------------------------------------------------------------
@@ -616,13 +616,13 @@ Sub Admin_SaveReply()
 	Update_PostToXml()
 	'----------------------------------------------------------------
 	
-	'¸üĞÂÏµÍ³XMLÊı¾İ------------
+	'æ›´æ–°ç³»ç»ŸXMLæ•°æ®------------
 	DvBoke.Update_SysCat sCatID&","&DvBoke.BokeNode.getAttribute("syscatid"),0,1,0,1,Now()
 	DvBoke.Update_System 0,1,0,0,0,1,Now()
 	DvBoke.SaveSystemCache()
-	'¸üĞÂÏµÍ³XMLÊı¾İ------------
+	'æ›´æ–°ç³»ç»ŸXMLæ•°æ®------------
 
-	ActMsg = "»Ø¸´Ö÷Ìâ¡¶"&Topic&"¡·³É¹¦£¡"
+	ActMsg = "å›å¤ä¸»é¢˜ã€Š"&Topic&"ã€‹æˆåŠŸï¼"
 	Select Case DvBoke.BokeSetting(5)
 	Case "0"
 		DvBoke.RefreshID = 0
@@ -636,7 +636,7 @@ Sub Admin_SaveReply()
 	DvBoke.ShowMsg(0)
 End Sub
 
-'¸üĞÂÊ×Ò³ÆÀÂÛÊı¾İ
+'æ›´æ–°é¦–é¡µè¯„è®ºæ•°æ®
 Sub Update_PostToXml()
 	Dim Node,XmlDoc,NodeList,ChildNode
 	Set Node = DvBoke.BokeCat.selectNodes("xml/bokepost")
@@ -669,7 +669,7 @@ Sub Update_PostToXml()
 	DvBoke.Execute("Update Dv_Boke_User set XmlData = '"&Replace(DvBoke.BokeCat.documentElement.xml,"'","''")&"' where UserID="&DvBoke.BokeUserID)
 End Sub
 
-'É¾³ı²Ù×÷
+'åˆ é™¤æ“ä½œ
 Sub Admin_delete()
 	If DvBoke.UserID = 0 Then
 		DvBoke.ShowCode(14)
@@ -732,7 +732,7 @@ Sub Admin_delete()
 		DvBoke.Execute(Sql)
 		Sql = "Delete From [Dv_Boke_Post] Where RootID="&Rootid
 		DvBoke.Execute(Sql)
-		ActMsg = "Ö÷Ìâ¡¶"& Title &"¡·É¾³ı³É¹¦£¡"
+		ActMsg = "ä¸»é¢˜ã€Š"& Title &"ã€‹åˆ é™¤æˆåŠŸï¼"
 	Else
 		TopicNum = 0
 		CountNum = 1
@@ -742,7 +742,7 @@ Sub Admin_delete()
 		DvBoke.Execute(Sql)
 		Sql = "Update [Dv_Boke_Topic] Set Child = Child - 1 Where TopicID="&Rootid
 		DvBoke.Execute Sql
-		ActMsg = "Ö÷Ìâ¡¶"& Title &"¡·»Ø¸´ÆÀÂÛÉ¾³ı³É¹¦£¡"
+		ActMsg = "ä¸»é¢˜ã€Š"& Title &"ã€‹å›å¤è¯„è®ºåˆ é™¤æˆåŠŸï¼"
 	End If
 	Select Case sType
 		Case 0
@@ -769,7 +769,7 @@ Sub Admin_delete()
 	DvBoke.ShowMsg(0)
 End Sub
 
-'¾«»ª¹ÜÀí
+'ç²¾åç®¡ç†
 Sub Admin_isbest()
 	If DvBoke.UserID = 0 Then
 		DvBoke.ShowCode(14)
@@ -800,10 +800,10 @@ Sub Admin_isbest()
 		End If
 		If Rs("IsBest")=0 Then
 			Rs("IsBest")=1
-			ActMsg = "Ö÷Ìâ¡¶"&Rs(2)&"¡·Ìí¼ÓÎª¾«»ª³É¹¦£¡"
+			ActMsg = "ä¸»é¢˜ã€Š"&Rs(2)&"ã€‹æ·»åŠ ä¸ºç²¾åæˆåŠŸï¼"
 		Else
 			Rs("IsBest")=0
-			ActMsg = "¾«»ªÖ÷Ìâ¡¶"&Rs(2)&"¡·½â³ı³É¹¦£¡"
+			ActMsg = "ç²¾åä¸»é¢˜ã€Š"&Rs(2)&"ã€‹è§£é™¤æˆåŠŸï¼"
 		End If
 		Rs.Update
 	End If

@@ -6,12 +6,12 @@ Response.Clear
 dim rs
 
 If Not Dvbbs.Forum_ChanSetting(0)=1 Then
-	Response.Write "±¾ÂÛÌ³Ã»ÓĞ¿ªÆôÊÖ»ú¶ÌĞÅ»¥¶¯¹¦ÄÜ¡£"
+	Response.Write "æœ¬è®ºå›æ²¡æœ‰å¼€å¯æ‰‹æœºçŸ­ä¿¡äº’åŠ¨åŠŸèƒ½ã€‚"
 	Response.End
 End If
 
-'ËæÊ±¿ÉÍ¨¹ı´ËµØÖ·»ñµÃÂÛÌ³µ±Ç°µÄÌôÕ½Ëæ»úÊı
-'ÌôÕ½Ëæ»úÊı
+'éšæ—¶å¯é€šè¿‡æ­¤åœ°å€è·å¾—è®ºå›å½“å‰çš„æŒ‘æˆ˜éšæœºæ•°
+'æŒ‘æˆ˜éšæœºæ•°
 Dim MaxUserID,MaxLength
 MaxLength=12
 set rs=Dvbbs.Execute("select Max(userid) from [dv_user]")

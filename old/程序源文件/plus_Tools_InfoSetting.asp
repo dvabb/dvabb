@@ -4,7 +4,7 @@
 <!--#include file="inc/GroupPermission.asp"-->
 <!-- #include file="Dv_plus/Tools/plus_Tools_const.asp" -->
 <%
-Dvbbs.stats="ÂÛÌ³µÀ¾ßÈ¨ÏŞĞÅÏ¢"
+Dvbbs.stats="è®ºå›é“å…·æƒé™ä¿¡æ¯"
 Dvbbs.LoadTemplates("")
 Dvbbs.Head()
 
@@ -21,20 +21,20 @@ Dvbbs.mainsetting(0)="98%"
 Dvbbs.Footer()
 Dvbbs.PageEnd()
 '--------------------------------------------------------------------------------
-'ÓÃ»§µÀ¾ßÁĞ±í
+'ç”¨æˆ·é“å…·åˆ—è¡¨
 '--------------------------------------------------------------------------------
 Sub Show_ToolsInfo()
 
-''µÀ¾ß»ñÈ¡²ÎÊı
-'1:Ä¿±êÓÃ»§£ºToUserID=
-'2:Ìû×Ó£ºBoardID=&TopicID=&ReplyID=
+''é“å…·è·å–å‚æ•°
+'1:ç›®æ ‡ç”¨æˆ·ï¼šToUserID=
+'2:å¸–å­ï¼šBoardID=&TopicID=&ReplyID=
 Dim Str
 Str = "Action=0&ToUserID="&Request("ToUserID")&"&BoardID="&Dvbbs.BoardID&"&TopicID="&Request("TopicID")&"&ReplyID="&Request("ReplyID")
 %>
 <table border="0" cellpadding=3 cellspacing=1 align=center class=Tableborder1 Style="Width:99%">
 	<tr>
-	<th height=23>µÀ¾ßÊ¹ÓÃÁĞ±í</th></tr>
-	<tr><td height=23 class=Tablebody1><B>ËµÃ÷</B>£ºÇëÈ·ÈÏÃ¿ÖÖµÀ¾ßµÄËµÃ÷ÔÙ½øĞĞ²Ù×÷£¡<BR></td></tr>
+	<th height=23>é“å…·ä½¿ç”¨åˆ—è¡¨</th></tr>
+	<tr><td height=23 class=Tablebody1><B>è¯´æ˜</B>ï¼šè¯·ç¡®è®¤æ¯ç§é“å…·çš„è¯´æ˜å†è¿›è¡Œæ“ä½œï¼<BR></td></tr>
 </table>
 <%
 	Dim Sql,Rs,i
@@ -45,7 +45,7 @@ Str = "Action=0&ToUserID="&Request("ToUserID")&"&BoardID="&Dvbbs.BoardID&"&Topic
 	If Not Rs.eof Then
 		SQL = Rs.GetRows(-1)
 	Else
-		Response.Write "<td class=TableBody1 valign=Top>Äú»¹Î´ÓĞÈÎºÎµÀ¾ß£¬Çëµ½ÂÛÌ³µÀ¾ßÖĞĞÄ¹ºÂò£¡</td></tr></table>"
+		Response.Write "<td class=TableBody1 valign=Top>æ‚¨è¿˜æœªæœ‰ä»»ä½•é“å…·ï¼Œè¯·åˆ°è®ºå›é“å…·ä¸­å¿ƒè´­ä¹°ï¼</td></tr></table>"
 		Exit Sub
 	End If
 	Rs.close:Set Rs = Nothing
@@ -62,11 +62,11 @@ Str = "Action=0&ToUserID="&Request("ToUserID")&"&BoardID="&Dvbbs.BoardID&"&Topic
 		<tr><th height=20 ><%=Server.Htmlencode(SQL(4,i))%></th></tr>
 		<tr>
 		  <td align=center Width="50%"><a href="plus_Tools_postings.asp?ToolsID=<%=SQL(3,i)%>&<%=Str%>" >
-		  <img src="<%=ToolsImg%>" border=0 Title="ËµÃ÷£º<%=Server.Htmlencode(SQL(9,i)&"")%>&#13;&#10;ÊıÁ¿£º<%=SQL(5,i)%>">
+		  <img src="<%=ToolsImg%>" border=0 Title="è¯´æ˜ï¼š<%=Server.Htmlencode(SQL(9,i)&"")%>&#13;&#10;æ•°é‡ï¼š<%=SQL(5,i)%>">
 		  </a>
 		  </td>
 		</tr>
-		<tr><td><li>ÊıÁ¿£º<%=SQL(5,i)%></td>
+		<tr><td><li>æ•°é‡ï¼š<%=SQL(5,i)%></td>
 		</tr>
 	</table>
 </td>
@@ -138,7 +138,7 @@ Sub Show_UserGroupID()
 	%>
 	<table cellspacing="1" cellpadding="3" align="center" class=tableborder1 Style="width:99%">
 	<form name=thisForm onsubmit="putallid(self.opener.PlusTools.ToolsGroupID);">
-	<tr><th colspan="2" height=23><%=ToolsName%> -- ÓÃ»§×éÈ¨ÏŞÁĞ±í</th></tr>
+	<tr><th colspan="2" height=23><%=ToolsName%> -- ç”¨æˆ·ç»„æƒé™åˆ—è¡¨</th></tr>
 	<%
 	Dim IsSet
 	Set Rs=DvBBS.Execute("Select UserGroupID,Title,UserTitle,parentgid From Dv_UserGroups where parentgid<>0 Order By parentgid,UserGroupID")
@@ -160,14 +160,14 @@ Sub Show_UserGroupID()
 	Set Rs=Nothing
 	Response.Write "<tr><td class=tablebody2 colspan=2 align=center><font color="& Dvbbs.mainsetting(1) &">"
 	If CanUse=True Then _
-		Response.Write "¹§Ï²Äú£¬ÄúËùÊôµÄÓÃ»§×é¿ÉÒÔÊ¹ÓÃ¸ÃµÀ¾ß£¡" _
+		Response.Write "æ­å–œæ‚¨ï¼Œæ‚¨æ‰€å±çš„ç”¨æˆ·ç»„å¯ä»¥ä½¿ç”¨è¯¥é“å…·ï¼" _
 	Else _
-		Response.Write "ºÜ±§Ç¸£¬ÄúËùÊôµÄÓÃ»§×é²»¿ÉÒÔÊ¹ÓÃ¸ÃµÀ¾ß£¡"
+		Response.Write "å¾ˆæŠ±æ­‰ï¼Œæ‚¨æ‰€å±çš„ç”¨æˆ·ç»„ä¸å¯ä»¥ä½¿ç”¨è¯¥é“å…·ï¼"
 	Response.Write "</font></td></tr><tr><td class=tablebody1 colspan=2 >"
 	If Temp=0 Then _
-		Response.Write "<INPUT TYPE=""submit"" value=""È·ÈÏ"" >È«Ñ¡:<input type=checkbox name=chkall value=on onclick=""CheckAll(this.form)""> Ñ¡È¡ÔÊĞíµÄÓÃ»§×é£¬È»ºóµã»÷È·¶¨£¬µ±µÀ¾ß×ÊÁÏĞŞ¸ÄÌá½»ºó²ÅÄÜÉúĞ§£¡" _
+		Response.Write "<INPUT TYPE=""submit"" value=""ç¡®è®¤"" >å…¨é€‰:<input type=checkbox name=chkall value=on onclick=""CheckAll(this.form)""> é€‰å–å…è®¸çš„ç”¨æˆ·ç»„ï¼Œç„¶åç‚¹å‡»ç¡®å®šï¼Œå½“é“å…·èµ„æ–™ä¿®æ”¹æäº¤åæ‰èƒ½ç”Ÿæ•ˆï¼" _
 	Else _
-		Response.Write "<input type=""button"" value=""¹Ø±Õ"" onclick=""window.close()"">"
+		Response.Write "<input type=""button"" value=""å…³é—­"" onclick=""window.close()"">"
 	Response.Write "</td></tr></form></table>"
 End Sub
 
@@ -196,9 +196,9 @@ Sub Show_BoardID()
 	%>
 	<table cellspacing="1" cellpadding="3" align="center" class=tableborder1 Style="width:99%">
 	<form name=thisForm onsubmit="putallid(self.opener.document.PlusTools.ToolsBoardID);">
-	<tr><th colspan="2" height=23><%=ToolsName%> -- °æ¿éÈ¨ÏŞÁĞ±í</th></tr>
+	<tr><th colspan="2" height=23><%=ToolsName%> -- ç‰ˆå—æƒé™åˆ—è¡¨</th></tr>
 	<%
-	''ÂÛÌ³°æ¿éÁĞ±í
+	''è®ºå›ç‰ˆå—åˆ—è¡¨
 	Dim i,ii,BoardSetting,Loadboard
 	Dim Node,xpath
 	If Dvbbs.GroupSetting(37) ="1" Then xpath="[@hidden=0]"
@@ -221,9 +221,9 @@ Sub Show_BoardID()
 	Next
 	Response.Write "<tr><td class=tablebody1 colspan=2 >"
 	If Temp=0 Then _
-		Response.Write "<INPUT TYPE=""submit"" value=""È·ÈÏ"" >È«Ñ¡:<input type=checkbox name=chkall value=on onclick=""CheckAll(this.form)""> Ñ¡È¡ÔÊĞíÊ¹ÓÃµÄ°æ¿é£¬È»ºóµã»÷È·¶¨£¬µ±µÀ¾ß×ÊÁÏĞŞ¸ÄÌá½»ºó²ÅÄÜÉúĞ§£¡" _
+		Response.Write "<INPUT TYPE=""submit"" value=""ç¡®è®¤"" >å…¨é€‰:<input type=checkbox name=chkall value=on onclick=""CheckAll(this.form)""> é€‰å–å…è®¸ä½¿ç”¨çš„ç‰ˆå—ï¼Œç„¶åç‚¹å‡»ç¡®å®šï¼Œå½“é“å…·èµ„æ–™ä¿®æ”¹æäº¤åæ‰èƒ½ç”Ÿæ•ˆï¼" _
 	Else _
-		Response.Write "<input type=""button"" value=""¹Ø±Õ"" onclick=""window.close()"">"
+		Response.Write "<input type=""button"" value=""å…³é—­"" onclick=""window.close()"">"
 	Response.Write "</td></tr></form></table>"
 End Sub
 
@@ -237,7 +237,7 @@ Function iffcheck(iBoolean,itype,iStr)
 		End If
 	Else
 		If iBoolean=True Then
-			iffcheck = "¡Ì"
+			iffcheck = "âˆš"
 		Else
 			iffcheck = "<font color="&Dvbbs.Mainsetting(1)&">x</font>"
 		End If

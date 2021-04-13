@@ -20,47 +20,47 @@ set fso=server.createobject("scripting.filesystemobject")
 
 FileInfoURL="http://www.dvbbs.net/dvbbs.txt"
 strFileName= "comparefileonlie.asp"
-'¶¨ÒåÂÛÌ³Ä¿Â¼ÎªadminºóÌ¨Ç°¸öÄ¿Â¼
+'å®šä¹‰è®ºå›ç›®å½•ä¸ºadminåå°å‰ä¸ªç›®å½•
  InstallDir="../"
 
 If request("action") <> "" Then
     Response.Write "  <tr class='tdbg'> "
-    Response.Write "    <td width='70' height='30'><strong>¹ÜÀíµ¼º½£º</strong></td>"
-    Response.Write "    <td height='30'><a href='" & strFileName & "?Action=ShowAllResult'>È«²¿ÏÔÊ¾</a>&nbsp;|&nbsp;<a href='" & strFileName & "?Action=ShowOnlyDif'>Ö»ÏÔÊ¾²îÒì²¿·Ö</a></td>"
+    Response.Write "    <td width='70' height='30'><strong>ç®¡ç†å¯¼èˆªï¼š</strong></td>"
+    Response.Write "    <td height='30'><a href='" & strFileName & "?Action=ShowAllResult'>å…¨éƒ¨æ˜¾ç¤º</a>&nbsp;|&nbsp;<a href='" & strFileName & "?Action=ShowOnlyDif'>åªæ˜¾ç¤ºå·®å¼‚éƒ¨åˆ†</a></td>"
     Response.Write "  </tr>"
     Response.Write "  <tr class='tdbg'> "
-    Response.Write "    </br><td width='80' height='30'><strong>¸÷ÏîµÄº¬Òå£º</strong></td>"
+    Response.Write "    </br><td width='80' height='30'><strong>å„é¡¹çš„å«ä¹‰ï¼š</strong></td>"
     Response.Write "    <td height='30'> " & vbCrLf
     Response.Write "<table width='100%' border='0' align='center' cellpadding='0' cellspacing='0'>" & vbCrLf
     Response.Write "<tr>" & vbCrLf
-    Response.Write "    <td><b>'= '</b>----Á½±ß´óĞ¡Ê±¼äÍêÈ«ÏàÍ¬</td>" & vbCrLf
-    Response.Write "    <td><font color='red'><b>'¡Ù'</b></font>----Á½±ß´óĞ¡²»ÏàÍ¬</td>" & vbCrLf
-    Response.Write "    <td><font color='gray'><b>'¡Ö'</b></font>----Á½±ß½ö½öÊ±¼ä²»Í¬</td>" & vbCrLf
+    Response.Write "    <td><b>'= '</b>----ä¸¤è¾¹å¤§å°æ—¶é—´å®Œå…¨ç›¸åŒ</td>" & vbCrLf
+    Response.Write "    <td><font color='red'><b>'â‰ '</b></font>----ä¸¤è¾¹å¤§å°ä¸ç›¸åŒ</td>" & vbCrLf
+    Response.Write "    <td><font color='gray'><b>'â‰ˆ'</b></font>----ä¸¤è¾¹ä»…ä»…æ—¶é—´ä¸åŒ</td>" & vbCrLf
     Response.Write "</tr><tr>" & vbCrLf
-    Response.Write "    <td><font color='red'>ºìÉ«</font>----²»ÏàÍ¬£¬ĞŞ¸Ä»ò¸üĞÂ¹ıµÄÎÄ¼ş</td>" & vbCrLf
-    Response.Write "    <td><font color='blue'>À¶É«</font>----±¾µØ²»´æÔÚµÄÎÄ¼ş</td>" & vbCrLf
-    Response.Write "    <td><font color='gray'>»ÒÉ«</font>----¹Ù·½ÓĞĞÂÎÄ¼ş£¬µ«±¾µØÎ´¸üĞÂµÄÎÄ¼ş</td>" & vbCrLf
+    Response.Write "    <td><font color='red'>çº¢è‰²</font>----ä¸ç›¸åŒï¼Œä¿®æ”¹æˆ–æ›´æ–°è¿‡çš„æ–‡ä»¶</td>" & vbCrLf
+    Response.Write "    <td><font color='blue'>è“è‰²</font>----æœ¬åœ°ä¸å­˜åœ¨çš„æ–‡ä»¶</td>" & vbCrLf
+    Response.Write "    <td><font color='gray'>ç°è‰²</font>----å®˜æ–¹æœ‰æ–°æ–‡ä»¶ï¼Œä½†æœ¬åœ°æœªæ›´æ–°çš„æ–‡ä»¶</td>" & vbCrLf
     Response.Write "</tr><tr>" & vbCrLf
-    Response.Write "    <td><font color='black'>ºÚÉ«</font>----ÏàÍ¬ÎÄ¼ş»ò¹Ù·½ÎÄ¼ş</td>" & vbCrLf
+    Response.Write "    <td><font color='black'>é»‘è‰²</font>----ç›¸åŒæ–‡ä»¶æˆ–å®˜æ–¹æ–‡ä»¶</td>" & vbCrLf
     Response.Write "</tr>" & vbCrLf
     Response.Write "</table>" & vbCrLf
     Response.Write "</td>"
     Response.Write "  </tr>"
 Else
     Response.Write "  <tr class='tdbg'> "
-    Response.Write "    <td width='80' height='30'><strong>¹ÜÀíµ¼º½£º</strong></td>"
-    Response.Write "    <td height='30'><a href='" & strFileName & "?Action=ShowAllResult'>ÔÚÏß±È½ÏÍøÕ¾ÎÄ¼şĞÅÏ¢</a> </td>"
+    Response.Write "    <td width='80' height='30'><strong>ç®¡ç†å¯¼èˆªï¼š</strong></td>"
+    Response.Write "    <td height='30'><a href='" & strFileName & "?Action=ShowAllResult'>åœ¨çº¿æ¯”è¾ƒç½‘ç«™æ–‡ä»¶ä¿¡æ¯</a> </td>"
     Response.Write "  </tr>"
 End If
 
 
 If Not IsObjInstalled("Scripting.FileSystemObject") Then
-    Response.Write "<b><font color=red>ÄãµÄ·şÎñÆ÷²»Ö§³Ö FSO(Scripting.FileSystemObject)! ²»ÄÜÊ¹ÓÃ±¾¹¦ÄÜ</font></b>"
+    Response.Write "<b><font color=red>ä½ çš„æœåŠ¡å™¨ä¸æ”¯æŒ FSO(Scripting.FileSystemObject)! ä¸èƒ½ä½¿ç”¨æœ¬åŠŸèƒ½</font></b>"
     Response.End
 End If
 
 If Not IsObjInstalled("MSXML2.XMLHTTP") Then
-    Response.Write "<b><font color=red>ÄãµÄ·şÎñÆ÷²»Ö§³Ö XMLHTTP ×é¼ş! ²»ÄÜÊ¹ÓÃ±¾¹¦ÄÜ</font></b>"
+    Response.Write "<b><font color=red>ä½ çš„æœåŠ¡å™¨ä¸æ”¯æŒ XMLHTTP ç»„ä»¶! ä¸èƒ½ä½¿ç”¨æœ¬åŠŸèƒ½</font></b>"
     Response.End
 End If
 
@@ -75,31 +75,31 @@ end if
 Sub Main()
     Response.Write "<br><table width='100%' border='0' cellspacing='1' cellpadding='2' class='border'>"
     Response.Write "  <tr class='title'>"
-    Response.Write "    <td height='22' align='center'><strong>ÔÚÏß±È½ÏÍøÕ¾ÎÄ¼şĞÅÏ¢</strong></td>"
+    Response.Write "    <td height='22' align='center'><strong>åœ¨çº¿æ¯”è¾ƒç½‘ç«™æ–‡ä»¶ä¿¡æ¯</strong></td>"
     Response.Write "  </tr>"
     Response.Write "  <tr class='tdbg'>"
     Response.Write "    <td height='150'>"
-	Response.Write "FSOÎÄ±¾¶ÁĞ´&nbsp;£º"
+	Response.Write "FSOæ–‡æœ¬è¯»å†™&nbsp;ï¼š"
 
     If Not IsObjInstalled("Scripting.FileSystemObject") Then
-    Response.Write "´íÎó</br>"
+    Response.Write "é”™è¯¯</br>"
     err1 = 1
     Else
-    Response.Write "Õı³£</br>"
+    Response.Write "æ­£å¸¸</br>"
     End If
 
-    Response.Write "XMLHTTP×é¼ş&nbsp;£º"
+    Response.Write "XMLHTTPç»„ä»¶&nbsp;ï¼š"
     If Not IsObjInstalled("MSXML2.XMLHTTP") Then
-    Response.Write "´íÎó</br>"
+    Response.Write "é”™è¯¯</br>"
     err2 = 1
     Else
-    Response.Write "Õı³£</br>"
+    Response.Write "æ­£å¸¸</br>"
     End If
     Response.Write "<form name='form1' method='post' action='" & strFileName & "?Action=ShowAllResult'>"
-    Response.Write "<br>&nbsp;&nbsp;&nbsp;&nbsp;¹ÜÀíÔ±¿ÉÒÔÀûÓÃ±¾¹¦ÄÜ£¬ÔÚÏß±È½ÏWeb¿Õ¼äÖĞµÄÍøÕ¾ASPÎÄ¼şºÍ¹Ù·½·¢²¼µÄÏàÓ¦°æ±¾ÖĞÔ­Ê¼ASPÎÄ¼ş£¬·½±ãWeb¿Õ¼äÎÄ¼ş¹ÜÀí¡£<br>ÓĞÒÔÏÂÇé¿ö³öÏÖ½Ô¿ÉÒÔÊ¹ÓÃ±¾¹¦ÄÜ½øĞĞ±È½Ï£º<font color='green'><br>&nbsp;&nbsp;&nbsp;&nbsp;1£©µ±¹Ù·½¸üĞÂÎÄ¼şÊ±£»<br>&nbsp;&nbsp;&nbsp;&nbsp;2£©µ±»³ÒÉÕ¾µãASPÎÄ¼ş±»ÈËÉ¾³ı»ò¶ñÒâĞŞ¸ÄÊ±£»<br>&nbsp;&nbsp;&nbsp;&nbsp;3£©µ±¹Ù·½·¢²¼Â©¶´²¹¶¡Ê±¡£</font>"
-    Response.Write "<p>&nbsp;&nbsp;&nbsp;&nbsp;Èç¹ûÍøÕ¾ÎÄ¼şºÜ¶à£¬»òÕßÍøÂçËÙ¶È±È½ÏÂı£¬Ö´ĞĞ±¾²Ù×÷ĞèÒªºÄ·ÑÏàµ±³¤µÄÊ±¼ä£¬ÇëÔÚ·ÃÎÊÁ¿ÉÙÊ±Ö´ĞĞ±¾²Ù×÷¡£</p>"
+    Response.Write "<br>&nbsp;&nbsp;&nbsp;&nbsp;ç®¡ç†å‘˜å¯ä»¥åˆ©ç”¨æœ¬åŠŸèƒ½ï¼Œåœ¨çº¿æ¯”è¾ƒWebç©ºé—´ä¸­çš„ç½‘ç«™ASPæ–‡ä»¶å’Œå®˜æ–¹å‘å¸ƒçš„ç›¸åº”ç‰ˆæœ¬ä¸­åŸå§‹ASPæ–‡ä»¶ï¼Œæ–¹ä¾¿Webç©ºé—´æ–‡ä»¶ç®¡ç†ã€‚<br>æœ‰ä»¥ä¸‹æƒ…å†µå‡ºç°çš†å¯ä»¥ä½¿ç”¨æœ¬åŠŸèƒ½è¿›è¡Œæ¯”è¾ƒï¼š<font color='green'><br>&nbsp;&nbsp;&nbsp;&nbsp;1ï¼‰å½“å®˜æ–¹æ›´æ–°æ–‡ä»¶æ—¶ï¼›<br>&nbsp;&nbsp;&nbsp;&nbsp;2ï¼‰å½“æ€€ç–‘ç«™ç‚¹ASPæ–‡ä»¶è¢«äººåˆ é™¤æˆ–æ¶æ„ä¿®æ”¹æ—¶ï¼›<br>&nbsp;&nbsp;&nbsp;&nbsp;3ï¼‰å½“å®˜æ–¹å‘å¸ƒæ¼æ´è¡¥ä¸æ—¶ã€‚</font>"
+    Response.Write "<p>&nbsp;&nbsp;&nbsp;&nbsp;å¦‚æœç½‘ç«™æ–‡ä»¶å¾ˆå¤šï¼Œæˆ–è€…ç½‘ç»œé€Ÿåº¦æ¯”è¾ƒæ…¢ï¼Œæ‰§è¡Œæœ¬æ“ä½œéœ€è¦è€—è´¹ç›¸å½“é•¿çš„æ—¶é—´ï¼Œè¯·åœ¨è®¿é—®é‡å°‘æ—¶æ‰§è¡Œæœ¬æ“ä½œã€‚</p>"
     Response.Write "<p align='center'><input name='Action' type='hidden' id='Action' value='ShowAllResult'>"
-    Response.Write "<input type='submit' name='submit' value=' ¿ªÊ¼±È½Ï '></p>"
+    Response.Write "<input type='submit' name='submit' value=' å¼€å§‹æ¯”è¾ƒ '></p>"
     Response.Write "</form>"
     Response.Write "    </td>"
     Response.Write "  </tr>"
@@ -114,7 +114,7 @@ Sub ShowAllResult()
     AdminDir = Dvbbs.CacheData(33,0)
 
     If Html = "" Then
-        Response.Write "<br><p align='center'><font color='red' style='font-size:9pt'>»ñÈ¡¹Ù·½Êı¾İÊ§°Ü£¬¿ÉÄÜÊÇÄúµÄ·şÎñÆ÷²»Ö§³Ö XMLHTTP ×é¼ş»òÕßÊÇÍ¨¹ı´úÀí·şÎñÆ÷·ÃÎÊÍøÂç¡£</font></p>"
+        Response.Write "<br><p align='center'><font color='red' style='font-size:9pt'>è·å–å®˜æ–¹æ•°æ®å¤±è´¥ï¼Œå¯èƒ½æ˜¯æ‚¨çš„æœåŠ¡å™¨ä¸æ”¯æŒ XMLHTTP ç»„ä»¶æˆ–è€…æ˜¯é€šè¿‡ä»£ç†æœåŠ¡å™¨è®¿é—®ç½‘ç»œã€‚</font></p>"
         Exit Sub
     End If
     If AdminDir <> "Admin/" Then
@@ -132,13 +132,13 @@ Sub ShowAllResult()
     Response.Write "<br>"
     Response.Write "<table width='100%' border='0' cellspacing='0' cellpadding='0' class='border'>" & vbCrLf
     Response.Write "<tr class='title0'>" & vbCrLf
-    Response.Write "    <td>&nbsp;Ãû³Æ(¹Ù·½)</td>" & vbCrLf
-    Response.Write "    <td>&nbsp;´óĞ¡</td>" & vbCrLf
-    Response.Write "    <td>&nbsp;&nbsp;ĞŞ¸ÄÊ±¼ä</td>" & vbCrLf
+    Response.Write "    <td>&nbsp;åç§°(å®˜æ–¹)</td>" & vbCrLf
+    Response.Write "    <td>&nbsp;å¤§å°</td>" & vbCrLf
+    Response.Write "    <td>&nbsp;&nbsp;ä¿®æ”¹æ—¶é—´</td>" & vbCrLf
     Response.Write "    <td class='tdtop'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>" & vbCrLf
-    Response.Write "    <td>&nbsp;Ãû³Æ(±¾Õ¾)</td>" & vbCrLf
-    Response.Write "    <td>&nbsp;´óĞ¡</td>" & vbCrLf
-    Response.Write "    <td>&nbsp;&nbsp;ĞŞ¸ÄÊ±¼ä</td>" & vbCrLf
+    Response.Write "    <td>&nbsp;åç§°(æœ¬ç«™)</td>" & vbCrLf
+    Response.Write "    <td>&nbsp;å¤§å°</td>" & vbCrLf
+    Response.Write "    <td>&nbsp;&nbsp;ä¿®æ”¹æ—¶é—´</td>" & vbCrLf
     Response.Write "</tr>" & vbCrLf
     Dim j, dyNum, bdyNum, ydyNUm, bczNum
     j = 1
@@ -163,43 +163,43 @@ Sub ShowAllResult()
             FileSize = f.size
             FileDate = f.DateLastModified
             If theFiles(i)(1) <> CStr(FileSize) Then
-                interHtml = "red'>¡Ù"
+                interHtml = "red'>â‰ "
                 bdyNum = bdyNum + 1
             Else
-                interHtml = "gray'>¡Ö"
+                interHtml = "gray'>â‰ˆ"
                 If CDate(theFiles(i)(2)) <> FileDate Then
                     ydyNUm = ydyNUm + 1
                 End If
             End If
  
             If theFiles(i)(1) = CStr(FileSize) And CDate(theFiles(i)(2)) = FileDate Then
-                Response.Write "    <td><b>¡¤</b>" & theFiles(i)(0) & "</td>" & vbCrLf
+                Response.Write "    <td><b>Â·</b>" & theFiles(i)(0) & "</td>" & vbCrLf
                 Response.Write "    <td align='right'>" & FormatNumber(theFiles(i)(1), 0, vbTrue, vbFalse, vbTrue) & "&nbsp;&nbsp;</td>" & vbCrLf
                 Response.Write "    <td>" & theFiles(i)(2) & "</td>" & vbCrLf
                 Response.Write "    <td class='tdinter'><b>=</b></td>" & vbCrLf
-                Response.Write "    <td><b>¡¤</b>" & FileName & "</td>" & vbCrLf
+                Response.Write "    <td><b>Â·</b>" & FileName & "</td>" & vbCrLf
                 Response.Write "    <td align='right'>" & FormatNumber(FileSize, 0, vbTrue, vbFalse, vbTrue) & "&nbsp;&nbsp;</td>" & vbCrLf
                 Response.Write "    <td>" & FileDate & "</td>" & vbCrLf
                 dyNum = dyNum + 1
             Else
                 If CDate(theFiles(i)(2)) > FileDate Then
-                    Response.Write "    <td><font color='red'><b>¡¤</b>" & theFiles(i)(0) & "</font></td>" & vbCrLf
+                    Response.Write "    <td><font color='red'><b>Â·</b>" & theFiles(i)(0) & "</font></td>" & vbCrLf
                     Response.Write "    <td align='right'><font color='red'>" & FormatNumber(theFiles(i)(1), 0, vbTrue, vbFalse, vbTrue) & "</font>&nbsp;&nbsp;</td>" & vbCrLf
                     Response.Write "    <td><font color='red'>" & theFiles(i)(2) & "</font></td>" & vbCrLf
                     Response.Write "   <td class='tdinter'><b><font color='" & interHtml & "</font></b></td>" & vbCrLf
-                    Response.Write "    <td><font color='gray'><b>¡¤</b>" & FileName & "</font></td>" & vbCrLf
+                    Response.Write "    <td><font color='gray'><b>Â·</b>" & FileName & "</font></td>" & vbCrLf
                     Response.Write "    <td align='right'><font color='gray'>" & FormatNumber(FileSize, 0, vbTrue, vbFalse, vbTrue) & "</font>&nbsp;&nbsp;</td>" & vbCrLf
                     Response.Write "    <td><font color='gray'>" & FileDate & "</font></td>" & vbCrLf
                 Else
-                    Response.Write "    <td><b>¡¤</b>" & theFiles(i)(0) & "</td>" & vbCrLf
+                    Response.Write "    <td><b>Â·</b>" & theFiles(i)(0) & "</td>" & vbCrLf
                     Response.Write "    <td align='right'>" & FormatNumber(theFiles(i)(1), 0, vbTrue, vbFalse, vbTrue) & "&nbsp;&nbsp;</td>" & vbCrLf
                     Response.Write "    <td>" & theFiles(i)(2) & "</td>" & vbCrLf
                     Response.Write "   <td class='tdinter'><b><font color='" & interHtml & "</font></b></td>" & vbCrLf
-                    If interHtml = "gray'>¡Ö" Then
-                        Response.Write "    <td><b>¡¤</b>" & FileName & "</td>" & vbCrLf
+                    If interHtml = "gray'>â‰ˆ" Then
+                        Response.Write "    <td><b>Â·</b>" & FileName & "</td>" & vbCrLf
                         Response.Write "    <td align='right'>" & FormatNumber(FileSize, 0, vbTrue, vbFalse, vbTrue) & "&nbsp;&nbsp;</td>" & vbCrLf
                     Else
-                        Response.Write "    <td><font color='red'><b>¡¤</b>" & FileName & "</font></td>" & vbCrLf
+                        Response.Write "    <td><font color='red'><b>Â·</b>" & FileName & "</font></td>" & vbCrLf
                         Response.Write "    <td align='right'><font color='red'>" & FormatNumber(FileSize, 0, vbTrue, vbFalse, vbTrue) & "</font>&nbsp;&nbsp;</td>" & vbCrLf
                     End If
                     Response.Write "    <td><font color='red'>" & FileDate & "</font></td>" & vbCrLf
@@ -207,7 +207,7 @@ Sub ShowAllResult()
             End If
  
         Else
-            Response.Write "    <td><font color='blue'><b>¡¤</b>" & theFiles(i)(0) & "</font></td>" & vbCrLf
+            Response.Write "    <td><font color='blue'><b>Â·</b>" & theFiles(i)(0) & "</font></td>" & vbCrLf
             Response.Write "    <td align='right'><font color='blue'>" & FormatNumber(theFiles(i)(1), 0, vbTrue, vbFalse, vbTrue) & "&nbsp;&nbsp;</font></td>" & vbCrLf
             Response.Write "    <td><font color='blue'>" & theFiles(i)(2) & "</font></td>" & vbCrLf
             Response.Write "    <td class='tdinter'>&nbsp;</td>" & vbCrLf
@@ -224,13 +224,13 @@ Sub ShowAllResult()
     Response.Write "<br>" & vbCrLf
     Response.Write "<table width='100%'>" & vbCrLf
     Response.Write "<tr>" & vbCrLf
-    Response.Write "<td colspan='5'><b>¹Ù·½ºÍ±¾Õ¾±È½Ï½á¹ûÍ³¼Æ£º</b></td>" & vbCrLf
+    Response.Write "<td colspan='5'><b>å®˜æ–¹å’Œæœ¬ç«™æ¯”è¾ƒç»“æœç»Ÿè®¡ï¼š</b></td>" & vbCrLf
     Response.Write "</tr><tr>" & vbCrLf
-    Response.Write "    <td>Á½±ß´óĞ¡Ê±¼äÍêÈ«ÏàÍ¬£º<font color='red'>" & dyNum & "</font> ¸ö</td>" & vbCrLf
-    Response.Write "    <td>Á½±ß´óĞ¡²»ÏàÍ¬£º<font color='green'>" & bdyNum & "</font> ¸ö</td>" & vbCrLf
-    Response.Write "    <td>Á½±ß½ö½öÊ±¼ä²»Í¬£º<font color='gray'>" & ydyNUm & "</font> ¸ö</td>" & vbCrLf
+    Response.Write "    <td>ä¸¤è¾¹å¤§å°æ—¶é—´å®Œå…¨ç›¸åŒï¼š<font color='red'>" & dyNum & "</font> ä¸ª</td>" & vbCrLf
+    Response.Write "    <td>ä¸¤è¾¹å¤§å°ä¸ç›¸åŒï¼š<font color='green'>" & bdyNum & "</font> ä¸ª</td>" & vbCrLf
+    Response.Write "    <td>ä¸¤è¾¹ä»…ä»…æ—¶é—´ä¸åŒï¼š<font color='gray'>" & ydyNUm & "</font> ä¸ª</td>" & vbCrLf
     Response.Write "</tr><tr>" & vbCrLf
-    Response.Write "    <td>±¾µØ²»´æÔÚµÄÎÄ¼ş£º<font color='blue'>" & bczNum & "</font> ¸ö</td>" & vbCrLf
+    Response.Write "    <td>æœ¬åœ°ä¸å­˜åœ¨çš„æ–‡ä»¶ï¼š<font color='blue'>" & bczNum & "</font> ä¸ª</td>" & vbCrLf
     Response.Write "</tr>" & vbCrLf
     Response.Write "</table>" & vbCrLf
     Response.Write "<br>" & vbCrLf
@@ -243,7 +243,7 @@ Sub ShowOnlyDif()
 
     Html = GetHttpPage(FileInfoURL, 0)
     If Html = "" Then
-        Response.Write "<br><p align='center'><font color='red' style='font-size:9pt'>»ñÈ¡¹Ù·½Êı¾İÊ§°Ü£¬¿ÉÄÜÊÇÄúµÄ·şÎñÆ÷²»Ö§³Ö XMLHTTP ×é¼ş»òÕßÊÇÍ¨¹ı´úÀí·şÎñÆ÷·ÃÎÊÍøÂç¡£</font></p>"
+        Response.Write "<br><p align='center'><font color='red' style='font-size:9pt'>è·å–å®˜æ–¹æ•°æ®å¤±è´¥ï¼Œå¯èƒ½æ˜¯æ‚¨çš„æœåŠ¡å™¨ä¸æ”¯æŒ XMLHTTP ç»„ä»¶æˆ–è€…æ˜¯é€šè¿‡ä»£ç†æœåŠ¡å™¨è®¿é—®ç½‘ç»œã€‚</font></p>"
         Exit Sub
     End If
 
@@ -257,13 +257,13 @@ Sub ShowOnlyDif()
     Response.Write "<br>"
     Response.Write "<table width='100%' border='0' cellspacing='0' cellpadding='0' class='border'>" & vbCrLf
     Response.Write "<tr class='title0'>" & vbCrLf
-    Response.Write "    <td>&nbsp;Ãû³Æ(¹Ù·½)</td>" & vbCrLf
-    Response.Write "    <td>&nbsp;´óĞ¡</td>" & vbCrLf
-    Response.Write "    <td>&nbsp;&nbsp;ĞŞ¸ÄÊ±¼ä</td>" & vbCrLf
+    Response.Write "    <td>&nbsp;åç§°(å®˜æ–¹)</td>" & vbCrLf
+    Response.Write "    <td>&nbsp;å¤§å°</td>" & vbCrLf
+    Response.Write "    <td>&nbsp;&nbsp;ä¿®æ”¹æ—¶é—´</td>" & vbCrLf
     Response.Write "    <td class='tdtop'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>" & vbCrLf
-    Response.Write "    <td>&nbsp;Ãû³Æ(±¾Õ¾)</td>" & vbCrLf
-    Response.Write "    <td>&nbsp;´óĞ¡</td>" & vbCrLf
-    Response.Write "    <td>&nbsp;&nbsp;ĞŞ¸ÄÊ±¼ä</td>" & vbCrLf
+    Response.Write "    <td>&nbsp;åç§°(æœ¬ç«™)</td>" & vbCrLf
+    Response.Write "    <td>&nbsp;å¤§å°</td>" & vbCrLf
+    Response.Write "    <td>&nbsp;&nbsp;ä¿®æ”¹æ—¶é—´</td>" & vbCrLf
     Response.Write "</tr>" & vbCrLf
     Dim j
     j = 1
@@ -281,9 +281,9 @@ Sub ShowOnlyDif()
             FileSize = f.size
             FileDate = f.DateLastModified
             If theFiles(i)(1) <> CStr(FileSize) Then
-                interHtml = "red'>¡Ù"
+                interHtml = "red'>â‰ "
             Else
-                interHtml = "gray'>¡Ö"
+                interHtml = "gray'>â‰ˆ"
             End If
  
             If theFiles(i)(1) = CStr(FileSize) And CDate(theFiles(i)(2)) = FileDate Then
@@ -291,25 +291,25 @@ Sub ShowOnlyDif()
             Else
                 If CDate(theFiles(i)(2)) > FileDate Then
                     Response.Write trHtml & vbCrLf
-                    Response.Write "    <td><font color='red'><b>¡¤</b>" & theFiles(i)(0) & "</font></td>" & vbCrLf
+                    Response.Write "    <td><font color='red'><b>Â·</b>" & theFiles(i)(0) & "</font></td>" & vbCrLf
                     Response.Write "    <td align='right'><font color='red'>" & FormatNumber(theFiles(i)(1), 0, vbTrue, vbFalse, vbTrue) & "</font>&nbsp;&nbsp;</td>" & vbCrLf
                     Response.Write "    <td><font color='red'>" & theFiles(i)(2) & "</font></td>" & vbCrLf
                     Response.Write "   <td class='tdinter'><b><font color='" & interHtml & "</font></b></td>" & vbCrLf
-                    Response.Write "    <td><font color='gray'><b>¡¤</b>" & FileName & "</font></td>" & vbCrLf
+                    Response.Write "    <td><font color='gray'><b>Â·</b>" & FileName & "</font></td>" & vbCrLf
                     Response.Write "    <td align='right'><font color='gray'>" & FormatNumber(FileSize, 0, vbTrue, vbFalse, vbTrue) & "</font>&nbsp;&nbsp;</td>" & vbCrLf
                     Response.Write "    <td><font color='gray'>" & FileDate & "</font></td>" & vbCrLf
                     Response.Write "</tr>" & vbCrLf
                 Else
                     Response.Write trHtml & vbCrLf
-                    Response.Write "    <td><b>¡¤</b>" & theFiles(i)(0) & "</td>" & vbCrLf
+                    Response.Write "    <td><b>Â·</b>" & theFiles(i)(0) & "</td>" & vbCrLf
                     Response.Write "    <td align='right'>" & FormatNumber(theFiles(i)(1), 0, vbTrue, vbFalse, vbTrue) & "&nbsp;&nbsp;</td>" & vbCrLf
                     Response.Write "    <td>" & theFiles(i)(2) & "</td>" & vbCrLf
                     Response.Write "   <td class='tdinter'><b><font color='" & interHtml & "</font></b></td>" & vbCrLf
-                    If interHtml = "gray'>¡Ö" Then
-                        Response.Write "    <td><b>¡¤</b>" & FileName & "</td>" & vbCrLf
+                    If interHtml = "gray'>â‰ˆ" Then
+                        Response.Write "    <td><b>Â·</b>" & FileName & "</td>" & vbCrLf
                         Response.Write "    <td align='right'>" & FormatNumber(FileSize, 0, vbTrue, vbFalse, vbTrue) & "&nbsp;&nbsp;</td>" & vbCrLf
                     Else
-                        Response.Write "    <td><font color='red'><b>¡¤</b>" & FileName & "</font></td>" & vbCrLf
+                        Response.Write "    <td><font color='red'><b>Â·</b>" & FileName & "</font></td>" & vbCrLf
                         Response.Write "    <td align='right'><font color='red'>" & FormatNumber(FileSize, 0, vbTrue, vbFalse, vbTrue) & "</font>&nbsp;&nbsp;</td>" & vbCrLf
                     End If
                     Response.Write "    <td><font color='red'>" & FileDate & "</font></td>" & vbCrLf
@@ -319,7 +319,7 @@ Sub ShowOnlyDif()
  
         Else
             Response.Write trHtml & vbCrLf
-            Response.Write "    <td><font color='blue'><b>¡¤</b>" & theFiles(i)(0) & "</font></td>" & vbCrLf
+            Response.Write "    <td><font color='blue'><b>Â·</b>" & theFiles(i)(0) & "</font></td>" & vbCrLf
             Response.Write "    <td align='right'><font color='blue'>" & FormatNumber(theFiles(i)(1), 0, vbTrue, vbFalse, vbTrue) & "&nbsp;&nbsp;</font></td>" & vbCrLf
             Response.Write "    <td><font color='blue'>" & theFiles(i)(2) & "</font></td>" & vbCrLf
             Response.Write "    <td class='tdinter'>&nbsp;</td>" & vbCrLf

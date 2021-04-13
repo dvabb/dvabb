@@ -3,7 +3,7 @@
 <!--#include file="boke/config.asp"-->
 <!--#include File="boke/Upload_Class.asp" -->
 <%
-Dvbbs.Stats="²é¿´ÎÄ¼ş"
+Dvbbs.Stats="æŸ¥çœ‹æ–‡ä»¶"
 Dim DownId,Rs,FileName,sFileName,Boke_Setting,UploadSetting
 If Not IsNumeric(request("id")) Then
 	Dvbbs.AddErrCode(35)
@@ -11,15 +11,15 @@ Else
 	DownID=Clng(request("id"))
 End If
 Dvbbs.ShowErr()
-'È¡µÃ²©¿ÍÉÏ´«Ä¿Â¼
+'å–å¾—åšå®¢ä¸Šä¼ ç›®å½•
 Function CheckFolder()
 	If DvBoke.System_UpSetting(19)="" Or DvBoke.System_UpSetting(19)="0" Then DvBoke.System_UpSetting(19)="Boke/UploadFile/"
 	CheckFolder = Replace(Replace(DvBoke.System_UpSetting(19),Chr(0),""),".","")
-	'ÔÚÄ¿Â¼ºó¼Ó(/)
+	'åœ¨ç›®å½•ååŠ (/)
 	If Right(CheckFolder,1)<>"/" Then CheckFolder=CheckFolder&"/"
 End Function
 
-'È¡µÃ²©¿ÍÉèÖÃĞÅÏ¢
+'å–å¾—åšå®¢è®¾ç½®ä¿¡æ¯
 Set Rs=DvBoke.Execute("Select Top 1 * From Dv_Boke_System")
 Boke_Setting = Rs("S_Setting")
 If Boke_Setting = "" Or IsNull(Boke_Setting) Then Boke_Setting = "1,1,0,1,1,1,20,20,15,3,1,1,1|0|0|999|bbs.dvbbs.net|12|1|Arial|0|images/WaterMap.gif|0.7|110|35|4|120|100|1|1|1|Boke/UploadFile/|0,1,1,-1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1"
@@ -29,13 +29,13 @@ UploadSetting = Split(Boke_Setting(12),"|")
 If Ubound(UploadSetting) < 2 Then UploadSetting = Split("1|0|0|999|bbs.dvbbs.net|12|1|Arial|0|images/WaterMap.gif|0.7|110|35|4|120|100|1|1|1|Boke/UploadFile/|0","|")
 Rs.Close
 Set Rs = Nothing
-'Êä³öÎÄ¼ş
+'è¾“å‡ºæ–‡ä»¶
 Set Rs = DvBoke.Execute("Select FileName,sFileName From Dv_Boke_Upfile where id="&DownID)
 FileName = Rs("FileName")
 sFileName = Rs("sFileName")
 Rs.Close
 Set Rs = Nothing
-'ÅĞ¶ÏÊÇ·ñ·ÀµÁÁ´
+'åˆ¤æ–­æ˜¯å¦é˜²ç›—é“¾
 If UploadSetting(20) = "1" Then
     If Request.ServerVariables("HTTP_REFERER")="" Or InStr(Request.ServerVariables("HTTP_REFERER"),Request.ServerVariables("SERVER_NAME"))=0 Then
         Response.Redirect "index.asp"
@@ -59,14 +59,14 @@ Sub downloadFile(strFile,FileOldName)
 	s.Type = 1
 	Set fso = Dvbbs.iCreateObject("Scripting.FileSystemObject")
 	If Not fso.FileExists(strFilename) Then
-		Response.Write("<h1>´íÎó: </h1><br>ÏµÍ³ÕÒ²»µ½Ö¸¶¨ÎÄ¼ş")
+		Response.Write("<h1>é”™è¯¯: </h1><br>ç³»ç»Ÿæ‰¾ä¸åˆ°æŒ‡å®šæ–‡ä»¶")
 		Exit Sub
 	End If
 	Set f = fso.GetFile(strFilename)
 		intFilelength = f.size
 		s.LoadFromFile(strFilename)
 		If err Then
-			Response.Write("<h1>´íÎó: </h1>" & err.Description & "<p>")
+			Response.Write("<h1>é”™è¯¯: </h1>" & err.Description & "<p>")
 			Response.End
 		End If
 		Set fso=Nothing

@@ -103,21 +103,21 @@ Function BoardHelp1()
 Dim TempLateStr
 TempLateStr=template.html(5)
 TempLateStr=Replace(TempLateStr,"{$RedClor}",Dvbbs.mainsetting(1))
-'½ğÇ®
+'é‡‘é’±
 TempLateStr=Replace(TempLateStr,"{$RegUpMoney}",Dvbbs.Forum_user(0))
 TempLateStr=Replace(TempLateStr,"{$LoginUpMoney}",Dvbbs.Forum_user(4))
 TempLateStr=Replace(TempLateStr,"{$PostUpMoney}",Dvbbs.Forum_user(1))
 TempLateStr=Replace(TempLateStr,"{$ReplyUpMoney}",Dvbbs.Forum_user(2))
 TempLateStr=Replace(TempLateStr,"{$IsBestUpMoney}",Dvbbs.Forum_user(15))
 TempLateStr=Replace(TempLateStr,"{$IsDelUpMoney}",Dvbbs.Forum_user(3))
-'»ı·Ö
+'ç§¯åˆ†
 TempLateStr=Replace(TempLateStr,"{$RegUpEP}",Dvbbs.Forum_user(5))
 TempLateStr=Replace(TempLateStr,"{$LoginUpEP}",Dvbbs.Forum_user(9))
 TempLateStr=Replace(TempLateStr,"{$PostUpEP}",Dvbbs.Forum_user(6))
 TempLateStr=Replace(TempLateStr,"{$ReplyUpEP}",Dvbbs.Forum_user(7))
 TempLateStr=Replace(TempLateStr,"{$IsBestUpEP}",Dvbbs.Forum_user(17))
 TempLateStr=Replace(TempLateStr,"{$IsDelUpEP}",Dvbbs.Forum_user(8))
-'÷ÈÁ¦
+'é­…åŠ›
 TempLateStr=Replace(TempLateStr,"{$RegUpCP}",Dvbbs.Forum_user(10))
 TempLateStr=Replace(TempLateStr,"{$LoginUpCP}",Dvbbs.Forum_user(14))
 TempLateStr=Replace(TempLateStr,"{$PostUpCP}",Dvbbs.Forum_user(11))
@@ -153,28 +153,28 @@ Dim TempLateStr,MaxLengh
 if Dvbbs.BoardID>0 Then
 TempLateStr=template.html(7)
 MaxLengh=Clng(Dvbbs.Board_Setting(16))/1024
-TempLateStr=Replace(TempLateStr,"{$OpenHtml}",iif(Dvbbs.Board_Setting(5),"¿ÉÓÃ","²»¿ÉÓÃ"))
-TempLateStr=Replace(TempLateStr,"{$OpenUBB}",iif(Dvbbs.Board_Setting(6),"¿ÉÓÃ","²»¿ÉÓÃ"))
-TempLateStr=Replace(TempLateStr,"{$OpenImage}",iif(Dvbbs.Board_Setting(7),"¿ÉÓÃ","²»¿ÉÓÃ"))
-TempLateStr=Replace(TempLateStr,"{$OpenFlash}",iif(Dvbbs.Board_Setting(44),"¿ÉÓÃ","²»¿ÉÓÃ"))
-TempLateStr=Replace(TempLateStr,"{$OpenPlayer}",iif(Dvbbs.Board_Setting(9),"¿ÉÓÃ","²»¿ÉÓÃ"))
-TempLateStr=Replace(TempLateStr,"{$OpenEmcode}",iif(Dvbbs.Board_Setting(8),"¿ÉÓÃ","²»¿ÉÓÃ"))
-TempLateStr=Replace(TempLateStr,"{$OpenUpLoad}",iif(Dvbbs.Board_Setting(3),"¿ÉÓÃ","²»¿ÉÓÃ"))
+TempLateStr=Replace(TempLateStr,"{$OpenHtml}",iif(Dvbbs.Board_Setting(5),"å¯ç”¨","ä¸å¯ç”¨"))
+TempLateStr=Replace(TempLateStr,"{$OpenUBB}",iif(Dvbbs.Board_Setting(6),"å¯ç”¨","ä¸å¯ç”¨"))
+TempLateStr=Replace(TempLateStr,"{$OpenImage}",iif(Dvbbs.Board_Setting(7),"å¯ç”¨","ä¸å¯ç”¨"))
+TempLateStr=Replace(TempLateStr,"{$OpenFlash}",iif(Dvbbs.Board_Setting(44),"å¯ç”¨","ä¸å¯ç”¨"))
+TempLateStr=Replace(TempLateStr,"{$OpenPlayer}",iif(Dvbbs.Board_Setting(9),"å¯ç”¨","ä¸å¯ç”¨"))
+TempLateStr=Replace(TempLateStr,"{$OpenEmcode}",iif(Dvbbs.Board_Setting(8),"å¯ç”¨","ä¸å¯ç”¨"))
+TempLateStr=Replace(TempLateStr,"{$OpenUpLoad}",iif(Dvbbs.Board_Setting(3),"å¯ç”¨","ä¸å¯ç”¨"))
 TempLateStr=Replace(TempLateStr,"{$MaxLengh}",MaxLengh)
-TempLateStr=Replace(TempLateStr,"{$OpenMoney}",iif(Dvbbs.Board_Setting(10),"¿ÉÓÃ","²»¿ÉÓÃ"))
-TempLateStr=Replace(TempLateStr,"{$OpenEP}",iif(Dvbbs.Board_Setting(11),"¿ÉÓÃ","²»¿ÉÓÃ"))
-TempLateStr=Replace(TempLateStr,"{$OpenCP}",iif(Dvbbs.Board_Setting(12),"¿ÉÓÃ","²»¿ÉÓÃ"))
-TempLateStr=Replace(TempLateStr,"{$OpenPower}",iif(Dvbbs.Board_Setting(13),"¿ÉÓÃ","²»¿ÉÓÃ"))
-TempLateStr=Replace(TempLateStr,"{$OpenArticle}",iif(Dvbbs.Board_Setting(14),"¿ÉÓÃ","²»¿ÉÓÃ"))
-TempLateStr=Replace(TempLateStr,"{$OpenReplay}",iif(Dvbbs.Board_Setting(15),"¿ÉÓÃ","²»¿ÉÓÃ"))
-TempLateStr=Replace(TempLateStr,"{$OpenBuy}",iif(Dvbbs.Board_Setting(23),"¿ÉÓÃ","²»¿ÉÓÃ"))
+TempLateStr=Replace(TempLateStr,"{$OpenMoney}",iif(Dvbbs.Board_Setting(10),"å¯ç”¨","ä¸å¯ç”¨"))
+TempLateStr=Replace(TempLateStr,"{$OpenEP}",iif(Dvbbs.Board_Setting(11),"å¯ç”¨","ä¸å¯ç”¨"))
+TempLateStr=Replace(TempLateStr,"{$OpenCP}",iif(Dvbbs.Board_Setting(12),"å¯ç”¨","ä¸å¯ç”¨"))
+TempLateStr=Replace(TempLateStr,"{$OpenPower}",iif(Dvbbs.Board_Setting(13),"å¯ç”¨","ä¸å¯ç”¨"))
+TempLateStr=Replace(TempLateStr,"{$OpenArticle}",iif(Dvbbs.Board_Setting(14),"å¯ç”¨","ä¸å¯ç”¨"))
+TempLateStr=Replace(TempLateStr,"{$OpenReplay}",iif(Dvbbs.Board_Setting(15),"å¯ç”¨","ä¸å¯ç”¨"))
+TempLateStr=Replace(TempLateStr,"{$OpenBuy}",iif(Dvbbs.Board_Setting(23),"å¯ç”¨","ä¸å¯ç”¨"))
 End If
 BoardHelp4=TempLateStr
 TempLateStr=template.html(8)
-TempLateStr=Replace(TempLateStr,"{$OpenHtml}",iif(Dvbbs.Forum_Setting(66),"¿ÉÓÃ","²»¿ÉÓÃ"))
-TempLateStr=Replace(TempLateStr,"{$OpenUBB}",iif(Dvbbs.Forum_Setting(65),"¿ÉÓÃ","²»¿ÉÓÃ"))
-TempLateStr=Replace(TempLateStr,"{$OpenImage}",iif(Dvbbs.Forum_Setting(67),"¿ÉÓÃ","²»¿ÉÓÃ"))
-TempLateStr=Replace(TempLateStr,"{$OpenFlash}",iif(Dvbbs.Forum_Setting(71),"¿ÉÓÃ","²»¿ÉÓÃ"))
+TempLateStr=Replace(TempLateStr,"{$OpenHtml}",iif(Dvbbs.Forum_Setting(66),"å¯ç”¨","ä¸å¯ç”¨"))
+TempLateStr=Replace(TempLateStr,"{$OpenUBB}",iif(Dvbbs.Forum_Setting(65),"å¯ç”¨","ä¸å¯ç”¨"))
+TempLateStr=Replace(TempLateStr,"{$OpenImage}",iif(Dvbbs.Forum_Setting(67),"å¯ç”¨","ä¸å¯ç”¨"))
+TempLateStr=Replace(TempLateStr,"{$OpenFlash}",iif(Dvbbs.Forum_Setting(71),"å¯ç”¨","ä¸å¯ç”¨"))
 BoardHelp4=BoardHelp4&TempLateStr
 End Function
 

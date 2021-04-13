@@ -16,7 +16,7 @@ ajaxpostwin=Request.Form("ajaxpostwin")
 If ajaxPro=1 Then
 	ajaxPro=True
 Else
-	ajaxPro=False Rem ·ÇajaxµÇÂ½
+	ajaxPro=False Rem éajaxç™»é™†
 End If
 
 Dim comeurl
@@ -26,7 +26,7 @@ Dim EnterCount
 If Request.Cookies("count")<>"" Then
 	EnterCount=Request.Cookies("count")
 Else
-	EnterCount=Request.QueryString("count")'µØÖ·À¸´ø²ÎÊı
+	EnterCount=Request.QueryString("count")'åœ°å€æ å¸¦å‚æ•°
 End If
 '----------------------
 session("flag")=empty
@@ -101,26 +101,26 @@ Function Dvbbs_ChkLogin
 			    If  ajaxPro Then
 				    If ajaxpostwin="1" Then 'modifty by reoaiq at 091022
 						If Dvbbs.forum_setting(120)="1" Then 
-						strString("ÓïÒôÑéÖ¤ÂëĞ£ÑéÊ§°Ü@@@@2")
+						strString("è¯­éŸ³éªŒè¯ç æ ¡éªŒå¤±è´¥@@@@2")
 						Else 
-						strString("ÑéÖ¤ÂëĞ£ÑéÊ§°Ü@@@@0")
+						strString("éªŒè¯ç æ ¡éªŒå¤±è´¥@@@@0")
 						End If
 					else 
 						If Dvbbs.forum_setting(120)="1" Then 
-						strString("ÓïÒôÑéÖ¤ÂëĞ£ÑéÊ§°Ü@@@@2")
+						strString("è¯­éŸ³éªŒè¯ç æ ¡éªŒå¤±è´¥@@@@2")
 						Else 
-						strString("ÑéÖ¤ÂëĞ£ÑéÊ§°Ü@@@@0")
+						strString("éªŒè¯ç æ ¡éªŒå¤±è´¥@@@@0")
 						End If
 					end if  
 				Else 
 				    If ajaxpostwin="1" Then 
 						If Dvbbs.forum_setting(120)="1" Then 
-						strString("ÓïÒôÑéÖ¤ÂëĞ£ÑéÊ§°Ü@@@@2")
+						strString("è¯­éŸ³éªŒè¯ç æ ¡éªŒå¤±è´¥@@@@2")
 						Else 
-						strString("ÑéÖ¤ÂëĞ£ÑéÊ§°Ü@@@@0")
+						strString("éªŒè¯ç æ ¡éªŒå¤±è´¥@@@@0")
 						End If
 					Else 
-                    Response.redirect "showerr.asp?ErrCodes=<li>ÑéÖ¤ÂëĞ£ÑéÊ§°Ü£¬Çë·µ»ØË¢ĞÂÒ³ÃæºóÔÙÊäÈëÑéÖ¤Âë¡£&action=OtherErr"
+                    Response.redirect "showerr.asp?ErrCodes=<li>éªŒè¯ç æ ¡éªŒå¤±è´¥ï¼Œè¯·è¿”å›åˆ·æ–°é¡µé¢åå†è¾“å…¥éªŒè¯ç ã€‚&action=OtherErr"
 					End If 
                 End If 			
         End If
@@ -131,7 +131,7 @@ Function Dvbbs_ChkLogin
 			If Not ajaxPro Then
 				Dvbbs.AddErrCode(10)
 			Else			
-				strString("ÓÃ»§Ãû²»ÄÜÎª¿Õ@@@@0") 'o
+				strString("ç”¨æˆ·åä¸èƒ½ä¸ºç©º@@@@0") 'o
 			End If
 		End If
 	Else
@@ -142,7 +142,7 @@ Function Dvbbs_ChkLogin
 		If Not ajaxPro Then
 			Dvbbs.AddErrCode(11)
 		Else 
-			strString("ÃÜÂë²»ÄÜÎª¿Õ!@@@@0") 'o
+			strString("å¯†ç ä¸èƒ½ä¸ºç©º!@@@@0") 'o
 		End If
 	Else
 		password=md5(trim(Dvbbs.CheckStr(request("password"))),16)
@@ -151,8 +151,8 @@ Function Dvbbs_ChkLogin
 
 	If Dvbbs.ErrCodes<>"" Then Exit Function
 
-	'-----------------------------------------------------------------ÒÔÉÏ×¢ÊÍ(o)
-	'ÏµÍ³ÕûºÏ
+	'-----------------------------------------------------------------ä»¥ä¸Šæ³¨é‡Š(o)
+	'ç³»ç»Ÿæ•´åˆ
 	'-----------------------------------------------------------------
 	Dim DvApi_Obj,DvApi_SaveCookie,SysKey
 	If DvApi_Enable Then
@@ -181,7 +181,7 @@ Function Dvbbs_ChkLogin
 	'-----------------------------------------------------------------
 
 	usercookies=request("CookieDate")
-	'ÅĞ¶Ï¸üĞÂcookiesÄ¿Â¼
+	'åˆ¤æ–­æ›´æ–°cookiesç›®å½•
 	Dim cookies_path_s,cookies_path_d,cookies_path
 	cookies_path_s=split(Request.ServerVariables("PATH_INFO"),"/")
 	cookies_path_d=ubound(cookies_path_s)
@@ -204,7 +204,7 @@ Function Dvbbs_ChkLogin
 			If Not ajaxPro Then
 				Dvbbs.AddErrCode(12)
 			Else 
-				strString("±¾ÂÛÌ³²»´æÔÚ¸ÃÓÃ»§Ãû.@@@@0")'o
+				strString("æœ¬è®ºå›ä¸å­˜åœ¨è¯¥ç”¨æˆ·å.@@@@0")'o
 			End If
 			Exit Function
 		End If
@@ -227,7 +227,7 @@ Function Dvbbs_ChkLogin
 	Dim TempStr
 	TempStr = template.html(2)
 	'-----------------------------------------------------------------
-	'ÏµÍ³ÕûºÏ
+	'ç³»ç»Ÿæ•´åˆ
 	'-----------------------------------------------------------------
 	If DvApi_Enable Then
 		Response.Write DvApi_SaveCookie
@@ -241,12 +241,12 @@ Function Dvbbs_ChkLogin
 
 	Session.Contents.Remove("xcount")
 
-	If Not ajaxPro And DvApi_Enable Then'·Çajax
+	If Not ajaxPro And DvApi_Enable Then'éajax
 		Response.Write TempStr
 	ElseIf Not ajaxPro And Not DvApi_Enable Then
 		Response.Redirect(comeurl)
 	Else
-		Response.Cookies("count")=""'o(Çå¿ÕajaxÀïĞ´ÈëµÄcookies)
+		Response.Cookies("count")=""'o(æ¸…ç©ºajaxé‡Œå†™å…¥çš„cookies)
 		strString(comeurl&"@@@@1")'o
 	End If 
 End Function
@@ -300,423 +300,4 @@ Sub save_redir_reg()
 		username=Dvbbs.CheckStr(Trim(Request("name")))
 	End If
 
-	If Instr(username,"=")>0 or Instr(username,"%")>0 or Instr(username,chr(32))>0 or Instr(username,"?")>0 or Instr(username,"&")>0 or Instr(username,";")>0 or Instr(username,",")>0 or Instr(username,"'")>0 or Instr(username,",")>0 or Instr(username,chr(34))>0 or Instr(username,chr(9))>0 or Instr(username,"£ ")>0 or Instr(username,"$")>0 Then
-		Dvbbs.AddErrCode(19)
-	End If
-
-	If Request.form("psw")="" or len(Request.form("psw"))>10 or len(Request.form("psw"))<6 Then
-		ErrCodes=ErrCodes+"<li>ÇëÊäÈëÄúµÄÃÜÂë£¬ÃÜÂë³¤¶ÈÎª6-10×Ö½Ú¡£"
-	Else
-		pass1=Request.form("psw")
-	End If
-
-	If Request.form("pswc")="" or strLength(Request.form("pswc"))>10 or len(Request.form("pswc"))<6 Then
-		ErrCodes=ErrCodes+"<li>"+template.Strings(13)
-	Else
-		pass2=Request.form("pswc")
-	End If
-	If pass1<>pass2 Then
-		ErrCodes=ErrCodes+"<li>"+template.Strings(29)
-	Else
-		password=md5(pass2,16)
-	End If
-
-	Dim RegSplitWords
-	If Trim(Dvbbs.cachedata(1,0))<>"" Then
-	RegSplitWords=split(Dvbbs.cachedata(1,0),"|||")(4)
-	RegSplitWords=split(RegSplitWords,",")
-		For i = 0 to ubound(RegSplitWords)
-			If Trim(RegSplitWords(i))<>"" Then
-				If instr(username,RegSplitWords(i))>0 Then
-					Dvbbs.AddErrCode(19)
-					Exit For
-				End If
-			End If 
-		next
-	End If 
-	sex=1
-	'password=md5(re_challenge_reg_temp(1),16)
-	useremail=re_challenge_reg_temp(0) & "@dvbbs.net"
-	showRe=1
-	face="images/userface/image1.gif"
-	width=32
-	height=32
-
-	If request.Form("birthyear")="" or request.form("birthmonth")="" or request.form("birthday")="" Then
-		birthday=""
-	Else
-		birthday=trim(Request.Form("birthyear"))&"-"&trim(Request.Form("birthmonth"))&"-"&trim(Request.Form("birthday"))
-		If not isdate(birthday) Then birthday=""
-	End If
-
-	userinfo=checkreal(request.Form("realname")) & "|||" & checkreal(request.Form("character")) & "|||" & checkreal(request.Form("personal")) & "|||" & checkreal(request.Form("country")) & "|||" & checkreal(request.Form("province")) & "|||" & checkreal(request.Form("city")) & "|||" & request.Form("shengxiao") & "|||" & request.Form("blood") & "|||" & request.Form("belief") & "|||" & request.Form("occupation") & "|||" & request.Form("marital") & "|||" & request.Form("education") & "|||" & checkreal(request.Form("college")) & "|||" & checkreal(request.Form("userphone")) & "|||" & checkreal(request.Form("address"))
-	usersetting=request.Form("setuserinfo") & "|||" & request.Form("setusertrue") & "|||" & showRe
-
-	If ErrCodes<>"" Then
-		Response.Redirect "showerr.asp?ErrCodes="&ErrCodes&"&action=OtherErr"
-		Exit Sub
-	End If
-	If Dvbbs.ErrCodes<>"" Then Exit Sub
-	Dim titlepic,iUserGroupID
-	set rs=Dvbbs.Execute("select usertitle,grouppic,UserGroupID from Dv_UserGroups where ParentGID=3 order by minarticle")
-	userclass=rs(0)
-	titlepic=rs(1)
-	iUserGroupID=rs(2)
-	UserIM = "||||||||||||||||||"
-	set rs=Dvbbs.iCreateObject("adodb.recordset")
-	sql="select * from [Dv_User] where username='"&username&"' or Passport='"&re_challenge_reg_temp(0)&"'"
-	rs.open sql,conn,1,3
-	If not rs.eof and not rs.bof Then
-		Dvbbs.AddErrCode(21)
-		'strString("´ËÓÃ»§ÒÑ¾­´æÔÚ")'o
-		Exit Sub
-	Else
-		rs.addnew
-		rs("IsChallenge")=1
-		rs("username")=username
-		rs("userpassword")=password
-		rs("TruePassWord")=TruePassWord
-		rs("useremail")=useremail
-		rs("userclass")=userclass
-		rs("titlepic")=titlepic
-		rs("Passport")=re_challenge_reg_temp(0)
-		Rs("UserIM")=UserIM
-		Rs("UserPost")=0
-		Rs("usergroupid")=iUserGroupID
-		rs("lockuser")=0
-		Rs("Usersex")=sex
-		rs("JoinDate")=NOW()
-		rs("Userface")=replace(face,"'","")
-		rs("UserWidth")=width
-		rs("UserHeight")=height
-		rs("UserLogins")=1
-		Rs("lastlogin")=NOW()
-		Rs("LastMsg")=Now()
-		rs("userWealth")=Dvbbs.Forum_user(0)
-		rs("userEP")=Dvbbs.Forum_user(5)
-		rs("usercP")=Dvbbs.Forum_user(10)
-		rs("userinfo")=userinfo
-		rs("usersetting")=usersetting
-		rs("UserFav")="Ä°ÉúÈË,ÎÒµÄºÃÓÑ,ºÚÃûµ¥"
-		rs.update
-		Dvbbs.Execute("update Dv_Setup set Forum_usernum=Forum_usernum+1,Forum_lastuser='"&username&"'")
-	End If
-	rs.close
-	set rs=Dvbbs.Execute("select top 1 userid from [Dv_User] order by userid desc")
-	dvbbs.userid=rs(0)
-	set rs=nothing
-	Dvbbs.ReloadSetupCache username,14
-	Dvbbs.ReloadSetupCache (CLng(Dvbbs.CacheData(10,0))+1),10 
-
-	If Dvbbs.Forum_Setting(47)=1 and Cint(Dvbbs.Forum_Setting(2))>0 Then
-		'on error resume next
-		'·¢ËÍ×¢²áÓÊ¼ş
-		Dim getpass
-		topic=Replace(template.Strings(35),"{$Forumname}",Dvbbs.Forum_Info(0))
-		mailbody = template.html(17)
-		mailbody = Replace(mailbody,"{$username}",Dvbbs.HtmlEncode(username))
-		mailbody = Replace(mailbody,"{$password}",password)
-		mailbody = Replace(mailbody,"{$copyright}",Dvbbs.Forum_Copyright)
-		mailbody = Replace(mailbody,"{$version}",Dvbbs.Forum_Version)
-		Dim DvEmail
-		Set DvEmail = New Dv_SendMail
-		DvEmail.SendObject = Cint(Dvbbs.Forum_Setting(2))	'ÉèÖÃÑ¡È¡×é¼ş 1=Jmail,2=Cdonts,3=Aspemail
-		DvEmail.ServerLoginName = Dvbbs.Forum_info(12)	'ÄúµÄÓÊ¼ş·şÎñÆ÷µÇÂ¼Ãû
-		DvEmail.ServerLoginPass = Dvbbs.Forum_info(13)	'µÇÂ¼ÃÜÂë
-		DvEmail.SendSMTP = Dvbbs.Forum_info(4)			'SMTPµØÖ·
-		DvEmail.SendFromEmail = Dvbbs.Forum_info(5)		'·¢ËÍÀ´Ô´µØÖ·
-		DvEmail.SendFromName = Dvbbs.Forum_info(0)		'·¢ËÍÈËĞÅÏ¢
-		If DvEmail.ErrCode = 0 Then
-			DvEmail.SendMail useremail,topic,mailbody	'Ö´ĞĞ·¢ËÍÓÊ¼ş
-			If DvEmail.Count>0 Then
-				If Cint(Dvbbs.Forum_Setting(23))=1 Then
-					sendmsg=template.Strings(38)
-				Else
-					sendmsg=template.Strings(39)
-				End If
-			Else
-				sendmsg=template.Strings(37)
-			End If
-		Else
-			sendmsg=template.Strings(37)
-		End If
-		Set DvEmail = Nothing
-		Dvbbs.ErrCodes=""
-	Else
-		sendmsg = template.Strings(36)
-	End If
-
-	If Dvbbs.Forum_Setting(46)=1 Then
-		'·¢ËÍ×¢²á¶ÌĞÅ
-		Dim sender,title,body,UserMsg,MsgID
-		sender=Dvbbs.Forum_info(0)
-		title=Dvbbs.Forum_info(0)&"»¶Ó­ÄúµÄµ½À´"
-
-		body = template.html(18)
-		body = Replace(body,"{$Forumname}",Dvbbs.Forum_Info(0))
-		'response.write body
-		sql="insert into dv_message(incept,sender,title,content,sendtime,flag,issend) values('"&username&"','"&sender&"','"&title&"','"&body&"',"&SqlNowString&",0,1)"
-		Dvbbs.Execute(sql)
-		Set rs=Dvbbs.execute("select top 1 ID from [Dv_message] order by ID desc")
-		MsgID=rs(0)
-		Rs.close:Set Rs=Nothing
-		UserMsg="1||"& MsgID &"||"& sender
-		Dvbbs.execute("UPDATE [Dv_User] Set UserMsg='"&Dvbbs.CheckStr(UserMsg)&"' WHERE UserID="&Dvbbs.userid)
-	End If
-
-	If cint(Dvbbs.Forum_Setting(25))=1 Then
-
-	Else
-		Response.Cookies(Dvbbs.Forum_sn).path=dvbbs.cookiepath
-		Response.Cookies(Dvbbs.Forum_sn)("username")=""
-		Response.Cookies(Dvbbs.Forum_sn)("password")=""
-		Response.Cookies(Dvbbs.Forum_sn)("userclass")=""
-		Response.Cookies(Dvbbs.Forum_sn)("userid")=""
-		Response.Cookies(Dvbbs.Forum_sn)("userhidden")=""
-		Response.Cookies(Dvbbs.Forum_sn)("usercookies")=""
-		
-
-		StatUserID = Dvbbs.checkStr(Trim(Request.Cookies(Dvbbs.Forum_sn)("StatUserID")))
-		If IsNumeric(StatUserID) = 0 or StatUserID = "" Then
-			StatUserID = Replace(Dvbbs.UserTrueIP,".","")
-			UserSessionID = Replace(Startime,".","")
-			If IsNumeric(StatUserID) = 0 or StatUserID = "" Then StatUserID = 0
-			StatUserID = Ccur(StatUserID) + Ccur(UserSessionID)
-		End If
-		StatUserID = Ccur(StatUserID)
-		Response.Cookies(Dvbbs.Forum_sn).path=Dvbbs.cookiepath
-		Response.Cookies(Dvbbs.Forum_sn)("StatUserID") = StatUserID
- 		Response.Cookies(Dvbbs.Forum_sn)("usercookies") = "0"
-		Response.Cookies(Dvbbs.Forum_sn)("username") = username
-		Response.Cookies(Dvbbs.Forum_sn)("password") = TruePassWord
-		Response.Cookies(Dvbbs.Forum_sn)("userclass") = userclass
-		Response.Cookies(Dvbbs.Forum_sn)("userid") = dvbbs.userid
-		Response.Cookies(Dvbbs.Forum_sn)("userhidden") = 2
-		Dvbbs.Execute("delete from dv_online where username='"&dvbbs.membername&"' Or id="&StatUserID&"")
-	End If
-	If ChkUserLogin(username,password,"",0,1) Then password=""
-
-	TempStr = template.html(22)
-	TempStr = Replace(TempStr,"{$ray_logininfo}","")
-	TempStr = Replace(TempStr,"{$reuserpassword}",re_challenge_reg_temp(1))
-'	TempStr = Replace(TempStr,"{$sendmsg}","<li>ÂÛÌ³Í¨ĞĞÖ¤¿ìËÙ×¢²áÂÛÌ³ÓÃ»§³É¹¦£¡")
-	TempStr = Replace(TempStr,"{$forumname}",Dvbbs.Forum_Info(0))
-	Response.Write TempStr
-	TempStr=""
-	Session("re_challenge_reg_temp")=""
-	Session("challengeUserID") = Empty
-	Session("challengeWord_key") = Empty
-End Sub
-
-Function checkreal(v)
-Dim w
-If not isnull(v) Then
-	w=replace(v,"|||","¡ì¡ì¡ì")
-	checkreal=w
-End If
-End Function
-
-
-Rem ==========ÂÛÌ³µÇÂ¼º¯Êı=========
-Rem ÅĞ¶ÏÓÃ»§µÇÂ¼
-Function ChkUserLogin(username,password,mobile,usercookies,ctype)
-
-	Dim rsUser,article,userclass,titlepic,lastipinfo,lastipinfo_arr
-	Dim userhidden,lastip,UserLastLogin
-	Dim GroupID,ClassSql,FoundGrade
-	Dim regname,iMyUserInfo
-	Dim sql,sqlstr,OLDuserhidden
-
-	FoundGrade=False
-	lastip=Dvbbs.UserTrueIP
-	userhidden=request.form("userhidden")
-	If userhidden <> "1" Then userhidden=2
-	ChkUserLogin=false
-	If mobile<>"" Then
-		sqlstr=" Passport='"&mobile&"'"
-	Else
-		sqlstr=" UserName='"&username&"'"
-	End If
-	Sql="Select UserID,UserName,UserPassword,UserEmail,UserPost,UserTopic,UserSex,UserFace,UserWidth,UserHeight,JoinDate,LastLogin,LastMsg,lastlogin as cometime , LastLogin as activetime,UserLogins,Lockuser,Userclass,UserGroupID,UserGroup,userWealth,userEP,userCP,UserPower,UserBirthday,UserLastIP,UserDel,UserIsBest,UserHidden,UserMsg,IsChallenge,UserMobile,TitlePic,UserTitle,TruePassWord,UserToday,UserMoney,UserTicket,FollowMsgID,Vip_StarTime,Vip_EndTime,userid as boardid,lastipinfo"
-	Sql=Sql & " From [Dv_User] Where "&sqlstr&""
-	set rsUser=Dvbbs.Execute(sql)
-	If rsUser.eof and rsUser.bof Then
-		'strString("±¾ÂÛÌ³²»´æÔÚ¸ÃÓÃ»§Ãû.@@@@0")
-		ChkUserLogin=False
-		Exit Function
-	Else
-		If rsUser("Lockuser") =1 Or rsUser("UserGroupID") =5 Then
-			ChkUserLogin=False
-			Exit Function
-		Else
-			If Trim(password)=Trim(rsUser("UserPassword")) Then
-				ChkUserLogin=True
-				Dvbbs.UserID=RsUser("UserID")
-				RegName = RsUser("UserName")
-				Article= RsUser("UserPost")
-				UserLastLogin = RsUser("cometime")
-				UserClass = RsUser("Userclass")		
-				GroupID = RsUser("userGroupID")
-				OLDuserhidden=RsUser("UserHidden")
-				TitlePic = RsUser("UserTitle")
-				lastipinfo=RsUser("lastipinfo")
-				If Article < 0  Then Article=0
-				Set Dvbbs.UserSession=Dvbbs.RecordsetToxml(rsUser,"userinfo","xml")
-				Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@cometime").text=Now()
-				Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@activetime").text=DateAdd("s",-3600,Now())
-				Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@boardid").text=0
-				Dvbbs.UserSession.documentElement.selectSingleNode("userinfo").attributes.setNamedItem(Dvbbs.UserSession.createNode(2,"isuserpermissionall","")).text=Dvbbs.FoundUserPermission_All()
-				If OLDuserhidden <> CLng(userhidden) Then
-					Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userhidden").text=userhidden
-					Dvbbs.Execute("update Dv_user set userhidden="&userhidden&" where UserId=" & Dvbbs.UserID)
-				End If
-				Dim BS
-				Set Bs=Dvbbs.GetBrowser()
-				Dvbbs.UserSession.documentElement.appendChild(Bs.documentElement)
-				If EnabledSession Then 	Session(Dvbbs.CacheName & "UserID")=Dvbbs.UserSession.xml
-			Else
-				If ajaxPro Then
-					strString("ÓÃ»§Ãû»òÕßÃÜÂë²»ÕıÈ·.@@@@0")
-				End If
-				ChkUserLogin=False
-				Exit Function
-			End If
-		End If
-	End If
-	If ChkUserLogin Then
-
-	Rem ¼ì²éÊÇ·ñÓĞĞÂµÄÈº·¢¶ÌĞÅ	2010-3-4£¬Dv.Fish
-	'Dvbbs.TyUserMsg username,1
-
-	REM ÅĞ¶ÏÓÃ»§×é(µÈ¼¶)×ÊÁÏ£¬µ±ÓÃ»§¼¶±ğÎª¸úËæÎÄÕÂÊıÔö³¤Ôò×Ô¶¯¸üĞÂÓÃ»§×é(µÈ¼¶)
-	REM ×Ô¶¯¸üĞÂÓÃ»§Êı¾İ
-	REM Èç¹ûÊôÓÚÏµÍ³»òÌØÊâ»ò¶àÊôĞÔ×é
-	Set rsUser=Dvbbs.Execute("Select MinArticle,IsSetting,ParentGID,UserTitle,GroupPic From Dv_UserGroups Where UserGroupID="&GroupID)
-	If Not (rsUser.Eof And rsUser.Bof) Then
-		If rsUser(2)=1 Or rsUser(2)=2 Or rsUser(2)=4 Or rsUser(2)=5 Then
-			'ÓÃ»§µÈ¼¶²»°´ÕÕÎÄÕÂÉı¼¶£¬ÓÃ»§ÎªÏµÍ³»òÌØÊâ»ò¶àÊôĞÔ×é
-			UserClass=rsUser(3)
-			TitlePic=rsUser(4)
-			FoundGrade=True
-		End If
-	End If
-	If Not FoundGrade Then
-		'Èç¹û²»ÊôÓÚÏµÍ³»òÌØÊâ»ò¶àÊôĞÔ×é,Ôò½«¸ÃÓÃ»§ÊôÓÚ×¢²áÓÃ»§×éÇÒ°´ÕÕÆäÎÄÕÂÊı×Ô¶¯¸üĞÂÆäÓÃ»§×é(µÈ¼¶)
-		Set rsUser=Dvbbs.Execute("Select Top 1 usertitle,GroupPic,UserGroupID From Dv_UserGroups Where ParentGID=3 And Minarticle<="&Article&" Order By MinArticle Desc,UserGroupID")
-		If Not (rsUser.Eof And rsUser.Bof) Then
-			UserClass=rsUser(0)
-			TitlePic=rsUser(1)
-			GroupID=rsUser(2)
-			FoundGrade=True
-		End If
-	End If
-	Set rsUser=Nothing
-	If Not FoundGrade Then Response.Redirect "showerr.asp?ErrCodes=<li>ÏµÍ³Ã»ÓĞÕÒµ½ÄúµÄ×¢²áÓÃ»§×é×ÊÁÏ£¬ÇëÁªÏµ¹ÜÀíÔ±½øĞĞĞŞÕı¡£&action=OtherErr"
-	'¼ÇÂ¼×îºóÎå¸öIPµØÖ·£¬Í¬Ê±¸üĞÂdv_userÖĞµÄlastipinfo×Ö¶Î by Å£Í·
-	Dim myuseripinfo
-	myuseripinfo=dvbbs.UserTrueIP
-	If myuseripinfo="" Or IsNull(myuseripinfo) Then myuseripinfo="127.0.0.1"
-	If lastipinfo="" Or IsNull(lastipinfo) Then lastipinfo=myuseripinfo
-	If lastipinfo="" Or IsNull(lastipinfo) Then lastipinfo="127.0.0.1"
-	lastipinfo_arr=Split(lastipinfo,"|")
-	If IsArray(lastipinfo_arr) Then
-	    Select Case UBound(lastipinfo_arr)
-		Case 0
-		    If Trim(lastipinfo)<>Trim(myuseripinfo) Then
-			    lastipinfo=lastipinfo&"|"&myuseripinfo
-			End If
-		Case 1
-		    If InStr(lastipinfo,myuseripinfo)=0 Then lastipinfo=lastipinfo_arr(0)&"|"&lastipinfo_arr(1)&"|"&myuseripinfo
-		Case 2
-		    If InStr(lastipinfo,myuseripinfo)=0 Then lastipinfo=lastipinfo_arr(0)&"|"&lastipinfo_arr(1)&"|"&lastipinfo_arr(2)&"|"&myuseripinfo
-		Case 3
-			If InStr(lastipinfo,myuseripinfo)=0 Then lastipinfo=lastipinfo_arr(0)&"|"&lastipinfo_arr(1)&"|"&lastipinfo_arr(2)&"|"&lastipinfo_arr(3)&"|"&myuseripinfo
-		Case Else
-			lastipinfo=lastipinfo_arr(1)&"|"&lastipinfo_arr(2)&"|"&lastipinfo_arr(3)&"|"&lastipinfo_arr(4)&"|"&myuseripinfo
-		End Select
-	End If
-	select case ctype
-	case 1
-		If Datediff("d",UserLastLogin,Now())=0 Then
-			sql="update [Dv_User] set LastLogin="&SqlNowString&",UserLogins=UserLogins+1,UserLastIP='"&lastip&"',userclass='"&userclass&"',titlepic='"&titlepic&"',lastipinfo='"&lastipinfo&"',UserGroupID="&GroupID&",TruePassWord='"&TruePassWord&"' where userid="&dvbbs.UserID
-		Else
-			sql="update [Dv_User] set userWealth=userWealth+"&Dvbbs.Forum_user(4)&",userEP=userEP+"&Dvbbs.Forum_user(9)&",userCP=userCP+"&Dvbbs.Forum_user(14)&",LastLogin="&SqlNowString&",UserLogins=UserLogins+1,UserLastIP='"&lastip&"',userclass='"&userclass&"',lastipinfo='"&lastipinfo&"',titlepic='"&titlepic&"',UserGroupID="&GroupID&",TruePassWord='"&TruePassWord&"' where userid="&dvbbs.UserID
-		End If
-	case 2
-		sql="update [Dv_User] set UserPost=UserPost+1,UserTopic=UserTopic+1,userWealth=userWealth+"&Dvbbs.Forum_user(1)&",userEP=userEP+"&Dvbbs.Forum_user(6)&",userCP=userCP+"&Dvbbs.Forum_user(11)&",LastLogin="&SqlNowString&",UserLastIP='"&lastip&"',userclass='"&userclass&"',titlepic='"&titlepic&"',UserGroupID="&GroupID&",TruePassWord='"&TruePassWord&"' where userid="&dvbbs.UserID
-	case 3
-		sql="update [Dv_User] set UserPost=UserPost+1,userWealth=userWealth+"&Dvbbs.Forum_user(2)&",userEP=userEP+"&Dvbbs.Forum_user(7)&",userCP=userCP+"&Dvbbs.Forum_user(12)&",LastLogin="&SqlNowString&",UserLastIP='"&lastip&"',userclass='"&userclass&"',titlepic='"&titlepic&"',UserGroupID="&GroupID&",TruePassWord='"&TruePassWord&"' where userid="&dvbbs.UserID
-	end select
-	Dvbbs.Execute(sql)
-	Dim StatUserID,UserSessionID
-		StatUserID = Dvbbs.checkStr(Trim(Request.Cookies(Dvbbs.Forum_sn)("StatUserID")))
-		If IsNumeric(StatUserID) = 0 or StatUserID = "" Then
-			StatUserID = Replace(Dvbbs.UserTrueIP,".","")
-			UserSessionID = Replace(Startime,".","")
-			If IsNumeric(StatUserID) = 0 or StatUserID = "" Then StatUserID = 0
-			StatUserID = Ccur(StatUserID) + Ccur(UserSessionID)
-		End If
-	StatUserID = Ccur(StatUserID)
-	Dvbbs.Execute("delete from dv_online where  id="&StatUserID&"")
-	Response.Cookies(Dvbbs.Forum_sn).path = Dvbbs.cookiepath
-	If trim(username)<>trim(Dvbbs.membername) Then
-		Response.Cookies(Dvbbs.Forum_sn)("username")=""
-		Response.Cookies(Dvbbs.Forum_sn)("password")=""
-		Response.Cookies(Dvbbs.Forum_sn)("userclass")=""
-		Response.Cookies(Dvbbs.Forum_sn)("userid")=""
-		Response.Cookies(Dvbbs.Forum_sn)("userhidden")=""
-		Response.Cookies(Dvbbs.Forum_sn)("usercookies")=""
-		Dvbbs.Execute("delete from dv_online where username='"&Dvbbs.membername&"'")
-	End If
-	If isnull(usercookies) or usercookies="" Then usercookies="0"
-
-	Select case usercookies
-	case "0"
-		Response.Cookies(Dvbbs.Forum_sn)("usercookies") = usercookies
-	case 1
-   		Response.Cookies(Dvbbs.Forum_sn).Expires=Date+1
-		Response.Cookies(Dvbbs.Forum_sn)("usercookies") = usercookies
-	case 2
-		Response.Cookies(Dvbbs.Forum_sn).Expires=Date+31
-		Response.Cookies(Dvbbs.Forum_sn)("usercookies") = usercookies
-	case 3
-		Response.Cookies(Dvbbs.Forum_sn).Expires=Date+365
-		Response.Cookies(Dvbbs.Forum_sn)("usercookies") = usercookies
-	End Select
-	Response.Cookies(Dvbbs.Forum_sn)("username") = regname
-	Response.Cookies(Dvbbs.Forum_sn)("userid") = Dvbbs.UserID
-	Response.Cookies(Dvbbs.Forum_sn)("password") = TruePassWord
-	Response.Cookies(Dvbbs.Forum_sn)("userclass") = userclass
-	Response.Cookies(Dvbbs.Forum_sn)("userhidden") = userhidden
-
-	rem Çå³ıÍ¼Æ¬ÉÏ´«ÊıµÄÏŞÖÆ
-	Response.Cookies("upNum")=0
-	Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@truepassword").text= TruePassWord
-	Dvbbs.Membername=Dvbbs.Checkstr(regname)
-	Dvbbs.Memberclass=Dvbbs.Checkstr(userclass)
-	Dvbbs.UserGroupID=GroupID
-	End If
-End Function
-
-'-------------------------------------------------------------owz
-Function strString(strValue)	
-	Response.Clear
-	'Response.ClearContent()
-	'Response.ClearHeaders()
-	Response.Write(strValue)
-	Response.End
-End Function
-
-'Function BroswerType() rem ä¯ÀÀÊÇ·ñÎªIE
-	'Dim BrowserString 
-	'BrowserString = Request.ServerVariables("HTTP_USER_AGENT") 
-	'BrowserString = Lcase(BrowserString)
-	'If Instr(BrowserString, "msie") <> 0 Then
-	'	BroswerType=True
-	'Else
-	'	BroswerType=False
-	'End If
-'End Function
-
-'----------------------------------------------------------
-%>
+	If Instr(username,"=")>0 or Instr(username,"%")>0 or Instr(username,chr(32))>0 or Instr(username,"?")>0 or Instr(username,"&")>0 or Instr(username,";")>0 or Instr(username,",")>0 or Instr(username,"'")>0 or Instr(username,",")>0 or Instr(username,chr(34))>0 or Instr(username,chr(9))>0 or Instr(username,"

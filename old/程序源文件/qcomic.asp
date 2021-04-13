@@ -96,9 +96,9 @@ Sub qcomic_do_attach(qcomic_info)
 		Next
 	End If
 	
-	'ÉÏ´«Ä¿Â¼
+	'ä¸Šä¼ ç›®å½•
 	FilePath = CreatePath(CheckFolder)
-	'²»´øÏµÍ³ÉÏ´«Ä¿Â¼µÄÏÂ¼¶Ä¿Â¼Â·¾¶
+	'ä¸å¸¦ç³»ç»Ÿä¸Šä¼ ç›®å½•çš„ä¸‹çº§ç›®å½•è·¯å¾„
 	ChildFilePath = Replace(FilePath,CheckFolder,"")
 
 	total=Ubound(newimgs, 2)
@@ -165,7 +165,7 @@ End Sub
 Function qcomic_insert_fname(furl,fname,fsize,ChildFilePath,tid,pid,fid,uid,uname,topic)
 	Dim http,imgcont,objStream,Filepath,fpath,fext,rs_,newid
 	fext=qcomic_get_fext(fname)
-	If InStr("|"&QcomicFileExt&"|","|"&fext&"|")=0 Then	'·Ç·¨ÎÄ¼şºó×º£¬³ÌĞòÖĞÖ¹¡£
+	If InStr("|"&QcomicFileExt&"|","|"&fext&"|")=0 Then	'éæ³•æ–‡ä»¶åç¼€ï¼Œç¨‹åºä¸­æ­¢ã€‚
 		Response.Write "wrong FileExt!"
 		Response.End
 	End If
@@ -241,18 +241,18 @@ Sub qcomic_do_proxy()
 	Response.End
 End Sub
 
-'¶ÁÈ¡ÉÏ´«Ä¿Â¼
+'è¯»å–ä¸Šä¼ ç›®å½•
 Function CheckFolder()
 	If Dvbbs.Forum_Setting(76)="" Or Dvbbs.Forum_Setting(76)="0" Then Dvbbs.Forum_Setting(76)="UploadFile/"
 	CheckFolder = Replace(Replace(Dvbbs.Forum_Setting(76),Chr(0),""),".","")
-	'ÔÚÄ¿Â¼ºó¼Ó(/)
+	'åœ¨ç›®å½•ååŠ (/)
 	If Right(CheckFolder,1)<>"/" Then CheckFolder=CheckFolder&"/"
 End Function
 
-'°´ÔÂ·İ×Ô¶¯Ã÷ÃûÉÏ´«ÎÄ¼ş¼Ğ,ĞèÒª£Æ£Ó£Ï×é¼şÖ§³Ö¡£
+'æŒ‰æœˆä»½è‡ªåŠ¨æ˜åä¸Šä¼ æ–‡ä»¶å¤¹,éœ€è¦ï¼¦ï¼³ï¼¯ç»„ä»¶æ”¯æŒã€‚
 Function CreatePath(PathValue)
 	Dim objFSO,Fsofolder,uploadpath
-	'ÒÔÄêÔÂ´´½¨ÉÏ´«ÎÄ¼ş¼Ğ£¬¸ñÊ½£º2003£­8
+	'ä»¥å¹´æœˆåˆ›å»ºä¸Šä¼ æ–‡ä»¶å¤¹ï¼Œæ ¼å¼ï¼š2003ï¼8
 	uploadpath = year(now) & "-" & month(now)
 	If Right(PathValue,1)<>"/" Then PathValue = PathValue&"/"
 	On Error Resume Next
@@ -268,7 +268,7 @@ Function CreatePath(PathValue)
 	Set objFSO = Nothing
 End Function
 
-'ÈÕÆÚÊ±¼ä¶¨ÒåÎÄ¼şÃû
+'æ—¥æœŸæ—¶é—´å®šä¹‰æ–‡ä»¶å
 Function FormatName(Byval FileExt,Byval FileName)
 	Dim RanNum,TempStr
 	Randomize

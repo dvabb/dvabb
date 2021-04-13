@@ -108,20 +108,20 @@ Sub update()
 	Else
 		userpassword=md5(userpassword,16)
 	End If
-	'Ğ£ÑéÃÜÂë£¬
+	'æ ¡éªŒå¯†ç ï¼Œ
 	SQL="Select userpassword from dv_user where userid="&Dvbbs.UserID&""
 
 	Set Rs=Dvbbs.Execute(SQL)
 	If Not Rs.eof Then
 		If Rs(0)<> userpassword Then
-			Response.redirect "showerr.asp?ErrCodes=ÄúÊäÈëµÄÃÜÂë´íÎó&action=OtherErr"
+			Response.redirect "showerr.asp?ErrCodes=æ‚¨è¾“å…¥çš„å¯†ç é”™è¯¯&action=OtherErr"
 		End If
 	Else
-		Response.redirect "showerr.asp?ErrCodes=ÄúÊäÈëµÄÃÜÂë´íÎó&action=OtherErr"
+		Response.redirect "showerr.asp?ErrCodes=æ‚¨è¾“å…¥çš„å¯†ç é”™è¯¯&action=OtherErr"
 	End If
 	Set Rs=Nothing
 	If IsValidEmail(Request.form("Email"))=false Then
-		ErrCodes=ErrCodes+"<li>"+template.Strings(31)		'Dvbbs.AddErrmsg "ÄúµÄEmailÓĞ´íÎó¡£"
+		ErrCodes=ErrCodes+"<li>"+template.Strings(31)		'Dvbbs.AddErrmsg "æ‚¨çš„Emailæœ‰é”™è¯¯ã€‚"
 		Exit Sub
 	Else
 		If Not IsNull(Dvbbs.forum_setting(52)) And Dvbbs.forum_setting(52)<>"" And Dvbbs.forum_setting(52)<>"0" Then
@@ -129,7 +129,7 @@ Sub update()
 			SplitUserEmail=split(Dvbbs.forum_setting(52),"|")
 			For i=0 to ubound(SplitUserEmail)
 				If instr(Request.form("email"),SplitUserEmail(i))>0 Then
-					ErrCodes=ErrCodes+"<li>"+template.Strings(32)		'Dvbbs.AddErrmsg "ÄúÌîĞ´µÄEmailµØÖ·º¬ÓĞÏµÍ³½ûÖ¹×Ö·û¡£"
+					ErrCodes=ErrCodes+"<li>"+template.Strings(32)		'Dvbbs.AddErrmsg "æ‚¨å¡«å†™çš„Emailåœ°å€å«æœ‰ç³»ç»Ÿç¦æ­¢å­—ç¬¦ã€‚"
 					Exit Sub
 				End If
 			Next
@@ -148,7 +148,7 @@ Sub update()
 			Exit Sub
 		End If
 	End If
-	'Ö÷Ò³¼Óhttp://¿ªÍ· 2004-10-7 Dv.Yz
+	'ä¸»é¡µåŠ http://å¼€å¤´ 2004-10-7 Dv.Yz
 	HomePage = Trim(Request.Form("homepage"))
 	If Not (Left(HomePage, 7) = "http://" Or HomePage = "") Then HomePage = "http://" & HomePage
 	'HomePage,UserOicq,UserIcq,UserMsn,UserAim,UserYahoo,UserUC
@@ -183,8 +183,8 @@ Sub Psw_Userinfo()
 	Else
 		tempstr=Replace(tempstr,"{$user_id}",Rs(0))
 		tempstr=Replace(tempstr,"{$user_answer}","")
-		'tempstr=Replace(tempstr,"{$user_answer}",Rs(1) & "")'ÃÜÂë´ğ°¸
-		'tempstr=Replace(tempstr,"{$user_quesion}",Rs(2) & "")'ÃÜÂëÎÊÌâ²»ÏÔÊ¾
+		'tempstr=Replace(tempstr,"{$user_answer}",Rs(1) & "")'å¯†ç ç­”æ¡ˆ
+		'tempstr=Replace(tempstr,"{$user_quesion}",Rs(2) & "")'å¯†ç é—®é¢˜ä¸æ˜¾ç¤º
 		tempstr=Replace(tempstr,"{$user_quesion}","")
 		tempstr=Replace(tempstr,"{$color}",Dvbbs.mainsetting(1))
 		Response.write tempstr
@@ -200,9 +200,9 @@ Sub Psw_Update()
 		Dvbbs.AddErrCode(32)
 	Else
 		If Request.Form("oldpsw")="" Then
-	  		ErrCodes=ErrCodes+"<li>"+template.Strings(27)'Dvbbs.AddErrMsg "ÇëÊäÈëÄúµÄ¾ÉÃÜÂë,²ÅÄÜÍê³ÉĞŞ¸Ä¡£"
+	  		ErrCodes=ErrCodes+"<li>"+template.Strings(27)'Dvbbs.AddErrMsg "è¯·è¾“å…¥æ‚¨çš„æ—§å¯†ç ,æ‰èƒ½å®Œæˆä¿®æ”¹ã€‚"
 		ElseIf md5(trim(Request.Form("oldpsw")),16)<>trim(RS("Userpassword")) then
-	  		ErrCodes=ErrCodes+"<li>"+template.Strings(28)'Dvbbs.AddErrMsg "ÊäÈëµÄ¾ÉÃÜÂë´íÎó£¬ÇëÖØĞÂÊäÈë¡£"
+	  		ErrCodes=ErrCodes+"<li>"+template.Strings(28)'Dvbbs.AddErrMsg "è¾“å…¥çš„æ—§å¯†ç é”™è¯¯ï¼Œè¯·é‡æ–°è¾“å…¥ã€‚"
 		Else
 			oldpassword=Request.Form("oldpsw")
 		End If
@@ -217,18 +217,18 @@ Sub Psw_Update()
             answer=""
         Else
             If Request.Form("quesion")="" Then
-                ErrCodes=ErrCodes+"<li>ÃÜÂëÎÊÌâºÍ´ğ°¸±ØĞëÍ¬Ê±Îª¿Õ£¬»òÍ¬Ê±ÌîĞ´£¡</li>"
+                ErrCodes=ErrCodes+"<li>å¯†ç é—®é¢˜å’Œç­”æ¡ˆå¿…é¡»åŒæ—¶ä¸ºç©ºï¼Œæˆ–åŒæ—¶å¡«å†™ï¼</li>"
             Else
                 quesion=Request.Form("quesion")
                 If quesion <> Dvbbs.CheckStr(quesion) Then
-                    ErrCodes=ErrCodes+"<li>ÄúµÄÎÊÌâÖĞº¬ÓĞ·Ç·¨×Ö·û</li>"
+                    ErrCodes=ErrCodes+"<li>æ‚¨çš„é—®é¢˜ä¸­å«æœ‰éæ³•å­—ç¬¦</li>"
                 End If
             End If
 
             If Request.Form("answer")<>"" Then
                 answer=md5(Request.Form("answer"),16)
             Else
-                ErrCodes=ErrCodes+"<li>ÃÜÂëÎÊÌâºÍ´ğ°¸±ØĞëÍ¬Ê±Îª¿Õ£¬»òÍ¬Ê±ÌîĞ´£¡</li>"
+                ErrCodes=ErrCodes+"<li>å¯†ç é—®é¢˜å’Œç­”æ¡ˆå¿…é¡»åŒæ—¶ä¸ºç©ºï¼Œæˆ–åŒæ—¶å¡«å†™ï¼</li>"
             End If
         End If
 	End If
@@ -236,7 +236,7 @@ Sub Psw_Update()
 	If ErrCodes<>"" Then Exit sub
 	Dvbbs.Showerr()
 	'-----------------------------------------------------------------
-	'ÏµÍ³ÕûºÏ
+	'ç³»ç»Ÿæ•´åˆ
 	'-----------------------------------------------------------------
 	Dim DvApi_Obj,DvApi_SaveCookie,SysKey
 	If DvApi_Enable Then
@@ -271,7 +271,7 @@ Sub Psw_Update()
 	Else
 		'If Not Dvbbs.FoundIsChallenge Then
 		Rs("Userpassword")=password
-        If quesion<>"" Then'Èç¹ûÎÊÌâºÍ´ğ°¸Îª¿ÕÔò²»ĞŞ¸Ä
+        If quesion<>"" Then'å¦‚æœé—®é¢˜å’Œç­”æ¡ˆä¸ºç©ºåˆ™ä¸ä¿®æ”¹
 		    Rs("UserQuesion")=quesion
         End If
 		If answer<>"" Then

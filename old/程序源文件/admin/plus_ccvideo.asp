@@ -67,7 +67,7 @@ Sub Cc_save()
 	Ccvideo_api.Setattribute  "ccvideotype",ccvideotype
 	Ccvideo_api.Setattribute  "boardlist",","&Boardlist&","
 	Update_forum_api()
-	Dv_suc("²Ù×÷³É¹¦£¡")
+	Dv_suc("æ“ä½œæˆåŠŸï¼")
 End Sub 
 Sub Page_main()
 ccvideoid=Ccvideo_api.Getattribute("ccvideoid")
@@ -76,54 +76,54 @@ Ccvideobtn=Ccvideo_api.Getattribute("ccvideobtn")
 %>
 <table cellpadding="3" cellspacing="1" border="0" align="center" width="100%">
 	<tr>
-		<th colspan="2" style="text-align: center;">CcÊÓÆµ²å¼þËµÃ÷</th>
+		<th colspan="2" style="text-align: center;">Ccè§†é¢‘æ’ä»¶è¯´æ˜Ž</th>
 	</tr>
 	<tr>
 		<td width="20%" class="td1" align="center">
 		<button style="width: 80; height: 50; border: 1px outset;" class="button">
-		×¢ÒâÊÂÏî</button></td>
+		æ³¨æ„äº‹é¡¹</button></td>
 		<td width="80%" class="td2">
-		<li>¿ªÆôCCÊÓÆµ¹¦ÄÜ,ÄúÐèÒªÏÈ<a href="http://union.bokecc.com/signup.bo" target="_blank"><font color="red">×¢²á</font></a>Ò»¸öCCÊÓÆµÁªÃËÕÊºÅ</li>
-		<li>¿ª»§´Ë¹¦ÄÜºó,ÓÃ»§¿ÉÒÔÉÏ´«ÊÓÆµ,ËùÉÏ´«µÄÊÓÆµ»á±£´æÔÚCC·þÎñÆ÷</li>
+		<li>å¼€å¯CCè§†é¢‘åŠŸèƒ½,æ‚¨éœ€è¦å…ˆ<a href="http://union.bokecc.com/signup.bo" target="_blank"><font color="red">æ³¨å†Œ</font></a>ä¸€ä¸ªCCè§†é¢‘è”ç›Ÿå¸å·</li>
+		<li>å¼€æˆ·æ­¤åŠŸèƒ½åŽ,ç”¨æˆ·å¯ä»¥ä¸Šä¼ è§†é¢‘,æ‰€ä¸Šä¼ çš„è§†é¢‘ä¼šä¿å­˜åœ¨CCæœåŠ¡å™¨</li>
 		</td>
 	</tr>
 </table>
 <br />
 <table border="0" cellspacing="1" cellpadding="3" align="center" width="100%">
 	<tr>
-		<th colspan="3" style="text-align: center;">CcÊÓÆµ²å¼þÉèÖÃ</th>
+		<th colspan="3" style="text-align: center;">Ccè§†é¢‘æ’ä»¶è®¾ç½®</th>
 	</tr>
 	<form method="post" action="">
 		<input type="hidden" name="t" value="1" />
 		<tr>
-			<td align="right" width="25%">ÄúµÄCcÁªÃËID£º</td>
+			<td align="right" width="25%">æ‚¨çš„Ccè”ç›ŸIDï¼š</td>
 			<td colspan="2">
 			<input type="text" name="CCID" size="30" value="<%=ccvideoid%>" id="ccvideouserid" />&nbsp;&nbsp;
-			<font class="font1">ÇëÌîÐ´ÄúµÄCCÊÓÆµÁªÃËÊý×ÖID,Èç¹ûÃ»ÓÐ,Çëµã»÷<a href="http://union.bokecc.com/signup.bo" target="_blank"><font color="red">ÕâÀï</font></a>×¢²á</font></td>
+			<font class="font1">è¯·å¡«å†™æ‚¨çš„CCè§†é¢‘è”ç›Ÿæ•°å­—ID,å¦‚æžœæ²¡æœ‰,è¯·ç‚¹å‡»<a href="http://union.bokecc.com/signup.bo" target="_blank"><font color="red">è¿™é‡Œ</font></a>æ³¨å†Œ</font></td>
 		</tr>
 		<tr>
-			<td align="right" width="25%">ÇëÑ¡Ôñ°´Å¥ÑùÊ½£º</td>
+			<td align="right" width="25%">è¯·é€‰æ‹©æŒ‰é’®æ ·å¼ï¼š</td>
 			<td width="6%">
 			<select id="ccvideobtn" onchange="showbtnpre()" name="ccvideobtn">
 <script language="javascript">
 <!--
 var plgnamelist=[
-	["°µºÚÒ¹¿Õ","plugin"],
-	["ºÚ½ðÊ±´ú","plugin_2"],
-	["ÓÄÉîº£Ñó","plugin_3"],
-	["º£Ìì½»½Ó","plugin_4"],
-	["ÇàÇàÆ»¹û","plugin_5"],
-	["·ÛºìÀËÂþ","plugin_6"],
-	["Òø°×ÔÂ¹â","plugin_7"],
-	["´¿½àÎÞÐ°","plugin_8"],
-	["»ÒÉ«Ìì¿Õ","plugin_9"],
-	["º¬ÐßÂöÂö","plugin_10"],
-	["ÎíÕÚÇàË®","plugin_11"],
-	["½Û×ÓÓû»Æ","plugin_12"],
-	["ÂÌ²ÝÈçÒð","plugin_13"],
-	["µ­»Æ·¢¹â","plugin_14"],
-	["½ðÇïÊ®ÔÂ","plugin_15"],
-	["À¶ÌïÉúÓñ","plugin_16"]
+	["æš—é»‘å¤œç©º","plugin"],
+	["é»‘é‡‘æ—¶ä»£","plugin_2"],
+	["å¹½æ·±æµ·æ´‹","plugin_3"],
+	["æµ·å¤©äº¤æŽ¥","plugin_4"],
+	["é’é’è‹¹æžœ","plugin_5"],
+	["ç²‰çº¢æµªæ¼«","plugin_6"],
+	["é“¶ç™½æœˆå…‰","plugin_7"],
+	["çº¯æ´æ— é‚ª","plugin_8"],
+	["ç°è‰²å¤©ç©º","plugin_9"],
+	["å«ç¾žè„‰è„‰","plugin_10"],
+	["é›¾é®é’æ°´","plugin_11"],
+	["æ¡”å­æ¬²é»„","plugin_12"],
+	["ç»¿è‰å¦‚èŒµ","plugin_13"],
+	["æ·¡é»„å‘å…‰","plugin_14"],
+	["é‡‘ç§‹åæœˆ","plugin_15"],
+	["è“ç”°ç”ŸçŽ‰","plugin_16"]
 ];
 for (var i in plgnamelist){
 	document.writeln('<option value="'+plgnamelist[i][1]+'"');
@@ -153,13 +153,13 @@ for (var i in plgnamelist){
     }
    </script>
 		<tr>
-			<td align="right" width="25%">Ñ¡ÔñÆôÓÃ°å¿é£º<br />
-			Çë°´ Ctrl »òÕß Shift ¼ü¶àÑ¡<br />
-			°å¿é²»ÄÜ¼Ì³Ð</td>
+			<td align="right" width="25%">é€‰æ‹©å¯ç”¨æ¿å—ï¼š<br />
+			è¯·æŒ‰ Ctrl æˆ–è€… Shift é”®å¤šé€‰<br />
+			æ¿å—ä¸èƒ½ç»§æ‰¿</td>
 			<td colspan="2">
 			<select name="boardlist" size="20" style="width: 270px" multiple>
 			<option value="0" style="color: #FF0000; background-color: #FFFFCC;" <%if Instr(boardlist,",0,")>0 Then Response.Write " selected"%>="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-			Í£Ö¹Ê¹ÓÃ¸Ã²å¼þÇëÑ¡ÖÐ´ËÏî</option>
+			åœæ­¢ä½¿ç”¨è¯¥æ’ä»¶è¯·é€‰ä¸­æ­¤é¡¹</option>
 			<%
 		Dim ii
 		set rs=Dvbbs.Execute("select boardid,boardtype,depth from dv_board order by rootid,orders")
@@ -171,15 +171,15 @@ for (var i in plgnamelist){
 			Response.Write " value="&rs(0)&">"
 			Select Case rs(2)
 				Case 0
-					Response.Write "©ï"
+					Response.Write "â•‹"
 				Case 1
-					Response.Write "&nbsp;&nbsp;©À"
+					Response.Write "&nbsp;&nbsp;â”œ"
 			End Select
 			If rs(2)>1 Then
 				For ii=2 To rs(2)
-					Response.Write "&nbsp;&nbsp;©¦"
+					Response.Write "&nbsp;&nbsp;â”‚"
 				Next
-				Response.Write "&nbsp;&nbsp;©À"
+				Response.Write "&nbsp;&nbsp;â”œ"
 			End If
 			Response.Write rs(1)
 			Response.Write "</option>"
@@ -191,7 +191,7 @@ for (var i in plgnamelist){
 		</tr>
 		<tr>
 			<td class="td2" colspan="3" align="center">
-			<input type="submit" name="submit" value="È·ÈÏÌá½»" /> </td>
+			<input type="submit" name="submit" value="ç¡®è®¤æäº¤" /> </td>
 		</tr>
 	</form>
 </table>

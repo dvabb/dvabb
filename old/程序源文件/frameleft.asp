@@ -10,7 +10,7 @@ Sub PageMain()
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=gb2312" />
-<TITLE>×óÓÒ·ÖÀ¸</TITLE>
+<TITLE>å·¦å³åˆ†æ </TITLE>
 </head>
 <body>
 <script type="text/javascript">
@@ -63,12 +63,12 @@ Sub BoardMenu()
 End Sub
 
 Sub TransNode(XmlDoc)
-	'XSLTÄ£°å×ª»»¿ªÊ¼
+	'XSLTæ¨¡æ¿è½¬æ¢å¼€å§‹
 	Dim Xmlskin,Proc,XmlStyle
 	Set Xmlskin = Dvbbs.CreateXmlDoc("msxml2.FreeThreadedDOMDocument"& MsxmlVersion)
 	Dvbbs.LoadTemplates("")
 	If Not (Xmlskin.loadxml(Dvbbs.mainhtml(23))) Then
-		Response.Write "Ä£°åÊı¾İ³ö´í£¬ÇëÓë¹ÜÀíÔ±ÁªÏµ£¡"
+		Response.Write "æ¨¡æ¿æ•°æ®å‡ºé”™ï¼Œè¯·ä¸ç®¡ç†å‘˜è”ç³»ï¼"
 		Response.End
 	End If
 	Set XMLStyle=Dvbbs.iCreateObject("msxml2.XSLTemplate" & MsxmlVersion)

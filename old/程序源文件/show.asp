@@ -53,7 +53,7 @@ Else
 	Response.Cookies("tab").Expires=Date+365
 	response.cookies("tab")=tab
 End If
-maxpage=clng(tab*3)	'Ã¿Ò³ÏÔÊ¾ÎÄ¼şµÄ¸öÊı
+maxpage=clng(tab*3)	'æ¯é¡µæ˜¾ç¤ºæ–‡ä»¶çš„ä¸ªæ•°
 If Request("username")="" or Request("filetype")="" or Request("boardid")="" then rsearch=""
 
 If Request("boardid")<>"" and isnumeric(Request("boardid")) Then
@@ -75,9 +75,9 @@ TempStr = Replace(TempStr,"{$stats}",Dvbbs.Stats)
 	filetype=Request("filetype")
 	username=Request("username")
 	'If filetype="" or Not IsNumeric(filetype) Then filetype = 0
-	'È¡³ö×ÜÊı
+	'å–å‡ºæ€»æ•°
 
-	'¶¨Òå±äÁ¿
+	'å®šä¹‰å˜é‡
 	Dim t
 	Dim F_ID,F_AnnounceID,F_BoardID,F_Filename,F_FileType,F_Type,F_Readme,F_DownNum,F_ViewNum,F_Flag
 	Dim F_typename,showfile,golist
@@ -128,7 +128,7 @@ TempStr = Replace(TempStr,"{$stats}",Dvbbs.Stats)
 			F_Filename=Sql(7,i)
 			If F_Filename="" or Isnull(F_Filename) Then
 				F_Filename=Sql(3,i)
-					'ÅĞ¶ÏÎÄ¼şÊÇ·ñ±¾ÂÛÌ³£¬Èô²»ÊÇÔò²ÉÓÃ±íÖĞµÄ¼ÇÂ¼ 2004-9-12 Dv.Yz£®
+					'åˆ¤æ–­æ–‡ä»¶æ˜¯å¦æœ¬è®ºå›ï¼Œè‹¥ä¸æ˜¯åˆ™é‡‡ç”¨è¡¨ä¸­çš„è®°å½• 2004-9-12 Dv.Yzï¼
 					If InStr(F_Filename,":") = 0 Or InStr(F_Filename,"//") = 0 Then
 						If Dvbbs.Forum_Setting(75)="0" Then
 						F_Filename = Bbsurl & Dvbbs.Forum_Setting(76) & F_Filename
@@ -249,7 +249,7 @@ TempStr = Replace(TempStr,"{$stats}",Dvbbs.Stats)
 	Response.Write TempStr
 End sub
 
-'top ÅÅĞĞµ÷ÓÃ
+'top æ’è¡Œè°ƒç”¨
 Sub top(num,Str)
 	Dim Rs
 	TopStr = ""
@@ -270,7 +270,7 @@ Sub top(num,Str)
 			End If
 			tmptitle=cutStr(tmptitle,16)
 		Else
-			tmptitle="==Òş²Ø»òÈÏÖ¤°æÄÚÈİ=="
+			tmptitle="==éšè—æˆ–è®¤è¯ç‰ˆå†…å®¹=="
 		End If
 		TempStr2 = Replace(TempStr2,"{$title}",tmptitle)
 		TempStr3 = TempStr3 & TempStr2
@@ -312,10 +312,10 @@ Function reUBBCode(strContent)
 	set re=Nothing
 	reUBBCode=Dvbbs.ChkBadWords(strContent)
 End Function
-'½ØÈ¡Ö¸¶¨×Ö·û
+'æˆªå–æŒ‡å®šå­—ç¬¦
 Function cutStr(str,strlen)
 	Str=reUBBCode(Str)
-	'È¥µôËùÓĞHTML±ê¼Ç
+	'å»æ‰æ‰€æœ‰HTMLæ ‡è®°
 	Dim re
 	Set re=new RegExp
 	re.IgnoreCase =True
@@ -381,7 +381,7 @@ Function isshow(BID)
 	End If
 End Function
 
-'/ËùÒÔÓĞÒş²Ø°æÃæID£¬ÒÔ¶ººÅ·Ö¸ô
+'/æ‰€ä»¥æœ‰éšè—ç‰ˆé¢IDï¼Œä»¥é€—å·åˆ†éš”
 Function HiddenBID()
 	Dim Nodes,Node,Boardids,i
 	i = 0
@@ -394,7 +394,7 @@ Function HiddenBID()
 	HiddenBID = Boardids
 End Function
 
-'/ËùÒÔÓĞÈÏÖ¤°æÃæID£¬ÒÔ¶ººÅ·Ö¸ô
+'/æ‰€ä»¥æœ‰è®¤è¯ç‰ˆé¢IDï¼Œä»¥é€—å·åˆ†éš”
 Function CheckoutBID()
 	Dim Nodes,Node,Boardids,i
 	i = 0
@@ -406,7 +406,7 @@ Function CheckoutBID()
 	Next
 	CheckoutBID = Boardids
 End Function
-'/ËùÒÔÓĞËø¶¨°æÃæID£¬ÒÔ¶ººÅ·Ö¸ô
+'/æ‰€ä»¥æœ‰é”å®šç‰ˆé¢IDï¼Œä»¥é€—å·åˆ†éš”
 Function ChecklockBID()
 	Dim Nodes,Node,Boardids,i
 	i = 0

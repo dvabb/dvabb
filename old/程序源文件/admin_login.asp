@@ -4,11 +4,11 @@
 <!-- #include file="inc/myadmin.asp" -->
 <%
 Rem ===============================================================
-Rem ¿ªÆôÊ¹ÓÃÔÊĞíIPµÇÂ½¹¦ÄÜ Chk_IPLogin : 0- ¹Ø±Õ£¬1=¿ªÆô
+Rem å¼€å¯ä½¿ç”¨å…è®¸IPç™»é™†åŠŸèƒ½ Chk_IPLogin : 0- å…³é—­ï¼Œ1=å¼€å¯
 Const Chk_IPLogin = 1
 Rem ===============================================================
 Rem ===============================================================
-Rem CHECK_CODE ÉèÖÃÎª1 ¿ªÍ¨µÇÂ¼ÑéÖ¤Âë£¬ÉèÖÃÎª0¹Ø±ÕµÇÂ¼ÑéÖ¤Âë£¬ÒÔ·½±ãÊÓÕÏÈËÊ¿ÈçÃ¤ÈËµÈÅóÓÑÊ¹ÓÃ¡£
+Rem CHECK_CODE è®¾ç½®ä¸º1 å¼€é€šç™»å½•éªŒè¯ç ï¼Œè®¾ç½®ä¸º0å…³é—­ç™»å½•éªŒè¯ç ï¼Œä»¥æ–¹ä¾¿è§†éšœäººå£«å¦‚ç›²äººç­‰æœ‹å‹ä½¿ç”¨ã€‚
 Const CHECK_CODE=1
 Rem ===============================================================
 Dim Rs,sql,i
@@ -18,7 +18,7 @@ template.ChildFolder="Admin"
 'Response.Write Rs(0)
 'template.value = Rs(0)
 'Response.End
-Dvbbs.Stats="ÂÛÌ³¹ÜÀíµÇÂ¼"
+Dvbbs.Stats="è®ºå›ç®¡ç†ç™»å½•"
 
 Admin_Login()
 Dvbbs.PageEnd()
@@ -31,7 +31,7 @@ Sub Admin_Login()
 	Else
 		Dvbbs.Master = False
 	End If
-	If Not Dvbbs.Master Then Response.Redirect "showerr.asp?action=OtherErr&ErrCodes=<li>Äú²»ÊÇÏµÍ³¹ÜÀíÔ±£¡"
+	If Not Dvbbs.Master Then Response.Redirect "showerr.asp?action=OtherErr&ErrCodes=<li>æ‚¨ä¸æ˜¯ç³»ç»Ÿç®¡ç†å‘˜ï¼"
 
 	If Dvbbs.Master And Session("flag")<>"" Then Response.Redirect Dvbbs.CacheData(33,0) & "index.asp"
 	If Request.form("reaction")="chklogin" Then
@@ -43,7 +43,7 @@ End Sub
 
 Sub Admin_Login_Main()
 	Dim version
-	If IsSqlDataBase = 1 Then version="SQL °æ"&fversion Else version="ACCESS °æ"&fversion
+	If IsSqlDataBase = 1 Then version="SQL ç‰ˆ"&fversion Else version="ACCESS ç‰ˆ"&fversion
 	'Response.Write Replace(template.html(1),"{$path}",Dvbbs.CacheData(33,0) & "images/")
 	Response.Write Replace(template.html(1),"{$path}","")
 %>
@@ -63,7 +63,7 @@ b.rtop b.r4, b.rbottom b.r4{margin: 0 1px;height: 2px}
 <center>
 <div id="nifty">
 <b class="rtop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
-<div style="width:403px; height:26px; line-height:26px; background:none; font-size:12px; text-align:left;"><%=dvbbs.Forum_info(0)%> -- ¹ÜÀíµÇÂ¼</div>
+<div style="width:403px; height:26px; line-height:26px; background:none; font-size:12px; text-align:left;"><%=dvbbs.Forum_info(0)%> -- ç®¡ç†ç™»å½•</div>
 <div style="width:403px; height:46px; background:#166CA3;"><img src="images/login.gif" alt="" /></div>
 <div style="width:401px !important; width:403px; height:auto; background:#fff; border-left:1px solid #649EB2; border-right:1px solid #649EB2; ">
 <table width="100%" border="0" cellspacing="3" cellpadding="0">
@@ -71,31 +71,31 @@ b.rtop b.r4, b.rbottom b.r4{margin: 0 1px;height: 2px}
 <input name="reaction" type="hidden" value="chklogin" />
 	<%If Dvbbs.UserID=0 Or (Dvbbs.UserGroupID>1 And Dvbbs.GroupSetting(70)="0") Then%>
 	<tr>
-		<td align="right" width="35%"><b>Ç°Ì¨ÓÃ»§Ãû£º</b></td>
+		<td align="right" width="35%"><b>å‰å°ç”¨æˆ·åï¼š</b></td>
 		<td align="left"><input name="adduser" type="text" tabindex="2"/></td>
 	</tr>
 	<tr>
-		<td align="right" width="35%"><b>Ç°Ì¨ÃÜÂë£º</b></td>
+		<td align="right" width="35%"><b>å‰å°å¯†ç ï¼š</b></td>
 		<td align="left"><input name="password2" type="password" tabindex="3"/></td>
 	</tr>
 	<%End If%>
 	<tr>
-		<td align="right"><b>ÓÃ»§Ãû£º</b></td>
+		<td align="right"><b>ç”¨æˆ·åï¼š</b></td>
 		<td align="left"><input name="username" type="text" tabindex="4"/></td>
 	</tr>
 	<tr>
-		<td align="right"><b>ÃÜ¡¡Âë£º</b></td>
+		<td align="right"><b>å¯†ã€€ç ï¼š</b></td>
 		<td align="left"><input name="password" type="password" tabindex="5"/></td>
 	</tr>
 	<%If CHECK_CODE=1 Then%>
 	<tr>	
-		<td align="right"><b>¸½¼ÓÂë£º</b></td>
+		<td align="right"><b>é™„åŠ ç ï¼š</b></td>
 		<td align="left"><%=Dvbbs.GetCode%></td>
 	</tr>
 	<%End If%>
 	<tr>
 	<td align="right"></td>
-	<td align="left"><input  class="button" type="submit" name="submit" value="µÇ Â¼"/></td>
+	<td align="left"><input  class="button" type="submit" name="submit" value="ç™» å½•"/></td>
 	</tr>	
   </form>
 </table>
@@ -118,36 +118,36 @@ Sub ChkLogin()
 	If CHECK_CODE=1 Then
 		If Dvbbs.forum_setting(120)=1 Then 'modifty by reoaiq at 091022
 			If Request("codestryuyin")="" Then
-				Response.Redirect "showerr.asp?action=OtherErr&ErrCodes=<li>Çë·µ»ØÊäÈëÈ·ÈÏÂë¡£<b>·µ»ØºóÇëË¢ĞÂµÇÂ¼Ò³ÃæºóÖØĞÂÊäÈëÕıÈ·µÄĞÅÏ¢¡£</b>"
+				Response.Redirect "showerr.asp?action=OtherErr&ErrCodes=<li>è¯·è¿”å›è¾“å…¥ç¡®è®¤ç ã€‚<b>è¿”å›åè¯·åˆ·æ–°ç™»å½•é¡µé¢åé‡æ–°è¾“å…¥æ­£ç¡®çš„ä¿¡æ¯ã€‚</b>"
 				Exit Sub
 			Elseif Session("getcode")="9999" then
 				Session("getcode")=""
 			Elseif Session("getcode")="" then
-				Response.Redirect "showerr.asp?action=OtherErr&ErrCodes=<li>Çë²»ÒªÖØ¸´Ìá½»£¬ÈçĞèÖØĞÂµÇÂ¼Çë·µ»ØµÇÂ¼Ò³Ãæ¡£<b>·µ»ØºóÇëË¢ĞÂµÇÂ¼Ò³ÃæºóÖØĞÂÊäÈëÕıÈ·µÄĞÅÏ¢¡£</b>"
+				Response.Redirect "showerr.asp?action=OtherErr&ErrCodes=<li>è¯·ä¸è¦é‡å¤æäº¤ï¼Œå¦‚éœ€é‡æ–°ç™»å½•è¯·è¿”å›ç™»å½•é¡µé¢ã€‚<b>è¿”å›åè¯·åˆ·æ–°ç™»å½•é¡µé¢åé‡æ–°è¾“å…¥æ­£ç¡®çš„ä¿¡æ¯ã€‚</b>"
 				Exit Sub
 			ElseIf LCase(Cstr(Trim(Session("getcode"))))<>Lcase(Cstr(Trim(Request("codestryuyin")))) Then
-				Response.Redirect "showerr.asp?action=OtherErr&ErrCodes=<li>ÄúÊäÈëµÄÈ·ÈÏÂëºÍÏµÍ³²úÉúµÄ²»Ò»ÖÂ£¬ÇëÖØĞÂÊäÈë¡£<b>·µ»ØºóÇëË¢ĞÂµÇÂ¼Ò³ÃæºóÖØĞÂÊäÈëÕıÈ·µÄĞÅÏ¢¡£</b>"
+				Response.Redirect "showerr.asp?action=OtherErr&ErrCodes=<li>æ‚¨è¾“å…¥çš„ç¡®è®¤ç å’Œç³»ç»Ÿäº§ç”Ÿçš„ä¸ä¸€è‡´ï¼Œè¯·é‡æ–°è¾“å…¥ã€‚<b>è¿”å›åè¯·åˆ·æ–°ç™»å½•é¡µé¢åé‡æ–°è¾“å…¥æ­£ç¡®çš„ä¿¡æ¯ã€‚</b>"
 				Exit Sub
 			End If
 			Session("getcode")=""
 		Else 
 			If Request("codestr")="" Then
-				Response.Redirect "showerr.asp?action=OtherErr&ErrCodes=<li>Çë·µ»ØÊäÈëÈ·ÈÏÂë¡£<b>·µ»ØºóÇëË¢ĞÂµÇÂ¼Ò³ÃæºóÖØĞÂÊäÈëÕıÈ·µÄĞÅÏ¢¡£</b>"
+				Response.Redirect "showerr.asp?action=OtherErr&ErrCodes=<li>è¯·è¿”å›è¾“å…¥ç¡®è®¤ç ã€‚<b>è¿”å›åè¯·åˆ·æ–°ç™»å½•é¡µé¢åé‡æ–°è¾“å…¥æ­£ç¡®çš„ä¿¡æ¯ã€‚</b>"
 				Exit Sub
 			Elseif Session("getcode")="9999" then
 				Session("getcode")=""
 			Elseif Session("getcode")="" then
-				Response.Redirect "showerr.asp?action=OtherErr&ErrCodes=<li>Çë²»ÒªÖØ¸´Ìá½»£¬ÈçĞèÖØĞÂµÇÂ¼Çë·µ»ØµÇÂ¼Ò³Ãæ¡£<b>·µ»ØºóÇëË¢ĞÂµÇÂ¼Ò³ÃæºóÖØĞÂÊäÈëÕıÈ·µÄĞÅÏ¢¡£</b>"
+				Response.Redirect "showerr.asp?action=OtherErr&ErrCodes=<li>è¯·ä¸è¦é‡å¤æäº¤ï¼Œå¦‚éœ€é‡æ–°ç™»å½•è¯·è¿”å›ç™»å½•é¡µé¢ã€‚<b>è¿”å›åè¯·åˆ·æ–°ç™»å½•é¡µé¢åé‡æ–°è¾“å…¥æ­£ç¡®çš„ä¿¡æ¯ã€‚</b>"
 				Exit Sub
 			ElseIf LCase(Cstr(Trim(Session("getcode"))))<>Lcase(Cstr(Trim(Request("codestr")))) Then
-				Response.Redirect "showerr.asp?action=OtherErr&ErrCodes=<li>ÄúÊäÈëµÄÈ·ÈÏÂëºÍÏµÍ³²úÉúµÄ²»Ò»ÖÂ£¬ÇëÖØĞÂÊäÈë¡£<b>·µ»ØºóÇëË¢ĞÂµÇÂ¼Ò³ÃæºóÖØĞÂÊäÈëÕıÈ·µÄĞÅÏ¢¡£</b>"
+				Response.Redirect "showerr.asp?action=OtherErr&ErrCodes=<li>æ‚¨è¾“å…¥çš„ç¡®è®¤ç å’Œç³»ç»Ÿäº§ç”Ÿçš„ä¸ä¸€è‡´ï¼Œè¯·é‡æ–°è¾“å…¥ã€‚<b>è¿”å›åè¯·åˆ·æ–°ç™»å½•é¡µé¢åé‡æ–°è¾“å…¥æ­£ç¡®çš„ä¿¡æ¯ã€‚</b>"
 				Exit Sub
 			End If
 			Session("getcode")=""
 		End If 
 	End If
 	if UserName="" Or PassWord="" Then
-		Response.Redirect "showerr.asp?action=OtherErr&ErrCodes=<li>ÇëÊäÈëÄúµÄÓÃ»§Ãû»òÃÜÂë¡£<b>·µ»ØºóÇëË¢ĞÂµÇÂ¼Ò³ÃæºóÖØĞÂÊäÈëÕıÈ·µÄĞÅÏ¢¡£</b>"
+		Response.Redirect "showerr.asp?action=OtherErr&ErrCodes=<li>è¯·è¾“å…¥æ‚¨çš„ç”¨æˆ·åæˆ–å¯†ç ã€‚<b>è¿”å›åè¯·åˆ·æ–°ç™»å½•é¡µé¢åé‡æ–°è¾“å…¥æ­£ç¡®çš„ä¿¡æ¯ã€‚</b>"
 		Exit Sub
 	End If
 	ip=Dvbbs.UserTrueIP
@@ -161,32 +161,32 @@ Sub ChkLogin()
 	If Rs.Eof And Rs.Bof Then
 		Rs.Close
 		Set Rs=Nothing
-		Response.Redirect "showerr.asp?action=OtherErr&ErrCodes=<li>ÄúÊäÈëµÄÓÃ»§ÃûºÍÃÜÂë²»ÕıÈ·»òÕßÄú²»ÊÇÏµÍ³¹ÜÀíÔ±¡£Çë<a href=admin_login.asp>ÖØĞÂÊäÈë</a>ÄúµÄÃÜÂë¡£<b>·µ»ØºóÇëË¢ĞÂµÇÂ¼Ò³ÃæºóÖØĞÂÊäÈëÕıÈ·µÄĞÅÏ¢¡£</b>"
+		Response.Redirect "showerr.asp?action=OtherErr&ErrCodes=<li>æ‚¨è¾“å…¥çš„ç”¨æˆ·åå’Œå¯†ç ä¸æ­£ç¡®æˆ–è€…æ‚¨ä¸æ˜¯ç³»ç»Ÿç®¡ç†å‘˜ã€‚è¯·<a href=admin_login.asp>é‡æ–°è¾“å…¥</a>æ‚¨çš„å¯†ç ã€‚<b>è¿”å›åè¯·åˆ·æ–°ç™»å½•é¡µé¢åé‡æ–°è¾“å…¥æ­£ç¡®çš„ä¿¡æ¯ã€‚</b>"
 		Exit Sub
 	Else
 		If Rs("AcceptIP")<>"" And Chk_IPLogin=1 Then
 			If ChkLoginIP(Rs("AcceptIP"),ip)=False Then
-				Response.Redirect "showerr.asp?action=OtherErr&ErrCodes=<li>Äã²»ÊÇºÏ·¨µÄºóÌ¨¹ÜÀíÔ±¡£Çë<a href=admin_login.asp>ÖØĞÂÊäÈë</a>ÄúµÄÃÜÂë¡£"
+				Response.Redirect "showerr.asp?action=OtherErr&ErrCodes=<li>ä½ ä¸æ˜¯åˆæ³•çš„åå°ç®¡ç†å‘˜ã€‚è¯·<a href=admin_login.asp>é‡æ–°è¾“å…¥</a>æ‚¨çš„å¯†ç ã€‚"
 				Exit Sub
 			End If
 		End If
 		If Trim(Rs("password"))<>PassWord then
-			Response.Redirect "showerr.asp?action=OtherErr&ErrCodes=<li>ÄúÊäÈëµÄÓÃ»§ÃûºÍÃÜÂë²»ÕıÈ·»òÕßÄú²»ÊÇÏµÍ³¹ÜÀíÔ±¡£Çë<a href=admin_login.asp>ÖØĞÂÊäÈë</a>ÄúµÄÃÜÂë¡£<b>·µ»ØºóÇëË¢ĞÂµÇÂ¼Ò³ÃæºóÖØĞÂÊäÈëÕıÈ·µÄĞÅÏ¢¡£</b>"
+			Response.Redirect "showerr.asp?action=OtherErr&ErrCodes=<li>æ‚¨è¾“å…¥çš„ç”¨æˆ·åå’Œå¯†ç ä¸æ­£ç¡®æˆ–è€…æ‚¨ä¸æ˜¯ç³»ç»Ÿç®¡ç†å‘˜ã€‚è¯·<a href=admin_login.asp>é‡æ–°è¾“å…¥</a>æ‚¨çš„å¯†ç ã€‚<b>è¿”å›åè¯·åˆ·æ–°ç™»å½•é¡µé¢åé‡æ–°è¾“å…¥æ­£ç¡®çš„ä¿¡æ¯ã€‚</b>"
 			Exit Sub
 		Else
 			If Dvbbs.MemberName=""  Or Request("adduser") <>"" Then 
 				If Trim(Rs("userpassword"))<>md5(Request("password2"),16) Then
-					Response.Redirect "showerr.asp?action=OtherErr&ErrCodes=<li>ÄúÊäÈëµÄÓÃ»§ÃûºÍÃÜÂë²»ÕıÈ·»òÕßÄú²»ÊÇÏµÍ³¹ÜÀíÔ±¡£Çë<a href=admin_login.asp>ÖØĞÂÊäÈë</a>ÄúµÄÃÜÂë¡£<b>·µ»ØºóÇëË¢ĞÂµÇÂ¼Ò³ÃæºóÖØĞÂÊäÈëÕıÈ·µÄĞÅÏ¢¡£</b>"		
+					Response.Redirect "showerr.asp?action=OtherErr&ErrCodes=<li>æ‚¨è¾“å…¥çš„ç”¨æˆ·åå’Œå¯†ç ä¸æ­£ç¡®æˆ–è€…æ‚¨ä¸æ˜¯ç³»ç»Ÿç®¡ç†å‘˜ã€‚è¯·<a href=admin_login.asp>é‡æ–°è¾“å…¥</a>æ‚¨çš„å¯†ç ã€‚<b>è¿”å›åè¯·åˆ·æ–°ç™»å½•é¡µé¢åé‡æ–°è¾“å…¥æ­£ç¡®çš„ä¿¡æ¯ã€‚</b>"		
 					Exit Sub
 				End If
 			End If
-			Dim Rs1	'ÔÚ´ËÑéÖ¤GroupSetting(70)£¬ÇáÆ®Æ®
+			Dim Rs1	'åœ¨æ­¤éªŒè¯GroupSetting(70)ï¼Œè½»é£˜é£˜
 			Set Rs1=Dvbbs.Execute("Select GroupSetting From Dv_UserGroups Where UserGroupID="&Rs("usergroupid"))
 			If Rs1.Eof Or Rs1.Bof Then
 				Rs.Close
 				Set Rs=Nothing
 				Set Rs1=Nothing
-				Response.Redirect "showerr.asp?action=OtherErr&ErrCodes=<li>ÄúÊäÈëµÄÓÃ»§ÃûºÍÃÜÂë²»ÕıÈ·»òÕßÄú²»ÊÇÏµÍ³¹ÜÀíÔ±¡£Çë<a href=admin_login.asp>ÖØĞÂÊäÈë</a>ÄúµÄÃÜÂë¡£<b>·µ»ØºóÇëË¢ĞÂµÇÂ¼Ò³ÃæºóÖØĞÂÊäÈëÕıÈ·µÄĞÅÏ¢¡£</b>"
+				Response.Redirect "showerr.asp?action=OtherErr&ErrCodes=<li>æ‚¨è¾“å…¥çš„ç”¨æˆ·åå’Œå¯†ç ä¸æ­£ç¡®æˆ–è€…æ‚¨ä¸æ˜¯ç³»ç»Ÿç®¡ç†å‘˜ã€‚è¯·<a href=admin_login.asp>é‡æ–°è¾“å…¥</a>æ‚¨çš„å¯†ç ã€‚<b>è¿”å›åè¯·åˆ·æ–°ç™»å½•é¡µé¢åé‡æ–°è¾“å…¥æ­£ç¡®çš„ä¿¡æ¯ã€‚</b>"
 			Else
 				If Split(Rs1(0),",")(70)="1" Then
 					Dvbbs.Execute("Update "&admintable&" Set LastLogin="&SqlNowString&",LastLoginIP='"&ip&"' Where UserName='"&UserName&"'")
@@ -195,7 +195,7 @@ Sub ChkLogin()
 					Session("MemberName")=MemberName
 					Response.Redirect Dvbbs.CacheData(33,0) & "index.asp"
 				Else
-					Response.Redirect "showerr.asp?action=OtherErr&ErrCodes=<li>ÄúÃ»ÓĞµÇÂ½ºóÌ¨¹ÜÀíµÄÈ¨ÏŞ£¡"
+					Response.Redirect "showerr.asp?action=OtherErr&ErrCodes=<li>æ‚¨æ²¡æœ‰ç™»é™†åå°ç®¡ç†çš„æƒé™ï¼"
 				End If
 			End If		
 			Rs.Close

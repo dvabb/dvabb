@@ -21,11 +21,11 @@ Sub Main_head()
 
 %>
 <table width="100%" border="0" cellspacing="1" cellpadding="3" align="center">
-<tr><th style="text-align:center;">Ä§·¨±íÇé£¨Í·Ïñ£©ÉèÖÃºÍ¹ÜÀí</th></tr>
-<tr><td class="td2" style="line-height: 130%"><B>Ä§·¨±íÇé£¨Í·Ïñ£©ÉèÖÃºÍ¹ÜÀí</B>£º<BR>
-	1¡¢Ä§·¨±íÇé£¨Í·Ïñ£©Ä¬ÈÏµÄÍ¼Æ¬ºÍFlashĞ§¹ûÍ¼Â·¾¶·Ö±ğÊÇ£º<B>Dv_Plus/Tools/magicface/gif/</B>ºÍ<B>Dv_Plus/Tools/magicface/swf/</B>£¬ÔÚÌí¼Ó»ò¹ÜÀíÍ¼Æ¬ºÍflashĞ§¹ûµÄÊ±ºò×îºÃ½«Ïà¹ØÎÄ¼şÉÏ´«µ½´ËÎ»ÖÃ¡£
+<tr><th style="text-align:center;">é­”æ³•è¡¨æƒ…ï¼ˆå¤´åƒï¼‰è®¾ç½®å’Œç®¡ç†</th></tr>
+<tr><td class="td2" style="line-height: 130%"><B>é­”æ³•è¡¨æƒ…ï¼ˆå¤´åƒï¼‰è®¾ç½®å’Œç®¡ç†</B>ï¼š<BR>
+	1ã€é­”æ³•è¡¨æƒ…ï¼ˆå¤´åƒï¼‰é»˜è®¤çš„å›¾ç‰‡å’ŒFlashæ•ˆæœå›¾è·¯å¾„åˆ†åˆ«æ˜¯ï¼š<B>Dv_Plus/Tools/magicface/gif/</B>å’Œ<B>Dv_Plus/Tools/magicface/swf/</B>ï¼Œåœ¨æ·»åŠ æˆ–ç®¡ç†å›¾ç‰‡å’Œflashæ•ˆæœçš„æ—¶å€™æœ€å¥½å°†ç›¸å…³æ–‡ä»¶ä¸Šä¼ åˆ°æ­¤ä½ç½®ã€‚
 	<BR>
-	2¡¢Äú¿ÉÒÔ·Ö±ğÉè¶¨Ê¹ÓÃÃ¿¸öÄ§·¨±íÇéËùĞèÒªµÄ½ğ±ÒºÍµãÈ¯Êı£¬ËùÉèÖÃµÄ½ğ±ÒºÍµãÈ¯ÊıÎªÓÃ»§¹ºÂòĞèÒª¡£¿ÉÉèÖÃÊ¹ÓÃÃ¿¸öÄ§·¨±íÇé£¨Í·Ïñ£©ĞèÒªµÄÌû×Ó¡¢½ğÇ®¡¢»ı·Ö¡¢÷ÈÁ¦¡¢ÍşÍûÊıÏŞÖÆ£¬ÕâĞ©Ö»ÊÇÏŞÖÆ´ïµ½´Ë±ê×¼µÄ²ÅÄÜÊ¹ÓÃ£¬²¢²»¿Û³ıÏàÓ¦ÉèÖÃµÄÊıÖµ¡£</td></tr>
+	2ã€æ‚¨å¯ä»¥åˆ†åˆ«è®¾å®šä½¿ç”¨æ¯ä¸ªé­”æ³•è¡¨æƒ…æ‰€éœ€è¦çš„é‡‘å¸å’Œç‚¹åˆ¸æ•°ï¼Œæ‰€è®¾ç½®çš„é‡‘å¸å’Œç‚¹åˆ¸æ•°ä¸ºç”¨æˆ·è´­ä¹°éœ€è¦ã€‚å¯è®¾ç½®ä½¿ç”¨æ¯ä¸ªé­”æ³•è¡¨æƒ…ï¼ˆå¤´åƒï¼‰éœ€è¦çš„å¸–å­ã€é‡‘é’±ã€ç§¯åˆ†ã€é­…åŠ›ã€å¨æœ›æ•°é™åˆ¶ï¼Œè¿™äº›åªæ˜¯é™åˆ¶è¾¾åˆ°æ­¤æ ‡å‡†çš„æ‰èƒ½ä½¿ç”¨ï¼Œå¹¶ä¸æ‰£é™¤ç›¸åº”è®¾ç½®çš„æ•°å€¼ã€‚</td></tr>
 </table>
 <br>
 <%
@@ -50,11 +50,11 @@ PageSearch = "stype="&stype
 <table width="100%" border="0" cellspacing="1" cellpadding="3" align="center">
 <tr>
 <td class="td1" colspan=15 style="line-height: 130%">
-<li>Í¼Æ¬ºÍFlashÇë²ÎÕÕÉÏÊöËµÃ÷·ÅÔÚÄ¬ÈÏÄ¿Â¼£¬<font color=red>Í¼Æ¬ÓÃÊı×ÖĞòºÅÌîĞ´£¬Í¼Æ¬ºÍflashÎÄ¼şÖ»ÊÇÔÚÏÔÊ¾Ê±ºó×º²»Í¬£¬ÔÚ´ËÎªÍ³Ò»Ãû³Æ</font>£¬µã»÷Í¼Æ¬¿ÉÔ¤ÀÀĞ§¹û
-<li>ĞŞ¸ÄÄ§·¨±íÇé£¨Í·Ïñ£©Àà±ğÇë´ò¿ªDv_Plus/Tools/plus_tools_const.aspÎÄ¼şĞŞ¸ÄÆäÖĞMagicFaceType²ÎÊı
-<li><font color=red>½ğ±Ò1ºÍµãÈ¯1ÊÇ¹ºÂòÄ§·¨±íÇéµÄ¼Û¸ñ£¬½ğ±Ò2ºÍµãÈ¯2ÊÇ¹ºÂòÄ§·¨Í·ÏñµÄ¼Û¸ñ</font>
-<li><font color=blue>Ìí¼ÓÄ§·¨±íÇé£¨Í·Ïñ£©ÇëÔ¤ÏÈ×¼±¸Èı¸öÎÄ¼ş²¢´«µ½ÏàÓ¦Ä¿Â¼£¬Á½¸ögifÍ¼Æ¬·Ö±ğÊÇĞ¡ºÍ´óÍ¼Æ¬£¬Ğ¡Í¼Æ¬ÓÃÓÚÓÃ»§¹ºÂòÑ¡Ôñ´¦ÏÔÊ¾£¬´óÍ¼Æ¬ÓÃÓÚÓÃ»§¹ºÂòÄ§·¨Í·ÏñºóÔÚÌû×Ó¼°Æä×ÊÁÏÖĞÏÔÊ¾£¬Ò»¸öswfÎÄ¼şÊÇÄ§·¨Ğ§¹û</font><BR>
-<B>¿ìËÙ²é¿´·ÖÀà</B>£º<a href="?">È«²¿</a> | 
+<li>å›¾ç‰‡å’ŒFlashè¯·å‚ç…§ä¸Šè¿°è¯´æ˜æ”¾åœ¨é»˜è®¤ç›®å½•ï¼Œ<font color=red>å›¾ç‰‡ç”¨æ•°å­—åºå·å¡«å†™ï¼Œå›¾ç‰‡å’Œflashæ–‡ä»¶åªæ˜¯åœ¨æ˜¾ç¤ºæ—¶åç¼€ä¸åŒï¼Œåœ¨æ­¤ä¸ºç»Ÿä¸€åç§°</font>ï¼Œç‚¹å‡»å›¾ç‰‡å¯é¢„è§ˆæ•ˆæœ
+<li>ä¿®æ”¹é­”æ³•è¡¨æƒ…ï¼ˆå¤´åƒï¼‰ç±»åˆ«è¯·æ‰“å¼€Dv_Plus/Tools/plus_tools_const.aspæ–‡ä»¶ä¿®æ”¹å…¶ä¸­MagicFaceTypeå‚æ•°
+<li><font color=red>é‡‘å¸1å’Œç‚¹åˆ¸1æ˜¯è´­ä¹°é­”æ³•è¡¨æƒ…çš„ä»·æ ¼ï¼Œé‡‘å¸2å’Œç‚¹åˆ¸2æ˜¯è´­ä¹°é­”æ³•å¤´åƒçš„ä»·æ ¼</font>
+<li><font color=blue>æ·»åŠ é­”æ³•è¡¨æƒ…ï¼ˆå¤´åƒï¼‰è¯·é¢„å…ˆå‡†å¤‡ä¸‰ä¸ªæ–‡ä»¶å¹¶ä¼ åˆ°ç›¸åº”ç›®å½•ï¼Œä¸¤ä¸ªgifå›¾ç‰‡åˆ†åˆ«æ˜¯å°å’Œå¤§å›¾ç‰‡ï¼Œå°å›¾ç‰‡ç”¨äºç”¨æˆ·è´­ä¹°é€‰æ‹©å¤„æ˜¾ç¤ºï¼Œå¤§å›¾ç‰‡ç”¨äºç”¨æˆ·è´­ä¹°é­”æ³•å¤´åƒååœ¨å¸–å­åŠå…¶èµ„æ–™ä¸­æ˜¾ç¤ºï¼Œä¸€ä¸ªswfæ–‡ä»¶æ˜¯é­”æ³•æ•ˆæœ</font><BR>
+<B>å¿«é€ŸæŸ¥çœ‹åˆ†ç±»</B>ï¼š<a href="?">å…¨éƒ¨</a> | 
 <%
 For i = 0 To Ubound(iMagicFaceType)
 	If i <> Ubound(iMagicFaceType) Then
@@ -68,24 +68,24 @@ Next
 </tr>
 <tr>
 <th>ID</th>
-<th>Ô¤ÀÀ</th>
-<th>ËµÃ÷</th>
-<th>Àà±ğ</th>
-<th>Í¼Æ¬</th>
-<th>½ğ±Ò1</th>
-<th>µãÈ¯1</th>
-<th>½ğ±Ò2</th>
-<th>µãÈ¯2</th>
-<th>Ìû×Ó</th>
-<th>½ğÇ®</th>
-<th>»ı·Ö</th>
-<th>÷ÈÁ¦</th>
-<th>ÍşÍû</th>
-<th>²Ù×÷</th>
+<th>é¢„è§ˆ</th>
+<th>è¯´æ˜</th>
+<th>ç±»åˆ«</th>
+<th>å›¾ç‰‡</th>
+<th>é‡‘å¸1</th>
+<th>ç‚¹åˆ¸1</th>
+<th>é‡‘å¸2</th>
+<th>ç‚¹åˆ¸2</th>
+<th>å¸–å­</th>
+<th>é‡‘é’±</th>
+<th>ç§¯åˆ†</th>
+<th>é­…åŠ›</th>
+<th>å¨æœ›</th>
+<th>æ“ä½œ</th>
 </tr>
 <FORM METHOD=POST ACTION="?Action=Addnew">
 <tr align=center>
-<td class="td2"><font color=red>ĞÂ</font></td>
+<td class="td2"><font color=red>æ–°</font></td>
 <td class="td2">&nbsp;</td>
 <td class="td2"><input type=text size=13 name="ntitle"></td>
 <td class="td2">
@@ -107,7 +107,7 @@ Next
 <td class="td2"><input type=text size=3 name="nuserep" value="20"></td>
 <td class="td2"><input type=text size=3 name="nusercp" value="10"></td>
 <td class="td2"><input type=text size=3 name="npower" value="0"></td>
-<td class="td2"><input type=submit class="button" name=submit value="Ìí¼Ó"></td>
+<td class="td2"><input type=submit class="button" name=submit value="æ·»åŠ "></td>
 </tr>
 </FORM>
 <%
@@ -180,7 +180,7 @@ Set Rs=Nothing
 %>
 <tr>
 <td class="td1" colspan=15 align=right height="30">
-ÇëÑ¡ÖĞÖ¸¶¨µÄÄ§·¨±íÇé½øĞĞĞŞ¸Ä»òÉ¾³ı²Ù×÷&nbsp;&nbsp;È«Ñ¡<input name=chkall type=checkbox class="checkbox" value=on	onclick="CheckAll(this.form)">&nbsp;&nbsp;<input type=submit class="button" name=submit value="ĞŞ¸Ä">&nbsp;<input type=submit class="button" name=submit value="É¾³ı">
+è¯·é€‰ä¸­æŒ‡å®šçš„é­”æ³•è¡¨æƒ…è¿›è¡Œä¿®æ”¹æˆ–åˆ é™¤æ“ä½œ&nbsp;&nbsp;å…¨é€‰<input name=chkall type=checkbox class="checkbox" value=on	onclick="CheckAll(this.form)">&nbsp;&nbsp;<input type=submit class="button" name=submit value="ä¿®æ”¹">&nbsp;<input type=submit class="button" name=submit value="åˆ é™¤">
 </td>
 </tr>
 </FORM>
@@ -194,69 +194,69 @@ End Sub
 Sub Addnew()
 	Dim ntitle,ntype,ngif,nswf,nmoney,nticket,ntmoney,ntticket,ntopic,nwealth,nuserep,nusercp,npower
 	If Request("ntitle")="" Then
-		Errmsg=ErrMsg + "<BR><li>ÇëÊäÈëÄ§·¨±íÇéËµÃ÷¡£"
+		Errmsg=ErrMsg + "<BR><li>è¯·è¾“å…¥é­”æ³•è¡¨æƒ…è¯´æ˜ã€‚"
 		founderr=True
 	End If
 	ntitle = Dvbbs.CheckStr(Request("ntitle"))
 	If Request("ntype")="" Or Not IsNumeric(Request("ntype")) Then
-		Errmsg=ErrMsg + "<BR><li>ÇëÑ¡ÔñÄ§·¨±íÇéÀàĞÍ¡£"
+		Errmsg=ErrMsg + "<BR><li>è¯·é€‰æ‹©é­”æ³•è¡¨æƒ…ç±»å‹ã€‚"
 		founderr=True
 	End If
 	ntype = Request("ntype")
 	If Request("ngif")="" Then
-		Errmsg=ErrMsg + "<BR><li>ÇëÊäÈëÄ§·¨±íÇéĞ¡Í¼Æ¬¡£"
+		Errmsg=ErrMsg + "<BR><li>è¯·è¾“å…¥é­”æ³•è¡¨æƒ…å°å›¾ç‰‡ã€‚"
 		founderr=True
 	End If
 	ngif = Dvbbs.CheckStr(Request("ngif"))
 	If Request("nmoney")="" Or Not IsNumeric(Request("nmoney")) Then
-		Errmsg=ErrMsg + "<BR><li>ÇëÊäÈëÄ§·¨±íÇéĞèÒªµÄ½ğ±ÒÊı¡£"
+		Errmsg=ErrMsg + "<BR><li>è¯·è¾“å…¥é­”æ³•è¡¨æƒ…éœ€è¦çš„é‡‘å¸æ•°ã€‚"
 		founderr=True
 	End If
 	nmoney = Request("nmoney")
 	If Request("nticket")="" Or Not IsNumeric(Request("nticket")) Then
-		Errmsg=ErrMsg + "<BR><li>ÇëÊäÈëÄ§·¨±íÇéĞèÒªµÄµãÈ¯Êı¡£"
+		Errmsg=ErrMsg + "<BR><li>è¯·è¾“å…¥é­”æ³•è¡¨æƒ…éœ€è¦çš„ç‚¹åˆ¸æ•°ã€‚"
 		founderr=True
 	End If
 	nticket = Request("nticket")
 	If Request("ntmoney")="" Or Not IsNumeric(Request("ntmoney")) Then
-		Errmsg=ErrMsg + "<BR><li>ÇëÊäÈëÄ§·¨±íÇéĞèÒªµÄ½ğ±ÒÊı¡£"
+		Errmsg=ErrMsg + "<BR><li>è¯·è¾“å…¥é­”æ³•è¡¨æƒ…éœ€è¦çš„é‡‘å¸æ•°ã€‚"
 		founderr=True
 	End If
 	ntmoney = Request("ntmoney")
 	If Request("ntticket")="" Or Not IsNumeric(Request("ntticket")) Then
-		Errmsg=ErrMsg + "<BR><li>ÇëÊäÈëÄ§·¨±íÇéĞèÒªµÄµãÈ¯Êı¡£"
+		Errmsg=ErrMsg + "<BR><li>è¯·è¾“å…¥é­”æ³•è¡¨æƒ…éœ€è¦çš„ç‚¹åˆ¸æ•°ã€‚"
 		founderr=True
 	End If
 	ntticket = Request("ntticket")
 	If Request("ntopic")="" Or Not IsNumeric(Request("ntopic")) Then
-		Errmsg=ErrMsg + "<BR><li>ÇëÊäÈëÄ§·¨±íÇéĞèÒªµÄÌû×ÓÊı¡£"
+		Errmsg=ErrMsg + "<BR><li>è¯·è¾“å…¥é­”æ³•è¡¨æƒ…éœ€è¦çš„å¸–å­æ•°ã€‚"
 		founderr=True
 	End If
 	ntopic = Request("ntopic")
 	If Request("nwealth")="" Or Not IsNumeric(Request("nwealth")) Then
-		Errmsg=ErrMsg + "<BR><li>ÇëÊäÈëÄ§·¨±íÇéĞèÒªµÄ½ğÇ®Êı¡£"
+		Errmsg=ErrMsg + "<BR><li>è¯·è¾“å…¥é­”æ³•è¡¨æƒ…éœ€è¦çš„é‡‘é’±æ•°ã€‚"
 		founderr=True
 	End If
 	nwealth = Request("nwealth")
 	If Request("nuserep")="" Or Not IsNumeric(Request("nuserep")) Then
-		Errmsg=ErrMsg + "<BR><li>ÇëÊäÈëÄ§·¨±íÇéĞèÒªµÄ»ı·ÖÊı¡£"
+		Errmsg=ErrMsg + "<BR><li>è¯·è¾“å…¥é­”æ³•è¡¨æƒ…éœ€è¦çš„ç§¯åˆ†æ•°ã€‚"
 		founderr=True
 	End If
 	nuserep = Request("nuserep")
 	If Request("nusercp")="" Or Not IsNumeric(Request("nusercp")) Then
-		Errmsg=ErrMsg + "<BR><li>ÇëÊäÈëÄ§·¨±íÇéĞèÒªµÄ÷ÈÁ¦Êı¡£"
+		Errmsg=ErrMsg + "<BR><li>è¯·è¾“å…¥é­”æ³•è¡¨æƒ…éœ€è¦çš„é­…åŠ›æ•°ã€‚"
 		founderr=True
 	End If
 	nusercp = Request("nusercp")
 	If Request("npower")="" Or Not IsNumeric(Request("npower")) Then
-		Errmsg=ErrMsg + "<BR><li>ÇëÊäÈëÄ§·¨±íÇéĞèÒªµÄÍşÍûÊı¡£"
+		Errmsg=ErrMsg + "<BR><li>è¯·è¾“å…¥é­”æ³•è¡¨æƒ…éœ€è¦çš„å¨æœ›æ•°ã€‚"
 		founderr=True
 	End If
 	npower = Request("npower")
 	npower = Request("ntopic") & "|" & Request("nwealth") & "|" & Request("nuserep") & "|" & Request("nusercp") & "|" & Request("npower")
 	If Founderr Then Exit Sub
 	Dvbbs.Plus_Execute("Insert Into Dv_Plus_Tools_MagicFace (Title,MagicFace_s,MagicType,iMoney,iTicket,MagicSetting,tMoney,tTicket) Values ('"&ntitle&"',"&ngif&","&ntype&","&nmoney&","&nticket&",'"&npower&"',"&ntmoney&","&ntticket&")")
-	Dv_suc("Ìí¼ÓÄ§·¨±íÇé³É¹¦£¡")
+	Dv_suc("æ·»åŠ é­”æ³•è¡¨æƒ…æˆåŠŸï¼")
 End Sub
 
 Sub EditMagic()
@@ -269,7 +269,7 @@ Sub EditMagic()
 	FixID = Replace(ID,",","")
 	FixID = Left(FixID,300)
 	If ID = "" Or Not IsNumeric(FixID) Then
-		Errmsg=ErrMsg + "<BR><li>ÇëÑ¡ÖĞÖ¸¶¨µÄÄ§·¨±íÇé½øĞĞĞŞ¸Ä¸üĞÂ»òÉ¾³ı²Ù×÷¡£"
+		Errmsg=ErrMsg + "<BR><li>è¯·é€‰ä¸­æŒ‡å®šçš„é­”æ³•è¡¨æƒ…è¿›è¡Œä¿®æ”¹æ›´æ–°æˆ–åˆ é™¤æ“ä½œã€‚"
 		founderr=True
 	End If
 	For I=1 To Request.Form("ID").Count
@@ -299,12 +299,12 @@ Sub EditMagic()
 		ngif = Request.Form("ngif_"&ID)
 		If Not IsNumeric(ngif) Then ngif = 0
 
-		If Request("submit")="ĞŞ¸Ä" Then
+		If Request("submit")="ä¿®æ”¹" Then
 			Dvbbs.Plus_Execute("Update Dv_Plus_Tools_MagicFace Set Title='"&Dvbbs.CheckStr(Request.Form("ntitle_"&ID))&"',MagicFace_s="&ngif&",MagicType="&ntype&",iMoney="&nmoney&",iTicket="&nticket&",tMoney="&ntmoney&",tTicket="&ntticket&",MagicSetting='"&npower&"' Where ID = " & ID)
 		Else
 			Dvbbs.Plus_Execute("Delete From Dv_Plus_Tools_MagicFace Where ID = " & ID)
 		End If
 	Next
-	Dv_suc("ÅúÁ¿ĞŞ¸ÄÄ§·¨±íÇé³É¹¦£¡")
+	Dv_suc("æ‰¹é‡ä¿®æ”¹é­”æ³•è¡¨æƒ…æˆåŠŸï¼")
 End Sub
 %>

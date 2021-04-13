@@ -1,9 +1,9 @@
 <!--#include file="conn.asp"-->
 <!-- #include file="inc/const.asp" -->
 <%
-Const IsReLoad = False 'ÉèÎªTRUE£¬Ç¿ÖÆ¸üÐÂ
-Const updatePeri = 12 'ÎÄµµ¸üÐÂÖÜÆÚ£¬µ¥Î»Ð¡Ê±
-Const UrlSet = "http://www.baidu.com/search/bbs_sitemap.xsd" 'ÎÄµµÃû³Æ¿Õ¼ä
+Const IsReLoad = False 'è®¾ä¸ºTRUEï¼Œå¼ºåˆ¶æ›´æ–°
+Const updatePeri = 12 'æ–‡æ¡£æ›´æ–°å‘¨æœŸï¼Œå•ä½å°æ—¶
+Const UrlSet = "http://www.baidu.com/search/bbs_sitemap.xsd" 'æ–‡æ¡£åç§°ç©ºé—´
 Const SaveCachePath = "data/"
 Const MaxRows = 1000
 Dim XmlDom
@@ -59,7 +59,7 @@ Sub CreatXmlDoc()
 
 	Dim pre
 	Set pre = XmlDom.createProcessingInstruction("xml", "version='1.0' encoding='gb2312'")
-	XmlDom.insertBefore pre, XmlDom.childNodes.item(0) 'createProcessingInstructionÐ´ÔÚÁË×îÇ°Ãæ
+	XmlDom.insertBefore pre, XmlDom.childNodes.item(0) 'createProcessingInstructionå†™åœ¨äº†æœ€å‰é¢
 	XmlDom.documentElement = XmlDom.createElement("document")
 	Set Node = XmlDom.documentElement
 	Node.appendChild(XMLDom.createNode(1,"webSite","")).text=Dvbbs.Forum_Info(0) '"www.baidu.com"'
@@ -127,7 +127,7 @@ Function GetTopicList()
 End Function
 
 
-'ÏÞÖÆ·ÃÎÊµÄ°æ¿éIDÁÐ±í
+'é™åˆ¶è®¿é—®çš„ç‰ˆå—IDåˆ—è¡¨
 Function LockBoards()
 	Dim Nodes,ChildNode
 	Dim BoardList,i

@@ -2,16 +2,16 @@
 <!-- #include file="inc/const.asp" -->
 <%
 '//*****************************************************************************//
-''@	¶¯ÍøÂÛÌ³Ê×Ò³µ÷ÓÃ
-''@ ³ÌÐòÊÊÓÃ°æ±¾£ºDVBBS 8.3.0 
-''@ ¹Ù·½ÂÛÌ³µØÖ·£ºhttp://bbs.dvbbs.net http://www.aspsky.net
-''@ ³ÌÐò×÷Õß£º	Written by Fssunwin
-''@ ¸üÐÂÈÕÆÚ£º	2005-04-16
+''@	åŠ¨ç½‘è®ºå›é¦–é¡µè°ƒç”¨
+''@ ç¨‹åºé€‚ç”¨ç‰ˆæœ¬ï¼šDVBBS 8.3.0 
+''@ å®˜æ–¹è®ºå›åœ°å€ï¼šhttp://bbs.dvbbs.net http://www.aspsky.net
+''@ ç¨‹åºä½œè€…ï¼š	Written by Fssunwin
+''@ æ›´æ–°æ—¥æœŸï¼š	2005-04-16
 '//*****************************************************************************//
 Dim NewsConfigFile,XmlDoc
 NewsConfigFile = "Dv_ForumNews/Dv_NewsSetting.config"
 Dvbbs.LoadTemplates("")
-Dvbbs.Stats = "DVBBS8.3.0 Ê×Ò³µ÷ÓÃÑÝÊ¾"
+Dvbbs.Stats = "DVBBS8.3.0 é¦–é¡µè°ƒç”¨æ¼”ç¤º"
 Dvbbs.Head()
 DemoMain()
 Dvbbs.Footer
@@ -22,7 +22,7 @@ Sub DemoMain()
 	BbsUrl = Dvbbs.Get_ScriptNameUrl
 	LoadXml()
 	Set NewsCode = XmlDoc.DocumentElement.SelectNodes("NewsCode")
-	Childs = NewsCode.Length	'ÁÐ±íÊý
+	Childs = NewsCode.Length	'åˆ—è¡¨æ•°
 	%>
 	<script language="JavaScript">
 	<!--
@@ -48,15 +48,15 @@ Sub DemoMain()
 	ScriptCode = "<script src="""&BbsUrl&"Dv_News.asp?GetName="&Node.getAttribute("NewsName")&"""></script>"
 	%>
 	<table cellpadding="5" cellspacing="1" border="0" class="tableBorder2" align="center" style="width:500px;height:250px">
-	<tr><th height="23"><%=Node.getAttribute("Intro")%>Ð§¹û²âÊÔ</th></tr>
+	<tr><th height="23"><%=Node.getAttribute("Intro")%>æ•ˆæžœæµ‹è¯•</th></tr>
 	<tr>
 	<td height="*" class="tablebody1" valign="top">
 	<div class="quote">
-	µ÷ÓÃ´úÂë£º
+	è°ƒç”¨ä»£ç ï¼š
 	<input name="NewScript" id="<%=Node.getAttribute("NewsName")%>" value="<%=Server.Htmlencode(ScriptCode)%>" size="100">
-	<input type="button" value="¿½±´µ÷ÓÃ´úÂë" onclick="oCopy(document.getElementById('<%=Node.getAttribute("NewsName")%>'));">
+	<input type="button" value="æ‹·è´è°ƒç”¨ä»£ç " onclick="oCopy(document.getElementById('<%=Node.getAttribute("NewsName")%>'));">
 	</div>
-	<font color="gray">ÒÔÏÂÎª²é¿´µÄµ÷ÓÃÐ§¹û£º</font>
+	<font color="gray">ä»¥ä¸‹ä¸ºæŸ¥çœ‹çš„è°ƒç”¨æ•ˆæžœï¼š</font>
 	<hr size=1>
 	<%=ScriptCode%>
 	</td>

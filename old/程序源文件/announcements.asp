@@ -17,13 +17,13 @@ Dvbbs.stats=Template.Strings(10)
 Dvbbs.ShowErr()
 Dim dv_ubb
 Dim EmotPath
-EmotPath=Split(Dvbbs.Forum_emot,"|||")(0)		'emĞÄÇéÂ·¾¶
+EmotPath=Split(Dvbbs.Forum_emot,"|||")(0)		'emå¿ƒæƒ…è·¯å¾„
 Set dv_ubb=new Dvbbs_UbbCode
 dv_ubb.PostType=2
 If Request("action")<>"showone" Then
 	Dvbbs.Nav()
 	If Dvbbs.Boardid=0 then
-		dvbbs.Head_var 0,0,"ÂÛÌ³Ê×Ò³",""
+		dvbbs.Head_var 0,0,"è®ºå›é¦–é¡µ",""
 	Else
 		Dvbbs.head_var 1,Application(Dvbbs.CacheName&"_boardlist").documentElement.selectSingleNode("board[@boardid='"&Dvbbs.BoardID&"']/@depth").text,"",""
 	End if
@@ -81,7 +81,7 @@ Sub main()
 	Dim Showid
 	Response.Write Replace(Template.Strings(12),"{$boardid}",Dvbbs.boardid)
 	If Request("action")="showone" Then
-		'ĞŞÕıÊ×Ò³µ÷ÓÃÊ±µã»÷²é¿´²éÒ»¹«¸æ 2004-8-4 Dv.Yz
+		'ä¿®æ­£é¦–é¡µè°ƒç”¨æ—¶ç‚¹å‡»æŸ¥çœ‹æŸ¥ä¸€å…¬å‘Š 2004-8-4 Dv.Yz
 		If Isnumeric(Request("id")) Then
 			Showid = Clng(Request("id"))
 		Else
@@ -113,7 +113,7 @@ Sub main()
 			ubblists=ubblist(Sql(1,i))&"39,"
 			Tempwrite=Replace(Tempwrite,"{$content}",Dvbbs.TextEnCode(dv_ubb.Dv_UbbCode(Sql(1,i),Dvbbs.UserGroupID,2,1)))
 			Tempwrite=Replace(Tempwrite,"{$username}",Dvbbs.HtmlEnCode(Sql(2,i)))
-			REM ĞŞÕıÏÔÊ¾¹«¸æÊ±¼äÎªNULLÖµÊ±³ö´í 2004-6-1 Dv.Yz
+			REM ä¿®æ­£æ˜¾ç¤ºå…¬å‘Šæ—¶é—´ä¸ºNULLå€¼æ—¶å‡ºé”™ 2004-6-1 Dv.Yz
 			If Isdate(Sql(3,i)) Then
 				Tempwrite=Replace(Tempwrite,"{$addtime}",Sql(3,i))
 			Else
@@ -171,7 +171,7 @@ Sub SaveAnn()
 	Else
 		username=Dvbbs.MemberName
 	End if
-	'·ÀÖ¹±êÌâ±»²åÈë½Å±¾ºÍ³öÏÖ²»¹æ·¶´úÂë¡£
+	'é˜²æ­¢æ ‡é¢˜è¢«æ’å…¥è„šæœ¬å’Œå‡ºç°ä¸è§„èŒƒä»£ç ã€‚
 	Dim checkinfo
 	checkinfo=checkXHTML(request("title"))
 	If checkinfo<>"" Then
@@ -182,7 +182,7 @@ Sub SaveAnn()
 	Else
 		title=request("title")
 	End If
-	If Dvbbs.strLength(title)>250 Then Response.redirect "showerr.asp?ErrCodes=<li>±êÌâ²»ÄÜ¶àÓÚ250¸ö×Ö·û&action=OtherErr"
+	If Dvbbs.strLength(title)>250 Then Response.redirect "showerr.asp?ErrCodes=<li>æ ‡é¢˜ä¸èƒ½å¤šäº250ä¸ªå­—ç¬¦&action=OtherErr"
 	If request("content")="" Then 
 		Response.redirect "showerr.asp?ErrCodes=<li>"&template.Strings(19)&"&action=OtherErr"
 	Else
@@ -210,9 +210,9 @@ Sub SaveAnn()
 	Dvbbs.RemoveCache
 	Dvbbs.Dvbbs_suc("<li>"&Template.Strings(20))
 	If Dvbbs.BoardID=0 Then
-		Dvbbs.Execute("Insert Into Dv_Log (l_AnnounceID,l_BoardID,l_touser,l_username,l_content,l_ip,l_type) values (0,"&Dvbbs.BoardID&",'ÂÛÌ³¹«¸æ','" & Dvbbs.MemberName & "','·¢²¼ĞÂ¹«¸æ','" & Dvbbs.userTrueIP & "',3)")
+		Dvbbs.Execute("Insert Into Dv_Log (l_AnnounceID,l_BoardID,l_touser,l_username,l_content,l_ip,l_type) values (0,"&Dvbbs.BoardID&",'è®ºå›å…¬å‘Š','" & Dvbbs.MemberName & "','å‘å¸ƒæ–°å…¬å‘Š','" & Dvbbs.userTrueIP & "',3)")
 	Else
-		Dvbbs.Execute("Insert Into Dv_Log (l_AnnounceID,l_BoardID,l_touser,l_username,l_content,l_ip,l_type) values (0,"&Dvbbs.BoardID&",'ÂÛÌ³¹«¸æ','" & Dvbbs.MemberName & "','ÔÚ "&Dvbbs.boardtype&"·¢²¼ĞÂ¹«¸æ','" & Dvbbs.userTrueIP & "',3)")
+		Dvbbs.Execute("Insert Into Dv_Log (l_AnnounceID,l_BoardID,l_touser,l_username,l_content,l_ip,l_type) values (0,"&Dvbbs.BoardID&",'è®ºå›å…¬å‘Š','" & Dvbbs.MemberName & "','åœ¨ "&Dvbbs.boardtype&"å‘å¸ƒæ–°å…¬å‘Š','" & Dvbbs.userTrueIP & "',3)")
 	End If
 	
 End sub
@@ -233,14 +233,14 @@ Sub EditAnn()
 	Else
 		Sql=Rs.GetRows(-1)
 		For i=0 To Ubound(Sql,2)
-			'ĞŞ¸´ÒÔÍù¹«¸æµÄ´íÎó¡£
+			'ä¿®å¤ä»¥å¾€å…¬å‘Šçš„é”™è¯¯ã€‚
 			If isnull(Sql(1,i)) Then Dvbbs.execute("update Dv_bbsnews set boardid=0 where boardid is null")
 			Newslist=Newslist&Template.html(11)
 			Newslist=Replace(Newslist,"{$boardid}",Sql(1,i)&"")
 			Newslist=Replace(Newslist,"{$id}",Sql(0,i))
 			Newslist=Replace(Newslist,"{$title}",Dv_FilterJS(Sql(2,i)))
 			Newslist=Replace(Newslist,"{$username}",Dvbbs.HtmlEnCode(Sql(3,i)))
-			REM ĞŞÕıÏÔÊ¾¹«¸æÊ±¼äÎªNULLÖµÊ±³ö´í 2004-6-1 Dv.Yz
+			REM ä¿®æ­£æ˜¾ç¤ºå…¬å‘Šæ—¶é—´ä¸ºNULLå€¼æ—¶å‡ºé”™ 2004-6-1 Dv.Yz
 			If Isdate(Sql(4,i)) Then
 				Newslist=Replace(Newslist,"{$addtime}",Sql(4,i))
 			Else
@@ -322,8 +322,8 @@ Sub SaveEdit()
 	Else
 		title=request.form("title")
 	End If
-	If Dvbbs.strLength(title)>250 Then Response.redirect "showerr.asp?ErrCodes=<li>±êÌâ²»ÄÜ¶àÓÚ250¸ö×Ö·û&action=OtherErr"
-	'·ÀÖ¹±êÌâ±»²åÈë½Å±¾ºÍ³öÏÖ²»¹æ·¶´úÂë¡£
+	If Dvbbs.strLength(title)>250 Then Response.redirect "showerr.asp?ErrCodes=<li>æ ‡é¢˜ä¸èƒ½å¤šäº250ä¸ªå­—ç¬¦&action=OtherErr"
+	'é˜²æ­¢æ ‡é¢˜è¢«æ’å…¥è„šæœ¬å’Œå‡ºç°ä¸è§„èŒƒä»£ç ã€‚
 	Dim checkinfo
 	checkinfo=checkXHTML(title)
 	If checkinfo<>"" Then
@@ -352,9 +352,9 @@ Sub SaveEdit()
 	rs.close
 	Set Rs=Nothing
 	If Dvbbs.BoardID=0 Then
-		Dvbbs.Execute("Insert Into Dv_Log (l_AnnounceID,l_BoardID,l_touser,l_username,l_content,l_ip,l_type) values (0,"&Dvbbs.BoardID&",'ÂÛÌ³¹«¸æ','" & Dvbbs.MemberName & "','±à¼­¹«¸æ','" & Dvbbs.userTrueIP & "',3)")
+		Dvbbs.Execute("Insert Into Dv_Log (l_AnnounceID,l_BoardID,l_touser,l_username,l_content,l_ip,l_type) values (0,"&Dvbbs.BoardID&",'è®ºå›å…¬å‘Š','" & Dvbbs.MemberName & "','ç¼–è¾‘å…¬å‘Š','" & Dvbbs.userTrueIP & "',3)")
 	Else
-		Dvbbs.Execute("Insert Into Dv_Log (l_AnnounceID,l_BoardID,l_touser,l_username,l_content,l_ip,l_type) values (0,"&Dvbbs.BoardID&",'ÂÛÌ³¹«¸æ','" & Dvbbs.MemberName & "','ÔÚ "&Dvbbs.boardtype&"±à¼­¹«¸æ','" & Dvbbs.userTrueIP & "',3)")
+		Dvbbs.Execute("Insert Into Dv_Log (l_AnnounceID,l_BoardID,l_touser,l_username,l_content,l_ip,l_type) values (0,"&Dvbbs.BoardID&",'è®ºå›å…¬å‘Š','" & Dvbbs.MemberName & "','åœ¨ "&Dvbbs.boardtype&"ç¼–è¾‘å…¬å‘Š','" & Dvbbs.userTrueIP & "',3)")
 	End If
 	Dvbbs.Name = "Dv_news_"&Dvbbs.boardid
 	Dvbbs.RemoveCache
@@ -383,7 +383,7 @@ Sub delann()
 	Dvbbs.Name = "Dv_news_"&Dvbbs.boardid
 	Dvbbs.RemoveCache
 
-		Dvbbs.Execute("Insert Into Dv_Log (l_AnnounceID,l_BoardID,l_touser,l_username,l_content,l_ip,l_type) values (0,"&Dvbbs.BoardID&",'ÂÛÌ³¹«¸æ','" & Dvbbs.MemberName & "','É¾³ı¹«¸æ','" & Dvbbs.userTrueIP & "',3)")
+		Dvbbs.Execute("Insert Into Dv_Log (l_AnnounceID,l_BoardID,l_touser,l_username,l_content,l_ip,l_type) values (0,"&Dvbbs.BoardID&",'è®ºå›å…¬å‘Š','" & Dvbbs.MemberName & "','åˆ é™¤å…¬å‘Š','" & Dvbbs.userTrueIP & "',3)")
 	
 End sub
 Function Dv_FilterJS(v)

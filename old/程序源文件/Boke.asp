@@ -16,17 +16,17 @@ Sub Page_Main()
 	End If
 	Select Case iArchiveLink
 	Case "showtopic"
-		DvBoke.Stats = "ÆµµÀ--ÎÄÕÂ"
+		DvBoke.Stats = "é¢‘é“--æ–‡ç« "
 		DvBoke.Nav(0)
 		MainHtml = DvBoke.Main_Strings(5).text
 		MainHtml = Replace(MainHtml,"{$Main}",ShowTopic())
 	Case "showchannel"
-		DvBoke.Stats = "ÆµµÀ"
+		DvBoke.Stats = "é¢‘é“"
 		DvBoke.Nav(0)
 		MainHtml = DvBoke.Main_Strings(5).text
 		MainHtml = Replace(MainHtml,"{$Main}",ShowChannel())
 	Case Else
-		DvBoke.Stats = "Ê×Ò³"
+		DvBoke.Stats = "é¦–é¡µ"
 		DvBoke.Nav(0)
 		MainHtml = DvBoke.Main_Strings(5).text
 		MainHtml = Replace(MainHtml,"{$Main}",TopicList)
@@ -37,7 +37,7 @@ Sub Page_Main()
 End Sub
 
 'TopicID,CatID,sCatID,UserID,UserName,Title,TitleNote,PostTime,Child,Hits,IsView,IsLock,sType,LastPostTime,LastPoster,LastPostID,IsBest,S_Key,Weather
-'Ê×Ò³Ö÷ÌâÏÔÊ¾
+'é¦–é¡µä¸»é¢˜æ˜¾ç¤º
 Function TopicList()
 	If DvBoke.BokeUserID=0 Then
 		DvBoke.ShowCode(46)
@@ -75,7 +75,7 @@ Function TopicList()
 		TopicHtml = DvBoke.Main_Strings(6).text
 		TopicHtml = Replace(TopicHtml,"{$PostDate}",PostDate)
 		If Clng(ChildNodes.getAttribute("weather")) > Weather_C Or Clng(ChildNodes.getAttribute("weather")) < 0 Then
-			TopicHtml = Replace(TopicHtml,"{$Weather_A}","ÇçÌì")
+			TopicHtml = Replace(TopicHtml,"{$Weather_A}","æ™´å¤©")
 			TopicHtml = Replace(TopicHtml,"{$Weather_B}","sun.gif")
 		Else
 			TopicHtml = Replace(TopicHtml,"{$Weather_A}",Weather_A(ChildNodes.getAttribute("weather")))
@@ -101,7 +101,7 @@ Function TopicList()
 	TopicList = Replace(TopicList,"{$bokeurl}",DvBoke.ModHtmlLinked)
 End Function
 
-'ÆµµÀÎÄÕÂÏÔÊ¾
+'é¢‘é“æ–‡ç« æ˜¾ç¤º
 Function ShowTopic()
 	If DvBoke.BokeUserID=0 Then Exit Function
 	Dim ChannelNav,cat_tid,cat_id,PageHtml
@@ -140,17 +140,17 @@ Function ShowTopic()
 	Else
 		IsLock = Rs("IsLock")
 		Select Case IsLock
-			Case 3	'Òþ²Ø
+			Case 3	'éšè—
 				If Rs("UserID")<>DvBoke.UserID Then
 					DvBoke.ShowCode(36)
 					DvBoke.ShowMsg(0)
 				End If
-			Case 2	'¹Ø±Õ
+			Case 2	'å…³é—­
 				If Not (Rs("UserID")=DvBoke.UserID or Dvbbs.Master) Then
 					DvBoke.ShowCode(36)
 					DvBoke.ShowMsg(0)
 				End If
-			Case 1	'ÈÏÖ¤
+			Case 1	'è®¤è¯
 
 		End Select
 		cat_tid = Rs("sType")
@@ -180,7 +180,7 @@ Function ShowTopic()
 	ChannelNav = DvBoke.Main_Strings(19).text
 	ChannelNav = Replace(ChannelNav,"{$bokeuser}",DvBoke.BokeUserName)
 	ChannelNav = Replace(ChannelNav,"{$stype}",DvBoke.BokeStype(cat_tid))
-	ChannelNav = Replace(ChannelNav,"{$stats}","ä¯ÀÀÐÅÏ¢¡¶"&Title&"¡·")
+	ChannelNav = Replace(ChannelNav,"{$stats}","æµè§ˆä¿¡æ¯ã€Š"&Title&"ã€‹")
 	ChannelNav = Replace(ChannelNav,"{$Channel_Intro}",ChannelInfo)
 	'-----------------------------------------------
 	VisitPic = DvBoke.BokeSetting(12)
@@ -236,7 +236,7 @@ Function ShowTopic()
 	PageHtml = Replace(PageHtml,"{$hits}",Hits)
 	PageHtml = Replace(PageHtml,"{$WeekName}",WeekDayName(WeekDay(PostDate,1)))
 	If Clng(Weather) > Weather_C Or Clng(Weather) < 0 Then
-		PageHtml = Replace(PageHtml,"{$Weather_A}","ÇçÌì")
+		PageHtml = Replace(PageHtml,"{$Weather_A}","æ™´å¤©")
 		PageHtml = Replace(PageHtml,"{$Weather_B}","sun.gif")
 	Else
 		PageHtml = Replace(PageHtml,"{$Weather_A}",Weather_A(Weather))
@@ -346,7 +346,7 @@ Function ShowDispList(TopicID,Page)
 			Temp =  Replace(Temp,"{$RTitle}",Dv_FilterJS_T(Sql(7,i)))
 		End If
 		If Sql(5,i)=0 Then
-			Temp =  Replace(Temp,"{$PostUserName}","·Ã¿Í£º"&replace(Sql(6,i),"<","&lt;"))
+			Temp =  Replace(Temp,"{$PostUserName}","è®¿å®¢ï¼š"&replace(Sql(6,i),"<","&lt;"))
 		Else
 			Temp =  Replace(Temp,"{$PostUserName}",replace(Sql(6,i),"<","&lt;"))
 		End If
@@ -375,7 +375,7 @@ Function ShowDispList(TopicID,Page)
 End Function
 
 
-'ÆµµÀÖ÷ÌâÁÐ±íÏÔÊ¾
+'é¢‘é“ä¸»é¢˜åˆ—è¡¨æ˜¾ç¤º
 Function ShowChannel()
 	If DvBoke.BokeUserID=0 Then Exit Function
 	Dim cat_tid,cat_id,CatStr,iCat_tID,iCat_ID,iPage
@@ -416,7 +416,7 @@ Function ShowChannel()
 	ChannelNav = Replace(ChannelNav,"{$bokeuser}",DvBoke.BokeUserName)
 	ChannelNav = Replace(ChannelNav,"{$stype}",DvBoke.BokeStype(cat_tid))
 	ChannelNav = Replace(ChannelNav,"{$catname}",DvBoke.ChannelTitle(cat_id))
-	ChannelNav = Replace(ChannelNav,"{$stats}","ÐÅÏ¢ÁÐ±í")
+	ChannelNav = Replace(ChannelNav,"{$stats}","ä¿¡æ¯åˆ—è¡¨")
 	ChannelNav = Replace(ChannelNav,"{$cat_tid}",cat_tid)
 	ChannelNav = Replace(ChannelNav,"{$cat_id}",cat_id)
 	ChannelNav = Replace(ChannelNav,"{$Channel_Intro}",ChannelInfo)
@@ -436,19 +436,19 @@ Function ShowChannel()
 		CatStr = " and CatID="&cat_id
 	End If
 	IF cat_tid = 4 Then
-		'Ïà²á
-		'×Ö¶ÎÅÅÐò ID=0 ,BokeUserID=1 ,UserName=2 ,CatID=3 ,sType=4 ,TopicID=5 ,PostID=6 ,IsTopic=7 ,Title=8 ,FileName=9 ,FileType=10 ,FileSize=11 ,FileNote=12 ,DownNum=13 ,ViewNum=14 ,DateAndTime=15 ,PreviewImage=16 ,IsLock=17
+		'ç›¸å†Œ
+		'å­—æ®µæŽ’åº ID=0 ,BokeUserID=1 ,UserName=2 ,CatID=3 ,sType=4 ,TopicID=5 ,PostID=6 ,IsTopic=7 ,Title=8 ,FileName=9 ,FileType=10 ,FileSize=11 ,FileNote=12 ,DownNum=13 ,ViewNum=14 ,DateAndTime=15 ,PreviewImage=16 ,IsLock=17
 		Sql = "Select ID,BokeUserID,UserName,CatID,sType,TopicID,PostID,IsTopic,Title,FileName,FileType,FileSize,FileNote,DownNum,ViewNum,DateAndTime,PreviewImage,IsLock From Dv_Boke_Upfile where sType="&cat_tid&" "&CatStr&" and BokeUserID="&DvBoke.BokeUserID&" and IsTopic=0"
 		If DvBoke.IsBokeOwner Then
 			Sql = Sql & " order by DateAndTime Desc"
 		Else
 			Sql = Sql & " and IsLock<3 order by DateAndTime Desc"
 		End If
-	ElseIf cat_tid = 2 Then	'Á´½ÓÄ£Ê½
+	ElseIf cat_tid = 2 Then	'é“¾æŽ¥æ¨¡å¼
 		If Cat_ID > 0 Then
 		CatStr = " and T.CatID="&cat_id
 		End If
-		''×Ö¶ÎÅÅÐò TopicID=0 ,CatID=1 ,sCatID=2 ,UserID=3 ,UserName=4 ,Title=5 ,TitleNote=6 ,PostTime=7 ,Child=8 ,Hits=9 ,IsView=10 ,IsLock=11 ,sType=12 ,LastPostTime=13 ,IsBest=14 ,S_Key=15 ,Weather=16 
+		''å­—æ®µæŽ’åº TopicID=0 ,CatID=1 ,sCatID=2 ,UserID=3 ,UserName=4 ,Title=5 ,TitleNote=6 ,PostTime=7 ,Child=8 ,Hits=9 ,IsView=10 ,IsLock=11 ,sType=12 ,LastPostTime=13 ,IsBest=14 ,S_Key=15 ,Weather=16 
 		Sql = "Select T.TopicID,T.CatID,T.sCatID,T.UserID,T.UserName,T.Title,T.TitleNote,T.PostTime,T.Child,T.Hits,T.IsView,T.IsLock,T.sType,T.LastPostTime,T.IsBest,T.S_Key,T.Weather,P.PostID From Dv_Boke_Topic T Inner Join [Dv_Boke_Post] P on P.Rootid=T.Topicid where P.ParentID=0 and T.sType="&cat_tid&" "&CatStr&" and T.UserID="&DvBoke.BokeUserID
 		If DvBoke.IsBokeOwner Then
 			Sql = Sql & " order by T.LastPostTime Desc"
@@ -457,7 +457,7 @@ Function ShowChannel()
 		End If
 
 	Else
-		''×Ö¶ÎÅÅÐò TopicID=0 ,CatID=1 ,sCatID=2 ,UserID=3 ,UserName=4 ,Title=5 ,TitleNote=6 ,PostTime=7 ,Child=8 ,Hits=9 ,IsView=10 ,IsLock=11 ,sType=12 ,LastPostTime=13 ,IsBest=14 ,S_Key=15 ,Weather=16 
+		''å­—æ®µæŽ’åº TopicID=0 ,CatID=1 ,sCatID=2 ,UserID=3 ,UserName=4 ,Title=5 ,TitleNote=6 ,PostTime=7 ,Child=8 ,Hits=9 ,IsView=10 ,IsLock=11 ,sType=12 ,LastPostTime=13 ,IsBest=14 ,S_Key=15 ,Weather=16 
 		Sql = "Select TopicID,CatID,sCatID,UserID,UserName,Title,TitleNote,PostTime,Child,Hits,IsView,IsLock,sType,LastPostTime,IsBest,S_Key,Weather From Dv_Boke_Topic where sType="&cat_tid&" "&CatStr&" and Userid="&DvBoke.BokeUserID
 		If DvBoke.IsBokeOwner Then
 			Sql = Sql & " order by LastPostTime Desc"
@@ -501,7 +501,7 @@ Function ShowChannel()
 	Dim PageHtml
 	PageHtml = DvBoke.Main_Strings(18).text
 
-	If cat_tid = 4 Then	'Ïà²áÄ£Ê½
+	If cat_tid = 4 Then	'ç›¸å†Œæ¨¡å¼
 		Temp2 = DvBoke.Main_Strings(22).text
 		Dim ViewFile
 		If Not IsNumeric(DvBoke.System_Setting(9)) Then
@@ -541,7 +541,7 @@ Function ShowChannel()
 		PageHtml = Replace(PageHtml,"{$topiclist}",DvBoke.Main_Strings(20).text)
 		PageHtml = Replace(PageHtml,"{$photo_list}",Temp)
 
-	ElseIf cat_tid = 2 Then	'Á´½ÓÄ£Ê½
+	ElseIf cat_tid = 2 Then	'é“¾æŽ¥æ¨¡å¼
 		Dim LinkLogo,PostID
 		DvBoke.LoadPage("topic.xslt")
 		For i=0 To Ubound(SQL,2)
@@ -594,7 +594,7 @@ Function ShowChannel()
 			If ChannelTitle = "" Then ChannelTitle = FormatDateTime(Sql(7,i),1) & " " & FormatDateTime(Sql(7,i),4)
 			TopicHtml = Replace(TopicHtml,"{$PostDate}",FormatDateTime(Sql(7,i),1) & " " & FormatDateTime(Sql(7,i),4))
 			If Clng(Sql(16,i)) > Weather_C Or Clng(Sql(16,i)) < 0 Then
-				TopicHtml = Replace(TopicHtml,"{$Weather_A}","ÇçÌì")
+				TopicHtml = Replace(TopicHtml,"{$Weather_A}","æ™´å¤©")
 				TopicHtml = Replace(TopicHtml,"{$Weather_B}","sun.gif")
 			Else
 				TopicHtml = Replace(TopicHtml,"{$Weather_A}",Weather_A(Sql(16,i)))

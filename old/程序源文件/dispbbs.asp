@@ -7,9 +7,9 @@
 <!--#include file="inc/code_encrypt.asp"-->
 <!--#include file="inc/dv_pageclass.asp"-->
 <%
-If Dvbbs.BoardID < 1 Then Response.Write "²ÎÊı´íÎó":Response.End
+If Dvbbs.BoardID < 1 Then Response.Write "å‚æ•°é”™è¯¯":Response.End
 If Request("page") <> "" And CStr(Dvbbs.CheckNumeric(Request("page"))) <> Request("page") Then
-    Response.Write "²ÎÊı´íÎó"
+    Response.Write "å‚æ•°é”™è¯¯"
     Response.End
 End If
 If Dvbbs.GroupSetting(2)="0" Then Dvbbs.AddErrcode(31):Dvbbs.ShowErr():response.End
@@ -21,19 +21,19 @@ Dim G_Floor
 Dim G_CanReply
 Dim Dv_ubb
 Dim CanRead,TrueMaster,Skin
-'ÒÔÏÂ¶¨ÒåµÄ±äÁ¿ÔÚDv_ubbcode.aspÒ³Ãæ»áÓÃµ½
+'ä»¥ä¸‹å®šä¹‰çš„å˜é‡åœ¨Dv_ubbcode.aspé¡µé¢ä¼šç”¨åˆ°
 Dim EmotPath
 Dim TotalUsetable
 Dim PostBuyUser
 Dim UserName
 Dim T_GetMoneyType
 Dim AnnounceID, ReplyID, Replyid_a, AnnounceID_a, RootID_a
-Dim IsThisBoardMaster 'È·¶¨µ±Ç°ÓÃ»§ÊÇ·ñ±¾°æ°æÖ÷£¬·ÀÖ¹ÏÂÃæµÄ²Ù×÷Ó°Ïìµ½ Dvbbs.BoardMasterµ¼ÖÂ³ö´í
+Dim IsThisBoardMaster 'ç¡®å®šå½“å‰ç”¨æˆ·æ˜¯å¦æœ¬ç‰ˆç‰ˆä¸»ï¼Œé˜²æ­¢ä¸‹é¢çš„æ“ä½œå½±å“åˆ° Dvbbs.BoardMasterå¯¼è‡´å‡ºé”™
 IsThisBoardMaster = Dvbbs.BoardMaster
-'ä¯ÀÀ¹ºÂòÌûÈ¨ÏŞ
+'æµè§ˆè´­ä¹°å¸–æƒé™
 CanRead=False
 TrueMaster=False
-Rem Îª¼æ¹Ë¹ÜÀí²Ëµ¥ÏÔÊ¾,¶ÔÓĞ¹ÜÀíÈ¨ÏŞµÄÔİÊ±µ±°æÖ÷µÈ¼¶´¦Àí,ÎªµÄÊÇÏÔÊ¾¹ÜÀí²Ëµ¥.
+Rem ä¸ºå…¼é¡¾ç®¡ç†èœå•æ˜¾ç¤º,å¯¹æœ‰ç®¡ç†æƒé™çš„æš‚æ—¶å½“ç‰ˆä¸»ç­‰çº§å¤„ç†,ä¸ºçš„æ˜¯æ˜¾ç¤ºç®¡ç†èœå•.
 If Not Dvbbs.BoardMaster Then
 	If Dvbbs.UserID > 0 Then
 		If Dvbbs.GroupSetting(18) = "1" Then
@@ -73,16 +73,16 @@ If Dvbbs.BoardMaster Then CanRead=True
 Dim authorid
 authorid = Dvbbs.CheckNumeric(Request("authorid"))
 
-'³õÊ¼Êı¾İ
-AnnounceID		= 0			'Ö÷ÌâID
-G_UserItemQuery = "userid,username,useremail,userpost,usertopic,usersign,usersex,userface,userwidth,userheight,joindate,lastlogin,userlogins,lockuser,userclass,userwealth,userep,usercp,userpower,userdel,userisbest,usertitle,userhidden,usermoney,userticket,titlepic,usergroupid,userim,useremail" '²éÑ¯ÓÃ»§µÄ×Ö¶ÎÁĞ±í
+'åˆå§‹æ•°æ®
+AnnounceID		= 0			'ä¸»é¢˜ID
+G_UserItemQuery = "userid,username,useremail,userpost,usertopic,usersign,usersex,userface,userwidth,userheight,joindate,lastlogin,userlogins,lockuser,userclass,userwealth,userep,usercp,userpower,userdel,userisbest,usertitle,userhidden,usermoney,userticket,titlepic,usergroupid,userim,useremail" 'æŸ¥è¯¢ç”¨æˆ·çš„å­—æ®µåˆ—è¡¨
 '0-userid,1-username,2-useremail,3-userpost,4-usertopic,5-usersign,6-usersex,7-userface,8-userwidth,9-userheight,10-joindate,11-lastlogin,12-userlogins,13-lockuser,14-userclass,15-userwealth,16-userep,17-usercp,18-userpower,19-userdel,20-userisbest,21-usertitle,22-userhidden,23-usermoney,24-userticket,25-titlepic,26-UserGroupID,27-userim
 
-Rem Ôö¼ÓÑ«ÕÂ²å¼ş×Ö¶Î²éÑ¯£¬Fish 2010-3-11
+Rem å¢åŠ å‹‹ç« æ’ä»¶å­—æ®µæŸ¥è¯¢ï¼ŒFish 2010-3-11
 if Cint(dvbbs.Forum_Setting(104))=1 then G_UserItemQuery = G_UserItemQuery & ",UserMedal"
 if Cint(dvbbs.Forum_Setting(102))=1 then G_UserItemQuery = G_UserItemQuery & ",RLActTimeT" 
 
-'--------------------ÈÙÓşÑ«ÕÂ------------------------
+'--------------------è£èª‰å‹‹ç« ------------------------
 Dim G_MedalData
 G_MedalData = GetMedalData
 
@@ -110,7 +110,7 @@ Dvbbs.Head_var 1,"","",""
 Response.Write GetForumTextAd(2)
 Dvbbs.ActiveOnline()
 
-EmotPath=Split(Dvbbs.Forum_emot,"|||")(0)		'emĞÄÇéÂ·¾¶
+EmotPath=Split(Dvbbs.Forum_emot,"|||")(0)		'emå¿ƒæƒ…è·¯å¾„
 Set Dv_ubb=new Dvbbs_UbbCode
 Dv_ubb.PostType=1
 TPL_Scan	Template.html(0)'Dvbbs.ReadTextFile("dispbbsnew.tpl")'
@@ -144,7 +144,7 @@ Sub LoadTopicInfo()
 	Dvbbs.SqlQueryNum=Dvbbs.SqlQueryNum+1
 	If Rs.eof Or Rs.bof Then
 		If ""<>sMove Then
-			Response.Write "<script language=""javascript"">alert(""ÒÑ¾­ÊÇ×îºóÒ»ÌõÖ÷ÌâÁË£¡"");history.go(-1);</script>"
+			Response.Write "<script language=""javascript"">alert(""å·²ç»æ˜¯æœ€åä¸€æ¡ä¸»é¢˜äº†ï¼"");history.go(-1);</script>"
 			Rs.Close
 			Set Rs=Nothing
 			Dvbbs.PageEnd
@@ -231,9 +231,9 @@ Sub LoadBBSListData()
 		Dim mypage
 		Set mypage=new Pager
 		'If Not IsObject(Conn) Then ConnectionDatabase
-		mypage.getconn=conn 'µÃµ½Êı¾İ¿âÁ¬½Ó
-		mypage.pagesize=G_ItemsPerPage '¶¨Òå·ÖÒ³Ã¿Ò»Ò³µÄ¼ÇÂ¼Êı
-		mypage.TableName=TotalUsetable 'Òª²éÑ¯µÄ±íÃû
+		mypage.getconn=conn 'å¾—åˆ°æ•°æ®åº“è¿æ¥
+		mypage.pagesize=G_ItemsPerPage 'å®šä¹‰åˆ†é¡µæ¯ä¸€é¡µçš„è®°å½•æ•°
+		mypage.TableName=TotalUsetable 'è¦æŸ¥è¯¢çš„è¡¨å
 		mypage.Tablezd=sqlfields
 		mypage.KeyName="announceid"
 		mypage.OrderType=0
@@ -265,7 +265,7 @@ Sub LoadBBSListData()
 		Set Rs=Nothing
 	End If
 	Dvbbs.Showerr()
-	G_CanReply=False 'ÊÇ·ñÔÊĞí»Ø¸´
+	G_CanReply=False 'æ˜¯å¦å…è®¸å›å¤
 	If Not Dvbbs.Board_Setting(0)="1"  And Cint(G_LockTopic)=0 Then
 		If Dvbbs.GroupSetting(5)="1" Then
 			G_CanReply=True
@@ -287,20 +287,20 @@ Sub LoadUserListData()
 	Next
 	Set Rs		= Dvbbs.Execute("Select " & G_UserItemQuery & " From dv_user Where UserID IN ("& sUserIDList &")")
 	If Rs.Eof Or Rs.Bof Then
-		'È«²¿ÊÇ¿ÍÈË
+		'å…¨éƒ¨æ˜¯å®¢äºº
 	Else
 		G_UserList	= Rs.GetRows(-1)
 	End If
 	Rs.Close
 	Set Rs		= Nothing
-	'´¦ÀíÓÃ»§×ÊÁÏ
+	'å¤„ç†ç”¨æˆ·èµ„æ–™
 	For i=0 To iUbd
 		iTempUserID			= G_ItemList(10, i)
-		G_ItemList(10, i)	= 0	'³õÊ¼ÎªÓÎ¿Í
+		G_ItemList(10, i)	= 0	'åˆå§‹ä¸ºæ¸¸å®¢
 		If IsArray(G_UserList)	Then
 			For j=UBound(G_UserList,2) To 0 Step -1
 				If G_UserList(0, j)=iTempUserID Then
-					G_ItemList(10, i)	= j+1	'ÕâÀï¼ÓÁË1£¬Êµ¼ÊÓÃÊ±Òª¼õ1
+					G_ItemList(10, i)	= j+1	'è¿™é‡ŒåŠ äº†1ï¼Œå®é™…ç”¨æ—¶è¦å‡1
 					Exit For
 				End If
 			Next
@@ -330,18 +330,18 @@ Sub LoadAndParseVote(sTemplate)
 	s=Replace(s,"{$showvote.ucp}",aVote(10,0))
 	s=Replace(s,"{$showvote.upower}",aVote(11,0))
 	If 0=Dvbbs.userid Then
-		s=Replace(s,"{$showvote.input}","Äú»¹Î´µÇÂ¼£¬²»ÄÜ²ÎÓë¡£")
+		s=Replace(s,"{$showvote.input}","æ‚¨è¿˜æœªç™»å½•ï¼Œä¸èƒ½å‚ä¸ã€‚")
 	Else
 		If datediff("d",aVote(6,0),Now()) > 0 Then
-			s=Replace(s,"{$showvote.input}","ÒÑ¹ıÆÚ£¬²»ÄÜ²ÎÓë¡£")
+			s=Replace(s,"{$showvote.input}","å·²è¿‡æœŸï¼Œä¸èƒ½å‚ä¸ã€‚")
 		Else
 			If G_LockTopic Then
-				s=Replace(s,"{$showvote.input}","Ïà¹ØÖ÷ÌâÒÑ¾­Ëø¶¨£¬²»ÄÜ²ÎÓë¡£")
+				s=Replace(s,"{$showvote.input}","ç›¸å…³ä¸»é¢˜å·²ç»é”å®šï¼Œä¸èƒ½å‚ä¸ã€‚")
 			Else
 				If Not Dvbbs.Execute("Select * From Dv_voteuser Where voteid="& G_PollID &" And userid="& Dvbbs.userid).EOF Then
-					s=Replace(s,"{$showvote.input}","ÄúÒÑ¾­Í¶¹ıÆ±ÁË£¬¿´½á¹û°É£¡")
+					s=Replace(s,"{$showvote.input}","æ‚¨å·²ç»æŠ•è¿‡ç¥¨äº†ï¼Œçœ‹ç»“æœå§ï¼")
 				Else
-					s=Replace(s,"{$showvote.input}","<input type=""submit"" name=""VoteSubmit"" value=""Í¶ Æ±"" style=""margin:5px;""/>")
+					s=Replace(s,"{$showvote.input}","<input type=""submit"" name=""VoteSubmit"" value=""æŠ• ç¥¨"" style=""margin:5px;""/>")
 				End If
 			End If
 		End If
@@ -364,7 +364,7 @@ Sub LoadAndParseVote(sTemplate)
 						Case "1"
 							sLoop=sLoop&" <input type=""checkbox"" name=""postvote_"&i&""" value="""&j&""" class=""chkbox""/>"&votchilds_title(j)&" "
 						Case "2"
-							sLoop=sLoop&" »Ø´ğ£º<textarea name=""postvote_"&i&""" style=""width:70%;height:80px;""></textarea> "
+							sLoop=sLoop&" å›ç­”ï¼š<textarea name=""postvote_"&i&""" style=""width:70%;height:80px;""></textarea> "
 						Case Else
 							sLoop=sLoop&" <input type=""radio"" name=""postvote_"&i&""" value="""&j&""" style=""border:none;""/>"&votchilds_title(j)&" "
 					End Select
@@ -417,9 +417,9 @@ Sub ParsePageNode(sToken)
 			TPL_Echo s
 		Case "modelink"
 			If 1=Skin Then
-				TPL_Echo "<a href=""dispbbs.asp?BoardID="&Dvbbs.Boardid&"&ID="&AnnounceID&"&skin=0"">Æ½°å</a>"
+				TPL_Echo "<a href=""dispbbs.asp?BoardID="&Dvbbs.Boardid&"&ID="&AnnounceID&"&skin=0"">å¹³æ¿</a>"
 			Else
-				TPL_Echo "<a href=""dispbbs.asp?BoardID="&Dvbbs.Boardid&"&replyID="&G_ItemList(0,0)&"&ID="&AnnounceID&"&skin=1"">Ê÷ĞÎ</a>"
+				TPL_Echo "<a href=""dispbbs.asp?BoardID="&Dvbbs.Boardid&"&replyID="&G_ItemList(0,0)&"&ID="&AnnounceID&"&skin=1"">æ ‘å½¢</a>"
 			End If
 		Case "treemode"
 			If 1=Skin Then TPL_Echo "<div id=""postlist"" style=""margin-top : 10px; margin-bottom : 10px; ""> </div><span id=""showpagelist""></span><iframe style=""border:0px;width:0px;height:0px;"" src=""loadtree.asp?boardid="&Dvbbs.Boardid&"&amp;star="&G_CurrentPage&"&amp;replyid="&ReplyID&"&amp;id="&AnnounceID&"&amp;openid="&ReplyID&""" name=""hiddenframe""></iframe>"
@@ -427,44 +427,44 @@ Sub ParsePageNode(sToken)
 			s=""
 			If Dvbbs.Boardmaster Then
 				If 1=T_GetMoneyType Then
-					s=s& "		<a href=""BuyPost.asp?Action=Close&amp;BoardID="&Dvbbs.boardid&"&amp;PostTable="&TotalUseTable&"&amp;ID="&AnnounceID&"&amp;ReplyID="&ReplyID&""" title=""½áÌû¹ÜÀí"">½áÌû¹ÜÀí</a><br />"
+					s=s& "		<a href=""BuyPost.asp?Action=Close&amp;BoardID="&Dvbbs.boardid&"&amp;PostTable="&TotalUseTable&"&amp;ID="&AnnounceID&"&amp;ReplyID="&ReplyID&""" title=""ç»“å¸–ç®¡ç†"">ç»“å¸–ç®¡ç†</a><br />"
 				End If
-				s=s& "	<a href=""admin_postings.asp?action=×¨Ìâ¹ÜÀí&amp;BoardID="&Dvbbs.boardid&"&amp;ID="&AnnounceID&""" title=""×¨Ìâ¹ÜÀí"">×¨Ìâ¹ÜÀí</a><br />"
+				s=s& "	<a href=""admin_postings.asp?action=ä¸“é¢˜ç®¡ç†&amp;BoardID="&Dvbbs.boardid&"&amp;ID="&AnnounceID&""" title=""ä¸“é¢˜ç®¡ç†"">ä¸“é¢˜ç®¡ç†</a><br />"
 				If 1=G_LockTopic Then
-					s=s& "		<a href=""admin_postings.asp?action=½âËø&amp;BoardID="&Dvbbs.boardid&"&amp;ID="&AnnounceID&""" title=""½«±¾Ö÷Ìâ½â¿ªËø¶¨"">½â³ıËø¶¨</a><br />"
+					s=s& "		<a href=""admin_postings.asp?action=è§£é”&amp;BoardID="&Dvbbs.boardid&"&amp;ID="&AnnounceID&""" title=""å°†æœ¬ä¸»é¢˜è§£å¼€é”å®š"">è§£é™¤é”å®š</a><br />"
 				Else
-					s=s& "		<a href=""admin_postings.asp?action=Ëø¶¨&amp;BoardID="&Dvbbs.boardid&"&amp;ID="&AnnounceID&""" title=""Ëø¶¨±¾Ö÷Ìâ"">Ëø¶¨Ìû×Ó</a><br />"
+					s=s& "		<a href=""admin_postings.asp?action=é”å®š&amp;BoardID="&Dvbbs.boardid&"&amp;ID="&AnnounceID&""" title=""é”å®šæœ¬ä¸»é¢˜"">é”å®šå¸–å­</a><br />"
 				End If
-				s=s& "	<a href=""admin_postings.asp?action=ÌáÉı&amp;BoardID="&Dvbbs.boardid&"&amp;ID="&AnnounceID&""" title=""½«±¾Ö÷ÌâÌáÉıµ½Ìû×ÓÁĞ±í×îÇ°Ãæ"">ÌáÉıÌû×Ó</a><br />"
-				s=s& "	<a href=""admin_postings.asp?action=³Áµ×&amp;BoardID="&Dvbbs.boardid&"&amp;ID="&AnnounceID&""" title=""½«±¾Ö÷Ìâ·Åµ½Ìû×ÓÁĞ±í½Ï¿¿ºóÎ»ÖÃ"">³Áµ×Ìû×Ó</a><br />"
-				s=s& "	<a href=""admin_postings.asp?action=¸úÌû¹ÜÀí&amp;BoardID="&Dvbbs.boardid&"&amp;ID="&AnnounceID&""" title=""ÅúÁ¿É¾³ı±¾Ö÷ÌâµÄ¸úÌû"">¸úÌû¹ÜÀí</a><br />"
-				s=s& "	<a href=""admin_postings.asp?action=É¾³ıÖ÷Ìâ&amp;BoardID="&Dvbbs.boardid&"&amp;ID="&AnnounceID&""" title=""×¢Òâ£º±¾²Ù×÷½«É¾³ı±¾Ö÷ÌâËùÓĞÌû×Ó£¬²»ÄÜ»Ö¸´"">É¾³ıÌû×Ó</a><br />"
-				s=s& "	<a href=""admin_postings.asp?action=ÒÆ¶¯&amp;BoardID="&Dvbbs.boardid&"&amp;ID="&AnnounceID&"&amp;replyID="&ReplyID&""" title=""ÒÆ¶¯Ö÷Ìâ"">ÒÆ¶¯Ìû×Ó</a><br />"
-				s=s& "	<a href=""admin_postings.asp?action=ÉèÖÃ¹Ì¶¥&amp;BoardID="&Dvbbs.boardid&"&amp;ID="&AnnounceID&""" title=""½«±¾Ö÷ÌâÉèÖÃ¹Ì¶¥"">ÉèÖÃ¹Ì¶¥</a><br />"
-				TPL_Echo "<div class=""m_li_top"" style=""display:inline;"" onmouseover=""showmenu1('Menu_0',0);""><a href=""#"">Ö÷Ìâ¹ÜÀí</a>"
+				s=s& "	<a href=""admin_postings.asp?action=æå‡&amp;BoardID="&Dvbbs.boardid&"&amp;ID="&AnnounceID&""" title=""å°†æœ¬ä¸»é¢˜æå‡åˆ°å¸–å­åˆ—è¡¨æœ€å‰é¢"">æå‡å¸–å­</a><br />"
+				s=s& "	<a href=""admin_postings.asp?action=æ²‰åº•&amp;BoardID="&Dvbbs.boardid&"&amp;ID="&AnnounceID&""" title=""å°†æœ¬ä¸»é¢˜æ”¾åˆ°å¸–å­åˆ—è¡¨è¾ƒé åä½ç½®"">æ²‰åº•å¸–å­</a><br />"
+				s=s& "	<a href=""admin_postings.asp?action=è·Ÿå¸–ç®¡ç†&amp;BoardID="&Dvbbs.boardid&"&amp;ID="&AnnounceID&""" title=""æ‰¹é‡åˆ é™¤æœ¬ä¸»é¢˜çš„è·Ÿå¸–"">è·Ÿå¸–ç®¡ç†</a><br />"
+				s=s& "	<a href=""admin_postings.asp?action=åˆ é™¤ä¸»é¢˜&amp;BoardID="&Dvbbs.boardid&"&amp;ID="&AnnounceID&""" title=""æ³¨æ„ï¼šæœ¬æ“ä½œå°†åˆ é™¤æœ¬ä¸»é¢˜æ‰€æœ‰å¸–å­ï¼Œä¸èƒ½æ¢å¤"">åˆ é™¤å¸–å­</a><br />"
+				s=s& "	<a href=""admin_postings.asp?action=ç§»åŠ¨&amp;BoardID="&Dvbbs.boardid&"&amp;ID="&AnnounceID&"&amp;replyID="&ReplyID&""" title=""ç§»åŠ¨ä¸»é¢˜"">ç§»åŠ¨å¸–å­</a><br />"
+				s=s& "	<a href=""admin_postings.asp?action=è®¾ç½®å›ºé¡¶&amp;BoardID="&Dvbbs.boardid&"&amp;ID="&AnnounceID&""" title=""å°†æœ¬ä¸»é¢˜è®¾ç½®å›ºé¡¶"">è®¾ç½®å›ºé¡¶</a><br />"
+				TPL_Echo "<div class=""m_li_top"" style=""display:inline;"" onmouseover=""showmenu1('Menu_0',0);""><a href=""#"">ä¸»é¢˜ç®¡ç†</a>"
 				TPL_Echo "	<div class=""submenu submunu_popup"" id=""Menu_0"" onmouseout=""hidemenu1()"">"
 				If ""<>s Then TPL_Echo s
 				TPL_Echo "	</div></div>"
 			ElseIf IsSelfPost() Then
 				If 1=T_GetMoneyType Then
-					s=s& "		<a href=""BuyPost.asp?Action=Close&amp;BoardID="&Dvbbs.boardid&"&amp;PostTable="&TotalUseTable&"&amp;ID="&AnnounceID&"&amp;ReplyID="&ReplyID&""" title=""½áÌû¹ÜÀí"">½áÌû¹ÜÀí</a><br />"
+					s=s& "		<a href=""BuyPost.asp?Action=Close&amp;BoardID="&Dvbbs.boardid&"&amp;PostTable="&TotalUseTable&"&amp;ID="&AnnounceID&"&amp;ReplyID="&ReplyID&""" title=""ç»“å¸–ç®¡ç†"">ç»“å¸–ç®¡ç†</a><br />"
 				End If
 				If "1"=Dvbbs.GroupSetting(13) Then
 					If 1=G_LockTopic Then
-						s=s& "		<a href=""admin_postings.asp?action=½âËø&amp;BoardID="&Dvbbs.boardid&"&amp;ID="&AnnounceID&""" title=""½«±¾Ö÷Ìâ½â¿ªËø¶¨"">½â³ıËø¶¨</a><br />"
+						s=s& "		<a href=""admin_postings.asp?action=è§£é”&amp;BoardID="&Dvbbs.boardid&"&amp;ID="&AnnounceID&""" title=""å°†æœ¬ä¸»é¢˜è§£å¼€é”å®š"">è§£é™¤é”å®š</a><br />"
 					Else
-						s=s& "		<a href=""admin_postings.asp?action=Ëø¶¨&amp;BoardID="&Dvbbs.boardid&"&amp;ID="&AnnounceID&""" title=""Ëø¶¨±¾Ö÷Ìâ"">Ëø¶¨Ìû×Ó</a><br />"
+						s=s& "		<a href=""admin_postings.asp?action=é”å®š&amp;BoardID="&Dvbbs.boardid&"&amp;ID="&AnnounceID&""" title=""é”å®šæœ¬ä¸»é¢˜"">é”å®šå¸–å­</a><br />"
 					End If
 				End If
 				If "1"=Dvbbs.GroupSetting(11) Then
-					s=s& "<a href=""admin_postings.asp?action=¸úÌû¹ÜÀí&amp;BoardID="&Dvbbs.boardid&"&amp;ID="&AnnounceID&""" title=""ÅúÁ¿É¾³ı±¾Ö÷ÌâµÄ¸úÌû"">¸úÌû¹ÜÀí</a><br />"
-					s=s& "<a href=""admin_postings.asp?action=É¾³ıÖ÷Ìâ&amp;BoardID="&Dvbbs.boardid&"&amp;ID="&AnnounceID&""" title=""×¢Òâ£º±¾²Ù×÷½«É¾³ı±¾Ö÷ÌâËùÓĞÌû×Ó£¬²»ÄÜ»Ö¸´"">É¾³ıÌû×Ó</a><br />"
+					s=s& "<a href=""admin_postings.asp?action=è·Ÿå¸–ç®¡ç†&amp;BoardID="&Dvbbs.boardid&"&amp;ID="&AnnounceID&""" title=""æ‰¹é‡åˆ é™¤æœ¬ä¸»é¢˜çš„è·Ÿå¸–"">è·Ÿå¸–ç®¡ç†</a><br />"
+					s=s& "<a href=""admin_postings.asp?action=åˆ é™¤ä¸»é¢˜&amp;BoardID="&Dvbbs.boardid&"&amp;ID="&AnnounceID&""" title=""æ³¨æ„ï¼šæœ¬æ“ä½œå°†åˆ é™¤æœ¬ä¸»é¢˜æ‰€æœ‰å¸–å­ï¼Œä¸èƒ½æ¢å¤"">åˆ é™¤å¸–å­</a><br />"
 				End If
 				If "1"=Dvbbs.GroupSetting(12) Then
-					s=s& "<a href=""admin_postings.asp?action=ÒÆ¶¯&amp;BoardID="&Dvbbs.boardid&"&amp;ID="&AnnounceID&"&amp;replyID="&ReplyID&""" title=""ÒÆ¶¯Ö÷Ìâ"">ÒÆ¶¯Ìû×Ó</a><br />"
+					s=s& "<a href=""admin_postings.asp?action=ç§»åŠ¨&amp;BoardID="&Dvbbs.boardid&"&amp;ID="&AnnounceID&"&amp;replyID="&ReplyID&""" title=""ç§»åŠ¨ä¸»é¢˜"">ç§»åŠ¨å¸–å­</a><br />"
 				End If
 				If ""<>s Then
-					TPL_Echo "<div class=""m_li_top"" style=""display:inline;"" onmouseover=""showmenu1('Menu_0',0);""><a href=""jascript:;"">Ö÷Ìâ¹ÜÀí</a><div class=""submenu submunu_popup"" id=""Menu_0"" onmouseout=""hidemenu1()"">"
+					TPL_Echo "<div class=""m_li_top"" style=""display:inline;"" onmouseover=""showmenu1('Menu_0',0);""><a href=""jascript:;"">ä¸»é¢˜ç®¡ç†</a><div class=""submenu submunu_popup"" id=""Menu_0"" onmouseout=""hidemenu1()"">"
 					TPL_Echo s
 					TPL_Echo "</div></div>"
 				End If
@@ -478,7 +478,7 @@ Sub ParseUserNode(sToken)
 	i		= G_ItemList(10, G_Floor)
 	bShowAll	= False
 	If i>0 Then bShowAll = 2<>G_ItemList(8, G_Floor) Or Dvbbs.BoardMaster Or Dvbbs.UserID=G_UserList(0, G_ItemList(10, G_Floor)-1)
-	'			  ·Ç¿ÍÈËÌû ¶øÇÒ (·ÇÄäÃûÌû			»òÕß	 ÊÇ¹ÜÀíÔ±	»òÕß	ÊÇ×Ô¼º)
+	'			  éå®¢äººå¸– è€Œä¸” (éåŒ¿åå¸–			æˆ–è€…	 æ˜¯ç®¡ç†å‘˜	æˆ–è€…	æ˜¯è‡ªå·±)
 	If bShowAll Then
 		Select Case sToken
 			Case "userid"		TPL_Echo G_UserList(0, i-1)
@@ -497,9 +497,9 @@ Sub ParseUserNode(sToken)
 					Case 8	s2= Dvbbs.mainsetting(11)
 					Case Else s2= Dvbbs.mainsetting(5)
 				End Select
-				s=Split(Split(Application(Dvbbs.CacheName &"_groupsetting").documentElement.selectSingleNode("usergroup[@usergroupid='"& G_UserList(26, i-1) &"']/@groupsetting").text,",")(58),"¡ì")
+				s=Split(Split(Application(Dvbbs.CacheName &"_groupsetting").documentElement.selectSingleNode("usergroup[@usergroupid='"& G_UserList(26, i-1) &"']/@groupsetting").text,",")(58),"Â§")
 				TPL_Echo "<span style=""width:105px;filter:glow(color='"&s2&"',strength='2');"">"&(s(0)&replace(UserName,chr(255),"")&s(1))
-				If 2=G_ItemList(8, G_Floor) Then TPL_Echo "&nbsp;&nbsp;[ÒÑÄäÃû]"
+				If 2=G_ItemList(8, G_Floor) Then TPL_Echo "&nbsp;&nbsp;[å·²åŒ¿å]"
 				TPL_Echo "</span>"
 			Case "useremail"	TPL_Echo G_UserList(2, i-1)
 			Case "userpost"		TPL_Echo G_UserList(3, i-1)
@@ -532,16 +532,16 @@ Sub ParseUserNode(sToken)
 				If "1"=G_UserList(22, i-1) Then
 					Select Case s
 						Case "1"
-							TPL_Echo	"<img src=""Skins/Default/ofMale.gif"" alt=""Ë§¸çÓ´£¬ÀëÏß£¬ÓĞÈËÕÒÎÒÂğ£¿"" />"
+							TPL_Echo	"<img src=""Skins/Default/ofMale.gif"" alt=""å¸…å“¥å“Ÿï¼Œç¦»çº¿ï¼Œæœ‰äººæ‰¾æˆ‘å—ï¼Ÿ"" />"
 						Case Else
-							TPL_Echo	"<img src=""Skins/Default/ofFeMale.gif"" alt=""ÃÀÅ®Ñ½£¬ÀëÏß£¬ÁôÑÔ¸øÎÒ°É£¡"" />"
+							TPL_Echo	"<img src=""Skins/Default/ofFeMale.gif"" alt=""ç¾å¥³å‘€ï¼Œç¦»çº¿ï¼Œç•™è¨€ç»™æˆ‘å§ï¼"" />"
 					End Select
 				Else
 					Select Case s
 						Case "1"
-							TPL_Echo	"<img src=""Skins/Default/Male.gif"" alt=""Ë§¸ç£¬ÔÚÏßàŞ£¡"" />"
+							TPL_Echo	"<img src=""Skins/Default/Male.gif"" alt=""å¸…å“¥ï¼Œåœ¨çº¿å™¢ï¼"" />"
 						Case Else
-							TPL_Echo	"<img src=""Skins/Default/FeMale.gif"" alt=""ÃÀÅ®Ñ½£¬ÔÚÏß£¬¿ìÀ´ÕÒÎÒ°É£¡"" />"
+							TPL_Echo	"<img src=""Skins/Default/FeMale.gif"" alt=""ç¾å¥³å‘€ï¼Œåœ¨çº¿ï¼Œå¿«æ¥æ‰¾æˆ‘å§ï¼"" />"
 					End Select
 				End If
 			Case "userface"
@@ -559,7 +559,7 @@ Sub ParseUserNode(sToken)
 					s	= "0"
 				End If
 				s2	= s2 &	""" alt="""" />"
-				If "0"<>s Then	s2	= s2 &	("<br/><div><a href=""javascript:DispMagicEmot('"&s&"',350,500)"">²é¿´Ä§·¨Í·Ïñ</a></div>")
+				If "0"<>s Then	s2	= s2 &	("<br/><div><a href=""javascript:DispMagicEmot('"&s&"',350,500)"">æŸ¥çœ‹é­”æ³•å¤´åƒ</a></div>")
 				TPL_Echo	s2
 			Case "joindate"		TPL_Echo G_UserList(10, i-1)
 			Case "lastlogin"	TPL_Echo G_UserList(11, i-1)
@@ -591,7 +591,7 @@ Sub ParseUserNode(sToken)
 				TPL_Echo	G_UserList(27, i-1)(1)
 			Case "link_qq"
 				If Not IsArray(G_UserList(27, i-1)) Then	G_UserList(27, i-1)=Split(G_UserList(27, i-1), "|||")
-				If ""<>G_UserList(27, i-1)(1) Then TPL_Echo "	 | <a href=""tencent://message/?uin="&G_UserList(27, i-1)(1)&""" title=""µã»÷·¢ËÍQQÏûÏ¢¸ø"&UserName&""">QQ</a>"
+				If ""<>G_UserList(27, i-1)(1) Then TPL_Echo "	 | <a href=""tencent://message/?uin="&G_UserList(27, i-1)(1)&""" title=""ç‚¹å‡»å‘é€QQæ¶ˆæ¯ç»™"&UserName&""">QQ</a>"
 			Case "email"
 				TPL_Echo	G_UserList(28, i-1)
 			Case "homepage"
@@ -601,7 +601,7 @@ Sub ParseUserNode(sToken)
 				If Not IsArray(G_UserList(27, i-1)) Then	G_UserList(27, i-1)=Split(G_UserList(27, i-1), "|||")
 				TPL_Echo	G_UserList(27, i-1)(6)
 			
-			Rem ÒÔÏÂÎªÈÙÓşÑ«ÕÂ±êÇ©£¬fish 2010-2-19
+			Rem ä»¥ä¸‹ä¸ºè£èª‰å‹‹ç« æ ‡ç­¾ï¼Œfish 2010-2-19
 			Case "medal"
 				if Cint(dvbbs.Forum_Setting(104))=1 then
 					Dim j
@@ -619,26 +619,26 @@ Sub ParseUserNode(sToken)
 					TPL_Echo	s2
 				End If
 		End Select
-	Else	'ÓÎ¿Í »ò ÄäÃûÌû
+	Else	'æ¸¸å®¢ æˆ– åŒ¿åå¸–
 		Select Case sToken
 			Case "username"
 				s	= Split(G_ItemList(6, G_Floor), ".")
 				If i>0 Then
-					s2	= s2 &	"ÄäÃû"
+					s2	= s2 &	"åŒ¿å"
 				Else
-					s2	= s2 &	"¿ÍÈË"
+					s2	= s2 &	"å®¢äºº"
 				End If
 				s2	= s2 &	("(" & s(0) & "." & s(1) & ".*.*)")
 				TPL_Echo	s2
 			Case "richname"
 				s	= Split(G_ItemList(6, G_Floor), ".")
 				If i>0 Then
-					s2	= s2 &	"ÄäÃû"
+					s2	= s2 &	"åŒ¿å"
 				Else
-					s2	= s2 &	"¿ÍÈË"
+					s2	= s2 &	"å®¢äºº"
 				End If
 				s2	= s2 &	("(" & s(0) & "." & s(1) & ".*.*)")
-				s=Split(Split(Application(Dvbbs.CacheName &"_groupsetting").documentElement.selectSingleNode("usergroup[@usergroupid='7']/@groupsetting").text,",")(58),"¡ì")
+				s=Split(Split(Application(Dvbbs.CacheName &"_groupsetting").documentElement.selectSingleNode("usergroup[@usergroupid='7']/@groupsetting").text,",")(58),"Â§")
 				TPL_Echo "<span style=""width:130px;filter:glow(color='gray',strength='2');"">"&(s(0)&s2&s(1)&"</span>")
 			Case "userface"
 				If i>0 Then
@@ -676,7 +676,7 @@ Sub ParseBBSListNode(sToken)
 		Case "title"
 			TPL_Echo Dvbbs.Replacehtml(Dvbbs.ChkBadWords(G_ItemList(2, G_Floor)))
 		Case "tyisbest"
-			Rem ¾«»ªÌû¼Ó¸ÇÕÂ,Ğ¡Ò×
+			Rem ç²¾åå¸–åŠ ç›–ç« ,å°æ˜“
 			If 1=G_ItemList(9, G_Floor) Then
 		    TPL_Echo "<span class=""isbestcss""></span>"
 			end If
@@ -687,21 +687,21 @@ Sub ParseBBSListNode(sToken)
 			If i>0 Then
 				i	= G_UserList(26, i-1)
 			Else
-				i	= 7	'¿ÍÈË
+				i	= 7	'å®¢äºº
 			End If
-			If 0=G_Floor And 1=G_CurrentPage And CLng(G_ItemList(20, G_Floor))=0 Then	'¶¥Â¥ĞèÒªÅĞ¶Ï¹ºÂòÌû
-				If G_LockTopic Then TPL_Echo "<div class=""limitinfo"">Ìù×ÓÒÑ±»Ëø¶¨</div><br/>"
+			If 0=G_Floor And 1=G_CurrentPage And CLng(G_ItemList(20, G_Floor))=0 Then	'é¡¶æ¥¼éœ€è¦åˆ¤æ–­è´­ä¹°å¸–
+				If G_LockTopic Then TPL_Echo "<div class=""limitinfo"">è´´å­å·²è¢«é”å®š</div><br/>"
 				If 3=T_GetMoneyType Then
-					TPL_Echo "<div class=""limitinfo""><font color=""gray"">ÒÔÏÂÄÚÈİĞèÒªÖ§¸¶ <b><font color=""red"">"&G_ItemList(17, G_Floor)&"</font></b> ¸ö½ğ±Ò·½¿É²é¿´£¬"
+					TPL_Echo "<div class=""limitinfo""><font color=""gray"">ä»¥ä¸‹å†…å®¹éœ€è¦æ”¯ä»˜ <b><font color=""red"">"&G_ItemList(17, G_Floor)&"</font></b> ä¸ªé‡‘å¸æ–¹å¯æŸ¥çœ‹ï¼Œ"
 					If IsSelfPost() Then
-						TPL_Echo "ÕâÊÇÄú·¢µÄÌû×Ó"
+						TPL_Echo "è¿™æ˜¯æ‚¨å‘çš„å¸–å­"
 					ElseIf TrueMaster Then
-						TPL_Echo "ÓÉÓÚÄúÊÇ¹¤×÷ÈËÔ±£¬Äã¿ÉÒÔ¿´µ½ÄÚÈİ¡£"
+						TPL_Echo "ç”±äºæ‚¨æ˜¯å·¥ä½œäººå‘˜ï¼Œä½ å¯ä»¥çœ‹åˆ°å†…å®¹ã€‚"
 					Else
 						If Trim(PostBuyUser)="" Then PostBuyUser="0@@@-1@@@0@@@|||$PayMoney|||"
 						postbuyusers=split(PostBuyUser,"|||")
 						postbuyinfo=postbuyusers(0)
-						postbuyinfo=Split(postbuyinfo,"@@@") 'Rem postbuyinfo(0) ÊÕÈëmoney   postbuyinfo(1) ¹ºÂòÏŞÖÆmaxbuy   postbuyinfo(2) vipÊÇ·ñĞèÒª¹ºÂònotvipbuy   postbuyinfo(3) ÔÊĞí¹ºÂòÓÃ»§ÁĞ±íbuyuser
+						postbuyinfo=Split(postbuyinfo,"@@@") 'Rem postbuyinfo(0) æ”¶å…¥money   postbuyinfo(1) è´­ä¹°é™åˆ¶maxbuy   postbuyinfo(2) vipæ˜¯å¦éœ€è¦è´­ä¹°notvipbuy   postbuyinfo(3) å…è®¸è´­ä¹°ç”¨æˆ·åˆ—è¡¨buyuser
 						If UBound(postbuyinfo)<=2 Then Exit Sub
 						a=False
 						For j=2 to UBound(postbuyusers)
@@ -710,19 +710,19 @@ Sub ParseBBSListNode(sToken)
 							End If
 						Next
 						If a Then
-							TPL_Echo "ÄúÒÑ¾­¹ºÂò¡£"
+							TPL_Echo "æ‚¨å·²ç»è´­ä¹°ã€‚"
 						ElseIf Dvbbs.VipGroupUser And "1"=postbuyinfo(2) Then
-							TPL_Echo "ÓÉÓÚÄúÊÇvipÓÃ»§£¬²¢ÇÒÒòÎªÉèÖÃÁËvipÓÃ»§¿ÉÃâ¹ºÂò²é¿´£¬Äú¿ÉÒÔÖ±½Ó²é¿´¡£"
+							TPL_Echo "ç”±äºæ‚¨æ˜¯vipç”¨æˆ·ï¼Œå¹¶ä¸”å› ä¸ºè®¾ç½®äº†vipç”¨æˆ·å¯å…è´­ä¹°æŸ¥çœ‹ï¼Œæ‚¨å¯ä»¥ç›´æ¥æŸ¥çœ‹ã€‚"
 						ElseIf (""=postbuyinfo(3) Or InStr(","&postbuyinfo(3)&",", ","&Dvbbs.MemberName&",")>0) And Dvbbs.userid>0 Then
-							TPL_Echo "ÄúĞèÒª¹ºÂò·½¿É¿´µ½ÄÚÈİ¡£</font><br /><input type=""button"" value=""ÎÒÒª²é¿´ÄÚÈİ£¬¾ö¶¨¹ºÂò"" onclick=""location.href='BuyPost.asp?action=buy&amp;boardid="&Dvbbs.BoardID&"&amp;id="&AnnounceID&"&amp;ReplyID="&G_ItemList(0, G_Floor)&"&amp;PostTable="&TotalUsetable&"'""/>"
+							TPL_Echo "æ‚¨éœ€è¦è´­ä¹°æ–¹å¯çœ‹åˆ°å†…å®¹ã€‚</font><br /><input type=""button"" value=""æˆ‘è¦æŸ¥çœ‹å†…å®¹ï¼Œå†³å®šè´­ä¹°"" onclick=""location.href='BuyPost.asp?action=buy&amp;boardid="&Dvbbs.BoardID&"&amp;id="&AnnounceID&"&amp;ReplyID="&G_ItemList(0, G_Floor)&"&amp;PostTable="&TotalUsetable&"'""/>"
 							TPL_Echo "<br/></div>"
 							Exit Sub
 						Else
-							TPL_Echo "ÄúĞèÒª¹ºÂò·½¿É¿´µ½ÄÚÈİ¡£"
+							TPL_Echo "æ‚¨éœ€è¦è´­ä¹°æ–¹å¯çœ‹åˆ°å†…å®¹ã€‚"
 							If Dvbbs.userid>0 Then
-								TPL_Echo "Â¥Ö÷ÉèÖÃÁËÄú²»¿ÉÒÔ¹ºÂò¡£"
+								TPL_Echo "æ¥¼ä¸»è®¾ç½®äº†æ‚¨ä¸å¯ä»¥è´­ä¹°ã€‚"
 							Else
-								TPL_Echo "Äú»¹Î´µÇÂ¼£¬²»ÄÜ¹ºÂò¡£"
+								TPL_Echo "æ‚¨è¿˜æœªç™»å½•ï¼Œä¸èƒ½è´­ä¹°ã€‚"
 							End If
 							TPL_Echo "</font><br/></div>"
 							Exit Sub
@@ -732,7 +732,7 @@ Sub ParseBBSListNode(sToken)
 				End If
 			End If
 			Ubblists=G_ItemList(15, G_Floor)
-			'Ôö¼ÓÔÊĞí¹ÜÀíÔ±·¢iframe¹¦ÄÜ by Å£Í·
+			'å¢åŠ å…è®¸ç®¡ç†å‘˜å‘iframeåŠŸèƒ½ by ç‰›å¤´
 			if Dvbbs.userID<>0 then
 			If dvbbs.checknumeric(G_ItemList(10, G_Floor))>0 Then Dv_ubb.ismanager1= G_UserList(26, G_ItemList(10, G_Floor)-1)
 			End If 
@@ -750,30 +750,30 @@ Sub ParseBBSListNode(sToken)
 		Case "dateandtime" TPL_Echo G_ItemList(3, G_Floor)
 		Case "authorid"
             If authorid = 0 Then
-                TPL_Echo "[<a href=""dispbbs.asp?boardid="&Dvbbs.BoardID&"&Id="&AnnounceID&"&authorid="&GetPostUserID()&""">Ö»¿´¸Ã×÷Õß</a>]"
+                TPL_Echo "[<a href=""dispbbs.asp?boardid="&Dvbbs.BoardID&"&Id="&AnnounceID&"&authorid="&GetPostUserID()&""">åªçœ‹è¯¥ä½œè€…</a>]"
             Else
-                TPL_Echo "[<a href=""dispbbs.asp?boardid="&Dvbbs.BoardID&"&Id="&AnnounceID&""">ÏÔÊ¾È«²¿Ìû×Ó</a>]"
+                TPL_Echo "[<a href=""dispbbs.asp?boardid="&Dvbbs.BoardID&"&Id="&AnnounceID&""">æ˜¾ç¤ºå…¨éƒ¨å¸–å­</a>]"
             End If
 
 		Case "showpage"
 			TPL_ShowPage	G_CurrentPage, G_Childs, Dvbbs.CheckNumeric(Dvbbs.Board_Setting(27)), 10, "dispbbs.asp?boardid="&Dvbbs.BoardID&"&id="&AnnounceID&"&authorid="&authorid&"&page="&Dvbbs.CheckNumeric(request("page"))&"&star="
 		Case "bestinfo"
 			If 1=G_ItemList(9, G_Floor) Then
-				TPL_Echo "<div class=""info""><img src="""&Dvbbs.Forum_PicUrl&"jing.gif"" border=""0"" title=""±¾Ìû±»¼ÓÎª¾«»ª"" align=""absmiddle""/>[±¾Ìû±»¼ÓÎª¾«»ª]</div>"
+				TPL_Echo "<div class=""info""><img src="""&Dvbbs.Forum_PicUrl&"jing.gif"" border=""0"" title=""æœ¬å¸–è¢«åŠ ä¸ºç²¾å"" align=""absmiddle""/>[æœ¬å¸–è¢«åŠ ä¸ºç²¾å]</div>"
 			End If
 		Case "bestpic"
 			If 1=G_ItemList(9, G_Floor) Then
-				TPL_Echo "<img src=""images/best.gif"" border=""0"" style=""position:absolute;z-index:1;"" title=""¾«»ªÌû×ÓÈÏÖ¤"" align=""absmiddle"" />"
+				TPL_Echo "<img src=""images/best.gif"" border=""0"" style=""position:absolute;z-index:1;"" title=""ç²¾åå¸–å­è®¤è¯"" align=""absmiddle"" />"
 			End If
 		Case "appraise"
 			If IsNull(G_ItemList(12, G_Floor)) Then Exit Sub
 			SplitIsAgree
 			a = G_ItemList(12, G_Floor)
 			If a(1)>0 Then
-				TPL_Echo	"<div class=""info"">°æÖ÷ÆÀ¶¨£º<img src="""&Dvbbs.Forum_PicUrl&"agree.gif"" border=""0"" alt=""ºÃÆÀ£¬»ñµÃ"&a(1)&"¸ö½ğ±Ò½±Àø"" align=""absmiddle""/>ºÃÆÀ£¬»ñµÃ<font color=""red"">"&a(1)&"</font>¸ö½ğ±Ò½±Àø</div>"
+				TPL_Echo	"<div class=""info"">ç‰ˆä¸»è¯„å®šï¼š<img src="""&Dvbbs.Forum_PicUrl&"agree.gif"" border=""0"" alt=""å¥½è¯„ï¼Œè·å¾—"&a(1)&"ä¸ªé‡‘å¸å¥–åŠ±"" align=""absmiddle""/>å¥½è¯„ï¼Œè·å¾—<font color=""red"">"&a(1)&"</font>ä¸ªé‡‘å¸å¥–åŠ±</div>"
 				If ""<>a(3) Then TPL_Echo "(" & a(3) & ")"
 			ElseIf a(0)>0 Then
-				TPL_Echo	"<div class=""info"">°æÖ÷ÆÀ¶¨£º<img src="""&Dvbbs.Forum_PicUrl&"disagree.gif"" border=""0"" alt=""²îÆÀ£¬¿Û³ı"&a(0)&"¸ö½ğ±Ò"" align=""absmiddle""/>²îÆÀ£¬¿Û³ı<font color=""red"">"&a(0)&"</font>¸ö½ğ±Ò</div>"
+				TPL_Echo	"<div class=""info"">ç‰ˆä¸»è¯„å®šï¼š<img src="""&Dvbbs.Forum_PicUrl&"disagree.gif"" border=""0"" alt=""å·®è¯„ï¼Œæ‰£é™¤"&a(0)&"ä¸ªé‡‘å¸"" align=""absmiddle""/>å·®è¯„ï¼Œæ‰£é™¤<font color=""red"">"&a(0)&"</font>ä¸ªé‡‘å¸</div>"
 				If ""<>a(2) Then TPL_Echo "(" & a(2) & ")"
 			End If
 		
@@ -784,240 +784,5 @@ Sub ParseBBSListNode(sToken)
 				Select Case i
 					Case 1
 					If Dvbbs.BoardMaster Then 
-					TPL_Echo "<div class=""info"">ĞüÉÍ½ğ±ÒÌû£¬ÒªĞüÉÍ <font color=""red"">" & G_ItemList(17, G_Floor) & "</font> ¸ö½ğ±Ò</div>"
-					TPL_Echo "<div class=""info""><a href=""BuyPost.asp?Action=Cancel&PostTable="&TotalUsetable&"&BoardId="&Dvbbs.BoardID&"&ID="&AnnounceID&"&ReplyID="&ReplyID_a&"&UserName="&UserName&"&topic="&Dvbbs.Replacehtml(Dvbbs.ChkBadWords(G_ItemList(2, G_Floor)))&""" title=""È¡Ïû½ğ±ÒÌû"" target=""_blank"">È¡Ïû½ğ±ÒÌû</a></div>"
-					Else 
-					TPL_Echo "<div class=""info"">ĞüÉÍ½ğ±ÒÌû£¬ÒªĞüÉÍ <font color=""red"">" & G_ItemList(17, G_Floor) & "</font> ¸ö½ğ±Ò</div>"
-					End If 
-					Case 5
-					If Dvbbs.BoardMaster Then 
-					TPL_Echo "<div class=""info"">ĞüÉÍ½ğ±ÒÌû£¬ÒªĞüÉÍ <font color=""red"">" & G_ItemList(17, G_Floor) & "</font> ¸ö½ğ±Ò[ÒÑ½áÌû]</div>"
-					TPL_Echo "<div class=""info""><a href=""BuyPost.asp?Action=Cancel&PostTable="&TotalUsetable&"&BoardId="&Dvbbs.BoardID&"&ID="&AnnounceID&"&ReplyID="&ReplyID_a&"&UserName="&UserName&"&topic="&Dvbbs.Replacehtml(Dvbbs.ChkBadWords(G_ItemList(2, G_Floor)))&""" title=""È¡Ïû½ğ±ÒÌû"" target=""_blank"">È¡Ïû½ğ±ÒÌû</a></div>"	
-					Else 
-					TPL_Echo "<div class=""info"">ĞüÉÍ½ğ±ÒÌû£¬ÒªĞüÉÍ <font color=""red"">" & G_ItemList(17, G_Floor) & "</font> ¸ö½ğ±Ò[ÒÑ½áÌû]</div>"
-					End If 
-					Case 2
-					If Dvbbs.BoardMaster Then
-					TPL_Echo "<div class=""info"">»ñÔù½ğ±ÒÌû£¬¹²»ñµÃ <font color=""red"">" & G_ItemList(17, G_Floor) & "</font> ¸ö½ğ±Ò</div>"
-					TPL_Echo "<div class=""info""><a href=""BuyPost.asp?Action=Cancel&PostTable="&TotalUsetable&"&BoardId="&Dvbbs.BoardID&"&ID="&AnnounceID&"&ReplyID="&ReplyID_a&"&UserName="&UserName&"&topic="&Dvbbs.Replacehtml(Dvbbs.ChkBadWords(G_ItemList(2, G_Floor)))&""" title=""È¡Ïû½ğ±ÒÌû"" target=""_blank"">È¡Ïû½ğ±ÒÌû</a></div>"	
-					Else 
-					TPL_Echo "<div class=""info"">»ñÔù½ğ±ÒÌû£¬¹²»ñµÃ <font color=""red"">" & G_ItemList(17, G_Floor) & "</font> ¸ö½ğ±Ò</div>"
-					End If 
-					Case 3
-					If Dvbbs.BoardMaster Then
-					TPL_Echo "<div class=""info""><a href=""BuyPost.asp?Action=Cancel&PostTable="&TotalUsetable&"&BoardId="&Dvbbs.BoardID&"&ID="&AnnounceID&"&ReplyID="&ReplyID_a&"&UserName="&UserName&"&topic="&Dvbbs.Replacehtml(Dvbbs.ChkBadWords(G_ItemList(2, G_Floor)))&""" title=""È¡Ïû½ğ±ÒÌû"" target=""_blank"">È¡Ïû½ğ±ÒÌû</a></div>"	
-					End If 
-					Case Else
-				End Select
-			Else
-				If (1=i Or 5=i) And G_ItemList(10, G_Floor)>0 Then
-					If G_UserList(0, G_ItemList(10, G_Floor)-1)<>PostUserid Then
-						TPL_Echo "<div class=""info"">»ñµÃ<font color=""red"">" & G_ItemList(17, G_Floor) & "</font>¸ö½ğ±Ò</div>"
-					End If
-				End If
-				If 1=i And PostUserid=Dvbbs.UserID And G_ItemList(10, G_Floor)>0 Then
-					If G_UserList(0, G_ItemList(10, G_Floor)-1)<>Dvbbs.UserID Then
-						TPL_Echo "<div class=""info""><a href=""BuyPost.asp?Action=Send&PostTable="&TotalUsetable&"&BoardId="&Dvbbs.BoardID&"&ID="&AnnounceID&"&ReplyID="&ReplyID_a&"&UserName="&UserName&""" title=""ĞüÉÍ½ğ±Ò¸ø»áÔ±"&UserName&""" target=""_blank"">ĞüÉÍ½ğ±Ò</a></div>"
-					End If
-				End If
-				If 2=i Then TPL_Echo "<span class=""info"">ÔùËÍÂ¥Ö÷:<font color=""red"">" & G_ItemList(17, G_Floor) & "</font>¸ö½ğ±Ò</span>"
-			End If
-		Case "usetools"
-			If ""<>G_ItemList(18, G_Floor) Or (0<T_GetMoneyType And (G_Moved+G_Floor)=0) Then
-				TPL_Echo "<hr /><a href=""javascript:;"" onclick=""openScript('ViewInfo.asp?t=2&amp;action=View&amp;PostTable="&TotalUsetable&"&amp;BoardId="&Dvbbs.BoardID&"&amp;ID="&AnnounceID&"&amp;ReplyID="&ReplyID_a&"',600,450)""><img src="""&Dvbbs.Forum_PicUrl&"mini_query.gif"" border=""0"" alt=""²é¿´Ê¹ÓÃµÀ¾ßÏêÏ¸ĞÅÏ¢""  class=""imgonclick"" /></a>"
-			End If
-		Case "topicface"
-			TPL_Echo G_ItemList(5, G_Floor)
-		Case "ip"
-			If "1"=Dvbbs.GroupSetting(30) And (TrueMaster Or 3<>Dvbbs.UserGroupID) Then TPL_Echo "&nbsp;&nbsp;&nbsp;Post IP£º<a href=""TopicOther.asp?t=1&amp;boardid="&Dvbbs.Boardid&"&amp;userid="&GetPostUserID()&"&amp;ip="&G_ItemList(6, G_Floor)&"&amp;action=lookip"" title=""µã»÷²é¿´ÓÃ»§À´Ô´¼°¹ÜÀí"">"&G_ItemList(6, G_Floor)&"</a>"
-		Case "magicface"
-			If 0=G_Floor And G_CurrentPage=1 And Skin=0 Then
-				i=InStr(G_Expression,"|")
-				If i>0 Then
-					a=Left(G_Expression, i-1)
-					If "0"<>a Then
-						TPL_Echo "<div style=""float:right;margin-right:20px;""><a href=""javascript:DispMagicEmot("&a&",350,500)""><img src=""dv_plus/tools/magicface/gif/"&a&".gif"" border=""0"" alt=""""/><br /><br/></a></div><script type=""text/javascript"" language=""javascript"">LoadMagicEmot("&a&","&AnnounceID&");</script>"
-					End If
-				End If
-			End If
-		Case "adminlist"
-			i=GetPostUserID()
-			TPL_Echo "<span class=""m_li_top"" style=""display:inline;"" onmouseover=""showmenu1('Menu_"&ReplyID_a&"',0);""><a href=""#"">µ¥Ìû¹ÜÀí</a>"
-			TPL_Echo "	<div class=""submenu submunu_popup"" id=""Menu_"&ReplyID_a&""" onmouseout=""hidemenu1()"">"
-			TPL_Echo "	<a href=""TopicOther.asp?t=6&amp;BoardID="&Dvbbs.boardid&"&amp;id="&AnnounceID&"&amp;ReplyID="&ReplyID_a&""">¾Ù±¨Ìû×Ó</a><br />"
-			If Dvbbs.Boardmaster Then
-				If G_Floor>0 Or G_CurrentPage>1 Then
-					TPL_Echo "	<a href=""admin_postings.asp?action=dele_a&amp;BoardID="&Dvbbs.boardid&"&amp;replyID="&ReplyID_a&"&amp;ID="&AnnounceID&"&amp;star=1&amp;userid="&i&""">É¾³ıµ¥Ìû</a><br />"
-				End If
-				TPL_Echo "	<a href=""admin_postings.asp?action=copy_a&amp;BoardID="&Dvbbs.boardid&"&amp;replyID="&ReplyID_a&"&amp;ID="&AnnounceID&"&amp;star=1&amp;userid="&i&""">¸´ÖÆÌû×Ó</a><br />"
-				If 0=G_ItemList(9,G_Floor) Then
-					TPL_Echo "<a href=""admin_postings.asp?action=isbest_a&amp;BoardID="&Dvbbs.boardid&"&amp;replyID="&ReplyID_a&"&amp;ID="&AnnounceID&"&amp;star=1&amp;userid="&i&""">¼ÓÎª¾«»ª</a><br />"
-				Else
-					TPL_Echo "<a href=""admin_postings.asp?action=nobest_a&amp;BoardID="&Dvbbs.boardid&"&amp;replyID="&ReplyID_a&"&amp;ID="&AnnounceID&"&amp;star="&G_CurrentPage&"&amp;userid="&GetPostUserID()&""">½â³ı¾«»ª</a><br/>"
-				End If
-				Select Case G_ItemList(16,G_Floor)
-					Case 2
-						TPL_Echo "<a href=""admin_postings.asp?action=nolockpage_a&amp;BoardID="&Dvbbs.boardid&"&amp;replyID="&ReplyID_a&"&amp;ID="&AnnounceID&"&amp;star="&G_CurrentPage&"&amp;userid="&GetPostUserID()&""">½â³ıÆÁ±Î</a><br />"
-					Case 3
-						TPL_Echo "<a href=""AccessTopic.asp?action=unlock&amp;BoardID="&Dvbbs.boardid&"&amp;replyID="&ReplyID_a&"&amp;ID="&AnnounceID&""">ÉóºËÍ¨¹ı</a><br />"
-					Case Else
-						TPL_Echo "<a href=""admin_postings.asp?action=islockpage_a&amp;BoardID="&Dvbbs.boardid&"&amp;replyID="&ReplyID_a&"&amp;ID="&AnnounceID&"&amp;star="&G_CurrentPage&"&amp;userid="&GetPostUserID()&""">µ¥ÌûÆÁ±Î</a><br />"
-				End Select
-				TPL_Echo "	<a href=""admin_postings.asp?action=RewardMoney&amp;BoardID="&Dvbbs.boardid&"&amp;replyID="&ReplyID_a&"&amp;ID="&AnnounceID&"&amp;star=1"" title=""ºÃÆÀ»ò²îÆÀ£¬¿É½±Àø»ò¿Û³ı¸ÃÌûÓÃ»§Ïà¹Ø·ÖÖµ"">°æÖ÷ÆÀ¶¨</a><br />"
-			Else
-				If ((G_Floor>0 Or G_CurrentPage>1) And IsSelfPost() And "1"=Dvbbs.GroupSetting(11)) Then
-					TPL_Echo "	<a href=""admin_postings.asp?action=dele_a&amp;BoardID="&Dvbbs.boardid&"&amp;replyID="&ReplyID_a&"&amp;ID="&AnnounceID&"&amp;star=1&amp;userid="&i&""">É¾³ıµ¥Ìû</a><br />"
-				End If
-			End If
-			If "1"=Dvbbs.Forum_Setting(90) Then TPL_Echo "	<a title=""¶Ô±¾ÌûÊ¹ÓÃÂÛÌ³µÀ¾ß"" href=""javascript:openScript('plus_Tools_InfoSetting.asp?action=0&amp;BoardID="&Dvbbs.boardid&"&amp;TopicID="&AnnounceID&"&amp;ReplyID="&ReplyID_a&"',500,400)"">Ê¹ÓÃµÀ¾ß</a><br />"
-			TPL_Echo "	</div></span>"
-		Case Else
-	End Select
-End Sub
-
-Sub SplitIsAgree()
-	Dim a : a = G_ItemList(12, G_Floor)
-	If Not IsArray(a) Then
-		a = Split(G_ItemList(12, G_Floor), "|")
-		If UBound(a)<6 Then
-			If UBound(a)<1 Then
-				a = Split("0|0|||0|0|0","|")
-			Else
-				a = Split(G_ItemList(12, G_Floor)&"|||0|0|0","|")
-			End If
-		End If
-		G_ItemList(12, G_Floor) = a
-	End If
-End Sub
-
-Function Topic_Ads(n)
-		Randomize
-		Topic_Ads=Dvbbs.Forum_ads(n)(CInt(UBound(Dvbbs.Forum_ads(n))*Rnd))
-End Function
-
-Sub ParseADNode(sToken)
-	If 0=G_Floor And UBound(Dvbbs.Forum_ads)>23 Then
-		Select Case sToken
-			Case "first_body_top"
-				If "1"=Dvbbs.Forum_ads(18) Then
-					Dvbbs.Forum_ads(19)=Split(Dvbbs.Forum_ads(19), "#####")
-					TPL_Echo	"<div class=""first_body_top"">"&Topic_Ads(19)&"</div>"
-				End If
-			Case "first_body_bottom"
-				If "1"=Dvbbs.Forum_ads(20) Then
-					Dvbbs.Forum_ads(21)=Split(Dvbbs.Forum_ads(21), "#####")
-					TPL_Echo	"<div class=""first_body_bottom"">"&Topic_Ads(21)&"</div>"
-				End If
-			Case "first_body_left"
-				If "1"=Dvbbs.Forum_ads(22) Then
-					Dvbbs.Forum_ads(23)=Split(Dvbbs.Forum_ads(23), "#####")
-					TPL_Echo	"<div class=""first_body_left"">"&Topic_Ads(23)&"</div>"
-				End If
-			Case "first_body_right"
-				If "2"=Dvbbs.Forum_ads(22) Then
-					Dvbbs.Forum_ads(23)=Split(Dvbbs.Forum_ads(23), "#####")
-					TPL_Echo	"<div class=""first_body_right"">"&Topic_Ads(23)&"</div>"
-				End If
-			Case Else
-		End Select
-	End If
-	Select Case sToken
-		Case "bbslist_bottom"
-			If "1"=Dvbbs.Forum_ads(7) Then	TPL_Echo	Topic_Ads(14)
-		Case Else
-	End Select
-End Sub
-
-Sub TPL_ParseNode(sTokenType, sTokenName)
-	Select Case sTokenType
-		Case "page"
-			ParsePageNode		sTokenName
-		Case "user"
-			ParseUserNode	sTokenName
-		Case "bbslist"
-			ParseBBSListNode	sTokenName
-		Case "ad"
-			ParseADNode			sTokenName
-		Case "qcomic_plus"
-			DIM Qcomic_setting, codeStr
-			Qcomic_setting = Split(Dvbbs.qcomic_plus_setting(), "||||")
-			codeStr = "phid="&Trim(G_ItemList(21, G_Floor))&"&spassword="&Qcomic_setting(2)&"&ctime="&Now()
-			Select Case sTokenName
-				Case "qcomic_enable"	:	TPL_Echo "true"
-				Case "qcomic_sid"		:	TPL_Echo Qcomic_setting(1)
-				Case "qcomic_sid_phid"	:	TPL_Echo Qcomic_setting(1)&"_"&Trim(G_ItemList(21, G_Floor))
-				Case "qcomic_auto"		:	TPL_Echo "0"
-				Case "qcomic_code"		:	TPL_Echo Server.UrlEncode(AuthCode(codeStr, "ENCODE",Qcomic_setting(3)))
-				Case "qcomic_owidth"	:	TPL_Echo Qcomic_setting(4)
-				Case "qcomic_oheight"	:	TPL_Echo Qcomic_setting(5)
-			End Select
-	End Select
-End Sub
-
-Sub TPL_ParseArea(sTokenName, sTemplate)
-	Dim iUbd,sTemp
-	Select Case sTokenName
-		Case "bbslist"
-			iUbd = UBound(G_ItemList, 2)
-			If "1"=Dvbbs.Forum_ads(7) Then	Dvbbs.Forum_ads(14)=Split(Dvbbs.Forum_ads(14),"#####")
-			For G_Floor=0 To iUbd
-				'ÏÂÃæ¼¸¸ö¸³ÖµÓÃÔÚdv_ubbcode.asp
-				RootID_a	= G_ItemList(7, G_Floor)
-				AnnounceID_a= RootID_a
-				ReplyID_a	= G_ItemList(0, G_Floor)
-				UserName	= G_ItemList(1, G_Floor)
-				PostBuyUser = G_ItemList(19, G_Floor)
-				TPL_Scan	sTemplate
-			Next
-		Case "userinfo"
-			If G_ItemList(10, G_Floor)>0 Then
-				If 2<>G_ItemList(8, G_Floor) Or Dvbbs.BoardMaster Or _
-				Dvbbs.UserID=G_UserList(0, G_ItemList(10, G_Floor)-1) Then TPL_Scan	sTemplate
-			End If
-		Case "boke"
-			If 1=Dvbbs.Forum_setting(99) Then	TPL_Scan	sTemplate
-		Case "bbslimit"
-			sTemp=""
-			If 1=G_ItemList(9, G_Floor) Then
-				If "1"<>Dvbbs.GroupSetting(41) Then sTemp="<div class=""limitinfo"">ÄúÎŞÈ¨²é¿´¾«»ªÌû×Ó</div>"
-			Else
-				Select Case G_ItemList(16, G_Floor)
-					Case 2 sTemp="<div class=""limitinfo"">ÄÚÈİ±»ÆÁ±Î</div>"
-					Case 3 sTemp="<div class=""limitinfo"">ÄÚÈİ´ıÉóºË</div>"
-					Case Else
-						If G_ItemList(10, G_Floor)>0 Then
-							Select Case G_UserList(13, G_ItemList(10, G_Floor)-1)
-								Case 1 sTemp="<div class=""limitinfo"">ÓÃ»§ÒÑ±»Ëø¶¨</div>"
-								Case 2 sTemp="<div class=""limitinfo"">ÓÃ»§ÒÑ¾­±»ÆÁ±Î</div>"
-								Case Else
-							End Select
-						End If
-				End Select
-			End If
-			If ""<>sTemp Then
-				TPL_Echo sTemp
-			End If
-			If ""=sTemp Or TrueMaster Or (Dvbbs.Boardmaster And 3<>Dvbbs.UserGroupID) Then
-				TPL_Scan	sTemplate
-			End If
-		Case "qcomic_plus"
-			If Dvbbs.qcomic_plus Then
-				If Trim(G_ItemList(21, G_Floor))<>"" And Trim(G_ItemList(21, G_Floor))<>"0" Then
-					TPL_Scan	sTemplate
-				End If
-			End If
-		Case "logined"
-			If Dvbbs.userid>0 Then TPL_Scan	sTemplate
-		Case "showvote"
-			If G_IsVote>0 And 1=G_CurrentPage Then LoadAndParseVote sTemplate
-		Case "canreply"
-			If G_CanReply Then TPL_Scan	sTemplate
-		Case "canedit"
-			If (IsSelfPost() And Dvbbs.GroupSetting(10)="1") Or Dvbbs.boardmaster Then TPL_Scan	sTemplate
-		Case "tenpay"
-			If Dvbbs.Board_Setting(67)=1 Then	TPL_Scan sTemplate
-	End Select
-End Sub
-Dvbbs.Footer
-Dvbbs.PageEnd
-%>
+					TPL_Echo "<div class=""info"">æ‚¬èµé‡‘å¸å¸–ï¼Œè¦æ‚¬èµ <font color=""red"">" & G_ItemList(17, G_Floor) & "</font> ä¸ªé‡‘å¸</div>"
+					TPL_Echo "<div class=""info""><a href=""BuyPost.asp?Action=Cancel&PostTable="&TotalUsetable&"&BoardId="&Dvbbs.BoardID&"&ID="&AnnounceIor=""red"">"&a(1)&"</font>æ¶“

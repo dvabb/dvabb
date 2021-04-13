@@ -19,20 +19,20 @@ Footer()
 Sub Main()
 %>
 <table cellpadding="3" cellspacing="1" border="0" align="center" width="100%">
-<tr><th colspan="2" height="23">ÂÛÌ³Ê×Ò³µ÷ÓÃ¹ÜÀí</th></tr>
+<tr><th colspan="2" height="23">è®ºå›é¦–é¡µè°ƒç”¨ç®¡ç†</th></tr>
 <tr>
 <td width="20%" class="td1" align="center">
-<button Style="width:80;height:50;border: 1px outset;" class="button">×¢ÒâÊÂÏî</button>
+<button Style="width:80;height:50;border: 1px outset;" class="button">æ³¨æ„äº‹é¡¹</button>
 </td>
 <td width="80%" class="td2">
-	¢ÙÌí¼Óµ÷ÓÃºó£¬ÔÚÁÐ±íÖÐµã»÷ÏàÓ¦µÄÔ¤ÀÀ¿ÉÒÔ¿´µ½Ð§¹û£¬½«µ÷ÓÃ´úÂë¸´ÖÆµ½ÄãµÄÊ×Ò³¾Í¿ÉÒÔÁË¡£
-	<br>¢ÚÈç¹ûÄãµÄÊ×Ò³ÊÇºÍÂÛÌ³³ÌÐò·Ö¿ª£¬ÔÚÌîÐ´µ÷ÓÃÄ£°åÊ±½¨ÒéÓÃÉÏ¾ø¶ÔµØÖ·Â·¾¶¡£
-	<br>¢ÛÈôÐèÒªÉèÖÃÍâ²¿µ÷ÓÃÏÞÖÆºÍÉèÖÃÁÙÊ±ÎÄ¼þÃû£¬ÐÞ¸ÄDv_News.aspÎÄ¼þ£¬ÎÄ¼þÀï¸½ÓÐËµÃ÷¡£
-	<br>¢Ü½¨Òé¸ù¾Ý²»Í¬µÄµ÷ÓÃÉè¶¨¸üÐÂÊ±¼ä¼ä¸ô£¬Èç²»ÊÇ¾­³£¸üÐÂµÄ°æ¿éµ÷ÓÃ¿ÉÒÔÉèÖÃ³¤Ò»Ð©Ê±¼ä¼ä¸ô£¬ÕâÑù¿ÉÒÔÓÐÐ§µØ¼õµÍÏûºÄ¡£
+	â‘ æ·»åŠ è°ƒç”¨åŽï¼Œåœ¨åˆ—è¡¨ä¸­ç‚¹å‡»ç›¸åº”çš„é¢„è§ˆå¯ä»¥çœ‹åˆ°æ•ˆæžœï¼Œå°†è°ƒç”¨ä»£ç å¤åˆ¶åˆ°ä½ çš„é¦–é¡µå°±å¯ä»¥äº†ã€‚
+	<br>â‘¡å¦‚æžœä½ çš„é¦–é¡µæ˜¯å’Œè®ºå›ç¨‹åºåˆ†å¼€ï¼Œåœ¨å¡«å†™è°ƒç”¨æ¨¡æ¿æ—¶å»ºè®®ç”¨ä¸Šç»å¯¹åœ°å€è·¯å¾„ã€‚
+	<br>â‘¢è‹¥éœ€è¦è®¾ç½®å¤–éƒ¨è°ƒç”¨é™åˆ¶å’Œè®¾ç½®ä¸´æ—¶æ–‡ä»¶åï¼Œä¿®æ”¹Dv_News.aspæ–‡ä»¶ï¼Œæ–‡ä»¶é‡Œé™„æœ‰è¯´æ˜Žã€‚
+	<br>â‘£å»ºè®®æ ¹æ®ä¸åŒçš„è°ƒç”¨è®¾å®šæ›´æ–°æ—¶é—´é—´éš”ï¼Œå¦‚ä¸æ˜¯ç»å¸¸æ›´æ–°çš„ç‰ˆå—è°ƒç”¨å¯ä»¥è®¾ç½®é•¿ä¸€äº›æ—¶é—´é—´éš”ï¼Œè¿™æ ·å¯ä»¥æœ‰æ•ˆåœ°å‡ä½Žæ¶ˆè€—ã€‚
 </td>
 </tr>
 <tr><td colspan="2" class="td2">
-<a href="?Act=AddSetting">Ìí¼ÓÊ×Ò³µ÷ÓÃ</a> | <a href="?Act=NewsList">Ê×Ò³µ÷ÓÃÁÐ±í</a> | <a href="<%=MyDbPath%>Dv_News_Demo.asp" target="_blank">²é¿´ËùÓÐµ÷ÓÃÑÝÊ¾</a>
+<a href="?Act=AddSetting">æ·»åŠ é¦–é¡µè°ƒç”¨</a> | <a href="?Act=NewsList">é¦–é¡µè°ƒç”¨åˆ—è¡¨</a> | <a href="<%=MyDbPath%>Dv_News_Demo.asp" target="_blank">æŸ¥çœ‹æ‰€æœ‰è°ƒç”¨æ¼”ç¤º</a>
 </td></tr>
 </table>
 <%
@@ -46,12 +46,12 @@ Sub Main()
 	End Select
 End Sub
 
-'É¾³ý¼ÇÂ¼
+'åˆ é™¤è®°å½•
 Sub DelNewsInfo()
 	Dim DelNodes,DelChildNodes
 	Set XmlDoc = Dvbbs.CreateXmlDoc("Msxml2.FreeThreadedDOMDocument"& MsxmlVersion)
 	If Not XmlDoc.load(NewsConfigFile) Then
-		ErrMsg = "µ÷ÓÃÁÐ±íÖÐÎª¿Õ£¬ÇëÌîÐ´µ÷ÓÃºóÔÙÖ´ÐÐ±¾²Ù×÷!"
+		ErrMsg = "è°ƒç”¨åˆ—è¡¨ä¸­ä¸ºç©ºï¼Œè¯·å¡«å†™è°ƒç”¨åŽå†æ‰§è¡Œæœ¬æ“ä½œ!"
 		Dvbbs_Error()
 		Exit Sub
 	End If
@@ -63,7 +63,7 @@ Sub DelNewsInfo()
 		End If
 	Next
 	Call SaveXml()
-	Dv_suc("ËùÑ¡µÄ¼ÇÂ¼ÒÑÉ¾³ý!")
+	Dv_suc("æ‰€é€‰çš„è®°å½•å·²åˆ é™¤!")
 End Sub
 
 Sub SaveSetting()
@@ -75,48 +75,48 @@ Sub SaveSetting()
 	Skin_Footer	= Request.Form("Skin_Footer")
 
 	If NewsName="" Then
-		Errmsg=ErrMsg + "<li>ÇëÌîÐ´µ÷ÓÃ±êÊ¶£¡</li>"
+		Errmsg=ErrMsg + "<li>è¯·å¡«å†™è°ƒç”¨æ ‡è¯†ï¼</li>"
 	Else
 		NewsName = Lcase(NewsName)
 	End If
 	If NewsType < "1" Then
-		Errmsg=ErrMsg + "<li>Ñ¡È¡µ÷ÓÃÀàÐÍ£¡</li>"
+		Errmsg=ErrMsg + "<li>é€‰å–è°ƒç”¨ç±»åž‹ï¼</li>"
 	End If
 	If Skin_Main = "" Then
-		Errmsg=ErrMsg + "<li>Ä£°å_Ö÷ÌåÑ­»·±ê¼Ç²¿·Ö²»ÄÜÎª¿Õ£¡</li>"
+		Errmsg=ErrMsg + "<li>æ¨¡æ¿_ä¸»ä½“å¾ªçŽ¯æ ‡è®°éƒ¨åˆ†ä¸èƒ½ä¸ºç©ºï¼</li>"
 	End If
 	If Errmsg<>"" Then Dvbbs_Error() : Exit Sub
 	Call LoadXml()
 
 	If FoundNewsName(NewsName) and Request("Act") <> "SaveEditSetting" Then
-		Errmsg=ErrMsg + "<li>µ÷ÓÃ±êÊ¶ÒÑ´æÔÚ£¬²»ÄÜÖØ¸´Ìí¼Ó£¡</li>"
+		Errmsg=ErrMsg + "<li>è°ƒç”¨æ ‡è¯†å·²å­˜åœ¨ï¼Œä¸èƒ½é‡å¤æ·»åŠ ï¼</li>"
 		Dvbbs_Error()
 		Exit Sub
 	End If
 	Select Case NewsType
-		Case "1"		'Ìû×Óµ÷ÓÃ
+		Case "1"		'å¸–å­è°ƒç”¨
 			Call NewsType_1()
-		Case "2"		'ÐÅÏ¢µ÷ÓÃ
+		Case "2"		'ä¿¡æ¯è°ƒç”¨
 			Call NewsType_2()
-		Case "3"		'°æ¿éµ÷ÓÃ
+		Case "3"		'ç‰ˆå—è°ƒç”¨
 			Call NewsType_3()
-		Case "4"		'»áÔ±µ÷ÓÃ
+		Case "4"		'ä¼šå‘˜è°ƒç”¨
 			Call NewsType_4()
-		Case "5"		'¹«¸æµ÷ÓÃ
+		Case "5"		'å…¬å‘Šè°ƒç”¨
 			Call NewsType_5()
-		Case "6"		'Õ¹Çøµ÷ÓÃ
+		Case "6"		'å±•åŒºè°ƒç”¨
 			Call NewsType_6()
-		Case "7"		'È¦×Óµ÷ÓÃ
+		Case "7"		'åœˆå­è°ƒç”¨
 			Call NewsType_7()
-		Case "8"		'µÇÂ¼¿òµ÷ÓÃ
+		Case "8"		'ç™»å½•æ¡†è°ƒç”¨
 			Call NewsType_8()
 		Case Else
-			Errmsg=ErrMsg + "<li>ÇëÕýÈ·Ñ¡È¡µ÷ÓÃÀàÐÍ£¡</li>"
+			Errmsg=ErrMsg + "<li>è¯·æ­£ç¡®é€‰å–è°ƒç”¨ç±»åž‹ï¼</li>"
 			Dvbbs_Error()
 	End Select
 	Call CreateXmlLog()
 	Call SaveXml()
-	Dv_suc("µ÷ÓÃÉèÖÃ³É¹¦!")
+	Dv_suc("è°ƒç”¨è®¾ç½®æˆåŠŸ!")
 End Sub
 
 Sub LoadXml()
@@ -126,7 +126,7 @@ Sub LoadXml()
 	End If
 End Sub
 
-'¼ì²éÊÇ·ñ´æÔÚÏàÍ¬µÄ±êÊ¶
+'æ£€æŸ¥æ˜¯å¦å­˜åœ¨ç›¸åŒçš„æ ‡è¯†
 Function FoundNewsName(NewsName)
 	Dim Test
 	Set Test = XmlDoc.DocumentElement.selectSingleNode("NewsCode[@NewsName="""&NewsName&"""]")
@@ -138,7 +138,7 @@ Sub SaveXml()
 	Set XmlDoc = Nothing
 End Sub
 
-'¹«¹²¼ÇÂ¼
+'å…¬å…±è®°å½•
 Sub CreateXmlLog()
 	Dim attributes,createCDATASection,ChildNode
 	Dim FormName,NoAttFormName
@@ -151,7 +151,7 @@ Sub CreateXmlLog()
 			XmlDoc.DocumentElement.RemoveChild(Node)
 		End If
 	End If
-	'´´½¨½Úµã
+	'åˆ›å»ºèŠ‚ç‚¹
 	Set Node=XmlDoc.createNode(1,"NewsCode","")
 	NoAttFormName = ",Skin_Head,Skin_Main,Skin_Footer,Act,AddTime,Board_Input0,Board_Input1,Board_Input2,Board_Input3,Board_Input4,"
 	For Each FormName In Request.Form
@@ -196,7 +196,7 @@ Sub CreateXmlLog()
 	Set createCDATASection=XmlDoc.createCDATASection(replace(Skin_Footer,"]]>","]]&gt;"))
 	ChildNode.appendChild(createCDATASection)
 	node.appendChild(ChildNode)
-	''ÌØÊâ°æÃæÔö¼Ó
+	''ç‰¹æ®Šç‰ˆé¢å¢žåŠ 
 	If NewsType = "3" Then
 		Set ChildNode = XmlDoc.createNode(1,"Board_Input0","")
 		Set createCDATASection=XmlDoc.createCDATASection(Replace(Request.Form("Board_Input0"),"]]>","]]&gt;"))
@@ -228,7 +228,7 @@ Sub CreateXmlLog()
 End Sub
 
 
-'Ìû×Óµ÷ÓÃ
+'å¸–å­è°ƒç”¨
 Sub NewsType_1()
 	Dim News_Total,Topiclen,Orders,TopicType,Boardid,BoardLimit,BoardType,UserIDList,Sdate
 	News_Total = Dvbbs.CheckNumeric(Request.Form("Total"))
@@ -244,7 +244,7 @@ Sub NewsType_1()
 	Dim OrderBy,Searchstr,SearchBoard,Tempstr
 	NewsSql = "SELECT TOP "& News_Total
 	If Orders = "3" Then
-		'ÐÞÕý°´ÈÈÌûÅÅÐòÏÔÊ¾¾«»ª³ö´í 2007-7-6 Dv.Yz
+		'ä¿®æ­£æŒ‰çƒ­å¸–æŽ’åºæ˜¾ç¤ºç²¾åŽå‡ºé”™ 2007-7-6 Dv.Yz
 		If TopicType = 1 Then
 			OrderBy = " T.Hits Desc, "
 		ELSE
@@ -257,7 +257,7 @@ Sub NewsType_1()
 			OrderBy = " Dateandtime Desc, "
 		End If
 	End If
-	'Ö¸¶¨°æÃæ
+	'æŒ‡å®šç‰ˆé¢
 	If Boardid>0 Then
 		If TopicType = 1 Then
 			SearchBoard = " AND B.Boardid = " & Boardid
@@ -304,7 +304,7 @@ Sub NewsType_1()
 	Else
 		Tempstr = Cstr(Boardid)
 	End If
-	'ÏÞÖÆ²»ÏÔÊ¾ÌØÁÐ°æÃæ
+	'é™åˆ¶ä¸æ˜¾ç¤ºç‰¹åˆ—ç‰ˆé¢
 	If BoardLimit="1" and Tempstr<>"" Then
 		Tempstr = GetBoardid(Tempstr)
 		If Not Boardid = 0 Then
@@ -361,28 +361,28 @@ Sub NewsType_1()
 			End If
 		End If
 	End If
-	If TopicType = 1 Then		'ÏÔÊ¾¾«»ªÖ÷Ìâ
+	If TopicType = 1 Then		'æ˜¾ç¤ºç²¾åŽä¸»é¢˜
 		If Searchstr<>"" Then
 			Searchstr = " WHERE " & Mid(Searchstr, InStr(Searchstr, "AND")+3)
 		End If
 		NewsSql = NewsSql & " B.PostUserName, B.Title, B.Rootid, B.Boardid, B.Dateandtime, B.Announceid, B.Id, B.Expression From Dv_BestTopic B INNER JOIN Dv_Topic T ON B.RootID = T.TopicID " & Searchstr & " ORDER BY " & OrderBy & " B.Id Desc"
-	ElseIf TopicType=2 Then		'ÏÔÊ¾Ö÷ÌâºÍ»Ø¸´
+	ElseIf TopicType=2 Then		'æ˜¾ç¤ºä¸»é¢˜å’Œå›žå¤
 		NewsSql = NewsSql & " UserName,Topic,Rootid,Boardid,Dateandtime,Announceid,Body,Expression From "&Dvbbs.NowUseBBS&" Where not (Boardid in (444,777)) "& Searchstr &" ORDER BY "& OrderBy &" AnnounceID Desc"
-	Else		'ÏÔÊ¾Ö÷Ìâ
+	Else		'æ˜¾ç¤ºä¸»é¢˜
 		If Orders = 2 Then OrderBy = " Lastposttime Desc, "
 		NewsSql = NewsSql & " PostUserName,Title,Topicid,Boardid,Dateandtime,Topicid,Hits,Expression,LastPost From [Dv_topic] Where not (Boardid in (444,777)) "& Searchstr & " ORDER BY "& OrderBy &" Topicid Desc"
 	End If
 End Sub
 
-'ÐÅÏ¢µ÷ÓÃ
+'ä¿¡æ¯è°ƒç”¨
 Sub NewsType_2()
 End Sub
 
-'°æ¿éµ÷ÓÃ
+'ç‰ˆå—è°ƒç”¨
 Sub NewsType_3()
 End Sub
 
-'»áÔ±µ÷ÓÃ
+'ä¼šå‘˜è°ƒç”¨
 Sub NewsType_4()
 	Dim News_Total,Orders
 	News_Total = Dvbbs.CheckNumeric(Request.Form("Total"))
@@ -414,7 +414,7 @@ Sub NewsType_4()
 	NewsSql = NewsSql & " ORDER BY " & OrderBy & " UserID desc "
 End Sub
 
-'¹«¸æµ÷ÓÃ
+'å…¬å‘Šè°ƒç”¨
 Sub NewsType_5()
 	Dim News_Total,Boardid
 	News_Total = Dvbbs.CheckNumeric(Request.Form("Total"))
@@ -427,7 +427,7 @@ Sub NewsType_5()
 	NewsSql = NewsSql & " ORDER BY ID DESC"
 End Sub
 
-'Õ¹Çøµ÷ÓÃ
+'å±•åŒºè°ƒç”¨
 Sub NewsType_6()
 	Dim News_Total,Boardid,FileOrders,BoardLock,FileType,BoardLimit
 	Dim Searchstr,OrderBy
@@ -443,7 +443,7 @@ Sub NewsType_6()
 		Searchstr = " AND F_Type = "&FileType
 	End If
 
-	'Ö¸¶¨°æÃæ
+	'æŒ‡å®šç‰ˆé¢
 	Dim SearchBoard
 	Dim Rs,Tempstr
 	If Boardid > 0 Then
@@ -467,7 +467,7 @@ Sub NewsType_6()
 		Tempstr = Cstr(Boardid)
 	End If
 
-	'ÏÞÖÆ²»ÏÔÊ¾ÌØÁÐ°æÃæ
+	'é™åˆ¶ä¸æ˜¾ç¤ºç‰¹åˆ—ç‰ˆé¢
 	If BoardLimit="1" and Tempstr<>"" Then
 		Tempstr = GetBoardid(Tempstr)
 		If Boardid<>0 Then
@@ -497,7 +497,7 @@ Sub NewsType_6()
 	NewsSql = NewsSql & Searchstr & " ORDER BY "& OrderBy &" F_ID DESC"
 End Sub
 
-Rem È¦×Óµ÷ÓÃ£¬ÒÑÈ¥µô£¬Ð¡Ò×
+Rem åœˆå­è°ƒç”¨ï¼Œå·²åŽ»æŽ‰ï¼Œå°æ˜“
 Sub NewsType_7()
 	
 End Sub
@@ -506,7 +506,7 @@ Sub NewsType_8()
 End Sub
 
 
-'BoardidVal<>0 È¡³öµ÷ÓÃµÄ°æÃæID£¬µ±BoardidVal=0 È¡³ö²»±»µ÷ÓÃµÄ°æÃæID
+'BoardidVal<>0 å–å‡ºè°ƒç”¨çš„ç‰ˆé¢IDï¼Œå½“BoardidVal=0 å–å‡ºä¸è¢«è°ƒç”¨çš„ç‰ˆé¢ID
 Function GetBoardid(BoardidVal)
 	Dim TempData,Nodelist,Nodes
 	If BoardidVal<>"0" Then
@@ -530,7 +530,7 @@ Function GetBoardid(BoardidVal)
 	End If
 End Function
 
-'»ñÈ¡ÏÂÊô°æ¿éID
+'èŽ·å–ä¸‹å±žç‰ˆå—ID
 Private Function GetChildBoardID(BoardIDVal)
 		Dim TempData,Nodelist,Node
 		Set Nodelist = Application(Dvbbs.CacheName&"_boardlist").cloneNode(True).documentElement.getElementsByTagName("board")
@@ -548,7 +548,7 @@ Sub AddSetting()
 	If Request("Act") = "EditNewsInfo" Then
 		Set Node = XmlDoc.DocumentElement.selectSingleNode("NewsCode[@AddTime='"&Request("DelNodes")&"']")
 		If (Node is nothing) Then
-			ErrMsg = "<li>ËùÑ¡È¡µÄµ÷ÓÃÒÑ²»´æÔÚ!</li>"
+			ErrMsg = "<li>æ‰€é€‰å–çš„è°ƒç”¨å·²ä¸å­˜åœ¨!</li>"
 			Dvbbs_Error()
 			Exit Sub
 		End If
@@ -556,7 +556,7 @@ Sub AddSetting()
 	ElseIf Request("Act") = "CopyNewsInfo" Then
 		Set Node = XmlDoc.DocumentElement.selectSingleNode("NewsCode[@AddTime='"&Request("DelNodes")&"']")
 		If (Node is nothing) Then
-			ErrMsg = "<li>ËùÑ¡È¡µÄµ÷ÓÃÒÑ²»´æÔÚ!</li>"
+			ErrMsg = "<li>æ‰€é€‰å–çš„è°ƒç”¨å·²ä¸å­˜åœ¨!</li>"
 			Dvbbs_Error()
 			Exit Sub
 		End If
@@ -571,7 +571,7 @@ Sub AddSetting()
 		node.appendChild(ChildNode)
 		Action = "SaveSetting"
 	End If
-	'µ±²»ÊÇ±à¼­°æÃæµ÷ÓÃÊ±´´½¨ÁÙÊ±½Úµã
+	'å½“ä¸æ˜¯ç¼–è¾‘ç‰ˆé¢è°ƒç”¨æ—¶åˆ›å»ºä¸´æ—¶èŠ‚ç‚¹
 	If NewsType <> "3" or NewsType <> "6" Then
 		Set ChildNode = XmlDoc.createNode(1,"Board_Input0","")
 		node.appendChild(ChildNode)
@@ -594,22 +594,22 @@ Sub AddSetting()
 <br>
 <table cellpadding="3" cellspacing="1" border="0" align="center" width="100%">
 <form METHOD=POST ACTION="?Act=<%=Action%>" name="TheForm">
-<tr><th colspan="2" height="23">Ê×Ò³µ÷ÓÃ¹ÜÀí</th></tr>
+<tr><th colspan="2" height="23">é¦–é¡µè°ƒç”¨ç®¡ç†</th></tr>
 <tr>
 <td width="30%" class="td2" align="right">
-µ÷ÓÃ±êÊ¶Ãû³Æ£º
+è°ƒç”¨æ ‡è¯†åç§°ï¼š
 </td>
 <%
 If Request("Act") = "CopyNewsInfo" Then 
 %>
 <td width="70%" class="td1">
-<INPUT TYPE="text" NAME="NewsName" size="20" Maxlength="10" onkeyup="OutputNewsCode(this.value);" value="<%=Node.getAttribute("NewsName")&"_copy"%>">(ÇëÊ¹ÓÃÓ¢ÎÄ»òÊý×ÖÉè¶¨µ÷ÓÃÃû³Æ,²¢ÇÒÊÇÎ¨Ò»±êÊ¶.²»ÄÜ³¬³ö10¸ö×Ö·û)
+<INPUT TYPE="text" NAME="NewsName" size="20" Maxlength="10" onkeyup="OutputNewsCode(this.value);" value="<%=Node.getAttribute("NewsName")&"_copy"%>">(è¯·ä½¿ç”¨è‹±æ–‡æˆ–æ•°å­—è®¾å®šè°ƒç”¨åç§°,å¹¶ä¸”æ˜¯å”¯ä¸€æ ‡è¯†.ä¸èƒ½è¶…å‡º10ä¸ªå­—ç¬¦)
 </td>
 <%
 Else 
 %>
 <td width="70%" class="td1">
-<INPUT TYPE="text" NAME="NewsName" size="20" Maxlength="10" onkeyup="OutputNewsCode(this.value);" value="<%=Node.getAttribute("NewsName")%>">(ÇëÊ¹ÓÃÓ¢ÎÄ»òÊý×ÖÉè¶¨µ÷ÓÃÃû³Æ,²¢ÇÒÊÇÎ¨Ò»±êÊ¶.²»ÄÜ³¬³ö10¸ö×Ö·û)
+<INPUT TYPE="text" NAME="NewsName" size="20" Maxlength="10" onkeyup="OutputNewsCode(this.value);" value="<%=Node.getAttribute("NewsName")%>">(è¯·ä½¿ç”¨è‹±æ–‡æˆ–æ•°å­—è®¾å®šè°ƒç”¨åç§°,å¹¶ä¸”æ˜¯å”¯ä¸€æ ‡è¯†.ä¸èƒ½è¶…å‡º10ä¸ªå­—ç¬¦)
 </td>
 <%
 End If 
@@ -617,7 +617,7 @@ End If
 </tr>
 <tr>
 <td width="15%" class="td2" align="right">
-µ÷ÓÃ´úÂë£º
+è°ƒç”¨ä»£ç ï¼š
 </td>
 <%
 If Request("Act") = "CopyNewsInfo" Then 
@@ -637,61 +637,61 @@ End If
 </tr>
 <tr>
 <td class="td2" align="right">
-µ÷ÓÃËµÃ÷£º
+è°ƒç”¨è¯´æ˜Žï¼š
 </td>
 <td class="td1">
-<INPUT TYPE="text" NAME="Intro" size="30" Maxlength="30" value="<%=Node.getAttribute("Intro")%>">(ÌáÊ¾ËµÃ÷,ÒÔ×÷¹ÜÀíÇø·Ö.²»ÄÜ³¬³ö30¸ö×Ö·û)
+<INPUT TYPE="text" NAME="Intro" size="30" Maxlength="30" value="<%=Node.getAttribute("Intro")%>">(æç¤ºè¯´æ˜Ž,ä»¥ä½œç®¡ç†åŒºåˆ†.ä¸èƒ½è¶…å‡º30ä¸ªå­—ç¬¦)
 </td>
 </tr>
 <tr>
 <td class="td2" align="right">
-µ÷ÓÃÀàÐÍ£º
+è°ƒç”¨ç±»åž‹ï¼š
 </td>
 <td class="td1">
 	<SELECT NAME="NewsType" ID="NewsType" onchange="NewsTypeSel(this.selectedIndex)">
-	<option value="0">Ñ¡È¡µ÷ÓÃÀàÐÍ</option>
-	<option value="1">Ìû×Óµ÷ÓÃ</option>
-	<option value="2">ÐÅÏ¢µ÷ÓÃ</option>
-	<option value="3">°æ¿éµ÷ÓÃ</option>
-	<option value="4">»áÔ±µ÷ÓÃ</option>
-	<option value="5">¹«¸æµ÷ÓÃ</option>
-	<option value="6">Õ¹Çøµ÷ÓÃ</option>
-	<option value="8">µÇÂ¼¿òµ÷ÓÃ</option>
+	<option value="0">é€‰å–è°ƒç”¨ç±»åž‹</option>
+	<option value="1">å¸–å­è°ƒç”¨</option>
+	<option value="2">ä¿¡æ¯è°ƒç”¨</option>
+	<option value="3">ç‰ˆå—è°ƒç”¨</option>
+	<option value="4">ä¼šå‘˜è°ƒç”¨</option>
+	<option value="5">å…¬å‘Šè°ƒç”¨</option>
+	<option value="6">å±•åŒºè°ƒç”¨</option>
+	<option value="8">ç™»å½•æ¡†è°ƒç”¨</option>
 	</SELECT>
 </td>
 </tr>
 <tr>
 <td class="td2" align="right">
-Êý¾Ý¸üÐÂ¼ä¸ô£º
+æ•°æ®æ›´æ–°é—´éš”ï¼š
 </td>
-<td class="td1"><INPUT TYPE="text" NAME="Updatetime" value="<%=Node.getAttribute("Updatetime")%>">(µ¥Î»£ºÃë)</td>
+<td class="td1"><INPUT TYPE="text" NAME="Updatetime" value="<%=Node.getAttribute("Updatetime")%>">(å•ä½ï¼šç§’)</td>
 </tr>
 <tr>
 <td class="td2" align="right">
-Ê±¼äÏÔÊ¾¸ñÊ½£º
+æ—¶é—´æ˜¾ç¤ºæ ¼å¼ï¼š
 </td>
 <td class="td1">
 <SELECT NAME="FormatTime" ID="FormatTime">
-	<option value="0" SELECTED>YYYY-M-D H:M:S(³¤¸ñÊ½)</option>
-	<option value="1">YYYYÄêMÔÂD</option>
+	<option value="0" SELECTED>YYYY-M-D H:M:S(é•¿æ ¼å¼)</option>
+	<option value="1">YYYYå¹´MæœˆD</option>
 	<option value="2">YYYY-M-D</option>
 	<option value="3">H:M:S</option>
 	<option value="4">hh:mm</option>
 </SELECT>
-(°´·þÎñÆ÷Ê±¼äÇøÓò¸ñÊ½ÏÔÊ¾¡£)
+(æŒ‰æœåŠ¡å™¨æ—¶é—´åŒºåŸŸæ ¼å¼æ˜¾ç¤ºã€‚)
 </td>
 </tr>
 
 <tr>
-<td class="td2" align="right" valign="top">µ÷ÓÃÉèÖÃ£º</td>
+<td class="td2" align="right" valign="top">è°ƒç”¨è®¾ç½®ï¼š</td>
 <td class="td2">
 <div id="News"></div>
 </td>
 </tr>
-<!-- µ÷ÓÃÄ£°åÉèÖÃ -->
-<tr><th colspan="2" height="23">µ÷ÓÃÄ£°åÉèÖÃ(ÇëÓÃHTMLÓï·¨ÌîÐ´)</th></tr>
+<!-- è°ƒç”¨æ¨¡æ¿è®¾ç½® -->
+<tr><th colspan="2" height="23">è°ƒç”¨æ¨¡æ¿è®¾ç½®(è¯·ç”¨HTMLè¯­æ³•å¡«å†™)</th></tr>
 <tr>
-<td class="td2" align="right" valign="top">Ä£°å_¿ªÊ¼±ê¼Ç²¿·Ö
+<td class="td2" align="right" valign="top">æ¨¡æ¿_å¼€å§‹æ ‡è®°éƒ¨åˆ†
 </td>
 <td class="td2">
 	<textarea name="Skin_Head" ID="Skin_Head" style="width:100%;" rows="3"><%=Server.Htmlencode(Node.selectSingleNode("Skin_Head").text&"")%></textarea>
@@ -700,9 +700,9 @@ End If
 </tr>
 <tr>
 <td class="td2" align="right" valign="top">
-Ä£°å_Ö÷ÌåÑ­»·±ê¼Ç²¿·Ö
-<fieldset title="Ä£°å±äÁ¿">
-<legend>&nbsp;Ä£°å±äÁ¿ËµÃ÷&nbsp;</legend>
+æ¨¡æ¿_ä¸»ä½“å¾ªçŽ¯æ ‡è®°éƒ¨åˆ†
+<fieldset title="æ¨¡æ¿å˜é‡">
+<legend>&nbsp;æ¨¡æ¿å˜é‡è¯´æ˜Ž&nbsp;</legend>
 <div id="skin_info" align="left"></div>
 </fieldset>
 </td>
@@ -713,82 +713,82 @@ End If
 </td>
 </tr>
 <tr>
-<td class="td2" align="right" valign="top">Ä£°å_½áÊø±ê¼Ç²¿·Ö
+<td class="td2" align="right" valign="top">æ¨¡æ¿_ç»“æŸæ ‡è®°éƒ¨åˆ†
 </td>
 <td class="td2">
 	<textarea name="Skin_Footer" ID="Skin_Footer" style="width:100%;" rows="3"><%=Server.Htmlencode(Node.selectSingleNode("Skin_Footer").text&"")%></textarea>
 	<br><a href="javascript:admin_Size(-3,'Skin_Footer')"><img src="skins/images/minus.gif" unselectable="on" border='0'></a> <a href="javascript:admin_Size(3,'Skin_Footer')"><img src="skins/images/plus.gif" unselectable="on" border='0'></a>
 </td>
 </tr>
-<!-- µ÷ÓÃÄ£°åÉèÖÃ -->
+<!-- è°ƒç”¨æ¨¡æ¿è®¾ç½® -->
 <tr>
 <td class="td2" align="right">&nbsp;
 </td>
 <td class="td2" align="center">
-<INPUT TYPE="submit" class="button" value="Ìá½»">&nbsp;&nbsp;&nbsp;<INPUT TYPE="reset" class="button" value="ÖØÌî">
+<INPUT TYPE="submit" class="button" value="æäº¤">&nbsp;&nbsp;&nbsp;<INPUT TYPE="reset" class="button" value="é‡å¡«">
 <INPUT TYPE="hidden" name="AddTime" value="<%=Node.getAttribute("AddTime")%>">
 </td>
 </tr>
 </form>
 </table>
-<!-- ÉèÖÃÐÅÏ¢²¿·Ö -->
+<!-- è®¾ç½®ä¿¡æ¯éƒ¨åˆ† -->
 <div id="News_1" style="display:none">
-<!-- Ìû×Óµ÷ÓÃ -->
+<!-- å¸–å­è°ƒç”¨ -->
 <table border="0" cellpadding="3" cellspacing="1" width="100%">
 <tr>
 <td class="td1">
-ÏÔÊ¾¼ÇÂ¼Êý£º<INPUT TYPE="text" NAME="Total" size="3" value="<%=Node.getAttribute("Total")%>">
+æ˜¾ç¤ºè®°å½•æ•°ï¼š<INPUT TYPE="text" NAME="Total" size="3" value="<%=Node.getAttribute("Total")%>">
 </td><td class="td1">
-±êÌâ³¤¶È£º<INPUT TYPE="text" NAME="Topiclen" size="4" value="<%=Node.getAttribute("Topiclen")%>">
+æ ‡é¢˜é•¿åº¦ï¼š<INPUT TYPE="text" NAME="Topiclen" size="4" value="<%=Node.getAttribute("Topiclen")%>">
 </td>
 <td class="td1">
-Ìû×ÓÅÅÐò£º<SELECT NAME="Orders" ID="Orders">
-	<option value="0" SELECTED>Ä¬ÈÏ×îÐÂÅÅÐò(ÍÆ¼öÊ¹ÓÃ)</option>
-	<option value="1">°´ÕÕÊ±¼ä(°´×îÐÂÖ÷ÌâÊ±¼ä)</option>
-	<option value="2">°´ÕÕÊ±¼ä(°´×îÐÂ»Ø¸´Ê±¼ä)</option>
-	<option value="3">°´ÕÕµã»÷(×îÈÈÌû)</option>
+å¸–å­æŽ’åºï¼š<SELECT NAME="Orders" ID="Orders">
+	<option value="0" SELECTED>é»˜è®¤æœ€æ–°æŽ’åº(æŽ¨èä½¿ç”¨)</option>
+	<option value="1">æŒ‰ç…§æ—¶é—´(æŒ‰æœ€æ–°ä¸»é¢˜æ—¶é—´)</option>
+	<option value="2">æŒ‰ç…§æ—¶é—´(æŒ‰æœ€æ–°å›žå¤æ—¶é—´)</option>
+	<option value="3">æŒ‰ç…§ç‚¹å‡»(æœ€çƒ­å¸–)</option>
 	</SELECT>
 </td>
 </tr>
 <tr><td class="td1" colspan="3">
-ÌìÊýµÄÏÞÖÆ£º<INPUT TYPE="text" NAME="Sdate" value="<%=Node.getAttribute("Sdate")%>" size="3">(²éÑ¯¶àÉÙÌìÄÚÌû×Ó£¬1Îªµ±Ìì¡£ÈôÎª¿ÕÔòÈÕÆÚ²»ÏÞ£¬½¨ÒéÎª¿Õ¡£)
+å¤©æ•°çš„é™åˆ¶ï¼š<INPUT TYPE="text" NAME="Sdate" value="<%=Node.getAttribute("Sdate")%>" size="3">(æŸ¥è¯¢å¤šå°‘å¤©å†…å¸–å­ï¼Œ1ä¸ºå½“å¤©ã€‚è‹¥ä¸ºç©ºåˆ™æ—¥æœŸä¸é™ï¼Œå»ºè®®ä¸ºç©ºã€‚)
 </td></tr>
 <tr><td class="td1" colspan="3">
-ÏÔÊ¾µÄÀàÐÍ£º<SELECT NAME="TopicType" ID="TopicType">
-	<option value="0" SELECTED>ÏÔÊ¾Ö÷Ìâ</option>
-	<option value="1">ÏÔÊ¾¾«»ªÖ÷Ìâ</option>
-	<option value="2">ÏÔÊ¾Ö÷ÌâºÍ»Ø¸´</option>
+æ˜¾ç¤ºçš„ç±»åž‹ï¼š<SELECT NAME="TopicType" ID="TopicType">
+	<option value="0" SELECTED>æ˜¾ç¤ºä¸»é¢˜</option>
+	<option value="1">æ˜¾ç¤ºç²¾åŽä¸»é¢˜</option>
+	<option value="2">æ˜¾ç¤ºä¸»é¢˜å’Œå›žå¤</option>
 	</SELECT>
-	(²»ÍÆ¼öÊý¾ÝÁ¿´óµÄÓÃ»§Ê¹ÓÃµ÷ÓÃÖ÷ÌâºÍ»Ø¸´¡£)
+	(ä¸æŽ¨èæ•°æ®é‡å¤§çš„ç”¨æˆ·ä½¿ç”¨è°ƒç”¨ä¸»é¢˜å’Œå›žå¤ã€‚)
 </td>
 </tr>
 <tr><td class="td1" colspan="3">
-µ÷ÓÃµÄ°æÃæ£º<SELECT id="Boardid0" NAME="Boardid"></SELECT>
+è°ƒç”¨çš„ç‰ˆé¢ï¼š<SELECT id="Boardid0" NAME="Boardid"></SELECT>
 <BR>
-°æÃæ&nbsp;&nbsp;ÉèÖÃ£º<SELECT NAME="BoardType" ID="BoardType">
-	<option value="0" SELECTED>Ö»ÏÔÊ¾¸Ã°æÃæµÄÊý¾Ý</option>
-	<option value="1">ÏÔÊ¾¸Ã°æÃæµÄÏÂ¼¶ËùÓÐ°æÃæµÄÊý¾Ý</option>
-	<option value="2">ÏÔÊ¾¸Ã°æÃæºÍÏÂ¼¶ËùÓÐ°æÃæµÄÊý¾Ý</option>
+ç‰ˆé¢&nbsp;&nbsp;è®¾ç½®ï¼š<SELECT NAME="BoardType" ID="BoardType">
+	<option value="0" SELECTED>åªæ˜¾ç¤ºè¯¥ç‰ˆé¢çš„æ•°æ®</option>
+	<option value="1">æ˜¾ç¤ºè¯¥ç‰ˆé¢çš„ä¸‹çº§æ‰€æœ‰ç‰ˆé¢çš„æ•°æ®</option>
+	<option value="2">æ˜¾ç¤ºè¯¥ç‰ˆé¢å’Œä¸‹çº§æ‰€æœ‰ç‰ˆé¢çš„æ•°æ®</option>
 	</SELECT>
-<BR>°æÃæµÄÏÞÖÆ£º<SELECT NAME="BoardLimit" ID="BoardLimit">
-	<option value="0" SELECTED>ÏÔÊ¾ËùÓÐÊý¾Ý</option>
-	<option value="1">²»ÏÔÊ¾ÌØÊâ°æÃæÊý¾Ý</option>
-	</SELECT>£¨ÌØÊâ°æÃæÖ¸Òþ²Ø°æÃæºÍÈÏÖ¤°æÃæ£©
+<BR>ç‰ˆé¢çš„é™åˆ¶ï¼š<SELECT NAME="BoardLimit" ID="BoardLimit">
+	<option value="0" SELECTED>æ˜¾ç¤ºæ‰€æœ‰æ•°æ®</option>
+	<option value="1">ä¸æ˜¾ç¤ºç‰¹æ®Šç‰ˆé¢æ•°æ®</option>
+	</SELECT>ï¼ˆç‰¹æ®Šç‰ˆé¢æŒ‡éšè—ç‰ˆé¢å’Œè®¤è¯ç‰ˆé¢ï¼‰
 </td>
 </tr>
 <tr><td class="td1" colspan="3">
-µ¥¶ÀÓÃ»§ID£º<INPUT TYPE="text" NAME="UserIDList" value="<%=Node.getAttribute("UserIDList")%>">(ÇëÌîÐ´ÓÃ»§»áÔ±ID,ÓÃÓ¢ÎÄ¶ººÅ·Ö¸ô)
+å•ç‹¬ç”¨æˆ·IDï¼š<INPUT TYPE="text" NAME="UserIDList" value="<%=Node.getAttribute("UserIDList")%>">(è¯·å¡«å†™ç”¨æˆ·ä¼šå‘˜ID,ç”¨è‹±æ–‡é€—å·åˆ†éš”)
 </td>
 </tr>
 </table>
 <SCRIPT LANGUAGE="JavaScript">
 <!--
-BoardJumpListSelect('<%=Boardid%>',"Boardid0","Ñ¡È¡ËùÓÐ°æÃæ","",0);
+BoardJumpListSelect('<%=Boardid%>',"Boardid0","é€‰å–æ‰€æœ‰ç‰ˆé¢","",0);
 //-->
 </SCRIPT>
 </div>
 <div id="News_2" style="display:none">
-<!-- ÐÅÏ¢µ÷ÓÃ -->
+<!-- ä¿¡æ¯è°ƒç”¨ -->
 <table border="0" cellpadding="3" cellspacing="1" width="100%">
 <tr>
 <td></td>
@@ -796,132 +796,132 @@ BoardJumpListSelect('<%=Boardid%>',"Boardid0","Ñ¡È¡ËùÓÐ°æÃæ","",0);
 </table>
 </div>
 <div id="News_3" style="display:none">
-<!-- °æ¿éµ÷ÓÃ -->
+<!-- ç‰ˆå—è°ƒç”¨ -->
 <table border="0" cellpadding="3" cellspacing="1" width="100%">
 <tr>
 <td class="td1">
-ÏÔÊ¾Ä£Ê½£º<SELECT NAME="Orders" ID="Orders">
-	<option value="0"<%If Node.getAttribute("Orders") = 0 Then Response.Write " SELECTED"%>>Ê÷ÐÍ½á¹¹</option>
-	<option value="1"<%If Node.getAttribute("Orders") = 1 Then Response.Write " SELECTED"%>>µØÍ¼½á¹¹</option>
+æ˜¾ç¤ºæ¨¡å¼ï¼š<SELECT NAME="Orders" ID="Orders">
+	<option value="0"<%If Node.getAttribute("Orders") = 0 Then Response.Write " SELECTED"%>>æ ‘åž‹ç»“æž„</option>
+	<option value="1"<%If Node.getAttribute("Orders") = 1 Then Response.Write " SELECTED"%>>åœ°å›¾ç»“æž„</option>
 	</SELECT>
 </td>
 <td class="td1">
-<input type="text" name="BoardTab" value="<%=Node.getAttribute("BoardTab")%>" size="2">(µØÍ¼½á¹¹Ê±£¬ÏÞÖÆÃ¿ÐÐÏÔÊ¾ÊýÁ¿)
+<input type="text" name="BoardTab" value="<%=Node.getAttribute("BoardTab")%>" size="2">(åœ°å›¾ç»“æž„æ—¶ï¼Œé™åˆ¶æ¯è¡Œæ˜¾ç¤ºæ•°é‡)
 </td>
 </tr>
 <tr>
 <td class="td1" colspan="2">
-ÏÞÖÆµ÷ÓÃ°æ¿éµÄ²ãÊý£º<input type="text" name="Depth" size="2" value="<%=Node.getAttribute("Depth")%>"><BR>(Èç0,±íÊ¾Ö»µ÷ÓÃµÚÒ»¼¶·ÖÀà
-;Îª¿ÕÔò±íÊ¾µ÷ÓÃËùÓÐ£¬µ±µØÍ¼½á¹¹Ä£Ê½Ê±£¬²ãÊý³¬¹ý2ÎÞÐ§;)
+é™åˆ¶è°ƒç”¨ç‰ˆå—çš„å±‚æ•°ï¼š<input type="text" name="Depth" size="2" value="<%=Node.getAttribute("Depth")%>"><BR>(å¦‚0,è¡¨ç¤ºåªè°ƒç”¨ç¬¬ä¸€çº§åˆ†ç±»
+;ä¸ºç©ºåˆ™è¡¨ç¤ºè°ƒç”¨æ‰€æœ‰ï¼Œå½“åœ°å›¾ç»“æž„æ¨¡å¼æ—¶ï¼Œå±‚æ•°è¶…è¿‡2æ— æ•ˆ;)
 </td>
 </tr>
 <tr>
 <td class="td1">
-µ÷ÓÃµÄ°æÃæ£º<SELECT id="Boardid1" NAME="Boardid"></SELECT>
+è°ƒç”¨çš„ç‰ˆé¢ï¼š<SELECT id="Boardid1" NAME="Boardid"></SELECT>
 </td>
 <td class="td1">
-<input type="radio" class="radio" name="Stats" value="0">ÏÔÊ¾ËùÓÐ°æ¿é
-<input type="radio" class="radio" name="Stats" value="1" checked>²»ÏÔÊ¾Òþ²Ø°æ¿é
+<input type="radio" class="radio" name="Stats" value="0">æ˜¾ç¤ºæ‰€æœ‰ç‰ˆå—
+<input type="radio" class="radio" name="Stats" value="1" checked>ä¸æ˜¾ç¤ºéšè—ç‰ˆå—
 </td>
 </tr>
 </table>
 <SCRIPT LANGUAGE="JavaScript">
 <!--
-BoardJumpListSelect('<%=Boardid%>',"Boardid1","Ñ¡È¡ËùÓÐ°æÃæ","",0);
+BoardJumpListSelect('<%=Boardid%>',"Boardid1","é€‰å–æ‰€æœ‰ç‰ˆé¢","",0);
 //-->
 </SCRIPT>
 </div>
 <div id="News_4" style="display:none">
-<!-- »áÔ±µ÷ÓÃ -->
+<!-- ä¼šå‘˜è°ƒç”¨ -->
 <table border="0" cellpadding="3" cellspacing="1" width="100%">
 <tr>
 <td class="td1">
-ÏÔÊ¾¼ÇÂ¼Êý£º<INPUT TYPE="text" NAME="Total" size="3" value="<%=Node.getAttribute("Total")%>">
+æ˜¾ç¤ºè®°å½•æ•°ï¼š<INPUT TYPE="text" NAME="Total" size="3" value="<%=Node.getAttribute("Total")%>">
 </td>
 <td class="td1">
-»áÔ±ÅÅÐò£º<SELECT NAME="UserOrders" ID="UserOrders">
-	<option value="0" SELECTED>°´×¢²áÊ±¼ä</option>
-	<option value="1">°´ÓÃ»§ÎÄÕÂ</option>
-	<option value="2">°´ÓÃ»§Ö÷Ìâ</option>
-	<option value="3">°´ÓÃ»§¾«»ª</option>
-	<option value="4">°´ÓÃ»§½ðÇ®</option>
-	<option value="5">°´ÓÃ»§»ý·Ö</option>
-	<option value="6">°´ÓÃ»§÷ÈÁ¦</option>
-	<option value="7">°´ÓÃ»§±»É¾ÌûÊý</option>
-	<option value="8">°´ÓÃ»§µÇÂ½´ÎÊý</option>
+ä¼šå‘˜æŽ’åºï¼š<SELECT NAME="UserOrders" ID="UserOrders">
+	<option value="0" SELECTED>æŒ‰æ³¨å†Œæ—¶é—´</option>
+	<option value="1">æŒ‰ç”¨æˆ·æ–‡ç« </option>
+	<option value="2">æŒ‰ç”¨æˆ·ä¸»é¢˜</option>
+	<option value="3">æŒ‰ç”¨æˆ·ç²¾åŽ</option>
+	<option value="4">æŒ‰ç”¨æˆ·é‡‘é’±</option>
+	<option value="5">æŒ‰ç”¨æˆ·ç§¯åˆ†</option>
+	<option value="6">æŒ‰ç”¨æˆ·é­…åŠ›</option>
+	<option value="7">æŒ‰ç”¨æˆ·è¢«åˆ å¸–æ•°</option>
+	<option value="8">æŒ‰ç”¨æˆ·ç™»é™†æ¬¡æ•°</option>
 	</SELECT>
 </td>
 </tr>
 </table>
 </div>
 <div id="News_5" style="display:none">
-<!-- ¹«¸æµ÷ÓÃ -->
+<!-- å…¬å‘Šè°ƒç”¨ -->
 <table border="0" cellpadding="3" cellspacing="1" width="100%">
 <tr>
 <td class="td1">
-ÏÔÊ¾¼ÇÂ¼Êý£º<INPUT TYPE="text" NAME="Total" value="<%=Node.getAttribute("Total")%>" size="3">
+æ˜¾ç¤ºè®°å½•æ•°ï¼š<INPUT TYPE="text" NAME="Total" value="<%=Node.getAttribute("Total")%>" size="3">
 </td><td class="td1">
-±êÌâ³¤¶È£º<INPUT TYPE="text" NAME="Topiclen" value="<%=Node.getAttribute("Topiclen")%>" size="4">
+æ ‡é¢˜é•¿åº¦ï¼š<INPUT TYPE="text" NAME="Topiclen" value="<%=Node.getAttribute("Topiclen")%>" size="4">
 </td>
 </tr>
 <tr>
 <td class="td1" colspan="2">
-µ÷ÓÃµÄ°æÃæ£º<SELECT id="Boardid2" NAME="Boardid"></SELECT>
+è°ƒç”¨çš„ç‰ˆé¢ï¼š<SELECT id="Boardid2" NAME="Boardid"></SELECT>
 </td>
 </tr>
 </table>
 <SCRIPT LANGUAGE="JavaScript">
 <!--
-BoardJumpListSelect('<%=Boardid%>',"Boardid2","Ñ¡È¡ËùÓÐ°æÃæ","",0);
+BoardJumpListSelect('<%=Boardid%>',"Boardid2","é€‰å–æ‰€æœ‰ç‰ˆé¢","",0);
 //-->
 </SCRIPT>
 </div>
 <div id="News_6" style="display:none">
-<!-- Õ¹Çøµ÷ÓÃ -->
+<!-- å±•åŒºè°ƒç”¨ -->
 <table border="0" cellpadding="3" cellspacing="1" width="100%">
 <tr>
 <td>
-ÏÔÊ¾¼ÇÂ¼Êý£º<INPUT TYPE="text" NAME="Total" value="<%=Node.getAttribute("Total")%>" size="3">
+æ˜¾ç¤ºè®°å½•æ•°ï¼š<INPUT TYPE="text" NAME="Total" value="<%=Node.getAttribute("Total")%>" size="3">
 &nbsp;&nbsp;&nbsp;&nbsp;
-Ã¿ÐÐÏÔÊ¾¸öÊý£º<INPUT TYPE="text" NAME="Tab" value="<%=Node.getAttribute("Tab")%>" size="3">
-&nbsp;&nbsp;&nbsp;&nbsp;±êÌâ³¤¶È£º<INPUT TYPE="text" NAME="Topiclen" value="<%=Node.getAttribute("Topiclen")%>" size="4">
+æ¯è¡Œæ˜¾ç¤ºä¸ªæ•°ï¼š<INPUT TYPE="text" NAME="Tab" value="<%=Node.getAttribute("Tab")%>" size="3">
+&nbsp;&nbsp;&nbsp;&nbsp;æ ‡é¢˜é•¿åº¦ï¼š<INPUT TYPE="text" NAME="Topiclen" value="<%=Node.getAttribute("Topiclen")%>" size="4">
 <br>
-µ÷ÓÃµÄ°æÃæ£º<SELECT id="Boardid3" NAME="Boardid"></SELECT>
-°æÃæÏÞÖÆÉèÖÃ£º
+è°ƒç”¨çš„ç‰ˆé¢ï¼š<SELECT id="Boardid3" NAME="Boardid"></SELECT>
+ç‰ˆé¢é™åˆ¶è®¾ç½®ï¼š
 	<SELECT NAME="BoardLock" ID="BoardLock">
-	<option value="0">²»ÏÞÖÆ</option>
-	<option value="1">¸Ã°æÃæ²»±»µ÷ÓÃ</option>
-	<option value="2">Ö»µ÷ÓÃ¸Ã°æÃæ</option>
-	<option value="3">¸Ã°æÃæµÄÏÂ¼¶°æÃæ</option>
-	<option value="4">¸Ã°æ¼°ÏÂ¼¶ËùÓÐ°æÃæ</option>
+	<option value="0">ä¸é™åˆ¶</option>
+	<option value="1">è¯¥ç‰ˆé¢ä¸è¢«è°ƒç”¨</option>
+	<option value="2">åªè°ƒç”¨è¯¥ç‰ˆé¢</option>
+	<option value="3">è¯¥ç‰ˆé¢çš„ä¸‹çº§ç‰ˆé¢</option>
+	<option value="4">è¯¥ç‰ˆåŠä¸‹çº§æ‰€æœ‰ç‰ˆé¢</option>
 	</SELECT>
-<BR>°æÃæµÄÏÞÖÆ£º<SELECT NAME="BoardLimit" ID="BoardLimit">
-	<option value="0" SELECTED>ÏÔÊ¾ËùÓÐÊý¾Ý</option>
-	<option value="1">²»ÏÔÊ¾ÌØÊâ°æÃæÊý¾Ý</option>
-	</SELECT>£¨ÌØÊâ°æÃæÖ¸Òþ²Ø°æÃæºÍÈÏÖ¤°æÃæ£©
+<BR>ç‰ˆé¢çš„é™åˆ¶ï¼š<SELECT NAME="BoardLimit" ID="BoardLimit">
+	<option value="0" SELECTED>æ˜¾ç¤ºæ‰€æœ‰æ•°æ®</option>
+	<option value="1">ä¸æ˜¾ç¤ºç‰¹æ®Šç‰ˆé¢æ•°æ®</option>
+	</SELECT>ï¼ˆç‰¹æ®Šç‰ˆé¢æŒ‡éšè—ç‰ˆé¢å’Œè®¤è¯ç‰ˆé¢ï¼‰
 <br>
-µ÷ÓÃÎÄ¼þÀàÐÍ £º <SELECT NAME="FileType" ID="FileType">
-	<option value="all" SELECTED>ËùÓÐÎÄ¼þ</option>
-	<option value="0">ÎÄ¼þ¼¯</option>
-	<option value="1">Í¼Æ¬¼¯</option>
-	<option value="2">FLASH¼¯</option>
-	<option value="3">ÒôÀÖ¼¯</option>
-	<option value="4">µçÓ°¼¯</option>
+è°ƒç”¨æ–‡ä»¶ç±»åž‹ ï¼š <SELECT NAME="FileType" ID="FileType">
+	<option value="all" SELECTED>æ‰€æœ‰æ–‡ä»¶</option>
+	<option value="0">æ–‡ä»¶é›†</option>
+	<option value="1">å›¾ç‰‡é›†</option>
+	<option value="2">FLASHé›†</option>
+	<option value="3">éŸ³ä¹é›†</option>
+	<option value="4">ç”µå½±é›†</option>
 	</SELECT>
 <br>
-ÏÔÊ¾ÅÅÐò£º<SELECT NAME="FileOrders" ID="FileOrders">
-	<option value="0" SELECTED>Ä¬ÈÏ</option>
-	<option value="1">°´ä¯ÀÀ´ÎÊý</option>
-	<option value="2">°´ÏÂÔØ´ÎÊý</option>
-	<option value="3">°´ÎÄ¼þ´óÐ¡</option>
+æ˜¾ç¤ºæŽ’åºï¼š<SELECT NAME="FileOrders" ID="FileOrders">
+	<option value="0" SELECTED>é»˜è®¤</option>
+	<option value="1">æŒ‰æµè§ˆæ¬¡æ•°</option>
+	<option value="2">æŒ‰ä¸‹è½½æ¬¡æ•°</option>
+	<option value="3">æŒ‰æ–‡ä»¶å¤§å°</option>
 	</SELECT>
 </td>
 </tr>
 </table>
 <SCRIPT LANGUAGE="JavaScript">
 <!--
-BoardJumpListSelect('<%=Boardid%>',"Boardid3","Ñ¡È¡ËùÓÐ°æÃæ","",0);
-//BoardJumpListSelect(<%=Boardid%>,"Boardid3","Ñ¡È¡ËùÓÐ°æÃæ","",0);
+BoardJumpListSelect('<%=Boardid%>',"Boardid3","é€‰å–æ‰€æœ‰ç‰ˆé¢","",0);
+//BoardJumpListSelect(<%=Boardid%>,"Boardid3","é€‰å–æ‰€æœ‰ç‰ˆé¢","",0);
 //-->
 </SCRIPT>
 </div>
@@ -929,297 +929,26 @@ BoardJumpListSelect('<%=Boardid%>',"Boardid3","Ñ¡È¡ËùÓÐ°æÃæ","",0);
 
 </div>
 <div id="News_8" style="display:none">
-<!-- ÐÅÏ¢µ÷ÓÃ -->
+<!-- ä¿¡æ¯è°ƒç”¨ -->
 <table border="0" cellpadding="3" cellspacing="1" width="100%">
 <tr>
 <td></td>
 </tr>
 </table>
 </div>
-<!-- ±äÁ¿ËµÃ÷ -->
+<!-- å˜é‡è¯´æ˜Ž -->
 <div id="skininfo_0" style="display:none"></div>
 <div id="skininfo_1" style="display:none">
 	<ol>
 	
-	<li>±êÌâ£º{$Topic}</li>
-	<li>×÷Õß£º{$UserName}</li>
-	<li>·¢±íÊ±¼ä£º{$PostTime}</li>
-	<li>»Ø¸´Õß£º{$ReplyName}</li>
-	<li>»Ø¸´Ê±¼ä£º{$ReplyTime}</li>
-	<li>°æ¿éÃû³Æ£º{$BoardName}</li>
-	<li>°æ¿éËµÃ÷£º{$BoardInfo}</li>
-	<li>ÐÄÇéÍ¼±ê£º{$Face}</li>
-	<li>Ìû×ÓID£º{$ID}</li>
-	<li>Ìû×ÓReplyID£º{$ReplyID}</li>
-	<li>°æÃæID£º{$Boardid}</li>
-	</ol>
-</div>
-<div id="skininfo_2" style="display:none">
-	<ol>
-	<li>¡õ- Ö÷Ìâ×ÜÊý £º{$TopicNum}</li>
-	<li>¡õ- ÂÛÌ³ÌùÊý £º{$PostNum}</li>
-	<li>¡õ- ×¢²áÈËÊý £º{$JoinMembers}</li>
-	<li>¡õ- ÂÛÌ³ÔÚÏß £º{$AllOnline}</li>
-	<li>¡õ- ÐÂ½ø»áÔ± £º{$LastUser}</li>
-	<li>¡õ- ½ñÈÕÌûÊý £º{$TodayPostNum}</li>
-	<li>¡õ- ×òÈÕÌùÊý £º{$YesterdayPostNum}</li>
-	<li>¡õ- ¸ß·åÌùÊý £º{$TopPostNum}</li>
-	<li>¡õ- ×î¸ßÔÚÏß £º{$TopOnline}</li>
-	<li>¡õ- ½¨Õ¾Ê±¼ä £º{$BuildDay}</li>
-	</ol>
-</div>
-<div id="skininfo_3" style="display:none">
-<ol>
-<li>°æ¿éID£º{$BoardID}</li>
-<li>°æ¿éÃû³Æ£º{$BoardName}</li>
-<li>°æ¿éËµÃ÷£º{$BoardInfo}</li>
-<li>°æ¿éÏÂ¼¶·Ö°æÊý£º{$BoardChild}</li>
-<li>°æ¿éÌû×ÓÊý£º{$PostNum}</li>
-<li>°æ¿éÖ÷ÌâÊý£º{$TopicNum}</li>
-<li>°æ¿éµ±Ìì·¢ÌûÊý£º{$TodayNum}</li>
-<li>°æ¿é¹æÔòËµÃ÷£º{$Rules}</li>
-</ol>
-</div>
-<div id="Board_Input" style="display:none">
-<fieldset title="Ä£°å±äÁ¿" style="padding:5px">
-<legend>&nbsp;°æ¿éÌØÊâÉèÖÃ&nbsp;</legend>
-Çø°æ¿éÇ°±êÊ¶·û£º<input type="text" name="Board_Input0" value="<%=Server.Htmlencode(Node.selectSingleNode("Board_Input0").text&"")%>" size="40">
-<br>
-×Ó°æ¿éÇ°±êÊ¶·û£º<input type="text" name="Board_Input1" value="<%=Server.Htmlencode(Node.selectSingleNode("Board_Input1").text&"")%>" size="40">
-<br>
-ÉÏÏÂ¼¶°æ¿é¼ä¸ô£º<input type="text" name="Board_Input2" value="<%=Server.Htmlencode(Node.selectSingleNode("Board_Input2").text&"")%>" size="40">
-<br>
-Í¬¼¶°æ¿é¼ä¸ô£º<input type="text" name="Board_Input4" value="<%=Server.Htmlencode(Node.selectSingleNode("Board_Input4").text&"")%>" size="40">
-<br>
-°æ¿é»»ÐÐ£º<input type="text" name="Board_Input3" value="<%=Server.Htmlencode(Node.selectSingleNode("Board_Input3").text&"")%>" size="40">
-</fieldset>
-</div>
-<div id="skininfo_4" style="display:none">
-	<ol>
-	<li>ÓÃ»§ID £º{$UserID}</li>
-	<li>ÓÃ»§Ãû £º{$UserName}</li>
-	<li>ÓÃ»§Ö÷ÌâÊý £º{$UserTopic}</li>
-	<li>ÓÃ»§Ìû×ÓÊý £º{$UserPost}</li>
-	<li>ÓÃ»§¾«»ªÊý £º{$UserBest}</li>
-	<li>ÓÃ»§½ðÇ® £º{$UserWealth}</li>
-	<li>ÓÃ»§÷ÈÁ¦ £º{$UserCP}</li>
-	<li>ÓÃ»§»ý·Ö £º{$UserEP}</li>
-	<li>ÓÃ»§±»É¾ÌûÊý £º{$UserDel}</li>
-	<li>ÓÃ»§ÐÔ±ð £º{$UserSex}</li>
-	<li>ÓÃ»§×¢²áÊ±¼ä £º{$JoinDate}</li>
-	<li>ÓÃ»§µÇÂ½´ÎÊý £º{$UserLogins}</li>
-	</ol>
-</div>
-<div id="skininfo_5" style="display:none">
-	<ol>
-	<li>¹«¸æID£º{$ID}</li>
-	<li>±êÌâ£º{$Topic}</li>
-	<li>×÷Õß£º{$UserName}</li>
-	<li>°æ¿éÃû³Æ£º{$BoardName}</li>
-	<li>°æ¿éID£º{$Boardid}</li>
-	<li>Ê±¼ä£º{$PostTime}</li>
-	</ol>
-</div>
-<div id="skininfo_6" style="display:none">
-	<ol>
-	<li>×÷Õß£º{$UserName}</li>
-	<li>°æ¿éÃû³Æ£º{$BoardName}</li>
-	<li>°æ¿éID£º{$Boardid}</li>
-	<li>Ê±¼ä£º{$AddTime}</li>
-	<li>ÎÄ¼þID£º{$ID}</li>
-	<li>ÎÄ¼þÃû£º{$Filename}</li>
-	<li>ÎÄ¼þËµÃ÷£º{$Readme}</li>
-	<li>ÎÄ¼þÀàÐÍ£º{$FileType}</li>
-	<li>ÎÄ¼þÔ¤ÀÀÎÄ¼þÃû£º{$ViewFilename}</li>
-	<li>ä¯ÀÀÊý£º{$ViewNum}</li>
-	<li>ÏÂÔØÊý£º{$DownNum}</li>
-	<li>ÎÄ¼þ´óÐ¡£º{$FileSize}</li>
-	<li>Ìû×ÓÖ÷ÌâID£º{$RootID}</li>
-	<li>Ìû×Ó¶ÔÓ¦ID£º{$ReplyID}</li>
-	<li>½»ÌæÑÕÉ«£º{$TColor}</li>
-	</ol>
-</div>
-<div id="Show_Input" style="display:none">
-<fieldset title="Ä£°å±äÁ¿" style="padding:5px">
-<legend>&nbsp;Õ¹ÇøÌØÊâÉèÖÃ&nbsp;</legend>
-Í¼Æ¬¿í¶È£º<input type="text" name="PicWidth" value="<%=Node.getAttribute("PicWidth")%>" size="10"> ÏóËØ
-<br>
-Í¼Æ¬¸ß¶È£º<input type="text" name="PicHeight" value="<%=Node.getAttribute("PicHeight")%>" size="10"> ÏóËØ
-<br>
-½»ÌæÑÕÉ«1£º<input type="text" name="TColor1" id="TColor1" value="<%=Node.getAttribute("TColor1")%>" size="10">
-<img border=0 src="../images/post/rect.gif" style="cursor:pointer;background-Color:<%=Node.getAttribute("TColor1")%>;" onclick="Getcolor(this,'TColor1');" title="Ñ¡È¡ÑÕÉ«!">
-<br>
-½»ÌæÑÕÉ«2£º<input type="text" name="TColor2" id="TColor1" value="<%=Node.getAttribute("TColor2")%>" size="10">
-<img border=0 src="../images/post/rect.gif" style="cursor:pointer;background-Color:<%=Node.getAttribute("TColor2")%>;" onclick="Getcolor(this,'TColor2');" title="Ñ¡È¡ÑÕÉ«!">
-<br>
-»»ÐÐ±ê¼Ç£º<input type="text" name="Board_Input0" value="<%=Server.Htmlencode(Node.selectSingleNode("Board_Input0").text&"")%>" size="40">
-</fieldset>
-</div>
-<div id="skininfo_7" style="display:none">
-	<!--È¦×ÓµÄ£¬Áô×öËüÓÃ-->
-</div>
-<div id="skininfo_8" style="display:none">
-	<ol>
-	<li>ÑéÖ¤Âë£º{$CheckCode}</li>
-	</ol>
-</div>
-<iframe width="260" height="165" id="colourPalette" src="../images/post/nc_selcolor.htm" style="visibility:hidden; position: absolute; left: 0px; top: 0px;border:1px gray solid" frameborder="0" scrolling="no" ></iframe>
-<!-- ±äÁ¿ËµÃ÷ -->
-<!-- Ä¬ÈÏÄ£Ê½ -->
-
-<!-- Ä¬ÈÏÄ£Ê½ -->
-<SCRIPT LANGUAGE="JavaScript">
-<!--
-function NewsTypeSel(Val){
-	var skininfo = document.getElementById("skininfo_"+Val);
-	if (skininfo){
-		document.getElementById("skin_info").innerHTML = skininfo.innerHTML;
-	}
-	if (Val>0){
-		var News = document.getElementById("News_"+Val);
-		document.getElementById("News").innerHTML = News.innerHTML;
-	}else{
-		document.getElementById("News").innerHTML = "";
-	}
-	if (Val==3){
-	document.getElementById("DisInput").innerHTML = document.getElementById("Board_Input").innerHTML;
-	}
-	else if(Val==6){
-	document.getElementById("DisInput").innerHTML = document.getElementById("Show_Input").innerHTML;
-	}
-	else
-	{
-	document.getElementById("DisInput").innerHTML = "";
-	}
-}
-
-function OutputNewsCode(Val){
-	var obj = TheForm.Newscode;
-	if (obj){
-		if (Val!=''){
-			obj.value = "<scr"+"ipt src=\"Dv_News.asp?GetName="+Val.toLowerCase()+"\"><\/scr"+"ipt>";
-		}else{
-			obj.value = "";
-		}
-	}
-}
-//Ä¬ÈÏÖµ
-CheckSel("FormatTime",'<%=Node.getAttribute("FormatTime")%>');
-CheckSel("NewsType",'<%=Node.getAttribute("NewsType")%>');
-CheckSel("Orders",'<%=Node.getAttribute("Orders")%>');
-CheckSel("UserOrders",'<%=Node.getAttribute("UserOrders")%>');
-NewsTypeSel(<%=Node.getAttribute("NewsType")%>);
-CheckSel("TopicType",'<%=Node.getAttribute("TopicType")%>');
-CheckSel("BoardLimit",'<%=Node.getAttribute("BoardLimit")%>');
-chkradio(TheForm.Stats,'<%=Node.getAttribute("Stats")%>');
-CheckSel("BoardLock",'<%=Node.getAttribute("BoardLock")%>');
-CheckSel("FileType",'<%=Node.getAttribute("FileType")%>');BoardType
-CheckSel("FileOrders",'<%=Node.getAttribute("FileOrders")%>');
-CheckSel("BoardType",'<%=Node.getAttribute("BoardType")%>');
-//-->
-</SCRIPT>
-<%
-End Sub
-
-Sub NewsList()
-	Set XmlDoc = Dvbbs.CreateXmlDoc("Msxml2.FreeThreadedDOMDocument"& MsxmlVersion)
-	If Not XmlDoc.load(NewsConfigFile) Then
-		ErrMsg = "Ê×Ò³µ÷ÓÃÁÐ±íÎª¿Õ£¬ÇëÌí¼ÓÊ×Ò³µ÷ÓÃºóÔÙÖ´ÐÐ±¾²Ù×÷!"
-		Dvbbs_Error()
-		Exit Sub
-	End If
-	Dim SendLogNode,Childs
-	Set SendLogNode = XmlDoc.DocumentElement.SelectNodes("NewsCode")
-	Childs = SendLogNode.Length	'ÁÐ±íÊý
-	%>
-	<br>
-	<table cellpadding="3" cellspacing="1" border="0" align="center" width="100%">
-		<tr><th colspan="7" height="23">Ê×Ò³µ÷ÓÃÁÐ±í</th></tr>
-		<tr>
-			<td width="1%" height="23" align=center nowrap>Ñ¡È¡</td>
-			<td width="10%" align=center>Àà±ð</td>
-			<td width="10%" align=center>Ãû³Æ</td>
-			<td width="*" align=center nowrap>ËµÃ÷</td>
-			<td width="20%" align=center>Ìí¼ÓÊ±¼ä/¸üÐÂÊ±¼ä</td>
-			<td width="20%" align=center>Ìí¼ÓÕß</td>
-			<td width="1%" align=center>²Ù×÷</td>
-		</tr>
-		<form action="?" method="post" name="TheForm">
-		<%
-		Dim SearchStr,Topic,i
-		i=0
-		For Each Node in SendLogNode
-		%>
-		<tr>
-			<td class="<%If i Mod 2 = 1 Then %>td1<%Else%>td2<%End If%>" align=center>
-			<INPUT TYPE="checkbox" class="checkbox" NAME="DelNodes" value="<%=Node.getAttribute("AddTime")%>">
-			</td>
-			<td class="<%If i Mod 2 = 1 Then %>td1<%Else%>td2<%End If%>" align=center><%=NewsCodeType(Node.getAttribute("NewsType"))%></td>
-			<td class="<%If i Mod 2 = 1 Then %>td1<%Else%>td2<%End If%>" align=center><%=Node.getAttribute("NewsName")%></td>
-			<td class="<%If i Mod 2 = 1 Then %>td1<%Else%>td2<%End If%>">
-			<%=Node.getAttribute("Intro")%>
-			<br><font color="gray">¸üÐÂÊ±¼ä¼ä¸ôÎª£º(<font color="red"><%=Node.getAttribute("Updatetime")%></font>) Ãë¡£</font>
-			</td>
-			<td class="<%If i Mod 2 = 1 Then %>td1<%Else%>td2<%End If%>"><%=Node.getAttribute("AddTime")%><br><font color="red"><%=Node.getAttribute("LastTime")%></font></td>
-			<td class="<%If i Mod 2 = 1 Then %>td1<%Else%>td2<%End If%>" align=center><%=Node.getAttribute("MasterName")%><br><font color="gray"><%=Node.getAttribute("MasterIP")%></font></td>
-			<td class="<%If i Mod 2 = 1 Then %>td1<%Else%>td2<%End If%>" align=center>
-			<input type="submit" class="button"  onclick="this.form.Act.value='EditNewsInfo';Selchecked(this.form.DelNodes,<%=i%>);" value="±à¼­">
-			<input type="submit" class="button"  onclick="this.form.Act.value='CopyNewsInfo';Selchecked(this.form.DelNodes,<%=i%>);" value="¸´ÖÆ">
-			<input type="button" class="button" value="Ô¤ÀÀ" onclick="runscript(viewcode,'<%=Node.getAttribute("NewsName")%>');">
-			</td>
-		</tr>
-		<%
-			i=i+1
-		Next
-		%>
-		<tr>
-			<td colspan="7" class="td2">
-			<input type="hidden" name="viewcode" value="">
-			<input type="hidden" name="Act" value="DelNewsInfo">
-			<input type="submit" class="button" name="Submit" value="É¾³ý¼ÇÂ¼"  onclick="{if(confirm('×¢Òâ£ºËùÉ¾³ýµÄÄ£°æ½«²»ÄÜ»Ö¸´£¡')){this.form.submit();return true;}return false;}">  <input type=checkbox class=checkbox name=chkall value=on onclick="CheckAll(this.form)">È«Ñ¡</td>
-		</tr>
-		</form>
-	</table>
-	<SCRIPT LANGUAGE="JavaScript">
-	<!--
-	function Selchecked(obj,n){
-		if (obj[n]){
-			obj[n].checked=true;
-		}else{
-			obj.checked=true;
-		}
-	}
-	function runscript(n,Val){
-	TheForm.viewcode.value = "<scr"+"ipt src=\"Dv_News.asp?GetName="+Val.toLowerCase()+"\"><\/scr"+"ipt>";
-	txtRun=n;	window.open("../Dv_NewsView.asp",'Dv_ViewNews','toolbar=no,location=no,directories=no,status=yes,menubar=yes,scrollbars=yes,resizable=yes,copyhistory=no,width=780,height=450,left=200,top=150');
-	}
-	//-->
-	</SCRIPT>
-	</table>
-	<%
-	Set XmlDoc = Nothing
-End Sub
-
-
-Function NewsCodeType(TypeVal)
-	NewsCodeType = "Î´Öª"
-	Select Case Cstr(TypeVal)
-	Case "1"
-		NewsCodeType = "Ìû×Ó"
-	Case "2"
-		NewsCodeType = "ÐÅÏ¢"
-	Case "3"
-		NewsCodeType = "°æ¿é"
-	Case "4"
-		NewsCodeType = "»áÔ±"
-	Case "5"
-		NewsCodeType = "¹«¸æ"
-	Case "6"
-		NewsCodeType = "Õ¹Çø"
-	
-	Case "8"
-		NewsCodeType = "µÇÂ¼¿ò"
-	End Select
-	NewsCodeType = NewsCodeType & "µ÷ÓÃ"
-End Function
-%>
+	<li>æ ‡é¢˜ï¼š{$Topic}</li>
+	<li>ä½œè€…ï¼š{$UserName}</li>
+	<li>å‘è¡¨æ—¶é—´ï¼š{$PostTime}</li>
+	<li>å›žå¤è€…ï¼š{$ReplyName}</li>
+	<li>å›žå¤æ—¶é—´ï¼š{$ReplyTime}</li>
+	<li>ç‰ˆå—åç§°ï¼š{$BoardName}</li>
+	<li>ç‰ˆå—è¯´æ˜Žï¼š{$BoardInfo}</li>
+	<li>å¿ƒæƒ…å›¾æ ‡ï¼š{$Face}</li>
+	<li>å¸–å­IDï¼š{$ID}</li>
+	<li>å¸–å­FileType" ID="FileType">
+	<option value="all" SELECTED>éŽµâ‚¬éˆå¤‹æžƒæµ 

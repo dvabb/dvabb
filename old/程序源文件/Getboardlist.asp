@@ -52,23 +52,23 @@ function GetBbsList(dom)
 
 <script language="JScript"  runat="server" >
 	/*
-	Jscriptº¯Êı
+	Jscriptå‡½æ•°
 	*/
-	//StringBuilder ×Ö·û´®»º³å¶ÔÏó
+	//StringBuilder å­—ç¬¦ä¸²ç¼“å†²å¯¹è±¡
 	var StringBuilder = function(){
 	this._sArray = new Array();
 	}
-	//·½·¨ append Ïò»º³åÀïÑ¹ÈëÒ»¸ö×Ö·û´®£¬²ÎÊıstr=ÒªÑ¹ÈëµÄ×Ö·ûÄÚÈİ
+	//æ–¹æ³• append å‘ç¼“å†²é‡Œå‹å…¥ä¸€ä¸ªå­—ç¬¦ä¸²ï¼Œå‚æ•°str=è¦å‹å…¥çš„å­—ç¬¦å†…å®¹
 	StringBuilder.prototype.append = function(str){
 		this._sArray.push(str);
 	}
-	//·½·¨toString °Ñ»º³åÖĞµÄÄÚÈİÈ«²¿°´Ñ¹ÈëµÄ´ÎĞòÈ¡³ö¡£
+	//æ–¹æ³•toString æŠŠç¼“å†²ä¸­çš„å†…å®¹å…¨éƒ¨æŒ‰å‹å…¥çš„æ¬¡åºå–å‡ºã€‚
 	StringBuilder.prototype.toString = function(){
 		return this._sArray.join('');
 	}
 
 	
-		//JsonÀà 
+		//Jsonç±» 
 		function Json()
 		{
 			this.success=true;
@@ -76,7 +76,7 @@ function GetBbsList(dom)
 			this.singleInfo=new String();
 			this.arrData=new Array();
 			this.arrDataItem=new Array();
-			//Reset ·½·¨£¬×÷ÓÃ£ºÖØĞÂ³õÊ¼»¯ ÒÔ±ã¼ÌĞø´¦ÀíÏÂÒ»¸öJson;
+			//Reset æ–¹æ³•ï¼Œä½œç”¨ï¼šé‡æ–°åˆå§‹åŒ– ä»¥ä¾¿ç»§ç»­å¤„ç†ä¸‹ä¸€ä¸ªJson;
 			this.Reset=function()
 			{
 				this.success=true;
@@ -85,21 +85,21 @@ function GetBbsList(dom)
 				this.arrData=new Array();
 				this.arrDataItem=new Array();
 			}
-			//AddItem Ìí¼ÓÒ»¸öÊı¾İÏî
-			//²ÎÊı name Êı¾İÏîÃû³Æ£¬
-			//²ÎÊı_value Êı¾İÏîµÄÖµ
+			//AddItem æ·»åŠ ä¸€ä¸ªæ•°æ®é¡¹
+			//å‚æ•° name æ•°æ®é¡¹åç§°ï¼Œ
+			//å‚æ•°_value æ•°æ®é¡¹çš„å€¼
 			this.AddItem=function(name,_value)
 			{
 				this.arrDataItem.push(name);
 				this.arrDataItem.push(_value);
 			}
-			//ItemOk Êı¾İÏîÄ¿Ìí¼ÓÍê±Ï£¬°ÑÊı¾İÑ¹ÈëarrDataÊı×éÎªÏÂÒ»ĞĞÊı¾İµÄÌí¼Ó×ö×¼±¸
+			//ItemOk æ•°æ®é¡¹ç›®æ·»åŠ å®Œæ¯•ï¼ŒæŠŠæ•°æ®å‹å…¥arrDataæ•°ç»„ä¸ºä¸‹ä¸€è¡Œæ•°æ®çš„æ·»åŠ åšå‡†å¤‡
 			this.ItemOk=function()
 			{
 				this.arrData.push(this.arrDataItem);
 				this.arrDataItem=new Array();
 			}
-			//toString °ÑJsonµÄ×Ö·û´®ÄÚÈİ´ÓÊı×éÖĞÈ¡³öÀ´
+			//toString æŠŠJsonçš„å­—ç¬¦ä¸²å†…å®¹ä»æ•°ç»„ä¸­å–å‡ºæ¥
 			this.toString=function()
 			{
 				var sb=new StringBuilder();
@@ -132,28 +132,28 @@ function GetBbsList(dom)
 			}
 		}
 		/*
-		Json ÀàÓ¦ÓÃÀı×Ó
+		Json ç±»åº”ç”¨ä¾‹å­
 		 var json = new Json();
 		 json.AddItem("Id","1");
-		 json.AddItem("Type","²âÊÔÏîÄ¿1");
-		 json.AddItem("contents","ÄÚÈİ");
+		 json.AddItem("Type","æµ‹è¯•é¡¹ç›®1");
+		 json.AddItem("contents","å†…å®¹");
 		 json.ItemOk();
 		 json.AddItem("Id","2");
-		 json.AddItem("Type","²âÊÔÏîÄ¿2");
-		 json.AddItem("contents","ÄÚÈİ");
+		 json.AddItem("Type","æµ‹è¯•é¡¹ç›®2");
+		 json.AddItem("contents","å†…å®¹");
 		 Response.write(json.toString())
-		 Ê¹ÓÃjson.toString()·µ»ØµÄÄÚÈİ½«»áÊÇ
-		 {success:true,error:"",singleInfo:"",data:[{Id:unescape("1"),Type:unescape("²âÊÔÏîÄ¿1"),contents:unescape("ÄÚÈİ")}]}
+		 ä½¿ç”¨json.toString()è¿”å›çš„å†…å®¹å°†ä¼šæ˜¯
+		 {success:true,error:"",singleInfo:"",data:[{Id:unescape("1"),Type:unescape("æµ‹è¯•é¡¹ç›®1"),contents:unescape("å†…å®¹")}]}
 		 
-		 Òª¸üÉîÈëÁË½âJson Çëä¯ÀÀ
+		 è¦æ›´æ·±å…¥äº†è§£Json è¯·æµè§ˆ
 		 http://www.json.org/json-zh.html
 		 http://www.google.cn/search?source=ig&hl=zh-CN&q=Json&lr=
 		 
 		*/
 		//RsToJson
-	 //¼ÇÂ¼¼¯×ª»»³ÉJson¶ÔÏó¡£
-	 //²ÎÊı£ºRs ÀàĞÍ£ºADODB.Recordset
-	 //·µ»ØÖµ£¬×Ô¶¨¶ÔÏóJson
+	 //è®°å½•é›†è½¬æ¢æˆJsonå¯¹è±¡ã€‚
+	 //å‚æ•°ï¼šRs ç±»å‹ï¼šADODB.Recordset
+	 //è¿”å›å€¼ï¼Œè‡ªå®šå¯¹è±¡Json
 		function RsToJson(Rs)
 			{
 				var json= new Json()
@@ -168,7 +168,7 @@ function GetBbsList(dom)
 			    }
 				return json;
 			}
-		//×ª»»ÈÕÆÚÊ±¼ä£¬²ÎÊı(datestr)¿ÉÒÔÊÇºÁÃëÊı(1178331182500)»òÕß×Ö·û´®(Sun Aug 5 14:21:59 UTC+0800 2007)
+		//è½¬æ¢æ—¥æœŸæ—¶é—´ï¼Œå‚æ•°(datestr)å¯ä»¥æ˜¯æ¯«ç§’æ•°(1178331182500)æˆ–è€…å­—ç¬¦ä¸²(Sun Aug 5 14:21:59 UTC+0800 2007)
 		function strToDate (datestr)
 		{
 			var newDate;
@@ -182,7 +182,7 @@ function GetBbsList(dom)
 		}
 		//Response.write (strToDate("Sun Aug 5 14:21:59 UTC+0800 2007"))
 		//Response.write(strToDate(1178331182500));
-		//Ä£°æ¶ÔÏó
+		//æ¨¡ç‰ˆå¯¹è±¡
 		/*
 		var Mytemplate={};
 		Mytemplate.loadhtml=function(_value)

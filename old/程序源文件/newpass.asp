@@ -8,24 +8,24 @@ If Dvbbs.UserID>0 Then
 	If (Isnull(usercookies) or usercookies="") And Not Isnumeric(usercookies) Then usercookies=0
 
 	Call updateCookiesInfo(usercookies,TruePassWord)
-	'¼ì²éĞ´ÈëÊÇ·ñ³É¹¦Èç¹û³É¹¦Ôò¸üĞÂÊı¾İ
+	'æ£€æŸ¥å†™å…¥æ˜¯å¦æˆåŠŸå¦‚æœæˆåŠŸåˆ™æ›´æ–°æ•°æ®
 	i=0
 	Do While i<3
 		If Dvbbs.checkStr(Trim(Request.Cookies(Dvbbs.Forum_sn)("password")))=TruePassWord Then
 			Dvbbs.Execute("Update [Dv_user] Set TruePassWord='"&TruePassWord&"' where UserID="&Dvbbs.UserID)
 			Dvbbs.MemberWord = TruePassWord
 			Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@truepassword").text= TruePassWord
-			Response.write "Cookies¸üĞÂ³É¹¦£¡"
+			Response.write "Cookiesæ›´æ–°æˆåŠŸï¼"
 			Exit Do
 		Else
-			Response.Write "µÚ"&(i+1)&"´Î¸üĞÂÊ§°Ü£¬ÖØĞÂ·¢ËÍCookiesĞÅÏ¢"
+			Response.Write "ç¬¬"&(i+1)&"æ¬¡æ›´æ–°å¤±è´¥ï¼Œé‡æ–°å‘é€Cookiesä¿¡æ¯"
 			Call updateCookiesInfo(usercookies,TruePassWord)
 		End If
 		i=i+1
 	Loop
 End If
 
-'¸üĞÂÓÃ»§CookiesĞÅÏ¢
+'æ›´æ–°ç”¨æˆ·Cookiesä¿¡æ¯
 Sub updateCookiesInfo(usercookies,TruePassWord)
 	Select Case Cint(usercookies)
 		Case 0

@@ -4,7 +4,7 @@
 <!--#include file="inc/dv_ubbcode.asp"-->
 <!-- #include file="inc/ubblist.asp" -->
 <%
-Dim IsThisBoardMaster 'È·¶¨µ±Ç°ÓÃ»§ÊÇ·ñ±¾°æ°æÖ÷£¬·ÀÖ¹ÏÂÃæµÄ²Ù×÷Ó°Ïìµ½ Dvbbs.BoardMasterµ¼ÖÂ³ö´í
+Dim IsThisBoardMaster 'ç¡®å®šå½“å‰ç”¨æˆ·æ˜¯å¦æœ¬ç‰ˆç‰ˆä¸»ï¼Œé˜²æ­¢ä¸‹é¢çš„æ“ä½œå½±å“åˆ° Dvbbs.BoardMasterå¯¼è‡´å‡ºé”™
 IsThisBoardMaster = Dvbbs.BoardMaster
 Dim dv_ubb
 Set dv_ubb=new Dvbbs_UbbCode
@@ -27,19 +27,19 @@ If TotalUseTable="" Then
 Else
 	TotalUseTable=checktable(TotalUseTable)
 End If
-Dvbbs.Stats="Ô¤ÀÀÌû×Ó"
+Dvbbs.Stats="é¢„è§ˆå¸–å­"
 Dvbbs.head()
 Dim Username,PostBuyUser
 Dim abgcolor,bgcolor
 abgcolor="tablebody1"
 bgcolor="tablebody2"
 Dim EmotPath
-EmotPath=Split(Dvbbs.Forum_emot,"|||")(0)		'emĞÄÇéÂ·¾¶
+EmotPath=Split(Dvbbs.Forum_emot,"|||")(0)		'emå¿ƒæƒ…è·¯å¾„
 Response.Write "<p>&nbsp;</p>"
 Response.Write "<table cellpadding=3 cellspacing=1 align=center class=tableborder1>"
 Response.Write "<TBODY> "
 Response.Write "<TR>"
-Response.Write "<Th height=25>Ìû×ÓÔ¤ÀÀ</Th>"
+Response.Write "<Th height=25>å¸–å­é¢„è§ˆ</Th>"
 Response.Write "</TR>"
 Response.Write "<TR>"
 Response.Write "<TD class=tablebody1 height=24>"

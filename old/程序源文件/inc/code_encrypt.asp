@@ -119,21 +119,21 @@ Function AuthCode(str, operation, key)
 	Dim rndKey(256),Box(256),Result
 	result = ""
 
-	'Ñ­»·½øĞĞ£º
-	'iÓÃkey_lengthÇóÓà£¬Çó³öµÄ½á¹û»ñÈ¡ASCII
-	'°Ñ½á¹û¸³Öµµ½rndkeyÊı×éÖĞ£¬Êı×ékeyÊÇi
-	'°Ñ i ¸³Öµµ½boxÊı×éÖĞ£¬Êı×ékeyÊÇi
+	'å¾ªç¯è¿›è¡Œï¼š
+	'iç”¨key_lengthæ±‚ä½™ï¼Œæ±‚å‡ºçš„ç»“æœè·å–ASCII
+	'æŠŠç»“æœèµ‹å€¼åˆ°rndkeyæ•°ç»„ä¸­ï¼Œæ•°ç»„keyæ˜¯i
+	'æŠŠ i èµ‹å€¼åˆ°boxæ•°ç»„ä¸­ï¼Œæ•°ç»„keyæ˜¯i
 	For i = 0 To 255 Step 1
 		rndKey(i) = Asc(Mid(key, (i Mod key_length) + 1, 1))
 		box(i) = i
 	Next 
 
-	'Ñ­»·½øĞĞ£º
-	'j + key=iµÄboxÊı×é + key=iµÄrndkeyÊı×é£¬½á¹ûÓÃ256ÇóÓà£¬½á¹û¸³Öµ¸ø j
-	'key=iµÄboxÊı×é¸³Öµ¸ø tmp
-	'key=jµÄboxÊı×é¸³Öµ¸ø key=iµÄboxÊı×é
-	'tmp ¸³Öµ¸ø key=jµÄboxÊı×é
-	'Ò»¾ä»°£¬±äÁ¿Í¨¹ıÁÙÊ±±äÁ¿¸³Öµ
+	'å¾ªç¯è¿›è¡Œï¼š
+	'j + key=içš„boxæ•°ç»„ + key=içš„rndkeyæ•°ç»„ï¼Œç»“æœç”¨256æ±‚ä½™ï¼Œç»“æœèµ‹å€¼ç»™ j
+	'key=içš„boxæ•°ç»„èµ‹å€¼ç»™ tmp
+	'key=jçš„boxæ•°ç»„èµ‹å€¼ç»™ key=içš„boxæ•°ç»„
+	'tmp èµ‹å€¼ç»™ key=jçš„boxæ•°ç»„
+	'ä¸€å¥è¯ï¼Œå˜é‡é€šè¿‡ä¸´æ—¶å˜é‡èµ‹å€¼
 	Dim j, tmp
 	j = 0
 	For i = 0 To 255 Step 1
@@ -143,12 +143,12 @@ Function AuthCode(str, operation, key)
 		box(j) = tmp
 	Next 
 
-	'×ÅÖØ½âÊÍ£ºord($string[$i]) ^ ($box[($box[$a] + $box[$j]) % 256])£¬
-	'^ ×ó±ßÊÇ¶Ôkey=iµÄÊı×éstring½øĞĞord
-	' ^ ÓÒ±ßÊÇ $box[$a] + $box[$j] Ïà¼Ó½á¹ûÓÃ256ÇóÓà£¬ÇóÓàµÄ½á¹ûµ±×÷µ÷ÓÃÊı×éboxµÄkey
-	' ^ ÊÇ¶ş½øÖÆ°´Î»Òì»ò²Ù×÷
-	'×ÅÖØ½âÊÍ£º$result .= chr(
-	'ÒâË¼ÊÇ£¬°ÑchrµÄ½á¹û£¬×·¼Ó¸øresult±äÁ¿
+	'ç€é‡è§£é‡Šï¼šord($string[$i]) ^ ($box[($box[$a] + $box[$j]) % 256])ï¼Œ
+	'^ å·¦è¾¹æ˜¯å¯¹key=içš„æ•°ç»„stringè¿›è¡Œord
+	' ^ å³è¾¹æ˜¯ $box[$a] + $box[$j] ç›¸åŠ ç»“æœç”¨256æ±‚ä½™ï¼Œæ±‚ä½™çš„ç»“æœå½“ä½œè°ƒç”¨æ•°ç»„boxçš„key
+	' ^ æ˜¯äºŒè¿›åˆ¶æŒ‰ä½å¼‚æˆ–æ“ä½œ
+	'ç€é‡è§£é‡Šï¼š$result .= chr(
+	'æ„æ€æ˜¯ï¼ŒæŠŠchrçš„ç»“æœï¼Œè¿½åŠ ç»™resultå˜é‡
 	Dim a
 	a = 0
 	j = 0
@@ -169,10 +169,10 @@ Function AuthCode(str, operation, key)
 	Next
 	'response.write(Base64encode(result))
 
-	'DECODEÊ±£¬Ëù×ö²Ù×÷
-	'Èç¹û resultµÄÇ°8¸ö×Ö·û µÈÓÚ resultµÚ8¸ö×Ö·û¿ªÊ¼ºóĞø×Ö·û×·¼Ókey×öMD5ºóÔÙ½ØÈ¡Ç°8¸ö×Ö·û£¬·µ»Ø resultµÚ8¸ö×Ö·û¿ªÊ¼ºóĞø×Ö·û
-	'·ñÔò ·µ»Ø¿Õ×Ö·û
-	'ENCODEÊ±£¬°Ñ result base64±àÂëºóµÄ½á¹ûÖĞµÄ = Ìæ»»Îª ¿Õ×Ö·û
+	'DECODEæ—¶ï¼Œæ‰€åšæ“ä½œ
+	'å¦‚æœ resultçš„å‰8ä¸ªå­—ç¬¦ ç­‰äº resultç¬¬8ä¸ªå­—ç¬¦å¼€å§‹åç»­å­—ç¬¦è¿½åŠ keyåšMD5åå†æˆªå–å‰8ä¸ªå­—ç¬¦ï¼Œè¿”å› resultç¬¬8ä¸ªå­—ç¬¦å¼€å§‹åç»­å­—ç¬¦
+	'å¦åˆ™ è¿”å›ç©ºå­—ç¬¦
+	'ENCODEæ—¶ï¼ŒæŠŠ result base64ç¼–ç åçš„ç»“æœä¸­çš„ = æ›¿æ¢ä¸º ç©ºå­—ç¬¦
 	If "DECODE" = operation Then
 		If Mid(result, 1, 8) = Mid(md5(Mid(result, 9) & key, 32), 1, 8) Then 
 			AuthCode = Mid(result, 9)

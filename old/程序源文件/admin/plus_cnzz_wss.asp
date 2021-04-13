@@ -123,7 +123,7 @@ Sub TemplateApply()
 <table width="100%"  border="0" cellspacing="0" cellpadding="0" class="tableborder" style="h">
   <tr>
     <td colspan="2" class="tdtit">
-       ÕıÔÚ¿ªÍ¨ÂÛÌ³Í³¼Æ,ÇëÉÔºò......
+       æ­£åœ¨å¼€é€šè®ºå›ç»Ÿè®¡,è¯·ç¨å€™......
     </td>
   </tr>
 </table>
@@ -370,14 +370,14 @@ function getwss(){
 	document.getElementsByTagName("head")[0].appendChild(ojbscript);
 
 	if(document.all){
-		ojbscript.onreadystatechange = function(){//IEÓÃ
+		ojbscript.onreadystatechange = function(){//IEç”¨
 			var state = ojbscript.readyState;
 			if (state == "loaded" || state == "interactive" || state == "complete") {
 				callback();
 			}
 		};
 	} else {
-		ojbscript.onload = function() {//FFÓÃ
+		ojbscript.onload = function() {//FFç”¨
 			callback();
 		};
 	}
@@ -387,22 +387,22 @@ function callback(){
 	$errmsg='';
 	switch (wssRet){
 		case -1:
-		$errmsg='Key±àÂë´íÎó';
+		$errmsg='Keyç¼–ç é”™è¯¯';
 		break;
 		case -2:
-		$errmsg='ÄúµÄÓòÃû³¤¶È³¬¹ı×î³¤ÏŞÖÆ:64';
+		$errmsg='æ‚¨çš„åŸŸåé•¿åº¦è¶…è¿‡æœ€é•¿é™åˆ¶:64';
 		break;
 		case -3:
-		$errmsg='ÄúµÄÓòÃû°üº¬²»Ö§³ÖµÄ×Ö·û';
+		$errmsg='æ‚¨çš„åŸŸååŒ…å«ä¸æ”¯æŒçš„å­—ç¬¦';
 		break;
 		case -4:
-		$errmsg='CNZZ·şÎñÆ÷ÄÚ²¿´íÎó(Êı¾İ¿â´íÎó)';
+		$errmsg='CNZZæœåŠ¡å™¨å†…éƒ¨é”™è¯¯(æ•°æ®åº“é”™è¯¯)';
 		break;
 		case -5:
-		$errmsg='Ã¿¸öIP×¢²áµÄÓòÃûÊı×î¶à²»ÄÜ³¬¹ı10';
+		$errmsg='æ¯ä¸ªIPæ³¨å†Œçš„åŸŸåæ•°æœ€å¤šä¸èƒ½è¶…è¿‡10';
 		break;
 		case -6:
-		$errmsg='Á¬½ÓÍ³¼Æ·şÎñÆ÷Ê§°Ü';
+		$errmsg='è¿æ¥ç»Ÿè®¡æœåŠ¡å™¨å¤±è´¥';
 		break;
 		default:
 		$errmsg='';
@@ -428,52 +428,52 @@ function copyWssCode(){
 	var objTextArea=document.getElementById("CnzzWssCode");
 	objTextArea.select();
 	window.clipboardData.setData("text",objTextArea.value);
-	alert("´úÂëÒÑ¾­¸´ÖÆµ½¼ôÌù°å!");
+	alert("ä»£ç å·²ç»å¤åˆ¶åˆ°å‰ªè´´æ¿!");
 }
 </script>
 <table cellpadding="3" cellspacing="1" border="0" align="center" width="100%">
 	<tr>
-		<th colspan="2" style="text-align: center;">WSS²å¼şËµÃ÷</th>
+		<th colspan="2" style="text-align: center;">WSSæ’ä»¶è¯´æ˜</th>
 	</tr>
 	<tr>
 		<td width="20%" class="td1" align="center">
 		<button style="width: 80; height: 50; border: 1px outset;" class="button">
-		×¢ÒâÊÂÏî</button></td>
+		æ³¨æ„äº‹é¡¹</button></td>
 		<td width="80%" class="td2">
-		<li>´Ë¹¦ÄÜ½Ó¿ÚÓÉCNZZÌá¹©,ÎªÄúµÄÍøÕ¾Ìá¹©Í³¼Æ·şÎñ</li>
-		<li>Äú¿ÉÒÔµã»÷<a href="http://wss.cnzz.com/user/companion/cms_login.php?site_id=<%=CnzzWssID%>&password=<%=CnzzWssPassword%>" target="_blank">²é¿´Í³¼Æ</a>²é¿´ÄúµÄÍøÕ¾Í³¼ÆĞÅÏ¢</li>
-		<li>Èç¹ûÄúÆôÓÃ»òÕß¹Ø±ÕÊ¹¹¦ÄÜ£¬ÔÚ´Ë±£´æºó£¬»¹ĞèÒª¸üĞÂÂÛÌ³»º´æ²ÅÄÜÉúĞ§¡£</li>
+		<li>æ­¤åŠŸèƒ½æ¥å£ç”±CNZZæä¾›,ä¸ºæ‚¨çš„ç½‘ç«™æä¾›ç»Ÿè®¡æœåŠ¡</li>
+		<li>æ‚¨å¯ä»¥ç‚¹å‡»<a href="http://wss.cnzz.com/user/companion/cms_login.php?site_id=<%=CnzzWssID%>&password=<%=CnzzWssPassword%>" target="_blank">æŸ¥çœ‹ç»Ÿè®¡</a>æŸ¥çœ‹æ‚¨çš„ç½‘ç«™ç»Ÿè®¡ä¿¡æ¯</li>
+		<li>å¦‚æœæ‚¨å¯ç”¨æˆ–è€…å…³é—­ä½¿åŠŸèƒ½ï¼Œåœ¨æ­¤ä¿å­˜åï¼Œè¿˜éœ€è¦æ›´æ–°è®ºå›ç¼“å­˜æ‰èƒ½ç”Ÿæ•ˆã€‚</li>
 		</td>
 	</tr>
 </table>
 <br />
 <table border="0" cellspacing="1" cellpadding="3" align="center" width="100%">
 	<tr>
-		<th colspan="3" style="text-align: center;">WSS²å¼şÉèÖÃ</th>
+		<th colspan="3" style="text-align: center;">WSSæ’ä»¶è®¾ç½®</th>
 	</tr>
 	<form name="form1" id="frmsetting" method="POST" action="?">
 	<input type="hidden" name="action" id="action" value="saveconfig">
 		<tr>
-			<td align="right" width="25%">ÊÇ·ñÆôÓÃ£º</td>
+			<td align="right" width="25%">æ˜¯å¦å¯ç”¨ï¼š</td>
 			<td>
-				<input type="radio" name="CnzzWssIsOpen" style="border:none" value="1" <%If 1=CnzzWssIsOpen Then Response.Write "checked":End If %>>ÆôÓÃ&nbsp;&nbsp;&nbsp;&nbsp;
-				<input type="radio" name="CnzzWssIsOpen" style="border:none" value="0" <%If 1<>CnzzWssIsOpen Then Response.Write "checked":End If %>>¹Ø±Õ&nbsp;
+				<input type="radio" name="CnzzWssIsOpen" style="border:none" value="1" <%If 1=CnzzWssIsOpen Then Response.Write "checked":End If %>>å¯ç”¨&nbsp;&nbsp;&nbsp;&nbsp;
+				<input type="radio" name="CnzzWssIsOpen" style="border:none" value="0" <%If 1<>CnzzWssIsOpen Then Response.Write "checked":End If %>>å…³é—­&nbsp;
 			</td>
 		</tr>
 		<tr style="display:none;">
-			<td align="right" width="25%">Õ¾µãID£º</td>
+			<td align="right" width="25%">ç«™ç‚¹IDï¼š</td>
 			<td>
 				<input type="text" name="CnzzWssID" size="30" value="<%=CnzzWssID%>" id="CnzzWssID" readonly />&nbsp;&nbsp;
 			</td>
 		</tr>
 		<tr style="display:none;">
-			<td align="right" width="25%">µÇÂ½ÃÜÂë£º</td>
+			<td align="right" width="25%">ç™»é™†å¯†ç ï¼š</td>
 			<td>
 				<input type="text" name="CnzzWssPassword" size="30" value="<%=CnzzWssPassword%>" id="CnzzWssPassword" readonly />&nbsp;&nbsp;
 			</td>
 		</tr>
 		<tr style="display:none;">
-			<td align="right" width="25%">Í³¼Æ´úÂë£º</td>
+			<td align="right" width="25%">ç»Ÿè®¡ä»£ç ï¼š</td>
 			<td>
 				<textarea id="CnzzWssCode" name="CnzzWssCode" rows="6" cols="80" readonly onclick="copyWssCode()" onmouseover="this.select();" style="font-size:12px;"><script src='http://pw.cnzz.com/c.php?id=<%=CnzzWssID%>&l=2' language='JavaScript' charset='gb2312'></script></textarea>
 			</td>
@@ -481,14 +481,14 @@ function copyWssCode(){
 <%If 1=CnzzWssIsOpen Then%>
         <tr>
 			<td colspan="2" style="height:100px;font-size:18px;text-align:center;">
-				ÄúÒÑ¾­¿ªÍ¨ÁËcnzz¸øÄúÌá¹©µÄÃâ·ÑÁ÷Á¿Í³¼Æ <input type="button" value="²é¿´Í³¼Æ" class="button" onclick="window.open('http://wss.cnzz.com/user/companion/cms_login.php?site_id=<%=CnzzWssID%>&password=<%=CnzzWssPassword%>','')">
+				æ‚¨å·²ç»å¼€é€šäº†cnzzç»™æ‚¨æä¾›çš„å…è´¹æµé‡ç»Ÿè®¡ <input type="button" value="æŸ¥çœ‹ç»Ÿè®¡" class="button" onclick="window.open('http://wss.cnzz.com/user/companion/cms_login.php?site_id=<%=CnzzWssID%>&password=<%=CnzzWssPassword%>','')">
 			</td>
 		</tr>
 <%End If%>
 		<tr>
 			<td class="td2" colspan="2" align="center">
-				<input type="submit" name="Submit" value="±£´æÉèÖÃ" class="button" onclick="document.getElementById('action').value='saveconfig'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				<input type="submit" name="Submit" value="ÖØĞÂ×¢²á" class="button" onclick="document.getElementById('action').value='register'">
+				<input type="submit" name="Submit" value="ä¿å­˜è®¾ç½®" class="button" onclick="document.getElementById('action').value='saveconfig'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<input type="submit" name="Submit" value="é‡æ–°æ³¨å†Œ" class="button" onclick="document.getElementById('action').value='register'">
 			</td>
 		</tr>
 	</form>

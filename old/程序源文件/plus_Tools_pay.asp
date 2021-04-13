@@ -4,27 +4,27 @@
 <%
 Dim Action,SaleUserName,InputDisable,ToolsCount
 Dim TheUserToolsNum
-SaleUserName = "ÏµÍ³"
+SaleUserName = "ç³»ç»Ÿ"
 InputDisable = " Disabled " 
 Action = Trim(Request("action"))
-Dvbbs.stats = "ÂÛÌ³µÀ¾ß²Ù×÷"
+Dvbbs.stats = "è®ºå›é“å…·æ“ä½œ"
 
 Select Case Action
 	Case "BuyTools"
-		Dvbbs.stats = Dvbbs.stats & "-¹ºÂòÏµÍ³µÀ¾ß"
+		Dvbbs.stats = Dvbbs.stats & "-è´­ä¹°ç³»ç»Ÿé“å…·"
 	Case "BuyUserTools"
-		Dvbbs.stats = Dvbbs.stats & "-¹ºÂòÓÃ»§µÀ¾ß"
+		Dvbbs.stats = Dvbbs.stats & "-è´­ä¹°ç”¨æˆ·é“å…·"
 	Case "SellTools"
-		Dvbbs.stats = Dvbbs.stats & "-³öÊÛµÀ¾ß"
+		Dvbbs.stats = Dvbbs.stats & "-å‡ºå”®é“å…·"
 	Case "SaveBuyTools","SaveSellTools"
-		Dvbbs.stats = Dvbbs.stats & "-±£´æµÀ¾ß²Ù×÷"
+		Dvbbs.stats = Dvbbs.stats & "-ä¿å­˜é“å…·æ“ä½œ"
 End Select
 
 Dvbbs.LoadTemplates("")
 Dvbbs.head()
 Dv_Tools.ChkToolsLogin
 
-'ÈôÊÇÓÃ»§¹ºÂò»ò×ªÈÃ£¬¸ü¸ÄµÀ¾ß¼Û¸ñÎªÓÃ»§×Ô¶¨Òå¼Û¸ñ
+'è‹¥æ˜¯ç”¨æˆ·è´­ä¹°æˆ–è½¬è®©ï¼Œæ›´æ”¹é“å…·ä»·æ ¼ä¸ºç”¨æˆ·è‡ªå®šä¹‰ä»·æ ¼
 If Request("BussID")<>"" and IsNumeric(Request("BussID")) Then
 	Dim Rs,Sql,i,BussID,SaleUserID,SaleToolsID
 	BussID = Dv_Tools.CheckNumeric(Request("BussID"))
@@ -45,30 +45,30 @@ If Request("BussID")<>"" and IsNumeric(Request("BussID")) Then
 End If
 If Action = "SellTools" Then InputDisable = ""
 
-'Ïà¹ØÖ´ĞĞĞÅÏ¢
+'ç›¸å…³æ‰§è¡Œä¿¡æ¯
 Select Case Action
 	Case "BuyTools","BuyUserTools","SellTools"
-		'µÀ¾ßĞÅÏ¢
+		'é“å…·ä¿¡æ¯
 		ToolsInfo()
 		BuyTools
 	Case "SaveBuyTools"
 		SaveBuyTools
-		'µÀ¾ßĞÅÏ¢
+		'é“å…·ä¿¡æ¯
 		ToolsInfo()
 	Case "SaveSellTools"
 		SaveSellTools
-		'µÀ¾ßĞÅÏ¢
+		'é“å…·ä¿¡æ¯
 		ToolsInfo()
 	Case "SaveBuyUserTools"
 		SaveBuyUserTools
-		'µÀ¾ßĞÅÏ¢
+		'é“å…·ä¿¡æ¯
 		ToolsInfo()
 End Select
 
 Dvbbs.mainsetting(0)="98%"
 Dvbbs.Footer()
 Dvbbs.PageEnd()
-'µÀ¾ßĞÅÏ¢
+'é“å…·ä¿¡æ¯
 Sub ToolsInfo()
 If Dv_Tools.ToolsInfo(15)="" Then Dv_Tools.ToolsInfo(15)="Dv_plus/Tools/pic/None.jpg"
 Set Rs = Dvbbs.Plus_Execute("Select ToolsCount,SaleCount From [Dv_Plus_Tools_Buss] Where UserID="& Dvbbs.UserID &" and ToolsID="& Dv_Tools.ToolsID)
@@ -83,32 +83,32 @@ Set Rs=Nothing
 <table border="0" cellpadding=3 cellspacing=1 align=center class=Tableborder1 Style="Width:99%">
 <form name=PlusTools method=post>
     <tr>
-      <th height="23" colspan="3"><%=Dv_Tools.ToolsInfo(1)%> -- µÀ¾ßĞÅÏ¢</th>
+      <th height="23" colspan="3"><%=Dv_Tools.ToolsInfo(1)%> -- é“å…·ä¿¡æ¯</th>
     </tr>
     <tr>
       <td width="30%" rowspan="18" class="tablebody1" align=center>
 	  <font size=6><b><%=Dv_Tools.ToolsInfo(1)%></b></font>
 	  <br><img src="<%=Dv_Tools.ToolsInfo(15)%>" border=0>
 	  </td>
-      <td width="70%" height="20" class="tablebody1" colspan="2">µÀ¾ßËµÃ÷£º<hr style="BORDER: #807d76 1px dotted;height:1px;"><%=Dv_Tools.ToolsInfo(2)%></td>
+      <td width="70%" height="20" class="tablebody1" colspan="2">é“å…·è¯´æ˜ï¼š<hr style="BORDER: #807d76 1px dotted;height:1px;"><%=Dv_Tools.ToolsInfo(2)%></td>
     </tr>
 	<tr>
-      <th height="23" class="tablebody1" colspan="2">¹ºÂòËµÃ÷</th>
+      <th height="23" class="tablebody1" colspan="2">è´­ä¹°è¯´æ˜</th>
     </tr>
 	<tr>
-      <td width="30%" height="20" class="tablebody1" align=Right>ĞèÒª½ğ±Ò£º</td>
+      <td width="30%" height="20" class="tablebody1" align=Right>éœ€è¦é‡‘å¸ï¼š</td>
       <td width="40%" class="tablebody1"><font color="<%= Dvbbs.mainsetting(1) %>"><B><%=Dv_Tools.ToolsInfo(6)%></B></font></td>
     </tr>
 	<tr>
-      <td height="20" class="tablebody1" align=Right>ĞèÒªµãÈ¯£º</td>
+      <td height="20" class="tablebody1" align=Right>éœ€è¦ç‚¹åˆ¸ï¼š</td>
       <td class="tablebody1"><font color="<%= Dvbbs.mainsetting(1) %>"><B><%=Dv_Tools.ToolsInfo(13)%></B></font></td>
     </tr>
     <tr>
-      <td height="20" class="tablebody1" align=Right>¹ºÂò·½Ê½£º</td>
+      <td height="20" class="tablebody1" align=Right>è´­ä¹°æ–¹å¼ï¼š</td>
       <td class="tablebody1">
 	  	<%
 		If Dv_Tools.ToolsInfo(4)<=0 Then
-			Response.Write "ÔİÍ£¹ºÂò"
+			Response.Write "æš‚åœè´­ä¹°"
 		Else
 			Response.Write Dv_Tools.BuyType(Dv_Tools.ToolsInfo(14))
 		End IF
@@ -116,52 +116,52 @@ Set Rs=Nothing
 		</td>
     </tr>
     <tr>
-      <td height="23" class="tablebody1" align=Right>¿É¹ºÂòµÀ¾ßÊıÁ¿£º</td>
+      <td height="23" class="tablebody1" align=Right>å¯è´­ä¹°é“å…·æ•°é‡ï¼š</td>
       <td class="tablebody1"><B><%=Dv_Tools.ToolsInfo(4)%></B></td>
     </tr>
 	<tr>
-      <th height="23" class="tablebody1" colspan="2">Ê¹ÓÃÏŞÖÆ</th>
+      <th height="23" class="tablebody1" colspan="2">ä½¿ç”¨é™åˆ¶</th>
     </tr>
     <tr>
-      <td height="23" class="tablebody1" align=Right>Ê¹ÓÃÓÃ»§Ìû×ÓÊıÖÁÉÙ£º</td>
+      <td height="23" class="tablebody1" align=Right>ä½¿ç”¨ç”¨æˆ·å¸–å­æ•°è‡³å°‘ï¼š</td>
       <td class="tablebody1"><%=Dv_Tools.ToolsInfo(7)%></td>
     </tr>
     <tr>
-      <td height="23" class="tablebody1" align=Right>Ê¹ÓÃÓÃ»§½ğÇ®ÊıÖÁÉÙ£º</td>
+      <td height="23" class="tablebody1" align=Right>ä½¿ç”¨ç”¨æˆ·é‡‘é’±æ•°è‡³å°‘ï¼š</td>
       <td class="tablebody1"><%=Dv_Tools.ToolsInfo(8)%></td>
     </tr>
 	<tr>
-      <td height="23" class="tablebody1" align=Right>Ê¹ÓÃÓÃ»§»ı·ÖÖµÖÁÉÙ£º</td>
+      <td height="23" class="tablebody1" align=Right>ä½¿ç”¨ç”¨æˆ·ç§¯åˆ†å€¼è‡³å°‘ï¼š</td>
       <td class="tablebody1"><%=Dv_Tools.ToolsInfo(9)%></td>
     </tr>
 	<tr>
-      <td height="23" class="tablebody1" align=Right>Ê¹ÓÃÓÃ»§÷ÈÁ¦ÖµÖÁÉÙ£º</td>
+      <td height="23" class="tablebody1" align=Right>ä½¿ç”¨ç”¨æˆ·é­…åŠ›å€¼è‡³å°‘ï¼š</td>
       <td class="tablebody1"><%=Dv_Tools.ToolsInfo(10)%></td>
     </tr>
     <tr>
-      <td height="23" class="tablebody1" align=Right>Ä¿±êÓÃ»§Ìû×ÓÊıÖÁÉÙ£º</td>
+      <td height="23" class="tablebody1" align=Right>ç›®æ ‡ç”¨æˆ·å¸–å­æ•°è‡³å°‘ï¼š</td>
       <td class="tablebody1"><%=Dv_Tools.ToolsSetting(0)%></td>
     </tr>
     <tr>
-      <td height="23" class="tablebody1" align=Right>Ä¿±êÓÃ»§½ğÇ®ÊıÖÁÉÙ£º</td>
+      <td height="23" class="tablebody1" align=Right>ç›®æ ‡ç”¨æˆ·é‡‘é’±æ•°è‡³å°‘ï¼š</td>
       <td class="tablebody1"><%=Dv_Tools.ToolsSetting(1)%></td>
     </tr>
 	<tr>
-      <td height="23" class="tablebody1" align=Right>Ä¿±êÓÃ»§»ı·ÖÖµÖÁÉÙ£º</td>
+      <td height="23" class="tablebody1" align=Right>ç›®æ ‡ç”¨æˆ·ç§¯åˆ†å€¼è‡³å°‘ï¼š</td>
       <td class="tablebody1"><%=Dv_Tools.ToolsSetting(2)%></td>
     </tr>
 	<tr>
-      <td height="23" class="tablebody1" align=Right>Ä¿±êÓÃ»§÷ÈÁ¦ÖµÖÁÉÙ£º</td>
+      <td height="23" class="tablebody1" align=Right>ç›®æ ‡ç”¨æˆ·é­…åŠ›å€¼è‡³å°‘ï¼š</td>
       <td class="tablebody1"><%=Dv_Tools.ToolsSetting(3)%></td>
     </tr>
 	<tr>
-      <td height="23" class="tablebody1" align=Right>ÔÊĞíÊ¹ÓÃµÄÓÃ»§×é»òµÈ¼¶£º</td>
+      <td height="23" class="tablebody1" align=Right>å…è®¸ä½¿ç”¨çš„ç”¨æˆ·ç»„æˆ–ç­‰çº§ï¼š</td>
       <td class="tablebody1">
 	  <Select Name="ToolsGroupID" Size=1>
 <%
 	Set Rs=Dvbbs.Execute("Select UserGroupID,UserTitle From Dv_UserGroups Where UserGroupID In ("&Dv_Tools.ToolsInfo(11)&") Order By UserGroupID")
 	If Rs.Eof And Rs.Bof Then
-		Response.Write "<option value=0>Ã»ÓĞÓÃ»§¿ÉÊ¹ÓÃ´ËµÀ¾ß</option>"
+		Response.Write "<option value=0>æ²¡æœ‰ç”¨æˆ·å¯ä½¿ç”¨æ­¤é“å…·</option>"
 	End If
 	Do While Not Rs.Eof
 		Response.Write "<option value="&Rs(0)&">"&Server.HtmlEncode(Rs(1))&"</option>"
@@ -172,10 +172,10 @@ Set Rs=Nothing
 %>
 	  </Select>
 	  <!--<INPUT TYPE="hidden" NAME="ToolsGroupID" value="">
-	  <input type="button" value="ÏêÏ¸²é¿´" onclick="PlusOpen('plus_Tools_InfoSetting.asp?orders=0&id=<%=Dv_Tools.ToolsID%>',650,500)">--></td>
+	  <input type="button" value="è¯¦ç»†æŸ¥çœ‹" onclick="PlusOpen('plus_Tools_InfoSetting.asp?orders=0&id=<%=Dv_Tools.ToolsID%>',650,500)">--></td>
     </tr>
 	<tr>
-      <td height="23" class="tablebody1" align=Right>ÔÊĞíÊ¹ÓÃµÄ°æ¿é£º</td>
+      <td height="23" class="tablebody1" align=Right>å…è®¸ä½¿ç”¨çš„ç‰ˆå—ï¼š</td>
       <td class="tablebody1">
 	  <Select Name=ToolsBoardID Size=1>
 <%
@@ -190,24 +190,24 @@ Set Rs=Nothing
 			Response.Write "<option value=" & Node.attributes.getNamedItem("boardid").text & ">"
 			Select Case Clng(Node.attributes.getNamedItem("depth").text)
 			Case 0
-				Response.Write "©ï"
+				Response.Write "â•‹"
 			Case 1
-				Response.Write "&nbsp;&nbsp;©À"
+				Response.Write "&nbsp;&nbsp;â”œ"
 			End Select
 			If Clng(Node.attributes.getNamedItem("depth").text)>1 Then
 				For ii=2 To Clng(Node.attributes.getNamedItem("depth").text)
-					Response.Write "&nbsp;&nbsp;©¦"
+					Response.Write "&nbsp;&nbsp;â”‚"
 				Next
-				Response.Write "&nbsp;&nbsp;©À"
+				Response.Write "&nbsp;&nbsp;â”œ"
 			End If
 			Response.Write " " & Node.attributes.getNamedItem("boardtype").text & "</option>"
 		End If
 	Next
-	If ii = 0 Then Response.Write "<option value=0>Ã»ÓĞ°æÃæ¿ÉÊ¹ÓÃ´ËµÀ¾ß</option>"
+	If ii = 0 Then Response.Write "<option value=0>æ²¡æœ‰ç‰ˆé¢å¯ä½¿ç”¨æ­¤é“å…·</option>"
 %>
 	  </Select>
 	  <!--<INPUT TYPE="hidden" NAME="ToolsBoardID" value="">
-	  <input type="button" value="ÏêÏ¸²é¿´" onclick="PlusOpen('plus_Tools_InfoSetting.asp?orders=1&id=<%=Dv_Tools.ToolsID%>',650,500)">--></td>
+	  <input type="button" value="è¯¦ç»†æŸ¥çœ‹" onclick="PlusOpen('plus_Tools_InfoSetting.asp?orders=1&id=<%=Dv_Tools.ToolsID%>',650,500)">--></td>
     </tr>
     <tr>
       <td height="23" colspan="2" class=Tablebody2>
@@ -219,41 +219,41 @@ Set Rs=Nothing
 End Sub
 
 '---------------------------------------------------------------
-'µÀ¾ß¹ºÂò
+'é“å…·è´­ä¹°
 '---------------------------------------------------------------
 Sub BuyTools()
 Dim ReAction,ActName
 Select Case Action
 	Case "BuyTools"
 		ReAction = "SaveBuyTools"
-		ActName = "¹ºÂò"
+		ActName = "è´­ä¹°"
 	Case "BuyUserTools"
 		ReAction = "SaveBuyUserTools"
-		ActName = "¹ºÂò"
+		ActName = "è´­ä¹°"
 	Case "SellTools"
 		ReAction = "SaveSellTools"
-		ActName = "×ªÈÃ"
+		ActName = "è½¬è®©"
 End Select
 
 %>
 <form name=PlusTools action="?action=<%=ReAction%>" method=post>
 <table border="0" cellpadding=3 cellspacing=1 align=center class=Tableborder1 Style="Width:99%">
     <tr>
-      <th height="23" colspan="2">µÀ¾ß½»Ò×²Ù×÷</th>
+      <th height="23" colspan="2">é“å…·äº¤æ˜“æ“ä½œ</th>
     </tr>
 	<tr>
 		<td height="23" class="tablebody1" colspan=2>
-	  ÄúÄ¿Ç°ÓĞ <B><%=Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usermoney").text%></B> ¸ö½ğ±ÒºÍ <B><%=Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userticket").text%></B> ÕÅµãÈ¯£¬ÓµÓĞ¸ÃµÀ¾ß <B><%=TheUserToolsNum%></B> ¸ö</td>
+	  æ‚¨ç›®å‰æœ‰ <B><%=Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usermoney").text%></B> ä¸ªé‡‘å¸å’Œ <B><%=Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userticket").text%></B> å¼ ç‚¹åˆ¸ï¼Œæ‹¥æœ‰è¯¥é“å…· <B><%=TheUserToolsNum%></B> ä¸ª</td>
     </tr>
 	<%
 	If Action = "BuyTools" Then
 	%>
 	<tr>
-		<td height="23" class="tablebody1" width="30%">¹ºÂò·½Ê½£º</td>
+		<td height="23" class="tablebody1" width="30%">è´­ä¹°æ–¹å¼ï¼š</td>
 		<td class="tablebody1">
 	  	<%
 		If Dv_Tools.ToolsInfo(4)<=0 Then
-			Response.Write "ÔİÍ£¹ºÂò"
+			Response.Write "æš‚åœè´­ä¹°"
 		Else
 			Response.Write Dv_Tools.BuyType(Dv_Tools.ToolsInfo(14))
 		End IF
@@ -264,58 +264,58 @@ End Select
 	End If
 	%>
 	<tr>
-		<td height="23" class="tablebody1" width="30%">³öÊÛ·½£º</td>
+		<td height="23" class="tablebody1" width="30%">å‡ºå”®æ–¹ï¼š</td>
 		<td class="tablebody1"><%=SaleUserName%></td>
     </tr>
     <tr>
-		<td height="23" class="tablebody1" width="30%"><%=ActName%>ÊıÁ¿£º</td>
+		<td height="23" class="tablebody1" width="30%"><%=ActName%>æ•°é‡ï¼š</td>
 		<td class="tablebody1">
 		<INPUT TYPE="Text" name="ToolsSum" value="1"><%'=Dv_Tools.ToolsInfo(4)%>
 		</td>
     </tr>
 
     <tr>
-		<td height="23" class="tablebody1" width="30%"><%=ActName%>ĞèÒª½ğ±Òµ¥¼Û£º</td>
+		<td height="23" class="tablebody1" width="30%"><%=ActName%>éœ€è¦é‡‘å¸å•ä»·ï¼š</td>
 		<td class="tablebody1">
 		<INPUT TYPE="Text" name="ToolsMoney" value="<%=Dv_Tools.ToolsInfo(6)%>"<%=InputDisable%>>
 		</td>
     </tr>
     <tr>
-		<td height="23" class="tablebody1" width="30%"><%=ActName%>ĞèÒªµãÈ¯µ¥¼Û£º</td>
+		<td height="23" class="tablebody1" width="30%"><%=ActName%>éœ€è¦ç‚¹åˆ¸å•ä»·ï¼š</td>
 		<td class="tablebody1">
 		<INPUT TYPE="Text" name="ToolsTicket" value="<%=Dv_Tools.ToolsInfo(13)%>"<%=InputDisable%>>
 		</td>
     </tr>
     <tr>
-		<td height="23" class="tablebody1" width="30%">½»Ò×Ö§¸¶·½Ê½£º</td>
+		<td height="23" class="tablebody1" width="30%">äº¤æ˜“æ”¯ä»˜æ–¹å¼ï¼š</td>
 		<td class="tablebody1">
 <%
 Select Case Action
 	Case "BuyTools"
 %>
 		<SELECT NAME="BuyType">
-		<option value="0"<%If Cint(Dv_Tools.ToolsInfo(14))=0 Then%> Selected<%End If%>>½ğ±Ò
-		<option value="1"<%If Cint(Dv_Tools.ToolsInfo(14))=1 or Cint(Dv_Tools.ToolsInfo(14))=3 Then%> Selected<%End If%>>µãÈ¯
-		<option value="2"<%If Cint(Dv_Tools.ToolsInfo(14))=2 Then%> Selected<%End If%>>½ğ±Ò+µãÈ¯
+		<option value="0"<%If Cint(Dv_Tools.ToolsInfo(14))=0 Then%> Selected<%End If%>>é‡‘å¸
+		<option value="1"<%If Cint(Dv_Tools.ToolsInfo(14))=1 or Cint(Dv_Tools.ToolsInfo(14))=3 Then%> Selected<%End If%>>ç‚¹åˆ¸
+		<option value="2"<%If Cint(Dv_Tools.ToolsInfo(14))=2 Then%> Selected<%End If%>>é‡‘å¸+ç‚¹åˆ¸
 		</option>
 		</SELECT>
 <%
 	Case "BuyUserTools"
 		If Clng(Dv_Tools.ToolsInfo(6))>0 And Clng(Dv_Tools.ToolsInfo(13))=0 Then
-			Response.Write "¹ºÂò´ËÓÃ»§×ªÈÃµÄµÀ¾ßĞèÒª»¨·ÑÄú <B>"&Dv_Tools.ToolsInfo(6)&"</B> ¸ö½ğ±Ò"
+			Response.Write "è´­ä¹°æ­¤ç”¨æˆ·è½¬è®©çš„é“å…·éœ€è¦èŠ±è´¹æ‚¨ <B>"&Dv_Tools.ToolsInfo(6)&"</B> ä¸ªé‡‘å¸"
 		ElseIf Clng(Dv_Tools.ToolsInfo(13))>0 And Clng(Dv_Tools.ToolsInfo(6))=0 Then
-			Response.Write "¹ºÂò´ËÓÃ»§×ªÈÃµÄµÀ¾ßĞèÒª»¨·ÑÄú <B>"&Dv_Tools.ToolsInfo(13)&"</B> ÕÅµãÈ¯"
+			Response.Write "è´­ä¹°æ­¤ç”¨æˆ·è½¬è®©çš„é“å…·éœ€è¦èŠ±è´¹æ‚¨ <B>"&Dv_Tools.ToolsInfo(13)&"</B> å¼ ç‚¹åˆ¸"
 		ElseIf Clng(Dv_Tools.ToolsInfo(13))>0 And Clng(Dv_Tools.ToolsInfo(6))>0 Then
-			Response.Write "¹ºÂò´ËÓÃ»§×ªÈÃµÄµÀ¾ßĞèÒªÍ¬Ê±»¨·ÑÄú <B>"&Dv_Tools.ToolsInfo(6)&"</B> ¸ö½ğ±ÒºÍ <B>"&Dv_Tools.ToolsInfo(13)&"</B> ÕÅµãÈ¯"
+			Response.Write "è´­ä¹°æ­¤ç”¨æˆ·è½¬è®©çš„é“å…·éœ€è¦åŒæ—¶èŠ±è´¹æ‚¨ <B>"&Dv_Tools.ToolsInfo(6)&"</B> ä¸ªé‡‘å¸å’Œ <B>"&Dv_Tools.ToolsInfo(13)&"</B> å¼ ç‚¹åˆ¸"
 		End If
 	Case "SellTools"
-		Response.Write "·¢²¼×ªÈÃĞÅÏ¢£¬ÌîĞ´½ğ±Ò»òµãÈ¯ÊıÖµÔòÊ¹ÓÃ½ğ±Ò»òµãÈ¯¶¼ÄÜ¹ºÂò£¬Èç¹ûÁ½Õß¶¼ÌîĞ´Ôò¹ºÂòÓÃ»§±ØĞëÍ¬Ê±Ö§¸¶ÏàÓ¦µÄ½ğ±ÒºÍµãÈ¯²ÅÄÜ¹ºÂò"
+		Response.Write "å‘å¸ƒè½¬è®©ä¿¡æ¯ï¼Œå¡«å†™é‡‘å¸æˆ–ç‚¹åˆ¸æ•°å€¼åˆ™ä½¿ç”¨é‡‘å¸æˆ–ç‚¹åˆ¸éƒ½èƒ½è´­ä¹°ï¼Œå¦‚æœä¸¤è€…éƒ½å¡«å†™åˆ™è´­ä¹°ç”¨æˆ·å¿…é¡»åŒæ—¶æ”¯ä»˜ç›¸åº”çš„é‡‘å¸å’Œç‚¹åˆ¸æ‰èƒ½è´­ä¹°"
 End Select
 %>
 		</td>
     </tr>
 	<tr><td height="23" colspan="2" class=Tablebody2 align=center>
-	<INPUT TYPE="submit" value="¾ö¶¨<%=ActName%>">
+	<INPUT TYPE="submit" value="å†³å®š<%=ActName%>">
 	<INPUT TYPE="hidden" name="ToolsID" value="<%=Dv_Tools.ToolsID%>">
 	<INPUT TYPE="hidden" name="BussID" value="<%=BussID%>">
 	</td></tr>
@@ -325,7 +325,7 @@ End Select
 End Sub
 
 '---------------------------------------------------------------
-'±£´æµÀ¾ß¹ºÂò£¨ÓëÏµÍ³½»Ò×£©
+'ä¿å­˜é“å…·è´­ä¹°ï¼ˆä¸ç³»ç»Ÿäº¤æ˜“ï¼‰
 '---------------------------------------------------------------
 Sub SaveBuyTools()
 	If Not Dvbbs.ChkPost Then
@@ -345,17 +345,17 @@ Sub SaveBuyTools()
 
 	If ToolsSum<0 Then ToolsSum=0
 	If ToolsSum>10 Then
-		Response.redirect "showerr.asp?ErrCodes=<li>ÏµÍ³ÉèÖÃÃ¿´Î×î¶àÖ»ÄÜ¹ºÂò10¸ö£¡&action=NoHeadErr"
+		Response.redirect "showerr.asp?ErrCodes=<li>ç³»ç»Ÿè®¾ç½®æ¯æ¬¡æœ€å¤šåªèƒ½è´­ä¹°10ä¸ªï¼&action=NoHeadErr"
 		Exit Sub
 	End If
-	Dv_Tools.BuySum = ToolsSum		'ÉèÖÃ¹ºÂòÊı¾İ
-	Dv_Tools.ChkBuyTools(BuyType)	'ÑéÖ¤¹ºÂòÈ¨ÏŞ
+	Dv_Tools.BuySum = ToolsSum		'è®¾ç½®è´­ä¹°æ•°æ®
+	Dv_Tools.ChkBuyTools(BuyType)	'éªŒè¯è´­ä¹°æƒé™
 	
 	ToolsMoney = Int(Dv_Tools.ToolsInfo(6))*ToolsSum
 	ToolsTicket = Int(Dv_Tools.ToolsInfo(13))*ToolsSum
 	If ToolsMoney<0 Then ToolsMoney=0
 	If ToolsTicket<0 Then ToolsTicket=0
-	'±£´æ¹ºÂòµÀ¾ß
+	'ä¿å­˜è´­ä¹°é“å…·
 	Set Rs = Dvbbs.iCreateObject("adodb.recordset")
 	Sql = "Select * From [Dv_Plus_Tools_Buss] where UserID="& Dvbbs.UserID &" and ToolsID="& Dv_Tools.ToolsID
 	Dvbbs.SqlQueryNum=Dvbbs.SqlQueryNum+1
@@ -379,9 +379,9 @@ Sub SaveBuyTools()
 	Rs.Update
 	Rs.Close
 	Set Rs = Nothing
-	'¼õÉÙÏµÍ³¿â´æºÍÔö¼ÓÓÃ»§¿â´æ
+	'å‡å°‘ç³»ç»Ÿåº“å­˜å’Œå¢åŠ ç”¨æˆ·åº“å­˜
 	Dvbbs.Plus_Execute("UPDATE Dv_Plus_Tools_Info Set SysStock = SysStock-"& ToolsSum &",UserStock=UserStock+"& ToolsSum &" where ID="&Dv_Tools.ToolsID)
-	'¸üĞÂÓÃ»§µ±Ç°ĞÅÏ¢
+	'æ›´æ–°ç”¨æˆ·å½“å‰ä¿¡æ¯
 	If Cint(Dv_Tools.ToolsInfo(14))=3 Then
 		If BuyType = 0 Then
 			ToolsTicket = 0
@@ -399,17 +399,17 @@ Sub SaveBuyTools()
 	End If
 
 	Dvbbs.Execute("UPDATE Dv_User Set UserMoney = "& Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usermoney").text &",UserTicket="& Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userticket").text &" where UserID="& Dvbbs.UserID)
-	'²åÈëÊÂ¼ş¼ÇÂ¼
+	'æ’å…¥äº‹ä»¶è®°å½•
 	'---------------------------------------------------------------
-	SucMsg = "ÏòÏµÍ³¹ºÂòµÀ¾ß£º"&Dv_Tools.ToolsInfo(1)&",ÊıÁ¿£º<b>"&ToolsSum&"</b>,»¨·Ñ½ğ±Ò£º"&ToolsMoney&"£¬»¨·ÑµãÈ¯£º"&ToolsTicket&"¡£"
+	SucMsg = "å‘ç³»ç»Ÿè´­ä¹°é“å…·ï¼š"&Dv_Tools.ToolsInfo(1)&",æ•°é‡ï¼š<b>"&ToolsSum&"</b>,èŠ±è´¹é‡‘å¸ï¼š"&ToolsMoney&"ï¼ŒèŠ±è´¹ç‚¹åˆ¸ï¼š"&ToolsTicket&"ã€‚"
 	Call Dvbbs.ToolsLog(Dv_Tools.ToolsID,ToolsSum,ToolsMoney,ToolsTicket,4,SucMsg,Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usermoney").text&"|"&Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userticket").text)
 	'---------------------------------------------------------------
-	SucMsg = SucMsg & " µÀ¾ß¹ºÂò³É¹¦£¡"
+	SucMsg = SucMsg & " é“å…·è´­ä¹°æˆåŠŸï¼"
 	Dvbbs.Dvbbs_Suc(SucMsg)
 End Sub
 
 '---------------------------------------------------------------
-'±£´æµÀ¾ß³öÊÛ(×ªÈÃ)
+'ä¿å­˜é“å…·å‡ºå”®(è½¬è®©)
 '---------------------------------------------------------------
 Sub SaveSellTools()
 	If Not Dvbbs.ChkPost Then
@@ -444,18 +444,18 @@ Sub SaveSellTools()
 	
 	Dvbbs.Plus_Execute("UPDATE [Dv_Plus_Tools_Buss] Set ToolsCount = "& UpToolsCount &",SaleCount="& UpSaleCount &",SaleMoney="& ToolsMoney &",SaleTicket="& ToolsTicket &" where ID="& BussID)
 	
-	'²åÈëÊÂ¼ş¼ÇÂ¼
+	'æ’å…¥äº‹ä»¶è®°å½•
 	'---------------------------------------------------------------
-	SucMsg = "×ªÈÃµÀ¾ß£º"&Dv_Tools.ToolsInfo(1)&",ÊıÁ¿£º<b>"&ToolsSum&"</b>¡£"
+	SucMsg = "è½¬è®©é“å…·ï¼š"&Dv_Tools.ToolsInfo(1)&",æ•°é‡ï¼š<b>"&ToolsSum&"</b>ã€‚"
 	Call Dvbbs.ToolsLog(Dv_Tools.ToolsID,ToolsSum,ToolsMoney,ToolsTicket,2,SucMsg,Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usermoney").text&"|"&Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userticket").text)
 	'---------------------------------------------------------------
-	SucMsg = SucMsg & " µÀ¾ß×ªÈÃ³É¹¦£¡"
+	SucMsg = SucMsg & " é“å…·è½¬è®©æˆåŠŸï¼"
 	Dvbbs.Dvbbs_Suc(SucMsg)
 	'---------------------------------------------------------------
 End Sub
 
 '---------------------------------------------------------------
-'±£´æµÀ¾ß¹ºÂò£¨ÓÃ»§¼ä½»Ò×£©
+'ä¿å­˜é“å…·è´­ä¹°ï¼ˆç”¨æˆ·é—´äº¤æ˜“ï¼‰
 '---------------------------------------------------------------
 Sub SaveBuyUserTools()
 	If Not Dvbbs.ChkPost Then
@@ -469,33 +469,33 @@ Sub SaveBuyUserTools()
 	ToolsSum = Dv_Tools.CheckNumeric(Request.Form("ToolsSum"))
 	BuyType = Dv_Tools.CheckNumeric(Request.Form("BuyType"))
 	If ToolsSum<0 Then ToolsSum=0
-	If Int(Dv_Tools.ToolsInfo(4)) = 0 or ToolsSum>Int(Dv_Tools.ToolsInfo(4)) OR ToolsSum = 0 Then Dv_Tools.ShowErr(8):Exit Sub '¿â´æ²»×ã
+	If Int(Dv_Tools.ToolsInfo(4)) = 0 or ToolsSum>Int(Dv_Tools.ToolsInfo(4)) OR ToolsSum = 0 Then Dv_Tools.ShowErr(8):Exit Sub 'åº“å­˜ä¸è¶³
 	ToolsMoney = Dv_Tools.ToolsInfo(6)*ToolsSum
 	ToolsTicket = Dv_Tools.ToolsInfo(13)*ToolsSum
 	If ToolsMoney<0 Then ToolsMoney=0
 	If ToolsTicket<0 Then ToolsTicket=0
 	If ToolsMoney = 0 And ToolsTicket = 0 Then Dv_Tools.ShowErr(7):Exit Sub
 
-	'ÅĞ¶ÏÓÃ»§ÊÇ·ñ¾ßÓĞ¹ºÂòÈ¨ÏŞ
+	'åˆ¤æ–­ç”¨æˆ·æ˜¯å¦å…·æœ‰è´­ä¹°æƒé™
 	If SaleUserID<>Dvbbs.UserID Then
 		If CCur(Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usermoney").text)<ToolsMoney Or CCur(Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userticket").text)<ToolsTicket Then Dv_Tools.ShowErr(7):Exit Sub
 	Else
 		Dvbbs.Plus_Execute("UPDATE [Dv_Plus_Tools_Buss] Set ToolsCount = ToolsCount+"& ToolsSum &",SaleCount=SaleCount-"& ToolsSum &" where ID="& BussID)
-		'²åÈëÊÂ¼ş¼ÇÂ¼
+		'æ’å…¥äº‹ä»¶è®°å½•
 		'---------------------------------------------------------------
-		SucMsg = "Óë×ÔÒÑ¹º»ØµÀ¾ß£º"&Dv_Tools.ToolsInfo(1)&",ÊıÁ¿£º<b>"&ToolsSum&"</b>¡£"
+		SucMsg = "ä¸è‡ªå·²è´­å›é“å…·ï¼š"&Dv_Tools.ToolsInfo(1)&",æ•°é‡ï¼š<b>"&ToolsSum&"</b>ã€‚"
 		Call Dvbbs.ToolsLog(Dv_Tools.ToolsID,ToolsSum,ToolsMoney,ToolsTicket,4,SucMsg,Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usermoney").text&"|"&Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userticket").text)
 		'---------------------------------------------------------------
-		SucMsg = SucMsg & "µÀ¾ßĞÅÏ¢ÒÑ¸üĞÂ¡£"
+		SucMsg = SucMsg & "é“å…·ä¿¡æ¯å·²æ›´æ–°ã€‚"
 		Dvbbs.Dvbbs_Suc(SucMsg)
 		Exit Sub
 	End If
 
-	'¸üĞÂÂô·½Êı¾İ(¼õÉÙÊÛ³öÊıÁ¿)
+	'æ›´æ–°å–æ–¹æ•°æ®(å‡å°‘å”®å‡ºæ•°é‡)
 	Dvbbs.Plus_Execute("UPDATE [Dv_Plus_Tools_Buss] Set SaleCount=SaleCount-"& ToolsSum &" where ID="& BussID)
 	Dvbbs.Execute("UPDATE Dv_User Set UserMoney = UserMoney+"& ToolsMoney &",UserTicket=UserTicket+"& ToolsTicket &" where UserID="& SaleUserID)
-	'¸üĞÂÂò·½Êı¾İ(¼õÉÙÊÛ³öÊıÁ¿)
-	'±£´æ¹ºÂòµÀ¾ß(ÈôÎ´ÕÒµ½µÀ¾ßÌí¼ÓĞÂµÄ¼ÇÂ¼£¬ÒÑÓĞµÀ¾ßÖ»Ğè¸üĞÂ¸öÈË¿â´æ)
+	'æ›´æ–°ä¹°æ–¹æ•°æ®(å‡å°‘å”®å‡ºæ•°é‡)
+	'ä¿å­˜è´­ä¹°é“å…·(è‹¥æœªæ‰¾åˆ°é“å…·æ·»åŠ æ–°çš„è®°å½•ï¼Œå·²æœ‰é“å…·åªéœ€æ›´æ–°ä¸ªäººåº“å­˜)
 	Set Rs = Dvbbs.iCreateObject("adodb.recordset")
 	Sql = "Select * From [Dv_Plus_Tools_Buss] where UserID="& Dvbbs.UserID &" and ToolsID="& Dv_Tools.ToolsID
 	If Cint(Dvbbs.Forum_Setting(92))=1 Then
@@ -517,7 +517,7 @@ Sub SaveBuyUserTools()
 	End If
 	Rs.Update
 	Rs.Close : Set Rs = Nothing
-	'¸üĞÂÓÃ»§µ±Ç°ĞÅÏ¢
+	'æ›´æ–°ç”¨æˆ·å½“å‰ä¿¡æ¯
 	'If Cint(Dv_Tools.ToolsInfo(14))=3 Then
 	'	If BuyType = 0 Then
 	'		Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usermoney").text = CCur(Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usermoney").text)-ToolsMoney
@@ -533,12 +533,12 @@ Sub SaveBuyUserTools()
 	'End If
 
 	Dvbbs.Execute("UPDATE Dv_User Set UserMoney = "& Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usermoney").text &",UserTicket="& Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userticket").text &" where UserID="& Dvbbs.UserID)
-	'²åÈëÊÂ¼ş¼ÇÂ¼
+	'æ’å…¥äº‹ä»¶è®°å½•
 	'---------------------------------------------------------------
-	SucMsg = "Ïò"&SaleUserName&"¹ºÂòµÀ¾ß£º"&Dv_Tools.ToolsInfo(1)&",ÊıÁ¿£º<b>"&ToolsSum&"</b>,»¨·Ñ½ğ±Ò£º"&ToolsMoney&"£¬»¨·ÑµãÈ¯£º"&ToolsTicket&"¡£"
+	SucMsg = "å‘"&SaleUserName&"è´­ä¹°é“å…·ï¼š"&Dv_Tools.ToolsInfo(1)&",æ•°é‡ï¼š<b>"&ToolsSum&"</b>,èŠ±è´¹é‡‘å¸ï¼š"&ToolsMoney&"ï¼ŒèŠ±è´¹ç‚¹åˆ¸ï¼š"&ToolsTicket&"ã€‚"
 	Call Dvbbs.ToolsLog(Dv_Tools.ToolsID,ToolsSum,ToolsMoney,ToolsTicket,4,SucMsg,Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usermoney").text&"|"&Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userticket").text)
 	'---------------------------------------------------------------
-	SucMsg = SucMsg & "µÀ¾ßĞÅÏ¢ÒÑ¸üĞÂ¡£"
+	SucMsg = SucMsg & "é“å…·ä¿¡æ¯å·²æ›´æ–°ã€‚"
 	Dvbbs.Dvbbs_Suc(SucMsg)
 	'---------------------------------------------------------------
 End Sub

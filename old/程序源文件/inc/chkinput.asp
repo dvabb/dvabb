@@ -1,5 +1,5 @@
 <%
-Rem ==========ÂÛÌ³Í¨ÓÃº¯Êý=========
+Rem ==========è®ºå›é€šç”¨å‡½æ•°=========
 
 Rem Check for valid syntax in an email address.
 Function IsValidEmail(email)
@@ -44,7 +44,7 @@ End Function
 Function StrLength(str)
 	ON ERROR RESUME NEXT
 	Dim WINNT_CHINESE
-	WINNT_CHINESE    = (len("ÂÛÌ³")=2)
+	WINNT_CHINESE    = (len("è®ºå›")=2)
 	If WINNT_CHINESE Then
 		Dim l,t,c
 		Dim i
@@ -85,7 +85,7 @@ Function CutStr(str,strlen)
 	CutStr=replace(cutStr,chr(10),"")
 End Function
 
-'ÊÇ·ñ·ûºÏÖ»ÊÇÓ¢ÎÄ¼ÓÊý×ÖµÄ×Ö´®
+'æ˜¯å¦ç¬¦åˆåªæ˜¯è‹±æ–‡åŠ æ•°å­—çš„å­—ä¸²
 Function ChkIsEnAndNum(str)
 	ChkIsEnAndNum = False
 	Dim Re
@@ -106,7 +106,7 @@ Function ChkIsEnAndNum(str)
 	Set Re = Nothing
 End Function
 
-'ÊÇ·ñ·ûºÏµç»°¹æÔò£¨ÊÖ»ú»òµç»°£©
+'æ˜¯å¦ç¬¦åˆç”µè¯è§„åˆ™ï¼ˆæ‰‹æœºæˆ–ç”µè¯ï¼‰
 Function ChkIsPhone(str)
 	Dim Re
 	Set re=new RegExp

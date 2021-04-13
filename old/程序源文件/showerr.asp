@@ -2,11 +2,11 @@
 <!--#include file="inc/const.asp"-->
 <!--#include file="inc/dv_clsother.asp"-->
 <%
-Session("GetCode")=empty	'Çå¿ÕÑéÖ¤Âë
+Session("GetCode")=empty	'æ¸…ç©ºéªŒè¯ç 
 Dim ErrString,action,i,showstr,ShowErrType,ComeUrl,tmpstr
 Dim Template_html_0,Template_html_1,Template_html_2,Template_html_3
 action = Request("action")
-'¹ıÂËHTML±êÇ© 2005-12-29 Dv.Yz
+'è¿‡æ»¤HTMLæ ‡ç­¾ 2005-12-29 Dv.Yz
 action = Dvbbs.Replacehtml(action)
 ShowErrType = Trim(Request("ShowErrType"))	'Dvbbs.ErrType '
 If ShowErrType = "" Then ShowErrType = "0"
@@ -33,34 +33,34 @@ If Dvbbs.forum_setting(79)="0" Then
 Else
 	Template_html_3=Replace(Template_html_3,"{$codestr}",Dvbbs.GetCode())
 	Template_html_1 = Replace(Template_html_1,"{$getcode}",Template_html_3)
-	Session("xcount")=4'o(ÑéÖ¤Âë)
+	Session("xcount")=4'o(éªŒè¯ç )
 End If
 
 Select Case action
-	Case "stop"		'ÂÛÌ³ÔİÍ£
+	Case "stop"		'è®ºå›æš‚åœ
 		Dvbbs.Stats=Template.Strings(1)
 		Dvbbs.head()
 		Template_html_2=Replace(Template_html_2,"{$title}",Template.Strings(2)&Template.Strings(1))
 		If Dvbbs.BoardID=0 Then
-			Rem Ö¸¶¨ÓÃ»§×é¹Ø±Õ Fish 2010-2-3
+			Rem æŒ‡å®šç”¨æˆ·ç»„å…³é—­ Fish 2010-2-3
 			If (Dvbbs.Forum_Setting(69)="0" Or Dvbbs.Forum_Setting(21)="1") and Dvbbs.TyClsGroup=0 Then 
 				Template_html_2=Replace(Template_html_2,"{$stopreadme}",Stopreadme)
 			Else
 				if Dvbbs.TyClsGroup= 1 Then
 				Dvbbs.Forum_Setting(70)=Split(Dvbbs.TyClsGroupM,"|")
-				showstr="<br><b>&nbsp;&nbsp;ÄúËùÔÚµÄÓÃ»§×é</b>ÉèÖÃÁËÊÇ·ñ¶¨Ê±¿ª·Å£¬Çë°´ÏÂÃæµÄÊ±¼ä·ÃÎÊ£º<hr size=""1""><ul>"
+				showstr="<br><b>&nbsp;&nbsp;æ‚¨æ‰€åœ¨çš„ç”¨æˆ·ç»„</b>è®¾ç½®äº†æ˜¯å¦å®šæ—¶å¼€æ”¾ï¼Œè¯·æŒ‰ä¸‹é¢çš„æ—¶é—´è®¿é—®ï¼š<hr size=""1""><ul>"
 				else
 				Dvbbs.Forum_Setting(70)=Split(Dvbbs.Forum_Setting(70),"|")
-				showstr="<br><b>&nbsp;&nbsp;"&Dvbbs.Forum_Info(0)&"</b>ÉèÖÃÁËÊÇ·ñ¶¨Ê±¿ª·Å£¬Çë°´ÏÂÃæµÄÊ±¼ä·ÃÎÊ£º<hr size=""1""><ul>"
+				showstr="<br><b>&nbsp;&nbsp;"&Dvbbs.Forum_Info(0)&"</b>è®¾ç½®äº†æ˜¯å¦å®šæ—¶å¼€æ”¾ï¼Œè¯·æŒ‰ä¸‹é¢çš„æ—¶é—´è®¿é—®ï¼š<hr size=""1""><ul>"
 				end if
 				For i=0 to UBound(Dvbbs.Forum_Setting(70))
 					If i mod 6=0 Then showstr=showstr&"<li>"
 					If i<10 Then showstr=showstr&"&nbsp;"
-					showstr=showstr&i&"µã£º"
+					showstr=showstr&i&"ç‚¹ï¼š"
 					If Dvbbs.Forum_Setting(70)(i)="1" Then
-						showstr=showstr&"<font color="""&Dvbbs.mainsetting(1)&""">ÊÇ</font>&nbsp;&nbsp;"
+						showstr=showstr&"<font color="""&Dvbbs.mainsetting(1)&""">æ˜¯</font>&nbsp;&nbsp;"
 					Else
-						showstr=showstr&"·ñ&nbsp;&nbsp;"
+						showstr=showstr&"å¦&nbsp;&nbsp;"
 					End If
 				Next
 				showstr=showstr&"</ul>"
@@ -68,22 +68,22 @@ Select Case action
 			End If
 		Else
 			Dvbbs.Board_Setting(22)=Split(Dvbbs.Board_Setting(22),"|")
-			showstr="<br><b>&nbsp;&nbsp;"&Dvbbs.boardtype&"</b>ÉèÖÃÁËÊÇ·ñ¶¨Ê±¿ª·Å£¬Çë°´ÏÂÃæµÄÊ±¼ä·ÃÎÊ£º<hr size=""1""><ul>"
+			showstr="<br><b>&nbsp;&nbsp;"&Dvbbs.boardtype&"</b>è®¾ç½®äº†æ˜¯å¦å®šæ—¶å¼€æ”¾ï¼Œè¯·æŒ‰ä¸‹é¢çš„æ—¶é—´è®¿é—®ï¼š<hr size=""1""><ul>"
 			For i=0 to UBound(Dvbbs.Board_Setting(22))
 				If i mod 6=0 Then showstr=showstr&"<li>"
 				If i<10 Then showstr=showstr&"&nbsp;"
-				showstr=showstr&i&"µã£º"
+				showstr=showstr&i&"ç‚¹ï¼š"
 				If Dvbbs.Board_Setting(22)(i)="1" Then
-					showstr=showstr&"<font color="""&Dvbbs.mainsetting(1)&""">ÊÇ</font>&nbsp;&nbsp;"
+					showstr=showstr&"<font color="""&Dvbbs.mainsetting(1)&""">æ˜¯</font>&nbsp;&nbsp;"
 				Else
-					showstr=showstr&"·ñ&nbsp;&nbsp;"
+					showstr=showstr&"å¦&nbsp;&nbsp;"
 				End If
 			Next
 			showstr=showstr&"</ul>"
 			Template_html_2=Replace(Template_html_2,"{$stopreadme}",showstr)
 		End If 
 		Response.Write Template_html_2
-	Case "iplock"	'IP±»ÏŞ
+	Case "iplock"	'IPè¢«é™
 		Dvbbs.Stats=Template.Strings(4)
 		Dvbbs.head()
 		Session(Dvbbs.CacheName & "UserID")=Empty 
@@ -96,13 +96,13 @@ Select Case action
 
 		Template_html_2=Replace(Template_html_2,"{$stopreadme}",Template_Strings_5)
 		Response.Write Template_html_2
-	Case "limitedonline"	'ÔÚÏß±»ÏŞ
+	Case "limitedonline"	'åœ¨çº¿è¢«é™
 		Dvbbs.Stats=Template.Strings(4)
 		Dvbbs.head()
 		Template_html_2=Replace(Template_html_2,"{$title}",Template.Strings(23))
 		Template_html_2=Replace(Template_html_2,"{$stopreadme}",Replace(Template.Strings(22),"{$onlinelimited}",Request("lnum")))
 		Response.Write Template_html_2
-	Case "OtherErr"		'ÏÔÊ¾¶¥²¿¼°µ¼º½µÄ´íÎóĞÅÏ¢ÌáÊ¾
+	Case "OtherErr"		'æ˜¾ç¤ºé¡¶éƒ¨åŠå¯¼èˆªçš„é”™è¯¯ä¿¡æ¯æç¤º
 		ErrCodes=CheckErrCodes(Request("ErrCodes"),0)
 		Dvbbs.Stats=action&"-"&Template.Strings(0)
 		Dvbbs.head()
@@ -112,7 +112,7 @@ Select Case action
 		End If
 		Template_html_0=Replace(Template_html_0,"{$color}",Dvbbs.mainsetting(1))
 		Template_html_0=Replace(Template_html_0,"{$errtitle}",Dvbbs.Forum_Info(0)&"-"&Dvbbs.Stats)
-		Template_html_0=Replace(Template_html_0,"{$action}","·ÃÎÊÂÛÌ³")
+		Template_html_0=Replace(Template_html_0,"{$action}","è®¿é—®è®ºå›")
 		Template_html_0=Replace(Template_html_0,"{$ErrCount}",1)
 		Template_html_0=Replace(Template_html_0,"{$ErrString}",ErrCodes)		
 		If Request("autoreload")=1 Then	
@@ -125,7 +125,7 @@ Select Case action
 		End If
 		Dvbbs.ActiveOnline()
 		Dvbbs.footer()
-	Case "iOtherErr"		'ÏÔÊ¾¶¥²¿¼°µ¼º½µÄ´íÎóĞÅÏ¢ÌáÊ¾£¬¿ÉÊ¹ÓÃhtmlÓï·¨
+	Case "iOtherErr"		'æ˜¾ç¤ºé¡¶éƒ¨åŠå¯¼èˆªçš„é”™è¯¯ä¿¡æ¯æç¤ºï¼Œå¯ä½¿ç”¨htmlè¯­æ³•
 		ErrCodes=CheckErrCodes(Request("ErrCodes"),1)
 		Dvbbs.Stats=action&"-"&Template.Strings(0)
 		Dvbbs.head()
@@ -135,7 +135,7 @@ Select Case action
 		End If
 		Template_html_0=Replace(Template_html_0,"{$color}",Dvbbs.mainsetting(1))
 		Template_html_0=Replace(Template_html_0,"{$errtitle}",Dvbbs.Forum_Info(0)&"-"&Dvbbs.Stats)
-		Template_html_0=Replace(Template_html_0,"{$action}","·ÃÎÊÂÛÌ³")
+		Template_html_0=Replace(Template_html_0,"{$action}","è®¿é—®è®ºå›")
 		Template_html_0=Replace(Template_html_0,"{$ErrCount}",1)
 		Template_html_0=Replace(Template_html_0,"{$ErrString}",ErrCodes)
 		If Request("autoreload")=1 Then	
@@ -147,13 +147,13 @@ Select Case action
 		End If
 		Dvbbs.ActiveOnline()
 		Dvbbs.footer()
-	Case "NoHeadErr"	'²»ÏÔÊ¾¶¥²¿¼°µ¼º½µÄ´íÎóĞÅÏ¢ÌáÊ¾
+	Case "NoHeadErr"	'ä¸æ˜¾ç¤ºé¡¶éƒ¨åŠå¯¼èˆªçš„é”™è¯¯ä¿¡æ¯æç¤º
 		ErrCodes=CheckErrCodes(Request("ErrCodes"),0)
 		Dvbbs.Stats=action&"-"&Template.Strings(0)
 		Dvbbs.head()
 		Template_html_0=Replace(Template_html_0,"{$color}",Dvbbs.mainsetting(1))
 		Template_html_0=Replace(Template_html_0,"{$errtitle}",Dvbbs.Forum_Info(0)&"-"&Dvbbs.Stats)
-		Template_html_0=Replace(Template_html_0,"{$action}","·ÃÎÊÂÛÌ³")
+		Template_html_0=Replace(Template_html_0,"{$action}","è®¿é—®è®ºå›")
 		Template_html_0=Replace(Template_html_0,"{$ErrCount}",1)
 		Template_html_0=Replace(Template_html_0,"{$ErrString}",ErrCodes)
 		If Request("autoreload")=1 Then	
@@ -166,33 +166,33 @@ Select Case action
 		Dvbbs.ActiveOnline()
 		Dvbbs.footer()
 	Case "readonly"
-		Dvbbs.Stats="µ±Ç°ÂÛÌ³ÎªÖ»¶Á"
+		Dvbbs.Stats="å½“å‰è®ºå›ä¸ºåªè¯»"
 		Dvbbs.head()
 		If ShowErrType<>"1" Then
 			Dvbbs.showtoptable()
 			Dvbbs.Head_var 1,Dvbbs.boardtype,"",""
 		End If
-		Template_html_2=Replace(Template_html_2,"{$title}",Template.Strings(2)&"µ±Ç°Ê±¼äÂÛÌ³ÎªÖ»¶Á")
+		Template_html_2=Replace(Template_html_2,"{$title}",Template.Strings(2)&"å½“å‰æ—¶é—´è®ºå›ä¸ºåªè¯»")
 		If Dvbbs.BoardID>0 Then
 			Rem Fish 2010-2-3
 			If Dvbbs.Board_Setting(21)="2" or Dvbbs.TyClsGroup=2 Then
 				if Dvbbs.TyClsGroup=2 Then
 					Dvbbs.Board_Setting(22)=Split(Dvbbs.TyClsGroupM,"|")
-					showstr="<br><b>&nbsp;&nbsp;ÄúËùÔÚµÄÓÃ»§×é</b>ÉèÖÃÁËµ±Ç°Ê±¼äÎªÊÇ·ñÖ»¶Á×´Ì¬£¬ÇëÔÚ¹æ¶¨µÄÊ±¼äÄÚ·¢Ìù£º<hr size=""1""><ul>"
+					showstr="<br><b>&nbsp;&nbsp;æ‚¨æ‰€åœ¨çš„ç”¨æˆ·ç»„</b>è®¾ç½®äº†å½“å‰æ—¶é—´ä¸ºæ˜¯å¦åªè¯»çŠ¶æ€ï¼Œè¯·åœ¨è§„å®šçš„æ—¶é—´å†…å‘è´´ï¼š<hr size=""1""><ul>"
 				else
 					Dvbbs.Board_Setting(22)=Split(Dvbbs.Board_Setting(22),"|")
-					showstr="<br><b>&nbsp;&nbsp;"&Dvbbs.boardtype&"</b>ÉèÖÃÁËµ±Ç°Ê±¼äÎªÊÇ·ñÖ»¶Á×´Ì¬£¬ÇëÔÚ¹æ¶¨µÄÊ±¼äÄÚ·¢Ìù£º<hr size=""1""><ul>"
+					showstr="<br><b>&nbsp;&nbsp;"&Dvbbs.boardtype&"</b>è®¾ç½®äº†å½“å‰æ—¶é—´ä¸ºæ˜¯å¦åªè¯»çŠ¶æ€ï¼Œè¯·åœ¨è§„å®šçš„æ—¶é—´å†…å‘è´´ï¼š<hr size=""1""><ul>"
 				end if
 				
 				
 				For i=0 to UBound(Dvbbs.Board_Setting(22))
 					If i mod 6=0 Then showstr=showstr&"<li>"
 					If i<10 Then showstr=showstr&"&nbsp;"
-					showstr=showstr&i&"µã£º"
+					showstr=showstr&i&"ç‚¹ï¼š"
 					If Dvbbs.Board_Setting(22)(i)="1" Then
-						showstr=showstr&"<font color="""&Dvbbs.mainsetting(1)&""">ÊÇ</font>&nbsp;&nbsp;"
+						showstr=showstr&"<font color="""&Dvbbs.mainsetting(1)&""">æ˜¯</font>&nbsp;&nbsp;"
 					Else
-						showstr=showstr&"·ñ&nbsp;&nbsp;"
+						showstr=showstr&"å¦&nbsp;&nbsp;"
 					End If
 				Next
 				showstr=showstr&"</ul>"
@@ -200,15 +200,15 @@ Select Case action
 		End If
 		If Dvbbs.Forum_Setting(69) ="2" Then 
 			Dvbbs.Forum_Setting(70)=Split(Dvbbs.Forum_Setting(70),"|")
-				showstr="<br><b>&nbsp;&nbsp;"&Dvbbs.Forum_Info(0)&"</b>ÉèÖÃÁËµ±Ç°Ê±¼äÎªÊÇ·ñÖ»¶Á×´Ì¬£¬ÇëÔÚ¹æ¶¨µÄÊ±¼äÄÚ·¢Ìù£º<hr size=""1""><ul>"
+				showstr="<br><b>&nbsp;&nbsp;"&Dvbbs.Forum_Info(0)&"</b>è®¾ç½®äº†å½“å‰æ—¶é—´ä¸ºæ˜¯å¦åªè¯»çŠ¶æ€ï¼Œè¯·åœ¨è§„å®šçš„æ—¶é—´å†…å‘è´´ï¼š<hr size=""1""><ul>"
 				For i=0 to UBound(Dvbbs.Forum_Setting(70))
 					If i mod 6=0 Then showstr=showstr&"<li>"
 					If i<10 Then showstr=showstr&"&nbsp;"
-					showstr=showstr&i&"µã£º"
+					showstr=showstr&i&"ç‚¹ï¼š"
 					If Dvbbs.Forum_Setting(70)(i)="1" Then
-						showstr=showstr&"<font color="""&Dvbbs.mainsetting(1)&""">ÊÇ</font>&nbsp;&nbsp;"
+						showstr=showstr&"<font color="""&Dvbbs.mainsetting(1)&""">æ˜¯</font>&nbsp;&nbsp;"
 					Else
-						showstr=showstr&"·ñ&nbsp;&nbsp;"
+						showstr=showstr&"å¦&nbsp;&nbsp;"
 					End If
 				Next
 				showstr=showstr&"</ul>"
@@ -219,14 +219,14 @@ Select Case action
 		Dvbbs.ActiveOnline()
 		Dvbbs.footer()
 	Case "lock"
-		Dvbbs.Stats="ÂÛÌ³ÒÑËø¶¨"
+		Dvbbs.Stats="è®ºå›å·²é”å®š"
 		Dvbbs.head()
 		If ShowErrType<>"1" Then
 			Dvbbs.showtoptable()
 			Dvbbs.Head_var 0,"",Dvbbs.boardtype,""
 		End If
-		Template_html_2=Replace(Template_html_2,"{$title}",Template.Strings(2)&"ÂÛÌ³ÒÑËø¶¨")
-		Template_html_2=Replace(Template_html_2,"{$stopreadme}","±¾ÂÛÌ³ÒÑ¾­±»Ëø¶¨£¬²»ÔÊĞí·¢Ìù»ØÌù¡£")
+		Template_html_2=Replace(Template_html_2,"{$title}",Template.Strings(2)&"è®ºå›å·²é”å®š")
+		Template_html_2=Replace(Template_html_2,"{$stopreadme}","æœ¬è®ºå›å·²ç»è¢«é”å®šï¼Œä¸å…è®¸å‘è´´å›è´´ã€‚")
 		Response.Write Template_html_2
 		Dvbbs.ActiveOnline()
 		Dvbbs.footer()
@@ -240,7 +240,7 @@ Select Case action
 		End If
 		Template_html_0=Replace(Template_html_0,"{$color}",Dvbbs.mainsetting(1))
 		Template_html_0=Replace(Template_html_0,"{$errtitle}",Dvbbs.Forum_Info(0)&"-"&Dvbbs.Stats)
-		Template_html_0=Replace(Template_html_0,"{$action}","Ê¹ÓÃÂÛÌ³²å¼ş")
+		Template_html_0=Replace(Template_html_0,"{$action}","ä½¿ç”¨è®ºå›æ’ä»¶")
 		Template_html_0=Replace(Template_html_0,"{$ErrCount}",1)
 		Template_html_0=Replace(Template_html_0,"{$ErrString}",ErrCodes)
 		Response.Write Template_html_0

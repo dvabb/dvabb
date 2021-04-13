@@ -17,7 +17,7 @@ Footer()
 Sub consted()
 Dim rs,i,j
 if not isnumeric(request("editid")) then
-	Errmsg=ErrMsg + "<BR><li>´íÎóµÄ°æÃæÐÅÏ¢"
+	Errmsg=ErrMsg + "<BR><li>é”™è¯¯çš„ç‰ˆé¢ä¿¡æ¯"
 	dvbbs_error()
 	exit sub
 end if
@@ -25,13 +25,13 @@ set rs=Dvbbs.Execute("select * from dv_board where boardid="&request("editid"))
 Board_Setting=split(rs("board_setting"),",")
 %>
 <table width="100%" cellspacing="1" cellpadding="1" align="center">
-<tr><th colspan="7">ÂÛÌ³¸ß¼¶ÉèÖÃ ¡ú <%=rs("boardtype")%></th></tr>
+<tr><th colspan="7">è®ºå›é«˜çº§è®¾ç½® â†’ <%=rs("boardtype")%></th></tr>
 <tr> 
 <td width="100%" class=td1 colspan=7 height=25>
-ËµÃ÷£º<BR>
-1¡¢Çë×ÐÏ¸ÉèÖÃÏÂÃæµÄ¸ß¼¶Ñ¡Ïî£¬Flash±êÇ©Èç¹û´ò¿ª£¬¶Ô°²È«ÓÐÒ»¶¨Ó°Ïì£¬Çë¸ù¾ÝÄúµÄ¾ßÌåÇé¿ö¿¼ÂÇ¡£<BR>
-2¡¢Äú¿ÉÒÔ½«¸ß¼¶ÉèÖÃµÄÄ³ÏîÉèÖÃ£¨Ñ¡Ôñ¸ÃÐÐÉèÖÃÓÒ±ßµÄ¸´Ñ¡¿ò£©±£´æµ½ËùÓÐ°æÃæ¡¢ÏàÍ¬·ÖÀàÏÂËùÓÐ°æÃæ£¨²»°üÀ¨·ÖÀà£©¡¢ÏàÍ¬·ÖÀàÏÂËùÓÐ°æÃæ£¨°üÀ¨·ÖÀà£©¡¢Í¬·ÖÀàÍ¬¼¶±ð°æÃæ£¬¸ÃÏîÉèÖÃÇëÉ÷ÖØ²Ù×÷¡£<BR>
-3¡¢<font color=red>×¢Òâ£¬Ñ¡ÔñÅúÁ¿¸üÐÂ°üÀ¨Ö÷Ìâ½«»áÊ¹ÓÃÏàÍ¬ÉèÖÃ</font>¡£
+è¯´æ˜Žï¼š<BR>
+1ã€è¯·ä»”ç»†è®¾ç½®ä¸‹é¢çš„é«˜çº§é€‰é¡¹ï¼ŒFlashæ ‡ç­¾å¦‚æžœæ‰“å¼€ï¼Œå¯¹å®‰å…¨æœ‰ä¸€å®šå½±å“ï¼Œè¯·æ ¹æ®æ‚¨çš„å…·ä½“æƒ…å†µè€ƒè™‘ã€‚<BR>
+2ã€æ‚¨å¯ä»¥å°†é«˜çº§è®¾ç½®çš„æŸé¡¹è®¾ç½®ï¼ˆé€‰æ‹©è¯¥è¡Œè®¾ç½®å³è¾¹çš„å¤é€‰æ¡†ï¼‰ä¿å­˜åˆ°æ‰€æœ‰ç‰ˆé¢ã€ç›¸åŒåˆ†ç±»ä¸‹æ‰€æœ‰ç‰ˆé¢ï¼ˆä¸åŒ…æ‹¬åˆ†ç±»ï¼‰ã€ç›¸åŒåˆ†ç±»ä¸‹æ‰€æœ‰ç‰ˆé¢ï¼ˆåŒ…æ‹¬åˆ†ç±»ï¼‰ã€åŒåˆ†ç±»åŒçº§åˆ«ç‰ˆé¢ï¼Œè¯¥é¡¹è®¾ç½®è¯·æ…Žé‡æ“ä½œã€‚<BR>
+3ã€<font color=red>æ³¨æ„ï¼Œé€‰æ‹©æ‰¹é‡æ›´æ–°åŒ…æ‹¬ä¸»é¢˜å°†ä¼šä½¿ç”¨ç›¸åŒè®¾ç½®</font>ã€‚
 </td>
 </tr>
 <form method="POST" action="boardsetting.asp?action=save">
@@ -43,13 +43,13 @@ Board_Setting=split(rs("board_setting"),",")
 <tr> 
 <td width="100%" class=td1 colspan=7 height=25>
 <font color=blue>
-ÕâÀïÖ¸µÄ·ÖÀà½öÖ¸Ò»¼¶·ÖÀà£¬¶ø²»ÊÇ¸Ã°æÃæµÄÉÏ¼¶°æÃæ</font>£¬±ÈÈçÄúÄ¿Ç°ÉèÖÃµÄÊÇÒ»¸öÎå¼¶°æÃæ£¬Ñ¡ÔñÁËÏàÍ¬·ÖÀàÏÂËùÓÐ°æÃæ¶¼¸üÐÂ£¬ÄÇÃ´ÕâÀï½«¸üÐÂ°üÀ¨¸Ã·ÖÀàµÄÒ»¼¶¡¢¶þ¼¶¡¢Èý¼¶¡¢ËÄ¼¶ËùÓÐ°æÃæ£¬Èç¹ûÄúµ£ÐÄ¸üÐÂ·¶Î§Ì«´ó£¬¿ÉÒÔÑ¡Ôñ¸üÐÂÍ¬·ÖÀàÍ¬¼¶±ð°æÃæ¡£
+è¿™é‡ŒæŒ‡çš„åˆ†ç±»ä»…æŒ‡ä¸€çº§åˆ†ç±»ï¼Œè€Œä¸æ˜¯è¯¥ç‰ˆé¢çš„ä¸Šçº§ç‰ˆé¢</font>ï¼Œæ¯”å¦‚æ‚¨ç›®å‰è®¾ç½®çš„æ˜¯ä¸€ä¸ªäº”çº§ç‰ˆé¢ï¼Œé€‰æ‹©äº†ç›¸åŒåˆ†ç±»ä¸‹æ‰€æœ‰ç‰ˆé¢éƒ½æ›´æ–°ï¼Œé‚£ä¹ˆè¿™é‡Œå°†æ›´æ–°åŒ…æ‹¬è¯¥åˆ†ç±»çš„ä¸€çº§ã€äºŒçº§ã€ä¸‰çº§ã€å››çº§æ‰€æœ‰ç‰ˆé¢ï¼Œå¦‚æžœæ‚¨æ‹…å¿ƒæ›´æ–°èŒƒå›´å¤ªå¤§ï¼Œå¯ä»¥é€‰æ‹©æ›´æ–°åŒåˆ†ç±»åŒçº§åˆ«ç‰ˆé¢ã€‚
 </td>
 </tr>
-<!-- °æÃæÁÐ±í -->
+<!-- ç‰ˆé¢åˆ—è¡¨ -->
 <tr>
 <td rowspan=200 valign=top>
-°æÃæÉèÖÃ±£´æÑ¡Ïî<br />Çë°´ CTRL ¼ü¶àÑ¡
+ç‰ˆé¢è®¾ç½®ä¿å­˜é€‰é¡¹<br />è¯·æŒ‰ CTRL é”®å¤šé€‰
 <select name="getboardid" size="28" style="width:200px" multiple>
 <%
 set rs=Dvbbs.Execute("select boardid,boardtype,depth from dv_board order by rootid,orders")
@@ -61,15 +61,15 @@ end if
 Response.Write " value="&rs(0)&">"
 Select Case rs(2)
 	Case 0
-		Response.Write "©ï"
+		Response.Write "â•‹"
 	Case 1
-		Response.Write "&nbsp;&nbsp;©À"
+		Response.Write "&nbsp;&nbsp;â”œ"
 End Select
 If rs(2)>1 Then
 	For ii=2 To rs(2)
-		Response.Write "&nbsp;&nbsp;©¦"
+		Response.Write "&nbsp;&nbsp;â”‚"
 	Next
-	Response.Write "&nbsp;&nbsp;©À"
+	Response.Write "&nbsp;&nbsp;â”œ"
 End If
 Response.Write rs(1)
 Response.Write "</option>"
@@ -81,195 +81,195 @@ set rs=nothing
 </select>
 </td>
 </tr>
-<!-- °æÃæÁÐ±í -->
+<!-- ç‰ˆé¢åˆ—è¡¨ -->
 
-<!-- ¸ß¼¶ÉèÖÃ -->
+<!-- é«˜çº§è®¾ç½® -->
 
-<tr><td height="25" colspan="6" align=center><INPUT TYPE="checkbox" class="checkbox" NAME="chkall" onclick="CheckAll(this.form);">[È«Ñ¡]
-±à¼­°æ¿éÐÅÏ¢(Ñ¡ÖÐÔòÉèÖÃ)</td></tr>
-<tr><th height="25" colspan="6" align=left> &nbsp;¹¦ÄÜÉèÖÃµ¼º½</th></tr>
+<tr><td height="25" colspan="6" align=center><INPUT TYPE="checkbox" class="checkbox" NAME="chkall" onclick="CheckAll(this.form);">[å…¨é€‰]
+ç¼–è¾‘ç‰ˆå—ä¿¡æ¯(é€‰ä¸­åˆ™è®¾ç½®)</td></tr>
+<tr><th height="25" colspan="6" align=left> &nbsp;åŠŸèƒ½è®¾ç½®å¯¼èˆª</th></tr>
 <tr> 
 <td width="90%" class=td1 colspan=6 height=25>
-[<a href="#setting1">»ù±¾ÊôÐÔ</a>]
-[<a href="#setting2">·ÃÎÊÈ¨ÏÞ</a>]
-[<a href="#setting3">Ç°Ì¨¹ÜÀíÈ¨ÏÞ</a>]
-[<a href="#setting4">·¢ÌùÏà¹Ø</a>]
-[<a href="#setting5">Ìû×ÓÁÐ±íÏÔÊ¾</a>]
-[<a href="#setting6">Ìû×ÓÄÚÈÝÏÔÊ¾</a>]
-[<a href="#setting7">¸½¼þÏÞÖÆÉèÖÃ</a>]
-[<a href="#setting8">ÂÛÌ³×¨ÌâÉèÖÃ</a>]
-[<a href="#setting9">ÂÛÌ³ÐéÄâÐÎÏóÉèÖÃ</a>]
+[<a href="#setting1">åŸºæœ¬å±žæ€§</a>]
+[<a href="#setting2">è®¿é—®æƒé™</a>]
+[<a href="#setting3">å‰å°ç®¡ç†æƒé™</a>]
+[<a href="#setting4">å‘è´´ç›¸å…³</a>]
+[<a href="#setting5">å¸–å­åˆ—è¡¨æ˜¾ç¤º</a>]
+[<a href="#setting6">å¸–å­å†…å®¹æ˜¾ç¤º</a>]
+[<a href="#setting7">é™„ä»¶é™åˆ¶è®¾ç½®</a>]
+[<a href="#setting8">è®ºå›ä¸“é¢˜è®¾ç½®</a>]
+[<a href="#setting9">è®ºå›è™šæ‹Ÿå½¢è±¡è®¾ç½®</a>]
 </td>
 </tr>
 
-<tr><th height="25" colspan="6" id=tabletitlelink align=left> &nbsp;<a name="setting1"></a>»ù±¾ÊôÐÔ[<a href="#top">¶¥²¿</a>]</th></tr>
+<tr><th height="25" colspan="6" id=tabletitlelink align=left> &nbsp;<a name="setting1"></a>åŸºæœ¬å±žæ€§[<a href="#top">é¡¶éƒ¨</a>]</th></tr>
 <tr> 
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(50)"></td>
 <td colspan=2 class=td1>
-<U>Íâ²¿Á¬½Ó</U><BR>ÌîÐ´±¾ÄÚÈÝºó£¬ÔÚÂÛÌ³ÁÐ±íµã»÷´Ë°æÃæ½«×Ô¶¯ÇÐ»»µ½¸ÃÍøÖ·<BR>ÇëÌîÐ´URL¾ø¶ÔÂ·¾¶</td>
+<U>å¤–éƒ¨è¿žæŽ¥</U><BR>å¡«å†™æœ¬å†…å®¹åŽï¼Œåœ¨è®ºå›åˆ—è¡¨ç‚¹å‡»æ­¤ç‰ˆé¢å°†è‡ªåŠ¨åˆ‡æ¢åˆ°è¯¥ç½‘å€<BR>è¯·å¡«å†™URLç»å¯¹è·¯å¾„</td>
 <td colspan=2 class=td1>
 <input type=text name="Board_Setting(50)" value="<%=Board_Setting(50)%>" size=50>
 </td>
-<input type="hidden" id="b0" value="<b>Íâ²¿Á¬½Ó</b><br><li>ÌîÐ´±¾ÄÚÈÝºó£¬ÔÚÂÛÌ³ÁÐ±íµã»÷´Ë°æÃæ½«×Ô¶¯ÇÐ»»µ½¸ÃÍøÖ·<br><li>ÇëÌîÐ´URL¾ø¶ÔÂ·¾¶">
-<td class=td1><a href=# onclick="helpscript(b0);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
+<input type="hidden" id="b0" value="<b>å¤–éƒ¨è¿žæŽ¥</b><br><li>å¡«å†™æœ¬å†…å®¹åŽï¼Œåœ¨è®ºå›åˆ—è¡¨ç‚¹å‡»æ­¤ç‰ˆé¢å°†è‡ªåŠ¨åˆ‡æ¢åˆ°è¯¥ç½‘å€<br><li>è¯·å¡«å†™URLç»å¯¹è·¯å¾„">
+<td class=td1><a href=# onclick="helpscript(b0);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="ç‚¹å‡»æŸ¥é˜…ç®¡ç†å¸®åŠ©ï¼"></a></td>
 </tr>
 <tr> 
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(51)"></td>
 <td colspan=2 class=td2>
-<U>·ÖÂÛÌ³LOGO</U><BR>ÌîÐ´Í¼Æ¬µÄÏà¶Ô»ò¾ø¶ÔÂ·¾¶£¬²»ÌîÐ´Ôòµ±Ç°°æÃæLOGOÎªÂÛÌ³ÉèÖÃÖÐLOGO</td>
+<U>åˆ†è®ºå›LOGO</U><BR>å¡«å†™å›¾ç‰‡çš„ç›¸å¯¹æˆ–ç»å¯¹è·¯å¾„ï¼Œä¸å¡«å†™åˆ™å½“å‰ç‰ˆé¢LOGOä¸ºè®ºå›è®¾ç½®ä¸­LOGO</td>
 <td colspan=2 class=td2>
 <input type=text name="Board_Setting(51)" value="<%=Board_Setting(51)%>" size=50>
 </td>
-<input type="hidden" id="ba1" value="<b>·ÖÂÛÌ³LOGO</b><br><li>ÌîÐ´Í¼Æ¬µÄÏà¶Ô»ò¾ø¶ÔÂ·¾¶£¬²»ÌîÐ´Ôòµ±Ç°°æÃæLOGOÎªÂÛÌ³ÉèÖÃÖÐLOGO">
-<td class=td2><a href=# onclick="helpscript(ba1);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
+<input type="hidden" id="ba1" value="<b>åˆ†è®ºå›LOGO</b><br><li>å¡«å†™å›¾ç‰‡çš„ç›¸å¯¹æˆ–ç»å¯¹è·¯å¾„ï¼Œä¸å¡«å†™åˆ™å½“å‰ç‰ˆé¢LOGOä¸ºè®ºå›è®¾ç½®ä¸­LOGO">
+<td class=td2><a href=# onclick="helpscript(ba1);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="ç‚¹å‡»æŸ¥é˜…ç®¡ç†å¸®åŠ©ï¼"></a></td>
 </tr>
 <tr> 
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(40)"></td>
 <td colspan=2 class=td1>
-<U>ÊÇ·ñ²ÉÓÃ°æÖ÷¼Ì³ÐÖÆ¶È</U></td>
+<U>æ˜¯å¦é‡‡ç”¨ç‰ˆä¸»ç»§æ‰¿åˆ¶åº¦</U></td>
 <td colspan=2 class=td1>
-<input type=radio class="radio" name="Board_Setting(40)" value=0 <%if Board_Setting(40)="0" then%>checked<%end if%>>¹Ø±Õ&nbsp;
-<input type=radio class="radio" name="Board_Setting(40)" value=1 <%if Board_Setting(40)="1" then%>checked<%end if%>>¿ª·Å&nbsp;
+<input type=radio class="radio" name="Board_Setting(40)" value=0 <%if Board_Setting(40)="0" then%>checked<%end if%>>å…³é—­&nbsp;
+<input type=radio class="radio" name="Board_Setting(40)" value=1 <%if Board_Setting(40)="1" then%>checked<%end if%>>å¼€æ”¾&nbsp;
 </td>
-<input type="hidden" id="b6" value="<b>ÊÇ·ñ²ÉÓÃ°æÖ÷¼Ì³ÐÖÆ¶È</b><br><li>Èç¹û²ÉÓÃ¸ÃÖÆ¶È£¬ÔòÉÏ¼¶ÂÛÌ³°æÖ÷¿É¹ÜÀíÏÂ¼¶ÂÛÌ³Ïà¹ØÐÅÏ¢">
-<td class=td1><a href=# onclick="helpscript(b6);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
+<input type="hidden" id="b6" value="<b>æ˜¯å¦é‡‡ç”¨ç‰ˆä¸»ç»§æ‰¿åˆ¶åº¦</b><br><li>å¦‚æžœé‡‡ç”¨è¯¥åˆ¶åº¦ï¼Œåˆ™ä¸Šçº§è®ºå›ç‰ˆä¸»å¯ç®¡ç†ä¸‹çº§è®ºå›ç›¸å…³ä¿¡æ¯">
+<td class=td1><a href=# onclick="helpscript(b6);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="ç‚¹å‡»æŸ¥é˜…ç®¡ç†å¸®åŠ©ï¼"></a></td>
 </tr>
 <tr> 
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(39)"></td>
 <td colspan=2 class=td2>
-<U>ÂÛÌ³ÁÐ±íÏÔÊ¾ÏÂÊôÂÛÌ³·ç¸ñ</U><BR></td>
+<U>è®ºå›åˆ—è¡¨æ˜¾ç¤ºä¸‹å±žè®ºå›é£Žæ ¼</U><BR></td>
 <td colspan=2 class=td2>
-<input type=radio class="radio" name="Board_Setting(39)" value=0 <%if Board_Setting(39)="0" then%>checked<%end if%>>ÁÐ±í&nbsp;
-<input type=radio class="radio" name="Board_Setting(39)" value=1 <%if Board_Setting(39)="1" then%>checked<%end if%>>¼ò½à&nbsp;
+<input type=radio class="radio" name="Board_Setting(39)" value=0 <%if Board_Setting(39)="0" then%>checked<%end if%>>åˆ—è¡¨&nbsp;
+<input type=radio class="radio" name="Board_Setting(39)" value=1 <%if Board_Setting(39)="1" then%>checked<%end if%>>ç®€æ´&nbsp;
 </td>
-<input type="hidden" id="b7" value="<b>ÂÛÌ³ÁÐ±íÏÔÊ¾ÏÂÊôÂÛÌ³·ç¸ñ</b><br><li>µ±¸ÃÂÛÌ³ÓÐÏÂÊôÂÛÌ³µÄÊ±ºòÉúÐ§">
-<td class=td2><a href=# onclick="helpscript(b7);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
+<input type="hidden" id="b7" value="<b>è®ºå›åˆ—è¡¨æ˜¾ç¤ºä¸‹å±žè®ºå›é£Žæ ¼</b><br><li>å½“è¯¥è®ºå›æœ‰ä¸‹å±žè®ºå›çš„æ—¶å€™ç”Ÿæ•ˆ">
+<td class=td2><a href=# onclick="helpscript(b7);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="ç‚¹å‡»æŸ¥é˜…ç®¡ç†å¸®åŠ©ï¼"></a></td>
 </tr>
 <tr> 
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(41)"></td>
 <td colspan=2 class=td1>
-<U>ÂÛÌ³ÁÐ±í¼ò½à·ç¸ñÒ»ÐÐ°æÃæÊý</U></td>
+<U>è®ºå›åˆ—è¡¨ç®€æ´é£Žæ ¼ä¸€è¡Œç‰ˆé¢æ•°</U></td>
 <td colspan=2 class=td1>
-<input type=text size=10 name="Board_Setting(41)" value="<%=Board_Setting(41)%>"> ¸ö
+<input type=text size=10 name="Board_Setting(41)" value="<%=Board_Setting(41)%>"> ä¸ª
 </td>
-<input type="hidden" id="b8" value="<b>ÂÛÌ³ÁÐ±í¼ò½à·ç¸ñÒ»ÐÐ°æÃæÊý</b><br><li>µ±ÂÛÌ³ÁÐ±í¿ªÆôÁËÏÂÊôÂÛÌ³·ç¸ñÎª¼ò½à£¬´ËÑ¡ÏîÓÐÐ§£¬´ËÑ¡ÏîÎªÉèÖÃ¼ò½àÂÛÌ³ÁÐ±í·ç¸ñÒ»ÐÐÅÅÁÐ°æÃæÊý">
-<td class=td1><a href=# onclick="helpscript(b8);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
+<input type="hidden" id="b8" value="<b>è®ºå›åˆ—è¡¨ç®€æ´é£Žæ ¼ä¸€è¡Œç‰ˆé¢æ•°</b><br><li>å½“è®ºå›åˆ—è¡¨å¼€å¯äº†ä¸‹å±žè®ºå›é£Žæ ¼ä¸ºç®€æ´ï¼Œæ­¤é€‰é¡¹æœ‰æ•ˆï¼Œæ­¤é€‰é¡¹ä¸ºè®¾ç½®ç®€æ´è®ºå›åˆ—è¡¨é£Žæ ¼ä¸€è¡ŒæŽ’åˆ—ç‰ˆé¢æ•°">
+<td class=td1><a href=# onclick="helpscript(b8);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="ç‚¹å‡»æŸ¥é˜…ç®¡ç†å¸®åŠ©ï¼"></a></td>
 </tr>
 <tr> 
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(36)"></td>
 <td colspan=2 class=td2>
-<U>ÊÇ·ñ¹«¿ªÂÛÌ³ÊÂ¼þÖÐµÄ²Ù×÷Õß</U></td>
+<U>æ˜¯å¦å…¬å¼€è®ºå›äº‹ä»¶ä¸­çš„æ“ä½œè€…</U></td>
 <td colspan=2 class=td2>
-<input type=radio class="radio" name="Board_Setting(36)" value=0 <%if Board_Setting(36)="0" then%>checked<%end if%>>·ñ&nbsp;
-<input type=radio class="radio" name="Board_Setting(36)" value=1 <%if Board_Setting(36)="1" then%>checked<%end if%>>ÊÇ&nbsp;
+<input type=radio class="radio" name="Board_Setting(36)" value=0 <%if Board_Setting(36)="0" then%>checked<%end if%>>å¦&nbsp;
+<input type=radio class="radio" name="Board_Setting(36)" value=1 <%if Board_Setting(36)="1" then%>checked<%end if%>>æ˜¯&nbsp;
 </td>
-<input type="hidden" id="b12" value="<b>ÊÇ·ñ¹«¿ªÂÛÌ³ÊÂ¼þÖÐµÄ²Ù×÷Õß</b><br><li>ÂÛÌ³ÖÐ¶ÔÌû×ÓµÄÉ¾³ý¡¢¹Ì¶¥¡¢ÉèÖÃ¾«»ªµÈ²Ù×÷¶¼ÊÇÒª¼ÇÂ¼²Ù×÷ÕßºÍ²Ù×÷ÄÚÈÝµÄ£¬¹ÜÀíÔ±Ä¬ÈÏ¿É¿´µ½ÕâÐ©²Ù×÷ÄÚÈÝ£¬Ò»°ãÓÃ»§Èç¹û´ò¿ªÁË´ËÑ¡Ïî£¬ËûÃÇ½«ÄÜ¿´µ½²Ù×÷Õß">
-<td class=td1><a href=# onclick="helpscript(b12);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
+<input type="hidden" id="b12" value="<b>æ˜¯å¦å…¬å¼€è®ºå›äº‹ä»¶ä¸­çš„æ“ä½œè€…</b><br><li>è®ºå›ä¸­å¯¹å¸–å­çš„åˆ é™¤ã€å›ºé¡¶ã€è®¾ç½®ç²¾åŽç­‰æ“ä½œéƒ½æ˜¯è¦è®°å½•æ“ä½œè€…å’Œæ“ä½œå†…å®¹çš„ï¼Œç®¡ç†å‘˜é»˜è®¤å¯çœ‹åˆ°è¿™äº›æ“ä½œå†…å®¹ï¼Œä¸€èˆ¬ç”¨æˆ·å¦‚æžœæ‰“å¼€äº†æ­¤é€‰é¡¹ï¼Œä»–ä»¬å°†èƒ½çœ‹åˆ°æ“ä½œè€…">
+<td class=td1><a href=# onclick="helpscript(b12);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="ç‚¹å‡»æŸ¥é˜…ç®¡ç†å¸®åŠ©ï¼"></a></td>
 </tr>
-<tr><th height="25" colspan="6" id=tabletitlelink align=left>  &nbsp;<a name="setting2"></a>·ÃÎÊÈ¨ÏÞÏà¹Ø[<a href="#top">¶¥²¿</a>]</th></tr>
+<tr><th height="25" colspan="6" id=tabletitlelink align=left>  &nbsp;<a name="setting2"></a>è®¿é—®æƒé™ç›¸å…³[<a href="#top">é¡¶éƒ¨</a>]</th></tr>
 <tr> 
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(43)"></td>
 <td colspan=2 class=td1>
-<U>±¾ÂÛÌ³×÷Îª·ÖÀàÂÛÌ³²»ÔÊÐí·¢Ìù</U></td>
+<U>æœ¬è®ºå›ä½œä¸ºåˆ†ç±»è®ºå›ä¸å…è®¸å‘è´´</U></td>
 <td colspan=2 class=td1>
-<input type=radio class="radio" name="Board_Setting(43)" value=0 <%if Board_Setting(43)="0" then%>checked<%end if%>>·ñ&nbsp;
-<input type=radio class="radio" name="Board_Setting(43)" value=1 <%if Board_Setting(43)="1" then%>checked<%end if%>>ÊÇ&nbsp;
+<input type=radio class="radio" name="Board_Setting(43)" value=0 <%if Board_Setting(43)="0" then%>checked<%end if%>>å¦&nbsp;
+<input type=radio class="radio" name="Board_Setting(43)" value=1 <%if Board_Setting(43)="1" then%>checked<%end if%>>æ˜¯&nbsp;
 </td>
-<input type="hidden" id="b1" value="<b>±¾ÂÛÌ³×÷Îª·ÖÀàÂÛÌ³²»ÔÊÐí·¢Ìù</b><br><li>Èç¹ûÒÑ¾­ÓÐÌùÔòÏÔÊ¾»òÕßÄú¿ÉÒÔ×ªÒÆµ½±ðµÄÂÛÌ³<br><li>Ñ¡ÔñÁË¸ÃÏîºóËùÓÐ»áÔ±¾ù²»ÄÜÔÚ±¾°æ·¢Ìù/»ØÌûµÈ²Ù×÷">
-<td class=td1><a href=# onclick="helpscript(b1);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
+<input type="hidden" id="b1" value="<b>æœ¬è®ºå›ä½œä¸ºåˆ†ç±»è®ºå›ä¸å…è®¸å‘è´´</b><br><li>å¦‚æžœå·²ç»æœ‰è´´åˆ™æ˜¾ç¤ºæˆ–è€…æ‚¨å¯ä»¥è½¬ç§»åˆ°åˆ«çš„è®ºå›<br><li>é€‰æ‹©äº†è¯¥é¡¹åŽæ‰€æœ‰ä¼šå‘˜å‡ä¸èƒ½åœ¨æœ¬ç‰ˆå‘è´´/å›žå¸–ç­‰æ“ä½œ">
+<td class=td1><a href=# onclick="helpscript(b1);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="ç‚¹å‡»æŸ¥é˜…ç®¡ç†å¸®åŠ©ï¼"></a></td>
 </tr>
 <tr> 
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(0)"></td>
 <td colspan=2 class=td2>
-<U>ÊÇ·ñËø¶¨ÂÛÌ³</U></td>
+<U>æ˜¯å¦é”å®šè®ºå›</U></td>
 <td colspan=2 class=td2>
-<input type=radio class="radio" name="Board_Setting(0)" value=0 <%if Board_Setting(0)="0" then%>checked<%end if%>>·ñ&nbsp;
-<input type=radio class="radio" name="Board_Setting(0)" value=1 <%If Board_Setting(0)="1" then%>checked<%end if%>>ÊÇ&nbsp;
+<input type=radio class="radio" name="Board_Setting(0)" value=0 <%if Board_Setting(0)="0" then%>checked<%end if%>>å¦&nbsp;
+<input type=radio class="radio" name="Board_Setting(0)" value=1 <%If Board_Setting(0)="1" then%>checked<%end if%>>æ˜¯&nbsp;
 </td>
-<input type="hidden" id="b2" value="<b>ÊÇ·ñËø¶¨ÂÛÌ³</b><br><li>Ëø¶¨ÂÛÌ³Ö»ÓÐ¹ÜÀíÔ±ºÍ¸Ã°æÃæ°æÖ÷¿É½ø">
-<td class=td2><a href=# onclick="helpscript(b2);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
+<input type="hidden" id="b2" value="<b>æ˜¯å¦é”å®šè®ºå›</b><br><li>é”å®šè®ºå›åªæœ‰ç®¡ç†å‘˜å’Œè¯¥ç‰ˆé¢ç‰ˆä¸»å¯è¿›">
+<td class=td2><a href=# onclick="helpscript(b2);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="ç‚¹å‡»æŸ¥é˜…ç®¡ç†å¸®åŠ©ï¼"></a></td>
 </tr>
 <tr> 
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(1)"></td>
 <td colspan=2 class=td1>
-<U>ÊÇ·ñÒþ²ØÂÛÌ³</U></td>
+<U>æ˜¯å¦éšè—è®ºå›</U></td>
 <td colspan=2 class=td1>
-<input type=radio class="radio" name="Board_Setting(1)" value=0 <%If Board_Setting(1)="0" then%>checked<%end if%>>·ñ&nbsp;
-<input type=radio class="radio" name="Board_Setting(1)" value=1 <%if Board_Setting(1)="1" then%>checked<%end if%>>ÊÇ&nbsp;
+<input type=radio class="radio" name="Board_Setting(1)" value=0 <%If Board_Setting(1)="0" then%>checked<%end if%>>å¦&nbsp;
+<input type=radio class="radio" name="Board_Setting(1)" value=1 <%if Board_Setting(1)="1" then%>checked<%end if%>>æ˜¯&nbsp;
 </td>
-<input type="hidden" id="b3" value="<b>ÊÇ·ñÒþ²ØÂÛÌ³</b><br><li>Òþ²ØÂÛÌ³Ö»ÓÐ¹ÜÀíÔ±ºÍ¸Ã°æÃæ°æÖ÷¿É¼ûºÍ½øÈë<br><li>Èç¹ûÓÃ»§×é»òÂÛÌ³È¨ÏÞ¹ÜÀí»òÓÃ»§È¨ÏÞ¹ÜÀíÖÐÔÊÐíÔòÓÃ»§¿É¼ûºÍ½øÈë<br><li>±¾ÏÞÖÆ¶ÔÒ»¼¶ÂÛÌ³²»ÉúÐ§">
-<td class=td1><a href=# onclick="helpscript(b3);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
+<input type="hidden" id="b3" value="<b>æ˜¯å¦éšè—è®ºå›</b><br><li>éšè—è®ºå›åªæœ‰ç®¡ç†å‘˜å’Œè¯¥ç‰ˆé¢ç‰ˆä¸»å¯è§å’Œè¿›å…¥<br><li>å¦‚æžœç”¨æˆ·ç»„æˆ–è®ºå›æƒé™ç®¡ç†æˆ–ç”¨æˆ·æƒé™ç®¡ç†ä¸­å…è®¸åˆ™ç”¨æˆ·å¯è§å’Œè¿›å…¥<br><li>æœ¬é™åˆ¶å¯¹ä¸€çº§è®ºå›ä¸ç”Ÿæ•ˆ">
+<td class=td1><a href=# onclick="helpscript(b3);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="ç‚¹å‡»æŸ¥é˜…ç®¡ç†å¸®åŠ©ï¼"></a></td>
 </tr>
 <tr> 
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(2)"></td>
 <td colspan=2 class=td2>
-<U>ÊÇ·ñÈÏÖ¤ÂÛÌ³</U></td>
+<U>æ˜¯å¦è®¤è¯è®ºå›</U></td>
 <td colspan=2 class=td2>
-<input type=radio class="radio" name="Board_Setting(2)" value=0 <%if Board_Setting(2)="0" then%>checked<%end if%>>·ñ&nbsp;
-<input type=radio class="radio" name="Board_Setting(2)" value=1 <%if Board_Setting(2)="1" then%>checked<%end if%>>ÊÇ&nbsp;
+<input type=radio class="radio" name="Board_Setting(2)" value=0 <%if Board_Setting(2)="0" then%>checked<%end if%>>å¦&nbsp;
+<input type=radio class="radio" name="Board_Setting(2)" value=1 <%if Board_Setting(2)="1" then%>checked<%end if%>>æ˜¯&nbsp;
 </td>
-<input type="hidden" id="b4" value="<b>ÊÇ·ñÈÏÖ¤ÂÛÌ³</b><br><li>ÈÏÖ¤ÂÛÌ³Ö»ÓÐ¹ÜÀíÔ±ºÍ¸Ã°æÃæ°æÖ÷¿É¼ûºÍ½øÈë<br><li>ÈÏÖ¤ÂÛÌ³¶ÔÈÏÖ¤ÓÃ»§µÄÌí¼ÓºÍ¹ÜÀíÔÚ°æÃæ¹ÜÀíÖÐÓÐÁ¬½Ó<br><li>ÉèÖÃÁË±¾Ñ¡ÏîºóÖ»ÓÐÈÏÖ¤ÓÃ»§¿É½øÈë">
-<td class=td2><a href=# onclick="helpscript(b4);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
+<input type="hidden" id="b4" value="<b>æ˜¯å¦è®¤è¯è®ºå›</b><br><li>è®¤è¯è®ºå›åªæœ‰ç®¡ç†å‘˜å’Œè¯¥ç‰ˆé¢ç‰ˆä¸»å¯è§å’Œè¿›å…¥<br><li>è®¤è¯è®ºå›å¯¹è®¤è¯ç”¨æˆ·çš„æ·»åŠ å’Œç®¡ç†åœ¨ç‰ˆé¢ç®¡ç†ä¸­æœ‰è¿žæŽ¥<br><li>è®¾ç½®äº†æœ¬é€‰é¡¹åŽåªæœ‰è®¤è¯ç”¨æˆ·å¯è¿›å…¥">
+<td class=td2><a href=# onclick="helpscript(b4);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="ç‚¹å‡»æŸ¥é˜…ç®¡ç†å¸®åŠ©ï¼"></a></td>
 </tr>
 
 <tr> 
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(3)"></td>
 <td colspan=2 class=td1>
-<U>Ìû×ÓÉóºËÖÆ¶È</U></td>
+<U>å¸–å­å®¡æ ¸åˆ¶åº¦</U></td>
 <td colspan=2 class=td1>
-<input type=radio class="radio" name="Board_Setting(3)" value=0 <%if Board_Setting(3)="0" then%>checked<%end if%>>¹Ø±Õ&nbsp;
-<input type=radio class="radio" name="Board_Setting(3)" value=1 <%if Board_Setting(3)="1" then%>checked<%end if%>>¿ª·Å&nbsp;
+<input type=radio class="radio" name="Board_Setting(3)" value=0 <%if Board_Setting(3)="0" then%>checked<%end if%>>å…³é—­&nbsp;
+<input type=radio class="radio" name="Board_Setting(3)" value=1 <%if Board_Setting(3)="1" then%>checked<%end if%>>å¼€æ”¾&nbsp;
 </td>
-<input type="hidden" id="b5" value="<b>Ìû×ÓÉóºËÖÆ¶È</b><br><li>°æÖ÷¡¢¹ÜÀíÔ±ºÍ¿ª·ÅÈ¨ÏÞÓÃ»§¿É½øÐÐÉóºËÌû×Ó<br><li>°æÖ÷¡¢¹ÜÀíÔ±ºÍ¿ª·ÅÈ¨ÏÞÓÃ»§¿ÉÖ±½Ó·¢Ìù<br><li>Ò»°ãÓÃ»§ÐèÉóºËºóÌû×Ó·½¿É¼û">
-<td class=td1><a href=# onclick="helpscript(b5);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
+<input type="hidden" id="b5" value="<b>å¸–å­å®¡æ ¸åˆ¶åº¦</b><br><li>ç‰ˆä¸»ã€ç®¡ç†å‘˜å’Œå¼€æ”¾æƒé™ç”¨æˆ·å¯è¿›è¡Œå®¡æ ¸å¸–å­<br><li>ç‰ˆä¸»ã€ç®¡ç†å‘˜å’Œå¼€æ”¾æƒé™ç”¨æˆ·å¯ç›´æŽ¥å‘è´´<br><li>ä¸€èˆ¬ç”¨æˆ·éœ€å®¡æ ¸åŽå¸–å­æ–¹å¯è§">
+<td class=td1><a href=# onclick="helpscript(b5);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="ç‚¹å‡»æŸ¥é˜…ç®¡ç†å¸®åŠ©ï¼"></a></td>
 </tr>
 <tr> 
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(57)"></td>
 <td colspan=2 class=td2>
-<U>À©Õ¹ÉóºËÖÆ¶È</U></td>
+<U>æ‰©å±•å®¡æ ¸åˆ¶åº¦</U></td>
 <td colspan=2 class=td2>
-<input type=radio class="radio" name="Board_Setting(57)" value=0 <%if Board_Setting(57)="0" then%>checked<%end if%>>¹Ø±Õ&nbsp;
-<input type=radio class="radio" name="Board_Setting(57)" value=1 <%if Board_Setting(57)="1" then%>checked<%end if%>>¿ª·Å&nbsp;
-<input type="hidden" id="bnew" value="<b>À©Õ¹Ìû×ÓÉóºËÖÆ¶È</b><br><li>°æÖ÷¡¢¹ÜÀíÔ±ºÍ¿ª·ÅÈ¨ÏÞÓÃ»§¿É½øÐÐÉóºËÌû×Ó<br><li>°æÖ÷¡¢¹ÜÀíÔ±ºÍ¿ª·ÅÈ¨ÏÞÓÃ»§¿ÉÖ±½Ó·¢Ìù<br><li>Ò»°ãÓÃ»§Èç·¢ÌùÄÚÈÝÈç¹ûÓÐ±»¹ýÂËµÄÃô¸Ð×ÖÐèÉóºËºóÌû×Ó·½¿É¼û,<br>Èç¹ûÎÞ±»¹ýÂËµÄÄÚÈÝ£¬Ôò¿ÉÃâÉóºË·¢Ìù¡£">
+<input type=radio class="radio" name="Board_Setting(57)" value=0 <%if Board_Setting(57)="0" then%>checked<%end if%>>å…³é—­&nbsp;
+<input type=radio class="radio" name="Board_Setting(57)" value=1 <%if Board_Setting(57)="1" then%>checked<%end if%>>å¼€æ”¾&nbsp;
+<input type="hidden" id="bnew" value="<b>æ‰©å±•å¸–å­å®¡æ ¸åˆ¶åº¦</b><br><li>ç‰ˆä¸»ã€ç®¡ç†å‘˜å’Œå¼€æ”¾æƒé™ç”¨æˆ·å¯è¿›è¡Œå®¡æ ¸å¸–å­<br><li>ç‰ˆä¸»ã€ç®¡ç†å‘˜å’Œå¼€æ”¾æƒé™ç”¨æˆ·å¯ç›´æŽ¥å‘è´´<br><li>ä¸€èˆ¬ç”¨æˆ·å¦‚å‘è´´å†…å®¹å¦‚æžœæœ‰è¢«è¿‡æ»¤çš„æ•æ„Ÿå­—éœ€å®¡æ ¸åŽå¸–å­æ–¹å¯è§,<br>å¦‚æžœæ— è¢«è¿‡æ»¤çš„å†…å®¹ï¼Œåˆ™å¯å…å®¡æ ¸å‘è´´ã€‚">
 </td>
-<td class=td2><a href=# onclick="helpscript(bnew);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
+<td class=td2><a href=# onclick="helpscript(bnew);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="ç‚¹å‡»æŸ¥é˜…ç®¡ç†å¸®åŠ©ï¼"></a></td>
 </tr>
 <tr> 
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(58)"></td>
 <td colspan=2 class=td1>
-<U>Ãô¸Ð×ÖÉèÖÃ</U></td>
+<U>æ•æ„Ÿå­—è®¾ç½®</U></td>
 <td colspan=2 class=td1>
-<input type="text" Name=Board_Setting(58) Value="<%=Board_Setting(58)%>" Size=50><br>¿ÉÉèÖÃ¶à¸öÃô¸Ð×ÖÖÐ¼äÓÃ"|"·Ö¸ôÈç²»ÌîÐ´¿ÉÒÔÌî0
-<input type="hidden" id="bnewS" value="<b>Ãô¸Ð×ÖÉèÖÃ</b><br><li>¿ÉÉèÖÃ¶à¸öÃô¸Ð×ÖÖÐ¼äÓÃ | ·Ö¸ô">
+<input type="text" Name=Board_Setting(58) Value="<%=Board_Setting(58)%>" Size=50><br>å¯è®¾ç½®å¤šä¸ªæ•æ„Ÿå­—ä¸­é—´ç”¨"|"åˆ†éš”å¦‚ä¸å¡«å†™å¯ä»¥å¡«0
+<input type="hidden" id="bnewS" value="<b>æ•æ„Ÿå­—è®¾ç½®</b><br><li>å¯è®¾ç½®å¤šä¸ªæ•æ„Ÿå­—ä¸­é—´ç”¨ | åˆ†éš”">
 </td>
-<td class=td1><a href=# onclick="helpscript(bnewS);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
+<td class=td1><a href=# onclick="helpscript(bnewS);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="ç‚¹å‡»æŸ¥é˜…ç®¡ç†å¸®åŠ©ï¼"></a></td>
 </tr>
 <tr> 
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(18)"></td>
 <td colspan=2 class=td2>
-<U>ÔÊÐíÍ¬Ê±ÔÚÏßÊý</U><BR>²»ÏÞÖÆÔòÉèÖÃÎª0</td>
+<U>å…è®¸åŒæ—¶åœ¨çº¿æ•°</U><BR>ä¸é™åˆ¶åˆ™è®¾ç½®ä¸º0</td>
 <td colspan=2 class=td2>
-<input type=text size=10 name="Board_Setting(18)" value="<%=Board_Setting(18)%>"> ÈË
+<input type=text size=10 name="Board_Setting(18)" value="<%=Board_Setting(18)%>"> äºº
 </td>
-<input type="hidden" id="b9" value="<b>ÔÊÐíÍ¬Ê±ÔÚÏßÊý</b><br><li>²»ÏÞÖÆÔòÉèÖÃÎª0£¬ÈçÉèÖÃÁËÔÊÐíÍ¬Ê±ÔÚÏßÊý£¬Ôòµ±ÂÛÌ³ÔÚÏßÈËÊý³¬¹ý´ËÊý×ÖµÄÊ±ºòÎ´µÇÂ¼ÓÃ»§½«²»ÄÜ·ÃÎÊ¸Ã°æÃæ">
-<td class=td2><a href=# onclick="helpscript(b9);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
+<input type="hidden" id="b9" value="<b>å…è®¸åŒæ—¶åœ¨çº¿æ•°</b><br><li>ä¸é™åˆ¶åˆ™è®¾ç½®ä¸º0ï¼Œå¦‚è®¾ç½®äº†å…è®¸åŒæ—¶åœ¨çº¿æ•°ï¼Œåˆ™å½“è®ºå›åœ¨çº¿äººæ•°è¶…è¿‡æ­¤æ•°å­—çš„æ—¶å€™æœªç™»å½•ç”¨æˆ·å°†ä¸èƒ½è®¿é—®è¯¥ç‰ˆé¢">
+<td class=td2><a href=# onclick="helpscript(b9);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="ç‚¹å‡»æŸ¥é˜…ç®¡ç†å¸®åŠ©ï¼"></a></td>
 </tr>
 <tr> 
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(21)"></td>
 <td colspan=2 class=td1>
-<U>ÂÛÌ³¶¨Ê±ÉèÖÃ</U></td>
+<U>è®ºå›å®šæ—¶è®¾ç½®</U></td>
 <td colspan=2 class=td1>
-<input type=radio class="radio" name="Board_Setting(21)" value="0" <%If Board_Setting(21)="0" Then %>checked <%End If%>>¹Ø ±Õ</option>
-<input type=radio class="radio" name="Board_Setting(21)" value="1" <%If Board_Setting(21)="1" Then %>checked <%End If%>>¶¨Ê±¹Ø±Õ</option>
-<input type=radio class="radio" name="Board_Setting(21)" value="2" <%If Board_Setting(21)="2" Then %>checked <%End If%>>¶¨Ê±Ö»¶Á</option>
+<input type=radio class="radio" name="Board_Setting(21)" value="0" <%If Board_Setting(21)="0" Then %>checked <%End If%>>å…³ é—­</option>
+<input type=radio class="radio" name="Board_Setting(21)" value="1" <%If Board_Setting(21)="1" Then %>checked <%End If%>>å®šæ—¶å…³é—­</option>
+<input type=radio class="radio" name="Board_Setting(21)" value="2" <%If Board_Setting(21)="2" Then %>checked <%End If%>>å®šæ—¶åªè¯»</option>
 </td>
-<input type="hidden" id="b10" value="<b>¶¨Ê±ÉèÖÃÑ¡Ôñ:</b><br><li>ÔÚÕâÀïÄú¿ÉÒÔÉèÖÃÊÇ·ñÆðÓÃ¶¨Ê±µÄ¸÷ÖÖ¹¦ÄÜ£¬Èç¹û¿ªÆôÁË±¾¹¦ÄÜ£¬ÇëÉèÖÃºÃÏÂÃæÑ¡ÏîÖÐµÄÂÛÌ³ÉèÖÃÊ±¼ä£¬ÂÛÌ³¸Ã°æÃæ½«ÔÚÄú¹æ¶¨µÄÊ±¼äÄÚÓÐÖ¸¶¨µÄÉèÖÃ">
-<td class=td1><a href=# onclick="helpscript(b10);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
+<input type="hidden" id="b10" value="<b>å®šæ—¶è®¾ç½®é€‰æ‹©:</b><br><li>åœ¨è¿™é‡Œæ‚¨å¯ä»¥è®¾ç½®æ˜¯å¦èµ·ç”¨å®šæ—¶çš„å„ç§åŠŸèƒ½ï¼Œå¦‚æžœå¼€å¯äº†æœ¬åŠŸèƒ½ï¼Œè¯·è®¾ç½®å¥½ä¸‹é¢é€‰é¡¹ä¸­çš„è®ºå›è®¾ç½®æ—¶é—´ï¼Œè®ºå›è¯¥ç‰ˆé¢å°†åœ¨æ‚¨è§„å®šçš„æ—¶é—´å†…æœ‰æŒ‡å®šçš„è®¾ç½®">
+<td class=td1><a href=# onclick="helpscript(b10);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="ç‚¹å‡»æŸ¥é˜…ç®¡ç†å¸®åŠ©ï¼"></a></td>
 </tr>
 <tr> 
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(22)(22)"></td>
 <td colspan=2 class=td2>
-<U>¶¨Ê±ÉèÖÃ</U><BR>Çë¸ù¾ÝÐèÒªÑ¡Ôñ¿ª»ò¹Ø</td></td>
+<U>å®šæ—¶è®¾ç½®</U><BR>è¯·æ ¹æ®éœ€è¦é€‰æ‹©å¼€æˆ–å…³</td></td>
 <td colspan=2 class=td2>
 <%
 Board_Setting(22)=split(Board_Setting(22),"|")
@@ -280,15 +280,15 @@ End If
 For i= 0 to UBound(Board_Setting(22))
 If i<10 Then Response.Write "&nbsp;"
 %>
- <%=i%>µã£º<input type="checkbox" class="checkbox" name="Board_Setting(22)<%=i%>" value="<%=Board_Setting(22)(i)%>" <%If Board_Setting(22)(i)="1" Then %>checked<%End If%>>¿ª
+ <%=i%>ç‚¹ï¼š<input type="checkbox" class="checkbox" name="Board_Setting(22)<%=i%>" value="<%=Board_Setting(22)(i)%>" <%If Board_Setting(22)(i)="1" Then %>checked<%End If%>>å¼€
    
  <%
  If (i+1) mod 4 = 0 Then Response.Write "<br>"
  Next
  %>
 </td>
-<input type="hidden" id="b11" value="<b>ÂÛÌ³¿ª·ÅÊ±¼ä</b><br><li>ÉèÖÃÁË±¾Ñ¡Ïî±ØÐëÍ¬Ê±´ò¿ªÊÇ·ñÆðÓÃ¶¨Ê±¿ª¹ØÂÛÌ³ÉèÖÃ²ÅÓÐÐ§£¬ÉèÖÃÁË´ËÑ¡Ïî£¬ÂÛÌ³¸Ã°æÃæ½«ÔÚÄú¹æ¶¨µÄÊ±¼äÄÚ¸øÓÃ»§¿ª·Å">
-<td class=td2><a href=# onclick="helpscript(b11);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
+<input type="hidden" id="b11" value="<b>è®ºå›å¼€æ”¾æ—¶é—´</b><br><li>è®¾ç½®äº†æœ¬é€‰é¡¹å¿…é¡»åŒæ—¶æ‰“å¼€æ˜¯å¦èµ·ç”¨å®šæ—¶å¼€å…³è®ºå›è®¾ç½®æ‰æœ‰æ•ˆï¼Œè®¾ç½®äº†æ­¤é€‰é¡¹ï¼Œè®ºå›è¯¥ç‰ˆé¢å°†åœ¨æ‚¨è§„å®šçš„æ—¶é—´å†…ç»™ç”¨æˆ·å¼€æ”¾">
+<td class=td2><a href=# onclick="helpscript(b11);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="ç‚¹å‡»æŸ¥é˜…ç®¡ç†å¸®åŠ©ï¼"></a></td>
 </tr>
 <%
 Dim VisitConfirm
@@ -303,202 +303,202 @@ End If
 <tr> 
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(54)(0)"></td>
 <td colspan=2 class=td1>
-<U>ÓÃ»§ÖÁÉÙÎÄÕÂÊý</U></td>
+<U>ç”¨æˆ·è‡³å°‘æ–‡ç« æ•°</U></td>
 <td colspan=2 class=td1>
 <input type=text size=10 name="Board_Setting(54)(0)" value="<%=VisitConfirm(0)%>">
 </td>
-<input type="hidden" id="VisitConfirm1" value="<b>ÓÃ»§ÖÁÉÙÎÄÕÂÊý</b><br><li>µ±ÓÃ»§·¢±íµÄÎÄÕÂ´ïµ½´ËÉèÖÃÊ±£¬²ÅÄÜÓµÓÐ·ÃÎÊÈ¨ÏÞ£¡<li>²»ÏÞÖÆÉèÖÃÎª0">
-<td class=td1><a href=# onclick="helpscript(VisitConfirm1);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
+<input type="hidden" id="VisitConfirm1" value="<b>ç”¨æˆ·è‡³å°‘æ–‡ç« æ•°</b><br><li>å½“ç”¨æˆ·å‘è¡¨çš„æ–‡ç« è¾¾åˆ°æ­¤è®¾ç½®æ—¶ï¼Œæ‰èƒ½æ‹¥æœ‰è®¿é—®æƒé™ï¼<li>ä¸é™åˆ¶è®¾ç½®ä¸º0">
+<td class=td1><a href=# onclick="helpscript(VisitConfirm1);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="ç‚¹å‡»æŸ¥é˜…ç®¡ç†å¸®åŠ©ï¼"></a></td>
 </tr>
 <tr> 
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(54)(1)"></td>
 <td colspan=2 class=td2>
-<U>ÓÃ»§ÖÁÉÙ»ý·Ö</U></td>
+<U>ç”¨æˆ·è‡³å°‘ç§¯åˆ†</U></td>
 <td colspan=2 class=td2>
 <input type=text size=10 name="Board_Setting(54)(1)" value="<%=VisitConfirm(1)%>">
 </td>
-<input type="hidden" id="VisitConfirm2" value="<b>ÓÃ»§ÖÁÉÙ»ý·ÖÖµ</b><br><li>µ±ÓÃ»§µÄ»ý·ÖÖµ´ïµ½´ËÉèÖÃÊ±£¬²ÅÄÜÓµÓÐ·ÃÎÊÈ¨ÏÞ£¡<li>²»ÏÞÖÆÉèÖÃÎª0">
-<td class=td2><a href=# onclick="helpscript(VisitConfirm2);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
+<input type="hidden" id="VisitConfirm2" value="<b>ç”¨æˆ·è‡³å°‘ç§¯åˆ†å€¼</b><br><li>å½“ç”¨æˆ·çš„ç§¯åˆ†å€¼è¾¾åˆ°æ­¤è®¾ç½®æ—¶ï¼Œæ‰èƒ½æ‹¥æœ‰è®¿é—®æƒé™ï¼<li>ä¸é™åˆ¶è®¾ç½®ä¸º0">
+<td class=td2><a href=# onclick="helpscript(VisitConfirm2);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="ç‚¹å‡»æŸ¥é˜…ç®¡ç†å¸®åŠ©ï¼"></a></td>
 </tr>
 <tr> 
 
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(54)(2)"></td>
 <td colspan=2 class=td1>
-<U>ÓÃ»§ÖÁÉÙ½ðÇ®</U></td>
+<U>ç”¨æˆ·è‡³å°‘é‡‘é’±</U></td>
 <td colspan=2 class=td1>
 <input type=text size=10 name="Board_Setting(54)(2)" value="<%=VisitConfirm(2)%>">
 </td>
-<input type="hidden" id="VisitConfirm3" value="<b>ÓÃ»§ÖÁÉÙ½ðÇ®Êý</b><br><li>µ±ÓÃ»§µÄ½ðÇ®´ïµ½´ËÉèÖÃÊ±£¬²ÅÄÜÓµÓÐ·ÃÎÊÈ¨ÏÞ£¡<li>²»ÏÞÖÆÉèÖÃÎª0">
-<td class=td1><a href=# onclick="helpscript(VisitConfirm3);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
+<input type="hidden" id="VisitConfirm3" value="<b>ç”¨æˆ·è‡³å°‘é‡‘é’±æ•°</b><br><li>å½“ç”¨æˆ·çš„é‡‘é’±è¾¾åˆ°æ­¤è®¾ç½®æ—¶ï¼Œæ‰èƒ½æ‹¥æœ‰è®¿é—®æƒé™ï¼<li>ä¸é™åˆ¶è®¾ç½®ä¸º0">
+<td class=td1><a href=# onclick="helpscript(VisitConfirm3);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="ç‚¹å‡»æŸ¥é˜…ç®¡ç†å¸®åŠ©ï¼"></a></td>
 </tr>
 <tr> 
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(54)(3)"></td>
 <td colspan=2 class=td2>
-<U>ÓÃ»§ÖÁÉÙ÷ÈÁ¦</U></td>
+<U>ç”¨æˆ·è‡³å°‘é­…åŠ›</U></td>
 <td colspan=2 class=td2>
 <input type=text size=10 name="Board_Setting(54)(3)" value="<%=VisitConfirm(3)%>">
 </td>
-<input type="hidden" id="VisitConfirm4" value="<b>ÓÃ»§ÖÁÉÙ÷ÈÁ¦</b><br><li>µ±ÓÃ»§µÄ÷ÈÁ¦Öµ´ïµ½´ËÉèÖÃÊ±£¬²ÅÄÜÓµÓÐ·ÃÎÊÈ¨ÏÞ£¡<li>²»ÏÞÖÆÉèÖÃÎª0">
-<td class=td2><a href=# onclick="helpscript(VisitConfirm4);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
+<input type="hidden" id="VisitConfirm4" value="<b>ç”¨æˆ·è‡³å°‘é­…åŠ›</b><br><li>å½“ç”¨æˆ·çš„é­…åŠ›å€¼è¾¾åˆ°æ­¤è®¾ç½®æ—¶ï¼Œæ‰èƒ½æ‹¥æœ‰è®¿é—®æƒé™ï¼<li>ä¸é™åˆ¶è®¾ç½®ä¸º0">
+<td class=td2><a href=# onclick="helpscript(VisitConfirm4);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="ç‚¹å‡»æŸ¥é˜…ç®¡ç†å¸®åŠ©ï¼"></a></td>
 </tr>
 <tr> 
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(54)(4)"></td>
 <td colspan=2 class=td1>
-<U>ÓÃ»§ÖÁÉÙÍþÍû</U></td>
+<U>ç”¨æˆ·è‡³å°‘å¨æœ›</U></td>
 <td colspan=2 class=td1>
 <input type=text size=10 name="Board_Setting(54)(4)" value="<%=VisitConfirm(4)%>">
 </td>
-<input type="hidden" id="VisitConfirm5" value="<b>ÓÃ»§ÖÁÉÙÍþÍû</b><br><li>µ±ÓÃ»§ÍþÍû´ïµ½´ËÉèÖÃÊ±£¬²ÅÄÜÓµÓÐ·ÃÎÊÈ¨ÏÞ£¡<li>²»ÏÞÖÆÉèÖÃÎª0">
-<td class=td1><a href=# onclick="helpscript(VisitConfirm5);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
+<input type="hidden" id="VisitConfirm5" value="<b>ç”¨æˆ·è‡³å°‘å¨æœ›</b><br><li>å½“ç”¨æˆ·å¨æœ›è¾¾åˆ°æ­¤è®¾ç½®æ—¶ï¼Œæ‰èƒ½æ‹¥æœ‰è®¿é—®æƒé™ï¼<li>ä¸é™åˆ¶è®¾ç½®ä¸º0">
+<td class=td1><a href=# onclick="helpscript(VisitConfirm5);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="ç‚¹å‡»æŸ¥é˜…ç®¡ç†å¸®åŠ©ï¼"></a></td>
 </tr>
 <tr> 
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(54)(5)"></td>
 <td colspan=2 class=td2>
-<U>ÓÃ»§ÖÁÉÙ¾«»ªÎÄÕÂ</U></td>
+<U>ç”¨æˆ·è‡³å°‘ç²¾åŽæ–‡ç« </U></td>
 <td colspan=2 class=td2>
 <input type=text size=10 name="Board_Setting(54)(5)" value="<%=VisitConfirm(5)%>">
 </td>
-<input type="hidden" id="VisitConfirm6" value="<b>ÓÃ»§ÖÁÉÙ¾«»ªÎÄÕÂÊý</b><br><li>µ±ÓÃ»§·¢±íµÄ¾«»ªÎÄÕÂ´ïµ½´ËÉèÖÃÊ±£¬²ÅÄÜÓµÓÐ·ÃÎÊÈ¨ÏÞ£¡<li>²»ÏÞÖÆÉèÖÃÎª0">
-<td class=td2><a href=# onclick="helpscript(VisitConfirm6);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
+<input type="hidden" id="VisitConfirm6" value="<b>ç”¨æˆ·è‡³å°‘ç²¾åŽæ–‡ç« æ•°</b><br><li>å½“ç”¨æˆ·å‘è¡¨çš„ç²¾åŽæ–‡ç« è¾¾åˆ°æ­¤è®¾ç½®æ—¶ï¼Œæ‰èƒ½æ‹¥æœ‰è®¿é—®æƒé™ï¼<li>ä¸é™åˆ¶è®¾ç½®ä¸º0">
+<td class=td2><a href=# onclick="helpscript(VisitConfirm6);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="ç‚¹å‡»æŸ¥é˜…ç®¡ç†å¸®åŠ©ï¼"></a></td>
 </tr>
 <tr> 
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(54)(6)"></td>
 <td colspan=2 class=td1>
-<U>ÓÃ»§±»É¾Ìû×ÓÊýÉÏÏÞ</U></td>
+<U>ç”¨æˆ·è¢«åˆ å¸–å­æ•°ä¸Šé™</U></td>
 <td colspan=2 class=td1>
 <input type=text size=10 name="Board_Setting(54)(6)" value="<%=VisitConfirm(6)%>">
 </td>
-<input type="hidden" id="VisitConfirm7" value="<b>ÓÃ»§±»É¾Ìû×ÓÊýÉÏÏÞ</b><br><li>µ±ÓÃ»§±»É¾Ìû×ÓÊý³¬¹ý´ËÉèÖÃÊ±£¬²»ÄÜ·ÃÎÊ¸Ã·Ö°æ£¡<li>²»ÏÞÖÆÉèÖÃÎª0">
-<td class=td1><a href=# onclick="helpscript(VisitConfirm7);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
+<input type="hidden" id="VisitConfirm7" value="<b>ç”¨æˆ·è¢«åˆ å¸–å­æ•°ä¸Šé™</b><br><li>å½“ç”¨æˆ·è¢«åˆ å¸–å­æ•°è¶…è¿‡æ­¤è®¾ç½®æ—¶ï¼Œä¸èƒ½è®¿é—®è¯¥åˆ†ç‰ˆï¼<li>ä¸é™åˆ¶è®¾ç½®ä¸º0">
+<td class=td1><a href=# onclick="helpscript(VisitConfirm7);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="ç‚¹å‡»æŸ¥é˜…ç®¡ç†å¸®åŠ©ï¼"></a></td>
 </tr>
 <tr> 
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(54)(7)"></td>
 <td colspan=2 class=td2>
-<U>ÖÁÉÙ×¢²áÊ±¼ä£¨µ¥Î»Îª·ÖÖÓ£©</U></td>
+<U>è‡³å°‘æ³¨å†Œæ—¶é—´ï¼ˆå•ä½ä¸ºåˆ†é’Ÿï¼‰</U></td>
 <td colspan=2 class=td2>
 <input type=text size=10 name="Board_Setting(54)(7)" value="<%=VisitConfirm(7)%>">
 </td>
-<input type="hidden" id="VisitConfirm8" value="<b>ÓÃ»§ÖÁÉÙ×¢²áÊ±¼ä</b><br><li>×¢²áÊ±¼äÊÇÖ¸ÓÃ»§×¢²á¶àÉÙ·ÖÖÓºó¿É½øÈëÂÛÌ³¡£<li>µ¥Î»Îª·ÖÖÓ¡£<li>²»ÏÞÖÆÉèÖÃÎª0">
-<td class=td2><a href=# onclick="helpscript(VisitConfirm8);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
+<input type="hidden" id="VisitConfirm8" value="<b>ç”¨æˆ·è‡³å°‘æ³¨å†Œæ—¶é—´</b><br><li>æ³¨å†Œæ—¶é—´æ˜¯æŒ‡ç”¨æˆ·æ³¨å†Œå¤šå°‘åˆ†é’ŸåŽå¯è¿›å…¥è®ºå›ã€‚<li>å•ä½ä¸ºåˆ†é’Ÿã€‚<li>ä¸é™åˆ¶è®¾ç½®ä¸º0">
+<td class=td2><a href=# onclick="helpscript(VisitConfirm8);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="ç‚¹å‡»æŸ¥é˜…ç®¡ç†å¸®åŠ©ï¼"></a></td>
 </tr>
 <tr> 
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(54)(8)"></td>
 <td colspan=2 class=td1>
-<U>ÖÁÉÙÉÏ´«ÎÄ¼þ¸öÊý</U></td>
+<U>è‡³å°‘ä¸Šä¼ æ–‡ä»¶ä¸ªæ•°</U></td>
 <td colspan=2 class=td1>
 <input type=text size=10 name="Board_Setting(54)(8)" value="<%=VisitConfirm(8)%>">
 </td>
-<input type="hidden" id="VisitConfirm9" value="<b>ÓÃ»§ÖÁÉÙÉÏ´«ÎÄ¼þ¸öÊý</b><br><li>µ±ÓÃ»§ÖÁÉÙÉÏ´«ÎÄ¼þ¸öÊý´ïµ½´ËÉèÖÃÊ±£¬²ÅÄÜÓµÓÐ·ÃÎÊÈ¨ÏÞ£¡<li>²»ÏÞÖÆÉèÖÃÎª0">
-<td class=td1><a href=# onclick="helpscript(VisitConfirm9);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
+<input type="hidden" id="VisitConfirm9" value="<b>ç”¨æˆ·è‡³å°‘ä¸Šä¼ æ–‡ä»¶ä¸ªæ•°</b><br><li>å½“ç”¨æˆ·è‡³å°‘ä¸Šä¼ æ–‡ä»¶ä¸ªæ•°è¾¾åˆ°æ­¤è®¾ç½®æ—¶ï¼Œæ‰èƒ½æ‹¥æœ‰è®¿é—®æƒé™ï¼<li>ä¸é™åˆ¶è®¾ç½®ä¸º0">
+<td class=td1><a href=# onclick="helpscript(VisitConfirm9);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="ç‚¹å‡»æŸ¥é˜…ç®¡ç†å¸®åŠ©ï¼"></a></td>
 </tr>
 
-<tr><th height="25" colspan="6" id=tabletitlelink align=left>  &nbsp;ÈÏÖ¤°æ¿é¸ß¼¶ÉèÖÃ[<a href="#top">¶¥²¿</a>]</th></tr>
+<tr><th height="25" colspan="6" id=tabletitlelink align=left>  &nbsp;è®¤è¯ç‰ˆå—é«˜çº§è®¾ç½®[<a href="#top">é¡¶éƒ¨</a>]</th></tr>
 <tr><td height="25" colspan="6" class=td2>
-<b>×¢</b>£ºµ±±¾°æ¿éÉèÎªÈÏÖ¤°æÃæÊ±£¬ÒÔÏÂÉèÖÃ²ÅÄÜÉúÐ§¡£
+<b>æ³¨</b>ï¼šå½“æœ¬ç‰ˆå—è®¾ä¸ºè®¤è¯ç‰ˆé¢æ—¶ï¼Œä»¥ä¸‹è®¾ç½®æ‰èƒ½ç”Ÿæ•ˆã€‚
 </td></tr>
 <tr>
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(62)"></td>
 <td colspan=2 class=td1>
-<U>ÓÃ»§½øÈëÐèÒª½ðÇ®Êý</U></td>
+<U>ç”¨æˆ·è¿›å…¥éœ€è¦é‡‘é’±æ•°</U></td>
 <td colspan=2 class=td1>
 <input type=text size=10 name="Board_Setting(62)" value="<%=Board_Setting(62)%>">
-ÉèÖÃºó½øÈë¸Ã°æÃæ½«ÐèÒªÖ§¸¶Ò»¶¨Á¿µÄ½ð±Ò
+è®¾ç½®åŽè¿›å…¥è¯¥ç‰ˆé¢å°†éœ€è¦æ”¯ä»˜ä¸€å®šé‡çš„é‡‘å¸
 </td>
-<input type="hidden" id="b62" value="<b>ÓÃ»§½øÈëÐèÒª½ðÇ®Êý</b><br><li>ÉèÖÃºó½øÈë¸Ã°æÃæ½«ÐèÒªÖ§¸¶Ò»¶¨Á¿µÄ½ð±Ò£¡<li>²»ÏÞÖÆÉèÖÃÎª0">
-<td class=td1><a href=# onclick="helpscript(b62);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
+<input type="hidden" id="b62" value="<b>ç”¨æˆ·è¿›å…¥éœ€è¦é‡‘é’±æ•°</b><br><li>è®¾ç½®åŽè¿›å…¥è¯¥ç‰ˆé¢å°†éœ€è¦æ”¯ä»˜ä¸€å®šé‡çš„é‡‘å¸ï¼<li>ä¸é™åˆ¶è®¾ç½®ä¸º0">
+<td class=td1><a href=# onclick="helpscript(b62);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="ç‚¹å‡»æŸ¥é˜…ç®¡ç†å¸®åŠ©ï¼"></a></td>
 </tr>
 <tr> 
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(63)"></td>
 <td colspan=2 class=td2>
-<U>ÓÃ»§½øÈëÐèÒªµãÈ¯Êý</U></td>
+<U>ç”¨æˆ·è¿›å…¥éœ€è¦ç‚¹åˆ¸æ•°</U></td>
 <td colspan=2 class=td2>
 <input type=text size=10 name="Board_Setting(63)" value="<%=Board_Setting(63)%>">
-ÉèÖÃºó½øÈë¸Ã°æÃæ½«ÐèÒªÖ§¸¶Ò»¶¨Á¿µÄµãÈ¯
+è®¾ç½®åŽè¿›å…¥è¯¥ç‰ˆé¢å°†éœ€è¦æ”¯ä»˜ä¸€å®šé‡çš„ç‚¹åˆ¸
 </td>
-<input type="hidden" id="b63" value="<b>ÓÃ»§½øÈëÐèÒªµãÈ¯Êý</b><br><li>ÉèÖÃºó½øÈë¸Ã°æÃæ½«ÐèÒªÖ§¸¶Ò»¶¨Á¿µÄµãÈ¯£¡<li>²»ÏÞÖÆÉèÖÃÎª0">
-<td class=td2><a href=# onclick="helpscript(b63);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
+<input type="hidden" id="b63" value="<b>ç”¨æˆ·è¿›å…¥éœ€è¦ç‚¹åˆ¸æ•°</b><br><li>è®¾ç½®åŽè¿›å…¥è¯¥ç‰ˆé¢å°†éœ€è¦æ”¯ä»˜ä¸€å®šé‡çš„ç‚¹åˆ¸ï¼<li>ä¸é™åˆ¶è®¾ç½®ä¸º0">
+<td class=td2><a href=# onclick="helpscript(b63);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="ç‚¹å‡»æŸ¥é˜…ç®¡ç†å¸®åŠ©ï¼"></a></td>
 </tr>
 <tr>
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(66)"></td>
 <td colspan=2 class=td1>
-<U>VIPÓÃ»§×é½øÈëÊÕÈ¡½ð±ÒµãÈ¯±ê×¼</U><BR>ÇëÒÔÐ¡ÊýÉèÖÃ£¬ÉèÖÃÎª0Ôò²»ÐèÒªÖ§³Ö½ð±ÒºÍµãÈ¯£¬·ñÔòÒÔÉÏÃæÁ½ÏîÉèÖÃµÄ±ê×¼£ºVIPÓÃ»§½øÈëÐèÒª½ð±ÒÊý»òµãÈ¯Êý = VIPÓÃ»§×éÊÕÈ¡½ð±ÒµãÈ¯±ê×¼ X ÓÃ»§½øÈëÐèÒª½ð±ÒÊý»òµãÈ¯Êý</td>
+<U>VIPç”¨æˆ·ç»„è¿›å…¥æ”¶å–é‡‘å¸ç‚¹åˆ¸æ ‡å‡†</U><BR>è¯·ä»¥å°æ•°è®¾ç½®ï¼Œè®¾ç½®ä¸º0åˆ™ä¸éœ€è¦æ”¯æŒé‡‘å¸å’Œç‚¹åˆ¸ï¼Œå¦åˆ™ä»¥ä¸Šé¢ä¸¤é¡¹è®¾ç½®çš„æ ‡å‡†ï¼šVIPç”¨æˆ·è¿›å…¥éœ€è¦é‡‘å¸æ•°æˆ–ç‚¹åˆ¸æ•° = VIPç”¨æˆ·ç»„æ”¶å–é‡‘å¸ç‚¹åˆ¸æ ‡å‡† X ç”¨æˆ·è¿›å…¥éœ€è¦é‡‘å¸æ•°æˆ–ç‚¹åˆ¸æ•°</td>
 <td colspan=2 class=td1>
 <input type=text size=10 name="Board_Setting(66)" value="<%=Board_Setting(66)%>">
-ÉèÖÃºó½øÈë¸Ã°æÃæ½«ÐèÒªÖ§¸¶Ò»¶¨Á¿µÄµãÈ¯
+è®¾ç½®åŽè¿›å…¥è¯¥ç‰ˆé¢å°†éœ€è¦æ”¯ä»˜ä¸€å®šé‡çš„ç‚¹åˆ¸
 </td>
-<input type="hidden" id="b66" value="<b>VIPÓÃ»§½øÈëÐèÒª½ð±ÒÊý/µãÈ¯Êý = VIPÓÃ»§×éÊÕÈ¡½ð±ÒµãÈ¯±ê×¼ X ÓÃ»§½øÈëÐèÒª½ð±ÒÊý/µãÈ¯Êý£¡<li>²»ÏÞÖÆÉèÖÃÎª0">
-<td class=td1><a href=# onclick="helpscript(b66);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
+<input type="hidden" id="b66" value="<b>VIPç”¨æˆ·è¿›å…¥éœ€è¦é‡‘å¸æ•°/ç‚¹åˆ¸æ•° = VIPç”¨æˆ·ç»„æ”¶å–é‡‘å¸ç‚¹åˆ¸æ ‡å‡† X ç”¨æˆ·è¿›å…¥éœ€è¦é‡‘å¸æ•°/ç‚¹åˆ¸æ•°ï¼<li>ä¸é™åˆ¶è®¾ç½®ä¸º0">
+<td class=td1><a href=# onclick="helpscript(b66);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="ç‚¹å‡»æŸ¥é˜…ç®¡ç†å¸®åŠ©ï¼"></a></td>
 </tr>
 <tr>
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(64)"></td>
 <td colspan=2 class=td2>
-<U>Ö§¸¶½ð±Ò»òµãÈ¯½øÈë°æÃæµÄÓÐÐ§ÆÚ</U></td>
+<U>æ”¯ä»˜é‡‘å¸æˆ–ç‚¹åˆ¸è¿›å…¥ç‰ˆé¢çš„æœ‰æ•ˆæœŸ</U></td>
 <td colspan=2 class=td2>
 <input type=text size=10 name="Board_Setting(64)" value="<%=Board_Setting(64)%>">
-ÌîÐ´Êý×Ö1£­999£¬´ú±íÓÐÐ§ÆÚÎª¶àÉÙ¸öÔÂ
+å¡«å†™æ•°å­—1ï¼999ï¼Œä»£è¡¨æœ‰æ•ˆæœŸä¸ºå¤šå°‘ä¸ªæœˆ
 </td>
-<input type="hidden" id="b64" value="<b>Ö§¸¶½ð±Ò»òµãÈ¯½øÈë°æÃæµÄÓÐÐ§ÆÚ</b><br><li>ÌîÐ´Êý×Ö1£­12£¬´ú±íÓÐÐ§ÆÚÎª¶àÉÙ¸öÔÂ£¡<li>²»ÏÞÖÆÉèÖÃÎª0">
-<td class=td2><a href=# onclick="helpscript(b64);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
+<input type="hidden" id="b64" value="<b>æ”¯ä»˜é‡‘å¸æˆ–ç‚¹åˆ¸è¿›å…¥ç‰ˆé¢çš„æœ‰æ•ˆæœŸ</b><br><li>å¡«å†™æ•°å­—1ï¼12ï¼Œä»£è¡¨æœ‰æ•ˆæœŸä¸ºå¤šå°‘ä¸ªæœˆï¼<li>ä¸é™åˆ¶è®¾ç½®ä¸º0">
+<td class=td2><a href=# onclick="helpscript(b64);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="ç‚¹å‡»æŸ¥é˜…ç®¡ç†å¸®åŠ©ï¼"></a></td>
 </tr>
 
-<tr><th height="25" colspan="6" id=tabletitlelink align=left>  &nbsp;<a name="setting3"></a>Ç°Ì¨¹ÜÀíÈ¨ÏÞ[<a href="#top">¶¥²¿</a>]</th></tr>
+<tr><th height="25" colspan="6" id=tabletitlelink align=left>  &nbsp;<a name="setting3"></a>å‰å°ç®¡ç†æƒé™[<a href="#top">é¡¶éƒ¨</a>]</th></tr>
 <tr> 
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(33)"></td>
 <td colspan=2 class=td1>
-<U>Ö÷°æÖ÷¿ÉÒÔÔöÉ¾¸±°æÖ÷</U></td>
+<U>ä¸»ç‰ˆä¸»å¯ä»¥å¢žåˆ å‰¯ç‰ˆä¸»</U></td>
 <td colspan=2 class=td1>
-<input type=radio class="radio" name="Board_Setting(33)" value=0 <%if Board_Setting(33)="0" then%>checked<%end if%>>·ñ&nbsp;
-<input type=radio class="radio" name="Board_Setting(33)" value=1 <%if Board_Setting(33)="1" then%>checked<%end if%>>ÊÇ&nbsp;
+<input type=radio class="radio" name="Board_Setting(33)" value=0 <%if Board_Setting(33)="0" then%>checked<%end if%>>å¦&nbsp;
+<input type=radio class="radio" name="Board_Setting(33)" value=1 <%if Board_Setting(33)="1" then%>checked<%end if%>>æ˜¯&nbsp;
 </td>
 <td class=td1>&nbsp;</td>
 </tr>
 <tr> 
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(34)"></td>
 <td colspan=2 class=td2>
-<U>Ö÷°æÖ÷¿ÉÒÔÐÞ¸Ä¹ã¸æÉèÖÃ</U></td>
+<U>ä¸»ç‰ˆä¸»å¯ä»¥ä¿®æ”¹å¹¿å‘Šè®¾ç½®</U></td>
 <td colspan=2 class=td2>
-<input type=radio class="radio" name="Board_Setting(34)" value=0 <%if Board_Setting(34)="0" then%>checked<%end if%>>·ñ&nbsp;
-<input type=radio class="radio" name="Board_Setting(34)" value=1 <%if Board_Setting(34)="1" then%>checked<%end if%>>ÊÇ&nbsp;
+<input type=radio class="radio" name="Board_Setting(34)" value=0 <%if Board_Setting(34)="0" then%>checked<%end if%>>å¦&nbsp;
+<input type=radio class="radio" name="Board_Setting(34)" value=1 <%if Board_Setting(34)="1" then%>checked<%end if%>>æ˜¯&nbsp;
 </td>
 <td class=td2>&nbsp;</td>
 </tr>
 <tr> 
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(35)"></td>
 <td colspan=2 class=td1>
-<U>ËùÓÐ°æÖ÷¿ÉÒÔÐÞ¸Ä¹ã¸æÉèÖÃ</U></td>
+<U>æ‰€æœ‰ç‰ˆä¸»å¯ä»¥ä¿®æ”¹å¹¿å‘Šè®¾ç½®</U></td>
 <td colspan=2 class=td1>
-<input type=radio class="radio" name="Board_Setting(35)" value=0 <%if Board_Setting(35)="0" then%>checked<%end if%>>·ñ&nbsp;
-<input type=radio class="radio" name="Board_Setting(35)" value=1 <%if Board_Setting(35)="1" then%>checked<%end if%>>ÊÇ&nbsp;
+<input type=radio class="radio" name="Board_Setting(35)" value=0 <%if Board_Setting(35)="0" then%>checked<%end if%>>å¦&nbsp;
+<input type=radio class="radio" name="Board_Setting(35)" value=1 <%if Board_Setting(35)="1" then%>checked<%end if%>>æ˜¯&nbsp;
 </td>
 <td class=td1>&nbsp;</td>
 </tr>
 <tr> 
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(65)"></td>
 <td colspan=2 class=td2>
-<U>¹ÜÀí²Ù×÷¼°ÆÀ·ÖÀíÓÉÑ¡Ïî</U><BR>Ã¿¸öÀíÓÉÓÃ¡°|¡±·Ö¸î</td>
+<U>ç®¡ç†æ“ä½œåŠè¯„åˆ†ç†ç”±é€‰é¡¹</U><BR>æ¯ä¸ªç†ç”±ç”¨â€œ|â€åˆ†å‰²</td>
 <td colspan=2 class=td2>
 <input type="text" Name="Board_Setting(65)" Value="<%=Board_Setting(65)%>" Size=50>
 </td>
 <td class=td2>&nbsp;</td>
 </tr>
 <tr> 
-<th height="25" colspan="6" id=tabletitlelink align=left>  &nbsp;<a name="setting4"></a>·¢ÌùÏà¹Ø[<a href="#top">¶¥²¿</a>]</th>
+<th height="25" colspan="6" id=tabletitlelink align=left>  &nbsp;<a name="setting4"></a>å‘è´´ç›¸å…³[<a href="#top">é¡¶éƒ¨</a>]</th>
 </tr>
 <tr> 
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(4)"></td>
 <td colspan=2 class=td1>
-<U>·¢ÌùÊÇ·ñ²ÉÓÃÑéÖ¤Âë</U></td>
+<U>å‘è´´æ˜¯å¦é‡‡ç”¨éªŒè¯ç </U></td>
 <td colspan=2 class=td1>
-<input type=radio class="radio" name="Board_Setting(4)" value=0 <%if Board_Setting(4)="0" then%>checked<%end if%>>²»²ÉÓÃ&nbsp;
-<input type=radio class="radio" name="Board_Setting(4)" value=1 <%if Board_Setting(4)="1" then%>checked<%end if%>>¼òµ¥ÑéÖ¤Âë&nbsp;
-<input type=radio class="radio" name="Board_Setting(4)" value=2 <%if Board_Setting(4)="2" then%>checked<%end if%>>ÕóÁÐÑéÖ¤Âë&nbsp;
+<input type=radio class="radio" name="Board_Setting(4)" value=0 <%if Board_Setting(4)="0" then%>checked<%end if%>>ä¸é‡‡ç”¨&nbsp;
+<input type=radio class="radio" name="Board_Setting(4)" value=1 <%if Board_Setting(4)="1" then%>checked<%end if%>>ç®€å•éªŒè¯ç &nbsp;
+<input type=radio class="radio" name="Board_Setting(4)" value=2 <%if Board_Setting(4)="2" then%>checked<%end if%>>é˜µåˆ—éªŒè¯ç &nbsp;
 </td>
 <td class=td1>&nbsp;</td>
 </tr>
 <tr> 
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(45)"></td>
 <td colspan=2 class=td2>
-<U>Ö÷ÌâÏÞÖÆ³¤¶È</U></td>
+<U>ä¸»é¢˜é™åˆ¶é•¿åº¦</U></td>
 <td colspan=2 class=td2>
 <input type=text size=10 name="Board_Setting(45)" value="<%=Board_Setting(45)%>"> Byte
 </td>
@@ -507,47 +507,47 @@ End If
 <tr> 
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(17)"></td>
 <td colspan=2 class=td1>
-<U>·¢Ìùºó·µ»Ø</U></td>
+<U>å‘è´´åŽè¿”å›ž</U></td>
 <td colspan=2 class=td1>
-<input type=radio class="radio" name="Board_Setting(17)" value=1 <%if Board_Setting(17)="1" then%>checked<%end if%>>Ê×Ò³&nbsp;
-<input type=radio class="radio" name="Board_Setting(17)" value=2 <%if Board_Setting(17)="2" then%>checked<%end if%>>ÂÛÌ³&nbsp;
-<input type=radio class="radio" name="Board_Setting(17)" value=3 <%if Board_Setting(17)="3" then%>checked<%end if%>>Ìû×Ó&nbsp;
-<input type=radio class="radio" name="Board_Setting(17)" value=4 <%if Board_Setting(17)="4" then%>checked<%end if%>>¿ìËÙ·µ»Øµ½Ìû×Ó&nbsp;
+<input type=radio class="radio" name="Board_Setting(17)" value=1 <%if Board_Setting(17)="1" then%>checked<%end if%>>é¦–é¡µ&nbsp;
+<input type=radio class="radio" name="Board_Setting(17)" value=2 <%if Board_Setting(17)="2" then%>checked<%end if%>>è®ºå›&nbsp;
+<input type=radio class="radio" name="Board_Setting(17)" value=3 <%if Board_Setting(17)="3" then%>checked<%end if%>>å¸–å­&nbsp;
+<input type=radio class="radio" name="Board_Setting(17)" value=4 <%if Board_Setting(17)="4" then%>checked<%end if%>>å¿«é€Ÿè¿”å›žåˆ°å¸–å­&nbsp;
 </td>
 <td class=td1>&nbsp;</td>
 </tr>
 <tr> 
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(16)"></td>
 <td colspan=2 class=td2>
-<U>Ìû×ÓÄÚÈÝ×î´ó×Ö½ÚÊý</U><BR>1024×Ö½ÚµÈÓÚ1K</td>
+<U>å¸–å­å†…å®¹æœ€å¤§å­—èŠ‚æ•°</U><BR>1024å­—èŠ‚ç­‰äºŽ1K</td>
 <td colspan=2 class=td2>
-<input type=text size=10 name="Board_Setting(16)" value="<%=Board_Setting(16)%>"> ×Ö½Ú
+<input type=text size=10 name="Board_Setting(16)" value="<%=Board_Setting(16)%>"> å­—èŠ‚
 </td>
 <td class=td2>&nbsp;</td>
 </tr>
 <tr> 
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(52)"></td>
 <td colspan=2 class=td1>
-<U>Ìû×ÓÄÚÈÝ×îÐ¡×Ö½ÚÊý</U><BR>1024×Ö½ÚµÈÓÚ1K</td>
+<U>å¸–å­å†…å®¹æœ€å°å­—èŠ‚æ•°</U><BR>1024å­—èŠ‚ç­‰äºŽ1K</td>
 <td colspan=2 class=td1>
-<input type=text size=10 name="Board_Setting(52)" value="<%=Board_Setting(52)%>"> ×Ö½Ú
+<input type=text size=10 name="Board_Setting(52)" value="<%=Board_Setting(52)%>"> å­—èŠ‚
 </td>
 <td class=td1>&nbsp;</td>
 </tr>
 <tr> 
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(53)"></td>
 <td colspan=2 class=td2>
-<U>Í¶Æ±ºóÊÇ·ñ½«Í¶Æ±ÌùÌáÉýµ½Ìû×ÓÁÐ±í¶¥²¿</U></td>
+<U>æŠ•ç¥¨åŽæ˜¯å¦å°†æŠ•ç¥¨è´´æå‡åˆ°å¸–å­åˆ—è¡¨é¡¶éƒ¨</U></td>
 <td colspan=2 class=td2>
-<input type=radio class="radio" name="Board_Setting(53)" value=0 <%if Board_Setting(53)="0" then%>checked<%end if%>>·ñ&nbsp;
-<input type=radio class="radio" name="Board_Setting(53)" value=1 <%if Board_Setting(53)="1" then%>checked<%end if%>>ÊÇ&nbsp;
+<input type=radio class="radio" name="Board_Setting(53)" value=0 <%if Board_Setting(53)="0" then%>checked<%end if%>>å¦&nbsp;
+<input type=radio class="radio" name="Board_Setting(53)" value=1 <%if Board_Setting(53)="1" then%>checked<%end if%>>æ˜¯&nbsp;
 </td>
 <td class=td2>&nbsp;</td>
 </tr>
 <tr> 
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(19)"></td>
 <td colspan=2 class=td1>
-<U>ÉÏ´«ÎÄ¼þÀàÐÍ</U><BR>Ã¿ÖÖÎÄ¼þÀàÐÍÓÃ¡°|¡±ºÅ·Ö¿ª</td>
+<U>ä¸Šä¼ æ–‡ä»¶ç±»åž‹</U><BR>æ¯ç§æ–‡ä»¶ç±»åž‹ç”¨â€œ|â€å·åˆ†å¼€</td>
 <td colspan=2 class=td1>
 <input type=text size=50 name="Board_Setting(19)" value="<%=Board_Setting(19)%>">
 </td>
@@ -556,806 +556,26 @@ End If
 <tr> 
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(30)"></td>
 <td colspan=2 class=td2>
-<U>ÊÇ·ñÆðÓÃ·À¹àË®»úÖÆ</U></td>
+<U>æ˜¯å¦èµ·ç”¨é˜²çŒæ°´æœºåˆ¶</U></td>
 <td colspan=2 class=td2>
-<input type=radio class="radio" name="Board_Setting(30)" value=0 <%if Board_Setting(30)="0" then%>checked<%end if%>>·ñ&nbsp;
-<input type=radio class="radio" name="Board_Setting(30)" value=1 <%if Board_Setting(30)="1" then%>checked<%end if%>>ÊÇ&nbsp;
+<input type=radio class="radio" name="Board_Setting(30)" value=0 <%if Board_Setting(30)="0" then%>checked<%end if%>>å¦&nbsp;
+<input type=radio class="radio" name="Board_Setting(30)" value=1 <%if Board_Setting(30)="1" then%>checked<%end if%>>æ˜¯&nbsp;
 </td>
 <td class=td2>&nbsp;</td>
 </tr>
 <tr> 
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(31)"></td>
 <td colspan=2 class=td1>
-<U>Ã¿´Î·¢Ìù¼ä¸ô</U></td>
+<U>æ¯æ¬¡å‘è´´é—´éš”</U></td>
 <td colspan=2 class=td1>
-<input type=text size=10 name="Board_Setting(31)" value="<%=Board_Setting(31)%>"> Ãë
+<input type=text size=10 name="Board_Setting(31)" value="<%=Board_Setting(31)%>"> ç§’
 </td>
 <td class=td1>&nbsp;</td>
 </tr>
 <tr> 
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(32)"></td>
 <td colspan=2 class=td2>
-<U>×î¶àÍ¶Æ±ÏîÄ¿</U></td>
+<U>æœ€å¤šæŠ•ç¥¨é¡¹ç›®</U></td>
 <td colspan=2 class=td2>
-<input type=text size=10 name="Board_Setting(32)" value="<%=Board_Setting(32)%>"> ¸ö
-</td>
-<td class=td2>&nbsp;</td>
-</tr>
-<tr> 
-<td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(71)"></td>
-<td colspan=2 class=td1>
-<U>Ëø¶¨Ö÷ÌâÌìÊý</U><BR>Ëø¶¨¶àÉÙÌìÒÔÇ°·¢±íµÄÖ÷Ìâ£¬²»ÏÞÖÆÔòÉèÖÃÎª0¡£</td>
-<td colspan=2 class=td1>
-<input type=text size=10 name="Board_Setting(71)" value="<%IF Ubound(Board_Setting) < 71 Then Response.Write "0" Else Response.Write Board_Setting(71)%>"> Ìì
-</td>
-<td class=td1>&nbsp;</td>
-</tr>
-
-<tr> 
-<td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(24)"></td>
-<td colspan=2 class=td2>
-<U>ÊÇ·ñÔÊÐíÊ¹ÓÃÄ§·¨±íÇé</U></td>
-<td colspan=2 class=td2>
-<input type=radio class="radio" name="Board_Setting(24)" value=0 <%if Board_Setting(24)="0" then%>checked<%end if%>>·ñ&nbsp;
-<input type=radio class="radio" name="Board_Setting(24)" value=1 <%if Board_Setting(24)="1" then%>checked<%end if%>>ÊÇ&nbsp;
-</td>
-<td class=td2>&nbsp;</td>
-</tr>
-<tr> 
-<td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(67)"></td>
-<td colspan=2 class=td1>
-<U>ÊÇ·ñÔÊÐíÓÃ»§·¢²¼²Æ¸»Í¨½»Ò×Ìù</U></td>
-<td colspan=2 class=td1>
-<input type=radio class="radio" name="Board_Setting(67)" value=0 <%if Board_Setting(67)="0" then%>checked<%end if%>>·ñ&nbsp;
-<input type=radio class="radio" name="Board_Setting(67)" value=1 <%if Board_Setting(67)="1" then%>checked<%end if%>>ÊÇ&nbsp;
-</td>
-<td class=td1>&nbsp;</td>
-</tr>
-<tr> 
-<td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(68)"></td>
-<td colspan=2 class=td2>
-<U>ÊÇ·ñÔÊÐíÓÃ»§ÄäÃû·¢Ìù</U></td>
-<td colspan=2 class=td2>
-<input type=radio class="radio" name="Board_Setting(68)" value=0 <%if Board_Setting(68)="0" then%>checked<%end if%>>·ñ&nbsp;
-<input type=radio class="radio" name="Board_Setting(68)" value=1 <%if Board_Setting(68)="1" then%>checked<%end if%>>ÊÇ&nbsp;
-</td>
-<td class=td2>&nbsp;</td>
-</tr>
-
-<tr><th height="25" colspan="6" id=tabletitlelink align=left>  &nbsp;<a name="setting5"></a>Ìû×ÓÁÐ±íÏÔÊ¾Ïà¹Ø[<a href="#top">¶¥²¿</a>]</th></tr>
-<tr> 
-<td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(25)"></td>
-<td colspan=2 class=td2>
-<U>Ìû×ÓÁÐ±í±êÌâÏÔÊ¾×Ö·ûÊý</U></td>
-<td colspan=2 class=td2>
-<input type=text size=10 name="Board_Setting(25)" value="<%=Board_Setting(25)%>">
-</td>
-<td class=td2>&nbsp;</td>
-</tr>
-<tr> 
-<td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(26)"></td>
-<td colspan=2 class=td1>
-<U>Ìû×ÓÁÐ±íÃ¿Ò³¼ÇÂ¼Êý</U></td>
-<td colspan=2 class=td1>
-<input type=text size=10 name="Board_Setting(26)" value="<%=Board_Setting(26)%>">
-</td>
-<td class=td1>&nbsp;</td>
-</tr>
-<tr> 
-<td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(27)"></td>
-<td colspan=2 class=td2>
-<U>ä¯ÀÀÌû×ÓÃ¿Ò³¼ÇÂ¼Êý</U></td>
-<td colspan=2 class=td2>
-<input type=text size=10 name="Board_Setting(27)" value="<%=Board_Setting(27)%>">
-</td>
-<td class=td2>&nbsp;</td>
-</tr>
-<tr> 
-<td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(37)"></td>
-<td colspan=2 class=td1>
-<U>Ìû×ÓÁÐ±íÄ¬ÈÏ¶ÁÈ¡Êý¾ÝÁ¿</U></td>
-<td colspan=2 class=td1>
-<select size="1" name="Board_Setting(37)">
-<option value="1"<%if Board_Setting(37)="0" then%> selected<%end if%>>È«²¿ÏÔÊ¾Ìû×Ó</option>
-<option value="2"<%if Board_Setting(37)="5" then%> selected<%end if%>>ÎåÌìÄÚÌû×Ó</option>
-<option value="3"<%if Board_Setting(37)="15" then%> selected<%end if%>>°ëÔÂÄÚÌû×Ó</option>
-<option value="4"<%if Board_Setting(37)="30" then%> selected<%end if%>>Ò»ÔÂÄÚÌû×Ó</option>
-<option value="5"<%if Board_Setting(37)="60" then%> selected<%end if%>>Á½ÔÂÄÚÌû×Ó</option>
-<option value="6"<%if Board_Setting(37)="120" then%> selected<%end if%>>ËÄÔÂÄÚÌû×Ó</option>
-<option value="7"<%if Board_Setting(37)="180" then%> selected<%end if%>>°ëÄêÄÚÌû×Ó</option>
-</select>
-</td>
-<td class=td1>&nbsp;</td>
-</tr>
-<tr> 
-<td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(38)"></td>
-<td colspan=2 class=td2>
-<U>ÏÔÊ¾×îÐÂÌûÍ¼Æ¬ÏÔÊ¾·½Ê½</U></td>
-<td colspan=2 class=td2>
-<select size="1" name="Board_Setting(38)">
-<option value="0"<%if Board_Setting(38)="0" then%> selected<%end if%>>×îºó»Ø¸´Ê±¼ä</option>
-<option value="1"<%if Board_Setting(38)="1" then%> selected<%end if%>>·¢ÌùÊ±¼ä</option>
-</select>
-</td>
-<td class=td2>&nbsp;</td>
-</tr>
-<tr> 
-<td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(61)"></td>
-<td colspan=2 class=td1>
-<U>ÏÔÊ¾×îÐÂÌûÍ¼Æ¬±êÊ¶Ê±¼äÉèÖÃ</U></td>
-<td colspan=2 class=td1>
-<select size="1" name="Board_Setting(61)">
-<option value="0"<%if Board_Setting(61)="0" then%> selected<%end if%>>0·ÖÖÓ</option>
-<option value="10"<%if Board_Setting(61)="10" then%> selected<%end if%>>10·ÖÖÓ</option>
-<option value="30"<%if Board_Setting(61)="30" then%> selected<%end if%>>30·ÖÖÓ</option>
-<option value="60"<%if Board_Setting(61)="60" then%> selected<%end if%>>1Ð¡Ê±</option>
-<option value="360"<%If Board_Setting(61)="360" then%> selected<%end if%>>6Ð¡Ê±</option>
-<option value="720"<%if Board_Setting(61)="720" then%> selected<%end if%>>12Ð¡Ê±</option>
-<option value="1440"<%if Board_Setting(61)="1440" then%> selected<%end if%>>1Ìì</option>
-<option value="2880"<%if Board_Setting(61)="2880" then%> selected<%end if%>>2Ìì</option>
-</select>£ºÄÚ¸üÐÂµÄÌû×Ó
-</td>
-<td class=td1>&nbsp;</td>
-</tr>
-<tr> 
-<td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(60)"></td>
-<td colspan=2 class=td2>
-<U>ÏÔÊ¾×îÐÂÌûÍ¼Æ¬µØÖ·ÉèÖÃ£¨new£©£ºÖµÎª0»ò¿ÕÊ±¼´²»ÏÔÊ¾£¬ÌîÐ´×¼È·µØÖ·</U></td>
-<td colspan=2 class=td2>
-<input type=text size=30 name="Board_Setting(60)" value="<%=Board_Setting(60)%>">
-<%
-If instr(Board_Setting(60),".gif") Then Response.Write "<img src=""../"&Board_Setting(60)&""" border=0>"
-%>
-</td>
-<td class=td2>&nbsp;</td>
-</tr>
-<tr> 
-<th height="25" colspan="6" id=tabletitlelink align=left>  &nbsp;<a name="setting6"></a>Ìû×ÓÄÚÈÝÏÔÊ¾Ïà¹Ø[<a href="#top">¶¥²¿</a>]</th>
-</tr>
-<tr> 
-<td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(5)"></td>
-<td colspan=2 class=td1>
-<U>HTML´úÂë½âÎö</U></td>
-<td colspan=2 class=td1>
-<input type=radio class="radio" name="Board_Setting(5)" value=0 <%if Board_Setting(5)="0" then%>checked<%end if%>>¹Ø±Õ&nbsp;
-<input type=radio class="radio" name="Board_Setting(5)" value=1 <%if Board_Setting(5)="1" then%>checked<%end if%>>¿ª·Å&nbsp;
-</td>
-<td class=td1>&nbsp;</td>
-</tr>
-<tr> 
-<td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(6)"></td>
-<td colspan=2 class=td2>
-<U>UBB´úÂë½âÎö</U></td>
-<td colspan=2 class=td2>
-<input type=radio class="radio" name="Board_Setting(6)" value=0 <%if Board_Setting(6)="0" then%>checked<%end if%>>¹Ø±Õ&nbsp;
-<input type=radio class="radio" name="Board_Setting(6)" value=1 <%if Board_Setting(6)="1" then%>checked<%end if%>>¿ª·Å&nbsp;
-</td>
-<td class=td2>&nbsp;</td>
-</tr>
-<tr> 
-<td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(7)"></td>
-<td colspan=2 class=td1>
-<U>ÌùÍ¼±êÇ©</U></td>
-<td colspan=2 class=td1>
-<input type=radio class="radio" name="Board_Setting(7)" value=0 <%if Board_Setting(7)="0" then%>checked<%end if%>>¹Ø±Õ&nbsp;
-<input type=radio class="radio" name="Board_Setting(7)" value=1 <%if Board_Setting(7)="1" then%>checked<%end if%>>¿ª·Å&nbsp;
-</td>
-<td class=td1>&nbsp;</td>
-</tr>
-<tr> 
-<td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(8)"></td>
-<td colspan=2 class=td2>
-<U>±íÇé±êÇ©</U></td>
-<td colspan=2 class=td2>
-<input type=radio class="radio" name="Board_Setting(8)" value=0 <%if Board_Setting(8)="0" then%>checked<%end if%>>¹Ø±Õ&nbsp;
-<input type=radio class="radio" name="Board_Setting(8)" value=1 <%if Board_Setting(8)="1" then%>checked<%end if%>>¿ª·Å&nbsp;
-</td>
-<td class=td2>&nbsp;</td>
-</tr>
-<tr> 
-<td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(44)"></td>
-<td colspan=2 class=td1>
-<U>Flash±êÇ©</U></td>
-<td colspan=2 class=td1>
-<input type=radio class="radio" name="Board_Setting(44)" value=0 <%if Board_Setting(44)="0" then%>checked<%end if%>>¹Ø±Õ&nbsp;
-<input type=radio class="radio" name="Board_Setting(44)" value=1 <%if Board_Setting(44)="1" then%>checked<%end if%>>¿ª·Å&nbsp;
-</td>
-<td class=td1>&nbsp;</td>
-</tr>
-<tr> 
-<td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(9)"></td>
-<td colspan=2 class=td2>
-<U>¶àÃ½Ìå±êÇ©</U><BR>°üÀ¨RM,AVIµÈ</td>
-<td colspan=2 class=td2>
-<input type=radio class="radio" name="Board_Setting(9)" value=0 <%if Board_Setting(9)="0" then%>checked<%end if%>>¹Ø±Õ&nbsp;
-<input type=radio class="radio" name="Board_Setting(9)" value=1 <%if Board_Setting(9)="1" then%>checked<%end if%>>¿ª·Å&nbsp;
-</td>
-<td class=td2>&nbsp;</td>
-</tr>
-<tr> 
-<td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(10)"></td>
-<td colspan=2 class=td1>
-<U>ÊÇ·ñ¿ª·Å½ðÇ®Ìù</U></td>
-<td colspan=2 class=td1>
-<input type=radio class="radio" name="Board_Setting(10)" value=0 <%if Board_Setting(10)="0" then%>checked<%end if%>>¹Ø±Õ&nbsp;
-<input type=radio class="radio" name="Board_Setting(10)" value=1 <%if Board_Setting(10)="1" then%>checked<%end if%>>¿ª·Å&nbsp;
-</td>
-<td class=td1>&nbsp;</td>
-</tr>
-<tr> 
-<td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(11)"></td>
-<td colspan=2 class=td2>
-<U>ÊÇ·ñ¿ª·Å»ý·ÖÌù</U></td>
-<td colspan=2 class=td2>
-<input type=radio class="radio" name="Board_Setting(11)" value=0 <%if Board_Setting(11)="0" then%>checked<%end if%>>¹Ø±Õ&nbsp;
-<input type=radio class="radio" name="Board_Setting(11)" value=1 <%if Board_Setting(11)="1" then%>checked<%end if%>>¿ª·Å&nbsp;
-</td>
-<td class=td2>&nbsp;</td>
-</tr>
-<tr> 
-<td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(12)"></td>
-<td colspan=2 class=td1>
-<U>ÊÇ·ñ¿ª·Å÷ÈÁ¦Ìù</U></td>
-<td colspan=2 class=td1>
-<input type=radio class="radio" name="Board_Setting(12)" value=0 <%If Board_Setting(12)="0" then%>checked<%end if%>>¹Ø±Õ&nbsp;
-<input type=radio class="radio" name="Board_Setting(12)" value=1 <%If Board_Setting(12)="1" then%>checked<%end if%>>¿ª·Å&nbsp;
-</td>
-<td class=td1>&nbsp;</td>
-</tr>
-<tr> 
-<td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(13)"></td>
-<td colspan=2 class=td2>
-<U>ÊÇ·ñ¿ª·ÅÍþÍûÌù</U></td>
-<td colspan=2 class=td2>
-<input type=radio class="radio" name="Board_Setting(13)" value=0 <%if Board_Setting(13)="0" then%>checked<%end if%>>¹Ø±Õ&nbsp;
-<input type=radio class="radio" name="Board_Setting(13)" value=1 <%if Board_Setting(13)="1" then%>checked<%end if%>>¿ª·Å&nbsp;
-</td>
-<td class=td2>&nbsp;</td>
-</tr>
-<tr> 
-<td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(14)"></td>
-<td colspan=2 class=td1>
-<U>ÊÇ·ñ¿ª·ÅÎÄÕÂÌù</U></td>
-<td colspan=2 class=td1>
-<input type=radio class="radio" name="Board_Setting(14)" value=0 <%if Board_Setting(14)="0" then%>checked<%end if%>>¹Ø±Õ&nbsp;
-<input type=radio class="radio" name="Board_Setting(14)" value=1 <%if Board_Setting(14)="1" then%>checked<%end if%>>¿ª·Å&nbsp;
-</td>
-<td class=td1>&nbsp;</td>
-</tr>
-<tr> 
-<td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(15)"></td>
-<td colspan=2 class=td2>
-<U>ÊÇ·ñ¿ª·Å»Ø¸´¿É¼ûÌù</U></td>
-<td colspan=2 class=td2>
-<input type=radio class="radio" name="Board_Setting(15)" value=0 <%if Board_Setting(15)="0" then%>checked<%end if%>>¹Ø±Õ&nbsp;
-<input type=radio class="radio" name="Board_Setting(15)" value=1 <%if Board_Setting(15)="1" then%>checked<%end if%>>¿ª·Å&nbsp;
-</td>
-<td class=td2>&nbsp;</td>
-</tr>
-<tr> 
-<td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(23)"></td>
-<td colspan=2 class=td1>
-<U>ÊÇ·ñ¿ª·Å³öÊÛÌû×Ó¹¦ÄÜ</U></td>
-<td colspan=2 class=td1>
-<input type=radio class="radio" name="Board_Setting(23)" value=0 <%if Board_Setting(23)="0" then%>checked<%end if%>>¹Ø±Õ&nbsp;
-<input type=radio class="radio" name="Board_Setting(23)" value=1 <%if Board_Setting(23)="1" then%>checked<%end if%>>¿ª·Å&nbsp;
-</td>
-<td class=td1>&nbsp;</td>
-</tr>
-<tr> 
-<td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(56)"></td>
-<td colspan=2 class=td1>
-<U>ÊÇ·ñ¿ª·Å¶¨Ô±Ìû×Ó¹¦ÄÜ</U></td>
-<td colspan=2 class=td1>
-<input type=radio class="radio" name="Board_Setting(56)" value=0 <%if Board_Setting(56)="0" then%>checked<%end if%>>¹Ø±Õ&nbsp;
-<input type=radio class="radio" name="Board_Setting(56)" value=1 <%if Board_Setting(56)="1" then%>checked<%end if%>>¿ª·Å&nbsp;
-</td>
-<td class=td1>&nbsp;</td>
-</tr>
-<tr> 
-<td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(28)"></td>
-<td colspan=2 class=td2>
-<U>Ìû×ÓÕýÎÄ×ÖºÅ</U></td>
-<td colspan=2 class=td2>
-<input type=text size=10 name="Board_Setting(28)" value="<%=Board_Setting(28)%>">
-</td>
-<td class=td2>&nbsp;</td>
-</tr>
-<tr> 
-<td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(29)"></td>
-<td colspan=2 class=td1>
-<U>Ìû×ÓÕýÎÄÐÐ¼ä¾à</U></td>
-<td colspan=2 class=td1>
-<input type=text size=10 name="Board_Setting(29)" value="<%=Board_Setting(29)%>">
-</td>
-<td class=td1>&nbsp;</td>
-</tr>
-<tr> 
-<td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(69)"></td>
-<td colspan=2 class=td1>
-<U>Ìû×ÓÕýÎÄÊ×ÐÐËõ½ø</U></td>
-<td colspan=2 class=td1>
-<input type=text size=10 name="Board_Setting(69)" value="<%=Board_Setting(69)%>">
-</td>
-<td class=td1>&nbsp;</td>
-</tr>
-<tr> 
-<td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(42)"></td>
-<td colspan=2 class=td1>
-<U>²ÉÓÃÊ÷ÐÍÏÔÊ¾Ìû×ÓÄÚÈÝ</U></td>
-<td colspan=2 class=td1>
-<input type=radio class="radio" name="Board_Setting(42)" value=0 <%if Board_Setting(42)="0" then%>checked<%end if%>>¹Ø±Õ&nbsp;
-<input type=radio class="radio" name="Board_Setting(42)" value=1 <%if Board_Setting(42)="1" then%>checked<%end if%>>¿ª·Å&nbsp;
-</td>
-<td class=td1>&nbsp;</td>
-</tr>
-<%
-Dim DownConfirm,TempDownConfirm
-DownConfirm=Split(Board_Setting(55),"|")
-'SetSum = Ubound(DownConfirm)
-IF Ubound(DownConfirm)<12 Then
-	Redim TempDownConfirm(12)
-	For i=0 To Ubound(DownConfirm)
-		TempDownConfirm(i)=DownConfirm(i)
-	Next
-	For i=Ubound(DownConfirm) To 12
-		TempDownConfirm(i)=0
-	Next
-	DownConfirm = TempDownConfirm
-End If
-%>
-<tr><th height="25" colspan="6" id=tabletitlelink align=left>  &nbsp;<a name="setting7"></a>ÏÂÔØ¸½¼þÏÞÖÆÉèÖÃ[<a href="#top">¶¥²¿</a>]</th></tr>
-<tr> 
-<td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(55)(0)"></td>
-<td colspan=2 class=td1>
-<U>ÓÃ»§ÖÁÉÙÎÄÕÂÊý</U></td>
-<td colspan=2 class=td1>
-<input type=text size=10 name="Board_Setting(55)(0)" value="<%=DownConfirm(0)%>">
-</td>
-<input type="hidden" id="Down1" value="<b>ÓÃ»§ÖÁÉÙÎÄÕÂÊý</b><br><li>µ±ÓÃ»§·¢±íµÄÎÄÕÂ´ïµ½´ËÉèÖÃÊ±£¬²ÅÄÜÓµÓÐÏÂÔØÈ¨ÏÞ£¡<li>²»ÏÞÖÆÉèÖÃÎª0">
-<td class=td1><a href=# onclick="helpscript(Down1);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
-</tr>
-<tr> 
-<td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(55)(1)"></td>
-<td colspan=2 class=td2>
-<U>ÓÃ»§ÖÁÉÙ»ý·Ö</U></td>
-<td colspan=2 class=td2>
-<input type=text size=10 name="Board_Setting(55)(1)" value="<%=DownConfirm(1)%>">
-</td>
-<input type="hidden" id="Down2" value="<b>ÓÃ»§ÖÁÉÙ»ý·ÖÖµ</b><br><li>µ±ÓÃ»§µÄ»ý·ÖÖµ´ïµ½´ËÉèÖÃÊ±£¬²ÅÄÜÓµÓÐÏÂÔØÈ¨ÏÞ£¡<li>²»ÏÞÖÆÉèÖÃÎª0">
-<td class=td2><a href=# onclick="helpscript(Down2);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
-</tr>
-<tr> 
-<td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(55)(2)"></td>
-<td colspan=2 class=td1>
-<U>ÓÃ»§ÖÁÉÙ½ðÇ®</U></td>
-<td colspan=2 class=td1>
-<input type=text size=10 name="Board_Setting(55)(2)" value="<%=DownConfirm(2)%>">
-</td>
-<input type="hidden" id="Down3" value="<b>ÓÃ»§ÖÁÉÙ½ðÇ®Êý</b><br><li>µ±ÓÃ»§µÄ½ðÇ®´ïµ½´ËÉèÖÃÊ±£¬²ÅÄÜÓµÓÐÏÂÔØÈ¨ÏÞ£¡<li>²»ÏÞÖÆÉèÖÃÎª0">
-<td class=td1><a href=# onclick="helpscript(Down3);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
-</tr>
-<tr> 
-<td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(55)(3)"></td>
-<td colspan=2 class=td2>
-<U>ÓÃ»§ÖÁÉÙ÷ÈÁ¦</U></td>
-<td colspan=2 class=td2>
-<input type=text size=10 name="Board_Setting(55)(3)" value="<%=DownConfirm(3)%>">
-</td>
-<input type="hidden" id="Down4" value="<b>ÓÃ»§ÖÁÉÙ÷ÈÁ¦</b><br><li>µ±ÓÃ»§µÄ÷ÈÁ¦Öµ´ïµ½´ËÉèÖÃÊ±£¬²ÅÄÜÓµÓÐÏÂÔØÈ¨ÏÞ£¡<li>²»ÏÞÖÆÉèÖÃÎª0">
-<td class=td2><a href=# onclick="helpscript(Down4);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
-</tr>
-<tr> 
-<td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(55)(4)"></td>
-<td colspan=2 class=td1>
-<U>ÓÃ»§ÖÁÉÙÍþÍû</U></td>
-<td colspan=2 class=td1>
-<input type=text size=10 name="Board_Setting(55)(4)" value="<%=DownConfirm(4)%>">
-</td>
-<input type="hidden" id="Down5" value="<b>ÓÃ»§ÖÁÉÙÍþÍû</b><br><li>µ±ÓÃ»§ÍþÍû´ïµ½´ËÉèÖÃÊ±£¬²ÅÄÜÓµÓÐÏÂÔØÈ¨ÏÞ£¡<li>²»ÏÞÖÆÉèÖÃÎª0">
-<td class=td1><a href=# onclick="helpscript(Down5);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
-</tr>
-<tr> 
-<td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(55)(5)"></td>
-<td colspan=2 class=td2>
-<U>ÓÃ»§ÖÁÉÙ¾«»ªÎÄÕÂ</U></td>
-<td colspan=2 class=td2>
-<input type=text size=10 name="Board_Setting(55)(5)" value="<%=DownConfirm(5)%>">
-</td>
-<input type="hidden" id="Down6" value="<b>ÓÃ»§ÖÁÉÙ¾«»ªÎÄÕÂÊý</b><br><li>µ±ÓÃ»§·¢±íµÄ¾«»ªÎÄÕÂ´ïµ½´ËÉèÖÃÊ±£¬²ÅÄÜÓµÓÐÏÂÔØÈ¨ÏÞ£¡<li>²»ÏÞÖÆÉèÖÃÎª0">
-<td class=td2><a href=# onclick="helpscript(Down6);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
-</tr>
-<tr> 
-<td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(55)(6)"></td>
-<td colspan=2 class=td1>
-<U>ÓÃ»§±»É¾Ìû×ÓÊýÉÏÏÞ</U></td>
-<td colspan=2 class=td1>
-<input type=text size=10 name="Board_Setting(55)(6)" value="<%=DownConfirm(6)%>">
-</td>
-<input type="hidden" id="Down7" value="<b>ÓÃ»§±»É¾Ìû×ÓÊýÉÏÏÞ</b><br><li>µ±ÓÃ»§±»É¾Ìû×ÓÊý³¬¹ý´ËÉèÖÃÊ±£¬²»ÄÜÏÂÔØ¸Ã°æ¸½¼þ£¡<li>²»ÏÞÖÆÉèÖÃÎª0">
-<td class=td1><a href=# onclick="helpscript(Down7);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
-</tr>
-<tr> 
-<td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(55)(7)"></td>
-<td colspan=2 class=td2>
-<U>ÖÁÉÙ×¢²áÊ±¼ä</U></td>
-<td colspan=2 class=td2>
-<input type=text size=10 name="Board_Setting(55)(7)" value="<%=DownConfirm(7)%>">
-</td>
-<input type="hidden" id="Down8" value="<b>ÓÃ»§ÖÁÉÙ×¢²áÌìÊý</b><br><li>µ±ÓÃ»§ÖÁÉÙ×¢²á·ÖÖÓ´ïµ½´ËÉèÖÃÊ±£¬²ÅÄÜÓµÓÐÏÂÔØÈ¨ÏÞ£¡<li>ÒÔ·ÖÖÓÎªµ¥Î»£¬²»ÏÞÖÆÎª0¡£">
-<td class=td2><a href=# onclick="helpscript(Down8);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
-</tr>
-<tr> 
-<td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(55)(8)"></td>
-<td colspan=2 class=td1>
-<U>ÖÁÉÙÉÏ´«ÎÄ¼þ¸öÊý</U></td>
-<td colspan=2 class=td1>
-<input type=text size=10 name="Board_Setting(55)(8)" value="<%=DownConfirm(8)%>">
-</td>
-<input type="hidden" id="Down9" value="<b>ÓÃ»§ÖÁÉÙÉÏ´«ÎÄ¼þ¸öÊý</b><br><li>µ±ÓÃ»§ÖÁÉÙÉÏ´«ÎÄ¼þ¸öÊý´ïµ½´ËÉèÖÃÊ±£¬²ÅÄÜÓµÓÐÏÂÔØÈ¨ÏÞ£¡<li>²»ÏÞÖÆÉèÖÃÎª0">
-<td class=td1><a href=# onclick="helpscript(Down9);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
-</tr>
-<tr> 
-<td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(55)(9)"></td>
-<td colspan=2 class=td1>
-<U>ÏÂÔØÐèÒª½ð±ÒÊý</U></td>
-<td colspan=2 class=td1>
-<input type=text size=10 name="Board_Setting(55)(9)" value="<%=DownConfirm(9)%>">
-</td>
-<input type="hidden" id="Down10" value="<b>ÏÂÔØÐèÒª½ð±ÒÊý</b><br><li>µ±ÓÃ»§ÖÁÉÙÓµÓÐ´ËÉèÖÃµÄ½ð±ÒÊýÊ±£¬²ÅÄÜÏÂÔØ£¡<li>ÏÂÔØ½«¿Û³ýÏÂÔØÕß¸ÃÊýÁ¿½ð±ÒÊý¡£<li>´ËÉèÖÃºÍ¡°ÏÂÔØÐèÒª½ðÇ®Êý¡±¡¢¡°ÏÂÔØÐèÒª»ý·ÖÊý¡±µÄÉèÖÃ½«Í¬Ê±±»¿Û³ý£¬ÊÇ¡°Óë¡±¹ØÏµ¡£">
-<td class=td1><a href=# onclick="helpscript(Down10);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
-</tr>
-<tr> 
-<td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(55)(10)"></td>
-<td colspan=2 class=td1>
-<U>ÏÂÔØÐèÒª½ðÇ®Êý</U></td>
-<td colspan=2 class=td1>
-<input type=text size=10 name="Board_Setting(55)(10)" value="<%=DownConfirm(10)%>">
-</td>
-<input type="hidden" id="Down11" value="<b>ÏÂÔØÐèÒª½ðÇ®Êý</b><br><li>µ±ÓÃ»§ÖÁÉÙÓµÓÐ´ËÉèÖÃµÄ½ðÇ®ÊýÊ±£¬²ÅÄÜÏÂÔØ£¡<li>ÏÂÔØ½«¿Û³ýÏÂÔØÕß¸ÃÊýÁ¿½ðÇ®Êý¡£<li>´ËÉèÖÃºÍ¡°ÏÂÔØÐèÒª½ð±ÒÊý¡±¡¢¡°ÏÂÔØÐèÒª»ý·ÖÊý¡±µÄÉèÖÃ½«Í¬Ê±±»¿Û³ý£¬ÊÇ¡°Óë¡±¹ØÏµ¡£">
-<td class=td1><a href=# onclick="helpscript(Down11);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
-</tr>
-<tr> 
-<td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(55)(11)"></td>
-<td colspan=2 class=td1>
-<U>ÏÂÔØÐèÒª»ý·ÖÊý</U></td>
-<td colspan=2 class=td1>
-<input type=text size=10 name="Board_Setting(55)(11)" value="<%=DownConfirm(11)%>">
-</td>
-<input type="hidden" id="Down12" value="<b>ÏÂÔØÐèÒª»ý·ÖÊý</b><br><li>µ±ÓÃ»§ÖÁÉÙÓµÓÐ´ËÉèÖÃµÄ»ý·ÖÊýÊ±£¬²ÅÄÜÏÂÔØ£¡<li>ÏÂÔØ½«¿Û³ýÏÂÔØÕß¸ÃÊýÁ¿»ý·ÖÊý¡£<li>´ËÉèÖÃºÍ¡°ÏÂÔØÐèÒª½ð±ÒÊý¡±¡¢¡°ÏÂÔØÐèÒª½ðÇ®Êý¡±µÄÉèÖÃ½«Í¬Ê±±»¿Û³ý£¬ÊÇ¡°Óë¡±¹ØÏµ¡£">
-<td class=td1><a href=# onclick="helpscript(Down12);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
-</tr>
-<tr> 
-<td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(55)(12)"></td>
-<td colspan=2 class=td1>
-<U>·µ»¹×÷Õß°Ù·Ö±È</U></td>
-<td colspan=2 class=td1>
-<input type=text size=10 name="Board_Setting(55)(12)" value="<%=DownConfirm(12)%>">£¥
-</td>
-<input type="hidden" id="Down13" value="<b>·µ»¹×÷Õß°Ù·Ö±È</b><br><li>µ±ÓÐÓÃ»§ÏÂÔØÊ±£¬¿Û³ýµÄ½ð±Ò¡¢½ðÇ®¡¢»ý·Ö½«°´´ËÉèÖÃµÄ°Ù·Ö±È·µ»¹¸ø·¢²¼¸Ã¸½¼þµÄ×÷Õß£¡<li>·µ»¹²¿·ÖÖ»·µ»ØÕûÊý£¬Ð¡Êý²¿·ÖÈ¥µô¡£">
-<td class=td1><a href=# onclick="helpscript(Down13);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
-</tr>
-<tr><th height="25" colspan="6" id=tabletitlelink align=left>  &nbsp;<a name="setting9"></a>ÂÛÌ³ÐéÄâÐÎÏóÉèÖÃ[<a href="#top">¶¥²¿</a>]</th></tr>
-<tr> 
-<td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(59)"></td>
-<td colspan=2 class=td1>
-<U>ä¯ÀÀÌû×ÓÖÐÐéÄâÐÎÏó</U></td>
-<td colspan=2 class=td1>
-<input type=radio class="radio" name="Board_Setting(59)" value="0"
-<%
-If Board_Setting(59)="0" Then
-%>
- checked 
- <%
- End If
- %>
- >&nbsp;ÏÔÊ¾È«Éí
-<input type=radio class="radio" name="Board_Setting(59)" value="1"
-<%
-If Board_Setting(59)="1" Then
-%>
- checked 
- <%
- End If
- %>
- >&nbsp;ÏÔÊ¾Á³
- <input type=radio class="radio" name="Board_Setting(59)" value="2"
-<%
-If Board_Setting(59)="2" Then
-%>
- checked 
- <%
- End If
- %>
- >&nbsp;ÏÔÊ¾°ëÉí
- <input type=radio class="radio" name="Board_Setting(59)" value="3"
-<%
-If Board_Setting(59)="3" Then
-%>
- checked 
- <%
- End If
- %>
- >&nbsp;²»ÏÔÊ¾£¨ÏÔÊ¾Í·Ïñ£©
-</td>
-<input type="hidden" id="xx9" value="<b>ÓÃ»§ÖÁÉÙÉÏ´«ÎÄ¼þ¸öÊý</b><br><li>µ±ÓÃ»§ÖÁÉÙÉÏ´«ÎÄ¼þ¸öÊý´ïµ½´ËÉèÖÃÊ±£¬²ÅÄÜÓµÓÐÏÂÔØÈ¨ÏÞ£¡<li>²»ÏÞÖÆÉèÖÃÎª0">
-<td class=td1><a href=# onclick="helpscript(xx9);return false;" class="helplink"><img src="skins/images/help.gif" border=0 title="µã»÷²éÔÄ¹ÜÀí°ïÖú£¡"></a></td>
-</tr>
-<tr><th height="25" colspan="6" id=tabletitlelink align=left>  &nbsp;<a name="setting8"></a>ÂÛÌ³×¨Ìâ·ÖÀàÏà¹ØÉèÖÃ[<a href="#top">¶¥²¿</a>]</th></tr>
-<tr><td colspan="6" class=td1>
-<li>Ìí¼Ó×¨ÌâÖ»¶Ôµ±Ç°°æÃæÉúÐ§£»
-<li>ÔÊÐí·¢±í×¨ÌâÈ¨ÏÞ£¬Çëµ½ÏàÓ¦ÓÃ»§×é·¢ÌûÈ¨ÏÞÖÐÉèÖÃ£»
-<li>×¨ÌâÀ¸Ä¿¿ÉÒÔÌí¼Ó£¬ÐÞ¸Ä£»
-<li>×¢ÒâÉ¾³ý×¨ÌâÍ¬Ê±£¬»á½«×îºó×¨ÌâµÄËùÓÐÎÄÕÂ¸üÐÂÎªÆÕÍ¨Ö÷Ìâ¡£</td></tr>
-<%
-Dim BoardTopic,BoardTopicImg,ii
-BoardTopic=Split(Board_Setting(48),"$$")
-BoardTopicImg=Split(Board_Setting(49),"$$")
-For ii=0 to Ubound(BoardTopic)-1
-%>
-<tr>
-<td width="15%" class=td1><U>×¨ÌâÃû³Æ</U></td>
-<td width="35%" class=td1>
-<input type=text size=30 name="BoardTopic" value="<%=Server.Htmlencode(BoardTopic(ii))%>"></td>
-<td width="15%" class=td1><U>ÏàÓ¦ÏÔÊ¾Í¼±ê</U></td>
-<td width="35%" class=td1 colspan="2">
-<input type=text size=30 name="BoardTopicImg" value="<%=BoardTopicImg(ii)%>">
-<%
-If BoardTopicImg(ii)<>"" and Instr(BoardTopicImg(ii),".gif") Then Response.Write "<img src=../"&BoardTopicImg(ii)&" border=0>"
-%>
-</td>
-<td class=td1>&nbsp;</td>
-</tr>
-<%Next%>
-<input type=hidden value="<%=ii%>" name="BoardTopicNum">
-<tr>
-<td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(48)(48)"></td>
-<td width="15%" class=td1><U>Ìí¼Ó×¨Ìâ</U></td>
-<td width="35%" class=td1>
-<input type=text size=30 name="BoardTopic" value=""></td>
-<td width="15%" class=td1><U>ÏàÓ¦ÏÔÊ¾Í¼±ê</U></td>
-<td width="35%" class=td1>
-<input type=text size=30 name="BoardTopicImg" value=""></td>
-<td class=td1>&nbsp;</td>
-</tr>
-<tr>
-<td colspan=6 class=td2>
-<div align="center"> 
-<input type=hidden value="<%=Board_Setting(20)%>" name="Board_Setting(20)">
-<input type=hidden value="<%=Board_Setting(46)%>" name="Board_Setting(46)">
-<input type=hidden value="<%=Board_Setting(47)%>" name="Board_Setting(47)">
-<input type="submit" class="button" name="Submit" value="Ìá ½»">
-</div>
-</td>
-</tr>
-<!-- ¸ß¼¶ÉèÖÃ -->
-</form>
-</table>
-<%
-end sub
-
-Sub saveconst()
-Dim boardid,boardid_arr
-If Dvbbs.CheckStr(request("getboardid"))="" Then 
-	Errmsg=ErrMsg + "<BR><li>ÇëÑ¡Ôñ°æÃæ¡£"
-	dvbbs_error()
-	exit Sub
-End If 
-	boardid_arr=Split(Dvbbs.CheckStr(request("getboardid")),",")
-		For Each boardid In boardid_arr
-		save_1 boardid
-		Next 
-		ReloadBoardCache()
-		dv_suc("ÉèÖÃ³É¹¦¡£<a href=boardsetting.asp?editid="&request("editid")&">·µ»Ø°æÃæ¸ß¼¶ÉèÖÃ</a>")		
-End Sub
-
-Sub save_1(boardid) 'add by reoaiq at 090924
-Dim rs
-Dim i,ii
-Dim index,index_arr,index_22,index_48,index_54,index_55 
-Dim index22 
-Dim TempStr,BoardTopic,BoardTopicImg
-Dim board_setting,index48,index49,index54,index55 
-Dim board_setting_arr,index48_arr,index49_arr,index54_arr,index55_arr 
-Dim board_setting_Array,index48_Array,index49_Array,index54_Array,index55_Array 
-Dim dsonoff
-Set rs=Dvbbs.Execute("select board_setting from dv_board where boardid="&boardid&"")
-If rs.eof Then 
-	Errmsg=ErrMsg + "<BR><li>²éÑ¯Êý¾Ý²»´æÔÚ¡£"
-	dvbbs_error()
-	exit Sub
-Else 
-	board_setting=rs(0)
-	board_setting_arr=Split(board_setting,",")
-End If 
-rs.close:Set rs=Nothing
-Set board_setting_Array=New ArrayList
-Set index54_Array=New ArrayList
-Set index55_Array=New ArrayList
-index=GetAllIndex()
-If Dvbbs.CheckStr(Request("CheckBoardSetting(22)(22)"))="on" Then
-index_22=True 
-Else 
-index_22=False 
-End If 
-If Dvbbs.CheckStr(Request("CheckBoardSetting(48)(48)"))="on" Then
-index_48=True 
-Else 
-index_48=False 
-End If 
-index_54=GetIndex5455(54,8)
-index_55=GetIndex5455(55,12)
-	If index="" And Not index_22 and index_54="" and index_55="" And Not index_48 Then 
-		Errmsg=ErrMsg + "<BR><li>Ã»ÓÐÑ¡ÖÐÈÎºÎÉèÖÃ¡£"
-		dvbbs_error()
-		exit Sub
-	Else 
-			board_setting_Array.AddArray(board_setting_arr)
-			If index<>"" Then  'ÆÕÍ¨ÉèÖÃStart
-				index_arr=Split(index,",")
-				For Each ii In index_arr
-				If ii=21 Then dsonoff=true
-				board_setting_Array.Update ii,Dvbbs.CheckStr(Replace(Trim(Request("Board_Setting("&ii&")")),",",""))
-				Next 
-			End If 'ÆÕÍ¨ÉèÖÃEnd
-			If index_22 Then '¿ª¹ØÉèÖÃStart
-				index22=getds()
-				board_setting_Array.Update 22,index22
-			End If '¿ª¹ØÉèÖÃEnd
-			If index_48 And boardid=Request("editid") Then '×¨ÌâÓëÍ¼±êStart Ö»ÓÐµ±Ç°°æÃæÓëÁÐ±íÖÐ°æÃæÒ»ÖÁ²Å¸üÐÂ×¨Ìâ
-			ii=0
-				For Each TempStr in Request.form("BoardTopic")
-					If TempStr<>"" Then 
-						BoardTopic=BoardTopic&TempStr&"$$"
-						ii=ii+1
-					End If
-				Next
-				TempStr=""
-				For Each TempStr in Request.form("BoardTopicImg")
-						BoardTopicImg=BoardTopicImg&TempStr&"$$"
-				Next
-				TempStr=""
-				If ii>99 Then
-					Errmsg=ErrMsg + "<BR><li>×¨ÌâÀ¸Ä¿ÊýÄ¿ÔÚ£±£°£°ÒÔÄÚ¡£"
-					dvbbs_error()
-					exit sub
-				End If
-				board_setting_Array.Update 48,Dvbbs.CheckStr(Replace(Trim(BoardTopic),",",""))
-				board_setting_Array.Update 49,Dvbbs.CheckStr(Replace(Trim(BoardTopicImg),",",""))
-			End If '×¨ÌâÓëÍ¼±êEnd
-			If index_54<>"" Then '²é¿´ÏÞÖÆStart
-			Dim i54,index54_arr_ck,new54
-			i=0
-			i54=board_setting_arr(54)
-			index54_arr=Split(i54,"|")
-				If UBound(index54_arr)<8 Then 
-				ReDim index54_arr(12)
-				For i=0 To UBound(index54_arr)
-					If i=UBound(index54_arr) Then 
-					new54=new54&"0"
-					Else 
-					new54="0|"&new54
-					End If 
-				Next 
-			    index54_arr=Split(new54,"|")
-				End If 
-			index54_Array.AddArray(index54_arr)
-			index54_arr_ck=Split(index_54,",")
-			i=0
-			For Each  i in index54_arr_ck
-			index54_Array.Update i,Dvbbs.CheckStr(Replace(Trim(Request("Board_Setting(54)("&i&")")),",",""))
-			Next 
-			board_setting_Array.Update 54,index54_Array.Implode("|")
-			End If '²é¿´ÏÞÖÆEnd
-			If index_55<>"" Then 'ÏÂÔØÏÞÖÆStart
-			Dim i55,index55_arr_ck,new55
-			i=0
-			i55=board_setting_arr(55)
-			index55_arr=Split(i55,"|")
-				If UBound(index55_arr)<12 Then 
-				ReDim index55_arr(12)
-				For i=0 To UBound(index55_arr)
-					If i=UBound(index55_arr) Then 
-					new55=new55&"0"
-					Else 
-					new55="0|"&new55
-					End If 
-				Next 
-			    index55_arr=Split(new55,"|")
-				End If 
-			index55_Array.AddArray(index55_arr)
-			index55_arr_ck=Split(index_55,",")
-			i=0
-			For Each  i in index55_arr_ck
-			index55_Array.Update i,Dvbbs.CheckStr(Replace(Trim(Request("Board_Setting(55)("&i&")")),",",""))
-			Next 
-			board_setting_Array.Update 55,index55_Array.Implode("|")
-			End If  'ÏÂÔØÏÞÖÆEnd
-			Dvbbs.Execute("Update Dv_board set board_setting='"&board_setting_Array.Implode(",")&"' where boardid="&boardid&"")
-	End If 
-Set board_setting_Array=Nothing 
-Set index54_Array=Nothing 
-Set index55_Array=Nothing 
-End Sub 
-
-Function GetAllIndex() '»ñÈ¡ËùÓÐindex add by reoaiq at 090924
-Dim i,j,CheckBoardSetting,CheckBoardSetting_Arr,CheckBoardSettingOn
-	For i=0 To 71			
-		If Dvbbs.CheckStr(Request("CheckBoardSetting("&i&")"))="on" Then
-		CheckBoardSetting=CheckBoardSetting&i&","
-		j=j+1
-		End If 
-	Next 
-CheckBoardSetting_Arr=Split(CheckBoardSetting,",")
-For i=0 To j-1
-	If i=j-1 Then 
-	CheckBoardSettingOn=CheckBoardSettingOn&CheckBoardSetting_Arr(i)
-	Else 
-	CheckBoardSettingOn=CheckBoardSettingOn&CheckBoardSetting_Arr(i)&","
-	End If 
-Next 
-GetAllIndex=CheckBoardSettingOn
-End Function
-Function getds() '¶¨Ê±ÉèÖÃ add by reoaiq at 090924
-	Dim ds,i
-	For i=0 To 23
-	If i=0 Then 
-	ds=indexvalue(Request("Board_Setting(22)"&i&""))
-	Else 
-	ds=ds&"|"&indexvalue(Request("Board_Setting(22)"&i&""))
-	End If 
-	Next 
-	getds=ds
-End Function
-Function indexvalue(value) '¶¨Ê±ÉèÖÃ add by reoaiq at 090924
-If Dvbbs.CheckStr(value)="" Then 
-indexvalue=0
-Else 
-indexvalue=1
-End If 
-End Function 
-Function GetIndex5455(index,max) '»ñÈ¡·ÃÎÊ,ÏÂÔØÏÞÖÆ add by reoaiq at 090924
-Dim i,j,CheckBoardSetting,CheckBoardSetting_Arr,CheckBoardSettingOn
-		For i=0 To max
-			If Dvbbs.CheckStr(Request("CheckBoardSetting("&index&")("&i&")"))="on" Then
-			CheckBoardSetting=CheckBoardSetting&i&","
-			j=j+1
-			End If 
-	    Next 
-CheckBoardSetting_Arr=Split(CheckBoardSetting,",")
-For i=0 To j-1
-	If i=j-1 Then 
-	CheckBoardSettingOn=CheckBoardSettingOn&CheckBoardSetting_Arr(i)
-	Else 
-	CheckBoardSettingOn=CheckBoardSettingOn&CheckBoardSetting_Arr(i)&","
-	End If 
-Next 
-GetIndex5455=CheckBoardSettingOn
-End Function 
-Function CheckValueType(value,type2) '¼ì²âÀàÐÍ add by reoaiq at 090924
-Select Case type2
-Case "int"
-	If value="" Or Not IsNumeric(value) Then 
-	CheckValueType=0
-	Else 
-	CheckValueType=Dvbbs.CheckNumeric(value)
-	End If 
-Case "str"
-	If value="" Or IsNull(value) Then 
-	CheckValueType=0
-	Else 
-	CheckValueType=Dvbbs.CheckStr(value)
-	End If 
-Case Else 
-	CheckValueType=0
-End Select 
-End Function 
-Sub ReloadBoardCache()
-	Dim Board
-	Dvbbs. LoadBoardList()
-	For Each board in Application(Dvbbs.CacheName&"_boardlist").documentElement.selectNodes("board/@boardid")
-		Dvbbs.LoadBoardData(board.text)
-	Next
-End Sub
-
-%>
+<input type=text size=10 name="Board_Setting%>>ç”¯æ §ç“™&nbsp;
+<input type=radio class="radio" name="Board_Setting(17)" value=4 <%if Board_Setting(17)="4" then%>checked<%end if%>>è¹‡

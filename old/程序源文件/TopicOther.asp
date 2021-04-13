@@ -10,7 +10,7 @@ Dim abgcolor,dv_ubb
 Dim announceid,replyid,username,rootid,topic,postbuyuser,bgcolor,EmotPath
 Dim MailBody,Email,TotalUseTable
 Dim T_GetMoneyType,replyid_a,AnnounceID_a,RootID_a
-Dim IsThisBoardMaster 'È·¶¨µ±Ç°ÓÃ»§ÊÇ·ñ±¾°æ°æÖ÷£¬·ÀÖ¹ÏÂÃæµÄ²Ù×÷Ó°Ïìµ½ Dvbbs.BoardMasterµ¼ÖÂ³ö´í
+Dim IsThisBoardMaster 'ç¡®å®šå½“å‰ç”¨æˆ·æ˜¯å¦æœ¬ç‰ˆç‰ˆä¸»ï¼Œé˜²æ­¢ä¸‹é¢çš„æ“ä½œå½±å“åˆ° Dvbbs.BoardMasterå¯¼è‡´å‡ºé”™
 IsThisBoardMaster = Dvbbs.BoardMaster
 Select Case Request("t")
 Case "1"
@@ -56,19 +56,19 @@ Sub SaveFav_boards()
 		Dvbbs.ShowErr()
 	End If
 	If Dvbbs.Boardid=0 Then
-		Response.redirect "showerr.asp?ShowErrType="&Dvbbs.ErrType&"&ErrCodes=<li>ÇëÑ¡È¡ÒªÊÕ²ØµÄ°æÃæ&action=OtherErr"
+		Response.redirect "showerr.asp?ShowErrType="&Dvbbs.ErrType&"&ErrCodes=<li>è¯·é€‰å–è¦æ”¶è—çš„ç‰ˆé¢&action=OtherErr"
 	End If
 	Dim Rs,Sql,Fav_boards
 	Set Rs = Dvbbs.Execute("Select Fav_boards From Dv_user Where userid="&Dvbbs.UserID)
 	If Not Rs.Eof Then
 		Fav_boards = Trim(Rs(0))
 	Else
-		Response.redirect "showerr.asp?ShowErrType="&Dvbbs.ErrType&"&ErrCodes=<li>ÓÃ»§Êı¾İ²»´æÔÚ¡£&action=OtherErr"
+		Response.redirect "showerr.asp?ShowErrType="&Dvbbs.ErrType&"&ErrCodes=<li>ç”¨æˆ·æ•°æ®ä¸å­˜åœ¨ã€‚&action=OtherErr"
 	End If
 	Rs.Close
 	Set Rs = Nothing
 	If Instr(","&Fav_boards&",",","&Dvbbs.Boardid&",") Then
-		Response.redirect "showerr.asp?ShowErrType="&Dvbbs.ErrType&"&ErrCodes=<li>¸Ã°æÃæÒÑ¾­Ìí¼Óµ½ÊÕ²Ø¡£&action=OtherErr"
+		Response.redirect "showerr.asp?ShowErrType="&Dvbbs.ErrType&"&ErrCodes=<li>è¯¥ç‰ˆé¢å·²ç»æ·»åŠ åˆ°æ”¶è—ã€‚&action=OtherErr"
 	Else
 		If Fav_boards="" or IsNull(Fav_boards) Then
 			Fav_boards = Fav_boards & Dvbbs.Boardid
@@ -77,16 +77,16 @@ Sub SaveFav_boards()
 		End If
 	End If
 	If Len(Fav_boards)<250 Then
-		Dvbbs.stats="ÊÕ²Ø°æ¿é²Ù×÷"
+		Dvbbs.stats="æ”¶è—ç‰ˆå—æ“ä½œ"
 		Dvbbs.Nav()
 		Dvbbs.Execute("update dv_user Set Fav_boards='"&Dvbbs.Checkstr(Fav_boards)&"' Where Userid="&Dvbbs.UserID)
-		Dvbbs.Dvbbs_Suc("<li>¸Ã°æ¿éÊÕ²Ø³É¹¦£¡")
+		Dvbbs.Dvbbs_Suc("<li>è¯¥ç‰ˆå—æ”¶è—æˆåŠŸï¼")
 	Else
-		Response.redirect "showerr.asp?ShowErrType="&Dvbbs.ErrType&"&ErrCodes=<li>ÄãÊÕ²ØµÄ°æ¿é¹ı¶à³¬³öÏŞÖÆ¡£&action=OtherErr"
+		Response.redirect "showerr.asp?ShowErrType="&Dvbbs.ErrType&"&ErrCodes=<li>ä½ æ”¶è—çš„ç‰ˆå—è¿‡å¤šè¶…å‡ºé™åˆ¶ã€‚&action=OtherErr"
 	End If
 End Sub
 
-'================²é¿´ÓÃ»§À´Ô´ĞÅÏ¢===================
+'================æŸ¥çœ‹ç”¨æˆ·æ¥æºä¿¡æ¯===================
 Sub Look_Ip_Main()
 	Dvbbs.LoadTemplates("dispuser")
 	CanLookIP=False
@@ -122,7 +122,7 @@ Sub Look_Ip_Main()
 	Dvbbs.Nav()
 	Dvbbs.Head_var 0,0,Replace(template.Strings(0),"{$MemberName}",""),"dispuser.asp?Id="&CLng(Request("userid"))
 	If Not Dvbbs.ChkPost() And Request("action") <> "" Then
-		Response.redirect "showerr.asp?ShowErrType="&Dvbbs.ErrType&"&ErrCodes=<li>Äú²»Òª´ÓÍâ²¿Ìá½»Êı¾İ&action=OtherErr"
+		Response.redirect "showerr.asp?ShowErrType="&Dvbbs.ErrType&"&ErrCodes=<li>æ‚¨ä¸è¦ä»å¤–éƒ¨æäº¤æ•°æ®&action=OtherErr"
 	End If
 	If Request("action")="setlockip" Then
 		Call Setlockip()
@@ -150,15 +150,15 @@ Sub lookip()
 %>
 <table class=tableborder1 cellspacing="1" cellpadding="3" align="center">
 <tr align=center>
-<th height=25>²é¿´ <%=IP%>µÄÀ´Ô´</th>
+<th height=25>æŸ¥çœ‹ <%=IP%>çš„æ¥æº</th>
 </tr>
 <tr><td height=25 class=tablebody1><blockquote><%=useraddress%></blockquote></td></tr>
 <%If CanLookIP Then%>
-	<tr><td height=25 class=tablebody2 align=center><B>¹ÜÀí²Ù×÷</B>£º
+	<tr><td height=25 class=tablebody2 align=center><B>ç®¡ç†æ“ä½œ</B>ï¼š
 	<%If iGetLockIP Then%>
-		<a href="?t=1&action=unlock&boardid=<%=Dvbbs.BoardID%>&id=<%=LockID%>">¸ÃÓÃ»§IPÒÑ±»Ëø¶¨£¬½â³ıËø¶¨</a>
+		<a href="?t=1&action=unlock&boardid=<%=Dvbbs.BoardID%>&id=<%=LockID%>">è¯¥ç”¨æˆ·IPå·²è¢«é”å®šï¼Œè§£é™¤é”å®š</a>
 	<%Else%>
-		<a href="?t=1&action=setlockip&ip=<%=IP%>&boardid=<%=Dvbbs.BoardID%>">ÏŞÖÆ¸ÃIP²»ÔÊĞí·ÃÎÊ</a>
+		<a href="?t=1&action=setlockip&ip=<%=IP%>&boardid=<%=Dvbbs.BoardID%>">é™åˆ¶è¯¥IPä¸å…è®¸è®¿é—®</a>
 	<%End If%>
 	</td></tr>
 <%End If%>
@@ -176,15 +176,15 @@ Sub Setlockip()
 		sip=cstr(request.form("ip1"))
 		If sip<>"" Then
 			If Instr(sip,"*.")>0 Then
-				ErrCodes=ErrCodes+"<li>Ç°Ì¨×î¶àÖ»ÄÜÏŞÖÆËÄÀàIP£¬Èç218.1.2.*"
+				ErrCodes=ErrCodes+"<li>å‰å°æœ€å¤šåªèƒ½é™åˆ¶å››ç±»IPï¼Œå¦‚218.1.2.*"
 				Exit Sub
 			End If
 			If Instr(sip,"*.*.")>0 Then
-				ErrCodes=ErrCodes+"<li>Ç°Ì¨×î¶àÖ»ÄÜÏŞÖÆËÄÀàIP£¬Èç218.1.2.*"
+				ErrCodes=ErrCodes+"<li>å‰å°æœ€å¤šåªèƒ½é™åˆ¶å››ç±»IPï¼Œå¦‚218.1.2.*"
 				Exit Sub
 			End If
 			If Instr(sip,"*.*.*.")>0 Then
-				ErrCodes=ErrCodes+"<li>Ç°Ì¨×î¶àÖ»ÄÜÏŞÖÆËÄÀàIP£¬Èç218.1.2.*"
+				ErrCodes=ErrCodes+"<li>å‰å°æœ€å¤šåªèƒ½é™åˆ¶å››ç±»IPï¼Œå¦‚218.1.2.*"
 				Exit Sub
 			End If
 			If Trim(Dvbbs.CacheData(25,0))<>"" Then
@@ -195,7 +195,7 @@ Sub Setlockip()
 			dvbbs.execute("update dv_setup set Forum_LockIP='"&replace(sip,"'","''")&"'")
 			Dvbbs.loadSetup
 		End If
-		sql="insert into dv_log (l_touser,l_username,l_content,l_ip,l_type) values ('-','"&Dvbbs.membername&"','ÓÃ»§²Ù×÷£ºÏŞÖÆIP"&Dvbbs.checkstr(Request.Form("ip1"))&"-"&Dvbbs.checkstr(Request.Form("ip2"))&"','"&Dvbbs.UserTrueIP&"',6)"
+		sql="insert into dv_log (l_touser,l_username,l_content,l_ip,l_type) values ('-','"&Dvbbs.membername&"','ç”¨æˆ·æ“ä½œï¼šé™åˆ¶IP"&Dvbbs.checkstr(Request.Form("ip1"))&"-"&Dvbbs.checkstr(Request.Form("ip2"))&"','"&Dvbbs.UserTrueIP&"',6)"
 		dvbbs.Execute(SQL)
 		Dvbbs.Dvbbs_Suc("<li>"+template.Strings(9))
 	Else
@@ -214,16 +214,16 @@ Sub Setlockip()
 %>
 <table class=tableborder1 cellspacing="1" cellpadding="3" align="center">
 <tr align=center>
-<th height=25>Ëø¶¨ <%=IP%> µÄÀ´Ô´</th>
+<th height=25>é”å®š <%=IP%> çš„æ¥æº</th>
 </tr>
 <tr><td height=25 class=tablebody1><blockquote><%=useraddress%></blockquote></td></tr>
 <FORM METHOD=POST ACTION="?t=1&action=setlockip&boardid=<%=Dvbbs.BoardID%>">
 <input type=hidden name="reaction" value="yes">
 <tr><td height=40 class=tablebody1>
-<B>ËµÃ÷</B>£ºÄú¿ÉÒÔÌí¼Ó¶à¸öÏŞÖÆIP£¬Ã¿¸öIPÓÃ|ºÅ·Ö¸ô£¬ÏŞÖÆIPµÄÊéĞ´·½Ê½Èç202.152.12.1¾ÍÏŞÖÆÁË202.152.12.1Õâ¸öIPµÄ·ÃÎÊ£¬Èç202.152.12.*¾ÍÏŞÖÆÁËÒÔ202.152.12¿ªÍ·µÄIP·ÃÎÊ£¬Í¬Àí*.*.*.*ÔòÏŞÖÆÁËËùÓĞIPµÄ·ÃÎÊ¡£ÔÚÌí¼Ó¶à¸öIPµÄÊ±ºò£¬Çë×¢Òâ×îºóÒ»¸öIPµÄºóÃæ²»Òª¼Ó|Õâ¸ö·ûºÅ£¬<b>ÔÚÇ°Ì¨Ö»ÄÜ×öÒ»¸öĞÇºÅµÄËÄÀàIPÏŞÖÆ</b>
+<B>è¯´æ˜</B>ï¼šæ‚¨å¯ä»¥æ·»åŠ å¤šä¸ªé™åˆ¶IPï¼Œæ¯ä¸ªIPç”¨|å·åˆ†éš”ï¼Œé™åˆ¶IPçš„ä¹¦å†™æ–¹å¼å¦‚202.152.12.1å°±é™åˆ¶äº†202.152.12.1è¿™ä¸ªIPçš„è®¿é—®ï¼Œå¦‚202.152.12.*å°±é™åˆ¶äº†ä»¥202.152.12å¼€å¤´çš„IPè®¿é—®ï¼ŒåŒç†*.*.*.*åˆ™é™åˆ¶äº†æ‰€æœ‰IPçš„è®¿é—®ã€‚åœ¨æ·»åŠ å¤šä¸ªIPçš„æ—¶å€™ï¼Œè¯·æ³¨æ„æœ€åä¸€ä¸ªIPçš„åé¢ä¸è¦åŠ |è¿™ä¸ªç¬¦å·ï¼Œ<b>åœ¨å‰å°åªèƒ½åšä¸€ä¸ªæ˜Ÿå·çš„å››ç±»IPé™åˆ¶</b>
 </td></tr>
 <tr><td height=40 class=tablebody1>
-<B>ÏŞÖÆI&nbsp;P</B>£º<input type="text" name="ip1" size="30" value="<%=GetIp1%>">&nbsp;&nbsp;<input type="submit" name="Submit" value="Ìá ½»">
+<B>é™åˆ¶I&nbsp;P</B>ï¼š<input type="text" name="ip1" size="30" value="<%=GetIp1%>">&nbsp;&nbsp;<input type="submit" name="Submit" value="æ äº¤">
 </td></tr>
 </FORM>
 </table>
@@ -265,7 +265,7 @@ sub unlock()
 		Dvbbs.loadSetup
 	End If
 
-	sql="insert into dv_log (l_touser,l_username,l_content,l_ip,l_type) values ('-','"&Dvbbs.membername&"','ÓÃ»§²Ù×÷£º½â³ıIPÏŞÖÆ','"&Dvbbs.UserTrueIP&"',6)"
+	sql="insert into dv_log (l_touser,l_username,l_content,l_ip,l_type) values ('-','"&Dvbbs.membername&"','ç”¨æˆ·æ“ä½œï¼šè§£é™¤IPé™åˆ¶','"&Dvbbs.UserTrueIP&"',6)"
 	Dvbbs.Execute(SQL)
 	Dvbbs.Dvbbs_Suc("<li>"+template.Strings(11))
 End Sub
@@ -339,7 +339,7 @@ Function getLockIP(sip)
 	Next
 End Function
 
-'ÏÔÊ¾´íÎóĞÅÏ¢
+'æ˜¾ç¤ºé”™è¯¯ä¿¡æ¯
 Sub Showerr()
 	Dim Show_Errmsg
 	If ErrCodes<>"" Then
@@ -352,10 +352,10 @@ Sub Showerr()
 	End If
 	Response.write Show_Errmsg
 End Sub
-'================²é¿´ÓÃ»§À´Ô´ĞÅÏ¢===================
-'================Ìû×ÓÍ¶Æ±===========================
+'================æŸ¥çœ‹ç”¨æˆ·æ¥æºä¿¡æ¯===================
+'================å¸–å­æŠ•ç¥¨===========================
 Sub PostVote_Main()
-	Dvbbs.Stats="²ÎÓëÍ¶Æ±"
+	Dvbbs.Stats="å‚ä¸æŠ•ç¥¨"
 	Dim voteid
 	Dim announceid
 	If Dvbbs.IsReadonly() And Not Dvbbs.Master Then Response.Redirect "showerr.asp?ShowErrType="&Dvbbs.ErrType&"&action=readonly&boardid="&dvbbs.boardID
@@ -386,7 +386,7 @@ Sub PostVote_Main()
 
 	If CInt(Dvbbs.GroupSetting(9))=0 then Dvbbs.AddErrCode(56)
 	Dvbbs.ShowErr
-	'Ö÷ÌâÒÑËø¶¨£¬²»ÄÜ²ÎÓëÍ¶Æ±
+	'ä¸»é¢˜å·²é”å®šï¼Œä¸èƒ½å‚ä¸æŠ•ç¥¨
 	Set Rs=Dvbbs.Execute("select locktopic from dv_topic where topicid="&AnnounceID)
 	If Not (Rs.Eof And Rs.Bof) then
 		If Rs(0)=1 Then
@@ -395,7 +395,7 @@ Sub PostVote_Main()
 			Exit Sub
 		End If
 	End If
-	'ÒÑÍ¶Æ±ÓÃ»§²»ÔÊĞíÔÙ´ÎÍ¶Æ±
+	'å·²æŠ•ç¥¨ç”¨æˆ·ä¸å…è®¸å†æ¬¡æŠ•ç¥¨
 	Set Rs = Dvbbs.Execute("select userid from dv_voteuser where voteid="&voteID&" and userid="&Dvbbs.userid)
 	If Not(Rs.Eof And Rs.Bof) Then
 		Dvbbs.AddErrCode(58)
@@ -413,44 +413,44 @@ Sub PostVote_Main()
 		Dvbbs.ShowErr
 		Exit Sub
 	Else
-		'¹ÜÀíÔ±£¬³¬°æ£¬°æÖ÷²»ÊÜÍ¶Æ±ÏŞÖÆ
+		'ç®¡ç†å‘˜ï¼Œè¶…ç‰ˆï¼Œç‰ˆä¸»ä¸å—æŠ•ç¥¨é™åˆ¶
 		If Not (Dvbbs.Master Or Dvbbs.SuperBoardMaster Or Dvbbs.BoardMaster) Then
-		'ÎÄÕÂ
-		If Clng(Rs("UArticle"))>Clng(Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userpost").text) Then Response.redirect "showerr.asp?ShowErrType="&Dvbbs.ErrType&"&ErrCodes=<li>±¾Í¶Æ±ÉèÖÃÁËÓÃ»§·¢Ìù×îÉÙÎª <B>"&Rs("UArticle")&"</B> ²ÅÄÜÍ¶Æ±&action=OtherErr"
-		'½ğÇ®
-		If Clng(Rs("UWealth"))>Clng(Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userwealth").text) Then Response.redirect "showerr.asp?ShowErrType="&Dvbbs.ErrType&"&ErrCodes=<li>±¾Í¶Æ±ÉèÖÃÁËÓÃ»§½ğÇ®×îÉÙÎª <B>"&Rs("UWealth")&"</B> ²ÅÄÜÍ¶Æ±&action=OtherErr"
-		'»ı·Ö
-		If Clng(Rs("UEP"))>Clng(Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userep").text) Then Response.redirect "showerr.asp?ShowErrType="&Dvbbs.ErrType&"&ErrCodes=<li>±¾Í¶Æ±ÉèÖÃÁËÓÃ»§»ı·Ö×îÉÙÎª <B>"&Rs("UEP")&"</B> ²ÅÄÜÍ¶Æ±&action=OtherErr"
-		'÷ÈÁ¦
-		If Clng(Rs("UCP"))>Clng(Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usercp").text) Then Response.redirect "showerr.asp?ShowErrType="&Dvbbs.ErrType&"&ErrCodes=<li>±¾Í¶Æ±ÉèÖÃÁËÓÃ»§÷ÈÁ¦×îÉÙÎª <B>"&Rs("UCP")&"</B> ²ÅÄÜÍ¶Æ±&action=OtherErr"
-		'ÍşÍû
-		If Clng(Rs("UPower"))>Clng(Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userpower").text) Then Response.redirect "showerr.asp?ShowErrType="&Dvbbs.ErrType&"&ShowErrType="&Dvbbs.ErrType&"&ErrCodes=<li>±¾Í¶Æ±ÉèÖÃÁËÓÃ»§ÍşÍû×îÉÙÎª <B>"&Rs("UPower")&"</B> ²ÅÄÜÍ¶Æ±&action=OtherErr"
+		'æ–‡ç« 
+		If Clng(Rs("UArticle"))>Clng(Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userpost").text) Then Response.redirect "showerr.asp?ShowErrType="&Dvbbs.ErrType&"&ErrCodes=<li>æœ¬æŠ•ç¥¨è®¾ç½®äº†ç”¨æˆ·å‘è´´æœ€å°‘ä¸º <B>"&Rs("UArticle")&"</B> æ‰èƒ½æŠ•ç¥¨&action=OtherErr"
+		'é‡‘é’±
+		If Clng(Rs("UWealth"))>Clng(Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userwealth").text) Then Response.redirect "showerr.asp?ShowErrType="&Dvbbs.ErrType&"&ErrCodes=<li>æœ¬æŠ•ç¥¨è®¾ç½®äº†ç”¨æˆ·é‡‘é’±æœ€å°‘ä¸º <B>"&Rs("UWealth")&"</B> æ‰èƒ½æŠ•ç¥¨&action=OtherErr"
+		'ç§¯åˆ†
+		If Clng(Rs("UEP"))>Clng(Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userep").text) Then Response.redirect "showerr.asp?ShowErrType="&Dvbbs.ErrType&"&ErrCodes=<li>æœ¬æŠ•ç¥¨è®¾ç½®äº†ç”¨æˆ·ç§¯åˆ†æœ€å°‘ä¸º <B>"&Rs("UEP")&"</B> æ‰èƒ½æŠ•ç¥¨&action=OtherErr"
+		'é­…åŠ›
+		If Clng(Rs("UCP"))>Clng(Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usercp").text) Then Response.redirect "showerr.asp?ShowErrType="&Dvbbs.ErrType&"&ErrCodes=<li>æœ¬æŠ•ç¥¨è®¾ç½®äº†ç”¨æˆ·é­…åŠ›æœ€å°‘ä¸º <B>"&Rs("UCP")&"</B> æ‰èƒ½æŠ•ç¥¨&action=OtherErr"
+		'å¨æœ›
+		If Clng(Rs("UPower"))>Clng(Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userpower").text) Then Response.redirect "showerr.asp?ShowErrType="&Dvbbs.ErrType&"&ShowErrType="&Dvbbs.ErrType&"&ErrCodes=<li>æœ¬æŠ•ç¥¨è®¾ç½®äº†ç”¨æˆ·å¨æœ›æœ€å°‘ä¸º <B>"&Rs("UPower")&"</B> æ‰èƒ½æŠ•ç¥¨&action=OtherErr"
 		End If
 		Dim votenum_temp,n,num_tempstr
 		If Rs("votetype")=2 Then
-			'µ÷²éÍ¶Æ±
+			'è°ƒæŸ¥æŠ•ç¥¨
 			Votes = Split(Rs("vote"),"|")
 			votenum=Split(rs("votenum"),"|")
 			For i = 0 To Ubound(Votes)
 				VoteChilds  = Split(Votes(i),"@@")
-				VoteChildsType = VoteChilds(1)	'ÀàĞÍ£º0=µ¥Ñ¡£¬1=¶àÑ¡£¬2=ÎÄ±¾
+				VoteChildsType = VoteChilds(1)	'ç±»å‹ï¼š0=å•é€‰ï¼Œ1=å¤šé€‰ï¼Œ2=æ–‡æœ¬
 
 				If VoteChildsType = "2" Then
-					'ÎÄ±¾ÎÊ´ğĞÍÊ½
+					'æ–‡æœ¬é—®ç­”å‹å¼
 					VoteForm = Replace(Request.Form("postvote_"&i),"|","")
 					If Trim(VoteForm)="" Then
-					Response.redirect "showerr.asp?ShowErrType="&Dvbbs.ErrType&"&ErrCodes=<li>Çë¼ì²éÊÇ·ñÓĞ´ğ°¸Î´ÌîĞ´£¿</li>&action=OtherErr"
+					Response.redirect "showerr.asp?ShowErrType="&Dvbbs.ErrType&"&ErrCodes=<li>è¯·æ£€æŸ¥æ˜¯å¦æœ‰ç­”æ¡ˆæœªå¡«å†™ï¼Ÿ</li>&action=OtherErr"
 					End If
 					postoption = postoption & VoteForm &"|"
 				Else
-					VoteChildsEP_Item = Split(VoteChilds(3),"$$")	'µ÷²éµÄ»ı·Ö
+					VoteChildsEP_Item = Split(VoteChilds(3),"$$")	'è°ƒæŸ¥çš„ç§¯åˆ†
 					votenum_temp = Split(votenum(i),"$$")
 					num_tempstr = ""
 					If VoteChildsType="0" Then
-						'µ¥Ñ¡È¡³öÏàÓ¦·ÖÊı
+						'å•é€‰å–å‡ºç›¸åº”åˆ†æ•°
 						VoteForm = Request.Form("postvote_"&i)
 						If Not Isnumeric(VoteForm) or VoteForm = "" Then
-							Response.redirect "showerr.asp?ShowErrType="&Dvbbs.ErrType&"&ErrCodes=<li>Çë¼ì²éÊÇ·ñÓĞÂ©Ñ¡µÄÏîÄ¿£¿</li>&action=OtherErr"
+							Response.redirect "showerr.asp?ShowErrType="&Dvbbs.ErrType&"&ErrCodes=<li>è¯·æ£€æŸ¥æ˜¯å¦æœ‰æ¼é€‰çš„é¡¹ç›®ï¼Ÿ</li>&action=OtherErr"
 						Else
 							VoteForm = Cint(VoteForm)
 						End If
@@ -464,11 +464,11 @@ Sub PostVote_Main()
 						Next
 						votenum(i) = num_tempstr
 					Else
-						'¶àÑ¡
+						'å¤šé€‰
 						VoteForm_Tempstr = ""
 						For each VoteForm in Request.Form("postvote_"&i)
 							If Not Isnumeric(VoteForm) or VoteForm = "" Then
-								Response.redirect "showerr.asp?ShowErrType="&Dvbbs.ErrType&"&ErrCodes=<li>Çë¼ì²éÊÇ·ñÓĞÂ©Ñ¡µÄÏîÄ¿£¿</li>&action=OtherErr"
+								Response.redirect "showerr.asp?ShowErrType="&Dvbbs.ErrType&"&ErrCodes=<li>è¯·æ£€æŸ¥æ˜¯å¦æœ‰æ¼é€‰çš„é¡¹ç›®ï¼Ÿ</li>&action=OtherErr"
 							Else
 								VoteForm = Cint(VoteForm)
 							End If
@@ -488,7 +488,7 @@ Sub PostVote_Main()
 
 			postnum=1
 		Else
-			'µ¥Ñ¡¼°¶àÑ¡Í¶Æ±
+			'å•é€‰åŠå¤šé€‰æŠ•ç¥¨
 			votenum=Split(rs("votenum"),"|")
 			If Rs("votetype")=1 Then
 				For i = 0 to UBound(votenum)
@@ -540,11 +540,11 @@ Sub PostVote_Main()
 	Response.Redirect Request.ServerVariables("HTTP_REFERER")
 	Dvbbs.ShowErr
 End Sub
-'================Ìû×ÓÍ¶Æ±===========================
-'================´òÓ¡Ìû×Ó===========================
+'================å¸–å­æŠ•ç¥¨===========================
+'================æ‰“å°å¸–å­===========================
 Sub PrintPage_Main()
 	If Dvbbs.BoardID = 0 Then
-		Response.Write "²ÎÊı´íÎó"
+		Response.Write "å‚æ•°é”™è¯¯"
 		Response.End
 	End If
 	Set dv_ubb=new Dvbbs_UbbCode
@@ -559,7 +559,7 @@ Sub PrintPage_Main()
 	End If
 	If Dvbbs.GroupSetting(2)="0"  Then Dvbbs.AddErrcode(31)
 	Dvbbs.ShowErr()
-	EmotPath=Split(Dvbbs.Forum_emot,"|||")(0)		'emĞÄÇéÂ·¾¶
+	EmotPath=Split(Dvbbs.Forum_emot,"|||")(0)		'emå¿ƒæƒ…è·¯å¾„
 	abgcolor="tablebody1"
 	bgcolor="tablebody2"
 
@@ -638,9 +638,9 @@ Sub PrintPage_Main()
 			Ubblists=SQL(6,i)
 			If Sql(13,i)=2 Then
 				If Dvbbs.master Then
-					username=Sql(0,i)&" (ÄäÃû)"
+					username=Sql(0,i)&" (åŒ¿å)"
 				Else
-					username="ÄäÃûÓÃ»§"
+					username="åŒ¿åç”¨æˆ·"
 				End If
 			Else
 				username=Sql(0,i)
@@ -674,8 +674,8 @@ Function SimJsReplace(str)
 	str=Replace(str,"'","\'")
 	SimJsReplace=str
 End Function
-'================´òÓ¡Ìû×Ó===========================
-'================±¨¸æÌû×Ó===========================
+'================æ‰“å°å¸–å­===========================
+'================æŠ¥å‘Šå¸–å­===========================
 Sub Report_Main()
 	Dvbbs.LoadTemplates("postjob")
 	Dvbbs.stats=template.Strings(0)
@@ -759,7 +759,7 @@ Function update_user_msg(username)
 	End if
 	Dvbbs.execute("update [Dv_user] set UserMsg='"&dvbbs.CheckStr(msginfo)&"' where username='"&dvbbs.CheckStr(username)&"'")
 End Function
-'Í³¼ÆÁôÑÔ
+'ç»Ÿè®¡ç•™è¨€
 Function newincept(iusername)
 	Dim Yrs
 	Set Yrs=Dvbbs.execute("Select Count(id) From Dv_Message Where flag=0 and issend=1 and delR=0 And incept='"& iusername &"'")
@@ -777,8 +777,8 @@ Function inceptid(stype,iusername)
 	End if
 	set Yrs=nothing
 End Function
-'================±¨¸æÌû×Ó===========================
-'================·¢ËÍÒ³Ãæ===========================
+'================æŠ¥å‘Šå¸–å­===========================
+'================å‘é€é¡µé¢===========================
 Sub SendPage_Main()
 	Dim announceid,topic,content,postname,incepts
 	Dvbbs.LoadTemplates("postjob")
@@ -846,14 +846,14 @@ Sub SendPage_Main()
 		mailbody=Replace(mailbody,"{$version}",Dvbbs.Forum_Version)
 		Dim DvEmail
 		Set DvEmail = New Dv_SendMail
-		DvEmail.SendObject = Cint(Dvbbs.Forum_Setting(2))	'ÉèÖÃÑ¡È¡×é¼ş 0=Jmail,1=Cdonts,2=Aspemail
-		DvEmail.ServerLoginName = Dvbbs.Forum_info(12)	'ÄúµÄÓÊ¼ş·şÎñÆ÷µÇÂ¼Ãû
-		DvEmail.ServerLoginPass = Dvbbs.Forum_info(13)	'µÇÂ¼ÃÜÂë
-		DvEmail.SendSMTP = Dvbbs.Forum_info(4)			'SMTPµØÖ·
-		DvEmail.SendFromEmail = Dvbbs.Forum_info(5)		'·¢ËÍÀ´Ô´µØÖ·
-		DvEmail.SendFromName = Dvbbs.Forum_info(0)		'·¢ËÍÈËĞÅÏ¢
+		DvEmail.SendObject = Cint(Dvbbs.Forum_Setting(2))	'è®¾ç½®é€‰å–ç»„ä»¶ 0=Jmail,1=Cdonts,2=Aspemail
+		DvEmail.ServerLoginName = Dvbbs.Forum_info(12)	'æ‚¨çš„é‚®ä»¶æœåŠ¡å™¨ç™»å½•å
+		DvEmail.ServerLoginPass = Dvbbs.Forum_info(13)	'ç™»å½•å¯†ç 
+		DvEmail.SendSMTP = Dvbbs.Forum_info(4)			'SMTPåœ°å€
+		DvEmail.SendFromEmail = Dvbbs.Forum_info(5)		'å‘é€æ¥æºåœ°å€
+		DvEmail.SendFromName = Dvbbs.Forum_info(0)		'å‘é€äººä¿¡æ¯
 		If DvEmail.ErrCode = 0 Then
-			DvEmail.SendMail email,topic,mailbody	'Ö´ĞĞ·¢ËÍÓÊ¼ş
+			DvEmail.SendMail email,topic,mailbody	'æ‰§è¡Œå‘é€é‚®ä»¶
 			If DvEmail.Count=0 Then
 				Dvbbs.AddErrCode(51)
 			End If
@@ -879,5 +879,5 @@ Sub SendPage_Pag()
 	Tempwrite=Replace(Tempwrite,"{$boardid}",Dvbbs.boardid)
 	Response.write Tempwrite
 End Sub
-'================·¢ËÍÒ³Ãæ===========================
+'================å‘é€é¡µé¢===========================
 %>

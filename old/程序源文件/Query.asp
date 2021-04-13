@@ -3,7 +3,7 @@
 <!-- #include file="inc/dv_clsother.asp" -->
 <%
 If Dvbbs.BoardID < 0 Then
-	Response.Write "²ÎÊı´íÎó"
+	Response.Write "å‚æ•°é”™è¯¯"
 	Response.End
 End If
 Dim action,ReportText
@@ -46,7 +46,7 @@ Else
 	Dim SearchMaxPageList
 	isWeb = 0
 	isMoreInfo = 0
-	'ËÑË÷·µ»Ø½á¹ûÊı¿ØÖÆ
+	'æœç´¢è¿”å›ç»“æœæ•°æ§åˆ¶
 	If Dvbbs.Forum_Setting(12)<>"0" Then
 		If IsNumeric(Dvbbs.Forum_Setting(12)) Then
 		If Clng(Dvbbs.Forum_Setting(12)) Mod Cint(Dvbbs.Forum_Setting(11))=0 Then
@@ -83,7 +83,7 @@ Sub Queryform()
 		XMLDOM.documentElement.attributes.setNamedItem(XMLDOM.createNode(2,"keywordminlen","")).text=keywordlimited(0)		
 		XMLDOM.documentElement.attributes.setNamedItem(XMLDOM.createNode(2,"keywordmaxlen","")).text=keywordlimited(1)
 		XMLDOM.documentElement.attributes.setNamedItem(XMLDOM.createNode(2,"timelimited","")).text=Dvbbs.Forum_Setting(3)
-		XMLDOM.documentElement.attributes.setNamedItem(XMLDOM.createNode(2,"sqlsearch","")).text=Dvbbs.Forum_Setting(16) Rem È«ÎÄË÷Òı¿ª¹Ø
+		XMLDOM.documentElement.attributes.setNamedItem(XMLDOM.createNode(2,"sqlsearch","")).text=Dvbbs.Forum_Setting(16) Rem å…¨æ–‡ç´¢å¼•å¼€å…³
 		Dim Rs,Node
 		Set Rs=Dvbbs.Execute("select * from Dv_TableList")
 		Do while Not Rs.Eof
@@ -208,7 +208,7 @@ Sub CheckRequestInfo()
 		If keyword<>"" Then
 			Dim Foundmykeyword
 			Foundmykeyword = False
-			'ËÑË÷²»ÊÜ³¤¶ÈÏŞÖÆµÄ´Ê
+			'æœç´¢ä¸å—é•¿åº¦é™åˆ¶çš„è¯
 			If Dvbbs.Forum_Setting(9)<>"0" Then
 				Dim mykeyword
 				mykeyword = Split(Dvbbs.Forum_Setting(9),"|")
@@ -219,7 +219,7 @@ Sub CheckRequestInfo()
 					End If
 				Next
 			End If
-			'ËÑË÷×Ö´®×îĞ¡ºÍ×î´ó³¤¶È
+			'æœç´¢å­—ä¸²æœ€å°å’Œæœ€å¤§é•¿åº¦
 			If Dvbbs.Forum_Setting(4)<>"0" And Not Foundmykeyword And Not (Dvbbs.Master Or Dvbbs.BoardMaster Or Dvbbs.SuperBoardMaster) Then
 				Dim keywordlimited
 				keywordlimited = Split(Dvbbs.Forum_Setting(4),"|")
@@ -234,7 +234,7 @@ Sub CheckRequestInfo()
 			End If
 		End If
 		
-		'ËÑË÷¶àÉÙÌìÄÚÌû×Ó
+		'æœç´¢å¤šå°‘å¤©å†…å¸–å­
 		'If Lcase(request("SearchDate"))="all" Then
 		'	searchday=" "
 		'Else
@@ -249,13 +249,13 @@ Sub CheckRequestInfo()
 		'	End If
 		'End If
 	End If
-	'isWeb=0°üº¬Õ¾ÍâËÑË÷,isWeb=1½öÕ¾ÄÚ,isWeb=2½öÕ¾Íâ
+	'isWeb=0åŒ…å«ç«™å¤–æœç´¢,isWeb=1ä»…ç«™å†…,isWeb=2ä»…ç«™å¤–
 	If sType = 3 Or sType = 5 Then
 		isWeb = 1
 	Else
 		isWeb = Request("isWeb")
 		If isWeb = "" Or Not IsNumeric(isWeb) Then isWeb = 1
-		If Request("submit")="ÍøÒ³ËÑË÷" And Not isWeb=0 Then
+		If Request("submit")="ç½‘é¡µæœç´¢" And Not isWeb=0 Then
 			isWeb=2
 			sType=8
 		End If
@@ -265,7 +265,7 @@ Sub CheckRequestInfo()
 	SearchBoard = " "
 	If Dvbbs.BoardID>0 Then SearchBoard=" BoardID="&Dvbbs.BoardID&" and "
 	Dim FobWords
-	'ËÑË÷¹ıÂË×Ö
+	'æœç´¢è¿‡æ»¤å­—
 	FobWords = Array(91,92,304,305,430,431,437,438,12460,12461,12462,12463,12464,12465,12466,12467,12468,12469,12470,12471,12472,12473,12474,12475,12476,12477,12478,12479,12480,12481,12482,12483,12485,12486,12487,12488,12489,12490,12496,12497,12498,12499,12500,12501,12502,12503,12504,12505,12506,12507,12508,12509,12510,12532,12533,65339,65340)
 	For i = 1 to Ubound(FobWords,1)
 		If InStr(keyword,ChrW(FobWords(i))) > 0 Then
@@ -273,14 +273,14 @@ Sub CheckRequestInfo()
 			Exit For
 		End If
 	Next
-	FobWords = Array("~","!","@","#","$","%","^","&","*","(",")","_","+","=","`","[","]","{","}",";",":","""","'",",","<",">",".","/","\","|","?","_","about","1","2","3","4","5","6","7","8","9","0","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","after","all","also","an","and","another","any","are","as","at","be","because","been","before","being","between","both","but","by","came","can","come","could","did","do","each","for","from","get","got","had","has","have","he","her","here","him","himself","his","how","if","in","into","is","it","like","make","many","me","might","more","most","much","must","my","never","now","of","on","only","or","other","our","out","over","said","same","see","should","since","some","still","such","take","than","that","the","their","them","then","there","these","they","this","those","through","to","too","under","up","very","was","way","we","well","were","what","where","which","while","who","with","would","you","your","µÄ","Ò»","²»","ÔÚ","ÈË","ÓĞ","ÊÇ","Îª","ÒÔ","ÓÚ","ÉÏ","Ëû","¶ø","ºó","Ö®","À´","¼°","ÁË","Òò","ÏÂ","¿É","µ½","ÓÉ","Õâ","Óë","Ò²","´Ë","µ«","²¢","¸ö","Æä","ÒÑ","ÎŞ","Ğ¡","ÎÒ","ÃÇ","Æğ","×î","ÔÙ","½ñ","È¥","ºÃ","Ö»","ÓÖ","»ò","ºÜ","Òà","Ä³","°Ñ","ÄÇ","Äã","ÄË","Ëü")
+	FobWords = Array("~","!","@","#","$","%","^","&","*","(",")","_","+","=","`","[","]","{","}",";",":","""","'",",","<",">",".","/","\","|","?","_","about","1","2","3","4","5","6","7","8","9","0","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","after","all","also","an","and","another","any","are","as","at","be","because","been","before","being","between","both","but","by","came","can","come","could","did","do","each","for","from","get","got","had","has","have","he","her","here","him","himself","his","how","if","in","into","is","it","like","make","many","me","might","more","most","much","must","my","never","now","of","on","only","or","other","our","out","over","said","same","see","should","since","some","still","such","take","than","that","the","their","them","then","there","these","they","this","those","through","to","too","under","up","very","was","way","we","well","were","what","where","which","while","who","with","would","you","your","çš„","ä¸€","ä¸","åœ¨","äºº","æœ‰","æ˜¯","ä¸º","ä»¥","äº","ä¸Š","ä»–","è€Œ","å","ä¹‹","æ¥","åŠ","äº†","å› ","ä¸‹","å¯","åˆ°","ç”±","è¿™","ä¸","ä¹Ÿ","æ­¤","ä½†","å¹¶","ä¸ª","å…¶","å·²","æ— ","å°","æˆ‘","ä»¬","èµ·","æœ€","å†","ä»Š","å»","å¥½","åª","åˆ","æˆ–","å¾ˆ","äº¦","æŸ","æŠŠ","é‚£","ä½ ","ä¹ƒ","å®ƒ")
 	keyword = Left(keyword,100)
 	keyword = Replace(keyword,"!"," ")
 	keyword = Replace(keyword,"]"," ")
 	keyword = Replace(keyword,"["," ")
 	keyword = Replace(keyword,")"," ")
 	keyword = Replace(keyword,"("," ")
-	keyword = Replace(keyword,"¡¡"," ")
+	keyword = Replace(keyword,"ã€€"," ")
 	'keyword = Replace(keyword,"-"," ")
 	keyword = Replace(keyword,"/"," ")
 	keyword = Replace(keyword,"+"," ")
@@ -293,7 +293,7 @@ Sub CheckRequestInfo()
 			Exit for
 		End If
 	Next
-	If sType = 8 And (Request("submit")="Õ¾ÄÚËÑË÷") Then sType = 2
+	If sType = 8 And (Request("submit")="ç«™å†…æœç´¢") Then sType = 2
 	If sType = 8 And (Request("submit")="") Then isWeb = 2
 	'Response.Write stype&Request("submit")&isweb
 	'response.end
@@ -333,17 +333,17 @@ Sub SQLQueryStr()
 			SearchUserID = Rs(0)
 		End If
 		Select Case nSearch
-		'Ö÷Ìâ×÷Õß
+		'ä¸»é¢˜ä½œè€…
 		Case 1
 			If Not Dvbbs.master Then SearchUserID =SearchUserID&" And HideName=0"
 			SqlColumn = SqlColumn & " From dv_Topic Where "&searchboard&" PostUserID="&SearchUserID&" Order By TopicID Desc"
 			Dvbbs.Stats = Dvbbs.Stats & template.Strings(7)
-		'»Ø¸´×÷Õß
+		'å›å¤ä½œè€…
 		Case 2
 			If Not Dvbbs.master Then SearchUserID =SearchUserID&" And signflag<2"
 			SqlColumn = SqlColumn & " From " & stable & " Where "&searchboard&" ParentID>0 And PostUserID="&SearchUserID&" Order By AnnounceID Desc"
 			Dvbbs.Stats = Dvbbs.Stats & template.Strings(8)
-		'Ö÷ÌâºÍ»Ø¸´×÷Õß
+		'ä¸»é¢˜å’Œå›å¤ä½œè€…
 		Case 3
 			If Not Dvbbs.master Then SearchUserID =SearchUserID&" And signflag<2"
 			SqlColumn = SqlColumn & " From " & stable & " Where "&searchboard&" PostUserID="&SearchUserID&" Order By AnnounceID Desc"
@@ -359,7 +359,7 @@ Sub SQLQueryStr()
 		'Response.write SqlColumn
 		Dvbbs.Stats = Dvbbs.Stats & template.Strings(10)
 	Case 3
-		'×îĞÂ50Ìù
+		'æœ€æ–°50è´´
 		If Dvbbs.BoardID > 0 then
 			SqlColumn = SqlColumn & ",signflag From "&stable&" where BoardID="&Dvbbs.BoardID&" ORDER BY announceID desc"
 		Else
@@ -367,7 +367,7 @@ Sub SQLQueryStr()
 		End if
 		Dvbbs.Stats = template.Strings(12)
 	Case 4
-		'ÓÃ»§ÈÈÌù
+		'ç”¨æˆ·çƒ­è´´
 		If keyword<>"" Then
 			Set Rs=Dvbbs.Execute("Select UserID From Dv_User Where UserName='"&keyword&"'")
 			If Rs.Eof And Rs.Bof Then
@@ -405,7 +405,7 @@ Sub SQLQueryStr()
 		'Response.write SqlColumn
 		keyword = Dvbbs.CheckStr(Request("keyword"))
 	Case 5
-		'ÎÒµÄÖ÷ÌâºÍ±»»Ø¸´µÄÖ÷Ìâ
+		'æˆ‘çš„ä¸»é¢˜å’Œè¢«å›å¤çš„ä¸»é¢˜
 		If Dvbbs.UserID=0 Then
 			Dvbbs.AddErrCode(61)
 			Exit Sub
@@ -423,7 +423,7 @@ Sub SQLQueryStr()
 		End If
 		isMoreInfo = 1
 	Case 6
-		'°æÃæ»òÓÃ»§¾«»ªÌù
+		'ç‰ˆé¢æˆ–ç”¨æˆ·ç²¾åè´´
 		If keyword<>"" Then
 			Set Rs=Dvbbs.Execute("Select UserID From Dv_User Where UserName='"&keyword&"'")
 			If Rs.Eof And Rs.Bof Then
@@ -449,7 +449,7 @@ Sub SQLQueryStr()
 		keyword = Dvbbs.CheckStr(Request("keyword"))
 		Dvbbs.Stats = template.Strings(16)
 	Case 7
-		'ÄÚÈİ»òÈ«ÎÄË÷Òı
+		'å†…å®¹æˆ–å…¨æ–‡ç´¢å¼•
 		If Dvbbs.Forum_Setting(16)<>"0" Then
 			If IsSqlDataBase Then
 				If Trim(searchboard)="" Then
@@ -470,7 +470,7 @@ Sub SQLQueryStr()
 		End If
 	Case 8
 		SqlColumn = "Select Top 1 id as BoardID,id as RootID,Forum_lastUser as topic,Forum_lastUser as Expression,Forum_lastUser as UserName,id as PostUserID,Forum_MaxPostDate as DateAndtime,id as IsBest,id as LockTopic,id as Child,id as Hits From Dv_setup"
-		Dvbbs.Stats = Dvbbs.Stats & "ËÑË÷ÒıÇæËÑË÷½á¹û"
+		Dvbbs.Stats = Dvbbs.Stats & "æœç´¢å¼•æ“æœç´¢ç»“æœ"
 	Case Else
 		Dvbbs.AddErrCode(61)
 		Exit Sub
@@ -555,7 +555,7 @@ Sub SearchResult()
 	XMLDOM.documentElement.attributes.setNamedItem(XMLDOM.createNode(2,"keyword","")).text=KeyWord
 	XMLDOM.documentElement.attributes.setNamedItem(XMLDOM.createNode(2,"isWeb","")).text=isWeb
 	XMLDOM.documentElement.attributes.setNamedItem(XMLDOM.createNode(2,"sType","")).text=sType
-	XMLDOM.documentElement.attributes.setNamedItem(XMLDOM.createNode(2,"sqlsearch","")).text=Dvbbs.Forum_Setting(16) Rem È«ÎÄË÷Òı¿ª¹Ø
+	XMLDOM.documentElement.attributes.setNamedItem(XMLDOM.createNode(2,"sqlsearch","")).text=Dvbbs.Forum_Setting(16) Rem å…¨æ–‡ç´¢å¼•å¼€å…³
 	If sType=5 Then
 		XMLDOM.documentElement.attributes.setNamedItem(XMLDOM.createNode(2,"s","")).text=Request("s")
 	End If
@@ -601,7 +601,7 @@ Function QueryArrayToxml(DataArray,Recordset,row,xmlroot)
 
 		node.setAttribute "querynum",(i + 1) + ((Page - 1) * Dvbbs.Forum_Setting(11))
 		For Each rs in Recordset.Fields
-			'µ±TOPICÎª¿Õ£¬È¡BODYÄÚÈİÇ°30¸ö×Ö·û£¬È¥³ı<*>±ê¼Ç
+			'å½“TOPICä¸ºç©ºï¼Œå–BODYå†…å®¹å‰30ä¸ªå­—ç¬¦ï¼Œå»é™¤<*>æ ‡è®°
 			If LCase(rs.name)="body" Then
 				If node.attributes.getNamedItem("topic").text<>"" Then
 					node.setAttribute LCase(rs.name),""
@@ -621,7 +621,7 @@ Function QueryArrayToxml(DataArray,Recordset,row,xmlroot)
 	Next
 End Function
 
-'½øĞĞÅúÁ¿²Ù×÷
+'è¿›è¡Œæ‰¹é‡æ“ä½œ
 Sub Dobatch()
 	If Not Dvbbs.Master Then
 		Response.redirect "showerr.asp?ErrCodes=<li>"&template.Strings(27)&"&action=OtherErr"
@@ -646,7 +646,7 @@ Sub Dobatch()
 		Else
 			Set BoardNode=Application(Dvbbs.CacheName&"_boardlist").documentElement.selectSingleNode("board[@boardid="& Request("newboard") & "]")
 			If BoardNode.attributes.getNamedItem("nopost").text="1" Then
-				Response.redirect "showerr.asp?ErrCodes=<li>Ä¿±ê°æÃæ²»ÔÊĞí·¢Ìù.ÎŞ·¨ÒÆ¶¯&action=OtherErr"
+				Response.redirect "showerr.asp?ErrCodes=<li>ç›®æ ‡ç‰ˆé¢ä¸å…è®¸å‘è´´.æ— æ³•ç§»åŠ¨&action=OtherErr"
 				Exit Sub
 			End If
 		End If
@@ -658,7 +658,7 @@ Sub Dobatch()
 	Dim Forum_user,BoardNode,UpdateCount,boardid,Setupreload,BordidList
 	Setupreload=False
 	announceid=split(announceid,",")
-	ReportText="ÅúÁ¿²Ù×÷ĞÅÏ¢£º<br>"
+	ReportText="æ‰¹é‡æ“ä½œä¿¡æ¯ï¼š<br>"
 	BordidList=","
 	For i=0 to UBound(announceid)
 			RootID=split(announceid(i),"_")(0)
@@ -683,9 +683,9 @@ Sub Dobatch()
 						Select Case Request("maction")
 							Case "isbest"
 								If Rs("ParentID")=0 Then
-									ReportText=ReportText&"¾«»ªÖ÷Ìâ¡¶"& rs("Topic") &"¡·(ID"& Rs(0)&").<br>"
+									ReportText=ReportText&"ç²¾åä¸»é¢˜ã€Š"& rs("Topic") &"ã€‹(ID"& Rs(0)&").<br>"
 								Else
-									ReportText=ReportText&"¾«»ª¸úÌù(ID"& Rs(0)&").<br>"
+									ReportText=ReportText&"ç²¾åè·Ÿè´´(ID"& Rs(0)&").<br>"
 								End If
 								Dvbbs.Execute("Update "& posttable &" Set isbest=1 where announceID="&postid)
 								Dvbbs.Execute("Update Dv_topic Set isbest=1 where topicID="&RootID)
@@ -693,12 +693,12 @@ Sub Dobatch()
 								topicusername=rs("username")
 								topicuserID=rs("postuserID")
 								If topic="" Then topic=left(replace(Dvbbs.Replacehtml(rs("body")),chr(10),","),26)
-								datetimestr=replace(replace(rs("dateandtime"),"ÉÏÎç",""),"ÏÂÎç","")
+								datetimestr=replace(replace(rs("dateandtime"),"ä¸Šåˆ",""),"ä¸‹åˆ","")
 								Dvbbs.Execute("Insert Into Dv_bestTopic (title,boardID,AnnounceID,rootID,postusername,postuserID,dateandtime,expression) values ('"&Dvbbs.CheckStr(topic)&"',"&rs("boardID")&","&rs("AnnounceID")&","&rs("rootID")&",'"&Dvbbs.CheckStr(topicusername)&"',"&rs("postuserID")&",'"&datetimestr&"','"&Dvbbs.CheckStr(rs("expression"))&"')")
 								Dvbbs.Execute("update [Dv_user] set userWealth=userWealth+"& Forum_user(15) &",userCP=userCP+"& Forum_user(16) &",userEP=userEP+"& Forum_user(17) &",userIsBest=userisBest+1 where userid="& topicuserID)
 							Case "dele"	
 								If Rs("ParentID")=0 Then
-										ReportText=ReportText&"É¾³ıÖ÷Ìâ¡¶"& rs("Topic") &"¡·(ID"& Rs(0)&").<br>"
+										ReportText=ReportText&"åˆ é™¤ä¸»é¢˜ã€Š"& rs("Topic") &"ã€‹(ID"& Rs(0)&").<br>"
 										Set Rs=Dvbbs.Execute("Select istop From Dv_Topic Where topicid="&RootID)
 										If Rs(0)=0 Then	
 											Set Rs = Dvbbs.iCreateObject("adodb.recordset")
@@ -725,126 +725,4 @@ Sub Dobatch()
 												Rs.close
 												Dvbbs.Execute("Update Dv_topic Set isbest=0,BoardID=444,LockTopic="&BoardID&" where topicID="&RootID)
 												Dvbbs.Execute("Update Dv_Board Set TopicNum=TopicNum-1,PostNum=PostNum-"&UpdateCount&" where BoardID="&boardID)
-												Dvbbs.Execute("Update Dv_setup Set Forum_TopicNum=Forum_TopicNum-1,Forum_PostNum=Forum_PostNum-"&UpdateCount)
-												Setupreload=True
-												If InStr(BordidList,","&BoardId &",")=0 Then
-													BordidList=BordidList&BoardID&","
-												End If
-										Else
-											ReportText=ReportText&"¸ÃÖ÷ÌâÎª¹Ì¶¥Ö÷Ìâ£¬Çë½â³ı¹Ì¶¥ºó²Ù×÷.<br>"
-										End If
-								Else
-									If Rs("isbest")=1 Then
-												Dvbbs.Execute("Delete [Dv_BestTopic] Where Announceid="&Rs("Announceid"))
-												Dvbbs.Execute("update [Dv_user] set userWealth=userWealth-"& Forum_user(15) &",userCP=userCP-"& Forum_user(16) &",userEP=userEP-"& Forum_user(17) &",userIsBest=userisBest-1 where userid="& rs("postuserID"))
-									End If
-									Dvbbs.Execute("Update "& posttable &" Set isbest=0,boardid=444,LockTopic="&BoardID&" where announceID="&postid)
-									UpdateCount=1
-									Dvbbs.Execute("update [Dv_user] set userWealth=userWealth-"& Forum_user(3) &",userCP=userCP-"& Forum_user(8) &",userEP=userEP-"& Forum_user(13) &",UserPost=UserPost-1 where userid="& rs("postuserID"))
-									Dvbbs.Execute("Update Dv_topic Set Child=Child-1 where topicID="&RootID)
-									Dvbbs.Execute("Update Dv_Board Set TopicNum=TopicNum-1,PostNum=PostNum-"&UpdateCount&" where BoardID="&boardID)
-									Dvbbs.Execute("Update Dv_setup Set Forum_TopicNum=Forum_TopicNum-1,Forum_PostNum=Forum_PostNum-"&UpdateCount)
-									Setupreload=True
-									ReportText=ReportText&"É¾³ı¸úÌù(ID"& Rs(0)&").<br>"
-									If InStr(BordidList,","&BoardId &",")=0 Then
-											BordidList=BordidList&BoardID&","
-									End If
-								End If
-							Case "move"
-								If boardid<>Clng(Request("newboard")) Then
-									If Rs("ParentID")=0 Then
-										ReportText=ReportText&"³É¹¦ÒÆ¶¯Ö÷Ìâ¡¶"& rs("Topic") &"¡·(ID"& Rs(0)&").<br>"		
-										SQL="update ["&posttable&"] Set BoardID="&Request("newboard")&" where RootID="&RootID&" and BoardID<>444 and BoardID<>777"
-										Dvbbs.Execute(SQL)
-										SQL="select Count(*) From ["&posttable&"]  where RootID="&RootID&" and BoardID<>444 and BoardID<>777"
-										Set Rs=Dvbbs.Execute(SQL)
-										UpdateCount=Rs(0)
-										Dvbbs.Execute("Update Dv_topic Set BoardID="&Request("newboard")&",mode=0 where topicID="&RootID)
-										Dvbbs.Execute("Update Dv_Board Set TopicNum=TopicNum-1,PostNum=PostNum-"&UpdateCount&" where BoardID="&boardID)
-										Dvbbs.Execute("Update Dv_Board Set TopicNum=TopicNum+1,PostNum=PostNum+"&UpdateCount&" where BoardID="&Request("newboard"))
-										If InStr(BordidList,","&BoardId &",")=0 Then
-												BordidList=BordidList&BoardID&","
-										End If
-										If InStr(BordidList,","&Request("newboard") &",")=0 Then
-												BordidList=BordidList&Request("newboard")&","
-										End If
-									Else
-										ReportText=ReportText&"¸ÃÌù(ID"& Rs(0)&")²»ÊÇÖ÷Ìâ,ÎŞ·¨ÒÆ¶¯,²Ù×÷:Ìø¹ı.<br>"
-									End If
-								Else
-									ReportText=ReportText&"¸ÃÌù(ID"& Rs(0)&")ÒÑ¾­ÔÚÄ¿±ê°æÃæÁË,ÎŞĞëÒÆ¶¯,²Ù×÷:Ìø¹ı.<br>"
-								End If
-							Case "lock"
-								If Rs("ParentID")=0 Then
-									ReportText=ReportText&"³É¹¦Ëø¶¨Ö÷Ìâ¡¶"& rs("Topic") &"¡·(ID"& Rs(0)&").<br>"
-									Dvbbs.Execute("update dv_Topic Set LockTopic=1 Where TopicID=" & RootID)
-								Else
-									ReportText=ReportText&"¸ÃÌù(ID"& Rs(0)&")²»ÊÇÖ÷Ìâ,ÎŞ·¨Ëø¶¨,²Ù×÷:Ìø¹ı.<br>"
-								End If
-						End Select
-					Else
-							ReportText=ReportText&"Ìù×Ó±»É¾³ı»òÔÚ´ıÉóºËÖĞ£¬Ìø¹ı²Ù×÷"
-					End If
-				End If
-			End If
-	Next
-	SQL="insert into Dv_Log (L_AnnounceID,L_BoardID,L_ToUser,L_UserName,L_Content,L_IP,l_type) Values (0,0,'More','"&Dvbbs.Membername&"','"&Dvbbs.Checkstr(Request("maction"))&"','"&Dvbbs.UserTrueIP&"',3)"
-	Dvbbs.Execute(SQL)
-	Dvbbs.Dvbbs_suc(ReportText)
-	If Setupreload Then Dvbbs.loadSetup
-	If Len(BordidList)>1 Then 
-		BordidList=Left(BordidList,Len(BordidList)-1)
-		BordidList=Right(BordidList,Len(BordidList)-1)
-	End If
-	If Len(BordidList)>1 Then 
-		Dvbbs.ReloadBoardInfo(BordidList)
-	End If
-End Sub
-
-Sub isWeb_Query()
-	Dvbbs.Head()
-	Dim S,keyword,SelSearch
-	S = Request.QueryString("s")
-	keyword = Request("keyword")
-	SelSearch = Request("SelSearch")
-	If SelSearch <> "" Then SelSearch = Lcase(SelSearch)
-	If SelSearch = "page" Then SelSearch = "massist"
-	If SelSearch = "" Then SelSearch = "massist"
-	If keyword = "" Then keyword = "dvbbs"
-
-	Response.Write "<div id=""Seardata"" style=""height:500px;"">"
-	Select Case Request.QueryString("t")
-	Case 0
-		'Response.Write "ËÑË÷ÒıÇæ¿ò¼Ü,¹Ø¼ü×Ö£º" & request("keyword")
-		Response.Write "<iframe name=""isWeb"" id=""isWebQuery"" frameborder=""0"" width=""100%"" height=""100%"" scrolling=""auto"" src=""http://so.dvbbs.net/search.asp?k="&keyword&"&s="&SelSearch&"""></iframe>"
-	Case 1
-		'Response.Write "ËÑË÷ÒıÇæ¿ò¼Ü,¹Ø¼ü×Ö£º" & request("keyword")
-		Response.Write "<iframe name=""isWeb"" id=""isWebQuery"" frameborder=""0"" width=""100%"" height=""100%"" scrolling=""auto"" src=""http://so.dvbbs.net/search.asp?k="&keyword&"&s="&SelSearch&"""></iframe>"
-	Case 2
-		Response.Write ""
-	Case 3
-		Response.Write ""
-	Case 4
-		Response.Write ""
-	End Select
-	Response.Write "</div>"
-%>
-<script language="JavaScript">
-<!--
-var obj=parent.document.getElementById("<%=s%>");
-var SearchData = document.getElementById("Seardata");
-if (obj){
-	if (obj.style.display=='none'){
-		obj.style.display='';
-		//alert(document.getElementById("SearchMain1").offsetHeight);
-	}
-	//obj.style.height=(parent.document.getElementById("SearchMain1").offsetHeight)+'px';
-	if (!document.all){obj.style.height="700px";}
-	obj.innerHTML = SearchData.innerHTML;
-}
-
-//-->
-</script>
-<%
-End Sub
-%>
+												Dvbbs.Execute("Update Dv_setup Set Forum_TopicNum=Forum_TopicNum-1,Forum_PostNum=Forum_PostNum-"&Updat

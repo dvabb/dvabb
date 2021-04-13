@@ -5,7 +5,7 @@
 <%
 	Dim Action
 	Dvbbs.LoadTemplates("")
-	Dvbbs.Stats = "·¢±íÂÛÌ³¹«¸æ"
+	Dvbbs.Stats = "å‘è¡¨è®ºå›å…¬å‘Š"
 	Dvbbs.Nav()
 	Dvbbs.Head_var 0,0,Plus_Popwan.Program,"plus_popwan_ann.asp"
 	Dvbbs.ActiveOnline()
@@ -17,7 +17,7 @@
 	End If
 	Dvbbs.PageEnd()
 
-'Ò³ÃæÓÒ²àÄÚÈİ²¿·Ö
+'é¡µé¢å³ä¾§å†…å®¹éƒ¨åˆ†
 Sub Page_Center()
 	If Not (Dvbbs.master Or Dvbbs.GroupSetting(70)="1") Then
 		Dvbbs.AddErrcode(28)
@@ -39,24 +39,24 @@ Sub SaveAnn()
 	If Not Dvbbs.ChkPost() Then Dvbbs.AddErrCode(16):Exit sub
 	Dim username,title,content,bgs
 	If request("username")="" then
-		Response.redirect "showerr.asp?ErrCodes=<li>ÇëÊäÈëÄúµÄÓÃ»§Ãû£¬ÇëÈ·ÈÏÄúÊäÈëµÄÓÃ»§Ãû³¤¶ÈÊÇ·ñ·ûºÏÂÛÌ³±ê×¼¡£&action=OtherErr"
+		Response.redirect "showerr.asp?ErrCodes=<li>è¯·è¾“å…¥æ‚¨çš„ç”¨æˆ·åï¼Œè¯·ç¡®è®¤æ‚¨è¾“å…¥çš„ç”¨æˆ·åé•¿åº¦æ˜¯å¦ç¬¦åˆè®ºå›æ ‡å‡†ã€‚&action=OtherErr"
 	Else
 		username=Dvbbs.MemberName
 	End if
-	'·ÀÖ¹±êÌâ±»²åÈë½Å±¾ºÍ³öÏÖ²»¹æ·¶´úÂë¡£
+	'é˜²æ­¢æ ‡é¢˜è¢«æ’å…¥è„šæœ¬å’Œå‡ºç°ä¸è§„èŒƒä»£ç ã€‚
 	Dim checkinfo
 	checkinfo=checkXHTML(request("title"))
 	If checkinfo<>"" Then
 		Response.redirect "showerr.asp?ErrCodes=<li>"&checkinfo&"&action=OtherErr"
 	End If
 	If request("title")="" then
-		Response.redirect "showerr.asp?ErrCodes=<li>Êı¾İÖĞº¬ÓĞ·Ç·¨×Ö·û¡£&action=OtherErr"
+		Response.redirect "showerr.asp?ErrCodes=<li>æ•°æ®ä¸­å«æœ‰éæ³•å­—ç¬¦ã€‚&action=OtherErr"
 	Else
 		title=request("title")
 	End If
-	If Dvbbs.strLength(title)>250 Then Response.redirect "showerr.asp?ErrCodes=<li>±êÌâ²»ÄÜ¶àÓÚ250¸ö×Ö·û&action=OtherErr"
+	If Dvbbs.strLength(title)>250 Then Response.redirect "showerr.asp?ErrCodes=<li>æ ‡é¢˜ä¸èƒ½å¤šäº250ä¸ªå­—ç¬¦&action=OtherErr"
 	If request("content")="" Then 
-		Response.redirect "showerr.asp?ErrCodes=<li>ÄúÊäÈëµÄÓÃ»§Ãû°üº¬ÏµÍ³½ûÖ¹×¢²á×Ö·û¡£&action=OtherErr"
+		Response.redirect "showerr.asp?ErrCodes=<li>æ‚¨è¾“å…¥çš„ç”¨æˆ·ååŒ…å«ç³»ç»Ÿç¦æ­¢æ³¨å†Œå­—ç¬¦ã€‚&action=OtherErr"
 	Else
 		content=Dvbbs.CheckStr(request("content"))
 	End If
@@ -80,11 +80,11 @@ Sub SaveAnn()
 	rs.close:Set rs=Nothing
 	Dvbbs.Name = "Dv_news_"&Dvbbs.boardid
 	Dvbbs.RemoveCache
-	Dvbbs.Dvbbs_suc("<li>ÄúÒÑ¾­³É¹¦µÄ·¢²¼ÁË¹«¸æ¡£")
+	Dvbbs.Dvbbs_suc("<li>æ‚¨å·²ç»æˆåŠŸçš„å‘å¸ƒäº†å…¬å‘Šã€‚")
 	If Dvbbs.BoardID=0 Then
-		Dvbbs.Execute("Insert Into Dv_Log (l_AnnounceID,l_BoardID,l_touser,l_username,l_content,l_ip,l_type) values (0,"&Dvbbs.BoardID&",'ÂÛÌ³¹«¸æ','" & Dvbbs.MemberName & "','·¢²¼ĞÂ¹«¸æ','" & Dvbbs.userTrueIP & "',3)")
+		Dvbbs.Execute("Insert Into Dv_Log (l_AnnounceID,l_BoardID,l_touser,l_username,l_content,l_ip,l_type) values (0,"&Dvbbs.BoardID&",'è®ºå›å…¬å‘Š','" & Dvbbs.MemberName & "','å‘å¸ƒæ–°å…¬å‘Š','" & Dvbbs.userTrueIP & "',3)")
 	Else
-		Dvbbs.Execute("Insert Into Dv_Log (l_AnnounceID,l_BoardID,l_touser,l_username,l_content,l_ip,l_type) values (0,"&Dvbbs.BoardID&",'ÂÛÌ³¹«¸æ','" & Dvbbs.MemberName & "','ÔÚ "&Dvbbs.boardtype&"·¢²¼ĞÂ¹«¸æ','" & Dvbbs.userTrueIP & "',3)")
+		Dvbbs.Execute("Insert Into Dv_Log (l_AnnounceID,l_BoardID,l_touser,l_username,l_content,l_ip,l_type) values (0,"&Dvbbs.BoardID&",'è®ºå›å…¬å‘Š','" & Dvbbs.MemberName & "','åœ¨ "&Dvbbs.boardtype&"å‘å¸ƒæ–°å…¬å‘Š','" & Dvbbs.userTrueIP & "',3)")
 	End If
 	
 End Sub
@@ -95,43 +95,43 @@ Sub AddAnn()
 table {width:100%;}
 td {padding-left:5px;}
 </style>
-<!--announcements.asp##·¢²¼»ò±à¼­¹«¸æÒ³Ãæ-->
+<!--announcements.asp##å‘å¸ƒæˆ–ç¼–è¾‘å…¬å‘Šé¡µé¢-->
 <form action="?action=SaveAnn" method="post">
   <table class="tableborder1" cellspacing="1" cellpadding="6" align="center">
       <tr>
-        <th align="center" colspan="2">·¢²¼ÂÛÌ³¹«¸æ</th>
+        <th align="center" colspan="2">å‘å¸ƒè®ºå›å…¬å‘Š</th>
       </tr>
 	  <script language = "javaScript" src = "inc/toxhtml.js" type="text/javascript"></script><div style="display : none;" id="hiddenhtml"></div>
       <tr valign="middle">
-        <td class="tablebody1" align="left"><b>ÓÃ»§Ãû</b></td>
+        <td class="tablebody1" align="left"><b>ç”¨æˆ·å</b></td>
         <td class="tablebody1" align="left"><input name="username" type="text" disabled value="<%=Dvbbs.MemberName%>" size="20" /> 
           <input name="username" type="hidden" value="<%=Dvbbs.MemberName%>" /></td>
       </tr>
        <tr valign="middle">
-        <td class="tablebody1" align="left"><b>°æ¡¡Ãæ</b></td>
+        <td class="tablebody1" align="left"><b>ç‰ˆã€€é¢</b></td>
         <td class="tablebody1" align="left"><select id="boardid" name="boardid"></select>
 </td>
       </tr>
        <tr valign="middle">
-        <td class="tablebody1" align="left"><b>±³¾°ÀÖ</b></td>
-        <td class="tablebody1" align="left"><input name="bgs" type="text" value="" size="60" />&nbsp;Ö§³ÖMID»òWAVÎÄ¼ş£¬´ËÏî·Ç±ØÌî¡£</td>
+        <td class="tablebody1" align="left"><b>èƒŒæ™¯ä¹</b></td>
+        <td class="tablebody1" align="left"><input name="bgs" type="text" value="" size="60" />&nbsp;æ”¯æŒMIDæˆ–WAVæ–‡ä»¶ï¼Œæ­¤é¡¹éå¿…å¡«ã€‚</td>
       </tr>
         <tr valign="middle">
-        <td class="tablebody1" align="left"><b>±ê¡¡Ìâ</b></td>
+        <td class="tablebody1" align="left"><b>æ ‡ã€€é¢˜</b></td>
         <td class="tablebody1" align="left"><input name="title" type="text" value=""  onblur="fixtoxhtml(this)" size="60" /></td>
       </tr>
       <tr>
-        <td class="tablebody1" valign="top" width="30%" align="left"><b>ÄÚ¡¡Èİ</b></td>
+        <td class="tablebody1" valign="top" width="30%" align="left"><b>å†…ã€€å®¹</b></td>
         <td class="tablebody1" valign="middle" align="left"><textarea class="smallarea" name="Content" rows="8" wrap="virtual" cols="60"></textarea></td>
       </tr>
       <tr>
-        <td class="tablebody2" align="center" valign="middle" colspan="2"><input name="submit" type="submit" value="·¢ ²¼" /></td>
+        <td class="tablebody2" align="center" valign="middle" colspan="2"><input name="submit" type="submit" value="å‘ å¸ƒ" /></td>
       </tr>
   </table>
 </form>
 <script language="JavaScript" type="text/javascript">
 <!--
-BoardJumpListSelect('<%=Dvbbs.Boardid%>',"boardid","ÂÛÌ³Ê×Ò³","0",0);
+BoardJumpListSelect('<%=Dvbbs.Boardid%>',"boardid","è®ºå›é¦–é¡µ","0",0);
 //-->
 </script>
 

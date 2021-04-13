@@ -4,12 +4,12 @@
 <%
 Response.Expires=0
 If Dvbbs.BoardID = 0 Then
-	Response.Write "²ÎÊı´íÎó"
+	Response.Write "å‚æ•°é”™è¯¯"
 	Dvbbs.PageEnd()
 	Response.End
 End If
 If Dvbbs.GroupSetting(2)="0"  Then
-	Response.Write "<script language=""javascript"">alert('ÄúÃ»ÓĞÈ¨ÏŞ²é¿´Ìù×Ó!')</script>"
+	Response.Write "<script language=""javascript"">alert('æ‚¨æ²¡æœ‰æƒé™æŸ¥çœ‹è´´å­!')</script>"
 	Dvbbs.PageEnd()
 	Response.End
 End If
@@ -41,7 +41,7 @@ Sub showtree()
 	page=star
 	Dim MyTempStr,ii
 	num=0
-	outtext="¡¡¡¡¡¡&nbsp;&nbsp;"
+	outtext="ã€€ã€€ã€€&nbsp;&nbsp;"
 	Dim totalusetable
 	Set Rs=Dvbbs.Execute("Select child,PostTable from dv_topic where topicid="&rootid)
 	allnum=rs(0)
@@ -88,13 +88,13 @@ Sub showtree()
 			End if
 			MyTempStr=Replace(MyTempStr,"{$atitle}",Dvbbs.HtmlEncode(SQL(6,i)))
 			If SQL(7,i)=2 Then
-				MyTempStr=Replace(MyTempStr,"{$title}","==´Ë·¢ÑÔÒÑ±»¹ÜÀíÔ±ÆÁ±Î==")
+				MyTempStr=Replace(MyTempStr,"{$title}","==æ­¤å‘è¨€å·²è¢«ç®¡ç†å‘˜å±è”½==")
 			ElseIf SQL(7,i)=3 Then
-				MyTempStr=Replace(MyTempStr,"{$title}","==´Ë·¢ÑÔ±»¹Ì·âµÈ´ı½â³ı==")
+				MyTempStr=Replace(MyTempStr,"{$title}","==æ­¤å‘è¨€è¢«å›ºå°ç­‰å¾…è§£é™¤==")
 			ElseIf SQL(8,i)=1 Then
-				MyTempStr=Replace(MyTempStr,"{$title}","==´ËÈËÒÑ±»¹ÜÀíÔ±Ëø¶¨==")
+				MyTempStr=Replace(MyTempStr,"{$title}","==æ­¤äººå·²è¢«ç®¡ç†å‘˜é”å®š==")
 			ElseIf SQL(8,i)=2 Then
-				MyTempStr=Replace(MyTempStr,"{$title}","==´ËÈËËùÓĞ·¢ÑÔÒÑ±»¹ÜÀíÔ±ÆÁ±Î==")
+				MyTempStr=Replace(MyTempStr,"{$title}","==æ­¤äººæ‰€æœ‰å‘è¨€å·²è¢«ç®¡ç†å‘˜å±è”½==")
 			Else	
 				If SQL(6,i)="" Then
 					MyTempStr=Replace(MyTempStr,"{$title}"," "&cutStr(reUBBCode(SQL(3,i)),35) )
@@ -105,10 +105,10 @@ Sub showtree()
 			If Dvbbs.Board_Setting(68)="1" And SQL(9,i)=2 Then
 				If Dvbbs.BoardMaster Then
 					MyTempStr=Replace(MyTempStr,"{$userid}",SQL(5,i))
-					MyTempStr=Replace(MyTempStr,"{$username}",Dvbbs.iHtmlEncode(SQL(4,i))&"  <font color='gray'>(ÄäÃû)</font>")
+					MyTempStr=Replace(MyTempStr,"{$username}",Dvbbs.iHtmlEncode(SQL(4,i))&"  <font color='gray'>(åŒ¿å)</font>")
 				Else
 					MyTempStr=Replace(MyTempStr,"{$userid}","")
-					MyTempStr=Replace(MyTempStr,"{$username}","ÄäÃûÓÃ»§")
+					MyTempStr=Replace(MyTempStr,"{$username}","åŒ¿åç”¨æˆ·")
 				End If
 			Else
 				MyTempStr=Replace(MyTempStr,"{$userid}",SQL(5,i))
@@ -176,9 +176,9 @@ Function reUBBCode(strContent)
 	set re=Nothing
 	reUBBCode=strContent
 End Function
-'½ØÈ¡Ö¸¶¨×Ö·û
+'æˆªå–æŒ‡å®šå­—ç¬¦
 Function cutStr(str,strlen)
-	'È¥µôËùÓĞHTML±ê¼Ç
+	'å»æ‰æ‰€æœ‰HTMLæ ‡è®°
 	Dim re
 	Set re=new RegExp
 	re.IgnoreCase =True

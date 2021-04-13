@@ -19,21 +19,21 @@ Sub Main()
 %>
 <table border="0" cellspacing="1" cellpadding="5" align="center" width="100%">
 	<tr>
-		<th colspan="3" style="text-align:center;" id="TableTitleLink">Ä£°å×¢²áºÍ×¢Ïú¹ÜÀí</th>
+		<th colspan="3" style="text-align:center;" id="TableTitleLink">æ¨¡æ¿æ³¨å†Œå’Œæ³¨é”€ç®¡ç†</th>
 	</tr>
 	<tr>
 		<td class="forumHeaderBackgroundAlternate">
-		×¢²áÄ£°åËµÃ÷£º<br/>
-		¢Ù ½«ĞèÒª×¢²áµÄÄ£°åµÄÄ¿Â¼ÉÏ´«µ½ÂÛÌ³¸ùÄ¿Â¼ÏÂµÄ<font color="#FF0000">Resource</font>Ä¿Â¼ÖĞ£¨Ä£°åÄ¿Â¼Ãû³Æ²»ÄÜÊ¹ÓÃºº×Ö£©£»<br/>
-		¢Ú ÌîĞ´ÏÂÃæ¡°×¢²áÄ£°å¡±µÄÏà¹ØĞÅÏ¢Ìá½»¼´¿É¡£<br/>
-		¢Û ×¢Òâ£º<font color="#FF0000">Ä£°åÄ¿Â¼Ö»Ğ´Ä£°åµÄÎÄ¼ş¼ĞÃû³Æ£¨Èç£ºTemplate_1£©£¬²»ĞèÒªResource/Ç°×º£¡</font><br/>
+		æ³¨å†Œæ¨¡æ¿è¯´æ˜ï¼š<br/>
+		â‘  å°†éœ€è¦æ³¨å†Œçš„æ¨¡æ¿çš„ç›®å½•ä¸Šä¼ åˆ°è®ºå›æ ¹ç›®å½•ä¸‹çš„<font color="#FF0000">Resource</font>ç›®å½•ä¸­ï¼ˆæ¨¡æ¿ç›®å½•åç§°ä¸èƒ½ä½¿ç”¨æ±‰å­—ï¼‰ï¼›<br/>
+		â‘¡ å¡«å†™ä¸‹é¢â€œæ³¨å†Œæ¨¡æ¿â€çš„ç›¸å…³ä¿¡æ¯æäº¤å³å¯ã€‚<br/>
+		â‘¢ æ³¨æ„ï¼š<font color="#FF0000">æ¨¡æ¿ç›®å½•åªå†™æ¨¡æ¿çš„æ–‡ä»¶å¤¹åç§°ï¼ˆå¦‚ï¼šTemplate_1ï¼‰ï¼Œä¸éœ€è¦Resource/å‰ç¼€ï¼</font><br/>
 		<div id="formRegTemp">
 		<form name="formRegTemplate" method="post" action="?action=registerTemplate" onsubmit="return checkform(this);" target="hiddenframe">
-			Ä£°åÃû³Æ£º<input type="text" name="TemplateName" size="15"/>
-			Ä£°åÄ¿Â¼£º<input type="text" name="TemplateFolder" size="15"/>
-			<input type="submit" name="register" value="×¢²á">
-			<br/>×¢£º¢ÙÄ£°åÃû³ÆÈç¹ûÎª¿Õ£¬Ôò½«ÒÔÄ£°åÄ¿Â¼×÷ÎªÄ£°åÃû³Æ£»
-			<br/>&nbsp;&nbsp;&nbsp;&nbsp;¢ÚÄ£°åÄ¿Â¼²»ÄÜÎª¿Õ¡£
+			æ¨¡æ¿åç§°ï¼š<input type="text" name="TemplateName" size="15"/>
+			æ¨¡æ¿ç›®å½•ï¼š<input type="text" name="TemplateFolder" size="15"/>
+			<input type="submit" name="register" value="æ³¨å†Œ">
+			<br/>æ³¨ï¼šâ‘ æ¨¡æ¿åç§°å¦‚æœä¸ºç©ºï¼Œåˆ™å°†ä»¥æ¨¡æ¿ç›®å½•ä½œä¸ºæ¨¡æ¿åç§°ï¼›
+			<br/>&nbsp;&nbsp;&nbsp;&nbsp;â‘¡æ¨¡æ¿ç›®å½•ä¸èƒ½ä¸ºç©ºã€‚
 			<div id="ErrorInfo" style="display:none;"></div>
 		</form>
 		</div>
@@ -41,23 +41,23 @@ Sub Main()
 	</tr>
 	<tr>
 		<td class="forumHeaderBackgroundAlternate">
-		×¢ÏúÄ£°åËµÃ÷£º<br/>
-		¢Ùµã»÷¶ÔÓ¦Ä£°åµÄ¡°×¢Ïú¡±°´Å¥¿ÉÒÔ×¢ÏúÄ£°å£»<br/>
-		¢Ú½«ÒÑ×¢ÏúµÄÄ£°åµÄÄ¿Â¼´ÓÂÛÌ³¸ùÄ¿Â¼ÏÂµÄ<font color="#FF0000">Resource</font>Ä¿Â¼ÖĞÒÆ³ı¡£<br/>
+		æ³¨é”€æ¨¡æ¿è¯´æ˜ï¼š<br/>
+		â‘ ç‚¹å‡»å¯¹åº”æ¨¡æ¿çš„â€œæ³¨é”€â€æŒ‰é’®å¯ä»¥æ³¨é”€æ¨¡æ¿ï¼›<br/>
+		â‘¡å°†å·²æ³¨é”€çš„æ¨¡æ¿çš„ç›®å½•ä»è®ºå›æ ¹ç›®å½•ä¸‹çš„<font color="#FF0000">Resource</font>ç›®å½•ä¸­ç§»é™¤ã€‚<br/>
 		<form name="formLogOutTemplate" method="post" action="?action=logOutTemplate" onsubmit="return logOutTemplate(0,'','');">
 		<input type="hidden" name="id" value=""/>
 		<input type="hidden" name="folder" value=""/>
 		<table width="40%">
 			<tr>
-				<td>Ä£°åÃû³Æ</td>
-				<td>Ä£°åÄ¿Â¼</td>
-				<td>²Ù×÷</td>
+				<td>æ¨¡æ¿åç§°</td>
+				<td>æ¨¡æ¿ç›®å½•</td>
+				<td>æ“ä½œ</td>
 			</tr>
 		<%
 		Dim Rs,SQL
 		Set Rs=Dvbbs.Execute("Select * From Dv_Templates")
 		Do While Not Rs.Eof
-			Response.write "<tr><td>"&Rs(1)&"</td><td>"&Rs(2)&"</td><td><input type=""button"" name=""LogOut"" value=""×¢Ïú"" onclick=""logOutTemplate("&Rs(0)&",'"&Rs(1)&"','"&Rs(2)&"')""/></td></tr>"&chr(10)
+			Response.write "<tr><td>"&Rs(1)&"</td><td>"&Rs(2)&"</td><td><input type=""button"" name=""LogOut"" value=""æ³¨é”€"" onclick=""logOutTemplate("&Rs(0)&",'"&Rs(1)&"','"&Rs(2)&"')""/></td></tr>"&chr(10)
 			Rs.MoveNext
 		Loop
 		%>
@@ -70,7 +70,7 @@ Sub Main()
 <script languange="javascript">
 	function checkform(theForm){
 		if (''==theForm.TemplateFolder.value){
-			document.getElementById('ErrorInfo').innerHTML='<img src="../skins/default/images/note_error.gif"/><font color="red">Ä£°åÄ¿Â¼²»ÄÜÎª¿Õ¡£</font>';
+			document.getElementById('ErrorInfo').innerHTML='<img src="../skins/default/images/note_error.gif"/><font color="red">æ¨¡æ¿ç›®å½•ä¸èƒ½ä¸ºç©ºã€‚</font>';
 			document.getElementById('ErrorInfo').style.display='block';
 			theForm.TemplateFolder.focus();
 			return false;
@@ -81,7 +81,7 @@ Sub Main()
 	}
 	function logOutTemplate(id,templateName,templateFolder){
 		if (0 != id){
-			if (confirm('È·¶¨Òª×¢ÏúÄ£°å¡°'+templateName+'¡±Âğ£¿')){
+			if (confirm('ç¡®å®šè¦æ³¨é”€æ¨¡æ¿â€œ'+templateName+'â€å—ï¼Ÿ')){
 				document.formLogOutTemplate.id.value=id;
 				document.formLogOutTemplate.folder.value=templateFolder;
 				document.formLogOutTemplate.submit();
@@ -100,7 +100,7 @@ Sub RegisterTemplate()
 	TemplateFolder = Dvbbs.CheckStr(Request.Form("TemplateFolder"))
 	If TemplateFolder="" Then
 		Response.write "<script language=""javascript"">"
-		Response.write "parent.document.getElementById('ErrorInfo').innerHTML='<img src=""../skins/default/images/note_error.gif""/><font color=""red"">Ä£°åÄ¿Â¼²»ÄÜÎª¿Õ¡£</font>';"
+		Response.write "parent.document.getElementById('ErrorInfo').innerHTML='<img src=""../skins/default/images/note_error.gif""/><font color=""red"">æ¨¡æ¿ç›®å½•ä¸èƒ½ä¸ºç©ºã€‚</font>';"
 		Response.write "parent.document.getElementById('ErrorInfo').style.display='block';"
 		Response.write "</script>"
 		Response.end
@@ -109,7 +109,7 @@ Sub RegisterTemplate()
 	Set Rs=Dvbbs.Execute("Select * From Dv_Templates Where Folder='"&TemplateFolder&"'")
 	If Not Rs.Eof Then
 		Response.write "<script language=""javascript"">"
-		Response.write "parent.document.getElementById('ErrorInfo').innerHTML='<img src=""../skins/default/images/note_error.gif""/><font color=""red"">Ä£°åÄ¿Â¼¡°"&TemplateFolder&"¡±ÒÑ¾­×¢²á¹ı£¬²»ÄÜÖØ¸´×¢²á¡£</font>';"
+		Response.write "parent.document.getElementById('ErrorInfo').innerHTML='<img src=""../skins/default/images/note_error.gif""/><font color=""red"">æ¨¡æ¿ç›®å½•â€œ"&TemplateFolder&"â€å·²ç»æ³¨å†Œè¿‡ï¼Œä¸èƒ½é‡å¤æ³¨å†Œã€‚</font>';"
 		Response.write "parent.document.getElementById('ErrorInfo').style.display='block';"
 		Response.write "</script>"
 		Response.end
@@ -117,7 +117,7 @@ Sub RegisterTemplate()
 	Rs.Close:Set Rs=Nothing
 	Dvbbs.Execute("Insert Into Dv_Templates(Type,Folder) Values('"&TemplateName&"','"&TemplateFolder&"')")
 	Response.write "<script language=""javascript"">"
-	Response.write "parent.document.getElementById('formRegTemp').innerHTML='<img src=""../skins/default/images/note_ok.gif""/>"&TemplateName&" Ä£°å×¢²á³É¹¦¡£<a href=""Template_RegAndLogout.asp"">·µ»Ø</a>¼ÌĞø×¢²áÄ£°å';"
+	Response.write "parent.document.getElementById('formRegTemp').innerHTML='<img src=""../skins/default/images/note_ok.gif""/>"&TemplateName&" æ¨¡æ¿æ³¨å†ŒæˆåŠŸã€‚<a href=""Template_RegAndLogout.asp"">è¿”å›</a>ç»§ç»­æ³¨å†Œæ¨¡æ¿';"
 	Response.write "</script>"
 	Dvbbs.Loadstyle()
 End Sub
@@ -135,12 +135,12 @@ Sub LogOutTemplate()
 		Dvbbs.Execute("Delete From Dv_Templates Where ID="&ID)
 		Dvbbs.Loadstyle()
 		Response.Write "<script language='javascript'>"
-		Response.Write "alert('Ä£°å×¢Ïú³É¹¦£¬ÇëµÇÂ¼ftp°Ñ¸ÃÄ£°å¶ÔÓ¦µÄÎÄ¼ş¼Ğ"&TemplateFolder&"É¾³ı¡£');"
+		Response.Write "alert('æ¨¡æ¿æ³¨é”€æˆåŠŸï¼Œè¯·ç™»å½•ftpæŠŠè¯¥æ¨¡æ¿å¯¹åº”çš„æ–‡ä»¶å¤¹"&TemplateFolder&"åˆ é™¤ã€‚');"
 		Response.Write "self.location='Template_RegAndLogout.asp';"
 		Response.Write "</script>"
 	Else
 		Response.Write "<script language='javascript'>"
-		Response.Write "alert('Î¨Ò»µÄÒ»·İÄ£°åÊÇ²»¿ÉÒÔ±»×¢ÏúµÄ');"
+		Response.Write "alert('å”¯ä¸€çš„ä¸€ä»½æ¨¡æ¿æ˜¯ä¸å¯ä»¥è¢«æ³¨é”€çš„');"
 		Response.Write "self.location='Template_RegAndLogout.asp';"
 		Response.Write "</script>"
 	End if

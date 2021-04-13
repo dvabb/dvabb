@@ -2,20 +2,20 @@
 Dim Dv_plus
 Set Dv_plus=new Cls_plus
 Class Cls_plus
-	'VBSÀàËµÃ÷£ºÊôĞÔNameÓÃÓÚÌáÈ¡ÉèÖÃ£¬µ÷ÓÃ·½·¨:ÊµÀı.namr=²å¼şID
-	'±äÁ¿Mian_settingÊı×é£¬´æ´¢²å¼ş³£¹æÉèÖÃ,
-	'±äÁ¿plus_SettingsÊı×é£¬´æ´¢²å¼ş×Ô¶¨ÒåÀ©Õ¹ÉèÖÃ
-	'±äÁ¿plus_SettingnamesÊı×é£¬´æ´¢²å¼ş×Ô¶¨ÒåÀ©Õ¹ÉèÖÃµÄ¶¨ÒåµÄ
-	'±äÁ¿plus_Copyright´æ´¢²å¼ş°æÈ¨ĞÅÏ¢¡£
-	'±äÁ¿Plus_Name´æ´¢²å¼şÔÚ²Ëµ¥ÖĞÏÔÊ¾µÄÃû³Æ¡£
-	'plus_master´æ´¢ÊÇ·ñÊÇ²å¼ş¹ÜÀíÔ±µÄ²¼¶ûÖµ
-	'·½·¨checklogin()ÑéÖ¤Ê¹ÓÃ²å¼şµÄÈ¨ÏŞ£¬ÅĞ¶Ï²å¼ş¹ÜÀíÔ±µÄÉí·İ¡£
-	'·½·¨updateuser()¸üĞÂÊ¹ÓÃ²å¼şºóµÄÓÃ»§µÄÊı¾İ£¬Èç½ğÇ®£¬»ı·ÖµÈµÄ¸üĞÂ¡£
+	'VBSç±»è¯´æ˜ï¼šå±æ€§Nameç”¨äºæå–è®¾ç½®ï¼Œè°ƒç”¨æ–¹æ³•:å®ä¾‹.namr=æ’ä»¶ID
+	'å˜é‡Mian_settingæ•°ç»„ï¼Œå­˜å‚¨æ’ä»¶å¸¸è§„è®¾ç½®,
+	'å˜é‡plus_Settingsæ•°ç»„ï¼Œå­˜å‚¨æ’ä»¶è‡ªå®šä¹‰æ‰©å±•è®¾ç½®
+	'å˜é‡plus_Settingnamesæ•°ç»„ï¼Œå­˜å‚¨æ’ä»¶è‡ªå®šä¹‰æ‰©å±•è®¾ç½®çš„å®šä¹‰çš„
+	'å˜é‡plus_Copyrightå­˜å‚¨æ’ä»¶ç‰ˆæƒä¿¡æ¯ã€‚
+	'å˜é‡Plus_Nameå­˜å‚¨æ’ä»¶åœ¨èœå•ä¸­æ˜¾ç¤ºçš„åç§°ã€‚
+	'plus_masterå­˜å‚¨æ˜¯å¦æ˜¯æ’ä»¶ç®¡ç†å‘˜çš„å¸ƒå°”å€¼
+	'æ–¹æ³•checklogin()éªŒè¯ä½¿ç”¨æ’ä»¶çš„æƒé™ï¼Œåˆ¤æ–­æ’ä»¶ç®¡ç†å‘˜çš„èº«ä»½ã€‚
+	'æ–¹æ³•updateuser()æ›´æ–°ä½¿ç”¨æ’ä»¶åçš„ç”¨æˆ·çš„æ•°æ®ï¼Œå¦‚é‡‘é’±ï¼Œç§¯åˆ†ç­‰çš„æ›´æ–°ã€‚
 	Public Mian_settings,plus_Settings,plus_Copyright,Plus_Name,plus_master,plus_Settingnames
 	Public Property Let Name(ByVal vNewValue)
 		Call GetPlus_Setting(vNewValue)
 	End Property
-	'ÑéÖ¤Ê¹ÓÃ²å¼şµÄÈ¨ÏŞ£¬ÅĞ¶Ï²å¼ş¹ÜÀíÔ±µÄÉí·İ¡£
+	'éªŒè¯ä½¿ç”¨æ’ä»¶çš„æƒé™ï¼Œåˆ¤æ–­æ’ä»¶ç®¡ç†å‘˜çš„èº«ä»½ã€‚
 	Public Sub checklogin()
 		plus_master=False
 		If Dvbbs.UserID>0 Then 
@@ -39,11 +39,11 @@ Class Cls_plus
 			   		If IsNumeric(Otime(0)) And IsNumeric(OTime(1)) Then
 						If CInt(OTime(0))< CInt(OTime(1)) Then
 							If Hour(Now) < Cint(Otime(0)) or Hour(Now) > Cint(Otime(1)) Then
-								Response.redirect "showerr.asp?ErrCodes=<li>"&Plus_Name&"<B>"&OTime(0)&"</B>ÖÁ<B>"&OTime(1)&"</B>µã¿ª·Å£¬ÇëÔÚ¹æ¶¨Ê±¼äÄÚÊ¹ÓÃ£¬Ğ»Ğ»¡£&action=plus"
+								Response.redirect "showerr.asp?ErrCodes=<li>"&Plus_Name&"<B>"&OTime(0)&"</B>è‡³<B>"&OTime(1)&"</B>ç‚¹å¼€æ”¾ï¼Œè¯·åœ¨è§„å®šæ—¶é—´å†…ä½¿ç”¨ï¼Œè°¢è°¢ã€‚&action=plus"
 							End If
 						Else
 							If Hour(Now)< Cint(OTime(0)) And Hour(Now) > Cint(OTime(1)) Then
-								Response.redirect "showerr.asp?ErrCodes=<li>"&Plus_Name&"<B>"&OTime(0)&"</B>ÖÁ<B>"&OTime(1)&"</B>µã¿ª·Å£¬ÇëÔÚ¹æ¶¨Ê±¼äÄÚÊ¹ÓÃ£¬Ğ»Ğ»¡£&action=plus"
+								Response.redirect "showerr.asp?ErrCodes=<li>"&Plus_Name&"<B>"&OTime(0)&"</B>è‡³<B>"&OTime(1)&"</B>ç‚¹å¼€æ”¾ï¼Œè¯·åœ¨è§„å®šæ—¶é—´å†…ä½¿ç”¨ï¼Œè°¢è°¢ã€‚&action=plus"
 							End If
 						End If 
 					End If
@@ -52,9 +52,9 @@ Class Cls_plus
 			Dim UserGroupIDlist
 			UserGroupIDlist="@"&Mian_settings(2)&"@"
 			If Not InStr(UserGroupIDlist,"@"&Dvbbs.UserGroupID&"@")>0 Then
-				Response.redirect "showerr.asp?ErrCodes=<li>ÄúÃ»ÓĞÈ¨ÏŞ½øÈë"&Plus_Name&"&action=plus"
+				Response.redirect "showerr.asp?ErrCodes=<li>æ‚¨æ²¡æœ‰æƒé™è¿›å…¥"&Plus_Name&"&action=plus"
 			End If
-			'¼ì²éÊ¹ÓÃ²å¼şµÄÏŞÖÆ,Èç¹ûÉèÖÃÁË¿ÍÈË×é¿ÉÊ¹ÓÃ£¬´ËÅĞ¶ÏºöÂÔ¡£
+			'æ£€æŸ¥ä½¿ç”¨æ’ä»¶çš„é™åˆ¶,å¦‚æœè®¾ç½®äº†å®¢äººç»„å¯ä½¿ç”¨ï¼Œæ­¤åˆ¤æ–­å¿½ç•¥ã€‚
 			If Not InStr(UserGroupIDlist,"@7@")>0 Then
 				Dim Plus_UserPost,Plus_userWealth,Plus_UserEP,Plus_UserCP,Plus_UserPower
 				Plus_UserPost=Mian_settings(4)
@@ -64,34 +64,34 @@ Class Cls_plus
 				Plus_UserPower=Mian_settings(8)	
 				If IsNumeric(Plus_UserPost) Then 
 					If CLng(Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userpost").text)< CLng(Plus_UserPost) Then
-						Response.redirect "showerr.asp?ErrCodes=<li>Ê¹ÓÃ"&Plus_Name&"µÄ×îÉÙ·¢ÌùÊıÊÇ"&Plus_UserPost&",ÄúÖ»ÓĞ" & Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userpost").text & "Æª&action=plus"
+						Response.redirect "showerr.asp?ErrCodes=<li>ä½¿ç”¨"&Plus_Name&"çš„æœ€å°‘å‘è´´æ•°æ˜¯"&Plus_UserPost&",æ‚¨åªæœ‰" & Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userpost").text & "ç¯‡&action=plus"
 					End If
 				End If
 				If IsNumeric(Plus_userWealth) Then 
 					If CLng(Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userwealth").text)< CLng(Plus_userWealth) Then
-						Response.redirect "showerr.asp?ErrCodes=<li>Ê¹ÓÃ"&Plus_Name&"µÄ×îÉÙ½ğÇ®"&Plus_userWealth&",ÄúÖ»ÓĞ"& Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userwealth").text &"&action=plus"
+						Response.redirect "showerr.asp?ErrCodes=<li>ä½¿ç”¨"&Plus_Name&"çš„æœ€å°‘é‡‘é’±"&Plus_userWealth&",æ‚¨åªæœ‰"& Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userwealth").text &"&action=plus"
 					End If
 				End If
 				If IsNumeric(Plus_UserEP) Then 
 					If CLng(Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userep").text)< CLng(Plus_UserEP) Then
-						Response.redirect "showerr.asp?ErrCodes=<li>Ê¹ÓÃ"&Plus_Name&"µÄ×îÉÙ»ı·ÖÊÇ"&Plus_UserEP&",ÄúÖ»ÓĞ"& Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userep").text &"&action=plus"
+						Response.redirect "showerr.asp?ErrCodes=<li>ä½¿ç”¨"&Plus_Name&"çš„æœ€å°‘ç§¯åˆ†æ˜¯"&Plus_UserEP&",æ‚¨åªæœ‰"& Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userep").text &"&action=plus"
 					End If
 				End If
 				If IsNumeric(Plus_UserCP) Then 
 					If CLng(Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usercp").text)< CLng(Plus_UserCP) Then
-						Response.redirect "showerr.asp?ErrCodes=<li>Ê¹ÓÃ"&Plus_Name&"µÄ×îÉÙ÷ÈÁ¦ÊÇ"&Plus_UserCP&",ÄúÖ»ÓĞ"& Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usercp").text &"&action=plus"
+						Response.redirect "showerr.asp?ErrCodes=<li>ä½¿ç”¨"&Plus_Name&"çš„æœ€å°‘é­…åŠ›æ˜¯"&Plus_UserCP&",æ‚¨åªæœ‰"& Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usercp").text &"&action=plus"
 					End If
 				End If
 				If IsNumeric(Plus_UserPower) Then 
 					If Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userpower").text = "" Then Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userpower").text = 0
 					If CLng(Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userpower").text) < CLng(Plus_UserPower) Then
-						Response.redirect "showerr.asp?ErrCodes=<li>Ê¹ÓÃ"&Plus_Name&"µÄ×îÉÙ÷ÈÁ¦ÊÇ"&Plus_UserPower&",ÄúÖ»ÓĞ"& Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userpower").text &"&action=plus"
+						Response.redirect "showerr.asp?ErrCodes=<li>ä½¿ç”¨"&Plus_Name&"çš„æœ€å°‘é­…åŠ›æ˜¯"&Plus_UserPower&",æ‚¨åªæœ‰"& Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userpower").text &"&action=plus"
 					End If
 				End If
 			End If
 		End If
 	End Sub
-	'Ê¹ÓÃ²å¼şºó¸üĞÂÓÃ»§Êı¾İ²¿·Ö
+	'ä½¿ç”¨æ’ä»¶åæ›´æ–°ç”¨æˆ·æ•°æ®éƒ¨åˆ†
 	Public Sub updateuser()
 		If Dvbbs.UserID>0 Then
 			Dim ADDuserWealth,ADDUserEP,ADDUserCP,ADDUserPower
@@ -113,13 +113,13 @@ Class Cls_plus
 			End If
 		End If 
 	End Sub 
-	'---------------È¡µÃ²å¼şÉèÖÃÊı¾İ
+	'---------------å–å¾—æ’ä»¶è®¾ç½®æ•°æ®
 	Public Sub GetPlus_Setting(plus_ID)
-	plus_Settingnames="ÉèÖÃ×Ö¶Î1,ÉèÖÃ×Ö¶Î2,ÉèÖÃ×Ö¶Î3,ÉèÖÃ×Ö¶Î4,ÉèÖÃ×Ö¶Î5,ÉèÖÃ×Ö¶Î6,ÉèÖÃ×Ö¶Î7,ÉèÖÃ×Ö¶Î8,ÉèÖÃ×Ö¶Î9,ÉèÖÃ×Ö¶Î10,ÉèÖÃ×Ö¶Î11,ÉèÖÃ×Ö¶Î12,ÉèÖÃ×Ö¶Î13,ÉèÖÃ×Ö¶Î14,ÉèÖÃ×Ö¶Î15,ÉèÖÃ×Ö¶Î16,ÉèÖÃ×Ö¶Î17,ÉèÖÃ×Ö¶Î18,ÉèÖÃ×Ö¶Î19"
+	plus_Settingnames="è®¾ç½®å­—æ®µ1,è®¾ç½®å­—æ®µ2,è®¾ç½®å­—æ®µ3,è®¾ç½®å­—æ®µ4,è®¾ç½®å­—æ®µ5,è®¾ç½®å­—æ®µ6,è®¾ç½®å­—æ®µ7,è®¾ç½®å­—æ®µ8,è®¾ç½®å­—æ®µ9,è®¾ç½®å­—æ®µ10,è®¾ç½®å­—æ®µ11,è®¾ç½®å­—æ®µ12,è®¾ç½®å­—æ®µ13,è®¾ç½®å­—æ®µ14,è®¾ç½®å­—æ®µ15,è®¾ç½®å­—æ®µ16,è®¾ç½®å­—æ®µ17,è®¾ç½®å­—æ®µ18,è®¾ç½®å­—æ®µ19"
 	plus_Settings="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"
 	Mian_settings="0,0|24,1@2@3@4@5@6@7@8,,0,0,0,0,0,0,0,0,0"
 	plus_Copyright="dvbbs"
-	Plus_Name="Î´Öª²å¼ş"
+	Plus_Name="æœªçŸ¥æ’ä»¶"
 	Dim SettingDatas
 	SettingDatas=Plus_Setting()
 		If IsArray(SettingDatas) Then		
@@ -129,7 +129,7 @@ Class Cls_plus
 					SettingData=SettingDatas(1,i)
 					Plus_Name=SettingDatas(2,i)
 					plus_Copyright=SettingDatas(3,i)
-					Dvbbs.Forum_Copyright=Dvbbs.Forum_Copyright&"<br><b>"&Plus_Name&"</b> ÓÉ"&plus_Copyright&"¿ª·¢"
+					Dvbbs.Forum_Copyright=Dvbbs.Forum_Copyright&"<br><b>"&Plus_Name&"</b> ç”±"&plus_Copyright&"å¼€å‘"
 					Exit For
 				End If
 			Next

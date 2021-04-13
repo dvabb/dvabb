@@ -6,7 +6,7 @@ ajaxPro=CInt(Request.Form("ajaxPost"))
 If ajaxPro=1 Then
 	ajaxPro=True
 Else
-	ajaxPro=False Rem 非ajax登陆
+	ajaxPro=False Rem 闈瀉jax鐧婚檰
 End If
 Dim comeurl
 Dim TruePassWord
@@ -14,7 +14,7 @@ Dim EnterCount
 If Request.Cookies("count")<>"" Then
 	EnterCount=Request.Cookies("count")
 Else
-	EnterCount=Request.QueryString("count")'地址栏带参数
+	EnterCount=Request.QueryString("count")'鍦板潃鏍忓甫鍙傛暟
 End If
 Dvbbs.LoadTemplates("login")
 Select Case request("winaction")

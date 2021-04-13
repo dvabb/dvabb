@@ -9,7 +9,7 @@
 <link href="skins/css/main.css" rel="stylesheet" type="text/css" />
 <TITLE>Label</TITLE>
 <style type="text/css">
-body  { margin:0px; background:#fff; margin:0px; padding:10px; font:normal 12px ËÎÌå; 
+body  { margin:0px; background:#fff; margin:0px; padding:10px; font:normal 12px å®‹ä½“; 
 SCROLLBAR-FACE-COLOR: #C9DEFA; SCROLLBAR-HIGHLIGHT-COLOR: #C9DEFA; 
 SCROLLBAR-SHADOW-COLOR: #337ABB; SCROLLBAR-DARKSHADOW-COLOR: #C9DEFA; 
 SCROLLBAR-3DLIGHT-COLOR: #C9DEFA; SCROLLBAR-ARROW-COLOR: #264580;
@@ -119,7 +119,7 @@ Function CreateFSO()
 	Set CreateFSO = Dvbbs.iCreateObject("Scripting.FileSystemObject")
 	If Err Then 
 		Err.Clear
-		response.write "ÄúµÄ¿Õ¼ä²»Ö§³ÖFSO£¬»òÕßFSO¶ÔÏóÃûÓÉÓÚ°²È«Ô­Òò±»¸ü¸Ä¹ı£¬ÇëÓë¿Õ¼äÉÌÁªÏµ£¡<a href='javascript:history.go(-1)'>[·µ»ØÉÏÒ»´Î²Ù×÷µÄÒ³Ãæ]</a>"
+		response.write "æ‚¨çš„ç©ºé—´ä¸æ”¯æŒFSOï¼Œæˆ–è€…FSOå¯¹è±¡åç”±äºå®‰å…¨åŸå› è¢«æ›´æ”¹è¿‡ï¼Œè¯·ä¸ç©ºé—´å•†è”ç³»ï¼<a href='javascript:history.go(-1)'>[è¿”å›ä¸Šä¸€æ¬¡æ“ä½œçš„é¡µé¢]</a>"
 		response.End 
 	End If 
 End Function 
@@ -132,26 +132,26 @@ Sub ListLabelFolder(sLabelPath)
 	Set Folder = Fso.GetFolder(sRealPath) 
 	If Err Then
 		Err.Clear
-		response.write "´«µİ¹ıÀ´µÄ±êÇ©Ä¿Â¼ÓĞÎó£¬»òÕßÄúµÄ¿Õ¼ä²»Ö§³Ö»ñÈ¡Ä¿Â¼²Ù×÷£¬ÇëÓë¿Õ¼äÉÌÁªÏµ£¡<a href='javascript:history.go(-1)'>[·µ»ØÉÏÒ»´Î²Ù×÷µÄÒ³Ãæ]</a>"
+		response.write "ä¼ é€’è¿‡æ¥çš„æ ‡ç­¾ç›®å½•æœ‰è¯¯ï¼Œæˆ–è€…æ‚¨çš„ç©ºé—´ä¸æ”¯æŒè·å–ç›®å½•æ“ä½œï¼Œè¯·ä¸ç©ºé—´å•†è”ç³»ï¼<a href='javascript:history.go(-1)'>[è¿”å›ä¸Šä¸€æ¬¡æ“ä½œçš„é¡µé¢]</a>"
 		response.End 
 	End If 
 	If "/"<>sLabelPath Then
-		If ""<>G_ParentFolder And "/"<>G_ParentFolder Then response.write "<a href='?folder=' class=folder title='·µ»Ø¸ùÄ¿Â¼'>/<br/><em>·µ»Ø¸ùÄ¿Â¼</em></a>"
-		response.write "<a href='?folder=" & G_ParentFolder & "' class=folder title='·µ»ØÉÏÒ»¼¶Ä¿Â¼'>../<br/><em>·µ»ØÉÏÒ»¼¶Ä¿Â¼</em></a>"
+		If ""<>G_ParentFolder And "/"<>G_ParentFolder Then response.write "<a href='?folder=' class=folder title='è¿”å›æ ¹ç›®å½•'>/<br/><em>è¿”å›æ ¹ç›®å½•</em></a>"
+		response.write "<a href='?folder=" & G_ParentFolder & "' class=folder title='è¿”å›ä¸Šä¸€çº§ç›®å½•'>../<br/><em>è¿”å›ä¸Šä¸€çº§ç›®å½•</em></a>"
 	End If 
 	G_i = 0
 	For Each SubFolder In Folder.Subfolders
 		G_i = G_i + 1
-		response.write "<a href='?folder=" & sLabelPath & SubFolder.name & "/' class=folder  title='±êÇ©Ä¿Â¼£º" & SubFolder.name & VBNewline & "µã»÷´ò¿ª¸ÃÄ¿Â¼'>" & SubFolder.name & "<br/><em>ÓĞ" & SubFolder.Subfolders.Count & "¸öÄ¿Â¼</em><br/><em>ÓĞ" & SubFolder.Files.Count & "¸ö±êÇ©</em></a>"
+		response.write "<a href='?folder=" & sLabelPath & SubFolder.name & "/' class=folder  title='æ ‡ç­¾ç›®å½•ï¼š" & SubFolder.name & VBNewline & "ç‚¹å‡»æ‰“å¼€è¯¥ç›®å½•'>" & SubFolder.name & "<br/><em>æœ‰" & SubFolder.Subfolders.Count & "ä¸ªç›®å½•</em><br/><em>æœ‰" & SubFolder.Files.Count & "ä¸ªæ ‡ç­¾</em></a>"
 	Next 
 	For Each File In Folder.Files
 		G_i = G_i + 1
-		response.write "<a href='?do=edit_label&realdo=edit&file=" & File.name & "&folder=" & sLabelPath & "' class=file title='±êÇ©Ãû£º" & File.name & VBNewline & "µã»÷±à¼­¸Ã±êÇ©'>" & File.name & "<br><em>" & File.DateLastModified & "</em></a>"
+		response.write "<a href='?do=edit_label&realdo=edit&file=" & File.name & "&folder=" & sLabelPath & "' class=file title='æ ‡ç­¾åï¼š" & File.name & VBNewline & "ç‚¹å‡»ç¼–è¾‘è¯¥æ ‡ç­¾'>" & File.name & "<br><em>" & File.DateLastModified & "</em></a>"
 	Next 
 	Set File = Nothing 
 	Set Fso	= Nothing 
 	If 0=G_i Then
-		response.write "Ã»ÓĞÕÒµ½×Ô¶¨Òå±êÇ©¡£Äú¿ÉÒÔÔÚÏÂÃæµÄ±í¸ñÖĞÌí¼Ó£º"
+		response.write "æ²¡æœ‰æ‰¾åˆ°è‡ªå®šä¹‰æ ‡ç­¾ã€‚æ‚¨å¯ä»¥åœ¨ä¸‹é¢çš„è¡¨æ ¼ä¸­æ·»åŠ ï¼š"
 	End If 
 End Sub 
 
@@ -174,24 +174,24 @@ Sub DelLabel()
 		On Error Resume Next 
 		sRealPath=Server.MapPath(Dvbbs.ScriptPath&sLabelPath&sLabelName&".tpl")
 		If Err Then 
-			G_Msg="<font color=red>´«µİ¹ıÀ´µÄÂ·¾¶²»¹æ·¶¡£Çëµ½¿Õ¼äÉÏÊÖ¶¯É¾³ı¸ÃÎÄ¼ş¡£</font>"
+			G_Msg="<font color=red>ä¼ é€’è¿‡æ¥çš„è·¯å¾„ä¸è§„èŒƒã€‚è¯·åˆ°ç©ºé—´ä¸Šæ‰‹åŠ¨åˆ é™¤è¯¥æ–‡ä»¶ã€‚</font>"
 		Else 
 			Set Fso=CreateFSO()
 			If Fso.FileExists(sRealPath) Then
 				Fso.DeleteFile sRealPath,True
 				If Err Then
 					Err.Clear
-					G_Msg="<font color=red>ÔÚÉ¾³ı±êÇ©ÎÄ¼şÊ±·¢Éú´íÎó£¬¿ÉÄÜÊÇÃ»ÓĞ×ã¹»µÄÈ¨ÏŞ¡£Çëµ½¿Õ¼äÉÏÊÖ¶¯É¾³ı´Ë±êÇ©ÎÄ¼ş¡£</font>"
+					G_Msg="<font color=red>åœ¨åˆ é™¤æ ‡ç­¾æ–‡ä»¶æ—¶å‘ç”Ÿé”™è¯¯ï¼Œå¯èƒ½æ˜¯æ²¡æœ‰è¶³å¤Ÿçš„æƒé™ã€‚è¯·åˆ°ç©ºé—´ä¸Šæ‰‹åŠ¨åˆ é™¤æ­¤æ ‡ç­¾æ–‡ä»¶ã€‚</font>"
 				Else
-					G_Msg="<font color=green>³É¹¦É¾³ı±êÇ©£º"&sLabelName&"</font>"
+					G_Msg="<font color=green>æˆåŠŸåˆ é™¤æ ‡ç­¾ï¼š"&sLabelName&"</font>"
 				End If 
 			Else
-				G_Msg="<font color=red>±êÇ©ÎÄ¼şÃ»ÓĞÕÒµ½¡£¿ÉÄÜÒÑ¾­±»É¾³ı£¬»òÕßÃ»ÓĞ×ã¹»µÄÈ¨ÏŞ¡£</font>"
+				G_Msg="<font color=red>æ ‡ç­¾æ–‡ä»¶æ²¡æœ‰æ‰¾åˆ°ã€‚å¯èƒ½å·²ç»è¢«åˆ é™¤ï¼Œæˆ–è€…æ²¡æœ‰è¶³å¤Ÿçš„æƒé™ã€‚</font>"
 			End If 
 			Set Fso=Nothing 
 		End If 
 	Else
-		G_Msg="<font color=red>´«µİ¹ıÀ´µÄÂ·¾¶ÒòÎª°²È«Ô­Òò±»½ûÖ¹¡£Çëµ½¿Õ¼äÉÏÊÖ¶¯É¾³ı¸ÃÎÄ¼ş¡£</font>"
+		G_Msg="<font color=red>ä¼ é€’è¿‡æ¥çš„è·¯å¾„å› ä¸ºå®‰å…¨åŸå› è¢«ç¦æ­¢ã€‚è¯·åˆ°ç©ºé—´ä¸Šæ‰‹åŠ¨åˆ é™¤è¯¥æ–‡ä»¶ã€‚</font>"
 	End If 
 End Sub 
 
@@ -213,7 +213,7 @@ Sub SaveRssLabel()
 	If oXml.loadXml(sXslt) Then 
 		SaveLabelToFile sSave
 	Else
-		G_Msg="<font color=red>½âÊÍÄ£°åÄÚÈİ²»¹æ·¶£¬ÇëĞŞ¸ÄºóÖØĞÂÌá½»¡£</font>"
+		G_Msg="<font color=red>è§£é‡Šæ¨¡æ¿å†…å®¹ä¸è§„èŒƒï¼Œè¯·ä¿®æ”¹åé‡æ–°æäº¤ã€‚</font>"
 		G_Config=Split(sSave,"|||")
 	End If 
 End Sub 
@@ -230,7 +230,7 @@ Sub SaveQueryLabel()
 	sQuery="select top "&arr(0)&" "
 	sQueryType=Replace(sQueryType,"|||","")
 	Select Case sQueryType
-		Case "bbs" '0-µ÷ÓÃ¼ÇÂ¼ÌõÊı$1-ÅÅĞò·½Ê½$2-Õıµ¹Ğò$3-°æÃæÁĞ±í$4-°æÃæÄ£Ê½$5-Ìù×ÓÀàĞÍ(0-²»ÏŞ1-¹Ì¶¥Ö÷Ìâ2-¾«»ªÖ÷Ìâ3-»Ø¸´Ìù×Ó)$6-Ê±¼äÏŞÖÆ
+		Case "bbs" '0-è°ƒç”¨è®°å½•æ¡æ•°$1-æ’åºæ–¹å¼$2-æ­£å€’åº$3-ç‰ˆé¢åˆ—è¡¨$4-ç‰ˆé¢æ¨¡å¼$5-è´´å­ç±»å‹(0-ä¸é™1-å›ºé¡¶ä¸»é¢˜2-ç²¾åä¸»é¢˜3-å›å¤è´´å­)$6-æ—¶é—´é™åˆ¶
 			sPreT="":sPreB=""
 			If "3"=arr(5) Then
 				sQuery=sQuery&" UserName,Topic,Rootid,Boardid,Dateandtime,Announceid,Body,Expression from "&Dvbbs.NowUseBBS
@@ -446,18 +446,18 @@ Sub SaveLabelToFile(Content)
 	If IsSafeParam(sLabelPath,"^[a-zA-Z0-9_\/]+$") Then 
 		If IsSafeParam(sLabelName,"^[a-zA-Z0-9_]+$") Then
 			If "add"=request("realdo") Then
-				If FileIsExist(Dvbbs.ScriptPath&sLabelPath&sLabelName&".tpl") Then G_Msg="<font color=red>¸Ã±êÇ©ÃûÒÑ´æÔÚ£¬ÇëĞŞ¸Ä±êÇ©ÃûºóÖØĞÂÌá½»¡£</font>"
+				If FileIsExist(Dvbbs.ScriptPath&sLabelPath&sLabelName&".tpl") Then G_Msg="<font color=red>è¯¥æ ‡ç­¾åå·²å­˜åœ¨ï¼Œè¯·ä¿®æ”¹æ ‡ç­¾ååé‡æ–°æäº¤ã€‚</font>"
 			Else
 				If sLabelOldName<>"" And sLabelOldName<>sLabelName Then 
 					If FileIsExist(Dvbbs.ScriptPath&sLabelPath&sLabelName&".tpl") Then
-						G_Msg="<font color=red>ÄúÊÔÍ¼ĞŞ¸Ä±êÇ©Ãû£¬µ«ÊÇ¸Ã±êÇ©ÃûÒÑ´æÔÚ£¬ÇëĞŞ¸ÄºóÖØĞÂÌá½»¡£</font>"
+						G_Msg="<font color=red>æ‚¨è¯•å›¾ä¿®æ”¹æ ‡ç­¾åï¼Œä½†æ˜¯è¯¥æ ‡ç­¾åå·²å­˜åœ¨ï¼Œè¯·ä¿®æ”¹åé‡æ–°æäº¤ã€‚</font>"
 					Else
 						If IsSafeParam(sLabelOldName,"^[a-zA-Z0-9_]+$") Then 
 							If Not FileReName(Dvbbs.ScriptPath&sLabelPath&sLabelOldName&".tpl", sLabelName&".tpl") Then 
-								G_Msg="<font color=red>ÄúÊÔÍ¼ĞŞ¸Ä±êÇ©Ãû£¬µ«ÊÇÃ»ÓĞ³É¹¦¡£¿ÉÄÜÊÇÈ¨ÏŞ²»¹»¡£</font>"
+								G_Msg="<font color=red>æ‚¨è¯•å›¾ä¿®æ”¹æ ‡ç­¾åï¼Œä½†æ˜¯æ²¡æœ‰æˆåŠŸã€‚å¯èƒ½æ˜¯æƒé™ä¸å¤Ÿã€‚</font>"
 							End If
 						Else
-							G_Msg="<font color=red>·Ç·¨²ÎÊı¡£ÇëĞŞ¸ÄºóÖØĞÂÌá½»¡£</font>"
+							G_Msg="<font color=red>éæ³•å‚æ•°ã€‚è¯·ä¿®æ”¹åé‡æ–°æäº¤ã€‚</font>"
 						End If 
 					End If 
 				End If 
@@ -467,19 +467,19 @@ Sub SaveLabelToFile(Content)
 				Dvbbs.WriteToFile sLabelPath&sLabelName&".tpl", Content
 				If Err Then 
 					Err.Clear
-					G_Msg="<font color=red>±êÇ©±£´æÊ§°Ü¡£¿ÉÄÜÄúµÄ±êÇ©ÎÄ¼ş¼Ğ£¨Resource/Label£©¼°Æä×ÓÄ¿Â¼Ã»ÓĞĞ´ÈëºÍĞŞ¸ÄÈ¨ÏŞ¡£</font>"
+					G_Msg="<font color=red>æ ‡ç­¾ä¿å­˜å¤±è´¥ã€‚å¯èƒ½æ‚¨çš„æ ‡ç­¾æ–‡ä»¶å¤¹ï¼ˆResource/Labelï¼‰åŠå…¶å­ç›®å½•æ²¡æœ‰å†™å…¥å’Œä¿®æ”¹æƒé™ã€‚</font>"
 				Else
-					G_Msg="<font color=green>¹§Ï²£¬±êÇ©±£´æ³É¹¦£¡</font>"
+					G_Msg="<font color=green>æ­å–œï¼Œæ ‡ç­¾ä¿å­˜æˆåŠŸï¼</font>"
 					Application.Lock
 					Application.Contents.Remove(Dvbbs.CacheName&"_label_"&LCase(Mid(sLabelPath,2)&sLabelName)&"_buffer")
 					Application.unLock
 				End If 
 			End If 
 		Else
-			G_Msg="<font color=red>±êÇ©Ãû²»¹æ·¶¡£±êÇ©ÃûÖ»ÄÜÓÉ×ÖÄ¸¡¢Êı×ÖºÍÏÂ»®Ïß×é³É¡£ÇëĞŞ¸ÄºóÖØĞÂÌá½»¡£</font>"
+			G_Msg="<font color=red>æ ‡ç­¾åä¸è§„èŒƒã€‚æ ‡ç­¾ååªèƒ½ç”±å­—æ¯ã€æ•°å­—å’Œä¸‹åˆ’çº¿ç»„æˆã€‚è¯·ä¿®æ”¹åé‡æ–°æäº¤ã€‚</font>"
 		End If 
 	Else
-		G_Msg="<font color=red>±£´æÄ¿Â¼Ãû³Æ²»¹æ·¶¡£Ä¿Â¼Ãû³ÆÖ»ÄÜÓÉ×ÖÄ¸¡¢Êı×ÖºÍÏÂ»®Ïß×é³É¡£Çëµ½¿Õ¼äµÄÏàÓ¦ÎÄ¼ş¼ĞÖĞĞŞ¸ÄÄ¿Â¼Ãû¡£</font>"
+		G_Msg="<font color=red>ä¿å­˜ç›®å½•åç§°ä¸è§„èŒƒã€‚ç›®å½•åç§°åªèƒ½ç”±å­—æ¯ã€æ•°å­—å’Œä¸‹åˆ’çº¿ç»„æˆã€‚è¯·åˆ°ç©ºé—´çš„ç›¸åº”æ–‡ä»¶å¤¹ä¸­ä¿®æ”¹ç›®å½•åã€‚</font>"
 	End If 
 	G_Config=Split(Content,"|||")
 End Sub 
@@ -492,19 +492,19 @@ function $(i){return document.getElementById(i);}
 function Label_Chk(o,restr){
 	var re=new RegExp(restr);
 	if (re.test(o.value)){
-		$(o.name+"_chk").innerHTML="<font color=green><b>¡Ì</b></font>";
+		$(o.name+"_chk").innerHTML="<font color=green><b>âˆš</b></font>";
 		return true;
 	}else{
-		$(o.name+"_chk").innerHTML="<font color=red><b>¡Á</b></font>";
+		$(o.name+"_chk").innerHTML="<font color=red><b>Ã—</b></font>";
 		return false;
 	}
 }
 function Label_FormatTime(i){
 	var t=0;
-	if (i<60){t=i+'Ãë';}
-	else if (i<3600){t=parseInt(i/60)+'·ÖÖÖ';}
-	else{t=parseInt(i/3600)+'Ğ¡Ê±';}
-	return 'µ±Ç°»º´æÊ±¼äÔ¼'+t;
+	if (i<60){t=i+'ç§’';}
+	else if (i<3600){t=parseInt(i/60)+'åˆ†ç§';}
+	else{t=parseInt(i/3600)+'å°æ—¶';}
+	return 'å½“å‰ç¼“å­˜æ—¶é—´çº¦'+t;
 }
 function Label_Submit(frm,e){
 	var s,rtn=false; 
@@ -533,10 +533,10 @@ function Label_Submit(frm,e){
 	}
 	if (rtn){
 		frm.subtn.disabled=true;
-		$("form_chk").innerHTML="<font color=green>¼ì²éÍ¨¹ı£¬ÕıÔÚÌá½»£¬ÇëÉÔµÈ..</font>";
+		$("form_chk").innerHTML="<font color=green>æ£€æŸ¥é€šè¿‡ï¼Œæ­£åœ¨æäº¤ï¼Œè¯·ç¨ç­‰..</font>";
 	}else{
 		frm.subtn.disabled=false;
-		$("form_chk").innerHTML="<font color=red>¼ì²éÎ´Í¨¹ı£¬ÇëĞŞ¸ÄºóÖØĞÂÌá½»¡£</font>";
+		$("form_chk").innerHTML="<font color=red>æ£€æŸ¥æœªé€šè¿‡ï¼Œè¯·ä¿®æ”¹åé‡æ–°æäº¤ã€‚</font>";
 		try{e.returnValue=false;}catch(er){e.preventDefault();}
 	}
 }
@@ -593,22 +593,22 @@ function Label_Query_ChangeType(fromtype,totype,cfgstr,timetype){
 	$('tr_bbs').style.display='none';
 	$('tr_file').style.display='none';
 	$('label_order_by').length=null;
-	$('label_order_by').options[0]=new Option('Ñ¡ÔñÅÅĞò·½Ê½','0');
+	$('label_order_by').options[0]=new Option('é€‰æ‹©æ’åºæ–¹å¼','0');
 	var t=totype||'bbs',i=0;
 	var c=cfgstr;
 	var m=isNaN(timetype)?0:parseInt(timetype);
 	var arr=c?c.split('$'):[];
 	switch(t){
 		case 'bbs':
-			if(7!=arr.length||fromtype!=totype){c='10$1$1$$0$0$0';arr=c.split('$');}//0-µ÷ÓÃ¼ÇÂ¼ÌõÊı$1-ÅÅĞò·½Ê½$2-Õıµ¹Ğò$3-°æÃæÁĞ±í$4-°æÃæÄ£Ê½$5-Ìù×ÓÀàĞÍ$6-Ê±¼äÏŞÖÆ
+			if(7!=arr.length||fromtype!=totype){c='10$1$1$$0$0$0';arr=c.split('$');}//0-è°ƒç”¨è®°å½•æ¡æ•°$1-æ’åºæ–¹å¼$2-æ­£å€’åº$3-ç‰ˆé¢åˆ—è¡¨$4-ç‰ˆé¢æ¨¡å¼$5-è´´å­ç±»å‹$6-æ—¶é—´é™åˆ¶
 			Label_SelectMutiOption($('label_board').options,arr[3]||'');
 			$('label_board_0').checked=false;
 			$('label_board_1').checked=false;
 			$('label_board_'+arr[4]).checked=true;
-			$('label_order_by').options[++i]=new Option('Ìù×ÓID£¨ÍÆ¼ö£©',i);
-			$('label_order_by').options[++i]=new Option('×îĞÂ»Ø¸´Ê±¼ä',i);
-			$('label_order_by').options[++i]=new Option('µã»÷Á¿',i);
-			$('label_order_by').options[++i]=new Option('»Ø¸´Êı',i);
+			$('label_order_by').options[++i]=new Option('è´´å­IDï¼ˆæ¨èï¼‰',i);
+			$('label_order_by').options[++i]=new Option('æœ€æ–°å›å¤æ—¶é—´',i);
+			$('label_order_by').options[++i]=new Option('ç‚¹å‡»é‡',i);
+			$('label_order_by').options[++i]=new Option('å›å¤æ•°',i);
 			$('label_bbstype_0').checked=false;
 			$('label_bbstype_1').checked=false;
 			$('label_bbstype_2').checked=false;
@@ -619,38 +619,38 @@ function Label_Query_ChangeType(fromtype,totype,cfgstr,timetype){
 			$('label_time_limit').selectedIndex=arr[6]||0;
 			break;
 		case 'user':
-			if(3!=arr.length||fromtype!=totype){c='10$1$1';arr=c.split('$');}//0-µ÷ÓÃ¼ÇÂ¼ÌõÊı$1-ÅÅĞò·½Ê½$2-Õıµ¹Ğò
-			$('label_order_by').options[++i]=new Option('ÓÃ»§ID£¨ÍÆ¼ö£©',i);
-			$('label_order_by').options[++i]=new Option('Ìù×ÓÊı',i);
-			$('label_order_by').options[++i]=new Option('Ö÷ÌâÊı',i);
-			$('label_order_by').options[++i]=new Option('¾«»ªÊı',i);
-			$('label_order_by').options[++i]=new Option('½ğÇ®Öµ',i);
-			$('label_order_by').options[++i]=new Option('»ı·ÖÖµ',i);
-			$('label_order_by').options[++i]=new Option('÷ÈÁ¦Öµ',i);
-			$('label_order_by').options[++i]=new Option('±»É¾ÌùÊı',i);
-			$('label_order_by').options[++i]=new Option('µÇÂ½´ÎÊı',i);
+			if(3!=arr.length||fromtype!=totype){c='10$1$1';arr=c.split('$');}//0-è°ƒç”¨è®°å½•æ¡æ•°$1-æ’åºæ–¹å¼$2-æ­£å€’åº
+			$('label_order_by').options[++i]=new Option('ç”¨æˆ·IDï¼ˆæ¨èï¼‰',i);
+			$('label_order_by').options[++i]=new Option('è´´å­æ•°',i);
+			$('label_order_by').options[++i]=new Option('ä¸»é¢˜æ•°',i);
+			$('label_order_by').options[++i]=new Option('ç²¾åæ•°',i);
+			$('label_order_by').options[++i]=new Option('é‡‘é’±å€¼',i);
+			$('label_order_by').options[++i]=new Option('ç§¯åˆ†å€¼',i);
+			$('label_order_by').options[++i]=new Option('é­…åŠ›å€¼',i);
+			$('label_order_by').options[++i]=new Option('è¢«åˆ è´´æ•°',i);
+			$('label_order_by').options[++i]=new Option('ç™»é™†æ¬¡æ•°',i);
 			$('label_query_type').selectedIndex=2;
 			break;
 		case 'news':
-			if(5!=arr.length||fromtype!=totype){c='10$1$1$$0';arr=c.split('$');}//0-µ÷ÓÃ¼ÇÂ¼ÌõÊı$1-ÅÅĞò·½Ê½$2-Õıµ¹Ğò$3-°æÃæÁĞ±í$4-°æÃæÄ£Ê½
+			if(5!=arr.length||fromtype!=totype){c='10$1$1$$0';arr=c.split('$');}//0-è°ƒç”¨è®°å½•æ¡æ•°$1-æ’åºæ–¹å¼$2-æ­£å€’åº$3-ç‰ˆé¢åˆ—è¡¨$4-ç‰ˆé¢æ¨¡å¼
 			Label_SelectMutiOption($('label_board').options,arr[3]||'0');
 			$('label_board_0').checked=false;
 			$('label_board_1').checked=false;
 			$('label_board_'+arr[4]).checked=true;
-			$('label_order_by').options[++i]=new Option('¹«¸æID',i);
+			$('label_order_by').options[++i]=new Option('å…¬å‘ŠID',i);
 			$('tr_board').style.display='';
 			$('label_query_type').selectedIndex=3;
 			break;
 		case 'file':
-			if(6!=arr.length||fromtype!=totype){c='10$1$1$$0$1';arr=c.split('$');}//0-µ÷ÓÃ¼ÇÂ¼ÌõÊı$1-ÅÅĞò·½Ê½$2-Õıµ¹Ğò$3-°æÃæÁĞ±í$4-°æÃæÄ£Ê½$5-ÎÄ¼şÀàĞÍ$6-ºó×ºÃû
+			if(6!=arr.length||fromtype!=totype){c='10$1$1$$0$1';arr=c.split('$');}//0-è°ƒç”¨è®°å½•æ¡æ•°$1-æ’åºæ–¹å¼$2-æ­£å€’åº$3-ç‰ˆé¢åˆ—è¡¨$4-ç‰ˆé¢æ¨¡å¼$5-æ–‡ä»¶ç±»å‹$6-åç¼€å
 			Label_SelectMutiOption($('label_board').options,arr[3]||'0');
 			$('label_board_0').checked=false;
 			$('label_board_1').checked=false;
 			$('label_board_'+arr[4]).checked=true;
-			$('label_order_by').options[++i]=new Option('¸½¼şID£¨ÍÆ¼ö£©',i);
-			$('label_order_by').options[++i]=new Option('ä¯ÀÀ´ÎÊı',i);
-			$('label_order_by').options[++i]=new Option('ÏÂÔØ´ÎÊı',i);
-			$('label_order_by').options[++i]=new Option('ÎÄ¼ş´óĞ¡',i);
+			$('label_order_by').options[++i]=new Option('é™„ä»¶IDï¼ˆæ¨èï¼‰',i);
+			$('label_order_by').options[++i]=new Option('æµè§ˆæ¬¡æ•°',i);
+			$('label_order_by').options[++i]=new Option('ä¸‹è½½æ¬¡æ•°',i);
+			$('label_order_by').options[++i]=new Option('æ–‡ä»¶å¤§å°',i);
 			$('label_file_type').selectedIndex='all'==arr[5]?0:parseInt(arr[5])+1;
 			$('tr_board').style.display='';
 			$('tr_file').style.display='';
@@ -669,19 +669,19 @@ function Label_Query_ChangeType(fromtype,totype,cfgstr,timetype){
 <form name="form1" method="post" action="?do=save_label" onsubmit="Label_Submit(this,event)">
 <table width="100%" border="0" cellspacing="1" cellpadding="0">
 	<tr>
-	<td width="170" class="td_title" style="border:0px;">×Ô¶¨Òå±êÇ©ÁĞ±í</td><td width="*" class="td_title" style="border:0px;"></td>
+	<td width="170" class="td_title" style="border:0px;">è‡ªå®šä¹‰æ ‡ç­¾åˆ—è¡¨</td><td width="*" class="td_title" style="border:0px;"></td>
 	</tr>
 	<tr>
 	<td align="left" colspan="2" valign="middle" style="height:140px;padding:10px;margin:10px;"><%ListLabelFolder G_CurrentFolder%></td>
 	</tr>
 	<tr>
-	<td align="left" colspan="2" class="td_title">Ìí¼Ó×Ô¶¨Òå±êÇ©[ <a href="?do=add&label_type=static&folder=<%=G_CurrentFolder%>" title="µãÕâÀïÌí¼ÓÒ»¸ö¾²Ì¬±êÇ©">¾²Ì¬±êÇ©</a> - <a href="?do=add&label_type=rss&folder=<%=G_CurrentFolder%>" title="µãÕâÀïÌí¼ÓÒ»¸öRSS¶©ÔÄ±êÇ©">RSS¶©ÔÄ±êÇ©</a> - <a href="?do=add&label_type=query&folder=<%=G_CurrentFolder%>" title="µãÕâÀïÌí¼ÓÒ»¸öÂÛÌ³ÄÚÈİµ÷ÓÃ±êÇ©">ÂÛÌ³ÄÚÈİµ÷ÓÃ±êÇ©</a> ]</td>
+	<td align="left" colspan="2" class="td_title">æ·»åŠ è‡ªå®šä¹‰æ ‡ç­¾[ <a href="?do=add&label_type=static&folder=<%=G_CurrentFolder%>" title="ç‚¹è¿™é‡Œæ·»åŠ ä¸€ä¸ªé™æ€æ ‡ç­¾">é™æ€æ ‡ç­¾</a> - <a href="?do=add&label_type=rss&folder=<%=G_CurrentFolder%>" title="ç‚¹è¿™é‡Œæ·»åŠ ä¸€ä¸ªRSSè®¢é˜…æ ‡ç­¾">RSSè®¢é˜…æ ‡ç­¾</a> - <a href="?do=add&label_type=query&folder=<%=G_CurrentFolder%>" title="ç‚¹è¿™é‡Œæ·»åŠ ä¸€ä¸ªè®ºå›å†…å®¹è°ƒç”¨æ ‡ç­¾">è®ºå›å†…å®¹è°ƒç”¨æ ‡ç­¾</a> ]</td>
 	</tr>
 	<tr>
-	<td align="right">ÈıÖÖ±êÇ©µÄËµÃ÷£º</td>
-	<td>¢Ù ¾²Ì¬±êÇ©£º±à¼­Ö®ºó£¬±êÇ©ÄÚÈİ²»»á±ä»¯¡£ÊÊºÏÓÚÒ»Ğ©²»³£¸Ä¶¯µ«¶à´¦Ê¹ÓÃµÄÒ³ÃæÄÚÈİ¡£ <br />
-	¢Ú RSS¶©ÔÄ±êÇ©£º¶©ÔÄÖ¸¶¨ÄÚÈİ£¬¶¨Ê±¸üĞÂÄÚÈİ¡£ÕâĞ©ÄÚÈİ²»ÏŞÓÚ±¾ÂÛÌ³¡£ <br />
-	¢Û ÂÛÌ³ÄÚÈİµ÷ÓÃ±êÇ©£º¿ÉÒÔµ÷ÓÃÂÛÌ³Êı¾İ¿âÖĞµÄÄÚÈİ£¬°üÀ¨Ìù×Ó¡¢ÓÃ»§¡¢°æÃæµÈ¡£<br />
+	<td align="right">ä¸‰ç§æ ‡ç­¾çš„è¯´æ˜ï¼š</td>
+	<td>â‘  é™æ€æ ‡ç­¾ï¼šç¼–è¾‘ä¹‹åï¼Œæ ‡ç­¾å†…å®¹ä¸ä¼šå˜åŒ–ã€‚é€‚åˆäºä¸€äº›ä¸å¸¸æ”¹åŠ¨ä½†å¤šå¤„ä½¿ç”¨çš„é¡µé¢å†…å®¹ã€‚ <br />
+	â‘¡ RSSè®¢é˜…æ ‡ç­¾ï¼šè®¢é˜…æŒ‡å®šå†…å®¹ï¼Œå®šæ—¶æ›´æ–°å†…å®¹ã€‚è¿™äº›å†…å®¹ä¸é™äºæœ¬è®ºå›ã€‚ <br />
+	â‘¢ è®ºå›å†…å®¹è°ƒç”¨æ ‡ç­¾ï¼šå¯ä»¥è°ƒç”¨è®ºå›æ•°æ®åº“ä¸­çš„å†…å®¹ï¼ŒåŒ…æ‹¬è´´å­ã€ç”¨æˆ·ã€ç‰ˆé¢ç­‰ã€‚<br />
 	</td>
 	</tr>
 <%
@@ -690,7 +690,7 @@ Function GetDefaultSet(LabelType)
 	Dim str
 	Select Case LabelType
 		Case "static"
-			str="static|||72000|||ÕâÀïÊÇÊä³öÄÚÈİ.."
+			str="static|||72000|||è¿™é‡Œæ˜¯è¾“å‡ºå†…å®¹.."
 		Case "rss"
 			str="rss|||3600|||http://|||<?xml version=""1.0"" encoding=""gb2312""?>"&VBNewline&_
 				"<xsl:stylesheet version=""1.0"" xmlns:xsl=""http://www.w3.org/1999/XSL/Transform"">"&VBNewline&_
@@ -726,7 +726,7 @@ Sub Label_Form()
 					G_Config=Dvbbs.ReadTextFile(sLabelPath&sLabelName&".tpl")
 					If Err Then 
 						Err.Clear
-						G_Msg="<font color=red>¶ÁÈ¡±êÇ©Ê§°Ü£¬¿ÉÄÜÊÇÃ»ÓĞ¶ÁÈ¡ÎÄ¼şµÄÈ¨ÏŞ¡£</font>"
+						G_Msg="<font color=red>è¯»å–æ ‡ç­¾å¤±è´¥ï¼Œå¯èƒ½æ˜¯æ²¡æœ‰è¯»å–æ–‡ä»¶çš„æƒé™ã€‚</font>"
 						sRealDo="add"
 					Else
 						If InStr(G_Config,"|||")>0 Then 
@@ -734,90 +734,90 @@ Sub Label_Form()
 							Select Case G_Config(0)
 								Case "static"
 									If 2=UBound(G_Config) Then
-										G_Msg="ÄúÕı×¼±¸±à¼­Ò»¸ö¾²Ì¬±êÇ©¡£"
+										G_Msg="æ‚¨æ­£å‡†å¤‡ç¼–è¾‘ä¸€ä¸ªé™æ€æ ‡ç­¾ã€‚"
 									Else
 										G_Config=Split(GetDefaultSet("static"),"|||")
-										G_Msg="<font color=red>±êÇ©¸ñÊ½²»¹æ·¶¡£Äú¿ÉÒÔ³¢ÊÔÌîĞ´ÏÂÃæµÄ±í¸ñÀ´Ìæ»»Ëü¡£</font>"
+										G_Msg="<font color=red>æ ‡ç­¾æ ¼å¼ä¸è§„èŒƒã€‚æ‚¨å¯ä»¥å°è¯•å¡«å†™ä¸‹é¢çš„è¡¨æ ¼æ¥æ›¿æ¢å®ƒã€‚</font>"
 									End If 
 								Case "rss"
 									If 3=UBound(G_Config) Then
-										G_Msg="ÄúÕı×¼±¸±à¼­Ò»¸öRss¶©ÔÄ±êÇ©¡£"
+										G_Msg="æ‚¨æ­£å‡†å¤‡ç¼–è¾‘ä¸€ä¸ªRssè®¢é˜…æ ‡ç­¾ã€‚"
 									Else
 										G_Config=Split(GetDefaultSet("rss"),"|||")
-										G_Msg="<font color=red>±êÇ©¸ñÊ½²»¹æ·¶¡£Äú¿ÉÒÔ³¢ÊÔÌîĞ´ÏÂÃæµÄ±í¸ñÀ´Ìæ»»Ëü¡£</font>"
+										G_Msg="<font color=red>æ ‡ç­¾æ ¼å¼ä¸è§„èŒƒã€‚æ‚¨å¯ä»¥å°è¯•å¡«å†™ä¸‹é¢çš„è¡¨æ ¼æ¥æ›¿æ¢å®ƒã€‚</font>"
 									End If 
 								Case "query"
 									If 9=UBound(G_Config) Then
-										G_Msg="ÄúÕı×¼±¸±à¼­Ò»¸öÂÛÌ³ÄÚÈİµ÷ÓÃ±êÇ©¡£"
+										G_Msg="æ‚¨æ­£å‡†å¤‡ç¼–è¾‘ä¸€ä¸ªè®ºå›å†…å®¹è°ƒç”¨æ ‡ç­¾ã€‚"
 									Else
 										G_Config=Split(GetDefaultSet("query"),"|||")
-										G_Msg="<font color=red>±êÇ©¸ñÊ½²»¹æ·¶¡£Äú¿ÉÒÔ³¢ÊÔÌîĞ´ÏÂÃæµÄ±í¸ñÀ´Ìæ»»Ëü¡£</font>"
+										G_Msg="<font color=red>æ ‡ç­¾æ ¼å¼ä¸è§„èŒƒã€‚æ‚¨å¯ä»¥å°è¯•å¡«å†™ä¸‹é¢çš„è¡¨æ ¼æ¥æ›¿æ¢å®ƒã€‚</font>"
 									End If 
 								Case Else 
 									G_Config=Split(GetDefaultSet("static"),"|||")
-									G_Msg="<font color=red>±êÇ©¸ñÊ½²»¹æ·¶¡£Äú¿ÉÒÔ³¢ÊÔÌîĞ´ÏÂÃæµÄ±í¸ñÀ´Ìæ»»Ëü¡£</font>"
+									G_Msg="<font color=red>æ ‡ç­¾æ ¼å¼ä¸è§„èŒƒã€‚æ‚¨å¯ä»¥å°è¯•å¡«å†™ä¸‹é¢çš„è¡¨æ ¼æ¥æ›¿æ¢å®ƒã€‚</font>"
 							End Select 
 						Else 
 							G_Config=Split(GetDefaultSet("static"),"|||")
-							G_Msg="<font color=red>±êÇ©¸ñÊ½²»¹æ·¶¡£Äú¿ÉÒÔ³¢ÊÔÌîĞ´ÏÂÃæµÄ±í¸ñÀ´Ìæ»»Ëü¡£</font>"
+							G_Msg="<font color=red>æ ‡ç­¾æ ¼å¼ä¸è§„èŒƒã€‚æ‚¨å¯ä»¥å°è¯•å¡«å†™ä¸‹é¢çš„è¡¨æ ¼æ¥æ›¿æ¢å®ƒã€‚</font>"
 						End If 
 						sRealDo="update"
-						G_Msg=G_Msg&"   <a href='?do=del_label&label_name="&sLabelName&"&folder="&sLabelPath&"' onclick='return confirm(""ÄúÈ·¶¨ÒªÉ¾³ı"&sLabelName&"±êÇ©Âğ£¿É¾³ıÖ®ºó²»ÄÜ»Ö¸´¡£"")'>ÄúÒ²¿ÉÒÔµãÕâÀïÉ¾³ıËü¡£</a>"
+						G_Msg=G_Msg&"   <a href='?do=del_label&label_name="&sLabelName&"&folder="&sLabelPath&"' onclick='return confirm(""æ‚¨ç¡®å®šè¦åˆ é™¤"&sLabelName&"æ ‡ç­¾å—ï¼Ÿåˆ é™¤ä¹‹åä¸èƒ½æ¢å¤ã€‚"")'>æ‚¨ä¹Ÿå¯ä»¥ç‚¹è¿™é‡Œåˆ é™¤å®ƒã€‚</a>"
 					End If 
 				Else
-					G_Msg="<font color=red>ÕÒ²»µ½¸Ã±êÇ©£¬Äú¿ÉÒÔ³¢ÊÔÌîĞ´ÏÂÃæµÄ±í¸ñÀ´Ìí¼ÓËü¡£</font>"
+					G_Msg="<font color=red>æ‰¾ä¸åˆ°è¯¥æ ‡ç­¾ï¼Œæ‚¨å¯ä»¥å°è¯•å¡«å†™ä¸‹é¢çš„è¡¨æ ¼æ¥æ·»åŠ å®ƒã€‚</font>"
 					sRealDo="add"
 				End If 
 			Else
 				G_Config=Split(GetDefaultSet("static"),"|||")
-				G_Msg="<font color=red>´«µİ¹ıÀ´µÄ²ÎÊı²»¹æ·¶¡£ÎŞ·¨¶ÁÈ¡±êÇ©ÎÄ¼ş¡£Äú¿ÉÒÔÌîĞ´ÏÂÃæµÄ±í¸ñÌí¼Ó±êÇ©¡£</font>"
+				G_Msg="<font color=red>ä¼ é€’è¿‡æ¥çš„å‚æ•°ä¸è§„èŒƒã€‚æ— æ³•è¯»å–æ ‡ç­¾æ–‡ä»¶ã€‚æ‚¨å¯ä»¥å¡«å†™ä¸‹é¢çš„è¡¨æ ¼æ·»åŠ æ ‡ç­¾ã€‚</font>"
 				sLabelName="untitle_"&(G_i+1)
 				sRealDo="add"
 			End If 
 		Case "save_label"
 		Case "del_label"
 			G_Config=Split(GetDefaultSet("static"),"|||")
-			G_Msg=G_Msg&" ÄúÏÖÔÚ¿ÉÒÔÌí¼ÓÒ»¸ö¾²Ì¬±êÇ©¡£"
+			G_Msg=G_Msg&" æ‚¨ç°åœ¨å¯ä»¥æ·»åŠ ä¸€ä¸ªé™æ€æ ‡ç­¾ã€‚"
 		Case Else 
 			Select Case request("label_type")
 				Case "static" 
 					G_Config=Split(GetDefaultSet("static"),"|||")
-					G_Msg="ÄúÏÖÔÚ¿ÉÒÔÌí¼ÓÒ»¸ö¾²Ì¬±êÇ©¡£"
+					G_Msg="æ‚¨ç°åœ¨å¯ä»¥æ·»åŠ ä¸€ä¸ªé™æ€æ ‡ç­¾ã€‚"
 				Case "rss" 
 					G_Config=Split(GetDefaultSet("rss" ),"|||")
-					G_Msg="ÄúÏÖÔÚ¿ÉÒÔÌí¼ÓÒ»¸öRSS¶©ÔÄ±êÇ©¡£"
+					G_Msg="æ‚¨ç°åœ¨å¯ä»¥æ·»åŠ ä¸€ä¸ªRSSè®¢é˜…æ ‡ç­¾ã€‚"
 				Case "query" 
 					G_Config=Split(GetDefaultSet("query" ),"|||")
-					G_Msg="ÄúÏÖÔÚ¿ÉÒÔÌí¼ÓÒ»¸öÂÛÌ³ÄÚÈİµ÷ÓÃ±êÇ©¡£"
+					G_Msg="æ‚¨ç°åœ¨å¯ä»¥æ·»åŠ ä¸€ä¸ªè®ºå›å†…å®¹è°ƒç”¨æ ‡ç­¾ã€‚"
 				Case Else
 					G_Config=Split(GetDefaultSet("static"),"|||")
-					G_Msg="ÄúÏÖÔÚ¿ÉÒÔÌí¼ÓÒ»¸ö¾²Ì¬±êÇ©¡£"
+					G_Msg="æ‚¨ç°åœ¨å¯ä»¥æ·»åŠ ä¸€ä¸ªé™æ€æ ‡ç­¾ã€‚"
 			End Select 
 	End Select 
 %>
 	<tr>
-	<td align="center" colspan="2" style="color:blue">²Ù×÷ÌáÊ¾£º<%=G_Msg%></td>
+	<td align="center" colspan="2" style="color:blue">æ“ä½œæç¤ºï¼š<%=G_Msg%></td>
 	</tr>
 	<tr>
-	<td align="right">±£´æÄ¿Â¼£º</td>
+	<td align="right">ä¿å­˜ç›®å½•ï¼š</td>
 	<td>
 	../Resource/Label<%=G_CurrentFolder%>  
 	</td>
 	</tr>
 	<tr>
-	<td align="right">±êÇ©Ãû³Æ£º</td>
-	<td><input type="text" name="label_name" size="20" maxlength="255" value="<%=sLabelName%>" onblur="Label_Chk(this,/^[a-zA-Z0-9_\/]+$/gi)" />.tpl<span id="label_name_chk"></span> *Ö»ÄÜÓÉ×ÖÄ¸ºÍÏÂ»®Ïß¼°Êı×Ö×é³É¡£</td>
+	<td align="right">æ ‡ç­¾åç§°ï¼š</td>
+	<td><input type="text" name="label_name" size="20" maxlength="255" value="<%=sLabelName%>" onblur="Label_Chk(this,/^[a-zA-Z0-9_\/]+$/gi)" />.tpl<span id="label_name_chk"></span> *åªèƒ½ç”±å­—æ¯å’Œä¸‹åˆ’çº¿åŠæ•°å­—ç»„æˆã€‚</td>
 	</tr>
 	<tr>
-	<td align="right">»º´æÊ±¼ä£º</td>
-	<td><input type="text" id="label_intv" name="label_intv" size="10" value="<%=G_Config(1)%>" onkeyup="this.value=this.value.replace(/[^0-9]/gi,'');$('format_time').innerHTML=Label_FormatTime(this.value);"  onblur="Label_Chk(this,/^[0-9]+$/gi)"><span id="label_intv_chk"></span> *µ¥Î»£ºÃë¡£Ö»ÄÜÌîÊı×Ö¡£<span id="format_time"></span></td>
+	<td align="right">ç¼“å­˜æ—¶é—´ï¼š</td>
+	<td><input type="text" id="label_intv" name="label_intv" size="10" value="<%=G_Config(1)%>" onkeyup="this.value=this.value.replace(/[^0-9]/gi,'');$('format_time').innerHTML=Label_FormatTime(this.value);"  onblur="Label_Chk(this,/^[0-9]+$/gi)"><span id="label_intv_chk"></span> *å•ä½ï¼šç§’ã€‚åªèƒ½å¡«æ•°å­—ã€‚<span id="format_time"></span></td>
 	</tr>
 <%
 Select Case G_Config(0)
 	Case "static"
 %>
 	<tr>
-	<td align="right" valign="top">Êä³öÄÚÈİ£º</td>
+	<td align="right" valign="top">è¾“å‡ºå†…å®¹ï¼š</td>
 	<td style="padding:0px;margin:0px;border:0px;">
 		<span><textarea id="label_content" name="label_content" style="display:none;width:100%;height:300px;overflow:auto;padding:0px;margin:0px;border:none;"><%=G_Config(2)%></textarea></span>
 		<div>
@@ -840,11 +840,11 @@ Select Case G_Config(0)
 	Case "rss"
 %>
 	<tr>
-	<td align="right">¶©ÔÄÍøÖ·£º</td>
-	<td><input type="text" name="label_rss" size="70" maxlength="255" value="<%=G_Config(2)%>" onblur="Label_Chk(this,/^http:\/\//gi)" /><span id="label_rss_chk"></span> <br/>*ÒÔ"http://"¿ªÍ·µÄÍêÕûÍøÖ·¡£Èç°Ù¶ÈµÄ¹úÄÚ½¹µãĞÂÎÅ£ºhttp://news.baidu.com/n?cmd=1&class=civilnews&tn=rss&sub=0</td>
+	<td align="right">è®¢é˜…ç½‘å€ï¼š</td>
+	<td><input type="text" name="label_rss" size="70" maxlength="255" value="<%=G_Config(2)%>" onblur="Label_Chk(this,/^http:\/\//gi)" /><span id="label_rss_chk"></span> <br/>*ä»¥"http://"å¼€å¤´çš„å®Œæ•´ç½‘å€ã€‚å¦‚ç™¾åº¦çš„å›½å†…ç„¦ç‚¹æ–°é—»ï¼šhttp://news.baidu.com/n?cmd=1&class=civilnews&tn=rss&sub=0</td>
 	</tr>
 	<tr>
-	<td align="right" valign="top">½âÊÍÄ£°å£º<br/>(stylesheet)</td>
+	<td align="right" valign="top">è§£é‡Šæ¨¡æ¿ï¼š<br/>(stylesheet)</td>
 	<td><textarea name="label_xslt" style="width:100%;height:300px;border:0px;margin:0px;padding:0px;font-family:Courier New;color:#cc0000"><%=G_Config(3)%></textarea></td>
 	</tr>
 <%
@@ -852,218 +852,25 @@ Select Case G_Config(0)
 		response.write "<script language='javascript'>var FromQueryType='"&G_Config(2)&"',ToQueryType='"&G_Config(2)&"',Config='"&G_Config(7)&"',TimeType='"&G_Config(9)&"';</script>"
 %>
 	<tr>
-	<td align="right">ÄÚÈİÀàĞÍ£º</td>
+	<td align="right">å†…å®¹ç±»å‹ï¼š</td>
 	<td><select id="label_query_type" name="label_query_type" onchange="Label_Query_ChangeType(FromQueryType,this.value,Config,TimeType)">
-	<option value="">Ñ¡È¡µ÷ÓÃÀàĞÍ</option>
-	<option value="bbs">Ìû×Óµ÷ÓÃ</option>
-	<option value="user">»áÔ±µ÷ÓÃ</option>
-	<option value="news">¹«¸æµ÷ÓÃ</option>
-	<option value="file">Õ¹Çøµ÷ÓÃ</option>
+	<option value="">é€‰å–è°ƒç”¨ç±»å‹</option>
+	<option value="bbs">å¸–å­è°ƒç”¨</option>
+	<option value="user">ä¼šå‘˜è°ƒç”¨</option>
+	<option value="news">å…¬å‘Šè°ƒç”¨</option>
+	<option value="file">å±•åŒºè°ƒç”¨</option>
 	</select></td>
 	</tr>
 	<tr>
-	<td align="right">µ÷ÓÃ¼ÇÂ¼ÌõÊı£º</td>
-	<td><input type="text" id="label_total" name="label_total" size="10" maxlength="6" value="" onkeyup="this.value=this.value.replace(/[^0-9]/gi,'');" onblur="Label_Chk(this,/^[0-9]+$/gi)" /><span id="label_total_chk"></span> *Ö»ÄÜÌîÊı×Ö¡£</td>
-	</tr>
-	<tr id="tr_board" style="display:none;">
-	<td align="right" valign="top">°æÃæ²éÑ¯ÉèÖÃ£º</td>
-	<td>
-		<select id="label_board" name="label_board" multiple="multiple" size="8"></select>
-		<script language="javascript">
-		<!--
-		BoardJumpListSelect('0',"label_board","Ñ¡È¡ËùÓĞ°æÃæ","",0);
-		//-->
-		</script> <label for="label_board_0"><input id="label_board_0" type="radio" name="select_board_mode" value="0" class="radio" checked />µ÷ÓÃÑ¡ÖĞ°æÃæ</label>  <label for="label_board_1"><input id="label_board_1" type="radio" name="select_board_mode" value="1" class="radio" />ÅÅ³ıÑ¡ÖĞ°æÃæ</label> *°´×¡CTRL¡¢SHIFT¼ü»òÕßÔÚÑ¡Ôñ¿òÄÚÍÏ¶¯Êó±ê¿ÉÒÔÑ¡ÖĞ¶à¸ö°æÃæ¡£
-	</td>
-	</tr>
-	<tr>
-	<td align="right" valign="top">Ê±¼äÏÔÊ¾¸ñÊ½£º</td>
-	<td>
-		<select id="label_time_type" name="label_time_type">
-		<option value="0" SELECTED>YYYY-M-D H:M:S(³¤¸ñÊ½)</option>
-		<option value="1">YYYYÄêMÔÂD</option>
-		<option value="2">YYYY-M-D</option>
-		<option value="3">H:M:S</option>
-		<option value="4">hh:mm</option>
-	    </select>
-		&nbsp;&nbsp;&nbsp;
-	</td>
-	</tr>
-	<tr>
-	<td align="right" valign="top">ÅÅĞò·½Ê½ÉèÖÃ£º</td>
-	<td>
-		<select id="label_order_by" name="label_order_by">
-		<option value="0">Ñ¡ÔñÅÅĞò·½Ê½</option>
-		</select>  <label for="label_order_0"><input id="label_order_0" type="radio" name="select_order_mode" value="0" class="radio" checked />ÕıĞò£¨Ğ¡->´ó£©</label>  <label for="label_order_1"><input id="label_order_1" type="radio" name="select_order_mode" value="1" class="radio" />µ¹Ğò£¨´ó->Ğ¡£©</label>
-	</td>
-	</tr>
-
-	<tr id="tr_bbs" style="display:none;">
-	<td align="right" valign="top">ÆäËüµ÷ÓÃÏŞÖÆ£º</td>
-	<td>
-		±êÌâ³¤¶È<input type="text" id="label_title_length" name="label_title_length" size="10" maxlength="6" value="<%=G_Config(8)%>" onblur="Label_Chk(this,/^[0-9]+$/gi)" onkeyup="this.value=this.value.replace(/[^0-9]/gi,'');" /><span id="label_title_length_chk"></span> *Ö»ÄÜÌîÊı×Ö¡£ Ìù×ÓÀàĞÍ£º<label for="label_bbstype_0"><input id="label_bbstype_0" type="radio" name="label_bbstype" value="0" class="radio" checked />²»ÏŞ</label> <label for="label_bbstype_1"><input id="label_bbstype_1" type="radio" name="label_bbstype" value="1" class="radio" />½ö¹Ì¶¥Ö÷Ìâ</label> <label for="label_bbstype_2"><input id="label_bbstype_2" type="radio" name="label_bbstype" value="2" class="radio" />½ö¾«»ªÖ÷Ìâ</label> <label for="label_bbstype_3"><input id="label_bbstype_3" type="radio" name="label_bbstype" value="3" class="radio" />½ö»Ø¸´Ìù×Ó£¨Èç¹ûÑ¡ÖĞ´ËÏî£¬½«Ö»ÄÜ°´Ìù×ÓIDÅÅĞò£©</label> <br/>Ê±¼ä·¶Î§£º
-		<select id="label_time_limit" name="label_time_limit">
-		<option value="0" SELECTED>²»ÏŞÊ±¼ä</option>
-		<option value="1">1ÖÜÄÚ</option>
-		<option value="2">1¸öÔÂÄÚ</option>
-		<option value="3">3¸öÔÂÄÚ</option>
-		<option value="4">°ëÄêÄÚ</option>
-		<option value="5">1ÄêÄÚ</option>
-	    </select>
-	</td>
-	</tr>
-
-	<tr id="tr_file" style="display:none;">
-	<td align="right" valign="top">ÆäËüµ÷ÓÃÏŞÖÆ£º</td>
-	<td>
-		ÎÄ¼şËµÃ÷³¤¶È<input type="text" id="label_readme_length" name="label_readme_length" size="10" maxlength="6" value="<%=G_Config(8)%>" onblur="Label_Chk(this,/^[0-9]+$/gi)" onkeyup="this.value=this.value.replace(/[^0-9]/gi,'');" /><span id="label_readme_length_chk"></span> *Ö»ÄÜÌîÊı×Ö¡£ 
-		µ÷ÓÃÎÄ¼şÀàĞÍ£º 
-		<select name="label_file_type" id="label_file_type">
-		<option value="all" selected>²»ÏŞÀàĞÍ</option>
-		<option value="0">ÎÄ¼ş¼¯</option>
-		<option value="1">Í¼Æ¬¼¯</option>
-		<option value="2">flash¼¯</option>
-		<option value="3">ÒôÀÖ¼¯</option>
-		<option value="4">µçÓ°¼¯</option>
-		</select> </label> 
-	</td>
-	</tr>
-
-	<tr>
-	<td align="right" valign="top">½âÊÍÄ£°å£¨¿ªÊ¼£©£º<br/>¿ªÊ¼½âÊÍÊ±Êä³ö</td>
-	<td style="padding:0px;margin:0px;border:0px;">
-		<textarea id="label_template_start" name="label_template_start" style="width:100%;height:100px;overflow:auto;padding:0px;margin:0px;border:none"><%=G_Config(4)%></textarea>
-		<div>
-		<SCRIPT LANGUAGE="JavaScript">
-		<!--
-		//var label_edit_template_start=new DvEdit('label_template_start','75px','text',['bold','italic','underline','separator','fontsize','fontfamily','fontcolor','fontbgcolor','separator','link','image','media','separator','justifyleft','justifycenter','justifyright','separator','insertorderedlist','insertunorderedlist','outdent','indent']);
+	<td align="right">è°ƒç”¨è®°å½•æ¡æ•°ï¼š</td>
+	<td><input type="text" id="label_total" name="label_total" size="10" maconfig);
 		//-->
 		</SCRIPT>
 		</div>
-	</td>
-	</tr>
-	<tr>
-	<td align="right" valign="top">½âÊÍÄ£°å£¨Ñ­»·£©£º<br/>Ñ­»·½âÊÍÄÚÈİÊä³ö
-		<div id="tool_label_user" style="display:none;">
-			<ul>
-			<li>ÓÃ»§ID£º<a href="javascript:;" onclick="label_edit_template_loop.insert(this.innerHTML);">{$UserID}</a></li>
-			<li>ÓÃ»§Ãû£º<a href="javascript:;" onclick="label_edit_template_loop.insert(this.innerHTML);">{$UserName}</a></li>
-			<li>ÓÃ»§Ö÷ÌâÊı£º<a href="javascript:;" onclick="label_edit_template_loop.insert(this.innerHTML);">{$UserTopic}</a></li>
-			<li>ÓÃ»§Ìû×ÓÊı£º<a href="javascript:;" onclick="label_edit_template_loop.insert(this.innerHTML);">{$UserPost}</a></li>
-			<li>ÓÃ»§¾«»ªÊı£º<a href="javascript:;" onclick="label_edit_template_loop.insert(this.innerHTML);">{$UserBest}</a></li>
-			<li>ÓÃ»§½ğÇ®£º<a href="javascript:;" onclick="label_edit_template_loop.insert(this.innerHTML);">{$UserWealth}</a></li>
-			<li>ÓÃ»§÷ÈÁ¦£º<a href="javascript:;" onclick="label_edit_template_loop.insert(this.innerHTML);">{$UserCP}</a></li>
-			<li>ÓÃ»§»ı·Ö£º<a href="javascript:;" onclick="label_edit_template_loop.insert(this.innerHTML);">{$UserEP}</a></li>
-			<li>ÓÃ»§±»É¾ÌûÊı£º<a href="javascript:;" onclick="label_edit_template_loop.insert(this.innerHTML);">{$UserDel}</a></li>
-			<li>ÓÃ»§ĞÔ±ğ£º<a href="javascript:;" onclick="label_edit_template_loop.insert(this.innerHTML);">{$UserSex}</a></li>
-			<li>ÓÃ»§×¢²áÊ±¼ä£º<a href="javascript:;" onclick="label_edit_template_loop.insert(this.innerHTML);">{$JoinDate}</a></li>
-			<li>ÓÃ»§µÇÂ½´ÎÊı£º<a href="javascript:;" onclick="label_edit_template_loop.insert(this.innerHTML);">{$UserLogins}</a></li>
-			</ul>
-		</div>
-		<div id="tool_label_news" style="display:none;">
-			<ul>
-			<li>¹«¸æID£º<a href="javascript:;" onclick="label_edit_template_loop.insert(this.innerHTML);">{$ID}</a></li>
-			<li>±êÌâ£º<a href="javascript:;" onclick="label_edit_template_loop.insert(this.innerHTML);">{$Topic}</a></li>
-			<li>×÷Õß£º<a href="javascript:;" onclick="label_edit_template_loop.insert(this.innerHTML);">{$UserName}</a></li>
-			<li>°æ¿éÃû³Æ£º<a href="javascript:;" onclick="label_edit_template_loop.insert(this.innerHTML);">{$BoardName}</a></li>
-			<li>°æ¿éID£º<a href="javascript:;" onclick="label_edit_template_loop.insert(this.innerHTML);">{$Boardid}</a></li>
-			<li>Ê±¼ä£º<a href="javascript:;" onclick="label_edit_template_loop.insert(this.innerHTML);">{$PostTime}</a></li>
-			</ul>
-		</div>
-		<div id="tool_label_file" style="display:none;">
-			<ul>
-			<li>×÷Õß£º<a href="javascript:;" onclick="label_edit_template_loop.insert(this.innerHTML);">{$UserName}</a></li>
-			<li>°æ¿éÃû³Æ£º<a href="javascript:;" onclick="label_edit_template_loop.insert(this.innerHTML);">{$BoardName}</a></li>
-			<li>°æ¿éID£º<a href="javascript:;" onclick="label_edit_template_loop.insert(this.innerHTML);">{$Boardid}</a></li>
-			<li>Ê±¼ä£º<a href="javascript:;" onclick="label_edit_template_loop.insert(this.innerHTML);">{$AddTime}</a></li>
-			<li>ÎÄ¼şID£º<a href="javascript:;" onclick="label_edit_template_loop.insert(this.innerHTML);">{$ID}</a></li>
-			<li>ÎÄ¼şÃû£º<a href="javascript:;" onclick="label_edit_template_loop.insert(this.innerHTML);">{$Filename}</a></li>
-			<li>ÎÄ¼şËµÃ÷£º<a href="javascript:;" onclick="label_edit_template_loop.insert(this.innerHTML);">{$Readme}</a></li>
-			<li>ÎÄ¼şÀàĞÍ£º<a href="javascript:;" onclick="label_edit_template_loop.insert(this.innerHTML);">{$FileType}</a></li>
-			<li>ÎÄ¼şÔ¤ÀÀÎÄ¼şÃû£º<a href="javascript:;" onclick="label_edit_template_loop.insert(this.innerHTML);">{$ViewFilename}</a></li>
-			<li>ä¯ÀÀÊı£º<a href="javascript:;" onclick="label_edit_template_loop.insert(this.innerHTML);">{$ViewNum}</a></li>
-			<li>ÏÂÔØÊı£º<a href="javascript:;" onclick="label_edit_template_loop.insert(this.innerHTML);">{$DownNum}</a></li>
-			<li>ÎÄ¼ş´óĞ¡£º<a href="javascript:;" onclick="label_edit_template_loop.insert(this.innerHTML);">{$FileSize}</a></li>
-			<li>Ìû×ÓÖ÷ÌâID£º<a href="javascript:;" onclick="label_edit_template_loop.insert(this.innerHTML);">{$RootID}</a></li>
-			<li>Ìû×Ó¶ÔÓ¦ID£º<a href="javascript:;" onclick="label_edit_template_loop.insert(this.innerHTML);">{$ReplyID}</a></li>
-			<li>½»ÌæÑÕÉ«£º<a href="javascript:;" onclick="label_edit_template_loop.insert(this.innerHTML);">{$TColor}</a></li>
-			</ul>
-		</div>
-		<div id="tool_label_bbs" style="display:none;">
-			<ul>
-			<li>±êÌâ£º<a href="javascript:;" onclick="label_edit_template_loop.insert(this.innerHTML);">{$Topic}</a></li>
-			<li>×÷Õß£º<a href="javascript:;" onclick="label_edit_template_loop.insert(this.innerHTML);">{$UserName}</a></li>
-			<li>·¢±íÊ±¼ä£º<a href="javascript:;" onclick="label_edit_template_loop.insert(this.innerHTML);">{$PostTime}</a></li>
-			<li>»Ø¸´Õß£º<a href="javascript:;" onclick="label_edit_template_loop.insert(this.innerHTML);">{$ReplyName}</a></li>
-			<li>»Ø¸´Ê±¼ä£º<a href="javascript:;" onclick="label_edit_template_loop.insert(this.innerHTML);">{$ReplyTime}</a></li>
-			<li>°æ¿éÃû³Æ£º<a href="javascript:;" onclick="label_edit_template_loop.insert(this.innerHTML);">{$BoardName}</a></li>
-			<li>°æ¿éËµÃ÷£º<a href="javascript:;" onclick="label_edit_template_loop.insert(this.innerHTML);">{$BoardInfo}</a></li>
-			<li>ĞÄÇéÍ¼±ê£º<a href="javascript:;" onclick="label_edit_template_loop.insert(this.innerHTML);">{$Face}</a></li>
-			<li>Ìû×ÓID£º<a href="javascript:;" onclick="label_edit_template_loop.insert(this.innerHTML);">{$ID}</a></li>
-			<li>Ìû×ÓReplyID£º<a href="javascript:;" onclick="label_edit_template_loop.insert(this.innerHTML);">{$ReplyID}</a></li>
-			<li>°æÃæID£º<a href="javascript:;" onclick="label_edit_template_loop.insert(this.innerHTML);">{$Boardid}</a></li>
-			</ul>
-		</div>
-		<div id="tool_label_group" style="display:none;">
-			
-		</div>
-	</td>
-	<td style="padding:0px;margin:0px;border:0px;">
-		<textarea id="label_template_loop" name="label_template_loop" style="display:none;width:100%;height:300px;overflow:auto;padding:0px;margin:0px;border:none"><%=G_Config(5)%></textarea>
-		<div>
-		<SCRIPT LANGUAGE="JavaScript">
-		<!--
-		function strForSelectLabel(){
-			var s=$('label_query_type').value||'bbs';
-			return $('tool_label_'+s).innerHTML;
-		}
-		var dveditconfig={
-			textarea_id:'label_template_loop',
-			edit_height:'275px',
-			edit_mode:'design',
-			toolbar:['bold','italic','underline','separator','fontsize','fontfamily','fontcolor','fontbgcolor','separator','link','image','media','separator','justifyleft','justifycenter','justifyright','separator','insertorderedlist','insertunorderedlist','outdent','indent','<div style="float:left;position:relative;padding-top:4px;color:red" onclick="label_edit_template_loop.t.open(this,strForSelectLabel())">[²åÈëµ÷ÓÃ±êÇ©]</div>'],
-			to_xhml:false
-		};
-		var label_edit_template_loop=new DvEdit(dveditconfig);
-		//-->
-		</SCRIPT>
-		</div>
-	</td>
-	</tr>
-	<tr>
-	<td align="right" valign="top">½âÊÍÄ£°å£¨½áÊø£©£º<br/>½áÊø½âÊÍÊ±Êä³ö</td>
-	<td style="padding:0px;margin:0px;border:0px;">
-		<textarea id="label_template_stop" name="label_template_stop" style="width:100%;height:100px;overflow:auto;padding:0px;margin:0px;border:none"><%=G_Config(6)%></textarea>
-		<div>
-		<SCRIPT LANGUAGE="JavaScript">
-		<!--
-		//var label_edit_template_stop=new DvEdit('label_template_stop','75px','text',['bold','italic','underline','separator','fontsize','fontfamily','fontcolor','fontbgcolor','separator','link','image','media','separator','justifyleft','justifycenter','justifyright','separator','insertorderedlist','insertunorderedlist','outdent','indent']);
-		//-->
-		</SCRIPT>
-		</div>
-	</td>
-	</tr>
-	<input type="hidden" id="label_mainshow_length" name="label_mainshow_length" value="<%=G_Config(8)%>" />
-	<input type="hidden" id="label_query_config" name="label_query_config" value="<%=G_Config(7)%>" />
-	<script language="javascript">Label_Query_ChangeType(FromQueryType,ToQueryType,Config,TimeType);</script>
-<%
-End Select 
-%>
-	<tr>
-	<td align="right">&nbsp;</td>
-	<td>
-	<input type="hidden" name="label_oldname" value="<%=sLabelName%>" />
-	<input type="hidden" name="realdo" value="<%=sRealDo%>" />
-	<input type="hidden" name="label_type" value="<%=G_Config(0)%>" />
-	<input type="hidden" name="label_path" value="<%=sLabelPath%>" />
-	<input type="hidden" name="folder" value="<%=sLabelPath%>" />
-	<input type="submit" name="subtn" value="    Ìá½»±£´æ   " class="button" /> <span id="form_chk"></span>
 	</td>
 	</tr>
 <%
-End Sub 
+	Case "rss"
 %>
-</table>
-</form>
-</body>
-</html>
+	<tr>
+	<td align="right">ç’ãˆ¤æ§„ç¼ƒæˆæ½ƒé”›
