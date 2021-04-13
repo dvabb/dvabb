@@ -3,7 +3,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
 <meta HTTP-EQUIV=Expires CONTENT=0>
 <Link rel="stylesheet" type="text/css" href="pop.css">
-<title>·¢ÆğÒ»¸ö²Æ¸¶Í¨½»Ò×</title>
+<title>å‘èµ·ä¸€ä¸ªè´¢ä»˜é€šäº¤æ˜“</title>
 <script language="JavaScript">
 var s_alipay_email = "@";
 var s_alipay_name = "";
@@ -16,7 +16,7 @@ var s_alipay_ww = "";
 var s_alipay_qq = "";
 var s_alipay_demo = "";
 
-// ±¾´°¿Ú·µ»ØÖµ
+// æœ¬çª—å£è¿”å›å€¼
 function ReturnValue(){
 	s_alipay_email = alipay_email.value;
 	s_alipay_name = alipay_name.value;
@@ -52,7 +52,7 @@ function ReturnValue(){
 	//put_html('PostContent',sHTML);
 	window.close();
 }
-// µãÈ·¶¨Ê±Ö´ĞĞ
+// ç‚¹ç¡®å®šæ—¶æ‰§è¡Œ
 function ok(){
 	alipay_money.value = ToInt(alipay_money.value);
 	alipay_mail.value = ToInt(alipay_mail.value);
@@ -60,7 +60,7 @@ function ok(){
 	alipay_qq.value = ToInt(alipay_qq.value);
 	ReturnValue();
 }
-// ×ªÎªÊı×ÖĞÍ£¬²¢ÎŞÇ°µ¼0£¬²»ÄÜ×ªÔò·µ»Ø""
+// è½¬ä¸ºæ•°å­—å‹ï¼Œå¹¶æ— å‰å¯¼0ï¼Œä¸èƒ½è½¬åˆ™è¿”å›""
 function ToInt(str){
 	str=BaseTrim(str);
 	if (str!=""){
@@ -73,7 +73,7 @@ function ToInt(str){
 	}
 	return str;
 }
-// È¥¿Õ¸ñ£¬left,right,all¿ÉÑ¡
+// å»ç©ºæ ¼ï¼Œleft,right,allå¯é€‰
 function BaseTrim(str){
 	  lIdx=0;rIdx=str.length;
 	  if (BaseTrim.arguments.length==2)
@@ -99,47 +99,47 @@ function BaseTrim(str){
 <tr>
 <td>
 	<fieldset>
-	<legend>ÉÌÆ·ĞÅÏ¢</legend>
+	<legend>å•†å“ä¿¡æ¯</legend>
 	<table border=0 cellpadding=2 cellspacing=0 width="100%">
 		<tr><td colspan=5 height=5></td></tr>
 		<tr>
 			<td width=5></td>
-			<td width=70 align=right>²Æ¸¶Í¨ÕÊºÅ</td>
+			<td width=70 align=right>è´¢ä»˜é€šå¸å·</td>
 			<td width=5></td>
 			<td width="*"><input type=text ID="alipay_email" style="width:170px" size=25 value="@"></td>
 			<td width=5></td>
 		</tr>
 		<tr>
 			<td width=5></td>
-			<td width=70 align=right>ÉÌÆ·Ãû³Æ</td>
+			<td width=70 align=right>å•†å“åç§°</td>
 			<td width=5></td>
 			<td width="*"><input type=text ID="alipay_name" style="width:170px" size=25></td>
 			<td width=5></td>
 		</tr>
 		<tr>
 			<td width=5></td>
-			<td width=70 align=right>ÉÌÆ·¼Û¸ñ</td>
+			<td width=70 align=right>å•†å“ä»·æ ¼</td>
 			<td width=5></td>
-			<td width="*"><input type=text ID="alipay_money" style="width:45px" size=25 value="0"> Ôª</td>
+			<td width="*"><input type=text ID="alipay_money" style="width:45px" size=25 value="0"> å…ƒ</td>
 			<td width=5></td>
 		</tr>
 		<tr>
 			<td width=5></td>
-			<td width=70 align=right valign="top">ÓÊ·Ñ³Ğµ£·½</td>
+			<td width=70 align=right valign="top">é‚®è´¹æ‰¿æ‹…æ–¹</td>
 			<td width=5></td>
 			<td width="*">
-			<input type=radio ID="ialipay_transport" name="ialipay_transport" value="3" onclick="document.getElementById('alipay_mail').disabled=true; document.getElementById('alipay_express').disabled=true;alipay_transport.value=3;"> ĞéÄâÎïÆ·²»ĞèÓÊµİ<BR>
-			<input type=radio ID="ialipay_transport" name="ialipay_transport" checked value="1" onclick="document.getElementById('alipay_mail').disabled=true; document.getElementById('alipay_express').disabled=true;alipay_transport.value=1;"> Âô¼Ò³Ğµ£ÔË·Ñ<BR>
-			<input type=radio ID="ialipay_transport" name="ialipay_transport" value="2" onclick="document.getElementById('alipay_mail').disabled=false; document.getElementById('alipay_express').disabled=false;alipay_transport.value=2;"> Âò¼Ò³Ğµ£ÔË·Ñ<BR>
+			<input type=radio ID="ialipay_transport" name="ialipay_transport" value="3" onclick="document.getElementById('alipay_mail').disabled=true; document.getElementById('alipay_express').disabled=true;alipay_transport.value=3;"> è™šæ‹Ÿç‰©å“ä¸éœ€é‚®é€’<BR>
+			<input type=radio ID="ialipay_transport" name="ialipay_transport" checked value="1" onclick="document.getElementById('alipay_mail').disabled=true; document.getElementById('alipay_express').disabled=true;alipay_transport.value=1;"> å–å®¶æ‰¿æ‹…è¿è´¹<BR>
+			<input type=radio ID="ialipay_transport" name="ialipay_transport" value="2" onclick="document.getElementById('alipay_mail').disabled=false; document.getElementById('alipay_express').disabled=false;alipay_transport.value=2;"> ä¹°å®¶æ‰¿æ‹…è¿è´¹<BR>
 			<input type="hidden" value="1" ID="alipay_transport">
-			<input type=text ID="alipay_mail" name="alipay_mail" style="width:45px" size=25 disabled> ÔªÆ½ÓÊ (²»ÌîÎªÆ½ÓÊ)<BR>
-			<input type=text ID="alipay_express" name="alipay_express" style="width:45px" size=25 disabled> Ôª¿ìµİ (²»ÌîÎªÆ½ÓÊ)
+			<input type=text ID="alipay_mail" name="alipay_mail" style="width:45px" size=25 disabled> å…ƒå¹³é‚® (ä¸å¡«ä¸ºå¹³é‚®)<BR>
+			<input type=text ID="alipay_express" name="alipay_express" style="width:45px" size=25 disabled> å…ƒå¿«é€’ (ä¸å¡«ä¸ºå¹³é‚®)
 			</td>
 			<td width=5></td>
 		</tr>
 		<tr>
 			<td width=5></td>
-			<td width=70 align=right valign=top>ÉÌÆ·ËµÃ÷</td>
+			<td width=70 align=right valign=top>å•†å“è¯´æ˜</td>
 			<td width=5></td>
 			<td width="*"><textarea rows="5" ID="alipay_message" style="width: 170px; word-break: break-all" tabindex="4"></textarea></td>
 			<td width=5></td>
@@ -153,12 +153,12 @@ function BaseTrim(str){
 <tr>
 	<td>
 	<fieldset>
-	<legend>ÆäËüĞÅÏ¢</legend>
+	<legend>å…¶å®ƒä¿¡æ¯</legend>
 	<table border=0 cellpadding=2 cellspacing=0 width="100%">
 		<tr><td colspan=5 height=5></td></tr>
 		<tr>
 			<td width=5></td>
-			<td width=70 align=right valign=top>ÑİÊ¾µØÖ·</td>
+			<td width=70 align=right valign=top>æ¼”ç¤ºåœ°å€</td>
 			<td width=5></td>
 			<td width="*"><input type=text ID="alipay_demo" style="width:170px" size=25 value="http://"></td>
 			<td width=5></td>
@@ -172,9 +172,9 @@ function BaseTrim(str){
 		</tr>
 		<tr>
 			<td width=5></td>
-			<td width=70 align=right valign=top>ÌÚÑ¶QQ</td>
+			<td width=70 align=right valign=top>è…¾è®¯QQ</td>
 			<td width=5></td>
-			<td width="*"><input type=text ID="alipay_qq" style="width:80px" size=25> QQºÅÂë</td>
+			<td width="*"><input type=text ID="alipay_qq" style="width:80px" size=25> QQå·ç </td>
 			<td width=5></td>
 		</tr>
 		<tr><td colspan=5 height=5></td></tr>
@@ -184,20 +184,20 @@ function BaseTrim(str){
 </tr>
 <tr><td height=5 ></td></tr>
 <tr>
-<td align=center ><input type=submit value='  È·¶¨  ' id=Ok onclick="ok()">&nbsp;&nbsp;
-<input type=button value='  È¡Ïû  ' onclick="window.close();"></td>
+<td align=center ><input type=submit value='  ç¡®å®š  ' id=Ok onclick="ok()">&nbsp;&nbsp;
+<input type=button value='  å–æ¶ˆ  ' onclick="window.close();"></td>
 </tr>
 <tr><td height=5></td></tr>
 <tr>
 	<td>
 	<fieldset>
-	<legend>¹ØÓÚ²Æ¸¶Í¨</legend>
+	<legend>å…³äºè´¢ä»˜é€š</legend>
 	<table border=0 cellpadding=2 cellspacing=0 width="100%">
 		<tr><td height=3></td></tr>
 		<tr><td>
-		&nbsp;&nbsp;<a href="https://www.tenpay.com/" target=_blank>²Æ¸¶Í¨½»Ò×</a> °²È«¡¢¿ìËÙ¡¢ÃâÊÖĞø·Ñ£¡<BR>
-		&nbsp;&nbsp;Á÷³Ì£º·¢Æğ½»Ò× ¡ú ÓÃ»§¸¶¿î ¡ú Âô¼ÒÈ·ÈÏ²¢·¢»õ ¡ú Âò¼ÒÊÕ»õ²¢È·ÈÏ ¡ú Íê³É<BR>
-		&nbsp;&nbsp;<a href="https://www.tenpay.com/zft/qa/qa_zj.shtml" target=_blank>µã´Ë²é¿´¸üÏêÏ¸²Æ¸¶Í¨½»Ò×°ïÖú</a>
+		&nbsp;&nbsp;<a href="https://www.tenpay.com/" target=_blank>è´¢ä»˜é€šäº¤æ˜“</a> å®‰å…¨ã€å¿«é€Ÿã€å…æ‰‹ç»­è´¹ï¼<BR>
+		&nbsp;&nbsp;æµç¨‹ï¼šå‘èµ·äº¤æ˜“ â†’ ç”¨æˆ·ä»˜æ¬¾ â†’ å–å®¶ç¡®è®¤å¹¶å‘è´§ â†’ ä¹°å®¶æ”¶è´§å¹¶ç¡®è®¤ â†’ å®Œæˆ<BR>
+		&nbsp;&nbsp;<a href="https://www.tenpay.com/zft/qa/qa_zj.shtml" target=_blank>ç‚¹æ­¤æŸ¥çœ‹æ›´è¯¦ç»†è´¢ä»˜é€šäº¤æ˜“å¸®åŠ©</a>
 		</td></tr>
 		<tr><td height=3></td></tr>
 	</table>

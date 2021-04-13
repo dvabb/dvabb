@@ -1,4 +1,4 @@
-<!--usermanager.asp##¿ØÖÆÃæ°åÖ÷Ìå²¿·Ö-->
+<!--usermanager.asp##æ§åˆ¶é¢æ¿ä¸»ä½“éƒ¨åˆ†-->
 <div class="mainbox" style="margin-top:0">
 <div class="Contentbox">
 <div id="con_two_1">
@@ -6,72 +6,72 @@
 		<tr>
 		   <td width="250" valign="top">
 				<table class="tableborder1" cellspacing="1" cellpadding="0" style="width:100%;padding:0px;">
-					<tr><th>ÎÒµÄÍ·Ïñ [<a href="dispuser.asp?name={$username}" target="_blank">Ô¤ÀÀ×ÊÁÏ</a>]</th></tr>
+					<tr><th>æˆ‘çš„å¤´åƒ [<a href="dispuser.asp?name={$username}" target="_blank">é¢„è§ˆèµ„æ–™</a>]</th></tr>
 					<tr>
 						<td class="tablebody1" align="center">{$user_Face}</td>
 					</tr>
-					<tr><th>»ù±¾ĞÅÏ¢</th></tr>
+					<tr><th>åŸºæœ¬ä¿¡æ¯</th></tr>
 					<tr>
 						<td class="tablebody1">
-						ÓÃ»§Í·ÏÎ£º{$user_Title}<br />
-						ÓÃ»§µÈ¼¶£º{$user_Group}<br />
-						ÓÃ»§½ğÇ®£º{$user_Wealth}<br />
-						ÓÃ»§»ı·Ö£º{$user_EP}<br />
-						ÓÃ»§÷ÈÁ¦£º{$user_CP}<br />
-						ÓÃ»§½ğ±Ò£º{$user_Money}<br />
-						ÓÃ»§µãÈ¯£º{$user_Ticket}<br />
-						¾«»ªÌûÊı£º{$user_IsBest}<br />
-						ÌûÊı×ÜÊı£º{$user_Article}<br />
-						×¢²áÊ±¼ä£º{$user_AddDate}<br />
-						µÇÂ½´ÎÊı£º{$user_Logins}<br />
+						ç”¨æˆ·å¤´è¡”ï¼š{$user_Title}<br />
+						ç”¨æˆ·ç­‰çº§ï¼š{$user_Group}<br />
+						ç”¨æˆ·é‡‘é’±ï¼š{$user_Wealth}<br />
+						ç”¨æˆ·ç§¯åˆ†ï¼š{$user_EP}<br />
+						ç”¨æˆ·é­…åŠ›ï¼š{$user_CP}<br />
+						ç”¨æˆ·é‡‘å¸ï¼š{$user_Money}<br />
+						ç”¨æˆ·ç‚¹åˆ¸ï¼š{$user_Ticket}<br />
+						ç²¾åå¸–æ•°ï¼š{$user_IsBest}<br />
+						å¸–æ•°æ€»æ•°ï¼š{$user_Article}<br />
+						æ³¨å†Œæ—¶é—´ï¼š{$user_AddDate}<br />
+						ç™»é™†æ¬¡æ•°ï¼š{$user_Logins}<br />
 						{$UserTicket}<br />
-						<a href="Query.asp?stype=1&nSearch=3&keyword={$username}&SearchDate=all" target="_blank">ÎÒµÄĞÂÌû</a> | <a href="Query.asp?stype=4&nSearch=0&pSearch=0&keyword={$username}" target="_blank">ÎÒµÄÈÈÌû</a> | <a href="Query.asp?stype=6&nSearch=0&pSearch=0&keyword={$username}" target="_blank">ÎÒµÄ¾«»ª</a> | <a href="show.asp?username={$username}" target="_blank">ÎÒµÄÕ¹Çø</a>
+						<a href="Query.asp?stype=1&nSearch=3&keyword={$username}&SearchDate=all" target="_blank">æˆ‘çš„æ–°å¸–</a> | <a href="Query.asp?stype=4&nSearch=0&pSearch=0&keyword={$username}" target="_blank">æˆ‘çš„çƒ­å¸–</a> | <a href="Query.asp?stype=6&nSearch=0&pSearch=0&keyword={$username}" target="_blank">æˆ‘çš„ç²¾å</a> | <a href="show.asp?username={$username}" target="_blank">æˆ‘çš„å±•åŒº</a>
 						</td>
 					</tr>
-					<tr><th height="25">ºÃÓÑÔÚÏß</th></tr>
+					<tr><th height="25">å¥½å‹åœ¨çº¿</th></tr>
 					<tr><td class="tablebody1" style="padding:10px" align="left">{$friend_Info}</td></tr>
-					<tr><td height="25" class="tablebody2">£ªµã»÷Í¼±ê¸øºÃÓÑ·¢ËÍ¶ÌÑ¶£¡</td></tr>
+					<tr><td height="25" class="tablebody2">ï¼Šç‚¹å‡»å›¾æ ‡ç»™å¥½å‹å‘é€çŸ­è®¯ï¼</td></tr>
 				</table>
 		   </td>
 		   <td style="background:#F1F7FB;padding:8px" valign="top">
-				<!--»ù±¾ĞÅÏ¢start-->
+				<!--åŸºæœ¬ä¿¡æ¯start-->
 					<table cellpadding="8" cellspacing="0">											
 						<tr>
 							
 							<td align="center" valign="top">
 								<table cellspacing="1" class="tableborder1">
 									<tr class="tablebody1" align="center">
-										<td>Ä¿Ç°ÄúÓĞ<font color="{$color}"><b> [{$msg_newincept}] </b></font>ÌõµÄĞÂ¶ÌÏûÏ¢¡£,<a href="usersms.asp?action=inbox"><font color="{$color}">ÊÕ¼şÏä</font></a>ÖĞ¹²ÓĞ <b>[{$msg_incept}]</b> ÌõĞÅÏ¢£¬<a href='usersms.asp?action=issend'><font color="{$color}">·¢¼şÏä</font></a>ÖĞ¹²ÓĞ <b>[{$msg_send}]</b> ÌõĞÅÏ¢¶Ô·½Î´²éÔÄ¡£</td>
+										<td>ç›®å‰æ‚¨æœ‰<font color="{$color}"><b> [{$msg_newincept}] </b></font>æ¡çš„æ–°çŸ­æ¶ˆæ¯ã€‚,<a href="usersms.asp?action=inbox"><font color="{$color}">æ”¶ä»¶ç®±</font></a>ä¸­å…±æœ‰ <b>[{$msg_incept}]</b> æ¡ä¿¡æ¯ï¼Œ<a href='usersms.asp?action=issend'><font color="{$color}">å‘ä»¶ç®±</font></a>ä¸­å…±æœ‰ <b>[{$msg_send}]</b> æ¡ä¿¡æ¯å¯¹æ–¹æœªæŸ¥é˜…ã€‚</td>
 									</tr>
 								</table>
 								<br />
 								<table cellspacing="1" cellpadding="0" class="tableborder1">
-									<tr><th colspan="5" height="25" align="left">×îĞÂÊÕµ½µÄ¶ÌÑ¶</th></tr>
+									<tr><th colspan="5" height="25" align="left">æœ€æ–°æ”¶åˆ°çš„çŸ­è®¯</th></tr>
 									<tr class="tablebody1">
-										<td valign="middle" width="30" class="tabletitle2"><b>×´Ì¬</b></td>
-										<td valign="middle" width="100" class="tabletitle2"><b>·¢¼şÈË</b></td>
-										<td  valign="middle" width="*"  class="tabletitle2"><b>Ö÷Ìâ</b></td>
-										<td valign="middle" width="120" class="tabletitle2"><b>ÈÕÆÚ</b></td>
-										<td  valign="middle" width="60" class="tabletitle2"><b>´óĞ¡</b></td>
+										<td valign="middle" width="30" class="tabletitle2"><b>çŠ¶æ€</b></td>
+										<td valign="middle" width="100" class="tabletitle2"><b>å‘ä»¶äºº</b></td>
+										<td  valign="middle" width="*"  class="tabletitle2"><b>ä¸»é¢˜</b></td>
+										<td valign="middle" width="120" class="tabletitle2"><b>æ—¥æœŸ</b></td>
+										<td  valign="middle" width="60" class="tabletitle2"><b>å¤§å°</b></td>
 									</tr>
 								{$msglist}
 								</table>
 								<br />
 								<table cellspacing="1" cellpadding="0" class="tableborder1">
-									<tr><th colspan="5" height="25" align="left">×îĞÂÉÏ´«ÎÄ¼ş</th></tr>
+									<tr><th colspan="5" height="25" align="left">æœ€æ–°ä¸Šä¼ æ–‡ä»¶</th></tr>
 									<tr class="tablebody1">
-										<td  valign="middle" width="30" class="tabletitle2"><b>ÊôĞÔ</b></td>
-										<td valign="middle" width="100" class="tabletitle2"><b>´óĞ¡</b></td>
-										<td align="center" valign="middle" width="*" class="tabletitle2"><b>ÎÄ¼ş</b></td>
-										<td align="center" valign="middle" width="120" class="tabletitle2"><b>ÈÕÆÚ</b></td>
-										<td align="center" valign="middle" width="60" class="tabletitle2"><b>ÀàĞÍ</b></td>
+										<td  valign="middle" width="30" class="tabletitle2"><b>å±æ€§</b></td>
+										<td valign="middle" width="100" class="tabletitle2"><b>å¤§å°</b></td>
+										<td align="center" valign="middle" width="*" class="tabletitle2"><b>æ–‡ä»¶</b></td>
+										<td align="center" valign="middle" width="120" class="tabletitle2"><b>æ—¥æœŸ</b></td>
+										<td align="center" valign="middle" width="60" class="tabletitle2"><b>ç±»å‹</b></td>
 									</tr>
 									{$filelist}
 								</table>
 							</td>
 						</tr>
 					</table>
-				<!--»ù±¾ĞÅÏ¢end-->
+				<!--åŸºæœ¬ä¿¡æ¯end-->
 			</td>
 		</tr>
 	</table>

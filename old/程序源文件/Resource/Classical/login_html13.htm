@@ -88,26 +88,26 @@ function tipColor(id,tp)
 <div class="mainbox">
 <div class="page_right" style="margin:0px 0px 0px 0px; width:270px; border:0px;">
 	<div class="leftcolor" style=" background:#F4FCEE;"><br />
-	<span class="font14 username">ÒÑ¾­ÊÇ±¾Õ¾»áÔ±£¿</span>
-	<span class="username">Çëµã´ËµÇÂ¼£¡</span>
-	<span><input class="input0" type="button" onclick="javascript:window.location='login.asp'" value=" Á¢¼´×ªµ½µÇÂ¼Ò³Ãæ "/></span><br /><br />
+	<span class="font14 username">å·²ç»æ˜¯æœ¬ç«™ä¼šå‘˜ï¼Ÿ</span>
+	<span class="username">è¯·ç‚¹æ­¤ç™»å½•ï¼</span>
+	<span><input class="input0" type="button" onclick="javascript:window.location='login.asp'" value=" ç«‹å³è½¬åˆ°ç™»å½•é¡µé¢ "/></span><br /><br />
 	</div>
 </div>
 <ul class="tableborder heightd page_left2">
 	<form action="reg.asp?action=save" method="post" name="theForm" id="theForm" onsubmit="return formcheck();">
-	  <h3 class="titlebig">ÓÃ»§×¢²á(»ù±¾ĞÅÏ¢)</h3>
+	  <h3 class="titlebig">ç”¨æˆ·æ³¨å†Œ(åŸºæœ¬ä¿¡æ¯)</h3>
 	  <li>
-		<p class="font14">ÓÃ»§Ãû</p>
+		<p class="font14">ç”¨æˆ·å</p>
 		<input name="{$username}" id="{$username}" type="text" size="30" maxlength="{$NameMaxLength}" onblur="dv_ajaxcheck('checkusername','{$username}');tipColor('isok_{$username}',0);"  tabindex="1" style="float:left" onfocus="tipColor('isok_{$username}',1);"/>
-		<span id="isok_{$username}" class="forminfo">&nbsp;&nbsp;×¢²áÓÃ»§Ãû³¤¶ÈÏŞÖÆÎª{$NameLimLength}£­{$NameMaxLength}×Ö½Ú</span>
+		<span id="isok_{$username}" class="forminfo">&nbsp;&nbsp;æ³¨å†Œç”¨æˆ·åé•¿åº¦é™åˆ¶ä¸º{$NameLimLength}ï¼{$NameMaxLength}å­—èŠ‚</span>
 	  </li>
 	  {$getcode}
 	  <li>
-		<p class="font14">ĞÔ±ğ</p>
+		<p class="font14">æ€§åˆ«</p>
 		<input name="sex" type="radio" value="1"  tabindex="2" checked="checked" class="checkbox" />
-		<img src="images/boy.gif">ÄĞº¢ &nbsp;&nbsp;&nbsp;&nbsp;
+		<img src="images/boy.gif">ç”·å­© &nbsp;&nbsp;&nbsp;&nbsp;
 		<input name="sex" type="radio" value="0" class="checkbox"  tabindex="2"/>
-		<img src="images/girl.gif">Å®º¢
+		<img src="images/girl.gif">å¥³å­©
 	  </li>
 	  <script language="JavaScript" type="text/javascript">
 		<!--
@@ -115,16 +115,16 @@ function tipColor(id,tp)
 		if (Forum_Setting23!=1)
 		{
 			document.write ('<li>');
-			document.write ('<p class="font14">ÂÛÌ³ÃÜÂë</p>');
+			document.write ('<p class="font14">è®ºå›å¯†ç </p>');
 			document.write ('<input type="password" style="float:left" maxLength="16" size="30"  tabindex="3" name="{$psw}" onkeyup="RegCheck.pass(this.value,\'{$psw}\',0);" onblur="tipColor(\'isok_{$psw}\',0);" onfocus="tipColor(\'isok_{$psw}\',1)" />');
 			//document.write ('</li>');
 			//document.write('<li>');
-			//document.write('<p class="font14">ÃÜÂë°²È«ĞÔ¼ì²â</p>');
+			//document.write('<p class="font14">å¯†ç å®‰å…¨æ€§æ£€æµ‹</p>');
 			document.write('<style type="text/css">table span{color:#333;line-height:12px;}.pse01{background-color:#EBEBEB;border-right:solid 1px #BEBEBE;border-bottom:solid 1px #BEBEBE;}.pse02{background-color:#FF4545;border-right:solid 1px #BB2B2B;border-bottom:solid 1px #BB2B2B;}.pse03{background-color:#FFD35E;border-right:solid 1px #E9AE10;border-bottom:solid 1px #E9AE10;}.pse04{background-color:#95EB81;border-right:solid 1px #3BBC1B;border-bottom:solid 1px #3BBC1B;}</style>');
-			document.write('<table cellpadding="0" cellspacing="0" border="0" style="width:120px; height:12px;line-height:12px;margin:0 0 0 5px;padding:0px;float:left"><tr><td id="idSM1" width="33%" class="pse01" align="center"><span style="font-size:1px">&nbsp;</span><span id="idSMT1" style="display:none;">Èõ</span></td><td id="idSM2" width="34%" class="pse01" align="center" style="border-left:solid 1px #fff"><span style="font-size:1px">&nbsp;</span><span id="idSMT0" style="display:inline;font-weight:normal;color:#666"></span><span id="idSMT2" style="display:none;">ÖĞ</span></td><td id="idSM3" width="33%" class="pse01" align="center" style="border-left:solid 1px #fff"><span style="font-size:1px">&nbsp;</span><span id="idSMT3" style="display:none;">Ç¿</span></td></tr></table><span id="isok_{$psw}"></span>');
+			document.write('<table cellpadding="0" cellspacing="0" border="0" style="width:120px; height:12px;line-height:12px;margin:0 0 0 5px;padding:0px;float:left"><tr><td id="idSM1" width="33%" class="pse01" align="center"><span style="font-size:1px">&nbsp;</span><span id="idSMT1" style="display:none;">å¼±</span></td><td id="idSM2" width="34%" class="pse01" align="center" style="border-left:solid 1px #fff"><span style="font-size:1px">&nbsp;</span><span id="idSMT0" style="display:inline;font-weight:normal;color:#666"></span><span id="idSMT2" style="display:none;">ä¸­</span></td><td id="idSM3" width="33%" class="pse01" align="center" style="border-left:solid 1px #fff"><span style="font-size:1px">&nbsp;</span><span id="idSMT3" style="display:none;">å¼º</span></td></tr></table><span id="isok_{$psw}"></span>');
 			document.write ('</li>');
-			document.write ('<li><p class="font14">ÇëÔÙÊäÒ»±éÈ·ÈÏ</p>');
-			document.write ('<input type="password" style="float:left" maxLength="16"  tabindex="4" size="30" name="{$pswc}" onblur="RegCheck.pass(this.value,\'{$pswc}\',1);tipColor(\'isok_{$pswc}\',0);" onfocus="tipColor(\'isok_{$pswc}\',1)"/><span id="isok_{$pswc}" class="forminfo">&nbsp;&nbsp;ÂÛÌ³ÃÜÂëÈ·ÈÏ(ÖÁÉÙ6Î»)</span>');
+			document.write ('<li><p class="font14">è¯·å†è¾“ä¸€éç¡®è®¤</p>');
+			document.write ('<input type="password" style="float:left" maxLength="16"  tabindex="4" size="30" name="{$pswc}" onblur="RegCheck.pass(this.value,\'{$pswc}\',1);tipColor(\'isok_{$pswc}\',0);" onfocus="tipColor(\'isok_{$pswc}\',1)"/><span id="isok_{$pswc}" class="forminfo">&nbsp;&nbsp;è®ºå›å¯†ç ç¡®è®¤(è‡³å°‘6ä½)</span>');
 			document.write ('</li>');
 		}
 		 //-->
@@ -132,42 +132,42 @@ function tipColor(id,tp)
 	  <li>
 		<p class="font14">E-Mail</p>
 		<input name="e_mail" id="e_mail" type="text" size="30" maxlength="50"  tabindex="5" onblur="dv_ajaxcheck('checke_mail','e_mail');tipColor('isok_e_mail',0);" style="float:left;" onfocus="tipColor('isok_e_mail',1);"/>
-		<span id="isok_e_mail" class="forminfo">&nbsp;&nbsp;ÇëÊäÈëÓĞĞ§µÄE-Mail£¬Õâ½«Ê¹ÄúÄÜÓÃµ½ÂÛÌ³ÖĞµÄËùÓĞ¹¦ÄÜ</span>
+		<span id="isok_e_mail" class="forminfo">&nbsp;&nbsp;è¯·è¾“å…¥æœ‰æ•ˆçš„E-Mailï¼Œè¿™å°†ä½¿æ‚¨èƒ½ç”¨åˆ°è®ºå›ä¸­çš„æ‰€æœ‰åŠŸèƒ½</span>
 	  </li>
 	  {$regask}
 	  {$difference}
 	   <li style="clear:both;">
-		<p class="font14">¸ß¼¶Ñ¡Ïî</p>
-		<input name="advshow" type="checkbox" id="advcheck" onclick="showadv()" value="1" class="radio"/><span id="advance">ÏÔÊ¾¸ß¼¶ÓÃ»§ÉèÖÃÑ¡Ïî</span>
+		<p class="font14">é«˜çº§é€‰é¡¹</p>
+		<input name="advshow" type="checkbox" id="advcheck" onclick="showadv()" value="1" class="radio"/><span id="advance">æ˜¾ç¤ºé«˜çº§ç”¨æˆ·è®¾ç½®é€‰é¡¹</span>
 	  </li>
 	  <li id="adv" name="adv" style="display:none;clear:both;overflow:hidden;">
 	   <table cellspacing="0" style="width:100%;">
 		 <tr>
 			<th colspan="2" class="titlebig">
-				ÌîĞ´ÏêÏ¸×ÊÁÏ
+				å¡«å†™è¯¦ç»†èµ„æ–™
 			</th>
 		 </tr>
 		 <tr><td style="background-color:#F3F8FC">
-			<p class="font14">ÃÜÂëÎÊÌâ</p>
+			<p class="font14">å¯†ç é—®é¢˜</p>
 		 </td><td style="background-color:#F3F8FC">
-			<input name="question" type="text" size="30" style="float:left;" tabindex="7" onmousedown="tipColor('isok_question',1);"/><div id="isok_question" class="forminfo">Íü¼ÇÃÜÂëµÄÌáÊ¾ÎÊÌâ(·Ç±ØÌî£¬Ö÷ÒªÊÇÍü¼ÇÃÜÂëÊ±·½±ãÈ¡»ØÃÜÂë)</div>
+			<input name="question" type="text" size="30" style="float:left;" tabindex="7" onmousedown="tipColor('isok_question',1);"/><div id="isok_question" class="forminfo">å¿˜è®°å¯†ç çš„æç¤ºé—®é¢˜(éå¿…å¡«ï¼Œä¸»è¦æ˜¯å¿˜è®°å¯†ç æ—¶æ–¹ä¾¿å–å›å¯†ç )</div>
 		</td></tr>
 		 <tr><td style="background-color:#F3F8FC">
-			<p class="font14">ÃÜÂë´ğ°¸</p>
+			<p class="font14">å¯†ç ç­”æ¡ˆ</p>
 		 </td><td style="background-color:#F3F8FC">
-				<input name="answer" type="text" size="30" style="float:left;"  tabindex="8" onmousedown="tipColor('isok_answer',1);"/><div id="isok_answer" class="forminfo">ÔÚ´ËÊäÈëÉÏÃæÎÊÌâµÄ´ğ°¸(·Ç±ØÌî£¬Ö÷ÒªÊÇÍü¼ÇÃÜÂëÊ±·½±ãÈ¡»ØÃÜÂë)</div>
+				<input name="answer" type="text" size="30" style="float:left;"  tabindex="8" onmousedown="tipColor('isok_answer',1);"/><div id="isok_answer" class="forminfo">åœ¨æ­¤è¾“å…¥ä¸Šé¢é—®é¢˜çš„ç­”æ¡ˆ(éå¿…å¡«ï¼Œä¸»è¦æ˜¯å¿˜è®°å¯†ç æ—¶æ–¹ä¾¿å–å›å¯†ç )</div>
 		 </td></tr>
 		 <tr>
 			<td class="tb">
-				Í·Ïñ</td>
+				å¤´åƒ</td>
 			<td style="width:785px;">
 				<select name="face" style="font-family:arial" size="1" onchange="document.images['face'].src=options[selectedIndex].value; parent.document.theForm.myface.value=options[selectedIndex].value">
 				{$Face_select}
 				</select>
 				<img src='{$FaceDefault}' alt="" id="face" />
-				<a href="javascript:;" onclick="openScript('smiley.asp?t=1',650,400)" title="Í·ÏñÔ¤ÀÀÁĞ±í">
-					[<font color="{$color}">Í·ÏñÔ¤ÀÀ</font>]
-				</a>&nbsp;Ñ¡ÔñµÄÍ·Ïñ½«³öÏÖÔÚÄúµÄ×ÊÁÏºÍ·¢±íµÄÌû×ÓÖĞ£¬ÄúÒ²¿ÉÒÔÑ¡ÔñÏÂÃæµÄ×Ô¶¨ÒåÍ·Ïñ
+				<a href="javascript:;" onclick="openScript('smiley.asp?t=1',650,400)" title="å¤´åƒé¢„è§ˆåˆ—è¡¨">
+					[<font color="{$color}">å¤´åƒé¢„è§ˆ</font>]
+				</a>&nbsp;é€‰æ‹©çš„å¤´åƒå°†å‡ºç°åœ¨æ‚¨çš„èµ„æ–™å’Œå‘è¡¨çš„å¸–å­ä¸­ï¼Œæ‚¨ä¹Ÿå¯ä»¥é€‰æ‹©ä¸‹é¢çš„è‡ªå®šä¹‰å¤´åƒ
 			</td>
 		 </tr>
 		 <tr>
@@ -179,174 +179,174 @@ function tipColor(id,tp)
 					if (Forum_Setting54==0)
 					{
 						document.write ('<td>');
-						document.write ('<p class="font14">×Ô¶¨ÒåÍ·Ïñ</p><!--Èç¹ûÍ¼ÏñÎ»ÖÃÖĞÓĞÁ¬½ÓÍ¼Æ¬½«ÒÔ×Ô¶¨ÒåµÄÎªÖ÷--></td>');
+						document.write ('<p class="font14">è‡ªå®šä¹‰å¤´åƒ</p><!--å¦‚æœå›¾åƒä½ç½®ä¸­æœ‰è¿æ¥å›¾ç‰‡å°†ä»¥è‡ªå®šä¹‰çš„ä¸ºä¸»--></td>');
 					}
 					else
 					{
 						document.write ('<td>');
-						document.write ('<p class="font14">ÓÃ»§Í·Ïñ</p><!--ÄúÔİÊ±Ã»ÓĞ×Ô¶¨ÒåÍ·ÏñµÄÈ¨ÏŞ--></td>');
+						document.write ('<p class="font14">ç”¨æˆ·å¤´åƒ</p><!--æ‚¨æš‚æ—¶æ²¡æœ‰è‡ªå®šä¹‰å¤´åƒçš„æƒé™--></td>');
 					}
 					if (Forum_Setting7==1)
 					{
 						document.write ('<td><iframe name="ad" frameborder="0" width="300" height="40" scrolling="no" src="reg_upload.asp"></iframe><br />');
 					}
 					else{document.write('<td>');}
-					document.write('Í¼ÏñÎ»ÖÃ£º<input type="text" name="myface" size="30" maxlength="100">&nbsp;ÍêÕûUrlµØÖ·<br />');
-					document.write ('<span style="color:#000;">¿í&nbsp;&nbsp;&nbsp;&nbsp;¶È£º</span>');
+					document.write('å›¾åƒä½ç½®ï¼š<input type="text" name="myface" size="30" maxlength="100">&nbsp;å®Œæ•´Urlåœ°å€<br />');
+					document.write ('<span style="color:#000;">å®½&nbsp;&nbsp;&nbsp;&nbsp;åº¦ï¼š</span>');
 					document.write ('<input type="text" name="width" size="3" maxlength="3" value="{$FaceMaxWidth}" />');
-					document.write ('0---{$ForumFaceMax}µÄÕûÊı<span style="color:#000;">&nbsp;&nbsp;¸ß&nbsp;&nbsp;&nbsp;&nbsp;¶È£º</span>');
+					document.write ('0---{$ForumFaceMax}çš„æ•´æ•°<span style="color:#000;">&nbsp;&nbsp;é«˜&nbsp;&nbsp;&nbsp;&nbsp;åº¦ï¼š</span>');
 					document.write ('<input type="text" name="height" size="3" maxlength="3" value="{$FaceMaxHeight}">');
-					document.write ('0---{$ForumFaceMax}µÄÕûÊı<br />');
+					document.write ('0---{$ForumFaceMax}çš„æ•´æ•°<br />');
 					document.write ('</td>');
 				//-->
 				</script>
 		 </td></tr>
 		 <tr>
 			<td class="tb">
-				¸öÈËÍøÖ·</td>
+				ä¸ªäººç½‘å€</td>
 			<td>
 				<input name="homepage" type="text" size="44" maxlength="80" />
 			</td>
 		 </tr>
 		 <tr>
-			<td class="tb">QQºÅÂë</td>
+			<td class="tb">QQå·ç </td>
 			<td>
-				<input name="OICQ" type="text" size="44" maxlength="20" />ÌîĞ´ÄúµÄQQºÅÂë£¬·½±ãÓëËûÈËµÄÁªÏµ
+				<input name="OICQ" type="text" size="44" maxlength="20" />å¡«å†™æ‚¨çš„QQå·ç ï¼Œæ–¹ä¾¿ä¸ä»–äººçš„è”ç³»
 			</td>
 		 </tr>
 		 <tr>
 			<td class="tb">
-				ICQºÅÂë</td>
+				ICQå·ç </td>
 			<td>
-				<input name="ICQ" type="text" size="44" maxlength="20" />ÌîĞ´ÄúµÄICQµØÖ·£¬·½±ãÓëËûÈËµÄÁªÏµ
+				<input name="ICQ" type="text" size="44" maxlength="20" />å¡«å†™æ‚¨çš„ICQåœ°å€ï¼Œæ–¹ä¾¿ä¸ä»–äººçš„è”ç³»
 			</td>
 		 </tr>
 		 <tr>
 			<td class="tb">
 				MSN</td>
 			<td>
-				<input name="msn" type="text" size="44" maxlength="70" />ÌîĞ´ÄúµÄMSNµØÖ·£¬·½±ãÓëËûÈËµÄÁªÏµ
+				<input name="msn" type="text" size="44" maxlength="70" />å¡«å†™æ‚¨çš„MSNåœ°å€ï¼Œæ–¹ä¾¿ä¸ä»–äººçš„è”ç³»
 			</td>
 		 </tr>
 		 <tr>
 			<td class="tb">
 				Aim</td>
 			<td>
-				<input name="aim" type="text" size="44" maxlength="70" />ÌîĞ´ÄúµÄAimµØÖ·£¬·½±ãÓëËûÈËµÄÁªÏµ
+				<input name="aim" type="text" size="44" maxlength="70" />å¡«å†™æ‚¨çš„Aimåœ°å€ï¼Œæ–¹ä¾¿ä¸ä»–äººçš„è”ç³»
 			</td>
 		 </tr>
 		 <tr>
 			<td class="tb">
 				Yahoo</td>
 			<td>
-				<input name="yahoo" type="text" size="44" maxlength="70" />ÌîĞ´ÄúµÄYahooµØÖ·£¬·½±ãÓëËûÈËµÄÁªÏµ
+				<input name="yahoo" type="text" size="44" maxlength="70" />å¡«å†™æ‚¨çš„Yahooåœ°å€ï¼Œæ–¹ä¾¿ä¸ä»–äººçš„è”ç³»
 			</td>
 		 </tr>
 		 <tr>
 			<td class="tb">
 				UC</td>
 			<td>
-				<input maxlength="70" size="44" name="uc"/>ÌîĞ´ÄúµÄUCºÅÂë£¬·½±ãÓëËûÈËµÄÁªÏµ
+				<input maxlength="70" size="44" name="uc"/>å¡«å†™æ‚¨çš„UCå·ç ï¼Œæ–¹ä¾¿ä¸ä»–äººçš„è”ç³»
 			</td>
 		 </tr>
 		 <tr>
 			<th colspan="2" class="titlebig">
-				»ù±¾ÉèÖÃÑ¡Ïî
+				åŸºæœ¬è®¾ç½®é€‰é¡¹
 			</th>
 		 </tr>
 		 <tr>
 			<td class="tb">
-				CookieµÄ±£ÁôÊ±¼ä</td>
+				Cookieçš„ä¿ç•™æ—¶é—´</td>
 			<td>
-				<input name="usercookies" type="radio" value="1" checked="checked" class="radio"/>1Ìì
-				<input name="usercookies" type="radio" value="2" class="radio"/>1¸öÔÂ
-				<input name="usercookies" type="radio" value="3" class="radio"/>1Äê
-				<input name="usercookies" type="radio" value="0" class="radio"/>²»±£Áô&nbsp;&nbsp;&nbsp;&nbsp;µÇÂ¼ÂÛÌ³ĞÅÏ¢±£ÁôÊ±¼ä£¬ÔÚÕâ¸öÊ±¼äÄÚÖØ¸´µÇÂ¼ÂÛÌ³²»ĞèÒªÖØĞÂµÇÂ¼
+				<input name="usercookies" type="radio" value="1" checked="checked" class="radio"/>1å¤©
+				<input name="usercookies" type="radio" value="2" class="radio"/>1ä¸ªæœˆ
+				<input name="usercookies" type="radio" value="3" class="radio"/>1å¹´
+				<input name="usercookies" type="radio" value="0" class="radio"/>ä¸ä¿ç•™&nbsp;&nbsp;&nbsp;&nbsp;ç™»å½•è®ºå›ä¿¡æ¯ä¿ç•™æ—¶é—´ï¼Œåœ¨è¿™ä¸ªæ—¶é—´å†…é‡å¤ç™»å½•è®ºå›ä¸éœ€è¦é‡æ–°ç™»å½•
 			</td>
 		 </tr>
 		 <tr>
 			<td class="tb">
-				ÄúµÄ»ù±¾×ÊÁÏ</td>
+				æ‚¨çš„åŸºæœ¬èµ„æ–™</td>
 			<td>
 				<input name="setuserinfo" type="radio" value="1" checked="checked" class="radio"/>
-				¿ª·Å  <input name="setuserinfo" type="radio" value="0" class="radio"/>
-				²»¿ª·Å &nbsp;&nbsp;¿ª·Åºó±ğÈË¿ÉÒÔ¿´µ½ÄúµÄĞÔ±ğ¡¢Email¡¢QQµÈĞÅÏ¢
+				å¼€æ”¾  <input name="setuserinfo" type="radio" value="0" class="radio"/>
+				ä¸å¼€æ”¾ &nbsp;&nbsp;å¼€æ”¾ååˆ«äººå¯ä»¥çœ‹åˆ°æ‚¨çš„æ€§åˆ«ã€Emailã€QQç­‰ä¿¡æ¯
 			</td>
 		 </tr>
 		 <tr>
 			<td class="tb">
-				ÄúµÄÕæÊµ×ÊÁÏ</td>
+				æ‚¨çš„çœŸå®èµ„æ–™</td>
 			<td>
-				<input name="setusertrue" type="radio" value="1" class="radio"/>¿ª·Å
-				<input name="setusertrue" type="radio" value="0" checked="checked" class="radio"/>²»¿ª·Å&nbsp;&nbsp;&nbsp;&nbsp;¿ª·Åºó±ğÈË¿ÉÒÔ¿´µ½ÄúµÄÕæÊµĞÕÃû¡¢ÁªÏµ·½Ê½µÈĞÅÏ¢
+				<input name="setusertrue" type="radio" value="1" class="radio"/>å¼€æ”¾
+				<input name="setusertrue" type="radio" value="0" checked="checked" class="radio"/>ä¸å¼€æ”¾&nbsp;&nbsp;&nbsp;&nbsp;å¼€æ”¾ååˆ«äººå¯ä»¥çœ‹åˆ°æ‚¨çš„çœŸå®å§“åã€è”ç³»æ–¹å¼ç­‰ä¿¡æ¯
 			</td>
 		 </tr>
 		 <tr>
 			<td class="tb">
-				»Ø¸´ÌáÊ¾</td>
+				å›å¤æç¤º</td>
 			<td>
 				<input name="showRe" type="radio" value="1" class="radio"/>
-				ÌáÊ¾ÎÒ
+				æç¤ºæˆ‘
 				<input name="showRe" type="radio" value="0" checked="checked" class="radio"/>
-				²»ÌáÊ¾&nbsp;&nbsp;&nbsp;&nbsp;µ±Äú·¢±íµÄÌû×ÓÓĞÈË»Ø¸´Ê±£¬Ê¹ÓÃÂÛÌ³ĞÅÏ¢Í¨ÖªÄú¡£
+				ä¸æç¤º&nbsp;&nbsp;&nbsp;&nbsp;å½“æ‚¨å‘è¡¨çš„å¸–å­æœ‰äººå›å¤æ—¶ï¼Œä½¿ç”¨è®ºå›ä¿¡æ¯é€šçŸ¥æ‚¨ã€‚
 			</td>
 		 </tr>
 		 <tr>
 			<th colspan="2" class="titlebig">
-				¸öÈËÕæÊµĞÅÏ¢£¨ÒÔÏÂÄÚÈİ½¨ÒéÌîĞ´£©
+				ä¸ªäººçœŸå®ä¿¡æ¯ï¼ˆä»¥ä¸‹å†…å®¹å»ºè®®å¡«å†™ï¼‰
 			</th>
 		 </th>
 		 <tr>
 			<td class="tb">
-				ÕæÊµĞÕÃû</td>
+				çœŸå®å§“å</td>
 			<td>
 				<input type="text" name="realname" size="18" />
 			</td>
 		 </tr>
 		 <tr>
 			<td class="tb">
-				¹ú¡¡¡¡¼Ò</td>
+				å›½ã€€ã€€å®¶</td>
 			<td>
 				<input name="country" type="text" size="18" />
 			</td>
 		 </tr>
 		 <tr>
 			<td class="tb">
-				ÁªÏµµç»°</td>
+				è”ç³»ç”µè¯</td>
 			<td>
 				<input name="userphone" type="text" size="18" />
 			</td>
 		 </tr>
 		 <tr>
 			<td class="tb">
-				Í¨ĞÅµØÖ·</td>
+				é€šä¿¡åœ°å€</td>
 			<td>
 				<input name="address" type="text" size="18" />
 			</td>
 		 </tr>
 		 <tr>
 			<td class="tb">
-				Ê¡¡¡¡¡·İ</td>
+				çœã€€ã€€ä»½</td>
 			<td>
 				<input name="province" type="text" size="18" />
 				<select name="selectp" onchange="selectcityarea('selectp','selectc','theForm');theForm.province.value=this.value;">
-					<option value="0" selected="selected">ÇëÑ¡Ôñ....</option>
+					<option value="0" selected="selected">è¯·é€‰æ‹©....</option>
 				</select>
 			</td>
 		 </tr>
 		 <tr>
 			<td class="tb">
-				³Ç¡¡¡¡ÊĞ</td>
+				åŸã€€ã€€å¸‚</td>
 			<td>
 					<input type="text" name="city" size="18" />
 					<select name="selectc" onchange="theForm.city.value=this.value;">
-						<option value="0" selected="selected">ÇëÑ¡Ôñ....</option>
+						<option value="0" selected="selected">è¯·é€‰æ‹©....</option>
 					</select>
 			</td>
 		 </tr>
 		 <tr>
 			<td class="tb">
-				Éú¡¡¡¡Ğ¤</td>
+				ç”Ÿã€€ã€€è‚–</td>
 			<td>
 					<select size="1" name="shengxiao">
 						{$user_shengxiao}
@@ -355,7 +355,7 @@ function tipColor(id,tp)
 		 </tr>
 		 <tr>
 			<td class="tb">
-				Ñª¡¡¡¡ĞÍ</td>
+				è¡€ã€€ã€€å‹</td>
 			<td>
 					<select size="1" name="blood">
 						{$user_blood}
@@ -364,7 +364,7 @@ function tipColor(id,tp)
 		 </tr>
 		 <tr>
 			<td class="tb">
-				ĞÅ¡¡¡¡Ñö</td>
+				ä¿¡ã€€ã€€ä»°</td>
 			<td>
 					<select size="1" name="belief">
 					{$user_belief}
@@ -373,7 +373,7 @@ function tipColor(id,tp)
 		 </tr>
 		 <tr>
 			<td class="tb">
-				Ö°¡¡¡¡Òµ</td>
+				èŒã€€ã€€ä¸š</td>
 			<td>
 					<select name="occupation">
 						{$user_occupation}
@@ -382,7 +382,7 @@ function tipColor(id,tp)
 		 </tr>
 		 <tr>
 			<td class="tb">
-				»éÒö×´¿ö</td>
+				å©šå§»çŠ¶å†µ</td>
 			<td>
 					<select size="1" name="marital">
 						{$user_marital}
@@ -391,7 +391,7 @@ function tipColor(id,tp)
 		 </tr>
 		 <tr>
 			<td class="tb">
-				×î¸ßÑ§Àú</td>
+				æœ€é«˜å­¦å†</td>
 			<td>
 					<select size="1" name="education">
 						{$user_education}
@@ -400,21 +400,21 @@ function tipColor(id,tp)
 		 </tr>
 		 <tr>
 			<td class="tb">
-				±ÏÒµÔºĞ£</td>
+				æ¯•ä¸šé™¢æ ¡</td>
 			<td>
 					<input name="college" type="text" size="18" />
 			</td>
 		 </tr>
 		 <tr>
 			<td class="tb">
-				ĞÔ¡¡¸ñ</td>
+				æ€§ã€€æ ¼</td>
 			<td>
 				<div style="float:left;">{$user_character}</div>
 			</td>
 		 </tr>
 		 <tr>
 			<td class="tb">
-				¸öÈË¼ò½é</td>
+				ä¸ªäººç®€ä»‹</td>
 			<td>
 				<textarea name="personal" rows="6" cols="90%" ></textarea>
 			</td>
@@ -422,11 +422,11 @@ function tipColor(id,tp)
 	   </table>
 	  </li>
 		<li style="height:40px;text-align:center">
-			<input type="checkbox" name="checkbox" checked="checked" class="checkbox" value="checkbox" tabindex="10" /> <a href="reg.asp">Í¬Òâ²¢½ÓÊÜ×¢²áĞ­Òé</a>
+			<input type="checkbox" name="checkbox" checked="checked" class="checkbox" value="checkbox" tabindex="10" /> <a href="reg.asp">åŒæ„å¹¶æ¥å—æ³¨å†Œåè®®</a>
 			<input type="hidden" name="{$hidden}" value="{$hidden}" />
 			<input type="hidden" name="checkreg" id="checkreg" value="0" />
-			<input class="input0" id="bt_save" name="Submit" type="submit"  tabindex="11" disabled="true" value=" Ìá   ½» " />&nbsp;
-			<input class="input0" type="reset" tabindex="12" value=" ÖØ   ÖÃ "/>
+			<input class="input0" id="bt_save" name="Submit" type="submit"  tabindex="11" disabled="true" value=" æ   äº¤ " />&nbsp;
+			<input class="input0" type="reset" tabindex="12" value=" é‡   ç½® "/>
 		</li>
 	</form>
 </ul>
@@ -445,12 +445,12 @@ function tipColor(id,tp)
 		if (document.theForm.advshow.checked == true)
 		{
 			document.getElementById("adv").style.display = "inline";
-			document.getElementById("advance").innerHTML="¹Ø±Õ¸ß¼¶ÓÃ»§ÉèÖÃÑ¡Ïî";
+			document.getElementById("advance").innerHTML="å…³é—­é«˜çº§ç”¨æˆ·è®¾ç½®é€‰é¡¹";
 		}
 		else
 		{
 			document.getElementById("adv").style.display = "none";
-			document.getElementById("advance").innerHTML="ÏÔÊ¾¸ß¼¶ÓÃ»§ÉèÖÃÑ¡Ïî";
+			document.getElementById("advance").innerHTML="æ˜¾ç¤ºé«˜çº§ç”¨æˆ·è®¾ç½®é€‰é¡¹";
 		}
 	}
 //-->

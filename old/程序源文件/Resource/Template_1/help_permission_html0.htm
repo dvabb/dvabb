@@ -1,4 +1,4 @@
-<!--°æÃæÈ¨ÏŞä¯ÀÀ£¬Ö÷ÌåJs²¿·Ö-->
+<!--ç‰ˆé¢æƒé™æµè§ˆï¼Œä¸»ä½“Jséƒ¨åˆ†-->
 <script language="JavaScript" type="text/javascript">
 <!--
 var groupname=new Array();
@@ -7,12 +7,12 @@ function showtoptable(orders)
 {
 	document.write ('<table class="tableborder1" cellspacing="1" cellpadding="0"  align="center">');
 	document.write ('<tr>');
-	document.write ('<th height="25" width="16%" id=tabletitlelink><a href="?boardid={$boardid}&orders=1&action={$action}">ä¯ÀÀÈ¨ÏŞ<a></th>');
-	document.write ('<th height="23" width="16%" id=tabletitlelink><a href="?boardid={$boardid}&orders=2&action={$action}">·¢ÌûÈ¨ÏŞ<a></th>');
-	document.write ('<th height="23" width="16%" id=tabletitlelink><a href="?boardid={$boardid}&orders=3&action={$action}">Ìû×Ó¹ÜÀíÈ¨ÏŞ<a></th>');
-	document.write ('<th height="23" width="16%" id=tabletitlelink><a href="?boardid={$boardid}&orders=4&action={$action}">ÆäËûÈ¨ÏŞ<a></th>');
-	document.write ('<th height="23" width="16%" id=tabletitlelink><a href="?boardid={$boardid}&orders=5&action={$action}">¹ÜÀíÈ¨ÏŞ<a></th>');
-	document.write ('<th height="23" width="16%" id=tabletitlelink><a href="?boardid={$boardid}&orders=6&action={$action}">¶ÌĞÅÈ¨ÏŞ<a></th>');
+	document.write ('<th height="25" width="16%" id=tabletitlelink><a href="?boardid={$boardid}&orders=1&action={$action}">æµè§ˆæƒé™<a></th>');
+	document.write ('<th height="23" width="16%" id=tabletitlelink><a href="?boardid={$boardid}&orders=2&action={$action}">å‘å¸–æƒé™<a></th>');
+	document.write ('<th height="23" width="16%" id=tabletitlelink><a href="?boardid={$boardid}&orders=3&action={$action}">å¸–å­ç®¡ç†æƒé™<a></th>');
+	document.write ('<th height="23" width="16%" id=tabletitlelink><a href="?boardid={$boardid}&orders=4&action={$action}">å…¶ä»–æƒé™<a></th>');
+	document.write ('<th height="23" width="16%" id=tabletitlelink><a href="?boardid={$boardid}&orders=5&action={$action}">ç®¡ç†æƒé™<a></th>');
+	document.write ('<th height="23" width="16%" id=tabletitlelink><a href="?boardid={$boardid}&orders=6&action={$action}">çŸ­ä¿¡æƒé™<a></th>');
 	document.write ('</tr>');
 	document.write ('</table>');
 	switch (orders)
@@ -20,114 +20,114 @@ function showtoptable(orders)
 		case 1:
 		document.write ('<table class="tableborder1" cellspacing="1" cellpadding="0"  align="center">');
 		document.write ('<tr  align="center">');
-		document.write ('<td colspan="5" class="tablebody1">ä¯ÀÀÈ¨ÏŞ</td>');
+		document.write ('<td colspan="5" class="tablebody1">æµè§ˆæƒé™</td>');
 		document.write ('</tr>');
 		document.write ('<tr>');
-		document.write ('<td height="25" width="20%" class="tablebody2">ÓÃ»§×éÃû('+groupname.length+')</td>');
-		document.write ('<td height="23" width="20%" class="tablebody2">¿ÉÒÔä¯ÀÀÂÛÌ³</td>');
-		document.write ('<td height="23" width="20%" class="tablebody2">¿ÉÒÔ²é¿´»áÔ±ĞÅÏ¢(°üÀ¨ÆäËû»áÔ±µÄ×ÊÁÏºÍ»áÔ±ÁĞ±í)</td>');
-		document.write ('<td height="23" width="20%" class="tablebody2">¿ÉÒÔ²é¿´ÆäËûÈË·¢²¼µÄÖ÷Ìâ</td>');
-		document.write ('<td height="23" width="20%" class="tablebody2">¿ÉÒÔä¯ÀÀ¾«»ªÌû×Ó</td>');
+		document.write ('<td height="25" width="20%" class="tablebody2">ç”¨æˆ·ç»„å('+groupname.length+')</td>');
+		document.write ('<td height="23" width="20%" class="tablebody2">å¯ä»¥æµè§ˆè®ºå›</td>');
+		document.write ('<td height="23" width="20%" class="tablebody2">å¯ä»¥æŸ¥çœ‹ä¼šå‘˜ä¿¡æ¯(åŒ…æ‹¬å…¶ä»–ä¼šå‘˜çš„èµ„æ–™å’Œä¼šå‘˜åˆ—è¡¨)</td>');
+		document.write ('<td height="23" width="20%" class="tablebody2">å¯ä»¥æŸ¥çœ‹å…¶ä»–äººå‘å¸ƒçš„ä¸»é¢˜</td>');
+		document.write ('<td height="23" width="20%" class="tablebody2">å¯ä»¥æµè§ˆç²¾åå¸–å­</td>');
 		document.write ('</tr>');
 		break;
 		case 2:
 		document.write ('<table class="tableborder1" cellspacing="1" cellpadding="3"  align="center">');
 		document.write ('<tr  align="center">');
-		document.write ('<td colspan=13 class="tablebody1">·¢ÌûÈ¨ÏŞ</td>');
+		document.write ('<td colspan=13 class="tablebody1">å‘å¸–æƒé™</td>');
 		document.write ('</tr>');
 		document.write ('<tr>');
-		document.write ('<td height="25" width="16%" class="tablebody2">ÓÃ»§×éÃû('+groupname.length+')</td>');
-		document.write ('<td height="23" width="7%"class="tablebody2">¿ÉÒÔ·¢²¼ĞÂÖ÷Ìâ</td>');
-		document.write ('<td height="23" width="7%"class="tablebody2">¿ÉÒÔ»Ø¸´×Ô¼ºµÄÖ÷Ìâ</td>');
-		document.write ('<td height="23" width="7%"class="tablebody2">¿ÉÒÔ»Ø¸´ÆäËûÈËµÄÖ÷Ìâ</td>');
-		document.write ('<td height="23" width="7%"class="tablebody2">²ÎÓëÆÀ·ÖËùĞè½ğÇ®</td>');
-		document.write ('<td height="23" width="7%"class="tablebody2">¿ÉÒÔÉÏ´«¸½¼ş</td>');
-		document.write ('<td height="23" width="7%"class="tablebody2">×î¶àÉÏ´«ÎÄ¼ş¸öÊı</td>');
-		document.write ('<td height="23" width="7%"class="tablebody2">ÉÏ´«ÎÄ¼ş´óĞ¡ÏŞÖÆ</td>');
-		document.write ('<td height="23" width="7%"class="tablebody2">¿ÉÒÔ·¢²¼ĞÂÍ¶Æ±</td>');
-		document.write ('<td height="23" width="7%"class="tablebody2">¿ÉÒÔ²ÎÓëÍ¶Æ±</td>');
-		document.write ('<td height="23" width="7%"class="tablebody2">¿ÉÒÔ·¢²¼Ğ¡×Ö±¨</td>');
-		document.write ('<td height="23" width="7%"class="tablebody2">·¢²¼Ğ¡×Ö±¨ËùĞè½ğÇ®</td>');
+		document.write ('<td height="25" width="16%" class="tablebody2">ç”¨æˆ·ç»„å('+groupname.length+')</td>');
+		document.write ('<td height="23" width="7%"class="tablebody2">å¯ä»¥å‘å¸ƒæ–°ä¸»é¢˜</td>');
+		document.write ('<td height="23" width="7%"class="tablebody2">å¯ä»¥å›å¤è‡ªå·±çš„ä¸»é¢˜</td>');
+		document.write ('<td height="23" width="7%"class="tablebody2">å¯ä»¥å›å¤å…¶ä»–äººçš„ä¸»é¢˜</td>');
+		document.write ('<td height="23" width="7%"class="tablebody2">å‚ä¸è¯„åˆ†æ‰€éœ€é‡‘é’±</td>');
+		document.write ('<td height="23" width="7%"class="tablebody2">å¯ä»¥ä¸Šä¼ é™„ä»¶</td>');
+		document.write ('<td height="23" width="7%"class="tablebody2">æœ€å¤šä¸Šä¼ æ–‡ä»¶ä¸ªæ•°</td>');
+		document.write ('<td height="23" width="7%"class="tablebody2">ä¸Šä¼ æ–‡ä»¶å¤§å°é™åˆ¶</td>');
+		document.write ('<td height="23" width="7%"class="tablebody2">å¯ä»¥å‘å¸ƒæ–°æŠ•ç¥¨</td>');
+		document.write ('<td height="23" width="7%"class="tablebody2">å¯ä»¥å‚ä¸æŠ•ç¥¨</td>');
+		document.write ('<td height="23" width="7%"class="tablebody2">å¯ä»¥å‘å¸ƒå°å­—æŠ¥</td>');
+		document.write ('<td height="23" width="7%"class="tablebody2">å‘å¸ƒå°å­—æŠ¥æ‰€éœ€é‡‘é’±</td>');
 		document.write ('</tr>');
 		break;
 		case 3:
 		document.write ('<table class=tableborder1 cellspacing=1 cellpadding=3  align="center">');
 		document.write ('<tr  align="center">');
-		document.write ('<td colspan="5" class="tablebody1">Ìû×Ó¹ÜÀíÈ¨ÏŞ</td>');
+		document.write ('<td colspan="5" class="tablebody1">å¸–å­ç®¡ç†æƒé™</td>');
 		document.write ('</tr>');
 		document.write ('<tr>');
-		document.write ('<td height="25" width="20%" class="tablebody2">ÓÃ»§×éÃû('+groupname.length+')</td>');
-		document.write ('<td height="23" width="20%" class="tablebody2">¿ÉÒÔ±à¼­×Ô¼ºµÄÌû×Ó</td>');
-		document.write ('<td height="23" width="20%" class="tablebody2">¿ÉÒÔÉ¾³ı×Ô¼ºµÄÌû×Ó</td>');
-		document.write ('<td height="23" width="20%" class="tablebody2">¿ÉÒÔÒÆ¶¯×Ô¼ºµÄÌû×Óµ½ÆäËûÂÛÌ³</td>');
-		document.write ('<td height="23" width="20%" class="tablebody2">¿ÉÒÔ´ò¿ª/¹Ø±Õ×Ô¼º·¢²¼µÄÖ÷Ìâ</td>');
+		document.write ('<td height="25" width="20%" class="tablebody2">ç”¨æˆ·ç»„å('+groupname.length+')</td>');
+		document.write ('<td height="23" width="20%" class="tablebody2">å¯ä»¥ç¼–è¾‘è‡ªå·±çš„å¸–å­</td>');
+		document.write ('<td height="23" width="20%" class="tablebody2">å¯ä»¥åˆ é™¤è‡ªå·±çš„å¸–å­</td>');
+		document.write ('<td height="23" width="20%" class="tablebody2">å¯ä»¥ç§»åŠ¨è‡ªå·±çš„å¸–å­åˆ°å…¶ä»–è®ºå›</td>');
+		document.write ('<td height="23" width="20%" class="tablebody2">å¯ä»¥æ‰“å¼€/å…³é—­è‡ªå·±å‘å¸ƒçš„ä¸»é¢˜</td>');
 		document.write ('</tr>');
 		break;
 		case 4:
 		document.write ('<table class="tableborder1" cellspacing="1" cellpadding="3"  align="center">');
 		document.write ('<tr  align="center">');
-		document.write ('<td colspan=8 class="tablebody1">ÆäËûÈ¨ÏŞ</td>');
+		document.write ('<td colspan=8 class="tablebody1">å…¶ä»–æƒé™</td>');
 		document.write ('</tr>');
 		document.write ('<tr>');
-		document.write ('<td height="25" width="12.5%" class="tablebody2">ÓÃ»§×éÃû('+groupname.length+')</td>');
-		document.write ('<td height="23" width="12.5%" class="tablebody2">¿ÉÒÔËÑË÷ÂÛÌ³</td>');
-		document.write ('<td height="23" width="12.5%" class="tablebody2">¿ÉÒÔÊ¹ÓÃ\'·¢ËÍ±¾Ò³¸øºÃÓÑ\'¹¦ÄÜ</td>');
-		document.write ('<td height="23" width="12.5%" class="tablebody2">¿ÉÒÔĞŞ¸Ä¸öÈË×ÊÁÏ</td>');
-		document.write ('<td height="23" width="12.5%" class="tablebody2">Ìû×ÓÖĞ¿ÉÒÔ²é¿´ÆäËûÈËÍ·ÏÎ</td>');
-		document.write ('<td height="23" width="12.5%" class="tablebody2">Ìû×ÓÖĞ¿ÉÒÔ²é¿´ÆäËûÈËÍ·Ïñ</td>');
-		document.write ('<td height="23" width="12.5%" class="tablebody2">¿ÉÒÔä¯ÀÀÂÛÌ³ÊÂ¼ş</td>');
+		document.write ('<td height="25" width="12.5%" class="tablebody2">ç”¨æˆ·ç»„å('+groupname.length+')</td>');
+		document.write ('<td height="23" width="12.5%" class="tablebody2">å¯ä»¥æœç´¢è®ºå›</td>');
+		document.write ('<td height="23" width="12.5%" class="tablebody2">å¯ä»¥ä½¿ç”¨\'å‘é€æœ¬é¡µç»™å¥½å‹\'åŠŸèƒ½</td>');
+		document.write ('<td height="23" width="12.5%" class="tablebody2">å¯ä»¥ä¿®æ”¹ä¸ªäººèµ„æ–™</td>');
+		document.write ('<td height="23" width="12.5%" class="tablebody2">å¸–å­ä¸­å¯ä»¥æŸ¥çœ‹å…¶ä»–äººå¤´è¡”</td>');
+		document.write ('<td height="23" width="12.5%" class="tablebody2">å¸–å­ä¸­å¯ä»¥æŸ¥çœ‹å…¶ä»–äººå¤´åƒ</td>');
+		document.write ('<td height="23" width="12.5%" class="tablebody2">å¯ä»¥æµè§ˆè®ºå›äº‹ä»¶</td>');
 		document.write ('</tr>');
 		break;
 		case 5:
 		document.write ('<table class="tableborder1" cellspacing="1" cellpadding="3"  align="center">');
 		document.write ('<tr  align="center">');
-		document.write ('<td colspan=18 class="tablebody1">¹ÜÀíÈ¨ÏŞ</td>');
+		document.write ('<td colspan=18 class="tablebody1">ç®¡ç†æƒé™</td>');
 		document.write ('</tr>');
 		document.write ('<tr>');
-		document.write ('<td height="25" width="10%" class="tablebody2">ÓÃ»§×éÃû('+groupname.length+')</td>');
-		document.write ('<td height="23" width="5%" class="tablebody2">¿ÉÒÔÉ¾³ıÆäËûÈËÌû×Ó</td>');
-		document.write ('<td height="23" width="5%" class="tablebody2">¿ÉÒÔÒÆ¶¯ÆäËûÈËÌû×Ó</td>');
-		document.write ('<td height="23" width="5%" class="tablebody2">¿ÉÒÔ´ò¿ª/¹Ø±ÕÆäËûÈËÌû×Ó</td>');
-		document.write ('<td height="23" width="5%" class="tablebody2">¿ÉÒÔ¹Ì¶¥/½â³ı¹Ì¶¥Ìû×Ó</td>');
-		document.write ('<td height="23" width="5%" class="tablebody2">¿ÉÒÔ½±Àø/³Í·£·¢ÌûÓÃ»§</td>');
-		document.write ('<td height="23" width="5%" class="tablebody2">¿ÉÒÔ½±Àø/³Í·£ÓÃ»§</td>');
-		document.write ('<td height="23" width="5%" class="tablebody2">¿ÉÒÔ±à¼­ÆäËûÈËÌû×Ó</td>');
-		document.write ('<td height="23" width="5%" class="tablebody2">¿ÉÒÔ¼ÓÈë/½â³ı¾«»ªÌû×Ó</td>');
-		document.write ('<td height="23" width="5%" class="tablebody2">¿ÉÒÔ·¢²¼¹«¸æ</td>');
-		document.write ('<td height="23" width="5%" class="tablebody2">¿ÉÒÔ¹ÜÀí¹«¸æ</td>');
-		document.write ('<td height="23" width="5%" class="tablebody2">¿ÉÒÔ¹ÜÀíĞ¡×Ö±¨</td>');
-		document.write ('<td height="23" width="5%" class="tablebody2">¿ÉÒÔËø¶¨/ÆÁ±Î/½â³ıËø¶¨ÓÃ»§</td>');
-		document.write ('<td height="23" width="5%" class="tablebody2">¿ÉÒÔÉ¾³ıÓÃ»§1£­10ÌìÄÚËù·¢Ìû×Ó</td>');
-		document.write ('<td height="23" width="5%" class="tablebody2">¿ÉÒÔ²é¿´À´·ÃIP¼°À´Ô´</td>');
-		document.write ('<td height="23" width="5%" class="tablebody2">¿ÉÒÔÏŞ¶¨IPÀ´·Ã</td>');
-		document.write ('<td height="23" width="5%" class="tablebody2">¿ÉÒÔ¹ÜÀíÓÃ»§È¨ÏŞ</td>');
-		document.write ('<td height="23" width="5%" class="tablebody2">¿ÉÒÔÅúÁ¿É¾³ıÌû×Ó£¨Ç°Ì¨£©</td>');
+		document.write ('<td height="25" width="10%" class="tablebody2">ç”¨æˆ·ç»„å('+groupname.length+')</td>');
+		document.write ('<td height="23" width="5%" class="tablebody2">å¯ä»¥åˆ é™¤å…¶ä»–äººå¸–å­</td>');
+		document.write ('<td height="23" width="5%" class="tablebody2">å¯ä»¥ç§»åŠ¨å…¶ä»–äººå¸–å­</td>');
+		document.write ('<td height="23" width="5%" class="tablebody2">å¯ä»¥æ‰“å¼€/å…³é—­å…¶ä»–äººå¸–å­</td>');
+		document.write ('<td height="23" width="5%" class="tablebody2">å¯ä»¥å›ºé¡¶/è§£é™¤å›ºé¡¶å¸–å­</td>');
+		document.write ('<td height="23" width="5%" class="tablebody2">å¯ä»¥å¥–åŠ±/æƒ©ç½šå‘å¸–ç”¨æˆ·</td>');
+		document.write ('<td height="23" width="5%" class="tablebody2">å¯ä»¥å¥–åŠ±/æƒ©ç½šç”¨æˆ·</td>');
+		document.write ('<td height="23" width="5%" class="tablebody2">å¯ä»¥ç¼–è¾‘å…¶ä»–äººå¸–å­</td>');
+		document.write ('<td height="23" width="5%" class="tablebody2">å¯ä»¥åŠ å…¥/è§£é™¤ç²¾åå¸–å­</td>');
+		document.write ('<td height="23" width="5%" class="tablebody2">å¯ä»¥å‘å¸ƒå…¬å‘Š</td>');
+		document.write ('<td height="23" width="5%" class="tablebody2">å¯ä»¥ç®¡ç†å…¬å‘Š</td>');
+		document.write ('<td height="23" width="5%" class="tablebody2">å¯ä»¥ç®¡ç†å°å­—æŠ¥</td>');
+		document.write ('<td height="23" width="5%" class="tablebody2">å¯ä»¥é”å®š/å±è”½/è§£é™¤é”å®šç”¨æˆ·</td>');
+		document.write ('<td height="23" width="5%" class="tablebody2">å¯ä»¥åˆ é™¤ç”¨æˆ·1ï¼10å¤©å†…æ‰€å‘å¸–å­</td>');
+		document.write ('<td height="23" width="5%" class="tablebody2">å¯ä»¥æŸ¥çœ‹æ¥è®¿IPåŠæ¥æº</td>');
+		document.write ('<td height="23" width="5%" class="tablebody2">å¯ä»¥é™å®šIPæ¥è®¿</td>');
+		document.write ('<td height="23" width="5%" class="tablebody2">å¯ä»¥ç®¡ç†ç”¨æˆ·æƒé™</td>');
+		document.write ('<td height="23" width="5%" class="tablebody2">å¯ä»¥æ‰¹é‡åˆ é™¤å¸–å­ï¼ˆå‰å°ï¼‰</td>');
 		document.write ('</tr>');
 		break;
 		case 6:
 		document.write ('<table class="tableborder1" cellspacing="1" cellpadding="3"  align="center">');
 		document.write ('<tr  align="center">');
-		document.write ('<td colspan="5" class="tablebody1">¶ÌĞÅÈ¨ÏŞ</td>');
+		document.write ('<td colspan="5" class="tablebody1">çŸ­ä¿¡æƒé™</td>');
 		document.write ('</tr>');
 		document.write ('<tr>');
-		document.write ('<td height="25" width="12.5%" class="tablebody2">ÓÃ»§×éÃû('+groupname.length+')</td>');
-		document.write ('<td height="23" width="12.5%" class="tablebody2">¿ÉÒÔ·¢ËÍ¶ÌĞÅ</td>');
-		document.write ('<td height="23" width="12.5%" class="tablebody2">×î¶à·¢ËÍÓÃ»§</td>');
-		document.write ('<td height="23" width="12.5%" class="tablebody2">¶ÌĞÅÄÚÈİ´óĞ¡ÏŞÖÆ</td>');
-		document.write ('<td height="23" width="12.5%" class="tablebody2">ĞÅÏä´óĞ¡ÏŞÖÆ</td>');
+		document.write ('<td height="25" width="12.5%" class="tablebody2">ç”¨æˆ·ç»„å('+groupname.length+')</td>');
+		document.write ('<td height="23" width="12.5%" class="tablebody2">å¯ä»¥å‘é€çŸ­ä¿¡</td>');
+		document.write ('<td height="23" width="12.5%" class="tablebody2">æœ€å¤šå‘é€ç”¨æˆ·</td>');
+		document.write ('<td height="23" width="12.5%" class="tablebody2">çŸ­ä¿¡å†…å®¹å¤§å°é™åˆ¶</td>');
+		document.write ('<td height="23" width="12.5%" class="tablebody2">ä¿¡ç®±å¤§å°é™åˆ¶</td>');
 		document.write ('</tr>');
 		break ;
 		case "":
 		document.write ('<table class="tableborder1" cellspacing="1" cellpadding="3"  align="center">');
 		document.write ('<tr  align="center">');
-		document.write ('<td colspan="5" class="tablebody1">ÆäËûÈ¨ÏŞ</td>');
+		document.write ('<td colspan="5" class="tablebody1">å…¶ä»–æƒé™</td>');
 		document.write ('</tr>');
 		document.write ('<tr>');
-		document.write ('<td height="25" width="20%" class="tablebody2">ÓÃ»§×éÃû('+groupname.length+')</td>');
-		document.write ('<td height="23" width="20%" class="tablebody2">¿ÉÒÔä¯ÀÀÂÛÌ³</td>');
-		document.write ('<td height="23" width="20%" class="tablebody2">¿ÉÒÔ²é¿´»áÔ±ĞÅÏ¢(°üÀ¨ÆäËû»áÔ±µÄ×ÊÁÏºÍ»áÔ±ÁĞ±í)</td>');
-		document.write ('<td height="23" width="20%" class="tablebody2">¿ÉÒÔ²é¿´ÆäËûÈË·¢²¼µÄÖ÷Ìâ</td>');
-		document.write ('<td height="23" width="20%" class="tablebody2">¿ÉÒÔä¯ÀÀ¾«»ªÌû×Ó</td>');
+		document.write ('<td height="25" width="20%" class="tablebody2">ç”¨æˆ·ç»„å('+groupname.length+')</td>');
+		document.write ('<td height="23" width="20%" class="tablebody2">å¯ä»¥æµè§ˆè®ºå›</td>');
+		document.write ('<td height="23" width="20%" class="tablebody2">å¯ä»¥æŸ¥çœ‹ä¼šå‘˜ä¿¡æ¯(åŒ…æ‹¬å…¶ä»–ä¼šå‘˜çš„èµ„æ–™å’Œä¼šå‘˜åˆ—è¡¨)</td>');
+		document.write ('<td height="23" width="20%" class="tablebody2">å¯ä»¥æŸ¥çœ‹å…¶ä»–äººå‘å¸ƒçš„ä¸»é¢˜</td>');
+		document.write ('<td height="23" width="20%" class="tablebody2">å¯ä»¥æµè§ˆç²¾åå¸–å­</td>');
 		document.write ('</tr>');
 		baeak;
 	}
@@ -237,11 +237,11 @@ function showtoptable(orders)
 function YesOrNo(thiskey)
 {	if (thiskey=='1')
 	{
-		return('¡Ì')
+		return('âˆš')
 	}
 	else
 	{
-		return('<font color="{$alertcolor}">¡Á</font>')
+		return('<font color="{$alertcolor}">Ã—</font>')
 	}
 	
 	

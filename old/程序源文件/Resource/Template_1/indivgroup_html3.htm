@@ -11,7 +11,7 @@
 	<script language="JavaScript" src="Dv_plus/IndivGroup/js/IndivGroup_Main.js"></script>
 	<script language="JavaScript" src="inc/Pagination.js"></script>
 	<script language="JavaScript" src="inc/Font.js"></script>
-	<!--ÅÐ¶ÏÊÇ·ñÊÇIE£¬Éú³ÉÏàÓ¦µÄstyleºÍclass-->
+	<!--åˆ¤æ–­æ˜¯å¦æ˜¯IEï¼Œç”Ÿæˆç›¸åº”çš„styleå’Œclass-->
 	<xsl:variable name="postclass">
 		<xsl:choose>
 			<xsl:when test="post/agent/@browser='Microsoft Internet Explorer' and not(post/agent/@version > 6 ) ">postie</xsl:when>
@@ -24,14 +24,14 @@
 	<div class="mainbox">
 	
 	<div class="main" style="margin-top:4px;height:28px;line-height:28px;margin-bottom:4px;">
-	<div style="float:right;">ÄúÊÇ±¾ÌûµÄµÚ <b><xsl:value-of select="post/postinfo/@hits"/></b> ¸öÔÄ¶ÁÕß</div>
-		<input type="image" src="Skins/Default/postnew.gif" style="border:none" onclick="location.href='IndivGroup_Post.asp?action=new&amp;groupid={/post/postinfo/@groupid}&amp;groupboardid={/post/postinfo/@boardid}'" title="·¢±íÒ»¸öÐÂÌû×Ó" />
+	<div style="float:right;">æ‚¨æ˜¯æœ¬å¸–çš„ç¬¬ <b><xsl:value-of select="post/postinfo/@hits"/></b> ä¸ªé˜…è¯»è€…</div>
+		<input type="image" src="Skins/Default/postnew.gif" style="border:none" onclick="location.href='IndivGroup_Post.asp?action=new&amp;groupid={/post/postinfo/@groupid}&amp;groupboardid={/post/postinfo/@boardid}'" title="å‘è¡¨ä¸€ä¸ªæ–°å¸–å­" />
 		<input type="image" src="Skins/Default/mreply.gif" style="border:none" onclick="location.href='IndivGroup_Post.asp?action=revert&amp;groupid={/post/postinfo/@groupid}&amp;groupboardid={/post/postinfo/@boardid}&amp;id={/post/postinfo/@topicid}&amp;page={/post/postinfo/@page}'" />	
 	</div>
 	
 	<table class="tablebox border" style="width:100%" cellspacing="0" cellpadding="0">
 		<tr>
-	 		<th colspan="5"><h1>Ö÷Ìâ£º
+	 		<th colspan="5"><h1>ä¸»é¢˜ï¼š
 			<xsl:choose>
 				<xsl:when test="post/postinfo/@topicmode=0 or post/postinfo/@topicmode=1">
 					<xsl:value-of select="post/postinfo/@title" disable-output-escaping="yes"/>
@@ -53,19 +53,19 @@
 					<xsl:choose>
 						<xsl:when test="/post/userlist/user[@userid=$userid]/@userhidden='1'">
 							<xsl:choose>
-								<xsl:when test="/post/userlist/user[@userid=$userid]/@usersex!='1'"><img src="{/post/setting/@picurl}ofFeMale.gif" alt="ÃÀÅ®Ñ½£¬ÀëÏß£¬ÁôÑÔ¸øÎÒ°É£¡"/></xsl:when>
-								<xsl:otherwise><img src="{/post/setting/@picurl}ofMale.gif" alt="Ë§¸çÓ´£¬ÀëÏß£¬ÓÐÈËÕÒÎÒÂð£¿"/></xsl:otherwise>
+								<xsl:when test="/post/userlist/user[@userid=$userid]/@usersex!='1'"><img src="{/post/setting/@picurl}ofFeMale.gif" alt="ç¾Žå¥³å‘€ï¼Œç¦»çº¿ï¼Œç•™è¨€ç»™æˆ‘å§ï¼"/></xsl:when>
+								<xsl:otherwise><img src="{/post/setting/@picurl}ofMale.gif" alt="å¸…å“¥å“Ÿï¼Œç¦»çº¿ï¼Œæœ‰äººæ‰¾æˆ‘å—ï¼Ÿ"/></xsl:otherwise>
 							</xsl:choose>
 						</xsl:when>
 						<xsl:otherwise>
 							<xsl:choose>
-								<xsl:when test="/post/userlist/user[@userid=$userid]/@usersex!='1'"><img src="{/post/setting/@picurl}FeMale.gif" alt="ÃÀÅ®Ñ½£¬ÔÚÏß£¬¿ìÀ´ÕÒÎÒ°É£¡"/></xsl:when>
-								<xsl:otherwise><img src="{/post/setting/@picurl}Male.gif" alt="Ë§¸çÓ´£¬ÔÚÏß£¬ÓÐÈËÕÒÎÒÂð£¿"/></xsl:otherwise>
+								<xsl:when test="/post/userlist/user[@userid=$userid]/@usersex!='1'"><img src="{/post/setting/@picurl}FeMale.gif" alt="ç¾Žå¥³å‘€ï¼Œåœ¨çº¿ï¼Œå¿«æ¥æ‰¾æˆ‘å§ï¼"/></xsl:when>
+								<xsl:otherwise><img src="{/post/setting/@picurl}Male.gif" alt="å¸…å“¥å“Ÿï¼Œåœ¨çº¿ï¼Œæœ‰äººæ‰¾æˆ‘å—ï¼Ÿ"/></xsl:otherwise>
 							</xsl:choose>
 						</xsl:otherwise>
 					</xsl:choose>
 					<script type="text/javascript" language="javascript">document.write (astro('<xsl:value-of select="/post/userlist/user[@userid=$userid]/@userbirthday"/>'));</script>
-					<xsl:value-of select="substring-before(/post/userlist/user[@userid=$userid]/@namestyle,'¡ì')" disable-output-escaping="yes"/><xsl:value-of select="@username" /><xsl:value-of select="substring-after(/post/userlist/user[@userid=$userid]/@namestyle,'¡ì')" disable-output-escaping="yes"/>
+					<xsl:value-of select="substring-before(/post/userlist/user[@userid=$userid]/@namestyle,'Â§')" disable-output-escaping="yes"/><xsl:value-of select="@username" /><xsl:value-of select="substring-after(/post/userlist/user[@userid=$userid]/@namestyle,'Â§')" disable-output-escaping="yes"/>
 				</span>
 				</td>
 				<td class="usermenu">
@@ -73,34 +73,34 @@
 					<xsl:choose>
 						<xsl:when test="/post/postinfo/@star =1">
 							<xsl:choose>
-								<xsl:when test="position()=1">Â¥Ö÷</xsl:when>
-								<xsl:otherwise>µÚ <font color="red"><xsl:value-of select="position()"/></font> Â¥</xsl:otherwise>
+								<xsl:when test="position()=1">æ¥¼ä¸»</xsl:when>
+								<xsl:otherwise>ç¬¬ <font color="red"><xsl:value-of select="position()"/></font> æ¥¼</xsl:otherwise>
 							</xsl:choose>
 						</xsl:when>
-						<xsl:otherwise>	µÚ <font color="red"><xsl:value-of select="position() + (/post/postinfo/@star -1) * /post/setting/@pagesize"/></font> Â¥</xsl:otherwise>
+						<xsl:otherwise>	ç¬¬ <font color="red"><xsl:value-of select="position() + (/post/postinfo/@star -1) * /post/setting/@pagesize"/></font> æ¥¼</xsl:otherwise>
 					</xsl:choose>
 				</em>
 				<xsl:text disable-output-escaping="yes" >&amp;nbsp;</xsl:text>
 					<xsl:if test="(not (/post/userinfo/@cananony=1) or @signflag !=2 or /post/userinfo/@truemaster=1 or /post/userinfo/@userid = @postuserid) and @postuserid!=0">
-						<a href="userspace.asp?sid={@postuserid}">¸öÐÔÊ×Ò³</a>
+						<a href="userspace.asp?sid={@postuserid}">ä¸ªæ€§é¦–é¡µ</a>
 						<xsl:if test="/post/setting/@isboke=1">
-							 | <a href="boke.asp?UserID={@postuserid}" title="·ÃÎÊ{@username}µÄ¸öÈË²©¿Í" target="_blank">²©¿Í</a>
+							 | <a href="boke.asp?UserID={@postuserid}" title="è®¿é—®{@username}çš„ä¸ªäººåšå®¢" target="_blank">åšå®¢</a>
 						</xsl:if>
 						<xsl:if test="/post/userlist/user[@userid=$userid]/@oicq !=''">
-							| <a href="http://wpa.qq.com/msgrd?V=1&amp;Uin={/post/userlist/user[@userid=$userid]/@oicq}&amp;Site=By Dvbbs&amp;Menu=yes" title="µã»÷·¢ËÍQQÏûÏ¢¸ø{@username}" target="_blank">QQ</a>
+							| <a href="http://wpa.qq.com/msgrd?V=1&amp;Uin={/post/userlist/user[@userid=$userid]/@oicq}&amp;Site=By Dvbbs&amp;Menu=yes" title="ç‚¹å‡»å‘é€QQæ¶ˆæ¯ç»™{@username}" target="_blank">QQ</a>
 						</xsl:if>
 						<xsl:if test="/post/userinfo/@userid  !=0">
-							| <a href="dispuser.asp?id={@postuserid}" target="_blank">ÐÅÏ¢</a>
-							| <a href="query.asp?stype=1&amp;nSearch=3&amp;keyword={@username}&amp;groupid={/post/postinfo/@groupid}&amp;GroupBoardID={/post/postinfo/@boardid}&amp;SearchDate=ALL" target="_blank">ËÑË÷</a>
+							| <a href="dispuser.asp?id={@postuserid}" target="_blank">ä¿¡æ¯</a>
+							| <a href="query.asp?stype=1&amp;nSearch=3&amp;keyword={@username}&amp;groupid={/post/postinfo/@groupid}&amp;GroupBoardID={/post/postinfo/@boardid}&amp;SearchDate=ALL" target="_blank">æœç´¢</a>
 						</xsl:if>
 						<xsl:if test="/post/userlist/user[@userid=$userid]/@useremail !=''">
-							| <a href="mailto:{/post/userlist/user[@userid=$userid]/@useremail}">ÓÊÏä</a>
+							| <a href="mailto:{/post/userlist/user[@userid=$userid]/@useremail}">é‚®ç®±</a>
 						</xsl:if>
 						<xsl:if test="/post/userlist/user[@userid=$userid]/@homepage !=''">
-							| <a href="{/post/userlist/user[@userid=$userid]/@homepage}" target="_blank">Ö÷Ò³</a>
+							| <a href="{/post/userlist/user[@userid=$userid]/@homepage}" target="_blank">ä¸»é¡µ</a>
 						</xsl:if>
 						<xsl:if test="/post/userlist/user[@userid=$userid]/@userim !=''">
-							| <a href="http://service.51uc.com/user_info/show_user_info_base.shtml?UID={/post/userlist/user[@userid=$userid]/@userim}" title="{@username}[{/post/userlist/user[@userid=$userid]/@userim}]µÄUCÇé¿ö" target="_blank">UC</a>
+							| <a href="http://service.51uc.com/user_info/show_user_info_base.shtml?UID={/post/userlist/user[@userid=$userid]/@userim}" title="{@username}[{/post/userlist/user[@userid=$userid]/@userim}]çš„UCæƒ…å†µ" target="_blank">UC</a>
 						</xsl:if>
 					</xsl:if>
 				</td>
@@ -113,7 +113,7 @@
 					<xsl:when test="contains($userface,'|')">
 						<div><img src="{substring-after($userface,'|')}" width="{/post/userlist/user[@userid=$userid]/@userwidth}" height="{/post/userlist/user[@userid=$userid]/@userheight}"/></div>
 						<xsl:if test="substring-before($userface,'|') != '0'">
-							<div><a href="javascript:DispMagicEmot({substring-before($userface,'|')},350,500)">²é¿´Ä§·¨Í·Ïñ</a></div>
+							<div><a href="javascript:DispMagicEmot({substring-before($userface,'|')},350,500)">æŸ¥çœ‹é­”æ³•å¤´åƒ</a></div>
 						</xsl:if>
 					</xsl:when>
 					<xsl:otherwise>
@@ -121,37 +121,37 @@
 					</xsl:otherwise>
 				</xsl:choose>
 				</span><br />
-				<span><img src="images/freund.gif" alt="" /><a href="friendlist.asp?action=addF&amp;myFriend={@username}">¼ÓºÃÓÑ</a> <img src="images/mail.gif" /><a href="messanger.asp?action=new&amp;touser={@username}">·¢¶ÌÐÅ</a></span>
+				<span><img src="images/freund.gif" alt="" /><a href="friendlist.asp?action=addF&amp;myFriend={@username}">åŠ å¥½å‹</a> <img src="images/mail.gif" /><a href="messanger.asp?action=new&amp;touser={@username}">å‘çŸ­ä¿¡</a></span>
 				<span><img style="margin:5px 0px 5px 0px;" src="{/post/setting/@picurl}star/{/post/userlist/user[@userid=$userid]/@titlepic}"/></span>
 				<xsl:if test="/post/setting/@usertitle=1 and /post/userlist/user[@userid=$userid]/@usertitle != ''">
-					<span>Í·ÏÎ£º<xsl:value-of select="/post/userlist/user[@userid=$userid]/@usertitle"/></span>
+					<span>å¤´è¡”ï¼š<xsl:value-of select="/post/userlist/user[@userid=$userid]/@usertitle"/></span>
 				</xsl:if>
-				<span>µÈ¼¶£º<xsl:value-of select="/post/userlist/user[@userid=$userid]/@userclass"/></span>
+				<span>ç­‰çº§ï¼š<xsl:value-of select="/post/userlist/user[@userid=$userid]/@userclass"/></span>
 				<xsl:if test="/post/userlist/user[@userid=$userid]/@userpower != 0">
-					<span><font color="red"><b>ÍþÍû£º<xsl:value-of select="/post/userlist/user[@userid=$userid]/@userpower"/></b></font></span>
+					<span><font color="red"><b>å¨æœ›ï¼š<xsl:value-of select="/post/userlist/user[@userid=$userid]/@userpower"/></b></font></span>
 				</xsl:if>
-				<span>ÎÄÕÂ£º<xsl:value-of select="/post/userlist/user[@userid=$userid]/@userpost"/></span>
-				<span>»ý·Ö£º<xsl:value-of select="/post/userlist/user[@userid=$userid]/@userep"/></span>
-				<span>×¢²á£º<xsl:value-of select="/post/userlist/user[@userid=$userid]/@joindate"/></span>
+				<span>æ–‡ç« ï¼š<xsl:value-of select="/post/userlist/user[@userid=$userid]/@userpost"/></span>
+				<span>ç§¯åˆ†ï¼š<xsl:value-of select="/post/userlist/user[@userid=$userid]/@userep"/></span>
+				<span>æ³¨å†Œï¼š<xsl:value-of select="/post/userlist/user[@userid=$userid]/@joindate"/></span>
 			</td>
 				<td class="inforight" valign="top">	
 					<xsl:if test="@locktopic=2">
 						<xsl:choose>
-							<xsl:when test="/post/userinfo/@truemaster=1"><div class="lockuser">ÄÚÈÝ±»ÆÁ±Î</div></xsl:when>
-							<xsl:otherwise><div class="lockuser" >ÄÚÈÝ±»ÆÁ±Î</div></xsl:otherwise>
+							<xsl:when test="/post/userinfo/@truemaster=1"><div class="lockuser">å†…å®¹è¢«å±è”½</div></xsl:when>
+							<xsl:otherwise><div class="lockuser" >å†…å®¹è¢«å±è”½</div></xsl:otherwise>
 						</xsl:choose>
 					</xsl:if>
 					
 					<xsl:if test="@locktopic != 2 or /post/userinfo/@truemaster =1">
 							<b style="font-size:12px;line-height:15px;"><xsl:value-of select="@topic" disable-output-escaping="yes"/></b><br />
-							<span class="font10" style="line-height:20px; ">·¢±íÓÚ£º<xsl:value-of select="@dateandtime" /></span><br />
-						<!-- Ìû×ÓÄÚÈÝ²¿·Ö -->
-						<!-- Ìû×ÓÄÚÈÝ¶¥²¿¹ã¸æ²¿·Ö -->
+							<span class="font10" style="line-height:20px; ">å‘è¡¨äºŽï¼š<xsl:value-of select="@dateandtime" /></span><br />
+						<!-- å¸–å­å†…å®¹éƒ¨åˆ† -->
+						<!-- å¸–å­å†…å®¹é¡¶éƒ¨å¹¿å‘Šéƒ¨åˆ† -->
 						<xsl:if test="position()=1 and /post/postinfo/@star='1' and /post/postinfo/forum_ads[@id=18]/@set='1'">
 							<div class="body_adv_top"><xsl:value-of select="/post/postinfo/forum_ads[@id='18']/@code" disable-output-escaping="yes"/></div><br/>
 						</xsl:if>
 						<div id="textstyle_{@announceid}" style="font-size:14px; margin-top:10px;word-wrap : break-word ;word-break : break-all ;" onload="this.style.overflowX='auto';">
-							<!-- Ìû×Ó×óÓÒ¹ã¸æ²¿·Ö -->
+							<!-- å¸–å­å·¦å³å¹¿å‘Šéƒ¨åˆ† -->
 							<xsl:if test="position()=1 and /post/postinfo/@star=1">
 								<xsl:choose>
 									<xsl:when test="/post/postinfo/forum_ads[@id=22]/@set='1'">
@@ -162,17 +162,17 @@
 									</xsl:when>
 								</xsl:choose>
 							</xsl:if>
-							<!-- Ìû×ÓÄÚÈÝÎÄ±¾ -->
+							<!-- å¸–å­å†…å®¹æ–‡æœ¬ -->
 							<xsl:value-of select="@body" disable-output-escaping="yes"/>
 							<br />
-							<!-- Ìû×ÓÄÚÈÝµ×²¿¹ã¸æ²¿·Ö -->
+							<!-- å¸–å­å†…å®¹åº•éƒ¨å¹¿å‘Šéƒ¨åˆ† -->
 							<xsl:if test="position()=1 and /post/postinfo/@star=1 and /post/postinfo/forum_ads[@id='20']/@set='1'">
 								<br/>
 								<div class="body_adv_bottom"><xsl:value-of select="/post/postinfo/forum_ads[@id='20']/@code" disable-output-escaping="yes"/></div>
 							</xsl:if>
 						</div>
 						<xsl:if test="@isbest='1'">
-							<div class="info"><img src="{/post/setting/@picurl}jing.gif" border="0" title="±¾Ìû±»¼ÓÎª¾«»ª" align="absmiddle"/>±¾Ìû±»¼ÓÎª¾«»ª</div>
+							<div class="info"><img src="{/post/setting/@picurl}jing.gif" border="0" title="æœ¬å¸–è¢«åŠ ä¸ºç²¾åŽ" align="absmiddle"/>æœ¬å¸–è¢«åŠ ä¸ºç²¾åŽ</div>
 						</xsl:if>
 					</xsl:if>
 				</td>
@@ -194,10 +194,10 @@
 				<xsl:if test="position()=last()"><xsl:attribute name="id">postend</xsl:attribute></xsl:if>
 					<xsl:choose>
 						<xsl:when test="/post/userinfo/@truemaster=1">
-							<a href="TopicOther.asp?t=1&amp;groupid={/post/postinfo/@groupid}&amp;GroupBoardID={/post/postinfo/@boardid}&amp;userid={$userid}&amp;ip={@ip}&amp;action=lookip" target="_blank"><img src="Skins/Default/ip.gif" style="vertical-align:baseline" alt="µã»÷²é¿´ÓÃ»§À´Ô´¼°¹ÜÀí£¬·¢ÌûIP£º{@ip}" /></a>
+							<a href="TopicOther.asp?t=1&amp;groupid={/post/postinfo/@groupid}&amp;GroupBoardID={/post/postinfo/@boardid}&amp;userid={$userid}&amp;ip={@ip}&amp;action=lookip" target="_blank"><img src="Skins/Default/ip.gif" style="vertical-align:baseline" alt="ç‚¹å‡»æŸ¥çœ‹ç”¨æˆ·æ¥æºåŠç®¡ç†ï¼Œå‘å¸–IPï¼š{@ip}" /></a>
 						</xsl:when>
 						<xsl:otherwise>
-							<img src="{/post/setting/@picurl}ip.gif" style="margin: 4px;" alt="ipµØÖ·ÒÑÉèÖÃ±£ÃÜ" />
+							<img src="{/post/setting/@picurl}ip.gif" style="margin: 4px;" alt="ipåœ°å€å·²è®¾ç½®ä¿å¯†" />
 						</xsl:otherwise>
 					</xsl:choose>
 					
@@ -206,39 +206,39 @@
 							<div class="menuitems"><xsl:value-of select="''" />
 								<xsl:if test="position() != 1">
 									<xsl:if test="/post/userinfo/@userid= $userid or /post/userinfo/@truemaster=1">
-										<a href="IndivGroup_PostManage.asp?action=deletepost&amp;groupid={/post/postinfo/@groupid}&amp;GroupBoardID={/post/postinfo/@boardid}&amp;replyID={@announceid}&amp;ID={/post/postinfo/@topicid}&amp;star={/post/postinfo/@star}&amp;userid={@postuserid}">É¾³ýµ¥Ìû</a>
+										<a href="IndivGroup_PostManage.asp?action=deletepost&amp;groupid={/post/postinfo/@groupid}&amp;GroupBoardID={/post/postinfo/@boardid}&amp;replyID={@announceid}&amp;ID={/post/postinfo/@topicid}&amp;star={/post/postinfo/@star}&amp;userid={@postuserid}">åˆ é™¤å•å¸–</a>
 										<br />
 									</xsl:if>
 								</xsl:if>
 								<xsl:if test="/post/userinfo/@truemaster =1 ">
 									<xsl:choose>
 										<xsl:when test="@isbest= 0 ">
-											<a href="IndivGroup_PostManage.asp?action=setbest&amp;groupid={/post/postinfo/@groupid}&amp;GroupBoardID={/post/postinfo/@boardid}&amp;replyID={@announceid}&amp;ID={/post/postinfo/@topicid}&amp;star={/post/postinfo/@star}&amp;userid={@postuserid}">¼ÓÎª¾«»ª</a>
+											<a href="IndivGroup_PostManage.asp?action=setbest&amp;groupid={/post/postinfo/@groupid}&amp;GroupBoardID={/post/postinfo/@boardid}&amp;replyID={@announceid}&amp;ID={/post/postinfo/@topicid}&amp;star={/post/postinfo/@star}&amp;userid={@postuserid}">åŠ ä¸ºç²¾åŽ</a>
 										</xsl:when>
 										<xsl:otherwise>
-											<a href="IndivGroup_PostManage.asp?action=unchainbest&amp;groupid={/post/postinfo/@groupid}&amp;GroupBoardID={/post/postinfo/@boardid}&amp;replyID={@announceid}&amp;ID={/post/postinfo/@topicid}&amp;star={/post/postinfo/@star}&amp;userid={@postuserid}">½â³ý¾«»ª</a>
+											<a href="IndivGroup_PostManage.asp?action=unchainbest&amp;groupid={/post/postinfo/@groupid}&amp;GroupBoardID={/post/postinfo/@boardid}&amp;replyID={@announceid}&amp;ID={/post/postinfo/@topicid}&amp;star={/post/postinfo/@star}&amp;userid={@postuserid}">è§£é™¤ç²¾åŽ</a>
 										</xsl:otherwise>
 									</xsl:choose>
 									<xsl:choose>
 										<xsl:when test="@locktopic !=2">
 											<br/>
-											<a href="IndivGroup_PostManage.asp?action=LockPage&amp;groupid={/post/postinfo/@groupid}&amp;GroupBoardID={/post/postinfo/@boardid}&amp;replyID={@announceid}&amp;ID={/post/postinfo/@topicid}&amp;star={/post/postinfo/@star}&amp;userid={@postuserid}">µ¥ÌûÆÁ±Î</a>
+											<a href="IndivGroup_PostManage.asp?action=LockPage&amp;groupid={/post/postinfo/@groupid}&amp;GroupBoardID={/post/postinfo/@boardid}&amp;replyID={@announceid}&amp;ID={/post/postinfo/@topicid}&amp;star={/post/postinfo/@star}&amp;userid={@postuserid}">å•å¸–å±è”½</a>
 										</xsl:when>
 										<xsl:otherwise>
 											<br/>
-											<a href="IndivGroup_PostManage.asp?action=UnchainLockPage&amp;groupid={/post/postinfo/@groupid}&amp;GroupBoardID={/post/postinfo/@boardid}&amp;replyID={@announceid}&amp;ID={/post/postinfo/@topicid}&amp;star={/post/postinfo/@star}&amp;userid={@postuserid}">½â³ýÆÁ±Î</a>
+											<a href="IndivGroup_PostManage.asp?action=UnchainLockPage&amp;groupid={/post/postinfo/@groupid}&amp;GroupBoardID={/post/postinfo/@boardid}&amp;replyID={@announceid}&amp;ID={/post/postinfo/@topicid}&amp;star={/post/postinfo/@star}&amp;userid={@postuserid}">è§£é™¤å±è”½</a>
 										</xsl:otherwise>
 									</xsl:choose>
 								</xsl:if>
 							</div>
 						</div>
 						<xsl:if test="(/post/postinfo/@locktopic != 1 and /post/userinfo/@canreply =1)or (/post/userinfo/@truemaster =1 ) ">
-							<a href="IndivGroup_Post.asp?action=revert&amp;groupid={/post/postinfo/@groupid}&amp;GroupBoardID={/post/postinfo/@boardid}&amp;PostID={@announceid}&amp;ID={/post/postinfo/@topicid}&amp;star={/post/postinfo/@star}&amp;reply=true">ÒýÓÃ</a> |
-							<a href="IndivGroup_Post.asp?action=revert&amp;groupid={/post/postinfo/@groupid}&amp;GroupBoardID={/post/postinfo/@boardid}&amp;PostID={@announceid}&amp;ID={/post/postinfo/@topicid}&amp;star={/post/postinfo/@star}">»Ø¸´</a> |
+							<a href="IndivGroup_Post.asp?action=revert&amp;groupid={/post/postinfo/@groupid}&amp;GroupBoardID={/post/postinfo/@boardid}&amp;PostID={@announceid}&amp;ID={/post/postinfo/@topicid}&amp;star={/post/postinfo/@star}&amp;reply=true">å¼•ç”¨</a> |
+							<a href="IndivGroup_Post.asp?action=revert&amp;groupid={/post/postinfo/@groupid}&amp;GroupBoardID={/post/postinfo/@boardid}&amp;PostID={@announceid}&amp;ID={/post/postinfo/@topicid}&amp;star={/post/postinfo/@star}">å›žå¤</a> |
 						</xsl:if>
 						<xsl:if test="/post/userinfo/@truemaster=1 or (/post/userinfo/@userid= $userid and /post/userinfo/@caneditmypost=1)">
-							<a href="IndivGroup_Post.asp?action=edit&amp;groupid={/post/postinfo/@groupid}&amp;GroupBoardID={/post/postinfo/@boardid}&amp;PostID={@announceid}&amp;page={/post/postinfo/@page}">±à¼­</a> |
-							<a href="###" onmouseover="showmenu(event,'','Menu_{position()}');">Ìû×Ó²Ù×÷</a>
+							<a href="IndivGroup_Post.asp?action=edit&amp;groupid={/post/postinfo/@groupid}&amp;GroupBoardID={/post/postinfo/@boardid}&amp;PostID={@announceid}&amp;page={/post/postinfo/@page}">ç¼–è¾‘</a> |
+							<a href="###" onmouseover="showmenu(event,'','Menu_{position()}');">å¸–å­æ“ä½œ</a>
 						</xsl:if>
 					</xsl:if>
 					 | <a href="#top">TOP</a>
@@ -253,7 +253,7 @@
 		<div  style="height:26px;float:right;">
 			<xsl:choose>
 				<xsl:when test="post/postinfo/@skin='0'">
-				<!--·ÖÒ³Ó¦ÓÃ-->
+				<!--åˆ†é¡µåº”ç”¨-->
 				<script language="javascript">PageList(<xsl:value-of select="post/postinfo/@star"/>,10,<xsl:value-of select="post/setting/@pagesize"/>,<xsl:value-of select="post/postinfo/@child+1"/>,"?groupid=<xsl:value-of select="post/postinfo/@groupid"/>&amp;GroupBoardID=<xsl:value-of select="post/postinfo/@boardid"/>&amp;id=<xsl:value-of select="post/postinfo/@topicid"/>",3);</script>
 				</xsl:when>
 				<xsl:otherwise>
@@ -279,14 +279,14 @@
 <xsl:template name="checkuser">
 	<xsl:param name="userid"/>
 	<xsl:choose>
-		<xsl:when test="@locktopic=2">ÄÚÈÝ±»ÆÁ±Î</xsl:when>
+		<xsl:when test="@locktopic=2">å†…å®¹è¢«å±è”½</xsl:when>
 		<xsl:otherwise>
 			<xsl:choose>
-				<xsl:when test="/post/userlist/user[@userid=$userid]/@lockuser=1">ÓÃ»§ÒÑ±»Ëø¶¨</xsl:when>
-				<xsl:when test="/post/userlist/user[@userid=$userid]/@lockuser=2">ÓÃ»§ÒÑ¾­±»ÆÁ±Î</xsl:when>
+				<xsl:when test="/post/userlist/user[@userid=$userid]/@lockuser=1">ç”¨æˆ·å·²è¢«é”å®š</xsl:when>
+				<xsl:when test="/post/userlist/user[@userid=$userid]/@lockuser=2">ç”¨æˆ·å·²ç»è¢«å±è”½</xsl:when>
 				<xsl:otherwise>
 					<xsl:choose>
-						<xsl:when test="@locktopic=3">ÄÚÈÝ´ýÉóºË</xsl:when>
+						<xsl:when test="@locktopic=3">å†…å®¹å¾…å®¡æ ¸</xsl:when>
 						<xsl:otherwise></xsl:otherwise>
 					</xsl:choose>
 				</xsl:otherwise>
@@ -298,19 +298,19 @@
 <xsl:template name="managemenu">
 <div class="mainbar0" style="height:36px;line-height:36px;">
 	<div style="height:36px;float:right;">
-		<b>¹ÜÀíÑ¡Ïî:</b>
-		<a href="IndivGroup_PostManage.asp?action=ÐÞ¸´&amp;groupid={post/postinfo/@groupid}&amp;GroupBoardID={post/postinfo/@boardid}&amp;ID={post/postinfo/@topicid}" title="ÐÞ¸´Ìû×ÓµÄ»Ø¸´Êý¡¢¸üÐÂÊ±¼ä¡£" style="margin-right: 10px;font-weight : normal; ">ÐÞ¸´</a>
+		<b>ç®¡ç†é€‰é¡¹:</b>
+		<a href="IndivGroup_PostManage.asp?action=ä¿®å¤&amp;groupid={post/postinfo/@groupid}&amp;GroupBoardID={post/postinfo/@boardid}&amp;ID={post/postinfo/@topicid}" title="ä¿®å¤å¸–å­çš„å›žå¤æ•°ã€æ›´æ–°æ—¶é—´ã€‚" style="margin-right: 10px;font-weight : normal; ">ä¿®å¤</a>
 		<xsl:choose>
-			<xsl:when test="post/postinfo/@locktopic = 1">| <a href="IndivGroup_PostManage.asp?action=UnchainLock&amp;groupid={/post/postinfo/@groupid}&amp;GroupBoardID={/post/postinfo/@boardid}&amp;ID={/post/postinfo/@topicid}" title="½«±¾Ö÷Ìâ½â¿ªËø¶¨">½âËø</a></xsl:when>
-			<xsl:otherwise>| <a href="IndivGroup_PostManage.asp?action=Lock&amp;groupid={/post/postinfo/@groupid}&amp;GroupBoardID={/post/postinfo/@boardid}&amp;ID={/post/postinfo/@topicid}" title="Ëø¶¨±¾Ö÷Ìâ">Ëø¶¨</a></xsl:otherwise>
+			<xsl:when test="post/postinfo/@locktopic = 1">| <a href="IndivGroup_PostManage.asp?action=UnchainLock&amp;groupid={/post/postinfo/@groupid}&amp;GroupBoardID={/post/postinfo/@boardid}&amp;ID={/post/postinfo/@topicid}" title="å°†æœ¬ä¸»é¢˜è§£å¼€é”å®š">è§£é”</a></xsl:when>
+			<xsl:otherwise>| <a href="IndivGroup_PostManage.asp?action=Lock&amp;groupid={/post/postinfo/@groupid}&amp;GroupBoardID={/post/postinfo/@boardid}&amp;ID={/post/postinfo/@topicid}" title="é”å®šæœ¬ä¸»é¢˜">é”å®š</a></xsl:otherwise>
 		</xsl:choose>
-		| <a href="IndivGroup_PostManage.asp?action=DeleteTopic&amp;groupid={/post/postinfo/@groupid}&amp;GroupBoardID={/post/postinfo/@boardid}&amp;ID={/post/postinfo/@topicid}" title="×¢Òâ£º±¾²Ù×÷½«É¾³ý±¾Ö÷ÌâËùÓÐÌû×Ó£¬²»ÄÜ»Ö¸´">É¾³ýÖ÷Ìâ</a>
+		| <a href="IndivGroup_PostManage.asp?action=DeleteTopic&amp;groupid={/post/postinfo/@groupid}&amp;GroupBoardID={/post/postinfo/@boardid}&amp;ID={/post/postinfo/@topicid}" title="æ³¨æ„ï¼šæœ¬æ“ä½œå°†åˆ é™¤æœ¬ä¸»é¢˜æ‰€æœ‰å¸–å­ï¼Œä¸èƒ½æ¢å¤">åˆ é™¤ä¸»é¢˜</a>
 		<xsl:choose>
 			<xsl:when test="post/postinfo/@istop = 0">
-			| <a href="IndivGroup_PostManage.asp?action=SetTop&amp;groupid={/post/postinfo/@groupid}&amp;GroupBoardID={/post/postinfo/@boardid}&amp;ID={/post/postinfo/@topicid}" title="½«±¾Ö÷ÌâÉèÖÃ¹Ì¶¥">ÉèÖÃ¹Ì¶¥</a>
+			| <a href="IndivGroup_PostManage.asp?action=SetTop&amp;groupid={/post/postinfo/@groupid}&amp;GroupBoardID={/post/postinfo/@boardid}&amp;ID={/post/postinfo/@topicid}" title="å°†æœ¬ä¸»é¢˜è®¾ç½®å›ºé¡¶">è®¾ç½®å›ºé¡¶</a>
 			</xsl:when>
 			<xsl:otherwise>
-			| <a href="IndivGroup_PostManage.asp?action=UnchainTop&amp;groupid={/post/postinfo/@groupid}&amp;GroupBoardID={/post/postinfo/@boardid}&amp;ID={/post/postinfo/@topicid}" title="½«±¾Ö÷ÌâÉèÖÃ¹Ì¶¥">½â³ý¹Ì¶¥</a>
+			| <a href="IndivGroup_PostManage.asp?action=UnchainTop&amp;groupid={/post/postinfo/@groupid}&amp;GroupBoardID={/post/postinfo/@boardid}&amp;ID={/post/postinfo/@topicid}" title="å°†æœ¬ä¸»é¢˜è®¾ç½®å›ºé¡¶">è§£é™¤å›ºé¡¶</a>
 			</xsl:otherwise>
 		</xsl:choose>
 	</div>
@@ -320,8 +320,8 @@
 <xsl:template name="managemenume">
 	<div class="mainbar0" style="height:36px;line-height:36px;">
 		<div style="height:36px;float:right;">
-			<b>¸öÈËÌû×Ó¹ÜÀí:</b>
-			<a href="IndivGroup_PostManage.asp?action=DeleteTopic&amp;groupid={/post/postinfo/@groupid}&amp;GroupBoardID={/post/postinfo/@boardid}&amp;ID={/post/postinfo/@topicid}" title="×¢Òâ£º±¾²Ù×÷½«É¾³ý±¾Ö÷ÌâËùÓÐÌû×Ó£¬²»ÄÜ»Ö¸´">É¾³ýÖ÷Ìâ</a>
+			<b>ä¸ªäººå¸–å­ç®¡ç†:</b>
+			<a href="IndivGroup_PostManage.asp?action=DeleteTopic&amp;groupid={/post/postinfo/@groupid}&amp;GroupBoardID={/post/postinfo/@boardid}&amp;ID={/post/postinfo/@topicid}" title="æ³¨æ„ï¼šæœ¬æ“ä½œå°†åˆ é™¤æœ¬ä¸»é¢˜æ‰€æœ‰å¸–å­ï¼Œä¸èƒ½æ¢å¤">åˆ é™¤ä¸»é¢˜</a>
 		</div>
 	</div>
 </xsl:template>

@@ -1,4 +1,4 @@
-<!--usersms.asp##¶ÌĞÅ¹ÜÀí²¿·Ö-->
+<!--usersms.asp##çŸ­ä¿¡ç®¡ç†éƒ¨åˆ†-->
 <div class="mainbox" style="margin-top:0">
 <div class="Contentbox">
 <div id="con_two_5" >
@@ -6,28 +6,28 @@
 		<tr>
 			<td style="width:160px;" valign="top">
 				<div id="sub_1" class="subHover" onclick="setDiv(1,5);">
-					<a href="usersms.asp?action=inbox">ÊÕĞÅÏä</a>
+					<a href="usersms.asp?action=inbox">æ”¶ä¿¡ç®±</a>
 				</div>
 				<div id="sub_2" class="subOut" onclick="setDiv(2,5);">
-					<a href="usersms.asp?action=outbox">·¢ĞÅÏä</a>
+					<a href="usersms.asp?action=outbox">å‘ä¿¡ç®±</a>
 				</div>
 				<div id="sub_3" class="subOut" onclick="setDiv(3,5);">
-					<a href="usersms.asp?action=issend">ÒÑ·¢ËÍÓÊ¼ş</a>
+					<a href="usersms.asp?action=issend">å·²å‘é€é‚®ä»¶</a>
 				</div>
 				<div id="sub_4" class="subOut" onclick="setDiv(4,5);">
-					<a href="usersms.asp?action=recycle">·Ï¼şÏä</a>
+					<a href="usersms.asp?action=recycle">åºŸä»¶ç®±</a>
 				</div>
 				<div class="subOut">
-					<a href="friendlist.asp">µØÖ·²¾</a>
+					<a href="friendlist.asp">åœ°å€ç°¿</a>
 				</div>
 				<div class="subOut">
-					<a title="·¢ËÍÂÛÌ³¶ÌĞÅÏ¢" href="javascript:;" onclick="DvWnd.open('·¢ËÍ¶ÌĞÅ','messanger.asp?action=new&amp;sh=520&amp;sw=500',800,520,1,{bgc:'black',opa:0.5});">×«Ğ´¶ÌĞÅ</a>
+					<a title="å‘é€è®ºå›çŸ­ä¿¡æ¯" href="javascript:;" onclick="DvWnd.open('å‘é€çŸ­ä¿¡','messanger.asp?action=new&amp;sh=520&amp;sw=500',800,520,1,{bgc:'black',opa:0.5});">æ’°å†™çŸ­ä¿¡</a>
 				</div>
 			</td>
 			<td style="background:#F1F7FB;padding:8px" valign="top">
 				<table cellpadding="3" cellspacing="0" width="98%" style="background:#F4FCEE;">
 					<tr>
-						<td width="100" align="right">ÄúµÄÓÊÏäÈİÁ¿£º</td>
+						<td width="100" align="right">æ‚¨çš„é‚®ç®±å®¹é‡ï¼š</td>
 						<td width="*">
 							<img src="Skins/Default/bar/bar3.gif" width="0" height="16" id="Sms_bar" align="absmiddle" />
 						</td>
@@ -37,24 +37,24 @@
 				<script language="javascript">					
 					 var url = window.document.location.href;
 					 var vl=url.substr(url.indexOf('=')+1);
-					 var ii=1,tl="ÊÕ¼şÏä";
+					 var ii=1,tl="æ”¶ä»¶ç®±";
 					 switch(vl)
 					 {
 						case "inbox":
 							ii=1;
-							tl="ÊÕ¼şÏä";
+							tl="æ”¶ä»¶ç®±";
 							break;
 						case "outbox":
 							ii=2;
-							tl="·¢¼şÏä";
+							tl="å‘ä»¶ç®±";
 							break;
 						case "issend":
 							ii=3;
-							tl="ÒÑ·¢ËÍ";
+							tl="å·²å‘é€";
 							break;
 						case "recycle":
 							ii=4;
-							tl="·Ï¼şÏä";
+							tl="åºŸä»¶ç®±";
 							break;
 					 }
 					for(i=1;i<=4;i++){
@@ -68,25 +68,25 @@
 						<script language="JavaScript" type="text/javascript">
 							<!--
 							function dvbbs_usersms_smsbox_top(smstype){
-							document.write ('<th valign="middle" width="30" height="25">ÒÑ¶Á</th>');
+							document.write ('<th valign="middle" width="30" height="25">å·²è¯»</th>');
 							document.write ('<th valign="middle" width="100">');
 							if (smstype=='inbox' || smstype=='recycle')
 							{
-								document.write ('·¢¼şÈË');
+								document.write ('å‘ä»¶äºº');
 							}else{
-								document.write ('ÊÕ¼şÈË');
+								document.write ('æ”¶ä»¶äºº');
 							}
 							document.write ('</th>');
-							document.write ('<th valign="middle" width="300">Ö÷Ìâ</th>');
-							document.write ('<th valign="middle" width="150">ÈÕÆÚ</th>');
-							document.write ('<th valign="middle" width="50">´óĞ¡</th>');
-							document.write ('<th valign="middle" width="30">²Ù×÷</th>');
+							document.write ('<th valign="middle" width="300">ä¸»é¢˜</th>');
+							document.write ('<th valign="middle" width="150">æ—¥æœŸ</th>');
+							document.write ('<th valign="middle" width="50">å¤§å°</th>');
+							document.write ('<th valign="middle" width="30">æ“ä½œ</th>');
 							document.write ('</tr>');
 							}
 
 							function dvbbs_usersms_smsbox_emp(boxname){
 							document.write ('<tr>');
-							document.write ('<td class="tablebody1" align="center" valign="middle" colspan="6">ÄúµÄ'+boxname+'ÖĞÃ»ÓĞÈÎºÎÄÚÈİ¡£</td>');
+							document.write ('<td class="tablebody1" align="center" valign="middle" colspan="6">æ‚¨çš„'+boxname+'ä¸­æ²¡æœ‰ä»»ä½•å†…å®¹ã€‚</td>');
 							document.write ('</tr>');
 							}
 
@@ -107,24 +107,24 @@
 								case 'inbox':
 									if (flag==0)
 									{
-									document.write ('<img src="{$Sms_news}" border="0" alt="ĞÂ¶ÌĞÅ"/>');
+									document.write ('<img src="{$Sms_news}" border="0" alt="æ–°çŸ­ä¿¡"/>');
 									}else{
-									document.write ('<img src="{$Sms_olds}" border="0" alt="¾É¶ÌĞÅ" />');
+									document.write ('<img src="{$Sms_olds}" border="0" alt="æ—§çŸ­ä¿¡" />');
 									}
 									break;
 								case 'outbox':
-									document.write ('<img src="{$Sms_issend_2}" border="0" alt="ÒÑ·¢ËÍ£¬ÇÒ¶Ô·½ÒÑ²éÔÄ£¡" />');
+									document.write ('<img src="{$Sms_issend_2}" border="0" alt="å·²å‘é€ï¼Œä¸”å¯¹æ–¹å·²æŸ¥é˜…ï¼" />');
 									break;
 								case 'issend':
-									document.write ('<img src="{$Sms_issend_1}" border="0" alt="ÒÑ·¢ËÍ£¬¶Ô·½Î´²éÔÄ£¡" />');
+									document.write ('<img src="{$Sms_issend_1}" border="0" alt="å·²å‘é€ï¼Œå¯¹æ–¹æœªæŸ¥é˜…ï¼" />');
 									break;
 
 								case 'recycle':
 									if (flag==0)
 									{
-									document.write ('<img src="{$Sms_news}" border="0"  alt="ĞÂ¶ÌĞÅ" />');
+									document.write ('<img src="{$Sms_news}" border="0"  alt="æ–°çŸ­ä¿¡" />');
 									}else{
-									document.write ('<img src="{$Sms_olds}" border="0" alt="¾É¶ÌĞÅ" />');
+									document.write ('<img src="{$Sms_olds}" border="0" alt="æ—§çŸ­ä¿¡" />');
 									}
 									break;
 							}
@@ -138,7 +138,7 @@
 							{
 							document.write ('<a href="dispuser.asp?name='+incept+'" target="_blank">'+incept+'</a>');}
 							document.write ('</td>');
-							document.write ('<td class="'+tablebody+'" align="left" style="'+newstyle+'"><a href="javascript:;" title="ÔÄ¶ÁÂÛÌ³¶ÌĞÅÏ¢" onclick="DvWnd.open(\'·¢ËÍ¶ÌĞÅ\',\'messanger.asp?action='+readaction+'&id='+id+'&sender='+sender+'\',800,520,1,{bgc:\'black\',opa:0.5});">'+title+'</a>	</td>');
+							document.write ('<td class="'+tablebody+'" align="left" style="'+newstyle+'"><a href="javascript:;" title="é˜…è¯»è®ºå›çŸ­ä¿¡æ¯" onclick="DvWnd.open(\'å‘é€çŸ­ä¿¡\',\'messanger.asp?action='+readaction+'&id='+id+'&sender='+sender+'\',800,520,1,{bgc:\'black\',opa:0.5});">'+title+'</a>	</td>');
 							document.write ('<td class='+tablebody+' style="'+newstyle+'">'+sendtime+'</td>');
 							document.write ('<td class='+tablebody+' style="'+newstyle+'">'+clength+'Byte</td>');
 							document.write ('<td align=center valign=middle width=30 class='+tablebody+'><input type=checkbox class=chkbox name=id value='+id+'></td>');
@@ -147,7 +147,7 @@
 
 							function dvbbs_usersms_smsbox_footer(boxname){
 							document.write ('<tr>');
-							document.write ('<td align="right" valign="middle" colspan="6" class="tablebody2">½ÚÊ¡Ã¿Ò»·Ö¿Õ¼ä£¬Çë¼°Ê±É¾³ıÎŞÓÃĞÅÏ¢&nbsp;<input type="checkbox" class="chkbox" name="chkall" value="on" onclick="CheckAll(this.form)">Ñ¡ÖĞËùÓĞÏÔÊ¾¼ÇÂ¼&nbsp;<input type=submit name=action onclick="{if(confirm(\'È·¶¨É¾³ıÑ¡¶¨µÄ¼ÍÂ¼Âğ?\')){return true;}return false;}" value="É¾³ı'+boxname+'" />&nbsp;<input type="submit" name="action" onclick="{if(confirm(\'È·¶¨Çå³ı'+boxname+'ËùÓĞµÄ¼ÍÂ¼Âğ?\')){this.document.inbox.submit();return true;}return false;}" value="Çå¿Õ'+boxname+'" /></td>');
+							document.write ('<td align="right" valign="middle" colspan="6" class="tablebody2">èŠ‚çœæ¯ä¸€åˆ†ç©ºé—´ï¼Œè¯·åŠæ—¶åˆ é™¤æ— ç”¨ä¿¡æ¯&nbsp;<input type="checkbox" class="chkbox" name="chkall" value="on" onclick="CheckAll(this.form)">é€‰ä¸­æ‰€æœ‰æ˜¾ç¤ºè®°å½•&nbsp;<input type=submit name=action onclick="{if(confirm(\'ç¡®å®šåˆ é™¤é€‰å®šçš„çºªå½•å—?\')){return true;}return false;}" value="åˆ é™¤'+boxname+'" />&nbsp;<input type="submit" name="action" onclick="{if(confirm(\'ç¡®å®šæ¸…é™¤'+boxname+'æ‰€æœ‰çš„çºªå½•å—?\')){this.document.inbox.submit();return true;}return false;}" value="æ¸…ç©º'+boxname+'" /></td>');
 							document.write ('</tr>');
 							document.write ('</form></table></div><!--end--></td></tr></table></div></div></div>');
 							}

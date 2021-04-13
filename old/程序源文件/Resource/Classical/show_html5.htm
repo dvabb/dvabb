@@ -1,21 +1,21 @@
-<!--show.asp##·ÖÒ³²¿·ÖJS-->
+<!--show.asp##åˆ†é¡µéƒ¨åˆ†JS-->
 <script language="JavaScript" type="text/javascript">
 <!--
 	var Pcount={$Pcount};
 	var star={$star};
 	document.write ('<table cellpadding="0" cellspacing="3" border="0" width="100%" align="center" ><form method="post" action="?boardid={$boardid}&filetype={$filetype}&username={$username}&tab={$tab}">');
-	document.write ('<tr><td valign="middle" nowrap="nowrap">Õ¹Çø¹²ÓĞ<b>{$pagelistnum}</b>·ù×÷Æ·£¬Ã¿Ò³×î¶àÕ¹Ê¾{$limitednum}¸öÎÄ¼ş£¬¹²<b><font color=red>'+Pcount+'</font></b>Ò³¡£');
+	document.write ('<tr><td valign="middle" nowrap="nowrap">å±•åŒºå…±æœ‰<b>{$pagelistnum}</b>å¹…ä½œå“ï¼Œæ¯é¡µæœ€å¤šå±•ç¤º{$limitednum}ä¸ªæ–‡ä»¶ï¼Œå…±<b><font color=red>'+Pcount+'</font></b>é¡µã€‚');
 	document.write ('</td><td align="center">');
 	if (star!='1')
 	{
-		document.write ('<font face="Webdings">3</font><a href="?star='+((star*1)-1)+'&boardid={$boardid}&filetype={$filetype}&username={$username}&tab={$tab}" >ÉÏÒ»Ò³</A> ');
+		document.write ('<font face="Webdings">3</font><a href="?star='+((star*1)-1)+'&boardid={$boardid}&filetype={$filetype}&username={$username}&tab={$tab}" >ä¸Šä¸€é¡µ</A> ');
 	}
 	else
 	{
-		document.write ('<font face=Webdings>3</font><font color=#996633>ÉÏÒ»Ò³</font>');
+		document.write ('<font face=Webdings>3</font><font color=#996633>ä¸Šä¸€é¡µ</font>');
 		
 	}
-	document.write (' <a href="?star='+((star*1)+1)+'&boardid={$boardid}&filetype={$filetype}&username={$username}&tab={$tab} ">ÏÂÒ»Ò³</a><font face="Webdings">4</font>');
+	document.write (' <a href="?star='+((star*1)+1)+'&boardid={$boardid}&filetype={$filetype}&username={$username}&tab={$tab} ">ä¸‹ä¸€é¡µ</a><font face="Webdings">4</font>');
 	document.write ('</td><td align="right">');
 	var vendpage;
 	if ((star*1)>4)
@@ -52,7 +52,7 @@
 	{
 		document.write ('... <a href="?star='+Pcount+'&boardid={$boardid}&filetype={$filetype}&username={$username}&tab={$tab}">['+Pcount+']</a>');
 	}
-	document.write ('×ªµ½:<input type="text" name="star" size="3" maxlength="10 " value="'+star+'" /><input type="submit" value="Go"  id="button1" name="button1" />');
+	document.write ('è½¬åˆ°:<input type="text" name="star" size="3" maxlength="10 " value="'+star+'" /><input type="submit" value="Go"  id="button1" name="button1" />');
 	document.write ('</td></tr></form></table>');
 //-->
 </script>

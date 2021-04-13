@@ -21,21 +21,21 @@
 	<table cellpadding="2" cellspacing="1" class="tableborder1">
 		<tr><th colspan="2"><xsl:value-of select="@actionname" /></th></tr>
 	<tr class="tablebody1">
-		<td><b>�û�����</b></td>
+		<td><b>用户名：</b></td>
 		<td><input type="text" name="PostUserName" value="{@postusername}"/></td>
 	</tr>
 	<tr class="tablebody1">
-		<td><b>�ꡡ�⣺</b></td>
+		<td><b>标　题：</b></td>
 		<td><input type="text" name="Title" size="50" onkeyup="javascript:Dv_Form.CheckLength(this,250);" value="{@topic}"/></td>
 	</tr>
 	<tr class="tablebody1">
-		<td><b>�ļ��ϴ���</b><input type="hidden" name="upfilerename" value=""/></td>
+		<td><b>文件上传：</b><input type="hidden" name="upfilerename" value=""/></td>
 		<td id="ad">
 			<iframe name="UPLOADFRAME" frameborder="0" width="80%" height="30" scrolling="no" src="IndivGroup_Upload.asp?groupid={@groupid}&amp;groupboardid={@boardid}"></iframe>
 		</td>
 	</tr>
 	<tr class="tablebody1">
-		<td><b>�ڡ��ݣ�</b></td>
+		<td><b>内　容：</b></td>
 		<td style="padding:0px;margin:0px;">
 		<span><textarea rows="4" name="PostContent" id="PostContent" style="display:none;width:100%;height:330px;margin:0;padding:0;border:none;"><xsl:value-of select="@content"/></textarea></span>
 <div><script language="javascript">
@@ -56,9 +56,9 @@
 		</td>
 	</tr>
 	<tr class="tablebody1">
-		<td><b>����С��ʿ��</b></td><td>�� ���⾡���ܼ�����Ҫ�����ݾ�����˵������飬�����ظ��߲�����ȷ����ʱ�Ļظ�</td>
+		<td><b>发帖小贴士：</b></td><td>① 标题尽可能简明扼要，内容尽可能说清楚事情，这样回复者才能明确并及时的回复</td>
 	</tr>
-	<tr class="tablebody1"><td></td><td><input type="submit" name="submit" value="�ύ��Ϣ"/></td></tr>
+	<tr class="tablebody1"><td></td><td><input type="submit" name="submit" value="提交信息"/></td></tr>
 	</table>
 	</FORM>
 </xsl:for-each>

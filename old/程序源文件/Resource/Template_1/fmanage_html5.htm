@@ -1,20 +1,20 @@
-<!--¸úÌû¹ÜÀí-->
+<!--è·Ÿå¸–ç®¡ç†-->
 <form action="admin_postings.asp?action=delre" method="post" name="frmAnnounce" id="frmAnnounce">
 <table style="width:97%" cellspacing="1" cellpadding="3" align="center" class="tableborder1">
 <tr>
-<th height="20">ÂÛÌ³Ìû×Ó¹ÜÀíÖĞĞÄ£­ÄúÒª½øĞĞµÄ²Ù×÷ÊÇ <b>{$action}</b></th>
+<th height="20">è®ºå›å¸–å­ç®¡ç†ä¸­å¿ƒï¼æ‚¨è¦è¿›è¡Œçš„æ“ä½œæ˜¯ <b>{$action}</b></th>
 </tr>
 <tr>
 <td class="tablebody1" height="24"><b>
-²Ù×÷ÀíÓÉ</b>£º
+æ“ä½œç†ç”±</b>ï¼š
 <select name="title" size="1">
-<option>×Ô¶¨Òå</option>
-<option value="¹àË®">¹àË®</option>
-<option value="¹ã¸æ">¹ã¸æ</option>
-<option value="½±Àø">½±Àø</option>
-<option value="ºÃÎÄÕÂ">ºÃÎÄÕÂ</option>
-<option value="ÄÚÈİ²»·û">ÄÚÈİ²»·û</option>
-<option value="ÖØ¸´·¢Ìû">ÖØ¸´·¢Ìû</option>
+<option>è‡ªå®šä¹‰</option>
+<option value="çŒæ°´">çŒæ°´</option>
+<option value="å¹¿å‘Š">å¹¿å‘Š</option>
+<option value="å¥–åŠ±">å¥–åŠ±</option>
+<option value="å¥½æ–‡ç« ">å¥½æ–‡ç« </option>
+<option value="å†…å®¹ä¸ç¬¦">å†…å®¹ä¸ç¬¦</option>
+<option value="é‡å¤å‘å¸–">é‡å¤å‘å¸–</option>
 </select>
 <input name="content" type="text" size="60" />  *</td>
 </tr>
@@ -26,7 +26,7 @@ var seldisable='{$seldisable}';
 var doWealth='{$doWealth}';
 var dousercp='{$dousercp}';
 var douserep='{$douserep}';
-document.write ('<b>ÓÃ»§²Ù×÷</b>£º  ½ğÇ®');
+document.write ('<b>ç”¨æˆ·æ“ä½œ</b>ï¼š  é‡‘é’±');
 document.write ('	<select name="doWealth" size="1 "'+seldisable+'>');
 for (i=-50;i<51 ;i++ )
 {
@@ -37,7 +37,7 @@ for (i=-50;i<51 ;i++ )
 	}
 	document.write ('>'+i+'</option>');
 }
-document.write ('	</select>&nbsp;÷ÈÁ¦');
+document.write ('	</select>&nbsp;é­…åŠ›');
 document.write ('	<select name="douserCP" size=1 '+seldisable+'>');
 for (i=-50;i<51 ;i++ )
 {
@@ -48,7 +48,7 @@ for (i=-50;i<51 ;i++ )
 	}
 	document.write ('>'+i+'</option>');
 }
-document.write ('	</select>&nbsp;»ı·Ö');
+document.write ('	</select>&nbsp;ç§¯åˆ†');
 document.write ('	<select name="douserEP" size=1 '+seldisable+'>');
 for (i=-50;i<51 ;i++ )
 {
@@ -59,20 +59,20 @@ for (i=-50;i<51 ;i++ )
 	}
 	document.write ('>'+i+'</option>');
 }
-document.write ('</select>&nbsp;<input type="checkbox" name="checkbox" value="checkbox" onclick="nocent();" '+seldisable+'>²»¶ÔÓÃ»§½øĞĞ·ÖÖµ²Ù×÷');
+document.write ('</select>&nbsp;<input type="checkbox" name="checkbox" value="checkbox" onclick="nocent();" '+seldisable+'>ä¸å¯¹ç”¨æˆ·è¿›è¡Œåˆ†å€¼æ“ä½œ');
 var decrease='{$decrease}';
 if (0<decrease){
 	switch(decrease){
 		case '1':
 			document.write('<select name="decrease" size="1">');
-			document.write('<option value="0" selected="selected">ËùÓĞÈËÔö¼Ó¡°±»É¾Ìû¡±ÊıÄ¿</option>');
-			document.write('<option value="1">Â¥Ö÷²»Ôö¼Ó¡°±»É¾Ìû¡±ÊıÄ¿</option>');
-			document.write('<option value="2">¸úÌû²»Ôö¼Ó¡°±»É¾Ìû¡±ÊıÄ¿</option>');
-			document.write('<option value="3">ËùÓĞÈË²»Ôö¼Ó¡°±»É¾Ìû¡±ÊıÄ¿</option>');
+			document.write('<option value="0" selected="selected">æ‰€æœ‰äººå¢åŠ â€œè¢«åˆ å¸–â€æ•°ç›®</option>');
+			document.write('<option value="1">æ¥¼ä¸»ä¸å¢åŠ â€œè¢«åˆ å¸–â€æ•°ç›®</option>');
+			document.write('<option value="2">è·Ÿå¸–ä¸å¢åŠ â€œè¢«åˆ å¸–â€æ•°ç›®</option>');
+			document.write('<option value="3">æ‰€æœ‰äººä¸å¢åŠ â€œè¢«åˆ å¸–â€æ•°ç›®</option>');
 			document.write('</select>');
 			break;
 		case '2':
-			document.write('<input type="checkbox" name="decrease" value="2" />²»Ôö¼Ó¡°±»É¾Ìû¡±ÊıÄ¿');
+			document.write('<input type="checkbox" name="decrease" value="2" />ä¸å¢åŠ â€œè¢«åˆ å¸–â€æ•°ç›®');
 			break;
 	}
 }
@@ -104,21 +104,21 @@ var fileconfirm='{$fileconfirm}';
 if (fileconfirm=='1'){
 document.write ('<tr>');
 document.write ('<td height="24" class="tablebody1">');
-document.write ('<b¸½¼ş²Ù×÷</b>£º<input  type="radio" name="delupfile" value="0" checked="checked" />±£Áô¸½¼ş¡¡¡¡<input type="radio" name="delupfile" value="1" />É¾³ı¸½¼ş');
-document.write ('£¨É¾³ıÇåÀíµÄ¸½¼ş½«²»ÄÜ»Ö¸´£¡£©</td>');
+document.write ('<bé™„ä»¶æ“ä½œ</b>ï¼š<input  type="radio" name="delupfile" value="0" checked="checked" />ä¿ç•™é™„ä»¶ã€€ã€€<input type="radio" name="delupfile" value="1" />åˆ é™¤é™„ä»¶');
+document.write ('ï¼ˆåˆ é™¤æ¸…ç†çš„é™„ä»¶å°†ä¸èƒ½æ¢å¤ï¼ï¼‰</td>');
 document.write ('</tr>');
 }
 //-->
 </script>
 <tr>
 <td height="24" class="tablebody1">
-<b>¶ÌĞÅÍ¨Öª</b>£º<input name="msg" type="text" size="70" />&nbsp;<input type="checkbox" name="ismsg" value="1" />Ê¹ÓÃ</td>
+<b>çŸ­ä¿¡é€šçŸ¥</b>ï¼š<input name="msg" type="text" size="70" />&nbsp;<input type="checkbox" name="ismsg" value="1" />ä½¿ç”¨</td>
 </tr>
 <tr>
 <td height="24" class="tablebody1">
-<b>¹ÜÀíËµÃ÷</b>£º<br />
-¢ÙÇëÉ÷ÖØÊ¹ÓÃ°æÖ÷µÄ¹ÜÀíÖ°ÄÜ£¬°æÖ÷ËùÓĞ²Ù×÷½«±»¼ÇÂ¼<br />
-¢ÚÈç¹ûÑ¡ÔñÁË¶ÌĞÅÍ¨Öª£¬Ôò»á½«É¾ÌûÔ­Òò·¢ËÍ¸øÓÃ»§£¬ÄúÒ²¿ÉÒÔÔÚ¶ÌĞÅÖĞ¸½ÉÏ¼ò¶ÌËµÃ÷
+<b>ç®¡ç†è¯´æ˜</b>ï¼š<br />
+â‘ è¯·æ…é‡ä½¿ç”¨ç‰ˆä¸»çš„ç®¡ç†èŒèƒ½ï¼Œç‰ˆä¸»æ‰€æœ‰æ“ä½œå°†è¢«è®°å½•<br />
+â‘¡å¦‚æœé€‰æ‹©äº†çŸ­ä¿¡é€šçŸ¥ï¼Œåˆ™ä¼šå°†åˆ å¸–åŸå› å‘é€ç»™ç”¨æˆ·ï¼Œæ‚¨ä¹Ÿå¯ä»¥åœ¨çŸ­ä¿¡ä¸­é™„ä¸Šç®€çŸ­è¯´æ˜
 </td>
 </tr>
 </table>
@@ -128,12 +128,12 @@ document.write ('</tr>');
 <table cellpadding="3" cellspacing="1" align="center" class="tableborder1">
   <tr> 
     <th align="left"  id="tabletitlelink" colspan="3" height="20">
-      &nbsp;* ¸úÌûÁĞ±í£º</th>
+      &nbsp;* è·Ÿå¸–åˆ—è¡¨ï¼š</th>
     <th align="right" width="20%" id="tabletitlelink" valign="middle" height="20" >&nbsp;<!--img src="gotop.gif" alt="" width="15" height="15" /--></th>
   </tr>
 {$treeloop}
 <tr>
   <td height="27" width="100%" class="tablebody2" colspan="4">
-  <input name="chkall" type="checkbox" onclick="CheckAll(this.form)" value="on" />Ñ¡ÖĞËùÓĞÏÔÊ¾Ìû×Ó&nbsp;<input name="submit" type="submit" onclick="{if(confirm('È·¶¨É¾³ıÑ¡¶¨µÄ¼ÍÂ¼Âğ?')){this.document.frmAnnounce.submit();return true;}return false;}" value="É¾³ı" /></td></tr>
+  <input name="chkall" type="checkbox" onclick="CheckAll(this.form)" value="on" />é€‰ä¸­æ‰€æœ‰æ˜¾ç¤ºå¸–å­&nbsp;<input name="submit" type="submit" onclick="{if(confirm('ç¡®å®šåˆ é™¤é€‰å®šçš„çºªå½•å—?')){this.document.frmAnnounce.submit();return true;}return false;}" value="åˆ é™¤" /></td></tr>
 </table>
 </form>

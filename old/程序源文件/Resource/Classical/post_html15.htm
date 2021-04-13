@@ -1,148 +1,148 @@
-<tr><td width="20%" class="tablebody2"><b>²Æ¸¶Í¨ÕÊºÅ£º</b><li>Ò²¿ÉÌîĞ´ÓĞĞ§EmailµØÖ·»òQQÕÊºÅ</li><li>Èç¹ûÄúÔÚ²Æ¸¶Í¨ÍøÕ¾ÉèÖÃÁË¡°·ÀÉ§ÈÅ¡±£¬ÔòÊ¹ÓÃ¡°½»Ò×¡±°´Å¥·¢²¼µÄ½»Ò×ÎŞĞ§
+<tr><td width="20%" class="tablebody2"><b>è´¢ä»˜é€šå¸å·ï¼š</b><li>ä¹Ÿå¯å¡«å†™æœ‰æ•ˆEmailåœ°å€æˆ–QQå¸å·</li><li>å¦‚æœæ‚¨åœ¨è´¢ä»˜é€šç½‘ç«™è®¾ç½®äº†â€œé˜²éªšæ‰°â€ï¼Œåˆ™ä½¿ç”¨â€œäº¤æ˜“â€æŒ‰é’®å‘å¸ƒçš„äº¤æ˜“æ— æ•ˆ
 </li></td>
 <td width="80%" class="tablebody2">
 <input name="alipay_seller" value="{$paytomail}" class="FormClass" size="30" onblur="checkAlipaySeller(this);" />
 &nbsp;&nbsp;<span id="alipay_seller_errinfo"></span>
-<br/><br/>Î´×¢²á²Æ¸¶Í¨ÇëÔÚÂò¼Ò½»Ò×ºó²éÊÕ¼¤»îÓÊ¼ş
+<br/><br/>æœªæ³¨å†Œè´¢ä»˜é€šè¯·åœ¨ä¹°å®¶äº¤æ˜“åæŸ¥æ”¶æ¿€æ´»é‚®ä»¶
 </td></tr>
-<tr><td width="20%" class="tablebody1"><b>ÉÌÆ·Ãû³Æ£º</b><li><a href="https://www.tenpay.com/zft/qa/qa_zj.shtml" target="_blank"><font color="blue">²Æ¸¶Í¨½»Ò×°ïÖú</font></a></li></td>
-<td width="80%" class="tablebody1"><input name="alipay_subject" class="FormClass" size="45" onblur="checkAlipaySubject(this);"/>&nbsp;&nbsp;<span id="alipay_subject_errinfo"></span>&nbsp;&nbsp;¼Û¸ñ&nbsp;<input name="alipay_price" class="FormClass" size="5" value="0" onblur="checkAlipayPrice(this);"/>&nbsp;Ôª&nbsp;&nbsp;<span id="alipay_price_errinfo"></span>
+<tr><td width="20%" class="tablebody1"><b>å•†å“åç§°ï¼š</b><li><a href="https://www.tenpay.com/zft/qa/qa_zj.shtml" target="_blank"><font color="blue">è´¢ä»˜é€šäº¤æ˜“å¸®åŠ©</font></a></li></td>
+<td width="80%" class="tablebody1"><input name="alipay_subject" class="FormClass" size="45" onblur="checkAlipaySubject(this);"/>&nbsp;&nbsp;<span id="alipay_subject_errinfo"></span>&nbsp;&nbsp;ä»·æ ¼&nbsp;<input name="alipay_price" class="FormClass" size="5" value="0" onblur="checkAlipayPrice(this);"/>&nbsp;å…ƒ&nbsp;&nbsp;<span id="alipay_price_errinfo"></span>
 </td></tr>
-<tr><td width="20%" class="tablebody1"><b>ÓÊ·Ñ³Ğµ£·½£º</b></td>
+<tr><td width="20%" class="tablebody1"><b>é‚®è´¹æ‰¿æ‹…æ–¹ï¼š</b></td>
 <td width="80%" class="tablebody1">
 			<input type="radio" id="ialipay_transport" name="ialipay_transport" value="3" class="radio" onclick="document.getElementById('alipay_mail_1').disabled=true; document.getElementById('alipay_express_1').disabled=true;alipay_transport.value=3;" /> 
-			ĞéÄâÎïÆ·²»ĞèÓÊµİ&nbsp;&nbsp;
+			è™šæ‹Ÿç‰©å“ä¸éœ€é‚®é€’&nbsp;&nbsp;
 			<input type="radio" id="ialipay_transport" name="ialipay_transport" checked="checked" value="1" class="radio" onclick="document.getElementById('alipay_mail_1').disabled=true; document.getElementById('alipay_express_1').disabled=true;alipay_transport.value=1;" /> 
-			Âô¼Ò³Ğµ£ÔË·Ñ&nbsp;&nbsp;
+			å–å®¶æ‰¿æ‹…è¿è´¹&nbsp;&nbsp;
 			<input type="radio" class="radio" id="ialipay_transport" name="ialipay_transport" value="2" onclick="document.getElementById('alipay_mail_1').disabled=false; document.getElementById('alipay_express_1').disabled=false;alipay_transport.value=2;" /> 
-			Âò¼Ò³Ğµ£ÔË·Ñ<br />
+			ä¹°å®¶æ‰¿æ‹…è¿è´¹<br />
 			<input type="hidden" value="1" id="alipay_transport" />
-			Æ½ÓÊ&nbsp;
+			å¹³é‚®&nbsp;
 			<input type="text" id="alipay_mail_1" name="alipay_mail" style="width:45px" size="25" disabled="disabled" onblur="checkAlipayTransport(this);" /> 
-			Ôª &nbsp;&nbsp;
-			¿ìµİ&nbsp;
+			å…ƒ &nbsp;&nbsp;
+			å¿«é€’&nbsp;
 			<input type="text" id="alipay_express_1" name="alipay_express" style="width:45px" size="25" disabled="disabled" onblur="checkAlipayTransport(this);" /> 
-			Ôª (²»ÌîÎªÆ½ÓÊ)
+			å…ƒ (ä¸å¡«ä¸ºå¹³é‚®)
 			<span id="alipay_transport_errinfo"></span>
 </td></tr>
-<tr><td width="20%" class="tablebody1"><b>ÑİÊ¾µØÖ·£º</b></td>
+<tr><td width="20%" class="tablebody1"><b>æ¼”ç¤ºåœ°å€ï¼š</b></td>
 <td width="80%" class="tablebody1"><input name="alipay_demo" class="FormClass" size="45" value="http://" onblur="checkAlipayDemo(this);" />
-&nbsp;&nbsp;ÉÌÆ·ËµÃ÷ÇëÌîĞ´ÓÚĞÅÏ¢ÄÚÈİÖĞ<span id="alipay_demo_errinfo"></span>
+&nbsp;&nbsp;å•†å“è¯´æ˜è¯·å¡«å†™äºä¿¡æ¯å†…å®¹ä¸­<span id="alipay_demo_errinfo"></span>
 </td></tr>
-<tr><td width="20%" class="tablebody1"><b>ÁªÏµ·½Ê½£º</b></td>
-<td width="80%" class="tablebody1">Email:&nbsp;<input type="text" name="alipay_ww" size="8" onblur="checkAlipayWw(this);"/>&nbsp;&nbsp;ÌÚÑ¶QQ&nbsp;<input type="text" name="alipay_qq" size="9" onblur="checkAlipayQq(this);"/>&nbsp;&nbsp;ÈÃÂò¼ÒÔÚÏßÁªÏµÄú<span id="alipay_link_errinfo"></span>
+<tr><td width="20%" class="tablebody1"><b>è”ç³»æ–¹å¼ï¼š</b></td>
+<td width="80%" class="tablebody1">Email:&nbsp;<input type="text" name="alipay_ww" size="8" onblur="checkAlipayWw(this);"/>&nbsp;&nbsp;è…¾è®¯QQ&nbsp;<input type="text" name="alipay_qq" size="9" onblur="checkAlipayQq(this);"/>&nbsp;&nbsp;è®©ä¹°å®¶åœ¨çº¿è”ç³»æ‚¨<span id="alipay_link_errinfo"></span>
 </td></tr>
 <script language="JavaScript" type="text/javascript">
 var CheckAlipayEmailStr = /^[_a-zA-Z0-9\-]+(\.[_a-zA-Z0-9\-]*)*@[a-zA-Z0-9\-]+([\.][a-zA-Z0-9\-]+)+$/;
 var CheckAlipayQQStr = /^[1-9][0-9]*$/;
 var CheckAlipayPrice = /^(0|[1-9][0-9]*)(\.[0-9]{1,2})*$/;
-//²Æ¸¶Í¨ÕÊºÅÑéÖ¤
+//è´¢ä»˜é€šå¸å·éªŒè¯
 function checkAlipaySeller(theform){
 	if (theform.value != '') {
 		if (theform.value.length > 4 && theform.value.length < 66){
 			if (CheckAlipayEmailStr.test(theform.value) || CheckAlipayQQStr.test(theform.value)){
-				document.getElementById("alipay_seller_errinfo").innerHTML='<img src="Skins/Default/note_ok.gif"/>·ûºÏÒªÇó!';
+				document.getElementById("alipay_seller_errinfo").innerHTML='<img src="Skins/Default/note_ok.gif"/>ç¬¦åˆè¦æ±‚!';
 				return true;
 			}else{
-				document.getElementById("alipay_seller_errinfo").innerHTML='<img src="Skins/Default/note_error.gif"/>²Æ¸»Í¨ÕÊºÅ±ØĞëÊÇ±ê×¼µÄEmailµØÖ·»òQQºÅÂë!';
+				document.getElementById("alipay_seller_errinfo").innerHTML='<img src="Skins/Default/note_error.gif"/>è´¢å¯Œé€šå¸å·å¿…é¡»æ˜¯æ ‡å‡†çš„Emailåœ°å€æˆ–QQå·ç !';
 			}
 		}else{
 			if (theform.value.value.length < 5){
-				document.getElementById("alipay_seller_errinfo").innerHTML='<img src="Skins/Default/note_error.gif"/>²Æ¸»Í¨ÕÊºÅ²»ÄÜĞ¡ÓÚ5¸ö×Ö·û.';
+				document.getElementById("alipay_seller_errinfo").innerHTML='<img src="Skins/Default/note_error.gif"/>è´¢å¯Œé€šå¸å·ä¸èƒ½å°äº5ä¸ªå­—ç¬¦.';
 			}
 			if (theform.value.value.length > 65){
-				document.getElementById("alipay_seller_errinfo").innerHTML='<img src="Skins/Default/note_error.gif"/>²Æ¸»Í¨ÕÊºÅ³¤¶È²»ÄÜ³¬¹ı65¸ö×Ö·û.';
+				document.getElementById("alipay_seller_errinfo").innerHTML='<img src="Skins/Default/note_error.gif"/>è´¢å¯Œé€šå¸å·é•¿åº¦ä¸èƒ½è¶…è¿‡65ä¸ªå­—ç¬¦.';
 			}
 		}
 	}else{
-		document.getElementById("alipay_seller_errinfo").innerHTML='<img src="Skins/Default/note_error.gif"/>ÇëÊäÈë²Æ¸»Í¨ÕÊºÅ.';
+		document.getElementById("alipay_seller_errinfo").innerHTML='<img src="Skins/Default/note_error.gif"/>è¯·è¾“å…¥è´¢å¯Œé€šå¸å·.';
 	}
 	return false;
 }
-//ÉÌÆ·Ãû³ÆÑéÖ¤
+//å•†å“åç§°éªŒè¯
 function checkAlipaySubject(theform){
 	var CheckAlipaySubject = /^[^<>\'\"%\s]+$/;
 	if (theform.value != '' || theform.value == 0){
 		if (theform.value.length < 33){
 			if (CheckAlipaySubject.test(theform.value)){
-				document.getElementById("alipay_subject_errinfo").innerHTML='<img src="Skins/Default/note_ok.gif"/>·ûºÏÒªÇó!';
+				document.getElementById("alipay_subject_errinfo").innerHTML='<img src="Skins/Default/note_ok.gif"/>ç¬¦åˆè¦æ±‚!';
 				return true;
 			}else{
-				document.getElementById("alipay_subject_errinfo").innerHTML='<img src="Skins/Default/note_error.gif"/>ÉÌÆ·Ãû³Æ²»ÄÜ°üº¬¡°<>\'\"%¡±µÈÌØÊâ×Ö·û.';
+				document.getElementById("alipay_subject_errinfo").innerHTML='<img src="Skins/Default/note_error.gif"/>å•†å“åç§°ä¸èƒ½åŒ…å«â€œ<>\'\"%â€ç­‰ç‰¹æ®Šå­—ç¬¦.';
 			}
 		}else{
-			document.getElementById("alipay_subject_errinfo").innerHTML='<img src="Skins/Default/note_error.gif"/>ÉÌÆ·Ãû³Æ³¤¶È²»ÄÜ³¬¹ı32¸ö×Ö·û.';
+			document.getElementById("alipay_subject_errinfo").innerHTML='<img src="Skins/Default/note_error.gif"/>å•†å“åç§°é•¿åº¦ä¸èƒ½è¶…è¿‡32ä¸ªå­—ç¬¦.';
 		}
 	}else{
-		document.getElementById("alipay_subject_errinfo").innerHTML='<img src="Skins/Default/note_error.gif"/>ÇëÊäÈëÉÌÆ·Ãû³Æ.';
+		document.getElementById("alipay_subject_errinfo").innerHTML='<img src="Skins/Default/note_error.gif"/>è¯·è¾“å…¥å•†å“åç§°.';
 	}
 	return false;
 }
-//ÉÌÆ·¼Û¸ñÑéÖ¤
+//å•†å“ä»·æ ¼éªŒè¯
 function checkAlipayPrice(theform){
 	if (theform.value != ''){
 		if (CheckAlipayPrice.test(theform.value)){
-			document.getElementById("alipay_price_errinfo").innerHTML='<img src="Skins/Default/note_ok.gif"/>·ûºÏÒªÇó!';
+			document.getElementById("alipay_price_errinfo").innerHTML='<img src="Skins/Default/note_ok.gif"/>ç¬¦åˆè¦æ±‚!';
 			return true;
 		}else{
-			document.getElementById("alipay_price_errinfo").innerHTML='<img src="Skins/Default/note_error.gif"/>ÉÌÆ·¼Û¸ñ±ØĞëÊÇÊı×Ö»ò·ûºÏ¡°Êı×Ö.Êı×Ö¡±¸ñÊ½(ÀıÈç£º1.23£¬123.32).';
+			document.getElementById("alipay_price_errinfo").innerHTML='<img src="Skins/Default/note_error.gif"/>å•†å“ä»·æ ¼å¿…é¡»æ˜¯æ•°å­—æˆ–ç¬¦åˆâ€œæ•°å­—.æ•°å­—â€æ ¼å¼(ä¾‹å¦‚ï¼š1.23ï¼Œ123.32).';
 		}
 	}else{
-		document.getElementById("alipay_price_errinfo").innerHTML='<img src="Skins/Default/note_error.gif"/>ÇëÊäÈëÉÌÆ·¼Û¸ñ.';
+		document.getElementById("alipay_price_errinfo").innerHTML='<img src="Skins/Default/note_error.gif"/>è¯·è¾“å…¥å•†å“ä»·æ ¼.';
 	}
 	return false;
 }
-//ÔË·Ñ¼Û¸ñÑéÖ¤
+//è¿è´¹ä»·æ ¼éªŒè¯
 function checkAlipayTransport(theform){
 	if (document.getElementById("alipay_transport").value==2){
 		if (theform.value != ''){
 			if (CheckAlipayPrice.test(theform.value)){
-				document.getElementById("alipay_transport_errinfo").innerHTML='<img src="Skins/Default/note_ok.gif"/>·ûºÏÒªÇó!';
+				document.getElementById("alipay_transport_errinfo").innerHTML='<img src="Skins/Default/note_ok.gif"/>ç¬¦åˆè¦æ±‚!';
 				return true;
 			}else{
-				document.getElementById("alipay_transport_errinfo").innerHTML='<img src="Skins/Default/note_error.gif"/>ÔË·Ñ¼Û¸ñ±ØĞëÊÇÊı×Ö»ò·ûºÏ¡°Êı×Ö.Êı×Ö¡±¸ñÊ½(ÀıÈç£º1.23£¬123.32).';
+				document.getElementById("alipay_transport_errinfo").innerHTML='<img src="Skins/Default/note_error.gif"/>è¿è´¹ä»·æ ¼å¿…é¡»æ˜¯æ•°å­—æˆ–ç¬¦åˆâ€œæ•°å­—.æ•°å­—â€æ ¼å¼(ä¾‹å¦‚ï¼š1.23ï¼Œ123.32).';
 				return false;
 			}
 		}
 	}
 }
-//ÑİÊ¾µØÖ·ÑéÖ¤
+//æ¼”ç¤ºåœ°å€éªŒè¯
 function checkAlipayDemo(theform){
 	var CheckAlipayDemo = /^[^<>\'\"]+$/;
 	if (theform.value != ''){
 		if (theform.value.length < 256){
 			if (CheckAlipayDemo.test(theform.value)){
-				document.getElementById("alipay_demo_errinfo").innerHTML='<img src="Skins/Default/note_ok.gif"/>·ûºÏÒªÇó!';
+				document.getElementById("alipay_demo_errinfo").innerHTML='<img src="Skins/Default/note_ok.gif"/>ç¬¦åˆè¦æ±‚!';
 				return true;
 			}else{
-				document.getElementById("alipay_demo_errinfo").innerHTML='<img src="Skins/Default/note_error.gif"/>ÑİÊ¾µØÖ·²»ÄÜ°üº¬¡°<>\'\"%¡±µÈÌØÊâ×Ö·û.';
+				document.getElementById("alipay_demo_errinfo").innerHTML='<img src="Skins/Default/note_error.gif"/>æ¼”ç¤ºåœ°å€ä¸èƒ½åŒ…å«â€œ<>\'\"%â€ç­‰ç‰¹æ®Šå­—ç¬¦.';
 			}
 		}else{
-			document.getElementById("alipay_demo_errinfo").innerHTML='<img src="Skins/Default/note_error.gif"/>ÑİÊ¾µØÖ·²»ÄÜ³¬¹ı255¸ö×Ö·û.';
+			document.getElementById("alipay_demo_errinfo").innerHTML='<img src="Skins/Default/note_error.gif"/>æ¼”ç¤ºåœ°å€ä¸èƒ½è¶…è¿‡255ä¸ªå­—ç¬¦.';
 		}
 		return false;
 	}
 }
-//EmailÁªÏµ·½Ê½ÑéÖ¤Âë
+//Emailè”ç³»æ–¹å¼éªŒè¯ç 
 function checkAlipayWw(theform){
 	if (theform.value != ''){
 		if (CheckAlipayEmailStr.test(theform.value)){
-			document.getElementById("alipay_link_errinfo").innerHTML='<img src="Skins/Default/note_ok.gif"/>·ûºÏÒªÇó!';
+			document.getElementById("alipay_link_errinfo").innerHTML='<img src="Skins/Default/note_ok.gif"/>ç¬¦åˆè¦æ±‚!';
 			return true;
 		}else{
-			document.getElementById("alipay_link_errinfo").innerHTML='<img src="Skins/Default/note_error.gif"/>ÁªÏµ·½Ê½(Email)¸ñÊ½²»ÕıÈ·.';
+			document.getElementById("alipay_link_errinfo").innerHTML='<img src="Skins/Default/note_error.gif"/>è”ç³»æ–¹å¼(Email)æ ¼å¼ä¸æ­£ç¡®.';
 			return false;
 		}
 	}
 }
-//QQÁªÏµ·½Ê½ÑéÖ¤Âë
+//QQè”ç³»æ–¹å¼éªŒè¯ç 
 function checkAlipayQq(theform){
 	if (theform.value != ''){
 		if (CheckAlipayQQStr.test(theform.value)){
-			document.getElementById("alipay_link_errinfo").innerHTML='<img src="Skins/Default/note_ok.gif"/>·ûºÏÒªÇó!';
+			document.getElementById("alipay_link_errinfo").innerHTML='<img src="Skins/Default/note_ok.gif"/>ç¬¦åˆè¦æ±‚!';
 			return true;
 		}else{
-			document.getElementById("alipay_link_errinfo").innerHTML='<img src="Skins/Default/note_error.gif"/>ÁªÏµ·½Ê½(QQ)²»ÕıÈ·£¬±ØĞëÊÇ´¿Êı×Ö.';
+			document.getElementById("alipay_link_errinfo").innerHTML='<img src="Skins/Default/note_error.gif"/>è”ç³»æ–¹å¼(QQ)ä¸æ­£ç¡®ï¼Œå¿…é¡»æ˜¯çº¯æ•°å­—.';
 			return false;
 		}
 	}
@@ -151,7 +151,7 @@ function checkPay(){
 	var ischeck=true;
 	if (document.Dvform.alipay_seller!=null){
 		if (document.Dvform.alipay_seller.value==''){
-			document.getElementById("alipay_seller_errinfo").innerHTML=" <font color=\"#FF0000\">¡ûÇëÊäÈë²Æ¸¶Í¨ÕÊºÅ</font>";
+			document.getElementById("alipay_seller_errinfo").innerHTML=" <font color=\"#FF0000\">â†è¯·è¾“å…¥è´¢ä»˜é€šå¸å·</font>";
 			document.Dvform.alipay_seller.focus();
 			ischeck=false;
 		}else{
@@ -163,7 +163,7 @@ function checkPay(){
 	}
 	if (document.Dvform.alipay_subject!=null){
 		if (document.Dvform.alipay_subject.value==''){
-			document.getElementById("alipay_subject_errinfo").innerHTML=" <font color=\"#FF0000\">¡ûÇëÊäÈëÉÌÆ·Ãû³Æ</font>";
+			document.getElementById("alipay_subject_errinfo").innerHTML=" <font color=\"#FF0000\">â†è¯·è¾“å…¥å•†å“åç§°</font>";
 			document.Dvform.alipay_subject.focus();
 			ischeck=false;
 		}else{
@@ -175,7 +175,7 @@ function checkPay(){
 	}
 	if (document.Dvform.alipay_price!=null){
 		if (document.Dvform.alipay_price.value==''){
-			document.getElementById("alipay_price_errinfo").innerHTML=" <font color=\"#FF0000\">¡ûÇëÊäÈëÉÌÆ·¼Û¸ñ</font>";
+			document.getElementById("alipay_price_errinfo").innerHTML=" <font color=\"#FF0000\">â†è¯·è¾“å…¥å•†å“ä»·æ ¼</font>";
 			document.Dvform.alipay_price.focus();
 			ischeck=false;
 		}else{
@@ -189,7 +189,7 @@ function checkPay(){
 		if (document.Dvform.alipay_transport.value==2){
 			if (document.Dvform.alipay_mail.value=='' && document.Dvform.alipay_express.value=='')
 			{
-				document.getElementById("alipay_transport_errinfo").innerHTML=" <font color=\"#FF0000\">¡ûÇëÊäÈëÔË·Ñ</font>";
+				document.getElementById("alipay_transport_errinfo").innerHTML=" <font color=\"#FF0000\">â†è¯·è¾“å…¥è¿è´¹</font>";
 				document.Dvform.alipay_mail.focus();
 				ischeck=false;
 			}else{

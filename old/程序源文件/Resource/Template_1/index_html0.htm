@@ -2,10 +2,10 @@
 <div class="mainbox">
 	<div class="notice">
 	<span><img src="images/nav_icon.gif" alt="" />&nbsp;&nbsp;<a href="index.asp"><b>{$pub.forum_type}</b></a><br />
-	<a href="query.asp?stype=3&pSearch=0&nSearch=0" class="newlink">²é¿´ĞÂÌû</a> | <a href="query.asp?stype=4&pSearch=0&nSearch=0" class="newlink">ÈÈÃÅ»°Ìâ</a> | <a href="infolist.asp?t=toplist&orders=1" class="newlink">·¢ÌûÅÅĞĞ</a> | <a href="infolist.asp?t=toplist&orders=7" class="newlink">ÓÃ»§ÁĞ±í</a>
+	<a href="query.asp?stype=3&pSearch=0&nSearch=0" class="newlink">æŸ¥çœ‹æ–°å¸–</a> | <a href="query.asp?stype=4&pSearch=0&nSearch=0" class="newlink">çƒ­é—¨è¯é¢˜</a> | <a href="infolist.asp?t=toplist&orders=1" class="newlink">å‘å¸–æ’è¡Œ</a> | <a href="infolist.asp?t=toplist&orders=7" class="newlink">ç”¨æˆ·åˆ—è¡¨</a>
 	</span>
-	½ñÈÕ£º{$pub.forum_todaynum} Ìû | ×òÈÕ£º{$pub.forum_yesterdaynum} Ìû | ×î¸ßÈÕ£º{$pub.forum_maxpostnum} Ìû<br />
-	Ö÷Ìâ£º{$pub.forum_topicnum} | Ìû×Ó£º{$pub.forum_postnum} | »áÔ±£º{$pub.forum_usernum} | ĞÂ»áÔ± <a href="dispuser.asp?Name={$pub.forum_lastuser}"><b>{$pub.forum_lastuser}</b></a>
+	ä»Šæ—¥ï¼š{$pub.forum_todaynum} å¸– | æ˜¨æ—¥ï¼š{$pub.forum_yesterdaynum} å¸– | æœ€é«˜æ—¥ï¼š{$pub.forum_maxpostnum} å¸–<br />
+	ä¸»é¢˜ï¼š{$pub.forum_topicnum} | å¸–å­ï¼š{$pub.forum_postnum} | ä¼šå‘˜ï¼š{$pub.forum_usernum} | æ–°ä¼šå‘˜ <a href="dispuser.asp?Name={$pub.forum_lastuser}"><b>{$pub.forum_lastuser}</b></a>
 	</div>
 </div>
 {$ad.forumtextad}
@@ -20,11 +20,11 @@
 		<li class="rollleft">
 			<div class="rollTextMenus" id="rollTextMenus">
 				{$announcementsitem.begin}
-				<div id="rollTextMenu{$announcementsitem.i}" name="announcementsitem" style="display: none"><strong>¡¡¹«¸æ£º</strong> <a href="javascript:;" onclick="DvWnd.open('¹«¸æ£º{$announcementsitem.title}','announcements.asp?action=showone&amp;boardid={$announcementsitem.boardid}&amp;id={$announcementsitem.id}',600,400,1,{bgc:'black',opa:0.5});" >{$announcementsitem.title}</a> ({$announcementsitem.addtime})</div>
+				<div id="rollTextMenu{$announcementsitem.i}" name="announcementsitem" style="display: none"><strong>ã€€å…¬å‘Šï¼š</strong> <a href="javascript:;" onclick="DvWnd.open('å…¬å‘Šï¼š{$announcementsitem.title}','announcements.asp?action=showone&amp;boardid={$announcementsitem.boardid}&amp;id={$announcementsitem.id}',600,400,1,{bgc:'black',opa:0.5});" >{$announcementsitem.title}</a> ({$announcementsitem.addtime})</div>
 				{$announcementsitem.end}
 			</div>
 		</li>
-		<li class="rollright" width="40"><a title="ÉÏÒ»Ìõ" href="javascript:rollText(-1);"><img src="images/last.gif" alt="ÉÏÒ»Ìõ" width="11" height="11" border="0" /></a> <a title="ÏÂÒ»Ìõ" href="javascript:rollText(1);"><img src="images/next.gif" alt="ÏÂÒ»Ìõ" width="11" height="11" border="0" /></a></li>
+		<li class="rollright" width="40"><a title="ä¸Šä¸€æ¡" href="javascript:rollText(-1);"><img src="images/last.gif" alt="ä¸Šä¸€æ¡" width="11" height="11" border="0" /></a> <a title="ä¸‹ä¸€æ¡" href="javascript:rollText(1);"><img src="images/next.gif" alt="ä¸‹ä¸€æ¡" width="11" height="11" border="0" /></a></li>
 		<li class="rollcenter" id="pageShow" width="30"></li>
 	</ul>
 	</div><!--Div rollboder End-->
@@ -36,12 +36,12 @@
 		<div class="ritabtitle">
 			<div id="login_bot">
 				{$userid=0.begin}
-				<p class="tabgroup">ÓÃ»§µÇÂ¼</p>
-				<p class="tabgroup_on"><a href="reg.asp?action=apply">ÓÃ»§×¢²á</a></p>
+				<p class="tabgroup">ç”¨æˆ·ç™»å½•</p>
+				<p class="tabgroup_on"><a href="reg.asp?action=apply">ç”¨æˆ·æ³¨å†Œ</a></p>
 				{$userid=0.end}    
 				{$userid>0.begin}
-				<p class="tabgroup"><a href="usermanager.asp" title="ÓÃ»§¿ØÖÆÃæ°å">ÓÃ»§ÖĞĞÄ</a></p>
-				<p class="tabgroup_on"><a href="logout.asp" title="ÍË³öµÇÂ¼">ÍË³öµÇÂ¼</a></p>
+				<p class="tabgroup"><a href="usermanager.asp" title="ç”¨æˆ·æ§åˆ¶é¢æ¿">ç”¨æˆ·ä¸­å¿ƒ</a></p>
+				<p class="tabgroup_on"><a href="logout.asp" title="é€€å‡ºç™»å½•">é€€å‡ºç™»å½•</a></p>
 				{$userid>0.end}
 			</div>
 			<div>
@@ -49,11 +49,11 @@
 			<form action="login.asp?action=chk" method="post">
 				<table>
 					<tr>
-						<td style="width:100px; text-align:right">ÓÃ»§ÕÊºÅ£º</td>
+						<td style="width:100px; text-align:right">ç”¨æˆ·å¸å·ï¼š</td>
 						<td style="width:150px; text-align:left"><input tyep="text" name="username" size="18" tabindex="4" /></td>
 					</tr>
 					<tr>
-						<td style="width:100px; text-align:right">ÓÃ»§ÃÜÂë£º</td>
+						<td style="width:100px; text-align:right">ç”¨æˆ·å¯†ç ï¼š</td>
 						<td style="width:150px; text-align:left"><input type="password" name="password" size="18" tabindex="5" /></td>
 					</tr>
 					{$logincode.begin}
@@ -62,16 +62,16 @@
 					</script>
 					<script language="JavaScript" src="inc/dv_ajax.js" type="text/javascript"></script>
 					<tr>
-						<td style="width:100px; text-align:right">ÑéÖ¤Âë£º</td>
+						<td style="width:100px; text-align:right">éªŒè¯ç ï¼š</td>
 						<td style="width:150px; text-align:left">{$page.codestr}</td>
 					</tr>
 					{$logincode.end}
 					<tr>
-						<td style="width:100px; text-align:right">Cookie£º</td>
-						<td style="width:150px; text-align:left"><select name="CookieDate" tabindex="7"><option value="0">²»±£´æ</option><option value="1">±£´æÒ»Ìì</option><option value="2" selected="selected">±£´æÒ»ÔÂ</option><option value="3">±£´æÒ»Äê</option></select></td>
+						<td style="width:100px; text-align:right">Cookieï¼š</td>
+						<td style="width:150px; text-align:left"><select name="CookieDate" tabindex="7"><option value="0">ä¸ä¿å­˜</option><option value="1">ä¿å­˜ä¸€å¤©</option><option value="2" selected="selected">ä¿å­˜ä¸€æœˆ</option><option value="3">ä¿å­˜ä¸€å¹´</option></select></td>
 					</tr>
 					<tr>
-						<td colspan="2" style="text-align:center"><input type="submit" name="submit" value=" µÇ Â¼ " class="input0" tabindex="8" />  [ <a href="lostpass.asp"> Íü¼ÇÃÜÂë</a> ]</td>
+						<td colspan="2" style="text-align:center"><input type="submit" name="submit" value=" ç™» å½• " class="input0" tabindex="8" />  [ <a href="lostpass.asp"> å¿˜è®°å¯†ç </a> ]</td>
 					</tr>
 				</table>
 			</form>
@@ -79,21 +79,21 @@
 
 
 			{$userid>0.begin}
-			<div style="float:left;width:50px;text-align:center;overflow:hidden;padding:10px;clear:left; "><a href="dispuser.asp?id={$user.userid}" title="²é¿´ÎÒµÄĞÅÏ¢"><img src="{$user.userface}" alt="²é¿´ÎÒµÄĞÅÏ¢" height="48" style="margin-left:2px;border:0px" /></a></div>
+			<div style="float:left;width:50px;text-align:center;overflow:hidden;padding:10px;clear:left; "><a href="dispuser.asp?id={$user.userid}" title="æŸ¥çœ‹æˆ‘çš„ä¿¡æ¯"><img src="{$user.userface}" alt="æŸ¥çœ‹æˆ‘çš„ä¿¡æ¯" height="48" style="margin-left:2px;border:0px" /></a></div>
 			<div style="float:left;width:150px;text-align:left;padding-top:10px;">
-				ÕÊºÅ£º{$user.username} ({$user.userclass})<br /><a href="usersms.asp?action=inbox">ÊÕ¼şÏä</a>
+				å¸å·ï¼š{$user.username} ({$user.userclass})<br /><a href="usersms.asp?action=inbox">æ”¶ä»¶ç®±</a>
 				{$smsnew=0.begin}(0){$smsnew=0.end}
 				{$smsnew>0.begin}
-				(<a href="javascript:;" onclick="DvWnd.open('ÔÄ¶ÁÂÛÌ³¶ÌĞÅÏ¢','messanger.asp?action=read&id={$usermsg.1}&sender={$usermsg.2}',800,600,1,{bgc:'black',opa:0.5});" title="ÔÄ¶ÁÂÛÌ³¶ÌĞÅÏ¢"><font class="redfont">{$usermsg.0}</font></a>)
+				(<a href="javascript:;" onclick="DvWnd.open('é˜…è¯»è®ºå›çŸ­ä¿¡æ¯','messanger.asp?action=read&id={$usermsg.1}&sender={$usermsg.2}',800,600,1,{bgc:'black',opa:0.5});" title="é˜…è¯»è®ºå›çŸ­ä¿¡æ¯"><font class="redfont">{$usermsg.0}</font></a>)
 				<bgsound src="{$pub.forum_picurl}mail.wav" />
 				{$smsnew>0.end}
-				&nbsp;|&nbsp;µÇÂ¼ {$user.userlogins} ´Î 
-				<br />×¢²á£º{$user.joindate}
+				&nbsp;|&nbsp;ç™»å½• {$user.userlogins} æ¬¡ 
+				<br />æ³¨å†Œï¼š{$user.joindate}
 			</div>
 			<div style="text-align:left;padding-left:10px;clear:both;">
-			Ö÷Ìâ£º{$user.usertopic}&nbsp; | &nbsp;ÎÄÕÂ£º{$user.userpost}<br />
-			½ğÇ®£º{$user.userwealth}&nbsp; | &nbsp;»ı·Ö£º{$user.userep}<br />
-			÷ÈÁ¦£º{$user.usercp}&nbsp; | &nbsp;¾«»ª£º<font color="#FF00FF"><b>{$user.userisbest}</b></font>&nbsp; | &nbsp;±»É¾£º<font color="red"><b>{$user.userdel}</b></font><br />
+			ä¸»é¢˜ï¼š{$user.usertopic}&nbsp; | &nbsp;æ–‡ç« ï¼š{$user.userpost}<br />
+			é‡‘é’±ï¼š{$user.userwealth}&nbsp; | &nbsp;ç§¯åˆ†ï¼š{$user.userep}<br />
+			é­…åŠ›ï¼š{$user.usercp}&nbsp; | &nbsp;ç²¾åï¼š<font color="#FF00FF"><b>{$user.userisbest}</b></font>&nbsp; | &nbsp;è¢«åˆ ï¼š<font color="red"><b>{$user.userdel}</b></font><br />
 			</div>			
 			{$userid>0.end}
 			</div>
@@ -102,28 +102,28 @@
 		<ul>
 			<div class="tabtitle">
 				<div id="search_bot">
-					<p class="tabgroup">ËÑË÷±êÌâ</p>
-					<p class="tabgroup_on">ËÑË÷×÷Õß</p>
-					<p class="tabgroup_on">ËÑË÷ÄÚÈİ</p>
+					<p class="tabgroup">æœç´¢æ ‡é¢˜</p>
+					<p class="tabgroup_on">æœç´¢ä½œè€…</p>
+					<p class="tabgroup_on">æœç´¢å†…å®¹</p>
 					<div style="clear:both;"></div>
 				</div>
 				<div id="searchbody" style="padding:10px;">
 					<dl>
 						<form action="query.asp" method="get" style="display: inline;">
 						<input type="hidden" name="boardid" value="0" /><input type="hidden" name="sType" value="2" /><input type="text" name="keyword" value="" />
-						&nbsp;&nbsp;<button type="submit" onMousemove="this.className='button_on';" onMouseout="this.className='button'"> ËÑ Ë÷</button>
+						&nbsp;&nbsp;<button type="submit" onMousemove="this.className='button_on';" onMouseout="this.className='button'"> æœ ç´¢</button>
 						</form>
 					</dl>
 					<dl>
 						<form action="query.asp" method="get" style="display: inline;">
 						<input type="hidden" name="boardid" value="0" /><input type="hidden" name="sType" value="1" /><input type="text" name="keyword" value="" />
-						&nbsp;&nbsp;<button type="submit" onMousemove="this.className='button_on';" onMouseout="this.className='button'"> ËÑ Ë÷</button>
+						&nbsp;&nbsp;<button type="submit" onMousemove="this.className='button_on';" onMouseout="this.className='button'"> æœ ç´¢</button>
 						</form>
 					</dl>
 					<dl>
 						<form action="query.asp" method="get" style="display: inline;">
 						<input type="hidden" name="boardid" value="0" /><input type="hidden" name="sType" value="7" /><input type="text" name="keyword" value="" />
-						&nbsp;&nbsp;<button type="submit" onMousemove="this.className='button_on';" onMouseout="this.className='button'"> ËÑ Ë÷</button>
+						&nbsp;&nbsp;<button type="submit" onMousemove="this.className='button_on';" onMouseout="this.className='button'"> æœ ç´¢</button>
 						</form>
 					</dl>
 				</div>
@@ -138,37 +138,37 @@
 	{$bbsitem.begin}
 	<div class="bbs_column{$bbsitem.mode}">
 		<h2>
-			<em>{$urlrewrite.open}<a href="cookies.asp?action=dispBoard&amp;do={$bbsitem.disp}&amp;id={$bbsitem.boardid}"><img src="{$pub.forum_picurl}{$bbsitem.dispimg}.gif" alt="Òş²Ø/ÏÔÊ¾°æÃæ" /></a>{$urlrewrite.close} <a href="cookies.asp?action=setlistmod&amp;thisvalue={$bbsitem.mode}&amp;id={$bbsitem.boardid}"><img src="{$pub.forum_picurl}list{$bbsitem.mode}.gif" alt="ÇĞ»»Ä£Ê½ÏÔÊ¾°æÃæ" /></a> <a href="javascript:disp('boardmaster_{$bbsitem.boardid}');"><img src="{$pub.forum_picurl}master.gif" alt="²é¿´Çø°æÖ÷×ÊÁÏ" /></a></em><em style="display:none;" id="boardmaster_{$bbsitem.boardid}">{$bbsitem.boardmaster}</em>{$urlrewrite.open}<a href="index.asp?boardid={$bbsitem.boardid}" class="newlink">{$bbsitem.boardtype}</a>{$urlrewrite.close}			
+			<em>{$urlrewrite.open}<a href="cookies.asp?action=dispBoard&amp;do={$bbsitem.disp}&amp;id={$bbsitem.boardid}"><img src="{$pub.forum_picurl}{$bbsitem.dispimg}.gif" alt="éšè—/æ˜¾ç¤ºç‰ˆé¢" /></a>{$urlrewrite.close} <a href="cookies.asp?action=setlistmod&amp;thisvalue={$bbsitem.mode}&amp;id={$bbsitem.boardid}"><img src="{$pub.forum_picurl}list{$bbsitem.mode}.gif" alt="åˆ‡æ¢æ¨¡å¼æ˜¾ç¤ºç‰ˆé¢" /></a> <a href="javascript:disp('boardmaster_{$bbsitem.boardid}');"><img src="{$pub.forum_picurl}master.gif" alt="æŸ¥çœ‹åŒºç‰ˆä¸»èµ„æ–™" /></a></em><em style="display:none;" id="boardmaster_{$bbsitem.boardid}">{$bbsitem.boardmaster}</em>{$urlrewrite.open}<a href="index.asp?boardid={$bbsitem.boardid}" class="newlink">{$bbsitem.boardtype}</a>{$urlrewrite.close}			
 		</h2>
 		<ul>		
-		{$bbsitem_1.begin}<!--°æÃæÁĞ±íÄ£Ê½-->
+		{$bbsitem_1.begin}<!--ç‰ˆé¢åˆ—è¡¨æ¨¡å¼-->
 		<table id="board_{$bbsitem.boardid}" style="display:;" cellpadding="0" cellspacing="0">
 		<tr>
-		<td class="greyline">&nbsp;</td><td class="greyline">°æ¿éĞÅÏ¢</td><td class="greyline">&nbsp;</td><td align="center" class="greyline">Ö÷Ìâ / »Ø¸´</td><td class="greyline">×îĞÂ</td>
+		<td class="greyline">&nbsp;</td><td class="greyline">ç‰ˆå—ä¿¡æ¯</td><td class="greyline">&nbsp;</td><td align="center" class="greyline">ä¸»é¢˜ / å›å¤</td><td class="greyline">æœ€æ–°</td>
 		</tr>
 		{$boarditem.begin}{$urlrewrite.open}
 		<tr class="bbsboxout">
 			<td width="60" align="center"><img src="{$pub.forum_picurl}{$boarditem.today}.gif" /></td>
 			<td>
-			<strong><a href="index.asp?boardid={$boarditem.boardid}" class="newlink">{$boarditem.boardtype}</a></strong> <font color="#999999">[ ½ñÈÕÌû£º{$information.todaynum} ]</font><br />
+			<strong><a href="index.asp?boardid={$boarditem.boardid}" class="newlink">{$boarditem.boardtype}</a></strong> <font color="#999999">[ ä»Šæ—¥å¸–ï¼š{$information.todaynum} ]</font><br />
 			{$boarditem.readme}<br />
-			<span>°æÖ÷£º{$boarditem.boardmaster}</span></td>
+			<span>ç‰ˆä¸»ï¼š{$boarditem.boardmaster}</span></td>
 			<td width="1%" style="text-align:right">&nbsp;<a href="index.asp?boardid={$boarditem.boardid}">{$boarditem.indeximg}</a></td>
 			<td width="100" class="newtopic"><small class="time">{$information.topicnum}</small> / <small>{$information.postnum}</small></td>
-			<td width="200">×îĞÂ£º<a href="dispbbs.asp?boardid={$information.lastpost_7}&amp;replyID={$information.lastpost_1}&amp;ID={$information.lastpost_6}&amp;skin=1" class="blue">{$information.lastpost_3}</a><br />
-			By£º<a href="dispuser.asp?name={$information.lastpost_0}" class="grey">{$information.lastpost_0}</a> <small class="font10">{$information.lastpost_2}</small></td>
+			<td width="200">æœ€æ–°ï¼š<a href="dispbbs.asp?boardid={$information.lastpost_7}&amp;replyID={$information.lastpost_1}&amp;ID={$information.lastpost_6}&amp;skin=1" class="blue">{$information.lastpost_3}</a><br />
+			Byï¼š<a href="dispuser.asp?name={$information.lastpost_0}" class="grey">{$information.lastpost_0}</a> <small class="font10">{$information.lastpost_2}</small></td>
 		</tr>{$urlrewrite.close}		
 		{$boarditem.end}
 		</table>
 		{$bbsitem_1.end}
-		{$bbsitem_2.begin}<!--°æÃæ¼ò½àÄ£Ê½-->
+		{$bbsitem_2.begin}<!--ç‰ˆé¢ç®€æ´æ¨¡å¼-->
 		<table id="board_{$bbsitem.boardid}" style="display:;"  cellpadding="0" cellspacing="0">
 		<tr class="bbsboxout">
 		{$boarditem.begin}{$urlrewrite.open}
 			<td width="{$bbsitem.width}">
 			<div style="margin-top:5px;height:35px;float:left;margin-right:5px;" align="center"><img src="{$pub.forum_picurl}{$boarditem.today}.gif" /></div>
 			<strong><a href="index.asp?boardid={$boarditem.boardid}" class="newlink">{$boarditem.boardtype}</a></strong>
-			<span>°æÖ÷£º{$boarditem.boardmaster}<br />Ö÷Ìâ£º<em>{$information.topicnum}</em>   |  Ìû×Ó£º<em>{$information.postnum}</em></span></td>
+			<span>ç‰ˆä¸»ï¼š{$boarditem.boardmaster}<br />ä¸»é¢˜ï¼š<em>{$information.topicnum}</em>   |  å¸–å­ï¼š<em>{$information.postnum}</em></span></td>
 		{$bbsitem.br}{$urlrewrite.close}
 		{$boarditem.end}	
 		</tr>			
@@ -183,10 +183,10 @@
 <div class="mainbox">
 	<div class="Menubox">
 		<ul>
-		   <li id="too1" onclick="setTab('too',1,3)" class="hover">ÓÑÇéÁ´½Ó</li>
-		   <li id="too2" onclick="setTab('too',2,3)" >µ±Ç°ÔÚÏß<span>({$pub.forum_online})</span></li>
+		   <li id="too1" onclick="setTab('too',1,3)" class="hover">å‹æƒ…é“¾æ¥</li>
+		   <li id="too2" onclick="setTab('too',2,3)" >å½“å‰åœ¨çº¿<span>({$pub.forum_online})</span></li>
 		   {$biruser.begin}
-		   <li id="too3" onclick="setTab('too',3,3)">½ñÌì¹ıÉúÈÕµÄÓÃ»§£¨¹²{$biruser_list.sum}ÈË£©</li>
+		   <li id="too3" onclick="setTab('too',3,3)">ä»Šå¤©è¿‡ç”Ÿæ—¥çš„ç”¨æˆ·ï¼ˆå…±{$biruser_list.sum}äººï¼‰</li>
 		   {$biruser.end}
 		</ul>
 	</div>
@@ -208,16 +208,16 @@
 		<div id="con_too_2" style="display:none">
 			<div class="count">
 				<ul>
-				<li>µ±Ç°ÔÚÏß£º{$pub.forum_online}ÈË(»áÔ±£º{$pub.forum_useronline} / ·Ã¿Í£º{$pub.forum_guestonline}) | ×î¸ßÔÚÏß£º{$pub.forum_maxonline} ÈË | ½¨Õ¾Ê±¼ä£º{$pub.forum_createtime}</li>
-				<li><span id="showstr"><a href="online.asp?action=1&amp;boardid=0" target="hiddenframe"><font id="ifOnlineStr">ÏÔÊ¾ÏêÏ¸ÁĞ±í</font></a></span> | <a href="boardstat.asp?reaction=online">²é¿´ÔÚÏßÓÃ»§Î»ÖÃ</a></li>
-				<li>ÔÚÏßÍ¼Àı£º
+				<li>å½“å‰åœ¨çº¿ï¼š{$pub.forum_online}äºº(ä¼šå‘˜ï¼š{$pub.forum_useronline} / è®¿å®¢ï¼š{$pub.forum_guestonline}) | æœ€é«˜åœ¨çº¿ï¼š{$pub.forum_maxonline} äºº | å»ºç«™æ—¶é—´ï¼š{$pub.forum_createtime}</li>
+				<li><span id="showstr"><a href="online.asp?action=1&amp;boardid=0" target="hiddenframe"><font id="ifOnlineStr">æ˜¾ç¤ºè¯¦ç»†åˆ—è¡¨</font></a></span> | <a href="boardstat.asp?reaction=online">æŸ¥çœ‹åœ¨çº¿ç”¨æˆ·ä½ç½®</a></li>
+				<li>åœ¨çº¿å›¾ä¾‹ï¼š
 					{$usergrouppic.begin}
 						<img src="{$pub.forum_picurl}{$usergrouppic.titlepic}" alt="{$usergrouppic.usertitle}" /> {$usergrouppic.usertitle}&nbsp;&nbsp;||&nbsp;&nbsp;
 					{$usergrouppic.end}
 				</li>
 				</ul>
 			</div>
-			<div style="line-height:18px;text-align:left;display:none;" id="onlinetr">ÔÚÏßÊı¾İ¼ÓÔØÖĞ¡­</div>
+			<div style="line-height:18px;text-align:left;display:none;" id="onlinetr">åœ¨çº¿æ•°æ®åŠ è½½ä¸­â€¦</div>
 			<iframe style="border:0px;width:0px;height:0px;" src="{$page.online_asp}" name="hiddenframe"></iframe>
 		</div>
 		{$biruser.begin}
@@ -226,7 +226,7 @@
 				<tr><td>
 					<ul style="border:1px solid #FFFFFF">
 					{$biruser_list.begin}
-					<li style="width:25%;float:left;"><img src="{$forum_info.pic_3}" alt="" />¡¼×£ <a href="dispuser.asp?name={$biruser_list.username}" title="×£{$biruser_list.age}ËêÉúÈÕ¿ìÀÖ£¡" target="_blank">{$biruser_list.username}</a> ÉúÈÕ¿ìÀÖ¡½</li>
+					<li style="width:25%;float:left;"><img src="{$forum_info.pic_3}" alt="" />ã€–ç¥ <a href="dispuser.asp?name={$biruser_list.username}" title="ç¥{$biruser_list.age}å²ç”Ÿæ—¥å¿«ä¹ï¼" target="_blank">{$biruser_list.username}</a> ç”Ÿæ—¥å¿«ä¹ã€—</li>
 					{$biruser_list.end}
 					</ul>
 				</td></tr>
@@ -235,9 +235,9 @@
 		{$biruser.end}
 	</div>
 </div>
-<!---------------end µ×²¿ÓÑÇéÁ´½Ó²¿·Ö------------------->
+<!---------------end åº•éƒ¨å‹æƒ…é“¾æ¥éƒ¨åˆ†------------------->
 <script type="text/javascript" language="JavaScript">
-// ¼ÓÔØÓÒ±ßÀ¸JSĞ§¹û
+// åŠ è½½å³è¾¹æ JSæ•ˆæœ
 loadRightMenu();
 //-->
 </script>

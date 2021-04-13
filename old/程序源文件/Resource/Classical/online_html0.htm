@@ -19,7 +19,7 @@ function reshow(boardid)
 	if(parentDIV.style.display=='none')
 	{
 		parentDIV.style.display='block';
-		parentDIV.innerHTML='<span style="width:240px;margin-left:18px;border:1px solid black;background-color:lightyellow;color:black;padding:2px">ÕıÔÚ¶ÁÈ¡ÔÚÏßĞÅÏ¢£¬ÇëÉÔºî¡­¡­</span>'
+		parentDIV.innerHTML='<span style="width:240px;margin-left:18px;border:1px solid black;background-color:lightyellow;color:black;padding:2px">æ­£åœ¨è¯»å–åœ¨çº¿ä¿¡æ¯ï¼Œè¯·ç¨ä¾¯â€¦â€¦</span>'
 		parentshow.innerHTML='<a href="Online.asp?action=0&Boardid='+boardid+'" target="hiddenframe">'+Strings[1]+'</a>';
 	}
 	else
@@ -79,13 +79,13 @@ function showonlist(str)
 		if(tmpcount[4]!=0){showstring=showstring.replace(/{\$ip}/gi,str[i][tmpcount[4]]);}
 		if ((username!=''&&(str[i][4])!=0&&str[i][3]=='2')||(master==1&&(str[i][4])!=0))
 		{
-			//showstring+='<a href=dispuser.asp?name='+str[i][1]+' target=_blank >²é¿´×ÊÁÏ</a>&nbsp;&nbsp;<a href="#" onclick="DvWnd.open(\'¸ø'+str[i][1]+'·¢ËÍ¶ÌĞÅ\',\'messanger.asp?action=new&amp;touser='+str[i][1]+'\',800,600,1,{bgc:\'black\',opa:0.5});">¸øËûÁôÑÔ</a>';
-			showstring+='<a href=dispuser.asp?name='+str[i][1]+' target=_blank >²é¿´×ÊÁÏ</a>&nbsp;&nbsp;<a href=messanger.asp?action=new&touser='+str[i][1]+' target=_blank >¸øËûÁôÑÔ</a>';
+			//showstring+='<a href=dispuser.asp?name='+str[i][1]+' target=_blank >æŸ¥çœ‹èµ„æ–™</a>&nbsp;&nbsp;<a href="#" onclick="DvWnd.open(\'ç»™'+str[i][1]+'å‘é€çŸ­ä¿¡\',\'messanger.asp?action=new&amp;touser='+str[i][1]+'\',800,600,1,{bgc:\'black\',opa:0.5});">ç»™ä»–ç•™è¨€</a>';
+			showstring+='<a href=dispuser.asp?name='+str[i][1]+' target=_blank >æŸ¥çœ‹èµ„æ–™</a>&nbsp;&nbsp;<a href=messanger.asp?action=new&touser='+str[i][1]+' target=_blank >ç»™ä»–ç•™è¨€</a>';
 		}
 		showstring = "<div class=menuitems>"+showstring+"<\/div>";
 		if (((myid)==(str[i][0]) && username=='')||((myid)==0 && username==str[i][1]))
 		{
-			parentstr+='<td width="14%" colspan="+k+">&nbsp;'+showonline_face((str[i][2]),str[i][5],str[i][3])+'<a  title="Äú×Ô¼º" ><font color="#0000ff">'+str[i][1]+'</font></a></td>'
+			parentstr+='<td width="14%" colspan="+k+">&nbsp;'+showonline_face((str[i][2]),str[i][5],str[i][3])+'<a  title="æ‚¨è‡ªå·±" ><font color="#0000ff">'+str[i][1]+'</font></a></td>'
 		}
 		else
 		{
@@ -124,22 +124,22 @@ function showonlist(str)
 	{
 		parentstr+='<table width="100%" border="0" cellspacing="0" cellpadding="0" >'
 		parentstr+='<tr><td><hr size=1 color=#6595D6 >'
-		parentstr+='<tr><td>&nbsp;&nbsp;¹²ÓĞÔÚÏß¼ÇÂ¼ '+Count+' Ìõ,Ã¿Ò³ÏÔÊ¾ '+PageSize+' Ìõ,¹² '+pageCount+' Ò³,µ±Ç°ÎªµÚ '+page+' Ò³¡£×ªµ½£º'
+		parentstr+='<tr><td>&nbsp;&nbsp;å…±æœ‰åœ¨çº¿è®°å½• '+Count+' æ¡,æ¯é¡µæ˜¾ç¤º '+PageSize+' æ¡,å…± '+pageCount+' é¡µ,å½“å‰ä¸ºç¬¬ '+page+' é¡µã€‚è½¬åˆ°ï¼š'
 		if (page!=1)
 		{
-			parentstr+='<a href="Online.asp?action=3&Boardid='+nowbodarid+'&page=1" target="hiddenframe" >[Ê×Ò³]</a> '
+			parentstr+='<a href="Online.asp?action=3&Boardid='+nowbodarid+'&page=1" target="hiddenframe" >[é¦–é¡µ]</a> '
 		}
 		if (page>2)
 		{
-			parentstr+='<a href="Online.asp?action=3&Boardid='+nowbodarid+'&page='+(page-1)+'" target="hiddenframe" >[ÉÏÒ»Ò³]</a> '
+			parentstr+='<a href="Online.asp?action=3&Boardid='+nowbodarid+'&page='+(page-1)+'" target="hiddenframe" >[ä¸Šä¸€é¡µ]</a> '
 		}
 		if (page<(pageCount-1))
 		{
-			parentstr+='<a href="Online.asp?action=3&Boardid='+nowbodarid+'&page='+(page+1)+'" target="hiddenframe" >[ÏÂÒ»Ò³]</a> '
+			parentstr+='<a href="Online.asp?action=3&Boardid='+nowbodarid+'&page='+(page+1)+'" target="hiddenframe" >[ä¸‹ä¸€é¡µ]</a> '
 		}
 		if(page!=pageCount)
 		{
-			parentstr+='<a href="Online.asp?action=3&Boardid='+nowbodarid+'&page='+pageCount+'" target="hiddenframe" >[Î²Ò³]</a> '
+			parentstr+='<a href="Online.asp?action=3&Boardid='+nowbodarid+'&page='+pageCount+'" target="hiddenframe" >[å°¾é¡µ]</a> '
 		}
 		parentstr+='</td></tr>'
 		parentstr+='</table>'

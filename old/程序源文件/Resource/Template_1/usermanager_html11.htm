@@ -1,4 +1,4 @@
-<!--messanger.asp##¶ÌĞÅÊÕ·¢²¿·Ö-->
+<!--messanger.asp##çŸ­ä¿¡æ”¶å‘éƒ¨åˆ†-->
 <!--<link rel="stylesheet" type="text/css" href="images/post/edit.css" />-->
 <script language="javascript" src="images/emot/config.js"></script>
 <script language="JavaScript" type="text/javascript">
@@ -17,29 +17,29 @@ function SaveMessage(frm,e){
 </script>
 <form action="{$Sms_SendAct}" method="post" name="Dvform" id="Dvform" onSubmit="SaveMessage(this,event)">
 <table cellpadding="3" cellspacing="1" align="center" class="mainbox tableborder">
-<tr><th colspan="3">ÂÛÌ³¶ÌÏûÏ¢</th></tr>
+<tr><th colspan="3">è®ºå›çŸ­æ¶ˆæ¯</th></tr>
 <tr><td colspan="3" class="tablebody1" valign="middle" style="text-align:center" align="center">
-<a href="messanger.asp?action=delet&id={$sms_id}"><img src="{$sms_delete}" border="0" alt="É¾³ıÏûÏ¢" /></a> &nbsp; 
-<a href="messanger.asp?action=new"><img src="{$sms__write}" border="0" alt="·¢ËÍÏûÏ¢" /></a> &nbsp;
-<a href="messanger.asp?action=new&touser={$sender}&id={$sms_id}"><img src="{$sms__reply}" border=0 alt="»Ø¸´ÏûÏ¢"></a>&nbsp;
-<a href="messanger.asp?action=fw&id={$sms_id}"><img src="{$sms__fw}" border="0" alt="×ª·¢ÏûÏ¢" /></a>
+<a href="messanger.asp?action=delet&id={$sms_id}"><img src="{$sms_delete}" border="0" alt="åˆ é™¤æ¶ˆæ¯" /></a> &nbsp; 
+<a href="messanger.asp?action=new"><img src="{$sms__write}" border="0" alt="å‘é€æ¶ˆæ¯" /></a> &nbsp;
+<a href="messanger.asp?action=new&touser={$sender}&id={$sms_id}"><img src="{$sms__reply}" border=0 alt="å›å¤æ¶ˆæ¯"></a>&nbsp;
+<a href="messanger.asp?action=fw&id={$sms_id}"><img src="{$sms__fw}" border="0" alt="è½¬å‘æ¶ˆæ¯" /></a>
 </td></tr>
 ||
 <tr>
-<td class="tablebody1" valign="middle" width="15%"><b>ÊÕ¼şÈË£º</b></td>
+<td class="tablebody1" valign="middle" width="15%"><b>æ”¶ä»¶äººï¼š</b></td>
 <td class="tablebody1" valign="middle" width="85%"><input name="touser" type="text" value="{$touser}" size="50" />
 <select name="friend" onchange="DoTitle(this.options[this.selectedIndex].value)">
-<option selected="selected">Ñ¡Ôñ</option>
+<option selected="selected">é€‰æ‹©</option>
 {$Friend_option}
 </select></td></tr>
 <tr>
-<td class="tablebody1" ><b>±êÌâ£º</b></td>
+<td class="tablebody1" ><b>æ ‡é¢˜ï¼š</b></td>
 <td class="tablebody1" valign="middle"><input name="title" type="text" size="70" maxlength="80" {$title}></td>
 </tr>
 {$getcode}
 {$mo_send}
 <tr>
-<td class="tablebody1"><b>ÄÚÈİ£º</b></td>
+<td class="tablebody1"><b>å†…å®¹ï¼š</b></td>
 <td class="tablebody1" style="padding:0px;margin:0px;">
 <span><textarea name="message" id="message" style="width:100%;height:200px;border:none;">{$textarea}</textarea></span>
 <div><script language="javascript">
@@ -57,18 +57,18 @@ dvmsgarea=new DvEdit(dveditconfig);
 </td></tr>
 <tr>
 <td class="tablebody1" colspan="2">
-<b>ËµÃ÷</b>£º<br />
-¢Ù Äú¿ÉÒÔÊ¹ÓÃ<b>Ctrl+Enter</b>¼ü¿ì½İ·¢ËÍ¶ÌĞÅ<br />
-¢Ú ¿ÉÒÔÓÃÓ¢ÎÄ×´Ì¬ÏÂµÄ¶ººÅ½«ÓÃ»§Ãû¸ô¿ªÊµÏÖÈº·¢£¬×î¶à<b>{$Sms_senduser}</b>¸öÓÃ»§<br />
-¢Û ±êÌâ×î¶à<b>50</b>¸ö×Ö·û£¬ÄÚÈİ×î¶à<b>{$Sms_maxbody}</b>¸ö×Ö·û<br>
-¢Ü Äú½ñÌì»¹¿ÉÒÔ·¢ <b>{$smslimited}</b> Ìõ¶ÌĞÅ
+<b>è¯´æ˜</b>ï¼š<br />
+â‘  æ‚¨å¯ä»¥ä½¿ç”¨<b>Ctrl+Enter</b>é”®å¿«æ·å‘é€çŸ­ä¿¡<br />
+â‘¡ å¯ä»¥ç”¨è‹±æ–‡çŠ¶æ€ä¸‹çš„é€—å·å°†ç”¨æˆ·åéš”å¼€å®ç°ç¾¤å‘ï¼Œæœ€å¤š<b>{$Sms_senduser}</b>ä¸ªç”¨æˆ·<br />
+â‘¢ æ ‡é¢˜æœ€å¤š<b>50</b>ä¸ªå­—ç¬¦ï¼Œå†…å®¹æœ€å¤š<b>{$Sms_maxbody}</b>ä¸ªå­—ç¬¦<br>
+â‘£ æ‚¨ä»Šå¤©è¿˜å¯ä»¥å‘ <b>{$smslimited}</b> æ¡çŸ­ä¿¡
 </td></tr>
 <tr>
 <td class="tablebody2" valign="middle" colspan="2" style="text-align:center">
 <input name="sms_act" type="hidden" value="" />
-<input name="Submit" type="submit" onclick="this.form.sms_act.value='Sms_Issend'" value="·¢ËÍ" />&nbsp;
-<input name="Submit" type="submit"  onclick="this.form.sms_act.value='Sms_Issave'" value="±£´æ" />&nbsp;&nbsp;
-<input name="Clear" type="reset" onclick="dvmsgarea.clear();" value="Çå³ı" />&nbsp;
+<input name="Submit" type="submit" onclick="this.form.sms_act.value='Sms_Issend'" value="å‘é€" />&nbsp;
+<input name="Submit" type="submit"  onclick="this.form.sms_act.value='Sms_Issave'" value="ä¿å­˜" />&nbsp;&nbsp;
+<input name="Clear" type="reset" onclick="dvmsgarea.clear();" value="æ¸…é™¤" />&nbsp;
 <script language="JavaScript" type="text/javascript">
 <!--
 var reaction='{$reaction}';
@@ -77,14 +77,14 @@ if (action=='new')
 {
 if (reaction=='chatlog')
 {
-document.write ('<input type="button" value="¹Ø±ÕÁÄÌì¼ÇÂ¼" name="chatlog" onclick="location.href=\'?action=new&id={$sms_id}&touser={$touser}\'" />');
+document.write ('<input type="button" value="å…³é—­èŠå¤©è®°å½•" name="chatlog" onclick="location.href=\'?action=new&id={$sms_id}&touser={$touser}\'" />');
 }else{
-document.write ('<input type="button" value="²é¿´ÁÄÌì¼ÇÂ¼" name="chatlog" onclick="location.href=\'?action=new&id={$sms_id}&touser={$touser}&reaction=chatlog\'" />');
+document.write ('<input type="button" value="æŸ¥çœ‹èŠå¤©è®°å½•" name="chatlog" onclick="location.href=\'?action=new&id={$sms_id}&touser={$touser}&reaction=chatlog\'" />');
 }
 }
 //-->
 </script>
-&nbsp;<input name="close" type="button" onclick="wndClose();" value="¹Ø±Õ" />
+&nbsp;<input name="close" type="button" onclick="wndClose();" value="å…³é—­" />
 </td></tr>
 <script language="JavaScript" type="text/javascript">
 <!--
@@ -97,12 +97,12 @@ if (action=='new')
 if (reaction=='chatlog')
 {
 	document.write ('<tr>');
-	document.write ('<th colspan="3">ÎÒÓë{$touser}µÄÁÄÌì¼ÇÂ¼</th>');
+	document.write ('<th colspan="3">æˆ‘ä¸{$touser}çš„èŠå¤©è®°å½•</th>');
 	document.write ('</tr>');
 if (myname=='{$touser}')
 	{
 		document.write ('<tr>');
-		document.write ('<td class="tablebody1" colspan="3">×Ô¼º¸ú×Ô¼ºµÄÁÄÌì¼ÇÂ¼Ã»Ê²Ã´ºÃ¿´µÄ£º£©</td>');
+		document.write ('<td class="tablebody1" colspan="3">è‡ªå·±è·Ÿè‡ªå·±çš„èŠå¤©è®°å½•æ²¡ä»€ä¹ˆå¥½çœ‹çš„ï¼šï¼‰</td>');
 		document.write ('</tr>');
 	}
 	else{
@@ -135,7 +135,7 @@ function send_xiaoyue() {
 		document.Dvform.action="challenge_msg.asp?action=submessage";
 		document.Dvform.title.disabled=true;
 		aaaa = document.Dvform.title.value;
-		document.Dvform.title.value= "ÊÖ»ú¶ÌĞÅ±êÌâÎŞĞ§£¬Ò»´ÎÒ»Î»»áÔ±";
+		document.Dvform.title.value= "æ‰‹æœºçŸ­ä¿¡æ ‡é¢˜æ— æ•ˆï¼Œä¸€æ¬¡ä¸€ä½ä¼šå‘˜";
 	}
 }
 /*
@@ -172,30 +172,30 @@ revisedTitle = currentTitle+","+addTitle;
 var taction='{$action}';
 	if (taction=='outread')
 	{
-	document.write ('ÔÚ<b>{$sendtime}</b>£¬Äú·¢ËÍ´ËÏûÏ¢¸ø<b>{$incept}</b>£¡');
+	document.write ('åœ¨<b>{$sendtime}</b>ï¼Œæ‚¨å‘é€æ­¤æ¶ˆæ¯ç»™<b>{$incept}</b>ï¼');
 	}
 	else
 	{
-	document.write ('ÔÚ<b>{$sendtime}</b>£¬<b>{$sender}</b>¸øÄú·¢ËÍµÄÏûÏ¢£¡');
+	document.write ('åœ¨<b>{$sendtime}</b>ï¼Œ<b>{$sender}</b>ç»™æ‚¨å‘é€çš„æ¶ˆæ¯ï¼');
 	}
 //-->
 </script>
 </td></tr>
 <tr><td class="tablebody1" colspan="3">
-<b>ÏûÏ¢±êÌâ£º{$read_title}</b><hr size="1" />{$textarea}
+<b>æ¶ˆæ¯æ ‡é¢˜ï¼š{$read_title}</b><hr size="1" />{$textarea}
 </td></tr>
 <script language="JavaScript" type="text/javascript">
 <!--
 var nextid='{$nextid}';
 if (nextid != '')
 {
-document.write ('<td class="tablebody2" valign="top" align="right" colspan="3"><a href="messanger.asp?action=read&amp;id={$nextid}&amp;sender={$nextsender}">[¶ÁÈ¡ÏÂÒ»ÌõĞÅÏ¢]</a></td></tr>');
+document.write ('<td class="tablebody2" valign="top" align="right" colspan="3"><a href="messanger.asp?action=read&amp;id={$nextid}&amp;sender={$nextsender}">[è¯»å–ä¸‹ä¸€æ¡ä¿¡æ¯]</a></td></tr>');
 }
 //-->
 </script>
 ||
 </table>
 ||
-<td class="tablebody1" ><b>ÑéÖ¤Âë£º</b></td>
+<td class="tablebody1" ><b>éªŒè¯ç ï¼š</b></td>
 <td class="tablebody1" valign="middle">{$codestr}</td>
 </tr>

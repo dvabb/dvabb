@@ -1,11 +1,11 @@
-<!--mymodify.asp##»ù±¾×ÊÁÏĞŞ¸Ä-×Ô¶¨ÒåÍ·Ïñ²¿·Ö 2005-1-27-->
+<!--mymodify.asp##åŸºæœ¬èµ„æ–™ä¿®æ”¹-è‡ªå®šä¹‰å¤´åƒéƒ¨åˆ† 2005-1-27-->
 <table cellpadding="0" cellspacing="0">
 	<tr>
-		<td width="*">ÂÛÌ³Í·ÏñÑ¡Ôñ 
+		<td width="*">è®ºå›å¤´åƒé€‰æ‹© 
 			<select name="face" style="font-family:arial" size="1" onChange="document.images['face'].src=options[selectedIndex].value; parent.document.theForm.myface.value=options[selectedIndex].value"> 
 			{$Face_select}
 			</select>
-			<a href="#" onclick="openScript('smiley.asp?t=1',650,400)" title="Í·ÏñÔ¤ÀÀÁĞ±í">[<font color="{$color}">Í·ÏñÔ¤ÀÀ</font>]</a>
+			<a href="#" onclick="openScript('smiley.asp?t=1',650,400)" title="å¤´åƒé¢„è§ˆåˆ—è¡¨">[<font color="{$color}">å¤´åƒé¢„è§ˆ</font>]</a>
 		</td>
 		<td width="180" rowspan="2" valign="top" align="center">
 			<img id="face" src="{$user_Face}" width="{$user_FaceWidth}" height="{$user_FaceHeight}" />
@@ -14,10 +14,10 @@
 	<tr>
 		<td width="*">
 			||<iframe src="reg_upload.asp" name="ad" style="width:auto:min-width:300px;" height="26" scrolling="no" frameborder="0" id="ad"></iframe>||
-			<br />×Ô¶¨ÒåÍ·ÏñµØÖ·£º<input name="myface" type="text" value="{$user_Face}" size="30" maxlength="100" /> 
-			<br /><font color="red">ÄúÏÖÔÚµÄ·¢ÌûÊıÎª[{$mypostnum}]Æª£¬Èç¹ûĞ¡ÓÚ[{$facepostnum}]ÆªÔòÒÔÉÏµØÖ·ÎŞĞ§£¡</font>
-			<br />¿í&nbsp;&nbsp;&nbsp;&nbsp;¶È£º<input name="width" type="text" value="{$user_FaceWidth}" size="3" maxlength="3" />0---{$forum_Mwidth}µÄÕûÊı
-			<br />¸ß&nbsp;&nbsp;&nbsp;&nbsp;¶È£º<input name="height" type="text" value="{$user_FaceHeight}" size="3" maxlength="3" />0---{$forum_Mheight}µÄÕûÊı
+			<br />è‡ªå®šä¹‰å¤´åƒåœ°å€ï¼š<input name="myface" type="text" value="{$user_Face}" size="30" maxlength="100" /> 
+			<br /><font color="red">æ‚¨ç°åœ¨çš„å‘å¸–æ•°ä¸º[{$mypostnum}]ç¯‡ï¼Œå¦‚æœå°äº[{$facepostnum}]ç¯‡åˆ™ä»¥ä¸Šåœ°å€æ— æ•ˆï¼</font>
+			<br />å®½&nbsp;&nbsp;&nbsp;&nbsp;åº¦ï¼š<input name="width" type="text" value="{$user_FaceWidth}" size="3" maxlength="3" />0---{$forum_Mwidth}çš„æ•´æ•°
+			<br />é«˜&nbsp;&nbsp;&nbsp;&nbsp;åº¦ï¼š<input name="height" type="text" value="{$user_FaceHeight}" size="3" maxlength="3" />0---{$forum_Mheight}çš„æ•´æ•°
 			<br />
 		</td>
 	</tr>

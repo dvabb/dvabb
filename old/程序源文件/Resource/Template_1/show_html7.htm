@@ -1,28 +1,28 @@
-<!--myfile.asp##¸öÈËÎÄ¼þ¼¯Ö÷Ìå²¿·Ö-->
+<!--myfile.asp##ä¸ªäººæ–‡ä»¶é›†ä¸»ä½“éƒ¨åˆ†-->
 <div class="mainbox" style="margin-top:0">
 <div class="Contentbox">
 <div id="con_two_8" ><!--start-->
 	<table cellspacing="0" cellpadding="0">
 		<tr>
 			<td style="width:160px;" valign="top">
-				<div class="subHover"><a href="myfile.asp">ÎÒµÄÎÄ¼þ</a></div>
-				<div class="subOut"><a href="myfile.asp?action=fadd">Ìí¼ÓÎÄ¼þ</a></div>
-				<div class="subOut"><a href="show.asp?username={$username}">¸öÈËÕ¹Çø</a></div>
+				<div class="subHover"><a href="myfile.asp">æˆ‘çš„æ–‡ä»¶</a></div>
+				<div class="subOut"><a href="myfile.asp?action=fadd">æ·»åŠ æ–‡ä»¶</a></div>
+				<div class="subOut"><a href="show.asp?username={$username}">ä¸ªäººå±•åŒº</a></div>
 			</td>
 			<td style="background:#F1F7FB;padding:8px" valign="top">
 				<div id="dvbase_1">
 					<table width="98%" class="tableborder2" cellSpacing="1" cellPadding="0" align="center">
 					  <form action="myfile.asp" method="get">
 					  <tr>
-						<td><a href="?action=fadd">¡²ÐÂÔöÎÄ¼þ¿â¡³</a>£¬<a href="show.asp?username={$username}">¡²¸öÈËÕ¹Çø¡³</a></td>
+						<td><a href="?action=fadd">ã€”æ–°å¢žæ–‡ä»¶åº“ã€•</a>ï¼Œ<a href="show.asp?username={$username}">ã€”ä¸ªäººå±•åŒºã€•</a></td>
 						<td align="right" width="200"><select onchange="javascript:submit()" name="Stype">
-							<option value="all" selected>²é¿´ÎÄ¼þÀàÐÍ</option>
-							<option value="0">ÎÄ¼þ¼¯</option>
-							<option value="1">Í¼Æ¬¼¯</option>
-							<option value="2">FLASH¼¯</option>
-							<option value="3">ÒôÀÖ¼¯</option>
-							<option value="4">µçÓ°¼¯</option>
-							<option value="5">ËùÓÐÎÄ¼þ</option>
+							<option value="all" selected>æŸ¥çœ‹æ–‡ä»¶ç±»åž‹</option>
+							<option value="0">æ–‡ä»¶é›†</option>
+							<option value="1">å›¾ç‰‡é›†</option>
+							<option value="2">FLASHé›†</option>
+							<option value="3">éŸ³ä¹é›†</option>
+							<option value="4">ç”µå½±é›†</option>
+							<option value="5">æ‰€æœ‰æ–‡ä»¶</option>
 						  </select></td>
 					  </tr>
 					  </FORM>
@@ -30,21 +30,21 @@
 					<table width="98%" class="tableborder1" cellSpacing="1" cellPadding="0" align="center">
 						<form name="myfile" action="myfile.asp?action=fdel" method="post">
 							<tr>
-							  <th align="left" colSpan="7" height="25">-=&gt; ×îÐÂÉÏ´«ÎÄ¼þ</th>
+							  <th align="left" colSpan="7" height="25">-=&gt; æœ€æ–°ä¸Šä¼ æ–‡ä»¶</th>
 							</tr>
 							<tr>
-							  <td width="30" align="center" valign="middle" class="tabletitle2"><b>ÊôÐÔ</b></td>
-							  <td  width="*" align="center" valign="middle" class="tabletitle2"><b>ÎÄ¼þËµÃ÷</b></td>
-							  <td class="tabletitle2" valign="middle" align="center" width="60"><b>´óÐ¡</b></td>
-							  <td class="tabletitle2" valign="middle" align="center" width="60"><b>ÏÂÔØ/ä¯ÀÀ</b></td>
-							  <td class="tabletitle2" valign="middle" align="center" width="120"><b>ÈÕÆÚ</b></td>
-							  <td class="tabletitle2" valign="middle" align="center" width="60"><b>ÀàÐÍ</b></td>
-							  <td class="tabletitle2" valign="middle" align="center" width="120"><b>²Ù×÷</b></td>
+							  <td width="30" align="center" valign="middle" class="tabletitle2"><b>å±žæ€§</b></td>
+							  <td  width="*" align="center" valign="middle" class="tabletitle2"><b>æ–‡ä»¶è¯´æ˜Ž</b></td>
+							  <td class="tabletitle2" valign="middle" align="center" width="60"><b>å¤§å°</b></td>
+							  <td class="tabletitle2" valign="middle" align="center" width="60"><b>ä¸‹è½½/æµè§ˆ</b></td>
+							  <td class="tabletitle2" valign="middle" align="center" width="120"><b>æ—¥æœŸ</b></td>
+							  <td class="tabletitle2" valign="middle" align="center" width="60"><b>ç±»åž‹</b></td>
+							  <td class="tabletitle2" valign="middle" align="center" width="120"><b>æ“ä½œ</b></td>
 							</tr>
 							{$Filelist}
 							<tr>
-							  <td class="tablebody2" align="right" colspan="7">ÇëÑ¡Ôñ¿ÉÒÔÉ¾³ýµÄÎÄ¼þ£¬<input name="chkall" type="checkbox" class="chkbox" onclick="CheckAll(this.form)" value="on" />È«Ñ¡ 
-								<input name="Submit" type="submit" onclick="{if(confirm('ÄúÈ·¶¨Ö´ÐÐµÄ²Ù×÷Âð?')){this.document.myfile.submit();return true;}return false;}" value="Ö´ÐÐ" /></td>
+							  <td class="tablebody2" align="right" colspan="7">è¯·é€‰æ‹©å¯ä»¥åˆ é™¤çš„æ–‡ä»¶ï¼Œ<input name="chkall" type="checkbox" class="chkbox" onclick="CheckAll(this.form)" value="on" />å…¨é€‰ 
+								<input name="Submit" type="submit" onclick="{if(confirm('æ‚¨ç¡®å®šæ‰§è¡Œçš„æ“ä½œå—?')){this.document.myfile.submit();return true;}return false;}" value="æ‰§è¡Œ" /></td>
 							</tr>
 						</form>
 					</table>

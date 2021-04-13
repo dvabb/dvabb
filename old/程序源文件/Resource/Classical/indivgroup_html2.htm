@@ -7,16 +7,16 @@
 	Web: http://www.aspsky.net/,http://www.dvbbs.net/
 	Email: eway@aspsky.net
 	-->
-<!--Ä£°åÉèÖÃ-->
-<xsl:variable name="showexpression" select="0" /><!--ÉèÖÃÎª1ÏÔÊ¾·¢ÌûĞÄÇéÍ¼±ê-->
-<xsl:variable name="showtitleinfo" select="1" /><!--ÉèÖÃÎª1ÏÔÊ¾±êÌâÖĞĞüÍ£µÄÌáÊ¾ÄÚÈİ,¾ÍÊÇtitleÊôĞÔ±êÇ©ÀïµÄÄÚÈİ.-->
-<xsl:variable name="showstatslink" select="1" /><!--ÉèÖÃÎª1Ìû×Ó×´Ì¬Í¼±íÖĞ¼ÓÈë¿ªĞÂ´°¿ÚµÄÁ´½Ó.-->
-<xsl:variable name="showspage" select="1" /><!--ÊÇ·ñÏÔÊ¾µ¥Ìû·ÖÒ³ÉèÖÃÎª1ÔòÏÔÊ¾-->
-<xsl:variable name="splittoptiopc" select="0" /><!--ÊÇ·ñ·ÖÀë¹Ì¶¥Çø-->
-<xsl:variable name="rulesstyle" select="1" /><!--°æ¹æÑùÊ½ ,0Îª±í¸ñÑùÊ½,1ÎªfieldsetÑùÊ½-->
-<xsl:variable name="showfiletype" select="1" /><!--0²»ÏÔÊ¾¸½¼şÀàĞÍÍ¼Æ¬-->
-<xsl:variable name="rulespage" select="2" /> <!--µÚ¼¸Ò³¿ªÊ¼²»ÏÔÊ¾°æ¹æÄÚÈİ--> 
-<!--Ä£°åÉèÖÃ½áÊø-->
+<!--æ¨¡æ¿è®¾ç½®-->
+<xsl:variable name="showexpression" select="0" /><!--è®¾ç½®ä¸º1æ˜¾ç¤ºå‘å¸–å¿ƒæƒ…å›¾æ ‡-->
+<xsl:variable name="showtitleinfo" select="1" /><!--è®¾ç½®ä¸º1æ˜¾ç¤ºæ ‡é¢˜ä¸­æ‚¬åœçš„æç¤ºå†…å®¹,å°±æ˜¯titleå±æ€§æ ‡ç­¾é‡Œçš„å†…å®¹.-->
+<xsl:variable name="showstatslink" select="1" /><!--è®¾ç½®ä¸º1å¸–å­çŠ¶æ€å›¾è¡¨ä¸­åŠ å…¥å¼€æ–°çª—å£çš„é“¾æ¥.-->
+<xsl:variable name="showspage" select="1" /><!--æ˜¯å¦æ˜¾ç¤ºå•å¸–åˆ†é¡µè®¾ç½®ä¸º1åˆ™æ˜¾ç¤º-->
+<xsl:variable name="splittoptiopc" select="0" /><!--æ˜¯å¦åˆ†ç¦»å›ºé¡¶åŒº-->
+<xsl:variable name="rulesstyle" select="1" /><!--ç‰ˆè§„æ ·å¼ ,0ä¸ºè¡¨æ ¼æ ·å¼,1ä¸ºfieldsetæ ·å¼-->
+<xsl:variable name="showfiletype" select="1" /><!--0ä¸æ˜¾ç¤ºé™„ä»¶ç±»å‹å›¾ç‰‡-->
+<xsl:variable name="rulespage" select="2" /> <!--ç¬¬å‡ é¡µå¼€å§‹ä¸æ˜¾ç¤ºç‰ˆè§„å†…å®¹--> 
+<!--æ¨¡æ¿è®¾ç½®ç»“æŸ-->
 <xsl:variable name="myscript">
 <![CDATA[
 function CheckAll(form){
@@ -26,14 +26,14 @@ function CheckAll(form){
 	}
 }
 function clicksubmit(form){
-	if(confirm('ÄúÈ·¶¨Ö´ĞĞµÄ²Ù×÷Âğ?')){
+	if(confirm('æ‚¨ç¡®å®šæ‰§è¡Œçš„æ“ä½œå—?')){
 		this.document.batch.submit();
 		return true;
 	}else{
 		return false;
 	}
 }
-BoardJumpListSelect(0,"newboard","ÒÆ¶¯Ìû×ÓÇëÑ¡Ôñ","",1)
+BoardJumpListSelect(0,"newboard","ç§»åŠ¨å¸–å­è¯·é€‰æ‹©","",1)
 ]]>
 </xsl:variable>
 	
@@ -41,13 +41,13 @@ BoardJumpListSelect(0,"newboard","ÒÆ¶¯Ìû×ÓÇëÑ¡Ôñ","",1)
 <script language="JavaScript" src="Dv_plus/IndivGroup/js/IndivGroup_Main.js"></script>
 <script language="JavaScript" src="inc/Pagination.js"></script>
 <div class="mainbox"> 
-<!--°æ¹æ-->
+<!--ç‰ˆè§„-->
 <xsl:if test="IndivGroup/Board/@rules != '' and IndivGroup/@page &lt; $rulespage">
 <div class="page_left border" style="margin:0 auto">
 	<xsl:choose>
 		<xsl:when test="$rulesstyle=0">
 			<div class="bbs_column">
-				<h3 class="titlebig"><xsl:text disable-output-escaping="yes" >&amp;nbsp;&amp;nbsp;</xsl:text>>±¾°æ¹æÔò</h3>
+				<h3 class="titlebig"><xsl:text disable-output-escaping="yes" >&amp;nbsp;&amp;nbsp;</xsl:text>>æœ¬ç‰ˆè§„åˆ™</h3>
 				<div id="rules">
 				<xsl:value-of select="IndivGroup/Board/@rules" disable-output-escaping="yes"/>
 				</div>
@@ -56,7 +56,7 @@ BoardJumpListSelect(0,"newboard","ÒÆ¶¯Ìû×ÓÇëÑ¡Ôñ","",1)
 		</xsl:when>
 		<xsl:otherwise>
 			<div class="bbs_column">
-				<h3 class="titlebig">°æ ¹æ ºÍ µ¼ ¶Á</h3>
+				<h3 class="titlebig">ç‰ˆ è§„ å’Œ å¯¼ è¯»</h3>
 					<xsl:value-of select="IndivGroup/Board/@rules" disable-output-escaping="yes"/>
 			</div>
 		</xsl:otherwise>
@@ -65,34 +65,34 @@ BoardJumpListSelect(0,"newboard","ÒÆ¶¯Ìû×ÓÇëÑ¡Ôñ","",1)
 </xsl:if>
 
 <div style="margin:5px auto">
-	<input type="image" src="Skins/Default/postnew.gif" style="border:none" onclick="return window.location='IndivGroup_Post.asp?action=new&amp;groupid={IndivGroup/Board/@rootid}&amp;groupboardid={IndivGroup/Board/@id}';" title="·¢±íÒ»¸öĞÂÌû×Ó" />
+	<input type="image" src="Skins/Default/postnew.gif" style="border:none" onclick="return window.location='IndivGroup_Post.asp?action=new&amp;groupid={IndivGroup/Board/@rootid}&amp;groupboardid={IndivGroup/Board/@id}';" title="å‘è¡¨ä¸€ä¸ªæ–°å¸–å­" />
 </div>
 
 <xsl:if test="IndivGroup/@powerflag=1 or IndivGroup/@powerflag=2 or IndivGroup/@powerflag=3">
 	<div class="page_left border" style="width:100%;margin:5px auto;line-height:25px;">
-		¹ÜÀíÑ¡Ïî:¡¡<a href="?action=batch&amp;GroupID={IndivGroup/Board/@rootid}&amp;GroupBoardid={IndivGroup/Board/@id}">Ìû×ÓÅúÁ¿¹ÜÀí</a>
+		ç®¡ç†é€‰é¡¹:ã€€<a href="?action=batch&amp;GroupID={IndivGroup/Board/@rootid}&amp;GroupBoardid={IndivGroup/Board/@id}">å¸–å­æ‰¹é‡ç®¡ç†</a>
 	</div>
 </xsl:if>
 
 <div class="page_left border" style="width:100%;margin:0 auto">
-	<h3 class="titlebig" style="margin:0;">Èº×é»°Ìâ</h3>	
+	<h3 class="titlebig" style="margin:0;">ç¾¤ç»„è¯é¢˜</h3>	
 	<table class="tableborder" style="width:100%;border:0;border-bottom:1px;" cellspacing="0" cellpadding="0">
 		<tr>
 			<td style="border-top:0px;text-align:center;">
 			<xsl:choose>
 				<xsl:when test="IndivGroup/@powerflag &lt; 4">
-					<a href="?groupid={IndivGroup/Board/@rootid}&amp;groupboardid={IndivGroup/Board/@id}&amp;page={IndivGroup/@page}&amp;action=batch">×´Ì¬</a>
+					<a href="?groupid={IndivGroup/Board/@rootid}&amp;groupboardid={IndivGroup/Board/@id}&amp;page={IndivGroup/@page}&amp;action=batch">çŠ¶æ€</a>
 				</xsl:when>
-				<xsl:otherwise>×´Ì¬</xsl:otherwise>
+				<xsl:otherwise>çŠ¶æ€</xsl:otherwise>
 			</xsl:choose>
 			</td>
-			<td style="border-top:0px;text-align:center;">Ö÷ Ìâ</td>
-			<td style="border-top:0px;text-align:center;">×÷Õß</td>
-			<td style="border-top:0px;text-align:center;">ÈËÆø</td>
-			<td style="border-top:0px;text-align:center;">»Ø¸´</td>
+			<td style="border-top:0px;text-align:center;">ä¸» é¢˜</td>
+			<td style="border-top:0px;text-align:center;">ä½œè€…</td>
+			<td style="border-top:0px;text-align:center;">äººæ°”</td>
+			<td style="border-top:0px;text-align:center;">å›å¤</td>
 		</tr>
 		<xsl:choose>
-			<xsl:when test="not (IndivGroup/toptopic/row or IndivGroup/topic/row)"><tr><td colspan="5">±¾À¸Ä¿Ã»ÓĞÆÀÂÛ</td></tr></xsl:when>
+			<xsl:when test="not (IndivGroup/toptopic/row or IndivGroup/topic/row)"><tr><td colspan="5">æœ¬æ ç›®æ²¡æœ‰è¯„è®º</td></tr></xsl:when>
 			<xsl:otherwise>
 				<form action="IndivGroup_PostsManage.asp?groupid={IndivGroup/Board/@rootid}&amp;groupboardid={IndivGroup/Board/@id}" method="post" name="batch">
 				<xsl:if test="IndivGroup/toptopic/row">
@@ -108,11 +108,11 @@ BoardJumpListSelect(0,"newboard","ÒÆ¶¯Ìû×ÓÇëÑ¡Ôñ","",1)
 				<xsl:if test="IndivGroup/@action='batch' and IndivGroup/@powerflag &lt; 4">
 					<tr><td colspan="6">
 						<input type="hidden" value="{IndivGroup/Board/@id}" name="groupboardid"/>
-						<input type="checkbox" name="chkall" value="on" onclick="CheckAll(this.form);" class="chkbox"/>È«Ñ¡/È¡Ïû 
-						<input type="radio" name="action" value="dele" class="radio"/>ÅúÁ¿É¾³ı
-						<input class="radio" type="radio" name="action" value="isbest"/>ÅúÁ¿¾«»ª
-						<input type="radio" name="action" value="lock" class="radio"/>ÅúÁ¿Ëø¶¨
-						<input type="submit" name="Submit" value="Ö´ĞĞ" onclick="return clicksubmit(this.form);"/>
+						<input type="checkbox" name="chkall" value="on" onclick="CheckAll(this.form);" class="chkbox"/>å…¨é€‰/å–æ¶ˆ 
+						<input type="radio" name="action" value="dele" class="radio"/>æ‰¹é‡åˆ é™¤
+						<input class="radio" type="radio" name="action" value="isbest"/>æ‰¹é‡ç²¾å
+						<input type="radio" name="action" value="lock" class="radio"/>æ‰¹é‡é”å®š
+						<input type="submit" name="Submit" value="æ‰§è¡Œ" onclick="return clicksubmit(this.form);"/>
 						<script type="text/javascript" language="javascript">
 							<xsl:value-of select="$myscript" disable-output-escaping="yes" />
 						</script>
@@ -120,7 +120,7 @@ BoardJumpListSelect(0,"newboard","ÒÆ¶¯Ìû×ÓÇëÑ¡Ôñ","",1)
 				</xsl:if>
 				</form>
 				<xsl:variable name="CountNum"><xsl:value-of select="IndivGroup/Board/@topicnum - count(IndivGroup/toptopic/row)"/></xsl:variable>
-						<!-- ·ÖÒ³ĞÅÏ¢-->
+						<!-- åˆ†é¡µä¿¡æ¯-->
 						<script language="javascript">PageList(<xsl:value-of select="IndivGroup/@page"/>,10,<xsl:value-of select="IndivGroup/forum_setting/@pagesize"/>,<xsl:value-of select="$CountNum"/>,"groupid=<xsl:value-of select="IndivGroup/Board/@rootid"/>&amp;groupboardid=<xsl:value-of select="IndivGroup/Board/@id"/>&amp;action=<xsl:value-of select="/IndivGroup/@action"/>",4);</script>
 			</xsl:otherwise>
 		</xsl:choose>
@@ -139,18 +139,18 @@ BoardJumpListSelect(0,"newboard","ÒÆ¶¯Ìû×ÓÇëÑ¡Ôñ","",1)
 			<input name="isWeb" type="hidden" value="1"/>
 			<input type="text" name="keyword"/>
 			<xsl:text disable-output-escaping="yes" >&amp;nbsp;</xsl:text>
-			<input type="submit" name="submit" value="ÍøÒ³ËÑË÷"/>
+			<input type="submit" name="submit" value="ç½‘é¡µæœç´¢"/>
 		</form>
 </div>
 
 <br/>
 
 <div style="margin:5px auto;">	
-		<div style="width:15%;float:left;"><img align="absmiddle" src="{IndivGroup/@opentopic}" alt="¿ª·ÅµÄ»°Ìâ"/> ¿ª·ÅµÄ»°Ìâ</div>
-		<div style="width:15%;float:left;"><img align="absmiddle" src="{IndivGroup/@hottopic}" alt="»Ø¸´³¬¹ı{IndivGroup/forum_setting/@ishot}Ìû"/> ÈÈÃÅµÄ»°Ìâ</div>
-		<div style="width:15%;float:left;"><img align="absmiddle" src="{IndivGroup/@ilocktopic}" alt="Ëø¶¨µÄ»°Ìâ"/> Ëø¶¨µÄ»°Ìâ</div>
-		<div style="width:15%;float:left;"><img align="absmiddle" src="{IndivGroup/@besttopic}" alt="º¬¾«»ªÌûµÄ»°Ìâ"/> º¬¾«»ªÌûµÄ»°Ìâ</div>
-		<div style="width:15%;float:left;"><img align="absmiddle" src="{IndivGroup/@istopic}" alt="¹Ì¶¥"/>  ¹Ì¶¥»°Ìâ</div>
+		<div style="width:15%;float:left;"><img align="absmiddle" src="{IndivGroup/@opentopic}" alt="å¼€æ”¾çš„è¯é¢˜"/> å¼€æ”¾çš„è¯é¢˜</div>
+		<div style="width:15%;float:left;"><img align="absmiddle" src="{IndivGroup/@hottopic}" alt="å›å¤è¶…è¿‡{IndivGroup/forum_setting/@ishot}å¸–"/> çƒ­é—¨çš„è¯é¢˜</div>
+		<div style="width:15%;float:left;"><img align="absmiddle" src="{IndivGroup/@ilocktopic}" alt="é”å®šçš„è¯é¢˜"/> é”å®šçš„è¯é¢˜</div>
+		<div style="width:15%;float:left;"><img align="absmiddle" src="{IndivGroup/@besttopic}" alt="å«ç²¾åå¸–çš„è¯é¢˜"/> å«ç²¾åå¸–çš„è¯é¢˜</div>
+		<div style="width:15%;float:left;"><img align="absmiddle" src="{IndivGroup/@istopic}" alt="å›ºé¡¶"/>  å›ºé¡¶è¯é¢˜</div>
 </div>
 </div>
 
@@ -158,7 +158,7 @@ BoardJumpListSelect(0,"newboard","ÒÆ¶¯Ìû×ÓÇëÑ¡Ôñ","",1)
 </xsl:template>
 
 <xsl:template  name="topic">
-<!-- Ö÷ÌâÁĞ±íÑ­»·²¿·Ö-->
+<!-- ä¸»é¢˜åˆ—è¡¨å¾ªç¯éƒ¨åˆ†-->
 <xsl:variable name="endpage">
 	<xsl:choose>
 		<xsl:when test="(@child+1) mod (/IndivGroup/forum_setting/@dispsize)=0"><xsl:value-of select="(@child+1) div (/IndivGroup/forum_setting/@dispsize)"/></xsl:when>
@@ -222,22 +222,22 @@ BoardJumpListSelect(0,"newboard","ÒÆ¶¯Ìû×ÓÇëÑ¡Ôñ","",1)
 <xsl:choose>
 	<xsl:when test="@istop=1 or @isbest=1">
 		<xsl:choose>
-			<xsl:when test="@istop=1"><img border="0" src="{/IndivGroup/@istopic}" alt="¹Ì¶¥µÄÖ÷Ìâ,µã»÷¿ªĞÂ´°¿Úä¯ÀÀ" /></xsl:when>
-			<xsl:otherwise><img border="0" src="{/IndivGroup/@besttopic}" alt="º¬¾«»ªµÄÖ÷Ìâ,µã»÷¿ªĞÂ´°¿Úä¯ÀÀ" /></xsl:otherwise>
+			<xsl:when test="@istop=1"><img border="0" src="{/IndivGroup/@istopic}" alt="å›ºé¡¶çš„ä¸»é¢˜,ç‚¹å‡»å¼€æ–°çª—å£æµè§ˆ" /></xsl:when>
+			<xsl:otherwise><img border="0" src="{/IndivGroup/@besttopic}" alt="å«ç²¾åçš„ä¸»é¢˜,ç‚¹å‡»å¼€æ–°çª—å£æµè§ˆ" /></xsl:otherwise>
 		</xsl:choose>
 	</xsl:when>
 	<xsl:otherwise>
 		<xsl:choose>
 			<xsl:when test="@locktopic=1">
-				<img border="0" src="{/IndivGroup/@ilocktopic}" alt="ÒÑËø¶¨µÄÖ÷Ìâ,µã»÷¿ªĞÂ´°¿Úä¯ÀÀ"/>
+				<img border="0" src="{/IndivGroup/@ilocktopic}" alt="å·²é”å®šçš„ä¸»é¢˜,ç‚¹å‡»å¼€æ–°çª—å£æµè§ˆ"/>
 			</xsl:when>
 			<xsl:otherwise>
 				<xsl:choose>
 					<xsl:when test="@child &gt; /IndivGroup/forum_setting/@ishot">
-						<img border="0" src="{/IndivGroup/@hottopic}" alt="ÈÈÃÅµÄÖ÷Ìâ,µã»÷¿ªĞÂ´°¿Úä¯ÀÀ" />
+						<img border="0" src="{/IndivGroup/@hottopic}" alt="çƒ­é—¨çš„ä¸»é¢˜,ç‚¹å‡»å¼€æ–°çª—å£æµè§ˆ" />
 					</xsl:when>
 					<xsl:otherwise>
-						<img border="0" src="{/IndivGroup/@opentopic}" alt="¿ª·ÅµÄÖ÷Ìâ,µã»÷¿ªĞÂ´°¿Úä¯ÀÀ" />
+						<img border="0" src="{/IndivGroup/@opentopic}" alt="å¼€æ”¾çš„ä¸»é¢˜,ç‚¹å‡»å¼€æ–°çª—å£æµè§ˆ" />
 					</xsl:otherwise>
 				</xsl:choose>
 			</xsl:otherwise>
@@ -246,14 +246,14 @@ BoardJumpListSelect(0,"newboard","ÒÆ¶¯Ìû×ÓÇëÑ¡Ôñ","",1)
 </xsl:choose>
 </xsl:template>
 
-<!--ÏÔÊ¾¸÷ÖÖÄ£Ê½µÄ±êÌâ-->
+<!--æ˜¾ç¤ºå„ç§æ¨¡å¼çš„æ ‡é¢˜-->
 <xsl:template name="showtitle">
 <a href="IndivGroup_Dispbbs.asp?GroupID={@groupid}&amp;groupboardid={@boardid}&amp;ID={@topicid}&amp;page={/IndivGroup/@page}">
 <xsl:if test="$showtitleinfo=1">
-	<xsl:attribute name="title">¡¶<xsl:value-of select="@title" disable-output-escaping="yes"/>¡·
-×÷Õß£º<xsl:value-of select="@postusername"/>
-·¢±íÓÚ£º<xsl:value-of select="@dateandtime"/>
-×îºó·¢Ìû£º<xsl:value-of select="@lastpost_3"/>
+	<xsl:attribute name="title">ã€Š<xsl:value-of select="@title" disable-output-escaping="yes"/>ã€‹
+ä½œè€…ï¼š<xsl:value-of select="@postusername"/>
+å‘è¡¨äºï¼š<xsl:value-of select="@dateandtime"/>
+æœ€åå‘å¸–ï¼š<xsl:value-of select="@lastpost_3"/>
 	</xsl:attribute>
 </xsl:if>
 <xsl:choose>
@@ -261,7 +261,7 @@ BoardJumpListSelect(0,"newboard","ÒÆ¶¯Ìû×ÓÇëÑ¡Ôñ","",1)
 	<xsl:otherwise>
 		<xsl:choose>
 			<xsl:when test="string-length(@title) &gt; 30 ">
-				<xsl:value-of select="concat(substring(@title,0,20),'....',substring(@title,(string-length(@title)- 10 ),string-length(@title)))" disable-output-escaping="yes"/>[³¤]
+				<xsl:value-of select="concat(substring(@title,0,20),'....',substring(@title,(string-length(@title)- 10 ),string-length(@title)))" disable-output-escaping="yes"/>[é•¿]
 			</xsl:when>
 			<xsl:otherwise><xsl:value-of select="@title" disable-output-escaping="yes"/></xsl:otherwise>
 		</xsl:choose>
@@ -271,7 +271,7 @@ BoardJumpListSelect(0,"newboard","ÒÆ¶¯Ìû×ÓÇëÑ¡Ôñ","",1)
 <xsl:value-of select="' '" />
 <xsl:if test="/IndivGroup/forum_setting/@newflagpic !='0'  and /IndivGroup/forum_setting/@newflagpic !=''">
 	<xsl:if test="@datedifftime"> 
-		<img src="{/IndivGroup/forum_setting/@newflagpic}" border="0" alt="{@datedifftime}·ÖÖÓÇ°¸üĞÂ!"/>
+		<img src="{/IndivGroup/forum_setting/@newflagpic}" border="0" alt="{@datedifftime}åˆ†é’Ÿå‰æ›´æ–°!"/>
 	</xsl:if>
 </xsl:if>
 </xsl:template>

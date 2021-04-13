@@ -1,6 +1,6 @@
 <HTML>
 <HEAD>
-<TITLE>Dvbbs多功能编辑器--调色板工具</TITLE>
+<TITLE>Dvbbs澶氬姛鑳界紪杈戝櫒--璋冭壊鏉垮伐鍏�</TITLE>
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
 <Link rel="stylesheet" type="text/css" href="pop.css">
 <script language="javascript">
@@ -33,18 +33,18 @@ function over() {
 		document.getElementById("hexColValue").value = this.id;
 	}
 }
-//Mouse 移开
+//Mouse 绉诲紑
 function out() {
 	if (this.id.length == 7){
 		this.style.border='1px solid #000000';
 	}
 }
-//Mouse 点击
+//Mouse 鐐瑰嚮
 function click() {
 	selectColor(this.id);
 }
 
-//颜色选取
+//棰滆壊閫夊彇
 function selectColor(color){
 	self.parent.setColor(color);
 }
@@ -60,7 +60,7 @@ input {border: 0px; background-color: #CCCCCC; font-family: Verdana, Arial, Helv
  <tr> 
   <td class="grTd" width="40"><div style="background-color: #000000; padding: 1; height: 15px; width: 40px"><div id="colPreview" style="height: 100%; width: 100%"></div></div></td>
   <td class="grTd" width="10"><input type="text" id="hexColValue" value="" size="10" style="cursor: default" /></td>
-  <td class="grTd" width="*" align=right><b>DV</b>颜色画板</td>
+  <td class="grTd" width="*" align=right><b>DV</b>棰滆壊鐢绘澘</td>
  </tr>
 </table>
 <table border="0" cellpadding="0" cellspacing="0" bordercolor="#000000" bgcolor="#000000" width="100%" height="84%">

@@ -28,7 +28,7 @@
 	<xsl:template name="manageresult">
 		<div class="mainbox">
 			<ul class="tableborder heightd">
-				<h1>ÉóºË½á¹û</h1>
+				<h1>å®¡æ ¸ç»“æžœ</h1>
 				<ol style="margin-top:0px;margin-bottom:0px;list-style-position : inside;">
 					<xsl:for-each select="xml/result">
 						<xsl:sort select="@boardid" order="descending" data-type="number"/>
@@ -39,48 +39,48 @@
 										color:<xsl:value-of select="@color"/>;
 									</xsl:attribute>
 								</xsl:if>
-								Ìû×Ó±àºÅ£º<xsl:value-of select="@rootid" />£¬
-								¸úÌû±àºÅ£º<xsl:value-of select="@announceid" />£¬
-								²Ù×÷×´Ì¬£º<xsl:value-of select="@stats" />
+								å¸–å­ç¼–å·ï¼š<xsl:value-of select="@rootid" />ï¼Œ
+								è·Ÿå¸–ç¼–å·ï¼š<xsl:value-of select="@announceid" />ï¼Œ
+								æ“ä½œçŠ¶æ€ï¼š<xsl:value-of select="@stats" />
 							</div>
 						</li>
 					</xsl:for-each>
 				</ol>
 			<hr />
-			<div>±¾´°¿ÚÓÚ10Ãëºó×Ô¶¯¹Ø±Õ</div></ul>
+			<div>æœ¬çª—å£äºŽ10ç§’åŽè‡ªåŠ¨å…³é—­</div></ul>
 		</div>
-		<div class="mainbar1"><a href="javascript:window.close()"> ÂíÉÏ¹Ø±Õ´°¿Ú </a> </div>
+		<div class="mainbar1"><a href="javascript:window.close()"> é©¬ä¸Šå…³é—­çª—å£ </a> </div>
 		<script type="text/javascript" language="javascript">
 			setTimeout("window.close()",10000)
 		</script>
 	</xsl:template>
 	<xsl:template name="view">
-		<div class="th" style="width:700px;text-align : center;">ÉóºËÌû×Ó</div>
+		<div class="th" style="width:700px;text-align : center;">å®¡æ ¸å¸–å­</div>
 		<div class="mainbar3" style="text-align : left;text-indent:24px;width:700px;line-height:28px;height : 28px;">
 			<div style="float:right;margin-right:5px;">
-				<a href="javascript:window.close()"> ¹Ø±Õ´°¿Ú </a> 
+				<a href="javascript:window.close()"> å…³é—­çª—å£ </a> 
 			</div>
 			<xsl:if test="xml/row/@parentid!=0">
 				<div style="text-indent:10px;">
-					<a href="IndivGroup_Dispbbs.asp?boardid={xml/row/@locktopic}&amp;id={xml/row/@rootid}" target="_blank" >Ïà¹ØÖ÷Ìâ</a>
+					<a href="IndivGroup_Dispbbs.asp?boardid={xml/row/@locktopic}&amp;id={xml/row/@rootid}" target="_blank" >ç›¸å…³ä¸»é¢˜</a>
 				</div>
 			</xsl:if>
 		</div>
 		<div class="mainbar3" style="line-height:25px;text-indent:10px;width:700px;word-wrap : break-word ;word-break : break-all ;">
 			<fieldset style="border : 1px dotted #ccc;text-align : left;line-height:22px;text-align : left;padding:10px;margin:10px;">
 				<legend> <b><xsl:value-of select="xml/row/@topic" /></b></legend>
-				<div style="text-align : center;">----×÷Õß£º
+				<div style="text-align : center;">----ä½œè€…ï¼š
 					<a href="dispuser.asp?id={xml/row/@postuserid}" target="_blank" >
 						<xsl:value-of select="xml/row/@username" />
 					</a> 
-					°æÃæ£º
+					ç‰ˆé¢ï¼š
 					<xsl:variable name="bid" select="xml/row/@locktopic"/>
 					<xsl:value-of select="xml/BoardList/board[@boardid= $bid]/@boardtype"  disable-output-escaping="yes"/> 
-					·¢±íÊ±¼ä£º<xsl:value-of select="xml/row/@dateandtime" />  
-					ÀàÐÍ£º
+					å‘è¡¨æ—¶é—´ï¼š<xsl:value-of select="xml/row/@dateandtime" />  
+					ç±»åž‹ï¼š
 					<xsl:choose>
-						<xsl:when test="xml/row/@parentid=0">Ö÷Ìâ</xsl:when>
-						<xsl:otherwise>¸úÌû</xsl:otherwise>
+						<xsl:when test="xml/row/@parentid=0">ä¸»é¢˜</xsl:when>
+						<xsl:otherwise>è·Ÿå¸–</xsl:otherwise>
 					</xsl:choose> 
 				</div>
 				<div><xsl:value-of select="xml/row/@body" disable-output-escaping="yes"/></div>
@@ -90,40 +90,40 @@
 	<xsl:template name="readme">
 		<div class="mainbox">
 			<ul class="tableborder heightd">
-				<h3>Ìû×ÓÉóºË»úÖÆ£¬ÂÛÌ³µÄ·À»ðÇ½</h3>
+				<h3>å¸–å­å®¡æ ¸æœºåˆ¶ï¼Œè®ºå›çš„é˜²ç«å¢™</h3>
 				<ol style="margin-top:0px;margin-bottom:0px;list-style-position : inside;">
-					<li style="padding:0px 5px;">Îª¾»»¯ÂÛÌ³ÐÅÏ¢£¬±£Ö¤ÂÛÌ³ÄÜÕý³£µÄÔËÐÐ£¬ÎÒÃÇÉèÁ¢ÁËÉóºË»úÖÆ¡£ÐÅÏ¢ÉóºËÒÑ¾­ÊÇµ±Ç°ÂÛÌ³±Ø²»¿ÉÉÙµÄ»·½Ú£¬Çë¸÷Î»¹ÜÀíÈËÔ±ÈÏÕæ×öºÃÉóºËµÄ¹¤×÷£¬ÒÔÈ·±£ÂÛÌ³Õý³£ÔË×ª¡£</li>
-					<li style="padding:0px 5px;">ÎªÓÐÐ§¿ØÖÆ£¬¹ýÂË¸÷ÖÖ¹ã¸æºÍ²»Á¼ÐÅÏ¢£¬ÎÒÃÇÐèÒªÉóºË»úÖÆ£¬È»¶ø£¬ÒòÂÛÌ³µÄÐÅÏ¢¿ÉÄÜºÜ¶à£¬¿ÉÄÜÉóºË¹¤×÷Ïàµ±·±ÖØ£¬Îª´Ë£¬ÎÒÃÇÖÆ¶©ÁËÒ»ÏµÁÐµÄ¿ÆÑ§µÄÉóºË·½°¸£¬ÎñÇó×öµ½¼È¿ÉÓÐÐ§·ÀÖ¹ºÍ¹ýÂË²»Á¼ÐÅÏ¢£¬ÓÖ¾¡¿ÉÄÜÒÔ¼õÉÙÉóºË¹¤×÷µÄ¸ºµ£¡£</li>
-					<li style="padding:0px 5px;">Ä¿Ç°ÎÒÃÇÖÆ¶©ÁË¶àÌ×ÉóºË»úÖÆ£¬ÒÔºó»áÂ½ÐøÌí¼Ó¡£ÉóºË»úÖÆµÄÉèÖÃ±ØÐëÓÉ¹ÜÀíÔ±ÉèÖÃ¡£°æÖ÷ºÍÆäËûµÄ¹ÜÀíÔ±ÄÜ²é¿´µ±Ç°ÉèÖÃµÄÏêÇé¡£</li>
-					<li style="padding:0px 5px;">Èç¹ûÄú·¢ÏÖÄ³ÓÃ»§ÊÇ¿ÉÒÔ»íÃâÉóºË(²»ÐèÒªÉóºËËûµÄÌû×Ó)¿ÉÒÔµãÆäÃû×ÖºóÃæµÄ»íÃâ£¬ÔòÒÔºó²»ÐèÒªÔÙÉóºËËûµÄÌû×ÓÁË¡£´ËÇé¿öÊÇÔÚ¸ß¶ÈÏàÐÅ´ËÈËµÄÇé¿öÏÂ£¬Îª±ÜÃâÉóºËµÄÂé·³¶ø×öµÄ²Ù×÷£¬ÐèÒªÉóÉ÷¡£</li>
+					<li style="padding:0px 5px;">ä¸ºå‡€åŒ–è®ºå›ä¿¡æ¯ï¼Œä¿è¯è®ºå›èƒ½æ­£å¸¸çš„è¿è¡Œï¼Œæˆ‘ä»¬è®¾ç«‹äº†å®¡æ ¸æœºåˆ¶ã€‚ä¿¡æ¯å®¡æ ¸å·²ç»æ˜¯å½“å‰è®ºå›å¿…ä¸å¯å°‘çš„çŽ¯èŠ‚ï¼Œè¯·å„ä½ç®¡ç†äººå‘˜è®¤çœŸåšå¥½å®¡æ ¸çš„å·¥ä½œï¼Œä»¥ç¡®ä¿è®ºå›æ­£å¸¸è¿è½¬ã€‚</li>
+					<li style="padding:0px 5px;">ä¸ºæœ‰æ•ˆæŽ§åˆ¶ï¼Œè¿‡æ»¤å„ç§å¹¿å‘Šå’Œä¸è‰¯ä¿¡æ¯ï¼Œæˆ‘ä»¬éœ€è¦å®¡æ ¸æœºåˆ¶ï¼Œç„¶è€Œï¼Œå› è®ºå›çš„ä¿¡æ¯å¯èƒ½å¾ˆå¤šï¼Œå¯èƒ½å®¡æ ¸å·¥ä½œç›¸å½“ç¹é‡ï¼Œä¸ºæ­¤ï¼Œæˆ‘ä»¬åˆ¶è®¢äº†ä¸€ç³»åˆ—çš„ç§‘å­¦çš„å®¡æ ¸æ–¹æ¡ˆï¼ŒåŠ¡æ±‚åšåˆ°æ—¢å¯æœ‰æ•ˆé˜²æ­¢å’Œè¿‡æ»¤ä¸è‰¯ä¿¡æ¯ï¼Œåˆå°½å¯èƒ½ä»¥å‡å°‘å®¡æ ¸å·¥ä½œçš„è´Ÿæ‹…ã€‚</li>
+					<li style="padding:0px 5px;">ç›®å‰æˆ‘ä»¬åˆ¶è®¢äº†å¤šå¥—å®¡æ ¸æœºåˆ¶ï¼Œä»¥åŽä¼šé™†ç»­æ·»åŠ ã€‚å®¡æ ¸æœºåˆ¶çš„è®¾ç½®å¿…é¡»ç”±ç®¡ç†å‘˜è®¾ç½®ã€‚ç‰ˆä¸»å’Œå…¶ä»–çš„ç®¡ç†å‘˜èƒ½æŸ¥çœ‹å½“å‰è®¾ç½®çš„è¯¦æƒ…ã€‚</li>
+					<li style="padding:0px 5px;">å¦‚æžœæ‚¨å‘çŽ°æŸç”¨æˆ·æ˜¯å¯ä»¥è±å…å®¡æ ¸(ä¸éœ€è¦å®¡æ ¸ä»–çš„å¸–å­)å¯ä»¥ç‚¹å…¶åå­—åŽé¢çš„è±å…ï¼Œåˆ™ä»¥åŽä¸éœ€è¦å†å®¡æ ¸ä»–çš„å¸–å­äº†ã€‚æ­¤æƒ…å†µæ˜¯åœ¨é«˜åº¦ç›¸ä¿¡æ­¤äººçš„æƒ…å†µä¸‹ï¼Œä¸ºé¿å…å®¡æ ¸çš„éº»çƒ¦è€Œåšçš„æ“ä½œï¼Œéœ€è¦å®¡æ…Žã€‚</li>
 				</ol>
-				<li style="text-align:right;"><a href="AccessTopic.asp">ÂÛÌ³ÉóºËÖ÷Ò³Ãæ</a> | <a href="?igid={xml/param/@igid}">È¦×ÓÉóºËÖ÷Ò³Ãæ</a> | <a href="AccessTopic.asp?action=info" target="_blank">²é¿´ÉèÖÃ</a><xsl:if test="xml/param/@master=1"> | <a href="AccessTopic.asp?action=modify" class="redfont" >ÐÞ¸ÄÉóºËÉèÖÃ</a> </xsl:if></li>
+				<li style="text-align:right;"><a href="AccessTopic.asp">è®ºå›å®¡æ ¸ä¸»é¡µé¢</a> | <a href="?igid={xml/param/@igid}">åœˆå­å®¡æ ¸ä¸»é¡µé¢</a> | <a href="AccessTopic.asp?action=info" target="_blank">æŸ¥çœ‹è®¾ç½®</a><xsl:if test="xml/param/@master=1"> | <a href="AccessTopic.asp?action=modify" class="redfont" >ä¿®æ”¹å®¡æ ¸è®¾ç½®</a> </xsl:if></li>
 			</ul>
 		</div>
 		<div class="mainbox">
 			<ul class="tableborder heightd">
-				<h3><xsl:text disable-output-escaping="yes" >&amp;nbsp;</xsl:text>ËÑË÷È¦×ÓÉóºËÌû </h3>
+				<h3><xsl:text disable-output-escaping="yes" >&amp;nbsp;</xsl:text>æœç´¢åœˆå­å®¡æ ¸å¸– </h3>
 				<form action="IndivGroup_AccessTopic.asp" method="post" class="formMgr">
 					<div  style="text-align : left;line-height:25px;height:25px;text-indent:10px;">
-						¼ìË÷È¦×ÓÃû³Æ£º<input type="text" name="igname" value="{xml/param/@igname}" />
+						æ£€ç´¢åœˆå­åç§°ï¼š<input type="text" name="igname" value="{xml/param/@igname}" />
 						<xsl:if test="xml/param/@igid &gt; 0">
-						È¦×Ó°åÃæ£º
+						åœˆå­æ¿é¢ï¼š
 						<xsl:variable name="boardid" select="xml/param/@boardid"/>
 						<xsl:value-of select="$boardid"/>
 						<select name="boardid" id="boardid">
-							<option value="0">È«²¿°æÃæ</option>
+							<option value="0">å…¨éƒ¨ç‰ˆé¢</option>
 						<xsl:for-each select="xml/boardlist/row">
 							<option value="{@id}"><xsl:if test="$boardid=@id"><xsl:attribute name="selected">selected</xsl:attribute></xsl:if><xsl:value-of select="@boardname"/></option>
 						</xsl:for-each>
 						</select>
 						</xsl:if>
-						Êý¾Ý±í-[ÉóºËÌûÊý]£º
+						æ•°æ®è¡¨-[å®¡æ ¸å¸–æ•°]ï¼š
 						<select name="tableid" id="tableid">
-							<option value="0"><xsl:if test="xml/param/@tableid=0"><xsl:attribute name="selected">selected</xsl:attribute></xsl:if>È¦×ÓÖ÷Ìâ±í-[<xsl:value-of select="xml/@topiccount" />]</option>
-							<option value="1"><xsl:if test="/xml/param/@tableid &gt; 0"><xsl:attribute name="selected">selected</xsl:attribute></xsl:if>È¦×ÓÌû×Ó±í-[<xsl:value-of select="xml/@postcount" />]</option>
+							<option value="0"><xsl:if test="xml/param/@tableid=0"><xsl:attribute name="selected">selected</xsl:attribute></xsl:if>åœˆå­ä¸»é¢˜è¡¨-[<xsl:value-of select="xml/@topiccount" />]</option>
+							<option value="1"><xsl:if test="/xml/param/@tableid &gt; 0"><xsl:attribute name="selected">selected</xsl:attribute></xsl:if>åœˆå­å¸–å­è¡¨-[<xsl:value-of select="xml/@postcount" />]</option>
 						</select>
-						¹Ø¼ü×Ö£º<input type="text" name="keyword" value="{xml/param/@keyword}" />
-						<input type="submit" value="ËÑ Ë÷" />
+						å…³é”®å­—ï¼š<input type="text" name="keyword" value="{xml/param/@keyword}" />
+						<input type="submit" value="æœ ç´¢" />
 					</div>
 				</form>
 			</ul>
@@ -132,26 +132,26 @@
 <xsl:template name="result">
 	<div class="mainbox"><!--div_start-->
 		<ul class="tableborder heightd">
-			<h3>¼ìË÷½á¹û</h3>
+			<h3>æ£€ç´¢ç»“æžœ</h3>
 			<div style="text-indent:24px;">
 			<xsl:choose>
-					<xsl:when test="xml/param/@searchcount=0">Ã»ÓÐÕÒµ½Æ¥ÅäµÄ¼ÇÂ¼£¬Äú¿ÉÒÔ¸ü¸Ä¼ìË÷Ìõ¼þÔÙÊÔ¡£</xsl:when>
-					<xsl:otherwise>ÕÒµ½ <b><font color="red"><xsl:value-of select="xml/param/@searchcount" /></font></b>  ÌõÆ¥Åä¼ÇÂ¼¡£</xsl:otherwise>
+					<xsl:when test="xml/param/@searchcount=0">æ²¡æœ‰æ‰¾åˆ°åŒ¹é…çš„è®°å½•ï¼Œæ‚¨å¯ä»¥æ›´æ”¹æ£€ç´¢æ¡ä»¶å†è¯•ã€‚</xsl:when>
+					<xsl:otherwise>æ‰¾åˆ° <b><font color="red"><xsl:value-of select="xml/param/@searchcount" /></font></b>  æ¡åŒ¹é…è®°å½•ã€‚</xsl:otherwise>
 			</xsl:choose>
 			</div>
 		</ul>	
 		<div class="mainbar2">
 			<div class="th" style="width:100%;text-align : center;line-height:25px;height : 25px;text-indent:0px;border:0px;background:#f1f7fb;"> 
-				<div style="float:left;width:32px;">Í¨¹ý</div>
-				<div class="li1" style="width:32px;float:left;line-height:25px;heigh:25px;">É¾³ý</div>
-				<div class="li1" style="width:32px;float:left;line-height:25px;height:25px;">´ýÉó</div>
-				<div class="li1" style="width:32px;float:left;line-height:25px;height:25px;">ÀàÐÍ</div>
-				<div class="li1" style="float:left;text-indent:12px;line-height:25px;height:25px;">±êÌâ»òÄÚÈÝÌáÒª(Çëµã»÷±êÌâ²é¿´)</div>
-				<div class="li1" style="float:right;width:120px;line-height:25px;height : 25px;">·¢±íÊ±¼ä</div>
-				<div class="li1" style="float:right;width:80px;line-height:25px;height : 25px;">²Ù ×÷</div> 
-				<div class="li1" style="float:right;width:90px;line-height:25px;height : 25px;">×÷ Õß </div> 
-				<div class="li1" style="float:right;width:120px;line-height:25px;height : 25px;">°æ Ãæ</div>
-				<div class="li1" style="float:right;width:120px;line-height:25px;height : 25px;">È¦×ÓÃû³Æ</div>
+				<div style="float:left;width:32px;">é€šè¿‡</div>
+				<div class="li1" style="width:32px;float:left;line-height:25px;heigh:25px;">åˆ é™¤</div>
+				<div class="li1" style="width:32px;float:left;line-height:25px;height:25px;">å¾…å®¡</div>
+				<div class="li1" style="width:32px;float:left;line-height:25px;height:25px;">ç±»åž‹</div>
+				<div class="li1" style="float:left;text-indent:12px;line-height:25px;height:25px;">æ ‡é¢˜æˆ–å†…å®¹æè¦(è¯·ç‚¹å‡»æ ‡é¢˜æŸ¥çœ‹)</div>
+				<div class="li1" style="float:right;width:120px;line-height:25px;height : 25px;">å‘è¡¨æ—¶é—´</div>
+				<div class="li1" style="float:right;width:80px;line-height:25px;height : 25px;">æ“ ä½œ</div> 
+				<div class="li1" style="float:right;width:90px;line-height:25px;height : 25px;">ä½œ è€… </div> 
+				<div class="li1" style="float:right;width:120px;line-height:25px;height : 25px;">ç‰ˆ é¢</div>
+				<div class="li1" style="float:right;width:120px;line-height:25px;height : 25px;">åœˆå­åç§°</div>
 			</div>
 		</div>
 		<form name="recycle" action="IndivGroup_AccessTopic.asp?action=manage" method="post" target="_blank">
@@ -172,9 +172,9 @@
 					</div>
 					<div class="li2" style="width:32px;float:left;line-height:28px;height : 28px;">
 						<xsl:choose>
-							<xsl:when test="/xml/param/@tableid=0">Ö÷Ìâ</xsl:when>
-							<xsl:when test="@parentid=0">Ö÷Ìâ</xsl:when>
-							<xsl:otherwise>¸úÌû</xsl:otherwise>
+							<xsl:when test="/xml/param/@tableid=0">ä¸»é¢˜</xsl:when>
+							<xsl:when test="@parentid=0">ä¸»é¢˜</xsl:when>
+							<xsl:otherwise>è·Ÿå¸–</xsl:otherwise>
 						</xsl:choose>
 					</div>
 					<div class="li1" style="float:left;text-indent:12px;overflow :hidden;">
@@ -186,7 +186,7 @@
 						<xsl:value-of select="@dateandtime" />
 					</div>
 					<div class="li1" style="float:right;width:80px;"> 
-						<a href="AccessTopic.asp?action=addnocheck&amp;username={@username}" target="_blank" title="»íÃâ{@username}" style="color:green;">Ãâ</a> | <a href="IndivGroup_AccessTopic.asp?igname={/xml/param/@igname}&amp;boardid={/xml/param/@boardid}&amp;tableid={/xml/param/@tableid}&amp;keyword={@username}" title="ËÑË÷ÓÃ»§{@username}ËùÓÐ´ýÉóÌû">ËÑ</a> | <a href="admin_lockuser.asp?action=lock_1&amp;name={@username}" target="_blank" title="·âÁËÕâ¸ö¼Ò»ï" style="color:red;">·â</a> 
+						<a href="AccessTopic.asp?action=addnocheck&amp;username={@username}" target="_blank" title="è±å…{@username}" style="color:green;">å…</a> | <a href="IndivGroup_AccessTopic.asp?igname={/xml/param/@igname}&amp;boardid={/xml/param/@boardid}&amp;tableid={/xml/param/@tableid}&amp;keyword={@username}" title="æœç´¢ç”¨æˆ·{@username}æ‰€æœ‰å¾…å®¡å¸–">æœ</a> | <a href="admin_lockuser.asp?action=lock_1&amp;name={@username}" target="_blank" title="å°äº†è¿™ä¸ªå®¶ä¼™" style="color:red;">å°</a> 
 					</div>
 					<div class="li1" style="float:right;width:90px;">
 						<a href="dispuser.asp?id={@userid}" target="_blank" ><xsl:value-of select="@username" /></a> 
@@ -209,25 +209,25 @@
 				<div style="float:left;width:32px;text-align :center;">
 					<input type="radio" name="chkall" value="on" onclick="CheckAll(this.form,1);" style="margin:4px;" />
 				</div>
-				<div style="float:left;color:green;">È«²¿Í¨¹ý</div>
+				<div style="float:left;color:green;">å…¨éƒ¨é€šè¿‡</div>
 				<div style="float:left;width:32px;text-align :center;">
 					<input type="radio" name="chkall" value="on" onclick="CheckAll(this.form,0);" style="margin:4px;"/>
 				</div>
-				<div style="float:left;color:red;">È«²¿É¾³ý</div>
+				<div style="float:left;color:red;">å…¨éƒ¨åˆ é™¤</div>
 				<div style="float:left;width:32px;text-align :center;">
 					<input type="radio" name="chkall" value="on" onclick="CheckAll(this.form,2);" style="margin:4px;" checked="checked"/>
 				</div>
-				<div style="float:left;"><b>È«²¿´ýÉó</b></div>
+				<div style="float:left;"><b>å…¨éƒ¨å¾…å®¡</b></div>
 				<div style="float:left;"> 
-					<input type="submit" name="action" value="Åú Á¿ ²Ù ×÷" style="margin:3px 10px;"/>
+					<input type="submit" name="action" value="æ‰¹ é‡ æ“ ä½œ" style="margin:3px 10px;"/>
 				</div>
 			</div>
 		</form>
 		<div class="mainbar3" style="line-height:18px;text-align :left;text-indent:24px;">
-			<div style="padding:10px;"><b>ÅúÁ¿²Ù×÷ËµÃ÷£º</b>
-				<div>¶ÔÁÐ±íÖÐµÄÃ¿¸öÌû×Ó¿ÉÒÔÉèÖÃ£ºÍ¨¹ý¡¢É¾³ý¡¢´ýÉóºËÖÐµÄÒ»ÖÖ´¦Àí·½·¨£¬ÉèÖÃÍê±Ïºó¿ÉÒÔµãÅúÁ¿²Ù×÷°´Å¥Ö´ÐÐÉóºË²Ù×÷¡£</div>
-				<div>1.ÈçÑ¡Ôñ <font color="green">Í¨¹ý</font> ÔòÍ¨¹ýÉóºË 2.Ñ¡Ôñ <font color="red">É¾³ý</font> Ôò²»Í¨¹ýÉóºË£¬²¢Ö±½ÓÉ¾³ý 3.Ñ¡Ôñ <b>´ýÉó</b> ÔòÔÝ²»×÷ÈÎºÎ´¦Àí£¬ÈÝºóÔÙ¶¨¡£</div>
-				<div>²Ù×÷Ñ¡ÔñÖÐµÄ:Ãâ¡¢ËÑ¡¢·â·Ö±ð´ú±í»íÃâ£¬ËÑË÷¸ÃÓÃ»§ËùÓÐ´ýÉóºËÌû£¬Ëø¶¨¸ÃÓÃ»§ÕÊºÅ</div>
+			<div style="padding:10px;"><b>æ‰¹é‡æ“ä½œè¯´æ˜Žï¼š</b>
+				<div>å¯¹åˆ—è¡¨ä¸­çš„æ¯ä¸ªå¸–å­å¯ä»¥è®¾ç½®ï¼šé€šè¿‡ã€åˆ é™¤ã€å¾…å®¡æ ¸ä¸­çš„ä¸€ç§å¤„ç†æ–¹æ³•ï¼Œè®¾ç½®å®Œæ¯•åŽå¯ä»¥ç‚¹æ‰¹é‡æ“ä½œæŒ‰é’®æ‰§è¡Œå®¡æ ¸æ“ä½œã€‚</div>
+				<div>1.å¦‚é€‰æ‹© <font color="green">é€šè¿‡</font> åˆ™é€šè¿‡å®¡æ ¸ 2.é€‰æ‹© <font color="red">åˆ é™¤</font> åˆ™ä¸é€šè¿‡å®¡æ ¸ï¼Œå¹¶ç›´æŽ¥åˆ é™¤ 3.é€‰æ‹© <b>å¾…å®¡</b> åˆ™æš‚ä¸ä½œä»»ä½•å¤„ç†ï¼Œå®¹åŽå†å®šã€‚</div>
+				<div>æ“ä½œé€‰æ‹©ä¸­çš„:å…ã€æœã€å°åˆ†åˆ«ä»£è¡¨è±å…ï¼Œæœç´¢è¯¥ç”¨æˆ·æ‰€æœ‰å¾…å®¡æ ¸å¸–ï¼Œé”å®šè¯¥ç”¨æˆ·å¸å·</div>
 			</div>
 		</div>
 		<xsl:value-of select="$myscript" disable-output-escaping="yes" />		
@@ -249,14 +249,14 @@
 	</div><!--div_end-->
 </xsl:template>
 <xsl:template name="PageList">
-	<xsl:param name="Page"/><!--µ±Ç°Ò³Âë-->
-	<xsl:param name="m"/><!--Ò»´Î×î¶àÏÔÊ¾¼¸¸öÒ³Âë-->
-	<xsl:param name="MaxRows"/><!--Ã¿Ò³¼ÇÂ¼Êý-->
-	<xsl:param name="CountNum"/><!--×Ü¼ÇÂ¼Êý-->
-	<xsl:param name="PageStr"/><!--Á´½Ó²ÎÊý-->
-	<xsl:param name="v"/><!--ÏÔÊ¾ÀàÐÍ-->
-	<xsl:param name="pv"/><!--Ò³Âë²ÎÊý-->
-	<xsl:param name="target"/><!--Á´½ÓÄ¿±ê¿ò¼Ü-->
+	<xsl:param name="Page"/><!--å½“å‰é¡µç -->
+	<xsl:param name="m"/><!--ä¸€æ¬¡æœ€å¤šæ˜¾ç¤ºå‡ ä¸ªé¡µç -->
+	<xsl:param name="MaxRows"/><!--æ¯é¡µè®°å½•æ•°-->
+	<xsl:param name="CountNum"/><!--æ€»è®°å½•æ•°-->
+	<xsl:param name="PageStr"/><!--é“¾æŽ¥å‚æ•°-->
+	<xsl:param name="v"/><!--æ˜¾ç¤ºç±»åž‹-->
+	<xsl:param name="pv"/><!--é¡µç å‚æ•°-->
+	<xsl:param name="target"/><!--é“¾æŽ¥ç›®æ ‡æ¡†æž¶-->
 	<xsl:param name="Forum_AllTopNum"/>
 	<xsl:variable name="pagecount"><xsl:choose>
 	<xsl:when test="$CountNum mod $MaxRows=0">
@@ -269,12 +269,12 @@
 		<table class="tableborder5" cellpadding="0" cellspacing="1" style="width:auto;float:right;text-align:right;">
 		<form action="{$PageStr}" method="post" name="PageForm" target="{$target}">
 			<tr align="center">
-				<td class="tabletitle1" title="×ÜÊý" style="text-align : right; ">
+				<td class="tabletitle1" title="æ€»æ•°" style="text-align : right; ">
 					<xsl:text disable-output-escaping="yes" >&amp;nbsp;</xsl:text>
 					<xsl:value-of select="$Forum_AllTopNum + $CountNum"/>
 					<xsl:text disable-output-escaping="yes" >&amp;nbsp;</xsl:text>
 				</td>
-				<td class="tabletitle1" title="±¾Ò³¼ÇÂ¼Êý"><xsl:text disable-output-escaping="yes" >&amp;nbsp;</xsl:text>
+				<td class="tabletitle1" title="æœ¬é¡µè®°å½•æ•°"><xsl:text disable-output-escaping="yes" >&amp;nbsp;</xsl:text>
 					<xsl:choose>
 						<xsl:when test="$Page='1'">
 							<xsl:choose>
@@ -301,7 +301,7 @@
 				</td>
 				<td class="tabletitle1">
 					<xsl:text disable-output-escaping="yes" >&amp;nbsp;</xsl:text>
-					<xsl:value-of select="$Page"/>/<xsl:value-of select="$pagecount"/>Ò³
+					<xsl:value-of select="$Page"/>/<xsl:value-of select="$pagecount"/>é¡µ
 					<xsl:text disable-output-escaping="yes" >&amp;nbsp;</xsl:text>
 				</td>
 				<xsl:if test="$Page='1'">
@@ -315,7 +315,7 @@
 					<td class="tablebody1">
 						<xsl:text disable-output-escaping="yes" >&amp;nbsp;</xsl:text>
 						<a href="{$PageStr}&amp;{$pv}=1" target="{$target}">
-							<img src="images/pagelist/First.gif" border="0" alt="Ê×Ò³"/>
+							<img src="images/pagelist/First.gif" border="0" alt="é¦–é¡µ"/>
 						</a>
 						<xsl:text disable-output-escaping="yes" >&amp;nbsp;</xsl:text>
 					</td>
@@ -324,7 +324,7 @@
 					<td class="tablebody1">
 						<xsl:text disable-output-escaping="yes" >&amp;nbsp;</xsl:text>
 						<a href="{$PageStr}&amp;{$pv}={$Page - $m}" target="{$target}">
-							<img src="images/pagelist/Previous.gif" border="0" alt="ÉÏ{$m}Ò³"/>
+							<img src="images/pagelist/Previous.gif" border="0" alt="ä¸Š{$m}é¡µ"/>
 						</a>
 						<xsl:text disable-output-escaping="yes" >&amp;nbsp;</xsl:text>
 					</td>
@@ -353,7 +353,7 @@
 					<td class="tablebody1">
 						<xsl:text disable-output-escaping="yes" >&amp;nbsp;</xsl:text>
 						<a href="{$PageStr}&amp;{$pv}={$m + $Page}"  target="{$target}">
-							<img src="images/pagelist/Next.gif" border="0" alt="ÏÂ{$m}Ò³"/>
+							<img src="images/pagelist/Next.gif" border="0" alt="ä¸‹{$m}é¡µ"/>
 						</a>
 						<xsl:text disable-output-escaping="yes" >&amp;nbsp;</xsl:text>
 					</td>
@@ -362,7 +362,7 @@
 					<td class="tablebody1">
 						<xsl:text disable-output-escaping="yes" >&amp;nbsp;</xsl:text>
 						<a href="{$PageStr}&amp;{$pv}={$pagecount}" target="{$target}">
-							<img src="images/pagelist/Last.gif" border="0" alt="Î²Ò³"/>
+							<img src="images/pagelist/Last.gif" border="0" alt="å°¾é¡µ"/>
 						</a>
 						<xsl:text disable-output-escaping="yes" >&amp;nbsp;</xsl:text>
 					</td>

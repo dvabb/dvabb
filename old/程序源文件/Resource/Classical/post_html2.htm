@@ -1,5 +1,5 @@
-<!--post.asp##上传文件部分-->
-<tr><td width="20%" valign="top" class="tablebody2"><b>文件上传</b> <a onmouseover="showmenu(event,'{$uploadlist}')" style="cursor:pointer" title="查看可上传的文件类型" >类型</a>
+<!--post.asp##涓婁紶鏂囦欢閮ㄥ垎-->
+<tr><td width="20%" valign="top" class="tablebody2"><b>鏂囦欢涓婁紶</b> <a onmouseover="showmenu(event,'{$uploadlist}')" style="cursor:pointer" title="鏌ョ湅鍙笂浼犵殑鏂囦欢绫诲瀷" >绫诲瀷</a>
 </td><td width="80%" class="tablebody2" style="text-indent:0;">
 <!--<iframe name="ad" frameborder="0" width="100%" height="25" scrolling="no" src="post_upload.asp?boardid={$boardid}"></iframe>-->
 <iframe id="ad" name="ad" align="left" frameborder="0" width="100%" height="20" scrolling="no" src="savefile.asp?boardid={$boardid}"></iframe>
@@ -7,9 +7,9 @@
 ||||
 <tr>
 	<td width="20%" valign="top" class="tablebody2">
-		<b>组图上传</b>  <a id="h" href="javascript:;" onclick="h();">关闭</a>
+		<b>缁勫浘涓婁紶</b>  <a id="h" href="javascript:;" onclick="h();">鍏抽棴</a>
 		<br /><br />
-		&nbsp;&nbsp;&nbsp;图片批量上传 图片全屏展示
+		&nbsp;&nbsp;&nbsp;鍥剧墖鎵归噺涓婁紶 鍥剧墖鍏ㄥ睆灞曠ず
 	</td>
 	<td width="80%" class="tablebody2">
 		<script language="JavaScript" type="text/javascript">
@@ -22,11 +22,11 @@
 		function h() {
 			if(document.getElementById("upload_swf").style.display==''){
 				document.getElementById("upload_swf").style.display='none';
-				document.getElementById("h").innerText="展开";
+				document.getElementById("h").innerText="灞曞紑";
 			}
 			else{
 				document.getElementById("upload_swf").style.display='';
-				document.getElementById("h").innerText="关闭";
+				document.getElementById("h").innerText="鍏抽棴";
 			}
 		}
 		function qcomic_postsubmit(phid) {

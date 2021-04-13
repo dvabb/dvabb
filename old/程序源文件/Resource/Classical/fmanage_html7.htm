@@ -6,8 +6,8 @@ var seldisable='{$seldisable}';
 var doWealth={$doWealth};
 var dousercp={$dousercp};
 var douserep={$douserep};
-document.write ('<b>ÓÃ»§²Ù×÷</b>£º');
-document.write ('&nbsp;&nbsp;½ğÇ® <select name="doWealth" size="1" '+seldisable+'>');
+document.write ('<b>ç”¨æˆ·æ“ä½œ</b>ï¼š');
+document.write ('&nbsp;&nbsp;é‡‘é’± <select name="doWealth" size="1" '+seldisable+'>');
 for (i=-50;i<51 ;i++ )
 {
 	document.write ('<option value="'+i+'" ');
@@ -17,7 +17,7 @@ for (i=-50;i<51 ;i++ )
 	}
 	document.write ('>'+i+'</option>');
 }
-document.write ('</select>&nbsp;÷ÈÁ¦');
+document.write ('</select>&nbsp;é­…åŠ›');
 document.write (' <select name="douserCP" size="1" '+seldisable+'>');
 for (i=-50;i<51 ;i++ )
 {
@@ -28,7 +28,7 @@ for (i=-50;i<51 ;i++ )
 	}
 	document.write ('>'+i+'</option>');
 }
-document.write ('</select>&nbsp;»ı·Ö');
+document.write ('</select>&nbsp;ç§¯åˆ†');
 document.write (' <select name="douserEP" size="1" '+seldisable+'>');
 for (i=-50;i<51 ;i++ )
 {
@@ -63,21 +63,21 @@ function nocent()
 }
 //-->
 </script>
-&nbsp;<input type="checkbox" name="checkbox" value="checkbox" onclick="nocent();" {$seldisable} />²»¶ÔÓÃ»§½øĞĞ·ÖÖµ²Ù×÷
+&nbsp;<input type="checkbox" name="checkbox" value="checkbox" onclick="nocent();" {$seldisable} />ä¸å¯¹ç”¨æˆ·è¿›è¡Œåˆ†å€¼æ“ä½œ
 <script language="JavaScript" type="text/javascript">
 	var decrease='{$decrease}';
 	if (0<decrease){
 		switch(decrease){
 			case '1':
 				document.write('<select name="decrease" size="1">');
-				document.write('<option value="0" selected="selected">ËùÓĞÈËÔö¼Ó¡°±»É¾Ìû¡±ÊıÄ¿</option>');
-				document.write('<option value="1">Â¥Ö÷²»Ôö¼Ó¡°±»É¾Ìû¡±ÊıÄ¿</option>');
-				document.write('<option value="2">¸úÌû²»Ôö¼Ó¡°±»É¾Ìû¡±ÊıÄ¿</option>');
-				document.write('<option value="3">ËùÓĞÈË²»Ôö¼Ó¡°±»É¾Ìû¡±ÊıÄ¿</option>');
+				document.write('<option value="0" selected="selected">æ‰€æœ‰äººå¢åŠ â€œè¢«åˆ å¸–â€æ•°ç›®</option>');
+				document.write('<option value="1">æ¥¼ä¸»ä¸å¢åŠ â€œè¢«åˆ å¸–â€æ•°ç›®</option>');
+				document.write('<option value="2">è·Ÿå¸–ä¸å¢åŠ â€œè¢«åˆ å¸–â€æ•°ç›®</option>');
+				document.write('<option value="3">æ‰€æœ‰äººä¸å¢åŠ â€œè¢«åˆ å¸–â€æ•°ç›®</option>');
 				document.write('</select>');
 				break;
 			case '2':
-				document.write('<input type="checkbox" name="decrease" value="2" />²»Ôö¼Ó¡°±»É¾Ìû¡±ÊıÄ¿');
+				document.write('<input type="checkbox" name="decrease" value="2" />ä¸å¢åŠ â€œè¢«åˆ å¸–â€æ•°ç›®');
 				break;
 		}
 	}

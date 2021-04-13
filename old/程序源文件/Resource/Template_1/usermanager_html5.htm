@@ -1,4 +1,4 @@
-<!--mymodify.asp##»ù±¾×ÊÁÏĞŞ¸ÄÖ÷Ìå²¿·Ö 2005-1-27-->
+<!--mymodify.asp##åŸºæœ¬èµ„æ–™ä¿®æ”¹ä¸»ä½“éƒ¨åˆ† 2005-1-27-->
 <div class="mainbox" style="margin-top:0">
 <div class="Contentbox">
 <div id="con_two_2">
@@ -6,9 +6,9 @@
 	<table width="98%" cellspacing="0" cellpadding="0">
 		<tr>
 			<td style="width:160px;" valign="top">
-				<div id="sub_1" class="subHover" onclick="setDiv(1,3);">»ù±¾ÉèÖÃÑ¡Ïî</div>
-				<div id="sub_2" class="subOut" onclick="setDiv(2,3);">ÆäËüÑ¡Ïî</div>
-				<div id="sub_3" class="subOut" onclick="setDiv(3,3);">¸öÈËÕæÊµĞÅÏ¢</div>
+				<div id="sub_1" class="subHover" onclick="setDiv(1,3);">åŸºæœ¬è®¾ç½®é€‰é¡¹</div>
+				<div id="sub_2" class="subOut" onclick="setDiv(2,3);">å…¶å®ƒé€‰é¡¹</div>
+				<div id="sub_3" class="subOut" onclick="setDiv(3,3);">ä¸ªäººçœŸå®ä¿¡æ¯</div>
 			</td>
 			<td style="background:#F1F7FB;padding:8px" valign="top">
 				<form action="mymodify.asp?action=updat&username={$user_Id}" method="post" name="theForm" id="theForm">
@@ -22,90 +22,90 @@
 						</script>
 						{$SetTitle_info}
 						<tr>
-							<td width="20%" align="right" class="font14">ĞÔ±ğ£º
+							<td width="20%" align="right" class="font14">æ€§åˆ«ï¼š
 							<td width="80%">
-								<input type="radio" value="1"  class="radio" name="sex"/> ¿á¸ç
-								<input type="radio" value="0" class="radio" name="sex"/> ö¦ÃÃ							</td>
+								<input type="radio" value="1"  class="radio" name="sex"/> é…·å“¥
+								<input type="radio" value="0" class="radio" name="sex"/> é“å¦¹							</td>
 						</tr>
 						<tr>
-							<td align="right" valign="top" class="font14">Í·Ïñ£º </td>   
+							<td align="right" valign="top" class="font14">å¤´åƒï¼š </td>   
 							<td>{$SetFace_info}</td>
 						</tr>
 						{$usermagicface}
 						<tr>
-							<td align="right" class="font14">ÉúÈÕ£º</td>
+							<td align="right" class="font14">ç”Ÿæ—¥ï¼š</td>
 							<td style="height:40px;overflow:hidden;">
 								<script language="JavaScript" src="inc/dv_calendar.js" type="text/javascript"></script>
 								<script language=javascript>
 								var myDate=new dateSelector();
-								myDate.inputName='birthday';  //×¢ÒâÕâÀïÉèÖÃÊäÈë¿òµÄname£¬Í¬Ò»Ò³ÖĞÈÕÆÚÊäÈë¿ò£¬²»ÄÜ³öÏÖÖØ¸´µÄname¡£
+								myDate.inputName='birthday';  //æ³¨æ„è¿™é‡Œè®¾ç½®è¾“å…¥æ¡†çš„nameï¼ŒåŒä¸€é¡µä¸­æ—¥æœŸè¾“å…¥æ¡†ï¼Œä¸èƒ½å‡ºç°é‡å¤çš„nameã€‚
 								myDate.defvalue='{$user_Birthday}';
 								myDate.display();
 								</script>
 								</td>
 						</tr>
 						<tr>
-							<td align="right" class="font14">¸öÈËÕÕÆ¬£º</td>   
+							<td align="right" class="font14">ä¸ªäººç…§ç‰‡ï¼š</td>   
 							<td>    
 								<input name="userphoto" type="text" value="{$user_Photo}" size="30" maxlength="100" />							</td>
 						</tr>
 						{$SetGroup_info}
 						<tr>
 							<td align="right" valign="top" class="font14">
-							  Ç©Ãû£º </td>   
+							  ç­¾åï¼š </td>   
 							<td>    
 								<textarea name="Signature" rows="5" cols="60" wrap="physical">{$user_Signature}</textarea>							</td>
 						</tr>
 						<tr>
 							<td colspan="2" width="100%" style="text-align:center;">
-								<input name="Submit" type="submit" value="¸ü ĞÂ" /> &nbsp; <input name="Submit2" type="reset" value="Çå ³ı" />							</td>
+								<input name="Submit" type="submit" value="æ›´ æ–°" /> &nbsp; <input name="Submit2" type="reset" value="æ¸… é™¤" />							</td>
 						</tr>
 					</table>
 				</div>
 				<div id="dvbase_2" style="display:none">					
 					<table width="98%" cellspacing="0" cellpadding="5">
 							<tr>
-								<td class="font14" align="right">ÊÇ·ñ½«¸öĞÔÊ×Ò³ÉèÎªÂÛÌ³Ä¬ÈÏÊ×Ò³£º</td>
+								<td class="font14" align="right">æ˜¯å¦å°†ä¸ªæ€§é¦–é¡µè®¾ä¸ºè®ºå›é»˜è®¤é¦–é¡µï¼š</td>
 								<td width="60%">
-									<input type="radio" name="userdsindex" class="radio" value="1"/> ÊÇ
-									&nbsp;&nbsp;<input type="radio" name="userdsindex" class="radio" value="0"/> ·ñ
+									<input type="radio" name="userdsindex" class="radio" value="1"/> æ˜¯
+									&nbsp;&nbsp;<input type="radio" name="userdsindex" class="radio" value="0"/> å¦
 								</td>
 							</tr>
 							<tr>
-								<td class="font14" align="right">ÓĞ»ØÌûÊ±ÊÇ·ñÌáÊ¾Äú£º</td>   
+								<td class="font14" align="right">æœ‰å›å¸–æ—¶æ˜¯å¦æç¤ºæ‚¨ï¼š</td>   
 								<td>
-									<input type="radio" name="showRe" class="radio" value="1"/> ÌáÊ¾ÎÒ
-									&nbsp;&nbsp;<input type="radio" name="showRe" class="radio" value="0"/> ²»ÌáÊ¾
+									<input type="radio" name="showRe" class="radio" value="1"/> æç¤ºæˆ‘
+									&nbsp;&nbsp;<input type="radio" name="showRe" class="radio" value="0"/> ä¸æç¤º
 								</td>
 							</tr>	  
 							<tr>
-								<td class="font14" align="right">Ñ¡ÔñCookieµÄ±£ÁôÊ±¼ä£º</td>   
+								<td class="font14" align="right">é€‰æ‹©Cookieçš„ä¿ç•™æ—¶é—´ï¼š</td>   
 								<td>
-									<input type="radio" name="usercookies" class="radio" value="1"/>1Ìì
-									&nbsp;&nbsp;<input type="radio" name="usercookies" class="radio" value="2"/>1¸öÔÂ
-									&nbsp;&nbsp;<input type="radio" name="usercookies" class="radio" value="3"/>1Äê
-									&nbsp;&nbsp;<input type="radio" name="usercookies" class="radio" value="0"/>²»±£Áô
+									<input type="radio" name="usercookies" class="radio" value="1"/>1å¤©
+									&nbsp;&nbsp;<input type="radio" name="usercookies" class="radio" value="2"/>1ä¸ªæœˆ
+									&nbsp;&nbsp;<input type="radio" name="usercookies" class="radio" value="3"/>1å¹´
+									&nbsp;&nbsp;<input type="radio" name="usercookies" class="radio" value="0"/>ä¸ä¿ç•™
 								</td>
 							</tr>
 							<tr>
-								<td class="font14" align="right">ÊÇ·ñ¿ª·ÅÄúµÄ»ù±¾×ÊÁÏ£º</td>
+								<td class="font14" align="right">æ˜¯å¦å¼€æ”¾æ‚¨çš„åŸºæœ¬èµ„æ–™ï¼š</td>
 								<td width="60%">
-									<input type="radio" name="setuserinfo" class="radio" value="1"/> ¿ª·Å
-									&nbsp;&nbsp;<input type="radio" name="setuserinfo" class="radio" value="0"/> ²»¿ª·Å
+									<input type="radio" name="setuserinfo" class="radio" value="1"/> å¼€æ”¾
+									&nbsp;&nbsp;<input type="radio" name="setuserinfo" class="radio" value="0"/> ä¸å¼€æ”¾
 								</td>
 							</tr>
 							<tr>
 								<td class="font14" align="right">
-									ÊÇ·ñ¿ª·ÅÄúµÄÕæÊµ×ÊÁÏ£º
+									æ˜¯å¦å¼€æ”¾æ‚¨çš„çœŸå®èµ„æ–™ï¼š
 								</td>
 								<td width="60%">
-									<input type="radio" name="setusertrue" class="radio" value="1"/> ¿ª·Å
-									&nbsp;&nbsp;<input type="radio" name="setusertrue" class="radio" value="0"/> ²»¿ª·Å
+									<input type="radio" name="setusertrue" class="radio" value="1"/> å¼€æ”¾
+									&nbsp;&nbsp;<input type="radio" name="setusertrue" class="radio" value="0"/> ä¸å¼€æ”¾
 								</td>
 							</tr>
 							<tr>
 								<td colspan="2" width="100%" class="tablebody2" style="text-align:center;">
-									<input name="Submit" type="submit" value="¸ü ĞÂ" /> &nbsp; <input name="Submit2" type="reset" value="Çå ³ı" />
+									<input name="Submit" type="submit" value="æ›´ æ–°" /> &nbsp; <input name="Submit2" type="reset" value="æ¸… é™¤" />
 								</td>
 							</tr>
 					</table>
@@ -114,16 +114,16 @@
 					<table width="98%" cellspacing="0" cellpadding="5">
 						<tr>
 							<td valign="top">
-								ÕæÊµĞÕÃû£º <input type=text name=realname size=18 value="{$user_Realname}">
+								çœŸå®å§“åï¼š <input type=text name=realname size=18 value="{$user_Realname}">
 							</td>
 							<td align="left" valign="top" rowspan="14" width="60%" >
 								<table width="100%" border="0" cellspacing="0" cellpadding="5">
 									<tr>
-										<td>ĞÔ¡¡¸ñ£º &nbsp; <br />{$user_character}</td>
+										<td>æ€§ã€€æ ¼ï¼š &nbsp; <br />{$user_character}</td>
 									</tr>
 									<tr>
 										<td  height="140px" valign="top">
-											¸öÈË¼ò½é£º &nbsp;</b><br />
+											ä¸ªäººç®€ä»‹ï¼š &nbsp;</b><br />
 											<textarea name="personal" rows="6" cols="90%">{$user_Personal}</textarea>
 										</td>
 									</tr>
@@ -132,73 +132,73 @@
 						</tr>
 						<tr>
 							<td valign="top">
-								¹ú¡¡¡¡¼Ò£º <input name="country" type="text" value="{$user_Country}" size="18" />
+								å›½ã€€ã€€å®¶ï¼š <input name="country" type="text" value="{$user_Country}" size="18" />
 							</td>
 						</tr>
 						<tr>
 							<td valign="top">
-								ÁªÏµµç»°£º <input name="userphone" type="text" value="{$user_Phone}" size="18" />
+								è”ç³»ç”µè¯ï¼š <input name="userphone" type="text" value="{$user_Phone}" size="18" />
 							</td>
 						</tr>
 						<tr>
 							<td valign="top">
-								Í¨ĞÅµØÖ·£º <input name="address" type="text" value="{$user_Address}" size="18" />
+								é€šä¿¡åœ°å€ï¼š <input name="address" type="text" value="{$user_Address}" size="18" />
 							</td>
 						</tr>
 						<tr>
 							<td valign="top">
-								Ê¡¡¡¡¡·İ£º <input name="province" type="text" value="{$user_Province}" size="18" />
+								çœã€€ã€€ä»½ï¼š <input name="province" type="text" value="{$user_Province}" size="18" />
 								<select name="selectp" onChange="selectcityarea('selectp','selectc','theForm');theForm.province.value=this.value;">
-									<option value="0" selected="selected">ÇëÑ¡Ôñ....</option>');
+									<option value="0" selected="selected">è¯·é€‰æ‹©....</option>');
 								</select>
 							</td>
 						</tr>
 						<tr>
 							<td valign="top">
-								³Ç¡¡¡¡ÊĞ£º <input type=text name="city" size=18 value="{$user_City}">
+								åŸã€€ã€€å¸‚ï¼š <input type=text name="city" size=18 value="{$user_City}">
 								<select name="selectc" onChange="theForm.city.value=this.value;">
-									<option value="0" selected>ÇëÑ¡Ôñ....</option>
+									<option value="0" selected>è¯·é€‰æ‹©....</option>
 								</select>
 							</td>
 						</tr>
 						<tr>
 							<td valign="top">
-							Éú¡¡¡¡Ğ¤£º
+							ç”Ÿã€€ã€€è‚–ï¼š
 								<select size="1" name="shengxiao">
 									{$user_shengxiao}
 								</select>
 							</td>
 						</tr>
 						<tr>
-							<td valign="top">Ñª¡¡¡¡ĞÍ£º
+							<td valign="top">è¡€ã€€ã€€å‹ï¼š
 								<select size="1" name="blood">
 									{$user_blood}
 								</select>
 							</td>
 						</tr>
 						<tr>
-							<td valign="top">ĞÅ¡¡¡¡Ñö£º
+							<td valign="top">ä¿¡ã€€ã€€ä»°ï¼š
 								<select size="1" name="belief">
 									{$user_belief}
 								</select>
 							</td>
 						</tr>
 						<tr>
-							<td valign="top">Ö°¡¡¡¡Òµ£º
+							<td valign="top">èŒã€€ã€€ä¸šï¼š
 								<select name="occupation">
 									{$user_occupation}
 								</select>
 							</td>
 						</tr>
 						<tr>
-							<td valign="top">»éÒö×´¿ö£º
+							<td valign="top">å©šå§»çŠ¶å†µï¼š
 								<select size="1" name="marital">
 									{$user_marital}
 								</select>
 							</td>
 						</tr>
 						<tr>
-							<td valign="top">×î¸ßÑ§Àú£º
+							<td valign="top">æœ€é«˜å­¦å†ï¼š
 								<select size="1" name="education">
 									{$user_education}
 								</select>
@@ -206,12 +206,12 @@
 						</tr>
 						<tr>
 							<td valign="top">
-								±ÏÒµÔºĞ££º <input name="college" type="text" value="{$user_College}" size="18" />
+								æ¯•ä¸šé™¢æ ¡ï¼š <input name="college" type="text" value="{$user_College}" size="18" />
 							</td>
 						</tr>
 						<tr>
 							<td colspan="2" width="100%" class="tablebody2" style="text-align:center;">
-								<input name="Submit" type="submit" value="¸ü ĞÂ" /> &nbsp; <input name="Submit2" type="reset" value="Çå ³ı" />
+								<input name="Submit" type="submit" value="æ›´ æ–°" /> &nbsp; <input name="Submit2" type="reset" value="æ¸… é™¤" />
 							</td>
 						</tr>
 					</table>
