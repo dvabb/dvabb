@@ -24,36 +24,36 @@ function createopenwindow() {
 	} else {
 		openwindow_block = document.getElementById("openwindow_block");
 	}
-	openwindow_block.innerHTML="<img src='images/loading.gif' /> Êı¾İÕıÔÚ¼ÓÔØÖĞ...";
-    //»ñÈ¡µÇÂ¼Êı¾İ
+	openwindow_block.innerHTML="<img src='images/loading.gif' /> æ•°æ®æ­£åœ¨åŠ è½½ä¸­...";
+    //è·å–ç™»å½•æ•°æ®
 	openwindow_block.style.top = document.documentElement.scrollTop + 150 + "px"; 
 	var url = "login_win.asp";
-¡¡  var postStr = url+"?winaction=winlogin";
+ã€€  var postStr = url+"?winaction=winlogin";
     var ajax1 = InitAjax();
-¡¡  ajax1.open("POST", postStr, true);
+ã€€  ajax1.open("POST", postStr, true);
     //ajax1.setrequestheader("content-length",postStr.length); 
-¡¡  ajax1.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
-¡¡  ajax1.send(postStr);
+ã€€  ajax1.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+ã€€  ajax1.send(postStr);
     ajax1.onreadystatechange = function() { 
-¡¡¡¡if (ajax1.readyState == 4 && ajax1.status == 200) { 
+ã€€ã€€if (ajax1.readyState == 4 && ajax1.status == 200) { 
 	var xmlhttpstrmy=ajax1.responseText;
 	xmlhttpstrmy=xmlhttpstrmy.replace(/(^\s*)|(\s*$)/g,'');
 	if(xmlhttpstrmy=="success"){
-		openwindow_block.innerHTML="µÇÂ¼³É¹¦,¿ªÊ¼Ìø×ª!";
+		openwindow_block.innerHTML="ç™»å½•æˆåŠŸ,å¼€å§‹è·³è½¬!";
 	}
 	else{
 	openwindow_block.innerHTML = ajax1.responseText;
 	var closeLink = document.createElement("a");
 	closeLink.href = "#";
-	closeLink.title = "¹Ø±Õ";
-	closeLink.innerText = "¹Ø±Õ"
+	closeLink.title = "å…³é—­";
+	closeLink.innerText = "å…³é—­"
 	closeLink.className = "down_pop_close";
 	closeLink.onclick = closeDownBlock;
 	openwindow_block.appendChild(closeLink);
 	return false;
 	}
-¡¡¡¡} 
-¡¡  }
+ã€€ã€€} 
+ã€€  }
 	
 }
 
@@ -64,18 +64,18 @@ function closeDownBlock() {
 }
 function InitAjax()
 {
-¡¡var ajax1=false; 
-¡¡try { 
-¡¡¡¡ajax1 = new ActiveXObject("Msxml2.XMLHTTP"); 
-¡¡} catch (e) { 
-¡¡¡¡try { 
-¡¡¡¡¡¡ajax1 = new ActiveXObject("Microsoft.XMLHTTP"); 
-¡¡¡¡} catch (E) { 
-¡¡¡¡¡¡ajax1 = false; 
-¡¡¡¡} 
-¡¡}
-¡¡if (!ajax1 && typeof XMLHttpRequest!='undefined') { 
-¡¡¡¡ajax1 = new XMLHttpRequest(); 
-¡¡} 
-¡¡return ajax1;
+ã€€var ajax1=false; 
+ã€€try { 
+ã€€ã€€ajax1 = new ActiveXObject("Msxml2.XMLHTTP"); 
+ã€€} catch (e) { 
+ã€€ã€€try { 
+ã€€ã€€ã€€ajax1 = new ActiveXObject("Microsoft.XMLHTTP"); 
+ã€€ã€€} catch (E) { 
+ã€€ã€€ã€€ajax1 = false; 
+ã€€ã€€} 
+ã€€}
+ã€€if (!ajax1 && typeof XMLHttpRequest!='undefined') { 
+ã€€ã€€ajax1 = new XMLHttpRequest(); 
+ã€€} 
+ã€€return ajax1;
 }

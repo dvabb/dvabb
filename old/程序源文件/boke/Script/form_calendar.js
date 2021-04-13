@@ -1,4 +1,4 @@
-var dMonthName = new Array("1 ÔÂ","2 ÔÂ","3 ÔÂ","4 ÔÂ","5 ÔÂ","6 ÔÂ","7 ÔÂ","8 ÔÂ","9 ÔÂ","10 ÔÂ","11 ÔÂ","12 ÔÂ");
+var dMonthName = new Array("1 æœˆ","2 æœˆ","3 æœˆ","4 æœˆ","5 æœˆ","6 æœˆ","7 æœˆ","8 æœˆ","9 æœˆ","10 æœˆ","11 æœˆ","12 æœˆ");
 
 function populate(Dyear,Dmonth,Dday,Val) {
 	if (Dyear.options[Dyear.selectedIndex].value==0)

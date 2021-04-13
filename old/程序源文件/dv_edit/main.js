@@ -27,18 +27,18 @@ function DvEdit(){
 	this.loadCss=function(p,re){var a=this.$t('link'),o=null;if (a){for (var i=a.length-1;i>=0;--i){if (-1!=a[i].href.indexOf('dv_edit')){if (re){o=a[i];}else{return;}}}};if (!o){o=document.createElement('link');o.rel='stylesheet';o.type='text/css';};o.href=p;try{this.$t('head')[0].appendChild(o);}catch(e){;}};
 	this.fcs=function(o){try{setTimeout(function(){o.focus();},0);}catch(e){;}};
 	a=arguments[0];if(!a){return;}
-	this.c=a['textarea_id']||'content';//textareaµÄid
-	this.h=a['edit_height']||'300px';//±à¼­¿òµÄ¸ß¶È
-	this.m=(this.isIE||this.isFF||this.isGG)?(a['edit_mode']||'design'):'text';//±à¼­Ä£Ê½
+	this.c=a['textarea_id']||'content';//textareaçš„id
+	this.h=a['edit_height']||'300px';//ç¼–è¾‘æ¡†çš„é«˜åº¦
+	this.m=(this.isIE||this.isFF||this.isGG)?(a['edit_mode']||'design'):'text';//ç¼–è¾‘æ¨¡å¼
 	this.l=a['toolbar']||['bold','italic','underline','fontsize','fontfamily','fontcolor','fontbgcolor','separator','emot','link','image','media','separator','justifyleft','justifycenter','justifyright','separator','insertorderedlist','insertunorderedlist','outdent','indent','separator','tenpay'];
-	this.u=(this.isIE||this.isFF||this.isGG)?(null==a['is_show_status']?true:a['is_show_status']):false;//ÊÇ·ñÏÔÊ¾×´Ì¬À¸
-	this.v=null==a['is_open_temp_save']?false:a['is_open_temp_save'];//ÊÇ·ñ¿ªÆôcookies±£´æÄÚÈİ
-	this.em=a['emot'];//±íÇéÏµÁĞ
-	this.e=null==a['quick_send']?1:a['quick_send'];//0-²»²¶»ñ¿ì½İ¼ü·¢Ìù 1-ctrl+enter·¢Ìù 2-enter·¢Ìù
-	this.s=a['style_folder']||'default';//·ç¸ñ
-	this.um=null==a['use_ubb']?0:a['use_ubb'];//ÏŞÖÆÖ»ÄÜÊ¹ÓÃubb
-	this.tox=null==a['to_xhml']?1:a['to_xhml'];//ÊÇ·ñÇ¿ÖÆ×ª»»µ½xhtml¸ñÊ½
-	this.lm=null;//ÉÏÒ»´ÎµÄ±à¼­Ä£Ê½
+	this.u=(this.isIE||this.isFF||this.isGG)?(null==a['is_show_status']?true:a['is_show_status']):false;//æ˜¯å¦æ˜¾ç¤ºçŠ¶æ€æ 
+	this.v=null==a['is_open_temp_save']?false:a['is_open_temp_save'];//æ˜¯å¦å¼€å¯cookiesä¿å­˜å†…å®¹
+	this.em=a['emot'];//è¡¨æƒ…ç³»åˆ—
+	this.e=null==a['quick_send']?1:a['quick_send'];//0-ä¸æ•è·å¿«æ·é”®å‘è´´ 1-ctrl+enterå‘è´´ 2-enterå‘è´´
+	this.s=a['style_folder']||'default';//é£æ ¼
+	this.um=null==a['use_ubb']?0:a['use_ubb'];//é™åˆ¶åªèƒ½ä½¿ç”¨ubb
+	this.tox=null==a['to_xhml']?1:a['to_xhml'];//æ˜¯å¦å¼ºåˆ¶è½¬æ¢åˆ°xhtmlæ ¼å¼
+	this.lm=null;//ä¸Šä¸€æ¬¡çš„ç¼–è¾‘æ¨¡å¼
 	this.p=this.getPath();
 	a=window;a.dv___=a.dv___||new Array();a.dv___.push(this);
 	this.i=a.dv___.length-1;
@@ -64,7 +64,7 @@ function DvEdit(){
 			var sl = [{a:"body",b:"{background-color:#fff;font-size:14px;font-family:verdana;margin:5px;}"}, 
 				{a:"p",b:"{font-family:Verdana, Arial, Helvetica, sans-serif;  font-size:14px; margin:0px;padding:0px;}"},
 				{a:"div.quote",b:"{margin :5px; border : 1px solid #cccccc; padding : 5px;background : #f9f9f9; line-height : normal;}"},
-				{a:"div.htmlcode",b:"{margin : 5px 20px; border : 1px solid #cccccc;padding : 5px;background : #fdfddf;font-size : 14px;font-family : tahoma, ËÎÌå, fantasy;font-style : oblique;line-height : normal;}"}];
+				{a:"div.htmlcode",b:"{margin : 5px 20px; border : 1px solid #cccccc;padding : 5px;background : #fdfddf;font-size : 14px;font-family : tahoma, å®‹ä½“, fantasy;font-style : oblique;line-height : normal;}"}];
 			d=this.f.document;
 			if (d.createStyleSheet)
 			{
@@ -160,7 +160,7 @@ function DvEdit(){
 		this.$(this.c).value=s;
 		this.syc('t->d');
 	}
-	this.sta='<div id="'+this.x.s+'" class="dveditstatusbar"><a href="javascript:;" onclick="'+this.d+'.mode(\'design\')" title="ÔÚ´ËÄ£Ê½ÏÂ±à¼­¿ÉÒÔÊµÏÖÒ»Ğ©¼Ó´Ö¡¢¸ü¸Ä×ÖÌå¡¢¸ü¸ÄÎÄ×ÖÑÕÉ«µÈĞ§¹û¡£">[Éè¼ÆÄ£Ê½]</a> <a href="javascript:;" onclick="'+this.d+'.mode(\'text\')" title="´¿ÎÄ±¾Ä£Ê½£¬Èç¹û¿ªÆôÁËHTML¿ÉÒÔÖ±½ÓÊ¹ÓÃHTML´úÂë¡£">[´úÂëÄ£Ê½]</a></div>';
+	this.sta='<div id="'+this.x.s+'" class="dveditstatusbar"><a href="javascript:;" onclick="'+this.d+'.mode(\'design\')" title="åœ¨æ­¤æ¨¡å¼ä¸‹ç¼–è¾‘å¯ä»¥å®ç°ä¸€äº›åŠ ç²—ã€æ›´æ”¹å­—ä½“ã€æ›´æ”¹æ–‡å­—é¢œè‰²ç­‰æ•ˆæœã€‚">[è®¾è®¡æ¨¡å¼]</a> <a href="javascript:;" onclick="'+this.d+'.mode(\'text\')" title="çº¯æ–‡æœ¬æ¨¡å¼ï¼Œå¦‚æœå¼€å¯äº†HTMLå¯ä»¥ç›´æ¥ä½¿ç”¨HTMLä»£ç ã€‚">[ä»£ç æ¨¡å¼]</a></div>';
 	this.init=function(){
 		this.p=this.getPath();
 		//this.loadCss(this.p+'skins/'+this.s+'/main.css',false);
@@ -171,11 +171,11 @@ function DvEdit(){
 	};
 	this.saveT=function(){
 		var a=this_.get();var b=this_.readC(this_.x.f+'_conent_temp');if (!b||(a&&a.length>b.length)){this_.setC(this_.x.f+'_conent_temp',a)};
-		setTimeout(function(){this_.saveT()},0); //±£´æÄÚÈİµ½cookies
+		setTimeout(function(){this_.saveT()},0); //ä¿å­˜å†…å®¹åˆ°cookies
 	};
 	this.chkC=function(){
 		var a=this.readC(this.x.f+'_conent_temp');
-		if ('0'==this.readC(this.x.f+'_conent_saved')&&a&&a.replace(/<.[^.]*>/gi,'').length>10&&confirm("¼ì²âµ½ÓĞÎ´±£´æµÄÄÚÈİ£¬ÊÇ·ñÁ¢¼´»Ö¸´£¿")){
+		if ('0'==this.readC(this.x.f+'_conent_saved')&&a&&a.replace(/<.[^.]*>/gi,'').length>10&&confirm("æ£€æµ‹åˆ°æœ‰æœªä¿å­˜çš„å†…å®¹ï¼Œæ˜¯å¦ç«‹å³æ¢å¤ï¼Ÿ")){
 			setTimeout(function(){this_.$(this_.c).value=a;},0);
 		}
 		this.setC(this.x.f+'_conent_temp','');

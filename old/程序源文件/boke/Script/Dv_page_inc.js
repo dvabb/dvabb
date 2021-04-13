@@ -1,5 +1,5 @@
 /*//////////////////////////////////////////////////////////////////
- * Script For Dvbbs Program -- 前台页面公共对象
+ * Script For Dvbbs Program -- 鍓嶅彴椤甸潰鍏叡瀵硅薄
  * Version: 8.3.0
  * Copyright (C) 2000 - 2005 bbs.dvbbs.net
  *
@@ -11,7 +11,7 @@
  * Created: 2005-04-23
 *///////////////////////////////////////////////////////////////////
 var DvMenu = new MenuObj();
-//CSS读取
+//CSS璇诲彇
 window.onload = function(e) {
 	try{
 		var cookieName = forum_sn+'_style_'+templateid+'_'+boardid;
@@ -29,7 +29,7 @@ window.onunload = function(e) {
   Dvbbs.createCookie("style", filepath, 365);
 };
 
-//转换CSS
+//杞崲CSS
 function setActiveStyleSheet(filepath) {
 	if (filepath.lastIndexOf('.css')==-1) return false;
 	var cookieName = forum_sn+'_style_'+templateid+'_'+boardid;
@@ -53,7 +53,7 @@ function getActiveStyleSheet() {
 }
 
 /*
-菜单MENU
+鑿滃崟MENU
 */
 function showmenu(e,vmenu,vmenuobj,mod){
 	DvMenu.ShowMenu(e,vmenu,vmenuobj,mod);
@@ -146,6 +146,6 @@ function mybook(){
   w = 300;
   t = ( screen.availHeight - h ) / 2;
   l = ( screen.availWidth - w ) / 2;
-  //window.open("http://forumAd.to5198.com/common/login.jsp?sCheckUrl=/out/login.jsp&sDesUrl=/out/mybook.jsp", "我的服务","left=" + l + ",top=" + t + ",height=" + h + ",width=" + w + ",toolbar=no,status=no,scrollbars=no,resizable=yes");
+  //window.open("http://forumAd.to5198.com/common/login.jsp?sCheckUrl=/out/login.jsp&sDesUrl=/out/mybook.jsp", "鎴戠殑鏈嶅姟","left=" + l + ",top=" + t + ",height=" + h + ",width=" + w + ",toolbar=no,status=no,scrollbars=no,resizable=yes");
   return;
 }

@@ -13,7 +13,7 @@ else{
 function Dvbbs_InitDocument(hiddenid, charset)
 {
 	if (charset!=null){Dvbbs_charset=charset;}
-	var Dvbbs_bodyTag="<style type=\"text/css\" type=\"text/css\">.quote{margin:5px 20px;border:1px solid #CCCCCC;padding:5px; background:#F3F3F3 }\nbody{boder:0px}.HtmlCode{margin:5px 20px;border:1px solid #CCCCCC;padding:5px;background:#FDFDDF;font-size:14px;font-family:Tahoma;font-style : oblique;line-height : normal ;font-weight:bold;}\nbody{boder:0px}</style></head><body bgcolor=\"#FFFFFF\" title=\"Ctrl+EnterÖ±½ÓÌá½»Ìù×Ó\" >";
+	var Dvbbs_bodyTag="<style type=\"text/css\" type=\"text/css\">.quote{margin:5px 20px;border:1px solid #CCCCCC;padding:5px; background:#F3F3F3 }\nbody{boder:0px}.HtmlCode{margin:5px 20px;border:1px solid #CCCCCC;padding:5px;background:#FDFDDF;font-size:14px;font-family:Tahoma;font-style : oblique;line-height : normal ;font-weight:bold;}\nbody{boder:0px}</style></head><body bgcolor=\"#FFFFFF\" title=\"Ctrl+Enterç›´æ¥æäº¤è´´å­\" >";
 	var editor=IframeID
 	var h=document.getElementById(hiddenid).value;
 	if (navigator.appVersion.indexOf("MSIE 6.0",0)==-1){
@@ -82,9 +82,9 @@ function Dvbbs_setStyle()
 function Dvbbs_CopyData(hiddenid)
 {
 	var con=OSWEBXHTML.GetXHTML(IframeID.document.body);
-	document.getElementById(hiddenid).value = con.replace(/¡¤/gi,".");
+	document.getElementById(hiddenid).value = con.replace(/Â·/gi,".");
 }
-//¸ñÊ½»¯Á´½Ó
+//æ ¼å¼åŒ–é“¾æ¥
 function Dvbbs_correctUrl(cont)
 {
 	var regExp;
@@ -110,7 +110,7 @@ function Dvbbs_formatimg()
 			tmp[i].outerHTML="<IMG src=\""+tmp[i].src+"\""+tempstr+">"
 		}
 }
-//ÇåÀí¶àÓàHTML´úÂë
+//æ¸…ç†å¤šä½™HTMLä»£ç 
 function Dvbbs_cleanHtml(content)
 {
 	if(Dvbbs_bTextMode!=1){
@@ -127,7 +127,7 @@ function Dvbbs_cleanHtml(content)
 return content;
 }
 
-//´úÂë¹ıÂË¼°JSÌáÈ¡
+//ä»£ç è¿‡æ»¤åŠJSæå–
 function Dvbbs_FilterScript(content)
 {
 	content = content.replace(/<(\w[^div|>]*) class\s*=\s*([^>|\s]*)([^>]*)/gi,"<$1$3") ;
@@ -229,7 +229,7 @@ function Dvbbs_doSelectClick(str, el)
 function Dvbbs_validateMode()
 {
 	if (Dvbbs_bTextMode!=2) return true;
-	alert("ÇëÈ¡Ïû¡°²é¿´HTMLÔ´´úÂë¡±Ñ¡ÏîÔÙÊ¹ÓÃÏµÍ³±à¼­¹¦ÄÜ»òÕßÌá½»!");
+	alert("è¯·å–æ¶ˆâ€œæŸ¥çœ‹HTMLæºä»£ç â€é€‰é¡¹å†ä½¿ç”¨ç³»ç»Ÿç¼–è¾‘åŠŸèƒ½æˆ–è€…æäº¤!");
 	IframeID.focus();
 	return false;
 }
@@ -257,7 +257,7 @@ function Dvbbs_backColor()
 {
 	if (!Dvbbs_validateMode()) return;
 	if(Dvbbs_bTextMode==3){
-		alert('µ±Ç°±à¼­Æ÷²»Ö§³Ö¸ÃUBB±ê¼Ç¡£');
+		alert('å½“å‰ç¼–è¾‘å™¨ä¸æ”¯æŒè¯¥UBBæ ‡è®°ã€‚');
 		return ;
 	}
 	if (Dvbbs_bIsIE5)
@@ -283,7 +283,7 @@ function Dvbbs_UserDialog(what)
 	if(what == "InsertAlipay"){
 		if (Dvbbs_bIsNC)
 		{
-		imagePath = prompt('ÇëÌîĞ´Í¼Æ¬Á´½ÓµØÖ·ĞÅÏ¢£º', 'http://');			
+		imagePath = prompt('è¯·å¡«å†™å›¾ç‰‡é“¾æ¥åœ°å€ä¿¡æ¯ï¼š', 'http://');			
 		if ((imagePath != null) && (imagePath != "")) {
 			IframeID.document.execCommand('InsertImage', false, imagePath);
 		}
@@ -320,7 +320,7 @@ function ShowForum_Emot(thepage)
 	var EmotStr='&nbsp;';
 	var EmotPath=Forum_Emot[0];
 	if (thepage!=1 && Emot_PageCount>1)
-	{EmotStr+='<img style="cursor: pointer;" onClick="ShowForum_Emot('+(thepage-1)+');" src="Images/post/Previous.gif" width="14" height="14" title="ÉÏÒ»Ò³">&nbsp;';}
+	{EmotStr+='<img style="cursor: pointer;" onClick="ShowForum_Emot('+(thepage-1)+');" src="Images/post/Previous.gif" width="14" height="14" title="ä¸Šä¸€é¡µ">&nbsp;';}
 	for(i=(thepage-1)*Emot_PageSize;i<(thepage-1)*Emot_PageSize+Emot_PageSize;i++)
 	{
 		if (i==Emot_Count){break}
@@ -331,10 +331,10 @@ function ShowForum_Emot(thepage)
 		EmotStr+='<img title="'+istr+'" style="cursor: pointer;padding:1px;" onload="if(this.width>30){this.width=30;Emot_PageSize=12;}" onClick=putEmot("'+istr+'"); src="'+EmotPath+Forum_Emot[i+1]+'">&nbsp;';
 	}
 	if (thepage!=Emot_PageCount)
-	{EmotStr+='<img style="cursor: pointer;" onClick="Emot_PageSize=12;ShowForum_Emot('+(thepage+1)+');" src="Images/post/Next.gif" width="14" height="14" title="ÏÂÒ»Ò³">&nbsp;';}
+	{EmotStr+='<img style="cursor: pointer;" onClick="Emot_PageSize=12;ShowForum_Emot('+(thepage+1)+');" src="Images/post/Next.gif" width="14" height="14" title="ä¸‹ä¸€é¡µ">&nbsp;';}
 	if (thepage<5 && Emot_PageCount>4)
-	{EmotStr+='&nbsp;<img title="²åÈë±íÇé´°¿Ú" style="cursor: pointer;" onclick="ShadeDiv.ShowFrame(\'dispEmot.asp?action=disp&amp;&amp;sw=510&amp;sh=auto\');" src="'+EmotPath+Forum_Emot[50]+'" width="30" height="30" title="ĞÂ±íÇé ÓÆÎûºï">';}
-	//EmotStr+='·ÖÒ³£º<b>'+thepage+'</b>/<b>'+Emot_PageCount+'</b>£¬¹²<b>'+(Emot_Count)+'</b>¸ö';
+	{EmotStr+='&nbsp;<img title="æ’å…¥è¡¨æƒ…çª—å£" style="cursor: pointer;" onclick="ShadeDiv.ShowFrame(\'dispEmot.asp?action=disp&amp;&amp;sw=510&amp;sh=auto\');" src="'+EmotPath+Forum_Emot[50]+'" width="30" height="30" title="æ–°è¡¨æƒ… æ‚ å˜»çŒ´">';}
+	//EmotStr+='åˆ†é¡µï¼š<b>'+thepage+'</b>/<b>'+Emot_PageCount+'</b>ï¼Œå…±<b>'+(Emot_Count)+'</b>ä¸ª';
 	//EmotStr+="<select id=emotpage onchange=\"ShowForum_Emot(this.value);\">";
 	//for (i=1; i<=Emot_PageCount;i++ )
 	//{
@@ -357,7 +357,7 @@ function copy_preview(){
 	if (dv_preview && readCookie("preview")==1) {
 		var html=OSWEBXHTML.GetXHTML(IframeID.document.body);
 		dv_preview.innerHTML=html;
-		if (html==''|| html=='<p>&nbsp;</p>' || html=='<p></p>') dv_preview.innerHTML='<font color="#cccccc">»Ø¸´Ğ§¹ûÔ¤ÀÀ</font> ';
+		if (html==''|| html=='<p>&nbsp;</p>' || html=='<p></p>') dv_preview.innerHTML='<font color="#cccccc">å›å¤æ•ˆæœé¢„è§ˆ</font> ';
 		if (dv_preview.offsetHeight>200){
 		dv_preview.style.overflow='auto';
 		dv_preview.style.height='200px';
@@ -374,7 +374,7 @@ var Gettotal=document.getElementById(total);
 	max = Gettotal.value;
 	if (Getmessage.value.length > max) {
 	Getmessage.value = Getmessage.value.substring(0,max);
-	alert("ÄÚÈİ²»ÄÜ³¬¹ı " + max + " ¸ö×Ö!");
+	alert("å†…å®¹ä¸èƒ½è¶…è¿‡ " + max + " ä¸ªå­—!");
 	document.Dvform.Submit.disabled=true;
 	}
 	else {

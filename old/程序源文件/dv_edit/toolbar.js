@@ -1,4 +1,4 @@
-//ÅäÖÃÇø
+//é…ç½®åŒº
 var dvedit_toolbar_reply_all=['bold','italic','underline','fontsize','fontfamily','fontcolor','fontbgcolor','separator','emot','link','image','media','insertquote','insertcode','inserttable','separator','cleancode','unlink','separator','justifyleft','justifycenter','justifyright','separator','insertorderedlist','insertunorderedlist','outdent','indent','separator'];
 var dvedit_toolbar_reply_ubb=['bold','italic','underline','fontsize','justifycenter','separator','emot','link','image','media','insertquote','insertcode','separator'];
 var dvedit_toolbar_newpost_all=['bold','italic','underline','fontsize','fontfamily','fontcolor','fontbgcolor','separator','emot','link','image','media','insertquote','insertcode','inserttable','separator','cleancode','unlink','separator','justifyleft','justifycenter','justifyright','separator','insertorderedlist','insertunorderedlist','outdent','indent','separator'];
@@ -21,40 +21,40 @@ this.r=null;
 this.w=this.p.$(this.p.x.w);
 this.m='dvedit_'+this.p.i+'emot_list_page';
 this.icon={
- bold:{t:'¼Ó´Ö',i:'bold'}
-,italic:{t:'Ğ±Ìå',i:'italic'}
-,underline:{t:'ÏÂ»®Ïß',i:'underline'}
-,fontsize:{t:'ÎÄ×Ö´óĞ¡',i:'fontsize'}
-,fontfamily:{t:'×ÖÌå',i:'fontfamily'}
-,fontcolor:{t:'ÎÄ×ÖÑÕÉ«',i:'fontcolor'}
-,fontbgcolor:{t:'ÎÄ×Ö±³¾°ÑÕÉ«',i:'fontbgcolor'}
-,emot:{t:'²åÈë±íÇé',i:'emot'}
-,link:{t:'²åÈëÁ´½Ó',i:'link'}
-,image:{t:'²åÈëÍ¼Æ¬',i:'image'}
-,media:{t:'²åÈë¶¯»­/ÒôÀÖ/µçÓ°..',i:'media'}
-,justifyleft:{t:'×ó¶ÔÆë',i:'justifyleft'}
-,justifycenter:{t:'¾ÓÖĞ',i:'justifycenter'}
-,justifyright:{t:'ÓÒ¶ÔÆë',i:'justifyright'}
-,insertorderedlist:{t:'±àºÅ',i:'insertorderedlist'}
-,insertunorderedlist:{t:'ÏîÄ¿·ûºÅ',i:'insertunorderedlist'}
-,outdent:{t:'¼õÉÙËõ½ø',i:'outdent'}
-,indent:{t:'Ôö¼ÓËõ½ø',i:'indent'}
-,tenpay:{t:'Éú³ÉÒ»¸ö½»Ò×ĞÅÏ¢',i:'tenpay'}
-,separator:{t:'·Ö¸ôÏß',i:'separator'}
-,newline:{t:'¹¤¾ßÌõ»»ĞĞ',i:'newline'}
-,inserttable:{t:'²åÈë±í¸ñ',i:'inserttable'}
-,unlink:{t:'È¥³ıÁ´½Ó',i:'unlink'}
-,insertquote:{t:'²åÈëÒıÓÃ',i:'insertquote'}
-,insertcode:{t:'²åÈë´úÂë',i:'insertcode'}
-,cleancode:{t:'Çå³ı´úÂë',i:'cleancode'}
+ bold:{t:'åŠ ç²—',i:'bold'}
+,italic:{t:'æ–œä½“',i:'italic'}
+,underline:{t:'ä¸‹åˆ’çº¿',i:'underline'}
+,fontsize:{t:'æ–‡å­—å¤§å°',i:'fontsize'}
+,fontfamily:{t:'å­—ä½“',i:'fontfamily'}
+,fontcolor:{t:'æ–‡å­—é¢œè‰²',i:'fontcolor'}
+,fontbgcolor:{t:'æ–‡å­—èƒŒæ™¯é¢œè‰²',i:'fontbgcolor'}
+,emot:{t:'æ’å…¥è¡¨æƒ…',i:'emot'}
+,link:{t:'æ’å…¥é“¾æ¥',i:'link'}
+,image:{t:'æ’å…¥å›¾ç‰‡',i:'image'}
+,media:{t:'æ’å…¥åŠ¨ç”»/éŸ³ä¹/ç”µå½±..',i:'media'}
+,justifyleft:{t:'å·¦å¯¹é½',i:'justifyleft'}
+,justifycenter:{t:'å±…ä¸­',i:'justifycenter'}
+,justifyright:{t:'å³å¯¹é½',i:'justifyright'}
+,insertorderedlist:{t:'ç¼–å·',i:'insertorderedlist'}
+,insertunorderedlist:{t:'é¡¹ç›®ç¬¦å·',i:'insertunorderedlist'}
+,outdent:{t:'å‡å°‘ç¼©è¿›',i:'outdent'}
+,indent:{t:'å¢åŠ ç¼©è¿›',i:'indent'}
+,tenpay:{t:'ç”Ÿæˆä¸€ä¸ªäº¤æ˜“ä¿¡æ¯',i:'tenpay'}
+,separator:{t:'åˆ†éš”çº¿',i:'separator'}
+,newline:{t:'å·¥å…·æ¡æ¢è¡Œ',i:'newline'}
+,inserttable:{t:'æ’å…¥è¡¨æ ¼',i:'inserttable'}
+,unlink:{t:'å»é™¤é“¾æ¥',i:'unlink'}
+,insertquote:{t:'æ’å…¥å¼•ç”¨',i:'insertquote'}
+,insertcode:{t:'æ’å…¥ä»£ç ',i:'insertcode'}
+,cleancode:{t:'æ¸…é™¤ä»£ç ',i:'cleancode'}
 };
 this.menu={
 FontFamily:[
- {t:'ËÎÌå'}
-,{t:'¿¬Ìå_GB2312'}
-,{t:'ºÚÌå'}
-,{t:'Ó×Ô²'}
-,{t:'Î¢ÈíÑÅºÚ'}
+ {t:'å®‹ä½“'}
+,{t:'æ¥·ä½“_GB2312'}
+,{t:'é»‘ä½“'}
+,{t:'å¹¼åœ†'}
+,{t:'å¾®è½¯é›…é»‘'}
 ,{t:'Verdana'}
 ,{t:'Arial'}
 ,{t:'Impact'}
@@ -78,10 +78,10 @@ FontColor:[
 ,['FF99CC'],['FFCC99'],['FFFF99'],['CCFFCC'],['CCFFFF'],['99CCFF'],['CC99FF'],['FFFFFF']
 ]
 };
-//t:±êÌâ b:¿ªÊ¼ĞòºÅ e:½áÊøĞòºÅ w:¿í¶È h:¸ß¶È nw:Ò»ĞĞÏÔÊ¾¸öÊı nh:ÏÔÊ¾¶àÉÙĞĞ p:Ïà¶ÔÓÚdv_edit/main.jsµÄÂ·¾¶
+//t:æ ‡é¢˜ b:å¼€å§‹åºå· e:ç»“æŸåºå· w:å®½åº¦ h:é«˜åº¦ nw:ä¸€è¡Œæ˜¾ç¤ºä¸ªæ•° nh:æ˜¾ç¤ºå¤šå°‘è¡Œ p:ç›¸å¯¹äºdv_edit/main.jsçš„è·¯å¾„
 this.emot=this.p.em||('undefined'!=typeof(global_emot_config)?global_emot_config:null)||[
- {t:"QQÏµÁĞ",b:1,e:49,w:21,h:21,nw:10,nh:5,p:'../images/emot/'}
-,{t:"ÓÆÎûºï",b:50,e:115,w:40,h:40,nw:5,nh:3,p:'../images/emot/'}
+ {t:"QQç³»åˆ—",b:1,e:49,w:21,h:21,nw:10,nh:5,p:'../images/emot/'}
+,{t:"æ‚ å˜»çŒ´",b:50,e:115,w:40,h:40,nw:5,nh:3,p:'../images/emot/'}
 ];
 this.emot_default='undefined'!=typeof(global_emot_default)?global_emot_default:0;
 this.setIcon=function(o,e){var s=o.style;if (0==e){s.border='1px #f9fbfd solid';}else{var c1=(1==e?'#fff':'#ccc'),c2=(1==e?'#ccc':'#fff');s.borderRight='1px '+c1+' solid';s.borderBottom='1px '+c1+' solid';s.borderTop='1px '+c2+' solid';s.borderLeft='1px '+c2+' solid';}};
@@ -232,7 +232,7 @@ this.ubbMedia=function(){
 			case 'rmvb':
 			case 'ram':
 			case 'ra':ubb='rm';break;
-			default:ubb='mp';alert('Î´ÄÜÊ¶±ğÃ½Ìå¸ñÊ½£¬½«ÒÔÄ¬ÈÏµÄ¸ñÊ½²åÈë¡£');
+			default:ubb='mp';alert('æœªèƒ½è¯†åˆ«åª’ä½“æ ¼å¼ï¼Œå°†ä»¥é»˜è®¤çš„æ ¼å¼æ’å…¥ã€‚');
 		};
 	}
 	u=u.replace(/\s/gi,'%20');
@@ -241,7 +241,7 @@ this.ubbMedia=function(){
 };
 this.exeRC=function(c,v){this.exec(c,v);this.close();};
 this.exe=function(c,o){
-	var s="",i=1,e=this.p.d+'.t.exeRC(\'<1>\','+this.p.d+'.$(\''+this.p.x.w+'<2>\').value);',ds='<div unselectable="on"><input unselectable="on" type="button" value="È·¶¨" onclick="<1>" /> <input unselectable="on" type="button" value="È¡Ïû" onclick="'+this.p.d+'.t.close()" /></div>';
+	var s="",i=1,e=this.p.d+'.t.exeRC(\'<1>\','+this.p.d+'.$(\''+this.p.x.w+'<2>\').value);',ds='<div unselectable="on"><input unselectable="on" type="button" value="ç¡®å®š" onclick="<1>" /> <input unselectable="on" type="button" value="å–æ¶ˆ" onclick="'+this.p.d+'.t.close()" /></div>';
 	this.saveR();
 	switch(c){
 		case 'fontcolor':
@@ -269,23 +269,23 @@ this.exe=function(c,o){
 			break;
 		case 'link':
 			e=e.replace('<1>','createlink');e=e.replace('<2>','_link_url');
-			s+='<div unselectable="on">ÇëÑ¡ÖĞÒ»¶ÎÎÄ×Ö£¬È»ºóÊäÈëÍøÖ·¡£<br/>£¨Èç£ºhttp://bbs.dvbbs.net/£©</div>';
+			s+='<div unselectable="on">è¯·é€‰ä¸­ä¸€æ®µæ–‡å­—ï¼Œç„¶åè¾“å…¥ç½‘å€ã€‚<br/>ï¼ˆå¦‚ï¼šhttp://bbs.dvbbs.net/ï¼‰</div>';
 			s+='<div unselectable="on"><input id="'+this.p.x.w+'_link_url" type="text" class="dveditborder" value="http://" style="width:300px;" /></div>';
 			s+=ds.replace('<1>',e);
 			this.open(o,s);
 			break;
 		case 'image':
 			e=e.replace('<1>','insertimage');e=e.replace('<2>','_image_url');
-			s+='<div unselectable="on">ÇëÊäÈëÍ¼Æ¬µØÖ·£¬²åÈëºó¿ÉÒÔÀ­¶¯±ß¿ò¸Ä±ä´óĞ¡¡£<br/>£¨Èç£ºhttp://bbs.dvbbs.net/images/logo.gif£©</div>';
+			s+='<div unselectable="on">è¯·è¾“å…¥å›¾ç‰‡åœ°å€ï¼Œæ’å…¥åå¯ä»¥æ‹‰åŠ¨è¾¹æ¡†æ”¹å˜å¤§å°ã€‚<br/>ï¼ˆå¦‚ï¼šhttp://bbs.dvbbs.net/images/logo.gifï¼‰</div>';
 			s+='<div unselectable="on"><input id="'+this.p.x.w+'_image_url" type="text" class="dveditborder" value="http://" style="width:300px;" /></div>';
 			s+=ds.replace('<1>',e);
 			this.open(o,s);
 			break;
 		case 'media':
 			e=this.p.d+'.t.recvR();'+this.p.d+'.t.insert('+this.p.d+'.t.ubbMedia());'+this.p.d+'.t.close();';
-			s+='<div unselectable="on">ÇëÊäÈëÃ½ÌåÎÄ¼şµØÖ·¡£¿ÉÒÔÊÇ¶¯»­¡¢ÒôÀÖ¡¢µçÓ°...<br/>£¨×¢£º×Ô¶¯²¥·ÅÊôĞÔÓëÓÃ»§×éµÄÈ¨ÏŞÓĞ¹Ø¡££©</div>';
+			s+='<div unselectable="on">è¯·è¾“å…¥åª’ä½“æ–‡ä»¶åœ°å€ã€‚å¯ä»¥æ˜¯åŠ¨ç”»ã€éŸ³ä¹ã€ç”µå½±...<br/>ï¼ˆæ³¨ï¼šè‡ªåŠ¨æ’­æ”¾å±æ€§ä¸ç”¨æˆ·ç»„çš„æƒé™æœ‰å…³ã€‚ï¼‰</div>';
 			s+='<div unselectable="on"><input id="'+this.p.x.w+'_media_url" type="text" class="dveditborder" value="http://" style="width:300px;" /></div>';
-			s+='<div unselectable="on">¿í¶È <input id="'+this.p.x.w+'_media_width" type="text" class="dveditborder" value="500" style="width:50px;" />  ¸ß¶È <input id="'+this.p.x.w+'_media_height" type="text" class="dveditborder" value="300" style="width:50px;" />  <input id="'+this.p.x.w+'_media_autostart" type="checkbox" class="dveditborder" checked="checked" />×Ô¶¯²¥·Å <select id="'+this.p.x.w+'_media_type" class="dveditborder" /><option value="">ÀàĞÍ</option><option value="flash">flash</option><option value="mp">mp3</option><option value="mp">wmv</option><option value="mp">avi</option><option value="mp">asf</option><option value="mp">mov</option><option value="rm">rm</option><option value="rm">rmvb</option><option value="rm">ram</option><option value="rm">ra</option></select></div>  </div>';
+			s+='<div unselectable="on">å®½åº¦ <input id="'+this.p.x.w+'_media_width" type="text" class="dveditborder" value="500" style="width:50px;" />  é«˜åº¦ <input id="'+this.p.x.w+'_media_height" type="text" class="dveditborder" value="300" style="width:50px;" />  <input id="'+this.p.x.w+'_media_autostart" type="checkbox" class="dveditborder" checked="checked" />è‡ªåŠ¨æ’­æ”¾ <select id="'+this.p.x.w+'_media_type" class="dveditborder" /><option value="">ç±»å‹</option><option value="flash">flash</option><option value="mp">mp3</option><option value="mp">wmv</option><option value="mp">avi</option><option value="mp">asf</option><option value="mp">mov</option><option value="rm">rm</option><option value="rm">rmvb</option><option value="rm">ram</option><option value="rm">ra</option></select></div>  </div>';
 			s+=ds.replace('<1>',e);
 			this.open(o,s);
 			break;
@@ -303,29 +303,29 @@ this.exe=function(c,o){
 				}
 				s+='<br style="clear:both;"/>';
 			}
-			s+='<div style="padding:0;margin:1px;">ĞĞÊı <input type="text" size="2" value="0" id="'+this.p.x.w+'_table_rows" />  ÁĞÊı <input type="text" size="2" value="0" id="'+this.p.x.w+'_table_cols" />  ±ß¿ò¿í <input type="text" size="2" value="1" id="'+this.p.x.w+'_table_border" /></div>';
+			s+='<div style="padding:0;margin:1px;">è¡Œæ•° <input type="text" size="2" value="0" id="'+this.p.x.w+'_table_rows" />  åˆ—æ•° <input type="text" size="2" value="0" id="'+this.p.x.w+'_table_cols" />  è¾¹æ¡†å®½ <input type="text" size="2" value="1" id="'+this.p.x.w+'_table_border" /></div>';
 			s+='<br style="clear:both;height:0px;line-height:0px;padding:0;margin:0px;"/>';
-			s+='<div style="padding:0;margin:1px;">¼ä¾à <input type="text" size="2" value="0" id="'+this.p.x.w+'_table_padding" />  ¿Õ°× <input type="text" size="2" value="0" id="'+this.p.x.w+'_table_spacing" />  <input type="button" value="²åÈë" onclick="'+this.p.d+'.t.createtable()" /></div>';
+			s+='<div style="padding:0;margin:1px;">é—´è· <input type="text" size="2" value="0" id="'+this.p.x.w+'_table_padding" />  ç©ºç™½ <input type="text" size="2" value="0" id="'+this.p.x.w+'_table_spacing" />  <input type="button" value="æ’å…¥" onclick="'+this.p.d+'.t.createtable()" /></div>';
 			s+='</div>';
 			this.open(o,s);
 			break;
 		case 'insertquote':
 			s+='<div unselectable="on">';
-			s+='<div unselectable="on">ÇëÊäÈëÒıÓÃÄÚÈİ£º</div>';
+			s+='<div unselectable="on">è¯·è¾“å…¥å¼•ç”¨å†…å®¹ï¼š</div>';
 			s+='<br style="clear:both;height:0px;line-height:0px;padding:0;margin:0px;"/>';
 			s+='<div style="width:200px;height:100px;"><textarea id="'+this.p.x.w+'_temp_content" style="width:200px;height:100px;"></textarea></div><div>';
-			//s+='<input type="button" value="²åÈë" onclick="'+this.p.d+'.insert(\''+(this.p.um?'[quote]':'<div class=quote>ÒÔÏÂÊÇÒıÓÃÄÚÈİ£º<br/>')+'\'+'+this.p.d+'.$('+this.p.d+'.x.w+\'_temp_content\').value.replace(/\\n/gi,\''+(this.p.um?'[br]':'<br/>')+'\')+\''+(this.p.um?'[/quote]':'</div><br/>')+'\');'+this.p.d+'.t.close()" /></div>';
-			s+='<input type="button" value="²åÈë" onclick="'+this.p.d+'.insert(\'[quote]\'+'+this.p.d+'.$('+this.p.d+'.x.w+\'_temp_content\').value.replace(/\\n/gi,\''+(this.p.um?'[br]':'<br/>')+'\')+\'[/quote]\');'+this.p.d+'.t.close()" /></div>';
+			//s+='<input type="button" value="æ’å…¥" onclick="'+this.p.d+'.insert(\''+(this.p.um?'[quote]':'<div class=quote>ä»¥ä¸‹æ˜¯å¼•ç”¨å†…å®¹ï¼š<br/>')+'\'+'+this.p.d+'.$('+this.p.d+'.x.w+\'_temp_content\').value.replace(/\\n/gi,\''+(this.p.um?'[br]':'<br/>')+'\')+\''+(this.p.um?'[/quote]':'</div><br/>')+'\');'+this.p.d+'.t.close()" /></div>';
+			s+='<input type="button" value="æ’å…¥" onclick="'+this.p.d+'.insert(\'[quote]\'+'+this.p.d+'.$('+this.p.d+'.x.w+\'_temp_content\').value.replace(/\\n/gi,\''+(this.p.um?'[br]':'<br/>')+'\')+\'[/quote]\');'+this.p.d+'.t.close()" /></div>';
 			s+='</div>';
 			this.open(o,s);
 			break;
 		case 'insertcode':
 			s+='<div unselectable="on">';
-			s+='<div unselectable="on">ÇëÊäÈë´úÂëÄÚÈİ£º</div>';
+			s+='<div unselectable="on">è¯·è¾“å…¥ä»£ç å†…å®¹ï¼š</div>';
 			s+='<br style="clear:both;height:0px;line-height:0px;padding:0;margin:0px;"/>';
 			s+='<div style="width:200px;height:100px;"><textarea id="'+this.p.x.w+'_temp_content" style="width:200px;height:100px;"></textarea></div><div>';
-			//s+='<input type="button" value="²åÈë" onclick="var codei=0;'+this.p.d+'.insert(\''+(this.p.um?'[code]':'<div class=htmlcode>ÒÔÏÂÊÇ½Å±¾ÄÚÈİ£º<br/>')+'\'+(\'\\n\'+'+this.p.d+'.$('+this.p.d+'.x.w+\'_temp_content\').value).replace(/</gi,\'£¼\').replace(/>/gi,\'£¾\').replace(/\\t/gi,\'&nbsp;&nbsp;&nbsp;&nbsp;\').replace(/>/gi,\'£¾\').replace(/\\n/gi,function(){return \''+(this.p.um?'[br]\'+(++codei)+\' ':'<br/><font color=red><b>\'+(++codei)+\'</b></font>&nbsp;&nbsp;')+' \';})+\''+(this.p.um?'[/code]':'</div>')+'\');'+this.p.d+'.t.close()" /></div>';
-			s+='<input type="button" value="²åÈë" onclick="var codei=0;'+this.p.d+'.insert(\'[code]\'+(\'\\n\'+'+this.p.d+'.$('+this.p.d+'.x.w+\'_temp_content\').value).replace(/</gi,\'£¼\').replace(/>/gi,\'£¾\').replace(/\\t/gi,\'&nbsp;&nbsp;&nbsp;&nbsp;\').replace(/>/gi,\'£¾\').replace(/\\n/gi,function(){return \'[br]\'+(++codei)+\' \';})+\'[/code]\');'+this.p.d+'.t.close()" /></div>';
+			//s+='<input type="button" value="æ’å…¥" onclick="var codei=0;'+this.p.d+'.insert(\''+(this.p.um?'[code]':'<div class=htmlcode>ä»¥ä¸‹æ˜¯è„šæœ¬å†…å®¹ï¼š<br/>')+'\'+(\'\\n\'+'+this.p.d+'.$('+this.p.d+'.x.w+\'_temp_content\').value).replace(/</gi,\'ï¼œ\').replace(/>/gi,\'ï¼\').replace(/\\t/gi,\'&nbsp;&nbsp;&nbsp;&nbsp;\').replace(/>/gi,\'ï¼\').replace(/\\n/gi,function(){return \''+(this.p.um?'[br]\'+(++codei)+\' ':'<br/><font color=red><b>\'+(++codei)+\'</b></font>&nbsp;&nbsp;')+' \';})+\''+(this.p.um?'[/code]':'</div>')+'\');'+this.p.d+'.t.close()" /></div>';
+			s+='<input type="button" value="æ’å…¥" onclick="var codei=0;'+this.p.d+'.insert(\'[code]\'+(\'\\n\'+'+this.p.d+'.$('+this.p.d+'.x.w+\'_temp_content\').value).replace(/</gi,\'ï¼œ\').replace(/>/gi,\'ï¼\').replace(/\\t/gi,\'&nbsp;&nbsp;&nbsp;&nbsp;\').replace(/>/gi,\'ï¼\').replace(/\\n/gi,function(){return \'[br]\'+(++codei)+\' \';})+\'[/code]\');'+this.p.d+'.t.close()" /></div>';
 			s+='</div>';
 			this.open(o,s);
 			break;
@@ -427,14 +427,14 @@ this.init=function(){
 			a.style.visibility="hidden";
 			a.style.position="absolute";
 			document.body.appendChild(a);
-			setTimeout(function(){//×¢ÒâÕâÀïÒªÒì²½²Ù×÷¡£²»È»ÂíÉÏµÃ²»µ½Êı¾İ
+			setTimeout(function(){//æ³¨æ„è¿™é‡Œè¦å¼‚æ­¥æ“ä½œã€‚ä¸ç„¶é©¬ä¸Šå¾—ä¸åˆ°æ•°æ®
 				var b=a.contentWindow.document.body;
 				b.innerHTML="";
 				b.createTextRange().execCommand("Paste");
 				var c=b.innerHTML;
 				document.body.removeChild(a);
 				var d=/<\w[^>]* class="?MsoNormal"?/gi;
-				if (d.test(c)&&confirm("¿ÉÄÜÄúÊÇ´Óword¸´ÖÆ¹ıÀ´£¬ÒÑ¼ì²âµ½ÀïÃæÓĞ¶àÓàµÄ´úÂë£¬µãÈ·¶¨Çå³ı¶àÓà´úÂë£¬µãÈ¡Ïû±£³ÖÍêÕûÕ³Ìù¡£")){c=this_.clear(c);}
+				if (d.test(c)&&confirm("å¯èƒ½æ‚¨æ˜¯ä»wordå¤åˆ¶è¿‡æ¥ï¼Œå·²æ£€æµ‹åˆ°é‡Œé¢æœ‰å¤šä½™çš„ä»£ç ï¼Œç‚¹ç¡®å®šæ¸…é™¤å¤šä½™ä»£ç ï¼Œç‚¹å–æ¶ˆä¿æŒå®Œæ•´ç²˜è´´ã€‚")){c=this_.clear(c);}
 				this_.insert(c);
 			},100);
 			return false;

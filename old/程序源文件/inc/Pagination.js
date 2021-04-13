@@ -1,7 +1,7 @@
 //'-------------------------------------------------------------------------------------------------------------------------
-//'ÀıÈç£ºPageList(1,3,10,123,"acton=12",1)
-//'Ò³´Î£º1/13Ò³¡¡Ã¿Ò³£º10Æª ¹²£º123Æª [1][2][3]...[13] 
-//'Ò³´Î£ºµ±Ç°µÚcurrentpagÒ³£¬n ·Ö¸ôÊıÁ¿£»Ã¿Ò³ÏÔÊ¾¼ÇÂ¼Êı:MaxRows,×Ü¼ÇÂ¼Êı£ºCountNum,vÎªÏÔÊ¾ÀàĞÍ
+//'ä¾‹å¦‚ï¼šPageList(1,3,10,123,"acton=12",1)
+//'é¡µæ¬¡ï¼š1/13é¡µã€€æ¯é¡µï¼š10ç¯‡ å…±ï¼š123ç¯‡ [1][2][3]...[13] 
+//'é¡µæ¬¡ï¼šå½“å‰ç¬¬currentpagé¡µï¼Œn åˆ†éš”æ•°é‡ï¼›æ¯é¡µæ˜¾ç¤ºè®°å½•æ•°:MaxRows,æ€»è®°å½•æ•°ï¼šCountNum,vä¸ºæ˜¾ç¤ºç±»å‹
 //'-------------------------------------------------------------------------------------------------------------------------
 function PageList(CurrentPage,n,MaxRows,CountNum,PageSearch,v,getdata)
 {
@@ -23,9 +23,9 @@ function PageList(CurrentPage,n,MaxRows,CountNum,PageSearch,v,getdata)
 				PageStr = SeachPage(CurrentPage,n,MaxRows,Endpage,Pagecount,PageSearch,0)
 				ShowPage="<div>";
 				ShowPage+="<form action=\"?"+PageSearch+"\" method=POST name=\"PageForm\">";
-				ShowPage+="¹²£º<b>"+CountNum+"<\/b>£¬Ò³´Î£º<b>"+CurrentPage+"<\/b>/<b>"+Pagecount+"</b>Ò³";
+				ShowPage+="å…±ï¼š<b>"+CountNum+"<\/b>ï¼Œé¡µæ¬¡ï¼š<b>"+CurrentPage+"<\/b>/<b>"+Pagecount+"</b>é¡µ";
 				ShowPage+=PageStr;
-				ShowPage+="<input type=\"text\" name=\"page\" size=\"4\" value=\""+CurrentPage+"\"><input type=button class=button onclick=\"submit(this)\" value=\"GO\" title=\"ÌîĞ´·­×ªµÄ·ÖÒ³£¬È»ºóµã»÷²é¿´£¡\">";
+				ShowPage+="<input type=\"text\" name=\"page\" size=\"4\" value=\""+CurrentPage+"\"><input type=button class=button onclick=\"submit(this)\" value=\"GO\" title=\"å¡«å†™ç¿»è½¬çš„åˆ†é¡µï¼Œç„¶åç‚¹å‡»æŸ¥çœ‹ï¼\">";
 				ShowPage+="</form>";
 				ShowPage+="</div>";
 				break;
@@ -33,21 +33,21 @@ function PageList(CurrentPage,n,MaxRows,CountNum,PageSearch,v,getdata)
 				ShowPage="<table border=\"0\"  align=\"right\" cellpadding=\"0\" cellspacing=\"2\"><FORM action=\"?"+PageSearch+"\" method=POST name=\"PageForm\">";
 				PageStr = SeachPage(CurrentPage,n,MaxRows,Endpage,Pagecount,PageSearch,1)
 				ShowPage+="<tr><td nowrap>";
-				ShowPage+="Ò³´Î£º<b><font color=\"Red\">"+CurrentPage+"<\/font><\/b>/<b>"+Pagecount+"</b>Ò³";
-				ShowPage+="£®Ã¿Ò³£ºÏÔÊ¾<b>"+MaxRows+"<\/b>Ìõ ¹²£º<b>"+CountNum+"<\/b>Ìõ¼ÇÂ¼</td>";
+				ShowPage+="é¡µæ¬¡ï¼š<b><font color=\"Red\">"+CurrentPage+"<\/font><\/b>/<b>"+Pagecount+"</b>é¡µ";
+				ShowPage+="ï¼æ¯é¡µï¼šæ˜¾ç¤º<b>"+MaxRows+"<\/b>æ¡ å…±ï¼š<b>"+CountNum+"<\/b>æ¡è®°å½•</td>";
 				ShowPage+="<td valign=middle nowrap align=right>";
 				ShowPage+=PageStr;
-				ShowPage+="&nbsp;<\/td><td noWrap align=right><input type=\"text\" name=\"page\" size=\"4\" value=\""+CurrentPage+"\"><input type=button class=button onclick=\"submit(this)\" value=\">>\" title=\"ÌîĞ´·­×ªµÄ·ÖÒ³£¬È»ºóµã»÷²é¿´£¡\"><\/td><\/tr>";
+				ShowPage+="&nbsp;<\/td><td noWrap align=right><input type=\"text\" name=\"page\" size=\"4\" value=\""+CurrentPage+"\"><input type=button class=button onclick=\"submit(this)\" value=\">>\" title=\"å¡«å†™ç¿»è½¬çš„åˆ†é¡µï¼Œç„¶åç‚¹å‡»æŸ¥çœ‹ï¼\"><\/td><\/tr>";
 				ShowPage+="<\/FORM><\/table>";
 				break;
 			case 2:
 				ShowPage="<table border=\"0\" Style=\"width:100%;width:auto;\" align=center cellpadding=0 cellspacing=2><form action=\"?"+PageSearch+"\" method=POST name=\"PageForm\">";
 				PageStr = SeachPage(CurrentPage,n,MaxRows,Endpage,Pagecount,PageSearch,2)
 				ShowPage+="<tr><td nowrap>";
-				ShowPage+="·ûºÏÄúÌõ¼şµÄ¹²ÓĞ<font color=\"Red\">"+CountNum+"<\/font>Ìõ £¬µÚ£º<font color=\"Red\">"+CurrentPage+"<\/font> Ò³/¹² <font color=\"Red\">"+Pagecount+"<\/font> Ò³";
+				ShowPage+="ç¬¦åˆæ‚¨æ¡ä»¶çš„å…±æœ‰<font color=\"Red\">"+CountNum+"<\/font>æ¡ ï¼Œç¬¬ï¼š<font color=\"Red\">"+CurrentPage+"<\/font> é¡µ/å…± <font color=\"Red\">"+Pagecount+"<\/font> é¡µ";
 				ShowPage+="</td><td valign=middle nowrap align=right>";
 				ShowPage+=PageStr;
-				ShowPage+="<\/td><td noWrap align=right><input type=\"text\" name=\"page\" size=\"4\" value=\""+CurrentPage+"\"><input type=button class=button onclick=\"submit(this)\" value=\"GO\" title=\"ÌîĞ´·­×ªµÄ·ÖÒ³£¬È»ºóµã»÷²é¿´£¡\"><\/td><\/tr>";
+				ShowPage+="<\/td><td noWrap align=right><input type=\"text\" name=\"page\" size=\"4\" value=\""+CurrentPage+"\"><input type=button class=button onclick=\"submit(this)\" value=\"GO\" title=\"å¡«å†™ç¿»è½¬çš„åˆ†é¡µï¼Œç„¶åç‚¹å‡»æŸ¥çœ‹ï¼\"><\/td><\/tr>";
 				ShowPage+="<\/FORM><\/table>";
 				break;
 			case 3:
@@ -59,7 +59,7 @@ function PageList(CurrentPage,n,MaxRows,CountNum,PageSearch,v,getdata)
 				ShowPage=ShowPage+"<td class=\"page\"><input type=\"text\" name=\"star\" size=\"2\" value=\""+CurrentPage+"\" Class=PageInput style=\"border:0px;\"></td>";
 				ShowPage=ShowPage+"<td class=\"page\"><input type=submit class=button value=GO name=submit Class=PageInput style=\"border:0px; height:16px;\">&nbsp;</td>";
 				ShowPage=ShowPage+"<td class=\"page\">&nbsp;"+CountNum+"&nbsp;|&nbsp;"+MaxRows+"&nbsp;</td>";
-				ShowPage=ShowPage+"<td class=\"tabletitle1\" title=\"·ÖÒ³\">&nbsp;"+CurrentPage+"/"+Pagecount+"&nbsp;Ò³</td>";
+				ShowPage=ShowPage+"<td class=\"tabletitle1\" title=\"åˆ†é¡µ\">&nbsp;"+CurrentPage+"/"+Pagecount+"&nbsp;é¡µ</td>";
 				ShowPage=ShowPage+"</tr></form></table>";
 				break;
 			case 4:
@@ -72,13 +72,13 @@ function PageList(CurrentPage,n,MaxRows,CountNum,PageSearch,v,getdata)
 				ShowPage=ShowPage+"<td class=\"page\"><input type=\"text\" name=\"star\" size=\"2\" value=\""+CurrentPage+"\" Class=PageInput style=\"border:0px;\"></td>";
 				ShowPage=ShowPage+"<td class=\"page\"><input type=submit class=button value=GO name=submit Class=PageInput style=\"border:0px; height:16px;\">&nbsp;</td>";
 				ShowPage=ShowPage+"<td class=\"page\">&nbsp;"+CountNum+"&nbsp;|&nbsp;"+MaxRows+"&nbsp;</td>";
-				ShowPage=ShowPage+"<td class=\"tabletitle1\" title=\"·ÖÒ³\">&nbsp;"+CurrentPage+"/"+Pagecount+"&nbsp;Ò³</td>";
+				ShowPage=ShowPage+"<td class=\"tabletitle1\" title=\"åˆ†é¡µ\">&nbsp;"+CurrentPage+"/"+Pagecount+"&nbsp;é¡µ</td>";
 				ShowPage=ShowPage+"</tr></form></table>";
 				break;
 			case 5:
 				PageStr = SeachPage(CurrentPage,n,MaxRows,Endpage,Pagecount,PageSearch,5)
 				ShowPage="<span>";
-				ShowPage+="¹²<b>"+Pagecount+"<\/b>Ò³£º";
+				ShowPage+="å…±<b>"+Pagecount+"<\/b>é¡µï¼š";
 				ShowPage+=PageStr;
 				ShowPage+="</span>";
 				break;
@@ -91,7 +91,7 @@ function PageList(CurrentPage,n,MaxRows,CountNum,PageSearch,v,getdata)
 				ShowPage=ShowPage+PageStr
 				ShowPage=ShowPage+"<td class=\"page\"><input type=\"text\" name=\"star\" size=\"2\" value=\""+CurrentPage+"\" style=\"border:0px;\"></td>";
 				ShowPage=ShowPage+"<td class=\"page\"><input type=submit class=button value=GO name=submit style=\"width:auto;border:0px; height:16px;\"></td>";
-				ShowPage=ShowPage+"<td class=\"tabletitle1\" title=\"×ÜÊı\">&nbsp;"+CountNum+"Ìõ&nbsp;&nbsp;"+CurrentPage+"/"+Pagecount+"&nbsp;Ò³&nbsp;</td>";
+				ShowPage=ShowPage+"<td class=\"tabletitle1\" title=\"æ€»æ•°\">&nbsp;"+CountNum+"æ¡&nbsp;&nbsp;"+CurrentPage+"/"+Pagecount+"&nbsp;é¡µ&nbsp;</td>";
 				ShowPage=ShowPage+"</tr></form></table>";
 				break;
 			
@@ -143,22 +143,22 @@ switch (v)
 	case 0:
 		if (CurrentPage!=1)
 		{
-			PageStr += " <a href=\"?"+PageSearch+"page=1\" title=\"Ê×Ò³\">[Ê×Ò³]<\/a>";
+			PageStr += " <a href=\"?"+PageSearch+"page=1\" title=\"é¦–é¡µ\">[é¦–é¡µ]<\/a>";
 		}
 		if (CurrentPage>1)
 			{
-			PageStr += " <a href=\"?"+PageSearch+"page="+(CurrentPage-1)+"\" title=\"ÉÏÒ»Ò³\">[ÉÏÒ»Ò³]<\/a>";
+			PageStr += " <a href=\"?"+PageSearch+"page="+(CurrentPage-1)+"\" title=\"ä¸Šä¸€é¡µ\">[ä¸Šä¸€é¡µ]<\/a>";
 
 		}
 		if (CurrentPage<Pagecount)
 			{
-			PageStr += " <a href=\"?"+PageSearch+"page="+(CurrentPage+1)+"\" title=\"ÏÂÒ»Ò³\">[ÏÂÒ»Ò³]<\/a>";
+			PageStr += " <a href=\"?"+PageSearch+"page="+(CurrentPage+1)+"\" title=\"ä¸‹ä¸€é¡µ\">[ä¸‹ä¸€é¡µ]<\/a>";
 
 		}
 
 		if (CurrentPage!=Pagecount)
 		{
-			PageStr += " <a href=\"?"+PageSearch+"page="+Pagecount+"\" title=\"Î²Ò³\">[Î²Ò³]<\/a>";
+			PageStr += " <a href=\"?"+PageSearch+"page="+Pagecount+"\" title=\"å°¾é¡µ\">[å°¾é¡µ]<\/a>";
 		}
 		break
 	case 1:
@@ -189,12 +189,12 @@ switch (v)
 		}
 		if (CurrentPage!=1)
 		{
-			PageStr += "<a href=\"?"+PageSearch+"page=1\" title=\"Ê×Ò³\"><img src=\"images/pagelist/First.gif\" border=\"0\" alt=\"µÚÒ»Ò³\"><\/a>";
+			PageStr += "<a href=\"?"+PageSearch+"page=1\" title=\"é¦–é¡µ\"><img src=\"images/pagelist/First.gif\" border=\"0\" alt=\"ç¬¬ä¸€é¡µ\"><\/a>";
 		}
 
 		if (p*n > 0)
 		{
-			PageStr += "<a href=\"?"+PageSearch+"page="+p*n+"\" title=\"ÉÏÊ®Ò³\"><img src=\"images/pagelist/Previous.gif\" border=\"0\"><\/a>";
+			PageStr += "<a href=\"?"+PageSearch+"page="+p*n+"\" title=\"ä¸Šåé¡µ\"><img src=\"images/pagelist/Previous.gif\" border=\"0\"><\/a>";
 		}
 		//PageStr += "<b>";
 		for (var i=p*n+1;i<p*n+n+1;i++)
@@ -212,11 +212,11 @@ switch (v)
 		//PageStr += "</b>";
 		if (i<Pagecount)
 		{
-			PageStr += "<a href=\"?"+PageSearch+"page="+i+"\" title=\"ÏÂÊ®Ò³\"><img src=\"images/pagelist/Next.gif\" border=\"0\"><\/a>";
+			PageStr += "<a href=\"?"+PageSearch+"page="+i+"\" title=\"ä¸‹åé¡µ\"><img src=\"images/pagelist/Next.gif\" border=\"0\"><\/a>";
 		}
 		if (CurrentPage!=Pagecount)
 		{
-			PageStr += "<a href=\"?"+PageSearch+"page="+Pagecount+"\" title=\"Î²Ò³\"><img src=\"images/pagelist/Last.gif\" border=\"0\"><\/a>";
+			PageStr += "<a href=\"?"+PageSearch+"page="+Pagecount+"\" title=\"å°¾é¡µ\"><img src=\"images/pagelist/Last.gif\" border=\"0\"><\/a>";
 		}
 	break;
 	case 3:
@@ -231,14 +231,14 @@ switch (v)
 		}
 		if (CurrentPage!=1)
 		{			
-			PageStr+="<td class=\"page\" >&nbsp;<a href=\"?"+PageSearch+"star=1\" title=\"µÚÒ»Ò³\"><img src=\"images/pagelist/First.gif\" border=\"0\" alt=\"µÚÒ»Ò³\"><\/a>&nbsp;<\/td>";
+			PageStr+="<td class=\"page\" >&nbsp;<a href=\"?"+PageSearch+"star=1\" title=\"ç¬¬ä¸€é¡µ\"><img src=\"images/pagelist/First.gif\" border=\"0\" alt=\"ç¬¬ä¸€é¡µ\"><\/a>&nbsp;<\/td>";
 		}
 		//else{
 			//PageStr+="<td class=\"page\"><font style=\"font-family:webdings\">9<\/font><\/td>";
 		//}
 		if (p*n > 0)
 		{
-			PageStr +="<td class=\"page\" >&nbsp;<a href=\"?"+PageSearch+"star="+p*n+"\" title=\"ÉÏÊ®Ò³\"><img src=\"images/pagelist/Previous.gif\" border=\"0\"><\/a>&nbsp;<\/td>";
+			PageStr +="<td class=\"page\" >&nbsp;<a href=\"?"+PageSearch+"star="+p*n+"\" title=\"ä¸Šåé¡µ\"><img src=\"images/pagelist/Previous.gif\" border=\"0\"><\/a>&nbsp;<\/td>";
 		}
 		for (var i=p*n+1;i<p*n+n+1;i++)
 		{
@@ -254,11 +254,11 @@ switch (v)
 		}
 		if (i<Pagecount)
 		{
-			PageStr+="<td class=\"page\" >&nbsp;<a href=\"?"+PageSearch+"star="+i+"\" title=\"ÏÂÊ®Ò³\"><img src=\"images/pagelist/Next.gif\" border=\"0\"><\/a>&nbsp;<\/td>";
+			PageStr+="<td class=\"page\" >&nbsp;<a href=\"?"+PageSearch+"star="+i+"\" title=\"ä¸‹åé¡µ\"><img src=\"images/pagelist/Next.gif\" border=\"0\"><\/a>&nbsp;<\/td>";
 		}
 		if (CurrentPage<Pagecount)
 		{
-			PageStr+="<td class=\"page\" >&nbsp;<a href=\"?"+PageSearch+"star="+Pagecount+"\" title=\"Î²Ò³\"><img src=\"images/pagelist/Last.gif\" border=\"0\"><\/a>&nbsp;";
+			PageStr+="<td class=\"page\" >&nbsp;<a href=\"?"+PageSearch+"star="+Pagecount+"\" title=\"å°¾é¡µ\"><img src=\"images/pagelist/Last.gif\" border=\"0\"><\/a>&nbsp;";
 			PageStr+="<\/td>";
 		}
 	break;
@@ -275,11 +275,11 @@ switch (v)
 		}
 		if (CurrentPage!=1)
 		{			
-			PageStr+="<td class=\"page\" >&nbsp;<a href=\"?"+PageSearch+"page=1\" title=\"µÚÒ»Ò³\"><img src=\"images/pagelist/First.gif\" border=\"0\" alt=\"µÚÒ»Ò³\"><\/a>&nbsp;<\/td>";
+			PageStr+="<td class=\"page\" >&nbsp;<a href=\"?"+PageSearch+"page=1\" title=\"ç¬¬ä¸€é¡µ\"><img src=\"images/pagelist/First.gif\" border=\"0\" alt=\"ç¬¬ä¸€é¡µ\"><\/a>&nbsp;<\/td>";
 		}
 		if (p*n > 0)
 		{
-			PageStr +="<td class=\"page\" >&nbsp;<a href=\"?"+PageSearch+"page="+p*n+"\" title=\"ÉÏÊ®Ò³\"><img src=\"images/pagelist/Previous.gif\" border=\"0\"><\/a>&nbsp;<\/td>";
+			PageStr +="<td class=\"page\" >&nbsp;<a href=\"?"+PageSearch+"page="+p*n+"\" title=\"ä¸Šåé¡µ\"><img src=\"images/pagelist/Previous.gif\" border=\"0\"><\/a>&nbsp;<\/td>";
 		}
 		for (var i=p*n+1;i<p*n+n+1;i++)
 		{
@@ -295,11 +295,11 @@ switch (v)
 		}
 		if (i<Pagecount)
 		{
-			PageStr+="<td class=\"page\" >&nbsp;<a href=\"?"+PageSearch+"page="+i+"\" title=\"ÏÂÊ®Ò³\"><img src=\"images/pagelist/Next.gif\" border=\"0\"><\/a>&nbsp;<\/td>";
+			PageStr+="<td class=\"page\" >&nbsp;<a href=\"?"+PageSearch+"page="+i+"\" title=\"ä¸‹åé¡µ\"><img src=\"images/pagelist/Next.gif\" border=\"0\"><\/a>&nbsp;<\/td>";
 		}
 		if (CurrentPage<Pagecount)
 		{
-			PageStr+="<td class=\"page\" >&nbsp;<a href=\"?"+PageSearch+"page="+Pagecount+"\" title=\"Î²Ò³\"><img src=\"images/pagelist/Last.gif\" border=\"0\"><\/a>&nbsp;";
+			PageStr+="<td class=\"page\" >&nbsp;<a href=\"?"+PageSearch+"page="+Pagecount+"\" title=\"å°¾é¡µ\"><img src=\"images/pagelist/Last.gif\" border=\"0\"><\/a>&nbsp;";
 			PageStr+="<\/td>";
 		}
 	break;
@@ -333,14 +333,14 @@ switch (v)
 		}
 		if (CurrentPage!=1)
 		{			
-			PageStr+="<td class=\"page\" >&nbsp;<a href=\"?"+PageSearch+"star=1\" target=\"hiddenframe\" title=\"µÚÒ»Ò³\"><img src=\"images/pagelist/First.gif\" border=\"0\" alt=\"µÚÒ»Ò³\"><\/a>&nbsp;<\/td>";
+			PageStr+="<td class=\"page\" >&nbsp;<a href=\"?"+PageSearch+"star=1\" target=\"hiddenframe\" title=\"ç¬¬ä¸€é¡µ\"><img src=\"images/pagelist/First.gif\" border=\"0\" alt=\"ç¬¬ä¸€é¡µ\"><\/a>&nbsp;<\/td>";
 		}
 		//else{
 			//PageStr+="<td class=\"page\"><font style=\"font-family:webdings\">9<\/font><\/td>";
 		//}
 		if (p*n > 0)
 		{
-			PageStr +="<td class=\"page\" >&nbsp;<a href=\"?"+PageSearch+"star="+p*n+"\" target=\"hiddenframe\" title=\"ÉÏÊ®Ò³\"><img src=\"images/pagelist/Previous.gif\" border=\"0\"><\/a>&nbsp;<\/td>";
+			PageStr +="<td class=\"page\" >&nbsp;<a href=\"?"+PageSearch+"star="+p*n+"\" target=\"hiddenframe\" title=\"ä¸Šåé¡µ\"><img src=\"images/pagelist/Previous.gif\" border=\"0\"><\/a>&nbsp;<\/td>";
 		}
 		for (var i=p*n+1;i<p*n+n+1;i++)
 		{
@@ -356,11 +356,11 @@ switch (v)
 		}
 		if (i<Pagecount)
 		{
-			PageStr+="<td class=\"page\" >&nbsp;<a href=\"?"+PageSearch+"star="+i+"\" target=\"hiddenframe\" title=\"ÏÂÊ®Ò³\"><img src=\"images/pagelist/Next.gif\" border=\"0\"><\/a>&nbsp;<\/td>";
+			PageStr+="<td class=\"page\" >&nbsp;<a href=\"?"+PageSearch+"star="+i+"\" target=\"hiddenframe\" title=\"ä¸‹åé¡µ\"><img src=\"images/pagelist/Next.gif\" border=\"0\"><\/a>&nbsp;<\/td>";
 		}
 		if (CurrentPage<Pagecount)
 		{
-			PageStr+="<td class=\"page\" >&nbsp;<a href=\"?"+PageSearch+"star="+Pagecount+"\" target=\"hiddenframe\" title=\"Î²Ò³\"><img src=\"images/pagelist/Last.gif\" border=\"0\"><\/a>&nbsp;";
+			PageStr+="<td class=\"page\" >&nbsp;<a href=\"?"+PageSearch+"star="+Pagecount+"\" target=\"hiddenframe\" title=\"å°¾é¡µ\"><img src=\"images/pagelist/Last.gif\" border=\"0\"><\/a>&nbsp;";
 			PageStr+="<\/td>";
 		}
 	break;

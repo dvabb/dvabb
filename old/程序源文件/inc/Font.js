@@ -1,4 +1,4 @@
-//更改字体大小
+//鏇存敼瀛椾綋澶у皬
 var status0 = '';
 function fontSize(type,objname){
 	var currentfontsize,currentlineheight;

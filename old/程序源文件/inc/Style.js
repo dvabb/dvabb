@@ -22,7 +22,7 @@ function loadStyle(t) {
 		if (styleList.length > 1){
 		
 				styleString = '<select name="style" onchange="setActiveStyleSheet(this.options[selectedIndex].value);">';
-				styleString += '<option value="0">-- CSSÆ¤·ô --</option>';
+				styleString += '<option value="0">-- CSSçš®è‚¤ --</option>';
 				for (var i=0; i<styleList.length ;i++ ){
 					styleString += '<option value="'+i+'" '+ (cookie == i?"selected":"")+ '>-- '+styleList[i][0]+' --</option>';
 				}
@@ -38,19 +38,19 @@ function reSize(_value)
 		var ivalue = parseInt(_value)
 		if(isNaN(ivalue))
 		{
-			stylemsg.innerHTML="ÉèÖÃµÄ¿í¶È±ØĞëÊÇÊı×Ö";
+			stylemsg.innerHTML="è®¾ç½®çš„å®½åº¦å¿…é¡»æ˜¯æ•°å­—";
 		}
 		else
 		{
 			if(ivalue <900)
 			{
-				stylemsg.innerHTML="ÉèÖÃµÄ¿í¶È±ØĞë´óÓÚ900ÏñËØ";
+				stylemsg.innerHTML="è®¾ç½®çš„å®½åº¦å¿…é¡»å¤§äº900åƒç´ ";
 			}
 			else
 			{
 				if(ivalue >5000)
 				{
-					stylemsg.innerHTML="ÉèÖÃµÄ¿í¶È²»¿ÉÒÔ´óÓÚ5000ÏñËØ";
+					stylemsg.innerHTML="è®¾ç½®çš„å®½åº¦ä¸å¯ä»¥å¤§äº5000åƒç´ ";
 				}
 				else
 				{

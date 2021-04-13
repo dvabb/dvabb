@@ -16,52 +16,52 @@ function astro(birth)
 		
 		switch(mm){
 		case 1 :
-		if(dd>=21){return('<img src=Skins/Default/birth/z11.gif alt=Ë®Æ¿×ù'+mm+'-'+dd+'>');}
-		else{return('<img src=Skins/Default/birth/z10.gif alt=Ä§ôÉ×ù'+mm+'-'+dd+'>');}
+		if(dd>=21){return('<img src=Skins/Default/birth/z11.gif alt=æ°´ç“¶åº§'+mm+'-'+dd+'>');}
+		else{return('<img src=Skins/Default/birth/z10.gif alt=é­”ç¾¯åº§'+mm+'-'+dd+'>');}
 		break;
 		case 2 :
-		if(dd>=20){return('<img src=Skins/Default/birth/z12.gif alt=Ë«Óã×ù'+mm+'-'+dd+'>');}
-		else{return('<img src=Skins/Default/birth/z11.gif alt=Ë®Æ¿×ù'+mm+'-'+dd+'>');}
+		if(dd>=20){return('<img src=Skins/Default/birth/z12.gif alt=åŒé±¼åº§'+mm+'-'+dd+'>');}
+		else{return('<img src=Skins/Default/birth/z11.gif alt=æ°´ç“¶åº§'+mm+'-'+dd+'>');}
 		break;
 		case 3 :
-		if(dd>=21){return('<img src=Skins/Default/birth/z1.gif alt=°×Ñò×ù'+mm+'-'+dd+'>');}
-		else{return('<img src=Skins/Default/birth/z12.gif alt=Ë«Óã×ù'+mm+'-'+dd+'>');}
+		if(dd>=21){return('<img src=Skins/Default/birth/z1.gif alt=ç™½ç¾Šåº§'+mm+'-'+dd+'>');}
+		else{return('<img src=Skins/Default/birth/z12.gif alt=åŒé±¼åº§'+mm+'-'+dd+'>');}
 		break;
 		case 4 :
-		if(dd>=21){return('<img src=Skins/Default/birth/z2.gif alt=½ğÅ£×ù'+mm+'-'+dd+'>');}
-		else{return('<img src=Skins/Default/birth/z1.gif alt=°×Ñò×ù'+mm+'-'+dd+'>');}
+		if(dd>=21){return('<img src=Skins/Default/birth/z2.gif alt=é‡‘ç‰›åº§'+mm+'-'+dd+'>');}
+		else{return('<img src=Skins/Default/birth/z1.gif alt=ç™½ç¾Šåº§'+mm+'-'+dd+'>');}
 		break;
 		case 5 :
-		if(dd>=22){return('<img src=Skins/Default/birth/z3.gif alt=Ë«×Ó×ù'+mm+'-'+dd+'>');}
-		else{return('<img src=Skins/Default/birth/z2.gif alt=½ğÅ£×ù'+mm+'-'+dd+'>');}
+		if(dd>=22){return('<img src=Skins/Default/birth/z3.gif alt=åŒå­åº§'+mm+'-'+dd+'>');}
+		else{return('<img src=Skins/Default/birth/z2.gif alt=é‡‘ç‰›åº§'+mm+'-'+dd+'>');}
 		break;
 		case 6 :
-		if(dd>=22){return('<img src=Skins/Default/birth/z4.gif alt=¾ŞĞ·×ù'+mm+'-'+dd+'>');}
-		else{return('<img src=Skins/Default/birth/z3.gif alt=Ë«×Ó×ù'+mm+'-'+dd+'>');}
+		if(dd>=22){return('<img src=Skins/Default/birth/z4.gif alt=å·¨èŸ¹åº§'+mm+'-'+dd+'>');}
+		else{return('<img src=Skins/Default/birth/z3.gif alt=åŒå­åº§'+mm+'-'+dd+'>');}
 		break;
 		case 7 :
-		if(dd>=23){return('<img src=Skins/Default/birth/z5.gif alt=Ê¨×Ó×ù'+mm+'-'+dd+'>');}
-		else{return('<img src=Skins/Default/birth/z4.gif alt=¾ŞĞ·×ù'+mm+'-'+dd+'>');}
+		if(dd>=23){return('<img src=Skins/Default/birth/z5.gif alt=ç‹®å­åº§'+mm+'-'+dd+'>');}
+		else{return('<img src=Skins/Default/birth/z4.gif alt=å·¨èŸ¹åº§'+mm+'-'+dd+'>');}
 		break;
 		case 8 :
-		if(dd>=24){return('<img src=Skins/Default/birth/z6.gif alt=´¦Å®×ù'+mm+'-'+dd+'>');}
-		else{return('<img src=Skins/Default/birth/z5.gif alt=Ê¨×Ó×ù'+mm+'-'+dd+'>');}
+		if(dd>=24){return('<img src=Skins/Default/birth/z6.gif alt=å¤„å¥³åº§'+mm+'-'+dd+'>');}
+		else{return('<img src=Skins/Default/birth/z5.gif alt=ç‹®å­åº§'+mm+'-'+dd+'>');}
 		break;
 		case 9 :
-		if(dd>=24){return('<img src=Skins/Default/birth/z7.gif alt=Ìì³Ó×ù'+mm+'-'+dd+'>');}
-		else{return('<img src=Skins/Default/birth/z6.gif alt=´¦Å®×ù'+mm+'-'+dd+'>');}
+		if(dd>=24){return('<img src=Skins/Default/birth/z7.gif alt=å¤©ç§¤åº§'+mm+'-'+dd+'>');}
+		else{return('<img src=Skins/Default/birth/z6.gif alt=å¤„å¥³åº§'+mm+'-'+dd+'>');}
 		break;
 		case 10 :
-		if(dd>=24){return('<img src=Skins/Default/birth/z8.gif alt=ÌìĞ«×ù'+mm+'-'+dd+'>');}
-		else{return('<img src=Skins/Default/birth/z7.gif alt=Ìì³Ó×ù'+mm+'-'+dd+'>');}
+		if(dd>=24){return('<img src=Skins/Default/birth/z8.gif alt=å¤©èåº§'+mm+'-'+dd+'>');}
+		else{return('<img src=Skins/Default/birth/z7.gif alt=å¤©ç§¤åº§'+mm+'-'+dd+'>');}
 		break;
 		case 11 :
-		if(dd>=23){return('<img src=Skins/Default/birth/z9.gif alt=ÉäÊÖ×ù'+mm+'-'+dd+'>');}
-		else{return('<img src=Skins/Default/birth/z8.gif alt=ÌìĞ«×ù'+mm+'-'+dd+'>');}
+		if(dd>=23){return('<img src=Skins/Default/birth/z9.gif alt=å°„æ‰‹åº§'+mm+'-'+dd+'>');}
+		else{return('<img src=Skins/Default/birth/z8.gif alt=å¤©èåº§'+mm+'-'+dd+'>');}
 		break;
 		case 12 :
-		if(dd>=22){return('<img src=Skins/Default/birth/z10.gif alt=Ä§ôÉ×ù'+mm+'-'+dd+'>');}
-		else{return('<img src=Skins/Default/birth/z9.gif alt=ÉäÊÖ×ù'+mm+'-'+dd+'>');}
+		if(dd>=22){return('<img src=Skins/Default/birth/z10.gif alt=é­”ç¾¯åº§'+mm+'-'+dd+'>');}
+		else{return('<img src=Skins/Default/birth/z9.gif alt=å°„æ‰‹åº§'+mm+'-'+dd+'>');}
 		break;
 		default : return('');
 }

@@ -1,7 +1,7 @@
-function announcements() //¹«¸æºÍĞ¡×Ö±¨ ÏÔÊ¾
+function announcements() //å…¬å‘Šå’Œå°å­—æŠ¥ æ˜¾ç¤º
 {
 	this_=this;
-	var rollText_k=(!document.all?document.getElementsByName("announcementsitem").length:document.getElementById("rollTextMenus").childNodes.length);//²Ëµ¥×ÜÊı
+	var rollText_k=(!document.all?document.getElementsByName("announcementsitem").length:document.getElementById("rollTextMenus").childNodes.length);//èœå•æ€»æ•°
 	if (rollText_k==0)
 	{
 		var str=window.location.href; 
@@ -12,10 +12,10 @@ function announcements() //¹«¸æºÍĞ¡×Ö±¨ ÏÔÊ¾
 		{
 			boardid = 0;
 		}
-		document.getElementById("rollTextMenus").innerHTML = '<div id="rollTextMenu1" name="announcementsitem" style="display: none"><strong>¡¡¹«¸æ£º</strong> <a href="announcements.asp?boardid='+boardid+'" target="_blank"><b>µ±Ç°»¹Î´ÓĞ¹«¸æ</b></a></div>';
+		document.getElementById("rollTextMenus").innerHTML = '<div id="rollTextMenu1" name="announcementsitem" style="display: none"><strong>ã€€å…¬å‘Šï¼š</strong> <a href="announcements.asp?boardid='+boardid+'" target="_blank"><b>å½“å‰è¿˜æœªæœ‰å…¬å‘Š</b></a></div>';
 		rollText_k=1;
 	}
-	var rollText_i=1; //²Ëµ¥Ä¬ÈÏÖµ
+	var rollText_i=1; //èœå•é»˜è®¤å€¼
 	document.getElementById("rollTextMenu1").style.display="block";
 	document.getElementById("pageShow").innerHTML = "1/"+rollText_k;
 	rollText_tt=setInterval(function(){
@@ -36,7 +36,7 @@ function announcements() //¹«¸æºÍĞ¡×Ö±¨ ÏÔÊ¾
 		document.getElementById("pageShow").innerHTML = rollText_i+"/"+rollText_k;
 	}
 }
-//ĞÂÎÅÄ£Ê½·ÖÀàÏÔÊ¾²Ëµ¥
+//æ–°é—»æ¨¡å¼åˆ†ç±»æ˜¾ç¤ºèœå•
 function NewsSpanBar(){
 	this.f=1;
 	this.event = "click"
@@ -85,7 +85,7 @@ function tips(e,str)
 	var l=e.offsetLeft+120;
 	var t=e.offsetTop;
 	var tip=document.getElementById("tips");
-	tip.innerHTML="ÌáÊ¾£º"+str;
+	tip.innerHTML="æç¤ºï¼š"+str;
 	if(e=e.offsetParent)
 	{
 		l+=e.offsetLeft;
@@ -100,7 +100,7 @@ function outtips(){
 }*/
 
 function loadRightMenu(){
-	//ÓÒ±ßËÑË÷ÇĞ»»
+	//å³è¾¹æœç´¢åˆ‡æ¢
 	var new1 = new NewsSpanBar();
 	new1.f=0;
 	new1.titleid = "search_bot";
@@ -108,7 +108,7 @@ function loadRightMenu(){
 	new1.class_hiton = "tabgroup_on";
 	new1.class_hitno = "tabgroup";
 	new1.load();
-	//ÓÒ±ßÌû×ÓÁĞ±íÇĞ»»
+	//å³è¾¹å¸–å­åˆ—è¡¨åˆ‡æ¢
 	var new3 = new NewsSpanBar();
 	new3.f=0;
 	new3.titleid = "topic_bot";
@@ -116,7 +116,7 @@ function loadRightMenu(){
 	new3.class_hiton = "tabgroup_on";
 	new3.class_hitno = "tabgroup";
 	new3.load();
-	//µ×²¿ÓÑÇéÁ´½ÓºÍÔÚÏßÍ³¼ÆÇĞ»»
+	//åº•éƒ¨å‹æƒ…é“¾æ¥å’Œåœ¨çº¿ç»Ÿè®¡åˆ‡æ¢
 	var new_link = new NewsSpanBar();
 	new_link.f=0;
 	new_link.titleid = "bot_link";

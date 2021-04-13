@@ -1,5 +1,5 @@
 /*
- Ä£ÄâwindowsÄ£Ì¬¶Ô»°¿ò¡£
+ æ¨¡æ‹Ÿwindowsæ¨¡æ€å¯¹è¯æ¡†ã€‚
  Author: HxyMan
  Thanks: Laomi,Fssunwin
  Update: 2008-1-20
@@ -66,11 +66,11 @@ var DvWnd={
 			var sh=document.body.offsetHeight;
 		}
 		var a=arguments;
-		DvWnd.title=a[0]||'ĞÅÏ¢´°¿Ú';
-		DvWnd.para=a[1];//ÍøÖ·»òÕßÒªÏÔÊ¾µÄÄÚÈİ
+		DvWnd.title=a[0]||'ä¿¡æ¯çª—å£';
+		DvWnd.para=a[1];//ç½‘å€æˆ–è€…è¦æ˜¾ç¤ºçš„å†…å®¹
 		DvWnd.width=a[2]||300;
 		DvWnd.height=a[3]||200;
-		DvWnd.type=null==a[4]?1:a[4];//1-¿ò¼Ü,2-Ö±½ÓÏÔÊ¾ÄÚÈİ
+		DvWnd.type=null==a[4]?1:a[4];//1-æ¡†æ¶,2-ç›´æ¥æ˜¾ç¤ºå†…å®¹
 		DvWnd.canvas=a[5]||{bgc:'#fff',opa:0.1};
 		DvWnd.left=a[6]||(w-DvWnd.width)/2+'px';
 		DvWnd.top=a[7]||(ch-(DvWnd.height||200))/2+st+'px';
@@ -83,7 +83,7 @@ var DvWnd={
 		o.style.left=DvWnd.left;
 		o.style.top=DvWnd.top;
 		s+='<div id="'+DvWnd.d.b+'" class="dvwndtitle" onmousedown="'+DvWnd.d.w+'.drag_start(event)" onmouseup="'+DvWnd.d.w+'.drag_stop(event)" onmousemove="'+DvWnd.d.w+'.drag(event)">';
-		s+='<span style="float:right"><a href="javascript:'+DvWnd.d.w+'.close();" class="dvwndclose">¡Á</a></span>'+DvWnd.title;
+		s+='<span style="float:right"><a href="javascript:'+DvWnd.d.w+'.close();" class="dvwndclose">Ã—</a></span>'+DvWnd.title;
 		s+='</div>';
 		s+='<div id="'+DvWnd.d.c+'" class="dvwndchild">';
 		s+=1==DvWnd.type?('<iframe id="'+DvWnd.d.e+'" name="'+DvWnd.d.e+'" src="about:blank"  style="width:100%;height:'+(DvWnd.height-40)+'px;" frameborder="0" hspace="0"></iframe>'):('<div style="padding:10px;">'+DvWnd.para+'</div>');

@@ -1,5 +1,5 @@
 /*//////////////////////////////////////////////////////////////////
- * Script For Dvbbs Program -- Ö÷Ìå¶ÔÏó
+ * Script For Dvbbs Program -- ä¸»ä½“å¯¹è±¡
  * Version: 8.3.0
  * Copyright (C) 2000 - 2005 bbs.dvbbs.net
  *
@@ -19,12 +19,12 @@ Dvbbs.menuOffY=18;
 function MainObjct(){
 	this.VBObjects = new Array();
 	this.LoadStats = false;
-	/*»ñÈ¡ä¯ÀÀÆ÷ÐÅÏ¢*/
+	/*èŽ·å–æµè§ˆå™¨ä¿¡æ¯*/
 	this.BrowserInfo = new function(){
 		this.sAgent=navigator.userAgent.toLowerCase();
 		this.IsIE=this.sAgent.indexOf("msie")!=-1;
 		this.IsGecko=!this.IsIE;
-		this.IsNC6=document.getElementById&&!this.IsIE;	//°üÀ¨Firefox
+		this.IsNC6=document.getElementById&&!this.IsIE;	//åŒ…æ‹¬Firefox
 		this.IsNC4=document.layers;
 		if (this.IsIE){
 			this.MajorVer=navigator.appVersion.match(/MSIE (.)/)[1];
@@ -35,7 +35,7 @@ function MainObjct(){
 		this.IsIE55rMore=this.IsIE&&(this.MajorVer>5||this.MinorVer>=5);
 		this.IsIE4=this.IsIE&&(this.MajorVer<5);
 	};
-	/*µ±Ç°Ä¿Â¼Ãû³Æ*/
+	/*å½“å‰ç›®å½•åç§°*/
 	this.LastFolder=function(){
 		var FolderName = location.pathname;
 		FolderName = FolderName.substring(0,FolderName.lastIndexOf("/"));
@@ -45,7 +45,7 @@ function MainObjct(){
 		};
 		return FolderName.toLowerCase();
 	};
-	/*µ±Ç°ÎÄµµÃû³Æ*/
+	/*å½“å‰æ–‡æ¡£åç§°*/
 	this.PageName=function(){
 		var Name = location.pathname;
 		Name = Name.substring(Name.lastIndexOf("/")+1,Name.length);
@@ -59,7 +59,7 @@ function MainObjct(){
 		for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=this.FindObj(n,d.layers[i].document);
 		if(!x && d.getElementById) x=d.getElementById(n); return x;
 	};
-	/*»ñÈ¡¶ÔÏó(¼õÉÙ·´¸´¶ÁÈ¡¶ÔÏó)*/
+	/*èŽ·å–å¯¹è±¡(å‡å°‘åå¤è¯»å–å¯¹è±¡)*/
 	this.Objects = function(idname, forcefetch){
 		if (typeof(this.VBObjects[idname]) == "undefined"||forcefetch)
 		{
@@ -67,7 +67,7 @@ function MainObjct(){
 		};
 		return this.VBObjects[idname];
 	};
-	/*´´½¨COOKIE £¨Ãû³Æ£¬Öµ£¬´æ·ÅÊ±¼ä£©*/
+	/*åˆ›å»ºCOOKIE ï¼ˆåç§°ï¼Œå€¼ï¼Œå­˜æ”¾æ—¶é—´ï¼‰*/
 	this.createCookie = function (name,value,days){
 		var expires = "";
 		if (days) {
@@ -77,7 +77,7 @@ function MainObjct(){
 		};
 		document.cookie = name+"="+value+expires+"; path=/";
 	};
-	/*¶ÁÈ¡COOKIE £¨Ãû³Æ£© ·µ»¹COOKIEÖµ*/
+	/*è¯»å–COOKIE ï¼ˆåç§°ï¼‰ è¿”è¿˜COOKIEå€¼*/
 	this.readCookie = function (name){
 		var nameEQ = name + "=";
 		var ca = document.cookie.split(';');
@@ -89,7 +89,7 @@ function MainObjct(){
 		return null;
 	};
 	/*
-	* ¸´Ñ¡±íµ¥È«Ñ¡ÊÂ¼þ form£º±íµ¥Ãû,CHECKALL±íµ¥,Ä¿Â¼¸´Ñ¡±íµ¥
+	* å¤é€‰è¡¨å•å…¨é€‰äº‹ä»¶ formï¼šè¡¨å•å,CHECKALLè¡¨å•,ç›®å½•å¤é€‰è¡¨å•
 	* CheckAll(this.form,this,'SelectName') CheckBoxID
 	*/
 	this.CheckAll = function (form,CheckAll,CheckBoxID){
@@ -103,7 +103,7 @@ function MainObjct(){
 		}else{checkBoxs.checked = CheckAll.checked;};
 	};
 
-	/*¶ÁÈ¡¶ÔÏóY×ø±ê*/
+	/*è¯»å–å¯¹è±¡Yåæ ‡*/
 	this.getOffsetTop = function(elm) {
 		var mOffsetTop = elm.offsetTop;
 		var mOffsetParent = elm.offsetParent;
@@ -114,7 +114,7 @@ function MainObjct(){
 		return mOffsetTop;
 	};
 
-	/*¶ÁÈ¡¶ÔÏóX×ø±ê*/
+	/*è¯»å–å¯¹è±¡Xåæ ‡*/
 	this.getOffsetLeft = function(elm) {
 		var mOffsetLeft = elm.offsetLeft;
 		var mOffsetParent = elm.offsetParent;
@@ -150,5 +150,5 @@ function bbimg(o){
 function get_Code() {
 	var Dv_CodeFile = "Dv_GetCode.asp";
 	if(document.getElementById("imgid"))
-		document.getElementById("imgid").innerHTML = '<img src="'+Dv_CodeFile+'?t='+Math.random()+'" alt="µã»÷Ë¢ÐÂÑéÖ¤Âë" style="cursor:pointer;border:0;vertical-align:middle;height:18px;" onclick="this.src=\''+Dv_CodeFile+'?t=\'+Math.random()" />'
+		document.getElementById("imgid").innerHTML = '<img src="'+Dv_CodeFile+'?t='+Math.random()+'" alt="ç‚¹å‡»åˆ·æ–°éªŒè¯ç " style="cursor:pointer;border:0;vertical-align:middle;height:18px;" onclick="this.src=\''+Dv_CodeFile+'?t=\'+Math.random()" />'
 }

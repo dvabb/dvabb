@@ -1,5 +1,5 @@
 document.charset = "gb2312";
-if (window.Event){ //  ĞŞÕıEventµÄDOM
+if (window.Event){ //  ä¿®æ­£Eventçš„DOM
     Event.prototype.__defineSetter__( " returnValue " , function (b){ //   
          if ( ! b) this .preventDefault();
          return  b;
@@ -7,10 +7,10 @@ if (window.Event){ //  ĞŞÕıEventµÄDOM
 }
 
 if (window.Node){
-	Node.prototype.replaceNode = function (Node){ //  Ìæ»»Ö¸¶¨½Úµã 
+	Node.prototype.replaceNode = function (Node){ //  æ›¿æ¢æŒ‡å®šèŠ‚ç‚¹ 
          this .parentNode.replaceChild(Node, this );
         }
-    Node.prototype.removeNode = function (removeChildren){ //  É¾³ıÖ¸¶¨½Úµã 
+    Node.prototype.removeNode = function (removeChildren){ //  åˆ é™¤æŒ‡å®šèŠ‚ç‚¹ 
          if (removeChildren)
              return   this .parentNode.removeChild( this );
          else {
@@ -23,8 +23,8 @@ if (window.Node){
 
 var getNameList = function(strName){return document.getElementsByName(strName);}
 
-//Í¶Æ±ÉèÖÃÊÂ¼ş
-//opmax ÏŞÖÆÊı
+//æŠ•ç¥¨è®¾ç½®äº‹ä»¶
+//opmax é™åˆ¶æ•°
 var voten = 0;
 function votetypeset(opobj,opmax){
 	//vote_set
@@ -35,7 +35,7 @@ function votetypeset(opobj,opmax){
 	document.getElementById("voteset_legend").innerHTML = s.text;
 	//voteset_function
 	var voteset_add = document.getElementById("voteset_add");
-	//Ìí¼ÓÍ¶Æ±Ïî±íµ¥
+	//æ·»åŠ æŠ•ç¥¨é¡¹è¡¨å•
 	voteset_add.innerHTML = voteset_input(s.value,opmax);
 	document.getElementById("votetitles").innerHTML = "";
 	voteset_todata("vote","set_vote",s.value);
@@ -44,30 +44,30 @@ function votetypeset(opobj,opmax){
 function voteset_input(s,opmax){
 
 	var _inputHmtl = '<input type="text" name="set_votetitle" id="set_votetitle" value="" size="80"/>';
-	_inputHmtl +=' <input type="button" name="put_vset" value="Ìí¼Ó" onclick="voteadd_input('+s+',\'set_votetitle\','+opmax+');"/>';
+	_inputHmtl +=' <input type="button" name="put_vset" value="æ·»åŠ " onclick="voteadd_input('+s+',\'set_votetitle\','+opmax+');"/>';
 	//_inputHmtl +=' <br/><ol id="votetitles"></ol>';
-	return ("Ìí¼ÓÏîÄ¿£º" + _inputHmtl);
+	return ("æ·»åŠ é¡¹ç›®ï¼š" + _inputHmtl);
 }
 
 function voteadd_input(s,objid,opmax){
 	var titleobj = document.getElementById(objid);
 	var voteset_function = document.getElementById("votetitles");
 	if (!titleobj){return ;}
-	if (titleobj.value==''){alert("ÇëÌîĞ´ÏàÓ¦µÄÄÚÈİ £¡");return ;}
+	if (titleobj.value==''){alert("è¯·å¡«å†™ç›¸åº”çš„å†…å®¹ ï¼");return ;}
 	if (document.getElementsByName("set_vote")){
 	if (document.getElementsByName("set_vote").length>=parseInt(opmax)){
-		alert("Í¶Æ±ÊıÄ¿³¬³öÏŞÖÆ£¡");
+		alert("æŠ•ç¥¨æ•°ç›®è¶…å‡ºé™åˆ¶ï¼");
 		return ;
 	}
 	}
 	voten = voten + 1;
 	var child_Html = "";
-	child_Html = '<li id="set_vote_'+voten+'">Í¶Æ±ÏîÄ¿£º<input type="text" name="set_vote" id="set_vote" value="'+titleobj.value+'" onBlur="voteset_todata(\'vote\',\'set_vote\','+s+');" size="80"/>  <input type="button" name="del_vset" value="É¾³ı" onclick="votedel_input(\'set_vote_'+voten+'\','+s+');"/>';
-	//ÎÊ¾íµ÷²éÔö¼ÓÌîĞ´±íµ¥
+	child_Html = '<li id="set_vote_'+voten+'">æŠ•ç¥¨é¡¹ç›®ï¼š<input type="text" name="set_vote" id="set_vote" value="'+titleobj.value+'" onBlur="voteset_todata(\'vote\',\'set_vote\','+s+');" size="80"/>  <input type="button" name="del_vset" value="åˆ é™¤" onclick="votedel_input(\'set_vote_'+voten+'\','+s+');"/>';
+	//é—®å·è°ƒæŸ¥å¢åŠ å¡«å†™è¡¨å•
 	if (s=='2'){
-		child_Html += ' <br/>×ÓÏîÊı£º<input maxlength="2" onkeyup="votechild_input('+voten+','+s+');" name="vote_childs_'+voten+'" id="vote_childs_'+voten+'" type="text" value="4" size="1"/>';
-		child_Html += ' ÀàĞÍ£º<select id="vote_childtype_'+voten+'" name="vote_childtype_'+voten+'" onchange="votechild_input('+voten+','+s+');"><option value="0">µ¥Ñ¡</option><option value="1">¶àÑ¡</option><option value="2">ÎÄ±¾</option></select>';
-		child_Html += '  <input type="hidden" name="voten" id="voten" value="'+voten+'"/><input type="button" name="add_vsetchild" value="Ìí¼Ó×ÓÏî" onclick="votechild_input('+voten+','+s+');"/>';
+		child_Html += ' <br/>å­é¡¹æ•°ï¼š<input maxlength="2" onkeyup="votechild_input('+voten+','+s+');" name="vote_childs_'+voten+'" id="vote_childs_'+voten+'" type="text" value="4" size="1"/>';
+		child_Html += ' ç±»å‹ï¼š<select id="vote_childtype_'+voten+'" name="vote_childtype_'+voten+'" onchange="votechild_input('+voten+','+s+');"><option value="0">å•é€‰</option><option value="1">å¤šé€‰</option><option value="2">æ–‡æœ¬</option></select>';
+		child_Html += '  <input type="hidden" name="voten" id="voten" value="'+voten+'"/><input type="button" name="add_vsetchild" value="æ·»åŠ å­é¡¹" onclick="votechild_input('+voten+','+s+');"/>';
 		child_Html += ' <ol type="A" id="vchild_ol_'+voten+'"></ol>'
 	}
 	child_Html += '</li>';
@@ -91,7 +91,7 @@ function votechild_input(objid,s){
 		for(var i=1; i<=AddLength; i++) {
 			child_Html +='<li id="vchild_li_'+objid+'">';
 			if (ChildsType.options[ChildsType.selectedIndex].value=='2'){
-				child_Html +='´ğ°¸£º<textarea id="vchild_input_'+objid+'" name="vchild_input_'+objid+'" onBlur="if (this.value==\'\'){this.value=\'null\';};voteset_todata(\'vote\',\'set_vote\','+s+');" style="width:460px;height:50px;">null</textarea>';
+				child_Html +='ç­”æ¡ˆï¼š<textarea id="vchild_input_'+objid+'" name="vchild_input_'+objid+'" onBlur="if (this.value==\'\'){this.value=\'null\';};voteset_todata(\'vote\',\'set_vote\','+s+');" style="width:460px;height:50px;">null</textarea>';
 			
 			}else
 			{
@@ -103,7 +103,7 @@ function votechild_input(objid,s){
 						child_Html +='<input type="checkbox" name="" class="chkbox"/>';
 						break;
 				}
-				child_Html +='<input type="text" id="vchild_input_'+objid+'" name="vchild_input_'+objid+'" onblur="voteset_todata(\'vote\',\'set_vote\','+s+');" size="80"/> µÃ·Ö£º<input type="text" name="vchild_ep_'+objid+'" id="vchild_ep_'+objid+'" value="0" onBlur="voteset_todata(\'vote\',\'set_vote\','+s+');" size="3"/>';
+				child_Html +='<input type="text" id="vchild_input_'+objid+'" name="vchild_input_'+objid+'" onblur="voteset_todata(\'vote\',\'set_vote\','+s+');" size="80"/> å¾—åˆ†ï¼š<input type="text" name="vchild_ep_'+objid+'" id="vchild_ep_'+objid+'" value="0" onBlur="voteset_todata(\'vote\',\'set_vote\','+s+');" size="3"/>';
 			}
 			child_Html +='</li>';
 		}
@@ -114,7 +114,7 @@ function votechild_input(objid,s){
 }
 
 function voteset_todata(objid,valobjid,s){
-	var votedb_Obj = document.getElementById(objid);	//Òş²Ø±íµ¥
+	var votedb_Obj = document.getElementById(objid);	//éšè—è¡¨å•
 	//var voteval_Obj = document.getElementsByName(valobjid);
 	//var voten = document.getElementsByName("voten");
 	var voteval_Obj = getNameList(valobjid);
@@ -165,13 +165,13 @@ function voteset_todata(objid,valobjid,s){
 }
 
 function votedel_input(objid,s){
-	var del_Obj = document.getElementById(objid);	//É¾³ı±íµ¥
+	var del_Obj = document.getElementById(objid);	//åˆ é™¤è¡¨å•
 	if (del_Obj){
 		del_Obj.removeNode(true);
 		voteset_todata("vote","set_vote",s);
 	}
 }
-//±£´æÊı¾İµ½ÁÙÊ±¸´ÖÆ°å
+//ä¿å­˜æ•°æ®åˆ°ä¸´æ—¶å¤åˆ¶æ¿
 function SaveDBtoText(objid){
 	var voteset_function = document.getElementById("voteset_function");
 	if (voteset_function){
@@ -179,9 +179,9 @@ function SaveDBtoText(objid){
 		if (setClipboard(voteset_function.innerHTML)){
 		var sobj = document.getElementById("votetype");
 		var s = sobj.options[sobj.selectedIndex];
-			alert("µ±Ç°Í¶Æ±ÄÚÈİ±£´æ³É¹¦£¬»¹Ô­Ê±Ñ¡È·ÈÏÍ¶Æ±ÀàĞÍÎª£º"+s.text+"£¡")
+			alert("å½“å‰æŠ•ç¥¨å†…å®¹ä¿å­˜æˆåŠŸï¼Œè¿˜åŸæ—¶é€‰ç¡®è®¤æŠ•ç¥¨ç±»å‹ä¸ºï¼š"+s.text+"ï¼")
 		}else{
-			alert("ÏµÍ³²»Ö§³ÖÄúµÄä¯ÀÀÆ÷½øĞĞ¸´ÖÆ±£´æ£¡")
+			alert("ç³»ç»Ÿä¸æ”¯æŒæ‚¨çš„æµè§ˆå™¨è¿›è¡Œå¤åˆ¶ä¿å­˜ï¼")
 		}
 	}
 }
@@ -200,7 +200,7 @@ function PutDBFromText(objid){
 	}
 }
 
-//½«×Ö·û´®maintext¸´ÖÆµ½¼ôÌù°å 
+//å°†å­—ç¬¦ä¸²maintextå¤åˆ¶åˆ°å‰ªè´´æ¿ 
 function setClipboard(maintext) { 
    if (window.clipboardData) {
 		window.clipboardData.setData("Text", maintext)
@@ -227,7 +227,7 @@ function setClipboard(maintext) {
    return false; 
 } 
 
-//·µ»Ø¼ôÌù°åµÄÄÚÈİ 
+//è¿”å›å‰ªè´´æ¿çš„å†…å®¹ 
 function getClipboard() { 
    if (window.clipboardData) { 
       return(window.clipboardData.getData('Text')); 

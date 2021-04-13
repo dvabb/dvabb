@@ -1,6 +1,6 @@
 
 
-///ÇøÓò±íµ¥
+///åŒºåŸŸè¡¨å•
 var cityareaname=new Array(35);
 var cityareacode=new Array(35);
 
@@ -10,360 +10,360 @@ function first(preP,preC,formname,selectP,selectC)
 	if (selectP=='01')
 	{ 
 		a=1;
-		tempoption=new Option('±±¾©','±±¾©',false,true); 
+		tempoption=new Option('åŒ—äº¬','åŒ—äº¬',false,true); 
 	}
 	else
 	{ 
-		tempoption=new Option('±±¾©','±±¾©'); 
+		tempoption=new Option('åŒ—äº¬','åŒ—äº¬'); 
 	}
 	
 	eval('document.'+formname+'.'+preP+'.options[1]=tempoption;');
 	//ckeckBrowser(formname,preP,1);
 	cityareacode[0]=new Array('0101','0102','0103','0104','0105','0106','0107','0108');
-	cityareaname[0]=new Array('¶«³ÇÇø','Î÷³ÇÇø','³çÎÄÇø','ĞûÎäÇø','³¯ÑôÇø','º£µíÇø','·áÌ¨Çø','Ê¯¾°É½');
+	cityareaname[0]=new Array('ä¸œåŸåŒº','è¥¿åŸåŒº','å´‡æ–‡åŒº','å®£æ­¦åŒº','æœé˜³åŒº','æµ·æ·€åŒº','ä¸°å°åŒº','çŸ³æ™¯å±±');
 	if (selectP=='02')
 	{ 
-		a=2;tempoption=new Option('ÉîÛÚ','ÉîÛÚ',false,true); 
+		a=2;tempoption=new Option('æ·±åœ³','æ·±åœ³',false,true); 
 	}
 	else
 	{ 
-		tempoption=new Option('ÉîÛÚ','ÉîÛÚ'); 
+		tempoption=new Option('æ·±åœ³','æ·±åœ³'); 
 	}
 	eval('document.'+formname+'.'+preP+'.options[2]=tempoption;');
 	//ckeckBrowser(formname,preP,2);
 	cityareacode[1]=new Array('0201','0202','0203','0204','0205','0206');
-	cityareaname[1]=new Array('ÂŞºş','¸£Ìï','ÄÏÉ½','ÑÎÌï','±¦°²','Áú¸Ú');
+	cityareaname[1]=new Array('ç½—æ¹–','ç¦ç”°','å—å±±','ç›ç”°','å®å®‰','é¾™å²—');
 	if (selectP=='03')
 	{ 
-		a=3;tempoption=new Option('ÉÏº£','ÉÏº£',false,true); 
+		a=3;tempoption=new Option('ä¸Šæµ·','ä¸Šæµ·',false,true); 
 	}
 	else
 	{ 
-		tempoption=new Option('ÉÏº£','ÉÏº£'); 
+		tempoption=new Option('ä¸Šæµ·','ä¸Šæµ·'); 
 	}
 	eval('document.'+formname+'.'+preP+'.options[3]=tempoption;');
 	//ckeckBrowser(formname,preP,3);
 	cityareacode[2]=new Array('0301','0302','0303','0304','0305','0306','0307','0308','0309','0310','0311','0312','0313','0314','0315','0316','0317','0318','0319','0320');
-	cityareaname[2]=new Array('±¦É½','½ğÉ½','ÄÏÊĞ','³¤Äş','¾²°²','ÇàÆÖ','³çÃ÷','Â¬Íå','ËÉ½­','·îÏÍ','ÆÖ¶«','ÑîÆÖ','ºç¿Ú','ÆÕÍÓ','Õ¢±±','»ÆÆÖ','ãÉĞĞ','Ğì»ã','¼Î¶¨','ÄÏ»ã');
+	cityareaname[2]=new Array('å®å±±','é‡‘å±±','å—å¸‚','é•¿å®','é™å®‰','é’æµ¦','å´‡æ˜','å¢æ¹¾','æ¾æ±Ÿ','å¥‰è´¤','æµ¦ä¸œ','æ¨æµ¦','è™¹å£','æ™®é™€','é—¸åŒ—','é»„æµ¦','é—µè¡Œ','å¾æ±‡','å˜‰å®š','å—æ±‡');
 	if (selectP=='04')
 	{ 
-		a=4;tempoption=new Option('ÖØÇì','ÖØÇì',false,true); 
+		a=4;tempoption=new Option('é‡åº†','é‡åº†',false,true); 
 	}
 	else
 	{ 
-		tempoption=new Option('ÖØÇì','ÖØÇì'); 
+		tempoption=new Option('é‡åº†','é‡åº†'); 
 	}
 	eval('document.'+formname+'.'+preP+'.options[4]=tempoption;');
 	cityareacode[3]=new Array('0401','0402','0403','0404','0405','0406');
-	cityareaname[3]=new Array('ÓåÖĞ','½­±±','É³Æº°Ó','ÄÏ°¶','¾ÅÁúÆÂ','´ó¶É¿Ú');
+	cityareaname[3]=new Array('æ¸ä¸­','æ±ŸåŒ—','æ²™åªå','å—å²¸','ä¹é¾™å¡','å¤§æ¸¡å£');
 	if (selectP=='05')
 	{ 
-		a=5;tempoption=new Option('Ìì½ò','Ìì½ò',false,true); 
+		a=5;tempoption=new Option('å¤©æ´¥','å¤©æ´¥',false,true); 
 	}
 	else
 	{ 
-		tempoption=new Option('Ìì½ò','Ìì½ò'); 
+		tempoption=new Option('å¤©æ´¥','å¤©æ´¥'); 
 	}
 	eval('document.'+formname+'.'+preP+'.options[5]=tempoption;');
 	cityareacode[4]=new Array('0501','0502','0503','0504','0505','0506','0507','0508','0509','0510','0511','0512','0513','0514','0515');
-	cityareaname[4]=new Array('ºÍÆ½','ºÓ±±','ºÓÎ÷','ºÓ¶«','ÄÏ¿ª','ºìÇÅ','ÌÁ¹Á','ºº¹Á','´ó¸Û','¶«Àö','Î÷Çà','½òÄÏ','±±³½','ÎäÇå','±õº£');
+	cityareaname[4]=new Array('å’Œå¹³','æ²³åŒ—','æ²³è¥¿','æ²³ä¸œ','å—å¼€','çº¢æ¡¥','å¡˜æ²½','æ±‰æ²½','å¤§æ¸¯','ä¸œä¸½','è¥¿é’','æ´¥å—','åŒ—è¾°','æ­¦æ¸…','æ»¨æµ·');
 	if (selectP=='06')
 	{ 
-		a=6;tempoption=new Option('¹ã¶«','¹ã¶«',false,true); 
+		a=6;tempoption=new Option('å¹¿ä¸œ','å¹¿ä¸œ',false,true); 
 	}
 	else
 	{ 
-		tempoption=new Option('¹ã¶«','¹ã¶«'); 
+		tempoption=new Option('å¹¿ä¸œ','å¹¿ä¸œ'); 
 	}
 	eval('document.'+formname+'.'+preP+'.options[6]=tempoption;');
 	cityareacode[5]=new Array('0601','0602','0603','0604','0605','0606','0607','0608','0609','0610','0611','0612','0613','0614','0615','0616','0617','0618','0619','0620');
-	cityareaname[5]=new Array('¹ãÖİ','Öéº£','ÖĞÉ½','·ğÉ½','¶«İ¸','ÇåÔ¶','ÕØÇì','Ñô½­','Õ¿½­','ÉØ¹Ø','»İÖİ','ºÓÔ´','ÉÇÎ²','ÉÇÍ·','Ã¯Ãû','Ã·Öİ','³±Öİ','½­ÃÅ','½ÒÑô','ÔÆ¸¡');
+	cityareaname[5]=new Array('å¹¿å·','ç æµ·','ä¸­å±±','ä½›å±±','ä¸œè','æ¸…è¿œ','è‚‡åº†','é˜³æ±Ÿ','æ¹›æ±Ÿ','éŸ¶å…³','æƒ å·','æ²³æº','æ±•å°¾','æ±•å¤´','èŒ‚å','æ¢…å·','æ½®å·','æ±Ÿé—¨','æ­é˜³','äº‘æµ®');
 	if (selectP=='07')
 	{ 
-		a=7;tempoption=new Option('ºÓ±±','07',false,true); 
+		a=7;tempoption=new Option('æ²³åŒ—','07',false,true); 
 	}
 	else
 	{ 
-		tempoption=new Option('ºÓ±±','ºÓ±±'); 
+		tempoption=new Option('æ²³åŒ—','æ²³åŒ—'); 
 	}
 	eval('document.'+formname+'.'+preP+'.options[7]=tempoption;');
 	cityareacode[6]=new Array('0701','0702','0703','0704','0705','0706','0707','0708','0709','0710','0711');
-	cityareaname[6]=new Array('Ê¯¼Ò×¯','ÌÆÉ½','ÇØ»Êµº','ºªµ¦','ĞÏÌ¨','ÕÅ¼Ò¿Ú','³ĞµÂ','ÀÈ·»','²×Öİ','±£¶¨','ºâË®');
+	cityareaname[6]=new Array('çŸ³å®¶åº„','å”å±±','ç§¦çš‡å²›','é‚¯éƒ¸','é‚¢å°','å¼ å®¶å£','æ‰¿å¾·','å»ŠåŠ','æ²§å·','ä¿å®š','è¡¡æ°´');
 	if (selectP=='08')
 	{ 
-		a=8;tempoption=new Option('É½Î÷','É½Î÷',false,true); 
+		a=8;tempoption=new Option('å±±è¥¿','å±±è¥¿',false,true); 
 	}
 	else
 	{ 
-		tempoption=new Option('É½Î÷','É½Î÷'); 
+		tempoption=new Option('å±±è¥¿','å±±è¥¿'); 
 	}
 	eval('document.'+formname+'.'+preP+'.options[8]=tempoption;');
 	cityareacode[7]=new Array('0801','0802','0803','0804','0805','0806','0807');
-	cityareaname[7]=new Array('Ì«Ô­','´óÍ¬','ÑôÈª','Ë·Öİ','³¤ÖÎ','ÁÙ·Ú','½ú³Ç');
+	cityareaname[7]=new Array('å¤ªåŸ','å¤§åŒ','é˜³æ³‰','æœ”å·','é•¿æ²»','ä¸´æ±¾','æ™‹åŸ');
 	if (selectP=='09')
 	{ 
-		a=9;tempoption=new Option('ÄÚÃÉ¹Å','ÄÚÃÉ¹Å',false,true); 
+		a=9;tempoption=new Option('å†…è’™å¤','å†…è’™å¤',false,true); 
 	}
 	else
 	{
-		tempoption=new Option('ÄÚÃÉ¹Å','ÄÚÃÉ¹Å'); 
+		tempoption=new Option('å†…è’™å¤','å†…è’™å¤'); 
 	}
 	eval('document.'+formname+'.'+preP+'.options[9]=tempoption;');
 	cityareacode[8]=new Array('0901','0902','0903','0904','0905','0906','0907','0908','0909','0910','0911');
-	cityareaname[8]=new Array('ºôºÍºÆÌØ','°üÍ·','ÎÚº£','ÁÙºÓ','¶«Ê¤','¼¯Äş','ÎıÁÖºÆÌØ','Í¨ÁÉ','³à·å','º£À­¶û','ÎÚÀ¼ºÆÌØ');
+	cityareaname[8]=new Array('å‘¼å’Œæµ©ç‰¹','åŒ…å¤´','ä¹Œæµ·','ä¸´æ²³','ä¸œèƒœ','é›†å®','é”¡æ—æµ©ç‰¹','é€šè¾½','èµ¤å³°','æµ·æ‹‰å°”','ä¹Œå…°æµ©ç‰¹');
 	if (selectP=='10')
 	{ 
-		a=10;tempoption=new Option('ÁÉÄş','10',false,true); 
+		a=10;tempoption=new Option('è¾½å®','10',false,true); 
 	}
 	else
 	{ 
-		tempoption=new Option('ÁÉÄş','ÁÉÄş'); 
+		tempoption=new Option('è¾½å®','è¾½å®'); 
 	}
 	eval('document.'+formname+'.'+preP+'.options[10]=tempoption;');
 	cityareacode[9]=new Array('1001','1002','1003','1004','1005','1006','1007','1008','1009','1010','1011','1012','1013','1014');
-	cityareaname[9]=new Array('ÉòÑô','´óÁ¬','°°É½','½õÖİ','µ¤¶«','ÅÌ½õ','ÌúÁë','¸§Ë³','Óª¿Ú','ÁÉÑô','¸·ĞÂ','±¾Ïª','³¯Ñô','ºùÂ«µº');
+	cityareaname[9]=new Array('æ²ˆé˜³','å¤§è¿','éå±±','é”¦å·','ä¸¹ä¸œ','ç›˜é”¦','é“å²­','æŠšé¡º','è¥å£','è¾½é˜³','é˜œæ–°','æœ¬æºª','æœé˜³','è‘«èŠ¦å²›');
 	if (selectP=='11')
 	{ 
-		a=11;tempoption=new Option('¼ªÁÖ','¼ªÁÖ',false,true); 
+		a=11;tempoption=new Option('å‰æ—','å‰æ—',false,true); 
 	}
 	else
 	{ 
-		tempoption=new Option('¼ªÁÖ','¼ªÁÖ'); 
+		tempoption=new Option('å‰æ—','å‰æ—'); 
 	}
 	eval('document.'+formname+'.'+preP+'.options[11]=tempoption;');
 	cityareacode[10]=new Array('1101','1102','1103','1104','1105','1106','1107','1108','1109');
-	cityareaname[10]=new Array('³¤´º','¼ªÁÖ','ËÄÆ½','ÁÉÔ´','Í¨»¯','°×É½','ËÉÔ­','°×³Ç','ÑÓ±ß');
+	cityareaname[10]=new Array('é•¿æ˜¥','å‰æ—','å››å¹³','è¾½æº','é€šåŒ–','ç™½å±±','æ¾åŸ','ç™½åŸ','å»¶è¾¹');
 	if (selectP=='12')
 	{ 
-		a=12;tempoption=new Option('ºÚÁú½­','ºÚÁú½­',false,true);
+		a=12;tempoption=new Option('é»‘é¾™æ±Ÿ','é»‘é¾™æ±Ÿ',false,true);
 	}
 	else
 	{ 
-		tempoption=new Option('ºÚÁú½­','ºÚÁú½­'); 
+		tempoption=new Option('é»‘é¾™æ±Ÿ','é»‘é¾™æ±Ÿ'); 
 	}
 	eval('document.'+formname+'.'+preP+'.options[12]=tempoption;');
 	cityareacode[11]=new Array('1201','1202','1203','1204','1205','1206','1207','1208','1209','1210','1211','1212','1213');
-	cityareaname[11]=new Array('¹ş¶û±õ','ÆëÆë¹ş¶û','Äµµ¤½­','¼ÑÄ¾Ë¹','´óÇì','ÒÁ´º','ºÚºÓ','¼¦Î÷','º×¸Ú','Ë«Ñ¼É½','ÆßÌ¨ºÓ','Ëç»¯','´óĞË°²Áë');
+	cityareaname[11]=new Array('å“ˆå°”æ»¨','é½é½å“ˆå°”','ç‰¡ä¸¹æ±Ÿ','ä½³æœ¨æ–¯','å¤§åº†','ä¼Šæ˜¥','é»‘æ²³','é¸¡è¥¿','é¹¤å²—','åŒé¸­å±±','ä¸ƒå°æ²³','ç»¥åŒ–','å¤§å…´å®‰å²­');
 	if (selectP=='13')
 	{ 
-		a=13;tempoption=new Option('½­ËÕ','½­ËÕ',false,true); 
+		a=13;tempoption=new Option('æ±Ÿè‹','æ±Ÿè‹',false,true); 
 	}
 	else
 	{ 
-		tempoption=new Option('½­ËÕ','½­ËÕ'); 
+		tempoption=new Option('æ±Ÿè‹','æ±Ÿè‹'); 
 	}
 	eval('document.'+formname+'.'+preP+'.options[13]=tempoption;');
 	cityareacode[12]=new Array('1301','1302','1303','1304','1305','1306','1307','1308','1309','1310','1311','1312','1313');
-	cityareaname[12]=new Array('ÄÏ¾©','ËÕÖİ','ÎŞÎı','³£Öİ','Õò½­','Á¬ÔÆ¸Û ','ÑïÖİ','ĞìÖİ ','ÄÏÍ¨','ÑÎ³Ç','»´Òõ','Ì©Öİ','ËŞÇ¨');
+	cityareaname[12]=new Array('å—äº¬','è‹å·','æ— é”¡','å¸¸å·','é•‡æ±Ÿ','è¿äº‘æ¸¯ ','æ‰¬å·','å¾å· ','å—é€š','ç›åŸ','æ·®é˜´','æ³°å·','å®¿è¿');
 	if (selectP=='14')
 	{ 
-		a=14;tempoption=new Option('Õã½­','Õã½­',false,true); 
+		a=14;tempoption=new Option('æµ™æ±Ÿ','æµ™æ±Ÿ',false,true); 
 	}
 	else
 	{ 
-		tempoption=new Option('Õã½­','Õã½­'); 
+		tempoption=new Option('æµ™æ±Ÿ','æµ™æ±Ÿ'); 
 	}
 	eval('document.'+formname+'.'+preP+'.options[14]=tempoption;');
 	cityareacode[13]=new Array('1401','1402','1403','1404','1405','1406','1407','1408','1409','1410','1411');
-	cityareaname[13]=new Array('º¼Öİ','ºşÖİ','ÀöË®','ÎÂÖİ','ÉÜĞË','ÖÛÉ½','¼ÎĞË','½ğ»ª','Ì¨Öİ','áéÖİ','Äş²¨');
+	cityareaname[13]=new Array('æ­å·','æ¹–å·','ä¸½æ°´','æ¸©å·','ç»å…´','èˆŸå±±','å˜‰å…´','é‡‘å','å°å·','è¡¢å·','å®æ³¢');
 	if (selectP=='15')
 	{ 
-		a=15;tempoption=new Option('°²»Õ','°²»Õ',false,true); 
+		a=15;tempoption=new Option('å®‰å¾½','å®‰å¾½',false,true); 
 	}
 	else
 	{ 
-		tempoption=new Option('°²»Õ','°²»Õ'); 
+		tempoption=new Option('å®‰å¾½','å®‰å¾½'); 
 	}
 	eval('document.'+formname+'.'+preP+'.options[15]=tempoption;');
 	cityareacode[14]=new Array('1501','1502','1503','1504','1505','1506','1507','1508','1509','1510','1511','1512','1513','1514','1515','1516','1517');
-	cityareaname[14]=new Array('ºÏ·Ê  ','Îßºş ','°ö²º ','³üÖİ ','°²Çì ','Áù°² ','»ÆÉ½ ','Ğû³Ç ','»´ÄÏ ','ËŞÖİ ','Âí°°É½ ','Í­Áê','»´±± ','¸·Ñô ','³ØÖİ ','³²ºş ','ÙñÖİ');
+	cityareaname[14]=new Array('åˆè‚¥  ','èŠœæ¹– ','èšŒåŸ  ','æ»å· ','å®‰åº† ','å…­å®‰ ','é»„å±± ','å®£åŸ ','æ·®å— ','å®¿å· ','é©¬éå±± ','é“œé™µ','æ·®åŒ— ','é˜œé˜³ ','æ± å· ','å·¢æ¹– ','äº³å·');
 	if (selectP=='16')
 	{ 
-		a=16;tempoption=new Option('¸£½¨','¸£½¨',false,true); 
+		a=16;tempoption=new Option('ç¦å»º','ç¦å»º',false,true); 
 	}
 	else
 	{ 
-		tempoption=new Option('¸£½¨','¸£½¨');
+		tempoption=new Option('ç¦å»º','ç¦å»º');
 	}
 	eval('document.'+formname+'.'+preP+'.options[16]=tempoption;');
 	cityareacode[15]=new Array('1601','1602','1603','1604','1605','1606','1607','1608','1609');
-	cityareaname[15]=new Array('¸£Öİ ','ÏÃÃÅ ','ÈªÖİ ','ÕÄÖİ ','ÁúÑÒ ','ÄÏÆ½ ','ÄşµÂ ','ÆÎÌï ','ÈıÃ÷');
+	cityareaname[15]=new Array('ç¦å· ','å¦é—¨ ','æ³‰å· ','æ¼³å· ','é¾™å²© ','å—å¹³ ','å®å¾· ','è†ç”° ','ä¸‰æ˜');
 	if (selectP=='17')
 	{ 
-		a=17;tempoption=new Option('½­Î÷','½­Î÷',false,true); 
+		a=17;tempoption=new Option('æ±Ÿè¥¿','æ±Ÿè¥¿',false,true); 
 	}
 	else
 	{ 
-		tempoption=new Option('½­Î÷','½­Î÷');
+		tempoption=new Option('æ±Ÿè¥¿','æ±Ÿè¥¿');
 	}
 	eval('document.'+formname+'.'+preP+'.options[17]=tempoption;');
 	cityareacode[16]=new Array('1701','1702','1703','1704','1705','1706','1707','1708','1709','1710','1711');
-	cityareaname[16]=new Array('ÄÏ²ı','¾°µÂÕò','¾Å½­','Æ¼Ïç','ĞÂÓà','Ó¥Ì¶','¸ÓÖİ','ÒË´º','¼ª°²','ÉÏÈÄ','¸§Öİ');
+	cityareaname[16]=new Array('å—æ˜Œ','æ™¯å¾·é•‡','ä¹æ±Ÿ','èä¹¡','æ–°ä½™','é¹°æ½­','èµ£å·','å®œæ˜¥','å‰å®‰','ä¸Šé¥¶','æŠšå·');
 	if (selectP=='18')
 	{ 
-		a=18;tempoption=new Option('É½¶«','É½¶«',false,true); 
+		a=18;tempoption=new Option('å±±ä¸œ','å±±ä¸œ',false,true); 
 	}
 	else
 	{ 
-		tempoption=new Option('É½¶«','É½¶«'); 
+		tempoption=new Option('å±±ä¸œ','å±±ä¸œ'); 
 	}
 	eval('document.'+formname+'.'+preP+'.options[18]=tempoption;');
 	cityareacode[17]=new Array('1801','1802','1803','1804','1805','1806','1807','1808','1809','1810','1811','1812','1813','1814','1815','1816','1817');
-	cityareaname[17]=new Array('¼ÃÄÏ','Çàµº','×Í²©','µÂÖİ','ÑÌÌ¨','Î«·»','¼ÃÄş','Ì©°²','ÁÙÒÊ','ºÊÔó','Íşº£','Ôæ×¯','ÈÕÕÕ','À³Îß','ÁÄ³Ç','±õÖİ','¶«Óª');
+	cityareaname[17]=new Array('æµå—','é’å²›','æ·„åš','å¾·å·','çƒŸå°','æ½åŠ','æµå®','æ³°å®‰','ä¸´æ²‚','èæ³½','å¨æµ·','æ£åº„','æ—¥ç…§','è±èŠœ','èŠåŸ','æ»¨å·','ä¸œè¥');
 	if (selectP=='19')
 	{ 
-		a=19;tempoption=new Option('ºÓÄÏ','ºÓÄÏ',false,true);
+		a=19;tempoption=new Option('æ²³å—','æ²³å—',false,true);
 	}
 	else
 	{ 
-		tempoption=new Option('ºÓÄÏ','ºÓÄÏ'); 
+		tempoption=new Option('æ²³å—','æ²³å—'); 
 	}
 	eval('document.'+formname+'.'+preP+'.options[19]=tempoption;');
 	cityareacode[18]=new Array('1901','1902','1903','1904','1905','1906','1907','1908','1909','1910','1911','1912','1913','1914','1915','1916','1917','1918');
-	cityareaname[18]=new Array('Ö£Öİ','¿ª·â','ÂåÑô','Æ½¶¥É½','°²Ñô','º×±Ú','ĞÂÏç','½¹×÷','å§Ñô','Ğí²ı','äğºÓ','ÈıÃÅÏ¿','ÄÏÑô','ÉÌÇğ','ÖÜ¿Ú','×¤Âíµê','ĞÅÑô','¼ÃÔ´');
+	cityareaname[18]=new Array('éƒ‘å·','å¼€å°','æ´›é˜³','å¹³é¡¶å±±','å®‰é˜³','é¹¤å£','æ–°ä¹¡','ç„¦ä½œ','æ¿®é˜³','è®¸æ˜Œ','æ¼¯æ²³','ä¸‰é—¨å³¡','å—é˜³','å•†ä¸˜','å‘¨å£','é©»é©¬åº—','ä¿¡é˜³','æµæº');
 	if (selectP=='20')
 	{ 
-		a=20;tempoption=new Option('ºş±±','ºş±±',false,true); 
+		a=20;tempoption=new Option('æ¹–åŒ—','æ¹–åŒ—',false,true); 
 	}
 	else
 	{ 
-		tempoption=new Option('ºş±±','ºş±±'); 
+		tempoption=new Option('æ¹–åŒ—','æ¹–åŒ—'); 
 	}
 	eval('document.'+formname+'.'+preP+'.options[20]=tempoption;');
 	cityareacode[19]=new Array('2001','2002','2003','2004','2005','2006','2007','2008','2009','2010','2011','2012','2013','2014','2015','2016','2017');
-	cityareaname[19]=new Array('Îäºº','»ÆÊ¯','Ê®Ñß','¾£Öİ','ÒË²ı','Ïå·®','¶õÖİ','¾£ÃÅ','Ğ¢¸Ğ','»Æ¸Ô','ÏÌÄş','¶÷Ê©','ËæÖİ','ÏÉÌÒ','ÌìÃÅ','Ç±½­','ÉñÅ©¼Ü');
+	cityareaname[19]=new Array('æ­¦æ±‰','é»„çŸ³','åå °','è†å·','å®œæ˜Œ','è¥„æ¨Š','é„‚å·','è†é—¨','å­æ„Ÿ','é»„å†ˆ','å’¸å®','æ©æ–½','éšå·','ä»™æ¡ƒ','å¤©é—¨','æ½œæ±Ÿ','ç¥å†œæ¶');
 	if (selectP=='21')
 	{ 
-		a=21;tempoption=new Option('ºşÄÏ','21',false,true); 
+		a=21;tempoption=new Option('æ¹–å—','21',false,true); 
 	}
 	else
 	{ 
-		tempoption=new Option('ºşÄÏ','ºşÄÏ'); 
+		tempoption=new Option('æ¹–å—','æ¹–å—'); 
 	}
 	eval('document.'+formname+'.'+preP+'.options[21]=tempoption;');
 	cityareacode[20]=new Array('2101','2102','2103','2104','2105','2106','2107','2108','2109','2110','2111','2112','2113');
-	cityareaname[20]=new Array('³¤É³','ÖêÖİ','ÏæÌ¶','ºâÑô','ÉÛÑô','ÔÀÑô','³£µÂ','³»Öİ','ÒæÑô','ÓÀÖİ','»³»¯','Â¦µ×','ÏæÎ÷ ');
+	cityareaname[20]=new Array('é•¿æ²™','æ ªå·','æ¹˜æ½­','è¡¡é˜³','é‚µé˜³','å²³é˜³','å¸¸å¾·','éƒ´å·','ç›Šé˜³','æ°¸å·','æ€€åŒ–','å¨„åº•','æ¹˜è¥¿ ');
 	if (selectP=='22')
 	{ 
-		a=22;tempoption=new Option('¹ãÎ÷','¹ãÎ÷',false,true); 
+		a=22;tempoption=new Option('å¹¿è¥¿','å¹¿è¥¿',false,true); 
 	}
 	else
 	{ 
-		tempoption=new Option('¹ãÎ÷','¹ãÎ÷'); 
+		tempoption=new Option('å¹¿è¥¿','å¹¿è¥¿'); 
 	}
 	eval('document.'+formname+'.'+preP+'.options[22]=tempoption;');
 	cityareacode[21]=new Array('2201','2202','2203','2204','2205','2206','2207','2208','2209','2210','2211','2212');
-	cityareaname[21]=new Array('ÄÏÄş','ÁøÖİ','¹ğÁÖ','ÎàÖİ','±±º£','·À³Ç¸Û','ÇÕÖİ','¹ó¸Û','ÓñÁÖ','ºØÖİ','°ÙÉ«','ºÓ³Ø');
+	cityareaname[21]=new Array('å—å®','æŸ³å·','æ¡‚æ—','æ¢§å·','åŒ—æµ·','é˜²åŸæ¸¯','é’¦å·','è´µæ¸¯','ç‰æ—','è´ºå·','ç™¾è‰²','æ²³æ± ');
 	if (selectP=='23')
 	{ 
-		a=23;tempoption=new Option('º£ÄÏ','º£ÄÏ',false,true); 
+		a=23;tempoption=new Option('æµ·å—','æµ·å—',false,true); 
 	}
 	else
 	{ 
-		tempoption=new Option('º£ÄÏ','º£ÄÏ'); 
+		tempoption=new Option('æµ·å—','æµ·å—'); 
 	}
 	eval('document.'+formname+'.'+preP+'.options[23]=tempoption;');
 	cityareacode[22]=new Array('2301','2302','2303','2304','2305','2306','2307','2308','2309');
-	cityareaname[22]=new Array('º£¿Ú ','ÈıÑÇ','Í¨Ê²','Çíº£','ÇíÉ½','ÎÄ²ı','ÍòÄş','¶«·½','ÙÙÖİ');
+	cityareaname[22]=new Array('æµ·å£ ','ä¸‰äºš','é€šä»€','ç¼æµ·','ç¼å±±','æ–‡æ˜Œ','ä¸‡å®','ä¸œæ–¹','å„‹å·');
 	if (selectP=='24')
 	{ 
-		a=24;tempoption=new Option('ËÄ´¨','ËÄ´¨',false,true); 
+		a=24;tempoption=new Option('å››å·','å››å·',false,true); 
 	}
 	else
 	{ 
-		tempoption=new Option('ËÄ´¨','ËÄ´¨'); 
+		tempoption=new Option('å››å·','å››å·'); 
 	}
 	eval('document.'+formname+'.'+preP+'.options[24]=tempoption;');
 	cityareacode[23]=new Array('2401','2402','2403','2404','2405','2406','2407','2408','2409','2410','2411','2412','2413','2414','2415','2416','2417','2418','2419','2420');
-	cityareaname[23]=new Array('³É¶¼','×Ô¹±','ÅÊÖ¦»¨','ãòÖİ','µÂÑô','ÃàÑô','¹ãÔª','ËìÄş','ÄÚ½­','ÀÖÉ½','ÄÏ³ä  ','ÒË±ö','¹ã°²','´ï´¨','°ÍÖĞ','ÑÅ°²','Ã¼É½  ','°¢°Ó ','¸Ê×Î ','Á¹É½ ');
+	cityareaname[23]=new Array('æˆéƒ½','è‡ªè´¡','æ”€æèŠ±','æ³¸å·','å¾·é˜³','ç»µé˜³','å¹¿å…ƒ','é‚å®','å†…æ±Ÿ','ä¹å±±','å—å……  ','å®œå®¾','å¹¿å®‰','è¾¾å·','å·´ä¸­','é›…å®‰','çœ‰å±±  ','é˜¿å ','ç”˜å­œ ','å‡‰å±± ');
 	if (selectP=='25')
 	{ 
-		a=25;tempoption=new Option('¹óÖİ','¹óÖİ',false,true); 
+		a=25;tempoption=new Option('è´µå·','è´µå·',false,true); 
 	}
 	else
 	{ 
-		tempoption=new Option('¹óÖİ','¹óÖİ'); 
+		tempoption=new Option('è´µå·','è´µå·'); 
 	}
 	eval('document.'+formname+'.'+preP+'.options[25]=tempoption;');
 	cityareacode[24]=new Array('2501','2502','2503','2504','2505','2506','2507','2508','2509');
-	cityareaname[24]=new Array('¹óÑô ','ÁùÅÌË®','×ñÒå','Í­ÈÊ','±Ï½Ú','°²Ë³','Ç­Î÷ÄÏ ','Ç­¶«ÄÏ','Ç­ÄÏ');
+	cityareaname[24]=new Array('è´µé˜³ ','å…­ç›˜æ°´','éµä¹‰','é“œä»','æ¯•èŠ‚','å®‰é¡º','é»”è¥¿å— ','é»”ä¸œå—','é»”å—');
 	if (selectP=='26')
 	{ 
-		a=26;tempoption=new Option('ÔÆÄÏ','ÔÆÄÏ',false,true); 
+		a=26;tempoption=new Option('äº‘å—','äº‘å—',false,true); 
 	}
 	else
 	{ 
-		tempoption=new Option('ÔÆÄÏ','ÔÆÄÏ'); 
+		tempoption=new Option('äº‘å—','äº‘å—'); 
 	}
 	eval('document.'+formname+'.'+preP+'.options[26]=tempoption;');
 	cityareacode[25]=new Array('2601','2602','2603','2604','2605','2606','2607','2608','2609','2610','2611','2612','2613','2614','2615','2616','2617');
-	cityareaname[25]=new Array('À¥Ã÷','¶«´¨','Çú¾¸','ÓñÏª','ÕÑÍ¨','Ë¼Ã©','ÁÙ²×','±£É½','Àö½­','ÎÄÉ½ ','ºìºÓ ','Î÷Ë«°æÄÉ ','³şĞÛ ','´óÀí ','µÂºê ','Å­½­','µÏÇì');
+	cityareaname[25]=new Array('æ˜†æ˜','ä¸œå·','æ›²é–','ç‰æºª','æ˜­é€š','æ€èŒ…','ä¸´æ²§','ä¿å±±','ä¸½æ±Ÿ','æ–‡å±± ','çº¢æ²³ ','è¥¿åŒç‰ˆçº³ ','æ¥šé›„ ','å¤§ç† ','å¾·å® ','æ€’æ±Ÿ','è¿ªåº†');
 	if (selectP=='27')
 	{ 
-		a=27;tempoption=new Option('Î÷²Ø','27',false,true); 
+		a=27;tempoption=new Option('è¥¿è—','27',false,true); 
 	}
 	else
 	{ 
-		tempoption=new Option('Î÷²Ø','Î÷²Ø'); 
+		tempoption=new Option('è¥¿è—','è¥¿è—'); 
 	}
 	eval('document.'+formname+'.'+preP+'.options[27]=tempoption;');
 	cityareacode[26]=new Array('2701','2702','2703','2704','2705','2706','2707');
-	cityareaname[26]=new Array('À­Èø','ÄÇÇú','²ı¶¼','É½ÄÏ','ÈÕ¿¦Ôò','°¢Àï','ÁÖÖ¥');
+	cityareaname[26]=new Array('æ‹‰è¨','é‚£æ›²','æ˜Œéƒ½','å±±å—','æ—¥å–€åˆ™','é˜¿é‡Œ','æ—èŠ');
 	if (selectP=='28')
 	{ 
-		a=28;tempoption=new Option('ÉÂÎ÷','ÉÂÎ÷',false,true); 
+		a=28;tempoption=new Option('é™•è¥¿','é™•è¥¿',false,true); 
 	}
 	else
-	  { tempoption=new Option('ÉÂÎ÷','ÉÂÎ÷'); }
+	  { tempoption=new Option('é™•è¥¿','é™•è¥¿'); }
 	eval('document.'+formname+'.'+preP+'.options[28]=tempoption;');
 	cityareacode[27]=new Array('2801','2802','2803','2804','2805','2806','2807','2808','2809','2810');
-	cityareaname[27]=new Array('Î÷°²','Í­´¨','±¦¼¦','ÏÌÑô','Î¼ÄÏ','ÑÓ°²','ººÖĞ','ÓÜÁÖ','ÉÌÂå','°²¿µ');
+	cityareaname[27]=new Array('è¥¿å®‰','é“œå·','å®é¸¡','å’¸é˜³','æ¸­å—','å»¶å®‰','æ±‰ä¸­','æ¦†æ—','å•†æ´›','å®‰åº·');
 	if (selectP=='29')
-	  { a=29;tempoption=new Option('¸ÊËà','¸ÊËà',false,true); }
+	  { a=29;tempoption=new Option('ç”˜è‚ƒ','ç”˜è‚ƒ',false,true); }
 	else
-	  { tempoption=new Option('¸ÊËà','¸ÊËà'); }
+	  { tempoption=new Option('ç”˜è‚ƒ','ç”˜è‚ƒ'); }
 	eval('document.'+formname+'.'+preP+'.options[29]=tempoption;');
 	cityareacode[28]=new Array('2901','2902','2903','2904','2905','2906','2907','2908','2909','2910','2911','2912','2913','2914');
-	cityareaname[28]=new Array('À¼Öİ','½ğ²ı','°×Òø','ÌìË®','¼ÎÓø¹Ø','¶¨Î÷','Æ½Á¹','ÇìÑô','Â¤ÄÏ','ÎäÍş','ÕÅÒ´','¾ÆÈª','¸ÊÄÏ ','ÁÙÏÄ');
+	cityareaname[28]=new Array('å…°å·','é‡‘æ˜Œ','ç™½é“¶','å¤©æ°´','å˜‰å³ªå…³','å®šè¥¿','å¹³å‡‰','åº†é˜³','é™‡å—','æ­¦å¨','å¼ æ–','é…’æ³‰','ç”˜å— ','ä¸´å¤');
 	if (selectP=='30')
-	  { a=30;tempoption=new Option('Çàº£','Çàº£',false,true); }
+	  { a=30;tempoption=new Option('é’æµ·','é’æµ·',false,true); }
 	else
-	  { tempoption=new Option('Çàº£','Çàº£'); }
+	  { tempoption=new Option('é’æµ·','é’æµ·'); }
 	eval('document.'+formname+'.'+preP+'.options[30]=tempoption;');
 	cityareacode[29]=new Array('3001','3002','3003','3004','3005','3006','3007','3008');
-	cityareaname[29]=new Array('Î÷Äş','º£¶«',' º£±± ','»ÆÄÏ','º£ÄÏ','¹ûÂå','ÓñÊ÷','º£Î÷');
+	cityareaname[29]=new Array('è¥¿å®','æµ·ä¸œ',' æµ·åŒ— ','é»„å—','æµ·å—','æœæ´›','ç‰æ ‘','æµ·è¥¿');
 	if (selectP=='31')
-	  { a=31;tempoption=new Option('ÄşÏÄ','ÄşÏÄ',false,true); }
+	  { a=31;tempoption=new Option('å®å¤','å®å¤',false,true); }
 	else
-	  { tempoption=new Option('ÄşÏÄ','ÄşÏÄ'); }
+	  { tempoption=new Option('å®å¤','å®å¤'); }
 	eval('document.'+formname+'.'+preP+'.options[31]=tempoption;');
 	cityareacode[30]=new Array('3101','3102','3103','3104');
-	cityareaname[30]=new Array('Òø´¨','Ê¯×ìÉ½','ÒøÄÏ','¹ÌÔ­');
+	cityareaname[30]=new Array('é“¶å·','çŸ³å˜´å±±','é“¶å—','å›ºåŸ');
 	if (selectP=='32')
-	  { a=32;tempoption=new Option('ĞÂ½®','ĞÂ½®',false,true); }
+	  { a=32;tempoption=new Option('æ–°ç–†','æ–°ç–†',false,true); }
 	else
-	  { tempoption=new Option('ĞÂ½®','ĞÂ½®'); }
+	  { tempoption=new Option('æ–°ç–†','æ–°ç–†'); }
 	eval('document.'+formname+'.'+preP+'.options[32]=tempoption;');
 	cityareacode[31]=new Array('3201','3202','3203','3204','3205','3206','3207','3208','3209','3210','3211','3212','3213');
-	cityareaname[31]=new Array('ÎÚÂ³Ä¾Æë','¿ËÀ­ÂêÒÀ','Ê¯ºÓ×Ó','ÍÂÂ³·¬','¹şÃÜ','ºÍÌï','°¢¿ËËÕ','¿¦Ê²','¿Ë×ÎÀÕËÕ','°ÍÒô¹ùÀã','²ı¼ª','²©¶ûËşÀ­','ÒÁÀç');
+	cityareaname[31]=new Array('ä¹Œé²æœ¨é½','å…‹æ‹‰ç›ä¾','çŸ³æ²³å­','åé²ç•ª','å“ˆå¯†','å’Œç”°','é˜¿å…‹è‹','å–€ä»€','å…‹å­œå‹’è‹','å·´éŸ³éƒ­æ¥','æ˜Œå‰','åšå°”å¡”æ‹‰','ä¼ŠçŠ');
 	if (selectP=='33')
-	  { a=33;tempoption=new Option('Ïã¸Û','Ïã¸Û',false,true); }
+	  { a=33;tempoption=new Option('é¦™æ¸¯','é¦™æ¸¯',false,true); }
 	else
-	  { tempoption=new Option('Ïã¸Û','Ïã¸Û'); }
+	  { tempoption=new Option('é¦™æ¸¯','é¦™æ¸¯'); }
 	eval('document.'+formname+'.'+preP+'.options[33]=tempoption;');
 	cityareacode[32]=new Array();
 	cityareaname[32]=new Array();
 	if (selectP=='34')
-	  { a=34;tempoption=new Option('°ÄÃÅ','°ÄÃÅ',false,true); }
+	  { a=34;tempoption=new Option('æ¾³é—¨','æ¾³é—¨',false,true); }
 	else
-	  { tempoption=new Option('°ÄÃÅ','°ÄÃÅ'); }
+	  { tempoption=new Option('æ¾³é—¨','æ¾³é—¨'); }
 	eval('document.'+formname+'.'+preP+'.options[34]=tempoption;');
 	cityareacode[33]=new Array();
 	cityareaname[33]=new Array();
 	if (selectP=='35')
-	  { a=35;tempoption=new Option('Ì¨Íå','Ì¨Íå',false,true); }
+	  { a=35;tempoption=new Option('å°æ¹¾','å°æ¹¾',false,true); }
 	else
-	  { tempoption=new Option('Ì¨Íå','Ì¨Íå'); }
+	  { tempoption=new Option('å°æ¹¾','å°æ¹¾'); }
 	eval('document.'+formname+'.'+preP+'.options[35]=tempoption;');
 	cityareacode[34]=new Array();
 	cityareaname[34]=new Array();
@@ -400,7 +400,7 @@ function first(preP,preC,formname,selectP,selectC)
          }
      }
  }
-//ÇøÓò±íµ¥½áÊø
+//åŒºåŸŸè¡¨å•ç»“æŸ
 
 
 function gopreview()

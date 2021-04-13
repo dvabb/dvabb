@@ -1,5 +1,5 @@
 /*//////////////////////////////////////////////////////////////////
- * Script For Dvbbs Program -- ±íµ¥¶ÔÏóÏà¹Ø
+ * Script For Dvbbs Program -- è¡¨å•å¯¹è±¡ç›¸å…³
  * Version: 8.3.0
  * Copyright (C) 2000 - 2005 bbs.dvbbs.net
  *
@@ -21,21 +21,21 @@ else{
 	var Dvbbs_bIsNC=true;
 }
 /*
-* ¶¨ÒåÌáÊ¾ĞÅÏ¢
+* å®šä¹‰æç¤ºä¿¡æ¯
 */
-Lang["Msg"]				= "ÌáÊ¾£º";
-Lang["NEED_TEL_NUM"]	= "ÇëÕıÈ·ÌîĞ´µç»°ºÅÂë£¡";
-Lang["NEED_NUM"]		= "ÇëÕıÈ·ÌîĞ´ÊıÖµ!";
-Lang["NOT_DATE"]		= "ÇëÕıÈ·ÌîĞ´»òÑ¡È¡ÕıÈ·µÄÈÕÆÚ!";
-Lang["NO_Checked"]		= "Î´Ñ¡Ôñ£¡";
-Lang["NOT_MIN"]			= "¸ÃÏîÊıÖµ²»ÄÜĞ¡ÓÚ£º"
-Lang["NOT_MAX"]			= "¸ÃÏîÊıÖµ²»ÄÜ´óÓÚ£º"
-Lang["NOT_MAXLen"]		= "×Ö·ûÏŞÖÆ²»Òª³¬¹ı£º"
-Lang["NOT_MINLen"]		= "×Ö·ûÏŞÖÆ²»ÒªĞ¡ÓÚ£º"
-Lang["NEED_English"]	= "Ö»ÄÜÊ¹ÓÃÓ¢ÎÄ×ÖÄ¸¡¢Êı×Ö»òÏÂ»®\"_\"ÌîĞ´¡£"
+Lang["Msg"]				= "æç¤ºï¼š";
+Lang["NEED_TEL_NUM"]	= "è¯·æ­£ç¡®å¡«å†™ç”µè¯å·ç ï¼";
+Lang["NEED_NUM"]		= "è¯·æ­£ç¡®å¡«å†™æ•°å€¼!";
+Lang["NOT_DATE"]		= "è¯·æ­£ç¡®å¡«å†™æˆ–é€‰å–æ­£ç¡®çš„æ—¥æœŸ!";
+Lang["NO_Checked"]		= "æœªé€‰æ‹©ï¼";
+Lang["NOT_MIN"]			= "è¯¥é¡¹æ•°å€¼ä¸èƒ½å°äºï¼š"
+Lang["NOT_MAX"]			= "è¯¥é¡¹æ•°å€¼ä¸èƒ½å¤§äºï¼š"
+Lang["NOT_MAXLen"]		= "å­—ç¬¦é™åˆ¶ä¸è¦è¶…è¿‡ï¼š"
+Lang["NOT_MINLen"]		= "å­—ç¬¦é™åˆ¶ä¸è¦å°äºï¼š"
+Lang["NEED_English"]	= "åªèƒ½ä½¿ç”¨è‹±æ–‡å­—æ¯ã€æ•°å­—æˆ–ä¸‹åˆ’\"_\"å¡«å†™ã€‚"
 
 /*
-* Ìí¼Ó×Ö´®¶ÔÏó·½·¨
+* æ·»åŠ å­—ä¸²å¯¹è±¡æ–¹æ³•
 */
 String.prototype.remove=function(start,length){
 	var s='';
@@ -62,7 +62,7 @@ String.prototype.replaceNewLineChars=function(replacement){
 
 var Dv_Form = new FormObject();
 function FormObject(){
-	// ĞŞ¸Ä textarea ÎÄ±¾ÇøÓò±à¼­À¸¸ß¶È
+	// ä¿®æ”¹ textarea æ–‡æœ¬åŒºåŸŸç¼–è¾‘æ é«˜åº¦
 	this.set_Size = function(objname,num){
 		if (objname=="[object]"){
 			var obj = objname;
@@ -75,7 +75,7 @@ function FormObject(){
 		};
 	};
 
-	//SELECT±íµ¥Ñ¡È¡
+	//SELECTè¡¨å•é€‰å–
 	this.Set_Select = function(objname,Value){
 		if (objname=="[object]"){
 			var obj = objname;
@@ -90,7 +90,7 @@ function FormObject(){
 		};
 	};
 
-	//Weather SELECT±íµ¥Ñ¡È¡
+	//Weather SELECTè¡¨å•é€‰å–
 	this.Weather_Select = function(objname,Value,WeatherSrc,PicPath){
 		if (objname=="[object]"){
 			var obj = objname;
@@ -115,7 +115,7 @@ function FormObject(){
 		}
 	};
 
-	//µ¥Ñ¡±íµ¥Ñ¡È¡
+	//å•é€‰è¡¨å•é€‰å–
 	this.Set_Radio = function(objname,Value){
 		if (objname=="[object]"){
 			var obj = objname;
@@ -131,11 +131,11 @@ function FormObject(){
 	};
 
 	/**
-	* ÎÄ±¾±íµ¥¼ìÑé
+	* æ–‡æœ¬è¡¨å•æ£€éªŒ
 	* <input type="text" onkeyup="javascript:Dv_Form.CheckNumer(this,0,10);" >...
 	*/
 
-	//ÑéÖ¤±íµ¥ÊıÖµ object ±íµ¥¶ÔÏó | n_min×îĞ¡Öµ | n_max ×î´óÖµ
+	//éªŒè¯è¡¨å•æ•°å€¼ object è¡¨å•å¯¹è±¡ | n_minæœ€å°å€¼ | n_max æœ€å¤§å€¼
 	this.CheckNumer = function (Object,n_min,n_max)
 	{
 		var Value = Object.value;
@@ -157,7 +157,7 @@ function FormObject(){
 	};
 
 	/**
-	*ÎÄ±¾ÊäÈëÏŞÖÆ object ±íµ¥¶ÔÏó | n_max ×î´óÖµ 	//onkeydown or onkeyup
+	*æ–‡æœ¬è¾“å…¥é™åˆ¶ object è¡¨å•å¯¹è±¡ | n_max æœ€å¤§å€¼ 	//onkeydown or onkeyup
 	* <input type="text" onkeyup="javascript:Dv_Form.CheckLength(this,255);" >...
 	*/
 	this.CheckLength = function(obj,n_max){
@@ -170,7 +170,7 @@ function FormObject(){
 			};
 		};
 	};
-	//Êä³öÖ¸¶¨ÎÄ¼ş±íµ¥×Ö½ÚÊı
+	//è¾“å‡ºæŒ‡å®šæ–‡ä»¶è¡¨å•å­—èŠ‚æ•°
 	this.GetLength = function(_Getobj,Putobj){
 		var _Putobj = Dvbbs.Objects(Putobj);
 		if (!_Getobj||!_Putobj){alert("test");return false;}
@@ -182,9 +182,9 @@ function FormObject(){
 	};
 
 	/*
-	* ÑÕÉ«Ñ¡È¡Æ÷ ±íµ¥¼°Í¼Æ¬µ×É«¿É¸¶ÉÏÄ¬ÈÏÖµ
-	* img_obj Í¼±ê¶ÔÏó ,input_val Êä³öµ½±íµ¥Ãû
-	* <input type="text" name="setColor" value="#000000"/><img border="0" src="rect.gif" style="cursor:pointer;background-Color:#000000;" onclick="Dv_Form.Getcolor(this,'setColor');" alt="Ñ¡È¡ÑÕÉ«!"/>
+	* é¢œè‰²é€‰å–å™¨ è¡¨å•åŠå›¾ç‰‡åº•è‰²å¯ä»˜ä¸Šé»˜è®¤å€¼
+	* img_obj å›¾æ ‡å¯¹è±¡ ,input_val è¾“å‡ºåˆ°è¡¨å•å
+	* <input type="text" name="setColor" value="#000000"/><img border="0" src="rect.gif" style="cursor:pointer;background-Color:#000000;" onclick="Dv_Form.Getcolor(this,'setColor');" alt="é€‰å–é¢œè‰²!"/>
 	*/
 	var ColorImg;
 	var ColorValue;
@@ -221,7 +221,7 @@ function FormObject(){
 	};
 
 	/**
-	*ÎÄ±¾×Ö·ûÊäÈëÏŞÖÆ object ±íµ¥¶ÔÏó | n_max ×î´óÖµ 	//onkeydown or onkeyup
+	*æ–‡æœ¬å­—ç¬¦è¾“å…¥é™åˆ¶ object è¡¨å•å¯¹è±¡ | n_max æœ€å¤§å€¼ 	//onkeydown or onkeyup
 	* <input type="text" onkeyup="javascript:Dv_Form.CheckEnglish(this);" >...
 	*/
 	this.CheckEnglish = function(obj){
@@ -236,7 +236,7 @@ function FormObject(){
 }
 
 /*
-* »ñÈ¡ÌáÊ¾ĞÅÏ¢
+* è·å–æç¤ºä¿¡æ¯
 * @return String
 */
 	function getMsg(pKey) {
@@ -244,12 +244,12 @@ function FormObject(){
 	}
 
 /*
-*	»ñÈ¡ÏàÓ¦¸ñÊ½µÄÈÕÆÚ
-*	pValÎªÔö¼ÓµÄÌìÊı£¬¿ÉÎª+/-£¬½«·µ»¹¾àÀëµ±ÌìÌìÊıµÄÈÕÆÚ£»
-*	µ± pDiv Îª'/'Ê±£¬·µ»¹ '2004/11/01'µÄ¸ñÊ½.
+*	è·å–ç›¸åº”æ ¼å¼çš„æ—¥æœŸ
+*	pValä¸ºå¢åŠ çš„å¤©æ•°ï¼Œå¯ä¸º+/-ï¼Œå°†è¿”è¿˜è·ç¦»å½“å¤©å¤©æ•°çš„æ—¥æœŸï¼›
+*	å½“ pDiv ä¸º'/'æ—¶ï¼Œè¿”è¿˜ '2004/11/01'çš„æ ¼å¼.
 *   getDate(0,"/")
-*   @param pVal ¾àÀëÌìÊı.
-*   @param pDiv ·Ö¸ô·û.
+*   @param pVal è·ç¦»å¤©æ•°.
+*   @param pDiv åˆ†éš”ç¬¦.
 *	@return String
 */
 	function getDate(pVal, pDiv) {
@@ -267,7 +267,7 @@ function FormObject(){
 
 
 /*
-* ¼ì²âÊÇ·ñÖ»ÓĞÓ¢ÎÄ¼°Êı×Ö¼°"_"
+* æ£€æµ‹æ˜¯å¦åªæœ‰è‹±æ–‡åŠæ•°å­—åŠ"_"
 * @param pKey String
 * @return boolean
 */
@@ -288,7 +288,7 @@ function FormObject(){
 
 
 /*
-* ¼ì²âÊÇ·ñº¬ÓĞÖĞÎÄ
+* æ£€æµ‹æ˜¯å¦å«æœ‰ä¸­æ–‡
 * @param pKey String
 * @return boolean
 */
@@ -301,8 +301,8 @@ function FormObject(){
 	};
 
 /*
-* Email ¼ì²â
-* @param str ¼ì²â×Ö´®
+* Email æ£€æµ‹
+* @param str æ£€æµ‹å­—ä¸²
 * @return boolean
 */
 	function CheckEmail(str)
@@ -315,7 +315,7 @@ function FormObject(){
 
 /*
 *   isNumber('1234')
-*   @param pVal  ¼ì²â×Ö´®
+*   @param pVal  æ£€æµ‹å­—ä¸²
 *	@return boolean
 */
 	function isPhone(pVal)
@@ -333,8 +333,8 @@ function FormObject(){
 	};
 
 /*
-*	ÑéÖ¤ÊÇ·ñÉí·İÖ¤ºÅÂë
-*	@param strValue  ¼ì²â×Ö´®
+*	éªŒè¯æ˜¯å¦èº«ä»½è¯å·ç 
+*	@param strValue  æ£€æµ‹å­—ä¸²
 *	@return boolean
 */
 	function isCertificateNum(strValue)
@@ -348,8 +348,8 @@ function FormObject(){
 	};
 
 /*
-* ²éÕÒÌæ»»º¯Êı
-*  strÔ­×Ö´®£¬aÒª»»µôpattern£¬b»»³É×Ö´®£¬iÊÇ·ñÇø·Ö´óĞ¡Ğ´£¬MsgÌáÊ¾ĞÅÏ¢
+* æŸ¥æ‰¾æ›¿æ¢å‡½æ•°
+*  stråŸå­—ä¸²ï¼Œaè¦æ¢æ‰patternï¼Œbæ¢æˆå­—ä¸²ï¼Œiæ˜¯å¦åŒºåˆ†å¤§å°å†™ï¼ŒMsgæç¤ºä¿¡æ¯
 */
 	function Replace(str,a,b,i,Msg){	
 		a = a.replace("?","\\?");
@@ -365,7 +365,7 @@ function FormObject(){
 	};
 
 /*
-OchangeSel_Cat ObjNameÁĞ±í±íµ¥Ãû£¬StypeËùÊô·ÖÀà£¬Val=CATIDµÄÖµ¡£
+OchangeSel_Cat ObjNameåˆ—è¡¨è¡¨å•åï¼ŒStypeæ‰€å±åˆ†ç±»ï¼ŒVal=CATIDçš„å€¼ã€‚
 */
 function OchangeSel_Cat(ObjName,Stype,Val){
 	var Obj = Dvbbs.Objects(ObjName);
@@ -398,7 +398,7 @@ function OchangeSel_Cat(ObjName,Stype,Val){
 }
 
 /*
-±à¼­Æ÷Ïà¹Ø¹¦ÄÜ
+ç¼–è¾‘å™¨ç›¸å…³åŠŸèƒ½
 */
 
 function getContent(objname){
@@ -444,7 +444,7 @@ function GetNode(objname,toobj,Maxlen){
 			toobj.value = Selval;
 		}else
 		{
-			alert("ÇëÑ¡È¡×÷ÎªÕªÒªµÄÄÚÈİ£¡");
+			alert("è¯·é€‰å–ä½œä¸ºæ‘˜è¦çš„å†…å®¹ï¼");
 		};
 	};
 }
@@ -457,27 +457,27 @@ function PlayUbb(ObjName,code){
 	switch (code)
 	{
 		case 'FLASH':
-			txt1 = "Flash¿í¶È£¬¸ß¶È";
+			txt1 = "Flashå®½åº¦ï¼Œé«˜åº¦";
 			val1 = "500,350";
-			txt2 = "Flash ÎÄ¼şµÄµØÖ·";
+			txt2 = "Flash æ–‡ä»¶çš„åœ°å€";
 			val2 = "http://"
 			break;
 		case 'RM':
-			txt1 = "ÊÓÆµµÄ¿í¶È£¬¸ß¶È£¬²¥·Å²ÎÊı\r(²¥·Å²ÎÊı£º0£½ÊÖ¶¯²¥·Å£¬1£½×Ô¶¯²¥·Å)";
+			txt1 = "è§†é¢‘çš„å®½åº¦ï¼Œé«˜åº¦ï¼Œæ’­æ”¾å‚æ•°\r(æ’­æ”¾å‚æ•°ï¼š0ï¼æ‰‹åŠ¨æ’­æ”¾ï¼Œ1ï¼è‡ªåŠ¨æ’­æ”¾)";
 			val1 = "500,350,1";
-			txt2 = "ÊÓÆµÎÄ¼şµÄµØÖ·";
+			txt2 = "è§†é¢‘æ–‡ä»¶çš„åœ°å€";
 			val2 = "http://"
 			break;
 		case 'MP':
-			txt1 = "ÊÓÆµµÄ¿í¶È£¬¸ß¶È£¬²¥·Å²ÎÊı\r(²¥·Å²ÎÊı£º0£½ÊÖ¶¯²¥·Å£¬1£½×Ô¶¯²¥·Å)";
+			txt1 = "è§†é¢‘çš„å®½åº¦ï¼Œé«˜åº¦ï¼Œæ’­æ”¾å‚æ•°\r(æ’­æ”¾å‚æ•°ï¼š0ï¼æ‰‹åŠ¨æ’­æ”¾ï¼Œ1ï¼è‡ªåŠ¨æ’­æ”¾)";
 			val1 = "500,350,1";
-			txt2 = "ÊÓÆµÎÄ¼şµÄµØÖ·";
+			txt2 = "è§†é¢‘æ–‡ä»¶çš„åœ°å€";
 			val2 = "http://"
 			break;
 		case 'QT':
-			txt1 = "ÊÓÆµµÄ¿í¶È£¬¸ß¶È";
+			txt1 = "è§†é¢‘çš„å®½åº¦ï¼Œé«˜åº¦";
 			val1 = "500,350";
-			txt2 = "ÊÓÆµÎÄ¼şµÄµØÖ·";
+			txt2 = "è§†é¢‘æ–‡ä»¶çš„åœ°å€";
 			val2 = "http://"
 			break;
 		default : return;
@@ -502,7 +502,7 @@ function CheckPostForm(Obj){
 	{
 		if (Obj.sCatID.value=="-1"||Obj.sCatID.value=="")
 		{
-			alert("ÇëÑ¡È¡·¢±íµÄ»°Ìâ£¡");
+			alert("è¯·é€‰å–å‘è¡¨çš„è¯é¢˜ï¼");
 			return false;
 		};
 	};
@@ -510,7 +510,7 @@ function CheckPostForm(Obj){
 	{
 		if (Obj.Catid.value=="-1"||Obj.Catid.value=="")
 		{
-			alert("ÇëÑ¡È¡ÏàÓ¦µÄÀ¸Ä¿»ò½¨Á¢ºÃÀ¸Ä¿ºóÔÙ½øĞĞ·¢±í£¡");
+			alert("è¯·é€‰å–ç›¸åº”çš„æ ç›®æˆ–å»ºç«‹å¥½æ ç›®åå†è¿›è¡Œå‘è¡¨ï¼");
 			return false;
 		};
 	};

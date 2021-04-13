@@ -454,8 +454,8 @@ Dv_Win_Modal._initialize = function()
 
 	var closeLink = document.createElement("a");
 	closeLink.href = "javascript:void(0);";
-	closeLink.title = "¹Ø±Õ";
-	closeLink.innerText = "¹Ø±Õ"
+	closeLink.title = "å…³é—­";
+	closeLink.innerText = "å…³é—­"
 	closeLink.className = "down_pop_close";
 	closeLink.onclick = new Function('window.' + this._variableName + '.Close();');
 	this._modalTitle.appendChild(closeLink);

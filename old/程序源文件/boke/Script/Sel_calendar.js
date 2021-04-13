@@ -1,11 +1,11 @@
 //================================================================================
-//ÈÕÀú
+//æ—¥å†
 var date_start,date_end,g_object
 var today = new Date();
 var separator="-";
 var inover=false;
 
-//mode :Ê±¼ä±ä»»µÄÀàĞÍ0-Äê 1-ÔÂ 2-Ö±½ÓÑ¡ÔñÔÂ
+//mode :æ—¶é—´å˜æ¢çš„ç±»å‹0-å¹´ 1-æœˆ 2-ç›´æ¥é€‰æ‹©æœˆ
 function change_date(temp,mode)
 {
 	var t_month,t_year
@@ -52,7 +52,7 @@ function change_date(temp,mode)
     /****************MODIFY END***********************/
 }
 
-//³õÊ¼»¯ÈÕÀú
+//åˆå§‹åŒ–æ—¥å†
 function init(d_start,d_end)
 {
      var temp_str;
@@ -85,7 +85,7 @@ function init(d_start,d_end)
      temp_str+="<input type=\"Button\" value=\">>\" onclick=\"change_date(1,1)\" onmouseover=\"getlayerfocus()\"  style=\"color: #000099; background-color: #BFBFBF; cursor: hand\">";
 
      temp_str+="</td></tr><tr><td onmouseover=\"overcolor(this)\" align=center>"
-     temp_str+="<font color=red>ÈÕ</font></td><td align=center>Ò»</td><td align=center>¶ş</td><td align=center>Èı</td><td align=center>ËÄ</td><td align=center>Îå</td><td align=center>Áù</td></tr>";
+     temp_str+="<font color=red>æ—¥</font></td><td align=center>ä¸€</td><td align=center>äºŒ</td><td align=center>ä¸‰</td><td align=center>å››</td><td align=center>äº”</td><td align=center>å…­</td></tr>";
      for (i=1 ;i<=6 ;i++)
      {
      temp_str+="<tr>";
@@ -129,7 +129,7 @@ function set_cele_date(year,month)
     }
 }
 
-//s_object£ºµã»÷µÄ¶ÔÏó£»d_start-d_endÓĞĞ§µÄÊ±¼äÇø¶Î£»ĞèÒª´æ·ÅÖµµÄ¿Ø¼ş£»
+//s_objectï¼šç‚¹å‡»çš„å¯¹è±¡ï¼›d_start-d_endæœ‰æ•ˆçš„æ—¶é—´åŒºæ®µï¼›éœ€è¦å­˜æ”¾å€¼çš„æ§ä»¶ï¼›
 function show_cele_date(eP,d_start,d_end,t_object)
 {
 window.cele_date.style.display="";
@@ -181,7 +181,7 @@ if (t_d<=date_end && t_d>=date_start)
 var year = cele_date_year.value;
 var month = cele_date_month.value;
 var day = t_object.innerHTML;
-//ÒÔYYYY-MM-DD¸ñÊ½ÏÔÊ¾
+//ä»¥YYYY-MM-DDæ ¼å¼æ˜¾ç¤º
 //if (parseInt(month)<10) month = "0" + month;
 //if (parseInt(day)<10) day = "0" + day;
 
@@ -240,5 +240,5 @@ function lostlayerfocus()
 	inover=false;
 }
 init();
-//ÈÕÀú½áÊø
+//æ—¥å†ç»“æŸ
 //================================================================================

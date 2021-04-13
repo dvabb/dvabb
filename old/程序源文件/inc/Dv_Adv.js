@@ -1,4 +1,4 @@
-//浮动广告
+//娴姩骞垮憡
 var brOK=false;
 var mie=false;
 var vmin=2;
@@ -110,7 +110,7 @@ function move_ad(Forum_ads_3,Forum_ads_4,Forum_ads_5,Forum_ads_6)
 	jobads();
 }
 
-//右边固定广告
+//鍙宠竟鍥哄畾骞垮憡
 function StayCorner(){
 	var DivObj = document.getElementById("Corner");
 	if (DivObj){

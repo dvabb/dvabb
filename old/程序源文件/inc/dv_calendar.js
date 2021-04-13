@@ -1,34 +1,34 @@
-//edit by Óê¡¤Âş²½
+//edit by é›¨Â·æ¼«æ­¥
 var DS_x,DS_y;
-function dateSelector()  //¹¹ÔìdateSelector¶ÔÏó£¬ÓÃÀ´ÊµÏÖÒ»¸öÈÕÀúĞÎÊ½µÄÈÕÆÚÊäÈë¿ò¡£
+function dateSelector()  //æ„é€ dateSelectorå¯¹è±¡ï¼Œç”¨æ¥å®ç°ä¸€ä¸ªæ—¥å†å½¢å¼çš„æ—¥æœŸè¾“å…¥æ¡†ã€‚
 {
   var myDate=new Date();
-  this.year=myDate.getFullYear();  //¶¨ÒåyearÊôĞÔ£¬Äê·İ£¬Ä¬ÈÏÖµÎªµ±Ç°ÏµÍ³Äê·İ¡£
-  this.month=myDate.getMonth()+1;  //¶¨ÒåmonthÊôĞÔ£¬ÔÂ·İ£¬Ä¬ÈÏÖµÎªµ±Ç°ÏµÍ³ÔÂ·İ¡£
-  this.date=myDate.getDate();  //¶¨ÒådateÊôĞÔ£¬ÈÕ£¬Ä¬ÈÏÖµÎªµ±Ç°ÏµÍ³µÄÈÕ¡£
-  this.inputName='';  //¶¨ÒåinputNameÊôĞÔ£¬¼´ÊäÈë¿òµÄname£¬Ä¬ÈÏÖµÎª¿Õ¡£×¢Òâ£ºÔÚÍ¬Ò»Ò³ÖĞ³öÏÖ¶à¸öÈÕÆÚÊäÈë¿ò£¬²»ÄÜÓĞÖØ¸´µÄname£¡
-  this.display=display;  //¶¨Òådisplay·½·¨£¬ÓÃÀ´ÏÔÊ¾ÈÕÆÚÊäÈë¿ò¡£
-  this.defvalue='';//¶¨ÒåÎÄ±¾¿òµÄÄ¬ÈÏÖµ¡£
+  this.year=myDate.getFullYear();  //å®šä¹‰yearå±æ€§ï¼Œå¹´ä»½ï¼Œé»˜è®¤å€¼ä¸ºå½“å‰ç³»ç»Ÿå¹´ä»½ã€‚
+  this.month=myDate.getMonth()+1;  //å®šä¹‰monthå±æ€§ï¼Œæœˆä»½ï¼Œé»˜è®¤å€¼ä¸ºå½“å‰ç³»ç»Ÿæœˆä»½ã€‚
+  this.date=myDate.getDate();  //å®šä¹‰dateå±æ€§ï¼Œæ—¥ï¼Œé»˜è®¤å€¼ä¸ºå½“å‰ç³»ç»Ÿçš„æ—¥ã€‚
+  this.inputName='';  //å®šä¹‰inputNameå±æ€§ï¼Œå³è¾“å…¥æ¡†çš„nameï¼Œé»˜è®¤å€¼ä¸ºç©ºã€‚æ³¨æ„ï¼šåœ¨åŒä¸€é¡µä¸­å‡ºç°å¤šä¸ªæ—¥æœŸè¾“å…¥æ¡†ï¼Œä¸èƒ½æœ‰é‡å¤çš„nameï¼
+  this.display=display;  //å®šä¹‰displayæ–¹æ³•ï¼Œç”¨æ¥æ˜¾ç¤ºæ—¥æœŸè¾“å…¥æ¡†ã€‚
+  this.defvalue='';//å®šä¹‰æ–‡æœ¬æ¡†çš„é»˜è®¤å€¼ã€‚
 }
-function display()  //¶¨ÒådateSelectorµÄdisplay·½·¨£¬Ëü½«ÊµÏÖÒ»¸öÈÕÀúĞÎÊ½µÄÈÕÆÚÑ¡Ôñ¿ò¡£
+function display()  //å®šä¹‰dateSelectorçš„displayæ–¹æ³•ï¼Œå®ƒå°†å®ç°ä¸€ä¸ªæ—¥å†å½¢å¼çš„æ—¥æœŸé€‰æ‹©æ¡†ã€‚
 {
-  var week=new Array('ÈÕ','Ò»','¶ş','Èı','ËÄ','Îå','Áù');
+  var week=new Array('æ—¥','ä¸€','äºŒ','ä¸‰','å››','äº”','å…­');
   document.write("<style type=text/css>");
-  document.write("  .ds_font td { font: normal 12px ËÎÌå; color: #000000; }");
+  document.write("  .ds_font td { font: normal 12px å®‹ä½“; color: #000000; }");
   document.write("  .ds_border  { border: 1px solid #000000; cursor: hand; background-color: #DDDDDD }");
   document.write("  .ds_border2  { border: 1px solid #000000; cursor: hand; background-color: #DDDDDD }");
   document.write("</style>");
   document.write("<input style='text-align:center;' type='text' id='DS_"+this.inputName+"' name='"+this.inputName+"' value='"+this.defvalue+"'>");
-  document.write("<button style='width:60px;height:23px;font-size:12px;vertical-align:middle;margin:1px;border:1px solid #A4B3C8;background-color:#DFE7EF;' type=button onclick=showdiv(this.nextSibling) onfocus=this.blur()>Ñ¡ÔñÈÕÆÚ</button>");
+  document.write("<button style='width:60px;height:23px;font-size:12px;vertical-align:middle;margin:1px;border:1px solid #A4B3C8;background-color:#DFE7EF;' type=button onclick=showdiv(this.nextSibling) onfocus=this.blur()>é€‰æ‹©æ—¥æœŸ</button>");
   document.write("<div id='selector' style='position:absolute;display:none;text-align:center;width:0px;height:0px;overflow:visible' onselectstart='return false;'>");
   document.write("  <div style='position:absolute;left:-60px;top:20px;width:142px;height:165px;background-color:#F6F6F6;border:1px solid #245B7D;' class=ds_font>");
   document.write("    <table cellpadding=0 cellspacing=1 width=140 height=20 bgcolor=#CEDAE7 onmousedown='DS_x=event.x-parentNode.style.pixelLeft;DS_y=event.y-parentNode.style.pixelTop;setCapture();' onmouseup='releaseCapture();' onmousemove='dsMove(this.parentNode)' style='cursor:move;'>");
   document.write("      <tr align=center>");
-  document.write("        <td width=12% onmouseover=this.className='ds_border' onmouseout=this.className='' onclick=subYear(this) title='¼õĞ¡Äê·İ'><<</td>");
-  document.write("        <td width=12% onmouseover=this.className='ds_border' onmouseout=this.className='' onclick=subMonth(this) title='¼õĞ¡ÔÂ·İ'><</td>");
-  document.write("        <td width=52%><b>"+this.year+"</b><b>Äê</b><b>"+this.month+"</b><b>ÔÂ</b></td>");
-  document.write("        <td width=12% onmouseover=this.className='ds_border' onmouseout=this.className='' onclick=addMonth(this) title='Ôö¼ÓÔÂ·İ'>></td>");
-  document.write("        <td width=12% onmouseover=this.className='ds_border' onmouseout=this.className='' onclick=addYear(this) title='Ôö¼ÓÄê·İ'>>></td>");
+  document.write("        <td width=12% onmouseover=this.className='ds_border' onmouseout=this.className='' onclick=subYear(this) title='å‡å°å¹´ä»½'><<</td>");
+  document.write("        <td width=12% onmouseover=this.className='ds_border' onmouseout=this.className='' onclick=subMonth(this) title='å‡å°æœˆä»½'><</td>");
+  document.write("        <td width=52%><b>"+this.year+"</b><b>å¹´</b><b>"+this.month+"</b><b>æœˆ</b></td>");
+  document.write("        <td width=12% onmouseover=this.className='ds_border' onmouseout=this.className='' onclick=addMonth(this) title='å¢åŠ æœˆä»½'>></td>");
+  document.write("        <td width=12% onmouseover=this.className='ds_border' onmouseout=this.className='' onclick=addYear(this) title='å¢åŠ å¹´ä»½'>>></td>");
   document.write("      </tr>");
   document.write("    </table>");
   document.write("    <table cellpadding=0 cellspacing=0 width=140 height=20 onmousedown='DS_x=event.x-parentNode.style.pixelLeft;DS_y=event.y-parentNode.style.pixelTop;setCapture();' onmouseup='releaseCapture();' onmousemove='dsMove(this.parentNode)' style='cursor:move;'>");
@@ -46,7 +46,7 @@ function display()  //¶¨ÒådateSelectorµÄdisplay·½·¨£¬Ëü½«ÊµÏÖÒ»¸öÈÕÀúĞÎÊ½µÄÈÕÆÚÑ
     document.write("    </tr>");
   }
   document.write("    </table>");
-  document.write("    <span style=cursor:hand onclick=showdiv(this.parentNode.parentNode)>¡¾¹Ø±Õ¡¿</span>");
+  document.write("    <span style=cursor:hand onclick=showdiv(this.parentNode.parentNode)>ã€å…³é—­ã€‘</span>");
   document.write("  </div>");
   document.write("</div>");
   dateShow(document.all("DS_"+this.inputName).nextSibling.nextSibling.childNodes[0].childNodes[2],this.year,this.month)
@@ -58,19 +58,19 @@ function showdiv(obj)
 	else
 		obj.style.display="block";
 }
-function subYear(obj)  //¼õĞ¡Äê·İ
+function subYear(obj)  //å‡å°å¹´ä»½
 {
   var myObj=obj.parentNode.parentNode.parentNode.cells[2].childNodes;
   myObj[0].innerHTML=eval(myObj[0].innerHTML)-1;
   dateShow(obj.parentNode.parentNode.parentNode.nextSibling.nextSibling,eval(myObj[0].innerHTML),eval(myObj[2].innerHTML))
 }
-function addYear(obj)  //Ôö¼ÓÄê·İ
+function addYear(obj)  //å¢åŠ å¹´ä»½
 {
   var myObj=obj.parentNode.parentNode.parentNode.cells[2].childNodes;
   myObj[0].innerHTML=eval(myObj[0].innerHTML)+1;
   dateShow(obj.parentNode.parentNode.parentNode.nextSibling.nextSibling,eval(myObj[0].innerHTML),eval(myObj[2].innerHTML))
 }
-function subMonth(obj)  //¼õĞ¡ÔÂ·İ
+function subMonth(obj)  //å‡å°æœˆä»½
 {
   var myObj=obj.parentNode.parentNode.parentNode.cells[2].childNodes;
   var month=eval(myObj[2].innerHTML)-1;
@@ -82,7 +82,7 @@ function subMonth(obj)  //¼õĞ¡ÔÂ·İ
   myObj[2].innerHTML=month;
   dateShow(obj.parentNode.parentNode.parentNode.nextSibling.nextSibling,eval(myObj[0].innerHTML),eval(myObj[2].innerHTML))
 }
-function addMonth(obj)  //Ôö¼ÓÔÂ·İ
+function addMonth(obj)  //å¢åŠ æœˆä»½
 {
   var myObj=obj.parentNode.parentNode.parentNode.cells[2].childNodes;
   var month=eval(myObj[2].innerHTML)+1;
@@ -94,7 +94,7 @@ function addMonth(obj)  //Ôö¼ÓÔÂ·İ
   myObj[2].innerHTML=month;
   dateShow(obj.parentNode.parentNode.parentNode.nextSibling.nextSibling,eval(myObj[0].innerHTML),eval(myObj[2].innerHTML))
 }
-function dateShow(obj,year,month)  //ÏÔÊ¾¸÷ÔÂ·İµÄÈÕ
+function dateShow(obj,year,month)  //æ˜¾ç¤ºå„æœˆä»½çš„æ—¥
 {
   var myDate=new Date(year,month-1,1);
   var today=new Date();
@@ -139,7 +139,7 @@ function dateShow(obj,year,month)  //ÏÔÊ¾¸÷ÔÂ·İµÄÈÕ
       obj.cells[i+day].className='ds_border2';
   }
 }
-function getvalue(obj,inputObj)  //°ÑÑ¡ÔñµÄÈÕÆÚ´«¸øÊäÈë¿ò
+function getvalue(obj,inputObj)  //æŠŠé€‰æ‹©çš„æ—¥æœŸä¼ ç»™è¾“å…¥æ¡†
 {
   var myObj=inputObj.nextSibling.nextSibling.childNodes[0].childNodes[0].cells[2].childNodes;
   if(obj.innerHTML)
@@ -149,7 +149,7 @@ function getvalue(obj,inputObj)  //°ÑÑ¡ÔñµÄÈÕÆÚ´«¸øÊäÈë¿ò
     obj.parentNode.parentNode.parentNode.cells[i].className='';
   obj.className='ds_border2'
 }
-function dsMove(obj)  //ÊµÏÖ²ãµÄÍÏÒÆ
+function dsMove(obj)  //å®ç°å±‚çš„æ‹–ç§»
 {
   if(event.button==1)
   {

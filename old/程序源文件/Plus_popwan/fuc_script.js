@@ -3,9 +3,9 @@ POPWAN API SCRIPT CODE
 
 */
 /*
-Ê¹¿ò¼Ü×ÔÊÊÓ¦ÄÚÈİÒ³¸ß¶È
+ä½¿æ¡†æ¶è‡ªé€‚åº”å†…å®¹é¡µé«˜åº¦
 <iframe id="pw_frame" src="@url" scrolling="no" frameborder="0"></iframe>
-Ê¹ÓÃ£ºwindow.setInterval("reinitIframe('pw_frame')", 200);
+ä½¿ç”¨ï¼šwindow.setInterval("reinitIframe('pw_frame')", 200);
 */
 function reinitIframe(FID){
 	var iframe = document.getElementById(FID);
@@ -25,7 +25,7 @@ function checkHeight(FID) {
 	alert("bHeight:" + bHeight + ", dHeight:" + dHeight);
 }
 
-/*¸´ÖÆÊÂ¼ş*/
+/*å¤åˆ¶äº‹ä»¶*/
 function copyText(obj)
 {
 	if (!obj)
@@ -38,7 +38,7 @@ function copyText(obj)
     }
     obj.select(); 
     copyToClipboard(obj.value);
-    alert("¿½±´³É¹¦£¡");
+    alert("æ‹·è´æˆåŠŸï¼");
 }
 
 function copyToClipboard(txt) {  
@@ -58,7 +58,7 @@ function copyToClipboard(txt) {
         }  
         catch (e)  
         {  
-            alert("ÄúÊ¹ÓÃµÄä¯ÀÀÆ÷²»Ö§³Ö´Ë¸´ÖÆ¹¦ÄÜ£¬ÇëÊ¹ÓÃctrl+c»òÕßä¯ÀÀÆ÷ÓÒ¼ü¸´ÖÆ");  
+            alert("æ‚¨ä½¿ç”¨çš„æµè§ˆå™¨ä¸æ”¯æŒæ­¤å¤åˆ¶åŠŸèƒ½ï¼Œè¯·ä½¿ç”¨ctrl+cæˆ–è€…æµè§ˆå™¨å³é”®å¤åˆ¶");  
         }  
         var clip = Components.classes['@mozilla.org/widget/clipboard;1'].createInstance(Components.interfaces.nsIClipboard);  
         if (!clip)  

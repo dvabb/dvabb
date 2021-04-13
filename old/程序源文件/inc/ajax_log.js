@@ -118,7 +118,7 @@ ajaxpost.onsuccess=function(winclosed)
 		xcount+=1;		
 		//setTimeout('document.getElementById("dvlog").style.display="none"',300);	
 		//setTimeout('document.getElementById("trh").style.display="none"',300);
-        if (xcount>200) //200´ÎµÇÂ¼Ê§°Üºó²Ù×÷,ÒòÎªÓĞÓïÒôÑéÖ¤Âë´Ë´¦×ö´Ë¸ü»»
+        if (xcount>200) //200æ¬¡ç™»å½•å¤±è´¥åæ“ä½œ,å› ä¸ºæœ‰è¯­éŸ³éªŒè¯ç æ­¤å¤„åšæ­¤æ›´æ¢
 		{
 			var cookieEnabled=(navigator.cookieEnabled)? true : false;
 			if (cookieEnabled){		
@@ -147,7 +147,7 @@ function postErr(str,tp)
 	}
 	else
 	{
-		lg.innerHTML='<img src="images/loading_small.gif" alt="µÇÂ¼ÖĞ">µÇÂ¼ÖĞ...';
+		lg.innerHTML='<img src="images/loading_small.gif" alt="ç™»å½•ä¸­">ç™»å½•ä¸­...';
 	}
 }
 function postErr2(str,tp)
@@ -162,7 +162,7 @@ function postErr2(str,tp)
 	}
 	else
 	{
-		lg.innerHTML='<img src="images/loading_small.gif" alt="µÇÂ¼ÖĞ">µÇÂ¼ÖĞ...';
+		lg.innerHTML='<img src="images/loading_small.gif" alt="ç™»å½•ä¸­">ç™»å½•ä¸­...';
 	}
 }
 
@@ -170,16 +170,16 @@ function checkLogin()
 {
 	var a=arguments;
 	var theform=a[0]||document.forms[0];
-	var winclosed=a[1]||'nowinclosed';//ÊÇ·ñ¹Ø±Õ´°¿Ú
+	var winclosed=a[1]||'nowinclosed';//æ˜¯å¦å…³é—­çª—å£
 	if (theform.username.value=="")
 	{		
-		postErr("ÇëÊäÈëÄúµÄÓÃ»§Ãû",0);
+		postErr("è¯·è¾“å…¥æ‚¨çš„ç”¨æˆ·å",0);
 		theform.username.focus();
 		return false;
 	}
 	if (theform.password.value=="" || theform.password.value.length<6)
 	{
-		postErr("ÇëÊäÈëÄúµÄÃÜÂë",0);
+		postErr("è¯·è¾“å…¥æ‚¨çš„å¯†ç ",0);
 		theform.password.focus();
 		return false;
 	}
@@ -195,18 +195,18 @@ function checkLogin_win()
 {
 	var a=arguments;
 	var theform=a[0]||document.forms[0];
-	var evt=a[1]||'event';//ÊÇ·ñ¹Ø±Õ´°¿Ú
+	var evt=a[1]||'event';//æ˜¯å¦å…³é—­çª—å£
 	PrEvent(evt);
-	var winclosed=a[2]||'nowinclosed';//ÊÇ·ñ¹Ø±Õ´°¿Ú
+	var winclosed=a[2]||'nowinclosed';//æ˜¯å¦å…³é—­çª—å£
 	if (theform.username.value=="")
 	{		
-		postErr2("ÇëÊäÈëÄúµÄÓÃ»§Ãû",0);
+		postErr2("è¯·è¾“å…¥æ‚¨çš„ç”¨æˆ·å",0);
 		theform.username.focus();
 		return false;
 	}
 	if (theform.password.value=="" || theform.password.value.length<6)
 	{
-		postErr2("ÇëÊäÈëÄúµÄÃÜÂë",0);
+		postErr2("è¯·è¾“å…¥æ‚¨çš„å¯†ç ",0);
 		theform.password.focus();
 		return false;
 	}
@@ -250,8 +250,8 @@ function delCookie(name)
 }
 /*
 var cookieEnabled=(navigator.cookieEnabled)? true : false
-//ÅĞ¶ÏcookieÊÇ·ñ¿ªÆô
-//Èç¹ûä¯ÀÀÆ÷²»ÊÇie4+»òns6+
+//åˆ¤æ–­cookieæ˜¯å¦å¼€å¯
+//å¦‚æœæµè§ˆå™¨ä¸æ˜¯ie4+æˆ–ns6+
 if (typeof navigator.cookieEnabled=="undefined" && !cookieEnabled)
 { 
 	document.cookie="testcookie"

@@ -1,9 +1,9 @@
 <!--
-var useAjaxPost = 1 ; // ÊÇ·ñ²ÉÓÃajax·½Ê½Ìá½» 1ÎªÊÇ  0Îª·ñ
-var post_time=10;  //µ¹¼ÆÊ± ÃëÊı
+var useAjaxPost = 1 ; // æ˜¯å¦é‡‡ç”¨ajaxæ–¹å¼æäº¤ 1ä¸ºæ˜¯  0ä¸ºå¦
+var post_time=10;  //å€’è®¡æ—¶ ç§’æ•°
 var n=post_time;
-var post=0; //ÓÃÓÚ½ûÖ¹ÖØ¸´Ìá½» Îğ¸Ä
-var quoteMode=0; //1Îª¿ÉÒÔÇ¶Ì×ÒıÓÃ 0Îª·ñ
+var post=0; //ç”¨äºç¦æ­¢é‡å¤æäº¤ å‹¿æ”¹
+var quoteMode=0; //1ä¸ºå¯ä»¥åµŒå¥—å¼•ç”¨ 0ä¸ºå¦
 
 var j$=function(id) {
 	var itm = null;
@@ -48,9 +48,9 @@ function reply(id,userName,postTime,oDvEdit){
 
 		oDvEdit.clear();
 		if(2!=Dvbbs_Mode)
-			oDvEdit.insert('<div class=quote><b>ÒÔÏÂÊÇÒıÓÃ<i>'+userName+'</i>ÔÚ'+postTime+'µÄ·¢ÑÔ£º</b><br>'+content+'</div><p></p>');
+			oDvEdit.insert('<div class=quote><b>ä»¥ä¸‹æ˜¯å¼•ç”¨<i>'+userName+'</i>åœ¨'+postTime+'çš„å‘è¨€ï¼š</b><br>'+content+'</div><p></p>');
 		else
-			oDvEdit.insert('[QUOTE][B]ÒÔÏÂÊÇÒıÓÃ[I]'+userName+'[/I]ÔÚ'+postTime+'µÄ·¢ÑÔ£º[/B][BR]'+content+'[/QUOTE]');
+			oDvEdit.insert('[QUOTE][B]ä»¥ä¸‹æ˜¯å¼•ç”¨[I]'+userName+'[/I]åœ¨'+postTime+'çš„å‘è¨€ï¼š[/B][BR]'+content+'[/QUOTE]');
 	}	
 }
 
@@ -61,7 +61,7 @@ function readyPost(){
 	if (j$("errinfo")) {j$("errinfo").innerHTML = "";}
 	if (j$("ajaxMsg_1")){
 		j$("ajaxMsg_1").style.display = "";
-		j$("ajaxMsg_1").innerHTML = '<img src="images/loading_small.gif" width="16" height="16" alt="Loading..." />&nbsp;²Ù×÷ĞÅÏ¢£º<font color="#FF9900">ÕıÔÚÌá½»Êı¾İ£¬ÇëÉÔºó...</font>'
+		j$("ajaxMsg_1").innerHTML = '<img src="images/loading_small.gif" width="16" height="16" alt="Loading..." />&nbsp;æ“ä½œä¿¡æ¯ï¼š<font color="#FF9900">æ­£åœ¨æäº¤æ•°æ®ï¼Œè¯·ç¨å...</font>'
 	}
 }
 
@@ -70,7 +70,7 @@ function postSucceed(str){
 	if (j$("errinfo")) {j$("errinfo").innerHTML = "";}
 	if (j$("ajaxMsg_1")){
 		j$("ajaxMsg_1").style.display = "";
-		j$("ajaxMsg_1").innerHTML = '<img src="images/note_ok.gif" width="19" height="16" alt="Ok" />&nbsp;²Ù×÷ĞÅÏ¢£º<font color="#33CC00">'+str+'</font>';
+		j$("ajaxMsg_1").innerHTML = '<img src="images/note_ok.gif" width="19" height="16" alt="Ok" />&nbsp;æ“ä½œä¿¡æ¯ï¼š<font color="#33CC00">'+str+'</font>';
 		window.setTimeout("closeAjaxDiv('ajaxMsg_1')",3000);
 	}
 	n=post_time;
@@ -79,17 +79,17 @@ function postSucceed(str){
 }
 
 function ShowInfo(){
-	var strInfo =  "Çë»ºÒ»ÏÂÉÔºóÔÙ¹à...";
+	var strInfo =  "è¯·ç¼“ä¸€ä¸‹ç¨åå†çŒ...";
 	n--;
 	if(n <= 0){
-		document.Dvform.submit.value = "OK! ·¢±í»Ø¸´";
+		document.Dvform.submit.value = "OK! å‘è¡¨å›å¤";
 		document.Dvform.submit.disabled = false;
 		//document.Dvform.Submit2.disabled=false;
 		post=0;
 		clearInterval(disp);
 	}
 	else{
-		document.Dvform.submit.value = strInfo + n +"Ãë";
+		document.Dvform.submit.value = strInfo + n +"ç§’";
 	}   
 }   
 
@@ -104,7 +104,7 @@ function postErr(str){
 	if (j$("errinfo")) {j$("errinfo").innerHTML = ""; }
 	if (j$("ajaxMsg_1")){
 		j$("ajaxMsg_1").style.display = "";
-		j$("ajaxMsg_1").innerHTML = '<img src="images/note_error.gif" width="16" height="16" alt="Err" />&nbsp;´íÎóĞÅÏ¢£º<font color="#FF0000">'+str+'</font> ÇëÖØÊÔ...';
+		j$("ajaxMsg_1").innerHTML = '<img src="images/note_error.gif" width="16" height="16" alt="Err" />&nbsp;é”™è¯¯ä¿¡æ¯ï¼š<font color="#FF0000">'+str+'</font> è¯·é‡è¯•...';
 		window.setTimeout("closeAjaxDiv('ajaxMsg_1')",15000);
 	}
 	document.Dvform.submit.disabled=false;
@@ -188,13 +188,13 @@ function AjaxPost(){
 
 }
 /*
-ËµÃ÷
- Àı×Ó£º
+è¯´æ˜
+ ä¾‹å­ï¼š
  var ajaxpost=new AjaxPost() 
   
- ÔÚĞèÒªµ÷ÓÃµÄ±íµ¥Ìí¼Ó
+ åœ¨éœ€è¦è°ƒç”¨çš„è¡¨å•æ·»åŠ 
   onsubmit="return ajaxpost.postForm(this)"
-  Ìá½»ºó×Ô¶¯Ôö¼Ó±íµ¥Ïîajaxpost ÖµÎª1ÓÃÒÔ±êÊ¶ÊÇAjaxÌá½»
+  æäº¤åè‡ªåŠ¨å¢åŠ è¡¨å•é¡¹ajaxpost å€¼ä¸º1ç”¨ä»¥æ ‡è¯†æ˜¯Ajaxæäº¤
 */
 
 var ajaxpost=new AjaxPost()
@@ -215,7 +215,7 @@ ajaxpost.onsuccess=function()
 		Str += ( Str==""?"": msg.message[i]==""?"":"&nbsp;&nbsp;&nbsp;") + msg.message[i];
 	}
 	if (msg.Suc == 1){
-		postSucceed(Str+"&nbsp;&nbsp;ÍøÒ³ÕıÔÚÌø×ª...");
+		postSucceed(Str+"&nbsp;&nbsp;ç½‘é¡µæ­£åœ¨è·³è½¬...");
 		// id: Dvbbs.Board_Setting(17)|boardid|RootID|Star|page|returnurl
 		if (msg.id != "")
 		{
@@ -238,7 +238,7 @@ ajaxpost.onsuccess=function()
 }
 ajaxpost.onfailure=function()
 {
-	var Str="´íÎó´úºÅ"+this.xmlhttp.statu+"<br />"+this.xmlhttp.responseText;
+	var Str="é”™è¯¯ä»£å·"+this.xmlhttp.statu+"<br />"+this.xmlhttp.responseText;
 	postErr(Str);
 };
 
@@ -246,7 +246,7 @@ function addToList(data){
 	if (data.indexOf("ajax.SystemMsg:Post Suc")!=-1){
 		var ajaxInsert = j$("ajaxInsert");
 		j$("ajaxInsert").innerHTML += data;
-		postSucceed("»Ø¸´Ìû×Ó³É¹¦£¡")
+		postSucceed("å›å¤å¸–å­æˆåŠŸï¼")
 		return 1;
 	}
 	if (data.indexOf("IsAuditInfo")!=-1){

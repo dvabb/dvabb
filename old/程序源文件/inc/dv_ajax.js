@@ -126,10 +126,10 @@ var RegCheck = {
 		var isok_pass = obj_getbyid("isok_"+Objid);
 		RegCheck.passValue[t] = v;
 		if (v.length<6||v.length>10){
-			isok_pass.innerHTML = err_msg("ÃÜÂë²»ÄÜÉÙÓÚ6Î»»ò¶àÓÚ10Î»");
+			isok_pass.innerHTML = err_msg("å¯†ç ä¸èƒ½å°‘äº6ä½æˆ–å¤šäº10ä½");
 			return false;
 		}else{
-			isok_pass.innerHTML = suc_msg("·ûºÏÒªÇó");
+			isok_pass.innerHTML = suc_msg("ç¬¦åˆè¦æ±‚");
 		}
 		if (t==0){
 			SetPwdStrengthEx(v);
@@ -137,15 +137,15 @@ var RegCheck = {
 		else{
 			if (RegCheck.passValue.length==2){
 				if (RegCheck.passValue[0]==RegCheck.passValue[1]){
-					isok_pass.innerHTML = suc_msg("ÃÜÂëÈ·ÈÏ,·ûºÏÒªÇó");
+					isok_pass.innerHTML = suc_msg("å¯†ç ç¡®è®¤,ç¬¦åˆè¦æ±‚");
 				}else{
-					isok_pass.innerHTML = err_msg("ÖØ¸´ÊäÈëÃÜÂë²»·û");
+					isok_pass.innerHTML = err_msg("é‡å¤è¾“å…¥å¯†ç ä¸ç¬¦");
 					return false;
 				}
 				
 			}else
 			{
-				isok_pass.innerHTML = err_msg("ÖØ¸´ÊäÈëÃÜÂë²»·û");
+				isok_pass.innerHTML = err_msg("é‡å¤è¾“å…¥å¯†ç ä¸ç¬¦");
 				return false;
 			}
 
@@ -156,7 +156,7 @@ var RegCheck = {
 	Value : function(v,Objid){
 		var isok_pass = obj_getbyid("isok_"+Objid);
 		if (v==''){
-			isok_pass.innerHTML = err_msg("±ØÌîÄÚÈİ£¬²»ÄÜÎª¿Õ");
+			isok_pass.innerHTML = err_msg("å¿…å¡«å†…å®¹ï¼Œä¸èƒ½ä¸ºç©º");
 			return false;
 		}else{
 			isok_pass.innerHTML = "";
@@ -166,17 +166,17 @@ var RegCheck = {
 	}
 }
 
-//´íÎóÌáÊ¾ĞÅÏ¢
+//é”™è¯¯æç¤ºä¿¡æ¯
 function err_msg(msg){
 	obj_getbyid("checkreg").value = "0";
 	return "&nbsp;<img src='"+forum_picurl+"/note_error.gif' border='0'/> <span class='redfont'>"+msg+"</span>";
 }
-//³É¹¦ÌáÊ¾ĞÅÏ¢
+//æˆåŠŸæç¤ºä¿¡æ¯
 function suc_msg(msg){
 	obj_getbyid("checkreg").value = "1";
 	return "&nbsp;<img src='"+forum_picurl+"/note_ok.gif' border='0'/> <span class='bluefont'>"+msg+"</span>";
 }
-//¼ì²éÃÜÂëÇ¿Èõ
+//æ£€æŸ¥å¯†ç å¼ºå¼±
 function pse_a1(j,b){
 	this.j=j;this.b=b;
 };
