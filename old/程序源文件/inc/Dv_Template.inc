@@ -1,16 +1,16 @@
 <%
 '//=============================================
-' ¶¯ÍøÂÛÌ³Ä£°å½âÊÍÍ¨ÓÃº¯Êı
-' ×÷Õß	HxyMan
-' ¸üĞÂ	2008-1-14
-' ±êÇ©   {$token.value} - µ¥±êÇ© / {$token.begin} ... {$token.end} - ÇøÓò±êÇ©
-' ½âÊÍ	TPL_Scan É¨ÃèÄ£°å£¬Óöµ½±êÇ©¼´½»¸ø TPL_Parse ´¦Àí
-' Ê¹ÓÃ	1¡¢Ò³ÃæÍ·²¿°üº¬´ËÍ·ÎÄ¼ş¡£
-'	2¡¢Ò³ÃæÖĞĞèÒª¶¨ÒåÁ½¸ö´¦Àí¹ı³Ì£ºTPL_ParseArea(sToken, sAreaContent) / TPL_ParseNode(sToken, sValue)
+' åŠ¨ç½‘è®ºå›æ¨¡æ¿è§£é‡Šé€šç”¨å‡½æ•°
+' ä½œè€…	HxyMan
+' æ›´æ–°	2008-1-14
+' æ ‡ç­¾   {$token.value} - å•æ ‡ç­¾ / {$token.begin} ... {$token.end} - åŒºåŸŸæ ‡ç­¾
+' è§£é‡Š	TPL_Scan æ‰«ææ¨¡æ¿ï¼Œé‡åˆ°æ ‡ç­¾å³äº¤ç»™ TPL_Parse å¤„ç†
+' ä½¿ç”¨	1ã€é¡µé¢å¤´éƒ¨åŒ…å«æ­¤å¤´æ–‡ä»¶ã€‚
+'	2ã€é¡µé¢ä¸­éœ€è¦å®šä¹‰ä¸¤ä¸ªå¤„ç†è¿‡ç¨‹ï¼šTPL_ParseArea(sToken, sAreaContent) / TPL_ParseNode(sToken, sValue)
 '//=============================================
 
 Dim TPL_Memo, TPL_Immediate
-TPL_Immediate	= True	'ÊÇ·ñÁ¢¼´Êä³öÄÚÈİ
+TPL_Immediate	= True	'æ˜¯å¦ç«‹å³è¾“å‡ºå†…å®¹
 
 Sub TPL_Echo(sStr)
 	If TPL_Immediate Then
@@ -70,7 +70,7 @@ Function TPL_Parse(sTemplate, iPosBegin)
 	TPL_Parse	= iPosBegin
 End Function 
 
-'iCur-µ±Ç°Ò³ iRecords-×Ü¼ÇÂ¼Êı iPerPages-Ã¿Ò³ÏÔÊ¾Êı iLists-ÁĞ³ö¿Éµã»÷µÄÊıÄ¿ sParam-´«µİ²ÎÊı£¬¸ñÊ½ xxx.asp?a=xxx&b=xxx&page= 
+'iCur-å½“å‰é¡µ iRecords-æ€»è®°å½•æ•° iPerPages-æ¯é¡µæ˜¾ç¤ºæ•° iLists-åˆ—å‡ºå¯ç‚¹å‡»çš„æ•°ç›® sParam-ä¼ é€’å‚æ•°ï¼Œæ ¼å¼ xxx.asp?a=xxx&b=xxx&page= 
 Sub TPL_ShowPage(iCur, iRecords, iPerPage, iLists, sParam)
 	Dim iBegin, iEnd, iPages, i
 	iPages	= (iRecords\iPerPage)
@@ -90,10 +90,10 @@ Sub TPL_ShowPage(iCur, iRecords, iPerPage, iLists, sParam)
 		End If 
 		If (iBegin<=1 And iEnd>=iPages) Or i<=1 Then Exit Do     
 	Loop  
-	TPL_Echo "<b class=""page"">×ÜÊı "
+	TPL_Echo "<b class=""page"">æ€»æ•° "
 	TPL_Echo iRecords & "</b>"
 	If iBegin<>1 Then	TPL_Echo " <a class=""page"" href=""" & sParam & "1"">1.. </a>"
-	If iCur<>1 Then		TPL_Echo " <a class=""page"" href=""" & sParam & (iCur-1) & """>ÉÏÒ»Ò³</a> "
+	If iCur<>1 Then		TPL_Echo " <a class=""page"" href=""" & sParam & (iCur-1) & """>ä¸Šä¸€é¡µ</a> "
 	For i=iBegin To iEnd
 		If i=iCur Then 
 			TPL_Echo " <a class=""page"" href=""javascript:;"" id=""on"">" & i & "</a> "
@@ -101,9 +101,9 @@ Sub TPL_ShowPage(iCur, iRecords, iPerPage, iLists, sParam)
 			TPL_Echo " <a class=""page"" href=""" & sParam & i & """>" & i & "</a> "
 		End If 
 	Next 
-	If iCur<>iPages Then	TPL_Echo " <a class=""page"" href=""" & sParam & (iCur+1) & """>ÏÂÒ»Ò³</a> "
+	If iCur<>iPages Then	TPL_Echo " <a class=""page"" href=""" & sParam & (iCur+1) & """>ä¸‹ä¸€é¡µ</a> "
 	If iEnd<>iPages Then	TPL_Echo " <a class=""page"" href=""" & sParam & iPages & """>.." & iPages & "</a> "
-	If iPages>1 Then	TPL_Echo " <b class=""page""><input type=""text"" title=""ÊäÈëÊı×Ö£¬»Ø³µÌø×ª"" size=""3"" onkeydown=""if (13==event.keyCode) document.location.href='"&sParam&"'+this.value"" value="""&iCur&""" /></b> "
+	If iPages>1 Then	TPL_Echo " <b class=""page""><input type=""text"" title=""è¾“å…¥æ•°å­—ï¼Œå›è½¦è·³è½¬"" size=""3"" onkeydown=""if (13==event.keyCode) document.location.href='"&sParam&"'+this.value"" value="""&iCur&""" /></b> "
 	
 End Sub
 
@@ -126,7 +126,7 @@ Sub TPL_ParsePub(sToken)
 		Case "forum_picurl" TPL_Echo Dvbbs.Forum_PicUrl
 		Case "querytimes"   TPL_Echo Dvbbs.SqlQueryNum
 		Case "checkcode"	
-			If CInt(Dvbbs.Board_Setting(4))>0 Then TPL_Echo "<b>ÑéÖ¤Âë£º</b><input type=""text"" name=""codestr"" style=""margin-top:6px;"" size=""4"" /> <img id=""pgetcode"" src="""&DvCodeFile&""" alt= ""ÑéÖ¤Âë,¿´²»Çå³ş?Çëµã»÷Ë¢ĞÂÑéÖ¤Âë"" style=""margin-top:10px;cursor : pointer;"" onClick=""this.src='"&DvCodeFile&"?t='+Math.random()""/>"
+			If CInt(Dvbbs.Board_Setting(4))>0 Then TPL_Echo "<b>éªŒè¯ç ï¼š</b><input type=""text"" name=""codestr"" style=""margin-top:6px;"" size=""4"" /> <img id=""pgetcode"" src="""&DvCodeFile&""" alt= ""éªŒè¯ç ,çœ‹ä¸æ¸…æ¥š?è¯·ç‚¹å‡»åˆ·æ–°éªŒè¯ç "" style=""margin-top:10px;cursor : pointer;"" onClick=""this.src='"&DvCodeFile&"?t='+Math.random()""/>"
 		Case "editmode"
 			If "0"=Dvbbs.Board_Setting(5) Then
 				TPL_Echo "2"
@@ -145,7 +145,7 @@ Sub TPL_ParsePub(sToken)
 		Case "forum_maxpostdate"	: TPL_Echo Dvbbs.CacheData(13,0)
 		Case "forum_lastuser"		: TPL_Echo Dvbbs.CacheData(14,0)
 		Case "forum_homecall"
-		    Dvbbs.CacheData(37,0)="<script type=""text/javascript"">var swf_width=300;var swf_height=250;var files='';var texts='';var links='';files+='|http://www.cndw.com/templets/images/03.jpg'; texts+='|¶¯ÍøÂÛÌ³'; links+='|http://www.dvbbs.net/';files+='|http://www.cndw.com/templets/images/01.jpg'; texts+='|¶¯Íø9Äê';links+='|http://www.cndw.com/';files+='|http://www.cndw.com/templets/images/02.jpg'; texts+='|ÉÌÒµ´óºàOnline'; links+='|http://bto.uwan.com/';files=files.substr(1,files.length-1); texts=texts.substr(1,texts.length-1);links=links.substr(1,links.length-1);document.write('<object classid=""clsid:d27cdb6e-ae6d-11cf-96b8-444553540000"" codebase=""http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0"" width=""'+ swf_width +'"" height=""'+ swf_height +'"">');document.write('<param name=""movie"" value=""dv_plus/bcastr3/bcastr31.swf""><param name=""quality"" value=""high"">');document.write('<param name=""menu"" value=""false""><param name=wmode value=""opaque"">');document.write('<param name=""FlashVars"" value=""bcastr_file='+files+'&bcastr_link='+links+'&bcastr_title='+texts+'&TitleBgColor=6699FF"">');document.write('<embed src=""dv_plus/bcastr3/bcastr31.swf"" wmode=""opaque"" FlashVars=""bcastr_file='+files+'&bcastr_link='+links+'&bcastr_title='+texts+'&TitleBgColor=6699FF& menu=""false"" quality=""high"" width=""'+ swf_width +'"" height=""'+ swf_height +'"" type=""application/x-shockwave-flash"" pluginspage=""http://www.macromedia.com/go/getflashplayer"" />'); document.write('</object>'); </script>"
+		    Dvbbs.CacheData(37,0)="<script type=""text/javascript"">var swf_width=300;var swf_height=250;var files='';var texts='';var links='';files+='|http://www.cndw.com/templets/images/03.jpg'; texts+='|åŠ¨ç½‘è®ºå›'; links+='|http://www.dvbbs.net/';files+='|http://www.cndw.com/templets/images/01.jpg'; texts+='|åŠ¨ç½‘9å¹´';links+='|http://www.cndw.com/';files+='|http://www.cndw.com/templets/images/02.jpg'; texts+='|å•†ä¸šå¤§äº¨Online'; links+='|http://bto.uwan.com/';files=files.substr(1,files.length-1); texts=texts.substr(1,texts.length-1);links=links.substr(1,links.length-1);document.write('<object classid=""clsid:d27cdb6e-ae6d-11cf-96b8-444553540000"" codebase=""http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0"" width=""'+ swf_width +'"" height=""'+ swf_height +'"">');document.write('<param name=""movie"" value=""dv_plus/bcastr3/bcastr31.swf""><param name=""quality"" value=""high"">');document.write('<param name=""menu"" value=""false""><param name=wmode value=""opaque"">');document.write('<param name=""FlashVars"" value=""bcastr_file='+files+'&bcastr_link='+links+'&bcastr_title='+texts+'&TitleBgColor=6699FF"">');document.write('<embed src=""dv_plus/bcastr3/bcastr31.swf"" wmode=""opaque"" FlashVars=""bcastr_file='+files+'&bcastr_link='+links+'&bcastr_title='+texts+'&TitleBgColor=6699FF& menu=""false"" quality=""high"" width=""'+ swf_width +'"" height=""'+ swf_height +'"" type=""application/x-shockwave-flash"" pluginspage=""http://www.macromedia.com/go/getflashplayer"" />'); document.write('</object>'); </script>"
 		    TPL_Echo Dvbbs.CacheData(37,0)
 		Case "forum_online"			: TPL_Echo MyBoardOnline.Forum_Online
 		Case "forum_useronline"		: TPL_Echo MyBoardOnline.Forum_UserOnline
@@ -171,7 +171,7 @@ Sub TPL_ParseLabel(sToken)
 		sTemp	= Dvbbs.ReadTextFile("Resource/Label/"&sToken&".tpl")
 		If Err Then
 			Err.Clear
-			Response.Write "¶ÁÈ¡"&"Resource/Label/"&sToken&".tplÊ§°Ü£¡"
+			Response.Write "è¯»å–"&"Resource/Label/"&sToken&".tplå¤±è´¥ï¼"
 			Response.End 
 		End If 
 		TPL_Label sAppID, sTemp
@@ -224,7 +224,7 @@ Function TPL_BBS(sQuery, sTplLoop, iTopiclen, sTimeFmt)
 	If Not Rs.eof Then
 		SQL=Rs.GetRows(-1)
 	Else
-		TPL_BBS="<li>ÔİÎ´ÓĞÌù×ÓĞÅÏ¢</li>"
+		TPL_BBS="<li>æš‚æœªæœ‰è´´å­ä¿¡æ¯</li>"
 		Exit Function 
 	End If 
 	Rs.close:Set Rs=Nothing 
@@ -301,7 +301,7 @@ Function TPL_Group(sQuery, sTplLoop, sTimeFmt)
 	If Not Rs.eof Then
 		SQL=Rs.GetRows(-1)
 	Else
-		TPL_Group="<li>ÔİÎ´ÓĞÈ¦×ÓÊı¾İ£¡</li>"
+		TPL_Group="<li>æš‚æœªæœ‰åœˆå­æ•°æ®ï¼</li>"
 		Exit Function
 	End If
 	Rs.close:Set Rs = Nothing
@@ -332,7 +332,7 @@ Function TPL_User(sQuery, sTplLoop, sTimeFmt)
 	If Not Rs.eof Then
 		SQL=Rs.GetRows(-1)
 	Else
-		TPL_User="<LI>ÔİÎ´ÓĞ»áÔ±Êı¾İ£¡</LI>"
+		TPL_User="<LI>æš‚æœªæœ‰ä¼šå‘˜æ•°æ®ï¼</LI>"
 		Exit Function
 	End If
 	Rs.close:Set Rs = Nothing
@@ -361,7 +361,7 @@ Function TPL_News(sQuery, sTplLoop, sTimeFmt)
 	If Not Rs.eof Then
 		SQL=Rs.GetRows(-1)
 	Else
-		TPL_News="<li>ÔİÎ´ÓĞ¹«¸æÊı¾İ£¡</li>"
+		TPL_News="<li>æš‚æœªæœ‰å…¬å‘Šæ•°æ®ï¼</li>"
 		Exit Function
 	End If
 	Rs.close:Set Rs = Nothing
@@ -403,7 +403,7 @@ Function TPL_File(sQuery, sTplLoop, iTopiclen, sTimeFmt)
 	If Not Rs.eof Then
 		SQL=Rs.GetRows(-1)
 	Else
-		TPL_File="document.write('<li>ÔİÎ´ÓĞĞÂÕ¹ÇøÎÄ¼ş£¡</li>');"
+		TPL_File="document.write('<li>æš‚æœªæœ‰æ–°å±•åŒºæ–‡ä»¶ï¼</li>');"
 		Exit Function
 	End If
 	Rs.close:Set Rs = Nothing
@@ -416,13 +416,13 @@ Function TPL_File(sQuery, sTplLoop, iTopiclen, sTimeFmt)
 		Topiclen = Cint(Topiclen)
 	End If
 	'F_ID,F_AnnounceID,F_BoardID,F_Username,F_Filename,F_Readme,F_Type,F_FileType,F_AddTime,F_Viewname,F_ViewNum,F_DownNum,F_FileSize 
-	'F_Typ : 1=Í¼Æ¬¼¯,2=FLASH¼¯,3=ÒôÀÖ¼¯,4=µçÓ°¼¯,0=ÎÄ¼ş¼¯
+	'F_Typ : 1=å›¾ç‰‡é›†,2=FLASHé›†,3=éŸ³ä¹é›†,4=ç”µå½±é›†,0=æ–‡ä»¶é›†
 	Dim FileArray,Filename,Picheight,Picwidth
 	Dim RootID,ReplyID,F_AnnounceID
 	Dim BoardNode,Nodes,TempObj
 	Dim Bbsurl
 	Bbsurl=Dvbbs.Get_ScriptNameUrl
-	FileArray = "ÎÄ¼ş¼¯||Í¼Æ¬¼¯||FLASH¼¯||ÒôÀÖ¼¯||µçÓ°¼¯"
+	FileArray = "æ–‡ä»¶é›†||å›¾ç‰‡é›†||FLASHé›†||éŸ³ä¹é›†||ç”µå½±é›†"
 	FileArray = Split(FileArray,"||")
 	Set TempObj = Application(Dvbbs.CacheName&"_boardlist").cloneNode(True)
 	Set BoardNode = TempObj.documentElement.getElementsByTagName("board") 
@@ -504,19 +504,19 @@ End Function
 Function TPL_IGStatsStr(Stats)
 	Select Case Stats
 		Case 1
-			TPL_IGStatsStr="Õı³£"
+			TPL_IGStatsStr="æ­£å¸¸"
 		Case 2
-			TPL_IGStatsStr="Ëø¶¨"
+			TPL_IGStatsStr="é”å®š"
 		Case 3
-			TPL_IGStatsStr="¹Ø±Õ"
+			TPL_IGStatsStr="å…³é—­"
 		Case 0
-			TPL_IGStatsStr="ÉóºË"
+			TPL_IGStatsStr="å®¡æ ¸"
 		Case Else
-			TPL_IGStatsStr="Î´Öª"
+			TPL_IGStatsStr="æœªçŸ¥"
 	End Select
 End Function
 
-'ĞèÒªÓÃµ½¹«ÓĞ¶ÔÏódvstream
+'éœ€è¦ç”¨åˆ°å…¬æœ‰å¯¹è±¡dvstream
 Function TPL_BytesToBstr(body)
     dvstream.Type = 1
     dvstream.Mode =3
@@ -529,7 +529,7 @@ Function TPL_BytesToBstr(body)
 	dvstream.Close
 End Function
 
-'´¦ÀíRSSµ÷ÓÃ£¬±È½Ï·ÑÊ±£¬¿ÉÒÔ¿¼ÂÇ°ÑÊı¾İ¶ÁÈ¡·Åµ½Ò»¸öµ¥¶Àiframe»òÕßajaxÒ³Ãæ¡£
+'å¤„ç†RSSè°ƒç”¨ï¼Œæ¯”è¾ƒè´¹æ—¶ï¼Œå¯ä»¥è€ƒè™‘æŠŠæ•°æ®è¯»å–æ”¾åˆ°ä¸€ä¸ªå•ç‹¬iframeæˆ–è€…ajaxé¡µé¢ã€‚
 Sub TPL_Rss(sAppID, iIntv, sXmlUrl, sXslt)
 	Dim oXmlHttp,oXmlDom,oXSLTemplate,oXMLStyle,oProc
 	On Error Resume Next 

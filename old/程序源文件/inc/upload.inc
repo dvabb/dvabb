@@ -1,22 +1,22 @@
 <%
 '----------------------------------------------------------------------
-'×ª·¢Ê±Çë±£Áô´ËÉùÃ÷ĞÅÏ¢,Õâ¶ÎÉùÃ÷²»²¢»áÓ°ÏìÄãµÄËÙ¶È!
-'*******************   ÎŞ¾åÉÏ´«Àà V1.0  *********************************
-'×÷Õß:ÁºÎŞ¾å
-'ÍøÕ¾:http://www.25cn.com
-'µç×ÓÓÊ¼ş:yjlrb@21cn.com
-'°æÈ¨ÉùÃ÷:°æÈ¨ËùÓĞ,Ô´´úÂë¹«¿ª,¸÷ÖÖÓÃÍ¾¾ù¿ÉÃâ·ÑÊ¹ÓÃ,µ«ÊÇĞŞ¸Äºó±ØĞë°ÑĞŞ¸ÄºóµÄÎÄ¼ş
-'·¢ËÍÒ»·İ¸ø×÷Õß.
+'è½¬å‘æ—¶è¯·ä¿ç•™æ­¤å£°æ˜ä¿¡æ¯,è¿™æ®µå£°æ˜ä¸å¹¶ä¼šå½±å“ä½ çš„é€Ÿåº¦!
+'*******************   æ— æƒ§ä¸Šä¼ ç±» V1.0  *********************************
+'ä½œè€…:æ¢æ— æƒ§
+'ç½‘ç«™:http://www.25cn.com
+'ç”µå­é‚®ä»¶:yjlrb@21cn.com
+'ç‰ˆæƒå£°æ˜:ç‰ˆæƒæ‰€æœ‰,æºä»£ç å…¬å¼€,å„ç§ç”¨é€”å‡å¯å…è´¹ä½¿ç”¨,ä½†æ˜¯ä¿®æ”¹åå¿…é¡»æŠŠä¿®æ”¹åçš„æ–‡ä»¶
+'å‘é€ä¸€ä»½ç»™ä½œè€….
 '***********************************************************************
 '***********************************************************************
-'ÉÏ´«ÀàÇ¿»¯¼ÇÂ¼
-'ĞŞ¸ÄÕß£ºFssunwin
+'ä¸Šä¼ ç±»å¼ºåŒ–è®°å½•
+'ä¿®æ”¹è€…ï¼šFssunwin
 '----------------------------------------------------------------------
-'Ìí¼ÓÒÔÏÂÊôĞÔ£º
-'InceptFileType ÔÊĞíÉÏ´«µÄÎÄ¼şÀàĞÍ£¬ÒÔÓ¢ÎÄ¶ººÅ¡°,¡±·Ö¸ô¡£
-'Ìí¼ÓÒÔÏÂ·½·¨£º
-'FileWidth		Í¼Æ¬¿í¶È
-'FileHeight		Í¼Æ¬¸ß¶È
+'æ·»åŠ ä»¥ä¸‹å±æ€§ï¼š
+'InceptFileType å…è®¸ä¸Šä¼ çš„æ–‡ä»¶ç±»å‹ï¼Œä»¥è‹±æ–‡é€—å·â€œ,â€åˆ†éš”ã€‚
+'æ·»åŠ ä»¥ä¸‹æ–¹æ³•ï¼š
+'FileWidth		å›¾ç‰‡å®½åº¦
+'FileHeight		å›¾ç‰‡é«˜åº¦
 '----------------------------------------------------------------------
 '***********************************************************************
 
@@ -27,7 +27,7 @@ Class UpFile_Class
 	Private CHK_FileType,CHK_MaxSize
 
 	Private Sub Class_Initialize
-		Version = "ÎŞ¾åÉÏ´«Àà Version V1.0"
+		Version = "æ— æƒ§ä¸Šä¼ ç±» Version V1.0"
 		Err = -1
 		CHK_FileType = ""
 		CHK_MaxSize = -1
@@ -42,7 +42,7 @@ Class UpFile_Class
 	End Sub
 
 	Private Sub Class_Terminate  
-		'Çå³ı±äÁ¿¼°¶ÔÏñ
+		'æ¸…é™¤å˜é‡åŠå¯¹åƒ
 		Form.RemoveAll
 		Set Form = Nothing
 		File.RemoveAll
@@ -66,11 +66,11 @@ Class UpFile_Class
 	End Property
 
 	Public Sub GetDate()
-	   '¶¨Òå±äÁ¿
+	   'å®šä¹‰å˜é‡
 	  Dim RequestBinDate,sSpace,bCrLf,sInfo,iInfoEnd,tStream,iStart,oFileInfo
 	  Dim sFormValue,sFileName,sFormName,RequestSize
 	  Dim iFindStart,iFindEnd,iFormStart,iFormEnd,FileBlag
-	   '´úÂë¿ªÊ¼
+	   'ä»£ç å¼€å§‹
 	  RequestSize = Int(Request.TotalBytes)
 	  If  RequestSize < 1 Then
 		Err = 1
@@ -83,11 +83,11 @@ Class UpFile_Class
 	  iFormEnd = oUpFileStream.Size
 	  
 	  bCrLf = ChrB (13) & ChrB (10)
-	  'È¡µÃÃ¿¸öÏîÄ¿Ö®¼äµÄ·Ö¸ô·û
+	  'å–å¾—æ¯ä¸ªé¡¹ç›®ä¹‹é—´çš„åˆ†éš”ç¬¦
 	  sSpace = MidB (RequestBinDate,1, InStrB (1,RequestBinDate,bCrLf)-1)
 	  iStart = LenB  (sSpace)
 	  iFormStart = iStart+2
-	  '·Ö½âÏîÄ¿
+	  'åˆ†è§£é¡¹ç›®
 	  Do
 	    iInfoEnd = InStrB (iFormStart,RequestBinDate,bCrLf & bCrLf)+3
 	    tStream.Type = 1
@@ -99,15 +99,15 @@ Class UpFile_Class
 	    tStream.Type = 2
 	    tStream.CharSet = "gb2312"
 	    sInfo = tStream.ReadText
-	    'È¡µÃ±íµ¥ÏîÄ¿Ãû³Æ
+	    'å–å¾—è¡¨å•é¡¹ç›®åç§°
 	    iFormStart = InStrB (iInfoEnd,RequestBinDate,sSpace)-1
 	    iFindStart = InStr(22,sInfo,"name=""",1)+6
 	    iFindEnd = InStr(iFindStart,sInfo,"""",1)
 	    sFormName = Mid(sinfo,iFindStart,iFindEnd-iFindStart)
-	    'Èç¹ûÊÇÎÄ¼ş
+	    'å¦‚æœæ˜¯æ–‡ä»¶
 		If InStr(45,sInfo,"filename=""",1) > 0 Then
 			Set oFileInfo = new FileInfo_Class
-			'È¡µÃÎÄ¼şÊôĞÔ
+			'å–å¾—æ–‡ä»¶å±æ€§
 			iFindStart = InStr(iFindEnd,sInfo,"filename=""",1)+10
 			iFindEnd = InStr(iFindStart,sInfo,"""",1)
 			sFileName = Mid(sinfo,iFindStart,iFindEnd-iFindStart)
@@ -138,7 +138,7 @@ Class UpFile_Class
 			End If
 			File.Add sFormName,oFileInfo
 		Else
-			'Èç¹ûÊÇ±íµ¥ÏîÄ¿
+			'å¦‚æœæ˜¯è¡¨å•é¡¹ç›®
 			tStream.Close
 			tStream.Type = 1
 			tStream.Mode = 3
@@ -156,14 +156,14 @@ Class UpFile_Class
 		End If
 		tStream.Close
 		iFormStart = iFormStart+iStart+2
-	  'Èç¹ûµ½ÎÄ¼şÎ²ÁË¾ÍÍË³ö
+	  'å¦‚æœåˆ°æ–‡ä»¶å°¾äº†å°±é€€å‡º
 	  Loop Until  (iFormStart+2) = iFormEnd
 	  RequestBinDate = ""
 	  Set tStream = Nothing
 	End Sub
 
 	'====================================================================
-	'ÑéÖ¤ÉÏ´«ÀàĞÍ
+	'éªŒè¯ä¸Šä¼ ç±»å‹
 	'====================================================================
 	Private Function CheckErr(Byval ChkExt)
 		CheckErr=False
@@ -177,7 +177,7 @@ Class UpFile_Class
 		End If
 	End Function
 	'====================================================================
-	'Í¼Ïñ¿í¸ßÀàĞÍ¶ÁÈ¡
+	'å›¾åƒå®½é«˜ç±»å‹è¯»å–
 	'====================================================================
 	Private Function Bin2Str(Byval Bin)
 		Dim i, Str, Sclow
@@ -289,14 +289,14 @@ Class UpFile_Class
 	End Function
 End Class
 
-'ÎÄ¼şÊôĞÔÀà
+'æ–‡ä»¶å±æ€§ç±»
 Class FileInfo_Class
 	Public FormName,FileName,FilePath,FileSize,FileType,FileStart,FileExt,FileWidth,FileHeight
 	Private Sub Class_Initialize
 		FileWidth=0
 		FileHeight=0
 	End Sub
-	'±£´æÎÄ¼ş·½·¨
+	'ä¿å­˜æ–‡ä»¶æ–¹æ³•
 	Public Sub SaveToFile (Byval Path)
 		Dim Ext,oFileStream
 		Ext = LCase(Mid(Path, InStrRev(Path, ".") + 1))
@@ -313,7 +313,7 @@ Class FileInfo_Class
 		oFileStream.Close
 		Set oFileStream = Nothing 
 	End Sub
-	'È¡µÃÎÄ¼şÊı¾İ
+	'å–å¾—æ–‡ä»¶æ•°æ®
 	Public Function FileData
 		oUpFileStream.Position = FileStart
 		FileData = oUpFileStream.Read (FileSize)
