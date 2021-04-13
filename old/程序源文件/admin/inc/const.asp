@@ -2,7 +2,7 @@
 <%
 If Session("flag")<> "" Then Dvbbs.Master = True
 'UpUserFaceFolder 
-'ÈçÊÇ¶ÀÁ¢µÄĞéÄâÄ¿Â¼,ÔòÒªĞ´³É"/uploadFace"Èç¹ûÊÇÂÛÌ³Ä¿Â¼ÏÂµÄÆÕÍ¨Ä¿Â¼,ÔòĞ´³É""
+'å¦‚æ˜¯ç‹¬ç«‹çš„è™šæ‹Ÿç›®å½•,åˆ™è¦å†™æˆ"/uploadFace"å¦‚æœæ˜¯è®ºå›ç›®å½•ä¸‹çš„æ™®é€šç›®å½•,åˆ™å†™æˆ""
 'Const UpUserFaceFolder=""
 Const UpUserFaceFolder="/uploadFace/"
 MyDbPath = "../"
@@ -12,17 +12,17 @@ Dvbbs.UserID = Clng(Dvbbs.UserID)
 Dvbbs.MemberClass = Dvbbs.checkStr(Request.Cookies(Dvbbs.Forum_sn)("userclass"))
 
 Set MyBoardOnline=new Cls_UserOnlne 
-'»ñµÃÂÛÌ³»ù±¾ĞÅÏ¢ºÍ¼ì²âÓÃ»§µÇÂ½×´Ì¬
+'è·å¾—è®ºå›åŸºæœ¬ä¿¡æ¯å’Œæ£€æµ‹ç”¨æˆ·ç™»é™†çŠ¶æ€
 Dvbbs.GetForum_Setting
 Dvbbs.CheckUserLogin
-'ÖØĞÂ¸³ÓèÓÃ»§ÊÇ·ñ¿É½øÈëºóÌ¨È¨ÏŞ		ÒÑÒÆÖÁAdmin_login.aspÑéÖ¤£¬ÇáÆ®Æ®
+'é‡æ–°èµ‹äºˆç”¨æˆ·æ˜¯å¦å¯è¿›å…¥åå°æƒé™		å·²ç§»è‡³Admin_login.aspéªŒè¯ï¼Œè½»é£˜é£˜
 'If Dvbbs.GroupSetting(70)="1" Then
 '	Dvbbs.Master = True
 'Else
 '	Dvbbs.Master = False
 'End If
 
-'ºóÌ¨ĞÅÏ¢ºÍº¯Êı²¿·Ö
+'åå°ä¿¡æ¯å’Œå‡½æ•°éƒ¨åˆ†
 Dim AllPostTable
 Dim AllPostTableName
 Dim FoundErr
@@ -36,14 +36,14 @@ Dvbbs.LoadTemplates("Admin")
 'Set Rs=Dvbbs.Execute("Select H_Content From Dv_Help Where H_ID=1")
 'template.value = Rs(0)
 
-'¼ì²â¹ÜÀíÈ¨ÏŞ
+'æ£€æµ‹ç®¡ç†æƒé™
 Sub CheckAdmin(flag)
 	If Not Dvbbs.Master Or Session("flag")="" Then
-		Response.Redirect "../showerr.asp?action=OtherErr&ErrCodes=<li>±¾Ò³ÃæÎª¹ÜÀíÔ±×¨ÓÃ£¬Çë<a href=admin_login.asp target=_top>µÇÂ¼</a>ºó½øÈë¡£"
+		Response.Redirect "../showerr.asp?action=OtherErr&ErrCodes=<li>æœ¬é¡µé¢ä¸ºç®¡ç†å‘˜ä¸“ç”¨ï¼Œè¯·<a href=admin_login.asp target=_top>ç™»å½•</a>åè¿›å…¥ã€‚"
 	End If
 
 	If Instr(","&session("flag")&",",flag)=0 and flag<>"" then
-		Errmsg=ErrMsg +	"<BR><li>±¾Ò³ÃæÎª¹ÜÀíÔ±×¨ÓÃ£¬Çë<a href=../admin_login.asp target=_top>µÇÂ¼</a>ºó½øÈë¡£<br><li>ÄúÃ»ÓĞ¹ÜÀí±¾Ò³ÃæµÄÈ¨ÏŞ¡£"
+		Errmsg=ErrMsg +	"<BR><li>æœ¬é¡µé¢ä¸ºç®¡ç†å‘˜ä¸“ç”¨ï¼Œè¯·<a href=../admin_login.asp target=_top>ç™»å½•</a>åè¿›å…¥ã€‚<br><li>æ‚¨æ²¡æœ‰ç®¡ç†æœ¬é¡µé¢çš„æƒé™ã€‚"
 		Dvbbs_error()
 	End If
 End Sub
@@ -84,7 +84,7 @@ Sub Head()
 <html>
 <head>
 <meta http-equiv="content-type" content="text/html; charset=gb2312" />
-<TITLE><%=Dvbbs.Forum_info(0)%>-¹ÜÀíÒ³Ãæ</TITLE>
+<TITLE><%=Dvbbs.Forum_info(0)%>-ç®¡ç†é¡µé¢</TITLE>
 <link href="skins/css/main.css" rel="stylesheet" type="text/css" />
 <script src="../inc/main82.js" type="text/javascript"></script>
 <script src="inc/admin.js" type="text/javascript"></script>
@@ -114,7 +114,7 @@ Sub Dv_suc(info)
 	Response.Write"<br>"
 	Response.Write"<table cellpadding=0 cellspacing=0 align=center width=""100%"">"
 	Response.Write"<tr align=center>"
-	Response.Write"<th width=""100%"" style=""text-align:center;"" colspan=2>³É¹¦ĞÅÏ¢"
+	Response.Write"<th width=""100%"" style=""text-align:center;"" colspan=2>æˆåŠŸä¿¡æ¯"
 	Response.Write"</td>"
 	Response.Write"</tr>"
 	Response.Write"<tr>"
@@ -122,15 +122,15 @@ Sub Dv_suc(info)
 	Response.Write InfoArr(0)
 	Response.Write"</td></tr>"
 	Response.Write"<tr>"
-	Response.Write"<td class=""td2"" valign=middle colspan=2 style=""text-align:center;""><a href="&UrlArr&" ><<·µ»ØÉÏÒ»Ò³</a></td></tr>"
+	Response.Write"<td class=""td2"" valign=middle colspan=2 style=""text-align:center;""><a href="&UrlArr&" ><<è¿”å›ä¸Šä¸€é¡µ</a></td></tr>"
 	Response.Write"</table>"
 End Sub
-'Ò³Ãæ´íÎóÌáÊ¾ĞÅÏ¢
+'é¡µé¢é”™è¯¯æç¤ºä¿¡æ¯
 Sub dvbbs_error()
 	Response.Write"<br>"
 	Response.Write"<table cellpadding=3 cellspacing=1 align=center width=""100%"">"
 	Response.Write"<tr align=center>"
-	Response.Write"<th width=""100%"" style=""text-align:center;"" colspan=2>´íÎóĞÅÏ¢"
+	Response.Write"<th width=""100%"" style=""text-align:center;"" colspan=2>é”™è¯¯ä¿¡æ¯"
 	Response.Write"</td>"
 	Response.Write"</tr>"
 	Response.Write"<tr>"
@@ -138,7 +138,7 @@ Sub dvbbs_error()
 	Response.Write ErrMsg
 	Response.Write"</td></tr>"
 	Response.Write"<tr>"
-	Response.Write"<td class=""td1"" valign=middle colspan=2 style=""text-align:center;""><a href=""javascript:history.go(-1)""><<·µ»ØÉÏÒ»Ò³</a></td></tr>"
+	Response.Write"<td class=""td1"" valign=middle colspan=2 style=""text-align:center;""><a href=""javascript:history.go(-1)""><<è¿”å›ä¸Šä¸€é¡µ</a></td></tr>"
 	Response.Write"</table>"
 	footer()
 	Response.End 
@@ -167,9 +167,9 @@ Function enfixjs(Str)
 End Function
 
 Function Reload_All_Board_Cache()
-	'¸üĞÂ°æÃæÁĞ±í»º´æ
+	'æ›´æ–°ç‰ˆé¢åˆ—è¡¨ç¼“å­˜
 	ReloadBoardListAll
-	'¸üĞÂµ¥¸ö°æÃæ»º´æ£¨Ñ­»·£©
+	'æ›´æ–°å•ä¸ªç‰ˆé¢ç¼“å­˜ï¼ˆå¾ªç¯ï¼‰
 	Dim BoardListAll,BoardListNum,myBoardID
 	Dim i,Rs
 	BoardListAll=myCache.value

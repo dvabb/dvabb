@@ -65,7 +65,7 @@ function DvMenuCls(){
 
 
 
-// ĞŞ¸Ä±à¼­À¸¸ß¶È
+// ä¿®æ”¹ç¼–è¾‘æ é«˜åº¦
 function admin_Size(num,objname)
 {
 	var obj=document.getElementById(objname)
@@ -138,7 +138,7 @@ function setColor(color)
 	document.getElementById("colourPalette").style.visibility="hidden";
 }
 
-//SELECT±íµ¥Ñ¡È¡
+//SELECTè¡¨å•é€‰å–
 function CheckSel(Voption,Value)
 {
 	var obj = document.getElementById(Voption);
@@ -150,7 +150,7 @@ function CheckSel(Voption,Value)
 	}
 }
 
-//µ¥Ñ¡±íµ¥Ñ¡È¡
+//å•é€‰è¡¨å•é€‰å–
 function chkradio(Obj,Val)
 {
 	if (Obj)
@@ -163,8 +163,8 @@ function chkradio(Obj,Val)
 	}
 	}
 }
-//ÓÃ»§×éÅúÁ¿¸üĞÂ°´Å¥ <input type="button" value="Ñ¡ÔñÓÃ»§×é" onclick="getGroup('Select_Group');">
-//¼ÇÂ¼ ¸üĞÂIDµÄ±íµ¥ <input name="groupid" type="hidden" value="<%=Request("groupid")%>">
+//ç”¨æˆ·ç»„æ‰¹é‡æ›´æ–°æŒ‰é’® <input type="button" value="é€‰æ‹©ç”¨æˆ·ç»„" onclick="getGroup('Select_Group');">
+//è®°å½• æ›´æ–°IDçš„è¡¨å• <input name="groupid" type="hidden" value="<%=Request("groupid")%>">
 function getGroup(Did)
 {
 var SGroup = fetch_object(Did);
@@ -192,7 +192,7 @@ var SGroup = fetch_object(Did);
 	}
 }
 
-//¸´Ñ¡±íµ¥È«Ñ¡ÊÂ¼ş form£º±íµ¥Ãû
+//å¤é€‰è¡¨å•å…¨é€‰äº‹ä»¶ formï¼šè¡¨å•å
 function CheckAll(form)  {
 	for (var i=0;i<form.elements.length;i++)
 	{
@@ -233,7 +233,7 @@ function BoardJumpListSelect_Admin(boardid,selectname,fristoption,fristvalue,che
 					sel = k;
 				}
 				if (nodes[i].getAttribute("depth")==0){
-					var outtext="©ï";
+					var outtext="â•‹";
 				}
 				else
 				{
@@ -243,14 +243,14 @@ function BoardJumpListSelect_Admin(boardid,selectname,fristoption,fristvalue,che
 						if (j>0){outtext+=" |"}
 						outtext+="  "
 					}
-					outtext+="©À"
+					outtext+="â”œ"
 				}
 				t = outtext + t
 				t = t.replace(/<[^>]*>/g, "")
 				t = t.replace(/&[^&]*;/g, "")
 				if(checknopost==1 && nodes[i].getAttribute("nopost")=='1')
 				{
-						t+="(²»Ğí×ªÒÆ)"
+						t+="(ä¸è®¸è½¬ç§»)"
 				}
 				sObj.options[k++] = new Option(t, v);
 			}

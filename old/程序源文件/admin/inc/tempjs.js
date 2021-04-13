@@ -23,7 +23,7 @@ function ajaxSubmit(actionAddress,data){
 			try{
 				xmlhttp=new ActiveXObject('Msxml2.XMLHTTP');
 			}catch(e){
-				alert('ÄãÊ¹ÓÃµÄä¯ÀÀÆ÷²»Ö§³ÖajaxÌá½»Êı¾İ£¬ÇëÊ¹ÓÃIE6.0»òMozilla Firefox 2.0ÒÔÉÏä¯ÀÀÆ÷ä¯ÀÀ¡£');
+				alert('ä½ ä½¿ç”¨çš„æµè§ˆå™¨ä¸æ”¯æŒajaxæäº¤æ•°æ®ï¼Œè¯·ä½¿ç”¨IE6.0æˆ–Mozilla Firefox 2.0ä»¥ä¸Šæµè§ˆå™¨æµè§ˆã€‚');
 			}
 		}
 	}
@@ -38,8 +38,8 @@ function ajaxSubmit(actionAddress,data){
 					document.getElementById(returnInfo.formName).innerHTML = returnInfo.formValue;
 				}
 			}else{
-				alert(xmlhttp.status+'Í¶Æ±Ê§°Ü£¬ÍøÂçÖĞ¶Ï»ò·şÎñÆ÷Ã¦£¬ÇëÉÔºóÖØÊÔ¡£')
-				//ÕâÀï¿ÉÒÔ¸æËß¿Í»§¶Ë£¬Ìá½»Ê§°Ü£¬ÇëÖØÊÔ(×´Ì¬ºÅxmlhttp.status)
+				alert(xmlhttp.status+'æŠ•ç¥¨å¤±è´¥ï¼Œç½‘ç»œä¸­æ–­æˆ–æœåŠ¡å™¨å¿™ï¼Œè¯·ç¨åé‡è¯•ã€‚')
+				//è¿™é‡Œå¯ä»¥å‘Šè¯‰å®¢æˆ·ç«¯ï¼Œæäº¤å¤±è´¥ï¼Œè¯·é‡è¯•(çŠ¶æ€å·xmlhttp.status)
 			}
 		}
 	}

@@ -1,21 +1,21 @@
 <%
         '/******************************
-        'ÀàÃû£ºArrayList
-        'Ãû³Æ£ºÊı×é²Ù×÷Àà
-        'ÈÕÆÚ£º2007-11-6
-        '×÷Õß£ºÎ÷Â¥ÀäÔÂ
-        'ÍøÖ·£ºwww.xilou.net | www.chinaCMS.org
-        'ÃèÊö£º¶ÔÊı×éµÄ¸÷ÖÖ²Ù×÷
-        '°æÈ¨£º×ªÔØÇë×¢Ãû³ö´¦£¬×÷Õß
+        'ç±»åï¼šArrayList
+        'åç§°ï¼šæ•°ç»„æ“ä½œç±»
+        'æ—¥æœŸï¼š2007-11-6
+        'ä½œè€…ï¼šè¥¿æ¥¼å†·æœˆ
+        'ç½‘å€ï¼šwww.xilou.net | www.chinaCMS.org
+        'æè¿°ï¼šå¯¹æ•°ç»„çš„å„ç§æ“ä½œ
+        'ç‰ˆæƒï¼šè½¬è½½è¯·æ³¨åå‡ºå¤„ï¼Œä½œè€…
         '******************************
-        '×îºóĞŞ¸Ä£º2007-11-6
-        'ĞŞ¸Ä´ÎÊı£º0
-        'ĞŞ¸ÄËµÃ÷£º
-        'Ä¿Ç°°æ±¾£ºv1.0
+        'æœ€åä¿®æ”¹ï¼š2007-11-6
+        'ä¿®æ”¹æ¬¡æ•°ï¼š0
+        'ä¿®æ”¹è¯´æ˜ï¼š
+        'ç›®å‰ç‰ˆæœ¬ï¼šv1.0
         '******************************/
 Class ArrayList
-        Private arrList'//ÄÚ²¿Êı×é
-    Private arrLength'//¼ÇÂ¼Êı×éµÄ³¤¶È
+        Private arrList'//å†…éƒ¨æ•°ç»„
+    Private arrLength'//è®°å½•æ•°ç»„çš„é•¿åº¦
     
     Private Sub Class_Initialize()
         arrList=Array()
@@ -26,39 +26,39 @@ Class ArrayList
         Erase arrList
         End Sub
     
-    '//Êı×é³¤¶È,Ö»¶Á
+    '//æ•°ç»„é•¿åº¦,åªè¯»
     Public Property Get Length
         Length=arrLength
     End Property
     
-    '//È¡µÃÄ³¸öË÷ÒıµÄÖµ
+    '//å–å¾—æŸä¸ªç´¢å¼•çš„å€¼
     Public Function GetValue(index)
         On Error Resume Next
         GetValue=arrList(index)
         If Err Then showErr "ArrayList.GetValue()"&Err.Description:Err.Clear:Exit Function
     End Function
     
-        '//·µ»ØÕû¸öArrayÊı×é
+        '//è¿”å›æ•´ä¸ªArrayæ•°ç»„
         Public Function GetArray()
         GetArray=arrList
     End Function
     
-    '//Ìí¼ÓÔªËØ,½«ÖµÌí¼Óµ½ArrayListµÄ½áÎ²´¦
+    '//æ·»åŠ å…ƒç´ ,å°†å€¼æ·»åŠ åˆ°ArrayListçš„ç»“å°¾å¤„
     Public Sub Add(v)
             ReDim Preserve arrList(arrLength)
         arrList(arrLength)=v
         arrLength=arrLength+1
     End Sub
-    '//½«Êı×éÌí¼Óµ½ArrayListµÄ½áÎ²´¦
+    '//å°†æ•°ç»„æ·»åŠ åˆ°ArrayListçš„ç»“å°¾å¤„
     Public Sub AddArray(arr)
-        If Not IsArray(arr) Then showErr "²ÎÊı²»ÊÇÊı×é(arr):ArrayList.AddArray()":Exit Sub
+        If Not IsArray(arr) Then showErr "å‚æ•°ä¸æ˜¯æ•°ç»„(arr):ArrayList.AddArray()":Exit Sub
         Dim I,L,J
         On Error Resume Next
-            If arrLength = 0 Then '//Èç¹ûArrayListÎª¿ÕÔòÖ±½Ó¸½Öµ
+            If arrLength = 0 Then '//å¦‚æœArrayListä¸ºç©ºåˆ™ç›´æ¥é™„å€¼
             arrList=arr
             arrLength=arrLength+UBound(arr)+1
         Else
-                L=arrLength+UBound(arr)'//ĞÂµÄÊı×é³¤¶È
+                L=arrLength+UBound(arr)'//æ–°çš„æ•°ç»„é•¿åº¦
             J=0
                 ReDim Preserve arrList(L)
             For I = arrLength To L
@@ -70,107 +70,107 @@ Class ArrayList
         If Err Then showErr "ArrayList.AddArray()"&Err.Description:Err.Clear:Exit Sub
         
     End Sub
-    '//½«ÔªËØ²åÈëArrayListµÄÖ¸¶¨indexË÷Òı´¦,Ô­ÓĞµÄarrList(index)¼°ºóÃæµÄÔªËØ¶¼ÍùºóÅÅ
+    '//å°†å…ƒç´ æ’å…¥ArrayListçš„æŒ‡å®šindexç´¢å¼•å¤„,åŸæœ‰çš„arrList(index)åŠåé¢çš„å…ƒç´ éƒ½å¾€åæ’
     Public Sub Insert(index,v)
         Dim I,v2
         If index<arrLength And index>=0 Then
             ReDim Preserve arrList(arrLength)
         arrLength=arrLength+1
         For I = index To arrLength - 1
-            v2=arrList(I)'//½»»»Öµ
+            v2=arrList(I)'//äº¤æ¢å€¼
             arrList(I)=v
             v=v2
         Next
         Else
-                showErr "ÏÂ±êÔ½½ç:ArrayList.Insert()"
+                showErr "ä¸‹æ ‡è¶Šç•Œ:ArrayList.Insert()"
         End If
     End Sub
-    '//½«Ò»×éÊı×é²åÈëµ½Ö¸¶¨µÄindex´¦
+    '//å°†ä¸€ç»„æ•°ç»„æ’å…¥åˆ°æŒ‡å®šçš„indexå¤„
     Public Sub InsertArray(index,arr)
         If index = "" Or Not IsNumeric(index) Then 
-            showErr "·Ç·¨µÄ²ÎÊı:ArrayList.InsertArray()":Exit Sub
+            showErr "éæ³•çš„å‚æ•°:ArrayList.InsertArray()":Exit Sub
         End If
         If index < 0 Or index > arrLength-1 Then
-            showErr "ÏÂ±êÔ½½ç:ArrayList.InsertArray()":Exit Sub
+            showErr "ä¸‹æ ‡è¶Šç•Œ:ArrayList.InsertArray()":Exit Sub
         End If
-        If Not IsArray(arr) Then showErr "²ÎÊı²»ÊÇÊı×é:ArrayList.InsertArray()":Exit Sub
+        If Not IsArray(arr) Then showErr "å‚æ•°ä¸æ˜¯æ•°ç»„:ArrayList.InsertArray()":Exit Sub
         Dim I,L1,L2,J:J=0
         On Error Resume Next
         L1=UBound(arr)
         L2=arrLength+L1
         ReDim Preserve arrList(L2)
         For I = arrLength -1 To index Step -1
-            arrList(I+L1+1)=arrList(I)'//°ÑindexÖ®ºóµÄÖµÍùºóÒÆ
+            arrList(I+L1+1)=arrList(I)'//æŠŠindexä¹‹åçš„å€¼å¾€åç§»
         Next
         For I = index To index+L1
             arrList(I)=arr(J)
         J=J+1
         Next
         If Err Then showErr "ArrayList.InsertArray()"&Err.Description:Err.Clear:Exit Sub
-        arrLength=arrLength+L1+1'//ĞÂµÄÊı×é³¤¶È
+        arrLength=arrLength+L1+1'//æ–°çš„æ•°ç»„é•¿åº¦
     End Sub
-    '//¸üĞÂÊı×éÖĞË÷ÒıÎªindexµÄ¶ÔÓ¦Öµ
+    '//æ›´æ–°æ•°ç»„ä¸­ç´¢å¼•ä¸ºindexçš„å¯¹åº”å€¼
     '//by xilou 39949376
     Public Sub Update(index,v)
         If index = "" Or Not IsNumeric(index) Then 
-            showErr "·Ç·¨µÄ²ÎÊı(index):ArrayList.Update()":Exit Sub
+            showErr "éæ³•çš„å‚æ•°(index):ArrayList.Update()":Exit Sub
         End If
-        If index < 0  Then 'Õâ¸öµØ·½ĞŞ¸ÄÏÂ
+        If index < 0  Then 'è¿™ä¸ªåœ°æ–¹ä¿®æ”¹ä¸‹
 		'If index < 0 Or index > arrLength-1 Then
-            showErr "ÏÂ±êÔ½½ç1(index):ArrayList.Update()":Exit Sub
+            showErr "ä¸‹æ ‡è¶Šç•Œ1(index):ArrayList.Update()":Exit Sub
         End If
         arrList(index)=v
     End Sub
     
-    '//´ÓArrayListÖĞÉ¾³ıµÚÒ»¸öÆ¥ÅäÏî,×¢ÒâÊÇµÚÒ»¸ö,½«»áµÃµ½Ò»ĞÂµÄÊı×é
+    '//ä»ArrayListä¸­åˆ é™¤ç¬¬ä¸€ä¸ªåŒ¹é…é¡¹,æ³¨æ„æ˜¯ç¬¬ä¸€ä¸ª,å°†ä¼šå¾—åˆ°ä¸€æ–°çš„æ•°ç»„
     Public Sub Remove(v)
         Dim I,index
-        index = -1 '//µÚÒ»¸öÆ¥ÅäµÄË÷Òı
+        index = -1 '//ç¬¬ä¸€ä¸ªåŒ¹é…çš„ç´¢å¼•
         For I = 0 To arrLength - 1
             If arrList(I)=v Then index = I : Exit For
         Next
         If index <> -1 Then
             For I = index To arrLength - 2
-            arrList(I) = arrList(I+1)'//ÖµÏòÇ°Ìî³ä
+            arrList(I) = arrList(I+1)'//å€¼å‘å‰å¡«å……
         Next
-        ReDim Preserve arrList(arrLength-1)'//ÊÕËõÊı×é
+        ReDim Preserve arrList(arrLength-1)'//æ”¶ç¼©æ•°ç»„
         arrLength = arrLength - 1
         End If
     End Sub
-    '//ÒÆ³ıArrayListµÄÖ¸¶¨Ë÷Òı´¦µÄÔªËØ,½«»áµÃµ½Ò»ĞÂµÄÊı×é
+    '//ç§»é™¤ArrayListçš„æŒ‡å®šç´¢å¼•å¤„çš„å…ƒç´ ,å°†ä¼šå¾—åˆ°ä¸€æ–°çš„æ•°ç»„
     Public Sub RemoveAt(index)
         If index = "" Or Not IsNumeric(index) Then 
-            showErr "·Ç·¨µÄ²ÎÊı(index):ArrayList.RemoveAt()":Exit Sub
+            showErr "éæ³•çš„å‚æ•°(index):ArrayList.RemoveAt()":Exit Sub
         End If
         If index < 0 Or index > arrLength-1 Then
-            showErr "ÏÂ±êÔ½½ç(index):ArrayList.RemoveAt()":Exit Sub
+            showErr "ä¸‹æ ‡è¶Šç•Œ(index):ArrayList.RemoveAt()":Exit Sub
         End If
         If index > 0 Then
             For I = index To arrLength - 2
-            arrList(I) = arrList(I+1)'//ÖµÏòÇ°Ìî³ä
+            arrList(I) = arrList(I+1)'//å€¼å‘å‰å¡«å……
             Next
-            ReDim Preserve arrList(arrLength-1)'//ÊÕËõÊı×é
+            ReDim Preserve arrList(arrLength-1)'//æ”¶ç¼©æ•°ç»„
             arrLength = arrLength - 1
         End If
     End Sub
-    '//´ÓÒ»¸öÊı×éÖĞÒÆ³ı´ÓË÷Òımµ½Ë÷ÒınµÄÒ»¶ÎÔªËØ,²¢·µ»ØÕâ¶ÎÒÆ³ıµÄÊı×é
+    '//ä»ä¸€ä¸ªæ•°ç»„ä¸­ç§»é™¤ä»ç´¢å¼•måˆ°ç´¢å¼•nçš„ä¸€æ®µå…ƒç´ ,å¹¶è¿”å›è¿™æ®µç§»é™¤çš„æ•°ç»„
     Public Function Splice(m,n)
         If m = "" Or n = "" Or Not IsNumeric(m) Or Not IsNumeric(n) Then 
-            showErr "·Ç·¨µÄ²ÎÊı(m,n):ArrayList.Splice()":Exit Function
+            showErr "éæ³•çš„å‚æ•°(m,n):ArrayList.Splice()":Exit Function
         End If
         If m < 0 Or m > arrLength-1 Or n < 0 Or n > arrLength-1 Then
-            showErr "ÏÂ±êÔ½½ç(m,n):ArrayList.Splice()":Exit Function
+            showErr "ä¸‹æ ‡è¶Šç•Œ(m,n):ArrayList.Splice()":Exit Function
         End If
         Dim newArr,x,L,I,J
         newArr=Array()
-        If m > n Then x=m:m=n:n=x '//½»»»ÊıÖµ
+        If m > n Then x=m:m=n:n=x '//äº¤æ¢æ•°å€¼
         L=n-m
         ReDim Preserve newArr(L)
         For I = m To n
-            newArr(J)=arrList(I)'ÒªÒÆ³ıµÄÔªËØ
+            newArr(J)=arrList(I)'è¦ç§»é™¤çš„å…ƒç´ 
         J=J+1
         Next
-        '//°ÑnºóÃæµÄÔªËØµÄÖµÒÆÇ°
+        '//æŠŠnåé¢çš„å…ƒç´ çš„å€¼ç§»å‰
         For I = (n+1) To arrLength -1
             arrList(I-L-1)=arrList(I)
         Next
@@ -178,12 +178,12 @@ Class ArrayList
         ReDim Preserve arrList(arrLength)
         Splice=newArr
     End Function
-    '//Çå¿ÕÊı×é,Êı×é½«±äÎª¿Õ,³¤¶ÈLength=0
+    '//æ¸…ç©ºæ•°ç»„,æ•°ç»„å°†å˜ä¸ºç©º,é•¿åº¦Length=0
     Public Sub Clear()
         Erase arrList
         arrLength=0
     End Sub
-    '//½«Õû¸ö ArrayList ÖĞÔªËØµÄË³Ğò·´×ª
+    '//å°†æ•´ä¸ª ArrayList ä¸­å…ƒç´ çš„é¡ºåºåè½¬
     Public Sub Reverse()
         Dim L,I,J,v
         J=arrLength-1
@@ -197,17 +197,17 @@ Class ArrayList
         Next
         End If
     End Sub
-    '//·µ»Ø×Ö·û´®Öµ£¬ÆäÖĞ°üº¬ÁËÁ¬½Óµ½Ò»ÆğµÄÊı×éµÄËùÓĞÔªËØ£¬ÔªËØÓÉÖ¸¶¨µÄ·Ö¸ô·û·Ö¸ô¿ªÀ´
+    '//è¿”å›å­—ç¬¦ä¸²å€¼ï¼Œå…¶ä¸­åŒ…å«äº†è¿æ¥åˆ°ä¸€èµ·çš„æ•°ç»„çš„æ‰€æœ‰å…ƒç´ ï¼Œå…ƒç´ ç”±æŒ‡å®šçš„åˆ†éš”ç¬¦åˆ†éš”å¼€æ¥
     Public Function Implode(separator)
         Implode=Join(arrList,separator)
     End Function
-    '//·µ»ØArrayList´Ómµ½nµÄÒ»¶ÎÊı×é
+    '//è¿”å›ArrayListä»måˆ°nçš„ä¸€æ®µæ•°ç»„
     Public Function Slice(m,n)
         If m = "" Or n = "" Or Not IsNumeric(m) Or Not IsNumeric(n) Then 
-            showErr "·Ç·¨µÄ²ÎÊı:ArrayList.Slice()":Exit Function
+            showErr "éæ³•çš„å‚æ•°:ArrayList.Slice()":Exit Function
         End If
         If m < 0 Or m > arrLength-1 Or n < 0 Or n > arrLength-1 Then
-            showErr "ÏÂ±êÔ½½ç:ArrayList.Slice()":Exit Function
+            showErr "ä¸‹æ ‡è¶Šç•Œ:ArrayList.Slice()":Exit Function
         End If
         Dim I,J,newArr()
         J=0
@@ -228,7 +228,7 @@ Class ArrayList
         Erase newArr
     End Function
     
-    '//²éÕÒ,·µ»ØArrayListµÚÒ»¸öÆ¥ÅäÏîµÄ´ÓÁã¿ªÊ¼µÄË÷Òı¡£Ã»ÕÒµ½·µ»Ø-1¡£
+    '//æŸ¥æ‰¾,è¿”å›ArrayListç¬¬ä¸€ä¸ªåŒ¹é…é¡¹çš„ä»é›¶å¼€å§‹çš„ç´¢å¼•ã€‚æ²¡æ‰¾åˆ°è¿”å›-1ã€‚
     '//by xilou 39949376
     Public Function IndexOf(v)
         Dim I
@@ -237,7 +237,7 @@ Class ArrayList
         Next
         IndexOf=-1
     End Function
-    '//·µ»ØArrayListµÄ×îºóÒ»¸öÆ¥ÅäÏîµÄ´ÓÁã¿ªÊ¼µÄË÷Òı¡£Ã»ÕÒµ½·µ»Ø-1¡£
+    '//è¿”å›ArrayListçš„æœ€åä¸€ä¸ªåŒ¹é…é¡¹çš„ä»é›¶å¼€å§‹çš„ç´¢å¼•ã€‚æ²¡æ‰¾åˆ°è¿”å›-1ã€‚
     Public Function LastIndexOf(v)
         Dim I
         If arrLength=0 Then
@@ -250,9 +250,9 @@ Class ArrayList
         LastIndexOf=-1
     End Function
     
-    '//ÏÔÊ¾´íÎó
+    '//æ˜¾ç¤ºé”™è¯¯
     Private Sub showErr(errInfo)
-        Response.Write "<div id=""ERRORINFO"" style=""font-size:12px;color:#990000;font-family:""ĞÂËÎÌå"", Arial"">"
+        Response.Write "<div id=""ERRORINFO"" style=""font-size:12px;color:#990000;font-family:""æ–°å®‹ä½“"", Arial"">"
         Response.Write errInfo
         Response.Write "</div>"
         Response.End()
