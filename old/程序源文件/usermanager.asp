@@ -45,7 +45,7 @@ Sub Main()
 	MainTable=Replace(MainTable,"{$filelist}",Fileuplist(5))			
 	'MainTable=Replace(MainTable,"{$topiclist}",NewTopic(5))			
 	If (Dvbbs.Forum_ChanSetting(13)="1" And Dvbbs.Forum_ChanSetting(0)="1") Or Dvbbs.Forum_ChanSetting(3)="0" Then
-		MainTable = Replace(MainTable,"{$UserTicket}","<BR>" & Dvbbs.lanstr(11))
+		MainTable = Replace(MainTable,"{$UserTicket}","<br />" & Dvbbs.lanstr(11))
 	Else
 		MainTable = Replace(MainTable,"{$UserTicket}","")
 	End If

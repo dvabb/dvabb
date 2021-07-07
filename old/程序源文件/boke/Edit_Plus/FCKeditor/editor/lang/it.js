@@ -312,7 +312,7 @@ PasteErrorCopy	: "Le impostazioni di sicurezza del browser non permettono di cop
 PasteAsText		: "Incolla come testo semplice",
 PasteFromWord	: "Incolla da Word",
 
-DlgPasteMsg		: "Impossibile incollare automaticamente a causa delle <STRONG>impostazioni di sicurezza</STRONG> del browser.<BR>Incolla nel riquadro sottostante (<STRONG>Ctrl+V</STRONG>) e premi <STRONG>OK</STRONG>.",
+DlgPasteMsg		: "Impossibile incollare automaticamente a causa delle <STRONG>impostazioni di sicurezza</STRONG> del browser.<br />Incolla nel riquadro sottostante (<STRONG>Ctrl+V</STRONG>) e premi <STRONG>OK</STRONG>.",
 
 // Color Picker
 ColorAutomatic	: "Automatico",

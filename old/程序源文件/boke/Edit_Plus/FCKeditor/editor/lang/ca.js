@@ -312,7 +312,7 @@ PasteErrorCopy	: "La seguretat del vostre navigador no permet executar automàti
 PasteAsText		: "Enganxar com Text Planer",
 PasteFromWord	: "Enganxar com Word",
 
-DlgPasteMsg		: "L'editor no ha pogut executar automàticament l'operació d'enganxar a causa de la <STRONG>configuració de seguretat</STRONG> del seu navigador.<BR>Si us plau, enganxi en el següent cuadre de text utilitzant el teclat (<STRONG>Ctrl+V</STRONG>) i premeu <STRONG>OK</STRONG>.",
+DlgPasteMsg		: "L'editor no ha pogut executar automàticament l'operació d'enganxar a causa de la <STRONG>configuració de seguretat</STRONG> del seu navigador.<br />Si us plau, enganxi en el següent cuadre de text utilitzant el teclat (<STRONG>Ctrl+V</STRONG>) i premeu <STRONG>OK</STRONG>.",
 
 // Color Picker
 ColorAutomatic	: "Automàtic",

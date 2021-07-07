@@ -312,7 +312,7 @@ PasteErrorCopy	: "Os axustes de seguridade do seu navegador non permiten que o e
 PasteAsText		: "Pegar como texto plano",
 PasteFromWord	: "Pegar dende Word",
 
-DlgPasteMsg		: "O editor non pode executar automáticamente o pegado debido ós <STRONG>axustes de seguridade</STRONG> do seu navegador.<BR>Por favor, pegue dentro do seguinte cadro usando o atallo de teclado (<STRONG>Ctrl+V</STRONG>) e pulse <STRONG>OK</STRONG>.",
+DlgPasteMsg		: "O editor non pode executar automáticamente o pegado debido ós <STRONG>axustes de seguridade</STRONG> do seu navegador.<br />Por favor, pegue dentro do seguinte cadro usando o atallo de teclado (<STRONG>Ctrl+V</STRONG>) e pulse <STRONG>OK</STRONG>.",
 
 // Color Picker
 ColorAutomatic	: "Automático",

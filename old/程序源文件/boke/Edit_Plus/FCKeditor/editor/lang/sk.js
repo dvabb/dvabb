@@ -312,7 +312,7 @@ PasteErrorCopy	: "Bezpečnostné nastavenie Vášho prrehliadača nedovoľujú e
 PasteAsText		: "Vložiť ako čistý text",
 PasteFromWord	: "Vložiť text z Wordu",
 
-DlgPasteMsg		: "<STRONG>Bezpečnostné nastavenie</STRONG> Vášho prrehliadača nedovoľujú editoru spustiť funkciu pre vloženie textu zo schránky.<BR>Text zo schránky prosím vložte pomocou klávesnice do tohto poľa (<STRONG>Ctrl+V</STRONG>) a potom stlačte tlačítko <STRONG>OK</STRONG>.",
+DlgPasteMsg		: "<STRONG>Bezpečnostné nastavenie</STRONG> Vášho prrehliadača nedovoľujú editoru spustiť funkciu pre vloženie textu zo schránky.<br />Text zo schránky prosím vložte pomocou klávesnice do tohto poľa (<STRONG>Ctrl+V</STRONG>) a potom stlačte tlačítko <STRONG>OK</STRONG>.",
 
 // Color Picker
 ColorAutomatic	: "Automaticky",

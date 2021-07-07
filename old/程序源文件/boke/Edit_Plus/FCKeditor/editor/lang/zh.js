@@ -312,7 +312,7 @@ PasteErrorCopy	: "您的流覽器安全設置不允許編輯器自動執行複�
 PasteAsText		: "粘貼為無格式文本",
 PasteFromWord	: "從 MS Word 粘貼",
 
-DlgPasteMsg		: "因為您的流覽器編輯器 <STRONG>安全設置</STRONG> 原因，不能自動執行粘貼。<BR>請使用鍵盤快捷鍵(<STRONG>Ctrl+V</STRONG>)粘貼到下面並按 <STRONG>確定</STRONG>。",
+DlgPasteMsg		: "因為您的流覽器編輯器 <STRONG>安全設置</STRONG> 原因，不能自動執行粘貼。<br />請使用鍵盤快捷鍵(<STRONG>Ctrl+V</STRONG>)粘貼到下面並按 <STRONG>確定</STRONG>。",
 
 // Color Picker
 ColorAutomatic	: "自動",

@@ -34,7 +34,7 @@ Str = "Action=0&ToUserID="&Request("ToUserID")&"&BoardID="&Dvbbs.BoardID&"&Topic
 <table border="0" cellpadding=3 cellspacing=1 align=center class=Tableborder1 Style="Width:99%">
 	<tr>
 	<th height=23>道具使用列表</th></tr>
-	<tr><td height=23 class=Tablebody1><B>说明</B>：请确认每种道具的说明再进行操作！<BR></td></tr>
+	<tr><td height=23 class=Tablebody1><B>说明</B>：请确认每种道具的说明再进行操作！<br /></td></tr>
 </table>
 <%
 	Dim Sql,Rs,i

@@ -22,7 +22,7 @@ dim sel
 <th colspan="2" style="text-align:center;"><b>论坛广告设置</b>（如为设置分论坛，就是分论坛首页广告，下属页面为帖子显示页面）</th>
 </tr>
 <tr> 
-<td width="100%" class="td2" colspan=2><B>说明</B>：<BR>1、复选框中选择的为当前的使用设置模板，点击可查看该模板设置，点击别的模板直接查看该模板并修改设置。您可以将您下面的设置保存在多个论坛版面中<BR>2、您也可以将下面设定的信息保存并应用到具体的分论坛版面设置中，可多选<BR>3、如果您想在一个版面引用别的版面的配置，只要点击该版面名称，保存的时候选择要保存到的版面名称名称即可。
+<td width="100%" class="td2" colspan=2><B>说明</B>：<br />1、复选框中选择的为当前的使用设置模板，点击可查看该模板设置，点击别的模板直接查看该模板并修改设置。您可以将您下面的设置保存在多个论坛版面中<br />2、您也可以将下面设定的信息保存并应用到具体的分论坛版面设置中，可多选<br />3、如果您想在一个版面引用别的版面的配置，只要点击该版面名称，保存的时候选择要保存到的版面名称名称即可。
 <hr size=1 width="100%" color=blue>
 </td>
 </tr>
@@ -64,18 +64,18 @@ set rs=nothing
 </td>
 </tr>
 </FORM>
-</table><BR>
+</table><br />
 <form method="POST" action="forumads.asp?action=save" name="advform">
 <table width="100%" border="0" cellspacing="0" cellpadding="3" align="center">
 <tr> 
 <td width="100%" class="td2" colspan=2>
-<input type=checkbox class=checkbox name="getskinid" value="1" <%if request("getskinid")="1" or request("boardid")="" then Response.Write "checked"%>><a href="forumads.asp?getskinid=1">论坛默认广告</a><BR> 点击此处返回论坛默认广告设置，默认广告设置包含所有<FONT COLOR="blue">除</FONT>包含具体版面内容（如帖子列表、帖子显示、版面精华、版面发贴等）<FONT COLOR="blue">以外</FONT>的页面。<hr size=1 width="90%" color=blue>
+<input type=checkbox class=checkbox name="getskinid" value="1" <%if request("getskinid")="1" or request("boardid")="" then Response.Write "checked"%>><a href="forumads.asp?getskinid=1">论坛默认广告</a><br /> 点击此处返回论坛默认广告设置，默认广告设置包含所有<FONT COLOR="blue">除</FONT>包含具体版面内容（如帖子列表、帖子显示、版面精华、版面发贴等）<FONT COLOR="blue">以外</FONT>的页面。<hr size=1 width="90%" color=blue>
 </td>
 </tr>
 <tr> 
 <td width="200px" class="td1" valign=top>
-版面广告保存选项<BR>
-请按 CTRL 键多选<BR>
+版面广告保存选项<br />
+请按 CTRL 键多选<br />
 <select name="getboard" size="28" style="width:200px" multiple>
 <%
 set rs=Dvbbs.Execute("select boardid,boardtype,depth from dv_board order by rootid,orders")
@@ -217,7 +217,7 @@ If UBound(Dvbbs.Forum_ads)>14 Then
 	Ads_15=Dvbbs.Forum_ads(15)
 End If
 %>
-<td width="200" class="td1"><B>页面文字广告位设置(版面)</B><BR>请确认已打开了页面文字广告位功能<BR></td>
+<td width="200" class="td1"><B>页面文字广告位设置(版面)</B><br />请确认已打开了页面文字广告位功能<br /></td>
 <td width="*" class="td1"> 
 <input type=radio class="radio" name="Forum_ads_15" value=0 <%if Ads_15="0" then%>checked<%end if%>>帖子列表&nbsp;
 <input type=radio class="radio" name="Forum_ads_15" value=1 <%if Ads_15="1" then%>checked<%end if%>>帖子内容&nbsp;

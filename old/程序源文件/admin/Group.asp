@@ -53,7 +53,7 @@ Sub UserGroup()
 </td>
 </tr>
 </table>
-<BR>
+<br />
 <table width="100%" border="0" cellspacing="1" cellpadding="3" align="center">
 <tr> 
 <th style="text-align:center;" colspan="6">注册用户组(等级)管理</th>
@@ -112,7 +112,7 @@ Set Trs=Nothing
 </td></tr>
 </FORM>
 </table>
-<BR>
+<br />
 <table width="100%" border="0" cellspacing="1" cellpadding="3" align="center">
 <tr> 
 <th style="text-align:center;" colspan="6">系统用户组管理<a name="1"></a></th>
@@ -165,7 +165,7 @@ Set Trs=Nothing
 </FORM>
 </table>
 
-<BR>
+<br />
 <table width="100%" border="0" cellspacing="1" cellpadding="3" align="center">
 <tr> 
 <th style="text-align:center;" colspan="6">特殊用户组管理<a name="2"></a></th>
@@ -229,13 +229,13 @@ Set Trs=Nothing
 </FORM>
 </table>
 <!--
-<BR>
+<br />
 <table width="100%" border="0" cellspacing="1" cellpadding="3" align="center">
 <tr> 
 <th style="text-align:center;" colspan="7">多属性用户组管理<a name="3"></a></th>
 </tr>
 <tr><td colspan=7 height=25 class="td1">
-小提示：点击权限您可以分别设定每个多属性用户组的默认论坛权限，通常建立来分配给论坛上比较特殊的用户群体，多属性组头衔和图标显示在前台用户信息中，多属性用户组的用户可同时拥有多个用户组的权限。<BR><font color=blue>包含组ID请慎重填写，组ID的获取可参考上面的各个组列表，内容用竖线分隔(如：2|8)，如果发现不能更新，请仔细检查所填写组ID是否正确</font>
+小提示：点击权限您可以分别设定每个多属性用户组的默认论坛权限，通常建立来分配给论坛上比较特殊的用户群体，多属性组头衔和图标显示在前台用户信息中，多属性用户组的用户可同时拥有多个用户组的权限。<br /><font color=blue>包含组ID请慎重填写，组ID的获取可参考上面的各个组列表，内容用竖线分隔(如：2|8)，如果发现不能更新，请仔细检查所填写组ID是否正确</font>
 </td></tr>
 <tr>
 <td width="5%" class=bodytitle><B>组ID</B></td>
@@ -293,13 +293,13 @@ Set Trs=Nothing
 </td></tr>
 </FORM>
 </table>
-<BR>
+<br />
 //-->
 <%
 Dim FoundVipGroup
 FoundVipGroup = False
 %>
-<BR>
+<br />
 <table width="100%" border="0" cellspacing="1" cellpadding="3" align="center">
 <tr> 
 <th style="text-align:center;" colspan="6">Vip用户组管理<a name="4"></a></th>
@@ -421,7 +421,7 @@ Sub SaveSysGroup()
 	GroupIDList = Replace(GroupIDList,",","|")
 	ParentID = Request.Form("ParentID")
 	If Not IsNumeric(ParentID) Or ParentID="" Then
-		Errmsg = ErrMsg + "<BR><li>非法的用户组参数。"
+		Errmsg = ErrMsg + "<br /><li>非法的用户组参数。"
 		Dvbbs_Error()
 		Exit Sub
 	End If
@@ -485,7 +485,7 @@ Sub DelUserGroup()
 	Dim UserTitleID,tRs,rs
 	UserTitleID = Request("id")
 	If Not IsNumeric(UserTitleID) Or UserTitleID = "" Then
-		Errmsg = ErrMsg + "<BR><li>请指定要删除的用户组(等级)。"
+		Errmsg = ErrMsg + "<br /><li>请指定要删除的用户组(等级)。"
 		Dvbbs_Error()
 		Exit Sub
 	End If
@@ -494,14 +494,14 @@ Sub DelUserGroup()
 	'如果用户组为特殊、多属性组，则更新其用户信息为最低等级，用户登陆后会自动重新更新
 	Set Rs=Dvbbs.Execute("Select * From Dv_UserGroups Where (Not ParentGID=1) And UserGroupID = " & UserTitleID)
 	If Rs.Eof And Rs.Bof Then
-		Errmsg = ErrMsg + "<BR><li>指定要删除的用户组(等级)不存在。"
+		Errmsg = ErrMsg + "<br /><li>指定要删除的用户组(等级)不存在。"
 		Dvbbs_Error()
 		Exit Sub
 	ElseIf Not Rs("UserGroupID") = 8 And Rs("ParentGID") = 2 Then
 		'删除特殊用户组（等级）之判断 2005-4-9 Dv.Yz
 		Set tRs = Dvbbs.Execute("SELECT TOP 1 * FROM Dv_UserGroups WHERE ParentGID = 3 ORDER BY MinArticle Desc")
 		If tRs.Eof And tRs.Bof Then
-			Errmsg = ErrMsg + "<BR><li>注册用户组(等级)为空，不能删除，请先添加至少一个注册用户组(等级)。"
+			Errmsg = ErrMsg + "<br /><li>注册用户组(等级)为空，不能删除，请先添加至少一个注册用户组(等级)。"
 			Dvbbs_Error()
 			Exit Sub
 		Else
@@ -511,7 +511,7 @@ Sub DelUserGroup()
 	Else
 		Set tRs=Dvbbs.Execute("Select Top 1 * From Dv_UserGroups Where ParentGID=3 And (Not UserGroupID="&UserTitleID&") And MinArticle<="&Rs("MinArticle")&" Order By MinArticle Desc")
 		If tRs.Eof And tRs.Bof Then
-			Errmsg = ErrMsg + "<BR><li>该用户组(等级)为最后一个注册用户组，不能删除。"
+			Errmsg = ErrMsg + "<br /><li>该用户组(等级)为最后一个注册用户组，不能删除。"
 			Dvbbs_Error()
 			Exit Sub
 		Else
@@ -543,7 +543,7 @@ Dim GroupSetting_Arr
 Dim GroupSetting_ArrayList
 Set Rs=Dvbbs.Execute("select groupsetting from dv_usergroups where Usergroupid="&groupid&"")
 If Rs.eof Then 
-	Errmsg=ErrMsg + "<BR><li>查询数据不存在。"
+	Errmsg=ErrMsg + "<br /><li>查询数据不存在。"
 	dvbbs_error()
 	exit Sub
 Else 
@@ -584,13 +584,13 @@ If Request("ChkTyClsGroup")="on" Then
 	TyClsGroupM=Dvbbs.CheckStr(TyClsGroupM)
 	'Response.write TyClsGroupM:exit sub
 	if TyClsGroup<>"0" and TyClsGroupM="" then
-		Errmsg = ErrMsg + "<BR><li>您没有选择设置该用户组访问权限的具体时间。" 
+		Errmsg = ErrMsg + "<br /><li>您没有选择设置该用户组访问权限的具体时间。" 
 		Dvbbs_Error()
 		Exit Sub
 	end if
 End If 
 If CheckBoxList3="" And grouppic="" And TyClsGroup="" Then 
-		Errmsg = ErrMsg + "<BR><li>未选中任何设置。"
+		Errmsg = ErrMsg + "<br /><li>未选中任何设置。"
 		Dvbbs_Error()
 		Exit Sub
 Else 
@@ -635,7 +635,7 @@ End Sub  'Add By reoaiq at 090926 End
 Sub EditGroup()
 Dim i
 	If Not IsNumeric(Replace(Request("groupid"),",","")) Then
-		Errmsg = ErrMsg + "<BR><li>请选择对应的用户组。"
+		Errmsg = ErrMsg + "<br /><li>请选择对应的用户组。"
 		Dvbbs_Error()
 		Exit Sub
 	End If
@@ -653,7 +653,7 @@ Dim i
 		Dim reGroupSetting,Rs
 		Set Rs=Dvbbs.Execute("Select * From Dv_Usergroups Where UserGroupID="&Cint(Request("groupid")))
 		If Rs.Eof And Rs.Bof Then
-			Errmsg = ErrMsg + "<BR><li>未找到该用户组！"
+			Errmsg = ErrMsg + "<br /><li>未找到该用户组！"
 			Dvbbs_Error()
 			Exit Sub
 		End If
@@ -667,14 +667,14 @@ Dim i
 </th>
 </tr>
 <tr><td colspan=5 height=25 class="td1"><B>说明</B>：
-<BR>①在这里您可以设置各个用户组（等级）在论坛中的默认权限；
-<BR>②可以删除和编辑新添加的用户组；
-<BR>③<font color="red">在更新多个用户组设置时，请选取最左边的复选表单，只有选取的设置项目才会更新；</font>
-<BR>④不执行多用户组更新时，不需要选取左边的用户组列表。
+<br />①在这里您可以设置各个用户组（等级）在论坛中的默认权限；
+<br />②可以删除和编辑新添加的用户组；
+<br />③<font color="red">在更新多个用户组设置时，请选取最左边的复选表单，只有选取的设置项目才会更新；</font>
+<br />④不执行多用户组更新时，不需要选取左边的用户组列表。
 </td></tr>
 <tr><td rowspan="800" valign="top">
-应用用户组保存选项<BR>
-请按 CTRL 键多选<BR>
+应用用户组保存选项<br />
+请按 CTRL 键多选<br />
 <%
 Dim GroupArr
 GroupArr=GetUserGroup()
@@ -741,7 +741,7 @@ Next
 <tr> 
 <td width="1%" class=td1><INPUT TYPE="checkbox" class="checkbox" NAME="ChkTyClsGroupM"></td>
 <td colspan=1 class=td1>
-定时设置<BR>请根据需要选择开或关</td></td>
+定时设置<br />请根据需要选择开或关</td></td>
 <td colspan=1 class=td1>
 <%
 Rem 新增两字段 TyClsGroup 及 TyClsGroupM  by 动网.小易

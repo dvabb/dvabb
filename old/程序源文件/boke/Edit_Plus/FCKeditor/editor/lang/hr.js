@@ -312,7 +312,7 @@ PasteErrorCopy	: "Sigurnosne postavke Vašeg pretraživača ne dozvoljavaju oper
 PasteAsText		: "Zalijepi kao čisti tekst",
 PasteFromWord	: "Zalijepi iz Worda",
 
-DlgPasteMsg		: "Editor nije mogao automatski zalijepiti zbog  <STRONG>sigurnosnih postavki</STRONG> Vašeg pretraživača.<BR>Molimo zalijepite unutar sljedeće kocke koristeći tipkovnicu (<STRONG>Ctrl+V</STRONG>) i pritisnite na <STRONG>OK</STRONG>.",
+DlgPasteMsg		: "Editor nije mogao automatski zalijepiti zbog  <STRONG>sigurnosnih postavki</STRONG> Vašeg pretraživača.<br />Molimo zalijepite unutar sljedeće kocke koristeći tipkovnicu (<STRONG>Ctrl+V</STRONG>) i pritisnite na <STRONG>OK</STRONG>.",
 
 // Color Picker
 ColorAutomatic	: "Automatski",

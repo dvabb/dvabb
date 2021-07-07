@@ -17,7 +17,7 @@ Footer()
 Sub consted()
 Dim rs,i,j
 if not isnumeric(request("editid")) then
-	Errmsg=ErrMsg + "<BR><li>错误的版面信息"
+	Errmsg=ErrMsg + "<br /><li>错误的版面信息"
 	dvbbs_error()
 	exit sub
 end if
@@ -28,9 +28,9 @@ Board_Setting=split(rs("board_setting"),",")
 <tr><th colspan="7">论坛高级设置 → <%=rs("boardtype")%></th></tr>
 <tr> 
 <td width="100%" class=td1 colspan=7 height=25>
-说明：<BR>
-1、请仔细设置下面的高级选项，Flash标签如果打开，对安全有一定影响，请根据您的具体情况考虑。<BR>
-2、您可以将高级设置的某项设置（选择该行设置右边的复选框）保存到所有版面、相同分类下所有版面（不包括分类）、相同分类下所有版面（包括分类）、同分类同级别版面，该项设置请慎重操作。<BR>
+说明：<br />
+1、请仔细设置下面的高级选项，Flash标签如果打开，对安全有一定影响，请根据您的具体情况考虑。<br />
+2、您可以将高级设置的某项设置（选择该行设置右边的复选框）保存到所有版面、相同分类下所有版面（不包括分类）、相同分类下所有版面（包括分类）、同分类同级别版面，该项设置请慎重操作。<br />
 3、<font color=red>注意，选择批量更新包括主题将会使用相同设置</font>。
 </td>
 </tr>
@@ -106,7 +106,7 @@ set rs=nothing
 <tr> 
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(50)"></td>
 <td colspan=2 class=td1>
-<U>外部连接</U><BR>填写本内容后，在论坛列表点击此版面将自动切换到该网址<BR>请填写URL绝对路径</td>
+<U>外部连接</U><br />填写本内容后，在论坛列表点击此版面将自动切换到该网址<br />请填写URL绝对路径</td>
 <td colspan=2 class=td1>
 <input type=text name="Board_Setting(50)" value="<%=Board_Setting(50)%>" size=50>
 </td>
@@ -116,7 +116,7 @@ set rs=nothing
 <tr> 
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(51)"></td>
 <td colspan=2 class=td2>
-<U>分论坛LOGO</U><BR>填写图片的相对或绝对路径，不填写则当前版面LOGO为论坛设置中LOGO</td>
+<U>分论坛LOGO</U><br />填写图片的相对或绝对路径，不填写则当前版面LOGO为论坛设置中LOGO</td>
 <td colspan=2 class=td2>
 <input type=text name="Board_Setting(51)" value="<%=Board_Setting(51)%>" size=50>
 </td>
@@ -137,7 +137,7 @@ set rs=nothing
 <tr> 
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(39)"></td>
 <td colspan=2 class=td2>
-<U>论坛列表显示下属论坛风格</U><BR></td>
+<U>论坛列表显示下属论坛风格</U><br /></td>
 <td colspan=2 class=td2>
 <input type=radio class="radio" name="Board_Setting(39)" value=0 <%if Board_Setting(39)="0" then%>checked<%end if%>>列表&nbsp;
 <input type=radio class="radio" name="Board_Setting(39)" value=1 <%if Board_Setting(39)="1" then%>checked<%end if%>>简洁&nbsp;
@@ -247,7 +247,7 @@ set rs=nothing
 <tr> 
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(18)"></td>
 <td colspan=2 class=td2>
-<U>允许同时在线数</U><BR>不限制则设置为0</td>
+<U>允许同时在线数</U><br />不限制则设置为0</td>
 <td colspan=2 class=td2>
 <input type=text size=10 name="Board_Setting(18)" value="<%=Board_Setting(18)%>"> 人
 </td>
@@ -269,7 +269,7 @@ set rs=nothing
 <tr> 
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(22)(22)"></td>
 <td colspan=2 class=td2>
-<U>定时设置</U><BR>请根据需要选择开或关</td></td>
+<U>定时设置</U><br />请根据需要选择开或关</td></td>
 <td colspan=2 class=td2>
 <%
 Board_Setting(22)=split(Board_Setting(22),"|")
@@ -421,7 +421,7 @@ End If
 <tr>
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(66)"></td>
 <td colspan=2 class=td1>
-<U>VIP用户组进入收取金币点券标准</U><BR>请以小数设置，设置为0则不需要支持金币和点券，否则以上面两项设置的标准：VIP用户进入需要金币数或点券数 = VIP用户组收取金币点券标准 X 用户进入需要金币数或点券数</td>
+<U>VIP用户组进入收取金币点券标准</U><br />请以小数设置，设置为0则不需要支持金币和点券，否则以上面两项设置的标准：VIP用户进入需要金币数或点券数 = VIP用户组收取金币点券标准 X 用户进入需要金币数或点券数</td>
 <td colspan=2 class=td1>
 <input type=text size=10 name="Board_Setting(66)" value="<%=Board_Setting(66)%>">
 设置后进入该版面将需要支付一定量的点券
@@ -475,7 +475,7 @@ End If
 <tr> 
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(65)"></td>
 <td colspan=2 class=td2>
-<U>管理操作及评分理由选项</U><BR>每个理由用“|”分割</td>
+<U>管理操作及评分理由选项</U><br />每个理由用“|”分割</td>
 <td colspan=2 class=td2>
 <input type="text" Name="Board_Setting(65)" Value="<%=Board_Setting(65)%>" Size=50>
 </td>
@@ -519,7 +519,7 @@ End If
 <tr> 
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(16)"></td>
 <td colspan=2 class=td2>
-<U>帖子内容最大字节数</U><BR>1024字节等于1K</td>
+<U>帖子内容最大字节数</U><br />1024字节等于1K</td>
 <td colspan=2 class=td2>
 <input type=text size=10 name="Board_Setting(16)" value="<%=Board_Setting(16)%>"> 字节
 </td>
@@ -528,7 +528,7 @@ End If
 <tr> 
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(52)"></td>
 <td colspan=2 class=td1>
-<U>帖子内容最小字节数</U><BR>1024字节等于1K</td>
+<U>帖子内容最小字节数</U><br />1024字节等于1K</td>
 <td colspan=2 class=td1>
 <input type=text size=10 name="Board_Setting(52)" value="<%=Board_Setting(52)%>"> 字节
 </td>
@@ -547,7 +547,7 @@ End If
 <tr> 
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckBoardSetting(19)"></td>
 <td colspan=2 class=td1>
-<U>上传文件类型</U><BR>每种文件类型用“|”号分开</td>
+<U>上传文件类型</U><br />每种文件类型用“|”号分开</td>
 <td colspan=2 class=td1>
 <input type=text size=50 name="Board_Setting(19)" value="<%=Board_Setting(19)%>">
 </td>

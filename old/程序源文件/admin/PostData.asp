@@ -24,7 +24,7 @@ Sub main()
 %>
 <table width="100%" border="0" cellspacing="1" cellpadding="3" align="center">
 	<tr>
-		<td height="23" colspan="2" class=td1><B>说明</B>：<BR>您可以选择下列其中之一种模式进行帖子数据在不同表之间的转换。</td>
+		<td height="23" colspan="2" class=td1><B>说明</B>：<br />您可以选择下列其中之一种模式进行帖子数据在不同表之间的转换。</td>
 	</tr>
 	<tr>
 		<th colspan="2">模式一：搜索要转移的帖子</th>
@@ -75,7 +75,7 @@ sub nowused()
 <form method="POST" action="?action=update">
 <table width="100%" border="0" cellspacing="1" cellpadding="3" align="center">
 <tr>
-<td height="23" colspan="5" class=td1><B>说明</B>：<BR>下列数据表中选中的为当前论坛所使用来保存帖子数据的表，一般情况下每个表中的数据越少论坛帖子显示速度越快，当您下列单个帖子数据表中的数据有超过几万的帖子时不妨新添一个数据表来保存帖子数据（SQL版本用户建议每个表数据达到20万以后进行添加表操作），您会发现论坛速度快很多很多。<BR>您也可以将当前所使用的数据表在下列数据表中切换，当前所使用的帖子数据表即当前论坛用户发贴时默认的保存帖子数据表</td>
+<td height="23" colspan="5" class=td1><B>说明</B>：<br />下列数据表中选中的为当前论坛所使用来保存帖子数据的表，一般情况下每个表中的数据越少论坛帖子显示速度越快，当您下列单个帖子数据表中的数据有超过几万的帖子时不妨新添一个数据表来保存帖子数据（SQL版本用户建议每个表数据达到20万以后进行添加表操作），您会发现论坛速度快很多很多。<br />您也可以将当前所使用的数据表在下列数据表中切换，当前所使用的帖子数据表即当前论坛用户发贴时默认的保存帖子数据表</td>
 </tr>
 <tr>
 <th colspan="5">当前数据表设定</th>
@@ -152,7 +152,7 @@ sub del()
 	dim nAllPostTable,nAllPostTableName,ii,TableName
 	TableName = Dvbbs.CheckStr(trim(request("tablename")))
 	if TableName=Trim(Dvbbs.NowUseBBS) then
-		Errmsg=ErrMsg + "<BR><li>当前正在使用的表不能删除。"
+		Errmsg=ErrMsg + "<br /><li>当前正在使用的表不能删除。"
 		dvbbs_error()
 		exit sub
 	end if
@@ -167,31 +167,31 @@ end sub
 
 sub CreatTable()
 if request.form("tablename")="" then
-	Errmsg=ErrMsg + "<BR><li>请输入表名。"
+	Errmsg=ErrMsg + "<br /><li>请输入表名。"
 	dvbbs_error()
 	exit sub
 elseif len(request.form("tablename"))<>7 then
-	Errmsg=ErrMsg + "<BR><li>输入的表名不合法。"
+	Errmsg=ErrMsg + "<br /><li>输入的表名不合法。"
 	dvbbs_error()
 	exit sub
 elseif not isnumeric(right(request.form("tablename"),1)) then
-	Errmsg=ErrMsg + "<BR><li>输入的表名不合法。"
+	Errmsg=ErrMsg + "<br /><li>输入的表名不合法。"
 	dvbbs_error()
 	exit sub
 elseif cint(right(request.form("tablename"),1))>9 or cint(right(request.form("tablename"),1))<0 then
-	Errmsg=ErrMsg + "<BR><li>输入的表名不合法。"
+	Errmsg=ErrMsg + "<br /><li>输入的表名不合法。"
 	dvbbs_error()
 	exit sub
 end if
 if request.form("tablereadme")="" then
-	Errmsg=ErrMsg + "<BR><li>请输入表的说明。"
+	Errmsg=ErrMsg + "<br /><li>请输入表的说明。"
 	dvbbs_error()
 	exit sub
 end If
 Dim i,sql
 for i=0 to ubound(AllPostTable)
 	if AllPostTable(i)=request.form("tablename") then
-		Errmsg=ErrMsg + "<BR><li>您输入的表名已经存在，请重新输入。"
+		Errmsg=ErrMsg + "<br /><li>您输入的表名已经存在，请重新输入。"
 		dvbbs_error()
 		exit sub
 	end if
@@ -286,12 +286,12 @@ Dim orderby,PostUserID,OutTableName,InTableName
 OutTableName = Dvbbs.CheckStr(request.form("outtablename"))
 InTableName = Dvbbs.CheckStr(request.form("intablename"))
 if OutTableName=InTableName then
-	Errmsg=ErrMsg + "<BR><li>不能在相同数据表内转移数据。"
+	Errmsg=ErrMsg + "<br /><li>不能在相同数据表内转移数据。"
 	dvbbs_error()
 	exit sub
 end if
 if (not isnumeric(request.form("selnum"))) or request.form("selnum")="" then
-	Errmsg=ErrMsg + "<BR><li>请填写正确的更新数量。"
+	Errmsg=ErrMsg + "<br /><li>请填写正确的更新数量。"
 	dvbbs_error()
 	exit sub
 end if
@@ -311,7 +311,7 @@ end if
 Dim C1
 C1=TopNum
 %>
-&nbsp;<BR>
+&nbsp;<br />
 <table cellpadding="0" cellspacing="0" border="0" width="100%" align="center">
 <tr><td colspan=2 class=td1>
 下面开始转移论坛帖子资料，预计本次共有<%=C1%>个帖子需要更新
@@ -330,7 +330,7 @@ dim myrs,maxannid,i,rs
 for i=1 to ForNum
 set rs=Dvbbs.Execute("select top "&TopNum&" topicid,title from dv_topic where PostTable='"&OutTableName&"' order by topicid "&orderby&"")
 if rs.eof and rs.bof then
-	Errmsg=ErrMsg + "<BR><li>您所选择导出的数据表已经没有任何内容"
+	Errmsg=ErrMsg + "<br /><li>您所选择导出的数据表已经没有任何内容"
 	dvbbs_error()
 	exit sub
 else
@@ -393,7 +393,7 @@ else
 	currentpage=clng(currentpage)
 end if
 if request("keyword")="" then
-	Errmsg=ErrMsg + "<BR><li>请输入您要查询的关键字。"
+	Errmsg=ErrMsg + "<br /><li>请输入您要查询的关键字。"
 	dvbbs_error()
 	exit sub
 else
@@ -402,7 +402,7 @@ end if
 if request("searchWhat")="username" then
 Set Rs=Dvbbs.Execute("Select UserID From Dv_User Where UserName='"&keyword&"'")
 If Rs.Eof And Rs.Bof Then
-	Errmsg=ErrMsg + "<BR><li>目标用户并不存在，请重新输入。"
+	Errmsg=ErrMsg + "<br /><li>目标用户并不存在，请重新输入。"
 	dvbbs_error()
 	exit sub
 Else
@@ -412,7 +412,7 @@ sql="select * from dv_topic where PostTable='"&Dvbbs.CheckStr(request("tablename
 elseif request("topic")="yes" then
 sql="select * from dv_topic where PostTable='"&Dvbbs.CheckStr(request("tablename"))&"' and title like '%"&keyword&"%' order by LastPostTime desc"
 else
-	Errmsg=ErrMsg + "<BR><li>请选择您查询的方式。"
+	Errmsg=ErrMsg + "<br /><li>请选择您查询的方式。"
 	dvbbs_error()
 	exit sub
 end if
@@ -426,7 +426,7 @@ end if
 <input type=hidden name="tablename" value="<%=request("tablename")%>">
 <table width="100%" border="0" cellspacing="1" cellpadding="3" align="center">
 <tr>
-<td height="23" colspan="6" class=td1><B>说明</B>：<BR>您可以对下列的搜索结果进行转移数据表的操作，不能在相同表内进行转换操作。</td>
+<td height="23" colspan="6" class=td1><B>说明</B>：<br />您可以对下列的搜索结果进行转移数据表的操作，不能在相同表内进行转换操作。</td>
 </tr>
 <tr>
 <th colspan="6">搜索<%=request("tablename")%>结果</th>
@@ -515,7 +515,7 @@ end if
 end if
 rs.close
 set rs=nothing
-response.write "</table></form><BR><BR>"
+response.write "</table></form><br /><br />"
 end sub
 
 '根据搜索结果更新
@@ -525,13 +525,13 @@ Dim Rs,SQL,i
 TableName = Dvbbs.CheckStr(request("tablename"))
 
 if request.form("tablename")=request.form("totablename") then
-	Errmsg=ErrMsg + "<BR><li>不能在相同数据表内进行数据转换。"
+	Errmsg=ErrMsg + "<br /><li>不能在相同数据表内进行数据转换。"
 	dvbbs_error()
 	exit sub
 end if
 if request.form("allsearch")="yes" then
 	if request("keyword")="" then
-		Errmsg=ErrMsg + "<BR><li>请输入您要查询的关键字。"
+		Errmsg=ErrMsg + "<br /><li>请输入您要查询的关键字。"
 		dvbbs_error()
 		exit sub
 	else
@@ -540,7 +540,7 @@ if request.form("allsearch")="yes" then
 	if request("searchWhat")="username" then	'shinzeal add searchWhat in 2004/7/4
 		Set Rs=Dvbbs.Execute("Select UserID From Dv_User Where UserName='"&keyword&"'")
 		If Rs.Eof And Rs.Bof Then
-			Errmsg=ErrMsg + "<BR><li>目标用户并不存在，请重新输入。"
+			Errmsg=ErrMsg + "<br /><li>目标用户并不存在，请重新输入。"
 			dvbbs_error()
 			exit sub
 		Else
@@ -550,13 +550,13 @@ if request.form("allsearch")="yes" then
 	elseif request("topic")="yes" then
 		sql="select topicid,title from dv_topic where PostTable='"&TableName&"' and title like '%"&keyword&"%' order by LastPostTime desc"
 	else
-		Errmsg=ErrMsg + "<BR><li>请选择您查询的方式。"
+		Errmsg=ErrMsg + "<br /><li>请选择您查询的方式。"
 		dvbbs_error()
 		exit sub
 	end if
 else
 	if request.form("topicid")="" then
-		Errmsg=ErrMsg + "<BR><li>请选择要转移的帖子。"
+		Errmsg=ErrMsg + "<br /><li>请选择要转移的帖子。"
 		dvbbs_error()
 		exit sub
 	end if
@@ -579,7 +579,7 @@ Rs.Open SQL,Conn,1,1
 Dim C1,myrs,maxannid
 C1=Rs.ReCordCount
 %>
-&nbsp;<BR>
+&nbsp;<br />
 <table cellpadding="0" cellspacing="0" border="0" width="100%" align="center">
 <tr><td colspan=2 class=td1>
 下面开始转移论坛帖子资料，预计本次共有<%=C1%>个帖子需要更新
@@ -594,7 +594,7 @@ C1=Rs.ReCordCount
 <%
 Response.Flush
 if rs.eof and rs.bof then
-	Errmsg=ErrMsg + "<BR><li>没有任何记录可转换。"
+	Errmsg=ErrMsg + "<br /><li>没有任何记录可转换。"
 	dvbbs_error()
 	exit sub
 else

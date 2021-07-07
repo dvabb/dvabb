@@ -36,7 +36,7 @@ Sub Main()
 		</b></td>
         </tr>
 </table>
-<BR>
+<br />
 <table cellpadding=0 cellspacing=0 width="<%=Dvbbs.mainsetting(0)%>" align=center style="word-break:break-all;">
 		<tr>
               <td width="30%" valign=top align=left>
@@ -111,7 +111,7 @@ Sub Main()
       		<table cellpadding=3 cellspacing=1 class=tableborder1 style="width:100%;word-break:break-all;">
 		  <tr>
 			<td width="100%" height=24 class=tablebody1>
-<B>注意</B>：<BR>本页面为版主专用，使用前请看左边相对应的功能是否打开，在进行管理设置的时候，不要随意更改设置，如需更改，必须填写完整或者正确的填写。
+<B>注意</B>：<br />本页面为版主专用，使用前请看左边相对应的功能是否打开，在进行管理设置的时候，不要随意更改设置，如需更改，必须填写完整或者正确的填写。
 		  </td></tr>
 		</table>
 <%
@@ -259,7 +259,7 @@ Sub editbmads()
 </td>
 </tr>
 <tr> 
-<td width="200" class="tablebody1"><B>页面文字广告位设置(版面)</B><BR>请确认已打开了页面文字广告位功能<BR></td>
+<td width="200" class="tablebody1"><B>页面文字广告位设置(版面)</B><br />请确认已打开了页面文字广告位功能<br /></td>
 <td width="*" class="tablebody1"> 
 <input type=radio name="Forum_ads(15)" value=0 <%if Dvbbs.Forum_ads(15)="0" then%>checked<%end if%>>帖子列表&nbsp;
 <input type=radio name="Forum_ads(15)" value=1 <%if Dvbbs.Forum_ads(15)="1" then%>checked<%end if%>>帖子内容&nbsp;
@@ -401,7 +401,7 @@ Sub Editbminfo()
     <tr> 
       <td height=22 class=tablebody1  align="center">版主修改：</td>
       <td  class=tablebody1> 
-        <input type="text" name="boardmaster" size="50" value="<%=server.HTMLEncode(rs("boardmaster")&"")%>"><BR>(多版主添加请用|分隔，如：沙滩小子|wodeail)
+        <input type="text" name="boardmaster" size="50" value="<%=server.HTMLEncode(rs("boardmaster")&"")%>"><br />(多版主添加请用|分隔，如：沙滩小子|wodeail)
       </td>
     </tr>
     <%If Cint(Dvbbs.Board_Setting(2))=1 Then%>

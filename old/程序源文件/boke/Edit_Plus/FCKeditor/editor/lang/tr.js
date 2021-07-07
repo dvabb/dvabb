@@ -312,7 +312,7 @@ PasteErrorCopy	: "Web browser'ınızn güvenlik ayarlarından dolayı editörüm
 PasteAsText		: "Düz text olarak yapıştır",
 PasteFromWord	: "Word'ten yapıştır",
 
-DlgPasteMsg		: "Editörümüz, Web browser'ınızın <b>güvenlik ayarlarından</b> dolayı otomatik olarak yapıştırma işlemini yapamamaktadır.<BR>Lütfen yapıştırmak için <STRONG>Ctrl+V</STRONG> tuşlarına başın ve daha sonra <STRONG>TAMAM</STRONG>'a tıklayın.",
+DlgPasteMsg		: "Editörümüz, Web browser'ınızın <b>güvenlik ayarlarından</b> dolayı otomatik olarak yapıştırma işlemini yapamamaktadır.<br />Lütfen yapıştırmak için <STRONG>Ctrl+V</STRONG> tuşlarına başın ve daha sonra <STRONG>TAMAM</STRONG>'a tıklayın.",
 
 // Color Picker
 ColorAutomatic	: "Otomatik",

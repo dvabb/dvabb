@@ -478,7 +478,7 @@ document.getElementById("Setupload").innerHTML=tempstr2;
 		<td width="80%" class="reply_t3">
 			<input type=radio ID="ialipay_transport" name="ialipay_transport" value="3" onclick="document.getElementById('alipay_mail').disabled=true; document.getElementById('alipay_express').disabled=true;alipay_transport.value=3;"> 虚拟物品不需邮递&nbsp;&nbsp;
 			<input type=radio ID="ialipay_transport" name="ialipay_transport" checked value="1" onclick="document.getElementById('alipay_mail').disabled=true; document.getElementById('alipay_express').disabled=true;alipay_transport.value=1;"> 卖家承担运费&nbsp;&nbsp;
-			<input type=radio ID="ialipay_transport" name="ialipay_transport" value="2" onclick="document.getElementById('alipay_mail').disabled=false; document.getElementById('alipay_express').disabled=false;alipay_transport.value=2;"> 买家承担运费<BR>
+			<input type=radio ID="ialipay_transport" name="ialipay_transport" value="2" onclick="document.getElementById('alipay_mail').disabled=false; document.getElementById('alipay_express').disabled=false;alipay_transport.value=2;"> 买家承担运费<br />
 			<input type="hidden" value="1" ID="alipay_transport">
 			平邮&nbsp;<input type=text ID="alipay_mail" name="alipay_mail" style="width:45px" size=25 disabled> 元 &nbsp;&nbsp;
 			快递&nbsp;<input type=text ID="alipay_express" name="alipay_express" style="width:45px" size=25 disabled> 元 (不填为平邮)</td>

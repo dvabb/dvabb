@@ -23,8 +23,8 @@ Sub boardinfo()
 	<form action=boardunite.asp?action=unite method=post>
 	<tr>
 	<td class=td1>
-	<B>合并论坛选项</B>：<BR>
-<B>将本论坛及其下属版面的帖子都转移至目标论坛，并删除本论坛及其下属版面</B><BR><BR>
+	<B>合并论坛选项</B>：<br />
+<B>将本论坛及其下属版面的帖子都转移至目标论坛，并删除本论坛及其下属版面</B><br /><br />
 <%
 	Dim rs,sql,i
 	set rs = Dvbbs.iCreateObject ("Adodb.recordset")
@@ -69,12 +69,12 @@ Sub boardinfo()
 	end if
 	rs.close
 	set rs=nothing
-	response.write " <BR><BR><input type=submit class=button name=Submit value=合并论坛><BR><BR>"
+	response.write " <br /><br /><input type=submit class=button name=Submit value=合并论坛><br /><br />"
 %>
 	</td>
 	</tr>
 	<tr>
-	<td class=td1><B>注意事项</B>：<BR><FONT COLOR="red">所有操作不可逆，请慎重操作</FONT><BR> 不能在同一个版面内进行操作、不能将一个版面合并到其下属论坛中。<BR>合并后您所指定的论坛（或者包括其下属论坛）将被删除，所有帖子将转移到您所指定的目标论坛中
+	<td class=td1><B>注意事项</B>：<br /><FONT COLOR="red">所有操作不可逆，请慎重操作</FONT><br /> 不能在同一个版面内进行操作、不能将一个版面合并到其下属论坛中。<br />合并后您所指定的论坛（或者包括其下属论坛）将被删除，所有帖子将转移到您所指定的目标论坛中
 	</td>
 	</tr></form>
 	</table>

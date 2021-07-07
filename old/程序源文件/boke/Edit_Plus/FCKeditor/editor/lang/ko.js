@@ -312,7 +312,7 @@ PasteErrorCopy	: "브라우저의 보안설정때문에 복사하기 기능을 �
 PasteAsText		: "텍스트로 붙여넣기",
 PasteFromWord	: "MS Word 형식에서 붙여넣기",
 
-DlgPasteMsg		: "브라우저의 <STRONG>보안설정/STRONG> 때문에 붙여넣기 할 수 없습니다. <BR>키보드 명령(<STRONG>Ctrl+V</STRONG>)을 이용하여 붙여넣은 다음 <STRONG>예</STRONG>버튼을 클릭하십시요.",
+DlgPasteMsg		: "브라우저의 <STRONG>보안설정/STRONG> 때문에 붙여넣기 할 수 없습니다. <br />키보드 명령(<STRONG>Ctrl+V</STRONG>)을 이용하여 붙여넣은 다음 <STRONG>예</STRONG>버튼을 클릭하십시요.",
 
 // Color Picker
 ColorAutomatic	: "기본색상",

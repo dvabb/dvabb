@@ -312,7 +312,7 @@ PasteErrorCopy	: "Ustawienia bezpieczeństwa Twojej przeglądarki nie pozwalają
 PasteAsText		: "Wklej jako czysty tekst",
 PasteFromWord	: "Wklej z Worda",
 
-DlgPasteMsg		: "Automatyczne wklejenie tekstu nie było możliwe z powodu <STRONG>restrykcyjnych</STRONG> ustawień bezpieczeństwa Twojej przeglądarki.<BR>Wklej tekst w poniższe pole używając skrótu klawiszowego (<STRONG>Ctrl+V</STRONG>) i wciśnij <STRONG>OK</STRONG>.",
+DlgPasteMsg		: "Automatyczne wklejenie tekstu nie było możliwe z powodu <STRONG>restrykcyjnych</STRONG> ustawień bezpieczeństwa Twojej przeglądarki.<br />Wklej tekst w poniższe pole używając skrótu klawiszowego (<STRONG>Ctrl+V</STRONG>) i wciśnij <STRONG>OK</STRONG>.",
 
 // Color Picker
 ColorAutomatic	: "Automatycznie",

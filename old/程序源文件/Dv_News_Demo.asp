@@ -42,7 +42,7 @@ Sub DemoMain()
 	</td>
 	</tr>
 	</table>
-	<BR>
+	<br />
 	<%
 	For Each Node in NewsCode
 	ScriptCode = "<script src="""&BbsUrl&"Dv_News.asp?GetName="&Node.getAttribute("NewsName")&"""></script>"

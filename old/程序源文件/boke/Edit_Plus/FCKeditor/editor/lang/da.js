@@ -312,7 +312,7 @@ PasteErrorCopy	: "Din browsers sikkerhedsindstillinger tillader ikke editoren at
 PasteAsText		: "Indsæt som ren tekst",
 PasteFromWord	: "Indsæt fra Word",
 
-DlgPasteMsg		: "Editoren kunne ikke indsætte teksten automatisk på grund af din browsers <STRONG>sikkerhedsindstillinger</STRONG>.<BR>Indsæt i stedet teksten i den følgende boks ved hjælp af tastaturet (<STRONG>Ctrl+V</STRONG>) og klik <STRONG>OK</STRONG>.",
+DlgPasteMsg		: "Editoren kunne ikke indsætte teksten automatisk på grund af din browsers <STRONG>sikkerhedsindstillinger</STRONG>.<br />Indsæt i stedet teksten i den følgende boks ved hjælp af tastaturet (<STRONG>Ctrl+V</STRONG>) og klik <STRONG>OK</STRONG>.",
 
 // Color Picker
 ColorAutomatic	: "Automatisk",

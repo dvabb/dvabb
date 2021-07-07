@@ -312,7 +312,7 @@ PasteErrorCopy	: "As configurações de segurança do seu navegador não permite
 PasteAsText		: "Colar como Texto sem Formatação",
 PasteFromWord	: "Colar do Word",
 
-DlgPasteMsg		: "Não foi possível execurar o comando colar automaticamente devido às <STRONG>configurações de segurança</STRONG> seu navegador.<BR>Cole o conteúdo desejado dentro da seguinte caixa texto utilizando a tecla de atalho (<STRONG>Ctrl+V</STRONG>) e clique em <STRONG>OK</STRONG>.",
+DlgPasteMsg		: "Não foi possível execurar o comando colar automaticamente devido às <STRONG>configurações de segurança</STRONG> seu navegador.<br />Cole o conteúdo desejado dentro da seguinte caixa texto utilizando a tecla de atalho (<STRONG>Ctrl+V</STRONG>) e clique em <STRONG>OK</STRONG>.",
 
 // Color Picker
 ColorAutomatic	: "Automático",

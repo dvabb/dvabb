@@ -84,7 +84,7 @@ FCK.InitializeBehaviors = function( dontReturn )
 					if ( FCK.EditorDocument.queryCommandState( 'InsertOrderedList' ) || FCK.EditorDocument.queryCommandState( 'InsertUnorderedList' ) )
 						return true ;
 
-					// Insert the <BR> (The &nbsp; must be also inserted to make it work)
+					// Insert the <br /> (The &nbsp; must be also inserted to make it work)
 					FCK.InsertHtml("<br>&nbsp;") ;
 
 					// Remove the &nbsp;

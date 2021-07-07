@@ -36,21 +36,21 @@ dim sel
 <FORM METHOD=POST ACTION="help.asp?action=search">
 <tr>
 <td height="25" colspan="3" class="td1">
-<B>输入帮助关键字</B>：<input type="text" name="keyword" size=50> <input type=submit class=button name=submit value="搜 索"><BR><BR>输入帮助关键字进行搜索，不输入查询条件为显示所有帮助
+<B>输入帮助关键字</B>：<input type="text" name="keyword" size=50> <input type=submit class=button name=submit value="搜 索"><br /><br />输入帮助关键字进行搜索，不输入查询条件为显示所有帮助
 </td>
 </tr>
 </FORM>
-</table><BR>
+</table><br />
 <%
 search()
-%><BR>
+%><br />
 <table width="100%" border="0" cellspacing="1" cellpadding="3" align="center">
 <tr><th>论坛帮助添加</th></tr>
 <tr> 
 <td width="48%" class="td2" valign=top>
 <li>所添加内容将自动显示于前台的帮助页面；
 <li>添加一级分类方法：选取下拉选项“<font color=blue>作为一级分类</font>”，并填写旁边分类标题，标题与内容可以不填写；
-<li><font color=blue>所有填写内容均可使用HTML语法填写！</font><BR>
+<li><font color=blue>所有填写内容均可使用HTML语法填写！</font><br />
 </td>
 </tr>
 <tr> 
@@ -256,7 +256,7 @@ Response.Write rs("h_title")
 <tr><td class=td1 colspan=2>
 <%
 if not isnull(rs("h_content")) and rs("h_content")<>"" then
-	Response.Write left(replace(replace(rs("h_content"),"<br>"," "),"<BR>"," "),100)
+	Response.Write left(replace(replace(rs("h_content"),"<br>"," "),"<br />"," "),100)
 else
 	if rs("H_ParentID")=0 then
 	Response.Write "<font color=red>此项为一级分类标题!</font>"
@@ -329,7 +329,7 @@ set rs=Dvbbs.Execute("select * from dv_help where h_id="&request("id"))
 if rs.eof and rs.bof then
 	Response.Write "没有找到帮助"
 else
-	Response.Write "<BR><center><b>"&rs("h_title")&"</b></center><BR><BR><BR>"
+	Response.Write "<br /><center><b>"&rs("h_title")&"</b></center><br /><br /><br />"
 	Response.Write "<blockquote>"&rs("h_content")&"</blockquote>"
 	Response.Write "<div align=right>[<a href=help.asp?action=edit&id="&rs(0)&">编辑</a>] [<a href=help.asp?action=del&id="&rs(0)&">删除</a>]</div>"
 end if
@@ -384,7 +384,7 @@ set trs=nothing
 <tr><td width=40>类型：</td><td width=*><input type=checkbox class=checkbox name="stype" value="1" <%if rs("h_stype")=0 then Response.Write "checked"%>>&nbsp;选择此项所添加内容将不显示在左边菜单中(后台有效)</td></tr>
 <tr><td width=40>背景：</td><td width=*><input type="text" name="targeturl" size=35 value="<%=server.htmlencode(rs("h_bgimg"))%>"> 填写路径</td></tr>
 <tr><td width=40>内容：</td><td width=*>
-<textarea name="content" cols="80" rows="8"><%if not isnull(rs("h_content")) and rs("h_content")<>"" then%><%=server.htmlencode(replace(replace(rs("h_content"),"<br>",chr(10)),"<BR>",chr(10)))%><%end if%></textarea>
+<textarea name="content" cols="80" rows="8"><%if not isnull(rs("h_content")) and rs("h_content")<>"" then%><%=server.htmlencode(replace(replace(rs("h_content"),"<br>",chr(10)),"<br />",chr(10)))%><%end if%></textarea>
 </tr>
 <tr><td width=40>&nbsp;</td><td width=*><input type=submit class=button name=submit value="保存修改"></td></tr>
 </table>

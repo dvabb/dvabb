@@ -54,7 +54,7 @@ function Ok()
 	else
 	{
 		var sText = oEditor.FCKTools.HTMLEncode( document.getElementById('txtData').value )  ;
-		sText = sText.replace( /\n/g, '<BR>' ) ;
+		sText = sText.replace( /\n/g, '<br />' ) ;
 		oEditor.FCK.InsertHtml( sText ) ;
 	}
 	
@@ -68,7 +68,7 @@ function Ok()
 				<td>
 					<span fckLang="DlgPasteMsg">The editor was not able to automaticaly execute pasting 
 						because of the <STRONG>security settings</STRONG> of your browser.
-						<BR>
+						<br />
 						Please paste inside the following box using the keyboard (<STRONG>Ctrl+V</STRONG>) 
 						and hit <STRONG>OK</STRONG>.</span>
 				</td>

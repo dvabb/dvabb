@@ -29,7 +29,7 @@ If stype="" Then stype=0
 <table width="100%" border="0" cellspacing="1" cellpadding="3" align="center">
 <tr><th>道具中心日志管理</th></tr>
 <tr><td class="forumRow" style="line-height : 18px ;">
-<B>浏览</B>：<a href="MoneyLog.asp">所有日志</a> | <a href="MoneyLog.asp?stype=4"><%If stype=4 Then Response.Write "<font color=red>"%>购买日志<%If stype=4 Then Response.Write "</font>"%></a> | <a href="MoneyLog.asp?stype=2"><%If stype=2 Then Response.Write "<font color=red>"%>转让日志<%If stype=2 Then Response.Write "</font>"%></a> | <a href="MoneyLog.asp?stype=5"><%If stype=5 Then Response.Write "<font color=red>"%>奖励日志<%If stype=5 Then Response.Write "</font>"%></a> | <a href="MoneyLog.asp?stype=6"><%If stype=6 Then Response.Write "<font color=red>"%>VIP交易日志<%If stype=6 Then Response.Write "</font>"%></a> | <a href="MoneyLog.asp?stype=1"><%If stype=1 Then Response.Write "<font color=red>"%>使用日志<%If stype=1 Then Response.Write "</font>"%></a> | <a href="MoneyLog.asp?stype=-1"><%If stype="-1" Then Response.Write "<font color=red>"%>后台操作日志<%If stype="-1" Then Response.Write "</font>"%></a><BR>
+<B>浏览</B>：<a href="MoneyLog.asp">所有日志</a> | <a href="MoneyLog.asp?stype=4"><%If stype=4 Then Response.Write "<font color=red>"%>购买日志<%If stype=4 Then Response.Write "</font>"%></a> | <a href="MoneyLog.asp?stype=2"><%If stype=2 Then Response.Write "<font color=red>"%>转让日志<%If stype=2 Then Response.Write "</font>"%></a> | <a href="MoneyLog.asp?stype=5"><%If stype=5 Then Response.Write "<font color=red>"%>奖励日志<%If stype=5 Then Response.Write "</font>"%></a> | <a href="MoneyLog.asp?stype=6"><%If stype=6 Then Response.Write "<font color=red>"%>VIP交易日志<%If stype=6 Then Response.Write "</font>"%></a> | <a href="MoneyLog.asp?stype=1"><%If stype=1 Then Response.Write "<font color=red>"%>使用日志<%If stype=1 Then Response.Write "</font>"%></a> | <a href="MoneyLog.asp?stype=-1"><%If stype="-1" Then Response.Write "<font color=red>"%>后台操作日志<%If stype="-1" Then Response.Write "</font>"%></a><br />
 </td>
 </tr>
 <FORM METHOD=POST ACTION="MoneyLog.asp">
@@ -149,7 +149,7 @@ Sub Log_List()
 操作：<input name=chkall type=checkbox class="checkbox" value=on onclick=CheckAll(this.form)>
 全选
 <input type=submit class="button" name=submit value="批量删除">
-<BR><font color=blue>批量删除操作，系统会自动保留最后10天的日志信息，操作不可恢复，请慎重：</font><BR>
+<br /><font color=blue>批量删除操作，系统会自动保留最后10天的日志信息，操作不可恢复，请慎重：</font><br />
 <B>清空</B>：<a href="MoneyLog.asp?action=del" onclick="{if(confirm('删除操作将不可恢复，确定吗?')){return true;}return false;}">所有日志</a> | <a href="MoneyLog.asp?action=del&dtype=1" onclick="{if(confirm('删除操作将不可恢复，确定吗?')){return true;}return false;}">使用日志</a> | <a href="MoneyLog.asp?action=del&dtype=2" onclick="{if(confirm('删除操作将不可恢复，确定吗?')){return true;}return false;}">转让日志</a> | <a href="MoneyLog.asp?action=del&dtype=5" onclick="{if(confirm('删除操作将不可恢复，确定吗?')){return true;}return false;}">奖励日志</a> | <a href="MoneyLog.asp?action=del&dtype=4" onclick="{if(confirm('删除操作将不可恢复，确定吗?')){return true;}return false;}">购买日志</a> | <a href="MoneyLog.asp?action=del&dtype=3" onclick="{if(confirm('删除操作将不可恢复，确定吗?')){return true;}return false;}">充值日志</a> | <a href="MoneyLog.asp?action=del&dtype=-1" onclick="{if(confirm('删除操作将不可恢复，确定吗?')){return true;}return false;}">后台操作日志</a>
 </td></tr>
 </FORM>
@@ -199,12 +199,12 @@ Sub AllDel()
 	Dim SqlDate,sql
 	IDStr = Request("logid")
 	If IDStr="" Then
-		Errmsg=ErrMsg + "<BR><li>非法的参数。"
+		Errmsg=ErrMsg + "<br /><li>非法的参数。"
 		founderr=True
 	Else
 		IDStr_a = Replace(Replace(IDStr," ",""),",","")
 		If Not IsNumeric(IDStr_a) Then
-			Errmsg=ErrMsg + "<BR><li>非法的参数。"
+			Errmsg=ErrMsg + "<br /><li>非法的参数。"
 			founderr=True
 		End If
 	End If

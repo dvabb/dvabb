@@ -73,8 +73,8 @@ FCK.PasteAsPlainText = function()
 	// Get the data available in the clipboard and encodes it in HTML.
 	var sText = FCKTools.HTMLEncode( clipboardData.getData("Text") ) ;
 
-	// Replace the carriage returns with <BR>
-	sText = sText.replace( /\n/g, '<BR>' ) ;
+	// Replace the carriage returns with <br />
+	sText = sText.replace( /\n/g, '<br />' ) ;
 	
 	// Insert the resulting data in the editor.
 	this.InsertHtml( sText ) ;	

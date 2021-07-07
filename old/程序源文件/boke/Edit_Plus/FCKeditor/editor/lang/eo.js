@@ -312,7 +312,7 @@ PasteErrorCopy	: "La sekurecagordo de via TTT-legilo ne permesas, ke la redaktil
 PasteAsText		: "Interglui kiel Tekston",
 PasteFromWord	: "Interglui el Word",
 
-DlgPasteMsg		: "La redaktilo ne povis aŭtomate interglui pro la <STRONG>sekurecagordo</STRONG> de via TTT-legilo.<BR>Bonvolu interglui viajn datumojn en la ĉi suban tekstozonon per la klavaro (<STRONG>Ctrl-V</STRONG>) kaj musklaku la butonon <STRONG>Akceptita</STRONG>.",
+DlgPasteMsg		: "La redaktilo ne povis aŭtomate interglui pro la <STRONG>sekurecagordo</STRONG> de via TTT-legilo.<br />Bonvolu interglui viajn datumojn en la ĉi suban tekstozonon per la klavaro (<STRONG>Ctrl-V</STRONG>) kaj musklaku la butonon <STRONG>Akceptita</STRONG>.",
 
 // Color Picker
 ColorAutomatic	: "Aŭtomata",

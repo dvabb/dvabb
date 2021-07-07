@@ -67,7 +67,7 @@ Sub SetForm()
 <script language="javascript" src="../images/emot/config.js?rnd=<%=Now()%>"></script>
 <table width="100%" border="0" cellspacing="1" cellpadding="3" align=center>
 <tr> 
-<td height="23"><B>说明</B>：<br>①、图片统一存放于论坛Images/emot/目录。文件名为emX.gif，其中X表示两位或两位以上数字。不足两位前面补0。<br>②、此处调置为编辑器栏插入发贴表情时用<BR>③、此处管理只对配置文件操作，不涉及删除图片操作。<BR>④、添加非官方套图建议选择高序号段，比如从10000开始。以避免与官方套图序号冲突。
+<td height="23"><B>说明</B>：<br>①、图片统一存放于论坛Images/emot/目录。文件名为emX.gif，其中X表示两位或两位以上数字。不足两位前面补0。<br>②、此处调置为编辑器栏插入发贴表情时用<br />③、此处管理只对配置文件操作，不涉及删除图片操作。<br />④、添加非官方套图建议选择高序号段，比如从10000开始。以避免与官方套图序号冲突。
 </td>
 </tr>
 </table>

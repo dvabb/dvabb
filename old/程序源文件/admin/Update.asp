@@ -104,7 +104,7 @@ Dim i
 <FORM METHOD=POST ACTION="?action=updateuserinfo">
 <tr>
 <td width="20%" class="td1" valign=top>更新用户金钱/积分/魅力</td>
-<td width="80%" class="td1">执行本操作将按照<font color=red>当前论坛数据库</font>用户的发贴数量和论坛的相关设置重新计算用户的金钱/积分/魅力，本操作也将重新计算贵宾、版主、总版主的数据<BR>注意：不推荐用户进行本操作，本操作在数据很多的时候请尽量不要使用，并且本操作对各个版面删除帖子等所扣相应分值不做运算，只是按照发贴和总的论坛分值设置进行运算，请大家慎重操作，<font color=red>而且本项操作将重置用户因为奖励、惩罚等原因管理员对用户分值的修改。</font></td>
+<td width="80%" class="td1">执行本操作将按照<font color=red>当前论坛数据库</font>用户的发贴数量和论坛的相关设置重新计算用户的金钱/积分/魅力，本操作也将重新计算贵宾、版主、总版主的数据<br />注意：不推荐用户进行本操作，本操作在数据很多的时候请尽量不要使用，并且本操作对各个版面删除帖子等所扣相应分值不做运算，只是按照发贴和总的论坛分值设置进行运算，请大家慎重操作，<font color=red>而且本项操作将重置用户因为奖励、惩罚等原因管理员对用户分值的修改。</font></td>
 </tr>
 <tr>
 <td width="20%" class="td1">开始用户ID</td>
@@ -158,16 +158,16 @@ Dim i
 总固顶
 <input type="checkbox" class="checkbox" name="u7" value="1">
 最后注册
-<BR><BR><input type="submit" class="button" name="Submit" value="更新论坛总数据"><BR><BR>这里将重新计算整个论坛的帖子主题和回复数，今日帖子，最后加入用户等，建议每隔一段时间运行一次。<hr size=1></td>
+<br /><br /><input type="submit" class="button" name="Submit" value="更新论坛总数据"><br /><br />这里将重新计算整个论坛的帖子主题和回复数，今日帖子，最后加入用户等，建议每隔一段时间运行一次。<hr size=1></td>
 </tr>
 <tr>
 <td width="20%" class="td1">更新分版面数据</td>
-<td width="80%" class="td1"><input type="submit" class="button" name="Submit" value="更新分版面数据"><BR><BR>这里将重新计算每个版面的帖子主题和回复数，今日帖子，最后回复信息等，建议每隔一段时间运行一次。<hr size=1>
+<td width="80%" class="td1"><input type="submit" class="button" name="Submit" value="更新分版面数据"><br /><br />这里将重新计算每个版面的帖子主题和回复数，今日帖子，最后回复信息等，建议每隔一段时间运行一次。<hr size=1>
 </td>
 </tr>
 <tr>
 <td width="20%" class="td2">更新论坛收藏夹</td>
-<td width="80%" class="td2"><input type="submit" class="button" name="Submit" value="更新收藏夹"><BR><BR>这里将重新整理论坛的收藏夹，删除不存在用户的收藏记录，重新指向被移动的帖子收藏地址，删除已被删除的帖子收藏记录。
+<td width="80%" class="td2"><input type="submit" class="button" name="Submit" value="更新收藏夹"><br /><br />这里将重新整理论坛的收藏夹，删除不存在用户的收藏记录，重新指向被移动的帖子收藏地址，删除已被删除的帖子收藏记录。
 </td>
 </tr>
 <tr> 
@@ -216,7 +216,7 @@ Dim i
 <%
 	end if
 %>
-</table><BR><BR>
+</table><br /><br />
 <%
 	end sub
 
@@ -251,7 +251,7 @@ Sub updateboard()
 	End If
 	Set Rs=Nothing
 %>
-</table><BR>
+</table><br />
 <table cellpadding="0" cellspacing="0" border="0" width="100%" align="center">
 <tr><td colspan=2 class=td1>
 下面开始更新论坛版面资料，共有<%=C1%>个版面需要更新
@@ -655,7 +655,7 @@ Dim C1
 C1=clng(request.form("endid"))-clng(request.form("beginid"))
 %>
 </table>
-&nbsp;<BR>
+&nbsp;<br />
 <table cellpadding="0" cellspacing="0" border="0" width="100%" align="center">
 <tr><td colspan=2 class=td1>
 下面开始更新论坛帖子资料，预计本次共有<%=C1%>个帖子需要更新

@@ -764,13 +764,13 @@ End If
 </tr>
 <tr><td class="td1" colspan="3">
 调用的版面：<SELECT id="Boardid0" NAME="Boardid"></SELECT>
-<BR>
+<br />
 版面&nbsp;&nbsp;设置：<SELECT NAME="BoardType" ID="BoardType">
 	<option value="0" SELECTED>只显示该版面的数据</option>
 	<option value="1">显示该版面的下级所有版面的数据</option>
 	<option value="2">显示该版面和下级所有版面的数据</option>
 	</SELECT>
-<BR>版面的限制：<SELECT NAME="BoardLimit" ID="BoardLimit">
+<br />版面的限制：<SELECT NAME="BoardLimit" ID="BoardLimit">
 	<option value="0" SELECTED>显示所有数据</option>
 	<option value="1">不显示特殊版面数据</option>
 	</SELECT>（特殊版面指隐藏版面和认证版面）
@@ -811,7 +811,7 @@ BoardJumpListSelect('<%=Boardid%>',"Boardid0","选取所有版面","",0);
 </tr>
 <tr>
 <td class="td1" colspan="2">
-限制调用版块的层数：<input type="text" name="Depth" size="2" value="<%=Node.getAttribute("Depth")%>"><BR>(如0,表示只调用第一级分类
+限制调用版块的层数：<input type="text" name="Depth" size="2" value="<%=Node.getAttribute("Depth")%>"><br />(如0,表示只调用第一级分类
 ;为空则表示调用所有，当地图结构模式时，层数超过2无效;)
 </td>
 </tr>
@@ -895,7 +895,7 @@ BoardJumpListSelect('<%=Boardid%>',"Boardid2","选取所有版面","",0);
 	<option value="3">该版面的下级版面</option>
 	<option value="4">该版及下级所有版面</option>
 	</SELECT>
-<BR>版面的限制：<SELECT NAME="BoardLimit" ID="BoardLimit">
+<br />版面的限制：<SELECT NAME="BoardLimit" ID="BoardLimit">
 	<option value="0" SELECTED>显示所有数据</option>
 	<option value="1">不显示特殊版面数据</option>
 	</SELECT>（特殊版面指隐藏版面和认证版面）

@@ -312,7 +312,7 @@ PasteErrorCopy	: "Bezpečnostní nastavení Vašeho prohlížeče nedovolují ed
 PasteAsText		: "Vložit jako čistý text",
 PasteFromWord	: "Vložit text z Wordu",
 
-DlgPasteMsg		: "<STRONG>Bezpečnostní nastavení</STRONG> Vašeho prohlížeče nedovolují editoru spustit funkci pro vložení textu ze schránky.<BR>Text ze schránky prosím vložte pomocí klávesnice do tohoto pole (<STRONG>Ctrl+V</STRONG>) a pak stiskněte tlačítko <STRONG>OK</STRONG>.",
+DlgPasteMsg		: "<STRONG>Bezpečnostní nastavení</STRONG> Vašeho prohlížeče nedovolují editoru spustit funkci pro vložení textu ze schránky.<br />Text ze schránky prosím vložte pomocí klávesnice do tohoto pole (<STRONG>Ctrl+V</STRONG>) a pak stiskněte tlačítko <STRONG>OK</STRONG>.",
 
 // Color Picker
 ColorAutomatic	: "Automaticky",

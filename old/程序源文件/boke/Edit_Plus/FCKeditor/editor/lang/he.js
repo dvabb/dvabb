@@ -312,7 +312,7 @@ PasteErrorCopy	: "הגדרות האבטחה בדפדפן שלך לא מאפשר�
 PasteAsText		: "הדבקה כטקסט פשוט",
 PasteFromWord	: "הדבקה מ-Word",
 
-DlgPasteMsg		: "העורך לא הצליח לבצע הדבקה אוטומטית בגלל<STRONG>הגדרות האבטחה</STRONG> של הדפדפן שלך.<BR>נא להדביק לתוך התיבה הבאה באמצעות המקלדת (<STRONG>Ctrl+V</STRONG>) וללחוץ על <STRONG>אישור</STRONG>.",
+DlgPasteMsg		: "העורך לא הצליח לבצע הדבקה אוטומטית בגלל<STRONG>הגדרות האבטחה</STRONG> של הדפדפן שלך.<br />נא להדביק לתוך התיבה הבאה באמצעות המקלדת (<STRONG>Ctrl+V</STRONG>) וללחוץ על <STRONG>אישור</STRONG>.",
 
 // Color Picker
 ColorAutomatic	: "אוטומטי",

@@ -312,7 +312,7 @@ PasteErrorCopy	: "La configuración de seguridad de este navegador no permite la
 PasteAsText		: "Pegar como Texto Plano",
 PasteFromWord	: "Pegar desde Word",
 
-DlgPasteMsg		: "El editor no pudo ejecutar automáticamente el pegado debido a la <STRONG>configuración de seguridad</STRONG> de su navegador.<BR>Por favor pegue dentro del sigueinte recuadro usando el teclado (<STRONG>Ctrl+V</STRONG>) y presione <STRONG>OK</STRONG>.",
+DlgPasteMsg		: "El editor no pudo ejecutar automáticamente el pegado debido a la <STRONG>configuración de seguridad</STRONG> de su navegador.<br />Por favor pegue dentro del sigueinte recuadro usando el teclado (<STRONG>Ctrl+V</STRONG>) y presione <STRONG>OK</STRONG>.",
 
 // Color Picker
 ColorAutomatic	: "Automático",

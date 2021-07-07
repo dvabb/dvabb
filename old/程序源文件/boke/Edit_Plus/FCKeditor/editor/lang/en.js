@@ -312,7 +312,7 @@ PasteErrorCopy	: "Your browser security settings don't permit the editor to auto
 PasteAsText		: "Paste as Plain Text",
 PasteFromWord	: "Paste from Word",
 
-DlgPasteMsg		: "The editor was not able to automaticaly execute pasting because of the <STRONG>security settings</STRONG> of your browser.<BR>Please paste inside the following box using the keyboard (<STRONG>Ctrl+V</STRONG>) and hit <STRONG>OK</STRONG>.",
+DlgPasteMsg		: "The editor was not able to automaticaly execute pasting because of the <STRONG>security settings</STRONG> of your browser.<br />Please paste inside the following box using the keyboard (<STRONG>Ctrl+V</STRONG>) and hit <STRONG>OK</STRONG>.",
 
 // Color Picker
 ColorAutomatic	: "Automatic",

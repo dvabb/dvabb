@@ -312,7 +312,7 @@ PasteErrorCopy	: "Les paramètres de sécurité de votre navigateur empêchent l
 PasteAsText		: "Coller comme texte",
 PasteFromWord	: "Coller à partir de Word",
 
-DlgPasteMsg		: "L'éditeur n'a pu coller automatiquement vos données à cause des <STRONG>paramètres de sécurité</STRONG> de votre navigateur.<BR>Veuillez coller dans la zone suivante en utilisant le clavier (<STRONG>Ctrl+V</STRONG>) et cliquez sur <STRONG>OK</STRONG>.",
+DlgPasteMsg		: "L'éditeur n'a pu coller automatiquement vos données à cause des <STRONG>paramètres de sécurité</STRONG> de votre navigateur.<br />Veuillez coller dans la zone suivante en utilisant le clavier (<STRONG>Ctrl+V</STRONG>) et cliquez sur <STRONG>OK</STRONG>.",
 
 // Color Picker
 ColorAutomatic	: "Automatique",

@@ -150,7 +150,7 @@ Sub Tools_1()
 	<tr>
 	<th height=23 colspan=2>使用道具 <%=Dv_Tools.ToolsInfo(1)%></th></tr>
 	<tr><td height=23 class=Tablebody1 colspan=2>
-	<B>说明</B>：<BR>1、使用本道具可将您自己的金钱、点券或道具转让给目标用户<BR>2、目标用户的选择方法：通常在论坛的各种位置只要点击用户名连接即可进入该用户资料页面，浏览帖子过程可点击该贴用户“信息”图标，进入用户资料页面后点击“使用道具”连接即可进入具体的道具操作页面</td></tr>
+	<B>说明</B>：<br />1、使用本道具可将您自己的金钱、点券或道具转让给目标用户<br />2、目标用户的选择方法：通常在论坛的各种位置只要点击用户名连接即可进入该用户资料页面，浏览帖子过程可点击该贴用户“信息”图标，进入用户资料页面后点击“使用道具”连接即可进入具体的道具操作页面</td></tr>
 	<tr>
 	<td height=23 class=Tablebody1 width="30%" align=right>目标用户：</td>
 	<td height=23 class=Tablebody1 width="70%"><B><%=Dv_Tools.ToUserInfo(1)%></B></td>

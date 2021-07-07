@@ -312,7 +312,7 @@ PasteErrorCopy	: "الإعدادات الأمنية للمتصفح الذي تس
 PasteAsText		: "لصق كنص بسيط",
 PasteFromWord	: "لصق من وورد",
 
-DlgPasteMsg		: "لم يتمكن المحرر من القيام باللصق تلقائياً، نظراً <STRONG>لإعدادت متصفحك الأمنية</STRONG>.<BR>فضلاً إلصق داخل المربع التالي باستخدام لوحة المفاتيح (<STRONG>Ctrl+V</STRONG>) ثم اضغط <STRONG>موافق</STRONG>.",
+DlgPasteMsg		: "لم يتمكن المحرر من القيام باللصق تلقائياً، نظراً <STRONG>لإعدادت متصفحك الأمنية</STRONG>.<br />فضلاً إلصق داخل المربع التالي باستخدام لوحة المفاتيح (<STRONG>Ctrl+V</STRONG>) ثم اضغط <STRONG>موافق</STRONG>.",
 
 // Color Picker
 ColorAutomatic	: "تلقائي",

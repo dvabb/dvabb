@@ -23,7 +23,7 @@ Function GroupPermission(GroupSetting)
 </tr>
 <tr>
 <td class=tablebody1><input type="checkbox" class="checkbox" name="CheckGroupSetting(58)"></td>
-<td class=tablebody1>用户名在帖子内容中显示标记<BR>HTML语法，左右标记代码将加于用户名前后两头</td>
+<td class=tablebody1>用户名在帖子内容中显示标记<br />HTML语法，左右标记代码将加于用户名前后两头</td>
 <td class=tablebody1>左标记 <input name="GroupSetting(58)A" type=text size=30 value="<%=Server.HtmlEncode(UserHtmlA)%>"> <br>右标记 <input name="GroupSetting(58)B" type=text size=30 value="<%=Server.HtmlEncode(UserHtmlB)%>"></td>
 <td class=tablebody1><input type="hidden" id="g1" value="<b>用户名在帖子内容中显示标记</b><br><li>HTML语法，左右标记代码将加于用户名前后两头<br><li>如您设置了前后分别为《b》和《/b》，则在帖子内容中该组用户或者相关等级用户名显示为<B>粗体</B>">
 <a href=# onclick="helpscript(g1);return false;" class="helplink"><img src="<%=MyDbPath%>images/help.gif" border=0 title="点击查阅管理帮助！"></a></td>

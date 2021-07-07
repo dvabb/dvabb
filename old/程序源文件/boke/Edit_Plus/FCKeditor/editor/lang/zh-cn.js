@@ -312,7 +312,7 @@ PasteErrorCopy	: "您的浏览器安全设置不允许编辑器自动执行复�
 PasteAsText		: "粘贴为无格式文本",
 PasteFromWord	: "从 MS Word 粘贴",
 
-DlgPasteMsg		: "因为您的浏览器编辑器 <STRONG>安全设置</STRONG> 原因，不能自动执行粘贴。<BR>请使用键盘快捷键(<STRONG>Ctrl+V</STRONG>)粘贴到下面并按 <STRONG>确定</STRONG>。",
+DlgPasteMsg		: "因为您的浏览器编辑器 <STRONG>安全设置</STRONG> 原因，不能自动执行粘贴。<br />请使用键盘快捷键(<STRONG>Ctrl+V</STRONG>)粘贴到下面并按 <STRONG>确定</STRONG>。",
 
 // Color Picker
 ColorAutomatic	: "自动",

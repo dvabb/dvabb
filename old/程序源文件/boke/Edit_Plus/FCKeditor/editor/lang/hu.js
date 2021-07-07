@@ -312,7 +312,7 @@ PasteErrorCopy	: "A böngészõ biztonsági beállításai nem engedélyezik a s
 PasteAsText		: "Beillesztés formázatlan szövegként",
 PasteFromWord	: "Beillesztés Wordbõl",
 
-DlgPasteMsg		: "A szerkesztõ nem képes végrehajtani a beillesztési mûveletet a bõngészõ <STRONG>biztonsági beállításai</STRONG> miatt.<BR>Másolja be az alábbi mezõbe a (<STRONG>Ctrl+V</STRONG>) billentyûzetkombinációval és kattintson <STRONG>OK</STRONG> gombra.",
+DlgPasteMsg		: "A szerkesztõ nem képes végrehajtani a beillesztési mûveletet a bõngészõ <STRONG>biztonsági beállításai</STRONG> miatt.<br />Másolja be az alábbi mezõbe a (<STRONG>Ctrl+V</STRONG>) billentyûzetkombinációval és kattintson <STRONG>OK</STRONG> gombra.",
 
 // Color Picker
 ColorAutomatic	: "Automatikus",

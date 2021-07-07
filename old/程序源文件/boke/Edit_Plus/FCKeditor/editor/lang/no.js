@@ -312,7 +312,7 @@ PasteErrorCopy	: "Din nettlesers sikkerhetsinstillinger tillater ikke automatisk
 PasteAsText		: "Lim inn som ren tekst",
 PasteFromWord	: "Lim inn fra word",
 
-DlgPasteMsg		: "Programmet kan ikke lime inn tekst på grunn av din nettlesers <STRONG>sikkerhetsinstillinger</STRONG>.<BR>Vennligst lim inn teksten i boksen nedenfor med tastatursnareveien. (<STRONG>Ctrl+V</STRONG>) og trykk <STRONG>OK</STRONG>.",
+DlgPasteMsg		: "Programmet kan ikke lime inn tekst på grunn av din nettlesers <STRONG>sikkerhetsinstillinger</STRONG>.<br />Vennligst lim inn teksten i boksen nedenfor med tastatursnareveien. (<STRONG>Ctrl+V</STRONG>) og trykk <STRONG>OK</STRONG>.",
 
 // Color Picker
 ColorAutomatic	: "Automatisk",

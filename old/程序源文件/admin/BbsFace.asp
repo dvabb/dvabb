@@ -127,7 +127,7 @@ dim sel
 %>
 <table width="100%" border="0" cellspacing="1" cellpadding="3" align=center>
 <tr> 
-<td height="23" colspan="4" ><B>说明</B>：<br>①、以下图片均保存于论坛<%=bbspicurl%>目录中，如要更换也请将图片放于该目录<br>②、右边复选框为删除选项，如果选择后点保存设置，则删除相应图片<BR>③、如仅仅修改文件名，可在修改相应选项后直接点击保存设置而不用选择右边复选框
+<td height="23" colspan="4" ><B>说明</B>：<br>①、以下图片均保存于论坛<%=bbspicurl%>目录中，如要更换也请将图片放于该目录<br>②、右边复选框为删除选项，如果选择后点保存设置，则删除相应图片<br />③、如仅仅修改文件名，可在修改相应选项后直接点击保存设置而不用选择右边复选框
 </td>
 </tr>
 </table>
@@ -228,13 +228,13 @@ End If
 <% next %>
 <tr> 
 <td  colspan="4" class=forumrow> 
-<B>注意</B>：右边复选框为删除选项，如果选择后点保存设置，则删除相应图片<BR>如仅仅修改文件名，可在修改相应选项后直接点击保存设置而不用选择右边复选框
+<B>注意</B>：右边复选框为删除选项，如果选择后点保存设置，则删除相应图片<br />如仅仅修改文件名，可在修改相应选项后直接点击保存设置而不用选择右边复选框
 </td>
 </tr>
 <tr> 
 <td  colspan="4" class=forumrow> 
 <div align="center"> 
- 删除选项：删除所选的实际文件（<font color=red>需要FSO支持功能</font>）：是<input type=radio class="radio" name=setfso value=1 >否<input type=radio class="radio" name=setfso value=0 checked> 请选择要删除的文件，<input type="checkbox" class="checkbox" name=chkall value=on onclick="CheckAll(this.form)">全选 <BR>
+ 删除选项：删除所选的实际文件（<font color=red>需要FSO支持功能</font>）：是<input type=radio class="radio" name=setfso value=1 >否<input type=radio class="radio" name=setfso value=0 checked> 请选择要删除的文件，<input type="checkbox" class="checkbox" name=chkall value=on onclick="CheckAll(this.form)">全选 <br />
 <input type="submit" class="button" name="Submit" value="保存设置">
 <input type="submit" class="button" name="Submit" value="恢复默认设置">
 <input type="submit" class="button" name="Submit" value="恢复默认总设置">
@@ -243,7 +243,7 @@ End If
 </tr>
 </form>
 <!--主表单结束-->
-</table><BR><BR>
+</table><br /><br />
 
 <%
 end sub

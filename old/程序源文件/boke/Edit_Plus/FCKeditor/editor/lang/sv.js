@@ -312,7 +312,7 @@ PasteErrorCopy	: "Säkerhetsinställningar i Er webläsare tillåter inte åtgå
 PasteAsText		: "Klistra in som vanlig text",
 PasteFromWord	: "Klistra in från Word",
 
-DlgPasteMsg		: "Editorn tilläts ej att Klistra in p.g.a webläsarens <STRONG>säkerhetsinställning</STRONG>.<BR>Var god och Klistra in i fältet nedan genom att använda (<STRONG>Ctrl+V</STRONG>). Klicka sen på <STRONG>OK</STRONG>",
+DlgPasteMsg		: "Editorn tilläts ej att Klistra in p.g.a webläsarens <STRONG>säkerhetsinställning</STRONG>.<br />Var god och Klistra in i fältet nedan genom att använda (<STRONG>Ctrl+V</STRONG>). Klicka sen på <STRONG>OK</STRONG>",
 
 // Color Picker
 ColorAutomatic	: "Automatisk",

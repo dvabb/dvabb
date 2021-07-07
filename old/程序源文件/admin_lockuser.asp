@@ -464,7 +464,7 @@ Sub boardlist()
 	Response.Write "<tr><th colspan=6 height=23 align=left>编辑"&request("username")&"论坛权限（红色表示该用户在该版面有自定义权限）</th></tr>"
 	Response.Write "<tr><td colspan=6 class=tablebody1 height=25><a href=?action=userBoardPermission&boardid=0&userid="&request("userid")&">编辑该用户在其它页面的权限</a>（主要针对短信部分设置）</td></tr>"
 	'----------------------boardinfo--------------------
-	Response.Write "<tr><td colspan=6 class=tablebody1><B>点击论坛名称进入编辑状态</B><BR>"
+	Response.Write "<tr><td colspan=6 class=tablebody1><B>点击论坛名称进入编辑状态</B><br />"
 	Dim reBoard_Setting,FBoardMaster
 	FBoardMaster=False 
 	sql="select * from dv_board order by rootid,orders"

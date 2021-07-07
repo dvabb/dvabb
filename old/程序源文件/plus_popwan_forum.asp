@@ -156,7 +156,7 @@ rs_c.open sql,conn,1,1
 </tr>
 <tr> 
 <td width="100%" height="30" colspan="2">
-说明：<BR>1、添加论坛版面后，相关的设置均为默认设置，请返回论坛版面管理首页版面列表的高级设置中设置该论坛的相应属性，如果您想对该论坛做更具体的权限设置，请到<font color=blue>后台论坛权限管理</font>中设置相应用户组在该版面的权限。<BR>
+说明：<br />1、添加论坛版面后，相关的设置均为默认设置，请返回论坛版面管理首页版面列表的高级设置中设置该论坛的相应属性，如果您想对该论坛做更具体的权限设置，请到<font color=blue>后台论坛权限管理</font>中设置相应用户组在该版面的权限。<br />
 2、<font color=blue>如果您添加的是论坛分类</font>，只需要在所属分类中选择作为论坛分类即可；<font color=blue>如果您添加的是论坛版面</font>，则要在所属分类中确定并选择该论坛版面的上级版面。
 </td>
 </tr>
@@ -167,13 +167,13 @@ rs_c.open sql,conn,1,1
 </td>
 </tr>
 <tr> 
-<td width="40%" height="24">版面说明<BR>可以使用HTML代码</td>
+<td width="40%" height="24">版面说明<br />可以使用HTML代码</td>
 <td width="60%"> 
 <textarea name="Readme" cols="50" rows="5"></textarea>
 </td>
 </tr>
 <tr> 
-<td width="40%" height="24">版面规则<BR>可以使用HTML代码</td>
+<td width="40%" height="24">版面规则<br />可以使用HTML代码</td>
 <td width="60%"> 
 <textarea name="Rules" cols="50" rows="5"></textarea>
 </td>
@@ -190,7 +190,7 @@ BoardJumpListSelect('<%=Dvbbs.CheckNumeric(Request("editid"))%>','Boardid','做�
 </td>
 </tr>
 <tr> 
-<td width="40%" height="30"><U>使用样式风格</U><BR>相关样式风格中包含论坛颜色、图片<BR>等信息</td>
+<td width="40%" height="30"><U>使用样式风格</U><br />相关样式风格中包含论坛颜色、图片<br />等信息</td>
 <td width="60%">
 <%
 	set rs_c=dvbbs.execute("select forum_sid,forum_cid from dv_setup")
@@ -210,20 +210,20 @@ Next
 </td>
 </tr>
 <tr> 
-<td width="40%" height="30"><U>论坛版主</U><BR>多版主添加请用|分隔，如：沙滩小子|wodeail</td>
+<td width="40%" height="30"><U>论坛版主</U><br />多版主添加请用|分隔，如：沙滩小子|wodeail</td>
 <td width="60%"> 
 <input type="text" name="boardmaster" size="35">
 </td>
 </tr>
 <tr> 
-<td width="40%" height="30"><U>首页显示论坛图片</U><BR>出现在首页论坛版面介绍左边<BR>请直接填写图片URL</td>
+<td width="40%" height="30"><U>首页显示论坛图片</U><br />出现在首页论坛版面介绍左边<br />请直接填写图片URL</td>
 <td width="60%">
 <input type="text" name="indexIMG" size="35">
 </td>
 </tr>
 <!-- URL外部连接 开始 -->
 <tr> 
-<td width="40%" height="30"><U>URL外部连接</U><BR>填写本内容后，在论坛列表点击此版面将自动切换到该网址<BR>请填写URL绝对路径</td>
+<td width="40%" height="30"><U>URL外部连接</U><br />填写本内容后，在论坛列表点击此版面将自动切换到该网址<br />请填写URL绝对路径</td>
 <td width="60%">
 <input type="radio" class="radio" name="tempradio" value="0" checked onclick="javascript:document.theform.Board_Setting_50.value='0';">关闭&nbsp;
 <input type="radio" class="radio" name="tempradio" value="1" >使用URL外部连接&nbsp;
@@ -265,7 +265,7 @@ forum_sid=rs("sid")
 </tr>
 <tr> 
 <td width="100%" height="30" colspan="2">
-说明：<BR>1、添加论坛版面后，相关的设置均为默认设置，请返回论坛版面管理首页版面列表的高级设置中设置该论坛的相应属性，如果您想对该论坛做更具体的权限设置，请到<font color=blue>后台论坛权限管理</font>中设置相应用户组在该版面的权限。<BR>
+说明：<br />1、添加论坛版面后，相关的设置均为默认设置，请返回论坛版面管理首页版面列表的高级设置中设置该论坛的相应属性，如果您想对该论坛做更具体的权限设置，请到<font color=blue>后台论坛权限管理</font>中设置相应用户组在该版面的权限。<br />
 2、<font color=blue>如果您添加的是论坛分类</font>，只需要在所属分类中选择作为论坛分类即可；<font color=blue>如果您添加的是论坛版面</font>，则要在所属分类中确定并选择该论坛版面的上级版面。
 </td>
 </tr>
@@ -276,19 +276,19 @@ forum_sid=rs("sid")
 </td>
 </tr>
 <tr> 
-<td width="40%" height="24">版面说明<BR>可以使用HTML代码</td>
+<td width="40%" height="24">版面说明<br />可以使用HTML代码</td>
 <td width="60%"> 
 <textarea name="Readme" cols="50" rows="5"><%=server.HTMLEncode(Rs("readme")&"")%></textarea>
 </td>
 </tr>
 <tr> 
-<td width="40%" height="24">版面规则<BR>可以使用HTML代码</td>
+<td width="40%" height="24">版面规则<br />可以使用HTML代码</td>
 <td width="60%"> 
 <textarea name="Rules" cols="50" rows="5"><%=server.HTMLEncode(Rs("Rules")&"")%></textarea>
 </td>
 </tr>
 <tr> 
-<td width="40%" height="30"><U>所属类别</U><BR>所属论坛不能指定为当前版面<BR>所属论坛不能指定为当前版面的下属论坛</td>
+<td width="40%" height="30"><U>所属类别</U><br />所属论坛不能指定为当前版面<br />所属论坛不能指定为当前版面的下属论坛</td>
 <td width="60%"> 
 <select name="class">
 <option value="0">做为论坛分类</option>
@@ -306,7 +306,7 @@ rs_c.Close
 </td>
 </tr>
 <tr> 
-<td width="40%" height="30"><U>使用样式风格</U><BR>相关样式风格中包含论坛颜色、图片<BR>等信息</td>
+<td width="40%" height="30"><U>使用样式风格</U><br />相关样式风格中包含论坛颜色、图片<br />等信息</td>
 <td width="60%">
 <%
 	set rs_c=dvbbs.execute("select forum_sid,forum_cid from dv_setup")
@@ -326,21 +326,21 @@ Next
 </td>
 </tr>
 <tr> 
-<td width="40%" height="30"><U>论坛版主</U><BR>多斑竹添加请用|分隔，如：沙滩小子|wodeail</td>
+<td width="40%" height="30"><U>论坛版主</U><br />多斑竹添加请用|分隔，如：沙滩小子|wodeail</td>
 <td width="60%"> 
 <input type="text" name="boardmaster" size="35" value='<%=rs("boardmaster")%>'>
 <input type="hidden" name="oldboardmaster" value='<%=rs("boardmaster")%>'>
 </td>
 </tr>
 <tr> 
-<td width="40%" height="30"><U>首页显示论坛图片</U><BR>出现在首页论坛版面介绍左边<BR>请直接填写图片URL</td>
+<td width="40%" height="30"><U>首页显示论坛图片</U><br />出现在首页论坛版面介绍左边<br />请直接填写图片URL</td>
 <td width="60%">
 <input type="text" name="indexIMG" size="35" value="<%=rs("indexIMG")%>">
 </td>
 </tr>
 <!-- URL外部连接 开始 -->
 <tr> 
-<td width="40%" height="30"><U>URL外部连接</U><BR>填写本内容后，在论坛列表点击此版面将自动切换到该网址<BR>请填写URL绝对路径</td>
+<td width="40%" height="30"><U>URL外部连接</U><br />填写本内容后，在论坛列表点击此版面将自动切换到该网址<br />请填写URL绝对路径</td>
 <td width="60%">
 <input type="radio" class="radio" name="tempradio" value="0" onclick="javascript:document.theform.Board_Setting_50.value='0';">关闭&nbsp;
 <input type="radio" class="radio" name="tempradio" value="1" >使用URL外部连接&nbsp;

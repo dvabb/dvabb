@@ -160,7 +160,7 @@ FCK.PasteAsPlainText = function()
 	
 /*
 	var sText = FCKTools.HTMLEncode( clipboardData.getData("Text") ) ;
-	sText = sText.replace( /\n/g, '<BR>' ) ;
+	sText = sText.replace( /\n/g, '<br />' ) ;
 	this.InsertHtml( sText ) ;	
 */
 }

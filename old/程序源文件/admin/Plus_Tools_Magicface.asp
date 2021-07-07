@@ -22,9 +22,9 @@ Sub Main_head()
 %>
 <table width="100%" border="0" cellspacing="1" cellpadding="3" align="center">
 <tr><th style="text-align:center;">魔法表情（头像）设置和管理</th></tr>
-<tr><td class="td2" style="line-height: 130%"><B>魔法表情（头像）设置和管理</B>：<BR>
+<tr><td class="td2" style="line-height: 130%"><B>魔法表情（头像）设置和管理</B>：<br />
 	1、魔法表情（头像）默认的图片和Flash效果图路径分别是：<B>Dv_Plus/Tools/magicface/gif/</B>和<B>Dv_Plus/Tools/magicface/swf/</B>，在添加或管理图片和flash效果的时候最好将相关文件上传到此位置。
-	<BR>
+	<br />
 	2、您可以分别设定使用每个魔法表情所需要的金币和点券数，所设置的金币和点券数为用户购买需要。可设置使用每个魔法表情（头像）需要的帖子、金钱、积分、魅力、威望数限制，这些只是限制达到此标准的才能使用，并不扣除相应设置的数值。</td></tr>
 </table>
 <br>
@@ -53,7 +53,7 @@ PageSearch = "stype="&stype
 <li>图片和Flash请参照上述说明放在默认目录，<font color=red>图片用数字序号填写，图片和flash文件只是在显示时后缀不同，在此为统一名称</font>，点击图片可预览效果
 <li>修改魔法表情（头像）类别请打开Dv_Plus/Tools/plus_tools_const.asp文件修改其中MagicFaceType参数
 <li><font color=red>金币1和点券1是购买魔法表情的价格，金币2和点券2是购买魔法头像的价格</font>
-<li><font color=blue>添加魔法表情（头像）请预先准备三个文件并传到相应目录，两个gif图片分别是小和大图片，小图片用于用户购买选择处显示，大图片用于用户购买魔法头像后在帖子及其资料中显示，一个swf文件是魔法效果</font><BR>
+<li><font color=blue>添加魔法表情（头像）请预先准备三个文件并传到相应目录，两个gif图片分别是小和大图片，小图片用于用户购买选择处显示，大图片用于用户购买魔法头像后在帖子及其资料中显示，一个swf文件是魔法效果</font><br />
 <B>快速查看分类</B>：<a href="?">全部</a> | 
 <%
 For i = 0 To Ubound(iMagicFaceType)
@@ -194,62 +194,62 @@ End Sub
 Sub Addnew()
 	Dim ntitle,ntype,ngif,nswf,nmoney,nticket,ntmoney,ntticket,ntopic,nwealth,nuserep,nusercp,npower
 	If Request("ntitle")="" Then
-		Errmsg=ErrMsg + "<BR><li>请输入魔法表情说明。"
+		Errmsg=ErrMsg + "<br /><li>请输入魔法表情说明。"
 		founderr=True
 	End If
 	ntitle = Dvbbs.CheckStr(Request("ntitle"))
 	If Request("ntype")="" Or Not IsNumeric(Request("ntype")) Then
-		Errmsg=ErrMsg + "<BR><li>请选择魔法表情类型。"
+		Errmsg=ErrMsg + "<br /><li>请选择魔法表情类型。"
 		founderr=True
 	End If
 	ntype = Request("ntype")
 	If Request("ngif")="" Then
-		Errmsg=ErrMsg + "<BR><li>请输入魔法表情小图片。"
+		Errmsg=ErrMsg + "<br /><li>请输入魔法表情小图片。"
 		founderr=True
 	End If
 	ngif = Dvbbs.CheckStr(Request("ngif"))
 	If Request("nmoney")="" Or Not IsNumeric(Request("nmoney")) Then
-		Errmsg=ErrMsg + "<BR><li>请输入魔法表情需要的金币数。"
+		Errmsg=ErrMsg + "<br /><li>请输入魔法表情需要的金币数。"
 		founderr=True
 	End If
 	nmoney = Request("nmoney")
 	If Request("nticket")="" Or Not IsNumeric(Request("nticket")) Then
-		Errmsg=ErrMsg + "<BR><li>请输入魔法表情需要的点券数。"
+		Errmsg=ErrMsg + "<br /><li>请输入魔法表情需要的点券数。"
 		founderr=True
 	End If
 	nticket = Request("nticket")
 	If Request("ntmoney")="" Or Not IsNumeric(Request("ntmoney")) Then
-		Errmsg=ErrMsg + "<BR><li>请输入魔法表情需要的金币数。"
+		Errmsg=ErrMsg + "<br /><li>请输入魔法表情需要的金币数。"
 		founderr=True
 	End If
 	ntmoney = Request("ntmoney")
 	If Request("ntticket")="" Or Not IsNumeric(Request("ntticket")) Then
-		Errmsg=ErrMsg + "<BR><li>请输入魔法表情需要的点券数。"
+		Errmsg=ErrMsg + "<br /><li>请输入魔法表情需要的点券数。"
 		founderr=True
 	End If
 	ntticket = Request("ntticket")
 	If Request("ntopic")="" Or Not IsNumeric(Request("ntopic")) Then
-		Errmsg=ErrMsg + "<BR><li>请输入魔法表情需要的帖子数。"
+		Errmsg=ErrMsg + "<br /><li>请输入魔法表情需要的帖子数。"
 		founderr=True
 	End If
 	ntopic = Request("ntopic")
 	If Request("nwealth")="" Or Not IsNumeric(Request("nwealth")) Then
-		Errmsg=ErrMsg + "<BR><li>请输入魔法表情需要的金钱数。"
+		Errmsg=ErrMsg + "<br /><li>请输入魔法表情需要的金钱数。"
 		founderr=True
 	End If
 	nwealth = Request("nwealth")
 	If Request("nuserep")="" Or Not IsNumeric(Request("nuserep")) Then
-		Errmsg=ErrMsg + "<BR><li>请输入魔法表情需要的积分数。"
+		Errmsg=ErrMsg + "<br /><li>请输入魔法表情需要的积分数。"
 		founderr=True
 	End If
 	nuserep = Request("nuserep")
 	If Request("nusercp")="" Or Not IsNumeric(Request("nusercp")) Then
-		Errmsg=ErrMsg + "<BR><li>请输入魔法表情需要的魅力数。"
+		Errmsg=ErrMsg + "<br /><li>请输入魔法表情需要的魅力数。"
 		founderr=True
 	End If
 	nusercp = Request("nusercp")
 	If Request("npower")="" Or Not IsNumeric(Request("npower")) Then
-		Errmsg=ErrMsg + "<BR><li>请输入魔法表情需要的威望数。"
+		Errmsg=ErrMsg + "<br /><li>请输入魔法表情需要的威望数。"
 		founderr=True
 	End If
 	npower = Request("npower")
@@ -269,7 +269,7 @@ Sub EditMagic()
 	FixID = Replace(ID,",","")
 	FixID = Left(FixID,300)
 	If ID = "" Or Not IsNumeric(FixID) Then
-		Errmsg=ErrMsg + "<BR><li>请选中指定的魔法表情进行修改更新或删除操作。"
+		Errmsg=ErrMsg + "<br /><li>请选中指定的魔法表情进行修改更新或删除操作。"
 		founderr=True
 	End If
 	For I=1 To Request.Form("ID").Count

@@ -43,7 +43,7 @@ Sub CheckAdmin(flag)
 	End If
 
 	If Instr(","&session("flag")&",",flag)=0 and flag<>"" then
-		Errmsg=ErrMsg +	"<BR><li>本页面为管理员专用，请<a href=../admin_login.asp target=_top>登录</a>后进入。<br><li>您没有管理本页面的权限。"
+		Errmsg=ErrMsg +	"<br /><li>本页面为管理员专用，请<a href=../admin_login.asp target=_top>登录</a>后进入。<br><li>您没有管理本页面的权限。"
 		Dvbbs_error()
 	End If
 End Sub

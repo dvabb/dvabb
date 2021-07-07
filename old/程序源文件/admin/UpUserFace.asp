@@ -23,8 +23,8 @@ sub main()
 <table width="100%" border="0" cellspacing="1" cellpadding="3" align=center>
 <tr>
 <td valign=top>
-注意：本功能需要主机开放FSO权限，FSO相关帮助请看微软帮助文档<BR>
-在这里您可以管理论坛所有用户自定义头像上传文件，搜索用户头像请用用户ID进行搜索<BR>
+注意：本功能需要主机开放FSO权限，FSO相关帮助请看微软帮助文档<br />
+在这里您可以管理论坛所有用户自定义头像上传文件，搜索用户头像请用用户ID进行搜索<br />
 用户ID的获得可以通过用户信息管理中搜索相关用户，然后将鼠标移到用户名连接上，查看连接属性，参数UserID = 后面既是用户的ID
 </td>
 </tr>

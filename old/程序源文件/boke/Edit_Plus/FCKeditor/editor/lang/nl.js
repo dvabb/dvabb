@@ -312,7 +312,7 @@ PasteErrorCopy	: "De beveiligingsinstelling van de browser verhinderen het autom
 PasteAsText		: "Plakken als platte tekst",
 PasteFromWord	: "Plakken van Word-gegevens",
 
-DlgPasteMsg		: "De <STRONG>beveiligingsinstelling</STRONG> van de browser verhinderen het automatisch plakken. <BR>Plak de data in de volgende pagina door gebruik te maken van toetsenbord(<STRONG>Ctrl+V</STRONG>).  Klik hierna op <STRONG>OK</STRONG>.",
+DlgPasteMsg		: "De <STRONG>beveiligingsinstelling</STRONG> van de browser verhinderen het automatisch plakken. <br />Plak de data in de volgende pagina door gebruik te maken van toetsenbord(<STRONG>Ctrl+V</STRONG>).  Klik hierna op <STRONG>OK</STRONG>.",
 
 // Color Picker
 ColorAutomatic	: "Automatisch",

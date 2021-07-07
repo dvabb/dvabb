@@ -29,8 +29,8 @@ Sub Main_head()
 %>
 <table width="100%" border="0" cellspacing="1" cellpadding="3" align="center">
 <tr><th style="text-align:center;">道具中心用户信息管理</th></tr>
-<tr><td class="td2"><B>说明</B>：<BR>
-1、列表中的金币和点券指用户的总拥有量，而不是道具价格，查看相关用户道具信息请点击用户名进入<BR>
+<tr><td class="td2"><B>说明</B>：<br />
+1、列表中的金币和点券指用户的总拥有量，而不是道具价格，查看相关用户道具信息请点击用户名进入<br />
 2、关键字搜索内容：用户名模糊搜索
 </td></tr>
 <tr><td class="td1"><B>操作</B>：<a href="plus_Tools_User.asp">用户道具管理首页</a> | <a href="?action=paylist">出售中的用户道具</a> <!-- | <a href="?action=paylist1">低于系统售价的出售道具</a> --> | <a href="?action=SendTools">给用户添加道具或金币</a>
@@ -228,7 +228,7 @@ Sub EditInfo()
 	Dim ID,rs
 	ID=Request("ID")
 	If Not IsNumeric(ID) Or ID="" Then
-		Errmsg=ErrMsg + "<BR><li>非法的参数。"
+		Errmsg=ErrMsg + "<br /><li>非法的参数。"
 		founderr=True
 	Else
 		ID=Clng(ID)
@@ -237,7 +237,7 @@ Sub EditInfo()
 	Set Rs=Dvbbs.Plus_Execute("Select * From Dv_Plus_Tools_Buss Where ID=" & ID)
 
 	If Rs.Eof And Rs.Bof Then
-		Errmsg=ErrMsg + "<BR><li>没有找到相关的数据。"
+		Errmsg=ErrMsg + "<br /><li>没有找到相关的数据。"
 		founderr=True
 	End If
 	If founderr Then Exit Sub
@@ -293,35 +293,35 @@ Sub SaveEdit()
 	Dim ToolsCount,SaleCount,SaleMoney,SaleTicket
 	ID=Request("ID")
 	If Not IsNumeric(ID) Or ID="" Then
-		Errmsg=ErrMsg + "<BR><li>非法的参数。"
+		Errmsg=ErrMsg + "<br /><li>非法的参数。"
 		founderr=True
 	Else
 		ID=Clng(ID)
 	End If
 	ToolsCount=Request("ToolsCount")
 	If Not IsNumeric(ToolsCount) Or ToolsCount="" Then
-		Errmsg=ErrMsg + "<BR><li>非法的参数。"
+		Errmsg=ErrMsg + "<br /><li>非法的参数。"
 		founderr=True
 	Else
 		ToolsCount=Clng(ToolsCount)
 	End If
 	SaleCount=Request("SaleCount")
 	If Not IsNumeric(SaleCount) Or SaleCount="" Then
-		Errmsg=ErrMsg + "<BR><li>非法的参数。"
+		Errmsg=ErrMsg + "<br /><li>非法的参数。"
 		founderr=True
 	Else
 		SaleCount=Clng(SaleCount)
 	End If
 	SaleMoney=Request("SaleMoney")
 	If Not IsNumeric(SaleMoney) Or SaleMoney="" Then
-		Errmsg=ErrMsg + "<BR><li>非法的参数。"
+		Errmsg=ErrMsg + "<br /><li>非法的参数。"
 		founderr=True
 	Else
 		SaleMoney=Clng(SaleMoney)
 	End If
 	SaleTicket=Request("SaleTicket")
 	If Not IsNumeric(SaleTicket) Or SaleTicket="" Then
-		Errmsg=ErrMsg + "<BR><li>非法的参数。"
+		Errmsg=ErrMsg + "<br /><li>非法的参数。"
 		founderr=True
 	Else
 		SaleTicket=Clng(SaleTicket)
@@ -338,7 +338,7 @@ Sub SaveEdit()
 		Rs.Open Sql,Conn,1,3
 	End If
 	If Rs.Eof And Rs.Bof Then
-		Errmsg=ErrMsg + "<BR><li>没有找到相关的数据。"
+		Errmsg=ErrMsg + "<br /><li>没有找到相关的数据。"
 		founderr=True
 	End If
 	If founderr Then Exit Sub
@@ -364,7 +364,7 @@ Sub Not_Apply_Sale()
 	Dim ID,SQL,Trs,Rs
 	ID=Request("ID")
 	If Not IsNumeric(ID) Or ID="" Then
-		Errmsg=ErrMsg + "<BR><li>非法的参数。"
+		Errmsg=ErrMsg + "<br /><li>非法的参数。"
 		founderr=True
 	Else
 		ID=Clng(ID)
@@ -389,7 +389,7 @@ Sub Del_UserTools()
 	Dim ID,SQL,Trs,Rs
 	ID=Request("ID")
 	If Not IsNumeric(ID) Or ID="" Then
-		Errmsg=ErrMsg + "<BR><li>非法的参数。"
+		Errmsg=ErrMsg + "<br /><li>非法的参数。"
 		founderr=True
 	Else
 		ID=Clng(ID)
@@ -473,7 +473,7 @@ Sub SaveSend()
 	ToolsMoney = Dv_Tools.CheckNumeric(Request("ToolsMoney"))
 	SendName = Request("SendName")
 	If (ToolsID = 0 Or ToolsNum = 0 Or SendName = "") And ToolsMoney = 0 Then
-		Errmsg=ErrMsg + "<BR><li>非法的道具或数量或用户名参数。"
+		Errmsg=ErrMsg + "<br /><li>非法的道具或数量或用户名参数。"
 		founderr=True
 	End If
 	If founderr Then Exit Sub
@@ -481,14 +481,14 @@ Sub SaveSend()
 	If SendName<>"" And ToolsID>0 And ToolsNum>0 Then
 	Set Rs=Dvbbs.Plus_Execute("Select ToolsName From Dv_Plus_Tools_Info Where ID="&ToolsID)
 	If Rs.Eof And Rs.Bof Then
-		Errmsg=ErrMsg + "<BR><li>您要赠送的系统道具并不存在。"
+		Errmsg=ErrMsg + "<br /><li>您要赠送的系统道具并不存在。"
 		Exit Sub
 	Else
 		ToolsName = Rs(0)
 	End If
 	Set Rs=Dvbbs.Execute("Select UserID,UserName,UserMoney,UserTicket From Dv_User Where UserName='"&SendName&"'")
 	If Rs.Eof And Rs.Bof Then
-		Errmsg=ErrMsg + "<BR><li>您要赠送的目标用户名并不存在。"
+		Errmsg=ErrMsg + "<br /><li>您要赠送的目标用户名并不存在。"
 		founderr=True
 		Exit Sub
 	Else
@@ -514,7 +514,7 @@ Sub SaveSend()
 	If ToolsMoney<>0 And SendName<>"" Then
 		Set Rs=Dvbbs.Execute("Select UserID,UserName,UserMoney,UserTicket From Dv_User Where UserName='"&SendName&"'")
 		If Rs.Eof And Rs.Bof Then
-			Errmsg=ErrMsg + "<BR><li>您要赠送的目标用户名并不存在。"
+			Errmsg=ErrMsg + "<br /><li>您要赠送的目标用户名并不存在。"
 			founderr=True
 			Exit Sub
 		Else

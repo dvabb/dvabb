@@ -102,7 +102,7 @@ Sub SendLog()
 	EmailTopic = SelChildNodes.selectSingleNode("EmailTopic").text
 	EmailBody = SelChildNodes.selectSingleNode("EmailBody").text
 	EmailBody = Replace(EmailBody, CHR(10) & CHR(10), "</P><P> ")
-	EmailBody = Replace(EmailBody, CHR(10), "<BR> ")
+	EmailBody = Replace(EmailBody, CHR(10), "<br /> ")
 	SearchStr = SelChildNodes.selectSingleNode("Search").text
 	LastUserID = Int(SelChildNodes.getAttribute("LasterUserID"))
 	If Remain="0" Then

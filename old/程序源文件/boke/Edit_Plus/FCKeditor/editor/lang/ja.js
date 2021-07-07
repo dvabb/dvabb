@@ -312,7 +312,7 @@ PasteErrorCopy	: "ブラウザーのセキュリティ設定によりエディ�
 PasteAsText		: "プレーンテキスト貼り付け",
 PasteFromWord	: "ワード文章から貼り付け",
 
-DlgPasteMsg		: "ブラウザーの<STRONG>セキュリティ設定</STRONG>によりエディタの貼り付け操作が自動で実行することができません。<BR>実行するには手動でキーボードの(<STRONG>Ctrl+V</STRONG>)を実行して<STRONG>OK</STRONG>を押してください。",
+DlgPasteMsg		: "ブラウザーの<STRONG>セキュリティ設定</STRONG>によりエディタの貼り付け操作が自動で実行することができません。<br />実行するには手動でキーボードの(<STRONG>Ctrl+V</STRONG>)を実行して<STRONG>OK</STRONG>を押してください。",
 
 // Color Picker
 ColorAutomatic	: "自動",

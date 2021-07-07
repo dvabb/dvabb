@@ -312,7 +312,7 @@ PasteErrorCopy	: "Selaimesi turva-asetukset eivät salli editorin toteuttaa kopi
 PasteAsText		: "Liitä tekstinä",
 PasteFromWord	: "Liitä Wordista",
 
-DlgPasteMsg		: "Editori ei voinut toteuttaa liittämistä selaimesi <STRONG>turva-asetusten</STRONG> takia.<BR>Suorita liittäminen käyttäen näppäimistöä (<STRONG>Ctrl+V</STRONG>) ja valitse <STRONG>OK</STRONG>.",
+DlgPasteMsg		: "Editori ei voinut toteuttaa liittämistä selaimesi <STRONG>turva-asetusten</STRONG> takia.<br />Suorita liittäminen käyttäen näppäimistöä (<STRONG>Ctrl+V</STRONG>) ja valitse <STRONG>OK</STRONG>.",
 
 // Color Picker
 ColorAutomatic	: "Automaattinen",

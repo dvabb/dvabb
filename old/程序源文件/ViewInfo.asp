@@ -396,7 +396,7 @@ Sub ShowBuyUser()
 	Select Case TopicInfo(11,0)
 		Case 1,5
 			Response.Write "目前总共悬赏的金币数为：<b>"&TempStr(0)
-			Response.Write "</b>，悬赏次数为：<b>"&n-1&"</b>。<BR>"
+			Response.Write "</b>，悬赏次数为：<b>"&n-1&"</b>。<br />"
 			For i=2 to n
 				BuyUser = Split(TempStr(i),",")
 				Response.Write UserInfoUrl(BuyUser(0))
@@ -406,7 +406,7 @@ Sub ShowBuyUser()
 			Next
 		Case 2
 			Response.Write "目前作者共获得金币数为：<b>"&TempStr(0)
-			Response.Write "</b>，悬赏人数为：<b>"&n-1&"</b>。<BR>"
+			Response.Write "</b>，悬赏人数为：<b>"&n-1&"</b>。<br />"
 			For i=2 to n
 				BuyUser = Split(TempStr(i),",")
 				Response.Write UserInfoUrl(BuyUser(0))
@@ -440,7 +440,7 @@ Sub ShowBuyUser()
 			Response.Write BuyInfo
 			'Response.Write "<br>"
 			Response.Write "目前作者共获得金币数为：<b>"&GetMoney
-			Response.Write "</b>，购买人数为：<b>"&n-2&"</b>。<BR>"
+			Response.Write "</b>，购买人数为：<b>"&n-2&"</b>。<br />"
 			For i=2 to n
 				Response.Write UserInfoUrl(TempStr(i))
 				Response.Write "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"

@@ -199,7 +199,7 @@ Sub	newpass()
 ''''''''''''''
 '更新用户的的级别
 	'Dvbbs.Execute("update [dv_user]	set	usergroupid=1,userclass='"&groupsname&"',titlepic='"&titlepic&"' where username='"&trim(request("adduser"))&"'")	'
-	body="<li>管理员资料更新成功，请记住更新信息。<br> 管理员："&request("username2")&"	<BR> 密	  码："&request("password2")&" <a href=?>［ <font	color=red>返回</font> ］</a>"
+	body="<li>管理员资料更新成功，请记住更新信息。<br> 管理员："&request("username2")&"	<br /> 密	  码："&request("password2")&" <a href=?>［ <font	color=red>返回</font> ］</a>"
 	Dv_suc(body)
 	rs.update
 	End	if

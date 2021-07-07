@@ -83,11 +83,11 @@ Sub SmsPayMain()
 	</td>
 	</tr>
 	<%End If%>
-	<tr><td height=23 class="tablebody2" style="line-height: 18px"><B>点券使用小贴士</B>：<BR>
-	① 论坛点券可用于购买论坛中出售的各种趣味性道具<BR>
-	② 论坛点券和金币可用于参与论坛中一些需要点券购买贴的浏览、当您的帖子有人正确回答后赠与回复用户等操作<BR>
-	③ 各种论坛道具有其不同的功能，比如机遇卡可让目标用户（也可是您自己）随机出现一些机遇（如增减金钱获丢失道具等）<BR>
-	④ 论坛点券可在论坛用户中相互转让，前提是目标用户必须符合论坛设置以及购买了道具转让器<BR>
+	<tr><td height=23 class="tablebody2" style="line-height: 18px"><B>点券使用小贴士</B>：<br />
+	① 论坛点券可用于购买论坛中出售的各种趣味性道具<br />
+	② 论坛点券和金币可用于参与论坛中一些需要点券购买贴的浏览、当您的帖子有人正确回答后赠与回复用户等操作<br />
+	③ 各种论坛道具有其不同的功能，比如机遇卡可让目标用户（也可是您自己）随机出现一些机遇（如增减金钱获丢失道具等）<br />
+	④ 论坛点券可在论坛用户中相互转让，前提是目标用户必须符合论坛设置以及购买了道具转让器<br />
 	⑤ 系统中部分特殊的道具出于限制使用的目的，是需要用户同时拥有金币和点券才能购买的，有部分道具只有在特殊的情况下才会出现，这部分道具是用点券或金币都不能购买到的。</td>
 	</tr>
 </table>
@@ -159,7 +159,7 @@ Sub AliPay()
 		RandomizeStr = RandomizeStr & num1
 	Loop
 	'Response.Write RandomizeStr
-	'Response.Write "<BR>"
+	'Response.Write "<br />"
 	'Response.Write PayDayStr
 	If Dvbbs.Forum_ChanSetting(5) <> "0" Then
 		PayCode = "01" & Dvbbs.Forum_ChanSetting(5) & PayDayStr & RandomizeStr
@@ -792,10 +792,10 @@ Sub MainReadMe(str)
 	<th height=23>购买论坛点券</th></tr>
 	<tr><td height=24 class="tablebody2" align=center><a href="?action=PayList">所有交易记录</a> | <a href="?action=PayList&Suc=1">已成功订单</a> | <a href="?action=PayList&Suc=2">未成功订单</a> | <a href="?action=UserToolsLog_List">金币或点券使用记录</a> | <a href="?action=UserCenter"><font color=red>兑换论坛金币</font></a> | <a href="UserPay.asp"><font color=red>购买论坛点券</font></a></td>
 	</tr>
-	<tr><td height=23 class="tablebody1" style="line-height: 18px"><B>说明</B>：<BR>
-	① 通过网络支付可获<font color=red>奖励</font>相应的论坛点券<BR>
-	② 每通过网络支付 <font color=red><B>1</B></font> 元可获奖励 <font color=red><B><%=Dvbbs.Forum_ChanSetting(14)%></B></font> 张论坛点券<BR>
-	③ 论坛点券的作用：可购买论坛中各种趣味道具，享受更多有趣的论坛功能<BR>
+	<tr><td height=23 class="tablebody1" style="line-height: 18px"><B>说明</B>：<br />
+	① 通过网络支付可获<font color=red>奖励</font>相应的论坛点券<br />
+	② 每通过网络支付 <font color=red><B>1</B></font> 元可获奖励 <font color=red><B><%=Dvbbs.Forum_ChanSetting(14)%></B></font> 张论坛点券<br />
+	③ 论坛点券的作用：可购买论坛中各种趣味道具，享受更多有趣的论坛功能<br />
 	④ 点券的获取流程：根据下面提示选择网络支付后，通过网络)%></td>
 	</tr>
 <%

@@ -313,7 +313,7 @@ PasteErrorCopy	: "Die Sicherheitseinstellungen Ihres Browsers lassen es nicht zu
 PasteAsText		: "Als Text einfuegen",
 PasteFromWord	: "Aus Word einfuegen",
 
-DlgPasteMsg		: "Der Text konnte nicht automatisch eingefuegt werden, da die Sicherheitseinstellungen Ihres Browsers dies nicht zulassen.<BR>Bitte nutzen Sie in der folgenden Box die System-Zwischenablage ueber STRG-C (kopieren) und STRG-V (einfuegen).",
+DlgPasteMsg		: "Der Text konnte nicht automatisch eingefuegt werden, da die Sicherheitseinstellungen Ihres Browsers dies nicht zulassen.<br />Bitte nutzen Sie in der folgenden Box die System-Zwischenablage ueber STRG-C (kopieren) und STRG-V (einfuegen).",
 
 // Color Picker
 ColorAutomatic	: "Automatisch",

@@ -312,7 +312,7 @@ PasteErrorCopy	: "Varnostne nastavitve brskalnika ne dopuščajo samodejnega kop
 PasteAsText		: "Prilepi kot golo besedilo",
 PasteFromWord	: "Prilepi iz Worda",
 
-DlgPasteMsg		: "Ni bilo mogoče izvesti lepljenja zaradi <STRONG>varnostnih nastavitev</STRONG> vašega brskalnika.<BR>Prilepite v sledeče okno s kombinacijo tipk na tipkovnici (<STRONG>Ctrl+V</STRONG>) in pritisnite <STRONG>V redu</STRONG>.",
+DlgPasteMsg		: "Ni bilo mogoče izvesti lepljenja zaradi <STRONG>varnostnih nastavitev</STRONG> vašega brskalnika.<br />Prilepite v sledeče okno s kombinacijo tipk na tipkovnici (<STRONG>Ctrl+V</STRONG>) in pritisnite <STRONG>V redu</STRONG>.",
 
 // Color Picker
 ColorAutomatic	: "Samodejno",

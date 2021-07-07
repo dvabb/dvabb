@@ -25,7 +25,7 @@ Sub main()
 <th width="100%" colspan="3" style="text-align:center;">论坛含有关键词不允许发布功能
 </th></tr>
 <tr> 
-<td class="td2"><U>请输入关键词</U><BR>以回车分隔</td>
+<td class="td2"><U>请输入关键词</U><br />以回车分隔</td>
 <td class="td2"> 
 <%
 Dim rs,content

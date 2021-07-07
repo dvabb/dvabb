@@ -463,7 +463,7 @@ Class Dvbbs_Post
 			If ajaxPost Then
 				Call showAjaxMsg(0,Replace(template.Strings(23),"{$topiclimited}",Dvbbs.Board_Setting(45)),"","")
 			Else
-				parameter="showerr.asp?ShowErrType="&Dvbbs.ErrType&"&ErrCodes=<li>"&Replace(template.Strings(23),"{$topiclimited}",Dvbbs.Board_Setting(45))&"<BR>2秒后自动返回上一页面。&action=OtherErr&autoreload=1"
+				parameter="showerr.asp?ShowErrType="&Dvbbs.ErrType&"&ErrCodes=<li>"&Replace(template.Strings(23),"{$topiclimited}",Dvbbs.Board_Setting(45))&"<br />2秒后自动返回上一页面。&action=OtherErr&autoreload=1"
 				Response.redirect parameter
 			End If
 		End If
@@ -499,7 +499,7 @@ Class Dvbbs_Post
 			If ajaxPost Then
 				Call showAjaxMsg(0,Replace(template.Strings(24),"{$bodylimited}",Dvbbs.Board_Setting(16)),"","")
 			Else
-				Response.redirect "showerr.asp?ShowErrType="&Dvbbs.ErrType&"&ErrCodes=<li>"&Replace(template.Strings(24),"{$bodylimited}",Dvbbs.Board_Setting(16))&"<BR>2秒后自动返回上一页面。&action=OtherErr&autoreload=1"
+				Response.redirect "showerr.asp?ShowErrType="&Dvbbs.ErrType&"&ErrCodes=<li>"&Replace(template.Strings(24),"{$bodylimited}",Dvbbs.Board_Setting(16))&"<br />2秒后自动返回上一页面。&action=OtherErr&autoreload=1"
 			End If
 		End If
 		REM 2004-4-23添加限制帖子内容最小字节数,下次在模板中添加。Dvbbs.YangZheng
@@ -507,7 +507,7 @@ Class Dvbbs_Post
 			If ajaxPost Then
 				Call showAjaxMsg(0,Replace(template.Strings(24),"大于{$bodylimited}","小于"&Dvbbs.Board_Setting(52)),"","")
 			Else
-				parameter="showerr.asp?ShowErrType="&Dvbbs.ErrType&"&ErrCodes=<li>"&Replace(template.Strings(24),"大于{$bodylimited}","小于"&Dvbbs.Board_Setting(52))&"<BR>2秒后自动返回上一页面。&action=OtherErr&autoreload=1"
+				parameter="showerr.asp?ShowErrType="&Dvbbs.ErrType&"&ErrCodes=<li>"&Replace(template.Strings(24),"大于{$bodylimited}","小于"&Dvbbs.Board_Setting(52))&"<br />2秒后自动返回上一页面。&action=OtherErr&autoreload=1"
 				Response.redirect parameter
 			End if
 		End If

@@ -57,7 +57,7 @@ case else
 <B>注意</B>：下面操作将大批量删除论坛帖子，<font color=red>并且所有操作不可恢复！</font>如果您确定这样做，请仔细检查您输入的信息。
 </td>
 </tr>
-</table><BR>
+</table><br />
 <table width="100%" border="0" cellspacing="1" cellpadding="3" align="center">
 <form action="alldel.asp?action=alldel" method="post">
 	<th valign=middle colspan=2>删除指定日期内帖子</b>(本功能不扣除用户帖子数和积分)</th>
@@ -170,7 +170,7 @@ Sub Moveinfo()
 	<tr>
     <td width="100%" valign=top>
 <B>注意</B>：这里只是移动帖子，而不是拷贝或者删除！
-            <br>下面操作将删除原论坛帖子，并移动到您指定的论坛中。如果您确定这样做，请仔细检查您输入的信息。<BR>您可以将一个论坛下属论坛的帖子移动到上级论坛，也可以将上级论坛的帖子移动到下级论坛，但作为分类的论坛由于论坛设置很可能不能发布帖子（只能浏览）
+            <br>下面操作将删除原论坛帖子，并移动到您指定的论坛中。如果您确定这样做，请仔细检查您输入的信息。<br />您可以将一个论坛下属论坛的帖子移动到上级论坛，也可以将上级论坛的帖子移动到下级论坛，但作为分类的论坛由于论坛设置很可能不能发布帖子（只能浏览）
 </td>
 </tr>
 </table>
@@ -271,7 +271,7 @@ Sub Del()
 	Dim Dnum '删除帖子数 2005-10-30 Dv.Yz
 	If request("delboardid")="0" then
 		founderr=true
-		Errmsg=ErrMsg + "<BR><li>非法的版面参数。"
+		Errmsg=ErrMsg + "<br /><li>非法的版面参数。"
 		exit sub
 	Elseif request("delboardid")="all" then
 		delboardid=""
@@ -282,18 +282,18 @@ Sub Del()
 	End if
 	If Request("username")="" then
 		founderr=true
-		Errmsg=ErrMsg + "<BR><li>请输入被帖子删除用户名。"
+		Errmsg=ErrMsg + "<br /><li>请输入被帖子删除用户名。"
 		exit sub
 	End If
 	Set Rs=Dvbbs.Execute("Select UserID,UserGroupID From Dv_User Where UserName='"&replace(request("username"),"'","")&"'")
 	If Rs.Eof And Rs.Bof Then
 		founderr=true
-		Errmsg=ErrMsg + "<BR><li>目标用户不存在，请重新输入。"
+		Errmsg=ErrMsg + "<br /><li>目标用户不存在，请重新输入。"
 		exit sub
 	End If
 	If Rs(1)=1 Or Rs(1)=2 Or Rs(1)=3 Then
 		founderr=true
-		Errmsg=ErrMsg + "<BR><li>对管理员、超级版主、版主的贴子不能进行批量删除操作。"
+		Errmsg=ErrMsg + "<br /><li>对管理员、超级版主、版主的贴子不能进行批量删除操作。"
 		exit sub
 	End If
 		PostUserID=Rs(0)
@@ -324,7 +324,7 @@ Sub Del()
 		if isnull(titlenum) then titlenum=0
 		sql="update [dv_user] set userpost=userpost-"&titlenum&",userWealth=userWealth-"&titlenum*Dvbbs.Forum_user(3)&",userEP=userEP-"&titlenum*Dvbbs.Forum_user(8)&",userCP=userCP-"&titlenum*Dvbbs.Forum_user(13)&" where UserID="&PostUserID
 		Dvbbs.Execute(sql)
-		Response.write "该用户的" & Dnum & "个主题及跟帖删除成功！<BR>建议您到更新论坛数据中更新一下论坛数据，或者<a href=alldel.asp>返回</a>"
+		Response.write "该用户的" & Dnum & "个主题及跟帖删除成功！<br />建议您到更新论坛数据中更新一下论坛数据，或者<a href=alldel.asp>返回</a>"
 	Response.Flush
 End Sub
 
@@ -334,7 +334,7 @@ Sub Alldel()
 	Dim Dnum '删除帖子数 2005-10-30 Dv.Yz
 	If Request("delboardid")="0" Then
 		'founderr=true
-		Errmsg=ErrMsg + "<BR><li>非法的版面参数。"
+		Errmsg=ErrMsg + "<br /><li>非法的版面参数。"
 		Exit Sub
 	Elseif Request("delboardid")="all" Then
 		Delboardid=""
@@ -345,7 +345,7 @@ Sub Alldel()
 	TimeLimited=Request.Form("TimeLimited")
 	If Not Isnumeric(TimeLimited) Then
 		'founderr=true
-		Errmsg=ErrMsg + "<BR><li>非法的参数。"
+		Errmsg=ErrMsg + "<br /><li>非法的参数。"
 		Exit Sub
 	Else
 		For i=0 to Ubound(allposttable)
@@ -358,7 +358,7 @@ Sub Alldel()
 				Dnum = Rs(0)
 				Dvbbs.Execute("DELETE FROM "&Allposttable(i)&" WHERE "&Delboardid&" Datediff('d',DateAndTime,"&SqlNowString&")>"&TimeLimited)
 			End if
-			Response.Write Allposttable(i)&"表" & Dnum & "张帖子删除完成！<BR>"
+			Response.Write Allposttable(i)&"表" & Dnum & "张帖子删除完成！<br />"
 			Response.Flush
 		Next
 		If IsSqlDataBase=1 Then
@@ -372,10 +372,10 @@ Sub Alldel()
 			Dvbbs.Execute("DELETE FROM Dv_topic WHERE "&Delboardid&" Datediff('d',DateAndTime,"&SqlNowString&")>"&TimeLimited)
 			Dvbbs.Execute("DELETE FROM Dv_besttopic WHERE "&Delboardid&" Datediff('d',DateAndTime,"&SqlNowString&") > "&TimeLimited)
 		End If
-			Response.Write "Dv_Topic表" & Dnum & "个主题删除完成！<BR>"
+			Response.Write "Dv_Topic表" & Dnum & "个主题删除完成！<br />"
 			Response.Flush
 	End if
-	Response.Write "删除成功！<BR>建议您到更新论坛数据中更新一下论坛数据，或者<a href=alldel.asp>返回</a>"
+	Response.Write "删除成功！<br />建议您到更新论坛数据中更新一下论坛数据，或者<a href=alldel.asp>返回</a>"
 	Response.Flush
 End sub
 
@@ -384,7 +384,7 @@ sub alldelTopic()
 	Dim Dnum '删除帖子数 2005-10-30 Dv.Yz
 	if request("delboardid")="0" then
 		'founderr=true
-		Errmsg=ErrMsg + "<BR><li>非法的版面参数。"
+		Errmsg=ErrMsg + "<br /><li>非法的版面参数。"
 		exit sub
 	elseif request("delboardid")="all" then
 		delboardid=""
@@ -394,7 +394,7 @@ sub alldelTopic()
 	TimeLimited=request.form("TimeLimited")
 	if not isnumeric(TimeLimited) then
 		'founderr=true
-		Errmsg=ErrMsg + "<BR><li>非法的参数。"
+		Errmsg=ErrMsg + "<br /><li>非法的参数。"
 		exit sub
 	else
 	if IsSqlDataBase=1 then
@@ -418,7 +418,7 @@ sub alldelTopic()
 	end if
 	set rs=nothing
 	end if
-	response.write "Dv_Topic表" & Dnum & "个主题删除成功！<BR>建议您到更新论坛数据中更新一下论坛数据，或者<a href=alldel.asp>返回</a>"
+	response.write "Dv_Topic表" & Dnum & "个主题删除成功！<br />建议您到更新论坛数据中更新一下论坛数据，或者<a href=alldel.asp>返回</a>"
 	end sub
 
 Sub DelUser()
@@ -467,7 +467,7 @@ Sub DelUser()
 		Dvbbs.Execute("delete from [dv_user] where datediff('d',LastLogin,"&SqlNowString&")>"&TimeLimited&"")
 	end if
 	end if
-	response.write "删除" & Dnum & "个用户成功！<BR>建议您到更新论坛数据中更新一下论坛数据，或者<a href=alldel.asp>返回</a>"
+	response.write "删除" & Dnum & "个用户成功！<br />建议您到更新论坛数据中更新一下论坛数据，或者<a href=alldel.asp>返回</a>"
 	Response.Flush
 End Sub
 

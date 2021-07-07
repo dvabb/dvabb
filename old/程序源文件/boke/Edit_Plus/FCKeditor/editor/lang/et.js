@@ -312,7 +312,7 @@ PasteErrorCopy	: "Sinu brauseri turvaseaded ei luba redaktoril automaatselt kope
 PasteAsText		: "Kleebi tavalise tekstina",
 PasteFromWord	: "Kleebi Wordist",
 
-DlgPasteMsg		: "Redaktor ei saanud sinu brauseri <STRONG>turvaseadete</STRONG> pärast automatselt kleepida.<BR>Palun kleebi järgmisse kasti kasutades klaviatuuri(<STRONG>Ctrl+V</STRONG>) ja vajuta <STRONG>OK</STRONG>.",
+DlgPasteMsg		: "Redaktor ei saanud sinu brauseri <STRONG>turvaseadete</STRONG> pärast automatselt kleepida.<br />Palun kleebi järgmisse kasti kasutades klaviatuuri(<STRONG>Ctrl+V</STRONG>) ja vajuta <STRONG>OK</STRONG>.",
 
 // Color Picker
 ColorAutomatic	: "Automaatne",

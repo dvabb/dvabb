@@ -312,7 +312,7 @@ PasteErrorCopy	: "A configuração de segurança do navegador não permite a exe
 PasteAsText		: "Colar como Texto Simples",
 PasteFromWord	: "Colar do Word",
 
-DlgPasteMsg		: "O editor não pode executar automaticamente o colar devido à <STRONG>configuração de segurança</STRONG> do navegador.<BR>Por favor cole dentro do seguinte quadro usando o teclado (<STRONG>Ctrl+V</STRONG>) e pressione <STRONG>OK</STRONG>.",
+DlgPasteMsg		: "O editor não pode executar automaticamente o colar devido à <STRONG>configuração de segurança</STRONG> do navegador.<br />Por favor cole dentro do seguinte quadro usando o teclado (<STRONG>Ctrl+V</STRONG>) e pressione <STRONG>OK</STRONG>.",
 
 // Color Picker
 ColorAutomatic	: "Automático",

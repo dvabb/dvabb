@@ -27,9 +27,9 @@ Sub Main_head()
 %>
 <table width="100%" border="0" cellspacing="1" cellpadding="3" align="center">
 <tr><th>道具中心管理</th></tr>
-<tr><td class="td2"><B>道具资料设置说明</B>：<BR>
+<tr><td class="td2"><B>道具资料设置说明</B>：<br />
 	1、<font color=red>建议管理员定期添加库存，请按论坛市场实际需求进行调节，不建议频繁添加。</font>（通常在道具总拥有量非常少的情况下进行添加库存，防止会员趁机抬高价格。）
-	<BR>
+	<br />
 	2、<font color=blue>系统库存设置为-1则表示该道具为系统道具</font>，系统不出售，一般为论坛使用过程产生，如果用户得到可自己转让或出售</td></tr>
 </table>
 <br>
@@ -252,7 +252,7 @@ If SQL(15)="" Then SQL(15)="Dv_plus/Tools/pic/None.jpg"
 </tr>
 <tr>
 <td class="td2" align=right><b>道具使用反点奖励</b></td>
-<td class="td2"><INPUT TYPE="text" NAME="ToolsSetting(4)" value="<%=ToolsSetting(4)%>" size=10><BR> 部分道具可设置，设置后使用该道具可获得一定金币的奖励，对多用户有效的道具每产生一笔交易则给使用用户一定金币的奖励，<font color=blue>在金币购买帖子相应道具中，此设置为百分比（如0.3），如购买此贴需要10个金币，则返回10*0.3的金币给发贴者</font>，<font color=red>在查税卡中为向目标用户征收的总金币数百分比</font></td>
+<td class="td2"><INPUT TYPE="text" NAME="ToolsSetting(4)" value="<%=ToolsSetting(4)%>" size=10><br /> 部分道具可设置，设置后使用该道具可获得一定金币的奖励，对多用户有效的道具每产生一笔交易则给使用用户一定金币的奖励，<font color=blue>在金币购买帖子相应道具中，此设置为百分比（如0.3），如购买此贴需要10个金币，则返回10*0.3的金币给发贴者</font>，<font color=red>在查税卡中为向目标用户征收的总金币数百分比</font></td>
 </tr>
 <tr>
 <td class="td2" align=right><b>允许使用的用户组ID</b></td>

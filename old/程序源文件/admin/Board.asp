@@ -24,7 +24,7 @@ Sub main()
 </tr>
 <tr>
 <td class="td2" colspan=2>
-<p><B>注意</B>：<BR>①删除论坛同时将删除该论坛下所有帖子！删除分类同时删除下属论坛和其中帖子！ 操作时请完整填写表单信息；<BR>②如果选择<B>复位所有版面</B>，则所有版面都将作为一级论坛（分类），这时您需要重新对各个版面进行归属的基本设置，<B>不要轻易使用该功能</B>，仅在做出了错误的设置而无法复原版面之间的关系和排序的时候使用，在这里您也可以只针对某个分类进行复位操作(见分类的更多操作下拉菜单)，具体请看操作说明。<BR><font color=blue>每个版面的更多操作请见下拉菜单，操作前请仔细阅读说明，分类下拉菜单中比别的版面增加了分类排序和分类复位功能</font><BR>
+<p><B>注意</B>：<br />①删除论坛同时将删除该论坛下所有帖子！删除分类同时删除下属论坛和其中帖子！ 操作时请完整填写表单信息；<br />②如果选择<B>复位所有版面</B>，则所有版面都将作为一级论坛（分类），这时您需要重新对各个版面进行归属的基本设置，<B>不要轻易使用该功能</B>，仅在做出了错误的设置而无法复原版面之间的关系和排序的时候使用，在这里您也可以只针对某个分类进行复位操作(见分类的更多操作下拉菜单)，具体请看操作说明。<br /><font color=blue>每个版面的更多操作请见下拉菜单，操作前请仔细阅读说明，分类下拉菜单中比别的版面增加了分类排序和分类复位功能</font><br />
 <font color=red>如果您希望某个版面需要会员付出一定代价（货币）才能进入，可以在版面高级设置中设置相应版面进入所需的金币或点券数以及能访问的时间是多少</font>
 </td>
 </tr>
@@ -174,7 +174,7 @@ Next
 <td width="30%" align=Left  class="td2" >
 <Input type="submit" name="Submit" value="设 定" class="button"></td>
 </tr>
-</table><BR>
+</table><br />
 </form>
 <form action ="board.asp?action=savesid" method=post name="dv1">
 <table cellspacing="0" cellpadding="0" align="center" width="100%">
@@ -229,7 +229,7 @@ set rs=nothing
 <td width=300 align=Left class="td2" >&nbsp;</td>
 <td width=300 align=Left class="td2" ><input type="submit" name="Submit" value="设 定" class="button"></td>
 </tr>
-</table><BR><BR>
+</table><br /><br />
 </form>
 <%
 End Sub 
@@ -314,7 +314,7 @@ MoreMenu=""
 Next
 End If
 %>
-</table><BR><BR>
+</table><br /><br />
 <SCRIPT LANGUAGE="JavaScript">
 <!--
 function alertreadme(str,url){
@@ -357,7 +357,7 @@ rs_c.open sql,conn,1,1
 </tr>
 <tr> 
 <td width="100%" height=30 class="td2" colspan=2>
-说明：<BR>1、添加论坛版面后，相关的设置均为默认设置，请返回论坛版面管理首页版面列表的高级设置中设置该论坛的相应属性，如果您想对该论坛做更具体的权限设置，请到<A HREF="board.asp?action=permission"><font color=blue>论坛权限管理</font></A>中设置相应用户组在该版面的权限。<BR>
+说明：<br />1、添加论坛版面后，相关的设置均为默认设置，请返回论坛版面管理首页版面列表的高级设置中设置该论坛的相应属性，如果您想对该论坛做更具体的权限设置，请到<A HREF="board.asp?action=permission"><font color=blue>论坛权限管理</font></A>中设置相应用户组在该版面的权限。<br />
 2、<font color=blue>如果您添加的是论坛分类</font>，只需要在所属分类中选择作为论坛分类即可；<font color=blue>如果您添加的是论坛版面</font>，则要在所属分类中确定并选择该论坛版面的上级版面。
 </td>
 </tr>
@@ -368,13 +368,13 @@ rs_c.open sql,conn,1,1
 </td>
 </tr>
 <tr> 
-<td width="40%" height=24 class="td1">版面说明<BR>可以使用HTML代码</td>
+<td width="40%" height=24 class="td1">版面说明<br />可以使用HTML代码</td>
 <td width="60%" class="td1"> 
 <textarea name="Readme" cols="50" rows="5"></textarea>
 </td>
 </tr>
 <tr> 
-<td width="40%" height=24 class="td1">版面规则<BR>可以使用HTML代码</td>
+<td width="40%" height=24 class="td1">版面规则<br />可以使用HTML代码</td>
 <td width="60%" class="td1"> 
 <textarea name="Rules" cols="50" rows="5"></textarea>
 </td>
@@ -391,7 +391,7 @@ BoardJumpListSelect('<%=Dvbbs.CheckNumeric(Request("editid"))%>','Boardid','做�
 </td>
 </tr>
 <tr> 
-<td width="40%" height=30 class="td1"><U>使用样式风格</U><BR>相关样式风格中包含论坛颜色、图片<BR>等信息</td>
+<td width="40%" height=30 class="td1"><U>使用样式风格</U><br />相关样式风格中包含论坛颜色、图片<br />等信息</td>
 <td width="60%" class="td1">
 <%
 	set rs_c=dvbbs.execute("select forum_sid,forum_cid from dv_setup")
@@ -411,13 +411,13 @@ Next
 </td>
 </tr>
 <tr> 
-<td width="40%" height=30 class="td1"><U>论坛版主</U><BR>多版主添加请用|分隔，如：沙滩小子|wodeail</td>
+<td width="40%" height=30 class="td1"><U>论坛版主</U><br />多版主添加请用|分隔，如：沙滩小子|wodeail</td>
 <td width="60%" class="td1"> 
 <input type="text" name="boardmaster" size="35">
 </td>
 </tr>
 <tr> 
-<td width="40%" height=30 class="td1"><U>首页显示论坛图片</U><BR>出现在首页论坛版面介绍左边<BR>请直接填写图片URL</td>
+<td width="40%" height=30 class="td1"><U>首页显示论坛图片</U><br />出现在首页论坛版面介绍左边<br />请直接填写图片URL</td>
 <td width="60%" class="td1">
 <input type="text" name="indexIMG" size="35">
 </td>
@@ -456,7 +456,7 @@ forum_sid=rs("sid")
 </tr>
 <tr> 
 <td width="100%" height=30 class="td2" colspan=2>
-说明：<BR>1、添加论坛版面后，相关的设置均为默认设置，请返回论坛版面管理首页版面列表的高级设置中设置该论坛的相应属性，如果您想对该论坛做更具体的权限设置，请到<A HREF="board.asp?action=permission"><font color=blue>论坛权限管理</font></A>中设置相应用户组在该版面的权限。<BR>
+说明：<br />1、添加论坛版面后，相关的设置均为默认设置，请返回论坛版面管理首页版面列表的高级设置中设置该论坛的相应属性，如果您想对该论坛做更具体的权限设置，请到<A HREF="board.asp?action=permission"><font color=blue>论坛权限管理</font></A>中设置相应用户组在该版面的权限。<br />
 2、<font color=blue>如果您添加的是论坛分类</font>，只需要在所属分类中选择作为论坛分类即可；<font color=blue>如果您添加的是论坛版面</font>，则要在所属分类中确定并选择该论坛版面的上级版面
 </td>
 </tr>
@@ -467,19 +467,19 @@ forum_sid=rs("sid")
 </td>
 </tr>
 <tr> 
-<td width="40%" height=24 class="td1">版面说明<BR>可以使用HTML代码</td>
+<td width="40%" height=24 class="td1">版面说明<br />可以使用HTML代码</td>
 <td width="60%" class="td1"> 
 <textarea name="Readme" cols="50" rows="5"><%=server.HTMLEncode(Rs("readme")&"")%></textarea>
 </td>
 </tr>
 <tr> 
-<td width="40%" height=24 class="td1">版面规则<BR>可以使用HTML代码</td>
+<td width="40%" height=24 class="td1">版面规则<br />可以使用HTML代码</td>
 <td width="60%" class="td1"> 
 <textarea name="Rules" cols="50" rows="5"><%=server.HTMLEncode(Rs("Rules")&"")%></textarea>
 </td>
 </tr>
 <tr> 
-<td width="40%" height=30 class="td1"><U>所属类别</U><BR>所属论坛不能指定为当前版面<BR>所属论坛不能指定为当前版面的下属论坛</td>
+<td width="40%" height=30 class="td1"><U>所属类别</U><br />所属论坛不能指定为当前版面<br />所属论坛不能指定为当前版面的下属论坛</td>
 <td width="60%" class="td1"> 
 <select name=class>
 <option value="0">做为论坛分类</option>
@@ -497,7 +497,7 @@ rs_c.Close
 </td>
 </tr>
 <tr> 
-<td width="40%" height=30 class="td1"><U>使用样式风格</U><BR>相关样式风格中包含论坛颜色、图片<BR>等信息</td>
+<td width="40%" height=30 class="td1"><U>使用样式风格</U><br />相关样式风格中包含论坛颜色、图片<br />等信息</td>
 <td width="60%" class="td1">
 <%
 	set rs_c=dvbbs.execute("select forum_sid,forum_cid from dv_setup")
@@ -517,14 +517,14 @@ Next
 </td>
 </tr>
 <tr> 
-<td width="40%" height=30 class="td1"><U>论坛版主</U><BR>多斑竹添加请用|分隔，如：沙滩小子|wodeail</td>
+<td width="40%" height=30 class="td1"><U>论坛版主</U><br />多斑竹添加请用|分隔，如：沙滩小子|wodeail</td>
 <td width="60%" class="td1"> 
 <input type="text" name="boardmaster" size="35" value='<%=rs("boardmaster")%>'>
 <input type="hidden" name="oldboardmaster" value='<%=rs("boardmaster")%>'>
 </td>
 </tr>
 <tr> 
-<td width="40%" height=30 class="td1"><U>首页显示论坛图片</U><BR>出现在首页论坛版面介绍左边<BR>请直接填写图片URL</td>
+<td width="40%" height=30 class="td1"><U>首页显示论坛图片</U><br />出现在首页论坛版面介绍左边<br />请直接填写图片URL</td>
 <td width="60%" class="td1">
 <input type="text" name="indexIMG" size="35" value="<%=rs("indexIMG")%>">
 </td>
@@ -594,7 +594,7 @@ Set Rs = Nothing
 <br>
 只有设定为认证论坛的论坛需要填写能够进入该版面的用户，每输入一个用户请确认用户名在论坛中存在，每个用户名用<B>回车</B>分开</font>
 <%
-If Clng(Dvbbs.Board_Setting(62))>0 Or Clng(Dvbbs.Board_Setting(63))>0 Then Response.Write "<BR><font color=blue>此版面设置了支付金币或点券方能进入，有效期为<font color=red>" & Clng(Dvbbs.Board_Setting(64)) & "</font>个月，请在每个用户名后面加上：=当前时间，每行效果如：admin="&Now&"</font>"
+If Clng(Dvbbs.Board_Setting(62))>0 Or Clng(Dvbbs.Board_Setting(63))>0 Then Response.Write "<br /><font color=blue>此版面设置了支付金币或点券方能进入，有效期为<font color=red>" & Clng(Dvbbs.Board_Setting(64)) & "</font>个月，请在每个用户名后面加上：=当前时间，每行效果如：admin="&Now&"</font>"
 %>
 </td>
 <td width="48%" class=td1> 

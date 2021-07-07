@@ -35,7 +35,7 @@ Sub Main()
 	End If
 	Rs.Close:Set Rs=Nothing
 %>
-<BR>
+<br />
 <table cellpadding=3 cellspacing=1 align=center class=tableborder1>
 <tr><th colspan="2" width="100%">论坛通行证设置</th></tr>
 <tr>

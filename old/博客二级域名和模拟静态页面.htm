@@ -33,7 +33,7 @@ td, th, caption { font-family:  "宋体"; font-size: 12px; color:#000000;  LINE-
 		<td bgcolor="F3F3F3">
 		<b>动网论坛系统模拟静态页面配置说明</b><br>
 			<ol><li>需安装 ISAPI_Rewrite 组件，请自行到网上搜索此软件并安装于您的服务器。</li>
-		　　<li>配置 httpd.ini 文件，在该文件尾部加入以下代码：<BR>
+		　　<li>配置 httpd.ini 文件，在该文件尾部加入以下代码：<br />
 			<br />
 			# 重写index.asp <br>
 			RewriteRule /index_(\d+)_(\d*)_(.*)_(\d*)\.html /index\.asp\?boardid=$1&amp;topicmode=$2&amp;list_type=$3&amp;page=$4 [N,I] <br>
@@ -65,39 +65,39 @@ td, th, caption { font-family:  "宋体"; font-size: 12px; color:#000000;  LINE-
 			RewriteRule /dv_rss(.*)\.html(.*) /dv_rss.asp [N,I] </li>
 		<li>修改 conn.asp 文件中的 IsUrlreWrite 参数。其中httpd.ini是ISAPI_Rewrite伪静态文件</li>
 		</ol>
-		<li><B>动网论坛博客系统二级域名配置说明</B><BR>
-		　　1、如您没有独立服务器，请到 <a href="http://domain.iboker.com/reg.asp" target=_blank>http://domain.iboker.com</a> 申请一个免费的二级域名系统（只支持动网博客系统的二级域名）<BR>
-		　　2、独立服务器用户：<BR>
-		　　　　1). 绑定泛域名到您服务器IP，如您的域名为iboker.com，则绑定*.iboker.com到您的服务器IP(前面为星号)。<BR>
-		　　　　2). 将您博客所在网站iis服务的主机头留空，新建Default.asp文件，并把新建文件的执行优先级设定为最高（IIS设置属性中的文档，将Default.asp移到最上面）。<BR>
-		　　　　		　　　　Default.asp文件代码：<BR>
-		　　　　		　　　　&lt;%<BR>
-		　　　　		　　　　Dim iURL<BR>
-		　　　　		　　　　iURL = Split(Request.ServerVariables("SERVER_NAME"),".")<BR>
-		　　　　		　　　　If Lcase(iURL(0))="www" Then<BR>
-		　　　　		　　　　'此处为网站或论坛或博客首页地址，请自行选择<BR>
-		　　　　		　　　　	Response.Redirect("index.asp")<BR>
-		　　　　		　　　　Else<BR>
-		　　　　		　　　　'如博客不在网站（泛域名所在网站）目录，请自行更改此处地址<BR>
-		　　　　		　　　　	Response.Write( "&lt;frameset&gt;&lt;frame src=""boke.asp?"&iURL(0)&".index.html""&gt;&lt;/frameset&gt;")<BR>
-		　　　　		　　　　End If<BR>
-		　　　　		　　　　%&gt;<BR>
-		　　　　3). 将此文件上传到网站根目录，如博客目录不在网站根目录，还需要修改Default.asp文件中的路径。<BR><BR>
-		<li><B>动网论坛博客系统模拟静态页面配置说明</B><BR>
-		　　1、需安装 ISAPI_Rewrite 组件，请自行到网上搜索此软件并安装于您的服务器。<BR>
-		　　2、配置 httpd.ini 文件，在该文件尾部加入以下代码：<BR>
-		　　　　RewriteRule /show_topic\.html /bokeindex\.asp\?show_topic\.html [N,I]<BR>
-		　　　　RewriteRule /show_topic\.(\S+)\.html /bokeindex\.asp\?show_topic\.$1\.html [N,I]<BR>
-		　　　　RewriteRule /show_topic\.(\d+)\.(\S+)\.html /bokeindex\.asp\?show_topic\.$1\.$2\.html [N,I]<BR>
-		　　　　RewriteRule /show_user\.html /bokeindex\.asp\?show_user\.html [N,I]<BR>
-		　　　　RewriteRule /show_user\.(\S+)\.html /bokeindex\.asp\?show_user\.$1\.html [N,I]<BR>
-		　　　　RewriteRule /([A-Za-z0-9_-]+)\.index\.html /boke\.asp\?$1\.index\.html [N,I]<BR>
-		　　　　RewriteRule /([A-Za-z0-9_-]+)\.showchannel\.(\S+)\.html /boke\.asp\?$1\.showchannel\.$2\.html [N,I]<BR>
-		　　　　RewriteRule /([A-Za-z0-9_-]+)\.showchannel\.(\d+)\.(\S+)\.html /boke\.asp\?$1\.showchannel\.$2\.$3\.html [N,I]<BR>
-		　　　　RewriteRule /([A-Za-z0-9_-]+)\.showtopic\.(\S+)\.html /boke\.asp\?$1\.showtopic\.$2\.html [N,I]<BR>
-		　　　　RewriteRule /([A-Za-z0-9_-]+)\.showtopic\.(\d+)\.(\S+)\.html /boke\.asp\?$1\.showtopic\.$2\.$3\.html [N,I]<BR>
-		　　　　RewriteRule /([A-Za-z0-9_-]+)\.(\w+)\.xml /bokerss\.asp\?$1\.$2\.xml [N,I]<BR>
-		　　2、修改 boke/config.asp 文件中的 Is_Isapi_Rewrite 参数。<BR>
+		<li><B>动网论坛博客系统二级域名配置说明</B><br />
+		　　1、如您没有独立服务器，请到 <a href="http://domain.iboker.com/reg.asp" target=_blank>http://domain.iboker.com</a> 申请一个免费的二级域名系统（只支持动网博客系统的二级域名）<br />
+		　　2、独立服务器用户：<br />
+		　　　　1). 绑定泛域名到您服务器IP，如您的域名为iboker.com，则绑定*.iboker.com到您的服务器IP(前面为星号)。<br />
+		　　　　2). 将您博客所在网站iis服务的主机头留空，新建Default.asp文件，并把新建文件的执行优先级设定为最高（IIS设置属性中的文档，将Default.asp移到最上面）。<br />
+		　　　　		　　　　Default.asp文件代码：<br />
+		　　　　		　　　　&lt;%<br />
+		　　　　		　　　　Dim iURL<br />
+		　　　　		　　　　iURL = Split(Request.ServerVariables("SERVER_NAME"),".")<br />
+		　　　　		　　　　If Lcase(iURL(0))="www" Then<br />
+		　　　　		　　　　'此处为网站或论坛或博客首页地址，请自行选择<br />
+		　　　　		　　　　	Response.Redirect("index.asp")<br />
+		　　　　		　　　　Else<br />
+		　　　　		　　　　'如博客不在网站（泛域名所在网站）目录，请自行更改此处地址<br />
+		　　　　		　　　　	Response.Write( "&lt;frameset&gt;&lt;frame src=""boke.asp?"&iURL(0)&".index.html""&gt;&lt;/frameset&gt;")<br />
+		　　　　		　　　　End If<br />
+		　　　　		　　　　%&gt;<br />
+		　　　　3). 将此文件上传到网站根目录，如博客目录不在网站根目录，还需要修改Default.asp文件中的路径。<br /><br />
+		<li><B>动网论坛博客系统模拟静态页面配置说明</B><br />
+		　　1、需安装 ISAPI_Rewrite 组件，请自行到网上搜索此软件并安装于您的服务器。<br />
+		　　2、配置 httpd.ini 文件，在该文件尾部加入以下代码：<br />
+		　　　　RewriteRule /show_topic\.html /bokeindex\.asp\?show_topic\.html [N,I]<br />
+		　　　　RewriteRule /show_topic\.(\S+)\.html /bokeindex\.asp\?show_topic\.$1\.html [N,I]<br />
+		　　　　RewriteRule /show_topic\.(\d+)\.(\S+)\.html /bokeindex\.asp\?show_topic\.$1\.$2\.html [N,I]<br />
+		　　　　RewriteRule /show_user\.html /bokeindex\.asp\?show_user\.html [N,I]<br />
+		　　　　RewriteRule /show_user\.(\S+)\.html /bokeindex\.asp\?show_user\.$1\.html [N,I]<br />
+		　　　　RewriteRule /([A-Za-z0-9_-]+)\.index\.html /boke\.asp\?$1\.index\.html [N,I]<br />
+		　　　　RewriteRule /([A-Za-z0-9_-]+)\.showchannel\.(\S+)\.html /boke\.asp\?$1\.showchannel\.$2\.html [N,I]<br />
+		　　　　RewriteRule /([A-Za-z0-9_-]+)\.showchannel\.(\d+)\.(\S+)\.html /boke\.asp\?$1\.showchannel\.$2\.$3\.html [N,I]<br />
+		　　　　RewriteRule /([A-Za-z0-9_-]+)\.showtopic\.(\S+)\.html /boke\.asp\?$1\.showtopic\.$2\.html [N,I]<br />
+		　　　　RewriteRule /([A-Za-z0-9_-]+)\.showtopic\.(\d+)\.(\S+)\.html /boke\.asp\?$1\.showtopic\.$2\.$3\.html [N,I]<br />
+		　　　　RewriteRule /([A-Za-z0-9_-]+)\.(\w+)\.xml /bokerss\.asp\?$1\.$2\.xml [N,I]<br />
+		　　2、修改 boke/config.asp 文件中的 Is_Isapi_Rewrite 参数。<br />
 		</td>
 	</tr>
 	<tr><td align=center height=10 bgcolor="F3F3F3"></td></tr>

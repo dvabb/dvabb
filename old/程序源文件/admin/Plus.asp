@@ -97,13 +97,13 @@ Else
 End If
 %>
 </select>
-不选择则将做为一级菜单<BR>
+不选择则将做为一级菜单<br />
 </td>
 </tr>
 <tr>
 <td height="23" colspan="2" class=td1>
 注释：
-<input type=text size=50 name="readme" value="<%=server.htmlencode(trs("plus_copyright"))%>"> 显示于链接上的title注释，也是插件的版权信息<BR>
+<input type=text size=50 name="readme" value="<%=server.htmlencode(trs("plus_copyright"))%>"> 显示于链接上的title注释，也是插件的版权信息<br />
 </td>
 </tr>
 <tr>
@@ -123,13 +123,13 @@ End If
 <tr>
 <td height="23" colspan="2" class=td1>
 链接：
-<input type=text size=50 name="url" value="<%=server.htmlencode(trs("mainpage"))%>"> <BR>
+<input type=text size=50 name="url" value="<%=server.htmlencode(trs("mainpage"))%>"> <br />
 </td>
 </tr>
 <tr>
 <td height="23" colspan="2" class=td1>
 后台管理链接：
-<input type=text size=50 name="plus_adminpage" value="<%=server.htmlencode(trs("plus_adminpage")&"")%>"> <BR>
+<input type=text size=50 name="plus_adminpage" value="<%=server.htmlencode(trs("plus_adminpage")&"")%>"> <br />
 </td>
 </tr>
 <tr><th style="text-align:center;" colspan="2" >插件常规设置</th></tr>
@@ -268,13 +268,13 @@ Else
 End If
 %>
 </select>
-不选择则将做为一级菜单<BR>
+不选择则将做为一级菜单<br />
 </td>
 </tr>
 <tr>
 <td height="23" colspan="2" class=td1>
 注释：
-<input type=text size=50 name="readme"> 显示于链接上的title注释,也是插件的版权信息<BR>
+<input type=text size=50 name="readme"> 显示于链接上的title注释,也是插件的版权信息<br />
 </td>
 </tr>
 <tr>
@@ -294,13 +294,13 @@ End If
 <tr>
 <td height="23" colspan="2" class=td1>
 链接：
-<input type=text size=50 name="url"> <BR>
+<input type=text size=50 name="url"> <br />
 </td>
 </tr>
 <tr>
 <td height="23" colspan="2" class=td1>
 后台管理链接：
-<input type=text size=50 name="plus_adminpage"> <BR>
+<input type=text size=50 name="plus_adminpage"> <br />
 </td>
 </tr>
 <tr><th style="text-align:center;" colspan="2" >插件常规设置</th></tr>
@@ -361,7 +361,7 @@ End If
 <%
 end if
 %>
-</table><BR>
+</table><br />
 <%
 Call Select_Group(Replace(Groupids&"","@",","))
 End Sub 

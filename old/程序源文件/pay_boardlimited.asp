@@ -39,10 +39,10 @@ End If
 <tr><td class=tablebody1 colspan=2 height=24>访问该版面规则为：获得 <B><%=Dvbbs.Board_Setting(64)%></B> 个月的访问权限将花费您 <B><%=UseMondy%></B> 个金币 或 <B><%=UseTicket%></B> 张点券。
 </td></tr>
 <tr><td class=tablebody1 colspan=2 height=24>您目前共有 金币 <B><%=Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@usermoney").text%></B> 个 ＋ 点券 <B><%=Dvbbs.UserSession.documentElement.selectSingleNode("userinfo/@userticket").text%></B> 张 的货币单位可供支付 （<a href="UserPay.asp?action=UserCenter" target="_blank"><font color=red>兑换论坛金币</font></a> | <a href="UserPay.asp" target="_blank"><font color=red>购买论坛点券</font></a> | <a href="plus_Tools_SmsPay.asp"><font color=red>点播手机短信获奖论坛点券</font></a>）</td></tr>
-<tr><td class=tablebody1 colspan=2 height=24 style="line-height : 15px"><B>购买操作说明</B>：<BR>
-1、只需要金币购买的，则会扣除您相应的金币，不够则不能操作<BR>
-2、只需要点券购买的，则会扣除您相应的点券，点券充值请看<a href="plus_Tools_Center.asp">道具中心</a>，不够则不能操作<BR>
-3、金币和点券都能购买的，优先扣除相应的点券数，如果不够则从您的金币中扣除，如果两者均不够则不能操作<BR>
+<tr><td class=tablebody1 colspan=2 height=24 style="line-height : 15px"><B>购买操作说明</B>：<br />
+1、只需要金币购买的，则会扣除您相应的金币，不够则不能操作<br />
+2、只需要点券购买的，则会扣除您相应的点券，点券充值请看<a href="plus_Tools_Center.asp">道具中心</a>，不够则不能操作<br />
+3、金币和点券都能购买的，优先扣除相应的点券数，如果不够则从您的金币中扣除，如果两者均不够则不能操作<br />
 <%If Dvbbs.forum_setting(43)="1" Then%>
 4、Vip用户只需花费 <B><font color=red><%=Dvbbs.Board_Setting(62)*Dvbbs.Board_Setting(66)%></font></B> 个金币 或 <B><font color=red><%=Dvbbs.Board_Setting(63)*Dvbbs.Board_Setting(66)%></font></B> 张点券 （<a href="JoinVipGroup.asp" target="_blank"><font color=red>现以升级成为VIP用户</font></a>）
 <%End If%>

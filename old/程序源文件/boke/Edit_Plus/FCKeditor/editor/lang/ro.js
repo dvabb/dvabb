@@ -312,7 +312,7 @@ PasteErrorCopy	: "Setarile de securitate ale navigatorului (browser) pe care l f
 PasteAsText		: "Adauga ca text simplu (Plain Text)",
 PasteFromWord	: "Adauga din Word",
 
-DlgPasteMsg		: "Editor nu a putut executa automat adaugarea din cauza <STRONG>setarilor de securitate</STRONG> ale navigatorului (browser) dvs.<BR>Va rugam adaugati inauntrul casutei folosind tastatura (<STRONG>Ctrl+V</STRONG>) si apasati <STRONG>Bine</STRONG>.",
+DlgPasteMsg		: "Editor nu a putut executa automat adaugarea din cauza <STRONG>setarilor de securitate</STRONG> ale navigatorului (browser) dvs.<br />Va rugam adaugati inauntrul casutei folosind tastatura (<STRONG>Ctrl+V</STRONG>) si apasati <STRONG>Bine</STRONG>.",
 
 // Color Picker
 ColorAutomatic	: "Automatic",

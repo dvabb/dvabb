@@ -312,7 +312,7 @@ PasteErrorCopy	: "Jūsų naršyklės saugumo nustatymai neleidžia redaktoriui a
 PasteAsText		: "Įdėti kaip gryną tekstą",
 PasteFromWord	: "Įdėti iš Word",
 
-DlgPasteMsg		: "Redaktorius nesugeba automatiškai įvykdyti įdėjimo dėl <STRONG>saugumo nustatymų</STRONG> jūsų naršyklėje.<BR>Prašome įdėti tekstą šiame langelyje naudojantis klaviatūra (<STRONG>Ctrl+V</STRONG>) ir paspauskite <STRONG>OK</STRONG>.",
+DlgPasteMsg		: "Redaktorius nesugeba automatiškai įvykdyti įdėjimo dėl <STRONG>saugumo nustatymų</STRONG> jūsų naršyklėje.<br />Prašome įdėti tekstą šiame langelyje naudojantis klaviatūra (<STRONG>Ctrl+V</STRONG>) ir paspauskite <STRONG>OK</STRONG>.",
 
 // Color Picker
 ColorAutomatic	: "Automatinis",

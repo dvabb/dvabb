@@ -103,9 +103,9 @@ Sub FavAdd_Boke()
 		Else
 			Body = dv_ubb.Dv_UbbCode(Body,UserGroupID,1,1)
 		End If
-		iBody = "标题：" & Topic & "<BR><BR>"
-		iBody = iBody & "作者：" & UserName & "<BR><BR>"
-		iBody = iBody & Body & "<BR><BR>"
+		iBody = "标题：" & Topic & "<br /><br />"
+		iBody = iBody & "作者：" & UserName & "<br /><br />"
+		iBody = iBody & Body & "<br /><br />"
 		iBody = iBody & "原贴地址：" & Dvbbs.Get_ScriptNameUrl() & "dispbbs.asp?BoardID="&Dvbbs.BoardID&"&ID="&RootID_a&"&replyID="&ReplyID_a&"&skin=1"
 		iBody = Replace(iBody,"onload=""javascript:if(this.width>500)this.style.width=500;""","")
 		Dvbbs.UserSession.documentElement.selectSingleNode("userinfo").attributes.setNamedItem(Dvbbs.UserSession.createNode(2,"cachebokebody","")).text = iBody

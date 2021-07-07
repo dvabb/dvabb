@@ -45,9 +45,9 @@ Dim  sel
 </td>
 </tr>
 <tr>
-<td width="100%" class=td2 colspan=2 height=25><B>说明</B>：<BR>
-1、网络银行支付功能由“阿里巴巴支付宝”提供，开通此功能需到<a href="https://www.alipay.com/" target=_blank><font color=red>支付宝网站</font></a>申请一个支付宝账号并填入上述表单，不正确的账号将会影响到您的网站收益<BR>
-2、<font color=red><B>通过本功能交易收取1%手续费用，支付宝交易安全、便捷！用户支付的款项将直接转到您指定的支付宝帐号！</B></font><BR>
+<td width="100%" class=td2 colspan=2 height=25><B>说明</B>：<br />
+1、网络银行支付功能由“阿里巴巴支付宝”提供，开通此功能需到<a href="https://www.alipay.com/" target=_blank><font color=red>支付宝网站</font></a>申请一个支付宝账号并填入上述表单，不正确的账号将会影响到您的网站收益<br />
+2、<font color=red><B>通过本功能交易收取1%手续费用，支付宝交易安全、便捷！用户支付的款项将直接转到您指定的支付宝帐号！</B></font><br />
 </td>
 </tr>
 </form>
@@ -55,7 +55,7 @@ Dim  sel
 <!--手机部分开始-->
 <!--
 <tr> 
-<td width="50%" class=td1> <U>是否开启论坛手机相关功能</U><BR>手机相关功能总开关</td>
+<td width="50%" class=td1> <U>是否开启论坛手机相关功能</U><br />手机相关功能总开关</td>
 <td width="50%" class=td1>  
 <input type=radio class="radio" name="Forum_ChanSetting(0)" value=0 <%if cint(Dvbbs.Forum_ChanSetting(0))=0 then%>checked<%end if%>>否&nbsp;
 <input type=radio class="radio" name="Forum_ChanSetting(0)" value=1 <%if cint(Dvbbs.Forum_ChanSetting(0))=1 then%>checked<%end if%>>是&nbsp;
@@ -75,15 +75,15 @@ Dim  sel
 </td>
 </tr>
 <tr>
-<td width="100%" class=td2 colspan=2 height=25><B>说明</B>：<BR>相关的手机无线产品服务由北京阳光加信科技有限公司提供，开通此功能则默认接受相关的服务条款<BR><BR>
+<td width="100%" class=td2 colspan=2 height=25><B>说明</B>：<br />相关的手机无线产品服务由北京阳光加信科技有限公司提供，开通此功能则默认接受相关的服务条款<br /><br />
 <%
 dim trs,rs
 set trs=Dvbbs.Execute("select * from Dv_ChallengeInfo")
 set rs=Dvbbs.Execute("select * from dv_setup")
 %>
 <%if Dvbbs.Forum_ChanSetting(0)="1" and rs("Forum_isinstall")=1 then%>
-您已经安装了论坛的手机无线产品服务，具体事项请看相关说明<BR>
-您当前注册的手机无线产品资料是，用户名：<%=trs("d_username")%>，网站名：<%=trs("d_forumname")%>，论坛地址：<%if trs("d_forumurl")="" then%><%=Dvbbs.Get_ScriptNameUrl()%><%else%><%=trs("d_forumurl")%><%end if%>，如果这些资料和您当前所使用的论坛不符（如论坛地址或用户名），您将不能得到相关的短信收益。<BR>
+您已经安装了论坛的手机无线产品服务，具体事项请看相关说明<br />
+您当前注册的手机无线产品资料是，用户名：<%=trs("d_username")%>，网站名：<%=trs("d_forumname")%>，论坛地址：<%if trs("d_forumurl")="" then%><%=Dvbbs.Get_ScriptNameUrl()%><%else%><%=trs("d_forumurl")%><%end if%>，如果这些资料和您当前所使用的论坛不符（如论坛地址或用户名），您将不能得到相关的短信收益。<br />
 <a href="install.asp?isnew=1"><font color=blue>您可以点击此处进行资料更新或者重新注册站长资料</font></a>
 <%else%>
 您还没有安装论坛的手机无线产品服务，通过手机无线产品服务，您可以享受到各种不同的网站收益，具体请看关于<a href=""><font color=red>手机无线产品服务的说明</font></a>，<a href="install.asp"><font color=blue>点击此处开启论坛手机无线产品服务</font></a>
@@ -101,13 +101,13 @@ set trs=nothing
 </form>
 <form method="POST" action="Challenge.asp?action=Save3">
 <tr>
-<td width="50%" class=td1> <U>充值的点券兑换率</U><BR><!--包括手机短信和网络支付方式--></td>
+<td width="50%" class=td1> <U>充值的点券兑换率</U><br /><!--包括手机短信和网络支付方式--></td>
 <td width="50%" class=td1>  
 <input type=text size=5 value="<%=Dvbbs.Forum_ChanSetting(14)%>" name="Forum_ChanSetting(14)"> 张点券=1元人民币<!--或短信-->
 </td>
 </tr>
 <tr> 
-<td width="50%" class=td1> <U>是否开启RSS订阅功能</U><BR>开启后可通过一些RSS阅读软件订阅</td>
+<td width="50%" class=td1> <U>是否开启RSS订阅功能</U><br />开启后可通过一些RSS阅读软件订阅</td>
 <td width="50%" class=td1>  
 <input type=radio class="radio" name="Forum_ChanSetting(2)" value=1 <%if (Dvbbs.Forum_ChanSetting(2))="1" then%>checked<%end if%>>否&nbsp;
 <input type=radio class="radio" name="Forum_ChanSetting(2)" value=0 <%if (Dvbbs.Forum_ChanSetting(2))="0" then%>checked<%end if%>>是&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" class="button" name="Submit" value="提 交">
@@ -156,7 +156,7 @@ End Sub
 Sub Save4()
 	'3是否开启/4支付宝账号/5动网关联ID/6Forum_AliPayKey
 	If Request("UserID")="" Or Request("Email")="" Or Request("ForumKey")="" Then
-		Errmsg=ErrMsg + "<BR><li>非法的返回参数。"
+		Errmsg=ErrMsg + "<br /><li>非法的返回参数。"
 		Exit Sub
 	End If
 	Dim Forum_ChanSetting,iForum_ChanSetting,mForum_ChanSetting
